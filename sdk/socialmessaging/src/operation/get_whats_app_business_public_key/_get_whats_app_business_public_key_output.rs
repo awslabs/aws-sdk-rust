@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWhatsAppBusinessPublicKeyOutput {
-    /// The stored RSA business public key (PEM), if present.
+    /// <p>The stored PEM-encoded 2048-bit RSA public key.</p>
     pub business_public_key: ::std::option::Option<::std::string::String>,
-    /// Meta's signing status: "VALID" | "MISMATCH".
+    /// <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     pub business_public_key_signature_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetWhatsAppBusinessPublicKeyOutput {
-    /// The stored RSA business public key (PEM), if present.
+    /// <p>The stored PEM-encoded 2048-bit RSA public key.</p>
     pub fn business_public_key(&self) -> ::std::option::Option<&str> {
         self.business_public_key.as_deref()
     }
-    /// Meta's signing status: "VALID" | "MISMATCH".
+    /// <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     pub fn business_public_key_signature_status(&self) -> ::std::option::Option<&str> {
         self.business_public_key_signature_status.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct GetWhatsAppBusinessPublicKeyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetWhatsAppBusinessPublicKeyOutputBuilder {
-    /// The stored RSA business public key (PEM), if present.
+    /// <p>The stored PEM-encoded 2048-bit RSA public key.</p>
     pub fn business_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_public_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// The stored RSA business public key (PEM), if present.
+    /// <p>The stored PEM-encoded 2048-bit RSA public key.</p>
     pub fn set_business_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_public_key = input;
         self
     }
-    /// The stored RSA business public key (PEM), if present.
+    /// <p>The stored PEM-encoded 2048-bit RSA public key.</p>
     pub fn get_business_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_public_key
     }
-    /// Meta's signing status: "VALID" | "MISMATCH".
+    /// <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     pub fn business_public_key_signature_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_public_key_signature_status = ::std::option::Option::Some(input.into());
         self
     }
-    /// Meta's signing status: "VALID" | "MISMATCH".
+    /// <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     pub fn set_business_public_key_signature_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_public_key_signature_status = input;
         self
     }
-    /// Meta's signing status: "VALID" | "MISMATCH".
+    /// <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     pub fn get_business_public_key_signature_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_public_key_signature_status
     }

@@ -83,6 +83,8 @@ pub use crate::types::_ip_resource::IpResource;
 
 pub use crate::types::_arn_resource::ArnResource;
 
+pub use crate::types::_cidr_resource::CidrResource;
+
 pub use crate::types::_resource_endpoint_association_summary::ResourceEndpointAssociationSummary;
 
 pub use crate::types::_resource_gateway_summary::ResourceGatewaySummary;
@@ -129,9 +131,15 @@ pub use crate::types::_target_status::TargetStatus;
 
 pub use crate::types::_weighted_target_group::WeightedTargetGroup;
 
+pub use crate::types::_payer_responsibility_entry::PayerResponsibilityEntry;
+
 pub use crate::types::_path_match_type::PathMatchType;
 
 pub use crate::types::_header_match::HeaderMatch;
+
+pub use crate::types::_payer_responsibility_scope::PayerResponsibilityScope;
+
+pub use crate::types::_payer_responsibility_payer::PayerResponsibilityPayer;
 
 pub use crate::types::_header_match_type::HeaderMatchType;
 
@@ -142,6 +150,8 @@ mod _arn_resource;
 mod _auth_policy_state;
 
 mod _auth_type;
+
+mod _cidr_resource;
 
 mod _dns_entry;
 
@@ -180,6 +190,12 @@ mod _matcher;
 mod _path_match;
 
 mod _path_match_type;
+
+mod _payer_responsibility_entry;
+
+mod _payer_responsibility_payer;
+
+mod _payer_responsibility_scope;
 
 mod _private_dns_preference;
 

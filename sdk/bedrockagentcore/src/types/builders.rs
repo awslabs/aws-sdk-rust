@@ -337,6 +337,8 @@ pub use crate::types::_harness_tool_result_block::HarnessToolResultBlockBuilder;
 
 pub use crate::types::_variant_result::VariantResultBuilder;
 
+pub use crate::types::_session_trace_ids::SessionTraceIdsBuilder;
+
 pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryClusterBuilder;
 
 pub use crate::types::_user_intent_affected_session::UserIntentAffectedSessionBuilder;

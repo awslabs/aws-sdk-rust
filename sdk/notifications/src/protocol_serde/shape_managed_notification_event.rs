@@ -106,6 +106,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "attachments" => {
+                            builder = builder.set_attachments(
+                                crate::protocol_serde::shape_notification_event_attachment_list::de_notification_event_attachment_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

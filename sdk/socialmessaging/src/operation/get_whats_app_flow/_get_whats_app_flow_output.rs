@@ -17,7 +17,7 @@ pub struct GetWhatsAppFlowOutput {
     pub json_version: ::std::option::Option<::std::string::String>,
     /// <p>The data API version for data exchange endpoint Flows.</p>
     pub data_api_version: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint URI for data exchange Flows, if configured.</p>
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub endpoint_uri: ::std::option::Option<::std::string::String>,
     /// <p>The preview URL and its expiration timestamp for testing the Flow.</p>
     pub preview: ::std::option::Option<crate::types::MetaFlowPreviewInfo>,
@@ -65,7 +65,7 @@ impl GetWhatsAppFlowOutput {
     pub fn data_api_version(&self) -> ::std::option::Option<&str> {
         self.data_api_version.as_deref()
     }
-    /// <p>The endpoint URI for data exchange Flows, if configured.</p>
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn endpoint_uri(&self) -> ::std::option::Option<&str> {
         self.endpoint_uri.as_deref()
     }
@@ -230,17 +230,17 @@ impl GetWhatsAppFlowOutputBuilder {
     pub fn get_data_api_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_api_version
     }
-    /// <p>The endpoint URI for data exchange Flows, if configured.</p>
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The endpoint URI for data exchange Flows, if configured.</p>
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_uri = input;
         self
     }
-    /// <p>The endpoint URI for data exchange Flows, if configured.</p>
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_uri
     }

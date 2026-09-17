@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutWhatsAppBusinessPublicKeyInput {
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub origination_phone_number_id: ::std::option::Option<::std::string::String>,
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub business_public_key: ::std::option::Option<::std::string::String>,
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutWhatsAppBusinessPublicKeyInput {
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn origination_phone_number_id(&self) -> ::std::option::Option<&str> {
         self.origination_phone_number_id.as_deref()
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn business_public_key(&self) -> ::std::option::Option<&str> {
         self.business_public_key.as_deref()
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
@@ -40,46 +40,46 @@ pub struct PutWhatsAppBusinessPublicKeyInputBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutWhatsAppBusinessPublicKeyInputBuilder {
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     /// This field is required.
     pub fn origination_phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn set_origination_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_phone_number_id = input;
         self
     }
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn get_origination_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.origination_phone_number_id
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn business_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_public_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn set_business_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_public_key = input;
         self
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn get_business_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_public_key
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }

@@ -14,6 +14,7 @@
 /// match textparttype {
 ///     TextPartType::LocalizedText => { /* ... */ },
 ///     TextPartType::PlainText => { /* ... */ },
+///     TextPartType::PortableText => { /* ... */ },
 ///     TextPartType::Url => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum TextPartType {
     #[allow(missing_docs)] // documentation missing in model
     PlainText,
     #[allow(missing_docs)] // documentation missing in model
+    PortableText,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for TextPartType {
         match s {
             "LOCALIZED_TEXT" => TextPartType::LocalizedText,
             "PLAIN_TEXT" => TextPartType::PlainText,
+            "PORTABLE_TEXT" => TextPartType::PortableText,
             "URL" => TextPartType::Url,
             other => TextPartType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl TextPartType {
         match self {
             TextPartType::LocalizedText => "LOCALIZED_TEXT",
             TextPartType::PlainText => "PLAIN_TEXT",
+            TextPartType::PortableText => "PORTABLE_TEXT",
             TextPartType::Url => "URL",
             TextPartType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LOCALIZED_TEXT", "PLAIN_TEXT", "URL"]
+        &["LOCALIZED_TEXT", "PLAIN_TEXT", "PORTABLE_TEXT", "URL"]
     }
 }
 impl ::std::convert::AsRef<str> for TextPartType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for TextPartType {
         match self {
             TextPartType::LocalizedText => write!(f, "LOCALIZED_TEXT"),
             TextPartType::PlainText => write!(f, "PLAIN_TEXT"),
+            TextPartType::PortableText => write!(f, "PORTABLE_TEXT"),
             TextPartType::Url => write!(f, "URL"),
             TextPartType::Unknown(value) => write!(f, "{value}"),
         }

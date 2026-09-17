@@ -862,6 +862,18 @@ pub(crate) fn media_element_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn notification_event_attachment_correct_errors(
+    mut builder: crate::types::builders::NotificationEventAttachmentBuilder,
+) -> crate::types::builders::NotificationEventAttachmentBuilder {
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.content_type.is_none() {
+        builder.content_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn notification_event_summary_correct_errors(
     mut builder: crate::types::builders::NotificationEventSummaryBuilder,
 ) -> crate::types::builders::NotificationEventSummaryBuilder {

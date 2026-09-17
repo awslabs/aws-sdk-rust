@@ -323,6 +323,8 @@ pub(crate) mod shape_access_log_subscription_summary;
 
 pub(crate) mod shape_arn_resource;
 
+pub(crate) mod shape_cidr_resource;
+
 pub(crate) mod shape_dns_resource;
 
 pub(crate) mod shape_domain_verification_summary;
@@ -373,11 +375,15 @@ pub(crate) mod shape_target_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_cidr_range_list;
+
 pub(crate) mod shape_header_match;
 
 pub(crate) mod shape_header_match_list;
 
 pub(crate) mod shape_path_match;
+
+pub(crate) mod shape_payer_responsibility_list;
 
 pub(crate) mod shape_weighted_target_group;
 
@@ -386,3 +392,5 @@ pub(crate) mod shape_weighted_target_group_list;
 pub(crate) mod shape_header_match_type;
 
 pub(crate) mod shape_path_match_type;
+
+pub(crate) mod shape_payer_responsibility_entry;

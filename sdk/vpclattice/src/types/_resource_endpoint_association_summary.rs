@@ -22,6 +22,8 @@ pub struct ResourceEndpointAssociationSummary {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the VPC endpoint association was created, in ISO-8601 format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Who pays for each category of charges on the VPC endpoint association.</p>
+    pub payer_responsibility: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
 }
 impl ResourceEndpointAssociationSummary {
     /// <p>The ID of the VPC endpoint association.</p>
@@ -60,6 +62,12 @@ impl ResourceEndpointAssociationSummary {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
+    /// <p>Who pays for each category of charges on the VPC endpoint association.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payer_responsibility.is_none()`.
+    pub fn payer_responsibility(&self) -> &[crate::types::PayerResponsibilityEntry] {
+        self.payer_responsibility.as_deref().unwrap_or_default()
+    }
 }
 impl ResourceEndpointAssociationSummary {
     /// Creates a new builder-style object to manufacture [`ResourceEndpointAssociationSummary`](crate::types::ResourceEndpointAssociationSummary).
@@ -81,6 +89,7 @@ pub struct ResourceEndpointAssociationSummaryBuilder {
     pub(crate) vpc_endpoint_owner: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) payer_responsibility: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
 }
 impl ResourceEndpointAssociationSummaryBuilder {
     /// <p>The ID of the VPC endpoint association.</p>
@@ -209,6 +218,26 @@ impl ResourceEndpointAssociationSummaryBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// Appends an item to `payer_responsibility`.
+    ///
+    /// To override the contents of this collection use [`set_payer_responsibility`](Self::set_payer_responsibility).
+    ///
+    /// <p>Who pays for each category of charges on the VPC endpoint association.</p>
+    pub fn payer_responsibility(mut self, input: crate::types::PayerResponsibilityEntry) -> Self {
+        let mut v = self.payer_responsibility.unwrap_or_default();
+        v.push(input);
+        self.payer_responsibility = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Who pays for each category of charges on the VPC endpoint association.</p>
+    pub fn set_payer_responsibility(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>) -> Self {
+        self.payer_responsibility = input;
+        self
+    }
+    /// <p>Who pays for each category of charges on the VPC endpoint association.</p>
+    pub fn get_payer_responsibility(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>> {
+        &self.payer_responsibility
+    }
     /// Consumes the builder and constructs a [`ResourceEndpointAssociationSummary`](crate::types::ResourceEndpointAssociationSummary).
     pub fn build(self) -> crate::types::ResourceEndpointAssociationSummary {
         crate::types::ResourceEndpointAssociationSummary {
@@ -221,6 +250,7 @@ impl ResourceEndpointAssociationSummaryBuilder {
             vpc_endpoint_owner: self.vpc_endpoint_owner,
             created_by: self.created_by,
             created_at: self.created_at,
+            payer_responsibility: self.payer_responsibility,
         }
     }
 }

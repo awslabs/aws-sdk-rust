@@ -10,6 +10,8 @@ pub struct MessageComponents {
     pub paragraph_summary: ::std::option::Option<::std::string::String>,
     /// <p>A complete summary with all possible relevant information.</p>
     pub complete_description: ::std::option::Option<::std::string::String>,
+    /// <p>A rich description in Portable Text format, which you can convert to markup formats such as HTML, Markdown, or plain text. Channels that don't support rich rendering ignore this field and use the plain text components instead.</p>
+    pub markup_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of properties in key-value pairs. Pairs are shown in order of importance from most important to least important. Channels may limit the number of dimensions shown to the notification viewer.</p><note>
     /// <p>Included dimensions, keys, and values are subject to change.</p>
     /// </note>
@@ -27,6 +29,10 @@ impl MessageComponents {
     /// <p>A complete summary with all possible relevant information.</p>
     pub fn complete_description(&self) -> ::std::option::Option<&str> {
         self.complete_description.as_deref()
+    }
+    /// <p>A rich description in Portable Text format, which you can convert to markup formats such as HTML, Markdown, or plain text. Channels that don't support rich rendering ignore this field and use the plain text components instead.</p>
+    pub fn markup_description(&self) -> ::std::option::Option<&str> {
+        self.markup_description.as_deref()
     }
     /// <p>A list of properties in key-value pairs. Pairs are shown in order of importance from most important to least important. Channels may limit the number of dimensions shown to the notification viewer.</p><note>
     /// <p>Included dimensions, keys, and values are subject to change.</p>
@@ -51,6 +57,7 @@ pub struct MessageComponentsBuilder {
     pub(crate) headline: ::std::option::Option<::std::string::String>,
     pub(crate) paragraph_summary: ::std::option::Option<::std::string::String>,
     pub(crate) complete_description: ::std::option::Option<::std::string::String>,
+    pub(crate) markup_description: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
 }
 impl MessageComponentsBuilder {
@@ -96,6 +103,20 @@ impl MessageComponentsBuilder {
     pub fn get_complete_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.complete_description
     }
+    /// <p>A rich description in Portable Text format, which you can convert to markup formats such as HTML, Markdown, or plain text. Channels that don't support rich rendering ignore this field and use the plain text components instead.</p>
+    pub fn markup_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.markup_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A rich description in Portable Text format, which you can convert to markup formats such as HTML, Markdown, or plain text. Channels that don't support rich rendering ignore this field and use the plain text components instead.</p>
+    pub fn set_markup_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.markup_description = input;
+        self
+    }
+    /// <p>A rich description in Portable Text format, which you can convert to markup formats such as HTML, Markdown, or plain text. Channels that don't support rich rendering ignore this field and use the plain text components instead.</p>
+    pub fn get_markup_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.markup_description
+    }
     /// Appends an item to `dimensions`.
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
@@ -128,6 +149,7 @@ impl MessageComponentsBuilder {
             headline: self.headline,
             paragraph_summary: self.paragraph_summary,
             complete_description: self.complete_description,
+            markup_description: self.markup_description,
             dimensions: self.dimensions,
         }
     }

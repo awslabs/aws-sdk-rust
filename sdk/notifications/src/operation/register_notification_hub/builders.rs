@@ -22,8 +22,8 @@ impl crate::operation::register_notification_hub::builders::RegisterNotification
 }
 /// Fluent builder constructing a request to `RegisterNotificationHub`.
 ///
-/// <p>Registers a <code>NotificationConfiguration</code> in the specified Region.</p>
-/// <p>There is a maximum of one <code>NotificationConfiguration</code> per Region. You can have a maximum of 3 <code>NotificationHub</code> resources at a time.</p>
+/// <p>Registers a <code>NotificationHub</code> in the specified Region.</p>
+/// <p>There is a maximum of one <code>NotificationHub</code> per Region. You can have a maximum of 3 <code>NotificationHub</code> resources at a time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterNotificationHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

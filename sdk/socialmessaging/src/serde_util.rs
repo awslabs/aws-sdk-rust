@@ -8,6 +8,21 @@ pub(crate) fn create_whats_app_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_whats_app_call_permission_output_output_correct_errors(
+    mut builder: crate::operation::get_whats_app_call_permission::builders::GetWhatsAppCallPermissionOutputBuilder,
+) -> crate::operation::get_whats_app_call_permission::builders::GetWhatsAppCallPermissionOutputBuilder {
+    if builder.permission.is_none() {
+        builder.permission = {
+            let builder = crate::types::builders::WhatsAppCallPermissionBuilder::default();
+            crate::serde_util::whats_app_call_permission_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_whats_app_flow_output_output_correct_errors(
     mut builder: crate::operation::get_whats_app_flow::builders::GetWhatsAppFlowOutputBuilder,
 ) -> crate::operation::get_whats_app_flow::builders::GetWhatsAppFlowOutputBuilder {
@@ -56,11 +71,38 @@ pub(crate) fn list_whats_app_flows_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn send_whats_app_call_event_output_output_correct_errors(
+    mut builder: crate::operation::send_whats_app_call_event::builders::SendWhatsAppCallEventOutputBuilder,
+) -> crate::operation::send_whats_app_call_event::builders::SendWhatsAppCallEventOutputBuilder {
+    if builder.call_id.is_none() {
+        builder.call_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn send_whats_app_conversion_event_output_output_correct_errors(
     mut builder: crate::operation::send_whats_app_conversion_event::builders::SendWhatsAppConversionEventOutputBuilder,
 ) -> crate::operation::send_whats_app_conversion_event::builders::SendWhatsAppConversionEventOutputBuilder {
     if builder.request_id.is_none() {
         builder.request_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_linked_whats_app_business_account_phone_number_output_output_correct_errors(
+    mut builder: crate::operation::update_linked_whats_app_business_account_phone_number::builders::UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder,
+) -> crate::operation::update_linked_whats_app_business_account_phone_number::builders::UpdateLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder {
+    if builder.phone_number_id.is_none() {
+        builder.phone_number_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_call_permission_correct_errors(
+    mut builder: crate::types::builders::WhatsAppCallPermissionBuilder,
+) -> crate::types::builders::WhatsAppCallPermissionBuilder {
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
     }
     builder
 }
@@ -136,6 +178,15 @@ pub(crate) fn meta_flow_whats_app_business_account_info_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_call_settings_correct_errors(
+    mut builder: crate::types::builders::WhatsAppCallSettingsBuilder,
+) -> crate::types::builders::WhatsAppCallSettingsBuilder {
+    if builder.call_enabled.is_none() {
+        builder.call_enabled = Some(Default::default())
     }
     builder
 }
@@ -237,6 +288,36 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn whats_app_call_hours_correct_errors(
+    mut builder: crate::types::builders::WhatsAppCallHoursBuilder,
+) -> crate::types::builders::WhatsAppCallHoursBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    if builder.timezone.is_none() {
+        builder.timezone = Some(Default::default())
+    }
+    if builder.weekly_operating_hours.is_none() {
+        builder.weekly_operating_hours = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_call_permission_action_correct_errors(
+    mut builder: crate::types::builders::WhatsAppCallPermissionActionBuilder,
+) -> crate::types::builders::WhatsAppCallPermissionActionBuilder {
+    if builder.action_name.is_none() {
+        builder.action_name = Some(Default::default())
+    }
+    if builder.can_perform_action.is_none() {
+        builder.can_perform_action = Some(Default::default())
+    }
+    if builder.limits.is_none() {
+        builder.limits = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn meta_flow_health_entity_correct_errors(
     mut builder: crate::types::builders::MetaFlowHealthEntityBuilder,
 ) -> crate::types::builders::MetaFlowHealthEntityBuilder {
@@ -284,6 +365,75 @@ pub(crate) fn whats_app_phone_number_summary_correct_errors(
     }
     if builder.quality_rating.is_none() {
         builder.quality_rating = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_call_permission_limit_correct_errors(
+    mut builder: crate::types::builders::WhatsAppCallPermissionLimitBuilder,
+) -> crate::types::builders::WhatsAppCallPermissionLimitBuilder {
+    if builder.time_period.is_none() {
+        builder.time_period = Some(Default::default())
+    }
+    if builder.max_allowed.is_none() {
+        builder.max_allowed = Some(Default::default())
+    }
+    if builder.current_usage.is_none() {
+        builder.current_usage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn whats_app_holiday_schedule_entry_correct_errors(
+    mut builder: crate::types::builders::WhatsAppHolidayScheduleEntryBuilder,
+) -> crate::types::builders::WhatsAppHolidayScheduleEntryBuilder {
+    if builder.date.is_none() {
+        builder.date = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = {
+            let builder = crate::types::builders::WhatsAppTimeOfDayBuilder::default();
+            crate::serde_util::whats_app_time_of_day_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = {
+            let builder = crate::types::builders::WhatsAppTimeOfDayBuilder::default();
+            crate::serde_util::whats_app_time_of_day_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn whats_app_weekly_operating_hours_entry_correct_errors(
+    mut builder: crate::types::builders::WhatsAppWeeklyOperatingHoursEntryBuilder,
+) -> crate::types::builders::WhatsAppWeeklyOperatingHoursEntryBuilder {
+    if builder.day_of_week.is_none() {
+        builder.day_of_week = "no value was set".parse::<crate::types::WhatsAppDayOfWeek>().ok()
+    }
+    if builder.open_time.is_none() {
+        builder.open_time = {
+            let builder = crate::types::builders::WhatsAppTimeOfDayBuilder::default();
+            crate::serde_util::whats_app_time_of_day_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.close_time.is_none() {
+        builder.close_time = {
+            let builder = crate::types::builders::WhatsAppTimeOfDayBuilder::default();
+            crate::serde_util::whats_app_time_of_day_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn whats_app_time_of_day_correct_errors(
+    mut builder: crate::types::builders::WhatsAppTimeOfDayBuilder,
+) -> crate::types::builders::WhatsAppTimeOfDayBuilder {
+    if builder.hours.is_none() {
+        builder.hours = Some(Default::default())
+    }
+    if builder.minutes.is_none() {
+        builder.minutes = Some(Default::default())
     }
     builder
 }

@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "markupDescription" => {
+                            builder = builder.set_markup_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "dimensions" => {
                             builder = builder.set_dimensions(crate::protocol_serde::shape_dimensions::de_dimensions(tokens, _value, depth + 1)?);
                         }

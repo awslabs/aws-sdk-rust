@@ -315,6 +315,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListManagedN
                         query.push_kv("relatedAccount", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
+                if let ::std::option::Option::Some(inner_9) = &_input.include_sensitive_events {
+                    {
+                        query.push_kv("includeSensitiveEvents", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

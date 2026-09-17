@@ -239,4 +239,6 @@ mod untag_resource;
 
 mod update_event_rule;
 
+mod update_managed_notification_channel_association;
+
 mod update_notification_configuration;

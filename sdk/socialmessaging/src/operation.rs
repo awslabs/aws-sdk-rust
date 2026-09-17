@@ -43,6 +43,9 @@ pub mod get_linked_whats_app_business_account_phone_number;
 /// Types for the `GetWhatsAppBusinessPublicKey` operation.
 pub mod get_whats_app_business_public_key;
 
+/// Types for the `GetWhatsAppCallPermission` operation.
+pub mod get_whats_app_call_permission;
+
 /// Types for the `GetWhatsAppFlow` operation.
 pub mod get_whats_app_flow;
 
@@ -85,6 +88,9 @@ pub mod put_whats_app_business_account_event_destinations;
 /// Types for the `PutWhatsAppBusinessPublicKey` operation.
 pub mod put_whats_app_business_public_key;
 
+/// Types for the `SendWhatsAppCallEvent` operation.
+pub mod send_whats_app_call_event;
+
 /// Types for the `SendWhatsAppConversionEvent` operation.
 pub mod send_whats_app_conversion_event;
 
@@ -96,6 +102,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateLinkedWhatsAppBusinessAccountPhoneNumber` operation.
+pub mod update_linked_whats_app_business_account_phone_number;
 
 /// Types for the `UpdateWhatsAppFlow` operation.
 pub mod update_whats_app_flow;

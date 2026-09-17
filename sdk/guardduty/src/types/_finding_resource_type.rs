@@ -14,6 +14,15 @@
 /// match findingresourcetype {
 ///     FindingResourceType::AccessKey => { /* ... */ },
 ///     FindingResourceType::AutoscalingAutoScalingGroup => { /* ... */ },
+///     FindingResourceType::BedrockApplicationInferenceProfile => { /* ... */ },
+///     FindingResourceType::BedrockCustomModel => { /* ... */ },
+///     FindingResourceType::BedrockCustomModelDeployment => { /* ... */ },
+///     FindingResourceType::BedrockGuardrail => { /* ... */ },
+///     FindingResourceType::BedrockImportedModel => { /* ... */ },
+///     FindingResourceType::BedrockInferenceProfile => { /* ... */ },
+///     FindingResourceType::BedrockPrompt => { /* ... */ },
+///     FindingResourceType::BedrockPromptRouter => { /* ... */ },
+///     FindingResourceType::BedrockProvisionedModel => { /* ... */ },
 ///     FindingResourceType::CloudformationStack => { /* ... */ },
 ///     FindingResourceType::Container => { /* ... */ },
 ///     FindingResourceType::Ec2Image => { /* ... */ },
@@ -28,6 +37,7 @@
 ///     FindingResourceType::KubernetesWorkload => { /* ... */ },
 ///     FindingResourceType::S3Bucket => { /* ... */ },
 ///     FindingResourceType::S3Object => { /* ... */ },
+///     FindingResourceType::SagemakerEndpoint => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -60,6 +70,24 @@ pub enum FindingResourceType {
     AccessKey,
     #[allow(missing_docs)] // documentation missing in model
     AutoscalingAutoScalingGroup,
+    /// <p>An application-scoped Amazon Bedrock inference profile used to track invocation usage.</p>
+    BedrockApplicationInferenceProfile,
+    /// <p>An Amazon Bedrock custom model fine-tuned by the customer.</p>
+    BedrockCustomModel,
+    /// <p>A deployment of an Amazon Bedrock custom model.</p>
+    BedrockCustomModelDeployment,
+    /// <p>An Amazon Bedrock guardrail evaluated during a model invocation.</p>
+    BedrockGuardrail,
+    /// <p>An Amazon Bedrock imported model brought in from an external source.</p>
+    BedrockImportedModel,
+    /// <p>An Amazon Bedrock inference profile that routes model invocations across Regions.</p>
+    BedrockInferenceProfile,
+    /// <p>A managed prompt stored in Amazon Bedrock Prompt Management.</p>
+    BedrockPrompt,
+    /// <p>An Amazon Bedrock prompt router that selects a model per request.</p>
+    BedrockPromptRouter,
+    /// <p>An Amazon Bedrock model with provisioned throughput.</p>
+    BedrockProvisionedModel,
     #[allow(missing_docs)] // documentation missing in model
     CloudformationStack,
     #[allow(missing_docs)] // documentation missing in model
@@ -88,6 +116,8 @@ pub enum FindingResourceType {
     S3Bucket,
     #[allow(missing_docs)] // documentation missing in model
     S3Object,
+    /// <p>An Amazon SageMaker inference endpoint.</p>
+    SagemakerEndpoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -97,6 +127,15 @@ impl ::std::convert::From<&str> for FindingResourceType {
         match s {
             "ACCESS_KEY" => FindingResourceType::AccessKey,
             "AUTOSCALING_AUTO_SCALING_GROUP" => FindingResourceType::AutoscalingAutoScalingGroup,
+            "BEDROCK_APPLICATION_INFERENCE_PROFILE" => FindingResourceType::BedrockApplicationInferenceProfile,
+            "BEDROCK_CUSTOM_MODEL" => FindingResourceType::BedrockCustomModel,
+            "BEDROCK_CUSTOM_MODEL_DEPLOYMENT" => FindingResourceType::BedrockCustomModelDeployment,
+            "BEDROCK_GUARDRAIL" => FindingResourceType::BedrockGuardrail,
+            "BEDROCK_IMPORTED_MODEL" => FindingResourceType::BedrockImportedModel,
+            "BEDROCK_INFERENCE_PROFILE" => FindingResourceType::BedrockInferenceProfile,
+            "BEDROCK_PROMPT" => FindingResourceType::BedrockPrompt,
+            "BEDROCK_PROMPT_ROUTER" => FindingResourceType::BedrockPromptRouter,
+            "BEDROCK_PROVISIONED_MODEL" => FindingResourceType::BedrockProvisionedModel,
             "CLOUDFORMATION_STACK" => FindingResourceType::CloudformationStack,
             "CONTAINER" => FindingResourceType::Container,
             "EC2_IMAGE" => FindingResourceType::Ec2Image,
@@ -111,6 +150,7 @@ impl ::std::convert::From<&str> for FindingResourceType {
             "KUBERNETES_WORKLOAD" => FindingResourceType::KubernetesWorkload,
             "S3_BUCKET" => FindingResourceType::S3Bucket,
             "S3_OBJECT" => FindingResourceType::S3Object,
+            "SAGEMAKER_ENDPOINT" => FindingResourceType::SagemakerEndpoint,
             other => FindingResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -128,6 +168,15 @@ impl FindingResourceType {
         match self {
             FindingResourceType::AccessKey => "ACCESS_KEY",
             FindingResourceType::AutoscalingAutoScalingGroup => "AUTOSCALING_AUTO_SCALING_GROUP",
+            FindingResourceType::BedrockApplicationInferenceProfile => "BEDROCK_APPLICATION_INFERENCE_PROFILE",
+            FindingResourceType::BedrockCustomModel => "BEDROCK_CUSTOM_MODEL",
+            FindingResourceType::BedrockCustomModelDeployment => "BEDROCK_CUSTOM_MODEL_DEPLOYMENT",
+            FindingResourceType::BedrockGuardrail => "BEDROCK_GUARDRAIL",
+            FindingResourceType::BedrockImportedModel => "BEDROCK_IMPORTED_MODEL",
+            FindingResourceType::BedrockInferenceProfile => "BEDROCK_INFERENCE_PROFILE",
+            FindingResourceType::BedrockPrompt => "BEDROCK_PROMPT",
+            FindingResourceType::BedrockPromptRouter => "BEDROCK_PROMPT_ROUTER",
+            FindingResourceType::BedrockProvisionedModel => "BEDROCK_PROVISIONED_MODEL",
             FindingResourceType::CloudformationStack => "CLOUDFORMATION_STACK",
             FindingResourceType::Container => "CONTAINER",
             FindingResourceType::Ec2Image => "EC2_IMAGE",
@@ -142,6 +191,7 @@ impl FindingResourceType {
             FindingResourceType::KubernetesWorkload => "KUBERNETES_WORKLOAD",
             FindingResourceType::S3Bucket => "S3_BUCKET",
             FindingResourceType::S3Object => "S3_OBJECT",
+            FindingResourceType::SagemakerEndpoint => "SAGEMAKER_ENDPOINT",
             FindingResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -150,6 +200,15 @@ impl FindingResourceType {
         &[
             "ACCESS_KEY",
             "AUTOSCALING_AUTO_SCALING_GROUP",
+            "BEDROCK_APPLICATION_INFERENCE_PROFILE",
+            "BEDROCK_CUSTOM_MODEL",
+            "BEDROCK_CUSTOM_MODEL_DEPLOYMENT",
+            "BEDROCK_GUARDRAIL",
+            "BEDROCK_IMPORTED_MODEL",
+            "BEDROCK_INFERENCE_PROFILE",
+            "BEDROCK_PROMPT",
+            "BEDROCK_PROMPT_ROUTER",
+            "BEDROCK_PROVISIONED_MODEL",
             "CLOUDFORMATION_STACK",
             "CONTAINER",
             "EC2_IMAGE",
@@ -164,6 +223,7 @@ impl FindingResourceType {
             "KUBERNETES_WORKLOAD",
             "S3_BUCKET",
             "S3_OBJECT",
+            "SAGEMAKER_ENDPOINT",
         ]
     }
 }
@@ -189,6 +249,15 @@ impl ::std::fmt::Display for FindingResourceType {
         match self {
             FindingResourceType::AccessKey => write!(f, "ACCESS_KEY"),
             FindingResourceType::AutoscalingAutoScalingGroup => write!(f, "AUTOSCALING_AUTO_SCALING_GROUP"),
+            FindingResourceType::BedrockApplicationInferenceProfile => write!(f, "BEDROCK_APPLICATION_INFERENCE_PROFILE"),
+            FindingResourceType::BedrockCustomModel => write!(f, "BEDROCK_CUSTOM_MODEL"),
+            FindingResourceType::BedrockCustomModelDeployment => write!(f, "BEDROCK_CUSTOM_MODEL_DEPLOYMENT"),
+            FindingResourceType::BedrockGuardrail => write!(f, "BEDROCK_GUARDRAIL"),
+            FindingResourceType::BedrockImportedModel => write!(f, "BEDROCK_IMPORTED_MODEL"),
+            FindingResourceType::BedrockInferenceProfile => write!(f, "BEDROCK_INFERENCE_PROFILE"),
+            FindingResourceType::BedrockPrompt => write!(f, "BEDROCK_PROMPT"),
+            FindingResourceType::BedrockPromptRouter => write!(f, "BEDROCK_PROMPT_ROUTER"),
+            FindingResourceType::BedrockProvisionedModel => write!(f, "BEDROCK_PROVISIONED_MODEL"),
             FindingResourceType::CloudformationStack => write!(f, "CLOUDFORMATION_STACK"),
             FindingResourceType::Container => write!(f, "CONTAINER"),
             FindingResourceType::Ec2Image => write!(f, "EC2_IMAGE"),
@@ -203,6 +272,7 @@ impl ::std::fmt::Display for FindingResourceType {
             FindingResourceType::KubernetesWorkload => write!(f, "KUBERNETES_WORKLOAD"),
             FindingResourceType::S3Bucket => write!(f, "S3_BUCKET"),
             FindingResourceType::S3Object => write!(f, "S3_OBJECT"),
+            FindingResourceType::SagemakerEndpoint => write!(f, "SAGEMAKER_ENDPOINT"),
             FindingResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

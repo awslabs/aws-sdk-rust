@@ -155,19 +155,33 @@ impl GetPositionEstimateFluentBuilder {
     pub fn get_ip(&self) -> &::std::option::Option<crate::types::Ip> {
         self.inner.get_ip()
     }
-    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the GnssMultiFrame field.</p>
     pub fn gnss(mut self, input: crate::types::Gnss) -> Self {
         self.inner = self.inner.gnss(input);
         self
     }
-    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the GnssMultiFrame field.</p>
     pub fn set_gnss(mut self, input: ::std::option::Option<crate::types::Gnss>) -> Self {
         self.inner = self.inner.set_gnss(input);
         self
     }
-    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
+    /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the GnssMultiFrame field.</p>
     pub fn get_gnss(&self) -> &::std::option::Option<crate::types::Gnss> {
         self.inner.get_gnss()
+    }
+    /// <p>Retrieves an estimated device position by resolving multiple global navigation satellite system (GNSS) scan captures. The position is resolved using the multi-frame GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the Gnss field.</p>
+    pub fn gnss_multi_frame(mut self, input: crate::types::GnssMultiFrame) -> Self {
+        self.inner = self.inner.gnss_multi_frame(input);
+        self
+    }
+    /// <p>Retrieves an estimated device position by resolving multiple global navigation satellite system (GNSS) scan captures. The position is resolved using the multi-frame GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the Gnss field.</p>
+    pub fn set_gnss_multi_frame(mut self, input: ::std::option::Option<crate::types::GnssMultiFrame>) -> Self {
+        self.inner = self.inner.set_gnss_multi_frame(input);
+        self
+    }
+    /// <p>Retrieves an estimated device position by resolving multiple global navigation satellite system (GNSS) scan captures. The position is resolved using the multi-frame GNSS solver powered by LoRa Cloud. This field is mutually exclusive with the Gnss field.</p>
+    pub fn get_gnss_multi_frame(&self) -> &::std::option::Option<crate::types::GnssMultiFrame> {
+        self.inner.get_gnss_multi_frame()
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -183,17 +197,17 @@ impl GetPositionEstimateFluentBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_timestamp()
     }
-    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    /// <p>Optional configuration for customizing position measurement data.</p>
     pub fn advanced_configuration(mut self, input: crate::types::AdvancedConfiguration) -> Self {
         self.inner = self.inner.advanced_configuration(input);
         self
     }
-    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    /// <p>Optional configuration for customizing position measurement data.</p>
     pub fn set_advanced_configuration(mut self, input: ::std::option::Option<crate::types::AdvancedConfiguration>) -> Self {
         self.inner = self.inner.set_advanced_configuration(input);
         self
     }
-    /// Optional configuration to customize position estimates. If not provided, defaults are applied.
+    /// <p>Optional configuration for customizing position measurement data.</p>
     pub fn get_advanced_configuration(&self) -> &::std::option::Option<crate::types::AdvancedConfiguration> {
         self.inner.get_advanced_configuration()
     }

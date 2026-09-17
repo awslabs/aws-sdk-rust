@@ -83,6 +83,11 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "payerResponsibility" => {
+                            builder = builder.set_payer_responsibility(
+                                crate::protocol_serde::shape_payer_responsibility_list::de_payer_responsibility_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

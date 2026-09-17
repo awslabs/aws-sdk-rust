@@ -16,3 +16,5 @@ pub use crate::types::error::_dependency_exception::DependencyExceptionBuilder;
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
 pub use crate::types::error::_access_denied_by_meta_exception::AccessDeniedByMetaExceptionBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

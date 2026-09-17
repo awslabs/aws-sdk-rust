@@ -3,8 +3,11 @@ pub fn ser_associate_managed_notification_account_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.managed_notification_configuration_arn {
-        object.key("managedNotificationConfigurationArn").string(var_1.as_str());
+    if let Some(var_1) = &input.is_sensitive_events_subscribed {
+        object.key("isSensitiveEventsSubscribed").boolean(*var_1);
+    }
+    if let Some(var_2) = &input.managed_notification_configuration_arn {
+        object.key("managedNotificationConfigurationArn").string(var_2.as_str());
     }
     Ok(())
 }

@@ -78,6 +78,8 @@ pub struct ManagedNotificationEvent {
     pub text_parts: ::std::collections::HashMap<::std::string::String, crate::types::TextPartValue>,
     /// <p>The Organizational Unit Id that an Amazon Web Services account belongs to.</p>
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of files attached to the notification event.</p>
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::NotificationEventAttachment>>,
 }
 impl ManagedNotificationEvent {
     /// <p>Version of the <code>ManagedNotificationEvent</code> schema.</p>
@@ -181,6 +183,12 @@ impl ManagedNotificationEvent {
     pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
+    /// <p>A list of files attached to the notification event.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::NotificationEventAttachment] {
+        self.attachments.as_deref().unwrap_or_default()
+    }
 }
 impl ManagedNotificationEvent {
     /// Creates a new builder-style object to manufacture [`ManagedNotificationEvent`](crate::types::ManagedNotificationEvent).
@@ -206,6 +214,7 @@ pub struct ManagedNotificationEventBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) text_parts: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TextPartValue>>,
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::NotificationEventAttachment>>,
 }
 impl ManagedNotificationEventBuilder {
     /// <p>Version of the <code>ManagedNotificationEvent</code> schema.</p>
@@ -547,6 +556,26 @@ impl ManagedNotificationEventBuilder {
     pub fn get_organizational_unit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.organizational_unit_id
     }
+    /// Appends an item to `attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>A list of files attached to the notification event.</p>
+    pub fn attachments(mut self, input: crate::types::NotificationEventAttachment) -> Self {
+        let mut v = self.attachments.unwrap_or_default();
+        v.push(input);
+        self.attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of files attached to the notification event.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationEventAttachment>>) -> Self {
+        self.attachments = input;
+        self
+    }
+    /// <p>A list of files attached to the notification event.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationEventAttachment>> {
+        &self.attachments
+    }
     /// Consumes the builder and constructs a [`ManagedNotificationEvent`](crate::types::ManagedNotificationEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`schema_version`](crate::types::builders::ManagedNotificationEventBuilder::schema_version)
@@ -588,6 +617,7 @@ impl ManagedNotificationEventBuilder {
                 )
             })?,
             organizational_unit_id: self.organizational_unit_id,
+            attachments: self.attachments,
         })
     }
 }

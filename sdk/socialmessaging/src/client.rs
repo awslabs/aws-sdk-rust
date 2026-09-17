@@ -191,6 +191,8 @@ mod get_linked_whats_app_business_account_phone_number;
 
 mod get_whats_app_business_public_key;
 
+mod get_whats_app_call_permission;
+
 mod get_whats_app_flow;
 
 mod get_whats_app_flow_preview;
@@ -219,6 +221,8 @@ mod put_whats_app_business_account_event_destinations;
 
 mod put_whats_app_business_public_key;
 
+mod send_whats_app_call_event;
+
 mod send_whats_app_conversion_event;
 
 mod send_whats_app_message;
@@ -226,6 +230,8 @@ mod send_whats_app_message;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_linked_whats_app_business_account_phone_number;
 
 mod update_whats_app_flow;
 

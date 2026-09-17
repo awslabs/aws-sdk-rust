@@ -6,6 +6,8 @@
 pub enum ResourceConfigurationDefinition {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     ArnResource(crate::types::ArnResource),
+    /// <p>The network segment for a resource configuration of type CIDR, specified as one or more CIDR ranges (<code>cidrRanges</code>). Resources whose IP addresses fall within these ranges are reachable through a <code>Tunnel</code> VPC endpoint.</p>
+    CidrResource(crate::types::CidrResource),
     /// <p>The DNS name of the resource.</p>
     DnsResource(crate::types::DnsResource),
     /// <p>The IP resource.</p>
@@ -33,6 +35,19 @@ impl ResourceConfigurationDefinition {
     /// Returns true if this is a [`ArnResource`](crate::types::ResourceConfigurationDefinition::ArnResource).
     pub fn is_arn_resource(&self) -> bool {
         self.as_arn_resource().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CidrResource`](crate::types::ResourceConfigurationDefinition::CidrResource), extracting the inner [`CidrResource`](crate::types::CidrResource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cidr_resource(&self) -> ::std::result::Result<&crate::types::CidrResource, &Self> {
+        if let ResourceConfigurationDefinition::CidrResource(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CidrResource`](crate::types::ResourceConfigurationDefinition::CidrResource).
+    pub fn is_cidr_resource(&self) -> bool {
+        self.as_cidr_resource().is_ok()
     }
     /// Tries to convert the enum instance into [`DnsResource`](crate::types::ResourceConfigurationDefinition::DnsResource), extracting the inner [`DnsResource`](crate::types::DnsResource).
     /// Returns `Err(&Self)` if it can't be converted.

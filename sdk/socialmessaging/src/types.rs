@@ -21,6 +21,10 @@ pub use crate::types::_meta_flow_health_status::MetaFlowHealthStatus;
 
 pub use crate::types::_whats_app_phone_number_detail::WhatsAppPhoneNumberDetail;
 
+pub use crate::types::_whats_app_call_settings::WhatsAppCallSettings;
+
+pub use crate::types::_whats_app_call_permission::WhatsAppCallPermission;
+
 pub use crate::types::_s3_presigned_url::S3PresignedUrl;
 
 pub use crate::types::_tag::Tag;
@@ -45,6 +49,10 @@ pub use crate::types::_meta_library_template_definition::MetaLibraryTemplateDefi
 
 pub use crate::types::_whats_app_business_account_event_destination::WhatsAppBusinessAccountEventDestination;
 
+pub use crate::types::_whats_app_call_hours::WhatsAppCallHours;
+
+pub use crate::types::_whats_app_call_permission_action::WhatsAppCallPermissionAction;
+
 pub use crate::types::_waba_phone_number_setup_finalization::WabaPhoneNumberSetupFinalization;
 
 pub use crate::types::_linked_whats_app_business_account_id_meta_data::LinkedWhatsAppBusinessAccountIdMetaData;
@@ -56,6 +64,16 @@ pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput
 pub use crate::types::_meta_flow_health_entity::MetaFlowHealthEntity;
 
 pub use crate::types::_library_template_button_list::LibraryTemplateButtonList;
+
+pub use crate::types::_whats_app_weekly_operating_hours_entry::WhatsAppWeeklyOperatingHoursEntry;
+
+pub use crate::types::_whats_app_holiday_schedule_entry::WhatsAppHolidayScheduleEntry;
+
+pub use crate::types::_whats_app_call_permission_limit::WhatsAppCallPermissionLimit;
+
+pub use crate::types::_whats_app_day_of_week::WhatsAppDayOfWeek;
+
+pub use crate::types::_whats_app_time_of_day::WhatsAppTimeOfDay;
 
 mod _library_template_body_inputs;
 
@@ -105,6 +123,20 @@ mod _waba_setup_finalization;
 
 mod _whats_app_business_account_event_destination;
 
+mod _whats_app_call_hours;
+
+mod _whats_app_call_permission;
+
+mod _whats_app_call_permission_action;
+
+mod _whats_app_call_permission_limit;
+
+mod _whats_app_call_settings;
+
+mod _whats_app_day_of_week;
+
+mod _whats_app_holiday_schedule_entry;
+
 mod _whats_app_phone_number_detail;
 
 mod _whats_app_phone_number_summary;
@@ -114,6 +146,10 @@ mod _whats_app_setup_finalization;
 mod _whats_app_signup_callback;
 
 mod _whats_app_signup_callback_result;
+
+mod _whats_app_time_of_day;
+
+mod _whats_app_weekly_operating_hours_entry;
 
 /// Builders
 pub mod builders;

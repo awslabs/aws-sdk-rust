@@ -777,6 +777,8 @@ pub(crate) mod shape_last_delivery_event_list;
 
 pub(crate) mod shape_last_engagement_event_list;
 
+pub(crate) mod shape_tenant_name_filter_list;
+
 pub(crate) mod shape_event_details;
 
 pub(crate) mod shape_bounce;

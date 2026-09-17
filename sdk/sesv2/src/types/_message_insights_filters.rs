@@ -15,6 +15,8 @@ pub struct MessageInsightsFilters {
     pub subject: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).</p>
     pub isp: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The name of the tenant used when sending the message.</p>
+    pub tenant_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     pub last_delivery_event: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>,
     /// <p>The last engagement-related event for the email, where the ordering is as follows: <code>OPEN</code> &lt; <code>CLICK</code>.</p>
@@ -46,6 +48,12 @@ impl MessageInsightsFilters {
     pub fn isp(&self) -> &[::std::string::String] {
         self.isp.as_deref().unwrap_or_default()
     }
+    /// <p>The name of the tenant used when sending the message.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tenant_name.is_none()`.
+    pub fn tenant_name(&self) -> &[::std::string::String] {
+        self.tenant_name.as_deref().unwrap_or_default()
+    }
     /// <p>The last delivery-related event for the email, where the ordering is as follows: <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_delivery_event.is_none()`.
@@ -75,6 +83,7 @@ pub struct MessageInsightsFiltersBuilder {
     pub(crate) destination: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subject: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) isp: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tenant_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) last_delivery_event: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryEventType>>,
     pub(crate) last_engagement_event: ::std::option::Option<::std::vec::Vec<crate::types::EngagementEventType>>,
 }
@@ -159,6 +168,26 @@ impl MessageInsightsFiltersBuilder {
     pub fn get_isp(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.isp
     }
+    /// Appends an item to `tenant_name`.
+    ///
+    /// To override the contents of this collection use [`set_tenant_name`](Self::set_tenant_name).
+    ///
+    /// <p>The name of the tenant used when sending the message.</p>
+    pub fn tenant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.tenant_name.unwrap_or_default();
+        v.push(input.into());
+        self.tenant_name = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The name of the tenant used when sending the message.</p>
+    pub fn set_tenant_name(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.tenant_name = input;
+        self
+    }
+    /// <p>The name of the tenant used when sending the message.</p>
+    pub fn get_tenant_name(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.tenant_name
+    }
     /// Appends an item to `last_delivery_event`.
     ///
     /// To override the contents of this collection use [`set_last_delivery_event`](Self::set_last_delivery_event).
@@ -209,6 +238,7 @@ impl MessageInsightsFiltersBuilder {
             destination: self.destination,
             subject: self.subject,
             isp: self.isp,
+            tenant_name: self.tenant_name,
             last_delivery_event: self.last_delivery_event,
             last_engagement_event: self.last_engagement_event,
         }

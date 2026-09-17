@@ -17,9 +17,13 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_access_denied_by_meta_exception::AccessDeniedByMetaException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_denied_by_meta_exception;
 
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _dependency_exception;
 

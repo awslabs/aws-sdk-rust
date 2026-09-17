@@ -8,6 +8,8 @@ pub struct CloudWatchFilterConfig {
     pub session_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time range filter for selecting sessions to evaluate.</p>
     pub time_range: ::std::option::Option<crate::types::SessionFilterConfig>,
+    /// <p>A list of session and trace ID pairs that restrict evaluation to specific traces within a session. If specified, only the listed traces are evaluated instead of the entire session.</p>
+    pub session_trace_ids: ::std::option::Option<::std::vec::Vec<crate::types::SessionTraceIds>>,
 }
 impl CloudWatchFilterConfig {
     /// <p>A list of specific session IDs to evaluate. If specified, only these sessions are included in the evaluation.</p>
@@ -19,6 +21,12 @@ impl CloudWatchFilterConfig {
     /// <p>The time range filter for selecting sessions to evaluate.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::SessionFilterConfig> {
         self.time_range.as_ref()
+    }
+    /// <p>A list of session and trace ID pairs that restrict evaluation to specific traces within a session. If specified, only the listed traces are evaluated instead of the entire session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.session_trace_ids.is_none()`.
+    pub fn session_trace_ids(&self) -> &[crate::types::SessionTraceIds] {
+        self.session_trace_ids.as_deref().unwrap_or_default()
     }
 }
 impl CloudWatchFilterConfig {
@@ -34,6 +42,7 @@ impl CloudWatchFilterConfig {
 pub struct CloudWatchFilterConfigBuilder {
     pub(crate) session_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) time_range: ::std::option::Option<crate::types::SessionFilterConfig>,
+    pub(crate) session_trace_ids: ::std::option::Option<::std::vec::Vec<crate::types::SessionTraceIds>>,
 }
 impl CloudWatchFilterConfigBuilder {
     /// Appends an item to `session_ids`.
@@ -70,11 +79,32 @@ impl CloudWatchFilterConfigBuilder {
     pub fn get_time_range(&self) -> &::std::option::Option<crate::types::SessionFilterConfig> {
         &self.time_range
     }
+    /// Appends an item to `session_trace_ids`.
+    ///
+    /// To override the contents of this collection use [`set_session_trace_ids`](Self::set_session_trace_ids).
+    ///
+    /// <p>A list of session and trace ID pairs that restrict evaluation to specific traces within a session. If specified, only the listed traces are evaluated instead of the entire session.</p>
+    pub fn session_trace_ids(mut self, input: crate::types::SessionTraceIds) -> Self {
+        let mut v = self.session_trace_ids.unwrap_or_default();
+        v.push(input);
+        self.session_trace_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of session and trace ID pairs that restrict evaluation to specific traces within a session. If specified, only the listed traces are evaluated instead of the entire session.</p>
+    pub fn set_session_trace_ids(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTraceIds>>) -> Self {
+        self.session_trace_ids = input;
+        self
+    }
+    /// <p>A list of session and trace ID pairs that restrict evaluation to specific traces within a session. If specified, only the listed traces are evaluated instead of the entire session.</p>
+    pub fn get_session_trace_ids(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTraceIds>> {
+        &self.session_trace_ids
+    }
     /// Consumes the builder and constructs a [`CloudWatchFilterConfig`](crate::types::CloudWatchFilterConfig).
     pub fn build(self) -> crate::types::CloudWatchFilterConfig {
         crate::types::CloudWatchFilterConfig {
             session_ids: self.session_ids,
             time_range: self.time_range,
+            session_trace_ids: self.session_trace_ids,
         }
     }
 }

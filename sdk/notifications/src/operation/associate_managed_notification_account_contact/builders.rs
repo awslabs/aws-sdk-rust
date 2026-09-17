@@ -143,4 +143,18 @@ impl AssociateManagedNotificationAccountContactFluentBuilder {
     pub fn get_managed_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_managed_notification_configuration_arn()
     }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn is_sensitive_events_subscribed(mut self, input: bool) -> Self {
+        self.inner = self.inner.is_sensitive_events_subscribed(input);
+        self
+    }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn set_is_sensitive_events_subscribed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_is_sensitive_events_subscribed(input);
+        self
+    }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn get_is_sensitive_events_subscribed(&self) -> &::std::option::Option<bool> {
+        self.inner.get_is_sensitive_events_subscribed()
+    }
 }

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWhatsAppBusinessPublicKeyInput {
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub origination_phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWhatsAppBusinessPublicKeyInput {
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn origination_phone_number_id(&self) -> ::std::option::Option<&str> {
         self.origination_phone_number_id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetWhatsAppBusinessPublicKeyInputBuilder {
     pub(crate) origination_phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWhatsAppBusinessPublicKeyInputBuilder {
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     /// This field is required.
     pub fn origination_phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.origination_phone_number_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn set_origination_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origination_phone_number_id = input;
         self
     }
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn get_origination_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.origination_phone_number_id
     }

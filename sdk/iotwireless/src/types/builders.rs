@@ -53,6 +53,8 @@ pub use crate::types::_ip::IpBuilder;
 
 pub use crate::types::_gnss::GnssBuilder;
 
+pub use crate::types::_gnss_multi_frame::GnssMultiFrameBuilder;
+
 pub use crate::types::_advanced_configuration::AdvancedConfigurationBuilder;
 
 pub use crate::types::_device_registration_state_event_configuration::DeviceRegistrationStateEventConfigurationBuilder;
@@ -212,6 +214,8 @@ pub use crate::types::_tdscdma_obj::TdscdmaObjBuilder;
 pub use crate::types::_lte_obj::LteObjBuilder;
 
 pub use crate::types::_cdma_obj::CdmaObjBuilder;
+
+pub use crate::types::_gnss_capture::GnssCaptureBuilder;
 
 pub use crate::types::_certificate_list::CertificateListBuilder;
 

@@ -17,6 +17,7 @@
 ///     VpcEndpointType::Interface => { /* ... */ },
 ///     VpcEndpointType::Resource => { /* ... */ },
 ///     VpcEndpointType::ServiceNetwork => { /* ... */ },
+///     VpcEndpointType::Tunnel => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum VpcEndpointType {
     Resource,
     #[allow(missing_docs)] // documentation missing in model
     ServiceNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    Tunnel,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for VpcEndpointType {
             "Interface" => VpcEndpointType::Interface,
             "Resource" => VpcEndpointType::Resource,
             "ServiceNetwork" => VpcEndpointType::ServiceNetwork,
+            "Tunnel" => VpcEndpointType::Tunnel,
             other => VpcEndpointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +91,13 @@ impl VpcEndpointType {
             VpcEndpointType::Interface => "Interface",
             VpcEndpointType::Resource => "Resource",
             VpcEndpointType::ServiceNetwork => "ServiceNetwork",
+            VpcEndpointType::Tunnel => "Tunnel",
             VpcEndpointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Gateway", "GatewayLoadBalancer", "Interface", "Resource", "ServiceNetwork"]
+        &["Gateway", "GatewayLoadBalancer", "Interface", "Resource", "ServiceNetwork", "Tunnel"]
     }
 }
 impl ::std::convert::AsRef<str> for VpcEndpointType {
@@ -120,6 +125,7 @@ impl ::std::fmt::Display for VpcEndpointType {
             VpcEndpointType::Interface => write!(f, "Interface"),
             VpcEndpointType::Resource => write!(f, "Resource"),
             VpcEndpointType::ServiceNetwork => write!(f, "ServiceNetwork"),
+            VpcEndpointType::Tunnel => write!(f, "Tunnel"),
             VpcEndpointType::Unknown(value) => write!(f, "{value}"),
         }
     }

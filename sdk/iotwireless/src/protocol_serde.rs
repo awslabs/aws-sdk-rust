@@ -391,6 +391,8 @@ pub(crate) mod shape_fuota_task_log_option_list;
 
 pub(crate) mod shape_gnss;
 
+pub(crate) mod shape_gnss_multi_frame;
+
 pub(crate) mod shape_imported_wireless_device_list;
 
 pub(crate) mod shape_ip;
@@ -556,6 +558,8 @@ pub(crate) mod shape_factory_preset_freqs_list;
 pub(crate) mod shape_fuota_task;
 
 pub(crate) mod shape_fuota_task_event_log_option;
+
+pub(crate) mod shape_gnss_capture;
 
 pub(crate) mod shape_gsm_obj;
 

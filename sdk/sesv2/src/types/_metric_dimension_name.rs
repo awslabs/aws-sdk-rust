@@ -15,6 +15,7 @@
 ///     MetricDimensionName::ConfigurationSet => { /* ... */ },
 ///     MetricDimensionName::EmailIdentity => { /* ... */ },
 ///     MetricDimensionName::Isp => { /* ... */ },
+///     MetricDimensionName::TenantName => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,6 +54,11 @@
 /// <code>ISP</code> – The recipient ISP (e.g. <code>Gmail</code>, <code>Yahoo</code>,
 /// etc.).</p>
 /// </li>
+/// <li>
+/// <p>
+/// <code>TENANT_NAME</code> – The name of the tenant used when sending messages
+/// (if one was used).</p>
+/// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(
@@ -65,6 +71,8 @@ pub enum MetricDimensionName {
     EmailIdentity,
     #[allow(missing_docs)] // documentation missing in model
     Isp,
+    #[allow(missing_docs)] // documentation missing in model
+    TenantName,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +83,7 @@ impl ::std::convert::From<&str> for MetricDimensionName {
             "CONFIGURATION_SET" => MetricDimensionName::ConfigurationSet,
             "EMAIL_IDENTITY" => MetricDimensionName::EmailIdentity,
             "ISP" => MetricDimensionName::Isp,
+            "TENANT_NAME" => MetricDimensionName::TenantName,
             other => MetricDimensionName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -93,12 +102,13 @@ impl MetricDimensionName {
             MetricDimensionName::ConfigurationSet => "CONFIGURATION_SET",
             MetricDimensionName::EmailIdentity => "EMAIL_IDENTITY",
             MetricDimensionName::Isp => "ISP",
+            MetricDimensionName::TenantName => "TENANT_NAME",
             MetricDimensionName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURATION_SET", "EMAIL_IDENTITY", "ISP"]
+        &["CONFIGURATION_SET", "EMAIL_IDENTITY", "ISP", "TENANT_NAME"]
     }
 }
 impl ::std::convert::AsRef<str> for MetricDimensionName {
@@ -124,6 +134,7 @@ impl ::std::fmt::Display for MetricDimensionName {
             MetricDimensionName::ConfigurationSet => write!(f, "CONFIGURATION_SET"),
             MetricDimensionName::EmailIdentity => write!(f, "EMAIL_IDENTITY"),
             MetricDimensionName::Isp => write!(f, "ISP"),
+            MetricDimensionName::TenantName => write!(f, "TENANT_NAME"),
             MetricDimensionName::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -847,6 +847,10 @@ pub(crate) mod shape_recommendation_evaluator_list;
 
 pub(crate) mod shape_recommendation_evaluator_reference;
 
+pub(crate) mod shape_session_trace_ids;
+
+pub(crate) mod shape_session_trace_ids_list;
+
 pub(crate) mod shape_spans;
 
 pub(crate) mod shape_string_value_list;
@@ -936,6 +940,8 @@ pub(crate) mod shape_resource_content;
 pub(crate) mod shape_root_cause_cluster_list;
 
 pub(crate) mod shape_tool_description_config;
+
+pub(crate) mod shape_trace_id_list;
 
 pub(crate) mod shape_user_intent_list;
 

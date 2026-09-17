@@ -22,7 +22,7 @@ impl crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppB
 }
 /// Fluent builder constructing a request to `GetWhatsAppBusinessPublicKey`.
 ///
-/// Retrieves the business public key for a phone number and its signature status.
+/// <p>Retrieves the business public key for a phone number and its signature status.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWhatsAppBusinessPublicKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetWhatsAppBusinessPublicKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn origination_phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_phone_number_id(input.into());
         self
     }
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn set_origination_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_phone_number_id(input);
         self
     }
-    /// The unique identifier of the phone number whose business public key to retrieve.
+    /// <p>The unique identifier of the phone number whose business public key to retrieve.</p>
     pub fn get_origination_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_origination_phone_number_id()
     }

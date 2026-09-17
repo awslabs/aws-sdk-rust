@@ -685,6 +685,8 @@ pub use crate::types::_ec2_image::Ec2Image;
 
 pub use crate::types::_cloudformation_stack::CloudformationStack;
 
+pub use crate::types::_bedrock_guardrail_resource::BedrockGuardrailResource;
+
 pub use crate::types::_network_direction::NetworkDirection;
 
 pub use crate::types::_activity::Activity;
@@ -780,6 +782,8 @@ mod _aws_api_call_action;
 mod _bedrock_guardrail;
 
 mod _bedrock_guardrail_details;
+
+mod _bedrock_guardrail_resource;
 
 mod _block_public_access;
 

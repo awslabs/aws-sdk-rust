@@ -22,6 +22,9 @@ impl crate::operation::get_data_protection_policy::builders::GetDataProtectionPo
 }
 /// Fluent builder constructing a request to `GetDataProtectionPolicy`.
 ///
+/// <important>
+/// <p>Amazon SNS message data protection is no longer available to new customers. For more information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon SNS message data protection availability change</a>.</p>
+/// </important>
 /// <p>Retrieves the specified inline <code>DataProtectionPolicy</code> document that is stored in the specified Amazon SNS topic.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDataProtectionPolicyFluentBuilder {

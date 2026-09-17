@@ -39,6 +39,8 @@ pub use crate::types::_ip_resource::IpResourceBuilder;
 
 pub use crate::types::_arn_resource::ArnResourceBuilder;
 
+pub use crate::types::_cidr_resource::CidrResourceBuilder;
+
 pub use crate::types::_resource_endpoint_association_summary::ResourceEndpointAssociationSummaryBuilder;
 
 pub use crate::types::_resource_gateway_summary::ResourceGatewaySummaryBuilder;
@@ -68,5 +70,7 @@ pub use crate::types::_target_summary::TargetSummaryBuilder;
 pub use crate::types::_path_match::PathMatchBuilder;
 
 pub use crate::types::_weighted_target_group::WeightedTargetGroupBuilder;
+
+pub use crate::types::_payer_responsibility_entry::PayerResponsibilityEntryBuilder;
 
 pub use crate::types::_header_match::HeaderMatchBuilder;

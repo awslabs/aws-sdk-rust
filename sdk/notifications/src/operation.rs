@@ -115,5 +115,8 @@ pub mod untag_resource;
 /// Types for the `UpdateEventRule` operation.
 pub mod update_event_rule;
 
+/// Types for the `UpdateManagedNotificationChannelAssociation` operation.
+pub mod update_managed_notification_channel_association;
+
 /// Types for the `UpdateNotificationConfiguration` operation.
 pub mod update_notification_configuration;

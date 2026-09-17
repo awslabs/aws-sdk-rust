@@ -2226,6 +2226,18 @@ pub(crate) fn recommendation_evaluator_reference_correct_errors(
     builder
 }
 
+pub(crate) fn session_trace_ids_correct_errors(
+    mut builder: crate::types::builders::SessionTraceIdsBuilder,
+) -> crate::types::builders::SessionTraceIdsBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.trace_ids.is_none() {
+        builder.trace_ids = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn user_intent_affected_session_correct_errors(
     mut builder: crate::types::builders::UserIntentAffectedSessionBuilder,
 ) -> crate::types::builders::UserIntentAffectedSessionBuilder {

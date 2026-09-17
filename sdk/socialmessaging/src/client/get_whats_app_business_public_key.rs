@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWhatsAppBusinessPublicKey`](crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppBusinessPublicKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`origination_phone_number_id(impl Into<String>)`](crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppBusinessPublicKeyFluentBuilder::origination_phone_number_id) / [`set_origination_phone_number_id(Option<String>)`](crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppBusinessPublicKeyFluentBuilder::set_origination_phone_number_id):<br>required: **true**<br>The unique identifier of the phone number whose business public key to retrieve.<br>
+    ///   - [`origination_phone_number_id(impl Into<String>)`](crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppBusinessPublicKeyFluentBuilder::origination_phone_number_id) / [`set_origination_phone_number_id(Option<String>)`](crate::operation::get_whats_app_business_public_key::builders::GetWhatsAppBusinessPublicKeyFluentBuilder::set_origination_phone_number_id):<br>required: **true**<br><p>The unique identifier of the phone number whose business public key to retrieve.</p><br>
     /// - On success, responds with [`GetWhatsAppBusinessPublicKeyOutput`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyOutput) with field(s):
-    ///   - [`business_public_key(Option<String>)`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyOutput::business_public_key): The stored RSA business public key (PEM), if present.
-    ///   - [`business_public_key_signature_status(Option<String>)`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyOutput::business_public_key_signature_status): Meta's signing status: "VALID" | "MISMATCH".
+    ///   - [`business_public_key(Option<String>)`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyOutput::business_public_key): <p>The stored PEM-encoded 2048-bit RSA public key.</p>
+    ///   - [`business_public_key_signature_status(Option<String>)`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyOutput::business_public_key_signature_status): <p>The signature status of the stored business public key. Valid values are VALID and MISMATCH.</p>
     /// - On failure, responds with [`SdkError<GetWhatsAppBusinessPublicKeyError>`](crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError)
     pub fn get_whats_app_business_public_key(
         &self,

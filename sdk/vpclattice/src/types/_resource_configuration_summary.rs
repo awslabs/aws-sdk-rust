@@ -24,6 +24,8 @@ pub struct ResourceConfigurationSummary {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ResourceConfigurationType>,
     /// <p>The status of the resource configuration.</p>
@@ -72,6 +74,8 @@ impl ResourceConfigurationSummary {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationType> {
         self.r#type.as_ref()
@@ -211,6 +215,8 @@ impl ResourceConfigurationSummaryBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -226,6 +232,8 @@ impl ResourceConfigurationSummaryBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.r#type = input;
@@ -241,6 +249,8 @@ impl ResourceConfigurationSummaryBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         &self.r#type

@@ -15,7 +15,7 @@ pub struct CreateWhatsAppFlowInput {
     pub publish: ::std::option::Option<bool>,
     /// <p>The ID of an existing Flow within the same WhatsApp Business Account to clone.</p>
     pub clone_flow_id: ::std::option::Option<::std::string::String>,
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also declares data_api_version. To verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub endpoint_uri: ::std::option::Option<::std::string::String>,
 }
 impl CreateWhatsAppFlowInput {
@@ -45,7 +45,7 @@ impl CreateWhatsAppFlowInput {
     pub fn clone_flow_id(&self) -> ::std::option::Option<&str> {
         self.clone_flow_id.as_deref()
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also declares data_api_version. To verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn endpoint_uri(&self) -> ::std::option::Option<&str> {
         self.endpoint_uri.as_deref()
     }
@@ -162,17 +162,17 @@ impl CreateWhatsAppFlowInputBuilder {
     pub fn get_clone_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.clone_flow_id
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also declares data_api_version. To verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also declares data_api_version. To verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_uri = input;
         self
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow has no endpoint (static Flow). Meta only calls the endpoint when the Flow JSON also declares data_api_version. To verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+    /// <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_uri
     }

@@ -22,7 +22,7 @@ impl crate::operation::put_whats_app_business_public_key::builders::PutWhatsAppB
 }
 /// Fluent builder constructing a request to `PutWhatsAppBusinessPublicKey`.
 ///
-/// Sets the business public key used to encrypt the data exchanged with the endpoint of a data exchange Flow.
+/// <p>Sets the business public key used to encrypt the data exchanged with the endpoint of a data exchange Flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutWhatsAppBusinessPublicKeyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl PutWhatsAppBusinessPublicKeyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn origination_phone_number_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origination_phone_number_id(input.into());
         self
     }
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn set_origination_phone_number_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origination_phone_number_id(input);
         self
     }
-    /// The unique identifier of the phone number to associate with the business public key.
+    /// <p>The unique identifier of the phone number to associate with the business public key.</p>
     pub fn get_origination_phone_number_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_origination_phone_number_id()
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn business_public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.business_public_key(input.into());
         self
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn set_business_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_business_public_key(input);
         self
     }
-    /// PEM-encoded RSA public key. Mutually exclusive with kmsKeyArn.
+    /// <p>The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <code>kmsKeyArn</code>.</p>
     pub fn get_business_public_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_business_public_key()
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
-    /// Customer-managed KMS asymmetric RSA key ARN. Mutually exclusive with businessPublicKey.
+    /// <p>The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually exclusive with <code>businessPublicKey</code>.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }

@@ -21,28 +21,34 @@ pub fn ser_get_position_estimate_input_input(
         crate::protocol_serde::shape_gnss::ser_gnss(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.ip {
+    if let Some(var_7) = &input.gnss_multi_frame {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("Ip").start_object();
-        crate::protocol_serde::shape_ip::ser_ip(&mut object_8, var_7)?;
+        let mut object_8 = object.key("GnssMultiFrame").start_object();
+        crate::protocol_serde::shape_gnss_multi_frame::ser_gnss_multi_frame(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.timestamp {
+    if let Some(var_9) = &input.ip {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Ip").start_object();
+        crate::protocol_serde::shape_ip::ser_ip(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.timestamp {
         object
             .key("Timestamp")
-            .date_time(var_9, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_11, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_10) = &input.wi_fi_access_points {
-        let mut array_11 = object.key("WiFiAccessPoints").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.wi_fi_access_points {
+        let mut array_13 = object.key("WiFiAccessPoints").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_wi_fi_access_point::ser_wi_fi_access_point(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

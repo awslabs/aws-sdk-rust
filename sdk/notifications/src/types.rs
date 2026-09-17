@@ -79,6 +79,8 @@ pub use crate::types::_managed_notification_event_summary::ManagedNotificationEv
 
 pub use crate::types::_summarization_dimension_overview::SummarizationDimensionOverview;
 
+pub use crate::types::_notification_event_attachment::NotificationEventAttachment;
+
 pub use crate::types::_notification_event_summary::NotificationEventSummary;
 
 pub use crate::types::_media_element::MediaElement;
@@ -166,6 +168,8 @@ mod _notification_configuration_status;
 mod _notification_configuration_structure;
 
 mod _notification_configuration_subtype;
+
+mod _notification_event_attachment;
 
 mod _notification_event_overview;
 

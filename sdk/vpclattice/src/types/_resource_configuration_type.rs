@@ -14,6 +14,7 @@
 /// match resourceconfigurationtype {
 ///     ResourceConfigurationType::Arn => { /* ... */ },
 ///     ResourceConfigurationType::Child => { /* ... */ },
+///     ResourceConfigurationType::Cidr => { /* ... */ },
 ///     ResourceConfigurationType::Group => { /* ... */ },
 ///     ResourceConfigurationType::Single => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum ResourceConfigurationType {
     Arn,
     /// Resource Configuration of type CHILD
     Child,
+    /// Resource Configuration of type CIDR
+    Cidr,
     /// Resource Configuration of type GROUP
     Group,
     /// Resource Configuration of type SINGLE
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for ResourceConfigurationType {
         match s {
             "ARN" => ResourceConfigurationType::Arn,
             "CHILD" => ResourceConfigurationType::Child,
+            "CIDR" => ResourceConfigurationType::Cidr,
             "GROUP" => ResourceConfigurationType::Group,
             "SINGLE" => ResourceConfigurationType::Single,
             other => ResourceConfigurationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl ResourceConfigurationType {
         match self {
             ResourceConfigurationType::Arn => "ARN",
             ResourceConfigurationType::Child => "CHILD",
+            ResourceConfigurationType::Cidr => "CIDR",
             ResourceConfigurationType::Group => "GROUP",
             ResourceConfigurationType::Single => "SINGLE",
             ResourceConfigurationType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl ResourceConfigurationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ARN", "CHILD", "GROUP", "SINGLE"]
+        &["ARN", "CHILD", "CIDR", "GROUP", "SINGLE"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceConfigurationType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for ResourceConfigurationType {
         match self {
             ResourceConfigurationType::Arn => write!(f, "ARN"),
             ResourceConfigurationType::Child => write!(f, "CHILD"),
+            ResourceConfigurationType::Cidr => write!(f, "CIDR"),
             ResourceConfigurationType::Group => write!(f, "GROUP"),
             ResourceConfigurationType::Single => write!(f, "SINGLE"),
             ResourceConfigurationType::Unknown(value) => write!(f, "{value}"),

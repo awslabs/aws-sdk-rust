@@ -21,6 +21,10 @@ pub use crate::types::_meta_flow_health_status::MetaFlowHealthStatusBuilder;
 
 pub use crate::types::_whats_app_phone_number_detail::WhatsAppPhoneNumberDetailBuilder;
 
+pub use crate::types::_whats_app_call_settings::WhatsAppCallSettingsBuilder;
+
+pub use crate::types::_whats_app_call_permission::WhatsAppCallPermissionBuilder;
+
 pub use crate::types::_s3_presigned_url::S3PresignedUrlBuilder;
 
 pub use crate::types::_tag::TagBuilder;
@@ -41,6 +45,10 @@ pub use crate::types::_meta_library_template_definition::MetaLibraryTemplateDefi
 
 pub use crate::types::_whats_app_business_account_event_destination::WhatsAppBusinessAccountEventDestinationBuilder;
 
+pub use crate::types::_whats_app_call_hours::WhatsAppCallHoursBuilder;
+
+pub use crate::types::_whats_app_call_permission_action::WhatsAppCallPermissionActionBuilder;
+
 pub use crate::types::_waba_phone_number_setup_finalization::WabaPhoneNumberSetupFinalizationBuilder;
 
 pub use crate::types::_linked_whats_app_business_account_id_meta_data::LinkedWhatsAppBusinessAccountIdMetaDataBuilder;
@@ -52,3 +60,11 @@ pub use crate::types::_library_template_button_input::LibraryTemplateButtonInput
 pub use crate::types::_meta_flow_health_entity::MetaFlowHealthEntityBuilder;
 
 pub use crate::types::_library_template_button_list::LibraryTemplateButtonListBuilder;
+
+pub use crate::types::_whats_app_weekly_operating_hours_entry::WhatsAppWeeklyOperatingHoursEntryBuilder;
+
+pub use crate::types::_whats_app_holiday_schedule_entry::WhatsAppHolidayScheduleEntryBuilder;
+
+pub use crate::types::_whats_app_call_permission_limit::WhatsAppCallPermissionLimitBuilder;
+
+pub use crate::types::_whats_app_time_of_day::WhatsAppTimeOfDayBuilder;

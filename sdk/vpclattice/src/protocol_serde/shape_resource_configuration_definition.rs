@@ -51,6 +51,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'arnResource' cannot be null")
                             })?,
                         )),
+                        "cidrResource" => Some(crate::types::ResourceConfigurationDefinition::CidrResource(
+                            crate::protocol_serde::shape_cidr_resource::de_cidr_resource(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cidrResource' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ResourceConfigurationDefinition::Unknown)
@@ -100,6 +105,12 @@ pub fn ser_resource_configuration_definition(
             let mut object_3 = object_12.key("arnResource").start_object();
             crate::protocol_serde::shape_arn_resource::ser_arn_resource(&mut object_3, inner)?;
             object_3.finish();
+        }
+        crate::types::ResourceConfigurationDefinition::CidrResource(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_12.key("cidrResource").start_object();
+            crate::protocol_serde::shape_cidr_resource::ser_cidr_resource(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::ResourceConfigurationDefinition::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

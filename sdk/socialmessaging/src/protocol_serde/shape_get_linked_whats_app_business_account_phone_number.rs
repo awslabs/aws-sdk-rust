@@ -183,6 +183,13 @@ pub(crate) fn de_get_linked_whats_app_business_account_phone_number(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "callSettings" => {
+                    builder = builder.set_call_settings(crate::protocol_serde::shape_whats_app_call_settings::de_whats_app_call_settings(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "linkedWhatsAppBusinessAccountId" => {
                     builder = builder.set_linked_whats_app_business_account_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

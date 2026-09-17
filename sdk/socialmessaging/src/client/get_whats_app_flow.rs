@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`validation_errors(Option<Vec::<String>>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::validation_errors): <p>A list of validation errors from Meta, if any.</p>
     ///   - [`json_version(Option<String>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::json_version): <p>The version of the Flow JSON schema used by this Flow (for example, 7.3).</p>
     ///   - [`data_api_version(Option<String>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::data_api_version): <p>The data API version for data exchange endpoint Flows.</p>
-    ///   - [`endpoint_uri(Option<String>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::endpoint_uri): <p>The endpoint URI for data exchange Flows, if configured.</p>
+    ///   - [`endpoint_uri(Option<String>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::endpoint_uri): <p>The HTTPS endpoint that Meta calls for a data exchange Flow.</p>
     ///   - [`preview(Option<MetaFlowPreviewInfo>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::preview): <p>The preview URL and its expiration timestamp for testing the Flow.</p>
     ///   - [`whats_app_business_account(Option<MetaFlowWhatsAppBusinessAccountInfo>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::whats_app_business_account): <p>The WhatsApp Business Account information from Meta associated with this Flow.</p>
     ///   - [`application(Option<MetaFlowApplicationInfo>)`](crate::operation::get_whats_app_flow::GetWhatsAppFlowOutput::application): <p>The Meta application information associated with this Flow.</p>

@@ -22,7 +22,7 @@ impl crate::operation::validate_security_group_quotas_for_interface::builders::V
 }
 /// Fluent builder constructing a request to `ValidateSecurityGroupQuotasForInterface`.
 ///
-/// <p>Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas for inbound or outbound rules per security group and security groups per network interface. Only authorized AWS services can call this operation.</p>
+/// <p>Validates whether the specified security groups can be associated with a single network interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas. It checks inbound or outbound rules per security group and security groups per network interface. Only authorized AWS services can call this operation.</p>
 /// <p>For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ValidateSecurityGroupQuotasForInterfaceFluentBuilder {

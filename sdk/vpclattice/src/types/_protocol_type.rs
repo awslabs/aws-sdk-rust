@@ -13,6 +13,7 @@
 /// # let protocoltype = unimplemented!();
 /// match protocoltype {
 ///     ProtocolType::Tcp => { /* ... */ },
+///     ProtocolType::TcpUdp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ProtocolType {
     /// Resource Configuration protocol type TCP
     Tcp,
+    /// Resource Configuration protocol type TCP_UDP
+    TcpUdp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ProtocolType {
     fn from(s: &str) -> Self {
         match s {
             "TCP" => ProtocolType::Tcp,
+            "TCP_UDP" => ProtocolType::TcpUdp,
             other => ProtocolType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ProtocolType {
     pub fn as_str(&self) -> &str {
         match self {
             ProtocolType::Tcp => "TCP",
+            ProtocolType::TcpUdp => "TCP_UDP",
             ProtocolType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TCP"]
+        &["TCP", "TCP_UDP"]
     }
 }
 impl ::std::convert::AsRef<str> for ProtocolType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ProtocolType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProtocolType::Tcp => write!(f, "TCP"),
+            ProtocolType::TcpUdp => write!(f, "TCP_UDP"),
             ProtocolType::Unknown(value) => write!(f, "{value}"),
         }
     }

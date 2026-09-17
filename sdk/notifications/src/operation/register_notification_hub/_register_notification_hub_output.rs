@@ -5,7 +5,7 @@
 pub struct RegisterNotificationHubOutput {
     /// <p>The Region of the <code>NotificationHub</code>.</p>
     pub notification_hub_region: ::std::string::String,
-    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationHub</code> status information.</p>
     pub status_summary: ::std::option::Option<crate::types::NotificationHubStatusSummary>,
     /// <p>The date the resource was created.</p>
     pub creation_time: ::aws_smithy_types::DateTime,
@@ -19,7 +19,7 @@ impl RegisterNotificationHubOutput {
         use std::ops::Deref;
         self.notification_hub_region.deref()
     }
-    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationHub</code> status information.</p>
     pub fn status_summary(&self) -> ::std::option::Option<&crate::types::NotificationHubStatusSummary> {
         self.status_summary.as_ref()
     }
@@ -70,18 +70,18 @@ impl RegisterNotificationHubOutputBuilder {
     pub fn get_notification_hub_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.notification_hub_region
     }
-    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationHub</code> status information.</p>
     /// This field is required.
     pub fn status_summary(mut self, input: crate::types::NotificationHubStatusSummary) -> Self {
         self.status_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationHub</code> status information.</p>
     pub fn set_status_summary(mut self, input: ::std::option::Option<crate::types::NotificationHubStatusSummary>) -> Self {
         self.status_summary = input;
         self
     }
-    /// <p>Provides additional information about the current <code>NotificationConfiguration</code> status information.</p>
+    /// <p>Provides additional information about the current <code>NotificationHub</code> status information.</p>
     pub fn get_status_summary(&self) -> &::std::option::Option<crate::types::NotificationHubStatusSummary> {
         &self.status_summary
     }

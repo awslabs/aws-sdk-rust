@@ -31,7 +31,7 @@ pub struct GetServiceNetworkResourceAssociationOutput {
     pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>The most recent date and time that the association was updated, in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The private DNS entry for the service.</p>
+    /// <p>The private DNS entry for the service. This entry includes only the domain name.</p>
     pub private_dns_entry: ::std::option::Option<crate::types::DnsEntry>,
     /// <p>Indicates if private DNS is enabled in the service network resource association.</p>
     pub private_dns_enabled: ::std::option::Option<bool>,
@@ -100,7 +100,7 @@ impl GetServiceNetworkResourceAssociationOutput {
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
-    /// <p>The private DNS entry for the service.</p>
+    /// <p>The private DNS entry for the service. This entry includes only the domain name.</p>
     pub fn private_dns_entry(&self) -> ::std::option::Option<&crate::types::DnsEntry> {
         self.private_dns_entry.as_ref()
     }
@@ -355,17 +355,17 @@ impl GetServiceNetworkResourceAssociationOutputBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
-    /// <p>The private DNS entry for the service.</p>
+    /// <p>The private DNS entry for the service. This entry includes only the domain name.</p>
     pub fn private_dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
         self.private_dns_entry = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The private DNS entry for the service.</p>
+    /// <p>The private DNS entry for the service. This entry includes only the domain name.</p>
     pub fn set_private_dns_entry(mut self, input: ::std::option::Option<crate::types::DnsEntry>) -> Self {
         self.private_dns_entry = input;
         self
     }
-    /// <p>The private DNS entry for the service.</p>
+    /// <p>The private DNS entry for the service. This entry includes only the domain name.</p>
     pub fn get_private_dns_entry(&self) -> &::std::option::Option<crate::types::DnsEntry> {
         &self.private_dns_entry
     }

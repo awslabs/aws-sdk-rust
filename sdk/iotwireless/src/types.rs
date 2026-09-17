@@ -73,6 +73,8 @@ pub use crate::types::_ip::Ip;
 
 pub use crate::types::_gnss::Gnss;
 
+pub use crate::types::_gnss_multi_frame::GnssMultiFrame;
+
 pub use crate::types::_advanced_configuration::AdvancedConfiguration;
 
 pub use crate::types::_identifier_type::IdentifierType;
@@ -289,6 +291,8 @@ pub use crate::types::_lte_obj::LteObj;
 
 pub use crate::types::_cdma_obj::CdmaObj;
 
+pub use crate::types::_gnss_capture::GnssCapture;
+
 pub use crate::types::_certificate_list::CertificateList;
 
 pub use crate::types::_lo_ra_wan_gateway_metadata::LoRaWanGatewayMetadata;
@@ -456,6 +460,10 @@ mod _gateway_list_item;
 mod _global_identity;
 
 mod _gnss;
+
+mod _gnss_capture;
+
+mod _gnss_multi_frame;
 
 mod _gsm_local_id;
 

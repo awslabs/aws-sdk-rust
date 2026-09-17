@@ -1083,6 +1083,8 @@ pub(crate) mod shape_anomaly_object;
 
 pub(crate) mod shape_autoscaling_auto_scaling_group;
 
+pub(crate) mod shape_bedrock_guardrail_resource;
+
 pub(crate) mod shape_block_public_access;
 
 pub(crate) mod shape_bucket_policy;

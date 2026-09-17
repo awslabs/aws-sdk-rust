@@ -19,6 +19,8 @@ pub struct ListManagedNotificationEventsInput {
     pub organizational_unit_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the Managed Notification Events.</p>
     pub related_account: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub include_sensitive_events: ::std::option::Option<bool>,
 }
 impl ListManagedNotificationEventsInput {
     /// <p>The earliest time of events to return from this call.</p>
@@ -53,6 +55,10 @@ impl ListManagedNotificationEventsInput {
     pub fn related_account(&self) -> ::std::option::Option<&str> {
         self.related_account.as_deref()
     }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn include_sensitive_events(&self) -> ::std::option::Option<bool> {
+        self.include_sensitive_events
+    }
 }
 impl ListManagedNotificationEventsInput {
     /// Creates a new builder-style object to manufacture [`ListManagedNotificationEventsInput`](crate::operation::list_managed_notification_events::ListManagedNotificationEventsInput).
@@ -73,6 +79,7 @@ pub struct ListManagedNotificationEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_account: ::std::option::Option<::std::string::String>,
+    pub(crate) include_sensitive_events: ::std::option::Option<bool>,
 }
 impl ListManagedNotificationEventsInputBuilder {
     /// <p>The earliest time of events to return from this call.</p>
@@ -187,6 +194,20 @@ impl ListManagedNotificationEventsInputBuilder {
     pub fn get_related_account(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_account
     }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn include_sensitive_events(mut self, input: bool) -> Self {
+        self.include_sensitive_events = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn set_include_sensitive_events(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_sensitive_events = input;
+        self
+    }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn get_include_sensitive_events(&self) -> &::std::option::Option<bool> {
+        &self.include_sensitive_events
+    }
     /// Consumes the builder and constructs a [`ListManagedNotificationEventsInput`](crate::operation::list_managed_notification_events::ListManagedNotificationEventsInput).
     pub fn build(
         self,
@@ -203,6 +224,7 @@ impl ListManagedNotificationEventsInputBuilder {
             next_token: self.next_token,
             organizational_unit_id: self.organizational_unit_id,
             related_account: self.related_account,
+            include_sensitive_events: self.include_sensitive_events,
         })
     }
 }

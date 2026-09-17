@@ -36,6 +36,8 @@ pub struct ResourceData {
     pub ec2_image: ::std::option::Option<crate::types::Ec2Image>,
     /// <p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>
     pub cloudformation_stack: ::std::option::Option<crate::types::CloudformationStack>,
+    /// <p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub bedrock_guardrail: ::std::option::Option<crate::types::BedrockGuardrailResource>,
 }
 impl ResourceData {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -102,6 +104,10 @@ impl ResourceData {
     pub fn cloudformation_stack(&self) -> ::std::option::Option<&crate::types::CloudformationStack> {
         self.cloudformation_stack.as_ref()
     }
+    /// <p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn bedrock_guardrail(&self) -> ::std::option::Option<&crate::types::BedrockGuardrailResource> {
+        self.bedrock_guardrail.as_ref()
+    }
 }
 impl ResourceData {
     /// Creates a new builder-style object to manufacture [`ResourceData`](crate::types::ResourceData).
@@ -130,6 +136,7 @@ pub struct ResourceDataBuilder {
     pub(crate) ec2_vpc: ::std::option::Option<crate::types::Ec2Vpc>,
     pub(crate) ec2_image: ::std::option::Option<crate::types::Ec2Image>,
     pub(crate) cloudformation_stack: ::std::option::Option<crate::types::CloudformationStack>,
+    pub(crate) bedrock_guardrail: ::std::option::Option<crate::types::BedrockGuardrailResource>,
 }
 impl ResourceDataBuilder {
     /// <p>Contains information about the Amazon S3 bucket.</p>
@@ -356,6 +363,20 @@ impl ResourceDataBuilder {
     pub fn get_cloudformation_stack(&self) -> &::std::option::Option<crate::types::CloudformationStack> {
         &self.cloudformation_stack
     }
+    /// <p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn bedrock_guardrail(mut self, input: crate::types::BedrockGuardrailResource) -> Self {
+        self.bedrock_guardrail = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn set_bedrock_guardrail(mut self, input: ::std::option::Option<crate::types::BedrockGuardrailResource>) -> Self {
+        self.bedrock_guardrail = input;
+        self
+    }
+    /// <p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>
+    pub fn get_bedrock_guardrail(&self) -> &::std::option::Option<crate::types::BedrockGuardrailResource> {
+        &self.bedrock_guardrail
+    }
     /// Consumes the builder and constructs a [`ResourceData`](crate::types::ResourceData).
     pub fn build(self) -> crate::types::ResourceData {
         crate::types::ResourceData {
@@ -375,6 +396,7 @@ impl ResourceDataBuilder {
             ec2_vpc: self.ec2_vpc,
             ec2_image: self.ec2_image,
             cloudformation_stack: self.cloudformation_stack,
+            bedrock_guardrail: self.bedrock_guardrail,
         }
     }
 }

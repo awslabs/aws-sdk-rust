@@ -7,6 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetLinkedWhatsAppBusinessAccountPhoneNumberOutput`](crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput) with field(s):
     ///   - [`phone_number(Option<WhatsAppPhoneNumberDetail>)`](crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput::phone_number): <p>The details of your WhatsApp phone number.</p>
     ///   - [`linked_whats_app_business_account_id(Option<String>)`](crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput::linked_whats_app_business_account_id): <p>The WABA identifier linked to the phone number, formatted as <code>waba-01234567890123456789012345678901</code>.</p>
+    ///   - [`call_settings(Option<WhatsAppCallSettings>)`](crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput::call_settings): <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
     /// - On failure, responds with [`SdkError<GetLinkedWhatsAppBusinessAccountPhoneNumberError>`](crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberError)
     pub fn get_linked_whats_app_business_account_phone_number(
         &self,

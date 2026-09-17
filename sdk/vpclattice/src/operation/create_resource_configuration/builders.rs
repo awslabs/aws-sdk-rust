@@ -132,6 +132,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). Use this type to share a portion of your network rather than an individual resource. A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. You can't add a CIDR resource configuration to a service network. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.inner = self.inner.r#type(input);
@@ -147,6 +149,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). Use this type to share a portion of your network rather than an individual resource. A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. You can't add a CIDR resource configuration to a service network. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.inner = self.inner.set_type(input);
@@ -162,6 +166,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). Use this type to share a portion of your network rather than an individual resource. A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. You can't add a CIDR resource configuration to a service network. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         self.inner.get_type()
@@ -171,45 +177,45 @@ impl CreateResourceConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
     ///
-    /// <p>(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).</p>
+    /// <p>(SINGLE, GROUP, CHILD, CIDR) The port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30). To resolve DNS through a CIDR resource configuration, include port 53 in the port ranges.</p>
     pub fn port_ranges(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.port_ranges(input.into());
         self
     }
-    /// <p>(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).</p>
+    /// <p>(SINGLE, GROUP, CHILD, CIDR) The port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30). To resolve DNS through a CIDR resource configuration, include port 53 in the port ranges.</p>
     pub fn set_port_ranges(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
     }
-    /// <p>(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).</p>
+    /// <p>(SINGLE, GROUP, CHILD, CIDR) The port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30). To resolve DNS through a CIDR resource configuration, include port 53 in the port ranges.</p>
     pub fn get_port_ranges(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_port_ranges()
     }
-    /// <p>(SINGLE, GROUP) The protocol accepted by the resource configuration.</p>
+    /// <p>(SINGLE, GROUP, CIDR) The protocol accepted by the resource configuration. The default is <code>TCP</code>. <code>TCP_UDP</code> is supported only for CIDR resource configurations; specify it for a CIDR resource configuration to allow DNS resolution, which uses UDP.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolType) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// <p>(SINGLE, GROUP) The protocol accepted by the resource configuration.</p>
+    /// <p>(SINGLE, GROUP, CIDR) The protocol accepted by the resource configuration. The default is <code>TCP</code>. <code>TCP_UDP</code> is supported only for CIDR resource configurations; specify it for a CIDR resource configuration to allow DNS resolution, which uses UDP.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ProtocolType>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// <p>(SINGLE, GROUP) The protocol accepted by the resource configuration.</p>
+    /// <p>(SINGLE, GROUP, CIDR) The protocol accepted by the resource configuration. The default is <code>TCP</code>. <code>TCP_UDP</code> is supported only for CIDR resource configurations; specify it for a CIDR resource configuration to allow DNS resolution, which uses UDP.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ProtocolType> {
         self.inner.get_protocol()
     }
-    /// <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.</p>
+    /// <p>(SINGLE, GROUP, ARN, CIDR) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration. For a CIDR resource configuration, the associated resource gateway must have its DNS resolution set to <code>IN_VPC</code> so that DNS queries resolve in the context of your VPC.</p>
     pub fn resource_gateway_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_gateway_identifier(input.into());
         self
     }
-    /// <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.</p>
+    /// <p>(SINGLE, GROUP, ARN, CIDR) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration. For a CIDR resource configuration, the associated resource gateway must have its DNS resolution set to <code>IN_VPC</code> so that DNS queries resolve in the context of your VPC.</p>
     pub fn set_resource_gateway_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_gateway_identifier(input);
         self
     }
-    /// <p>(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.</p>
+    /// <p>(SINGLE, GROUP, ARN, CIDR) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration. For a CIDR resource configuration, the associated resource gateway must have its DNS resolution set to <code>IN_VPC</code> so that DNS queries resolve in the context of your VPC.</p>
     pub fn get_resource_gateway_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_gateway_identifier()
     }
@@ -235,6 +241,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
     /// <li>
     /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// <li>
+    /// <p><b>CIDR range</b> - For a resource configuration of type CIDR, specify a <code>cidrResource</code> with one or more <code>cidrRanges</code> (for example, <code>10.0.0.0/16</code>) that cover the IP addresses of the resources you want to make accessible. You can specify up to 10 ranges, using IPv4, IPv6, or both, and each range must include a prefix length. To represent your entire network, specify <code>0.0.0.0/0</code> (IPv4) or <code>::/0</code> (IPv6) as the only range. You can't use reserved ranges such as <code>169.254.0.0/16</code>, <code>100.64.0.0/10</code>, <code>224.0.0.0/4</code>, <code>fe80::/10</code>, or <code>ff00::/8</code>.</p></li>
     /// </ul>
     pub fn resource_configuration_definition(mut self, input: crate::types::ResourceConfigurationDefinition) -> Self {
         self.inner = self.inner.resource_configuration_definition(input);
@@ -248,6 +256,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
     /// <li>
     /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// <li>
+    /// <p><b>CIDR range</b> - For a resource configuration of type CIDR, specify a <code>cidrResource</code> with one or more <code>cidrRanges</code> (for example, <code>10.0.0.0/16</code>) that cover the IP addresses of the resources you want to make accessible. You can specify up to 10 ranges, using IPv4, IPv6, or both, and each range must include a prefix length. To represent your entire network, specify <code>0.0.0.0/0</code> (IPv4) or <code>::/0</code> (IPv6) as the only range. You can't use reserved ranges such as <code>169.254.0.0/16</code>, <code>100.64.0.0/10</code>, <code>224.0.0.0/4</code>, <code>fe80::/10</code>, or <code>ff00::/8</code>.</p></li>
     /// </ul>
     pub fn set_resource_configuration_definition(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationDefinition>) -> Self {
         self.inner = self.inner.set_resource_configuration_definition(input);
@@ -261,6 +271,8 @@ impl CreateResourceConfigurationFluentBuilder {
     /// <p><b>Domain name</b> - Any domain name that is publicly resolvable.</p></li>
     /// <li>
     /// <p><b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.</p></li>
+    /// <li>
+    /// <p><b>CIDR range</b> - For a resource configuration of type CIDR, specify a <code>cidrResource</code> with one or more <code>cidrRanges</code> (for example, <code>10.0.0.0/16</code>) that cover the IP addresses of the resources you want to make accessible. You can specify up to 10 ranges, using IPv4, IPv6, or both, and each range must include a prefix length. To represent your entire network, specify <code>0.0.0.0/0</code> (IPv4) or <code>::/0</code> (IPv6) as the only range. You can't use reserved ranges such as <code>169.254.0.0/16</code>, <code>100.64.0.0/10</code>, <code>224.0.0.0/4</code>, <code>fe80::/10</code>, or <code>ff00::/8</code>.</p></li>
     /// </ul>
     pub fn get_resource_configuration_definition(&self) -> &::std::option::Option<crate::types::ResourceConfigurationDefinition> {
         self.inner.get_resource_configuration_definition()

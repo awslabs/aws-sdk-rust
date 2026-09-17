@@ -8,6 +8,8 @@ pub struct AssociateManagedNotificationAdditionalChannelInput {
     pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <code>ManagedNotificationConfiguration</code> to associate with the additional Channel.</p>
     pub managed_notification_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether this channel is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl AssociateManagedNotificationAdditionalChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
@@ -18,6 +20,10 @@ impl AssociateManagedNotificationAdditionalChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the <code>ManagedNotificationConfiguration</code> to associate with the additional Channel.</p>
     pub fn managed_notification_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.managed_notification_configuration_arn.as_deref()
+    }
+    /// <p>Specifies whether this channel is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn is_sensitive_events_subscribed(&self) -> ::std::option::Option<bool> {
+        self.is_sensitive_events_subscribed
     }
 }
 impl AssociateManagedNotificationAdditionalChannelInput {
@@ -35,6 +41,7 @@ impl AssociateManagedNotificationAdditionalChannelInput {
 pub struct AssociateManagedNotificationAdditionalChannelInputBuilder {
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
     pub(crate) managed_notification_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl AssociateManagedNotificationAdditionalChannelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Channel to associate with the <code>ManagedNotificationConfiguration</code>.</p>
@@ -70,6 +77,20 @@ impl AssociateManagedNotificationAdditionalChannelInputBuilder {
     pub fn get_managed_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_notification_configuration_arn
     }
+    /// <p>Specifies whether this channel is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn is_sensitive_events_subscribed(mut self, input: bool) -> Self {
+        self.is_sensitive_events_subscribed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this channel is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn set_is_sensitive_events_subscribed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_sensitive_events_subscribed = input;
+        self
+    }
+    /// <p>Specifies whether this channel is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn get_is_sensitive_events_subscribed(&self) -> &::std::option::Option<bool> {
+        &self.is_sensitive_events_subscribed
+    }
     /// Consumes the builder and constructs a [`AssociateManagedNotificationAdditionalChannelInput`](crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelInput).
     pub fn build(
         self,
@@ -81,6 +102,7 @@ impl AssociateManagedNotificationAdditionalChannelInputBuilder {
             crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelInput {
                 channel_arn: self.channel_arn,
                 managed_notification_configuration_arn: self.managed_notification_configuration_arn,
+                is_sensitive_events_subscribed: self.is_sensitive_events_subscribed,
             },
         )
     }

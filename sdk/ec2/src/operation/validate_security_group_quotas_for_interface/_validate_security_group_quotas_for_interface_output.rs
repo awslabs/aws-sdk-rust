@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateSecurityGroupQuotasForInterfaceOutput {
-    /// <p>The operation returns <code>true</code> if the specified security groups can be associated with a single network interface without exceeding the quotas. It returns an error if associating the security groups would exceed a quota.</p>
+    /// <p>Specifies whether the specified security groups can be associated with a single network interface without exceeding the quotas. If associating the security groups would exceed a quota, the operation returns an error.</p>
     pub valid: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ValidateSecurityGroupQuotasForInterfaceOutput {
-    /// <p>The operation returns <code>true</code> if the specified security groups can be associated with a single network interface without exceeding the quotas. It returns an error if associating the security groups would exceed a quota.</p>
+    /// <p>Specifies whether the specified security groups can be associated with a single network interface without exceeding the quotas. If associating the security groups would exceed a quota, the operation returns an error.</p>
     pub fn valid(&self) -> ::std::option::Option<bool> {
         self.valid
     }
@@ -34,17 +34,17 @@ pub struct ValidateSecurityGroupQuotasForInterfaceOutputBuilder {
     _request_id: Option<String>,
 }
 impl ValidateSecurityGroupQuotasForInterfaceOutputBuilder {
-    /// <p>The operation returns <code>true</code> if the specified security groups can be associated with a single network interface without exceeding the quotas. It returns an error if associating the security groups would exceed a quota.</p>
+    /// <p>Specifies whether the specified security groups can be associated with a single network interface without exceeding the quotas. If associating the security groups would exceed a quota, the operation returns an error.</p>
     pub fn valid(mut self, input: bool) -> Self {
         self.valid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operation returns <code>true</code> if the specified security groups can be associated with a single network interface without exceeding the quotas. It returns an error if associating the security groups would exceed a quota.</p>
+    /// <p>Specifies whether the specified security groups can be associated with a single network interface without exceeding the quotas. If associating the security groups would exceed a quota, the operation returns an error.</p>
     pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.valid = input;
         self
     }
-    /// <p>The operation returns <code>true</code> if the specified security groups can be associated with a single network interface without exceeding the quotas. It returns an error if associating the security groups would exceed a quota.</p>
+    /// <p>Specifies whether the specified security groups can be associated with a single network interface without exceeding the quotas. If associating the security groups would exceed a quota, the operation returns an error.</p>
     pub fn get_valid(&self) -> &::std::option::Option<bool> {
         &self.valid
     }

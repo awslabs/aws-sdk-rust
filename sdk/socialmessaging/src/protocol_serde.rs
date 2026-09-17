@@ -51,6 +51,8 @@ pub(crate) mod shape_get_linked_whats_app_business_account_phone_number;
 
 pub(crate) mod shape_get_whats_app_business_public_key;
 
+pub(crate) mod shape_get_whats_app_call_permission;
+
 pub(crate) mod shape_get_whats_app_flow;
 
 pub(crate) mod shape_get_whats_app_flow_preview;
@@ -79,6 +81,8 @@ pub(crate) mod shape_put_whats_app_business_account_event_destinations;
 
 pub(crate) mod shape_put_whats_app_business_public_key;
 
+pub(crate) mod shape_send_whats_app_call_event;
+
 pub(crate) mod shape_send_whats_app_conversion_event;
 
 pub(crate) mod shape_send_whats_app_message;
@@ -86,6 +90,8 @@ pub(crate) mod shape_send_whats_app_message;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_linked_whats_app_business_account_phone_number;
 
 pub(crate) mod shape_update_whats_app_flow;
 
@@ -107,6 +113,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_whats_app_business_account_input;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_whats_app_dataset_input;
 
 pub(crate) mod shape_create_whats_app_flow_input;
@@ -120,6 +128,8 @@ pub(crate) mod shape_create_whats_app_message_template_media_input;
 pub(crate) mod shape_dependency_exception;
 
 pub(crate) mod shape_deprecate_whats_app_flow_input;
+
+pub(crate) mod shape_get_whats_app_call_permission_input;
 
 pub(crate) mod shape_get_whats_app_message_media_input;
 
@@ -141,6 +151,8 @@ pub(crate) mod shape_put_whats_app_business_public_key_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_send_whats_app_call_event_input;
+
 pub(crate) mod shape_send_whats_app_conversion_event_input;
 
 pub(crate) mod shape_send_whats_app_message_input;
@@ -150,6 +162,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttled_request_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_linked_whats_app_business_account_phone_number_input;
 
 pub(crate) mod shape_update_whats_app_flow_assets_input;
 
@@ -195,6 +209,12 @@ pub(crate) mod shape_validation_error_list;
 
 pub(crate) mod shape_whats_app_business_account_event_destination;
 
+pub(crate) mod shape_whats_app_call_permission;
+
+pub(crate) mod shape_whats_app_call_permission_action_list;
+
+pub(crate) mod shape_whats_app_call_settings;
+
 pub(crate) mod shape_whats_app_phone_number_detail;
 
 pub(crate) mod shape_whats_app_setup_finalization;
@@ -227,6 +247,10 @@ pub(crate) mod shape_waba_setup_finalization;
 
 pub(crate) mod shape_whats_app_business_account_event_destinations;
 
+pub(crate) mod shape_whats_app_call_hours;
+
+pub(crate) mod shape_whats_app_call_permission_action;
+
 pub(crate) mod shape_whats_app_phone_number_summary_list;
 
 pub(crate) mod shape_linked_whats_app_business_account_id_meta_data;
@@ -239,11 +263,25 @@ pub(crate) mod shape_meta_library_template_button_list;
 
 pub(crate) mod shape_meta_template_body_example_params;
 
+pub(crate) mod shape_whats_app_call_permission_limit_list;
+
+pub(crate) mod shape_whats_app_holiday_schedule_entry;
+
+pub(crate) mod shape_whats_app_holiday_schedule_list;
+
 pub(crate) mod shape_whats_app_phone_number_summary;
+
+pub(crate) mod shape_whats_app_weekly_operating_hours_entry;
+
+pub(crate) mod shape_whats_app_weekly_operating_hours_list;
 
 pub(crate) mod shape_library_template_button_list;
 
+pub(crate) mod shape_whats_app_call_permission_limit;
+
 pub(crate) mod shape_whats_app_phone_number_detail_list;
+
+pub(crate) mod shape_whats_app_time_of_day;
 
 pub(crate) mod shape_supported_apps;
 

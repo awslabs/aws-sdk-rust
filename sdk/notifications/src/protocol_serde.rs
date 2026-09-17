@@ -99,6 +99,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_event_rule;
 
+pub(crate) mod shape_update_managed_notification_channel_association;
+
 pub(crate) mod shape_update_notification_configuration;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -146,6 +148,8 @@ pub(crate) mod shape_tag_resource_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_event_rule_input;
+
+pub(crate) mod shape_update_managed_notification_channel_association_input;
 
 pub(crate) mod shape_update_notification_configuration_input;
 
@@ -217,6 +221,8 @@ pub(crate) mod shape_message_components;
 
 pub(crate) mod shape_notification_configuration_structure;
 
+pub(crate) mod shape_notification_event_attachment_list;
+
 pub(crate) mod shape_notification_event_overview;
 
 pub(crate) mod shape_notification_hub_overview;
@@ -238,6 +244,8 @@ pub(crate) mod shape_managed_notification_child_event_summary;
 pub(crate) mod shape_managed_notification_event_summary;
 
 pub(crate) mod shape_media_element;
+
+pub(crate) mod shape_notification_event_attachment;
 
 pub(crate) mod shape_notification_event_summary;
 

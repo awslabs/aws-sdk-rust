@@ -226,4 +226,18 @@ impl ListManagedNotificationEventsFluentBuilder {
     pub fn get_related_account(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_account()
     }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn include_sensitive_events(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_sensitive_events(input);
+        self
+    }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn set_include_sensitive_events(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_sensitive_events(input);
+        self
+    }
+    /// <p>Specifies whether to include sensitive events in the result. By default, only non-sensitive events are returned. The <code>notifications:AccessSensitiveEvents</code> permission controls access to sensitive events.</p>
+    pub fn get_include_sensitive_events(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_sensitive_events()
+    }
 }

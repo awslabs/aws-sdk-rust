@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedByMetaException(crate::types::error::AccessDeniedByMetaException),
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>Thrown when performing an action because a dependency would be broken.</p>
     DependencyException(crate::types::error::DependencyException),
     /// <p>The request processing has failed because of an unknown error, exception, or failure.</p>
@@ -35,6 +37,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedByMetaException(inner) => inner.fmt(f),
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::DependencyException(inner) => inner.fmt(f),
             Error::InternalServiceException(inner) => inner.fmt(f),
             Error::InvalidParametersException(inner) => inner.fmt(f),
@@ -65,6 +68,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedByMetaException(inner) => inner.meta(),
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::DependencyException(inner) => inner.meta(),
             Self::InternalServiceException(inner) => inner.meta(),
             Self::InvalidParametersException(inner) => inner.meta(),
@@ -749,6 +753,54 @@ impl From<crate::operation::get_whats_app_business_public_key::GetWhatsAppBusine
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError> for Error {
+    fn from(err: crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError) -> Self {
+        match err {
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_whats_app_call_permission::GetWhatsAppCallPermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_flow::GetWhatsAppFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1374,6 +1426,50 @@ impl From<crate::operation::put_whats_app_business_public_key::PutWhatsAppBusine
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError> for Error {
+    fn from(err: crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError) -> Self {
+        match err {
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError, R>>
     for Error
@@ -1511,6 +1607,48 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError> for Error {
+    fn from(
+        err: crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError,
+    ) -> Self {
+        match err {
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::AccessDeniedByMetaException(inner) => Error::AccessDeniedByMetaException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::InvalidParametersException(inner) => Error::InvalidParametersException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::ThrottledRequestException(inner) => Error::ThrottledRequestException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_linked_whats_app_business_account_phone_number::UpdateLinkedWhatsAppBusinessAccountPhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1662,6 +1800,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedByMetaException(inner) => inner.source(),
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::DependencyException(inner) => inner.source(),
             Error::InternalServiceException(inner) => inner.source(),
             Error::InvalidParametersException(inner) => inner.source(),
@@ -1678,6 +1817,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedByMetaException(e) => e.request_id(),
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::DependencyException(e) => e.request_id(),
             Self::InternalServiceException(e) => e.request_id(),
             Self::InvalidParametersException(e) => e.request_id(),

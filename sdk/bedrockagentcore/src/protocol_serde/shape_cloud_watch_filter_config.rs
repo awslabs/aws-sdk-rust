@@ -20,23 +20,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "sessionIds" => {
-                            builder = builder.set_session_ids(crate::protocol_serde::shape_evaluation_string_list::de_evaluation_string_list(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "sessionIds" => {
+                                builder = builder.set_session_ids(crate::protocol_serde::shape_evaluation_string_list::de_evaluation_string_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "timeRange" => {
+                                builder = builder.set_time_range(crate::protocol_serde::shape_session_filter_config::de_session_filter_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "sessionTraceIds" => {
+                                builder = builder.set_session_trace_ids(
+                                    crate::protocol_serde::shape_session_trace_ids_list::de_session_trace_ids_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "timeRange" => {
-                            builder = builder.set_time_range(crate::protocol_serde::shape_session_filter_config::de_session_filter_config(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -70,6 +77,18 @@ pub fn ser_cloud_watch_filter_config(
         let mut object_5 = object.key("timeRange").start_object();
         crate::protocol_serde::shape_session_filter_config::ser_session_filter_config(&mut object_5, var_4)?;
         object_5.finish();
+    }
+    if let Some(var_6) = &input.session_trace_ids {
+        let mut array_7 = object.key("sessionTraceIds").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_session_trace_ids::ser_session_trace_ids(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
     }
     Ok(())
 }

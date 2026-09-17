@@ -9,9 +9,11 @@ pub struct GetTopicAttributesOutput {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p></li>
+    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints. For subscription confirmation and unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications" regardless of this attribute.</p></li>
     /// <li>
     /// <p><code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Amazon SNS returns this attribute only if you explicitly set it. If Amazon SNS doesn't return it, the topic uses the default of <code>262144</code> (256 KiB).</p></li>
     /// <li>
     /// <p><code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p></li>
     /// <li>
@@ -69,9 +71,11 @@ impl GetTopicAttributesOutput {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p></li>
+    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints. For subscription confirmation and unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications" regardless of this attribute.</p></li>
     /// <li>
     /// <p><code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Amazon SNS returns this attribute only if you explicitly set it. If Amazon SNS doesn't return it, the topic uses the default of <code>262144</code> (256 KiB).</p></li>
     /// <li>
     /// <p><code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p></li>
     /// <li>
@@ -153,9 +157,11 @@ impl GetTopicAttributesOutputBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p></li>
+    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints. For subscription confirmation and unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications" regardless of this attribute.</p></li>
     /// <li>
     /// <p><code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Amazon SNS returns this attribute only if you explicitly set it. If Amazon SNS doesn't return it, the topic uses the default of <code>262144</code> (256 KiB).</p></li>
     /// <li>
     /// <p><code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p></li>
     /// <li>
@@ -215,9 +221,11 @@ impl GetTopicAttributesOutputBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p></li>
+    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints. For subscription confirmation and unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications" regardless of this attribute.</p></li>
     /// <li>
     /// <p><code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Amazon SNS returns this attribute only if you explicitly set it. If Amazon SNS doesn't return it, the topic uses the default of <code>262144</code> (256 KiB).</p></li>
     /// <li>
     /// <p><code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p></li>
     /// <li>
@@ -275,9 +283,11 @@ impl GetTopicAttributesOutputBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The JSON serialization of the topic's delivery policy.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints.</p></li>
+    /// <p><code>DisplayName</code> – The human-readable name used in the <code>From</code> field for notifications to <code>email</code> and <code>email-json</code> endpoints. For subscription confirmation and unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications" regardless of this attribute.</p></li>
     /// <li>
     /// <p><code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system defaults into account.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Amazon SNS returns this attribute only if you explicitly set it. If Amazon SNS doesn't return it, the topic uses the default of <code>262144</code> (256 KiB).</p></li>
     /// <li>
     /// <p><code>Owner</code> – The Amazon Web Services account ID of the topic's owner.</p></li>
     /// <li>

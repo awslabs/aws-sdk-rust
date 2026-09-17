@@ -7,6 +7,8 @@ pub struct AssociateManagedNotificationAccountContactInput {
     pub contact_identifier: ::std::option::Option<crate::types::AccountContactType>,
     /// <p>The Amazon Resource Name (ARN) of the <code>ManagedNotificationConfiguration</code> to associate with the Account Contact.</p>
     pub managed_notification_configuration_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl AssociateManagedNotificationAccountContactInput {
     /// <p>A unique value of an Account Contact Type to associate with the <code>ManagedNotificationConfiguration</code>.</p>
@@ -16,6 +18,10 @@ impl AssociateManagedNotificationAccountContactInput {
     /// <p>The Amazon Resource Name (ARN) of the <code>ManagedNotificationConfiguration</code> to associate with the Account Contact.</p>
     pub fn managed_notification_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.managed_notification_configuration_arn.as_deref()
+    }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn is_sensitive_events_subscribed(&self) -> ::std::option::Option<bool> {
+        self.is_sensitive_events_subscribed
     }
 }
 impl AssociateManagedNotificationAccountContactInput {
@@ -32,6 +38,7 @@ impl AssociateManagedNotificationAccountContactInput {
 pub struct AssociateManagedNotificationAccountContactInputBuilder {
     pub(crate) contact_identifier: ::std::option::Option<crate::types::AccountContactType>,
     pub(crate) managed_notification_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl AssociateManagedNotificationAccountContactInputBuilder {
     /// <p>A unique value of an Account Contact Type to associate with the <code>ManagedNotificationConfiguration</code>.</p>
@@ -64,6 +71,20 @@ impl AssociateManagedNotificationAccountContactInputBuilder {
     pub fn get_managed_notification_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_notification_configuration_arn
     }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn is_sensitive_events_subscribed(mut self, input: bool) -> Self {
+        self.is_sensitive_events_subscribed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn set_is_sensitive_events_subscribed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_sensitive_events_subscribed = input;
+        self
+    }
+    /// <p>Specifies whether this contact is subscribed to sensitive events. The <code>notifications:SubscribeSensitiveEvents</code> permission controls access to sensitive events. Defaults to false.</p>
+    pub fn get_is_sensitive_events_subscribed(&self) -> &::std::option::Option<bool> {
+        &self.is_sensitive_events_subscribed
+    }
     /// Consumes the builder and constructs a [`AssociateManagedNotificationAccountContactInput`](crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactInput).
     pub fn build(
         self,
@@ -75,6 +96,7 @@ impl AssociateManagedNotificationAccountContactInputBuilder {
             crate::operation::associate_managed_notification_account_contact::AssociateManagedNotificationAccountContactInput {
                 contact_identifier: self.contact_identifier,
                 managed_notification_configuration_arn: self.managed_notification_configuration_arn,
+                is_sensitive_events_subscribed: self.is_sensitive_events_subscribed,
             },
         )
     }

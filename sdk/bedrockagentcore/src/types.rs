@@ -545,6 +545,8 @@ pub use crate::types::_proxy_credentials::ProxyCredentials;
 
 pub use crate::types::_variant_result::VariantResult;
 
+pub use crate::types::_session_trace_ids::SessionTraceIds;
+
 pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryCluster;
 
 pub use crate::types::_user_intent_affected_session::UserIntentAffectedSession;
@@ -1166,6 +1168,8 @@ mod _session_metadata_shape;
 mod _session_status;
 
 mod _session_summary;
+
+mod _session_trace_ids;
 
 mod _skill_definition;
 

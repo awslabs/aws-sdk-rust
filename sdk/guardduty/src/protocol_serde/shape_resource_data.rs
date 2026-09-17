@@ -96,6 +96,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "bedrockGuardrail" => {
+                            builder = builder.set_bedrock_guardrail(
+                                crate::protocol_serde::shape_bedrock_guardrail_resource::de_bedrock_guardrail_resource(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

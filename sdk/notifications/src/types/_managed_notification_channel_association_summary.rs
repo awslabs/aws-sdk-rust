@@ -58,6 +58,8 @@ pub struct ManagedNotificationChannelAssociationSummary {
     /// </ul></li>
     /// </ul>
     pub override_option: ::std::option::Option<crate::types::ChannelAssociationOverrideOption>,
+    /// <p>Specifies whether this channel association is subscribed to sensitive events. Defaults to false for associations created without the flag.</p>
+    pub is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl ManagedNotificationChannelAssociationSummary {
     /// <p>The unique identifier for the notification channel.</p>
@@ -121,6 +123,10 @@ impl ManagedNotificationChannelAssociationSummary {
     pub fn override_option(&self) -> ::std::option::Option<&crate::types::ChannelAssociationOverrideOption> {
         self.override_option.as_ref()
     }
+    /// <p>Specifies whether this channel association is subscribed to sensitive events. Defaults to false for associations created without the flag.</p>
+    pub fn is_sensitive_events_subscribed(&self) -> ::std::option::Option<bool> {
+        self.is_sensitive_events_subscribed
+    }
 }
 impl ManagedNotificationChannelAssociationSummary {
     /// Creates a new builder-style object to manufacture [`ManagedNotificationChannelAssociationSummary`](crate::types::ManagedNotificationChannelAssociationSummary).
@@ -136,6 +142,7 @@ pub struct ManagedNotificationChannelAssociationSummaryBuilder {
     pub(crate) channel_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
     pub(crate) override_option: ::std::option::Option<crate::types::ChannelAssociationOverrideOption>,
+    pub(crate) is_sensitive_events_subscribed: ::std::option::Option<bool>,
 }
 impl ManagedNotificationChannelAssociationSummaryBuilder {
     /// <p>The unique identifier for the notification channel.</p>
@@ -326,6 +333,20 @@ impl ManagedNotificationChannelAssociationSummaryBuilder {
     pub fn get_override_option(&self) -> &::std::option::Option<crate::types::ChannelAssociationOverrideOption> {
         &self.override_option
     }
+    /// <p>Specifies whether this channel association is subscribed to sensitive events. Defaults to false for associations created without the flag.</p>
+    pub fn is_sensitive_events_subscribed(mut self, input: bool) -> Self {
+        self.is_sensitive_events_subscribed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this channel association is subscribed to sensitive events. Defaults to false for associations created without the flag.</p>
+    pub fn set_is_sensitive_events_subscribed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_sensitive_events_subscribed = input;
+        self
+    }
+    /// <p>Specifies whether this channel association is subscribed to sensitive events. Defaults to false for associations created without the flag.</p>
+    pub fn get_is_sensitive_events_subscribed(&self) -> &::std::option::Option<bool> {
+        &self.is_sensitive_events_subscribed
+    }
     /// Consumes the builder and constructs a [`ManagedNotificationChannelAssociationSummary`](crate::types::ManagedNotificationChannelAssociationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`channel_identifier`](crate::types::builders::ManagedNotificationChannelAssociationSummaryBuilder::channel_identifier)
@@ -347,6 +368,7 @@ impl ManagedNotificationChannelAssociationSummaryBuilder {
                 )
             })?,
             override_option: self.override_option,
+            is_sensitive_events_subscribed: self.is_sensitive_events_subscribed,
         })
     }
 }

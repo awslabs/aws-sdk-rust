@@ -7,6 +7,8 @@ pub struct GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
     pub phone_number: ::std::option::Option<crate::types::WhatsAppPhoneNumberDetail>,
     /// <p>The WABA identifier linked to the phone number, formatted as <code>waba-01234567890123456789012345678901</code>.</p>
     pub linked_whats_app_business_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
+    pub call_settings: ::std::option::Option<crate::types::WhatsAppCallSettings>,
     _request_id: Option<String>,
 }
 impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
@@ -17,6 +19,10 @@ impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
     /// <p>The WABA identifier linked to the phone number, formatted as <code>waba-01234567890123456789012345678901</code>.</p>
     pub fn linked_whats_app_business_account_id(&self) -> ::std::option::Option<&str> {
         self.linked_whats_app_business_account_id.as_deref()
+    }
+    /// <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
+    pub fn call_settings(&self) -> ::std::option::Option<&crate::types::WhatsAppCallSettings> {
+        self.call_settings.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
@@ -39,6 +45,7 @@ impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
 pub struct GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder {
     pub(crate) phone_number: ::std::option::Option<crate::types::WhatsAppPhoneNumberDetail>,
     pub(crate) linked_whats_app_business_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) call_settings: ::std::option::Option<crate::types::WhatsAppCallSettings>,
     _request_id: Option<String>,
 }
 impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder {
@@ -70,6 +77,20 @@ impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder {
     pub fn get_linked_whats_app_business_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.linked_whats_app_business_account_id
     }
+    /// <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
+    pub fn call_settings(mut self, input: crate::types::WhatsAppCallSettings) -> Self {
+        self.call_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
+    pub fn set_call_settings(mut self, input: ::std::option::Option<crate::types::WhatsAppCallSettings>) -> Self {
+        self.call_settings = input;
+        self
+    }
+    /// <p>The calling settings configured for the phone number. This value is absent when calling is not configured.</p>
+    pub fn get_call_settings(&self) -> &::std::option::Option<crate::types::WhatsAppCallSettings> {
+        &self.call_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -84,6 +105,7 @@ impl GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder {
         crate::operation::get_linked_whats_app_business_account_phone_number::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput {
             phone_number: self.phone_number,
             linked_whats_app_business_account_id: self.linked_whats_app_business_account_id,
+            call_settings: self.call_settings,
             _request_id: self._request_id,
         }
     }

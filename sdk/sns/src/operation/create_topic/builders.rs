@@ -139,7 +139,10 @@ impl CreateTopicFluentBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p></li>
+    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS, <code>email</code>, and <code>email-json</code> subscriptions. For <code>email</code> and <code>email-json</code> subscriptions, the display name is used as the sender name for regular notification messages. Subscription confirmation and unsubscribe confirmation emails always use "Amazon Web Services Notifications" as the sender name.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Valid values are <code>1024</code> to <code>1048576</code> (1 MiB). The default is <code>262144</code> (256 KiB).</p>
+    /// <p>A topic with a <code>MaximumMessageSize</code> above 256 KiB must have 100 or fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data Firehose, or Lambda subscription.</p></li>
     /// <li>
     /// <p><code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p></li>
     /// <li>
@@ -250,7 +253,10 @@ impl CreateTopicFluentBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p></li>
+    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS, <code>email</code>, and <code>email-json</code> subscriptions. For <code>email</code> and <code>email-json</code> subscriptions, the display name is used as the sender name for regular notification messages. Subscription confirmation and unsubscribe confirmation emails always use "Amazon Web Services Notifications" as the sender name.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Valid values are <code>1024</code> to <code>1048576</code> (1 MiB). The default is <code>262144</code> (256 KiB).</p>
+    /// <p>A topic with a <code>MaximumMessageSize</code> above 256 KiB must have 100 or fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data Firehose, or Lambda subscription.</p></li>
     /// <li>
     /// <p><code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p></li>
     /// <li>
@@ -361,7 +367,10 @@ impl CreateTopicFluentBuilder {
     /// <li>
     /// <p><code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints.</p></li>
     /// <li>
-    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS subscriptions.</p></li>
+    /// <p><code>DisplayName</code> – The display name to use for a topic with SMS, <code>email</code>, and <code>email-json</code> subscriptions. For <code>email</code> and <code>email-json</code> subscriptions, the display name is used as the sender name for regular notification messages. Subscription confirmation and unsubscribe confirmation emails always use "Amazon Web Services Notifications" as the sender name.</p></li>
+    /// <li>
+    /// <p><code>MaximumMessageSize</code> – The maximum size, in bytes, of a message that can be published to the topic. Valid values are <code>1024</code> to <code>1048576</code> (1 MiB). The default is <code>262144</code> (256 KiB).</p>
+    /// <p>A topic with a <code>MaximumMessageSize</code> above 256 KiB must have 100 or fewer subscriptions, and each subscription must be an Amazon SQS, Amazon Data Firehose, or Lambda subscription.</p></li>
     /// <li>
     /// <p><code>Policy</code> – The policy that defines who can access your topic. By default, only the topic owner can publish or subscribe to the topic.</p></li>
     /// <li>
@@ -490,6 +499,9 @@ impl CreateTopicFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <important>
+    /// <p>Amazon SNS message data protection is no longer available to new customers. For more information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon SNS message data protection availability change</a>.</p>
+    /// </important>
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>
@@ -498,6 +510,9 @@ impl CreateTopicFluentBuilder {
         self.inner = self.inner.data_protection_policy(input.into());
         self
     }
+    /// <important>
+    /// <p>Amazon SNS message data protection is no longer available to new customers. For more information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon SNS message data protection availability change</a>.</p>
+    /// </important>
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>
@@ -506,6 +521,9 @@ impl CreateTopicFluentBuilder {
         self.inner = self.inner.set_data_protection_policy(input);
         self
     }
+    /// <important>
+    /// <p>Amazon SNS message data protection is no longer available to new customers. For more information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon SNS message data protection availability change</a>.</p>
+    /// </important>
     /// <p>The body of the policy document you want to use for this topic.</p>
     /// <p>You can only add one policy per topic.</p>
     /// <p>The policy must be in JSON string format.</p>

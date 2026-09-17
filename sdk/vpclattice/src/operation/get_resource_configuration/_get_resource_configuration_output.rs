@@ -9,7 +9,7 @@ pub struct GetResourceConfigurationOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource configuration.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, or ARN.</p>
+    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, ARN, or CIDR.</p>
     pub resource_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the group resource configuration.</p>
     pub resource_configuration_group_id: ::std::option::Option<::std::string::String>,
@@ -23,6 +23,8 @@ pub struct GetResourceConfigurationOutput {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ResourceConfigurationType>,
     /// <p>Specifies whether the resource configuration is associated with a sharable service network.</p>
@@ -68,7 +70,7 @@ impl GetResourceConfigurationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, or ARN.</p>
+    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, ARN, or CIDR.</p>
     pub fn resource_gateway_id(&self) -> ::std::option::Option<&str> {
         self.resource_gateway_id.as_deref()
     }
@@ -86,6 +88,8 @@ impl GetResourceConfigurationOutput {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationType> {
         self.r#type.as_ref()
@@ -230,17 +234,17 @@ impl GetResourceConfigurationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, or ARN.</p>
+    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, ARN, or CIDR.</p>
     pub fn resource_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, or ARN.</p>
+    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, ARN, or CIDR.</p>
     pub fn set_resource_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_gateway_id = input;
         self
     }
-    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, or ARN.</p>
+    /// <p>The ID of the resource gateway used to connect to the resource configuration in a given VPC. You can specify the resource gateway identifier only for resource configurations with type SINGLE, GROUP, ARN, or CIDR.</p>
     pub fn get_resource_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_gateway_id
     }
@@ -268,6 +272,8 @@ impl GetResourceConfigurationOutputBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -283,6 +289,8 @@ impl GetResourceConfigurationOutputBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.r#type = input;
@@ -298,6 +306,8 @@ impl GetResourceConfigurationOutputBuilder {
     /// <p><code>CHILD</code> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><code>ARN</code> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><code>CIDR</code> - A network segment (a range of IP addresses) accessed through a <code>Tunnel</code> VPC endpoint.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         &self.r#type

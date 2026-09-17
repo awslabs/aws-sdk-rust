@@ -23,6 +23,8 @@ pub struct CreateResourceConfigurationOutput {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ResourceConfigurationType>,
     /// <p>The port range.</p>
@@ -88,6 +90,8 @@ impl CreateResourceConfigurationOutput {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceConfigurationType> {
         self.r#type.as_ref()
@@ -263,6 +267,8 @@ impl CreateResourceConfigurationOutputBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ResourceConfigurationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -278,6 +284,8 @@ impl CreateResourceConfigurationOutputBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceConfigurationType>) -> Self {
         self.r#type = input;
@@ -293,6 +301,8 @@ impl CreateResourceConfigurationOutputBuilder {
     /// <p><b>CHILD</b> - A single resource that is part of a group resource configuration.</p></li>
     /// <li>
     /// <p><b>ARN</b> - An Amazon Web Services resource.</p></li>
+    /// <li>
+    /// <p><b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block). A consumer accesses the resources within the CIDR range through a <code>Tunnel</code> VPC endpoint. A CIDR resource configuration must be associated with a resource gateway whose DNS resolution is set to <code>IN_VPC</code>.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ResourceConfigurationType> {
         &self.r#type

@@ -12,6 +12,7 @@
 /// ```text
 /// # let payerresponsibilitytype = unimplemented!();
 /// match payerresponsibilitytype {
+///     PayerResponsibilityType::ResourceGatewayAccount => { /* ... */ },
 ///     PayerResponsibilityType::VpcEndpointAccount => { /* ... */ },
 ///     PayerResponsibilityType::VpcEndpointServiceAccount => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum PayerResponsibilityType {
     #[allow(missing_docs)] // documentation missing in model
+    ResourceGatewayAccount,
+    #[allow(missing_docs)] // documentation missing in model
     VpcEndpointAccount,
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpointServiceAccount,
@@ -53,6 +56,7 @@ pub enum PayerResponsibilityType {
 impl ::std::convert::From<&str> for PayerResponsibilityType {
     fn from(s: &str) -> Self {
         match s {
+            "resource-gateway-account" => PayerResponsibilityType::ResourceGatewayAccount,
             "vpc-endpoint-account" => PayerResponsibilityType::VpcEndpointAccount,
             "vpc-endpoint-service-account" => PayerResponsibilityType::VpcEndpointServiceAccount,
             other => PayerResponsibilityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl PayerResponsibilityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PayerResponsibilityType::ResourceGatewayAccount => "resource-gateway-account",
             PayerResponsibilityType::VpcEndpointAccount => "vpc-endpoint-account",
             PayerResponsibilityType::VpcEndpointServiceAccount => "vpc-endpoint-service-account",
             PayerResponsibilityType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl PayerResponsibilityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["vpc-endpoint-account", "vpc-endpoint-service-account"]
+        &["resource-gateway-account", "vpc-endpoint-account", "vpc-endpoint-service-account"]
     }
 }
 impl ::std::convert::AsRef<str> for PayerResponsibilityType {
@@ -100,6 +105,7 @@ impl PayerResponsibilityType {
 impl ::std::fmt::Display for PayerResponsibilityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PayerResponsibilityType::ResourceGatewayAccount => write!(f, "resource-gateway-account"),
             PayerResponsibilityType::VpcEndpointAccount => write!(f, "vpc-endpoint-account"),
             PayerResponsibilityType::VpcEndpointServiceAccount => write!(f, "vpc-endpoint-service-account"),
             PayerResponsibilityType::Unknown(value) => write!(f, "{value}"),

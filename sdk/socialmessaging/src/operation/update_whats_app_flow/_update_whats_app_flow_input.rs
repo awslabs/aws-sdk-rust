@@ -11,9 +11,9 @@ pub struct UpdateWhatsAppFlowInput {
     pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>The updated categories for the Flow.</p>
     pub categories: ::std::option::Option<::std::vec::Vec<crate::types::MetaFlowCategory>>,
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    /// <p>The updated HTTPS endpoint for a data exchange Flow.</p>
     pub endpoint_uri: ::std::option::Option<::std::string::String>,
-    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    /// <p>The ID of the Meta application to attach to the Flow.</p>
     pub meta_app_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWhatsAppFlowInput {
@@ -35,11 +35,11 @@ impl UpdateWhatsAppFlowInput {
     pub fn categories(&self) -> &[crate::types::MetaFlowCategory] {
         self.categories.as_deref().unwrap_or_default()
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    /// <p>The updated HTTPS endpoint for a data exchange Flow.</p>
     pub fn endpoint_uri(&self) -> ::std::option::Option<&str> {
         self.endpoint_uri.as_deref()
     }
-    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    /// <p>The ID of the Meta application to attach to the Flow.</p>
     pub fn meta_app_id(&self) -> ::std::option::Option<&str> {
         self.meta_app_id.as_deref()
     }
@@ -127,31 +127,31 @@ impl UpdateWhatsAppFlowInputBuilder {
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetaFlowCategory>> {
         &self.categories
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    /// <p>The updated HTTPS endpoint for a data exchange Flow.</p>
     pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    /// <p>The updated HTTPS endpoint for a data exchange Flow.</p>
     pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_uri = input;
         self
     }
-    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    /// <p>The updated HTTPS endpoint for a data exchange Flow.</p>
     pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_uri
     }
-    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    /// <p>The ID of the Meta application to attach to the Flow.</p>
     pub fn meta_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.meta_app_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    /// <p>The ID of the Meta application to attach to the Flow.</p>
     pub fn set_meta_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.meta_app_id = input;
         self
     }
-    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    /// <p>The ID of the Meta application to attach to the Flow.</p>
     pub fn get_meta_app_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.meta_app_id
     }

@@ -45,16 +45,12 @@
 )]
 pub enum ChannelType {
     /// User Notification Service sends notifications to Account Managed contacts.
-    ///
     AccountContact,
     /// Chatbot sends notifications to group platforms, like Slack or Chime. Link:https://aws.amazon.com/chatbot/
-    ///
     Chatbot,
     /// Email sends notifications to email addresses.
-    ///
     Email,
     /// AWS Console Mobile App sends notifications to mobile devices. Link:https://aws.amazon.com/console/mobile/
-    ///
     Mobile,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

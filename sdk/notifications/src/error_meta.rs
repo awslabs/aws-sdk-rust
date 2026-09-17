@@ -1479,6 +1479,44 @@ impl From<crate::operation::update_event_rule::UpdateEventRuleError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError> for Error {
+    fn from(err: crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError) -> Self {
+        match err {
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_managed_notification_channel_association::UpdateManagedNotificationChannelAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_notification_configuration::UpdateNotificationConfigurationError,
             R,
         >,

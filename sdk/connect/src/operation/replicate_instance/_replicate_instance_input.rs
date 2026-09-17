@@ -102,7 +102,6 @@ impl ReplicateInstanceInputBuilder {
         &self.client_token
     }
     /// <p>The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.</p>
-    /// This field is required.
     pub fn replica_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replica_alias = ::std::option::Option::Some(input.into());
         self

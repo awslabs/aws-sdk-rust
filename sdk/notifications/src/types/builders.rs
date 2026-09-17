@@ -47,6 +47,8 @@ pub use crate::types::_managed_notification_event_summary::ManagedNotificationEv
 
 pub use crate::types::_summarization_dimension_overview::SummarizationDimensionOverviewBuilder;
 
+pub use crate::types::_notification_event_attachment::NotificationEventAttachmentBuilder;
+
 pub use crate::types::_notification_event_summary::NotificationEventSummaryBuilder;
 
 pub use crate::types::_media_element::MediaElementBuilder;

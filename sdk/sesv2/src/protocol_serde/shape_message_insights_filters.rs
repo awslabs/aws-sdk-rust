@@ -39,8 +39,8 @@ pub fn ser_message_insights_filters(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.last_delivery_event {
-        let mut array_14 = object.key("LastDeliveryEvent").start_array();
+    if let Some(var_13) = &input.tenant_name {
+        let mut array_14 = object.key("TenantName").start_array();
         for item_15 in var_13 {
             {
                 array_14.value().string(item_15.as_str());
@@ -48,14 +48,23 @@ pub fn ser_message_insights_filters(
         }
         array_14.finish();
     }
-    if let Some(var_16) = &input.last_engagement_event {
-        let mut array_17 = object.key("LastEngagementEvent").start_array();
+    if let Some(var_16) = &input.last_delivery_event {
+        let mut array_17 = object.key("LastDeliveryEvent").start_array();
         for item_18 in var_16 {
             {
                 array_17.value().string(item_18.as_str());
             }
         }
         array_17.finish();
+    }
+    if let Some(var_19) = &input.last_engagement_event {
+        let mut array_20 = object.key("LastEngagementEvent").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
     }
     Ok(())
 }
@@ -103,6 +112,13 @@ where
                         }
                         "Isp" => {
                             builder = builder.set_isp(crate::protocol_serde::shape_isp_filter_list::de_isp_filter_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "TenantName" => {
+                            builder = builder.set_tenant_name(crate::protocol_serde::shape_tenant_name_filter_list::de_tenant_name_filter_list(
                                 tokens,
                                 _value,
                                 depth + 1,
