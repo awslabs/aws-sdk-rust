@@ -16,6 +16,10 @@ pub struct GetVocabularyOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to view or download the custom vocabulary.</p>
     pub download_uri: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket that contains your input files and, if applicable, the KMS key specified in <code>EncryptionConfiguration</code>.</p>
+    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The encryption configuration used for your custom vocabulary.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetVocabularyOutput {
@@ -44,6 +48,14 @@ impl GetVocabularyOutput {
     pub fn download_uri(&self) -> ::std::option::Option<&str> {
         self.download_uri.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket that contains your input files and, if applicable, the KMS key specified in <code>EncryptionConfiguration</code>.</p>
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
+    }
+    /// <p>The encryption configuration used for your custom vocabulary.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetVocabularyOutput {
     fn request_id(&self) -> Option<&str> {
@@ -67,6 +79,8 @@ pub struct GetVocabularyOutputBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) download_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetVocabularyOutputBuilder {
@@ -157,6 +171,34 @@ impl GetVocabularyOutputBuilder {
     pub fn get_download_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.download_uri
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket that contains your input files and, if applicable, the KMS key specified in <code>EncryptionConfiguration</code>.</p>
+    pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket that contains your input files and, if applicable, the KMS key specified in <code>EncryptionConfiguration</code>.</p>
+    pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_access_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket that contains your input files and, if applicable, the KMS key specified in <code>EncryptionConfiguration</code>.</p>
+    pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_access_role_arn
+    }
+    /// <p>The encryption configuration used for your custom vocabulary.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration used for your custom vocabulary.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The encryption configuration used for your custom vocabulary.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -175,6 +217,8 @@ impl GetVocabularyOutputBuilder {
             last_modified_time: self.last_modified_time,
             failure_reason: self.failure_reason,
             download_uri: self.download_uri,
+            data_access_role_arn: self.data_access_role_arn,
+            encryption_configuration: self.encryption_configuration,
             _request_id: self._request_id,
         }
     }

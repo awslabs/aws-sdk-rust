@@ -7,6 +7,8 @@ pub use crate::types::_iframe_config::IframeConfig;
 
 pub use crate::types::_application_type::ApplicationType;
 
+pub use crate::types::_auth_config::AuthConfig;
+
 pub use crate::types::_schedule_configuration::ScheduleConfiguration;
 
 pub use crate::types::_file_configuration::FileConfiguration;
@@ -22,6 +24,8 @@ pub use crate::types::_subscription::Subscription;
 pub use crate::types::_publication::Publication;
 
 pub use crate::types::_contact_handling::ContactHandling;
+
+pub use crate::types::_auth_type::AuthType;
 
 pub use crate::types::_execution_mode::ExecutionMode;
 
@@ -54,6 +58,10 @@ mod _application_source_config;
 mod _application_summary;
 
 mod _application_type;
+
+mod _auth_config;
+
+mod _auth_type;
 
 mod _contact_handling;
 

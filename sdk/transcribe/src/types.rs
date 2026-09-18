@@ -9,6 +9,8 @@ pub use crate::types::_base_model_name::BaseModelName;
 
 pub use crate::types::_input_data_config::InputDataConfig;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
 pub use crate::types::_model_status::ModelStatus;
 
 pub use crate::types::_language_code::LanguageCode;
@@ -176,6 +178,8 @@ mod _clinical_note_generation_settings;
 mod _clm_language_code;
 
 mod _content_redaction;
+
+mod _encryption_configuration;
 
 mod _input_data_config;
 

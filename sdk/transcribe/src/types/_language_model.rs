@@ -47,6 +47,8 @@ pub struct LanguageModel {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location of the input files used to train and tune your custom language model, in addition to the data access role ARN (Amazon Resource Name) that has permissions to access these data.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
+    /// <p>The encryption configuration used for your custom language model.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl LanguageModel {
     /// <p>A unique name, chosen by you, for your custom language model.</p>
@@ -92,6 +94,10 @@ impl LanguageModel {
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
+    /// <p>The encryption configuration used for your custom language model.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl LanguageModel {
     /// Creates a new builder-style object to manufacture [`LanguageModel`](crate::types::LanguageModel).
@@ -113,6 +119,7 @@ pub struct LanguageModelBuilder {
     pub(crate) upgrade_availability: ::std::option::Option<bool>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl LanguageModelBuilder {
     /// <p>A unique name, chosen by you, for your custom language model.</p>
@@ -262,6 +269,20 @@ impl LanguageModelBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
         &self.input_data_config
     }
+    /// <p>The encryption configuration used for your custom language model.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The encryption configuration used for your custom language model.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The encryption configuration used for your custom language model.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`LanguageModel`](crate::types::LanguageModel).
     pub fn build(self) -> crate::types::LanguageModel {
         crate::types::LanguageModel {
@@ -274,6 +295,7 @@ impl LanguageModelBuilder {
             upgrade_availability: self.upgrade_availability,
             failure_reason: self.failure_reason,
             input_data_config: self.input_data_config,
+            encryption_configuration: self.encryption_configuration,
         }
     }
 }

@@ -121,6 +121,9 @@ pub mod untag_resource;
 /// Types for the `UpdateCallAnalyticsCategory` operation.
 pub mod update_call_analytics_category;
 
+/// Types for the `UpdateLanguageModel` operation.
+pub mod update_language_model;
+
 /// Types for the `UpdateMedicalVocabulary` operation.
 pub mod update_medical_vocabulary;
 

@@ -39,5 +39,8 @@ pub fn ser_start_data_quality_rule_recommendation_run_input_input(
         crate::protocol_serde::shape_data_quality_rule_recommendation_run_additional_run_options::ser_data_quality_rule_recommendation_run_additional_run_options(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.recommendation_mode {
+        object.key("RecommendationMode").string(var_11.as_str());
+    }
     Ok(())
 }

@@ -11,6 +11,8 @@ pub struct CreateNotebookInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the notebook.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the notebook.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The metadata for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The sensitive parameters for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.</p>
@@ -35,6 +37,10 @@ impl CreateNotebookInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
+    }
     /// <p>The metadata for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
@@ -55,6 +61,7 @@ impl ::std::fmt::Debug for CreateNotebookInput {
         formatter.field("owning_project_identifier", &self.owning_project_identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
@@ -76,6 +83,7 @@ pub struct CreateNotebookInputBuilder {
     pub(crate) owning_project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -140,6 +148,20 @@ impl CreateNotebookInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -203,6 +225,7 @@ impl CreateNotebookInputBuilder {
             owning_project_identifier: self.owning_project_identifier,
             name: self.name,
             description: self.description,
+            r#type: self.r#type,
             metadata: self.metadata,
             parameters: self.parameters,
             client_token: self.client_token,
@@ -216,6 +239,7 @@ impl ::std::fmt::Debug for CreateNotebookInputBuilder {
         formatter.field("owning_project_identifier", &self.owning_project_identifier);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);

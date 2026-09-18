@@ -12,6 +12,7 @@
 /// ```text
 /// # let applicationtype = unimplemented!();
 /// match applicationtype {
+///     ApplicationType::A2AServer => { /* ... */ },
 ///     ApplicationType::McpServer => { /* ... */ },
 ///     ApplicationType::Service => { /* ... */ },
 ///     ApplicationType::Standard => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum ApplicationType {
     #[allow(missing_docs)] // documentation missing in model
+    A2AServer,
+    #[allow(missing_docs)] // documentation missing in model
     McpServer,
     #[allow(missing_docs)] // documentation missing in model
     Service,
@@ -56,6 +59,7 @@ pub enum ApplicationType {
 impl ::std::convert::From<&str> for ApplicationType {
     fn from(s: &str) -> Self {
         match s {
+            "A2A_SERVER" => ApplicationType::A2AServer,
             "MCP_SERVER" => ApplicationType::McpServer,
             "SERVICE" => ApplicationType::Service,
             "STANDARD" => ApplicationType::Standard,
@@ -74,6 +78,7 @@ impl ApplicationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ApplicationType::A2AServer => "A2A_SERVER",
             ApplicationType::McpServer => "MCP_SERVER",
             ApplicationType::Service => "SERVICE",
             ApplicationType::Standard => "STANDARD",
@@ -82,7 +87,7 @@ impl ApplicationType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MCP_SERVER", "SERVICE", "STANDARD"]
+        &["A2A_SERVER", "MCP_SERVER", "SERVICE", "STANDARD"]
     }
 }
 impl ::std::convert::AsRef<str> for ApplicationType {
@@ -105,6 +110,7 @@ impl ApplicationType {
 impl ::std::fmt::Display for ApplicationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ApplicationType::A2AServer => write!(f, "A2A_SERVER"),
             ApplicationType::McpServer => write!(f, "MCP_SERVER"),
             ApplicationType::Service => write!(f, "SERVICE"),
             ApplicationType::Standard => write!(f, "STANDARD"),

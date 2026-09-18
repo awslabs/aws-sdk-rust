@@ -3,29 +3,59 @@ pub fn ser_orchestration_ai_agent_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrchestrationAiAgentConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("orchestrationAIPromptId").string(input.orchestration_ai_prompt_id.as_str());
+    if let Some(var_1) = &input.orchestration_ai_prompt_id {
+        object.key("orchestrationAIPromptId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.orchestration_ai_guardrail_id {
-        object.key("orchestrationAIGuardrailId").string(var_1.as_str());
+    if let Some(var_2) = &input.orchestration_ai_guardrail_id {
+        object.key("orchestrationAIGuardrailId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.tool_configurations {
-        let mut array_3 = object.key("toolConfigurations").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.tool_configurations {
+        let mut array_4 = object.key("toolConfigurations").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_tool_configuration::ser_tool_configuration(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.connect_instance_arn {
-        object.key("connectInstanceArn").string(var_6.as_str());
+    if let Some(var_7) = &input.multi_agent_configurations {
+        let mut array_8 = object.key("multiAgentConfigurations").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_multi_agent_configuration::ser_multi_agent_configuration(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
     }
-    if let Some(var_7) = &input.locale {
-        object.key("locale").string(var_7.as_str());
+    if let Some(var_11) = &input.connect_instance_arn {
+        object.key("connectInstanceArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.locale {
+        object.key("locale").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.input_schemas {
+        let mut array_14 = object.key("inputSchemas").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().document(item_15);
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_16) = &input.output_schemas {
+        let mut array_17 = object.key("outputSchemas").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().document(item_18);
+            }
+        }
+        array_17.finish();
     }
     Ok(())
 }
@@ -71,6 +101,15 @@ where
                                 crate::protocol_serde::shape_tool_configuration_list::de_tool_configuration_list(tokens, _value, depth + 1)?,
                             );
                         }
+                        "multiAgentConfigurations" => {
+                            builder = builder.set_multi_agent_configurations(
+                                crate::protocol_serde::shape_multi_agent_configuration_list::de_multi_agent_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "connectInstanceArn" => {
                             builder = builder.set_connect_instance_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -85,6 +124,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "inputSchemas" => {
+                            builder = builder.set_input_schemas(crate::protocol_serde::shape_json_document_list::de_json_document_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "outputSchemas" => {
+                            builder = builder.set_output_schemas(crate::protocol_serde::shape_json_document_list::de_json_document_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -94,11 +147,7 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::orchestration_ai_agent_configuration_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

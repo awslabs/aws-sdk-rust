@@ -197,6 +197,20 @@ impl UpdateNotebookFluentBuilder {
     pub fn get_cell_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellInformation>> {
         self.inner.get_cell_order()
     }
+    /// <p>The updated type of the notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The updated type of the notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The updated type of the notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        self.inner.get_type()
+    }
     ///
     /// Adds a key-value pair to `metadata`.
     ///

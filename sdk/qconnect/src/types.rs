@@ -441,6 +441,8 @@ pub use crate::types::_association_configuration::AssociationConfiguration;
 
 pub use crate::types::_tool_configuration::ToolConfiguration;
 
+pub use crate::types::_multi_agent_configuration::MultiAgentConfiguration;
+
 pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
 
 pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType;
@@ -456,6 +458,10 @@ pub use crate::types::_guardrail_sensitive_information_action::GuardrailSensitiv
 pub use crate::types::_guardrail_contextual_grounding_filter_type::GuardrailContextualGroundingFilterType;
 
 pub use crate::types::_ai_guardrail_assessment::AiGuardrailAssessment;
+
+pub use crate::types::_interaction_mode::InteractionMode;
+
+pub use crate::types::_return_reason::ReturnReason;
 
 pub use crate::types::_message_template_body_content_provider::MessageTemplateBodyContentProvider;
 
@@ -505,6 +511,10 @@ pub use crate::types::_annotation::Annotation;
 
 pub use crate::types::_user_interaction_configuration::UserInteractionConfiguration;
 
+pub use crate::types::_delegate_agent_configuration::DelegateAgentConfiguration;
+
+pub use crate::types::_handoff_agent_configuration::HandoffAgentConfiguration;
+
 pub use crate::types::_citation::Citation;
 
 pub use crate::types::_span_message::SpanMessage;
@@ -530,6 +540,10 @@ pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeB
 pub use crate::types::_tool_override_input_value::ToolOverrideInputValue;
 
 pub use crate::types::_tool_output_filter::ToolOutputFilter;
+
+pub use crate::types::_agent_target::AgentTarget;
+
+pub use crate::types::_multi_agent_instruction::MultiAgentInstruction;
 
 pub use crate::types::_span_text_value::SpanTextValue;
 
@@ -558,6 +572,8 @@ pub use crate::types::_guardrail_policy_type::GuardrailPolicyType;
 pub use crate::types::_tool_override_input_value_type::ToolOverrideInputValueType;
 
 mod _agent_attributes;
+
+mod _agent_target;
 
 mod _ai_agent_association_configuration_type;
 
@@ -705,6 +721,8 @@ mod _data_reference;
 
 mod _data_summary;
 
+mod _delegate_agent_configuration;
+
 mod _document;
 
 mod _document_text;
@@ -791,6 +809,8 @@ mod _guardrail_topic_type;
 
 mod _guardrail_word_config;
 
+mod _handoff_agent_configuration;
+
 mod _hierarchical_chunking_configuration;
 
 mod _hierarchical_chunking_level_configuration;
@@ -808,6 +828,8 @@ mod _import_job_type;
 mod _intent_detected_data_details;
 
 mod _intent_input_data;
+
+mod _interaction_mode;
 
 mod _knowledge_base_association_configuration_data;
 
@@ -878,6 +900,10 @@ mod _message_type;
 mod _model_lifecycle;
 
 mod _model_summary;
+
+mod _multi_agent_configuration;
+
+mod _multi_agent_instruction;
 
 mod _note_taking_ai_agent_configuration;
 
@@ -990,6 +1016,8 @@ mod _retrieval_configuration;
 mod _retrieval_filter_configuration;
 
 mod _retrieve_result;
+
+mod _return_reason;
 
 mod _runtime_session_data;
 

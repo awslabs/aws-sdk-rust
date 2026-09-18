@@ -419,6 +419,8 @@ pub use crate::types::_application::ApplicationBuilder;
 
 pub use crate::types::_flow_module::FlowModuleBuilder;
 
+pub use crate::types::_ai_agent::AiAgentBuilder;
+
 pub use crate::types::_data_table_access_control_configuration::DataTableAccessControlConfigurationBuilder;
 
 pub use crate::types::_task_template_field::TaskTemplateFieldBuilder;

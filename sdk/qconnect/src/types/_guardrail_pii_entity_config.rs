@@ -111,7 +111,7 @@ pub struct GuardrailPiiEntityConfig {
     /// <li>
     /// <p><b>CA_SOCIAL_INSURANCE_NUMBER</b></p>
     /// <p>A Canadian Social Insurance Number (SIN) is a nine-digit unique identifier, required for individuals to access government programs and benefits.</p>
-    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p></li>
+    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the Luhn algorithm. For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on the Wikipedia website.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>UK Specific</b></p>
@@ -246,7 +246,7 @@ impl GuardrailPiiEntityConfig {
     /// <li>
     /// <p><b>CA_SOCIAL_INSURANCE_NUMBER</b></p>
     /// <p>A Canadian Social Insurance Number (SIN) is a nine-digit unique identifier, required for individuals to access government programs and benefits.</p>
-    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p></li>
+    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the Luhn algorithm. For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on the Wikipedia website.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>UK Specific</b></p>
@@ -407,7 +407,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <li>
     /// <p><b>CA_SOCIAL_INSURANCE_NUMBER</b></p>
     /// <p>A Canadian Social Insurance Number (SIN) is a nine-digit unique identifier, required for individuals to access government programs and benefits.</p>
-    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p></li>
+    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the Luhn algorithm. For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on the Wikipedia website.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>UK Specific</b></p>
@@ -542,7 +542,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <li>
     /// <p><b>CA_SOCIAL_INSURANCE_NUMBER</b></p>
     /// <p>A Canadian Social Insurance Number (SIN) is a nine-digit unique identifier, required for individuals to access government programs and benefits.</p>
-    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p></li>
+    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the Luhn algorithm. For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on the Wikipedia website.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>UK Specific</b></p>
@@ -676,7 +676,7 @@ impl GuardrailPiiEntityConfigBuilder {
     /// <li>
     /// <p><b>CA_SOCIAL_INSURANCE_NUMBER</b></p>
     /// <p>A Canadian Social Insurance Number (SIN) is a nine-digit unique identifier, required for individuals to access government programs and benefits.</p>
-    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> .</p></li>
+    /// <p>The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>. A SIN can be validated through a simple check-digit process called the Luhn algorithm. For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> on the Wikipedia website.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><b>UK Specific</b></p>

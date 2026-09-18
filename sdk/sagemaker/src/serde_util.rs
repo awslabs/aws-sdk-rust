@@ -6314,6 +6314,37 @@ pub(crate) fn file_source_correct_errors(mut builder: crate::types::builders::Fi
     builder
 }
 
+pub(crate) fn hub_content_correct_errors(mut builder: crate::types::builders::HubContentBuilder) -> crate::types::builders::HubContentBuilder {
+    if builder.hub_content_name.is_none() {
+        builder.hub_content_name = Some(Default::default())
+    }
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
+    }
+    if builder.hub_content_version.is_none() {
+        builder.hub_content_version = Some(Default::default())
+    }
+    if builder.hub_content_type.is_none() {
+        builder.hub_content_type = "no value was set".parse::<crate::types::HubContentType>().ok()
+    }
+    if builder.document_schema_version.is_none() {
+        builder.document_schema_version = Some(Default::default())
+    }
+    if builder.hub_name.is_none() {
+        builder.hub_name = Some(Default::default())
+    }
+    if builder.hub_arn.is_none() {
+        builder.hub_arn = Some(Default::default())
+    }
+    if builder.hub_content_status.is_none() {
+        builder.hub_content_status = "no value was set".parse::<crate::types::HubContentStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn hyper_parameter_specification_correct_errors(
     mut builder: crate::types::builders::HyperParameterSpecificationBuilder,
 ) -> crate::types::builders::HyperParameterSpecificationBuilder {

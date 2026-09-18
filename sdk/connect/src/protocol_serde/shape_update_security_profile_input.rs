@@ -3,78 +3,90 @@ pub fn ser_update_security_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_security_profile::UpdateSecurityProfileInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.allowed_access_control_hierarchy_group_id {
-        object.key("AllowedAccessControlHierarchyGroupId").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.allowed_access_control_tags {
-        #[allow(unused_mut)]
-        let mut object_3 = object.key("AllowedAccessControlTags").start_object();
-        for (key_4, value_5) in var_2 {
-            {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
-            }
-        }
-        object_3.finish();
-    }
-    if let Some(var_6) = &input.allowed_flow_modules {
-        let mut array_7 = object.key("AllowedFlowModules").start_array();
-        for item_8 in var_6 {
+    if let Some(var_1) = &input.allowed_ai_agents {
+        let mut array_2 = object.key("AllowedAIAgents").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_flow_module::ser_flow_module(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_ai_agent::ser_ai_agent(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_7.finish();
+        array_2.finish();
     }
-    if let Some(var_10) = &input.applications {
-        let mut array_11 = object.key("Applications").start_array();
+    if let Some(var_5) = &input.allowed_access_control_hierarchy_group_id {
+        object.key("AllowedAccessControlHierarchyGroupId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.allowed_access_control_tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("AllowedAccessControlTags").start_object();
+        for (key_8, value_9) in var_6 {
+            {
+                object_7.key(key_8.as_str()).string(value_9.as_str());
+            }
+        }
+        object_7.finish();
+    }
+    if let Some(var_10) = &input.allowed_flow_modules {
+        let mut array_11 = object.key("AllowedFlowModules").start_array();
         for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
                 let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_application::ser_application(&mut object_13, item_12)?;
+                crate::protocol_serde::shape_flow_module::ser_flow_module(&mut object_13, item_12)?;
                 object_13.finish();
             }
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.description {
-        object.key("Description").string(var_14.as_str());
+    if let Some(var_14) = &input.applications {
+        let mut array_15 = object.key("Applications").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_application::ser_application(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
-    if let Some(var_15) = &input.granular_access_control_configuration {
+    if let Some(var_18) = &input.description {
+        object.key("Description").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.granular_access_control_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("GranularAccessControlConfiguration").start_object();
-        crate::protocol_serde::shape_granular_access_control_configuration::ser_granular_access_control_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_20 = object.key("GranularAccessControlConfiguration").start_object();
+        crate::protocol_serde::shape_granular_access_control_configuration::ser_granular_access_control_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_17) = &input.hierarchy_restricted_resources {
-        let mut array_18 = object.key("HierarchyRestrictedResources").start_array();
-        for item_19 in var_17 {
+    if let Some(var_21) = &input.hierarchy_restricted_resources {
+        let mut array_22 = object.key("HierarchyRestrictedResources").start_array();
+        for item_23 in var_21 {
             {
-                array_18.value().string(item_19.as_str());
+                array_22.value().string(item_23.as_str());
             }
         }
-        array_18.finish();
+        array_22.finish();
     }
-    if let Some(var_20) = &input.permissions {
-        let mut array_21 = object.key("Permissions").start_array();
-        for item_22 in var_20 {
+    if let Some(var_24) = &input.permissions {
+        let mut array_25 = object.key("Permissions").start_array();
+        for item_26 in var_24 {
             {
-                array_21.value().string(item_22.as_str());
+                array_25.value().string(item_26.as_str());
             }
         }
-        array_21.finish();
+        array_25.finish();
     }
-    if let Some(var_23) = &input.tag_restricted_resources {
-        let mut array_24 = object.key("TagRestrictedResources").start_array();
-        for item_25 in var_23 {
+    if let Some(var_27) = &input.tag_restricted_resources {
+        let mut array_28 = object.key("TagRestrictedResources").start_array();
+        for item_29 in var_27 {
             {
-                array_24.value().string(item_25.as_str());
+                array_28.value().string(item_29.as_str());
             }
         }
-        array_24.finish();
+        array_28.finish();
     }
     Ok(())
 }

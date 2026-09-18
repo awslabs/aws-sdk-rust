@@ -3479,6 +3479,8 @@ pub(crate) mod shape_holiday_config;
 
 pub(crate) mod shape_holiday_config_attributes;
 
+pub(crate) mod shape_hub_content;
+
 pub(crate) mod shape_hyper_parameter_tuning_instance_config;
 
 pub(crate) mod shape_hyper_parameter_tuning_instance_configs;

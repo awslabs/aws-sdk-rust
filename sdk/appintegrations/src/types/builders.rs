@@ -5,6 +5,8 @@ pub use crate::types::_application_config::ApplicationConfigBuilder;
 
 pub use crate::types::_iframe_config::IframeConfigBuilder;
 
+pub use crate::types::_auth_config::AuthConfigBuilder;
+
 pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_file_configuration::FileConfigurationBuilder;

@@ -53,5 +53,8 @@ pub fn ser_update_notebook_input_input(
     if let Some(var_18) = &input.status {
         object.key("status").string(var_18.as_str());
     }
+    if let Some(var_19) = &input.r#type {
+        object.key("type").string(var_19.as_str());
+    }
     Ok(())
 }

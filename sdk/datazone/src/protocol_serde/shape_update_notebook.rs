@@ -266,6 +266,13 @@ pub(crate) fn de_update_notebook(
                             .transpose()?,
                     );
                 }
+                "type" => {
+                    builder = builder.set_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::NotebookType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

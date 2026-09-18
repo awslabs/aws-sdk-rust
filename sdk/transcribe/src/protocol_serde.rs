@@ -103,6 +103,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_call_analytics_category;
 
+pub(crate) mod shape_update_language_model;
+
 pub(crate) mod shape_update_medical_vocabulary;
 
 pub(crate) mod shape_update_vocabulary;
@@ -207,6 +209,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_call_analytics_category_input;
 
+pub(crate) mod shape_update_language_model_input;
+
 pub(crate) mod shape_update_medical_vocabulary_input;
 
 pub(crate) mod shape_update_vocabulary_filter_input;
@@ -226,6 +230,8 @@ pub(crate) mod shape_category_properties_list;
 pub(crate) mod shape_channel_definition;
 
 pub(crate) mod shape_content_redaction;
+
+pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_input_data_config;
 
@@ -286,6 +292,8 @@ pub(crate) mod shape_channel_definitions;
 pub(crate) mod shape_clinical_note_generation_settings;
 
 pub(crate) mod shape_interruption_filter;
+
+pub(crate) mod shape_kms_encryption_context_map;
 
 pub(crate) mod shape_language_code_list;
 

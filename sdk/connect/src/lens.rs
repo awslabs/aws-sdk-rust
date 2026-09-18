@@ -499,6 +499,16 @@ pub(crate) fn reflens_list_security_keys_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_security_profile_ai_agents_output_output_next_token(
+    input: &crate::operation::list_security_profile_ai_agents::ListSecurityProfileAiAgentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_security_profile_applications_output_output_next_token(
     input: &crate::operation::list_security_profile_applications::ListSecurityProfileApplicationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1204,6 +1214,13 @@ pub(crate) fn lens_list_security_keys_output_output_security_keys(
     input: crate::operation::list_security_keys::ListSecurityKeysOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityKey>> {
     let input = input.security_keys?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_security_profile_ai_agents_output_output_allowed_ai_agents(
+    input: crate::operation::list_security_profile_ai_agents::ListSecurityProfileAiAgentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AiAgent>> {
+    let input = input.allowed_ai_agents?;
     ::std::option::Option::Some(input)
 }
 

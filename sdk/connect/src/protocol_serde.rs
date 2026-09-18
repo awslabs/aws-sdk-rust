@@ -501,6 +501,8 @@ pub(crate) mod shape_list_rules;
 
 pub(crate) mod shape_list_security_keys;
 
+pub(crate) mod shape_list_security_profile_ai_agents;
+
 pub(crate) mod shape_list_security_profile_applications;
 
 pub(crate) mod shape_list_security_profile_flow_modules;
@@ -1361,11 +1363,15 @@ pub(crate) mod shape_agent_status_search_filter;
 
 pub(crate) mod shape_agent_status_summary_list;
 
+pub(crate) mod shape_ai_agent;
+
 pub(crate) mod shape_ai_agent_input;
 
 pub(crate) mod shape_alias_configuration;
 
 pub(crate) mod shape_alias_configuration_list;
+
+pub(crate) mod shape_allowed_ai_agents;
 
 pub(crate) mod shape_allowed_capabilities;
 

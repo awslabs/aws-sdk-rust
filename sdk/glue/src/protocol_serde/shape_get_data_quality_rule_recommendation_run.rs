@@ -243,6 +243,13 @@ pub(crate) fn de_get_data_quality_rule_recommendation_run(
                             crate::protocol_serde::shape_data_quality_rule_recommendation_run_additional_run_options::de_data_quality_rule_recommendation_run_additional_run_options(tokens, _value, depth + 1)?
                         );
                 }
+                "RecommendationMode" => {
+                    builder = builder.set_recommendation_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::RecommendationMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

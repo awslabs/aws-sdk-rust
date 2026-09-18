@@ -22,7 +22,7 @@ impl crate::operation::create_session::builders::CreateSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateSession`.
 ///
-/// <p>Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Amazon Q in Connect session for each contact on which Amazon Q in Connect is enabled.</p>
+/// <p>Creates a session. A session is a contextual container used for generating recommendations. Connect Customer creates a new Amazon Q in Connect session for each contact on which Amazon Q in Connect is enabled.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -221,17 +221,17 @@ impl CreateSessionFluentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::AiAgentType, crate::types::AiAgentConfigurationData>> {
         self.inner.get_ai_agent_configuration()
     }
-    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Connect Customer. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
     pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Connect Customer. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
     pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
+    /// <p>The Amazon Resource Name (ARN) of the email contact in Connect Customer. Used to retrieve email content and establish session context for AI-powered email assistance.</p>
     pub fn get_contact_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_arn()
     }

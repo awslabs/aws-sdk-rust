@@ -641,6 +641,8 @@ mod list_rules;
 
 mod list_security_keys;
 
+mod list_security_profile_ai_agents;
+
 mod list_security_profile_applications;
 
 mod list_security_profile_flow_modules;

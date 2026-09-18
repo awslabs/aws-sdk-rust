@@ -306,6 +306,8 @@ mod untag_resource;
 
 mod update_call_analytics_category;
 
+mod update_language_model;
+
 mod update_medical_vocabulary;
 
 mod update_vocabulary;

@@ -40,7 +40,7 @@ pub struct QuickResponseSearchResultData {
     pub shortcut_key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the quick response search result data.</p>
     pub last_modified_by: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
+    /// <p>The Connect Customer contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub channels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language code value for the language in which the quick response is written.</p>
     pub language: ::std::option::Option<::std::string::String>,
@@ -124,7 +124,7 @@ impl QuickResponseSearchResultData {
     pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
-    /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
+    /// <p>The Connect Customer contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.channels.is_none()`.
     pub fn channels(&self) -> &[::std::string::String] {
@@ -453,19 +453,19 @@ impl QuickResponseSearchResultDataBuilder {
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
-    /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
+    /// <p>The Connect Customer contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input.into());
         self.channels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
+    /// <p>The Connect Customer contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.channels = input;
         self
     }
-    /// <p>The Amazon Connect contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
+    /// <p>The Connect Customer contact channels this quick response applies to. The supported contact channel types include <code>Chat</code>.</p>
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channels
     }

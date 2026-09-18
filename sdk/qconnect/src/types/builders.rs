@@ -319,6 +319,10 @@ pub use crate::types::_annotation::AnnotationBuilder;
 
 pub use crate::types::_user_interaction_configuration::UserInteractionConfigurationBuilder;
 
+pub use crate::types::_delegate_agent_configuration::DelegateAgentConfigurationBuilder;
+
+pub use crate::types::_handoff_agent_configuration::HandoffAgentConfigurationBuilder;
+
 pub use crate::types::_citation::CitationBuilder;
 
 pub use crate::types::_span_message::SpanMessageBuilder;
@@ -340,6 +344,8 @@ pub use crate::types::_knowledge_base_association_configuration_data::KnowledgeB
 pub use crate::types::_tool_override_input_value::ToolOverrideInputValueBuilder;
 
 pub use crate::types::_tool_output_filter::ToolOutputFilterBuilder;
+
+pub use crate::types::_multi_agent_instruction::MultiAgentInstructionBuilder;
 
 pub use crate::types::_span_text_value::SpanTextValueBuilder;
 

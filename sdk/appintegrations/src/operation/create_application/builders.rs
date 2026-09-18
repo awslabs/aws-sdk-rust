@@ -333,4 +333,18 @@ impl CreateApplicationFluentBuilder {
     pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
         self.inner.get_application_type()
     }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn auth_config(mut self, input: crate::types::AuthConfig) -> Self {
+        self.inner = self.inner.auth_config(input);
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn set_auth_config(mut self, input: ::std::option::Option<crate::types::AuthConfig>) -> Self {
+        self.inner = self.inner.set_auth_config(input);
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn get_auth_config(&self) -> &::std::option::Option<crate::types::AuthConfig> {
+        self.inner.get_auth_config()
+    }
 }

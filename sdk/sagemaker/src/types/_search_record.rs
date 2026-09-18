@@ -45,6 +45,8 @@ pub struct SearchRecord {
     pub model: ::std::option::Option<crate::types::ModelDashboardModel>,
     /// <p>The properties of a job.</p>
     pub job: ::std::option::Option<crate::types::Job>,
+    /// <p>The properties of a hub content resource.</p>
+    pub hub_content: ::std::option::Option<crate::types::HubContent>,
 }
 impl SearchRecord {
     /// <p>The properties of a training job.</p>
@@ -122,6 +124,10 @@ impl SearchRecord {
     pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
+    /// <p>The properties of a hub content resource.</p>
+    pub fn hub_content(&self) -> ::std::option::Option<&crate::types::HubContent> {
+        self.hub_content.as_ref()
+    }
 }
 impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::types::SearchRecord).
@@ -151,6 +157,7 @@ pub struct SearchRecordBuilder {
     pub(crate) model_card: ::std::option::Option<crate::types::ModelCard>,
     pub(crate) model: ::std::option::Option<crate::types::ModelDashboardModel>,
     pub(crate) job: ::std::option::Option<crate::types::Job>,
+    pub(crate) hub_content: ::std::option::Option<crate::types::HubContent>,
 }
 impl SearchRecordBuilder {
     /// <p>The properties of a training job.</p>
@@ -412,6 +419,20 @@ impl SearchRecordBuilder {
     pub fn get_job(&self) -> &::std::option::Option<crate::types::Job> {
         &self.job
     }
+    /// <p>The properties of a hub content resource.</p>
+    pub fn hub_content(mut self, input: crate::types::HubContent) -> Self {
+        self.hub_content = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of a hub content resource.</p>
+    pub fn set_hub_content(mut self, input: ::std::option::Option<crate::types::HubContent>) -> Self {
+        self.hub_content = input;
+        self
+    }
+    /// <p>The properties of a hub content resource.</p>
+    pub fn get_hub_content(&self) -> &::std::option::Option<crate::types::HubContent> {
+        &self.hub_content
+    }
     /// Consumes the builder and constructs a [`SearchRecord`](crate::types::SearchRecord).
     pub fn build(self) -> crate::types::SearchRecord {
         crate::types::SearchRecord {
@@ -432,6 +453,7 @@ impl SearchRecordBuilder {
             model_card: self.model_card,
             model: self.model,
             job: self.job,
+            hub_content: self.hub_content,
         }
     }
 }

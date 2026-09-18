@@ -243,17 +243,17 @@ impl CreateQuickResponseFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
-    /// <p>The Amazon Connect channels this quick response applies to.</p>
+    /// <p>The Connect Customer channels this quick response applies to.</p>
     pub fn channels(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channels(input.into());
         self
     }
-    /// <p>The Amazon Connect channels this quick response applies to.</p>
+    /// <p>The Connect Customer channels this quick response applies to.</p>
     pub fn set_channels(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_channels(input);
         self
     }
-    /// <p>The Amazon Connect channels this quick response applies to.</p>
+    /// <p>The Connect Customer channels this quick response applies to.</p>
     pub fn get_channels(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channels()
     }

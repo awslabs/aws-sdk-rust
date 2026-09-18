@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`application_config(Option<ApplicationConfig>)`](crate::operation::get_application::GetApplicationOutput::application_config): <p>The configuration settings for the application.</p>
     ///   - [`iframe_config(Option<IframeConfig>)`](crate::operation::get_application::GetApplicationOutput::iframe_config): <p>The iframe configuration for the application.</p>
     ///   - [`application_type(Option<ApplicationType>)`](crate::operation::get_application::GetApplicationOutput::application_type): <p>The type of application.</p>
+    ///   - [`auth_config(Option<AuthConfig>)`](crate::operation::get_application::GetApplicationOutput::auth_config): <p>The authentication settings that Connect Customer uses when calling the external application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

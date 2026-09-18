@@ -34,6 +34,8 @@ pub struct CreateApplicationInput {
     pub iframe_config: ::std::option::Option<crate::types::IframeConfig>,
     /// <p>The type of application.</p>
     pub application_type: ::std::option::Option<crate::types::ApplicationType>,
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub auth_config: ::std::option::Option<crate::types::AuthConfig>,
 }
 impl CreateApplicationInput {
     /// <p>The name of the application.</p>
@@ -101,6 +103,10 @@ impl CreateApplicationInput {
     pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
         self.application_type.as_ref()
     }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn auth_config(&self) -> ::std::option::Option<&crate::types::AuthConfig> {
+        self.auth_config.as_ref()
+    }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
@@ -127,6 +133,7 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     pub(crate) iframe_config: ::std::option::Option<crate::types::IframeConfig>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
+    pub(crate) auth_config: ::std::option::Option<crate::types::AuthConfig>,
 }
 impl CreateApplicationInputBuilder {
     /// <p>The name of the application.</p>
@@ -361,6 +368,20 @@ impl CreateApplicationInputBuilder {
     pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
         &self.application_type
     }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn auth_config(mut self, input: crate::types::AuthConfig) -> Self {
+        self.auth_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn set_auth_config(mut self, input: ::std::option::Option<crate::types::AuthConfig>) -> Self {
+        self.auth_config = input;
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn get_auth_config(&self) -> &::std::option::Option<crate::types::AuthConfig> {
+        &self.auth_config
+    }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn build(
         self,
@@ -380,6 +401,7 @@ impl CreateApplicationInputBuilder {
             application_config: self.application_config,
             iframe_config: self.iframe_config,
             application_type: self.application_type,
+            auth_config: self.auth_config,
         })
     }
 }

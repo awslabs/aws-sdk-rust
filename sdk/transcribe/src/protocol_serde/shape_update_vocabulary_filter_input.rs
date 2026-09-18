@@ -21,5 +21,11 @@ pub fn ser_update_vocabulary_filter_input_input(
     if let Some(var_6) = &input.data_access_role_arn {
         object.key("DataAccessRoleArn").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

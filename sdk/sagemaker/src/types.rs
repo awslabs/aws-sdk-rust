@@ -1927,6 +1927,8 @@ pub use crate::types::_model_dashboard_model::ModelDashboardModel;
 
 pub use crate::types::_job::Job;
 
+pub use crate::types::_hub_content::HubContent;
+
 pub use crate::types::_capacity_size_config::CapacitySizeConfig;
 
 pub use crate::types::_alarm_details::AlarmDetails;
@@ -3248,6 +3250,8 @@ mod _holiday_config_attributes;
 mod _home_efs_file_system_creation;
 
 mod _hub_access_config;
+
+mod _hub_content;
 
 mod _hub_content_dependency;
 

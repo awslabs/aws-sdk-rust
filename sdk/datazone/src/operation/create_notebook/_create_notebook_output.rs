@@ -15,6 +15,8 @@ pub struct CreateNotebookOutput {
     pub cell_order: ::std::vec::Vec<crate::types::CellInformation>,
     /// <p>The status of the notebook.</p>
     pub status: crate::types::NotebookStatus,
+    /// <p>The type of the notebook.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The description of the notebook.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the notebook was created.</p>
@@ -74,6 +76,10 @@ impl CreateNotebookOutput {
     /// <p>The status of the notebook.</p>
     pub fn status(&self) -> &crate::types::NotebookStatus {
         &self.status
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
     }
     /// <p>The description of the notebook.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -141,6 +147,7 @@ impl ::std::fmt::Debug for CreateNotebookOutput {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("cell_order", &self.cell_order);
         formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
@@ -181,6 +188,7 @@ pub struct CreateNotebookOutputBuilder {
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) cell_order: ::std::option::Option<::std::vec::Vec<crate::types::CellInformation>>,
     pub(crate) status: ::std::option::Option<crate::types::NotebookStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -292,6 +300,20 @@ impl CreateNotebookOutputBuilder {
     /// <p>The status of the notebook.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotebookStatus> {
         &self.status
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
     }
     /// <p>The description of the notebook.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -558,6 +580,7 @@ impl CreateNotebookOutputBuilder {
                     "status was not specified but it is required when building CreateNotebookOutput",
                 )
             })?,
+            r#type: self.r#type,
             description: self.description,
             created_at: self.created_at,
             created_by: self.created_by,
@@ -585,6 +608,7 @@ impl ::std::fmt::Debug for CreateNotebookOutputBuilder {
         formatter.field("domain_id", &self.domain_id);
         formatter.field("cell_order", &self.cell_order);
         formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);

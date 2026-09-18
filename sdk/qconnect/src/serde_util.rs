@@ -1454,15 +1454,6 @@ pub(crate) fn external_bedrock_knowledge_base_config_correct_errors(
     builder
 }
 
-pub(crate) fn orchestration_ai_agent_configuration_correct_errors(
-    mut builder: crate::types::builders::OrchestrationAiAgentConfigurationBuilder,
-) -> crate::types::builders::OrchestrationAiAgentConfigurationBuilder {
-    if builder.orchestration_ai_prompt_id.is_none() {
-        builder.orchestration_ai_prompt_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn orchestrator_configuration_entry_correct_errors(
     mut builder: crate::types::builders::OrchestratorConfigurationEntryBuilder,
 ) -> crate::types::builders::OrchestratorConfigurationEntryBuilder {
@@ -1837,6 +1828,24 @@ pub(crate) fn tool_configuration_correct_errors(
     }
     if builder.tool_type.is_none() {
         builder.tool_type = "no value was set".parse::<crate::types::ToolType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delegate_agent_configuration_correct_errors(
+    mut builder: crate::types::builders::DelegateAgentConfigurationBuilder,
+) -> crate::types::builders::DelegateAgentConfigurationBuilder {
+    if builder.agent_target.is_none() {
+        builder.agent_target = Some(crate::types::AgentTarget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn handoff_agent_configuration_correct_errors(
+    mut builder: crate::types::builders::HandoffAgentConfigurationBuilder,
+) -> crate::types::builders::HandoffAgentConfigurationBuilder {
+    if builder.agent_target.is_none() {
+        builder.agent_target = Some(crate::types::AgentTarget::Unknown)
     }
     builder
 }

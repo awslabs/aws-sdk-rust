@@ -299,9 +299,14 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNotebook
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_6.as_str()));
                     }
                 }
-                if let ::std::option::Option::Some(inner_7) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_7) = &_input.r#type {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_7));
+                        query.push_kv("type", &::aws_smithy_http::query::fmt_string(inner_7.as_str()));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
                 ::std::result::Result::Ok(())

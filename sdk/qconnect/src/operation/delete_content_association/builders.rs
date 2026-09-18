@@ -23,7 +23,7 @@ impl crate::operation::delete_content_association::builders::DeleteContentAssoci
 /// Fluent builder constructing a request to `DeleteContentAssociation`.
 ///
 /// <p>Deletes the content association.</p>
-/// <p>For more information about content associations--what they are and when they are used--see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For more information about content associations--what they are and when they are used--see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContentAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

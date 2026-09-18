@@ -40,6 +40,8 @@ pub struct GetApplicationOutput {
     pub iframe_config: ::std::option::Option<crate::types::IframeConfig>,
     /// <p>The type of application.</p>
     pub application_type: ::std::option::Option<crate::types::ApplicationType>,
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub auth_config: ::std::option::Option<crate::types::AuthConfig>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
@@ -120,6 +122,10 @@ impl GetApplicationOutput {
     pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
         self.application_type.as_ref()
     }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn auth_config(&self) -> ::std::option::Option<&crate::types::AuthConfig> {
+        self.auth_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetApplicationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -154,6 +160,7 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     pub(crate) iframe_config: ::std::option::Option<crate::types::IframeConfig>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
+    pub(crate) auth_config: ::std::option::Option<crate::types::AuthConfig>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -428,6 +435,20 @@ impl GetApplicationOutputBuilder {
     pub fn get_application_type(&self) -> &::std::option::Option<crate::types::ApplicationType> {
         &self.application_type
     }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn auth_config(mut self, input: crate::types::AuthConfig) -> Self {
+        self.auth_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn set_auth_config(mut self, input: ::std::option::Option<crate::types::AuthConfig>) -> Self {
+        self.auth_config = input;
+        self
+    }
+    /// <p>The authentication settings that Connect Customer uses when calling the external application.</p>
+    pub fn get_auth_config(&self) -> &::std::option::Option<crate::types::AuthConfig> {
+        &self.auth_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -457,6 +478,7 @@ impl GetApplicationOutputBuilder {
             application_config: self.application_config,
             iframe_config: self.iframe_config,
             application_type: self.application_type,
+            auth_config: self.auth_config,
             _request_id: self._request_id,
         }
     }

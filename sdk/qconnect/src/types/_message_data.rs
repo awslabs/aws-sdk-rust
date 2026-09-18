@@ -2,8 +2,10 @@
 
 /// <p>The message data.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum MessageData {
+    /// <p>The message data as a structured JSON document. This is the payload for a message of type <code>DATA</code>, and must be a JSON object at the root level.</p>
+    Data(::aws_smithy_types::Document),
     /// <p>The message data in text type.</p>
     Text(crate::types::TextMessage),
     /// <p>The result of tool usage in the message.</p>
@@ -19,6 +21,19 @@ pub enum MessageData {
     Unknown,
 }
 impl MessageData {
+    /// Tries to convert the enum instance into [`Data`](crate::types::MessageData::Data), extracting the inner [`Document`](::aws_smithy_types::Document).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_data(&self) -> ::std::result::Result<&::aws_smithy_types::Document, &Self> {
+        if let MessageData::Data(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Data`](crate::types::MessageData::Data).
+    pub fn is_data(&self) -> bool {
+        self.as_data().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::MessageData::Text), extracting the inner [`TextMessage`](crate::types::TextMessage).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&crate::types::TextMessage, &Self> {
@@ -48,5 +63,15 @@ impl MessageData {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for MessageData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            MessageData::Data(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            MessageData::Text(val) => f.debug_tuple("Text").field(&val).finish(),
+            MessageData::ToolUseResult(val) => f.debug_tuple("ToolUseResult").field(&val).finish(),
+            MessageData::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

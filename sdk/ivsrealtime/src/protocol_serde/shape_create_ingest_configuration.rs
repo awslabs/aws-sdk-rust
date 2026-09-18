@@ -344,6 +344,61 @@ pub fn de_create_ingest_configuration_http_response(
         let mut output = crate::operation::create_ingest_configuration::builders::CreateIngestConfigurationOutputBuilder::default();
         output = crate::protocol_serde::shape_create_ingest_configuration::de_create_ingest_configuration(_response_body, output)
             .map_err(crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled)?;
+        output = output.set_access_control_allow_origin(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_access_control_allow_origin_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                        "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                    )
+                },
+            )?,
+        );
+        output = output.set_access_control_expose_headers(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_access_control_expose_headers_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                        "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                    )
+                },
+            )?,
+        );
+        output = output.set_cache_control(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_cache_control_header(_response_headers).map_err(|_| {
+                crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                    "Failed to parse cacheControl from header `Cache-Control",
+                )
+            })?,
+        );
+        output = output.set_content_security_policy(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_content_security_policy_header(_response_headers).map_err(|_| {
+                crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                )
+            })?,
+        );
+        output = output.set_strict_transport_security(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_strict_transport_security_header(_response_headers).map_err(
+                |_| {
+                    crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                        "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                    )
+                },
+            )?,
+        );
+        output = output.set_x_content_type_options(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                )
+            })?,
+        );
+        output = output.set_x_frame_options(
+            crate::protocol_serde::shape_create_ingest_configuration_output::de_x_frame_options_header(_response_headers).map_err(|_| {
+                crate::operation::create_ingest_configuration::CreateIngestConfigurationError::unhandled(
+                    "Failed to parse xFrameOptions from header `X-Frame-Options",
+                )
+            })?,
+        );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })

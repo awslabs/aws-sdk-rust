@@ -34,6 +34,12 @@ pub struct SpanAttributes {
     pub ai_agent_invoker: ::std::option::Option<::std::string::String>,
     /// <p>AI agent orchestrator use case</p>
     pub ai_agent_orchestrator_use_case: ::std::option::Option<::std::string::String>,
+    /// <p>How the orchestrator engaged the collaborator agent. Present on spans that invoke a collaborator agent.</p>
+    pub interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
+    /// <p>Identifier of the collaborator agent being invoked. For first-party collaborators this is the Amazon Connect AI agent ID; for third-party collaborators this is the external application ID.</p>
+    pub target_agent_id: ::std::option::Option<::std::string::String>,
+    /// <p>Reason a sub-agent returned control to the calling agent. Present on return_to_agent spans.</p>
+    pub return_reason: ::std::option::Option<crate::types::ReturnReason>,
     /// <p>LLM model ID for request (e.g., anthropic.claude-3-sonnet)</p>
     pub request_model: ::std::option::Option<::std::string::String>,
     /// <p>Maximum tokens configured for generation</p>
@@ -137,6 +143,18 @@ impl SpanAttributes {
     /// <p>AI agent orchestrator use case</p>
     pub fn ai_agent_orchestrator_use_case(&self) -> ::std::option::Option<&str> {
         self.ai_agent_orchestrator_use_case.as_deref()
+    }
+    /// <p>How the orchestrator engaged the collaborator agent. Present on spans that invoke a collaborator agent.</p>
+    pub fn interaction_mode(&self) -> ::std::option::Option<&crate::types::InteractionMode> {
+        self.interaction_mode.as_ref()
+    }
+    /// <p>Identifier of the collaborator agent being invoked. For first-party collaborators this is the Amazon Connect AI agent ID; for third-party collaborators this is the external application ID.</p>
+    pub fn target_agent_id(&self) -> ::std::option::Option<&str> {
+        self.target_agent_id.as_deref()
+    }
+    /// <p>Reason a sub-agent returned control to the calling agent. Present on return_to_agent spans.</p>
+    pub fn return_reason(&self) -> ::std::option::Option<&crate::types::ReturnReason> {
+        self.return_reason.as_ref()
     }
     /// <p>LLM model ID for request (e.g., anthropic.claude-3-sonnet)</p>
     pub fn request_model(&self) -> ::std::option::Option<&str> {
@@ -259,6 +277,9 @@ pub struct SpanAttributesBuilder {
     pub(crate) ai_agent_version: ::std::option::Option<i32>,
     pub(crate) ai_agent_invoker: ::std::option::Option<::std::string::String>,
     pub(crate) ai_agent_orchestrator_use_case: ::std::option::Option<::std::string::String>,
+    pub(crate) interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
+    pub(crate) target_agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) return_reason: ::std::option::Option<crate::types::ReturnReason>,
     pub(crate) request_model: ::std::option::Option<::std::string::String>,
     pub(crate) request_max_tokens: ::std::option::Option<i32>,
     pub(crate) temperature: ::std::option::Option<f32>,
@@ -491,6 +512,48 @@ impl SpanAttributesBuilder {
     /// <p>AI agent orchestrator use case</p>
     pub fn get_ai_agent_orchestrator_use_case(&self) -> &::std::option::Option<::std::string::String> {
         &self.ai_agent_orchestrator_use_case
+    }
+    /// <p>How the orchestrator engaged the collaborator agent. Present on spans that invoke a collaborator agent.</p>
+    pub fn interaction_mode(mut self, input: crate::types::InteractionMode) -> Self {
+        self.interaction_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How the orchestrator engaged the collaborator agent. Present on spans that invoke a collaborator agent.</p>
+    pub fn set_interaction_mode(mut self, input: ::std::option::Option<crate::types::InteractionMode>) -> Self {
+        self.interaction_mode = input;
+        self
+    }
+    /// <p>How the orchestrator engaged the collaborator agent. Present on spans that invoke a collaborator agent.</p>
+    pub fn get_interaction_mode(&self) -> &::std::option::Option<crate::types::InteractionMode> {
+        &self.interaction_mode
+    }
+    /// <p>Identifier of the collaborator agent being invoked. For first-party collaborators this is the Amazon Connect AI agent ID; for third-party collaborators this is the external application ID.</p>
+    pub fn target_agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_agent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Identifier of the collaborator agent being invoked. For first-party collaborators this is the Amazon Connect AI agent ID; for third-party collaborators this is the external application ID.</p>
+    pub fn set_target_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_agent_id = input;
+        self
+    }
+    /// <p>Identifier of the collaborator agent being invoked. For first-party collaborators this is the Amazon Connect AI agent ID; for third-party collaborators this is the external application ID.</p>
+    pub fn get_target_agent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_agent_id
+    }
+    /// <p>Reason a sub-agent returned control to the calling agent. Present on return_to_agent spans.</p>
+    pub fn return_reason(mut self, input: crate::types::ReturnReason) -> Self {
+        self.return_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Reason a sub-agent returned control to the calling agent. Present on return_to_agent spans.</p>
+    pub fn set_return_reason(mut self, input: ::std::option::Option<crate::types::ReturnReason>) -> Self {
+        self.return_reason = input;
+        self
+    }
+    /// <p>Reason a sub-agent returned control to the calling agent. Present on return_to_agent spans.</p>
+    pub fn get_return_reason(&self) -> &::std::option::Option<crate::types::ReturnReason> {
+        &self.return_reason
     }
     /// <p>LLM model ID for request (e.g., anthropic.claude-3-sonnet)</p>
     pub fn request_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -834,6 +897,9 @@ impl SpanAttributesBuilder {
             ai_agent_version: self.ai_agent_version,
             ai_agent_invoker: self.ai_agent_invoker,
             ai_agent_orchestrator_use_case: self.ai_agent_orchestrator_use_case,
+            interaction_mode: self.interaction_mode,
+            target_agent_id: self.target_agent_id,
+            return_reason: self.return_reason,
             request_model: self.request_model,
             request_max_tokens: self.request_max_tokens,
             temperature: self.temperature,

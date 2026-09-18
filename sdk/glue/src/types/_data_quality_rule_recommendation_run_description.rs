@@ -14,6 +14,9 @@ pub struct DataQualityRuleRecommendationRunDescription {
     pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>The name of the ruleset that was created by the recommendation run.</p>
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
 }
 impl DataQualityRuleRecommendationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
@@ -36,6 +39,11 @@ impl DataQualityRuleRecommendationRunDescription {
     pub fn created_ruleset_name(&self) -> ::std::option::Option<&str> {
         self.created_ruleset_name.as_deref()
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(&self) -> ::std::option::Option<&crate::types::RecommendationMode> {
+        self.recommendation_mode.as_ref()
+    }
 }
 impl DataQualityRuleRecommendationRunDescription {
     /// Creates a new builder-style object to manufacture [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
@@ -53,6 +61,7 @@ pub struct DataQualityRuleRecommendationRunDescriptionBuilder {
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
     pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
 }
 impl DataQualityRuleRecommendationRunDescriptionBuilder {
     /// <p>The unique run identifier associated with this run.</p>
@@ -125,6 +134,23 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     pub fn get_created_ruleset_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_ruleset_name
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(mut self, input: crate::types::RecommendationMode) -> Self {
+        self.recommendation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn set_recommendation_mode(mut self, input: ::std::option::Option<crate::types::RecommendationMode>) -> Self {
+        self.recommendation_mode = input;
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn get_recommendation_mode(&self) -> &::std::option::Option<crate::types::RecommendationMode> {
+        &self.recommendation_mode
+    }
     /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
     pub fn build(self) -> crate::types::DataQualityRuleRecommendationRunDescription {
         crate::types::DataQualityRuleRecommendationRunDescription {
@@ -133,6 +159,7 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
             started_on: self.started_on,
             data_source: self.data_source,
             created_ruleset_name: self.created_ruleset_name,
+            recommendation_mode: self.recommendation_mode,
         }
     }
 }

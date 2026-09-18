@@ -3,6 +3,8 @@ pub use crate::types::_category_properties::CategoryPropertiesBuilder;
 
 pub use crate::types::_input_data_config::InputDataConfigBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
 pub use crate::types::_language_model::LanguageModelBuilder;
 
 pub use crate::types::_call_analytics_job::CallAnalyticsJobBuilder;

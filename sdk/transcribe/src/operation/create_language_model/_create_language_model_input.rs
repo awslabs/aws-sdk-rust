@@ -16,6 +16,8 @@ pub struct CreateLanguageModelInput {
     /// <p>Contains the Amazon S3 location of the training data you want to use to create a new custom language model, and permissions to access this location.</p>
     /// <p>When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code>, which is the Amazon S3 location of your training data, and <code>DataAccessRoleArn</code>, which is the Amazon Resource Name (ARN) of the role that has permission to access your specified Amazon S3 location. You can optionally include <code>TuningDataS3Uri</code>, which is the Amazon S3 location of your tuning data. If you specify different Amazon S3 locations for training and tuning data, the ARN you use must have permissions to access both locations.</p>
     pub input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
+    /// <p>Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -42,6 +44,10 @@ impl CreateLanguageModelInput {
     pub fn input_data_config(&self) -> ::std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
+    /// <p>Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
     /// <p>Adds one or more custom tags, each in the form of a key:value pair, to a new custom language model at the time you create this new model.</p>
     /// <p>To learn more about using tags with Amazon Transcribe, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.</p>
     ///
@@ -65,6 +71,7 @@ pub struct CreateLanguageModelInputBuilder {
     pub(crate) base_model_name: ::std::option::Option<crate::types::BaseModelName>,
     pub(crate) model_name: ::std::option::Option<::std::string::String>,
     pub(crate) input_data_config: ::std::option::Option<crate::types::InputDataConfig>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateLanguageModelInputBuilder {
@@ -143,6 +150,20 @@ impl CreateLanguageModelInputBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::InputDataConfig> {
         &self.input_data_config
     }
+    /// <p>Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>Specifies the encryption configuration for your custom language model. Your model artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key is not supplied.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -176,6 +197,7 @@ impl CreateLanguageModelInputBuilder {
             base_model_name: self.base_model_name,
             model_name: self.model_name,
             input_data_config: self.input_data_config,
+            encryption_configuration: self.encryption_configuration,
             tags: self.tags,
         })
     }

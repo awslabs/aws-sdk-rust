@@ -253,17 +253,17 @@ impl SendMessageFluentBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_metadata()
     }
-    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    /// <p>Request identifier from the origin system, used for end-to-end tracing across spans.</p>
     pub fn origin_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.origin_request_id(input.into());
         self
     }
-    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    /// <p>Request identifier from the origin system, used for end-to-end tracing across spans.</p>
     pub fn set_origin_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_origin_request_id(input);
         self
     }
-    /// Request identifier from the origin system, used for end-to-end tracing across spans.
+    /// <p>Request identifier from the origin system, used for end-to-end tracing across spans.</p>
     pub fn get_origin_request_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_origin_request_id()
     }

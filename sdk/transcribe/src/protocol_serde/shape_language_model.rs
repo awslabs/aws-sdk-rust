@@ -78,6 +78,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "EncryptionConfiguration" => {
+                            builder = builder.set_encryption_configuration(
+                                crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

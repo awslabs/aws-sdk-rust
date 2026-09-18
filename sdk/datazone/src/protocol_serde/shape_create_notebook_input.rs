@@ -35,5 +35,8 @@ pub fn ser_create_notebook_input_input(
         }
         object_10.finish();
     }
+    if let Some(var_13) = &input.r#type {
+        object.key("type").string(var_13.as_str());
+    }
     Ok(())
 }

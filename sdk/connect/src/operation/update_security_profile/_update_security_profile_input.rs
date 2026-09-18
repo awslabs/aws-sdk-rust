@@ -23,6 +23,8 @@ pub struct UpdateSecurityProfileInput {
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of Flow Modules an AI Agent can invoke as a tool</p>
     pub allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub allowed_ai_agents: ::std::option::Option<::std::vec::Vec<crate::types::AiAgent>>,
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
@@ -77,6 +79,12 @@ impl UpdateSecurityProfileInput {
     pub fn allowed_flow_modules(&self) -> &[crate::types::FlowModule] {
         self.allowed_flow_modules.as_deref().unwrap_or_default()
     }
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allowed_ai_agents.is_none()`.
+    pub fn allowed_ai_agents(&self) -> &[crate::types::AiAgent] {
+        self.allowed_ai_agents.as_deref().unwrap_or_default()
+    }
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub fn granular_access_control_configuration(&self) -> ::std::option::Option<&crate::types::GranularAccessControlConfiguration> {
         self.granular_access_control_configuration.as_ref()
@@ -103,6 +111,7 @@ pub struct UpdateSecurityProfileInputBuilder {
     pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) allowed_flow_modules: ::std::option::Option<::std::vec::Vec<crate::types::FlowModule>>,
+    pub(crate) allowed_ai_agents: ::std::option::Option<::std::vec::Vec<crate::types::AiAgent>>,
     pub(crate) granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
 }
 impl UpdateSecurityProfileInputBuilder {
@@ -293,6 +302,26 @@ impl UpdateSecurityProfileInputBuilder {
     pub fn get_allowed_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
         &self.allowed_flow_modules
     }
+    /// Appends an item to `allowed_ai_agents`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_ai_agents`](Self::set_allowed_ai_agents).
+    ///
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn allowed_ai_agents(mut self, input: crate::types::AiAgent) -> Self {
+        let mut v = self.allowed_ai_agents.unwrap_or_default();
+        v.push(input);
+        self.allowed_ai_agents = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn set_allowed_ai_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AiAgent>>) -> Self {
+        self.allowed_ai_agents = input;
+        self
+    }
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn get_allowed_ai_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AiAgent>> {
+        &self.allowed_ai_agents
+    }
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub fn granular_access_control_configuration(mut self, input: crate::types::GranularAccessControlConfiguration) -> Self {
         self.granular_access_control_configuration = ::std::option::Option::Some(input);
@@ -326,6 +355,7 @@ impl UpdateSecurityProfileInputBuilder {
             hierarchy_restricted_resources: self.hierarchy_restricted_resources,
             allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
             allowed_flow_modules: self.allowed_flow_modules,
+            allowed_ai_agents: self.allowed_ai_agents,
             granular_access_control_configuration: self.granular_access_control_configuration,
         })
     }

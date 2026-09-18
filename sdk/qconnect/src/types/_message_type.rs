@@ -12,6 +12,7 @@
 /// ```text
 /// # let messagetype = unimplemented!();
 /// match messagetype {
+///     MessageType::Data => { /* ... */ },
 ///     MessageType::Text => { /* ... */ },
 ///     MessageType::ToolUseResult => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum MessageType {
     #[allow(missing_docs)] // documentation missing in model
+    Data,
+    #[allow(missing_docs)] // documentation missing in model
     Text,
     #[allow(missing_docs)] // documentation missing in model
     ToolUseResult,
@@ -53,6 +56,7 @@ pub enum MessageType {
 impl ::std::convert::From<&str> for MessageType {
     fn from(s: &str) -> Self {
         match s {
+            "DATA" => MessageType::Data,
             "TEXT" => MessageType::Text,
             "TOOL_USE_RESULT" => MessageType::ToolUseResult,
             other => MessageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl MessageType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MessageType::Data => "DATA",
             MessageType::Text => "TEXT",
             MessageType::ToolUseResult => "TOOL_USE_RESULT",
             MessageType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl MessageType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEXT", "TOOL_USE_RESULT"]
+        &["DATA", "TEXT", "TOOL_USE_RESULT"]
     }
 }
 impl ::std::convert::AsRef<str> for MessageType {
@@ -100,6 +105,7 @@ impl MessageType {
 impl ::std::fmt::Display for MessageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MessageType::Data => write!(f, "DATA"),
             MessageType::Text => write!(f, "TEXT"),
             MessageType::ToolUseResult => write!(f, "TOOL_USE_RESULT"),
             MessageType::Unknown(value) => write!(f, "{value}"),

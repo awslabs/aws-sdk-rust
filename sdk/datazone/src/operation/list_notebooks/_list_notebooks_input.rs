@@ -15,6 +15,8 @@ pub struct ListNotebooksInput {
     pub sort_by: ::std::option::Option<crate::types::SortKey>,
     /// <p>The status to filter notebooks by.</p>
     pub status: ::std::option::Option<crate::types::NotebookStatus>,
+    /// <p>The type to filter notebooks by.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>When the number of notebooks is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notebooks, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotebooks</code> to list the next set of notebooks.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -43,6 +45,10 @@ impl ListNotebooksInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::NotebookStatus> {
         self.status.as_ref()
     }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
+    }
     /// <p>When the number of notebooks is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notebooks, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotebooks</code> to list the next set of notebooks.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -65,6 +71,7 @@ pub struct ListNotebooksInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) sort_by: ::std::option::Option<crate::types::SortKey>,
     pub(crate) status: ::std::option::Option<crate::types::NotebookStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListNotebooksInputBuilder {
@@ -154,6 +161,20 @@ impl ListNotebooksInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotebookStatus> {
         &self.status
     }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// <p>When the number of notebooks is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notebooks, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotebooks</code> to list the next set of notebooks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -179,6 +200,7 @@ impl ListNotebooksInputBuilder {
             sort_order: self.sort_order,
             sort_by: self.sort_by,
             status: self.status,
+            r#type: self.r#type,
             next_token: self.next_token,
         })
     }

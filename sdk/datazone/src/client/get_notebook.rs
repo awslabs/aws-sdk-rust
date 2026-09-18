@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`domain_id(String)`](crate::operation::get_notebook::GetNotebookOutput::domain_id): <p>The identifier of the Amazon SageMaker Unified Studio domain.</p>
     ///   - [`cell_order(Vec::<CellInformation>)`](crate::operation::get_notebook::GetNotebookOutput::cell_order): <p>The ordered list of cells in the notebook.</p>
     ///   - [`status(NotebookStatus)`](crate::operation::get_notebook::GetNotebookOutput::status): <p>The status of the notebook.</p>
+    ///   - [`r#type(Option<NotebookType>)`](crate::operation::get_notebook::GetNotebookOutput::type): <p>The type of the notebook.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_notebook::GetNotebookOutput::description): <p>The description of the notebook.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_notebook::GetNotebookOutput::created_at): <p>The timestamp of when the notebook was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::get_notebook::GetNotebookOutput::created_by): <p>The identifier of the user who created the notebook.</p>

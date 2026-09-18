@@ -117,6 +117,8 @@ pub(crate) mod shape_create_encoder_configuration_input;
 
 pub(crate) mod shape_create_ingest_configuration_input;
 
+pub(crate) mod shape_create_ingest_configuration_output;
+
 pub(crate) mod shape_create_participant_token_input;
 
 pub(crate) mod shape_create_stage_input;
@@ -196,6 +198,8 @@ pub(crate) mod shape_stop_participant_replication_output;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_update_ingest_configuration_input;
+
+pub(crate) mod shape_update_ingest_configuration_output;
 
 pub(crate) mod shape_update_stage_input;
 

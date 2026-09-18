@@ -18,6 +18,7 @@
 ///     ResourceType::ExperimentTrialComponent => { /* ... */ },
 ///     ResourceType::FeatureGroup => { /* ... */ },
 ///     ResourceType::FeatureMetadata => { /* ... */ },
+///     ResourceType::HubContent => { /* ... */ },
 ///     ResourceType::HyperParameterTuningJob => { /* ... */ },
 ///     ResourceType::Image => { /* ... */ },
 ///     ResourceType::ImageVersion => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     FeatureMetadata,
     #[allow(missing_docs)] // documentation missing in model
+    HubContent,
+    #[allow(missing_docs)] // documentation missing in model
     HyperParameterTuningJob,
     #[allow(missing_docs)] // documentation missing in model
     Image,
@@ -110,6 +113,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "ExperimentTrialComponent" => ResourceType::ExperimentTrialComponent,
             "FeatureGroup" => ResourceType::FeatureGroup,
             "FeatureMetadata" => ResourceType::FeatureMetadata,
+            "HubContent" => ResourceType::HubContent,
             "HyperParameterTuningJob" => ResourceType::HyperParameterTuningJob,
             "Image" => ResourceType::Image,
             "ImageVersion" => ResourceType::ImageVersion,
@@ -144,6 +148,7 @@ impl ResourceType {
             ResourceType::ExperimentTrialComponent => "ExperimentTrialComponent",
             ResourceType::FeatureGroup => "FeatureGroup",
             ResourceType::FeatureMetadata => "FeatureMetadata",
+            ResourceType::HubContent => "HubContent",
             ResourceType::HyperParameterTuningJob => "HyperParameterTuningJob",
             ResourceType::Image => "Image",
             ResourceType::ImageVersion => "ImageVersion",
@@ -169,6 +174,7 @@ impl ResourceType {
             "ExperimentTrialComponent",
             "FeatureGroup",
             "FeatureMetadata",
+            "HubContent",
             "HyperParameterTuningJob",
             "Image",
             "ImageVersion",
@@ -211,6 +217,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ExperimentTrialComponent => write!(f, "ExperimentTrialComponent"),
             ResourceType::FeatureGroup => write!(f, "FeatureGroup"),
             ResourceType::FeatureMetadata => write!(f, "FeatureMetadata"),
+            ResourceType::HubContent => write!(f, "HubContent"),
             ResourceType::HyperParameterTuningJob => write!(f, "HyperParameterTuningJob"),
             ResourceType::Image => write!(f, "Image"),
             ResourceType::ImageVersion => write!(f, "ImageVersion"),

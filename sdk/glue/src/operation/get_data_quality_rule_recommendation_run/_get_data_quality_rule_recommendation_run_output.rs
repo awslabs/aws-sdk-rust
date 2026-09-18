@@ -8,7 +8,7 @@ pub struct GetDataQualityRuleRecommendationRunOutput {
     pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The data source (an Glue table) associated with this run.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub number_of_workers: ::std::option::Option<i32>,
@@ -34,6 +34,9 @@ pub struct GetDataQualityRuleRecommendationRunOutput {
     pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Additional run options you can specify for a recommendation run.</p>
     pub additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRuleRecommendationRunOutput {
@@ -45,7 +48,7 @@ impl GetDataQualityRuleRecommendationRunOutput {
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -97,6 +100,11 @@ impl GetDataQualityRuleRecommendationRunOutput {
     pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
         self.additional_run_options.as_ref()
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(&self) -> ::std::option::Option<&crate::types::RecommendationMode> {
+        self.recommendation_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDataQualityRuleRecommendationRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -129,6 +137,7 @@ pub struct GetDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    pub(crate) recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRuleRecommendationRunOutputBuilder {
@@ -160,17 +169,17 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
@@ -345,6 +354,23 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
         &self.additional_run_options
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(mut self, input: crate::types::RecommendationMode) -> Self {
+        self.recommendation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn set_recommendation_mode(mut self, input: ::std::option::Option<crate::types::RecommendationMode>) -> Self {
+        self.recommendation_mode = input;
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn get_recommendation_mode(&self) -> &::std::option::Option<crate::types::RecommendationMode> {
+        &self.recommendation_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -372,6 +398,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
             created_ruleset_name: self.created_ruleset_name,
             data_quality_security_configuration: self.data_quality_security_configuration,
             additional_run_options: self.additional_run_options,
+            recommendation_mode: self.recommendation_mode,
             _request_id: self._request_id,
         }
     }

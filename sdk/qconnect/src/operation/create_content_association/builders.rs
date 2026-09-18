@@ -31,7 +31,7 @@ impl crate::operation::create_content_association::builders::CreateContentAssoci
 /// <li>
 /// <p>You can associate a step-by-step guide with multiple content resources.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContentAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

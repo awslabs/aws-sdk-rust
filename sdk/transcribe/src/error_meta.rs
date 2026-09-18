@@ -1298,6 +1298,34 @@ impl From<crate::operation::update_call_analytics_category::UpdateCallAnalyticsC
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_language_model::UpdateLanguageModelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_language_model::UpdateLanguageModelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_language_model::UpdateLanguageModelError> for Error {
+    fn from(err: crate::operation::update_language_model::UpdateLanguageModelError) -> Self {
+        match err {
+            crate::operation::update_language_model::UpdateLanguageModelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_language_model::UpdateLanguageModelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_language_model::UpdateLanguageModelError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_language_model::UpdateLanguageModelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_language_model::UpdateLanguageModelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_language_model::UpdateLanguageModelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyError, R>>
     for Error
 where
@@ -1379,6 +1407,7 @@ impl From<crate::operation::update_vocabulary_filter::UpdateVocabularyFilterErro
     fn from(err: crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError) -> Self {
         match err {
             crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError::InternalFailureException(inner) => {
                 Error::InternalFailureException(inner)
             }

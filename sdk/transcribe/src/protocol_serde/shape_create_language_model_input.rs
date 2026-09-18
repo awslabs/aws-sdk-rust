@@ -18,17 +18,23 @@ pub fn ser_create_language_model_input_input(
         crate::protocol_serde::shape_input_data_config::ser_input_data_config(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("Tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.tags {
+        let mut array_9 = object.key("Tags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
     Ok(())
 }

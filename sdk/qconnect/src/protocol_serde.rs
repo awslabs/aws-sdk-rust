@@ -717,6 +717,8 @@ pub(crate) mod shape_hierarchical_chunking_configuration;
 
 pub(crate) mod shape_knowledge_base_association_data;
 
+pub(crate) mod shape_multi_agent_configuration;
+
 pub(crate) mod shape_or_conditions;
 
 pub(crate) mod shape_push_adm_message_template_content;
@@ -767,11 +769,19 @@ pub(crate) mod shape_data_details;
 
 pub(crate) mod shape_data_reference;
 
+pub(crate) mod shape_delegate_agent_configuration;
+
 pub(crate) mod shape_document_text;
+
+pub(crate) mod shape_handoff_agent_configuration;
 
 pub(crate) mod shape_hierarchical_chunking_level_configuration;
 
+pub(crate) mod shape_json_document_list;
+
 pub(crate) mod shape_message_template_body_content_provider;
+
+pub(crate) mod shape_multi_agent_configuration_list;
 
 pub(crate) mod shape_object_fields_list;
 
@@ -803,6 +813,8 @@ pub(crate) mod shape_user_interaction_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
 
+pub(crate) mod shape_agent_target;
+
 pub(crate) mod shape_case_summarization_chunk_data_details;
 
 pub(crate) mod shape_citation_span;
@@ -830,6 +842,8 @@ pub(crate) mod shape_highlights;
 pub(crate) mod shape_intent_detected_data_details;
 
 pub(crate) mod shape_knowledge_base_association_configuration_data;
+
+pub(crate) mod shape_multi_agent_instruction;
 
 pub(crate) mod shape_notes_chunk_data_details;
 
@@ -886,5 +900,7 @@ pub(crate) mod shape_guardrail_policy_result;
 pub(crate) mod shape_span_citation_list;
 
 pub(crate) mod shape_tool_example_list;
+
+pub(crate) mod shape_multi_agent_example_list;
 
 pub(crate) mod shape_span_citation;

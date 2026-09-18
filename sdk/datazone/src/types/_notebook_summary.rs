@@ -14,6 +14,8 @@ pub struct NotebookSummary {
     pub domain_id: ::std::string::String,
     /// <p>The status of the notebook.</p>
     pub status: crate::types::NotebookStatus,
+    /// <p>The type of the notebook.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The description of the notebook.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the notebook was created.</p>
@@ -50,6 +52,10 @@ impl NotebookSummary {
     pub fn status(&self) -> &crate::types::NotebookStatus {
         &self.status
     }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
+    }
     /// <p>The description of the notebook.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -79,6 +85,7 @@ impl ::std::fmt::Debug for NotebookSummary {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("domain_id", &self.domain_id);
         formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
@@ -103,6 +110,7 @@ pub struct NotebookSummaryBuilder {
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::NotebookStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -184,6 +192,20 @@ impl NotebookSummaryBuilder {
     /// <p>The status of the notebook.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotebookStatus> {
         &self.status
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
     }
     /// <p>The description of the notebook.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -294,6 +316,7 @@ impl NotebookSummaryBuilder {
                     "status was not specified but it is required when building NotebookSummary",
                 )
             })?,
+            r#type: self.r#type,
             description: self.description,
             created_at: self.created_at,
             created_by: self.created_by,
@@ -310,6 +333,7 @@ impl ::std::fmt::Debug for NotebookSummaryBuilder {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("domain_id", &self.domain_id);
         formatter.field("status", &self.status);
+        formatter.field("r#type", &self.r#type);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);

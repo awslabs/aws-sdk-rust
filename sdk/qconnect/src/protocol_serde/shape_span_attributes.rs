@@ -126,6 +126,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "interactionMode" => {
+                            builder = builder.set_interaction_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::InteractionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "targetAgentId" => {
+                            builder = builder.set_target_agent_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "returnReason" => {
+                            builder = builder.set_return_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ReturnReason::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "requestModel" => {
                             builder = builder.set_request_model(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

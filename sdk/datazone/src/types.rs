@@ -51,6 +51,8 @@ pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTarg
 
 pub use crate::types::_notebook_status::NotebookStatus;
 
+pub use crate::types::_notebook_type::NotebookType;
+
 pub use crate::types::_environment_config::EnvironmentConfig;
 
 pub use crate::types::_notebook_error::NotebookError;
@@ -1456,6 +1458,8 @@ mod _notebook_run_summary;
 mod _notebook_status;
 
 mod _notebook_summary;
+
+mod _notebook_type;
 
 mod _notification_output;
 

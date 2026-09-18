@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::data_source): <p>The data source (an Glue table) associated with this run.</p>
-    ///   - [`role(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::role): <p>An IAM role supplied to encrypt the results of the run.</p>
+    ///   - [`role(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::role): <p>The IAM role that Glue assumes to access resources for the run.</p>
     ///   - [`number_of_workers(Option<i32>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::number_of_workers): <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     ///   - [`timeout(Option<i32>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::timeout): <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     ///   - [`status(Option<TaskStatusType>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::status): <p>The status for this run.</p>
@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`created_ruleset_name(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::created_ruleset_name): <p>The name of the ruleset that was created by the run.</p>
     ///   - [`data_quality_security_configuration(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::data_quality_security_configuration): <p>The name of the security configuration created with the data quality encryption option.</p>
     ///   - [`additional_run_options(Option<DataQualityRuleRecommendationRunAdditionalRunOptions>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::additional_run_options): <p>Additional run options you can specify for a recommendation run.</p>
+    ///   - [`recommendation_mode(Option<RecommendationMode>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::recommendation_mode): <p>The mode that Glue Data Quality uses to recommend rules.</p> <p>The default is <code>BASIC</code>.</p>
     /// - On failure, responds with [`SdkError<GetDataQualityRuleRecommendationRunError>`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunError)
     pub fn get_data_quality_rule_recommendation_run(
         &self,

@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NotebookType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

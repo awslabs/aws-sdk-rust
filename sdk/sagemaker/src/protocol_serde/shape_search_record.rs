@@ -105,6 +105,9 @@ where
                         "Job" => {
                             builder = builder.set_job(crate::protocol_serde::shape_job::de_job(tokens, _value, depth + 1)?);
                         }
+                        "HubContent" => {
+                            builder = builder.set_hub_content(crate::protocol_serde::shape_hub_content::de_hub_content(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

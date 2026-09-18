@@ -288,6 +288,25 @@ impl UpdateSecurityProfileFluentBuilder {
     pub fn get_allowed_flow_modules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FlowModule>> {
         self.inner.get_allowed_flow_modules()
     }
+    ///
+    /// Appends an item to `AllowedAIAgents`.
+    ///
+    /// To override the contents of this collection use [`set_allowed_ai_agents`](Self::set_allowed_ai_agents).
+    ///
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn allowed_ai_agents(mut self, input: crate::types::AiAgent) -> Self {
+        self.inner = self.inner.allowed_ai_agents(input);
+        self
+    }
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn set_allowed_ai_agents(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AiAgent>>) -> Self {
+        self.inner = self.inner.set_allowed_ai_agents(input);
+        self
+    }
+    /// <p>A list of AI agents that the security profile will give access to.</p>
+    pub fn get_allowed_ai_agents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AiAgent>> {
+        self.inner.get_allowed_ai_agents()
+    }
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub fn granular_access_control_configuration(mut self, input: crate::types::GranularAccessControlConfiguration) -> Self {
         self.inner = self.inner.granular_access_control_configuration(input);

@@ -154,6 +154,9 @@ pub(crate) fn de_get_application(
                             .transpose()?,
                     );
                 }
+                "AuthConfig" => {
+                    builder = builder.set_auth_config(crate::protocol_serde::shape_auth_config::de_auth_config(tokens, _value, depth + 1)?);
+                }
                 "CreatedTime" => {
                     builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

@@ -127,17 +127,20 @@ impl StartDataQualityRuleRecommendationRunFluentBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         self.inner.get_data_source()
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role(input.into());
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role(input);
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_role()
     }
@@ -227,5 +230,22 @@ impl StartDataQualityRuleRecommendationRunFluentBuilder {
     /// <p>Additional run options you can specify for a recommendation run.</p>
     pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
         self.inner.get_additional_run_options()
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(mut self, input: crate::types::RecommendationMode) -> Self {
+        self.inner = self.inner.recommendation_mode(input);
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn set_recommendation_mode(mut self, input: ::std::option::Option<crate::types::RecommendationMode>) -> Self {
+        self.inner = self.inner.set_recommendation_mode(input);
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn get_recommendation_mode(&self) -> &::std::option::Option<crate::types::RecommendationMode> {
+        self.inner.get_recommendation_mode()
     }
 }

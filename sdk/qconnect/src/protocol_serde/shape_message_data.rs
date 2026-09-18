@@ -16,6 +16,9 @@ pub fn ser_message_data(
             crate::protocol_serde::shape_tool_use_result_data::ser_tool_use_result_data(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::MessageData::Data(inner) => {
+            object_2.key("data").document(inner);
+        }
         crate::types::MessageData::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("MessageData")),
     }
     Ok(())
@@ -66,6 +69,10 @@ where
                             crate::protocol_serde::shape_tool_use_result_data::de_tool_use_result_data(tokens, _value, depth + 1)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolUseResult' cannot be null"),
                             )?,
+                        )),
+                        "data" => Some(crate::types::MessageData::Data(
+                            Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?)
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'data' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

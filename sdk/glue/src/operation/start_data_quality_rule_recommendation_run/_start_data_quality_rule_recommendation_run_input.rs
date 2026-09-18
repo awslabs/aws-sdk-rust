@@ -6,7 +6,8 @@
 pub struct StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub number_of_workers: ::std::option::Option<i32>,
@@ -20,13 +21,17 @@ pub struct StartDataQualityRuleRecommendationRunInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Additional run options you can specify for a recommendation run.</p>
     pub additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -54,6 +59,11 @@ impl StartDataQualityRuleRecommendationRunInput {
     pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
         self.additional_run_options.as_ref()
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(&self) -> ::std::option::Option<&crate::types::RecommendationMode> {
+        self.recommendation_mode.as_ref()
+    }
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
@@ -74,6 +84,7 @@ pub struct StartDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    pub(crate) recommendation_mode: ::std::option::Option<crate::types::RecommendationMode>,
 }
 impl StartDataQualityRuleRecommendationRunInputBuilder {
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -91,18 +102,21 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     /// This field is required.
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
-    /// <p>An IAM role supplied to encrypt the results of the run.</p>
+    /// <p>The IAM role that Glue assumes to access resources for the run.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure IAM permissions for Glue Data Quality</a>.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
@@ -193,6 +207,23 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
         &self.additional_run_options
     }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn recommendation_mode(mut self, input: crate::types::RecommendationMode) -> Self {
+        self.recommendation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn set_recommendation_mode(mut self, input: ::std::option::Option<crate::types::RecommendationMode>) -> Self {
+        self.recommendation_mode = input;
+        self
+    }
+    /// <p>The mode that Glue Data Quality uses to recommend rules.</p>
+    /// <p>The default is <code>BASIC</code>.</p>
+    pub fn get_recommendation_mode(&self) -> &::std::option::Option<crate::types::RecommendationMode> {
+        &self.recommendation_mode
+    }
     /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
     pub fn build(
         self,
@@ -210,6 +241,7 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
                 data_quality_security_configuration: self.data_quality_security_configuration,
                 client_token: self.client_token,
                 additional_run_options: self.additional_run_options,
+                recommendation_mode: self.recommendation_mode,
             },
         )
     }

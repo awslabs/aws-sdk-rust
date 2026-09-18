@@ -567,6 +567,8 @@ pub use crate::types::_application::Application;
 
 pub use crate::types::_flow_module::FlowModule;
 
+pub use crate::types::_ai_agent::AiAgent;
+
 pub use crate::types::_data_table_access_control_configuration::DataTableAccessControlConfiguration;
 
 pub use crate::types::_task_template_field::TaskTemplateField;
@@ -1022,6 +1024,8 @@ pub use crate::types::_pre_evaluation_filter::PreEvaluationFilter;
 pub use crate::types::_application_type::ApplicationType;
 
 pub use crate::types::_flow_module_type::FlowModuleType;
+
+pub use crate::types::_ai_agent_type::AiAgentType;
 
 pub use crate::types::_primary_attribute_access_control_configuration_item::PrimaryAttributeAccessControlConfigurationItem;
 
@@ -1629,11 +1633,15 @@ mod _agent_status_type;
 
 mod _agents_criteria;
 
+mod _ai_agent;
+
 mod _ai_agent_info;
 
 mod _ai_agent_input;
 
 mod _ai_agent_search_criteria;
+
+mod _ai_agent_type;
 
 mod _ai_agents_criteria;
 

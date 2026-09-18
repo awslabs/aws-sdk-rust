@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmazonConnectGuideAssociationData {
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are a type of flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are a type of flow.</p>
     pub flow_id: ::std::option::Option<::std::string::String>,
 }
 impl AmazonConnectGuideAssociationData {
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are a type of flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are a type of flow.</p>
     pub fn flow_id(&self) -> ::std::option::Option<&str> {
         self.flow_id.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct AmazonConnectGuideAssociationDataBuilder {
     pub(crate) flow_id: ::std::option::Option<::std::string::String>,
 }
 impl AmazonConnectGuideAssociationDataBuilder {
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are a type of flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are a type of flow.</p>
     pub fn flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are a type of flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are a type of flow.</p>
     pub fn set_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_id = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are a type of flow.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are a type of flow.</p>
     pub fn get_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_id
     }

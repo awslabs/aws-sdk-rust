@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Configuration {
-    /// <p>The configuration information of the Amazon Connect data source.</p>
+    /// <p>The configuration information of the Connect Customer data source.</p>
     ConnectConfiguration(crate::types::ConnectConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

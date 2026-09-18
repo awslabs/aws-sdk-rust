@@ -198,6 +198,20 @@ impl ListNotebooksFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::NotebookStatus> {
         self.inner.get_status()
     }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type to filter notebooks by.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        self.inner.get_type()
+    }
     /// <p>When the number of notebooks is greater than the default value for the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code> that is less than the number of notebooks, the response includes a pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent call to <code>ListNotebooks</code> to list the next set of notebooks.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

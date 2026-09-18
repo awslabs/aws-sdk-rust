@@ -15,6 +15,8 @@ pub struct UpdateNotebookInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The updated ordered list of cells in the notebook.</p>
     pub cell_order: ::std::option::Option<::std::vec::Vec<crate::types::CellInformation>>,
+    /// <p>The updated type of the notebook.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The updated metadata for the notebook, specified as key-value pairs.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The updated sensitive parameters for the notebook, specified as key-value pairs.</p>
@@ -51,6 +53,10 @@ impl UpdateNotebookInput {
     pub fn cell_order(&self) -> &[crate::types::CellInformation] {
         self.cell_order.as_deref().unwrap_or_default()
     }
+    /// <p>The updated type of the notebook.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
+    }
     /// <p>The updated metadata for the notebook, specified as key-value pairs.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.metadata.as_ref()
@@ -77,6 +83,7 @@ impl ::std::fmt::Debug for UpdateNotebookInput {
         formatter.field("status", &self.status);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("cell_order", &self.cell_order);
+        formatter.field("r#type", &self.r#type);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_configuration", &self.environment_configuration);
@@ -101,6 +108,7 @@ pub struct UpdateNotebookInputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::NotebookStatus>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) cell_order: ::std::option::Option<::std::vec::Vec<crate::types::CellInformation>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) environment_configuration: ::std::option::Option<crate::types::EnvironmentConfig>,
@@ -199,6 +207,20 @@ impl UpdateNotebookInputBuilder {
     pub fn get_cell_order(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CellInformation>> {
         &self.cell_order
     }
+    /// <p>The updated type of the notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated type of the notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The updated type of the notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -278,6 +300,7 @@ impl UpdateNotebookInputBuilder {
             status: self.status,
             name: self.name,
             cell_order: self.cell_order,
+            r#type: self.r#type,
             metadata: self.metadata,
             parameters: self.parameters,
             environment_configuration: self.environment_configuration,
@@ -294,6 +317,7 @@ impl ::std::fmt::Debug for UpdateNotebookInputBuilder {
         formatter.field("status", &self.status);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("cell_order", &self.cell_order);
+        formatter.field("r#type", &self.r#type);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_configuration", &self.environment_configuration);

@@ -121,6 +121,8 @@ pub(crate) mod shape_application_source_config;
 
 pub(crate) mod shape_applications_list;
 
+pub(crate) mod shape_auth_config;
+
 pub(crate) mod shape_data_integration_associations_list;
 
 pub(crate) mod shape_data_integrations_list;

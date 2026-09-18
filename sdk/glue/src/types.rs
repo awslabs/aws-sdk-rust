@@ -163,6 +163,8 @@ pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMet
 
 pub use crate::types::_data_quality_rule_recommendation_run_additional_run_options::DataQualityRuleRecommendationRunAdditionalRunOptions;
 
+pub use crate::types::_recommendation_mode::RecommendationMode;
+
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
 
 pub use crate::types::_dev_endpoint::DevEndpoint;
@@ -2060,6 +2062,8 @@ mod _recipe_action;
 mod _recipe_reference;
 
 mod _recipe_step;
+
+mod _recommendation_mode;
 
 mod _recrawl_behavior;
 

@@ -1303,6 +1303,8 @@ pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;
 
 pub use crate::types::_job::JobBuilder;
 
+pub use crate::types::_hub_content::HubContentBuilder;
+
 pub use crate::types::_capacity_size_config::CapacitySizeConfigBuilder;
 
 pub use crate::types::_alarm_details::AlarmDetailsBuilder;

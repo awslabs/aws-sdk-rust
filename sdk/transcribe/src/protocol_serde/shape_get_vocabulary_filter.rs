@@ -156,6 +156,18 @@ pub(crate) fn de_get_vocabulary_filter(
                             .transpose()?,
                     );
                 }
+                "DataAccessRoleArn" => {
+                    builder = builder.set_data_access_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "EncryptionConfiguration" => {
+                    builder = builder.set_encryption_configuration(
+                        crate::protocol_serde::shape_encryption_configuration::de_encryption_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {
