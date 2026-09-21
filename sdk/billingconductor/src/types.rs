@@ -3,17 +3,19 @@ pub use crate::types::_billing_period_range::BillingPeriodRange;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_auto_transfer_billing_group_creation_preference::AutoTransferBillingGroupCreationPreference;
+
 pub use crate::types::_list_account_associations_filter::ListAccountAssociationsFilter;
 
 pub use crate::types::_list_billing_group_cost_reports_filter::ListBillingGroupCostReportsFilter;
+
+pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_list_billing_groups_filter::ListBillingGroupsFilter;
 
 pub use crate::types::_account_grouping::AccountGrouping;
 
 pub use crate::types::_computation_preference::ComputationPreference;
-
-pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
 pub use crate::types::_billing_group_status::BillingGroupStatus;
 
@@ -138,6 +140,8 @@ mod _associate_resource_error_reason;
 mod _associate_resource_response_element;
 
 mod _attribute;
+
+mod _auto_transfer_billing_group_creation_preference;
 
 mod _billing_group_cost_report_element;
 

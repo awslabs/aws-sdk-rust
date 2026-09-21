@@ -10,6 +10,8 @@ pub enum InvokeHarnessStreamOutput {
     ContentBlockStart(crate::types::HarnessContentBlockStartEvent),
     /// <p>Indicates the end of the current content block.</p>
     ContentBlockStop(crate::types::HarnessContentBlockStopEvent),
+    /// <p>A lifecycle hook event emitted when a configured hook runs.</p>
+    HookEvent(crate::types::HarnessHookEvent),
     /// <p>Indicates the start of a new message from the agent.</p>
     MessageStart(crate::types::HarnessMessageStartEvent),
     /// <p>Indicates the end of the current message.</p>
@@ -65,6 +67,19 @@ impl InvokeHarnessStreamOutput {
     /// Returns true if this is a [`ContentBlockStop`](crate::types::InvokeHarnessStreamOutput::ContentBlockStop).
     pub fn is_content_block_stop(&self) -> bool {
         self.as_content_block_stop().is_ok()
+    }
+    /// Tries to convert the enum instance into [`HookEvent`](crate::types::InvokeHarnessStreamOutput::HookEvent), extracting the inner [`HarnessHookEvent`](crate::types::HarnessHookEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_hook_event(&self) -> ::std::result::Result<&crate::types::HarnessHookEvent, &Self> {
+        if let InvokeHarnessStreamOutput::HookEvent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`HookEvent`](crate::types::InvokeHarnessStreamOutput::HookEvent).
+    pub fn is_hook_event(&self) -> bool {
+        self.as_hook_event().is_ok()
     }
     /// Tries to convert the enum instance into [`MessageStart`](crate::types::InvokeHarnessStreamOutput::MessageStart), extracting the inner [`HarnessMessageStartEvent`](crate::types::HarnessMessageStartEvent).
     /// Returns `Err(&Self)` if it can't be converted.

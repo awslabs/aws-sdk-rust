@@ -13,6 +13,7 @@
 /// # let conflictexceptionreason = unimplemented!();
 /// match conflictexceptionreason {
 ///     ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => { /* ... */ },
+///     ConflictExceptionReason::PricingPlanReferencedByPreferenceDeleteConflict => { /* ... */ },
 ///     ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => { /* ... */ },
 ///     ConflictExceptionReason::PricingRuleInPricingPlanConflict => { /* ... */ },
 ///     ConflictExceptionReason::ResourceNameConflict => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PricingPlanAttachedToBillingGroupDeleteConflict,
     #[allow(missing_docs)] // documentation missing in model
+    PricingPlanReferencedByPreferenceDeleteConflict,
+    #[allow(missing_docs)] // documentation missing in model
     PricingRuleAttachedToPricingPlanDeleteConflict,
     #[allow(missing_docs)] // documentation missing in model
     PricingRuleInPricingPlanConflict,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT" => ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict,
+            "PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT" => ConflictExceptionReason::PricingPlanReferencedByPreferenceDeleteConflict,
             "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT" => ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict,
             "PRICING_RULE_IN_PRICING_PLAN_CONFLICT" => ConflictExceptionReason::PricingRuleInPricingPlanConflict,
             "RESOURCE_NAME_CONFLICT" => ConflictExceptionReason::ResourceNameConflict,
@@ -83,6 +87,7 @@ impl ConflictExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
+            ConflictExceptionReason::PricingPlanReferencedByPreferenceDeleteConflict => "PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT",
             ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT",
             ConflictExceptionReason::PricingRuleInPricingPlanConflict => "PRICING_RULE_IN_PRICING_PLAN_CONFLICT",
             ConflictExceptionReason::ResourceNameConflict => "RESOURCE_NAME_CONFLICT",
@@ -94,6 +99,7 @@ impl ConflictExceptionReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT",
+            "PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT",
             "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT",
             "PRICING_RULE_IN_PRICING_PLAN_CONFLICT",
             "RESOURCE_NAME_CONFLICT",
@@ -123,6 +129,9 @@ impl ::std::fmt::Display for ConflictExceptionReason {
         match self {
             ConflictExceptionReason::PricingPlanAttachedToBillingGroupDeleteConflict => {
                 write!(f, "PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT")
+            }
+            ConflictExceptionReason::PricingPlanReferencedByPreferenceDeleteConflict => {
+                write!(f, "PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT")
             }
             ConflictExceptionReason::PricingRuleAttachedToPricingPlanDeleteConflict => {
                 write!(f, "PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT")

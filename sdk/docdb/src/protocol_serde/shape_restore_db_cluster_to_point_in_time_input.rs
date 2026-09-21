@@ -101,6 +101,11 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
     if let Some(var_39) = &input.network_type {
         scope_38.string(var_39);
     }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("CopyTagsToSnapshot");
+    if let Some(var_41) = &input.copy_tags_to_snapshot {
+        scope_40.boolean(*var_41);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

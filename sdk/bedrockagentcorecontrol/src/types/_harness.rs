@@ -42,6 +42,8 @@ pub struct Harness {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>AgentCore Memory instance configuration for short and long term memory.</p>
     pub memory: ::std::option::Option<crate::types::HarnessMemoryConfiguration>,
+    /// <p>The lifecycle hooks configured for the harness.</p>
+    pub hooks: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>,
     /// <p>The maximum number of iterations in the agent loop allowed before exiting per invocation.</p>
     pub max_iterations: ::std::option::Option<i32>,
     /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation.</p>
@@ -136,6 +138,12 @@ impl Harness {
     pub fn memory(&self) -> ::std::option::Option<&crate::types::HarnessMemoryConfiguration> {
         self.memory.as_ref()
     }
+    /// <p>The lifecycle hooks configured for the harness.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks.is_none()`.
+    pub fn hooks(&self) -> &[crate::types::HarnessHook] {
+        self.hooks.as_deref().unwrap_or_default()
+    }
     /// <p>The maximum number of iterations in the agent loop allowed before exiting per invocation.</p>
     pub fn max_iterations(&self) -> ::std::option::Option<i32> {
         self.max_iterations
@@ -175,6 +183,7 @@ impl ::std::fmt::Debug for Harness {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("memory", &self.memory);
+        formatter.field("hooks", &self.hooks);
         formatter.field("max_iterations", &self.max_iterations);
         formatter.field("max_tokens", &self.max_tokens);
         formatter.field("timeout_seconds", &self.timeout_seconds);
@@ -212,6 +221,7 @@ pub struct HarnessBuilder {
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) memory: ::std::option::Option<crate::types::HarnessMemoryConfiguration>,
+    pub(crate) hooks: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>,
     pub(crate) max_iterations: ::std::option::Option<i32>,
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
@@ -531,6 +541,26 @@ impl HarnessBuilder {
     pub fn get_memory(&self) -> &::std::option::Option<crate::types::HarnessMemoryConfiguration> {
         &self.memory
     }
+    /// Appends an item to `hooks`.
+    ///
+    /// To override the contents of this collection use [`set_hooks`](Self::set_hooks).
+    ///
+    /// <p>The lifecycle hooks configured for the harness.</p>
+    pub fn hooks(mut self, input: crate::types::HarnessHook) -> Self {
+        let mut v = self.hooks.unwrap_or_default();
+        v.push(input);
+        self.hooks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The lifecycle hooks configured for the harness.</p>
+    pub fn set_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>) -> Self {
+        self.hooks = input;
+        self
+    }
+    /// <p>The lifecycle hooks configured for the harness.</p>
+    pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>> {
+        &self.hooks
+    }
     /// <p>The maximum number of iterations in the agent loop allowed before exiting per invocation.</p>
     pub fn max_iterations(mut self, input: i32) -> Self {
         self.max_iterations = ::std::option::Option::Some(input);
@@ -676,6 +706,7 @@ impl HarnessBuilder {
             environment_variables: self.environment_variables,
             authorizer_configuration: self.authorizer_configuration,
             memory: self.memory,
+            hooks: self.hooks,
             max_iterations: self.max_iterations,
             max_tokens: self.max_tokens,
             timeout_seconds: self.timeout_seconds,
@@ -705,6 +736,7 @@ impl ::std::fmt::Debug for HarnessBuilder {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("memory", &self.memory);
+        formatter.field("hooks", &self.hooks);
         formatter.field("max_iterations", &self.max_iterations);
         formatter.field("max_tokens", &self.max_tokens);
         formatter.field("timeout_seconds", &self.timeout_seconds);

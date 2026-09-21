@@ -14,6 +14,7 @@
 /// match harnessstopreason {
 ///     HarnessStopReason::ContentFiltered => { /* ... */ },
 ///     HarnessStopReason::EndTurn => { /* ... */ },
+///     HarnessStopReason::HookStopped => { /* ... */ },
 ///     HarnessStopReason::Interrupted => { /* ... */ },
 ///     HarnessStopReason::MalformedModelOutput => { /* ... */ },
 ///     HarnessStopReason::MalformedToolUse => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum HarnessStopReason {
     #[allow(missing_docs)] // documentation missing in model
     EndTurn,
     #[allow(missing_docs)] // documentation missing in model
+    HookStopped,
+    #[allow(missing_docs)] // documentation missing in model
     Interrupted,
     #[allow(missing_docs)] // documentation missing in model
     MalformedModelOutput,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for HarnessStopReason {
         match s {
             "content_filtered" => HarnessStopReason::ContentFiltered,
             "end_turn" => HarnessStopReason::EndTurn,
+            "hook_stopped" => HarnessStopReason::HookStopped,
             "interrupted" => HarnessStopReason::Interrupted,
             "malformed_model_output" => HarnessStopReason::MalformedModelOutput,
             "malformed_tool_use" => HarnessStopReason::MalformedToolUse,
@@ -120,6 +124,7 @@ impl HarnessStopReason {
         match self {
             HarnessStopReason::ContentFiltered => "content_filtered",
             HarnessStopReason::EndTurn => "end_turn",
+            HarnessStopReason::HookStopped => "hook_stopped",
             HarnessStopReason::Interrupted => "interrupted",
             HarnessStopReason::MalformedModelOutput => "malformed_model_output",
             HarnessStopReason::MalformedToolUse => "malformed_tool_use",
@@ -140,6 +145,7 @@ impl HarnessStopReason {
         &[
             "content_filtered",
             "end_turn",
+            "hook_stopped",
             "interrupted",
             "malformed_model_output",
             "malformed_tool_use",
@@ -177,6 +183,7 @@ impl ::std::fmt::Display for HarnessStopReason {
         match self {
             HarnessStopReason::ContentFiltered => write!(f, "content_filtered"),
             HarnessStopReason::EndTurn => write!(f, "end_turn"),
+            HarnessStopReason::HookStopped => write!(f, "hook_stopped"),
             HarnessStopReason::Interrupted => write!(f, "interrupted"),
             HarnessStopReason::MalformedModelOutput => write!(f, "malformed_model_output"),
             HarnessStopReason::MalformedToolUse => write!(f, "malformed_tool_use"),

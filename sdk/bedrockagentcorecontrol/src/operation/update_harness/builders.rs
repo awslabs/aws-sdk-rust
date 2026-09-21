@@ -336,6 +336,25 @@ impl UpdateHarnessFluentBuilder {
     pub fn get_truncation(&self) -> &::std::option::Option<crate::types::HarnessTruncationConfiguration> {
         self.inner.get_truncation()
     }
+    ///
+    /// Appends an item to `hooks`.
+    ///
+    /// To override the contents of this collection use [`set_hooks`](Self::set_hooks).
+    ///
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn hooks(mut self, input: crate::types::HarnessHook) -> Self {
+        self.inner = self.inner.hooks(input);
+        self
+    }
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn set_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>) -> Self {
+        self.inner = self.inner.set_hooks(input);
+        self
+    }
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>> {
+        self.inner.get_hooks()
+    }
     /// <p>The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.</p>
     pub fn max_iterations(mut self, input: i32) -> Self {
         self.inner = self.inner.max_iterations(input);

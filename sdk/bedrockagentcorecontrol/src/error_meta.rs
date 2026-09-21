@@ -5394,6 +5394,7 @@ impl From<crate::operation::update_harness::UpdateHarnessError> for Error {
             crate::operation::update_harness::UpdateHarnessError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_harness::UpdateHarnessError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_harness::UpdateHarnessError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_harness::UpdateHarnessError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_harness::UpdateHarnessError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_harness::UpdateHarnessError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_harness::UpdateHarnessError::Unhandled(inner) => Error::Unhandled(inner),

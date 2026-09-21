@@ -121,9 +121,11 @@ pub struct ModifyDbClusterInput {
     pub rotate_master_user_password: ::std::option::Option<bool>,
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInput {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -283,10 +285,14 @@ impl ModifyDbClusterInput {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
+        self.copy_tags_to_snapshot
     }
 }
 impl ModifyDbClusterInput {
@@ -320,6 +326,7 @@ pub struct ModifyDbClusterInputBuilder {
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) rotate_master_user_password: ::std::option::Option<bool>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
 }
 impl ModifyDbClusterInputBuilder {
     /// <p>The cluster identifier for the cluster that is being modified. This parameter is not case sensitive.</p>
@@ -828,7 +835,7 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
@@ -836,7 +843,7 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
@@ -844,10 +851,24 @@ impl ModifyDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+        self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copy_tags_to_snapshot = input;
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterInput`](crate::operation::modify_db_cluster::ModifyDbClusterInput).
     pub fn build(
@@ -874,6 +895,7 @@ impl ModifyDbClusterInputBuilder {
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             rotate_master_user_password: self.rotate_master_user_password,
             network_type: self.network_type,
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
         })
     }
 }

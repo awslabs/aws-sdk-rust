@@ -148,6 +148,9 @@ where
                                 )?,
                             );
                         }
+                        "hooks" => {
+                            builder = builder.set_hooks(crate::protocol_serde::shape_harness_hooks::de_harness_hooks(tokens, _value, depth + 1)?);
+                        }
                         "maxIterations" => {
                             builder = builder.set_max_iterations(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

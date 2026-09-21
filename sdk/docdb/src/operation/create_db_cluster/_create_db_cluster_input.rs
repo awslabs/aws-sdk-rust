@@ -90,7 +90,7 @@ pub struct CreateDbClusterInput {
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Not currently supported.</p>
     pub pre_signed_url: ::std::option::Option<::std::string::String>,
-    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
+    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -115,9 +115,11 @@ pub struct CreateDbClusterInput {
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub copy_tags_to_snapshot: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
@@ -246,7 +248,7 @@ impl CreateDbClusterInput {
     pub fn pre_signed_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_url.as_deref()
     }
-    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
+    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
     pub fn enable_cloudwatch_logs_exports(&self) -> &[::std::string::String] {
@@ -287,10 +289,14 @@ impl CreateDbClusterInput {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn copy_tags_to_snapshot(&self) -> ::std::option::Option<bool> {
+        self.copy_tags_to_snapshot
     }
 }
 impl CreateDbClusterInput {
@@ -329,6 +335,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_tags_to_snapshot: ::std::option::Option<bool>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -749,19 +756,19 @@ impl CreateDbClusterInputBuilder {
     ///
     /// To override the contents of this collection use [`set_enable_cloudwatch_logs_exports`](Self::set_enable_cloudwatch_logs_exports).
     ///
-    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
+    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
         self.enable_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
+    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
         self
     }
-    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
+    /// <p>A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html"> Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html"> Profiling Amazon DocumentDB Operations</a>.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports
     }
@@ -878,7 +885,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.network_type = ::std::option::Option::Some(input.into());
@@ -886,7 +893,7 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_type = input;
@@ -894,10 +901,24 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+        self.copy_tags_to_snapshot = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.copy_tags_to_snapshot = input;
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        &self.copy_tags_to_snapshot
     }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
@@ -929,6 +950,7 @@ impl CreateDbClusterInputBuilder {
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             network_type: self.network_type,
+            copy_tags_to_snapshot: self.copy_tags_to_snapshot,
         })
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::start_db_cluster::builders::StartDbClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `StartDBCluster`.
 ///
-/// <p>Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and Starting an Amazon DocumentDB Cluster</a>.</p>
+/// <p>Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping and Starting an Amazon DocumentDB Cluster</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

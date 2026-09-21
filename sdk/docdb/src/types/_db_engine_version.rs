@@ -21,7 +21,7 @@ pub struct DbEngineVersion {
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by <code>ExportableLogTypes</code> to CloudWatch Logs.</p>
     pub supports_log_exports_to_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>A list of the supported CA certificate identifiers.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub supported_ca_certificate_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub supports_certificate_rotation_without_restart: ::std::option::Option<bool>,
@@ -66,7 +66,7 @@ impl DbEngineVersion {
         self.supports_log_exports_to_cloudwatch_logs
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_ca_certificate_identifiers.is_none()`.
     pub fn supported_ca_certificate_identifiers(&self) -> &[::std::string::String] {
@@ -234,7 +234,7 @@ impl DbEngineVersionBuilder {
     /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
     ///
     /// <p>A list of the supported CA certificate identifiers.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub fn supported_ca_certificate_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
         v.push(input.into());
@@ -242,13 +242,13 @@ impl DbEngineVersionBuilder {
         self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub fn set_supported_ca_certificate_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_ca_certificate_identifiers = input;
         self
     }
     /// <p>A list of the supported CA certificate identifiers.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/ca_cert_rotation.html">Updating Your Amazon DocumentDB TLS Certificates</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/security.encryption.ssl.html"> Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.</p>
     pub fn get_supported_ca_certificate_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_ca_certificate_identifiers
     }

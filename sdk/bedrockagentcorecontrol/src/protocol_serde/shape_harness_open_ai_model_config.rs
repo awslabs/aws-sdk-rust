@@ -9,29 +9,32 @@ pub fn ser_harness_open_ai_model_config(
     {
         object.key("apiKeyArn").string(input.api_key_arn.as_str());
     }
-    if let Some(var_1) = &input.max_tokens {
+    if let Some(var_1) = &input.api_base {
+        object.key("apiBase").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.max_tokens {
         object.key("maxTokens").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.temperature {
+    if let Some(var_3) = &input.temperature {
         object.key("temperature").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_2).into()),
-        );
-    }
-    if let Some(var_3) = &input.top_p {
-        object.key("topP").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.api_format {
-        object.key("apiFormat").string(var_4.as_str());
+    if let Some(var_4) = &input.top_p {
+        object.key("topP").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_4).into()),
+        );
     }
-    if let Some(var_5) = &input.additional_params {
-        object.key("additionalParams").document(var_5);
+    if let Some(var_5) = &input.api_format {
+        object.key("apiFormat").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.additional_params {
+        object.key("additionalParams").document(var_6);
     }
     Ok(())
 }
@@ -67,6 +70,13 @@ where
                         }
                         "apiKeyArn" => {
                             builder = builder.set_api_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "apiBase" => {
+                            builder = builder.set_api_base(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

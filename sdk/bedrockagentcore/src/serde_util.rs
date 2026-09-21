@@ -1759,6 +1759,21 @@ pub(crate) fn harness_content_block_stop_event_correct_errors(
     builder
 }
 
+pub(crate) fn harness_hook_event_correct_errors(
+    mut builder: crate::types::builders::HarnessHookEventBuilder,
+) -> crate::types::builders::HarnessHookEventBuilder {
+    if builder.hook_event_id.is_none() {
+        builder.hook_event_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::HarnessHookEventType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn harness_message_start_event_correct_errors(
     mut builder: crate::types::builders::HarnessMessageStartEventBuilder,
 ) -> crate::types::builders::HarnessMessageStartEventBuilder {

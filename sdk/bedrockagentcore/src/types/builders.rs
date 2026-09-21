@@ -85,6 +85,8 @@ pub use crate::types::_harness_message_stop_event::HarnessMessageStopEventBuilde
 
 pub use crate::types::_harness_metadata_event::HarnessMetadataEventBuilder;
 
+pub use crate::types::_harness_hook_event::HarnessHookEventBuilder;
+
 pub use crate::types::_response_chunk::ResponseChunkBuilder;
 
 pub use crate::types::_browser_extension::BrowserExtensionBuilder;

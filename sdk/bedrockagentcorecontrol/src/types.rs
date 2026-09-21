@@ -409,6 +409,8 @@ pub use crate::types::_harness_truncation_strategy::HarnessTruncationStrategy;
 
 pub use crate::types::_harness_truncation_strategy_configuration::HarnessTruncationStrategyConfiguration;
 
+pub use crate::types::_harness_hook::HarnessHook;
+
 pub use crate::types::_harness_status::HarnessStatus;
 
 pub use crate::types::_harness_environment_provider::HarnessEnvironmentProvider;
@@ -625,6 +627,14 @@ pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindo
 
 pub use crate::types::_harness_summarization_configuration::HarnessSummarizationConfiguration;
 
+pub use crate::types::_harness_before_invocation_hook::HarnessBeforeInvocationHook;
+
+pub use crate::types::_harness_after_invocation_hook::HarnessAfterInvocationHook;
+
+pub use crate::types::_harness_before_tool_call_hook::HarnessBeforeToolCallHook;
+
+pub use crate::types::_harness_after_tool_call_hook::HarnessAfterToolCallHook;
+
 pub use crate::types::_harness_agent_core_runtime_environment::HarnessAgentCoreRuntimeEnvironment;
 
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInput;
@@ -755,6 +765,8 @@ pub use crate::types::_harness_agent_core_memory_retrieval_config::HarnessAgentC
 
 pub use crate::types::_harness_managed_memory_strategy_type::HarnessManagedMemoryStrategyType;
 
+pub use crate::types::_harness_hook_target::HarnessHookTarget;
+
 pub use crate::types::_memory_record_schema::MemoryRecordSchema;
 
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
@@ -822,6 +834,12 @@ pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 pub use crate::types::_api_key_credential_location::ApiKeyCredentialLocation;
 
 pub use crate::types::_harness_gateway_outbound_auth::HarnessGatewayOutboundAuth;
+
+pub use crate::types::_harness_hook_lambda_target::HarnessHookLambdaTarget;
+
+pub use crate::types::_harness_hook_sns_target::HarnessHookSnsTarget;
+
+pub use crate::types::_harness_hook_event_bridge_target::HarnessHookEventBridgeTarget;
 
 pub use crate::types::_semantic_override_configuration_input::SemanticOverrideConfigurationInput;
 
@@ -892,6 +910,8 @@ pub use crate::types::_api_gateway_tool_override::ApiGatewayToolOverride;
 pub use crate::types::_api_gateway_tool_filter::ApiGatewayToolFilter;
 
 pub use crate::types::_unit::Unit;
+
+pub use crate::types::_harness_hook_failure_mode::HarnessHookFailureMode;
 
 pub use crate::types::_metadata_schema_entry::MetadataSchemaEntry;
 
@@ -1359,6 +1379,10 @@ mod _google_oauth2_provider_config_output;
 
 mod _harness;
 
+mod _harness_after_invocation_hook;
+
+mod _harness_after_tool_call_hook;
+
 mod _harness_agent_core_browser_config;
 
 mod _harness_agent_core_code_interpreter_config;
@@ -1377,6 +1401,10 @@ mod _harness_bedrock_api_format;
 
 mod _harness_bedrock_model_config;
 
+mod _harness_before_invocation_hook;
+
+mod _harness_before_tool_call_hook;
+
 mod _harness_disabled_memory_configuration;
 
 mod _harness_endpoint;
@@ -1392,6 +1420,18 @@ mod _harness_environment_provider_request;
 mod _harness_gateway_outbound_auth;
 
 mod _harness_gemini_model_config;
+
+mod _harness_hook;
+
+mod _harness_hook_event_bridge_target;
+
+mod _harness_hook_failure_mode;
+
+mod _harness_hook_lambda_target;
+
+mod _harness_hook_sns_target;
+
+mod _harness_hook_target;
 
 mod _harness_inline_function_config;
 

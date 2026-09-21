@@ -2,12 +2,14 @@
 
 /// <p>Configuration for an OpenAI model provider. Requires an API key stored in AgentCore Identity.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HarnessOpenAiModelConfig {
     /// <p>The OpenAI model ID.</p>
     pub model_id: ::std::string::String,
     /// <p>The ARN of your OpenAI API key on AgentCore Identity.</p>
     pub api_key_arn: ::std::string::String,
+    /// <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+    pub api_base: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub max_tokens: ::std::option::Option<i32>,
     /// <p>The temperature to set when calling the model.</p>
@@ -30,6 +32,10 @@ impl HarnessOpenAiModelConfig {
         use std::ops::Deref;
         self.api_key_arn.deref()
     }
+    /// <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+    pub fn api_base(&self) -> ::std::option::Option<&str> {
+        self.api_base.as_deref()
+    }
     /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(&self) -> ::std::option::Option<i32> {
         self.max_tokens
@@ -51,6 +57,20 @@ impl HarnessOpenAiModelConfig {
         self.additional_params.as_ref()
     }
 }
+impl ::std::fmt::Debug for HarnessOpenAiModelConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("HarnessOpenAiModelConfig");
+        formatter.field("model_id", &self.model_id);
+        formatter.field("api_key_arn", &self.api_key_arn);
+        formatter.field("api_base", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_tokens", &self.max_tokens);
+        formatter.field("temperature", &self.temperature);
+        formatter.field("top_p", &self.top_p);
+        formatter.field("api_format", &self.api_format);
+        formatter.field("additional_params", &self.additional_params);
+        formatter.finish()
+    }
+}
 impl HarnessOpenAiModelConfig {
     /// Creates a new builder-style object to manufacture [`HarnessOpenAiModelConfig`](crate::types::HarnessOpenAiModelConfig).
     pub fn builder() -> crate::types::builders::HarnessOpenAiModelConfigBuilder {
@@ -59,11 +79,12 @@ impl HarnessOpenAiModelConfig {
 }
 
 /// A builder for [`HarnessOpenAiModelConfig`](crate::types::HarnessOpenAiModelConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct HarnessOpenAiModelConfigBuilder {
     pub(crate) model_id: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) api_base: ::std::option::Option<::std::string::String>,
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,
@@ -100,6 +121,20 @@ impl HarnessOpenAiModelConfigBuilder {
     /// <p>The ARN of your OpenAI API key on AgentCore Identity.</p>
     pub fn get_api_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_arn
+    }
+    /// <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+    pub fn api_base(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_base = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+    pub fn set_api_base(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.api_base = input;
+        self
+    }
+    /// <p>Optional custom endpoint URL for an OpenAI-compatible endpoint.</p>
+    pub fn get_api_base(&self) -> &::std::option::Option<::std::string::String> {
+        &self.api_base
     }
     /// <p>The maximum number of tokens to allow in the generated response per model call.</p>
     pub fn max_tokens(mut self, input: i32) -> Self {
@@ -189,11 +224,26 @@ impl HarnessOpenAiModelConfigBuilder {
                     "api_key_arn was not specified but it is required when building HarnessOpenAiModelConfig",
                 )
             })?,
+            api_base: self.api_base,
             max_tokens: self.max_tokens,
             temperature: self.temperature,
             top_p: self.top_p,
             api_format: self.api_format,
             additional_params: self.additional_params,
         })
+    }
+}
+impl ::std::fmt::Debug for HarnessOpenAiModelConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("HarnessOpenAiModelConfigBuilder");
+        formatter.field("model_id", &self.model_id);
+        formatter.field("api_key_arn", &self.api_key_arn);
+        formatter.field("api_base", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_tokens", &self.max_tokens);
+        formatter.field("temperature", &self.temperature);
+        formatter.field("top_p", &self.top_p);
+        formatter.field("api_format", &self.api_format);
+        formatter.field("additional_params", &self.additional_params);
+        formatter.finish()
     }
 }

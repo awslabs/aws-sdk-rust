@@ -567,6 +567,8 @@ pub(crate) mod shape_harness_content_block_stop_event;
 
 pub(crate) mod shape_harness_gemini_model_config;
 
+pub(crate) mod shape_harness_hook_event;
+
 pub(crate) mod shape_harness_lite_llm_model_config;
 
 pub(crate) mod shape_harness_message_start_event;

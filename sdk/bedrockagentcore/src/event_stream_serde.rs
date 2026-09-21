@@ -380,6 +380,13 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for InvokeHarnessStreamO
                         crate::types::InvokeHarnessStreamOutput::Metadata(parsed),
                     ))
                 }
+                "hookEvent" => {
+                    let parsed = crate::protocol_serde::shape_harness_hook_event::de_harness_hook_event_payload(&message.payload()[..])
+                        .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall HookEvent: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::InvokeHarnessStreamOutput::HookEvent(parsed),
+                    ))
+                }
                 _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                     crate::types::InvokeHarnessStreamOutput::Unknown,
                 )),

@@ -53,6 +53,8 @@ pub(crate) mod shape_disassociate_pricing_rules;
 
 pub(crate) mod shape_get_billing_group_cost_report;
 
+pub(crate) mod shape_get_billing_transfer_preference;
+
 pub(crate) mod shape_list_account_associations;
 
 pub(crate) mod shape_list_billing_group_cost_reports;
@@ -80,6 +82,8 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_billing_group;
+
+pub(crate) mod shape_update_billing_transfer_preference;
 
 pub(crate) mod shape_update_custom_line_item;
 
@@ -129,6 +133,8 @@ pub(crate) mod shape_disassociate_pricing_rules_input;
 
 pub(crate) mod shape_get_billing_group_cost_report_input;
 
+pub(crate) mod shape_get_billing_transfer_preference_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_account_associations_input;
@@ -161,6 +167,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_billing_group_input;
 
+pub(crate) mod shape_update_billing_transfer_preference_input;
+
 pub(crate) mod shape_update_custom_line_item_input;
 
 pub(crate) mod shape_update_pricing_plan_input;
@@ -174,6 +182,8 @@ pub(crate) mod shape_account_associations_list;
 pub(crate) mod shape_account_grouping;
 
 pub(crate) mod shape_associate_resources_response_list;
+
+pub(crate) mod shape_auto_transfer_billing_group_creation_preference;
 
 pub(crate) mod shape_billing_group_cost_report_list;
 

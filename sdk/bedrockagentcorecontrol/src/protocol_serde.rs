@@ -709,6 +709,8 @@ pub(crate) mod shape_harness_environment_artifact;
 
 pub(crate) mod shape_harness_environment_provider_request;
 
+pub(crate) mod shape_harness_hook;
+
 pub(crate) mod shape_harness_memory_configuration;
 
 pub(crate) mod shape_harness_model_configuration;
@@ -983,6 +985,10 @@ pub(crate) mod shape_google_oauth2_provider_config_input;
 
 pub(crate) mod shape_google_oauth2_provider_config_output;
 
+pub(crate) mod shape_harness_after_invocation_hook;
+
+pub(crate) mod shape_harness_after_tool_call_hook;
+
 pub(crate) mod shape_harness_agent_core_memory_configuration;
 
 pub(crate) mod shape_harness_agent_core_runtime_environment_request;
@@ -991,11 +997,17 @@ pub(crate) mod shape_harness_allowed_tools;
 
 pub(crate) mod shape_harness_bedrock_model_config;
 
+pub(crate) mod shape_harness_before_invocation_hook;
+
+pub(crate) mod shape_harness_before_tool_call_hook;
+
 pub(crate) mod shape_harness_disabled_memory_configuration;
 
 pub(crate) mod shape_harness_environment_provider;
 
 pub(crate) mod shape_harness_gemini_model_config;
+
+pub(crate) mod shape_harness_hooks;
 
 pub(crate) mod shape_harness_lite_llm_model_config;
 
@@ -1215,6 +1227,8 @@ pub(crate) mod shape_harness_agent_core_memory_retrieval_config;
 
 pub(crate) mod shape_harness_agent_core_runtime_environment;
 
+pub(crate) mod shape_harness_hook_target;
+
 pub(crate) mod shape_harness_inline_function_config;
 
 pub(crate) mod shape_harness_remote_mcp_config;
@@ -1368,6 +1382,12 @@ pub(crate) mod shape_finding;
 pub(crate) mod shape_harness_agent_core_memory_retrieval_configs;
 
 pub(crate) mod shape_harness_gateway_outbound_auth;
+
+pub(crate) mod shape_harness_hook_event_bridge_target;
+
+pub(crate) mod shape_harness_hook_lambda_target;
+
+pub(crate) mod shape_harness_hook_sns_target;
 
 pub(crate) mod shape_harness_managed_memory_strategy_list;
 

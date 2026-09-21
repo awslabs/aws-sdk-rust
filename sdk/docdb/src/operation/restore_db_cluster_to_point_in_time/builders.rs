@@ -483,7 +483,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_type(input.into());
@@ -491,7 +491,7 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_type(input);
@@ -499,9 +499,23 @@ impl RestoreDBClusterToPointInTimeFluentBuilder {
     }
     /// <p>The network type of the cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.</p>
     /// <p>Valid Values: <code>IPV4</code> | <code>DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
+    }
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+        self.inner = self.inner.copy_tags_to_snapshot(input);
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_copy_tags_to_snapshot(input);
+        self
+    }
+    /// <p>Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
+    pub fn get_copy_tags_to_snapshot(&self) -> &::std::option::Option<bool> {
+        self.inner.get_copy_tags_to_snapshot()
     }
 }

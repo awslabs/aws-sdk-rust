@@ -193,6 +193,8 @@ mod disassociate_pricing_rules;
 
 mod get_billing_group_cost_report;
 
+mod get_billing_transfer_preference;
+
 mod list_account_associations;
 
 mod list_billing_group_cost_reports;
@@ -220,6 +222,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_billing_group;
+
+mod update_billing_transfer_preference;
 
 mod update_custom_line_item;
 

@@ -373,6 +373,14 @@ pub use crate::types::_harness_sliding_window_configuration::HarnessSlidingWindo
 
 pub use crate::types::_harness_summarization_configuration::HarnessSummarizationConfigurationBuilder;
 
+pub use crate::types::_harness_before_invocation_hook::HarnessBeforeInvocationHookBuilder;
+
+pub use crate::types::_harness_after_invocation_hook::HarnessAfterInvocationHookBuilder;
+
+pub use crate::types::_harness_before_tool_call_hook::HarnessBeforeToolCallHookBuilder;
+
+pub use crate::types::_harness_after_tool_call_hook::HarnessAfterToolCallHookBuilder;
+
 pub use crate::types::_harness_agent_core_runtime_environment::HarnessAgentCoreRuntimeEnvironmentBuilder;
 
 pub use crate::types::_semantic_memory_strategy_input::SemanticMemoryStrategyInputBuilder;
@@ -518,6 +526,12 @@ pub use crate::types::_connector_configuration::ConnectorConfigurationBuilder;
 pub use crate::types::_provider_prefix::ProviderPrefixBuilder;
 
 pub use crate::types::_inference_operation_configuration::InferenceOperationConfigurationBuilder;
+
+pub use crate::types::_harness_hook_lambda_target::HarnessHookLambdaTargetBuilder;
+
+pub use crate::types::_harness_hook_sns_target::HarnessHookSnsTargetBuilder;
+
+pub use crate::types::_harness_hook_event_bridge_target::HarnessHookEventBridgeTargetBuilder;
 
 pub use crate::types::_semantic_override_configuration_input::SemanticOverrideConfigurationInputBuilder;
 

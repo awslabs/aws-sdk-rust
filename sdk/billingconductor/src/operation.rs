@@ -46,6 +46,9 @@ pub mod disassociate_pricing_rules;
 /// Types for the `GetBillingGroupCostReport` operation.
 pub mod get_billing_group_cost_report;
 
+/// Types for the `GetBillingTransferPreference` operation.
+pub mod get_billing_transfer_preference;
+
 /// Types for the `ListAccountAssociations` operation.
 pub mod list_account_associations;
 
@@ -87,6 +90,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateBillingGroup` operation.
 pub mod update_billing_group;
+
+/// Types for the `UpdateBillingTransferPreference` operation.
+pub mod update_billing_transfer_preference;
 
 /// Types for the `UpdateCustomLineItem` operation.
 pub mod update_custom_line_item;

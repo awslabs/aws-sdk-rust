@@ -482,6 +482,21 @@ pub fn de_db_cluster(
                 builder = builder.set_network_type(var_37);
             }
             ,
+            s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.docdb#DBCluster$CopyTagsToSnapshot */ =>  {
+                let var_38 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.docdb#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_copy_tags_to_snapshot(var_38);
+            }
+            ,
             _ => {}
         }
     }

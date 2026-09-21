@@ -31,6 +31,8 @@ pub struct UpdateHarnessInput {
     pub memory: ::std::option::Option<crate::types::UpdatedHarnessMemoryConfiguration>,
     /// <p>The truncation configuration for managing conversation context. If not specified, the existing value is retained.</p>
     pub truncation: ::std::option::Option<crate::types::HarnessTruncationConfiguration>,
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub hooks: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>,
     /// <p>The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.</p>
     pub max_iterations: ::std::option::Option<i32>,
     /// <p>The maximum total number of output tokens the agent can generate across all model calls within a single invocation. If not specified, the existing value is retained.</p>
@@ -103,6 +105,12 @@ impl UpdateHarnessInput {
     pub fn truncation(&self) -> ::std::option::Option<&crate::types::HarnessTruncationConfiguration> {
         self.truncation.as_ref()
     }
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hooks.is_none()`.
+    pub fn hooks(&self) -> &[crate::types::HarnessHook] {
+        self.hooks.as_deref().unwrap_or_default()
+    }
     /// <p>The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.</p>
     pub fn max_iterations(&self) -> ::std::option::Option<i32> {
         self.max_iterations
@@ -133,6 +141,7 @@ impl ::std::fmt::Debug for UpdateHarnessInput {
         formatter.field("allowed_tools", &self.allowed_tools);
         formatter.field("memory", &self.memory);
         formatter.field("truncation", &self.truncation);
+        formatter.field("hooks", &self.hooks);
         formatter.field("max_iterations", &self.max_iterations);
         formatter.field("max_tokens", &self.max_tokens);
         formatter.field("timeout_seconds", &self.timeout_seconds);
@@ -164,6 +173,7 @@ pub struct UpdateHarnessInputBuilder {
     pub(crate) allowed_tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) memory: ::std::option::Option<crate::types::UpdatedHarnessMemoryConfiguration>,
     pub(crate) truncation: ::std::option::Option<crate::types::HarnessTruncationConfiguration>,
+    pub(crate) hooks: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>,
     pub(crate) max_iterations: ::std::option::Option<i32>,
     pub(crate) max_tokens: ::std::option::Option<i32>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
@@ -403,6 +413,26 @@ impl UpdateHarnessInputBuilder {
     pub fn get_truncation(&self) -> &::std::option::Option<crate::types::HarnessTruncationConfiguration> {
         &self.truncation
     }
+    /// Appends an item to `hooks`.
+    ///
+    /// To override the contents of this collection use [`set_hooks`](Self::set_hooks).
+    ///
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn hooks(mut self, input: crate::types::HarnessHook) -> Self {
+        let mut v = self.hooks.unwrap_or_default();
+        v.push(input);
+        self.hooks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn set_hooks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>>) -> Self {
+        self.hooks = input;
+        self
+    }
+    /// <p>The lifecycle hooks to run at defined points in the agent loop. If specified, this replaces all existing hooks. If not specified, the existing hooks are retained.</p>
+    pub fn get_hooks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HarnessHook>> {
+        &self.hooks
+    }
     /// <p>The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.</p>
     pub fn max_iterations(mut self, input: i32) -> Self {
         self.max_iterations = ::std::option::Option::Some(input);
@@ -464,6 +494,7 @@ impl UpdateHarnessInputBuilder {
             allowed_tools: self.allowed_tools,
             memory: self.memory,
             truncation: self.truncation,
+            hooks: self.hooks,
             max_iterations: self.max_iterations,
             max_tokens: self.max_tokens,
             timeout_seconds: self.timeout_seconds,
@@ -487,6 +518,7 @@ impl ::std::fmt::Debug for UpdateHarnessInputBuilder {
         formatter.field("allowed_tools", &self.allowed_tools);
         formatter.field("memory", &self.memory);
         formatter.field("truncation", &self.truncation);
+        formatter.field("hooks", &self.hooks);
         formatter.field("max_iterations", &self.max_iterations);
         formatter.field("max_tokens", &self.max_tokens);
         formatter.field("timeout_seconds", &self.timeout_seconds);

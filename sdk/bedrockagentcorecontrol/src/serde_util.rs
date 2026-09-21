@@ -4937,6 +4937,54 @@ pub(crate) fn gateway_api_key_credential_provider_correct_errors(
     builder
 }
 
+pub(crate) fn harness_after_invocation_hook_correct_errors(
+    mut builder: crate::types::builders::HarnessAfterInvocationHookBuilder,
+) -> crate::types::builders::HarnessAfterInvocationHookBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::HarnessHookTarget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn harness_after_tool_call_hook_correct_errors(
+    mut builder: crate::types::builders::HarnessAfterToolCallHookBuilder,
+) -> crate::types::builders::HarnessAfterToolCallHookBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::HarnessHookTarget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn harness_before_invocation_hook_correct_errors(
+    mut builder: crate::types::builders::HarnessBeforeInvocationHookBuilder,
+) -> crate::types::builders::HarnessBeforeInvocationHookBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::HarnessHookTarget::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn harness_before_tool_call_hook_correct_errors(
+    mut builder: crate::types::builders::HarnessBeforeToolCallHookBuilder,
+) -> crate::types::builders::HarnessBeforeToolCallHookBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::HarnessHookTarget::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn harness_skill_git_source_correct_errors(
     mut builder: crate::types::builders::HarnessSkillGitSourceBuilder,
 ) -> crate::types::builders::HarnessSkillGitSourceBuilder {
@@ -5346,6 +5394,33 @@ pub(crate) fn api_gateway_tool_override_correct_errors(
     }
     if builder.method.is_none() {
         builder.method = "no value was set".parse::<crate::types::RestApiMethod>().ok()
+    }
+    builder
+}
+
+pub(crate) fn harness_hook_event_bridge_target_correct_errors(
+    mut builder: crate::types::builders::HarnessHookEventBridgeTargetBuilder,
+) -> crate::types::builders::HarnessHookEventBridgeTargetBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_hook_lambda_target_correct_errors(
+    mut builder: crate::types::builders::HarnessHookLambdaTargetBuilder,
+) -> crate::types::builders::HarnessHookLambdaTargetBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn harness_hook_sns_target_correct_errors(
+    mut builder: crate::types::builders::HarnessHookSnsTargetBuilder,
+) -> crate::types::builders::HarnessHookSnsTargetBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

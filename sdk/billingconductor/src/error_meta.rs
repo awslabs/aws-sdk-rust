@@ -553,6 +553,49 @@ impl From<crate::operation::get_billing_group_cost_report::GetBillingGroupCostRe
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError> for Error {
+    fn from(err: crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError) -> Self {
+        match err {
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_billing_transfer_preference::GetBillingTransferPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_account_associations::ListAccountAssociationsError, R>>
     for Error
 where
@@ -998,6 +1041,56 @@ impl From<crate::operation::update_billing_group::UpdateBillingGroupError> for E
             crate::operation::update_billing_group::UpdateBillingGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_billing_group::UpdateBillingGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError> for Error {
+    fn from(err: crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError) -> Self {
+        match err {
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_billing_transfer_preference::UpdateBillingTransferPreferenceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

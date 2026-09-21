@@ -80,6 +80,52 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn get_billing_transfer_preference_output_output_correct_errors(
+    mut builder: crate::operation::get_billing_transfer_preference::builders::GetBillingTransferPreferenceOutputBuilder,
+) -> crate::operation::get_billing_transfer_preference::builders::GetBillingTransferPreferenceOutputBuilder {
+    if builder.responsibility_transfer_arn.is_none() {
+        builder.responsibility_transfer_arn = Some(Default::default())
+    }
+    if builder.auto_billing_transfer_billing_group_creation.is_none() {
+        builder.auto_billing_transfer_billing_group_creation = {
+            let builder = crate::types::builders::AutoTransferBillingGroupCreationPreferenceBuilder::default();
+            crate::serde_util::auto_transfer_billing_group_creation_preference_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_billing_transfer_preference_output_output_correct_errors(
+    mut builder: crate::operation::update_billing_transfer_preference::builders::UpdateBillingTransferPreferenceOutputBuilder,
+) -> crate::operation::update_billing_transfer_preference::builders::UpdateBillingTransferPreferenceOutputBuilder {
+    if builder.responsibility_transfer_arn.is_none() {
+        builder.responsibility_transfer_arn = Some(Default::default())
+    }
+    if builder.auto_billing_transfer_billing_group_creation.is_none() {
+        builder.auto_billing_transfer_billing_group_creation = {
+            let builder = crate::types::builders::AutoTransferBillingGroupCreationPreferenceBuilder::default();
+            crate::serde_util::auto_transfer_billing_group_creation_preference_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn auto_transfer_billing_group_creation_preference_correct_errors(
+    mut builder: crate::types::builders::AutoTransferBillingGroupCreationPreferenceBuilder,
+) -> crate::types::builders::AutoTransferBillingGroupCreationPreferenceBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_custom_line_item_charge_details_correct_errors(
     mut builder: crate::types::builders::ListCustomLineItemChargeDetailsBuilder,
 ) -> crate::types::builders::ListCustomLineItemChargeDetailsBuilder {

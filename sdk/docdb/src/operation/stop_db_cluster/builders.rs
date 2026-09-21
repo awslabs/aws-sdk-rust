@@ -22,7 +22,7 @@ impl crate::operation::stop_db_cluster::builders::StopDbClusterInputBuilder {
 }
 /// Fluent builder constructing a request to `StopDBCluster`.
 ///
-/// <p>Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the <i>available</i> state. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping and Starting an Amazon DocumentDB Cluster</a>.</p>
+/// <p>Stops the running cluster that is specified by <code>DBClusterIdentifier</code>. The cluster must be in the <i>available</i> state. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping and Starting an Amazon DocumentDB Cluster</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDBClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

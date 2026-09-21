@@ -49,87 +49,99 @@ pub fn ser_create_harness_input_input(
     if let Some(var_16) = &input.harness_name {
         object.key("harnessName").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.max_iterations {
-        object.key("maxIterations").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
-        );
-    }
-    if let Some(var_18) = &input.max_tokens {
-        object.key("maxTokens").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
-        );
-    }
-    if let Some(var_19) = &input.memory {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("memory").start_object();
-        crate::protocol_serde::shape_harness_memory_configuration::ser_harness_memory_configuration(&mut object_20, var_19)?;
-        object_20.finish();
-    }
-    if let Some(var_21) = &input.model {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("model").start_object();
-        crate::protocol_serde::shape_harness_model_configuration::ser_harness_model_configuration(&mut object_22, var_21)?;
-        object_22.finish();
-    }
-    if let Some(var_23) = &input.skills {
-        let mut array_24 = object.key("skills").start_array();
-        for item_25 in var_23 {
+    if let Some(var_17) = &input.hooks {
+        let mut array_18 = object.key("hooks").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_harness_skill::ser_harness_skill(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_harness_hook::ser_harness_hook(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_24.finish();
+        array_18.finish();
     }
-    if let Some(var_27) = &input.system_prompt {
-        let mut array_28 = object.key("systemPrompt").start_array();
+    if let Some(var_21) = &input.max_iterations {
+        object.key("maxIterations").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
+    if let Some(var_22) = &input.max_tokens {
+        object.key("maxTokens").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+        );
+    }
+    if let Some(var_23) = &input.memory {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("memory").start_object();
+        crate::protocol_serde::shape_harness_memory_configuration::ser_harness_memory_configuration(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.model {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("model").start_object();
+        crate::protocol_serde::shape_harness_model_configuration::ser_harness_model_configuration(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.skills {
+        let mut array_28 = object.key("skills").start_array();
         for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
                 let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_harness_system_content_block::ser_harness_system_content_block(&mut object_30, item_29)?;
+                crate::protocol_serde::shape_harness_skill::ser_harness_skill(&mut object_30, item_29)?;
                 object_30.finish();
             }
         }
         array_28.finish();
     }
-    if let Some(var_31) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_32 = object.key("tags").start_object();
-        for (key_33, value_34) in var_31 {
-            {
-                object_32.key(key_33.as_str()).string(value_34.as_str());
-            }
-        }
-        object_32.finish();
-    }
-    if let Some(var_35) = &input.timeout_seconds {
-        object.key("timeoutSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_35).into()),
-        );
-    }
-    if let Some(var_36) = &input.tools {
-        let mut array_37 = object.key("tools").start_array();
-        for item_38 in var_36 {
+    if let Some(var_31) = &input.system_prompt {
+        let mut array_32 = object.key("systemPrompt").start_array();
+        for item_33 in var_31 {
             {
                 #[allow(unused_mut)]
-                let mut object_39 = array_37.value().start_object();
-                crate::protocol_serde::shape_harness_tool::ser_harness_tool(&mut object_39, item_38)?;
-                object_39.finish();
+                let mut object_34 = array_32.value().start_object();
+                crate::protocol_serde::shape_harness_system_content_block::ser_harness_system_content_block(&mut object_34, item_33)?;
+                object_34.finish();
             }
         }
-        array_37.finish();
+        array_32.finish();
     }
-    if let Some(var_40) = &input.truncation {
+    if let Some(var_35) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("truncation").start_object();
-        crate::protocol_serde::shape_harness_truncation_configuration::ser_harness_truncation_configuration(&mut object_41, var_40)?;
-        object_41.finish();
+        let mut object_36 = object.key("tags").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).string(value_38.as_str());
+            }
+        }
+        object_36.finish();
+    }
+    if let Some(var_39) = &input.timeout_seconds {
+        object.key("timeoutSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+        );
+    }
+    if let Some(var_40) = &input.tools {
+        let mut array_41 = object.key("tools").start_array();
+        for item_42 in var_40 {
+            {
+                #[allow(unused_mut)]
+                let mut object_43 = array_41.value().start_object();
+                crate::protocol_serde::shape_harness_tool::ser_harness_tool(&mut object_43, item_42)?;
+                object_43.finish();
+            }
+        }
+        array_41.finish();
+    }
+    if let Some(var_44) = &input.truncation {
+        #[allow(unused_mut)]
+        let mut object_45 = object.key("truncation").start_object();
+        crate::protocol_serde::shape_harness_truncation_configuration::ser_harness_truncation_configuration(&mut object_45, var_44)?;
+        object_45.finish();
     }
     Ok(())
 }

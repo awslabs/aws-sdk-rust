@@ -177,6 +177,8 @@ pub use crate::types::_harness_message_stop_event::HarnessMessageStopEvent;
 
 pub use crate::types::_harness_metadata_event::HarnessMetadataEvent;
 
+pub use crate::types::_harness_hook_event::HarnessHookEvent;
+
 pub use crate::types::_response_chunk::ResponseChunk;
 
 pub use crate::types::_browser_extension::BrowserExtension;
@@ -346,6 +348,10 @@ pub use crate::types::_harness_stop_reason::HarnessStopReason;
 pub use crate::types::_harness_token_usage::HarnessTokenUsage;
 
 pub use crate::types::_harness_stream_metrics::HarnessStreamMetrics;
+
+pub use crate::types::_harness_hook_event_type::HarnessHookEventType;
+
+pub use crate::types::_harness_hook_decision::HarnessHookDecision;
 
 pub use crate::types::_content_start_event::ContentStartEvent;
 
@@ -868,6 +874,12 @@ mod _harness_conversation_role;
 mod _harness_gateway_outbound_auth;
 
 mod _harness_gemini_model_config;
+
+mod _harness_hook_decision;
+
+mod _harness_hook_event;
+
+mod _harness_hook_event_type;
 
 mod _harness_inline_function_config;
 
