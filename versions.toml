@@ -2789,6 +2789,10 @@ source_hash = 'b39ddd6750bdfe8e025469d2e6c56037ada894c5bce38d4649e6c6910eb2c625'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '24f072acb98fb818444b17a88cbfea13cf8e541558872ae8daf899b2034e2037'
+
+[release]
+tag = 'release-2026-09-22'
+
 [release.crates]
 aws-runtime = '1.10.0'
 aws-sdk-accessanalyzer = '1.121.0'

@@ -1,4 +1,624 @@
 <!-- Do not manually edit this file. Use the `changelogger` tool. -->
+September 22nd, 2026
+====================
+**Breaking Changes:**
+- :bug::warning: ([smithy-rs#4805](https://github.com/smithy-lang/smithy-rs/issues/4805), [smithy-rs#4810](https://github.com/smithy-lang/smithy-rs/issues/4810), [smithy-rs#4827](https://github.com/smithy-lang/smithy-rs/issues/4827), @yychen23) Across the Smithy runtime crates and generated SDK crates, `http` 0.2.x is now reached only through a named feature. Every crate below still supports it; nothing is removed.
+
+    **A default build is unchanged.** Generated SDK crates still enable the `rustls` feature by default, which builds the legacy `hyper` 0.14 / `rustls` 0.21 HTTP client and brings `http` 0.2.x with it. No crate is added to or removed from a default dependency tree by this change. Making the default client opt-in is a separate, later change.
+
+    What this change makes possible is *removing* `http` 0.2.x, which addresses the unpatched `http` 0.2.x advisories for builds that opt out. See "Removing `http` 0.2.x from your dependency tree" below.
+
+    ### Recommended setup
+
+    Most users need no feature configuration and are unaffected:
+
+    ```toml
+    aws-sdk-s3 = "..."
+    ```
+
+    Enable `http-02x` (on the SDK crate, or on the individual runtime crate) only if you need the `http` 0.2.x interop APIs:
+
+    ```toml
+    aws-sdk-s3 = { version = "...", features = ["http-02x"] }
+    ```
+
+    ### Removing `http` 0.2.x from your dependency tree
+
+    If you need `http` 0.2.x gone entirely — for example to satisfy a patch-compliance scan, since `http` 0.2.x has unpatched advisories — disable default features and re-enable the ones you need, omitting `rustls` (and not enabling `legacy-https-client`, which selects the same legacy stack):
+
+    ```toml
+    aws-sdk-s3 = { version = "...", default-features = false, features = [
+        "sigv4a", "http-1x", "default-https-client", "rt-tokio"
+    ] }
+    ```
+
+    That is `aws-sdk-s3`'s default feature list with `rustls` left out; the list varies slightly per SDK crate, so check the crate you depend on. The result has no `http` 0.2.x, `http-body` 0.4.x, `hyper` 0.14, `rustls` 0.21 or `h2` 0.3 in **either normal or dev scope**. `aws-config` needs no configuration — it already depends on the SDK crates it uses with `default-features = false` and defaults to `default-https-client`.
+
+    Cargo features are additive, so this is the only way to get a smaller tree: there is no feature that removes `http` 0.2.x, only features that add it.
+
+    ### `aws-smithy-runtime-api`
+
+    `http` 0.2.x is now optional behind the pre-existing `http-02x` feature (off by default). The crate's internal HTTP representations (`Headers`, `Uri`, `HttpError`, `EndpointPrefix`, and request/response extensions) now use the `http` 1.x types.
+
+    **Breaking change:** these previously unconditional `pub` conversions now require the `http-02x` feature:
+
+    - `Request::try_into_http02x` and `Response::try_into_http02x`
+    - `impl From<http_02x::Uri> for Uri`
+    - `impl TryInto<http_02x::Request<B>> for Request<B>` and `impl TryFrom<http_02x::Request<B>> for Request<B>`
+    - `impl TryFrom<http_02x::Response<B>> for Response<B>`
+    - `impl From<http_02x::StatusCode> for StatusCode` and `impl From<StatusCode> for http_02x::StatusCode`
+    - `impl TryFrom<http_02x::HeaderMap> for Headers`
+    - `impl AsHeaderComponent for http_02x::HeaderName` and `impl AsHeaderComponent for http_02x::HeaderValue`
+
+    Additionally, `Request::try_into_http02x` now returns an `Err` instead of panicking when the request URI is valid under `http` 1.x but not under `http` 0.2.x, and `TryFrom<http_02x::HeaderMap> for Headers` now returns an `Err` instead of panicking for header names that `http` 0.2.x accepts but `http` 1.x rejects.
+
+    ### `aws-smithy-types`
+
+    Neither the `http-body-1-x` feature nor the `rt-tokio` feature pulls in `http` 0.2.x or `http-body` 0.4.x anymore. `rt-tokio` now uses the `http-body` 1.x path for file-based bodies, and the legacy adapter code (the `Http1toHttp04` body adapter, the 0.2.x header conversions, and the 0.4.x file-body impl) is gated behind the `http-body-0-4-x` feature.
+
+    **Breaking change:** because `rt-tokio` no longer implies `http-body-0-4-x`, the `http` 0.2.x / `http-body` 0.4.x interop APIs are not available with only `rt-tokio` enabled. If you use `SdkBody::from_body_0_4`, `ByteStream::from_body_0_4`, or the `From<hyper_0_14::Body>` impls, enable `http-body-0-4-x`.
+
+    ### `aws-smithy-runtime`
+
+    `http` 0.2.x and `http-body` 0.4.x are now optional behind a new `http-02x` feature (off by default), and the crate no longer forces on `aws-smithy-types`' `http-body-0-4-x` feature.
+
+    **Breaking change:** these `pub` modules now require the `http-02x` feature:
+
+    - `client::endpoint`, which contains the already-deprecated `apply_endpoint`. Its 1.8.0 deprecation notice already announced that it may be feature gated in a future minor version.
+    - `client::http::body::minimum_throughput::http_body_0_4_x`, which provides the `http_body::Body` 0.4.x implementations for `MinimumThroughputDownloadBody` and `ThroughputReadingBody`. Stalled stream protection is unaffected on the `http` 1.x path, which is what generated clients use.
+
+    **Breaking change:** the `test-util` feature no longer enables `legacy-test-util`, so it no longer pulls the `hyper` 0.14 stack — `hyper` 0.14 and `http-body` 0.4.x — into the dependency tree. Note that `http` 0.2.x itself is still reachable under `test-util`, through `aws-smithy-protocol-test`, which has not been moved off it. Two re-exports moved behind `legacy-test-util`, since both are the pre-1.x variants:
+
+    - `client::http::test_util::capture_request`
+    - `client::http::test_util::infallible_client_fn`
+
+    Keep them by enabling `legacy-test-util`, or migrate to the `http` 1.x equivalents in `aws_smithy_http_client::test_util`. `ReplayEvent`, `StaticReplayClient`, `NeverClient` and `capture_test_logs` are unaffected — they are already `http` 1.x or version-agnostic.
+
+    The legacy `connector-hyper-0-14-x` and `legacy-test-util` features otherwise work unchanged: they already pulled in the `http` 0.2.x ecosystem transitively through `aws-smithy-http-client`, and now declare what they need explicitly.
+
+    **Bug fix:** `aws-smithy-runtime` now falls back to the `hyper` 1.x client when a `BehaviorVersion` older than `v2026_01_12` would otherwise get no default HTTP client at all. That path previously consulted only `connector-hyper-0-14-x`, so two configurations installed no client and failed every request with "No HTTP client was available to send this request": a build without the legacy connector, and a build with the connector but no TLS implementation, since the legacy `default_client` requires `legacy-rustls-ring`. Builds that do have a working legacy client are unaffected and continue to use it for those behavior versions.
+
+    This matters for the opt-out above. Leaving `rustls` out of the feature list removes the legacy connector, so without this fallback a client pinned to a `BehaviorVersion` older than `v2026_01_12` would come up with no HTTP client. Falling back is not silent: it logs a warning naming the feature to enable if you need the legacy stack.
+
+    **Advance notice of a coming default change.** A build that resolves to the legacy `hyper` 0.14.x client now logs a warning once per process saying that the default becomes the `hyper` 1.x client in the 2.x release, currently expected November 2026 — a different TLS implementation, with different connection-pooling and timeout behavior. Nothing changes yet; this release only tells you where you stand.
+
+    It fires only where the legacy client is actually selected: a `BehaviorVersion` older than `v2026_01_12` with the legacy stack compiled in, which is what a default build is today. Clients on `v2026_01_12` or later already use the `hyper` 1.x client and are unaffected, so they stay quiet.
+
+    To keep the legacy client through that change, add `legacy-https-client` now — that spelling is stable across it, whereas `rustls` becomes a synonym for the `hyper` 1.x client:
+
+    ```toml
+    aws-sdk-s3 = { version = "...", features = ["legacy-https-client"] }
+    ```
+
+    Note the warning cannot tell a caller who has already pinned `legacy-https-client` apart from one riding the default, because both arrive at `aws-smithy-runtime` as `tls-rustls`. If you have already pinned it, you are set and can ignore the warning.
+
+    ### `aws-sigv4`
+
+    The default-on `sign-http` feature no longer declares a dependency on `http` 0.2.x. Nothing compiled under that feature used it: request signing runs on `http` 1.x through `SigningInstructions::apply_to_request_http1x`, and the only `http` 0.2.x path, `apply_to_request_http0x`, is gated on `http0-compat`. `http` 0.2.x is now reachable only through `http0-compat`.
+
+    No public API changed. However, `aws-runtime` used to enable `aws-sigv4/http0-compat`, so applications depending on both crates were getting that feature switched on for them through Cargo feature unification. If you call `apply_to_request_http0x`, enable `aws-sigv4/http0-compat` explicitly.
+
+    ### Generated SDK crates
+
+    The `http` dependency is now optional, enabled by a new opt-in `http-02x` feature. Generated crates also no longer enable `http-02x` on `aws-smithy-runtime-api` or `aws-runtime` unless that feature is turned on.
+
+    **Breaking change:** the deprecated `http` 0.2.x conversions on `PresignedRequest` require the `http-02x` feature:
+
+    - `PresignedRequest::make_http_02x_request`
+    - `PresignedRequest::into_http_02x_request`
+
+    Prefer migrating to the `http` 1.x equivalents, which are enabled by default and are not deprecated: `PresignedRequest::make_http_1x_request` and `PresignedRequest::into_http_1x_request`.
+
+    A new opt-in **`legacy-https-client`** feature names the `hyper` 0.14.x + `rustls` 0.21.x HTTP client — the same stack the default-on `rustls` feature selects today. It is additive: `rustls` is what puts that stack in a default build, so adding this feature changes no dependency tree.
+
+    It exists now because `rustls` is going to change meaning. A later release will make `rustls` a synonym for `default-https-client` (the `hyper` 1.x stack) and drop it from the default list, at which point a call site that wrote `features = ["rustls"]` meaning "the legacy stack" will silently get a different one. Spelling it `legacy-https-client` instead pins the stack you actually want, and that spelling will keep working:
+
+    ```toml
+    aws-sdk-s3 = { version = "...", features = ["legacy-https-client"] }
+    ```
+
+    The generated test features changed too, so that building with `test-util` no longer drags `http` 0.2.x in:
+
+    - `test-util` no longer enables `aws-smithy-runtime`'s test features, so it no longer adds `http` 0.2.x on top of whatever the build already has. A build with `--features test-util` now resolves to the same HTTP stack as a build without it.
+    - A new opt-in **`legacy-test-util`** feature provides the pre-1.x test helpers for anyone who still needs them, and pulls `http` 0.2.x back in when enabled. It also enables `test-util`, so `--features legacy-test-util` on its own is enough to compile and run tests.
+
+    ### `aws-runtime`
+
+    `aws-runtime`'s `http-02x` feature now enables `aws-smithy-types/http-body-0-4-x` itself. It previously inherited that feature transitively from `aws-smithy-runtime`, so enabling `aws-runtime/http-02x` on its own did not compile.
+
+**Service Features:**
+- `aws-sdk-apigateway` (1.118.0): API Gateway now supports two new security policies for REST APIs and custom domain names, SecurityPolicy-TLS13-1-2-Ext2-PQ-2025-09 (TLS 1.3 1.2 with post-quantum cryptography) and SecurityPolicy-TLS13-1-2-Ext2-FIPS-PQ-2025-09 (adds FIPS). Both retain legacy algorithms for backward compatibility.
+- `aws-sdk-cloudwatchomni` (1.0.0): Amazon CloudWatch Omni is now generally available, an AI-powered unified observability for AI agents, applications, and infrastructure. As part of it, organization centralization rules now support cross-account context graph centralization.
+- `aws-sdk-ec2` (1.263.0): Amazon EC2 now supports quote-based start date changes for future-dated Capacity Reservations
+- `aws-sdk-glue` (1.168.0): Adding two new fields for Glue Materialized Views feature - (1) SubObjectsStatistics and (2) SparkPipelineInfo.
+- `aws-sdk-observabilityadmin` (1.76.0): Amazon CloudWatch Omni is now generally available, an AI-powered unified observability for AI agents, applications, and infrastructure. Centralization now supports context graph for multi-account resource discovery, and dataset integrations makes logs available in CloudWatch datasets.
+- `aws-sdk-quicksight` (1.158.0): Adds support for granular custom permissions on 28 action connectors, including Gmail, Google Drive, Google Sheets, Airtable, and Dropbox. Administrators can now allow or deny individual connector operations instead of all action connectors at once.
+- `aws-sdk-ssoadmin` (1.117.0): AWS IAM Identity Center now returns PrimaryRegion and Regions in the DescribeInstance response, providing information about replicated instances, and returns IdentityStoreArn in both the ListInstances and DescribeInstance responses.
+
+**Contributors**
+Thank you for your contributions! ❤
+- @yychen23 ([smithy-rs#4805](https://github.com/smithy-lang/smithy-rs/issues/4805), [smithy-rs#4810](https://github.com/smithy-lang/smithy-rs/issues/4810), [smithy-rs#4827](https://github.com/smithy-lang/smithy-rs/issues/4827))
+
+**Crate Versions**
+<details>
+<summary>Click to expand to view crate versions...</summary>
+
+|Crate|Version|
+|-|-|
+|aws-config|1.12.0|
+|aws-credential-types|1.3.0|
+|aws-runtime|1.10.0|
+|aws-runtime-api|1.2.0|
+|aws-sdk-accessanalyzer|1.121.0|
+|aws-sdk-account|1.118.0|
+|aws-sdk-accountaccess|1.8.0|
+|aws-sdk-acm|1.118.0|
+|aws-sdk-acmpca|1.119.0|
+|aws-sdk-agentregistry|1.9.0|
+|aws-sdk-agentregistrycontrol|1.8.0|
+|aws-sdk-aiops|1.41.0|
+|aws-sdk-amp|1.122.0|
+|aws-sdk-amplify|1.123.0|
+|aws-sdk-amplifybackend|1.113.0|
+|aws-sdk-amplifyuibuilder|1.112.0|
+|aws-sdk-apigateway|1.118.0|
+|aws-sdk-apigatewaymanagement|1.113.0|
+|aws-sdk-apigatewayv2|1.116.0|
+|aws-sdk-appconfig|1.118.0|
+|aws-sdk-appconfigdata|1.113.0|
+|aws-sdk-appfabric|1.113.0|
+|aws-sdk-appflow|1.114.0|
+|aws-sdk-appintegrations|1.118.0|
+|aws-sdk-applicationautoscaling|1.120.0|
+|aws-sdk-applicationcostprofiler|1.112.0|
+|aws-sdk-applicationdiscovery|1.115.0|
+|aws-sdk-applicationinsights|1.114.0|
+|aws-sdk-applicationsignals|1.94.0|
+|aws-sdk-appmesh|1.113.0|
+|aws-sdk-apprunner|1.113.0|
+|aws-sdk-appstream|1.128.0|
+|aws-sdk-appsync|1.126.0|
+|aws-sdk-arcregionswitch|1.39.0|
+|aws-sdk-arczonalshift|1.117.0|
+|aws-sdk-artifact|1.104.0|
+|aws-sdk-athena|1.120.0|
+|aws-sdk-auditmanager|1.117.0|
+|aws-sdk-autoscaling|1.133.0|
+|aws-sdk-autoscalingplans|1.113.0|
+|aws-sdk-b2bi|1.119.0|
+|aws-sdk-backup|1.125.0|
+|aws-sdk-backupgateway|1.115.0|
+|aws-sdk-backupsearch|1.61.0|
+|aws-sdk-batch|1.130.0|
+|aws-sdk-bcmdashboards|1.32.0|
+|aws-sdk-bcmdataexports|1.113.0|
+|aws-sdk-bcmpricingcalculator|1.70.0|
+|aws-sdk-bcmrecommendedactions|1.33.0|
+|aws-sdk-bedrock|1.158.0|
+|aws-sdk-bedrockagent|1.148.0|
+|aws-sdk-bedrockagentcore|1.73.0|
+|aws-sdk-bedrockagentcorecontrol|1.85.0|
+|aws-sdk-bedrockagentruntime|1.142.0|
+|aws-sdk-bedrockdataautomation|1.69.0|
+|aws-sdk-bedrockdataautomationruntime|1.66.0|
+|aws-sdk-bedrockruntime|1.146.0|
+|aws-sdk-billing|1.70.0|
+|aws-sdk-billingconductor|1.118.0|
+|aws-sdk-braket|1.118.0|
+|aws-sdk-budgets|1.122.0|
+|aws-sdk-chatbot|1.102.0|
+|aws-sdk-chime|1.114.0|
+|aws-sdk-chimesdkidentity|1.112.0|
+|aws-sdk-chimesdkmediapipelines|1.114.0|
+|aws-sdk-chimesdkmeetings|1.114.0|
+|aws-sdk-chimesdkmessaging|1.113.0|
+|aws-sdk-chimesdkvoice|1.118.0|
+|aws-sdk-cleanrooms|1.139.0|
+|aws-sdk-cleanroomsml|1.120.0|
+|aws-sdk-cloud9|1.113.0|
+|aws-sdk-cloudcontrol|1.113.0|
+|aws-sdk-clouddirectory|1.113.0|
+|aws-sdk-cloudformation|1.128.0|
+|aws-sdk-cloudfront|1.133.0|
+|aws-sdk-cloudfrontkeyvaluestore|1.111.0|
+|aws-sdk-cloudhsm|1.113.0|
+|aws-sdk-cloudhsmv2|1.116.0|
+|aws-sdk-cloudsearch|1.113.0|
+|aws-sdk-cloudsearchdomain|1.113.0|
+|aws-sdk-cloudtrail|1.123.0|
+|aws-sdk-cloudtraildata|1.113.0|
+|aws-sdk-cloudwatch|1.131.0|
+|aws-sdk-cloudwatchevents|1.113.0|
+|aws-sdk-cloudwatchlogs|1.153.0|
+|aws-sdk-cloudwatchomni|1.0.0|
+|aws-sdk-codeartifact|1.115.0|
+|aws-sdk-codebuild|1.138.0|
+|aws-sdk-codecatalyst|1.113.0|
+|aws-sdk-codecommit|1.115.0|
+|aws-sdk-codeconnections|1.96.0|
+|aws-sdk-codedeploy|1.116.0|
+|aws-sdk-codeguruprofiler|1.112.0|
+|aws-sdk-codegurureviewer|1.112.0|
+|aws-sdk-codegurusecurity|1.113.0|
+|aws-sdk-codepipeline|1.123.0|
+|aws-sdk-codestarconnections|1.114.0|
+|aws-sdk-codestarnotifications|1.112.0|
+|aws-sdk-cognitoidentity|1.114.0|
+|aws-sdk-cognitoidentityprovider|1.136.0|
+|aws-sdk-cognitosync|1.113.0|
+|aws-sdk-comprehend|1.112.0|
+|aws-sdk-comprehendmedical|1.113.0|
+|aws-sdk-computeoptimizer|1.121.0|
+|aws-sdk-computeoptimizerautomation|1.24.0|
+|aws-sdk-config|1.124.0|
+|aws-sdk-connect|1.207.0|
+|aws-sdk-connectcampaigns|1.115.0|
+|aws-sdk-connectcampaignsv2|1.72.0|
+|aws-sdk-connectcases|1.127.0|
+|aws-sdk-connectcontactlens|1.116.0|
+|aws-sdk-connecthealth|1.19.0|
+|aws-sdk-connectparticipant|1.118.0|
+|aws-sdk-controlcatalog|1.98.0|
+|aws-sdk-controltower|1.120.0|
+|aws-sdk-costandusagereport|1.114.0|
+|aws-sdk-costexplorer|1.130.0|
+|aws-sdk-costoptimizationhub|1.120.0|
+|aws-sdk-customerprofiles|1.129.0|
+|aws-sdk-databasemigration|1.126.0|
+|aws-sdk-databrew|1.112.0|
+|aws-sdk-dataexchange|1.116.0|
+|aws-sdk-datapipeline|1.113.0|
+|aws-sdk-datasync|1.124.0|
+|aws-sdk-datazone|1.156.0|
+|aws-sdk-dax|1.114.0|
+|aws-sdk-deadline|1.116.0|
+|aws-sdk-detective|1.113.0|
+|aws-sdk-devicefarm|1.120.0|
+|aws-sdk-devopsagent|1.22.0|
+|aws-sdk-devopsguru|1.112.0|
+|aws-sdk-directconnect|1.120.0|
+|aws-sdk-directory|1.118.0|
+|aws-sdk-directoryservicedata|1.70.0|
+|aws-sdk-dlm|1.113.0|
+|aws-sdk-docdb|1.121.0|
+|aws-sdk-docdbelastic|1.114.0|
+|aws-sdk-drs|1.120.0|
+|aws-sdk-dsql|1.72.0|
+|aws-sdk-dynamodb|1.127.0|
+|aws-sdk-dynamodbstreams|1.114.0|
+|aws-sdk-ebs|1.112.0|
+|aws-sdk-ec2|1.263.0|
+|aws-sdk-ec2instanceconnect|1.113.0|
+|aws-sdk-ecr|1.130.0|
+|aws-sdk-ecrpublic|1.115.0|
+|aws-sdk-ecs|1.147.0|
+|aws-sdk-efs|1.116.0|
+|aws-sdk-eks|1.150.0|
+|aws-sdk-eksauth|1.110.0|
+|aws-sdk-elasticache|1.120.0|
+|aws-sdk-elasticbeanstalk|1.115.0|
+|aws-sdk-elasticloadbalancing|1.114.0|
+|aws-sdk-elasticloadbalancingv2|1.127.0|
+|aws-sdk-elasticsearch|1.120.0|
+|aws-sdk-elastictranscoder|1.112.0|
+|aws-sdk-elementalinference|1.22.0|
+|aws-sdk-emr|1.125.0|
+|aws-sdk-emrcontainers|1.120.0|
+|aws-sdk-emrserverless|1.124.0|
+|aws-sdk-entityresolution|1.125.0|
+|aws-sdk-eventbridge|1.119.0|
+|aws-sdk-evs|1.45.0|
+|aws-sdk-finspace|1.116.0|
+|aws-sdk-finspacedata|1.112.0|
+|aws-sdk-firehose|1.121.0|
+|aws-sdk-fis|1.115.0|
+|aws-sdk-fms|1.116.0|
+|aws-sdk-forecast|1.112.0|
+|aws-sdk-forecastquery|1.112.0|
+|aws-sdk-frauddetector|1.112.0|
+|aws-sdk-freetier|1.110.0|
+|aws-sdk-fsx|1.125.0|
+|aws-sdk-gamelift|1.128.0|
+|aws-sdk-gameliftstreams|1.61.0|
+|aws-sdk-geomaps|1.69.0|
+|aws-sdk-geoplaces|1.67.0|
+|aws-sdk-georoutes|1.69.0|
+|aws-sdk-glacier|1.114.0|
+|aws-sdk-globalaccelerator|1.114.0|
+|aws-sdk-glue|1.168.0|
+|aws-sdk-grafana|1.115.0|
+|aws-sdk-greengrass|1.113.0|
+|aws-sdk-greengrassv2|1.113.0|
+|aws-sdk-groundstation|1.118.0|
+|aws-sdk-guardduty|1.142.0|
+|aws-sdk-health|1.117.0|
+|aws-sdk-healthlake|1.120.0|
+|aws-sdk-iam|1.126.0|
+|aws-sdk-iamtoolbox|1.4.0|
+|aws-sdk-identitystore|1.114.0|
+|aws-sdk-imagebuilder|1.127.0|
+|aws-sdk-inspector|1.113.0|
+|aws-sdk-inspector2|1.130.0|
+|aws-sdk-inspectorscan|1.114.0|
+|aws-sdk-interconnect|1.16.0|
+|aws-sdk-internetmonitor|1.117.0|
+|aws-sdk-invoicing|1.68.0|
+|aws-sdk-iot|1.128.0|
+|aws-sdk-iotdataplane|1.113.0|
+|aws-sdk-iotdeviceadvisor|1.113.0|
+|aws-sdk-iotfleetwise|1.119.0|
+|aws-sdk-iotjobsdataplane|1.113.0|
+|aws-sdk-iotmanagedintegrations|1.57.0|
+|aws-sdk-iotsecuretunneling|1.114.0|
+|aws-sdk-iotsitewise|1.122.0|
+|aws-sdk-iotthingsgraph|1.112.0|
+|aws-sdk-iottwinmaker|1.112.0|
+|aws-sdk-iotwireless|1.121.0|
+|aws-sdk-ivs|1.122.0|
+|aws-sdk-ivschat|1.113.0|
+|aws-sdk-ivsrealtime|1.126.0|
+|aws-sdk-kafka|1.127.0|
+|aws-sdk-kafkaconnect|1.117.0|
+|aws-sdk-kendra|1.115.0|
+|aws-sdk-kendraranking|1.112.0|
+|aws-sdk-keyspaces|1.118.0|
+|aws-sdk-keyspacesstreams|1.40.0|
+|aws-sdk-kinesis|1.122.0|
+|aws-sdk-kinesisanalytics|1.113.0|
+|aws-sdk-kinesisanalyticsv2|1.118.0|
+|aws-sdk-kinesisvideo|1.115.0|
+|aws-sdk-kinesisvideoarchivedmedia|1.113.0|
+|aws-sdk-kinesisvideomedia|1.113.0|
+|aws-sdk-kinesisvideosignaling|1.112.0|
+|aws-sdk-kinesisvideowebrtcstorage|1.113.0|
+|aws-sdk-kms|1.121.0|
+|aws-sdk-lakeformation|1.118.0|
+|aws-sdk-lambda|1.147.0|
+|aws-sdk-lambdacore|1.10.0|
+|aws-sdk-lambdamicrovms|1.11.0|
+|aws-sdk-launchwizard|1.115.0|
+|aws-sdk-lexmodelbuilding|1.114.0|
+|aws-sdk-lexmodelsv2|1.124.0|
+|aws-sdk-lexruntime|1.112.0|
+|aws-sdk-lexruntimev2|1.113.0|
+|aws-sdk-licensemanager|1.117.0|
+|aws-sdk-licensemanagerlinuxsubscriptions|1.113.0|
+|aws-sdk-licensemanagerusersubscriptions|1.116.0|
+|aws-sdk-lightsail|1.126.0|
+|aws-sdk-location|1.117.0|
+|aws-sdk-lookoutequipment|1.114.0|
+|aws-sdk-m2|1.116.0|
+|aws-sdk-machinelearning|1.113.0|
+|aws-sdk-macie2|1.117.0|
+|aws-sdk-mailmanager|1.99.0|
+|aws-sdk-managedblockchain|1.112.0|
+|aws-sdk-managedblockchainquery|1.115.0|
+|aws-sdk-marketplaceagreement|1.116.0|
+|aws-sdk-marketplacecatalog|1.123.0|
+|aws-sdk-marketplacecommerceanalytics|1.113.0|
+|aws-sdk-marketplacedeployment|1.109.0|
+|aws-sdk-marketplacediscovery|1.17.0|
+|aws-sdk-marketplaceentitlement|1.119.0|
+|aws-sdk-marketplacemetering|1.116.0|
+|aws-sdk-marketplacereporting|1.68.0|
+|aws-sdk-mediaconnect|1.124.0|
+|aws-sdk-mediaconvert|1.145.0|
+|aws-sdk-medialive|1.155.0|
+|aws-sdk-mediapackage|1.113.0|
+|aws-sdk-mediapackagev2|1.131.0|
+|aws-sdk-mediapackagevod|1.113.0|
+|aws-sdk-mediastore|1.112.0|
+|aws-sdk-mediastoredata|1.113.0|
+|aws-sdk-mediatailor|1.129.0|
+|aws-sdk-medicalimaging|1.120.0|
+|aws-sdk-memorydb|1.116.0|
+|aws-sdk-mgn|1.119.0|
+|aws-sdk-migrationhub|1.113.0|
+|aws-sdk-migrationhubconfig|1.112.0|
+|aws-sdk-migrationhuborchestrator|1.113.0|
+|aws-sdk-migrationhubrefactorspaces|1.112.0|
+|aws-sdk-migrationhubstrategy|1.112.0|
+|aws-sdk-mpa|1.41.0|
+|aws-sdk-mq|1.118.0|
+|aws-sdk-mturk|1.112.0|
+|aws-sdk-mwaa|1.121.0|
+|aws-sdk-mwaaserverless|1.25.0|
+|aws-sdk-neptune|1.117.0|
+|aws-sdk-neptunedata|1.114.0|
+|aws-sdk-neptunegraph|1.112.0|
+|aws-sdk-networkfirewall|1.129.0|
+|aws-sdk-networkflowmonitor|1.68.0|
+|aws-sdk-networkmanager|1.117.0|
+|aws-sdk-networkmonitor|1.103.0|
+|aws-sdk-notifications|1.66.0|
+|aws-sdk-notificationscontacts|1.63.0|
+|aws-sdk-novaact|1.22.0|
+|aws-sdk-oam|1.115.0|
+|aws-sdk-observabilityadmin|1.76.0|
+|aws-sdk-odb|1.48.0|
+|aws-sdk-omics|1.128.0|
+|aws-sdk-opensearch|1.146.0|
+|aws-sdk-opensearchserverless|1.122.0|
+|aws-sdk-organizations|1.128.0|
+|aws-sdk-osis|1.117.0|
+|aws-sdk-outposts|1.130.0|
+|aws-sdk-partnercentralaccount|1.27.0|
+|aws-sdk-partnercentralbenefits|1.22.0|
+|aws-sdk-partnercentralchannel|1.24.0|
+|aws-sdk-partnercentralrevenuemeasurement|1.10.0|
+|aws-sdk-partnercentralselling|1.77.0|
+|aws-sdk-paymentcryptography|1.123.0|
+|aws-sdk-paymentcryptographydata|1.121.0|
+|aws-sdk-pcaconnectorad|1.113.0|
+|aws-sdk-pcaconnectorscep|1.83.0|
+|aws-sdk-pcs|1.89.0|
+|aws-sdk-personalize|1.117.0|
+|aws-sdk-personalizeevents|1.113.0|
+|aws-sdk-personalizeruntime|1.112.0|
+|aws-sdk-pi|1.114.0|
+|aws-sdk-pinpoint|1.114.0|
+|aws-sdk-pinpointemail|1.112.0|
+|aws-sdk-pinpointsmsvoice|1.113.0|
+|aws-sdk-pinpointsmsvoicev2|1.125.0|
+|aws-sdk-pipes|1.115.0|
+|aws-sdk-polly|1.120.0|
+|aws-sdk-pricing|1.116.0|
+|aws-sdk-pricingplanmanager|1.7.0|
+|aws-sdk-proton|1.112.0|
+|aws-sdk-qapps|1.80.0|
+|aws-sdk-qbusiness|1.129.0|
+|aws-sdk-qconnect|1.128.0|
+|aws-sdk-quicksight|1.158.0|
+|aws-sdk-ram|1.114.0|
+|aws-sdk-rbin|1.115.0|
+|aws-sdk-rds|1.151.0|
+|aws-sdk-rdsdata|1.115.0|
+|aws-sdk-redshift|1.121.0|
+|aws-sdk-redshiftdata|1.118.0|
+|aws-sdk-redshiftserverless|1.122.0|
+|aws-sdk-rekognition|1.116.0|
+|aws-sdk-repostspace|1.111.0|
+|aws-sdk-resiliencehub|1.116.0|
+|aws-sdk-resiliencehubv2|1.15.0|
+|aws-sdk-resourceexplorer2|1.117.0|
+|aws-sdk-resourcegroups|1.116.0|
+|aws-sdk-resourcegroupstagging|1.112.0|
+|aws-sdk-rolesanywhere|1.118.0|
+|aws-sdk-route53|1.125.0|
+|aws-sdk-route53domains|1.117.0|
+|aws-sdk-route53globalresolver|1.25.0|
+|aws-sdk-route53profiles|1.92.0|
+|aws-sdk-route53recoverycluster|1.113.0|
+|aws-sdk-route53recoverycontrolconfig|1.113.0|
+|aws-sdk-route53recoveryreadiness|1.113.0|
+|aws-sdk-route53resolver|1.123.0|
+|aws-sdk-rtbfabric|1.31.0|
+|aws-sdk-rum|1.115.0|
+|aws-sdk-s3|1.149.0|
+|aws-sdk-s3control|1.131.0|
+|aws-sdk-s3files|1.16.0|
+|aws-sdk-s3outposts|1.113.0|
+|aws-sdk-s3tables|1.69.0|
+|aws-sdk-s3vectors|1.39.0|
+|aws-sdk-sagemaker|1.236.0|
+|aws-sdk-sagemakera2iruntime|1.112.0|
+|aws-sdk-sagemakeredge|1.112.0|
+|aws-sdk-sagemakerfeaturestoreruntime|1.115.0|
+|aws-sdk-sagemakergeospatial|1.112.0|
+|aws-sdk-sagemakerjobruntime|1.11.0|
+|aws-sdk-sagemakermetrics|1.114.0|
+|aws-sdk-sagemakerruntime|1.116.0|
+|aws-sdk-sagemakerruntimehttp2|1.23.0|
+|aws-sdk-savingsplans|1.115.0|
+|aws-sdk-scheduler|1.112.0|
+|aws-sdk-schemas|1.112.0|
+|aws-sdk-secretsmanager|1.118.0|
+|aws-sdk-securityagent|1.23.0|
+|aws-sdk-securityhub|1.128.0|
+|aws-sdk-securityir|1.67.0|
+|aws-sdk-securitylake|1.116.0|
+|aws-sdk-serverlessapplicationrepository|1.112.0|
+|aws-sdk-servicecatalog|1.114.0|
+|aws-sdk-servicecatalogappregistry|1.112.0|
+|aws-sdk-servicediscovery|1.113.0|
+|aws-sdk-servicequotas|1.114.0|
+|aws-sdk-ses|1.116.0|
+|aws-sdk-sesv2|1.137.0|
+|aws-sdk-sfn|1.118.0|
+|aws-sdk-shield|1.112.0|
+|aws-sdk-signer|1.113.0|
+|aws-sdk-signerdata|1.18.0|
+|aws-sdk-signin|1.25.0|
+|aws-sdk-simpledbv2|1.16.0|
+|aws-sdk-snowball|1.112.0|
+|aws-sdk-snowdevicemanagement|1.113.0|
+|aws-sdk-sns|1.114.0|
+|aws-sdk-socialmessaging|1.73.0|
+|aws-sdk-sqs|1.112.0|
+|aws-sdk-ssm|1.125.0|
+|aws-sdk-ssmcontacts|1.111.0|
+|aws-sdk-ssmguiconnect|1.48.0|
+|aws-sdk-ssmincidents|1.112.0|
+|aws-sdk-ssmquicksetup|1.76.0|
+|aws-sdk-ssmsap|1.117.0|
+|aws-sdk-sso|1.112.0|
+|aws-sdk-ssoadmin|1.117.0|
+|aws-sdk-ssooidc|1.114.0|
+|aws-sdk-storagegateway|1.120.0|
+|aws-sdk-sts|1.117.0|
+|aws-sdk-supplychain|1.107.0|
+|aws-sdk-support|1.114.0|
+|aws-sdk-supportapp|1.112.0|
+|aws-sdk-supportauthz|1.10.0|
+|aws-sdk-sustainability|1.17.0|
+|aws-sdk-swf|1.114.0|
+|aws-sdk-synthetics|1.123.0|
+|aws-sdk-taxsettings|1.93.0|
+|aws-sdk-textract|1.112.0|
+|aws-sdk-timestreaminfluxdb|1.105.0|
+|aws-sdk-timestreamquery|1.117.0|
+|aws-sdk-timestreamwrite|1.114.0|
+|aws-sdk-tnb|1.113.0|
+|aws-sdk-transcribe|1.120.0|
+|aws-sdk-transcribestreaming|1.119.0|
+|aws-sdk-transfer|1.131.0|
+|aws-sdk-translate|1.112.0|
+|aws-sdk-trustedadvisor|1.115.0|
+|aws-sdk-uxc|1.16.0|
+|aws-sdk-verifiedpermissions|1.125.0|
+|aws-sdk-voiceid|1.112.0|
+|aws-sdk-vpclattice|1.121.0|
+|aws-sdk-waf|1.112.0|
+|aws-sdk-wafregional|1.114.0|
+|aws-sdk-wafv2|1.131.0|
+|aws-sdk-wellarchitected|1.114.0|
+|aws-sdk-wickr|1.23.0|
+|aws-sdk-wisdom|1.114.0|
+|aws-sdk-workdocs|1.113.0|
+|aws-sdk-workmail|1.114.0|
+|aws-sdk-workmailmessageflow|1.112.0|
+|aws-sdk-workspaces|1.136.0|
+|aws-sdk-workspacesinstances|1.43.0|
+|aws-sdk-workspacesthinclient|1.118.0|
+|aws-sdk-workspacesweb|1.123.0|
+|aws-sdk-xray|1.113.0|
+|aws-sigv4|1.6.0|
+|aws-smithy-async|1.3.0|
+|aws-smithy-cbor|0.62.1|
+|aws-smithy-cbor-fuzz|0.0.0|
+|aws-smithy-checksums|0.65.0|
+|aws-smithy-compression|0.2.0|
+|aws-smithy-dns|0.2.2|
+|aws-smithy-eventstream|0.61.4|
+|aws-smithy-eventstream-fuzz|0.1.0|
+|aws-smithy-experimental|0.3.0|
+|aws-smithy-http|0.64.0|
+|aws-smithy-http-client|1.4.2|
+|aws-smithy-http-fuzz|0.0.0|
+|aws-smithy-json|0.63.1|
+|aws-smithy-json-fuzz|0.0.0|
+|aws-smithy-legacy-http|0.63.0|
+|aws-smithy-mocks|0.3.0|
+|aws-smithy-observability|0.3.0|
+|aws-smithy-observability-otel|0.2.2|
+|aws-smithy-protocol-test|0.64.0|
+|aws-smithy-query|0.62.1|
+|aws-smithy-query-fuzz|0.0.0|
+|aws-smithy-runtime|1.15.0|
+|aws-smithy-runtime-api|1.17.0|
+|aws-smithy-runtime-api-macros|1.1.0|
+|aws-smithy-schema|0.2.1|
+|aws-smithy-types|1.8.0|
+|aws-smithy-types-convert|0.61.1|
+|aws-smithy-types-fuzz|0.0.0|
+|aws-smithy-wasm|0.2.0|
+|aws-smithy-xml|0.62.1|
+|aws-smithy-xml-fuzz|0.0.0|
+|aws-types|1.6.0|
+|aws-types-fuzz|0.0.0|
+</details>
+
+
 September 21st, 2026
 ====================
 **Service Features:**
