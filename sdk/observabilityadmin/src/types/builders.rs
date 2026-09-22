@@ -21,6 +21,8 @@ pub use crate::types::_region_status::RegionStatusBuilder;
 
 pub use crate::types::_centralization_rule_summary::CentralizationRuleSummaryBuilder;
 
+pub use crate::types::_dataset_integration_summary::DatasetIntegrationSummaryBuilder;
+
 pub use crate::types::_telemetry_configuration::TelemetryConfigurationBuilder;
 
 pub use crate::types::_integration_summary::IntegrationSummaryBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::_telemetry_pipeline_status_reason::TelemetryPipelineStatus
 pub use crate::types::_source_logs_configuration::SourceLogsConfigurationBuilder;
 
 pub use crate::types::_source_metrics_configuration::SourceMetricsConfigurationBuilder;
+
+pub use crate::types::_source_context_graph_configuration::SourceContextGraphConfigurationBuilder;
 
 pub use crate::types::_destination_logs_configuration::DestinationLogsConfigurationBuilder;
 

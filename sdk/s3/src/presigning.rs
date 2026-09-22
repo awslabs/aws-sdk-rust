@@ -173,8 +173,11 @@ impl PresigningConfigBuilder {
 ///
 /// **This struct has conversion convenience functions:**
 ///
-/// - [`PresignedRequest::make_http_02x_request<B>`][Self::make_http_02x_request] returns an [`http::Request<B>`](https://docs.rs/http/0.2.6/http/request/struct.Request.html)
-/// - [`PresignedRequest::into`](#impl-From<PresignedRequest>) returns an [`http::request::Builder`](https://docs.rs/http/0.2.6/http/request/struct.Builder.html)
+/// - [`PresignedRequest::make_http_1x_request<B>`][Self::make_http_1x_request] returns an [`http_1x::Request<B>`](https://docs.rs/http/1/http/request/struct.Request.html)
+/// - [`PresignedRequest::into_http_1x_request<B>`][Self::into_http_1x_request] returns an [`http_1x::Request<B>`](https://docs.rs/http/1/http/request/struct.Request.html)
+///
+/// The deprecated `http` 0.2.x equivalents, `make_http_02x_request` and `into_http_02x_request`,
+/// are only available when the `http-02x` feature is enabled.
 #[non_exhaustive]
 pub struct PresignedRequest {
     http_request: HttpRequest,
@@ -222,6 +225,9 @@ impl PresignedRequest {
     }
 
     /// Given a body, produce an `http::Request` from this `PresignedRequest`
+    ///
+    /// _Note: This is only available with the `http-02x` feature enabled._
+    #[cfg(feature = "http-02x")]
     #[deprecated = "Prefer the `make_http_1x_request()` instead by enabling the `http-1x` feature."]
     #[allow(deprecated)]
     pub fn make_http_02x_request<B>(&self, body: B) -> http::Request<B> {
@@ -229,6 +235,9 @@ impl PresignedRequest {
     }
 
     /// Converts this `PresignedRequest` directly into an `http` request.
+    ///
+    /// _Note: This is only available with the `http-02x` feature enabled._
+    #[cfg(feature = "http-02x")]
     #[deprecated = "Prefer the `into_http_1x_request` instead by enabling the `http-1x` feature."]
     pub fn into_http_02x_request<B>(self, body: B) -> http::Request<B> {
         self.http_request

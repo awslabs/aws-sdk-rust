@@ -9,6 +9,16 @@ pub(crate) fn reflens_list_centralization_rules_for_organization_output_output_n
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_dataset_integrations_output_output_next_token(
+    input: &crate::operation::list_dataset_integrations::ListDatasetIntegrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_resource_telemetry_output_output_next_token(
     input: &crate::operation::list_resource_telemetry::ListResourceTelemetryOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -73,6 +83,13 @@ pub(crate) fn lens_list_centralization_rules_for_organization_output_output_cent
     input: crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CentralizationRuleSummary>> {
     let input = input.centralization_rule_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_integrations_output_output_dataset_integration_summaries(
+    input: crate::operation::list_dataset_integrations::ListDatasetIntegrationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetIntegrationSummary>> {
+    let input = input.dataset_integration_summaries;
     ::std::option::Option::Some(input)
 }
 

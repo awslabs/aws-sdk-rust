@@ -10,6 +10,8 @@ pub mod defaults;
 
 pub mod dns;
 
+// Requires the `http-02x` feature: this module's public API is built on pre-1.x `http` types.
+#[cfg(feature = "http-02x")]
 pub mod endpoint;
 
 /// Built-in Smithy HTTP clients and connectors.

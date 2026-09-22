@@ -2,9 +2,9 @@
 resolver = "2"
 exclude = [
     "tests/no-default-features",
-    "tests/webassembly-no-os",
     "tests/telemetry",
-    "tests/webassembly-wstd"
+    "tests/webassembly-wstd",
+    "tests/webassembly-no-os"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -118,6 +118,7 @@ members = [
     "sdk/cloudwatch",
     "sdk/cloudwatchevents",
     "sdk/cloudwatchlogs",
+    "sdk/cloudwatchomni",
     "sdk/codeartifact",
     "sdk/codebuild",
     "sdk/codecatalyst",

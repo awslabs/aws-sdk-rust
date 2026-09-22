@@ -29,8 +29,11 @@ impl From<hyper_0_14::Body> for ByteStream {
 
 #[cfg(test)]
 mod tests {
+    #[cfg(feature = "hyper-0-14-x")]
     use crate::body::SdkBody;
+    #[cfg(feature = "hyper-0-14-x")]
     use crate::byte_stream::Inner;
+    #[cfg(feature = "hyper-0-14-x")]
     use bytes::Bytes;
 
     #[cfg(feature = "hyper-0-14-x")]

@@ -8,6 +8,9 @@
 //! If data is being streamed too slowly, this body type will emit an error next time it's polled.
 
 /// An implementation of v0.4 `http_body::Body` for `MinimumThroughputBody` and related code.
+///
+/// Requires the `http-02x` feature.
+#[cfg(feature = "http-02x")]
 pub mod http_body_0_4_x;
 
 /// An implementation of v1.0 `http_body::Body` for `MinimumThroughputBody` and related code.

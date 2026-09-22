@@ -8,6 +8,8 @@ pub struct InstanceMetadata {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the identity store that is connected to the Identity Center instance.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Identity Center instance.</p>
@@ -31,6 +33,10 @@ impl InstanceMetadata {
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
     pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
+    }
+    /// <p>The ARN of the identity store that is connected to the Identity Center instance.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
@@ -76,6 +82,7 @@ impl InstanceMetadata {
 pub struct InstanceMetadataBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -112,6 +119,20 @@ impl InstanceMetadataBuilder {
     /// <p>The identifier of the identity store that is connected to the Identity Center instance.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
+    }
+    /// <p>The ARN of the identity store that is connected to the Identity Center instance.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the Identity Center instance.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the Identity Center instance.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
     }
     /// <p>The Amazon Web Services account ID number of the owner of the Identity Center instance.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -222,6 +243,7 @@ impl InstanceMetadataBuilder {
         crate::types::InstanceMetadata {
             instance_arn: self.instance_arn,
             identity_store_id: self.identity_store_id,
+            identity_store_arn: self.identity_store_arn,
             owner_account_id: self.owner_account_id,
             name: self.name,
             created_date: self.created_date,

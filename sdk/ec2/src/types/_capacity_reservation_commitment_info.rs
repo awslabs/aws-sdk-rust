@@ -8,6 +8,8 @@ pub struct CapacityReservationCommitmentInfo {
     pub committed_instance_count: ::std::option::Option<i32>,
     /// <p>The date and time at which the commitment duration expires, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). You can't decrease the instance count or cancel the Capacity Reservation before this date and time.</p>
     pub commitment_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The commitment duration, in seconds, for the future-dated Capacity Reservation. This is the minimum duration for which you commit to having the Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    pub commitment_duration: ::std::option::Option<i64>,
 }
 impl CapacityReservationCommitmentInfo {
     /// <p>The instance capacity that you committed to when you requested the future-dated Capacity Reservation.</p>
@@ -17,6 +19,10 @@ impl CapacityReservationCommitmentInfo {
     /// <p>The date and time at which the commitment duration expires, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). You can't decrease the instance count or cancel the Capacity Reservation before this date and time.</p>
     pub fn commitment_end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.commitment_end_date.as_ref()
+    }
+    /// <p>The commitment duration, in seconds, for the future-dated Capacity Reservation. This is the minimum duration for which you commit to having the Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    pub fn commitment_duration(&self) -> ::std::option::Option<i64> {
+        self.commitment_duration
     }
 }
 impl CapacityReservationCommitmentInfo {
@@ -32,6 +38,7 @@ impl CapacityReservationCommitmentInfo {
 pub struct CapacityReservationCommitmentInfoBuilder {
     pub(crate) committed_instance_count: ::std::option::Option<i32>,
     pub(crate) commitment_end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) commitment_duration: ::std::option::Option<i64>,
 }
 impl CapacityReservationCommitmentInfoBuilder {
     /// <p>The instance capacity that you committed to when you requested the future-dated Capacity Reservation.</p>
@@ -62,11 +69,26 @@ impl CapacityReservationCommitmentInfoBuilder {
     pub fn get_commitment_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.commitment_end_date
     }
+    /// <p>The commitment duration, in seconds, for the future-dated Capacity Reservation. This is the minimum duration for which you commit to having the Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    pub fn commitment_duration(mut self, input: i64) -> Self {
+        self.commitment_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The commitment duration, in seconds, for the future-dated Capacity Reservation. This is the minimum duration for which you commit to having the Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    pub fn set_commitment_duration(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.commitment_duration = input;
+        self
+    }
+    /// <p>The commitment duration, in seconds, for the future-dated Capacity Reservation. This is the minimum duration for which you commit to having the Capacity Reservation in the <code>active</code> state in your account after it has been delivered.</p>
+    pub fn get_commitment_duration(&self) -> &::std::option::Option<i64> {
+        &self.commitment_duration
+    }
     /// Consumes the builder and constructs a [`CapacityReservationCommitmentInfo`](crate::types::CapacityReservationCommitmentInfo).
     pub fn build(self) -> crate::types::CapacityReservationCommitmentInfo {
         crate::types::CapacityReservationCommitmentInfo {
             committed_instance_count: self.committed_instance_count,
             commitment_end_date: self.commitment_end_date,
+            commitment_duration: self.commitment_duration,
         }
     }
 }

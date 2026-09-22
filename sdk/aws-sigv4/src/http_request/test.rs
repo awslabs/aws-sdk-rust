@@ -477,33 +477,6 @@ impl TestRequest {
     }
 }
 
-impl<B: AsRef<[u8]>> From<http0::Request<B>> for TestRequest {
-    fn from(value: http0::Request<B>) -> Self {
-        let invalid = value
-            .headers()
-            .values()
-            .find(|h| std::str::from_utf8(h.as_bytes()).is_err());
-        if let Some(invalid) = invalid {
-            panic!("invalid header: {:?}", invalid);
-        }
-        Self {
-            uri: value.uri().to_string(),
-            method: value.method().to_string(),
-            headers: value
-                .headers()
-                .iter()
-                .map(|(k, v)| {
-                    (
-                        k.to_string(),
-                        String::from_utf8(v.as_bytes().to_vec()).unwrap(),
-                    )
-                })
-                .collect::<Vec<_>>(),
-            body: TestSignedBody::Bytes(value.body().as_ref().to_vec()),
-        }
-    }
-}
-
 impl<B: AsRef<[u8]>> From<http::Request<B>> for TestRequest {
     fn from(value: http::Request<B>) -> Self {
         let invalid = value

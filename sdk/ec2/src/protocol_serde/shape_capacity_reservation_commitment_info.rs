@@ -40,6 +40,21 @@ pub fn de_capacity_reservation_commitment_info(
                 builder = builder.set_commitment_end_date(var_2);
             }
             ,
+            s if s.matches("commitmentDuration") /* CommitmentDuration com.amazonaws.ec2#CapacityReservationCommitmentInfo$CommitmentDuration */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.ec2#BoxedLong`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_commitment_duration(var_3);
+            }
+            ,
             _ => {}
         }
     }

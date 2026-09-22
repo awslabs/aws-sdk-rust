@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(all(
-    feature = "client",
-    any(feature = "test-util", feature = "legacy-test-util")
-))]
+// This test drives a hyper 0.14 server and builds http 0.2.x requests directly, so it needs the
+// legacy test utilities rather than just `test-util`.
+#![cfg(all(feature = "client", feature = "legacy-test-util"))]
 
 use aws_smithy_async::rt::sleep::TokioSleep;
 use aws_smithy_async::time::{SystemTimeSource, TimeSource};

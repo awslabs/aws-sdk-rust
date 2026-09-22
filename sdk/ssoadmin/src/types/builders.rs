@@ -37,6 +37,8 @@ pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_oidc_jwt_configuration::OidcJwtConfigurationBuilder;
 
+pub use crate::types::_region_metadata::RegionMetadataBuilder;
+
 pub use crate::types::_account_assignment_operation_status_metadata::AccountAssignmentOperationStatusMetadataBuilder;
 
 pub use crate::types::_account_assignment::AccountAssignmentBuilder;
@@ -56,8 +58,6 @@ pub use crate::types::_instance_metadata::InstanceMetadataBuilder;
 pub use crate::types::_attached_managed_policy::AttachedManagedPolicyBuilder;
 
 pub use crate::types::_permission_set_provisioning_status_metadata::PermissionSetProvisioningStatusMetadataBuilder;
-
-pub use crate::types::_region_metadata::RegionMetadataBuilder;
 
 pub use crate::types::_trusted_token_issuer_metadata::TrustedTokenIssuerMetadataBuilder;
 

@@ -12,6 +12,8 @@ pub struct CentralizationRuleSource {
     pub source_logs_configuration: ::std::option::Option<crate::types::SourceLogsConfiguration>,
     /// <p>Metric specific configuration for centralization source metrics.</p>
     pub source_metrics_configuration: ::std::option::Option<crate::types::SourceMetricsConfiguration>,
+    /// <p>Configuration that enables centralization of the context graph for the selected sources. Including this configuration in a rule's source opts the rule into centralizing the context graph for the selected sources.</p>
+    pub source_context_graph_configuration: ::std::option::Option<crate::types::SourceContextGraphConfiguration>,
 }
 impl CentralizationRuleSource {
     /// <p>The list of source regions from which telemetry data should be centralized.</p>
@@ -31,6 +33,10 @@ impl CentralizationRuleSource {
     pub fn source_metrics_configuration(&self) -> ::std::option::Option<&crate::types::SourceMetricsConfiguration> {
         self.source_metrics_configuration.as_ref()
     }
+    /// <p>Configuration that enables centralization of the context graph for the selected sources. Including this configuration in a rule's source opts the rule into centralizing the context graph for the selected sources.</p>
+    pub fn source_context_graph_configuration(&self) -> ::std::option::Option<&crate::types::SourceContextGraphConfiguration> {
+        self.source_context_graph_configuration.as_ref()
+    }
 }
 impl CentralizationRuleSource {
     /// Creates a new builder-style object to manufacture [`CentralizationRuleSource`](crate::types::CentralizationRuleSource).
@@ -47,6 +53,7 @@ pub struct CentralizationRuleSourceBuilder {
     pub(crate) scope: ::std::option::Option<::std::string::String>,
     pub(crate) source_logs_configuration: ::std::option::Option<crate::types::SourceLogsConfiguration>,
     pub(crate) source_metrics_configuration: ::std::option::Option<crate::types::SourceMetricsConfiguration>,
+    pub(crate) source_context_graph_configuration: ::std::option::Option<crate::types::SourceContextGraphConfiguration>,
 }
 impl CentralizationRuleSourceBuilder {
     /// Appends an item to `regions`.
@@ -111,6 +118,20 @@ impl CentralizationRuleSourceBuilder {
     pub fn get_source_metrics_configuration(&self) -> &::std::option::Option<crate::types::SourceMetricsConfiguration> {
         &self.source_metrics_configuration
     }
+    /// <p>Configuration that enables centralization of the context graph for the selected sources. Including this configuration in a rule's source opts the rule into centralizing the context graph for the selected sources.</p>
+    pub fn source_context_graph_configuration(mut self, input: crate::types::SourceContextGraphConfiguration) -> Self {
+        self.source_context_graph_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration that enables centralization of the context graph for the selected sources. Including this configuration in a rule's source opts the rule into centralizing the context graph for the selected sources.</p>
+    pub fn set_source_context_graph_configuration(mut self, input: ::std::option::Option<crate::types::SourceContextGraphConfiguration>) -> Self {
+        self.source_context_graph_configuration = input;
+        self
+    }
+    /// <p>Configuration that enables centralization of the context graph for the selected sources. Including this configuration in a rule's source opts the rule into centralizing the context graph for the selected sources.</p>
+    pub fn get_source_context_graph_configuration(&self) -> &::std::option::Option<crate::types::SourceContextGraphConfiguration> {
+        &self.source_context_graph_configuration
+    }
     /// Consumes the builder and constructs a [`CentralizationRuleSource`](crate::types::CentralizationRuleSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`regions`](crate::types::builders::CentralizationRuleSourceBuilder::regions)
@@ -125,6 +146,7 @@ impl CentralizationRuleSourceBuilder {
             scope: self.scope,
             source_logs_configuration: self.source_logs_configuration,
             source_metrics_configuration: self.source_metrics_configuration,
+            source_context_graph_configuration: self.source_context_graph_configuration,
         })
     }
 }

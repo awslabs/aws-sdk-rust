@@ -75,9 +75,19 @@ where
                                 )?,
                             );
                         }
+                        "SubObjectsStatistics" => {
+                            builder = builder.set_sub_objects_statistics(
+                                crate::protocol_serde::shape_sub_objects_statistics_list::de_sub_objects_statistics_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "Representations" => {
                             builder = builder.set_representations(
                                 crate::protocol_serde::shape_view_representation_list::de_view_representation_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "SparkPipelineInfo" => {
+                            builder = builder.set_spark_pipeline_info(
+                                crate::protocol_serde::shape_spark_pipeline_info_map::de_spark_pipeline_info_map(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

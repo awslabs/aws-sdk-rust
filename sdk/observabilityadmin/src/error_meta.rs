@@ -110,6 +110,43 @@ impl From<crate::operation::create_centralization_rule_for_organization::CreateC
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset_integration::CreateDatasetIntegrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset_integration::CreateDatasetIntegrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_dataset_integration::CreateDatasetIntegrationError> for Error {
+    fn from(err: crate::operation::create_dataset_integration::CreateDatasetIntegrationError) -> Self {
+        match err {
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_dataset_integration::CreateDatasetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_s3_table_integration::CreateS3TableIntegrationError, R>>
     for Error
 where
@@ -309,6 +346,45 @@ impl From<crate::operation::delete_centralization_rule_for_organization::DeleteC
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError> for Error {
+    fn from(err: crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError) -> Self {
+        match err {
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_dataset_integration::DeleteDatasetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -521,6 +597,42 @@ impl From<crate::operation::get_centralization_rule_for_organization::GetCentral
             crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dataset_integration::GetDatasetIntegrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dataset_integration::GetDatasetIntegrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dataset_integration::GetDatasetIntegrationError> for Error {
+    fn from(err: crate::operation::get_dataset_integration::GetDatasetIntegrationError) -> Self {
+        match err {
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_dataset_integration::GetDatasetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -821,6 +933,42 @@ impl From<crate::operation::list_centralization_rules_for_organization::ListCent
             crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_integrations::ListDatasetIntegrationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_integrations::ListDatasetIntegrationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_dataset_integrations::ListDatasetIntegrationsError> for Error {
+    fn from(err: crate::operation::list_dataset_integrations::ListDatasetIntegrationsError) -> Self {
+        match err {
+            crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1430,6 +1578,45 @@ impl From<crate::operation::update_centralization_rule_for_organization::UpdateC
             crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_centralization_rule_for_organization::UpdateCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dataset_integration::UpdateDatasetIntegrationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_dataset_integration::UpdateDatasetIntegrationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_dataset_integration::UpdateDatasetIntegrationError> for Error {
+    fn from(err: crate::operation::update_dataset_integration::UpdateDatasetIntegrationError) -> Self {
+        match err {
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_dataset_integration::UpdateDatasetIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

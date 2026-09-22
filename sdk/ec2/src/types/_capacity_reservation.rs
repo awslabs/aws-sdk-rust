@@ -110,6 +110,21 @@ pub struct CapacityReservation {
     pub interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
     /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
     pub interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
+    /// <p>The status of the most recent modification to the Capacity Reservation. A Capacity Reservation can have one of the following adjustment statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>requested</code> - The modification was requested and is being processed.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The modification was applied to the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>rejected</code> - The modification was not applied and the Capacity Reservation keeps its existing configuration.</p></li>
+    /// </ul>
+    /// <p>This field is not returned if the Capacity Reservation has never been modified.</p>
+    pub adjustment_status: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>,
+    /// <p>The configuration that the Capacity Reservation will have after the requested adjustment is applied.</p>
+    pub adjustment_details: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>,
+    /// <p>The start date that you originally requested for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). This value doesn't change when you push out the start date.</p>
+    pub original_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
     pub zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
@@ -286,6 +301,27 @@ impl CapacityReservation {
     pub fn interruption_info(&self) -> ::std::option::Option<&crate::types::InterruptionInfo> {
         self.interruption_info.as_ref()
     }
+    /// <p>The status of the most recent modification to the Capacity Reservation. A Capacity Reservation can have one of the following adjustment statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>requested</code> - The modification was requested and is being processed.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The modification was applied to the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>rejected</code> - The modification was not applied and the Capacity Reservation keeps its existing configuration.</p></li>
+    /// </ul>
+    /// <p>This field is not returned if the Capacity Reservation has never been modified.</p>
+    pub fn adjustment_status(&self) -> ::std::option::Option<&crate::types::CapacityReservationAdjustmentStatus> {
+        self.adjustment_status.as_ref()
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the requested adjustment is applied.</p>
+    pub fn adjustment_details(&self) -> ::std::option::Option<&crate::types::CapacityReservationAdjustmentDetails> {
+        self.adjustment_details.as_ref()
+    }
+    /// <p>The start date that you originally requested for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). This value doesn't change when you push out the start date.</p>
+    pub fn original_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.original_start_date.as_ref()
+    }
     /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
     pub fn zero_size_preference(&self) -> ::std::option::Option<&crate::types::ZeroSizePreference> {
         self.zero_size_preference.as_ref()
@@ -333,6 +369,9 @@ pub struct CapacityReservationBuilder {
     pub(crate) interruptible: ::std::option::Option<bool>,
     pub(crate) interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
     pub(crate) interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
+    pub(crate) adjustment_status: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>,
+    pub(crate) adjustment_details: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>,
+    pub(crate) original_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl CapacityReservationBuilder {
@@ -914,6 +953,75 @@ impl CapacityReservationBuilder {
     pub fn get_interruption_info(&self) -> &::std::option::Option<crate::types::InterruptionInfo> {
         &self.interruption_info
     }
+    /// <p>The status of the most recent modification to the Capacity Reservation. A Capacity Reservation can have one of the following adjustment statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>requested</code> - The modification was requested and is being processed.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The modification was applied to the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>rejected</code> - The modification was not applied and the Capacity Reservation keeps its existing configuration.</p></li>
+    /// </ul>
+    /// <p>This field is not returned if the Capacity Reservation has never been modified.</p>
+    pub fn adjustment_status(mut self, input: crate::types::CapacityReservationAdjustmentStatus) -> Self {
+        self.adjustment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the most recent modification to the Capacity Reservation. A Capacity Reservation can have one of the following adjustment statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>requested</code> - The modification was requested and is being processed.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The modification was applied to the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>rejected</code> - The modification was not applied and the Capacity Reservation keeps its existing configuration.</p></li>
+    /// </ul>
+    /// <p>This field is not returned if the Capacity Reservation has never been modified.</p>
+    pub fn set_adjustment_status(mut self, input: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>) -> Self {
+        self.adjustment_status = input;
+        self
+    }
+    /// <p>The status of the most recent modification to the Capacity Reservation. A Capacity Reservation can have one of the following adjustment statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>requested</code> - The modification was requested and is being processed.</p></li>
+    /// <li>
+    /// <p><code>applied</code> - The modification was applied to the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>rejected</code> - The modification was not applied and the Capacity Reservation keeps its existing configuration.</p></li>
+    /// </ul>
+    /// <p>This field is not returned if the Capacity Reservation has never been modified.</p>
+    pub fn get_adjustment_status(&self) -> &::std::option::Option<crate::types::CapacityReservationAdjustmentStatus> {
+        &self.adjustment_status
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the requested adjustment is applied.</p>
+    pub fn adjustment_details(mut self, input: crate::types::CapacityReservationAdjustmentDetails) -> Self {
+        self.adjustment_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the requested adjustment is applied.</p>
+    pub fn set_adjustment_details(mut self, input: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>) -> Self {
+        self.adjustment_details = input;
+        self
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the requested adjustment is applied.</p>
+    pub fn get_adjustment_details(&self) -> &::std::option::Option<crate::types::CapacityReservationAdjustmentDetails> {
+        &self.adjustment_details
+    }
+    /// <p>The start date that you originally requested for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). This value doesn't change when you push out the start date.</p>
+    pub fn original_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.original_start_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start date that you originally requested for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). This value doesn't change when you push out the start date.</p>
+    pub fn set_original_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.original_start_date = input;
+        self
+    }
+    /// <p>The start date that you originally requested for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). This value doesn't change when you push out the start date.</p>
+    pub fn get_original_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.original_start_date
+    }
     /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
     pub fn zero_size_preference(mut self, input: crate::types::ZeroSizePreference) -> Self {
         self.zero_size_preference = ::std::option::Option::Some(input);
@@ -962,6 +1070,9 @@ impl CapacityReservationBuilder {
             interruptible: self.interruptible,
             interruptible_capacity_allocation: self.interruptible_capacity_allocation,
             interruption_info: self.interruption_info,
+            adjustment_status: self.adjustment_status,
+            adjustment_details: self.adjustment_details,
+            original_start_date: self.original_start_date,
             zero_size_preference: self.zero_size_preference,
         }
     }

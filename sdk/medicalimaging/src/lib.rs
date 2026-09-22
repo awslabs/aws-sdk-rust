@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-medicalimaging = "1.119.0"
+//! aws-sdk-medicalimaging = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

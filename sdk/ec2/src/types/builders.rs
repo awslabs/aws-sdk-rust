@@ -69,6 +69,8 @@ pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
 
 pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservationCancellationQuoteBuilder;
 
+pub use crate::types::_capacity_reservation_modification_quote::CapacityReservationModificationQuoteBuilder;
+
 pub use crate::types::_carrier_gateway::CarrierGatewayBuilder;
 
 pub use crate::types::_connection_log_options::ConnectionLogOptionsBuilder;
@@ -407,6 +409,8 @@ pub use crate::types::_volume_detail::VolumeDetailBuilder;
 
 pub use crate::types::_address_attribute::AddressAttributeBuilder;
 
+pub use crate::types::_capacity_reservation_adjustment_details::CapacityReservationAdjustmentDetailsBuilder;
+
 pub use crate::types::_dns_servers_options_modify_structure::DnsServersOptionsModifyStructureBuilder;
 
 pub use crate::types::_load_permission_modifications::LoadPermissionModificationsBuilder;
@@ -590,6 +594,10 @@ pub use crate::types::_health_check_path_request_object::HealthCheckPathRequestO
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
 
 pub use crate::types::_capacity_reservation_configuration::CapacityReservationConfigurationBuilder;
+
+pub use crate::types::_modification_quote_current_configuration::ModificationQuoteCurrentConfigurationBuilder;
+
+pub use crate::types::_modification_terms::ModificationTermsBuilder;
 
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecificationBuilder;
 
@@ -1244,6 +1252,8 @@ pub use crate::types::_custom_tag_key_value_response_pair::CustomTagKeyValueResp
 pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
 
 pub use crate::types::_cancellation_terms::CancellationTermsBuilder;
+
+pub use crate::types::_modification_reservation_update::ModificationReservationUpdateBuilder;
 
 pub use crate::types::_directory_service_authentication_request::DirectoryServiceAuthenticationRequestBuilder;
 

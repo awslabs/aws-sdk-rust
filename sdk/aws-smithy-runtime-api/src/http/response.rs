@@ -239,14 +239,14 @@ impl<B> TryFrom<http_1x::Response<B>> for Response<B> {
     }
 }
 
-#[cfg(all(test, feature = "http-02x", feature = "http-1x"))]
+#[cfg(all(test, feature = "http-1x"))]
 mod test {
     use super::*;
     use aws_smithy_types::body::SdkBody;
 
     #[test]
     fn non_ascii_responses() {
-        let response = http_02x::Response::builder()
+        let response = http_1x::Response::builder()
             .status(200)
             .header("k", "😹")
             .body(SdkBody::empty())
@@ -259,7 +259,7 @@ mod test {
 
     #[test]
     fn response_can_be_created() {
-        let req = http_02x::Response::builder()
+        let req = http_1x::Response::builder()
             .status(200)
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -268,8 +268,23 @@ mod test {
         assert_eq!("b", rsp.headers().get("a").unwrap());
         rsp.headers_mut().append("a", "c");
         assert_eq!("b", rsp.headers().get("a").unwrap());
-        let http0 = rsp.try_into_http02x().unwrap();
-        assert_eq!(200, http0.status().as_u16());
+        let http1 = rsp.try_into_http1x().unwrap();
+        assert_eq!(200, http1.status().as_u16());
+    }
+
+    #[test]
+    #[should_panic]
+    fn header_panics() {
+        let res = http_1x::Response::builder()
+            .status(200)
+            .body(SdkBody::from("hello"))
+            .unwrap();
+        let mut res = Response::try_from(res).unwrap();
+        let _ = res
+            .headers_mut()
+            .try_insert("a\nb", "a\nb")
+            .expect_err("invalid header");
+        let _ = res.headers_mut().insert("a\nb", "a\nb");
     }
 
     #[test]
@@ -286,6 +301,12 @@ mod test {
         // A type that was never inserted returns None.
         assert_eq!(rsp.extension::<u64>(), None);
     }
+}
+
+#[cfg(all(test, feature = "http-02x", feature = "http-1x"))]
+mod cross_version_test {
+    use super::*;
+    use aws_smithy_types::body::SdkBody;
 
     macro_rules! resp_eq {
         ($a: expr, $b: expr) => {{
@@ -332,21 +353,6 @@ mod test {
                 .unwrap()
         };
         check_roundtrip(response);
-    }
-
-    #[test]
-    #[should_panic]
-    fn header_panics() {
-        let res = http_02x::Response::builder()
-            .status(200)
-            .body(SdkBody::from("hello"))
-            .unwrap();
-        let mut res = Response::try_from(res).unwrap();
-        let _ = res
-            .headers_mut()
-            .try_insert("a\nb", "a\nb")
-            .expect_err("invalid header");
-        let _ = res.headers_mut().insert("a\nb", "a\nb");
     }
 
     #[test]

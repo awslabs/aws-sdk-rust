@@ -5,12 +5,24 @@
 pub struct ModifyCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub r#return: ::std::option::Option<bool>,
+    /// <p>The status of the requested modification. For a description of each possible value, see the <code>adjustmentStatus</code> field of the <code>CapacityReservation</code> data type.</p>
+    pub adjustment_status: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>,
+    /// <p>The configuration that the Capacity Reservation will have after the adjustment is applied.</p>
+    pub adjustment_details: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>,
     _request_id: Option<String>,
 }
 impl ModifyCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
+    }
+    /// <p>The status of the requested modification. For a description of each possible value, see the <code>adjustmentStatus</code> field of the <code>CapacityReservation</code> data type.</p>
+    pub fn adjustment_status(&self) -> ::std::option::Option<&crate::types::CapacityReservationAdjustmentStatus> {
+        self.adjustment_status.as_ref()
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the adjustment is applied.</p>
+    pub fn adjustment_details(&self) -> ::std::option::Option<&crate::types::CapacityReservationAdjustmentDetails> {
+        self.adjustment_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ModifyCapacityReservationOutput {
@@ -30,6 +42,8 @@ impl ModifyCapacityReservationOutput {
 #[non_exhaustive]
 pub struct ModifyCapacityReservationOutputBuilder {
     pub(crate) r#return: ::std::option::Option<bool>,
+    pub(crate) adjustment_status: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>,
+    pub(crate) adjustment_details: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>,
     _request_id: Option<String>,
 }
 impl ModifyCapacityReservationOutputBuilder {
@@ -47,6 +61,34 @@ impl ModifyCapacityReservationOutputBuilder {
     pub fn get_return(&self) -> &::std::option::Option<bool> {
         &self.r#return
     }
+    /// <p>The status of the requested modification. For a description of each possible value, see the <code>adjustmentStatus</code> field of the <code>CapacityReservation</code> data type.</p>
+    pub fn adjustment_status(mut self, input: crate::types::CapacityReservationAdjustmentStatus) -> Self {
+        self.adjustment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the requested modification. For a description of each possible value, see the <code>adjustmentStatus</code> field of the <code>CapacityReservation</code> data type.</p>
+    pub fn set_adjustment_status(mut self, input: ::std::option::Option<crate::types::CapacityReservationAdjustmentStatus>) -> Self {
+        self.adjustment_status = input;
+        self
+    }
+    /// <p>The status of the requested modification. For a description of each possible value, see the <code>adjustmentStatus</code> field of the <code>CapacityReservation</code> data type.</p>
+    pub fn get_adjustment_status(&self) -> &::std::option::Option<crate::types::CapacityReservationAdjustmentStatus> {
+        &self.adjustment_status
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the adjustment is applied.</p>
+    pub fn adjustment_details(mut self, input: crate::types::CapacityReservationAdjustmentDetails) -> Self {
+        self.adjustment_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the adjustment is applied.</p>
+    pub fn set_adjustment_details(mut self, input: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>) -> Self {
+        self.adjustment_details = input;
+        self
+    }
+    /// <p>The configuration that the Capacity Reservation will have after the adjustment is applied.</p>
+    pub fn get_adjustment_details(&self) -> &::std::option::Option<crate::types::CapacityReservationAdjustmentDetails> {
+        &self.adjustment_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +102,8 @@ impl ModifyCapacityReservationOutputBuilder {
     pub fn build(self) -> crate::operation::modify_capacity_reservation::ModifyCapacityReservationOutput {
         crate::operation::modify_capacity_reservation::ModifyCapacityReservationOutput {
             r#return: self.r#return,
+            adjustment_status: self.adjustment_status,
+            adjustment_details: self.adjustment_details,
             _request_id: self._request_id,
         }
     }

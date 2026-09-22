@@ -41,6 +41,7 @@ pub struct Uri {
 
 #[derive(Debug, Clone)]
 enum ParsedUri {
+    #[cfg(feature = "http-02x")]
     H0(http_02x::Uri),
     H1(http_1x::Uri),
 }
@@ -48,6 +49,7 @@ enum ParsedUri {
 impl ParsedUri {
     fn path_and_query(&self) -> &str {
         match &self {
+            #[cfg(feature = "http-02x")]
             ParsedUri::H0(u) => u.path_and_query().map(|pq| pq.as_str()).unwrap_or(""),
             ParsedUri::H1(u) => u.path_and_query().map(|pq| pq.as_str()).unwrap_or(""),
         }
@@ -55,6 +57,7 @@ impl ParsedUri {
 
     fn path(&self) -> &str {
         match &self {
+            #[cfg(feature = "http-02x")]
             ParsedUri::H0(u) => u.path(),
             ParsedUri::H1(u) => u.path(),
         }
@@ -62,6 +65,7 @@ impl ParsedUri {
 
     fn query(&self) -> Option<&str> {
         match &self {
+            #[cfg(feature = "http-02x")]
             ParsedUri::H0(u) => u.query(),
             ParsedUri::H1(u) => u.query(),
         }
@@ -76,20 +80,20 @@ impl Uri {
     ///
     /// An `endpoint` MUST NOT contain a query
     pub fn set_endpoint(&mut self, endpoint: &str) -> Result<(), HttpError> {
-        let endpoint: http_02x::Uri = endpoint.parse().map_err(HttpError::invalid_uri)?;
+        let endpoint: http_1x::Uri = endpoint.parse().map_err(HttpError::invalid_uri)?;
         let endpoint = endpoint.into_parts();
         let authority = endpoint
             .authority
             .ok_or_else(HttpError::missing_authority)?;
         let scheme = endpoint.scheme.ok_or_else(HttpError::missing_scheme)?;
-        let new_uri = http_02x::Uri::builder()
+        let new_uri = http_1x::Uri::builder()
             .authority(authority)
             .scheme(scheme)
             .path_and_query(merge_paths(endpoint.path_and_query, &self.parsed).as_ref())
             .build()
             .map_err(HttpError::invalid_uri_parts)?;
         self.as_string = new_uri.to_string();
-        self.parsed = ParsedUri::H0(new_uri);
+        self.parsed = ParsedUri::H1(new_uri);
         Ok(())
     }
 
@@ -103,6 +107,7 @@ impl Uri {
         self.parsed.query()
     }
 
+    #[cfg(feature = "http-02x")]
     fn from_http0x_uri(uri: http_02x::Uri) -> Self {
         Self {
             as_string: uri.to_string(),
@@ -110,7 +115,6 @@ impl Uri {
         }
     }
 
-    #[allow(dead_code)]
     fn from_http1x_uri(uri: http_1x::Uri) -> Self {
         Self {
             as_string: uri.to_string(),
@@ -118,19 +122,31 @@ impl Uri {
         }
     }
 
-    #[allow(dead_code)]
-    fn into_h0(self) -> http_02x::Uri {
+    #[cfg(feature = "http-02x")]
+    fn into_h0(self) -> Result<http_02x::Uri, HttpError> {
         match self.parsed {
-            ParsedUri::H0(uri) => uri,
-            ParsedUri::H1(_uri) => self.as_string.parse().unwrap(),
+            ParsedUri::H0(uri) => Ok(uri),
+            // The internal storage is now http 1.x, which accepts some URIs that http 0.2.x does
+            // not. Surface those as an error instead of panicking.
+            ParsedUri::H1(_uri) => self.as_string.parse().map_err(HttpError::invalid_uri_h0),
+        }
+    }
+
+    #[cfg(feature = "http-1x")]
+    fn into_h1(self) -> http_1x::Uri {
+        match self.parsed {
+            // The internal storage is http 1.x, so this is free (no re-parse).
+            ParsedUri::H1(uri) => uri,
+            #[cfg(feature = "http-02x")]
+            ParsedUri::H0(_uri) => self
+                .as_string
+                .parse()
+                .expect("an http 0.2.x uri is a valid http 1.x uri"),
         }
     }
 }
 
-fn merge_paths(
-    endpoint_path: Option<http_02x::uri::PathAndQuery>,
-    uri: &ParsedUri,
-) -> Cow<'_, str> {
+fn merge_paths(endpoint_path: Option<http_1x::uri::PathAndQuery>, uri: &ParsedUri) -> Cow<'_, str> {
     let uri_path_and_query = uri.path_and_query();
     let endpoint_path = match endpoint_path {
         None => return Cow::Borrowed(uri_path_and_query),
@@ -155,7 +171,7 @@ impl TryFrom<String> for Uri {
     type Error = HttpError;
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
-        let parsed = ParsedUri::H0(value.parse().map_err(HttpError::invalid_uri)?);
+        let parsed = ParsedUri::H1(value.parse().map_err(HttpError::invalid_uri)?);
         Ok(Uri {
             as_string: value,
             parsed,
@@ -210,7 +226,7 @@ impl<B> Request<B> {
     #[cfg(feature = "http-02x")]
     pub fn try_into_http02x(self) -> Result<http_02x::Request<B>, HttpError> {
         let mut req = http_02x::Request::builder()
-            .uri(self.uri.into_h0())
+            .uri(self.uri.into_h0()?)
             .method(
                 http_02x::Method::from_bytes(self.method.as_str().as_bytes())
                     .expect("valid method"),
@@ -229,7 +245,7 @@ impl<B> Request<B> {
     #[cfg(feature = "http-1x")]
     pub fn try_into_http1x(self) -> Result<http_1x::Request<B>, HttpError> {
         let mut req = http_1x::Request::builder()
-            .uri(self.uri.as_string)
+            .uri(self.uri.into_h1())
             .method(self.method)
             .body(self.body)
             .expect("known valid");
@@ -253,7 +269,7 @@ impl<B> Request<B> {
     pub fn new(body: B) -> Self {
         Self {
             body,
-            uri: Uri::from_http0x_uri(http_02x::Uri::from_static("/")),
+            uri: Uri::from_http1x_uri(http_1x::Uri::from_static("/")),
             method: http_1x::Method::GET,
             extensions: Default::default(),
             headers: Default::default(),
@@ -402,14 +418,14 @@ impl<B> TryFrom<http_1x::Request<B>> for Request<B> {
     }
 }
 
-#[cfg(all(test, feature = "http-02x", feature = "http-1x"))]
+#[cfg(all(test, feature = "http-1x"))]
 mod test {
     use aws_smithy_types::body::SdkBody;
-    use http_02x::header::{AUTHORIZATION, CONTENT_LENGTH};
+    use http_1x::header::{AUTHORIZATION, CONTENT_LENGTH};
 
     #[test]
     fn non_ascii_requests() {
-        let request = http_02x::Request::builder()
+        let request = http_1x::Request::builder()
             .header("k", "😹")
             .body(SdkBody::empty())
             .unwrap();
@@ -421,7 +437,7 @@ mod test {
 
     #[test]
     fn request_can_be_created() {
-        let req = http_02x::Request::builder()
+        let req = http_1x::Request::builder()
             .uri("http://foo.com")
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -430,13 +446,13 @@ mod test {
         assert_eq!(req.headers().get("a").unwrap(), "b");
         req.headers_mut().append("a", "c");
         assert_eq!(req.headers().get("a").unwrap(), "b");
-        let http0 = req.try_into_http02x().unwrap();
-        assert_eq!(http0.uri(), "http://foo.com");
+        let http1 = req.try_into_http1x().unwrap();
+        assert_eq!(http1.uri(), "http://foo.com");
     }
 
     #[test]
     fn uri_mutations() {
-        let req = http_02x::Request::builder()
+        let req = http_1x::Request::builder()
             .uri("http://foo.com")
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -444,14 +460,24 @@ mod test {
         assert_eq!(req.uri(), "http://foo.com/");
         req.set_uri("http://bar.com").unwrap();
         assert_eq!(req.uri(), "http://bar.com");
-        let http0 = req.try_into_http02x().unwrap();
-        assert_eq!(http0.uri(), "http://bar.com");
+        let http1 = req.try_into_http1x().unwrap();
+        assert_eq!(http1.uri(), "http://bar.com");
+    }
+
+    #[test]
+    fn set_endpoint_merges_paths() {
+        let mut req = super::Request::empty();
+        req.set_uri("/foo/bar").unwrap();
+        req.uri_mut()
+            .set_endpoint("https://www.amazon.com")
+            .unwrap();
+        assert_eq!(req.uri(), "https://www.amazon.com/foo/bar");
     }
 
     #[test]
     #[should_panic]
     fn header_panics() {
-        let req = http_02x::Request::builder()
+        let req = http_1x::Request::builder()
             .uri("http://foo.com")
             .body(SdkBody::from("hello"))
             .unwrap();
@@ -465,8 +491,8 @@ mod test {
 
     #[test]
     fn try_clone_clones_all_data() {
-        let request = http_02x::Request::builder()
-            .uri(http_02x::Uri::from_static("https://www.amazon.com"))
+        let request = http_1x::Request::builder()
+            .uri(http_1x::Uri::from_static("https://www.amazon.com"))
             .method("POST")
             .header(CONTENT_LENGTH, 456)
             .header(AUTHORIZATION, "Token: hello")
@@ -482,6 +508,30 @@ mod test {
         assert_eq!("Token: hello", cloned.headers().get(AUTHORIZATION).unwrap(),);
         assert_eq!("456", cloned.headers().get(CONTENT_LENGTH).unwrap());
         assert_eq!("hello world!".as_bytes(), cloned.body().bytes().unwrap());
+    }
+}
+
+#[cfg(all(test, feature = "http-02x", feature = "http-1x"))]
+mod cross_version_test {
+    use super::Request;
+    use aws_smithy_types::body::SdkBody;
+    use http_02x::header::{AUTHORIZATION, CONTENT_LENGTH};
+
+    // The internal URI storage is http 1.x, which accepts some URIs that http 0.2.x rejects.
+    // `try_into_http02x` must surface that as an `Err` rather than panicking in `Uri::into_h0`.
+    #[test]
+    fn converting_a_non_ascii_uri_to_http02x_does_not_panic() {
+        let mut req = Request::empty();
+        if req.set_uri("http://foo.com/\u{80}").is_err() {
+            // If the URI is rejected up front there is nothing to demonstrate.
+            return;
+        }
+        let result =
+            std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| req.try_into_http02x()));
+        assert!(
+            result.is_ok(),
+            "Uri::into_h0's `self.as_string.parse()` panicked instead of surfacing an HttpError"
+        );
     }
 
     #[test]

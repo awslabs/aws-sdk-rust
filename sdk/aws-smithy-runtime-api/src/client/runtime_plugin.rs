@@ -297,7 +297,7 @@ impl RuntimePlugins {
     }
 }
 
-#[cfg(all(test, feature = "test-util", feature = "http-02x"))]
+#[cfg(all(test, feature = "test-util", feature = "http-1x"))]
 mod tests {
     use super::{RuntimePlugin, RuntimePlugins};
     use crate::client::http::{
@@ -309,7 +309,7 @@ mod tests {
     use crate::shared::IntoShared;
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::config_bag::ConfigBag;
-    use http_02x::HeaderValue;
+    use http_1x::HeaderValue;
     use std::borrow::Cow;
 
     #[derive(Debug)]
@@ -389,7 +389,7 @@ mod tests {
         impl HttpConnector for Connector1 {
             fn call(&self, _: HttpRequest) -> HttpConnectorFuture {
                 HttpConnectorFuture::new(async {
-                    Ok(http_02x::Response::builder()
+                    Ok(http_1x::Response::builder()
                         .status(200)
                         .header("rp1", "1")
                         .body(SdkBody::empty())

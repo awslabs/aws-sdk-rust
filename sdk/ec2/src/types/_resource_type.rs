@@ -18,6 +18,7 @@
 ///     ResourceType::CapacityReservation => { /* ... */ },
 ///     ResourceType::CapacityReservationCancellationQuote => { /* ... */ },
 ///     ResourceType::CapacityReservationFleet => { /* ... */ },
+///     ResourceType::CapacityReservationModificationQuote => { /* ... */ },
 ///     ResourceType::CarrierGateway => { /* ... */ },
 ///     ResourceType::ClientVpnEndpoint => { /* ... */ },
 ///     ResourceType::CoipPool => { /* ... */ },
@@ -163,6 +164,8 @@ pub enum ResourceType {
     CapacityReservationCancellationQuote,
     #[allow(missing_docs)] // documentation missing in model
     CapacityReservationFleet,
+    #[allow(missing_docs)] // documentation missing in model
+    CapacityReservationModificationQuote,
     #[allow(missing_docs)] // documentation missing in model
     CarrierGateway,
     #[allow(missing_docs)] // documentation missing in model
@@ -386,6 +389,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "capacity-reservation" => ResourceType::CapacityReservation,
             "capacity-reservation-cancellation-quote" => ResourceType::CapacityReservationCancellationQuote,
             "capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
+            "capacity-reservation-modification-quote" => ResourceType::CapacityReservationModificationQuote,
             "carrier-gateway" => ResourceType::CarrierGateway,
             "client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
             "coip-pool" => ResourceType::CoipPool,
@@ -512,6 +516,7 @@ impl ResourceType {
             ResourceType::CapacityReservation => "capacity-reservation",
             ResourceType::CapacityReservationCancellationQuote => "capacity-reservation-cancellation-quote",
             ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
+            ResourceType::CapacityReservationModificationQuote => "capacity-reservation-modification-quote",
             ResourceType::CarrierGateway => "carrier-gateway",
             ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
             ResourceType::CoipPool => "coip-pool",
@@ -629,6 +634,7 @@ impl ResourceType {
             "capacity-reservation",
             "capacity-reservation-cancellation-quote",
             "capacity-reservation-fleet",
+            "capacity-reservation-modification-quote",
             "carrier-gateway",
             "client-vpn-endpoint",
             "coip-pool",
@@ -763,6 +769,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::CapacityReservation => write!(f, "capacity-reservation"),
             ResourceType::CapacityReservationCancellationQuote => write!(f, "capacity-reservation-cancellation-quote"),
             ResourceType::CapacityReservationFleet => write!(f, "capacity-reservation-fleet"),
+            ResourceType::CapacityReservationModificationQuote => write!(f, "capacity-reservation-modification-quote"),
             ResourceType::CarrierGateway => write!(f, "carrier-gateway"),
             ResourceType::ClientVpnEndpoint => write!(f, "client-vpn-endpoint"),
             ResourceType::CoipPool => write!(f, "coip-pool"),

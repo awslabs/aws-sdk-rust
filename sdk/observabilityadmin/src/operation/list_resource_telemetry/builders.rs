@@ -133,17 +133,59 @@ impl ListResourceTelemetryFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
-    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the resources will be returned in the same order used in the request.</p>
+    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the service returns the resources in the same order as specified in the request. Currently supported resource types for discovery are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::EC2::Instance</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EC2::VPC</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EKS::Cluster</code></p></li>
+    /// <li>
+    /// <p><code>AWS::WAFv2::WebACL</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> (Network Load Balancers only)</p></li>
+    /// </ul>
     pub fn resource_types(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_types(input);
         self
     }
-    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the resources will be returned in the same order used in the request.</p>
+    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the service returns the resources in the same order as specified in the request. Currently supported resource types for discovery are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::EC2::Instance</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EC2::VPC</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EKS::Cluster</code></p></li>
+    /// <li>
+    /// <p><code>AWS::WAFv2::WebACL</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> (Network Load Balancers only)</p></li>
+    /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
-    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the resources will be returned in the same order used in the request.</p>
+    /// <p>A list of resource types used to filter resources supported by telemetry config. If this parameter is provided, the service returns the resources in the same order as specified in the request. Currently supported resource types for discovery are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS::EC2::Instance</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EC2::VPC</code></p></li>
+    /// <li>
+    /// <p><code>AWS::Lambda::Function</code></p></li>
+    /// <li>
+    /// <p><code>AWS::EKS::Cluster</code></p></li>
+    /// <li>
+    /// <p><code>AWS::WAFv2::WebACL</code></p></li>
+    /// <li>
+    /// <p><code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> (Network Load Balancers only)</p></li>
+    /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceType>> {
         self.inner.get_resource_types()
     }

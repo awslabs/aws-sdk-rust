@@ -7,7 +7,11 @@
 //!
 //! # Example: Signing an HTTP request
 //!
-//! **Note**: This requires `http0-compat` to be enabled.
+//! **Note**: This requires the `http1` feature (enabled by default). To sign a pre-1.x
+//! `http` 0.2.x request with [`SigningInstructions::apply_to_request_http0x`], enable the
+//! `http0-compat` feature instead.
+//!
+//! [`SigningInstructions::apply_to_request_http0x`]: crate::http_request::SigningInstructions::apply_to_request_http0x
 //!
 //! ```rust
 //! # use aws_credential_types::Credentials;
@@ -17,7 +21,6 @@
 //! fn test() -> Result<(), aws_sigv4::http_request::SigningError> {
 //! use aws_sigv4::http_request::{sign, SigningSettings, SigningParams, SignableRequest};
 //! use aws_sigv4::sign::v4;
-//! use http0;
 //! use std::time::SystemTime;
 //!
 //! // Set up information and settings for the signing

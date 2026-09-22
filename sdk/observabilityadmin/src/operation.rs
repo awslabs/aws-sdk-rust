@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateCentralizationRuleForOrganization` operation.
 pub mod create_centralization_rule_for_organization;
 
+/// Types for the `CreateDatasetIntegration` operation.
+pub mod create_dataset_integration;
+
 /// Types for the `CreateS3TableIntegration` operation.
 pub mod create_s3_table_integration;
 
@@ -19,6 +22,9 @@ pub mod create_telemetry_rule_for_organization;
 /// Types for the `DeleteCentralizationRuleForOrganization` operation.
 pub mod delete_centralization_rule_for_organization;
 
+/// Types for the `DeleteDatasetIntegration` operation.
+pub mod delete_dataset_integration;
+
 /// Types for the `DeleteS3TableIntegration` operation.
 pub mod delete_s3_table_integration;
 
@@ -33,6 +39,9 @@ pub mod delete_telemetry_rule_for_organization;
 
 /// Types for the `GetCentralizationRuleForOrganization` operation.
 pub mod get_centralization_rule_for_organization;
+
+/// Types for the `GetDatasetIntegration` operation.
+pub mod get_dataset_integration;
 
 /// Types for the `GetS3TableIntegration` operation.
 pub mod get_s3_table_integration;
@@ -57,6 +66,9 @@ pub mod get_telemetry_rule_for_organization;
 
 /// Types for the `ListCentralizationRulesForOrganization` operation.
 pub mod list_centralization_rules_for_organization;
+
+/// Types for the `ListDatasetIntegrations` operation.
+pub mod list_dataset_integrations;
 
 /// Types for the `ListResourceTelemetry` operation.
 pub mod list_resource_telemetry;
@@ -108,6 +120,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateCentralizationRuleForOrganization` operation.
 pub mod update_centralization_rule_for_organization;
+
+/// Types for the `UpdateDatasetIntegration` operation.
+pub mod update_dataset_integration;
 
 /// Types for the `UpdateTelemetryPipeline` operation.
 pub mod update_telemetry_pipeline;

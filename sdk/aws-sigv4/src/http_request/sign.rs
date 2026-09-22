@@ -201,7 +201,7 @@ impl SigningInstructions {
         self.params.as_slice()
     }
 
-    #[cfg(any(feature = "http0-compat", test))]
+    #[cfg(feature = "http0-compat")]
     /// Applies the instructions to the given `request`.
     pub fn apply_to_request_http0x<B>(self, request: &mut http0::Request<B>) {
         let (new_headers, new_query) = self.into_parts();

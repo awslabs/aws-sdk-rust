@@ -419,8 +419,46 @@ pub fn de_capacity_reservation(
                 builder = builder.set_interruption_info(var_31);
             }
             ,
-            s if s.matches("zeroSizePreference") /* ZeroSizePreference com.amazonaws.ec2#CapacityReservation$ZeroSizePreference */ =>  {
+            s if s.matches("adjustmentStatus") /* AdjustmentStatus com.amazonaws.ec2#CapacityReservation$AdjustmentStatus */ =>  {
                 let var_32 =
+                    Some(
+                        Result::<crate::types::CapacityReservationAdjustmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationAdjustmentStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_adjustment_status(var_32);
+            }
+            ,
+            s if s.matches("adjustmentDetails") /* AdjustmentDetails com.amazonaws.ec2#CapacityReservation$AdjustmentDetails */ =>  {
+                let var_33 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_reservation_adjustment_details::de_capacity_reservation_adjustment_details(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_adjustment_details(var_33);
+            }
+            ,
+            s if s.matches("originalStartDate") /* OriginalStartDate com.amazonaws.ec2#CapacityReservation$OriginalStartDate */ =>  {
+                let var_34 =
+                    Some(
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        )
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_original_start_date(var_34);
+            }
+            ,
+            s if s.matches("zeroSizePreference") /* ZeroSizePreference com.amazonaws.ec2#CapacityReservation$ZeroSizePreference */ =>  {
+                let var_35 =
                     Some(
                         Result::<crate::types::ZeroSizePreference, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ZeroSizePreference::from(
@@ -430,7 +468,7 @@ pub fn de_capacity_reservation(
                         ?
                     )
                 ;
-                builder = builder.set_zero_size_preference(var_32);
+                builder = builder.set_zero_size_preference(var_35);
             }
             ,
             _ => {}

@@ -83,6 +83,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_oidc_jwt_configuration::OidcJwtConfiguration;
 
+pub use crate::types::_region_metadata::RegionMetadata;
+
 pub use crate::types::_kms_key_type::KmsKeyType;
 
 pub use crate::types::_kms_key_status::KmsKeyStatus;
@@ -106,8 +108,6 @@ pub use crate::types::_instance_metadata::InstanceMetadata;
 pub use crate::types::_attached_managed_policy::AttachedManagedPolicy;
 
 pub use crate::types::_permission_set_provisioning_status_metadata::PermissionSetProvisioningStatusMetadata;
-
-pub use crate::types::_region_metadata::RegionMetadata;
 
 pub use crate::types::_trusted_token_issuer_metadata::TrustedTokenIssuerMetadata;
 

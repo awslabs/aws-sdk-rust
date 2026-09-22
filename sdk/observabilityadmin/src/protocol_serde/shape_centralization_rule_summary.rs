@@ -91,6 +91,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ContextGraphStatus" => {
+                            builder = builder.set_context_graph_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ContextGraphStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "DestinationAccountId" => {
                             builder = builder.set_destination_account_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

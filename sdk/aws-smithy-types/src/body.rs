@@ -26,6 +26,43 @@ pub mod http_body_1_x;
 /// A generic, boxed error that's `Send` and `Sync`
 pub type Error = Box<dyn StdError + Send + Sync>;
 
+// Converts an `http` 0.2.x trailer `HeaderMap` into an `http` 1.x `HeaderMap`. Only needed on the
+// legacy http-body 0.4.x trailer code path inside `poll_next_trailers`, which exists only when the
+// `http-body-0-4-x` feature is enabled. The `http-body-1-x` path (including `rt-tokio`, which now
+// rides the 1.x body path) never needs the `http` 0.2.x crate.
+#[cfg(feature = "http-body-0-4-x")]
+fn convert_trailers_0x_1x(input: http::HeaderMap) -> http_1x::HeaderMap {
+    let mut map = http_1x::HeaderMap::with_capacity(input.capacity());
+    let mut mem: Option<http::HeaderName> = None;
+    for (k, v) in input.into_iter() {
+        let name = k.or_else(|| mem.clone()).unwrap();
+        map.append(
+            http_1x::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
+            http_1x::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
+        );
+        mem = Some(name);
+    }
+    map
+}
+
+// Converts an `http` 1.x `HeaderMap` into an `http` 0.2.x `HeaderMap`. Shared by the http-body
+// 0.4.x adapters in `body/http_body_0_4_x.rs` and `body/http_body_1_x.rs`, so it lives here to
+// avoid duplication. Only needed on the legacy 0.4.x path (gated on `http-body-0-4-x`).
+#[cfg(feature = "http-body-0-4-x")]
+pub(crate) fn convert_headers_1x_0x(input: http_1x::HeaderMap) -> http::HeaderMap {
+    let mut map = http::HeaderMap::with_capacity(input.capacity());
+    let mut mem: Option<http_1x::HeaderName> = None;
+    for (k, v) in input.into_iter() {
+        let name = k.or_else(|| mem.clone()).unwrap();
+        map.append(
+            http::HeaderName::from_bytes(name.as_str().as_bytes()).expect("already validated"),
+            http::HeaderValue::from_bytes(v.as_bytes()).expect("already validated"),
+        );
+        mem = Some(name);
+    }
+    map
+}
+
 pin_project! {
     /// SdkBody type
     ///
@@ -61,14 +98,10 @@ impl Debug for SdkBody {
 /// A boxed generic HTTP body that, when consumed, will result in [`Bytes`] or an [`Error`].
 #[allow(dead_code)]
 enum BoxBody {
-    // This is enabled by the **dependency**, not the feature. This allows us to construct it
-    // whenever we have the dependency and keep the APIs private
-    #[cfg(any(
-        feature = "http-body-0-4-x",
-        feature = "http-body-1-x",
-        feature = "rt-tokio"
-    ))]
-    // will be dead code with `--no-default-features --features rt-tokio`
+    // The legacy http-body 0.4.x box body. Only exists when the `http-body-0-4-x` feature is
+    // enabled; the `http-body-1-x` path (including `rt-tokio`) does not pull in the `http` 0.2.x /
+    // `http-body` 0.4.x crates.
+    #[cfg(feature = "http-body-0-4-x")]
     HttpBody04(#[allow(dead_code)] http_body_0_4::combinators::BoxBody<Bytes, Error>),
 
     #[cfg(feature = "http-body-1-x")]
@@ -212,11 +245,7 @@ impl SdkBody {
     }
 
     #[allow(dead_code)]
-    #[cfg(any(
-        feature = "http-body-0-4-x",
-        feature = "http-body-1-x",
-        feature = "rt-tokio"
-    ))]
+    #[cfg(feature = "http-body-0-4-x")]
     pub(crate) fn from_body_0_4_internal<T, E>(body: T) -> Self
     where
         T: http_body_0_4::Body<Data = Bytes, Error = E> + Send + Sync + 'static,
@@ -258,27 +287,18 @@ impl SdkBody {
         self: Pin<&mut Self>,
         cx: &mut Context<'_>,
     ) -> Poll<Result<Option<http_1x::HeaderMap<http_1x::HeaderValue>>, Error>> {
-        // Three cases that matter here:
-        // 1) Both http-body features disabled, doesn't matter because this func won't compile
-        // 2) http-body-0-4-x enabled but 1-x disabled, we use the http_body_0_4_x conversion
-        // 3) http-body-1-x enabled (and 0-4-x is enabled or disabled), we use the 1-x conversion
-        // as our default whenever it is available
-        #[cfg(all(feature = "http-body-0-4-x", not(feature = "http-body-1-x")))]
-        use crate::body::http_body_0_4_x::convert_headers_0x_1x;
-        #[cfg(feature = "http-body-1-x")]
-        use crate::body::http_body_1_x::convert_headers_0x_1x;
-
         let this = self.project();
         match this.inner.project() {
             InnerProj::Once { .. } => Poll::Ready(Ok(None)),
             InnerProj::Dyn { inner } => match inner.get_mut() {
+                #[cfg(feature = "http-body-0-4-x")]
                 BoxBody::HttpBody04(box_body) => {
                     use http_body_0_4::Body;
                     let polled = Pin::new(box_body).poll_trailers(cx);
 
                     match polled {
                         Poll::Ready(Ok(maybe_trailers)) => {
-                            let http_1x_trailers = maybe_trailers.map(convert_headers_0x_1x);
+                            let http_1x_trailers = maybe_trailers.map(convert_trailers_0x_1x);
                             Poll::Ready(Ok(http_1x_trailers))
                         }
                         Poll::Ready(Err(err)) => Poll::Ready(Err(err)),

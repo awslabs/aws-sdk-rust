@@ -28,6 +28,12 @@ pub struct ModifyCapacityReservationInput {
     /// <p>The matching criteria (instance eligibility) that you want to use in the modified Capacity Reservation. If you change the instance eligibility of an existing Capacity Reservation from <code>targeted</code> to <code>open</code>, any running instances that match the attributes of the Capacity Reservation, have the <code>CapacityReservationPreference</code> set to <code>open</code>, and are not yet running in the Capacity Reservation, will automatically use the modified Capacity Reservation.</p>
     /// <p>To modify the instance eligibility, the Capacity Reservation must be completely idle (zero usage).</p>
     pub instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
+    /// <p>Indicates that you accept the modification terms of the quote identified by <code>QuoteId</code>. To apply a quoted modification, set this parameter to <code>true</code>.</p>
+    pub accept_modification_terms: ::std::option::Option<bool>,
+    /// <p>The new start date for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated Capacity Reservations only. Requires a quote from <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to <code>true</code>.</p>
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ID of the quote that describes the modification you want to apply. Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>. The quote must be in the <code>active</code> state, and each quote can be used only once.</p>
+    pub quote_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyCapacityReservationInput {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -71,6 +77,18 @@ impl ModifyCapacityReservationInput {
     pub fn instance_match_criteria(&self) -> ::std::option::Option<&crate::types::InstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
+    /// <p>Indicates that you accept the modification terms of the quote identified by <code>QuoteId</code>. To apply a quoted modification, set this parameter to <code>true</code>.</p>
+    pub fn accept_modification_terms(&self) -> ::std::option::Option<bool> {
+        self.accept_modification_terms
+    }
+    /// <p>The new start date for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated Capacity Reservations only. Requires a quote from <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to <code>true</code>.</p>
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
+    }
+    /// <p>The ID of the quote that describes the modification you want to apply. Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>. The quote must be in the <code>active</code> state, and each quote can be used only once.</p>
+    pub fn quote_id(&self) -> ::std::option::Option<&str> {
+        self.quote_id.as_deref()
+    }
 }
 impl ModifyCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
@@ -91,6 +109,9 @@ pub struct ModifyCapacityReservationInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) additional_info: ::std::option::Option<::std::string::String>,
     pub(crate) instance_match_criteria: ::std::option::Option<crate::types::InstanceMatchCriteria>,
+    pub(crate) accept_modification_terms: ::std::option::Option<bool>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) quote_id: ::std::option::Option<::std::string::String>,
 }
 impl ModifyCapacityReservationInputBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -233,6 +254,48 @@ impl ModifyCapacityReservationInputBuilder {
     pub fn get_instance_match_criteria(&self) -> &::std::option::Option<crate::types::InstanceMatchCriteria> {
         &self.instance_match_criteria
     }
+    /// <p>Indicates that you accept the modification terms of the quote identified by <code>QuoteId</code>. To apply a quoted modification, set this parameter to <code>true</code>.</p>
+    pub fn accept_modification_terms(mut self, input: bool) -> Self {
+        self.accept_modification_terms = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates that you accept the modification terms of the quote identified by <code>QuoteId</code>. To apply a quoted modification, set this parameter to <code>true</code>.</p>
+    pub fn set_accept_modification_terms(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.accept_modification_terms = input;
+        self
+    }
+    /// <p>Indicates that you accept the modification terms of the quote identified by <code>QuoteId</code>. To apply a quoted modification, set this parameter to <code>true</code>.</p>
+    pub fn get_accept_modification_terms(&self) -> &::std::option::Option<bool> {
+        &self.accept_modification_terms
+    }
+    /// <p>The new start date for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated Capacity Reservations only. Requires a quote from <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to <code>true</code>.</p>
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The new start date for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated Capacity Reservations only. Requires a quote from <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to <code>true</code>.</p>
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input;
+        self
+    }
+    /// <p>The new start date for the Capacity Reservation, in the ISO8601 format in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>). Applies to future-dated Capacity Reservations only. Requires a quote from <code>CreateCapacityReservationDateChangeQuote</code>; pass the quote ID in <code>QuoteId</code> with <code>AcceptModificationTerms</code> set to <code>true</code>.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
+    }
+    /// <p>The ID of the quote that describes the modification you want to apply. Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>. The quote must be in the <code>active</code> state, and each quote can be used only once.</p>
+    pub fn quote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the quote that describes the modification you want to apply. Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>. The quote must be in the <code>active</code> state, and each quote can be used only once.</p>
+    pub fn set_quote_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quote_id = input;
+        self
+    }
+    /// <p>The ID of the quote that describes the modification you want to apply. Generate a quote by using <code>CreateCapacityReservationDateChangeQuote</code>. The quote must be in the <code>active</code> state, and each quote can be used only once.</p>
+    pub fn get_quote_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quote_id
+    }
     /// Consumes the builder and constructs a [`ModifyCapacityReservationInput`](crate::operation::modify_capacity_reservation::ModifyCapacityReservationInput).
     pub fn build(
         self,
@@ -249,6 +312,9 @@ impl ModifyCapacityReservationInputBuilder {
             dry_run: self.dry_run,
             additional_info: self.additional_info,
             instance_match_criteria: self.instance_match_criteria,
+            accept_modification_terms: self.accept_modification_terms,
+            start_date: self.start_date,
+            quote_id: self.quote_id,
         })
     }
 }

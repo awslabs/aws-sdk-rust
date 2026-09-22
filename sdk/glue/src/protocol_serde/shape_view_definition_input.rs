@@ -60,5 +60,27 @@ pub fn ser_view_definition_input(
         }
         array_14.finish();
     }
+    if let Some(var_16) = &input.sub_objects_statistics {
+        let mut array_17 = object.key("SubObjectsStatistics").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_sub_object_statistics::ser_sub_object_statistics(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_20) = &input.spark_pipeline_info {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("SparkPipelineInfo").start_object();
+        for (key_22, value_23) in var_20 {
+            {
+                object_21.key(key_22.as_str()).string(value_23.as_str());
+            }
+        }
+        object_21.finish();
+    }
     Ok(())
 }

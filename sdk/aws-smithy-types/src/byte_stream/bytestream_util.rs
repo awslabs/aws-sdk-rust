@@ -13,10 +13,7 @@ use tokio::fs::File;
 use tokio::io::{self, AsyncReadExt, AsyncSeekExt};
 use tokio_util::io::ReaderStream;
 
-// TODO(https://github.com/smithy-lang/smithy-rs/issues/1925)
-//     Feature gating this now would break the
-//     `cargo check --no-default-features --features rt-tokio` test.
-// #[cfg(feature = "http-body-0-4-x")]
+#[cfg(feature = "http-body-0-4-x")]
 mod http_body_0_4_x;
 
 #[cfg(feature = "http-body-1-x")]
@@ -205,22 +202,14 @@ impl FsBuilder {
 
         if let Some(path) = self.path {
             let body_loader = move || {
-                // If an offset was provided, seeking will be handled in `PathBody::poll_data` each
+                // If an offset was provided, seeking will be handled in `PathBody::poll_frame` each
                 // time the file is loaded.
-                #[cfg(not(feature = "http-body-1-x"))]
-                return SdkBody::from_body_0_4_internal(PathBody::from_path(
+                SdkBody::from_body_1_x_internal(PathBody::from_path(
                     path.clone(),
                     length,
                     buffer_size,
                     self.offset,
-                ));
-                #[cfg(feature = "http-body-1-x")]
-                return SdkBody::from_body_1_x_internal(PathBody::from_path(
-                    path.clone(),
-                    length,
-                    buffer_size,
-                    self.offset,
-                ));
+                ))
             };
 
             Ok(ByteStream::new(SdkBody::retryable(body_loader)))
@@ -230,10 +219,6 @@ impl FsBuilder {
                 let _s = file.seek(io::SeekFrom::Start(offset)).await?;
             }
 
-            #[cfg(not(feature = "http-body-1-x"))]
-            let body =
-                SdkBody::from_body_0_4_internal(PathBody::from_file(file, length, buffer_size));
-            #[cfg(feature = "http-body-1-x")]
             let body =
                 SdkBody::from_body_1_x_internal(PathBody::from_file(file, length, buffer_size));
 

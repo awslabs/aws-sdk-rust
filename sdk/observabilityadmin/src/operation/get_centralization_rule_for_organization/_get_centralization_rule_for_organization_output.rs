@@ -23,6 +23,8 @@ pub struct GetCentralizationRuleForOrganizationOutput {
     pub tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
     /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
     pub tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub context_graph_status: ::std::option::Option<crate::types::ContextGraphStatus>,
     /// <p>The configuration details for the organization centralization rule.</p>
     pub centralization_rule: ::std::option::Option<crate::types::CentralizationRule>,
     _request_id: Option<String>,
@@ -68,6 +70,10 @@ impl GetCentralizationRuleForOrganizationOutput {
     pub fn tag_propagation_failure_reason(&self) -> ::std::option::Option<&crate::types::TagPropagationFailureReason> {
         self.tag_propagation_failure_reason.as_ref()
     }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn context_graph_status(&self) -> ::std::option::Option<&crate::types::ContextGraphStatus> {
+        self.context_graph_status.as_ref()
+    }
     /// <p>The configuration details for the organization centralization rule.</p>
     pub fn centralization_rule(&self) -> ::std::option::Option<&crate::types::CentralizationRule> {
         self.centralization_rule.as_ref()
@@ -99,6 +105,7 @@ pub struct GetCentralizationRuleForOrganizationOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<crate::types::CentralizationFailureReason>,
     pub(crate) tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
     pub(crate) tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
+    pub(crate) context_graph_status: ::std::option::Option<crate::types::ContextGraphStatus>,
     pub(crate) centralization_rule: ::std::option::Option<crate::types::CentralizationRule>,
     _request_id: Option<String>,
 }
@@ -243,6 +250,20 @@ impl GetCentralizationRuleForOrganizationOutputBuilder {
     pub fn get_tag_propagation_failure_reason(&self) -> &::std::option::Option<crate::types::TagPropagationFailureReason> {
         &self.tag_propagation_failure_reason
     }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn context_graph_status(mut self, input: crate::types::ContextGraphStatus) -> Self {
+        self.context_graph_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn set_context_graph_status(mut self, input: ::std::option::Option<crate::types::ContextGraphStatus>) -> Self {
+        self.context_graph_status = input;
+        self
+    }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn get_context_graph_status(&self) -> &::std::option::Option<crate::types::ContextGraphStatus> {
+        &self.context_graph_status
+    }
     /// <p>The configuration details for the organization centralization rule.</p>
     pub fn centralization_rule(mut self, input: crate::types::CentralizationRule) -> Self {
         self.centralization_rule = ::std::option::Option::Some(input);
@@ -279,6 +300,7 @@ impl GetCentralizationRuleForOrganizationOutputBuilder {
             failure_reason: self.failure_reason,
             tag_propagation_status: self.tag_propagation_status,
             tag_propagation_failure_reason: self.tag_propagation_failure_reason,
+            context_graph_status: self.context_graph_status,
             centralization_rule: self.centralization_rule,
             _request_id: self._request_id,
         }

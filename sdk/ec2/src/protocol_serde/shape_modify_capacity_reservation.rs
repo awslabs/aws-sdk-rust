@@ -75,6 +75,30 @@ pub fn de_modify_capacity_reservation(
                 builder = builder.set_return(var_1);
             }
             ,
+            s if s.matches("adjustmentStatus") /* AdjustmentStatus com.amazonaws.ec2.synthetic#ModifyCapacityReservationOutput$AdjustmentStatus */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<crate::types::CapacityReservationAdjustmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationAdjustmentStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_adjustment_status(var_2);
+            }
+            ,
+            s if s.matches("adjustmentDetails") /* AdjustmentDetails com.amazonaws.ec2.synthetic#ModifyCapacityReservationOutput$AdjustmentDetails */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_reservation_adjustment_details::de_capacity_reservation_adjustment_details(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_adjustment_details(var_3);
+            }
+            ,
             _ => {}
         }
     }

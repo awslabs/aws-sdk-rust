@@ -1055,6 +1055,8 @@ pub use crate::types::_s3_encryption_mode::S3EncryptionMode;
 
 pub use crate::types::_view_representation_input::ViewRepresentationInput;
 
+pub use crate::types::_sub_object_statistics::SubObjectStatistics;
+
 pub use crate::types::_iceberg_schema::IcebergSchema;
 
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpec;
@@ -1156,6 +1158,8 @@ pub use crate::types::_additional_option_keys::AdditionalOptionKeys;
 pub use crate::types::_recipe_step::RecipeStep;
 
 pub use crate::types::_ddb_export_type::DdbExportType;
+
+pub use crate::types::_sub_object_source_type::SubObjectSourceType;
 
 pub use crate::types::_iceberg_struct_type_enum::IcebergStructTypeEnum;
 
@@ -2298,6 +2302,10 @@ mod _storage_descriptor;
 mod _streaming_data_preview_options;
 
 mod _string_column_statistics_data;
+
+mod _sub_object_source_type;
+
+mod _sub_object_statistics;
 
 mod _supported_dialect;
 

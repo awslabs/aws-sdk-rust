@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_centralization_rule_for_organization;
 
+pub(crate) mod shape_create_dataset_integration;
+
 pub(crate) mod shape_create_s3_table_integration;
 
 pub(crate) mod shape_create_telemetry_pipeline;
@@ -35,6 +37,8 @@ pub(crate) mod shape_create_telemetry_rule_for_organization;
 
 pub(crate) mod shape_delete_centralization_rule_for_organization;
 
+pub(crate) mod shape_delete_dataset_integration;
+
 pub(crate) mod shape_delete_s3_table_integration;
 
 pub(crate) mod shape_delete_telemetry_pipeline;
@@ -44,6 +48,8 @@ pub(crate) mod shape_delete_telemetry_rule;
 pub(crate) mod shape_delete_telemetry_rule_for_organization;
 
 pub(crate) mod shape_get_centralization_rule_for_organization;
+
+pub(crate) mod shape_get_dataset_integration;
 
 pub(crate) mod shape_get_s3_table_integration;
 
@@ -60,6 +66,8 @@ pub(crate) mod shape_get_telemetry_rule;
 pub(crate) mod shape_get_telemetry_rule_for_organization;
 
 pub(crate) mod shape_list_centralization_rules_for_organization;
+
+pub(crate) mod shape_list_dataset_integrations;
 
 pub(crate) mod shape_list_resource_telemetry;
 
@@ -95,6 +103,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_centralization_rule_for_organization;
 
+pub(crate) mod shape_update_dataset_integration;
+
 pub(crate) mod shape_update_telemetry_pipeline;
 
 pub(crate) mod shape_update_telemetry_rule;
@@ -117,6 +127,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_centralization_rule_for_organization_input;
 
+pub(crate) mod shape_create_dataset_integration_input;
+
 pub(crate) mod shape_create_s3_table_integration_input;
 
 pub(crate) mod shape_create_telemetry_pipeline_input;
@@ -127,6 +139,8 @@ pub(crate) mod shape_create_telemetry_rule_input;
 
 pub(crate) mod shape_delete_centralization_rule_for_organization_input;
 
+pub(crate) mod shape_delete_dataset_integration_input;
+
 pub(crate) mod shape_delete_s3_table_integration_input;
 
 pub(crate) mod shape_delete_telemetry_pipeline_input;
@@ -136,6 +150,8 @@ pub(crate) mod shape_delete_telemetry_rule_for_organization_input;
 pub(crate) mod shape_delete_telemetry_rule_input;
 
 pub(crate) mod shape_get_centralization_rule_for_organization_input;
+
+pub(crate) mod shape_get_dataset_integration_input;
 
 pub(crate) mod shape_get_s3_table_integration_input;
 
@@ -150,6 +166,8 @@ pub(crate) mod shape_internal_server_exception;
 pub(crate) mod shape_invalid_state_exception;
 
 pub(crate) mod shape_list_centralization_rules_for_organization_input;
+
+pub(crate) mod shape_list_dataset_integrations_input;
 
 pub(crate) mod shape_list_resource_telemetry_for_organization_input;
 
@@ -183,6 +201,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_centralization_rule_for_organization_input;
 
+pub(crate) mod shape_update_dataset_integration_input;
+
 pub(crate) mod shape_update_telemetry_pipeline_input;
 
 pub(crate) mod shape_update_telemetry_rule_for_organization_input;
@@ -196,6 +216,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_centralization_rule;
 
 pub(crate) mod shape_centralization_rule_summaries;
+
+pub(crate) mod shape_dataset_integration_summaries;
 
 pub(crate) mod shape_encryption;
 
@@ -228,6 +250,8 @@ pub(crate) mod shape_centralization_rule_destination;
 pub(crate) mod shape_centralization_rule_source;
 
 pub(crate) mod shape_centralization_rule_summary;
+
+pub(crate) mod shape_dataset_integration_summary;
 
 pub(crate) mod shape_integration_summary;
 
@@ -268,6 +292,8 @@ pub(crate) mod shape_log_delivery_parameters;
 pub(crate) mod shape_msk_monitoring_parameters;
 
 pub(crate) mod shape_pipeline_output_error;
+
+pub(crate) mod shape_source_context_graph_configuration;
 
 pub(crate) mod shape_source_logs_configuration;
 

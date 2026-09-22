@@ -5,7 +5,7 @@
 
 #![cfg(all(feature = "client", feature = "test-util"))]
 
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 use aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier;
 use aws_smithy_runtime::client::retries::RetryPartition;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
@@ -30,7 +30,6 @@ pub use aws_smithy_runtime_api::{
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::retry::RetryConfig;
 pub use aws_smithy_types::{body::SdkBody, timeout::TimeoutConfig};
-pub use http_body_04x::Body;
 pub use std::{
     convert::Infallible,
     sync::{Arc, Mutex},
@@ -143,7 +142,7 @@ async fn token_bucket_exhausted_before_max_attempts() {
     let max_attempts = 100;
 
     let http_client = infallible_client_fn(|_req| {
-        http_02x::Response::builder()
+        http_1x::Response::builder()
             .status(503)
             .body(SdkBody::empty())
             .unwrap()
@@ -173,7 +172,7 @@ async fn token_bucket_partitioning() {
     let max_attempts = 100;
 
     let http_client = infallible_client_fn(|_req| {
-        http_02x::Response::builder()
+        http_1x::Response::builder()
             .status(503)
             .body(SdkBody::empty())
             .unwrap()

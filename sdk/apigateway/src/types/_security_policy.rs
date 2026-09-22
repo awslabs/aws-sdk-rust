@@ -15,6 +15,8 @@
 ///     SecurityPolicy::SecurityPolicyTls122018Edge => { /* ... */ },
 ///     SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => { /* ... */ },
 ///     SecurityPolicy::SecurityPolicyTls1312202106 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312Ext2FipsPq202509 => { /* ... */ },
+///     SecurityPolicy::SecurityPolicyTls1312Ext2Pq202509 => { /* ... */ },
 ///     SecurityPolicy::SecurityPolicyTls1312FipsPfsPq202509 => { /* ... */ },
 ///     SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => { /* ... */ },
 ///     SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => { /* ... */ },
@@ -59,6 +61,10 @@ pub enum SecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
     SecurityPolicyTls1312202106,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312Ext2FipsPq202509,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityPolicyTls1312Ext2Pq202509,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityPolicyTls1312FipsPfsPq202509,
     #[allow(missing_docs)] // documentation missing in model
     SecurityPolicyTls1312FipsPq202509,
@@ -86,6 +92,8 @@ impl ::std::convert::From<&str> for SecurityPolicy {
             "SecurityPolicy_TLS12_2018_EDGE" => SecurityPolicy::SecurityPolicyTls122018Edge,
             "SecurityPolicy_TLS12_PFS_2025_EDGE" => SecurityPolicy::SecurityPolicyTls12Pfs2025Edge,
             "SecurityPolicy_TLS13_1_2_2021_06" => SecurityPolicy::SecurityPolicyTls1312202106,
+            "SecurityPolicy_TLS13_1_2_Ext2_FIPS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312Ext2FipsPq202509,
+            "SecurityPolicy_TLS13_1_2_Ext2_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312Ext2Pq202509,
             "SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312FipsPfsPq202509,
             "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312FipsPq202509,
             "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09" => SecurityPolicy::SecurityPolicyTls1312PfsPq202509,
@@ -113,6 +121,8 @@ impl SecurityPolicy {
             SecurityPolicy::SecurityPolicyTls122018Edge => "SecurityPolicy_TLS12_2018_EDGE",
             SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => "SecurityPolicy_TLS12_PFS_2025_EDGE",
             SecurityPolicy::SecurityPolicyTls1312202106 => "SecurityPolicy_TLS13_1_2_2021_06",
+            SecurityPolicy::SecurityPolicyTls1312Ext2FipsPq202509 => "SecurityPolicy_TLS13_1_2_Ext2_FIPS_PQ_2025_09",
+            SecurityPolicy::SecurityPolicyTls1312Ext2Pq202509 => "SecurityPolicy_TLS13_1_2_Ext2_PQ_2025_09",
             SecurityPolicy::SecurityPolicyTls1312FipsPfsPq202509 => "SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09",
             SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09",
             SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09",
@@ -131,6 +141,8 @@ impl SecurityPolicy {
             "SecurityPolicy_TLS12_2018_EDGE",
             "SecurityPolicy_TLS12_PFS_2025_EDGE",
             "SecurityPolicy_TLS13_1_2_2021_06",
+            "SecurityPolicy_TLS13_1_2_Ext2_FIPS_PQ_2025_09",
+            "SecurityPolicy_TLS13_1_2_Ext2_PQ_2025_09",
             "SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09",
             "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09",
             "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09",
@@ -166,6 +178,8 @@ impl ::std::fmt::Display for SecurityPolicy {
             SecurityPolicy::SecurityPolicyTls122018Edge => write!(f, "SecurityPolicy_TLS12_2018_EDGE"),
             SecurityPolicy::SecurityPolicyTls12Pfs2025Edge => write!(f, "SecurityPolicy_TLS12_PFS_2025_EDGE"),
             SecurityPolicy::SecurityPolicyTls1312202106 => write!(f, "SecurityPolicy_TLS13_1_2_2021_06"),
+            SecurityPolicy::SecurityPolicyTls1312Ext2FipsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_Ext2_FIPS_PQ_2025_09"),
+            SecurityPolicy::SecurityPolicyTls1312Ext2Pq202509 => write!(f, "SecurityPolicy_TLS13_1_2_Ext2_PQ_2025_09"),
             SecurityPolicy::SecurityPolicyTls1312FipsPfsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_FIPS_PFS_PQ_2025_09"),
             SecurityPolicy::SecurityPolicyTls1312FipsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_FIPS_PQ_2025_09"),
             SecurityPolicy::SecurityPolicyTls1312PfsPq202509 => write!(f, "SecurityPolicy_TLS13_1_2_PFS_PQ_2025_09"),

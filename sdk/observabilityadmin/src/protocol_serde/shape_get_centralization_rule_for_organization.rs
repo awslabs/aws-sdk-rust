@@ -197,6 +197,13 @@ pub(crate) fn de_get_centralization_rule_for_organization(
                         depth + 1,
                     )?);
                 }
+                "ContextGraphStatus" => {
+                    builder = builder.set_context_graph_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ContextGraphStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "CreatedRegion" => {
                     builder = builder.set_created_region(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -48,6 +48,21 @@ pub fn ser_modify_capacity_reservation_input_input_input(
     if let Some(var_16) = &input.instance_match_criteria {
         scope_15.string(var_16.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("AcceptModificationTerms");
+    if let Some(var_18) = &input.accept_modification_terms {
+        scope_17.boolean(*var_18);
+    }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("StartDate");
+    if let Some(var_20) = &input.start_date {
+        scope_19.date_time(var_20, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("QuoteId");
+    if let Some(var_22) = &input.quote_id {
+        scope_21.string(var_22);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

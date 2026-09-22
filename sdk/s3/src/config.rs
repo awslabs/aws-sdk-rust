@@ -1049,7 +1049,6 @@ impl Builder {
     /// use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
     /// use aws_smithy_types::config_bag::ConfigBag;
     /// use aws_sdk_s3::config::Config;
-    /// use ::http::uri::Uri;
     ///
     /// fn base_url() -> String {
     ///     // ...
@@ -1070,7 +1069,7 @@ impl Builder {
     ///     ) -> Result<(), BoxError> {
     ///         let request = context.request_mut();
     ///         let uri = format!("{}{}", base_url(), request.uri());
-    ///         *request.uri_mut() = uri.parse::<Uri>()?.into();
+    ///         request.set_uri(uri)?;
     ///
     ///         Ok(())
     ///     }

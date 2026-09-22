@@ -801,6 +801,8 @@ pub use crate::types::_order::OrderBuilder;
 
 pub use crate::types::_view_representation_input::ViewRepresentationInputBuilder;
 
+pub use crate::types::_sub_object_statistics::SubObjectStatisticsBuilder;
+
 pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
 
 pub use crate::types::_iceberg_partition_spec::IcebergPartitionSpecBuilder;

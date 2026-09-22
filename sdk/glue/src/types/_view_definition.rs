@@ -20,8 +20,12 @@ pub struct ViewDefinition {
     pub sub_objects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of the Apache Iceberg table versions referenced by the materialized view.</p>
     pub sub_object_version_ids: ::std::option::Option<::std::vec::Vec<i64>>,
+    /// <p>Statistics captured for each sub-object referenced by the materialized view as of its most recent refresh, such as the source type, Glue version ID, and the partition, file, and byte counts. Each entry describes one sub-object, identified by its source type.</p>
+    pub sub_objects_statistics: ::std::option::Option<::std::vec::Vec<crate::types::SubObjectStatistics>>,
     /// <p>A list of representations.</p>
     pub representations: ::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentation>>,
+    /// <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP) information for the materialized view.</p>
+    pub spark_pipeline_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ViewDefinition {
     /// <p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
@@ -60,11 +64,21 @@ impl ViewDefinition {
     pub fn sub_object_version_ids(&self) -> &[i64] {
         self.sub_object_version_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Statistics captured for each sub-object referenced by the materialized view as of its most recent refresh, such as the source type, Glue version ID, and the partition, file, and byte counts. Each entry describes one sub-object, identified by its source type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sub_objects_statistics.is_none()`.
+    pub fn sub_objects_statistics(&self) -> &[crate::types::SubObjectStatistics] {
+        self.sub_objects_statistics.as_deref().unwrap_or_default()
+    }
     /// <p>A list of representations.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.representations.is_none()`.
     pub fn representations(&self) -> &[crate::types::ViewRepresentation] {
         self.representations.as_deref().unwrap_or_default()
+    }
+    /// <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP) information for the materialized view.</p>
+    pub fn spark_pipeline_info(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.spark_pipeline_info.as_ref()
     }
 }
 impl ViewDefinition {
@@ -86,7 +100,9 @@ pub struct ViewDefinitionBuilder {
     pub(crate) last_refresh_type: ::std::option::Option<crate::types::LastRefreshType>,
     pub(crate) sub_objects: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sub_object_version_ids: ::std::option::Option<::std::vec::Vec<i64>>,
+    pub(crate) sub_objects_statistics: ::std::option::Option<::std::vec::Vec<crate::types::SubObjectStatistics>>,
     pub(crate) representations: ::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentation>>,
+    pub(crate) spark_pipeline_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ViewDefinitionBuilder {
     /// <p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
@@ -213,6 +229,26 @@ impl ViewDefinitionBuilder {
     pub fn get_sub_object_version_ids(&self) -> &::std::option::Option<::std::vec::Vec<i64>> {
         &self.sub_object_version_ids
     }
+    /// Appends an item to `sub_objects_statistics`.
+    ///
+    /// To override the contents of this collection use [`set_sub_objects_statistics`](Self::set_sub_objects_statistics).
+    ///
+    /// <p>Statistics captured for each sub-object referenced by the materialized view as of its most recent refresh, such as the source type, Glue version ID, and the partition, file, and byte counts. Each entry describes one sub-object, identified by its source type.</p>
+    pub fn sub_objects_statistics(mut self, input: crate::types::SubObjectStatistics) -> Self {
+        let mut v = self.sub_objects_statistics.unwrap_or_default();
+        v.push(input);
+        self.sub_objects_statistics = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Statistics captured for each sub-object referenced by the materialized view as of its most recent refresh, such as the source type, Glue version ID, and the partition, file, and byte counts. Each entry describes one sub-object, identified by its source type.</p>
+    pub fn set_sub_objects_statistics(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubObjectStatistics>>) -> Self {
+        self.sub_objects_statistics = input;
+        self
+    }
+    /// <p>Statistics captured for each sub-object referenced by the materialized view as of its most recent refresh, such as the source type, Glue version ID, and the partition, file, and byte counts. Each entry describes one sub-object, identified by its source type.</p>
+    pub fn get_sub_objects_statistics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubObjectStatistics>> {
+        &self.sub_objects_statistics
+    }
     /// Appends an item to `representations`.
     ///
     /// To override the contents of this collection use [`set_representations`](Self::set_representations).
@@ -233,6 +269,33 @@ impl ViewDefinitionBuilder {
     pub fn get_representations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentation>> {
         &self.representations
     }
+    /// Adds a key-value pair to `spark_pipeline_info`.
+    ///
+    /// To override the contents of this collection use [`set_spark_pipeline_info`](Self::set_spark_pipeline_info).
+    ///
+    /// <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP) information for the materialized view.</p>
+    pub fn spark_pipeline_info(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.spark_pipeline_info.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.spark_pipeline_info = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP) information for the materialized view.</p>
+    pub fn set_spark_pipeline_info(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.spark_pipeline_info = input;
+        self
+    }
+    /// <p>A map of key-value pairs containing Spark Declarative Pipelines (SDP) information for the materialized view.</p>
+    pub fn get_spark_pipeline_info(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.spark_pipeline_info
+    }
     /// Consumes the builder and constructs a [`ViewDefinition`](crate::types::ViewDefinition).
     pub fn build(self) -> crate::types::ViewDefinition {
         crate::types::ViewDefinition {
@@ -244,7 +307,9 @@ impl ViewDefinitionBuilder {
             last_refresh_type: self.last_refresh_type,
             sub_objects: self.sub_objects,
             sub_object_version_ids: self.sub_object_version_ids,
+            sub_objects_statistics: self.sub_objects_statistics,
             representations: self.representations,
+            spark_pipeline_info: self.spark_pipeline_info,
         }
     }
 }

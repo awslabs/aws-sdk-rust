@@ -762,83 +762,419 @@ pub fn ser_capabilities(
     if let Some(var_253) = &input.use_new_relic_action {
         object.key("UseNewRelicAction").string(var_253.as_str());
     }
-    if let Some(var_254) = &input.topic {
-        object.key("Topic").string(var_254.as_str());
+    if let Some(var_254) = &input.pager_duty_agent_action {
+        object.key("PagerDutyAgentAction").string(var_254.as_str());
     }
-    if let Some(var_255) = &input.edit_visual_with_q {
-        object.key("EditVisualWithQ").string(var_255.as_str());
+    if let Some(var_255) = &input.create_and_update_pager_duty_agent_action {
+        object.key("CreateAndUpdatePagerDutyAgentAction").string(var_255.as_str());
     }
-    if let Some(var_256) = &input.build_calculated_field_with_q {
-        object.key("BuildCalculatedFieldWithQ").string(var_256.as_str());
+    if let Some(var_256) = &input.share_pager_duty_agent_action {
+        object.key("SharePagerDutyAgentAction").string(var_256.as_str());
     }
-    if let Some(var_257) = &input.create_dashboard_executive_summary_with_q {
-        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_257.as_str());
+    if let Some(var_257) = &input.use_pager_duty_agent_action {
+        object.key("UsePagerDutyAgentAction").string(var_257.as_str());
     }
-    if let Some(var_258) = &input.space {
-        object.key("Space").string(var_258.as_str());
+    if let Some(var_258) = &input.visier_agent_action {
+        object.key("VisierAgentAction").string(var_258.as_str());
     }
-    if let Some(var_259) = &input.create_spaces {
-        object.key("CreateSpaces").string(var_259.as_str());
+    if let Some(var_259) = &input.create_and_update_visier_agent_action {
+        object.key("CreateAndUpdateVisierAgentAction").string(var_259.as_str());
     }
-    if let Some(var_260) = &input.share_spaces {
-        object.key("ShareSpaces").string(var_260.as_str());
+    if let Some(var_260) = &input.share_visier_agent_action {
+        object.key("ShareVisierAgentAction").string(var_260.as_str());
     }
-    if let Some(var_261) = &input.chat_agent {
-        object.key("ChatAgent").string(var_261.as_str());
+    if let Some(var_261) = &input.use_visier_agent_action {
+        object.key("UseVisierAgentAction").string(var_261.as_str());
     }
-    if let Some(var_262) = &input.create_chat_agents {
-        object.key("CreateChatAgents").string(var_262.as_str());
+    if let Some(var_262) = &input.zoom_action {
+        object.key("ZoomAction").string(var_262.as_str());
     }
-    if let Some(var_263) = &input.share_chat_agents {
-        object.key("ShareChatAgents").string(var_263.as_str());
+    if let Some(var_263) = &input.create_and_update_zoom_action {
+        object.key("CreateAndUpdateZoomAction").string(var_263.as_str());
     }
-    if let Some(var_264) = &input.research {
-        object.key("Research").string(var_264.as_str());
+    if let Some(var_264) = &input.share_zoom_action {
+        object.key("ShareZoomAction").string(var_264.as_str());
     }
-    if let Some(var_265) = &input.self_upgrade_user_role {
-        object.key("SelfUpgradeUserRole").string(var_265.as_str());
+    if let Some(var_265) = &input.use_zoom_action {
+        object.key("UseZoomAction").string(var_265.as_str());
     }
-    if let Some(var_266) = &input.extension {
-        object.key("Extension").string(var_266.as_str());
+    if let Some(var_266) = &input.snow_flake_action {
+        object.key("SnowFlakeAction").string(var_266.as_str());
     }
-    if let Some(var_267) = &input.use_browser_extension {
-        object.key("UseBrowserExtension").string(var_267.as_str());
+    if let Some(var_267) = &input.create_and_update_snow_flake_action {
+        object.key("CreateAndUpdateSnowFlakeAction").string(var_267.as_str());
     }
-    if let Some(var_268) = &input.use_word_add_in_extension {
-        object.key("UseWordAddInExtension").string(var_268.as_str());
+    if let Some(var_268) = &input.share_snow_flake_action {
+        object.key("ShareSnowFlakeAction").string(var_268.as_str());
     }
-    if let Some(var_269) = &input.use_outlook_add_in_extension {
-        object.key("UseOutlookAddInExtension").string(var_269.as_str());
+    if let Some(var_269) = &input.use_snow_flake_action {
+        object.key("UseSnowFlakeAction").string(var_269.as_str());
     }
-    if let Some(var_270) = &input.use_excel_add_in_extension {
-        object.key("UseExcelAddInExtension").string(var_270.as_str());
+    if let Some(var_270) = &input.zapier_action {
+        object.key("ZapierAction").string(var_270.as_str());
     }
-    if let Some(var_271) = &input.use_powerpoint_add_in_extension {
-        object.key("UsePowerpointAddInExtension").string(var_271.as_str());
+    if let Some(var_271) = &input.create_and_update_zapier_action {
+        object.key("CreateAndUpdateZapierAction").string(var_271.as_str());
     }
-    if let Some(var_272) = &input.manage_shared_folders {
-        object.key("ManageSharedFolders").string(var_272.as_str());
+    if let Some(var_272) = &input.share_zapier_action {
+        object.key("ShareZapierAction").string(var_272.as_str());
     }
-    if let Some(var_273) = &input.generate_analyses {
-        object.key("GenerateAnalyses").string(var_273.as_str());
+    if let Some(var_273) = &input.use_zapier_action {
+        object.key("UseZapierAction").string(var_273.as_str());
     }
-    if let Some(var_274) = &input.story {
-        object.key("Story").string(var_274.as_str());
+    if let Some(var_274) = &input.airtable_action {
+        object.key("AirtableAction").string(var_274.as_str());
     }
-    if let Some(var_275) = &input.scenario {
-        object.key("Scenario").string(var_275.as_str());
+    if let Some(var_275) = &input.create_and_update_airtable_action {
+        object.key("CreateAndUpdateAirtableAction").string(var_275.as_str());
     }
-    if let Some(var_276) = &input.trigger {
-        object.key("Trigger").string(var_276.as_str());
+    if let Some(var_276) = &input.share_airtable_action {
+        object.key("ShareAirtableAction").string(var_276.as_str());
     }
-    if let Some(var_277) = &input.schedule_trigger {
-        object.key("ScheduleTrigger").string(var_277.as_str());
+    if let Some(var_277) = &input.use_airtable_action {
+        object.key("UseAirtableAction").string(var_277.as_str());
     }
-    if let Some(var_278) = &input.inbound_email_trigger {
-        object.key("InboundEmailTrigger").string(var_278.as_str());
+    if let Some(var_278) = &input.dropbox_action {
+        object.key("DropboxAction").string(var_278.as_str());
     }
-    if let Some(var_279) = &input.quick_event_trigger {
-        object.key("QuickEventTrigger").string(var_279.as_str());
+    if let Some(var_279) = &input.create_and_update_dropbox_action {
+        object.key("CreateAndUpdateDropboxAction").string(var_279.as_str());
+    }
+    if let Some(var_280) = &input.share_dropbox_action {
+        object.key("ShareDropboxAction").string(var_280.as_str());
+    }
+    if let Some(var_281) = &input.use_dropbox_action {
+        object.key("UseDropboxAction").string(var_281.as_str());
+    }
+    if let Some(var_282) = &input.gmail_action {
+        object.key("GmailAction").string(var_282.as_str());
+    }
+    if let Some(var_283) = &input.create_and_update_gmail_action {
+        object.key("CreateAndUpdateGmailAction").string(var_283.as_str());
+    }
+    if let Some(var_284) = &input.share_gmail_action {
+        object.key("ShareGmailAction").string(var_284.as_str());
+    }
+    if let Some(var_285) = &input.use_gmail_action {
+        object.key("UseGmailAction").string(var_285.as_str());
+    }
+    if let Some(var_286) = &input.google_analytics_action {
+        object.key("GoogleAnalyticsAction").string(var_286.as_str());
+    }
+    if let Some(var_287) = &input.create_and_update_google_analytics_action {
+        object.key("CreateAndUpdateGoogleAnalyticsAction").string(var_287.as_str());
+    }
+    if let Some(var_288) = &input.share_google_analytics_action {
+        object.key("ShareGoogleAnalyticsAction").string(var_288.as_str());
+    }
+    if let Some(var_289) = &input.use_google_analytics_action {
+        object.key("UseGoogleAnalyticsAction").string(var_289.as_str());
+    }
+    if let Some(var_290) = &input.google_docs_action {
+        object.key("GoogleDocsAction").string(var_290.as_str());
+    }
+    if let Some(var_291) = &input.create_and_update_google_docs_action {
+        object.key("CreateAndUpdateGoogleDocsAction").string(var_291.as_str());
+    }
+    if let Some(var_292) = &input.share_google_docs_action {
+        object.key("ShareGoogleDocsAction").string(var_292.as_str());
+    }
+    if let Some(var_293) = &input.use_google_docs_action {
+        object.key("UseGoogleDocsAction").string(var_293.as_str());
+    }
+    if let Some(var_294) = &input.google_drive_action {
+        object.key("GoogleDriveAction").string(var_294.as_str());
+    }
+    if let Some(var_295) = &input.create_and_update_google_drive_action {
+        object.key("CreateAndUpdateGoogleDriveAction").string(var_295.as_str());
+    }
+    if let Some(var_296) = &input.share_google_drive_action {
+        object.key("ShareGoogleDriveAction").string(var_296.as_str());
+    }
+    if let Some(var_297) = &input.use_google_drive_action {
+        object.key("UseGoogleDriveAction").string(var_297.as_str());
+    }
+    if let Some(var_298) = &input.google_meet_action {
+        object.key("GoogleMeetAction").string(var_298.as_str());
+    }
+    if let Some(var_299) = &input.create_and_update_google_meet_action {
+        object.key("CreateAndUpdateGoogleMeetAction").string(var_299.as_str());
+    }
+    if let Some(var_300) = &input.share_google_meet_action {
+        object.key("ShareGoogleMeetAction").string(var_300.as_str());
+    }
+    if let Some(var_301) = &input.use_google_meet_action {
+        object.key("UseGoogleMeetAction").string(var_301.as_str());
+    }
+    if let Some(var_302) = &input.google_sheets_action {
+        object.key("GoogleSheetsAction").string(var_302.as_str());
+    }
+    if let Some(var_303) = &input.create_and_update_google_sheets_action {
+        object.key("CreateAndUpdateGoogleSheetsAction").string(var_303.as_str());
+    }
+    if let Some(var_304) = &input.share_google_sheets_action {
+        object.key("ShareGoogleSheetsAction").string(var_304.as_str());
+    }
+    if let Some(var_305) = &input.use_google_sheets_action {
+        object.key("UseGoogleSheetsAction").string(var_305.as_str());
+    }
+    if let Some(var_306) = &input.google_slides_action {
+        object.key("GoogleSlidesAction").string(var_306.as_str());
+    }
+    if let Some(var_307) = &input.create_and_update_google_slides_action {
+        object.key("CreateAndUpdateGoogleSlidesAction").string(var_307.as_str());
+    }
+    if let Some(var_308) = &input.share_google_slides_action {
+        object.key("ShareGoogleSlidesAction").string(var_308.as_str());
+    }
+    if let Some(var_309) = &input.use_google_slides_action {
+        object.key("UseGoogleSlidesAction").string(var_309.as_str());
+    }
+    if let Some(var_310) = &input.quick_books_action {
+        object.key("QuickBooksAction").string(var_310.as_str());
+    }
+    if let Some(var_311) = &input.create_and_update_quick_books_action {
+        object.key("CreateAndUpdateQuickBooksAction").string(var_311.as_str());
+    }
+    if let Some(var_312) = &input.share_quick_books_action {
+        object.key("ShareQuickBooksAction").string(var_312.as_str());
+    }
+    if let Some(var_313) = &input.use_quick_books_action {
+        object.key("UseQuickBooksAction").string(var_313.as_str());
+    }
+    if let Some(var_314) = &input.figma_action {
+        object.key("FigmaAction").string(var_314.as_str());
+    }
+    if let Some(var_315) = &input.create_and_update_figma_action {
+        object.key("CreateAndUpdateFigmaAction").string(var_315.as_str());
+    }
+    if let Some(var_316) = &input.share_figma_action {
+        object.key("ShareFigmaAction").string(var_316.as_str());
+    }
+    if let Some(var_317) = &input.use_figma_action {
+        object.key("UseFigmaAction").string(var_317.as_str());
+    }
+    if let Some(var_318) = &input.whats_app_action {
+        object.key("WhatsAppAction").string(var_318.as_str());
+    }
+    if let Some(var_319) = &input.create_and_update_whats_app_action {
+        object.key("CreateAndUpdateWhatsAppAction").string(var_319.as_str());
+    }
+    if let Some(var_320) = &input.share_whats_app_action {
+        object.key("ShareWhatsAppAction").string(var_320.as_str());
+    }
+    if let Some(var_321) = &input.use_whats_app_action {
+        object.key("UseWhatsAppAction").string(var_321.as_str());
+    }
+    if let Some(var_322) = &input.google_chat_action {
+        object.key("GoogleChatAction").string(var_322.as_str());
+    }
+    if let Some(var_323) = &input.create_and_update_google_chat_action {
+        object.key("CreateAndUpdateGoogleChatAction").string(var_323.as_str());
+    }
+    if let Some(var_324) = &input.share_google_chat_action {
+        object.key("ShareGoogleChatAction").string(var_324.as_str());
+    }
+    if let Some(var_325) = &input.use_google_chat_action {
+        object.key("UseGoogleChatAction").string(var_325.as_str());
+    }
+    if let Some(var_326) = &input.one_note_action {
+        object.key("OneNoteAction").string(var_326.as_str());
+    }
+    if let Some(var_327) = &input.create_and_update_one_note_action {
+        object.key("CreateAndUpdateOneNoteAction").string(var_327.as_str());
+    }
+    if let Some(var_328) = &input.share_one_note_action {
+        object.key("ShareOneNoteAction").string(var_328.as_str());
+    }
+    if let Some(var_329) = &input.use_one_note_action {
+        object.key("UseOneNoteAction").string(var_329.as_str());
+    }
+    if let Some(var_330) = &input.shopify_action {
+        object.key("ShopifyAction").string(var_330.as_str());
+    }
+    if let Some(var_331) = &input.create_and_update_shopify_action {
+        object.key("CreateAndUpdateShopifyAction").string(var_331.as_str());
+    }
+    if let Some(var_332) = &input.share_shopify_action {
+        object.key("ShareShopifyAction").string(var_332.as_str());
+    }
+    if let Some(var_333) = &input.use_shopify_action {
+        object.key("UseShopifyAction").string(var_333.as_str());
+    }
+    if let Some(var_334) = &input.adobe_action {
+        object.key("AdobeAction").string(var_334.as_str());
+    }
+    if let Some(var_335) = &input.create_and_update_adobe_action {
+        object.key("CreateAndUpdateAdobeAction").string(var_335.as_str());
+    }
+    if let Some(var_336) = &input.share_adobe_action {
+        object.key("ShareAdobeAction").string(var_336.as_str());
+    }
+    if let Some(var_337) = &input.use_adobe_action {
+        object.key("UseAdobeAction").string(var_337.as_str());
+    }
+    if let Some(var_338) = &input.cisco_webex_vidcast_action {
+        object.key("CiscoWebexVidcastAction").string(var_338.as_str());
+    }
+    if let Some(var_339) = &input.create_and_update_cisco_webex_vidcast_action {
+        object.key("CreateAndUpdateCiscoWebexVidcastAction").string(var_339.as_str());
+    }
+    if let Some(var_340) = &input.share_cisco_webex_vidcast_action {
+        object.key("ShareCiscoWebexVidcastAction").string(var_340.as_str());
+    }
+    if let Some(var_341) = &input.use_cisco_webex_vidcast_action {
+        object.key("UseCiscoWebexVidcastAction").string(var_341.as_str());
+    }
+    if let Some(var_342) = &input.cisco_webex_meetings_action {
+        object.key("CiscoWebexMeetingsAction").string(var_342.as_str());
+    }
+    if let Some(var_343) = &input.create_and_update_cisco_webex_meetings_action {
+        object.key("CreateAndUpdateCiscoWebexMeetingsAction").string(var_343.as_str());
+    }
+    if let Some(var_344) = &input.share_cisco_webex_meetings_action {
+        object.key("ShareCiscoWebexMeetingsAction").string(var_344.as_str());
+    }
+    if let Some(var_345) = &input.use_cisco_webex_meetings_action {
+        object.key("UseCiscoWebexMeetingsAction").string(var_345.as_str());
+    }
+    if let Some(var_346) = &input.dun_and_bradstreet_action {
+        object.key("DunAndBradstreetAction").string(var_346.as_str());
+    }
+    if let Some(var_347) = &input.create_and_update_dun_and_bradstreet_action {
+        object.key("CreateAndUpdateDunAndBradstreetAction").string(var_347.as_str());
+    }
+    if let Some(var_348) = &input.share_dun_and_bradstreet_action {
+        object.key("ShareDunAndBradstreetAction").string(var_348.as_str());
+    }
+    if let Some(var_349) = &input.use_dun_and_bradstreet_action {
+        object.key("UseDunAndBradstreetAction").string(var_349.as_str());
+    }
+    if let Some(var_350) = &input.hg_insights_action {
+        object.key("HGInsightsAction").string(var_350.as_str());
+    }
+    if let Some(var_351) = &input.create_and_update_hg_insights_action {
+        object.key("CreateAndUpdateHGInsightsAction").string(var_351.as_str());
+    }
+    if let Some(var_352) = &input.share_hg_insights_action {
+        object.key("ShareHGInsightsAction").string(var_352.as_str());
+    }
+    if let Some(var_353) = &input.use_hg_insights_action {
+        object.key("UseHGInsightsAction").string(var_353.as_str());
+    }
+    if let Some(var_354) = &input.zoom_info_action {
+        object.key("ZoomInfoAction").string(var_354.as_str());
+    }
+    if let Some(var_355) = &input.create_and_update_zoom_info_action {
+        object.key("CreateAndUpdateZoomInfoAction").string(var_355.as_str());
+    }
+    if let Some(var_356) = &input.share_zoom_info_action {
+        object.key("ShareZoomInfoAction").string(var_356.as_str());
+    }
+    if let Some(var_357) = &input.use_zoom_info_action {
+        object.key("UseZoomInfoAction").string(var_357.as_str());
+    }
+    if let Some(var_358) = &input.moodys_action {
+        object.key("MoodysAction").string(var_358.as_str());
+    }
+    if let Some(var_359) = &input.create_and_update_moodys_action {
+        object.key("CreateAndUpdateMoodysAction").string(var_359.as_str());
+    }
+    if let Some(var_360) = &input.share_moodys_action {
+        object.key("ShareMoodysAction").string(var_360.as_str());
+    }
+    if let Some(var_361) = &input.use_moodys_action {
+        object.key("UseMoodysAction").string(var_361.as_str());
+    }
+    if let Some(var_362) = &input.bee_action {
+        object.key("BeeAction").string(var_362.as_str());
+    }
+    if let Some(var_363) = &input.create_and_update_bee_action {
+        object.key("CreateAndUpdateBeeAction").string(var_363.as_str());
+    }
+    if let Some(var_364) = &input.share_bee_action {
+        object.key("ShareBeeAction").string(var_364.as_str());
+    }
+    if let Some(var_365) = &input.use_bee_action {
+        object.key("UseBeeAction").string(var_365.as_str());
+    }
+    if let Some(var_366) = &input.topic {
+        object.key("Topic").string(var_366.as_str());
+    }
+    if let Some(var_367) = &input.edit_visual_with_q {
+        object.key("EditVisualWithQ").string(var_367.as_str());
+    }
+    if let Some(var_368) = &input.build_calculated_field_with_q {
+        object.key("BuildCalculatedFieldWithQ").string(var_368.as_str());
+    }
+    if let Some(var_369) = &input.create_dashboard_executive_summary_with_q {
+        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_369.as_str());
+    }
+    if let Some(var_370) = &input.space {
+        object.key("Space").string(var_370.as_str());
+    }
+    if let Some(var_371) = &input.create_spaces {
+        object.key("CreateSpaces").string(var_371.as_str());
+    }
+    if let Some(var_372) = &input.share_spaces {
+        object.key("ShareSpaces").string(var_372.as_str());
+    }
+    if let Some(var_373) = &input.chat_agent {
+        object.key("ChatAgent").string(var_373.as_str());
+    }
+    if let Some(var_374) = &input.create_chat_agents {
+        object.key("CreateChatAgents").string(var_374.as_str());
+    }
+    if let Some(var_375) = &input.share_chat_agents {
+        object.key("ShareChatAgents").string(var_375.as_str());
+    }
+    if let Some(var_376) = &input.research {
+        object.key("Research").string(var_376.as_str());
+    }
+    if let Some(var_377) = &input.self_upgrade_user_role {
+        object.key("SelfUpgradeUserRole").string(var_377.as_str());
+    }
+    if let Some(var_378) = &input.extension {
+        object.key("Extension").string(var_378.as_str());
+    }
+    if let Some(var_379) = &input.use_browser_extension {
+        object.key("UseBrowserExtension").string(var_379.as_str());
+    }
+    if let Some(var_380) = &input.use_word_add_in_extension {
+        object.key("UseWordAddInExtension").string(var_380.as_str());
+    }
+    if let Some(var_381) = &input.use_outlook_add_in_extension {
+        object.key("UseOutlookAddInExtension").string(var_381.as_str());
+    }
+    if let Some(var_382) = &input.use_excel_add_in_extension {
+        object.key("UseExcelAddInExtension").string(var_382.as_str());
+    }
+    if let Some(var_383) = &input.use_powerpoint_add_in_extension {
+        object.key("UsePowerpointAddInExtension").string(var_383.as_str());
+    }
+    if let Some(var_384) = &input.manage_shared_folders {
+        object.key("ManageSharedFolders").string(var_384.as_str());
+    }
+    if let Some(var_385) = &input.generate_analyses {
+        object.key("GenerateAnalyses").string(var_385.as_str());
+    }
+    if let Some(var_386) = &input.story {
+        object.key("Story").string(var_386.as_str());
+    }
+    if let Some(var_387) = &input.scenario {
+        object.key("Scenario").string(var_387.as_str());
+    }
+    if let Some(var_388) = &input.trigger {
+        object.key("Trigger").string(var_388.as_str());
+    }
+    if let Some(var_389) = &input.schedule_trigger {
+        object.key("ScheduleTrigger").string(var_389.as_str());
+    }
+    if let Some(var_390) = &input.inbound_email_trigger {
+        object.key("InboundEmailTrigger").string(var_390.as_str());
+    }
+    if let Some(var_391) = &input.quick_event_trigger {
+        object.key("QuickEventTrigger").string(var_391.as_str());
     }
     Ok(())
 }
@@ -2631,6 +2967,790 @@ where
                         }
                         "UseNewRelicAction" => {
                             builder = builder.set_use_new_relic_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PagerDutyAgentAction" => {
+                            builder = builder.set_pager_duty_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdatePagerDutyAgentAction" => {
+                            builder = builder.set_create_and_update_pager_duty_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SharePagerDutyAgentAction" => {
+                            builder = builder.set_share_pager_duty_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UsePagerDutyAgentAction" => {
+                            builder = builder.set_use_pager_duty_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "VisierAgentAction" => {
+                            builder = builder.set_visier_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateVisierAgentAction" => {
+                            builder = builder.set_create_and_update_visier_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareVisierAgentAction" => {
+                            builder = builder.set_share_visier_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseVisierAgentAction" => {
+                            builder = builder.set_use_visier_agent_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ZoomAction" => {
+                            builder = builder.set_zoom_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateZoomAction" => {
+                            builder = builder.set_create_and_update_zoom_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareZoomAction" => {
+                            builder = builder.set_share_zoom_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseZoomAction" => {
+                            builder = builder.set_use_zoom_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SnowFlakeAction" => {
+                            builder = builder.set_snow_flake_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateSnowFlakeAction" => {
+                            builder = builder.set_create_and_update_snow_flake_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSnowFlakeAction" => {
+                            builder = builder.set_share_snow_flake_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseSnowFlakeAction" => {
+                            builder = builder.set_use_snow_flake_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ZapierAction" => {
+                            builder = builder.set_zapier_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateZapierAction" => {
+                            builder = builder.set_create_and_update_zapier_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareZapierAction" => {
+                            builder = builder.set_share_zapier_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseZapierAction" => {
+                            builder = builder.set_use_zapier_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AirtableAction" => {
+                            builder = builder.set_airtable_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateAirtableAction" => {
+                            builder = builder.set_create_and_update_airtable_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareAirtableAction" => {
+                            builder = builder.set_share_airtable_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseAirtableAction" => {
+                            builder = builder.set_use_airtable_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DropboxAction" => {
+                            builder = builder.set_dropbox_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateDropboxAction" => {
+                            builder = builder.set_create_and_update_dropbox_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDropboxAction" => {
+                            builder = builder.set_share_dropbox_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseDropboxAction" => {
+                            builder = builder.set_use_dropbox_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GmailAction" => {
+                            builder = builder.set_gmail_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGmailAction" => {
+                            builder = builder.set_create_and_update_gmail_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGmailAction" => {
+                            builder = builder.set_share_gmail_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGmailAction" => {
+                            builder = builder.set_use_gmail_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleAnalyticsAction" => {
+                            builder = builder.set_google_analytics_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleAnalyticsAction" => {
+                            builder = builder.set_create_and_update_google_analytics_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleAnalyticsAction" => {
+                            builder = builder.set_share_google_analytics_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleAnalyticsAction" => {
+                            builder = builder.set_use_google_analytics_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleDocsAction" => {
+                            builder = builder.set_google_docs_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleDocsAction" => {
+                            builder = builder.set_create_and_update_google_docs_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleDocsAction" => {
+                            builder = builder.set_share_google_docs_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleDocsAction" => {
+                            builder = builder.set_use_google_docs_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleDriveAction" => {
+                            builder = builder.set_google_drive_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleDriveAction" => {
+                            builder = builder.set_create_and_update_google_drive_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleDriveAction" => {
+                            builder = builder.set_share_google_drive_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleDriveAction" => {
+                            builder = builder.set_use_google_drive_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleMeetAction" => {
+                            builder = builder.set_google_meet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleMeetAction" => {
+                            builder = builder.set_create_and_update_google_meet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleMeetAction" => {
+                            builder = builder.set_share_google_meet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleMeetAction" => {
+                            builder = builder.set_use_google_meet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleSheetsAction" => {
+                            builder = builder.set_google_sheets_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleSheetsAction" => {
+                            builder = builder.set_create_and_update_google_sheets_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleSheetsAction" => {
+                            builder = builder.set_share_google_sheets_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleSheetsAction" => {
+                            builder = builder.set_use_google_sheets_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleSlidesAction" => {
+                            builder = builder.set_google_slides_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleSlidesAction" => {
+                            builder = builder.set_create_and_update_google_slides_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleSlidesAction" => {
+                            builder = builder.set_share_google_slides_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleSlidesAction" => {
+                            builder = builder.set_use_google_slides_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "QuickBooksAction" => {
+                            builder = builder.set_quick_books_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateQuickBooksAction" => {
+                            builder = builder.set_create_and_update_quick_books_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareQuickBooksAction" => {
+                            builder = builder.set_share_quick_books_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseQuickBooksAction" => {
+                            builder = builder.set_use_quick_books_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "FigmaAction" => {
+                            builder = builder.set_figma_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateFigmaAction" => {
+                            builder = builder.set_create_and_update_figma_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareFigmaAction" => {
+                            builder = builder.set_share_figma_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseFigmaAction" => {
+                            builder = builder.set_use_figma_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "WhatsAppAction" => {
+                            builder = builder.set_whats_app_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateWhatsAppAction" => {
+                            builder = builder.set_create_and_update_whats_app_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareWhatsAppAction" => {
+                            builder = builder.set_share_whats_app_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseWhatsAppAction" => {
+                            builder = builder.set_use_whats_app_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleChatAction" => {
+                            builder = builder.set_google_chat_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleChatAction" => {
+                            builder = builder.set_create_and_update_google_chat_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleChatAction" => {
+                            builder = builder.set_share_google_chat_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleChatAction" => {
+                            builder = builder.set_use_google_chat_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "OneNoteAction" => {
+                            builder = builder.set_one_note_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateOneNoteAction" => {
+                            builder = builder.set_create_and_update_one_note_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareOneNoteAction" => {
+                            builder = builder.set_share_one_note_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseOneNoteAction" => {
+                            builder = builder.set_use_one_note_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShopifyAction" => {
+                            builder = builder.set_shopify_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateShopifyAction" => {
+                            builder = builder.set_create_and_update_shopify_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareShopifyAction" => {
+                            builder = builder.set_share_shopify_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseShopifyAction" => {
+                            builder = builder.set_use_shopify_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AdobeAction" => {
+                            builder = builder.set_adobe_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateAdobeAction" => {
+                            builder = builder.set_create_and_update_adobe_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareAdobeAction" => {
+                            builder = builder.set_share_adobe_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseAdobeAction" => {
+                            builder = builder.set_use_adobe_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CiscoWebexVidcastAction" => {
+                            builder = builder.set_cisco_webex_vidcast_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateCiscoWebexVidcastAction" => {
+                            builder = builder.set_create_and_update_cisco_webex_vidcast_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareCiscoWebexVidcastAction" => {
+                            builder = builder.set_share_cisco_webex_vidcast_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseCiscoWebexVidcastAction" => {
+                            builder = builder.set_use_cisco_webex_vidcast_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CiscoWebexMeetingsAction" => {
+                            builder = builder.set_cisco_webex_meetings_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateCiscoWebexMeetingsAction" => {
+                            builder = builder.set_create_and_update_cisco_webex_meetings_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareCiscoWebexMeetingsAction" => {
+                            builder = builder.set_share_cisco_webex_meetings_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseCiscoWebexMeetingsAction" => {
+                            builder = builder.set_use_cisco_webex_meetings_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DunAndBradstreetAction" => {
+                            builder = builder.set_dun_and_bradstreet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateDunAndBradstreetAction" => {
+                            builder = builder.set_create_and_update_dun_and_bradstreet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDunAndBradstreetAction" => {
+                            builder = builder.set_share_dun_and_bradstreet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseDunAndBradstreetAction" => {
+                            builder = builder.set_use_dun_and_bradstreet_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "HGInsightsAction" => {
+                            builder = builder.set_hg_insights_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateHGInsightsAction" => {
+                            builder = builder.set_create_and_update_hg_insights_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareHGInsightsAction" => {
+                            builder = builder.set_share_hg_insights_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseHGInsightsAction" => {
+                            builder = builder.set_use_hg_insights_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ZoomInfoAction" => {
+                            builder = builder.set_zoom_info_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateZoomInfoAction" => {
+                            builder = builder.set_create_and_update_zoom_info_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareZoomInfoAction" => {
+                            builder = builder.set_share_zoom_info_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseZoomInfoAction" => {
+                            builder = builder.set_use_zoom_info_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MoodysAction" => {
+                            builder = builder.set_moodys_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateMoodysAction" => {
+                            builder = builder.set_create_and_update_moodys_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareMoodysAction" => {
+                            builder = builder.set_share_moodys_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseMoodysAction" => {
+                            builder = builder.set_use_moodys_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "BeeAction" => {
+                            builder = builder.set_bee_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateBeeAction" => {
+                            builder = builder.set_create_and_update_bee_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareBeeAction" => {
+                            builder = builder.set_share_bee_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseBeeAction" => {
+                            builder = builder.set_use_bee_action(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

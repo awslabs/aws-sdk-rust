@@ -109,6 +109,16 @@ pub(crate) fn reflens_describe_capacity_reservation_billing_requests_output_outp
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_capacity_reservation_date_change_quotes_output_output_next_token(
+    input: &crate::operation::describe_capacity_reservation_date_change_quotes::DescribeCapacityReservationDateChangeQuotesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_capacity_reservation_fleets_output_output_next_token(
     input: &crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleetsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1773,6 +1783,13 @@ pub(crate) fn lens_describe_capacity_reservation_billing_requests_output_output_
     input: crate::operation::describe_capacity_reservation_billing_requests::DescribeCapacityReservationBillingRequestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationBillingRequest>> {
     let input = input.capacity_reservation_billing_requests?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_capacity_reservation_date_change_quotes_output_output_capacity_reservation_modification_quotes(
+    input: crate::operation::describe_capacity_reservation_date_change_quotes::DescribeCapacityReservationDateChangeQuotesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservationModificationQuote>> {
+    let input = input.capacity_reservation_modification_quotes?;
     ::std::option::Option::Some(input)
 }
 

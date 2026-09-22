@@ -138,6 +138,8 @@ impl Client {
 
 mod create_centralization_rule_for_organization;
 
+mod create_dataset_integration;
+
 mod create_s3_table_integration;
 
 mod create_telemetry_pipeline;
@@ -175,6 +177,8 @@ pub mod customize;
 
 mod delete_centralization_rule_for_organization;
 
+mod delete_dataset_integration;
+
 mod delete_s3_table_integration;
 
 mod delete_telemetry_pipeline;
@@ -184,6 +188,8 @@ mod delete_telemetry_rule;
 mod delete_telemetry_rule_for_organization;
 
 mod get_centralization_rule_for_organization;
+
+mod get_dataset_integration;
 
 mod get_s3_table_integration;
 
@@ -200,6 +206,8 @@ mod get_telemetry_rule;
 mod get_telemetry_rule_for_organization;
 
 mod list_centralization_rules_for_organization;
+
+mod list_dataset_integrations;
 
 mod list_resource_telemetry;
 
@@ -234,6 +242,8 @@ mod test_telemetry_pipeline;
 mod untag_resource;
 
 mod update_centralization_rule_for_organization;
+
+mod update_dataset_integration;
 
 mod update_telemetry_pipeline;
 

@@ -6,8 +6,8 @@
 //! Error types for HTTP requests/responses.
 
 use crate::box_error::BoxError;
-use http_02x::header::{InvalidHeaderName, InvalidHeaderValue};
-use http_02x::uri::InvalidUri;
+use http_1x::header::{InvalidHeaderName, InvalidHeaderValue};
+use http_1x::uri::InvalidUri;
 use std::error::Error;
 use std::fmt::{Debug, Display, Formatter};
 use std::str::Utf8Error;
@@ -23,6 +23,7 @@ pub struct HttpError {
 
 #[derive(Debug)]
 enum Kind {
+    #[cfg(feature = "http-02x")]
     InvalidExtensions,
     InvalidHeaderName,
     InvalidHeaderValue,
@@ -62,6 +63,7 @@ impl NonUtf8Header {
 }
 
 impl HttpError {
+    #[cfg(feature = "http-02x")]
     pub(super) fn invalid_extensions() -> Self {
         Self {
             kind: Kind::InvalidExtensions,
@@ -104,7 +106,15 @@ impl HttpError {
         }
     }
 
-    pub(super) fn invalid_uri_parts(err: http_02x::Error) -> Self {
+    #[cfg(feature = "http-02x")]
+    pub(super) fn invalid_uri_h0(err: http_02x::uri::InvalidUri) -> Self {
+        Self {
+            kind: Kind::InvalidUri,
+            source: Some(Box::new(err)),
+        }
+    }
+
+    pub(super) fn invalid_uri_parts(err: http_1x::Error) -> Self {
         Self {
             kind: Kind::InvalidUriParts,
             source: Some(Box::new(err)),
@@ -137,6 +147,7 @@ impl Display for HttpError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         use Kind::*;
         match &self.kind {
+            #[cfg(feature = "http-02x")]
             InvalidExtensions => write!(f, "Extensions were provided during initialization. This prevents the request format from being converted."),
             InvalidHeaderName => write!(f, "invalid header name"),
             InvalidHeaderValue => write!(f, "invalid header value"),

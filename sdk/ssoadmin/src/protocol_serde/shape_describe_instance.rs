@@ -137,6 +137,13 @@ pub(crate) fn de_describe_instance(
                             .transpose()?,
                     );
                 }
+                "IdentityStoreArn" => {
+                    builder = builder.set_identity_store_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "OwnerAccountId" => {
                     builder = builder.set_owner_account_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -170,6 +177,20 @@ pub(crate) fn de_describe_instance(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "PrimaryRegion" => {
+                    builder = builder.set_primary_region(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "Regions" => {
+                    builder = builder.set_regions(crate::protocol_serde::shape_region_metadata_list::de_region_metadata_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "EncryptionConfigurationDetails" => {
                     builder = builder.set_encryption_configuration_details(

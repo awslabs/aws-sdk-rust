@@ -301,6 +301,10 @@ pub(crate) mod shape_create_capacity_reservation_cancellation_quote;
 
 pub(crate) mod shape_create_capacity_reservation_cancellation_quote_input;
 
+pub(crate) mod shape_create_capacity_reservation_date_change_quote;
+
+pub(crate) mod shape_create_capacity_reservation_date_change_quote_input;
+
 pub(crate) mod shape_create_capacity_reservation_fleet;
 
 pub(crate) mod shape_create_capacity_reservation_fleet_input;
@@ -1222,6 +1226,10 @@ pub(crate) mod shape_describe_capacity_reservation_billing_requests_input;
 pub(crate) mod shape_describe_capacity_reservation_cancellation_quotes;
 
 pub(crate) mod shape_describe_capacity_reservation_cancellation_quotes_input;
+
+pub(crate) mod shape_describe_capacity_reservation_date_change_quotes;
+
+pub(crate) mod shape_describe_capacity_reservation_date_change_quotes_input;
 
 pub(crate) mod shape_describe_capacity_reservation_fleets;
 
@@ -3637,6 +3645,8 @@ pub(crate) mod shape_capacity_manager_monitored_tag_key_list;
 
 pub(crate) mod shape_capacity_reservation;
 
+pub(crate) mod shape_capacity_reservation_adjustment_details;
+
 pub(crate) mod shape_capacity_reservation_billing_request_set;
 
 pub(crate) mod shape_capacity_reservation_cancellation_quote;
@@ -3648,6 +3658,10 @@ pub(crate) mod shape_capacity_reservation_fleet_cancellation_state_set;
 pub(crate) mod shape_capacity_reservation_fleet_set;
 
 pub(crate) mod shape_capacity_reservation_group_set;
+
+pub(crate) mod shape_capacity_reservation_modification_quote;
+
+pub(crate) mod shape_capacity_reservation_modification_quote_response_set;
 
 pub(crate) mod shape_capacity_reservation_options_request;
 
@@ -4997,6 +5011,10 @@ pub(crate) mod shape_mac_system_integrity_protection_configuration;
 
 pub(crate) mod shape_metric_data_result;
 
+pub(crate) mod shape_modification_quote_current_configuration;
+
+pub(crate) mod shape_modification_terms;
+
 pub(crate) mod shape_moving_address_status;
 
 pub(crate) mod shape_nat_gateway_address;
@@ -5584,6 +5602,8 @@ pub(crate) mod shape_memory_mib;
 pub(crate) mod shape_metric_points;
 
 pub(crate) mod shape_metric_value_set;
+
+pub(crate) mod shape_modification_reservation_update;
 
 pub(crate) mod shape_monitoring;
 

@@ -262,13 +262,8 @@ mod download_test_tools {
     use tokio::sync::mpsc::Receiver;
 
     fn response(body: SdkBody) -> HttpResponse {
-        HttpResponse::try_from(
-            http_02x::Response::builder()
-                .status(200)
-                .body(body)
-                .unwrap(),
-        )
-        .unwrap()
+        HttpResponse::try_from(http_1x::Response::builder().status(200).body(body).unwrap())
+            .unwrap()
     }
 
     pub fn operation(

@@ -13,6 +13,8 @@ pub use crate::types::_tag_propagation_status::TagPropagationStatus;
 
 pub use crate::types::_tag_propagation_failure_reason::TagPropagationFailureReason;
 
+pub use crate::types::_context_graph_status::ContextGraphStatus;
+
 pub use crate::types::_integration_status::IntegrationStatus;
 
 pub use crate::types::_telemetry_enrichment_status::TelemetryEnrichmentStatus;
@@ -43,6 +45,8 @@ pub use crate::types::_region_status::RegionStatus;
 
 pub use crate::types::_centralization_rule_summary::CentralizationRuleSummary;
 
+pub use crate::types::_dataset_integration_summary::DatasetIntegrationSummary;
+
 pub use crate::types::_telemetry_state::TelemetryState;
 
 pub use crate::types::_telemetry_configuration::TelemetryConfiguration;
@@ -64,6 +68,8 @@ pub use crate::types::_telemetry_pipeline_status_reason::TelemetryPipelineStatus
 pub use crate::types::_source_logs_configuration::SourceLogsConfiguration;
 
 pub use crate::types::_source_metrics_configuration::SourceMetricsConfiguration;
+
+pub use crate::types::_source_context_graph_configuration::SourceContextGraphConfiguration;
 
 pub use crate::types::_destination_logs_configuration::DestinationLogsConfiguration;
 
@@ -171,7 +177,11 @@ mod _condition;
 
 mod _configuration_summary;
 
+mod _context_graph_status;
+
 mod _data_source;
+
+mod _dataset_integration_summary;
 
 mod _destination_logs_configuration;
 
@@ -244,6 +254,8 @@ mod _signal_type;
 mod _single_header;
 
 mod _source;
+
+mod _source_context_graph_configuration;
 
 mod _source_logs_configuration;
 

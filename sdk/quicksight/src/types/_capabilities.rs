@@ -762,6 +762,230 @@ pub struct Capabilities {
     pub share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use New Relic actions.</p>
     pub use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+    pub pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update PagerDuty Agent actions.</p>
+    pub create_and_update_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share PagerDuty Agent actions.</p>
+    pub share_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use PagerDuty Agent actions.</p>
+    pub use_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Visier Agent connectors.</p>
+    pub visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Visier Agent actions.</p>
+    pub create_and_update_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Visier Agent actions.</p>
+    pub share_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Visier Agent actions.</p>
+    pub use_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Zoom connectors.</p>
+    pub zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Zoom actions.</p>
+    pub create_and_update_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Zoom actions.</p>
+    pub share_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Zoom actions.</p>
+    pub use_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+    pub snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+    pub create_and_update_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Snowflake Cortex Agent actions.</p>
+    pub share_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Snowflake Cortex Agent actions.</p>
+    pub use_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Zapier Agent connectors.</p>
+    pub zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Zapier Agent actions.</p>
+    pub create_and_update_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Zapier Agent actions.</p>
+    pub share_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Zapier Agent actions.</p>
+    pub use_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Airtable connectors.</p>
+    pub airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Airtable actions.</p>
+    pub create_and_update_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Airtable actions.</p>
+    pub share_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Airtable actions.</p>
+    pub use_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Dropbox connectors.</p>
+    pub dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Dropbox actions.</p>
+    pub create_and_update_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Dropbox actions.</p>
+    pub share_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Dropbox actions.</p>
+    pub use_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Gmail connectors.</p>
+    pub gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Gmail actions.</p>
+    pub create_and_update_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Gmail actions.</p>
+    pub share_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Gmail actions.</p>
+    pub use_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Analytics connectors.</p>
+    pub google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Analytics actions.</p>
+    pub create_and_update_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Analytics actions.</p>
+    pub share_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Analytics actions.</p>
+    pub use_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Docs connectors.</p>
+    pub google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Docs actions.</p>
+    pub create_and_update_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Docs actions.</p>
+    pub share_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Docs actions.</p>
+    pub use_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Drive connectors.</p>
+    pub google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Drive actions.</p>
+    pub create_and_update_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Drive actions.</p>
+    pub share_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Drive actions.</p>
+    pub use_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Meet connectors.</p>
+    pub google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Meet actions.</p>
+    pub create_and_update_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Meet actions.</p>
+    pub share_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Meet actions.</p>
+    pub use_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Sheets connectors.</p>
+    pub google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Sheets actions.</p>
+    pub create_and_update_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Sheets actions.</p>
+    pub share_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Sheets actions.</p>
+    pub use_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Slides connectors.</p>
+    pub google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Slides actions.</p>
+    pub create_and_update_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Slides actions.</p>
+    pub share_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Slides actions.</p>
+    pub use_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using QuickBooks connectors.</p>
+    pub quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update QuickBooks actions.</p>
+    pub create_and_update_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share QuickBooks actions.</p>
+    pub share_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use QuickBooks actions.</p>
+    pub use_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Figma connectors.</p>
+    pub figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Figma actions.</p>
+    pub create_and_update_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Figma actions.</p>
+    pub share_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Figma actions.</p>
+    pub use_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using WhatsApp connectors.</p>
+    pub whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update WhatsApp actions.</p>
+    pub create_and_update_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share WhatsApp actions.</p>
+    pub share_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use WhatsApp actions.</p>
+    pub use_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Google Chat connectors.</p>
+    pub google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Google Chat actions.</p>
+    pub create_and_update_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Chat actions.</p>
+    pub share_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Google Chat actions.</p>
+    pub use_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+    pub one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Microsoft OneNote actions.</p>
+    pub create_and_update_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Microsoft OneNote actions.</p>
+    pub share_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Microsoft OneNote actions.</p>
+    pub use_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Shopify connectors.</p>
+    pub shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Shopify actions.</p>
+    pub create_and_update_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Shopify actions.</p>
+    pub share_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Shopify actions.</p>
+    pub use_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+    pub adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Adobe Marketing Agent actions.</p>
+    pub create_and_update_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Adobe Marketing Agent actions.</p>
+    pub share_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Adobe Marketing Agent actions.</p>
+    pub use_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Cisco Webex Video Messaging Agent connectors.</p>
+    pub cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Cisco Webex Video Messaging Agent actions.</p>
+    pub create_and_update_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+    pub share_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+    pub use_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+    pub cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Cisco Webex Meetings actions.</p>
+    pub create_and_update_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Cisco Webex Meetings actions.</p>
+    pub share_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Cisco Webex Meetings actions.</p>
+    pub use_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+    pub dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Dun and Bradstreet actions.</p>
+    pub create_and_update_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Dun and Bradstreet actions.</p>
+    pub share_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Dun and Bradstreet actions.</p>
+    pub use_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using HG Insights Agent connectors.</p>
+    pub hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update HG Insights Agent actions.</p>
+    pub create_and_update_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share HG Insights Agent actions.</p>
+    pub share_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use HG Insights Agent actions.</p>
+    pub use_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+    pub zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update ZoomInfo Agent actions.</p>
+    pub create_and_update_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share ZoomInfo Agent actions.</p>
+    pub share_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use ZoomInfo Agent actions.</p>
+    pub use_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+    pub moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+    pub create_and_update_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Moody's GenAI Ready Data actions.</p>
+    pub share_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Moody's GenAI Ready Data actions.</p>
+    pub use_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Bee connectors.</p>
+    pub bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Bee actions.</p>
+    pub create_and_update_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Bee actions.</p>
+    pub share_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Bee actions.</p>
+    pub use_bee_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform Topic-related actions.</p>
     pub topic: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to Edit Visual with AI</p>
@@ -2081,6 +2305,454 @@ impl Capabilities {
     pub fn use_new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.use_new_relic_action.as_ref()
     }
+    /// <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+    pub fn pager_duty_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.pager_duty_agent_action.as_ref()
+    }
+    /// <p>The ability to create and update PagerDuty Agent actions.</p>
+    pub fn create_and_update_pager_duty_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_pager_duty_agent_action.as_ref()
+    }
+    /// <p>The ability to share PagerDuty Agent actions.</p>
+    pub fn share_pager_duty_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_pager_duty_agent_action.as_ref()
+    }
+    /// <p>The ability to use PagerDuty Agent actions.</p>
+    pub fn use_pager_duty_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_pager_duty_agent_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Visier Agent connectors.</p>
+    pub fn visier_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.visier_agent_action.as_ref()
+    }
+    /// <p>The ability to create and update Visier Agent actions.</p>
+    pub fn create_and_update_visier_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_visier_agent_action.as_ref()
+    }
+    /// <p>The ability to share Visier Agent actions.</p>
+    pub fn share_visier_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_visier_agent_action.as_ref()
+    }
+    /// <p>The ability to use Visier Agent actions.</p>
+    pub fn use_visier_agent_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_visier_agent_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Zoom connectors.</p>
+    pub fn zoom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.zoom_action.as_ref()
+    }
+    /// <p>The ability to create and update Zoom actions.</p>
+    pub fn create_and_update_zoom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_zoom_action.as_ref()
+    }
+    /// <p>The ability to share Zoom actions.</p>
+    pub fn share_zoom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_zoom_action.as_ref()
+    }
+    /// <p>The ability to use Zoom actions.</p>
+    pub fn use_zoom_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_zoom_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+    pub fn snow_flake_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.snow_flake_action.as_ref()
+    }
+    /// <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+    pub fn create_and_update_snow_flake_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_snow_flake_action.as_ref()
+    }
+    /// <p>The ability to share Snowflake Cortex Agent actions.</p>
+    pub fn share_snow_flake_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_snow_flake_action.as_ref()
+    }
+    /// <p>The ability to use Snowflake Cortex Agent actions.</p>
+    pub fn use_snow_flake_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_snow_flake_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Zapier Agent connectors.</p>
+    pub fn zapier_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.zapier_action.as_ref()
+    }
+    /// <p>The ability to create and update Zapier Agent actions.</p>
+    pub fn create_and_update_zapier_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_zapier_action.as_ref()
+    }
+    /// <p>The ability to share Zapier Agent actions.</p>
+    pub fn share_zapier_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_zapier_action.as_ref()
+    }
+    /// <p>The ability to use Zapier Agent actions.</p>
+    pub fn use_zapier_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_zapier_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Airtable connectors.</p>
+    pub fn airtable_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.airtable_action.as_ref()
+    }
+    /// <p>The ability to create and update Airtable actions.</p>
+    pub fn create_and_update_airtable_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_airtable_action.as_ref()
+    }
+    /// <p>The ability to share Airtable actions.</p>
+    pub fn share_airtable_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_airtable_action.as_ref()
+    }
+    /// <p>The ability to use Airtable actions.</p>
+    pub fn use_airtable_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_airtable_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Dropbox connectors.</p>
+    pub fn dropbox_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.dropbox_action.as_ref()
+    }
+    /// <p>The ability to create and update Dropbox actions.</p>
+    pub fn create_and_update_dropbox_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_dropbox_action.as_ref()
+    }
+    /// <p>The ability to share Dropbox actions.</p>
+    pub fn share_dropbox_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_dropbox_action.as_ref()
+    }
+    /// <p>The ability to use Dropbox actions.</p>
+    pub fn use_dropbox_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_dropbox_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Gmail connectors.</p>
+    pub fn gmail_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.gmail_action.as_ref()
+    }
+    /// <p>The ability to create and update Gmail actions.</p>
+    pub fn create_and_update_gmail_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_gmail_action.as_ref()
+    }
+    /// <p>The ability to share Gmail actions.</p>
+    pub fn share_gmail_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_gmail_action.as_ref()
+    }
+    /// <p>The ability to use Gmail actions.</p>
+    pub fn use_gmail_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_gmail_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Analytics connectors.</p>
+    pub fn google_analytics_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_analytics_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Analytics actions.</p>
+    pub fn create_and_update_google_analytics_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_analytics_action.as_ref()
+    }
+    /// <p>The ability to share Google Analytics actions.</p>
+    pub fn share_google_analytics_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_analytics_action.as_ref()
+    }
+    /// <p>The ability to use Google Analytics actions.</p>
+    pub fn use_google_analytics_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_analytics_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Docs connectors.</p>
+    pub fn google_docs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_docs_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Docs actions.</p>
+    pub fn create_and_update_google_docs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_docs_action.as_ref()
+    }
+    /// <p>The ability to share Google Docs actions.</p>
+    pub fn share_google_docs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_docs_action.as_ref()
+    }
+    /// <p>The ability to use Google Docs actions.</p>
+    pub fn use_google_docs_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_docs_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Drive connectors.</p>
+    pub fn google_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_drive_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Drive actions.</p>
+    pub fn create_and_update_google_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_drive_action.as_ref()
+    }
+    /// <p>The ability to share Google Drive actions.</p>
+    pub fn share_google_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_drive_action.as_ref()
+    }
+    /// <p>The ability to use Google Drive actions.</p>
+    pub fn use_google_drive_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_drive_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Meet connectors.</p>
+    pub fn google_meet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_meet_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Meet actions.</p>
+    pub fn create_and_update_google_meet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_meet_action.as_ref()
+    }
+    /// <p>The ability to share Google Meet actions.</p>
+    pub fn share_google_meet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_meet_action.as_ref()
+    }
+    /// <p>The ability to use Google Meet actions.</p>
+    pub fn use_google_meet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_meet_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Sheets connectors.</p>
+    pub fn google_sheets_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_sheets_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Sheets actions.</p>
+    pub fn create_and_update_google_sheets_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_sheets_action.as_ref()
+    }
+    /// <p>The ability to share Google Sheets actions.</p>
+    pub fn share_google_sheets_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_sheets_action.as_ref()
+    }
+    /// <p>The ability to use Google Sheets actions.</p>
+    pub fn use_google_sheets_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_sheets_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Slides connectors.</p>
+    pub fn google_slides_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_slides_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Slides actions.</p>
+    pub fn create_and_update_google_slides_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_slides_action.as_ref()
+    }
+    /// <p>The ability to share Google Slides actions.</p>
+    pub fn share_google_slides_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_slides_action.as_ref()
+    }
+    /// <p>The ability to use Google Slides actions.</p>
+    pub fn use_google_slides_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_slides_action.as_ref()
+    }
+    /// <p>The ability to perform actions using QuickBooks connectors.</p>
+    pub fn quick_books_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.quick_books_action.as_ref()
+    }
+    /// <p>The ability to create and update QuickBooks actions.</p>
+    pub fn create_and_update_quick_books_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_quick_books_action.as_ref()
+    }
+    /// <p>The ability to share QuickBooks actions.</p>
+    pub fn share_quick_books_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_quick_books_action.as_ref()
+    }
+    /// <p>The ability to use QuickBooks actions.</p>
+    pub fn use_quick_books_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_quick_books_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Figma connectors.</p>
+    pub fn figma_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.figma_action.as_ref()
+    }
+    /// <p>The ability to create and update Figma actions.</p>
+    pub fn create_and_update_figma_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_figma_action.as_ref()
+    }
+    /// <p>The ability to share Figma actions.</p>
+    pub fn share_figma_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_figma_action.as_ref()
+    }
+    /// <p>The ability to use Figma actions.</p>
+    pub fn use_figma_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_figma_action.as_ref()
+    }
+    /// <p>The ability to perform actions using WhatsApp connectors.</p>
+    pub fn whats_app_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.whats_app_action.as_ref()
+    }
+    /// <p>The ability to create and update WhatsApp actions.</p>
+    pub fn create_and_update_whats_app_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_whats_app_action.as_ref()
+    }
+    /// <p>The ability to share WhatsApp actions.</p>
+    pub fn share_whats_app_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_whats_app_action.as_ref()
+    }
+    /// <p>The ability to use WhatsApp actions.</p>
+    pub fn use_whats_app_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_whats_app_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Google Chat connectors.</p>
+    pub fn google_chat_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_chat_action.as_ref()
+    }
+    /// <p>The ability to create and update Google Chat actions.</p>
+    pub fn create_and_update_google_chat_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_chat_action.as_ref()
+    }
+    /// <p>The ability to share Google Chat actions.</p>
+    pub fn share_google_chat_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_chat_action.as_ref()
+    }
+    /// <p>The ability to use Google Chat actions.</p>
+    pub fn use_google_chat_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_chat_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+    pub fn one_note_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.one_note_action.as_ref()
+    }
+    /// <p>The ability to create and update Microsoft OneNote actions.</p>
+    pub fn create_and_update_one_note_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_one_note_action.as_ref()
+    }
+    /// <p>The ability to share Microsoft OneNote actions.</p>
+    pub fn share_one_note_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_one_note_action.as_ref()
+    }
+    /// <p>The ability to use Microsoft OneNote actions.</p>
+    pub fn use_one_note_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_one_note_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Shopify connectors.</p>
+    pub fn shopify_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.shopify_action.as_ref()
+    }
+    /// <p>The ability to create and update Shopify actions.</p>
+    pub fn create_and_update_shopify_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_shopify_action.as_ref()
+    }
+    /// <p>The ability to share Shopify actions.</p>
+    pub fn share_shopify_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_shopify_action.as_ref()
+    }
+    /// <p>The ability to use Shopify actions.</p>
+    pub fn use_shopify_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_shopify_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+    pub fn adobe_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.adobe_action.as_ref()
+    }
+    /// <p>The ability to create and update Adobe Marketing Agent actions.</p>
+    pub fn create_and_update_adobe_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_adobe_action.as_ref()
+    }
+    /// <p>The ability to share Adobe Marketing Agent actions.</p>
+    pub fn share_adobe_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_adobe_action.as_ref()
+    }
+    /// <p>The ability to use Adobe Marketing Agent actions.</p>
+    pub fn use_adobe_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_adobe_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Cisco Webex Video Messaging Agent connectors.</p>
+    pub fn cisco_webex_vidcast_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.cisco_webex_vidcast_action.as_ref()
+    }
+    /// <p>The ability to create and update Cisco Webex Video Messaging Agent actions.</p>
+    pub fn create_and_update_cisco_webex_vidcast_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_cisco_webex_vidcast_action.as_ref()
+    }
+    /// <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+    pub fn share_cisco_webex_vidcast_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_cisco_webex_vidcast_action.as_ref()
+    }
+    /// <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+    pub fn use_cisco_webex_vidcast_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_cisco_webex_vidcast_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+    pub fn cisco_webex_meetings_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.cisco_webex_meetings_action.as_ref()
+    }
+    /// <p>The ability to create and update Cisco Webex Meetings actions.</p>
+    pub fn create_and_update_cisco_webex_meetings_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_cisco_webex_meetings_action.as_ref()
+    }
+    /// <p>The ability to share Cisco Webex Meetings actions.</p>
+    pub fn share_cisco_webex_meetings_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_cisco_webex_meetings_action.as_ref()
+    }
+    /// <p>The ability to use Cisco Webex Meetings actions.</p>
+    pub fn use_cisco_webex_meetings_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_cisco_webex_meetings_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+    pub fn dun_and_bradstreet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.dun_and_bradstreet_action.as_ref()
+    }
+    /// <p>The ability to create and update Dun and Bradstreet actions.</p>
+    pub fn create_and_update_dun_and_bradstreet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_dun_and_bradstreet_action.as_ref()
+    }
+    /// <p>The ability to share Dun and Bradstreet actions.</p>
+    pub fn share_dun_and_bradstreet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_dun_and_bradstreet_action.as_ref()
+    }
+    /// <p>The ability to use Dun and Bradstreet actions.</p>
+    pub fn use_dun_and_bradstreet_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_dun_and_bradstreet_action.as_ref()
+    }
+    /// <p>The ability to perform actions using HG Insights Agent connectors.</p>
+    pub fn hg_insights_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.hg_insights_action.as_ref()
+    }
+    /// <p>The ability to create and update HG Insights Agent actions.</p>
+    pub fn create_and_update_hg_insights_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_hg_insights_action.as_ref()
+    }
+    /// <p>The ability to share HG Insights Agent actions.</p>
+    pub fn share_hg_insights_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_hg_insights_action.as_ref()
+    }
+    /// <p>The ability to use HG Insights Agent actions.</p>
+    pub fn use_hg_insights_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_hg_insights_action.as_ref()
+    }
+    /// <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+    pub fn zoom_info_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.zoom_info_action.as_ref()
+    }
+    /// <p>The ability to create and update ZoomInfo Agent actions.</p>
+    pub fn create_and_update_zoom_info_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_zoom_info_action.as_ref()
+    }
+    /// <p>The ability to share ZoomInfo Agent actions.</p>
+    pub fn share_zoom_info_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_zoom_info_action.as_ref()
+    }
+    /// <p>The ability to use ZoomInfo Agent actions.</p>
+    pub fn use_zoom_info_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_zoom_info_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+    pub fn moodys_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.moodys_action.as_ref()
+    }
+    /// <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+    pub fn create_and_update_moodys_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_moodys_action.as_ref()
+    }
+    /// <p>The ability to share Moody's GenAI Ready Data actions.</p>
+    pub fn share_moodys_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_moodys_action.as_ref()
+    }
+    /// <p>The ability to use Moody's GenAI Ready Data actions.</p>
+    pub fn use_moodys_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_moodys_action.as_ref()
+    }
+    /// <p>The ability to perform actions using Bee connectors.</p>
+    pub fn bee_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.bee_action.as_ref()
+    }
+    /// <p>The ability to create and update Bee actions.</p>
+    pub fn create_and_update_bee_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_bee_action.as_ref()
+    }
+    /// <p>The ability to share Bee actions.</p>
+    pub fn share_bee_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_bee_action.as_ref()
+    }
+    /// <p>The ability to use Bee actions.</p>
+    pub fn use_bee_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_bee_action.as_ref()
+    }
     /// <p>The ability to perform Topic-related actions.</p>
     pub fn topic(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.topic.as_ref()
@@ -2451,6 +3123,118 @@ pub struct CapabilitiesBuilder {
     pub(crate) create_and_update_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_pager_duty_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_visier_agent_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_zoom_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_snow_flake_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_zapier_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_airtable_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_dropbox_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_gmail_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_analytics_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_docs_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_drive_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_meet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_sheets_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_slides_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_quick_books_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_figma_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_whats_app_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_chat_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_one_note_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_shopify_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_adobe_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_cisco_webex_vidcast_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_cisco_webex_meetings_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_dun_and_bradstreet_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_hg_insights_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_zoom_info_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_moodys_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_bee_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) topic: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) edit_visual_with_q: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) build_calculated_field_with_q: ::std::option::Option<crate::types::CapabilityState>,
@@ -6777,6 +7561,1574 @@ impl CapabilitiesBuilder {
     pub fn get_use_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.use_new_relic_action
     }
+    /// <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+    pub fn pager_duty_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.pager_duty_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+    pub fn set_pager_duty_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.pager_duty_agent_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using PagerDuty Agent connectors.</p>
+    pub fn get_pager_duty_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.pager_duty_agent_action
+    }
+    /// <p>The ability to create and update PagerDuty Agent actions.</p>
+    pub fn create_and_update_pager_duty_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_pager_duty_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update PagerDuty Agent actions.</p>
+    pub fn set_create_and_update_pager_duty_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_pager_duty_agent_action = input;
+        self
+    }
+    /// <p>The ability to create and update PagerDuty Agent actions.</p>
+    pub fn get_create_and_update_pager_duty_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_pager_duty_agent_action
+    }
+    /// <p>The ability to share PagerDuty Agent actions.</p>
+    pub fn share_pager_duty_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_pager_duty_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share PagerDuty Agent actions.</p>
+    pub fn set_share_pager_duty_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_pager_duty_agent_action = input;
+        self
+    }
+    /// <p>The ability to share PagerDuty Agent actions.</p>
+    pub fn get_share_pager_duty_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_pager_duty_agent_action
+    }
+    /// <p>The ability to use PagerDuty Agent actions.</p>
+    pub fn use_pager_duty_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_pager_duty_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use PagerDuty Agent actions.</p>
+    pub fn set_use_pager_duty_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_pager_duty_agent_action = input;
+        self
+    }
+    /// <p>The ability to use PagerDuty Agent actions.</p>
+    pub fn get_use_pager_duty_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_pager_duty_agent_action
+    }
+    /// <p>The ability to perform actions using Visier Agent connectors.</p>
+    pub fn visier_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.visier_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Visier Agent connectors.</p>
+    pub fn set_visier_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.visier_agent_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Visier Agent connectors.</p>
+    pub fn get_visier_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.visier_agent_action
+    }
+    /// <p>The ability to create and update Visier Agent actions.</p>
+    pub fn create_and_update_visier_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_visier_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Visier Agent actions.</p>
+    pub fn set_create_and_update_visier_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_visier_agent_action = input;
+        self
+    }
+    /// <p>The ability to create and update Visier Agent actions.</p>
+    pub fn get_create_and_update_visier_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_visier_agent_action
+    }
+    /// <p>The ability to share Visier Agent actions.</p>
+    pub fn share_visier_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_visier_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Visier Agent actions.</p>
+    pub fn set_share_visier_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_visier_agent_action = input;
+        self
+    }
+    /// <p>The ability to share Visier Agent actions.</p>
+    pub fn get_share_visier_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_visier_agent_action
+    }
+    /// <p>The ability to use Visier Agent actions.</p>
+    pub fn use_visier_agent_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_visier_agent_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Visier Agent actions.</p>
+    pub fn set_use_visier_agent_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_visier_agent_action = input;
+        self
+    }
+    /// <p>The ability to use Visier Agent actions.</p>
+    pub fn get_use_visier_agent_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_visier_agent_action
+    }
+    /// <p>The ability to perform actions using Zoom connectors.</p>
+    pub fn zoom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.zoom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Zoom connectors.</p>
+    pub fn set_zoom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.zoom_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Zoom connectors.</p>
+    pub fn get_zoom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.zoom_action
+    }
+    /// <p>The ability to create and update Zoom actions.</p>
+    pub fn create_and_update_zoom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_zoom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Zoom actions.</p>
+    pub fn set_create_and_update_zoom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_zoom_action = input;
+        self
+    }
+    /// <p>The ability to create and update Zoom actions.</p>
+    pub fn get_create_and_update_zoom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_zoom_action
+    }
+    /// <p>The ability to share Zoom actions.</p>
+    pub fn share_zoom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_zoom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Zoom actions.</p>
+    pub fn set_share_zoom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_zoom_action = input;
+        self
+    }
+    /// <p>The ability to share Zoom actions.</p>
+    pub fn get_share_zoom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_zoom_action
+    }
+    /// <p>The ability to use Zoom actions.</p>
+    pub fn use_zoom_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_zoom_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Zoom actions.</p>
+    pub fn set_use_zoom_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_zoom_action = input;
+        self
+    }
+    /// <p>The ability to use Zoom actions.</p>
+    pub fn get_use_zoom_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_zoom_action
+    }
+    /// <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+    pub fn snow_flake_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.snow_flake_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+    pub fn set_snow_flake_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.snow_flake_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Snowflake Cortex Agent connectors.</p>
+    pub fn get_snow_flake_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.snow_flake_action
+    }
+    /// <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+    pub fn create_and_update_snow_flake_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_snow_flake_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+    pub fn set_create_and_update_snow_flake_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_snow_flake_action = input;
+        self
+    }
+    /// <p>The ability to create and update Snowflake Cortex Agent actions.</p>
+    pub fn get_create_and_update_snow_flake_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_snow_flake_action
+    }
+    /// <p>The ability to share Snowflake Cortex Agent actions.</p>
+    pub fn share_snow_flake_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_snow_flake_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Snowflake Cortex Agent actions.</p>
+    pub fn set_share_snow_flake_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_snow_flake_action = input;
+        self
+    }
+    /// <p>The ability to share Snowflake Cortex Agent actions.</p>
+    pub fn get_share_snow_flake_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_snow_flake_action
+    }
+    /// <p>The ability to use Snowflake Cortex Agent actions.</p>
+    pub fn use_snow_flake_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_snow_flake_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Snowflake Cortex Agent actions.</p>
+    pub fn set_use_snow_flake_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_snow_flake_action = input;
+        self
+    }
+    /// <p>The ability to use Snowflake Cortex Agent actions.</p>
+    pub fn get_use_snow_flake_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_snow_flake_action
+    }
+    /// <p>The ability to perform actions using Zapier Agent connectors.</p>
+    pub fn zapier_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.zapier_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Zapier Agent connectors.</p>
+    pub fn set_zapier_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.zapier_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Zapier Agent connectors.</p>
+    pub fn get_zapier_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.zapier_action
+    }
+    /// <p>The ability to create and update Zapier Agent actions.</p>
+    pub fn create_and_update_zapier_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_zapier_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Zapier Agent actions.</p>
+    pub fn set_create_and_update_zapier_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_zapier_action = input;
+        self
+    }
+    /// <p>The ability to create and update Zapier Agent actions.</p>
+    pub fn get_create_and_update_zapier_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_zapier_action
+    }
+    /// <p>The ability to share Zapier Agent actions.</p>
+    pub fn share_zapier_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_zapier_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Zapier Agent actions.</p>
+    pub fn set_share_zapier_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_zapier_action = input;
+        self
+    }
+    /// <p>The ability to share Zapier Agent actions.</p>
+    pub fn get_share_zapier_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_zapier_action
+    }
+    /// <p>The ability to use Zapier Agent actions.</p>
+    pub fn use_zapier_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_zapier_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Zapier Agent actions.</p>
+    pub fn set_use_zapier_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_zapier_action = input;
+        self
+    }
+    /// <p>The ability to use Zapier Agent actions.</p>
+    pub fn get_use_zapier_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_zapier_action
+    }
+    /// <p>The ability to perform actions using Airtable connectors.</p>
+    pub fn airtable_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.airtable_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Airtable connectors.</p>
+    pub fn set_airtable_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.airtable_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Airtable connectors.</p>
+    pub fn get_airtable_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.airtable_action
+    }
+    /// <p>The ability to create and update Airtable actions.</p>
+    pub fn create_and_update_airtable_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_airtable_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Airtable actions.</p>
+    pub fn set_create_and_update_airtable_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_airtable_action = input;
+        self
+    }
+    /// <p>The ability to create and update Airtable actions.</p>
+    pub fn get_create_and_update_airtable_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_airtable_action
+    }
+    /// <p>The ability to share Airtable actions.</p>
+    pub fn share_airtable_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_airtable_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Airtable actions.</p>
+    pub fn set_share_airtable_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_airtable_action = input;
+        self
+    }
+    /// <p>The ability to share Airtable actions.</p>
+    pub fn get_share_airtable_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_airtable_action
+    }
+    /// <p>The ability to use Airtable actions.</p>
+    pub fn use_airtable_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_airtable_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Airtable actions.</p>
+    pub fn set_use_airtable_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_airtable_action = input;
+        self
+    }
+    /// <p>The ability to use Airtable actions.</p>
+    pub fn get_use_airtable_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_airtable_action
+    }
+    /// <p>The ability to perform actions using Dropbox connectors.</p>
+    pub fn dropbox_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.dropbox_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Dropbox connectors.</p>
+    pub fn set_dropbox_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.dropbox_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Dropbox connectors.</p>
+    pub fn get_dropbox_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.dropbox_action
+    }
+    /// <p>The ability to create and update Dropbox actions.</p>
+    pub fn create_and_update_dropbox_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_dropbox_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Dropbox actions.</p>
+    pub fn set_create_and_update_dropbox_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_dropbox_action = input;
+        self
+    }
+    /// <p>The ability to create and update Dropbox actions.</p>
+    pub fn get_create_and_update_dropbox_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_dropbox_action
+    }
+    /// <p>The ability to share Dropbox actions.</p>
+    pub fn share_dropbox_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_dropbox_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Dropbox actions.</p>
+    pub fn set_share_dropbox_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_dropbox_action = input;
+        self
+    }
+    /// <p>The ability to share Dropbox actions.</p>
+    pub fn get_share_dropbox_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_dropbox_action
+    }
+    /// <p>The ability to use Dropbox actions.</p>
+    pub fn use_dropbox_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_dropbox_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Dropbox actions.</p>
+    pub fn set_use_dropbox_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_dropbox_action = input;
+        self
+    }
+    /// <p>The ability to use Dropbox actions.</p>
+    pub fn get_use_dropbox_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_dropbox_action
+    }
+    /// <p>The ability to perform actions using Gmail connectors.</p>
+    pub fn gmail_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.gmail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Gmail connectors.</p>
+    pub fn set_gmail_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.gmail_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Gmail connectors.</p>
+    pub fn get_gmail_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.gmail_action
+    }
+    /// <p>The ability to create and update Gmail actions.</p>
+    pub fn create_and_update_gmail_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_gmail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Gmail actions.</p>
+    pub fn set_create_and_update_gmail_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_gmail_action = input;
+        self
+    }
+    /// <p>The ability to create and update Gmail actions.</p>
+    pub fn get_create_and_update_gmail_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_gmail_action
+    }
+    /// <p>The ability to share Gmail actions.</p>
+    pub fn share_gmail_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_gmail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Gmail actions.</p>
+    pub fn set_share_gmail_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_gmail_action = input;
+        self
+    }
+    /// <p>The ability to share Gmail actions.</p>
+    pub fn get_share_gmail_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_gmail_action
+    }
+    /// <p>The ability to use Gmail actions.</p>
+    pub fn use_gmail_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_gmail_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Gmail actions.</p>
+    pub fn set_use_gmail_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_gmail_action = input;
+        self
+    }
+    /// <p>The ability to use Gmail actions.</p>
+    pub fn get_use_gmail_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_gmail_action
+    }
+    /// <p>The ability to perform actions using Google Analytics connectors.</p>
+    pub fn google_analytics_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_analytics_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Analytics connectors.</p>
+    pub fn set_google_analytics_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_analytics_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Analytics connectors.</p>
+    pub fn get_google_analytics_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_analytics_action
+    }
+    /// <p>The ability to create and update Google Analytics actions.</p>
+    pub fn create_and_update_google_analytics_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_analytics_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Analytics actions.</p>
+    pub fn set_create_and_update_google_analytics_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_analytics_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Analytics actions.</p>
+    pub fn get_create_and_update_google_analytics_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_analytics_action
+    }
+    /// <p>The ability to share Google Analytics actions.</p>
+    pub fn share_google_analytics_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_analytics_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Analytics actions.</p>
+    pub fn set_share_google_analytics_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_analytics_action = input;
+        self
+    }
+    /// <p>The ability to share Google Analytics actions.</p>
+    pub fn get_share_google_analytics_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_analytics_action
+    }
+    /// <p>The ability to use Google Analytics actions.</p>
+    pub fn use_google_analytics_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_analytics_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Analytics actions.</p>
+    pub fn set_use_google_analytics_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_analytics_action = input;
+        self
+    }
+    /// <p>The ability to use Google Analytics actions.</p>
+    pub fn get_use_google_analytics_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_analytics_action
+    }
+    /// <p>The ability to perform actions using Google Docs connectors.</p>
+    pub fn google_docs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_docs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Docs connectors.</p>
+    pub fn set_google_docs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_docs_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Docs connectors.</p>
+    pub fn get_google_docs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_docs_action
+    }
+    /// <p>The ability to create and update Google Docs actions.</p>
+    pub fn create_and_update_google_docs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_docs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Docs actions.</p>
+    pub fn set_create_and_update_google_docs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_docs_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Docs actions.</p>
+    pub fn get_create_and_update_google_docs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_docs_action
+    }
+    /// <p>The ability to share Google Docs actions.</p>
+    pub fn share_google_docs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_docs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Docs actions.</p>
+    pub fn set_share_google_docs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_docs_action = input;
+        self
+    }
+    /// <p>The ability to share Google Docs actions.</p>
+    pub fn get_share_google_docs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_docs_action
+    }
+    /// <p>The ability to use Google Docs actions.</p>
+    pub fn use_google_docs_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_docs_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Docs actions.</p>
+    pub fn set_use_google_docs_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_docs_action = input;
+        self
+    }
+    /// <p>The ability to use Google Docs actions.</p>
+    pub fn get_use_google_docs_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_docs_action
+    }
+    /// <p>The ability to perform actions using Google Drive connectors.</p>
+    pub fn google_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Drive connectors.</p>
+    pub fn set_google_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_drive_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Drive connectors.</p>
+    pub fn get_google_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_drive_action
+    }
+    /// <p>The ability to create and update Google Drive actions.</p>
+    pub fn create_and_update_google_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Drive actions.</p>
+    pub fn set_create_and_update_google_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_drive_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Drive actions.</p>
+    pub fn get_create_and_update_google_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_drive_action
+    }
+    /// <p>The ability to share Google Drive actions.</p>
+    pub fn share_google_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Drive actions.</p>
+    pub fn set_share_google_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_drive_action = input;
+        self
+    }
+    /// <p>The ability to share Google Drive actions.</p>
+    pub fn get_share_google_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_drive_action
+    }
+    /// <p>The ability to use Google Drive actions.</p>
+    pub fn use_google_drive_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_drive_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Drive actions.</p>
+    pub fn set_use_google_drive_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_drive_action = input;
+        self
+    }
+    /// <p>The ability to use Google Drive actions.</p>
+    pub fn get_use_google_drive_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_drive_action
+    }
+    /// <p>The ability to perform actions using Google Meet connectors.</p>
+    pub fn google_meet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_meet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Meet connectors.</p>
+    pub fn set_google_meet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_meet_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Meet connectors.</p>
+    pub fn get_google_meet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_meet_action
+    }
+    /// <p>The ability to create and update Google Meet actions.</p>
+    pub fn create_and_update_google_meet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_meet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Meet actions.</p>
+    pub fn set_create_and_update_google_meet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_meet_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Meet actions.</p>
+    pub fn get_create_and_update_google_meet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_meet_action
+    }
+    /// <p>The ability to share Google Meet actions.</p>
+    pub fn share_google_meet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_meet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Meet actions.</p>
+    pub fn set_share_google_meet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_meet_action = input;
+        self
+    }
+    /// <p>The ability to share Google Meet actions.</p>
+    pub fn get_share_google_meet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_meet_action
+    }
+    /// <p>The ability to use Google Meet actions.</p>
+    pub fn use_google_meet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_meet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Meet actions.</p>
+    pub fn set_use_google_meet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_meet_action = input;
+        self
+    }
+    /// <p>The ability to use Google Meet actions.</p>
+    pub fn get_use_google_meet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_meet_action
+    }
+    /// <p>The ability to perform actions using Google Sheets connectors.</p>
+    pub fn google_sheets_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_sheets_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Sheets connectors.</p>
+    pub fn set_google_sheets_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_sheets_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Sheets connectors.</p>
+    pub fn get_google_sheets_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_sheets_action
+    }
+    /// <p>The ability to create and update Google Sheets actions.</p>
+    pub fn create_and_update_google_sheets_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_sheets_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Sheets actions.</p>
+    pub fn set_create_and_update_google_sheets_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_sheets_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Sheets actions.</p>
+    pub fn get_create_and_update_google_sheets_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_sheets_action
+    }
+    /// <p>The ability to share Google Sheets actions.</p>
+    pub fn share_google_sheets_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_sheets_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Sheets actions.</p>
+    pub fn set_share_google_sheets_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_sheets_action = input;
+        self
+    }
+    /// <p>The ability to share Google Sheets actions.</p>
+    pub fn get_share_google_sheets_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_sheets_action
+    }
+    /// <p>The ability to use Google Sheets actions.</p>
+    pub fn use_google_sheets_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_sheets_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Sheets actions.</p>
+    pub fn set_use_google_sheets_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_sheets_action = input;
+        self
+    }
+    /// <p>The ability to use Google Sheets actions.</p>
+    pub fn get_use_google_sheets_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_sheets_action
+    }
+    /// <p>The ability to perform actions using Google Slides connectors.</p>
+    pub fn google_slides_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_slides_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Slides connectors.</p>
+    pub fn set_google_slides_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_slides_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Slides connectors.</p>
+    pub fn get_google_slides_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_slides_action
+    }
+    /// <p>The ability to create and update Google Slides actions.</p>
+    pub fn create_and_update_google_slides_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_slides_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Slides actions.</p>
+    pub fn set_create_and_update_google_slides_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_slides_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Slides actions.</p>
+    pub fn get_create_and_update_google_slides_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_slides_action
+    }
+    /// <p>The ability to share Google Slides actions.</p>
+    pub fn share_google_slides_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_slides_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Slides actions.</p>
+    pub fn set_share_google_slides_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_slides_action = input;
+        self
+    }
+    /// <p>The ability to share Google Slides actions.</p>
+    pub fn get_share_google_slides_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_slides_action
+    }
+    /// <p>The ability to use Google Slides actions.</p>
+    pub fn use_google_slides_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_slides_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Slides actions.</p>
+    pub fn set_use_google_slides_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_slides_action = input;
+        self
+    }
+    /// <p>The ability to use Google Slides actions.</p>
+    pub fn get_use_google_slides_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_slides_action
+    }
+    /// <p>The ability to perform actions using QuickBooks connectors.</p>
+    pub fn quick_books_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.quick_books_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using QuickBooks connectors.</p>
+    pub fn set_quick_books_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.quick_books_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using QuickBooks connectors.</p>
+    pub fn get_quick_books_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.quick_books_action
+    }
+    /// <p>The ability to create and update QuickBooks actions.</p>
+    pub fn create_and_update_quick_books_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_quick_books_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update QuickBooks actions.</p>
+    pub fn set_create_and_update_quick_books_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_quick_books_action = input;
+        self
+    }
+    /// <p>The ability to create and update QuickBooks actions.</p>
+    pub fn get_create_and_update_quick_books_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_quick_books_action
+    }
+    /// <p>The ability to share QuickBooks actions.</p>
+    pub fn share_quick_books_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_quick_books_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share QuickBooks actions.</p>
+    pub fn set_share_quick_books_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_quick_books_action = input;
+        self
+    }
+    /// <p>The ability to share QuickBooks actions.</p>
+    pub fn get_share_quick_books_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_quick_books_action
+    }
+    /// <p>The ability to use QuickBooks actions.</p>
+    pub fn use_quick_books_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_quick_books_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use QuickBooks actions.</p>
+    pub fn set_use_quick_books_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_quick_books_action = input;
+        self
+    }
+    /// <p>The ability to use QuickBooks actions.</p>
+    pub fn get_use_quick_books_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_quick_books_action
+    }
+    /// <p>The ability to perform actions using Figma connectors.</p>
+    pub fn figma_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.figma_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Figma connectors.</p>
+    pub fn set_figma_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.figma_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Figma connectors.</p>
+    pub fn get_figma_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.figma_action
+    }
+    /// <p>The ability to create and update Figma actions.</p>
+    pub fn create_and_update_figma_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_figma_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Figma actions.</p>
+    pub fn set_create_and_update_figma_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_figma_action = input;
+        self
+    }
+    /// <p>The ability to create and update Figma actions.</p>
+    pub fn get_create_and_update_figma_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_figma_action
+    }
+    /// <p>The ability to share Figma actions.</p>
+    pub fn share_figma_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_figma_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Figma actions.</p>
+    pub fn set_share_figma_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_figma_action = input;
+        self
+    }
+    /// <p>The ability to share Figma actions.</p>
+    pub fn get_share_figma_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_figma_action
+    }
+    /// <p>The ability to use Figma actions.</p>
+    pub fn use_figma_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_figma_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Figma actions.</p>
+    pub fn set_use_figma_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_figma_action = input;
+        self
+    }
+    /// <p>The ability to use Figma actions.</p>
+    pub fn get_use_figma_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_figma_action
+    }
+    /// <p>The ability to perform actions using WhatsApp connectors.</p>
+    pub fn whats_app_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.whats_app_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using WhatsApp connectors.</p>
+    pub fn set_whats_app_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.whats_app_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using WhatsApp connectors.</p>
+    pub fn get_whats_app_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.whats_app_action
+    }
+    /// <p>The ability to create and update WhatsApp actions.</p>
+    pub fn create_and_update_whats_app_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_whats_app_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update WhatsApp actions.</p>
+    pub fn set_create_and_update_whats_app_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_whats_app_action = input;
+        self
+    }
+    /// <p>The ability to create and update WhatsApp actions.</p>
+    pub fn get_create_and_update_whats_app_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_whats_app_action
+    }
+    /// <p>The ability to share WhatsApp actions.</p>
+    pub fn share_whats_app_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_whats_app_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share WhatsApp actions.</p>
+    pub fn set_share_whats_app_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_whats_app_action = input;
+        self
+    }
+    /// <p>The ability to share WhatsApp actions.</p>
+    pub fn get_share_whats_app_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_whats_app_action
+    }
+    /// <p>The ability to use WhatsApp actions.</p>
+    pub fn use_whats_app_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_whats_app_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use WhatsApp actions.</p>
+    pub fn set_use_whats_app_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_whats_app_action = input;
+        self
+    }
+    /// <p>The ability to use WhatsApp actions.</p>
+    pub fn get_use_whats_app_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_whats_app_action
+    }
+    /// <p>The ability to perform actions using Google Chat connectors.</p>
+    pub fn google_chat_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_chat_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Google Chat connectors.</p>
+    pub fn set_google_chat_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_chat_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Google Chat connectors.</p>
+    pub fn get_google_chat_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_chat_action
+    }
+    /// <p>The ability to create and update Google Chat actions.</p>
+    pub fn create_and_update_google_chat_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_chat_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Google Chat actions.</p>
+    pub fn set_create_and_update_google_chat_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_chat_action = input;
+        self
+    }
+    /// <p>The ability to create and update Google Chat actions.</p>
+    pub fn get_create_and_update_google_chat_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_chat_action
+    }
+    /// <p>The ability to share Google Chat actions.</p>
+    pub fn share_google_chat_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_chat_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Chat actions.</p>
+    pub fn set_share_google_chat_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_chat_action = input;
+        self
+    }
+    /// <p>The ability to share Google Chat actions.</p>
+    pub fn get_share_google_chat_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_chat_action
+    }
+    /// <p>The ability to use Google Chat actions.</p>
+    pub fn use_google_chat_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_chat_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Google Chat actions.</p>
+    pub fn set_use_google_chat_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_chat_action = input;
+        self
+    }
+    /// <p>The ability to use Google Chat actions.</p>
+    pub fn get_use_google_chat_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_chat_action
+    }
+    /// <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+    pub fn one_note_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.one_note_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+    pub fn set_one_note_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.one_note_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Microsoft OneNote connectors.</p>
+    pub fn get_one_note_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.one_note_action
+    }
+    /// <p>The ability to create and update Microsoft OneNote actions.</p>
+    pub fn create_and_update_one_note_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_one_note_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Microsoft OneNote actions.</p>
+    pub fn set_create_and_update_one_note_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_one_note_action = input;
+        self
+    }
+    /// <p>The ability to create and update Microsoft OneNote actions.</p>
+    pub fn get_create_and_update_one_note_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_one_note_action
+    }
+    /// <p>The ability to share Microsoft OneNote actions.</p>
+    pub fn share_one_note_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_one_note_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Microsoft OneNote actions.</p>
+    pub fn set_share_one_note_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_one_note_action = input;
+        self
+    }
+    /// <p>The ability to share Microsoft OneNote actions.</p>
+    pub fn get_share_one_note_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_one_note_action
+    }
+    /// <p>The ability to use Microsoft OneNote actions.</p>
+    pub fn use_one_note_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_one_note_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Microsoft OneNote actions.</p>
+    pub fn set_use_one_note_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_one_note_action = input;
+        self
+    }
+    /// <p>The ability to use Microsoft OneNote actions.</p>
+    pub fn get_use_one_note_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_one_note_action
+    }
+    /// <p>The ability to perform actions using Shopify connectors.</p>
+    pub fn shopify_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.shopify_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Shopify connectors.</p>
+    pub fn set_shopify_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.shopify_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Shopify connectors.</p>
+    pub fn get_shopify_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.shopify_action
+    }
+    /// <p>The ability to create and update Shopify actions.</p>
+    pub fn create_and_update_shopify_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_shopify_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Shopify actions.</p>
+    pub fn set_create_and_update_shopify_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_shopify_action = input;
+        self
+    }
+    /// <p>The ability to create and update Shopify actions.</p>
+    pub fn get_create_and_update_shopify_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_shopify_action
+    }
+    /// <p>The ability to share Shopify actions.</p>
+    pub fn share_shopify_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_shopify_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Shopify actions.</p>
+    pub fn set_share_shopify_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_shopify_action = input;
+        self
+    }
+    /// <p>The ability to share Shopify actions.</p>
+    pub fn get_share_shopify_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_shopify_action
+    }
+    /// <p>The ability to use Shopify actions.</p>
+    pub fn use_shopify_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_shopify_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Shopify actions.</p>
+    pub fn set_use_shopify_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_shopify_action = input;
+        self
+    }
+    /// <p>The ability to use Shopify actions.</p>
+    pub fn get_use_shopify_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_shopify_action
+    }
+    /// <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+    pub fn adobe_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.adobe_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+    pub fn set_adobe_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.adobe_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Adobe Marketing Agent connectors.</p>
+    pub fn get_adobe_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.adobe_action
+    }
+    /// <p>The ability to create and update Adobe Marketing Agent actions.</p>
+    pub fn create_and_update_adobe_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_adobe_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Adobe Marketing Agent actions.</p>
+    pub fn set_create_and_update_adobe_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_adobe_action = input;
+        self
+    }
+    /// <p>The ability to create and update Adobe Marketing Agent actions.</p>
+    pub fn get_create_and_update_adobe_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_adobe_action
+    }
+    /// <p>The ability to share Adobe Marketing Agent actions.</p>
+    pub fn share_adobe_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_adobe_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Adobe Marketing Agent actions.</p>
+    pub fn set_share_adobe_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_adobe_action = input;
+        self
+    }
+    /// <p>The ability to share Adobe Marketing Agent actions.</p>
+    pub fn get_share_adobe_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_adobe_action
+    }
+    /// <p>The ability to use Adobe Marketing Agent actions.</p>
+    pub fn use_adobe_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_adobe_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Adobe Marketing Agent actions.</p>
+    pub fn set_use_adobe_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_adobe_action = input;
+        self
+    }
+    /// <p>The ability to use Adobe Marketing Agent actions.</p>
+    pub fn get_use_adobe_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_adobe_action
+    }
+    /// <p>The ability to perform actions using Cisco Webex Video Messaging Agent connectors.</p>
+    pub fn cisco_webex_vidcast_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.cisco_webex_vidcast_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Cisco Webex Video Messaging Agent connectors.</p>
+    pub fn set_cisco_webex_vidcast_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.cisco_webex_vidcast_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Cisco Webex Video Messaging Agent connectors.</p>
+    pub fn get_cisco_webex_vidcast_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.cisco_webex_vidcast_action
+    }
+    /// <p>The ability to create and update Cisco Webex Video Messaging Agent actions.</p>
+    pub fn create_and_update_cisco_webex_vidcast_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_cisco_webex_vidcast_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Cisco Webex Video Messaging Agent actions.</p>
+    pub fn set_create_and_update_cisco_webex_vidcast_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_cisco_webex_vidcast_action = input;
+        self
+    }
+    /// <p>The ability to create and update Cisco Webex Video Messaging Agent actions.</p>
+    pub fn get_create_and_update_cisco_webex_vidcast_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_cisco_webex_vidcast_action
+    }
+    /// <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+    pub fn share_cisco_webex_vidcast_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_cisco_webex_vidcast_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+    pub fn set_share_cisco_webex_vidcast_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_cisco_webex_vidcast_action = input;
+        self
+    }
+    /// <p>The ability to share Cisco Webex Video Messaging Agent actions.</p>
+    pub fn get_share_cisco_webex_vidcast_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_cisco_webex_vidcast_action
+    }
+    /// <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+    pub fn use_cisco_webex_vidcast_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_cisco_webex_vidcast_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+    pub fn set_use_cisco_webex_vidcast_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_cisco_webex_vidcast_action = input;
+        self
+    }
+    /// <p>The ability to use Cisco Webex Video Messaging Agent actions.</p>
+    pub fn get_use_cisco_webex_vidcast_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_cisco_webex_vidcast_action
+    }
+    /// <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+    pub fn cisco_webex_meetings_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.cisco_webex_meetings_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+    pub fn set_cisco_webex_meetings_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.cisco_webex_meetings_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Cisco Webex Meetings connectors.</p>
+    pub fn get_cisco_webex_meetings_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.cisco_webex_meetings_action
+    }
+    /// <p>The ability to create and update Cisco Webex Meetings actions.</p>
+    pub fn create_and_update_cisco_webex_meetings_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_cisco_webex_meetings_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Cisco Webex Meetings actions.</p>
+    pub fn set_create_and_update_cisco_webex_meetings_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_cisco_webex_meetings_action = input;
+        self
+    }
+    /// <p>The ability to create and update Cisco Webex Meetings actions.</p>
+    pub fn get_create_and_update_cisco_webex_meetings_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_cisco_webex_meetings_action
+    }
+    /// <p>The ability to share Cisco Webex Meetings actions.</p>
+    pub fn share_cisco_webex_meetings_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_cisco_webex_meetings_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Cisco Webex Meetings actions.</p>
+    pub fn set_share_cisco_webex_meetings_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_cisco_webex_meetings_action = input;
+        self
+    }
+    /// <p>The ability to share Cisco Webex Meetings actions.</p>
+    pub fn get_share_cisco_webex_meetings_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_cisco_webex_meetings_action
+    }
+    /// <p>The ability to use Cisco Webex Meetings actions.</p>
+    pub fn use_cisco_webex_meetings_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_cisco_webex_meetings_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Cisco Webex Meetings actions.</p>
+    pub fn set_use_cisco_webex_meetings_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_cisco_webex_meetings_action = input;
+        self
+    }
+    /// <p>The ability to use Cisco Webex Meetings actions.</p>
+    pub fn get_use_cisco_webex_meetings_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_cisco_webex_meetings_action
+    }
+    /// <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+    pub fn dun_and_bradstreet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.dun_and_bradstreet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+    pub fn set_dun_and_bradstreet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.dun_and_bradstreet_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Dun and Bradstreet connectors.</p>
+    pub fn get_dun_and_bradstreet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.dun_and_bradstreet_action
+    }
+    /// <p>The ability to create and update Dun and Bradstreet actions.</p>
+    pub fn create_and_update_dun_and_bradstreet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_dun_and_bradstreet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Dun and Bradstreet actions.</p>
+    pub fn set_create_and_update_dun_and_bradstreet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_dun_and_bradstreet_action = input;
+        self
+    }
+    /// <p>The ability to create and update Dun and Bradstreet actions.</p>
+    pub fn get_create_and_update_dun_and_bradstreet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_dun_and_bradstreet_action
+    }
+    /// <p>The ability to share Dun and Bradstreet actions.</p>
+    pub fn share_dun_and_bradstreet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_dun_and_bradstreet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Dun and Bradstreet actions.</p>
+    pub fn set_share_dun_and_bradstreet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_dun_and_bradstreet_action = input;
+        self
+    }
+    /// <p>The ability to share Dun and Bradstreet actions.</p>
+    pub fn get_share_dun_and_bradstreet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_dun_and_bradstreet_action
+    }
+    /// <p>The ability to use Dun and Bradstreet actions.</p>
+    pub fn use_dun_and_bradstreet_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_dun_and_bradstreet_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Dun and Bradstreet actions.</p>
+    pub fn set_use_dun_and_bradstreet_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_dun_and_bradstreet_action = input;
+        self
+    }
+    /// <p>The ability to use Dun and Bradstreet actions.</p>
+    pub fn get_use_dun_and_bradstreet_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_dun_and_bradstreet_action
+    }
+    /// <p>The ability to perform actions using HG Insights Agent connectors.</p>
+    pub fn hg_insights_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.hg_insights_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using HG Insights Agent connectors.</p>
+    pub fn set_hg_insights_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.hg_insights_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using HG Insights Agent connectors.</p>
+    pub fn get_hg_insights_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.hg_insights_action
+    }
+    /// <p>The ability to create and update HG Insights Agent actions.</p>
+    pub fn create_and_update_hg_insights_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_hg_insights_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update HG Insights Agent actions.</p>
+    pub fn set_create_and_update_hg_insights_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_hg_insights_action = input;
+        self
+    }
+    /// <p>The ability to create and update HG Insights Agent actions.</p>
+    pub fn get_create_and_update_hg_insights_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_hg_insights_action
+    }
+    /// <p>The ability to share HG Insights Agent actions.</p>
+    pub fn share_hg_insights_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_hg_insights_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share HG Insights Agent actions.</p>
+    pub fn set_share_hg_insights_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_hg_insights_action = input;
+        self
+    }
+    /// <p>The ability to share HG Insights Agent actions.</p>
+    pub fn get_share_hg_insights_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_hg_insights_action
+    }
+    /// <p>The ability to use HG Insights Agent actions.</p>
+    pub fn use_hg_insights_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_hg_insights_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use HG Insights Agent actions.</p>
+    pub fn set_use_hg_insights_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_hg_insights_action = input;
+        self
+    }
+    /// <p>The ability to use HG Insights Agent actions.</p>
+    pub fn get_use_hg_insights_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_hg_insights_action
+    }
+    /// <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+    pub fn zoom_info_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.zoom_info_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+    pub fn set_zoom_info_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.zoom_info_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using ZoomInfo Agent connectors.</p>
+    pub fn get_zoom_info_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.zoom_info_action
+    }
+    /// <p>The ability to create and update ZoomInfo Agent actions.</p>
+    pub fn create_and_update_zoom_info_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_zoom_info_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update ZoomInfo Agent actions.</p>
+    pub fn set_create_and_update_zoom_info_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_zoom_info_action = input;
+        self
+    }
+    /// <p>The ability to create and update ZoomInfo Agent actions.</p>
+    pub fn get_create_and_update_zoom_info_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_zoom_info_action
+    }
+    /// <p>The ability to share ZoomInfo Agent actions.</p>
+    pub fn share_zoom_info_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_zoom_info_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share ZoomInfo Agent actions.</p>
+    pub fn set_share_zoom_info_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_zoom_info_action = input;
+        self
+    }
+    /// <p>The ability to share ZoomInfo Agent actions.</p>
+    pub fn get_share_zoom_info_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_zoom_info_action
+    }
+    /// <p>The ability to use ZoomInfo Agent actions.</p>
+    pub fn use_zoom_info_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_zoom_info_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use ZoomInfo Agent actions.</p>
+    pub fn set_use_zoom_info_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_zoom_info_action = input;
+        self
+    }
+    /// <p>The ability to use ZoomInfo Agent actions.</p>
+    pub fn get_use_zoom_info_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_zoom_info_action
+    }
+    /// <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+    pub fn moodys_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.moodys_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+    pub fn set_moodys_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.moodys_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Moody's GenAI Ready Data connectors.</p>
+    pub fn get_moodys_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.moodys_action
+    }
+    /// <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+    pub fn create_and_update_moodys_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_moodys_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+    pub fn set_create_and_update_moodys_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_moodys_action = input;
+        self
+    }
+    /// <p>The ability to create and update Moody's GenAI Ready Data actions.</p>
+    pub fn get_create_and_update_moodys_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_moodys_action
+    }
+    /// <p>The ability to share Moody's GenAI Ready Data actions.</p>
+    pub fn share_moodys_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_moodys_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Moody's GenAI Ready Data actions.</p>
+    pub fn set_share_moodys_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_moodys_action = input;
+        self
+    }
+    /// <p>The ability to share Moody's GenAI Ready Data actions.</p>
+    pub fn get_share_moodys_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_moodys_action
+    }
+    /// <p>The ability to use Moody's GenAI Ready Data actions.</p>
+    pub fn use_moodys_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_moodys_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Moody's GenAI Ready Data actions.</p>
+    pub fn set_use_moodys_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_moodys_action = input;
+        self
+    }
+    /// <p>The ability to use Moody's GenAI Ready Data actions.</p>
+    pub fn get_use_moodys_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_moodys_action
+    }
+    /// <p>The ability to perform actions using Bee connectors.</p>
+    pub fn bee_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.bee_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Bee connectors.</p>
+    pub fn set_bee_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.bee_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Bee connectors.</p>
+    pub fn get_bee_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.bee_action
+    }
+    /// <p>The ability to create and update Bee actions.</p>
+    pub fn create_and_update_bee_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_bee_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Bee actions.</p>
+    pub fn set_create_and_update_bee_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_bee_action = input;
+        self
+    }
+    /// <p>The ability to create and update Bee actions.</p>
+    pub fn get_create_and_update_bee_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_bee_action
+    }
+    /// <p>The ability to share Bee actions.</p>
+    pub fn share_bee_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_bee_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Bee actions.</p>
+    pub fn set_share_bee_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_bee_action = input;
+        self
+    }
+    /// <p>The ability to share Bee actions.</p>
+    pub fn get_share_bee_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_bee_action
+    }
+    /// <p>The ability to use Bee actions.</p>
+    pub fn use_bee_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_bee_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Bee actions.</p>
+    pub fn set_use_bee_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_bee_action = input;
+        self
+    }
+    /// <p>The ability to use Bee actions.</p>
+    pub fn get_use_bee_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_bee_action
+    }
     /// <p>The ability to perform Topic-related actions.</p>
     pub fn topic(mut self, input: crate::types::CapabilityState) -> Self {
         self.topic = ::std::option::Option::Some(input);
@@ -7400,6 +9752,118 @@ impl CapabilitiesBuilder {
             create_and_update_new_relic_action: self.create_and_update_new_relic_action,
             share_new_relic_action: self.share_new_relic_action,
             use_new_relic_action: self.use_new_relic_action,
+            pager_duty_agent_action: self.pager_duty_agent_action,
+            create_and_update_pager_duty_agent_action: self.create_and_update_pager_duty_agent_action,
+            share_pager_duty_agent_action: self.share_pager_duty_agent_action,
+            use_pager_duty_agent_action: self.use_pager_duty_agent_action,
+            visier_agent_action: self.visier_agent_action,
+            create_and_update_visier_agent_action: self.create_and_update_visier_agent_action,
+            share_visier_agent_action: self.share_visier_agent_action,
+            use_visier_agent_action: self.use_visier_agent_action,
+            zoom_action: self.zoom_action,
+            create_and_update_zoom_action: self.create_and_update_zoom_action,
+            share_zoom_action: self.share_zoom_action,
+            use_zoom_action: self.use_zoom_action,
+            snow_flake_action: self.snow_flake_action,
+            create_and_update_snow_flake_action: self.create_and_update_snow_flake_action,
+            share_snow_flake_action: self.share_snow_flake_action,
+            use_snow_flake_action: self.use_snow_flake_action,
+            zapier_action: self.zapier_action,
+            create_and_update_zapier_action: self.create_and_update_zapier_action,
+            share_zapier_action: self.share_zapier_action,
+            use_zapier_action: self.use_zapier_action,
+            airtable_action: self.airtable_action,
+            create_and_update_airtable_action: self.create_and_update_airtable_action,
+            share_airtable_action: self.share_airtable_action,
+            use_airtable_action: self.use_airtable_action,
+            dropbox_action: self.dropbox_action,
+            create_and_update_dropbox_action: self.create_and_update_dropbox_action,
+            share_dropbox_action: self.share_dropbox_action,
+            use_dropbox_action: self.use_dropbox_action,
+            gmail_action: self.gmail_action,
+            create_and_update_gmail_action: self.create_and_update_gmail_action,
+            share_gmail_action: self.share_gmail_action,
+            use_gmail_action: self.use_gmail_action,
+            google_analytics_action: self.google_analytics_action,
+            create_and_update_google_analytics_action: self.create_and_update_google_analytics_action,
+            share_google_analytics_action: self.share_google_analytics_action,
+            use_google_analytics_action: self.use_google_analytics_action,
+            google_docs_action: self.google_docs_action,
+            create_and_update_google_docs_action: self.create_and_update_google_docs_action,
+            share_google_docs_action: self.share_google_docs_action,
+            use_google_docs_action: self.use_google_docs_action,
+            google_drive_action: self.google_drive_action,
+            create_and_update_google_drive_action: self.create_and_update_google_drive_action,
+            share_google_drive_action: self.share_google_drive_action,
+            use_google_drive_action: self.use_google_drive_action,
+            google_meet_action: self.google_meet_action,
+            create_and_update_google_meet_action: self.create_and_update_google_meet_action,
+            share_google_meet_action: self.share_google_meet_action,
+            use_google_meet_action: self.use_google_meet_action,
+            google_sheets_action: self.google_sheets_action,
+            create_and_update_google_sheets_action: self.create_and_update_google_sheets_action,
+            share_google_sheets_action: self.share_google_sheets_action,
+            use_google_sheets_action: self.use_google_sheets_action,
+            google_slides_action: self.google_slides_action,
+            create_and_update_google_slides_action: self.create_and_update_google_slides_action,
+            share_google_slides_action: self.share_google_slides_action,
+            use_google_slides_action: self.use_google_slides_action,
+            quick_books_action: self.quick_books_action,
+            create_and_update_quick_books_action: self.create_and_update_quick_books_action,
+            share_quick_books_action: self.share_quick_books_action,
+            use_quick_books_action: self.use_quick_books_action,
+            figma_action: self.figma_action,
+            create_and_update_figma_action: self.create_and_update_figma_action,
+            share_figma_action: self.share_figma_action,
+            use_figma_action: self.use_figma_action,
+            whats_app_action: self.whats_app_action,
+            create_and_update_whats_app_action: self.create_and_update_whats_app_action,
+            share_whats_app_action: self.share_whats_app_action,
+            use_whats_app_action: self.use_whats_app_action,
+            google_chat_action: self.google_chat_action,
+            create_and_update_google_chat_action: self.create_and_update_google_chat_action,
+            share_google_chat_action: self.share_google_chat_action,
+            use_google_chat_action: self.use_google_chat_action,
+            one_note_action: self.one_note_action,
+            create_and_update_one_note_action: self.create_and_update_one_note_action,
+            share_one_note_action: self.share_one_note_action,
+            use_one_note_action: self.use_one_note_action,
+            shopify_action: self.shopify_action,
+            create_and_update_shopify_action: self.create_and_update_shopify_action,
+            share_shopify_action: self.share_shopify_action,
+            use_shopify_action: self.use_shopify_action,
+            adobe_action: self.adobe_action,
+            create_and_update_adobe_action: self.create_and_update_adobe_action,
+            share_adobe_action: self.share_adobe_action,
+            use_adobe_action: self.use_adobe_action,
+            cisco_webex_vidcast_action: self.cisco_webex_vidcast_action,
+            create_and_update_cisco_webex_vidcast_action: self.create_and_update_cisco_webex_vidcast_action,
+            share_cisco_webex_vidcast_action: self.share_cisco_webex_vidcast_action,
+            use_cisco_webex_vidcast_action: self.use_cisco_webex_vidcast_action,
+            cisco_webex_meetings_action: self.cisco_webex_meetings_action,
+            create_and_update_cisco_webex_meetings_action: self.create_and_update_cisco_webex_meetings_action,
+            share_cisco_webex_meetings_action: self.share_cisco_webex_meetings_action,
+            use_cisco_webex_meetings_action: self.use_cisco_webex_meetings_action,
+            dun_and_bradstreet_action: self.dun_and_bradstreet_action,
+            create_and_update_dun_and_bradstreet_action: self.create_and_update_dun_and_bradstreet_action,
+            share_dun_and_bradstreet_action: self.share_dun_and_bradstreet_action,
+            use_dun_and_bradstreet_action: self.use_dun_and_bradstreet_action,
+            hg_insights_action: self.hg_insights_action,
+            create_and_update_hg_insights_action: self.create_and_update_hg_insights_action,
+            share_hg_insights_action: self.share_hg_insights_action,
+            use_hg_insights_action: self.use_hg_insights_action,
+            zoom_info_action: self.zoom_info_action,
+            create_and_update_zoom_info_action: self.create_and_update_zoom_info_action,
+            share_zoom_info_action: self.share_zoom_info_action,
+            use_zoom_info_action: self.use_zoom_info_action,
+            moodys_action: self.moodys_action,
+            create_and_update_moodys_action: self.create_and_update_moodys_action,
+            share_moodys_action: self.share_moodys_action,
+            use_moodys_action: self.use_moodys_action,
+            bee_action: self.bee_action,
+            create_and_update_bee_action: self.create_and_update_bee_action,
+            share_bee_action: self.share_bee_action,
+            use_bee_action: self.use_bee_action,
             topic: self.topic,
             edit_visual_with_q: self.edit_visual_with_q,
             build_calculated_field_with_q: self.build_calculated_field_with_q,

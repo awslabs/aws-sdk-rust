@@ -24,6 +24,8 @@ pub struct CentralizationRuleSummary {
     pub tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
     /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
     pub tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub context_graph_status: ::std::option::Option<crate::types::ContextGraphStatus>,
     /// <p>The primary destination account of the organization centralization rule.</p>
     pub destination_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The primary destination region of the organization centralization rule.</p>
@@ -70,6 +72,10 @@ impl CentralizationRuleSummary {
     pub fn tag_propagation_failure_reason(&self) -> ::std::option::Option<&crate::types::TagPropagationFailureReason> {
         self.tag_propagation_failure_reason.as_ref()
     }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn context_graph_status(&self) -> ::std::option::Option<&crate::types::ContextGraphStatus> {
+        self.context_graph_status.as_ref()
+    }
     /// <p>The primary destination account of the organization centralization rule.</p>
     pub fn destination_account_id(&self) -> ::std::option::Option<&str> {
         self.destination_account_id.as_deref()
@@ -100,6 +106,7 @@ pub struct CentralizationRuleSummaryBuilder {
     pub(crate) failure_reason: ::std::option::Option<crate::types::CentralizationFailureReason>,
     pub(crate) tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
     pub(crate) tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
+    pub(crate) context_graph_status: ::std::option::Option<crate::types::ContextGraphStatus>,
     pub(crate) destination_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) destination_region: ::std::option::Option<::std::string::String>,
 }
@@ -244,6 +251,20 @@ impl CentralizationRuleSummaryBuilder {
     pub fn get_tag_propagation_failure_reason(&self) -> &::std::option::Option<crate::types::TagPropagationFailureReason> {
         &self.tag_propagation_failure_reason
     }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn context_graph_status(mut self, input: crate::types::ContextGraphStatus) -> Self {
+        self.context_graph_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn set_context_graph_status(mut self, input: ::std::option::Option<crate::types::ContextGraphStatus>) -> Self {
+        self.context_graph_status = input;
+        self
+    }
+    /// <p>The status of context graph centralization for this rule. Returns <code>Provisioning</code> while the context graph is being set up, <code>Healthy</code> once it is active, or <code>Unhealthy</code> if provisioning failed. This status is independent of the overall <code>RuleHealth</code> for log delivery.</p>
+    pub fn get_context_graph_status(&self) -> &::std::option::Option<crate::types::ContextGraphStatus> {
+        &self.context_graph_status
+    }
     /// <p>The primary destination account of the organization centralization rule.</p>
     pub fn destination_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_account_id = ::std::option::Option::Some(input.into());
@@ -285,6 +306,7 @@ impl CentralizationRuleSummaryBuilder {
             failure_reason: self.failure_reason,
             tag_propagation_status: self.tag_propagation_status,
             tag_propagation_failure_reason: self.tag_propagation_failure_reason,
+            context_graph_status: self.context_graph_status,
             destination_account_id: self.destination_account_id,
             destination_region: self.destination_region,
         }

@@ -201,12 +201,6 @@ impl HttpClient for SharedHttpClient {
         self.selector.http_connector(settings, components)
     }
 
-    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
-        self.selector.connector_metadata()
-    }
-}
-
-impl ValidateConfig for SharedHttpClient {
     fn validate_base_client_config(
         &self,
         runtime_components: &RuntimeComponentsBuilder,
@@ -222,6 +216,28 @@ impl ValidateConfig for SharedHttpClient {
         cfg: &ConfigBag,
     ) -> Result<(), BoxError> {
         self.selector.validate_final_config(runtime_components, cfg)
+    }
+
+    fn connector_metadata(&self) -> Option<ConnectorMetadata> {
+        self.selector.connector_metadata()
+    }
+}
+
+impl ValidateConfig for SharedHttpClient {
+    fn validate_base_client_config(
+        &self,
+        runtime_components: &RuntimeComponentsBuilder,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        HttpClient::validate_base_client_config(self, runtime_components, cfg)
+    }
+
+    fn validate_final_config(
+        &self,
+        runtime_components: &RuntimeComponents,
+        cfg: &ConfigBag,
+    ) -> Result<(), BoxError> {
+        HttpClient::validate_final_config(self, runtime_components, cfg)
     }
 }
 
@@ -311,5 +327,129 @@ impl HttpConnectorSettings {
     /// from the time the request is initiated.
     pub fn read_timeout(&self) -> Option<Duration> {
         self.read_timeout
+    }
+}
+
+#[cfg(all(test, feature = "test-util"))]
+mod tests {
+    use super::*;
+    use crate::client::runtime_components::RuntimeComponentsBuilder;
+    use aws_smithy_types::config_bag::ConfigBag;
+    use std::sync::atomic::{AtomicUsize, Ordering};
+
+    /// Selector that records how many times each validation hook was invoked.
+    #[derive(Debug, Default)]
+    struct CountingSelector {
+        base: AtomicUsize,
+        final_: AtomicUsize,
+    }
+
+    impl HttpClient for CountingSelector {
+        fn http_connector(
+            &self,
+            _settings: &HttpConnectorSettings,
+            _components: &RuntimeComponents,
+        ) -> SharedHttpConnector {
+            unreachable!("http_connector is not exercised by these tests")
+        }
+
+        fn validate_base_client_config(
+            &self,
+            _runtime_components: &RuntimeComponentsBuilder,
+            _cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            self.base.fetch_add(1, Ordering::SeqCst);
+            Ok(())
+        }
+
+        fn validate_final_config(
+            &self,
+            _runtime_components: &RuntimeComponents,
+            _cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            self.final_.fetch_add(1, Ordering::SeqCst);
+            Ok(())
+        }
+    }
+
+    /// External decorator that owns an inner [`SharedHttpClient`] and forwards the
+    /// public [`HttpClient`] validation hooks through it. This models a downstream
+    /// wrapper that cannot reach the sealed `ValidateConfig` trait and must rely on
+    /// the public forwarding methods.
+    #[derive(Debug)]
+    struct DecoratingClient {
+        inner: SharedHttpClient,
+    }
+
+    impl HttpClient for DecoratingClient {
+        fn http_connector(
+            &self,
+            settings: &HttpConnectorSettings,
+            components: &RuntimeComponents,
+        ) -> SharedHttpConnector {
+            self.inner.http_connector(settings, components)
+        }
+
+        fn validate_base_client_config(
+            &self,
+            runtime_components: &RuntimeComponentsBuilder,
+            cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            HttpClient::validate_base_client_config(&self.inner, runtime_components, cfg)
+        }
+
+        fn validate_final_config(
+            &self,
+            runtime_components: &RuntimeComponents,
+            cfg: &ConfigBag,
+        ) -> Result<(), BoxError> {
+            HttpClient::validate_final_config(&self.inner, runtime_components, cfg)
+        }
+    }
+
+    #[test]
+    fn shared_http_client_forwards_validation_to_selector() {
+        let selector = Arc::new(CountingSelector::default());
+        let shared = SharedHttpClient {
+            selector: selector.clone(),
+        };
+        let cfg = ConfigBag::base();
+        let builder = RuntimeComponentsBuilder::for_tests();
+        let components = RuntimeComponentsBuilder::for_tests().build().unwrap();
+
+        // Public `HttpClient` path: what external decorators call.
+        HttpClient::validate_base_client_config(&shared, &builder, &cfg).unwrap();
+        HttpClient::validate_final_config(&shared, &components, &cfg).unwrap();
+
+        // Sealed `ValidateConfig` path: what the runtime's component validation calls.
+        ValidateConfig::validate_base_client_config(&shared, &builder, &cfg).unwrap();
+        ValidateConfig::validate_final_config(&shared, &components, &cfg).unwrap();
+
+        // Each hook ran exactly once per path (2 paths), so 2 invocations each. A
+        // higher count would signal recursion; a lower count divergence between the
+        // two forwarding paths.
+        assert_eq!(2, selector.base.load(Ordering::SeqCst));
+        assert_eq!(2, selector.final_.load(Ordering::SeqCst));
+    }
+
+    #[test]
+    fn external_decorator_reaches_selector_through_shared_client() {
+        let selector = Arc::new(CountingSelector::default());
+        let decorator = DecoratingClient {
+            inner: SharedHttpClient {
+                selector: selector.clone(),
+            },
+        };
+        let cfg = ConfigBag::base();
+        let builder = RuntimeComponentsBuilder::for_tests();
+        let components = RuntimeComponentsBuilder::for_tests().build().unwrap();
+
+        decorator
+            .validate_base_client_config(&builder, &cfg)
+            .unwrap();
+        decorator.validate_final_config(&components, &cfg).unwrap();
+
+        assert_eq!(1, selector.base.load(Ordering::SeqCst));
+        assert_eq!(1, selector.final_.load(Ordering::SeqCst));
     }
 }

@@ -10,13 +10,21 @@ use aws_smithy_runtime_api::client::http::SharedHttpClient;
 pub mod connection_poisoning;
 
 #[deprecated = "Direct HTTP test utility support from `aws-smithy-runtime` crate is deprecated. Please use the `test-util` feature from `aws-smithy-http-client` instead"]
-#[cfg(feature = "test-util")]
+#[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
 pub mod test_util {
     #![allow(missing_docs)]
 
-    pub use aws_smithy_http_client::test_util::{
-        legacy_capture_request as capture_request, CaptureRequestHandler, CaptureRequestReceiver,
-    };
+    pub use aws_smithy_http_client::test_util::{CaptureRequestHandler, CaptureRequestReceiver};
+
+    // `capture_request` and `infallible_client_fn` re-export the pre-1.x variants, so they require
+    // `legacy-test-util`. Enabling `test-util` alone no longer pulls the http 0.2.x ecosystem in;
+    // use `aws_smithy_http_client::test_util::{capture_request, infallible_client_fn}` for the
+    // http 1.x equivalents.
+    #[cfg(feature = "legacy-test-util")]
+    pub use aws_smithy_http_client::test_util::legacy_capture_request as capture_request;
+
+    #[cfg(feature = "legacy-test-util")]
+    pub use aws_smithy_http_client::test_util::legacy_infallible::infallible_client_fn;
 
     #[cfg(feature = "connector-hyper-0-14-x")]
     pub mod dvr {
@@ -24,8 +32,6 @@ pub mod test_util {
     }
 
     pub use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
-
-    pub use aws_smithy_http_client::test_util::legacy_infallible::infallible_client_fn;
 
     pub use aws_smithy_http_client::test_util::NeverClient;
 

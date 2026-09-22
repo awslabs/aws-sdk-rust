@@ -7,6 +7,8 @@ pub struct DescribeInstanceOutput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the identity store that is connected to the instance of IAM Identity Center.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account for which the instance was created.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the instance name.</p>
@@ -17,6 +19,10 @@ pub struct DescribeInstanceOutput {
     pub status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub primary_region: ::std::option::Option<::std::string::String>,
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
     /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     pub encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
     /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
@@ -31,6 +37,10 @@ impl DescribeInstanceOutput {
     /// <p>The identifier of the identity store that is connected to the instance of IAM Identity Center.</p>
     pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account for which the instance was created.</p>
     pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
@@ -51,6 +61,16 @@ impl DescribeInstanceOutput {
     /// <p>Provides additional context about the current status of the IAM Identity Center instance. This field is particularly useful when an instance is in a non-ACTIVE state, such as CREATE_FAILED. When an instance fails to create or update, this field contains information about the cause, which may include issues with KMS key configuration, permission problems with the specified KMS key, or service-related errors.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
+    }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn primary_region(&self) -> ::std::option::Option<&str> {
+        self.primary_region.as_deref()
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
+    pub fn regions(&self) -> &[crate::types::RegionMetadata] {
+        self.regions.as_deref().unwrap_or_default()
     }
     /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     pub fn encryption_configuration_details(&self) -> ::std::option::Option<&crate::types::EncryptionConfigurationDetails> {
@@ -79,11 +99,14 @@ impl DescribeInstanceOutput {
 pub struct DescribeInstanceOutputBuilder {
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) primary_region: ::std::option::Option<::std::string::String>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
     pub(crate) encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
     pub(crate) permission_sets_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -116,6 +139,20 @@ impl DescribeInstanceOutputBuilder {
     /// <p>The identifier of the identity store that is connected to the instance of IAM Identity Center.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The ARN of the identity store that is connected to the instance of IAM Identity Center.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
     }
     /// <p>The identifier of the Amazon Web Services account for which the instance was created.</p>
     pub fn owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -187,6 +224,40 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn primary_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.primary_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn set_primary_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.primary_region = input;
+        self
+    }
+    /// <p>The primary Region where the IAM Identity Center instance was originally enabled. The primary Region cannot be removed.</p>
+    pub fn get_primary_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.primary_region
+    }
+    /// Appends an item to `regions`.
+    ///
+    /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+    ///
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn regions(mut self, input: crate::types::RegionMetadata) -> Self {
+        let mut v = self.regions.unwrap_or_default();
+        v.push(input);
+        self.regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>) -> Self {
+        self.regions = input;
+        self
+    }
+    /// <p>The list of Regions enabled in the IAM Identity Center instance, including Regions with ACTIVE, ADDING, or REMOVING status.</p>
+    pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>> {
+        &self.regions
+    }
     /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     pub fn encryption_configuration_details(mut self, input: crate::types::EncryptionConfigurationDetails) -> Self {
         self.encryption_configuration_details = ::std::option::Option::Some(input);
@@ -229,11 +300,14 @@ impl DescribeInstanceOutputBuilder {
         crate::operation::describe_instance::DescribeInstanceOutput {
             instance_arn: self.instance_arn,
             identity_store_id: self.identity_store_id,
+            identity_store_arn: self.identity_store_arn,
             owner_account_id: self.owner_account_id,
             name: self.name,
             created_date: self.created_date,
             status: self.status,
             status_reason: self.status_reason,
+            primary_region: self.primary_region,
+            regions: self.regions,
             encryption_configuration_details: self.encryption_configuration_details,
             permission_sets_enabled: self.permission_sets_enabled,
             _request_id: self._request_id,

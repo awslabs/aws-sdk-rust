@@ -107,6 +107,8 @@ pub use crate::types::_capacity_reservation::CapacityReservation;
 
 pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservationCancellationQuote;
 
+pub use crate::types::_capacity_reservation_modification_quote::CapacityReservationModificationQuote;
+
 pub use crate::types::_fleet_capacity_reservation_tenancy::FleetCapacityReservationTenancy;
 
 pub use crate::types::_fleet_instance_match_criteria::FleetInstanceMatchCriteria;
@@ -659,6 +661,10 @@ pub use crate::types::_address_attribute::AddressAttribute;
 
 pub use crate::types::_modify_availability_zone_opt_in_status::ModifyAvailabilityZoneOptInStatus;
 
+pub use crate::types::_capacity_reservation_adjustment_status::CapacityReservationAdjustmentStatus;
+
+pub use crate::types::_capacity_reservation_adjustment_details::CapacityReservationAdjustmentDetails;
+
 pub use crate::types::_dns_servers_options_modify_structure::DnsServersOptionsModifyStructure;
 
 pub use crate::types::_operation_type::OperationType;
@@ -966,6 +972,12 @@ pub use crate::types::_capacity_reservation_commitment_info::CapacityReservation
 pub use crate::types::_capacity_reservation_cancellation_quote_state::CapacityReservationCancellationQuoteState;
 
 pub use crate::types::_capacity_reservation_configuration::CapacityReservationConfiguration;
+
+pub use crate::types::_capacity_reservation_modification_quote_state::CapacityReservationModificationQuoteState;
+
+pub use crate::types::_modification_quote_current_configuration::ModificationQuoteCurrentConfiguration;
+
+pub use crate::types::_modification_terms::ModificationTerms;
 
 pub use crate::types::_reservation_fleet_instance_specification::ReservationFleetInstanceSpecification;
 
@@ -1886,6 +1898,8 @@ pub use crate::types::_custom_tag_key_value_response_pair::CustomTagKeyValueResp
 pub use crate::types::_capacity_allocation::CapacityAllocation;
 
 pub use crate::types::_cancellation_terms::CancellationTerms;
+
+pub use crate::types::_modification_reservation_update::ModificationReservationUpdate;
 
 pub use crate::types::_client_vpn_authentication_type::ClientVpnAuthenticationType;
 
@@ -3179,6 +3193,10 @@ mod _capacity_manager_tag_dimension;
 
 mod _capacity_reservation;
 
+mod _capacity_reservation_adjustment_details;
+
+mod _capacity_reservation_adjustment_status;
+
 mod _capacity_reservation_billing_request;
 
 mod _capacity_reservation_billing_request_status;
@@ -3204,6 +3222,10 @@ mod _capacity_reservation_group;
 mod _capacity_reservation_info;
 
 mod _capacity_reservation_instance_platform;
+
+mod _capacity_reservation_modification_quote;
+
+mod _capacity_reservation_modification_quote_state;
 
 mod _capacity_reservation_options;
 
@@ -4552,6 +4574,12 @@ mod _metric_point;
 mod _metric_type;
 
 mod _metric_value;
+
+mod _modification_quote_current_configuration;
+
+mod _modification_reservation_update;
+
+mod _modification_terms;
 
 mod _modify_availability_zone_opt_in_status;
 

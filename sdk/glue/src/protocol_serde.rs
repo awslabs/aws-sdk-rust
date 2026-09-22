@@ -2513,6 +2513,8 @@ pub(crate) mod shape_skewed_info;
 
 pub(crate) mod shape_snowflake_node_data;
 
+pub(crate) mod shape_spark_pipeline_info_map;
+
 pub(crate) mod shape_sql_alias;
 
 pub(crate) mod shape_statement_output_data;
@@ -2526,6 +2528,10 @@ pub(crate) mod shape_streaming_data_preview_options;
 pub(crate) mod shape_string_column_statistics_data;
 
 pub(crate) mod shape_string_to_string_map;
+
+pub(crate) mod shape_sub_object_statistics;
+
+pub(crate) mod shape_sub_objects_statistics_list;
 
 pub(crate) mod shape_timestamped_inclusion_annotation;
 

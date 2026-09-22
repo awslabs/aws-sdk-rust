@@ -27,6 +27,12 @@ pub fn ser_centralization_rule_source(
         crate::protocol_serde::shape_source_metrics_configuration::ser_source_metrics_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.source_context_graph_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("SourceContextGraphConfiguration").start_object();
+        crate::protocol_serde::shape_source_context_graph_configuration::ser_source_context_graph_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -70,6 +76,15 @@ where
                         "SourceMetricsConfiguration" => {
                             builder = builder.set_source_metrics_configuration(
                                 crate::protocol_serde::shape_source_metrics_configuration::de_source_metrics_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "SourceContextGraphConfiguration" => {
+                            builder = builder.set_source_context_graph_configuration(
+                                crate::protocol_serde::shape_source_context_graph_configuration::de_source_context_graph_configuration(
                                     tokens,
                                     _value,
                                     depth + 1,
