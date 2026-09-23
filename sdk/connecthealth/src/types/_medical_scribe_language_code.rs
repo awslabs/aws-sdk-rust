@@ -13,6 +13,7 @@
 /// # let medicalscribelanguagecode = unimplemented!();
 /// match medicalscribelanguagecode {
 ///     MedicalScribeLanguageCode::EnUs => { /* ... */ },
+///     MedicalScribeLanguageCode::Multi => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum MedicalScribeLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EnUs,
+    #[allow(missing_docs)] // documentation missing in model
+    Multi,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for MedicalScribeLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "en-US" => MedicalScribeLanguageCode::EnUs,
+            "multi" => MedicalScribeLanguageCode::Multi,
             other => MedicalScribeLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl MedicalScribeLanguageCode {
     pub fn as_str(&self) -> &str {
         match self {
             MedicalScribeLanguageCode::EnUs => "en-US",
+            MedicalScribeLanguageCode::Multi => "multi",
             MedicalScribeLanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["en-US"]
+        &["en-US", "multi"]
     }
 }
 impl ::std::convert::AsRef<str> for MedicalScribeLanguageCode {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for MedicalScribeLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MedicalScribeLanguageCode::EnUs => write!(f, "en-US"),
+            MedicalScribeLanguageCode::Multi => write!(f, "multi"),
             MedicalScribeLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }

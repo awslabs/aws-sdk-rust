@@ -14,7 +14,7 @@ pub struct WorkflowSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The change description for the current version of the workflow resource.</p>
     pub change_description: ::std::option::Option<::std::string::String>,
-    /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
+    /// <p>The image creation stage that this workflow applies to.</p>
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
     /// <p>The owner of the workflow resource.</p>
     pub owner: ::std::option::Option<::std::string::String>,
@@ -46,7 +46,7 @@ impl WorkflowSummary {
     pub fn change_description(&self) -> ::std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
+    /// <p>The image creation stage that this workflow applies to.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
@@ -160,17 +160,17 @@ impl WorkflowSummaryBuilder {
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_description
     }
-    /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
+    /// <p>The image creation stage that this workflow applies to.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
+    /// <p>The image creation stage that this workflow applies to.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The image creation stage that this workflow applies to. Image Builder currently supports build and test stage workflows.</p>
+    /// <p>The image creation stage that this workflow applies to.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.r#type
     }

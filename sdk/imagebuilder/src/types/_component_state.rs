@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentState {
-    /// <p>The current state of the component.</p>
+    /// <p>The current state of the component. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub status: ::std::option::Option<crate::types::ComponentStatus>,
     /// <p>Describes how or why the component changed state.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ComponentState {
-    /// <p>The current state of the component.</p>
+    /// <p>The current state of the component. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ComponentStateBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ComponentStateBuilder {
-    /// <p>The current state of the component.</p>
+    /// <p>The current state of the component. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of the component.</p>
+    /// <p>The current state of the component. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ComponentStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current state of the component.</p>
+    /// <p>The current state of the component. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ComponentStatus> {
         &self.status
     }

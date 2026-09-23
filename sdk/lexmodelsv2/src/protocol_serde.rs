@@ -621,6 +621,8 @@ pub(crate) mod shape_slot_value_elicitation_setting;
 
 pub(crate) mod shape_slot_value_selection_setting;
 
+pub(crate) mod shape_speaker_diarization_settings;
+
 pub(crate) mod shape_speech_recognition_settings;
 
 pub(crate) mod shape_sub_slot_setting;

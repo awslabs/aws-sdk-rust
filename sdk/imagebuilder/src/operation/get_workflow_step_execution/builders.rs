@@ -108,17 +108,17 @@ impl GetWorkflowStepExecutionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you want to get runtime details for. To get the identifiers for the steps that ran in a workflow, call <code>ListWorkflowStepExecutions</code>.</p>
     pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_execution_id(input.into());
         self
     }
-    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you want to get runtime details for. To get the identifiers for the steps that ran in a workflow, call <code>ListWorkflowStepExecutions</code>.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_step_execution_id(input);
         self
     }
-    /// <p>Use the unique identifier for a specific runtime instance of the workflow step to get runtime details for that step.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you want to get runtime details for. To get the identifiers for the steps that ran in a workflow, call <code>ListWorkflowStepExecutions</code>.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_step_execution_id()
     }

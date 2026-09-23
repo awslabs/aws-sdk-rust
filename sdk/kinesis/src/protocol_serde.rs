@@ -109,6 +109,8 @@ pub(crate) mod shape_update_shard_count;
 
 pub(crate) mod shape_update_stream_mode;
 
+pub(crate) mod shape_update_stream_record_distribution_strategy;
+
 pub(crate) mod shape_update_stream_warm_throughput;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -234,6 +236,8 @@ pub(crate) mod shape_update_max_record_size_input;
 pub(crate) mod shape_update_shard_count_input;
 
 pub(crate) mod shape_update_stream_mode_input;
+
+pub(crate) mod shape_update_stream_record_distribution_strategy_input;
 
 pub(crate) mod shape_update_stream_warm_throughput_input;
 

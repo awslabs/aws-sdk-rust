@@ -3,41 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of the image build. If you don't specify a distribution configuration, Image Builder creates the output image only in the account and Amazon Web Services Region where the build runs.</p>
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that defines the environment in which your image will be built and tested.</p>
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The image tests configuration of the image.</p>
+    /// <p>Settings that determine whether Image Builder runs tests on the image after building it. Image tests are enabled by default.</p>
     pub image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     /// <p>Specifies whether to collect additional information about the image being created, including the operating system (OS) version and package list. Defaults to <code>true</code>.</p>
     pub enhanced_image_metadata_enabled: ::std::option::Option<bool>,
     /// <p>The tags of the image.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. This property is required if you specify <code>workflows</code>. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the image build logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl CreateImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn container_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of the image build. If you don't specify a distribution configuration, Image Builder creates the output image only in the account and Amazon Web Services Region where the build runs.</p>
     pub fn distribution_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
@@ -45,7 +45,7 @@ impl CreateImageInput {
     pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
-    /// <p>The image tests configuration of the image.</p>
+    /// <p>Settings that determine whether Image Builder runs tests on the image after building it. Image tests are enabled by default.</p>
     pub fn image_tests_configuration(&self) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
@@ -57,25 +57,25 @@ impl CreateImageInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
     pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
         self.workflows.as_deref().unwrap_or_default()
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. This property is required if you specify <code>workflows</code>. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the image build logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::ImageLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
@@ -105,45 +105,45 @@ pub struct CreateImageInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl CreateImageInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that defines how images are configured, tested, and assessed. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_recipe_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that defines how images are configured and tested. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_recipe_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of the image build. If you don't specify a distribution configuration, Image Builder creates the output image only in the account and Amazon Web Services Region where the build runs.</p>
     pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of the image build. If you don't specify a distribution configuration, Image Builder creates the output image only in the account and Amazon Web Services Region where the build runs.</p>
     pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of your pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that defines and configures the outputs of the image build. If you don't specify a distribution configuration, Image Builder creates the output image only in the account and Amazon Web Services Region where the build runs.</p>
     pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
@@ -162,17 +162,17 @@ impl CreateImageInputBuilder {
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
-    /// <p>The image tests configuration of the image.</p>
+    /// <p>Settings that determine whether Image Builder runs tests on the image after building it. Image tests are enabled by default.</p>
     pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.image_tests_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The image tests configuration of the image.</p>
+    /// <p>Settings that determine whether Image Builder runs tests on the image after building it. Image tests are enabled by default.</p>
     pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.image_tests_configuration = input;
         self
     }
-    /// <p>The image tests configuration of the image.</p>
+    /// <p>Settings that determine whether Image Builder runs tests on the image after building it. Image tests are enabled by default.</p>
     pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         &self.image_tests_configuration
     }
@@ -210,32 +210,32 @@ impl CreateImageInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Settings for vulnerability scans that Amazon Inspector runs during image creation. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository specified in <code>ecrConfiguration</code>.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
@@ -243,47 +243,47 @@ impl CreateImageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
     ///
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
         let mut v = self.workflows.unwrap_or_default();
         v.push(input);
         self.workflows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
         self.workflows = input;
         self
     }
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for the build. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the build, and you must also provide an <code>executionRole</code>.</p>
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         &self.workflows
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. This property is required if you specify <code>workflows</code>. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. This property is required if you specify <code>workflows</code>. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. This property is required if you specify <code>workflows</code>. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the image build logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the image build logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the image build logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
         &self.logging_configuration
     }

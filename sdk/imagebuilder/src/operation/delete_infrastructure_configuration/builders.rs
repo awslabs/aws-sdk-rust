@@ -22,7 +22,7 @@ impl crate::operation::delete_infrastructure_configuration::builders::DeleteInfr
 }
 /// Fluent builder constructing a request to `DeleteInfrastructureConfiguration`.
 ///
-/// <p>Deletes an infrastructure configuration.</p>
+/// <p>Deletes an infrastructure configuration. You can't delete a configuration that an image pipeline still references. The request fails with <code>ResourceDependencyException</code>. Update or delete the referencing pipelines first.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInfrastructureConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

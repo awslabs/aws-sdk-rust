@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendWorkflowStepActionOutput {
-    /// <p>The workflow step that sent the step action.</p>
+    /// <p>The unique identifier for the workflow step that received the action, as specified in the request.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image build version that received the action request.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SendWorkflowStepActionOutput {
     _request_id: Option<String>,
 }
 impl SendWorkflowStepActionOutput {
-    /// <p>The workflow step that sent the step action.</p>
+    /// <p>The unique identifier for the workflow step that received the action, as specified in the request.</p>
     pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
         self.step_execution_id.as_deref()
     }
@@ -47,17 +47,17 @@ pub struct SendWorkflowStepActionOutputBuilder {
     _request_id: Option<String>,
 }
 impl SendWorkflowStepActionOutputBuilder {
-    /// <p>The workflow step that sent the step action.</p>
+    /// <p>The unique identifier for the workflow step that received the action, as specified in the request.</p>
     pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The workflow step that sent the step action.</p>
+    /// <p>The unique identifier for the workflow step that received the action, as specified in the request.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
-    /// <p>The workflow step that sent the step action.</p>
+    /// <p>The unique identifier for the workflow step that received the action, as specified in the request.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_execution_id
     }

@@ -61,6 +61,22 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SpekeVersion" => {
+                            builder = builder.set_speke_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SpekeVersion::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ContentKeyPeriodConfiguration" => {
+                            builder = builder.set_content_key_period_configuration(
+                                crate::protocol_serde::shape_content_key_period_configuration::de_content_key_period_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -110,6 +126,15 @@ pub fn ser_speke_key_provider(
     }
     if let Some(var_5) = &input.certificate_arn {
         object.key("CertificateArn").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.speke_version {
+        object.key("SpekeVersion").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.content_key_period_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ContentKeyPeriodConfiguration").start_object();
+        crate::protocol_serde::shape_content_key_period_configuration::ser_content_key_period_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

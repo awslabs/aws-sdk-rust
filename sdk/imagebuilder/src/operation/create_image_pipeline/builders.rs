@@ -22,7 +22,7 @@ impl crate::operation::create_image_pipeline::builders::CreateImagePipelineInput
 }
 /// Fluent builder constructing a request to `CreateImagePipeline`.
 ///
-/// <p>Creates a new image pipeline. Use image pipelines to automate the creation and distribution of images.</p>
+/// <p>Creates a new image pipeline. Use image pipelines to automate the creation and distribution of images. You must specify exactly one recipe for the pipeline, using either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImagePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateImagePipelineFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the image pipeline.</p>
+    /// <p>The name of the image pipeline. Pipeline names must be unique to your account in each Amazon Web Services Region. Image Builder generates the pipeline ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the image pipeline.</p>
+    /// <p>The name of the image pipeline. Pipeline names must be unique to your account in each Amazon Web Services Region. Image Builder generates the pipeline ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the image pipeline.</p>
+    /// <p>The name of the image pipeline. Pipeline names must be unique to your account in each Amazon Web Services Region. Image Builder generates the pipeline ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -136,31 +136,31 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_recipe_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_recipe_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_recipe_arn()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_recipe_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_recipe_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_recipe_arn()
     }
@@ -192,17 +192,17 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_distribution_configuration_arn()
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.inner = self.inner.image_tests_configuration(input);
         self
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.inner = self.inner.set_image_tests_configuration(input);
         self
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         self.inner.get_image_tests_configuration()
     }
@@ -220,31 +220,31 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_enhanced_image_metadata_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enhanced_image_metadata_enabled()
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. If you don't provide a schedule, the pipeline runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.inner = self.inner.schedule(input);
         self
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. If you don't provide a schedule, the pipeline runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. If you don't provide a schedule, the pipeline runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
         self.inner.get_schedule()
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. If you don't specify a status, it defaults to <code>ENABLED</code>. A disabled pipeline doesn't run on its schedule, but you can still start builds manually.</p>
     pub fn status(mut self, input: crate::types::PipelineStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. If you don't specify a status, it defaults to <code>ENABLED</code>. A disabled pipeline doesn't run on its schedule, but you can still start builds manually.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. If you don't specify a status, it defaults to <code>ENABLED</code>. A disabled pipeline doesn't run on its schedule, but you can still start builds manually.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
         self.inner.get_status()
     }
@@ -272,45 +272,45 @@ impl CreateImagePipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
     ///
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_image_tags(input);
         self
     }
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_image_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.inner = self.inner.image_scanning_configuration(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.inner = self.inner.set_image_scanning_configuration(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         self.inner.get_image_scanning_configuration()
     }
@@ -319,17 +319,17 @@ impl CreateImagePipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
     ///
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
         self.inner = self.inner.workflows(input);
         self
     }
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
         self.inner = self.inner.set_workflows(input);
         self
     }
-    /// <p>Contains an array of workflow configuration objects.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         self.inner.get_workflows()
     }
@@ -361,17 +361,17 @@ impl CreateImagePipelineFluentBuilder {
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

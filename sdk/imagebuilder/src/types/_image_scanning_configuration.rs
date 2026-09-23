@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanningConfiguration {
-    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
     pub image_scanning_enabled: ::std::option::Option<bool>,
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
 impl ImageScanningConfiguration {
-    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
     pub fn image_scanning_enabled(&self) -> ::std::option::Option<bool> {
         self.image_scanning_enabled
     }
@@ -34,17 +34,17 @@ pub struct ImageScanningConfigurationBuilder {
     pub(crate) ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
 }
 impl ImageScanningConfigurationBuilder {
-    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
     pub fn image_scanning_enabled(mut self, input: bool) -> Self {
         self.image_scanning_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
     pub fn set_image_scanning_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.image_scanning_enabled = input;
         self
     }
-    /// <p>A setting that indicates whether Image Builder keeps a snapshot of the vulnerability scans that Amazon Inspector runs against the build instance when you create a new image.</p>
+    /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image, and whether Image Builder saves the findings. Amazon Inspector must be enabled in the account. Image tests must also be enabled. For AMI output, Amazon Inspector scans the test instance. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
     pub fn get_image_scanning_enabled(&self) -> &::std::option::Option<bool> {
         &self.image_scanning_enabled
     }

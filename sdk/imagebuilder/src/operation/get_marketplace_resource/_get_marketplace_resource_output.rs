@@ -5,7 +5,7 @@
 pub struct GetMarketplaceResourceOutput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon Web Services Marketplace resource that was requested.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The obfuscated S3 URL to download the component artifact from.</p>
+    /// <p>A time-limited presigned URL for downloading the component artifact from Amazon S3.</p>
     pub url: ::std::option::Option<::std::string::String>,
     /// <p>Returns obfuscated data that contains the YAML content of the component.</p>
     pub data: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl GetMarketplaceResourceOutput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The obfuscated S3 URL to download the component artifact from.</p>
+    /// <p>A time-limited presigned URL for downloading the component artifact from Amazon S3.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
@@ -61,17 +61,17 @@ impl GetMarketplaceResourceOutputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The obfuscated S3 URL to download the component artifact from.</p>
+    /// <p>A time-limited presigned URL for downloading the component artifact from Amazon S3.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The obfuscated S3 URL to download the component artifact from.</p>
+    /// <p>A time-limited presigned URL for downloading the component artifact from Amazon S3.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The obfuscated S3 URL to download the component artifact from.</p>
+    /// <p>A time-limited presigned URL for downloading the component artifact from Amazon S3.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

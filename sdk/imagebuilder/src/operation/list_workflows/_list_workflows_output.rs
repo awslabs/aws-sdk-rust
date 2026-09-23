@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsOutput {
-    /// <p>A list of workflow build versions that match the request criteria.</p>
+    /// <p>A list of workflow versions that match the request criteria.</p>
     pub workflow_version_list: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersion>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
-    /// <p>A list of workflow build versions that match the request criteria.</p>
+    /// <p>A list of workflow versions that match the request criteria.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_version_list.is_none()`.
     pub fn workflow_version_list(&self) -> &[crate::types::WorkflowVersion] {
@@ -46,19 +46,19 @@ impl ListWorkflowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflow_version_list`](Self::set_workflow_version_list).
     ///
-    /// <p>A list of workflow build versions that match the request criteria.</p>
+    /// <p>A list of workflow versions that match the request criteria.</p>
     pub fn workflow_version_list(mut self, input: crate::types::WorkflowVersion) -> Self {
         let mut v = self.workflow_version_list.unwrap_or_default();
         v.push(input);
         self.workflow_version_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of workflow build versions that match the request criteria.</p>
+    /// <p>A list of workflow versions that match the request criteria.</p>
     pub fn set_workflow_version_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersion>>) -> Self {
         self.workflow_version_list = input;
         self
     }
-    /// <p>A list of workflow build versions that match the request criteria.</p>
+    /// <p>A list of workflow versions that match the request criteria.</p>
     pub fn get_workflow_version_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowVersion>> {
         &self.workflow_version_list
     }

@@ -29,6 +29,7 @@ impl crate::operation::create_component::builders::CreateComponentInputBuilder {
 /// <li>
 /// <p>A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code> property in the request body.</p></li>
 /// </ul>
+/// <p>Image Builder determines the component type from the document. If the document contains a single phase named <code>test</code>, the component type is <code>TEST</code>. Otherwise, the component type is <code>BUILD</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +115,17 @@ impl CreateComponentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -262,34 +263,34 @@ impl CreateComponentFluentBuilder {
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data()
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota for component size, which is 64 KB by default.</p>
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uri(input.into());
         self
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota for component size, which is 64 KB by default.</p>
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uri(input);
         self
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
+    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota for component size, which is 64 KB by default.</p>
     /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uri()
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -312,31 +313,31 @@ impl CreateComponentFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

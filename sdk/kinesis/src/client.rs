@@ -288,4 +288,6 @@ mod update_shard_count;
 
 mod update_stream_mode;
 
+mod update_stream_record_distribution_strategy;
+
 mod update_stream_warm_throughput;

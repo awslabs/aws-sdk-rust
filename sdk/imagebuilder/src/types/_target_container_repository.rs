@@ -6,9 +6,7 @@
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
     pub service: crate::types::ContainerRepositoryService,
-    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location. For example, <code><repository location url>
-    /// /repository_name
-    /// </repository></code>.</p>
+    /// <p>The name of the container repository where the output container image is stored. Provide the repository name only (a namespace path such as <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
     pub repository_name: ::std::string::String,
 }
 impl TargetContainerRepository {
@@ -16,9 +14,7 @@ impl TargetContainerRepository {
     pub fn service(&self) -> &crate::types::ContainerRepositoryService {
         &self.service
     }
-    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location. For example, <code><repository location url>
-    /// /repository_name
-    /// </repository></code>.</p>
+    /// <p>The name of the container repository where the output container image is stored. Provide the repository name only (a namespace path such as <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
     pub fn repository_name(&self) -> &str {
         use std::ops::Deref;
         self.repository_name.deref()
@@ -54,24 +50,18 @@ impl TargetContainerRepositoryBuilder {
     pub fn get_service(&self) -> &::std::option::Option<crate::types::ContainerRepositoryService> {
         &self.service
     }
-    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location. For example, <code><repository location url>
-    /// /repository_name
-    /// </repository></code>.</p>
+    /// <p>The name of the container repository where the output container image is stored. Provide the repository name only (a namespace path such as <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
     /// This field is required.
     pub fn repository_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location. For example, <code><repository location url>
-    /// /repository_name
-    /// </repository></code>.</p>
+    /// <p>The name of the container repository where the output container image is stored. Provide the repository name only (a namespace path such as <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
     pub fn set_repository_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_name = input;
         self
     }
-    /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location. For example, <code><repository location url>
-    /// /repository_name
-    /// </repository></code>.</p>
+    /// <p>The name of the container repository where the output container image is stored. Provide the repository name only (a namespace path such as <code>team-a/my-repo</code> is allowed, but not the registry hostname).</p>
     pub fn get_repository_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_name
     }

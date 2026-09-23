@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowBuildVersionsOutput {
-    /// <p>A list that contains metadata for the workflow builds that have run for the workflow resource specified in the request.</p>
+    /// <p>A list that contains metadata for the build versions of the workflow resource specified in the request.</p>
     pub workflow_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkflowBuildVersionsOutput {
-    /// <p>A list that contains metadata for the workflow builds that have run for the workflow resource specified in the request.</p>
+    /// <p>A list that contains metadata for the build versions of the workflow resource specified in the request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_summary_list.is_none()`.
     pub fn workflow_summary_list(&self) -> &[crate::types::WorkflowSummary] {
@@ -46,19 +46,19 @@ impl ListWorkflowBuildVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflow_summary_list`](Self::set_workflow_summary_list).
     ///
-    /// <p>A list that contains metadata for the workflow builds that have run for the workflow resource specified in the request.</p>
+    /// <p>A list that contains metadata for the build versions of the workflow resource specified in the request.</p>
     pub fn workflow_summary_list(mut self, input: crate::types::WorkflowSummary) -> Self {
         let mut v = self.workflow_summary_list.unwrap_or_default();
         v.push(input);
         self.workflow_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list that contains metadata for the workflow builds that have run for the workflow resource specified in the request.</p>
+    /// <p>A list that contains metadata for the build versions of the workflow resource specified in the request.</p>
     pub fn set_workflow_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>>) -> Self {
         self.workflow_summary_list = input;
         self
     }
-    /// <p>A list that contains metadata for the workflow builds that have run for the workflow resource specified in the request.</p>
+    /// <p>A list that contains metadata for the build versions of the workflow resource specified in the request.</p>
     pub fn get_workflow_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowSummary>> {
         &self.workflow_summary_list
     }

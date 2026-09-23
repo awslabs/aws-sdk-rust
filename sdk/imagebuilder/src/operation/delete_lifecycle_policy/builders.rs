@@ -22,7 +22,7 @@ impl crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyI
 }
 /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
 ///
-/// <p>Deletes the specified lifecycle policy resource.</p>
+/// <p>Deletes the specified lifecycle policy resource. Deleting the policy removes its schedule, so no further lifecycle runs occur for that policy. If a lifecycle execution is in progress for the policy, Image Builder cancels it. Deletion doesn't revert actions that the policy already applied to your resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

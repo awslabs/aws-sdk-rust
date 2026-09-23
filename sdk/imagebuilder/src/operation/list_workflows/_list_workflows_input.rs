@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowsInput {
-    /// <p>Used to get a list of workflow build version filtered by the identity of the creator.</p>
+    /// <p>Filters results based on the workflow owner. By default, this request returns the workflows that your account owns (<code>Self</code>). Specify <code>Amazon</code> to list the workflows that Image Builder manages. Image Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values for workflows, and <code>AWSMarketplace</code> returns no results.</p>
     pub owner: ::std::option::Option<crate::types::Ownership>,
-    /// <p>Used to streamline search results.</p>
+    /// <p>Filters to narrow the list of workflows. You can filter on <code>name</code>, <code>version</code>, <code>description</code>, and <code>type</code>.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Specify all or part of the workflow name to streamline results.</p>
+    /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,17 +15,17 @@ pub struct ListWorkflowsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowsInput {
-    /// <p>Used to get a list of workflow build version filtered by the identity of the creator.</p>
+    /// <p>Filters results based on the workflow owner. By default, this request returns the workflows that your account owns (<code>Self</code>). Specify <code>Amazon</code> to list the workflows that Image Builder manages. Image Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values for workflows, and <code>AWSMarketplace</code> returns no results.</p>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Used to streamline search results.</p>
+    /// <p>Filters to narrow the list of workflows. You can filter on <code>name</code>, <code>version</code>, <code>description</code>, and <code>type</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Specify all or part of the workflow name to streamline results.</p>
+    /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(&self) -> ::std::option::Option<bool> {
         self.by_name
     }
@@ -56,17 +56,17 @@ pub struct ListWorkflowsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowsInputBuilder {
-    /// <p>Used to get a list of workflow build version filtered by the identity of the creator.</p>
+    /// <p>Filters results based on the workflow owner. By default, this request returns the workflows that your account owns (<code>Self</code>). Specify <code>Amazon</code> to list the workflows that Image Builder manages. Image Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values for workflows, and <code>AWSMarketplace</code> returns no results.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used to get a list of workflow build version filtered by the identity of the creator.</p>
+    /// <p>Filters results based on the workflow owner. By default, this request returns the workflows that your account owns (<code>Self</code>). Specify <code>Amazon</code> to list the workflows that Image Builder manages. Image Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values for workflows, and <code>AWSMarketplace</code> returns no results.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Used to get a list of workflow build version filtered by the identity of the creator.</p>
+    /// <p>Filters results based on the workflow owner. By default, this request returns the workflows that your account owns (<code>Self</code>). Specify <code>Amazon</code> to list the workflows that Image Builder manages. Image Builder rejects the <code>Shared</code> and <code>ThirdParty</code> owner values for workflows, and <code>AWSMarketplace</code> returns no results.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         &self.owner
     }
@@ -74,33 +74,33 @@ impl ListWorkflowsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Used to streamline search results.</p>
+    /// <p>Filters to narrow the list of workflows. You can filter on <code>name</code>, <code>version</code>, <code>description</code>, and <code>type</code>.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Used to streamline search results.</p>
+    /// <p>Filters to narrow the list of workflows. You can filter on <code>name</code>, <code>version</code>, <code>description</code>, and <code>type</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Used to streamline search results.</p>
+    /// <p>Filters to narrow the list of workflows. You can filter on <code>name</code>, <code>version</code>, <code>description</code>, and <code>type</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Specify all or part of the workflow name to streamline results.</p>
+    /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.by_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify all or part of the workflow name to streamline results.</p>
+    /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.by_name = input;
         self
     }
-    /// <p>Specify all or part of the workflow name to streamline results.</p>
+    /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         &self.by_name
     }

@@ -44,6 +44,8 @@ pub struct BotLocaleImportSpecification {
     pub unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
     /// <p>Audio filler settings to apply when importing the bot locale configuration. Audio filler requires <code>unifiedSpeechSettings</code> (speech-to-speech) to be enabled when <code>enabled</code> is <code>true</code>.</p>
     pub audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
+    /// <p>The speaker diarization settings to apply when importing the bot locale configuration.</p>
+    pub speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -107,6 +109,10 @@ impl BotLocaleImportSpecification {
     pub fn audio_filler_settings(&self) -> ::std::option::Option<&crate::types::AudioFillerSettings> {
         self.audio_filler_settings.as_ref()
     }
+    /// <p>The speaker diarization settings to apply when importing the bot locale configuration.</p>
+    pub fn speaker_diarization_settings(&self) -> ::std::option::Option<&crate::types::SpeakerDiarizationSettings> {
+        self.speaker_diarization_settings.as_ref()
+    }
 }
 impl BotLocaleImportSpecification {
     /// Creates a new builder-style object to manufacture [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
@@ -128,6 +134,7 @@ pub struct BotLocaleImportSpecificationBuilder {
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
     pub(crate) unified_speech_settings: ::std::option::Option<crate::types::UnifiedSpeechSettings>,
     pub(crate) audio_filler_settings: ::std::option::Option<crate::types::AudioFillerSettings>,
+    pub(crate) speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl BotLocaleImportSpecificationBuilder {
     /// <p>The identifier of the bot to import the locale to.</p>
@@ -325,6 +332,20 @@ impl BotLocaleImportSpecificationBuilder {
     pub fn get_audio_filler_settings(&self) -> &::std::option::Option<crate::types::AudioFillerSettings> {
         &self.audio_filler_settings
     }
+    /// <p>The speaker diarization settings to apply when importing the bot locale configuration.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.speaker_diarization_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The speaker diarization settings to apply when importing the bot locale configuration.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.speaker_diarization_settings = input;
+        self
+    }
+    /// <p>The speaker diarization settings to apply when importing the bot locale configuration.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        &self.speaker_diarization_settings
+    }
     /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
     /// This method will fail if any of the following fields are not set:
     /// - [`bot_id`](crate::types::builders::BotLocaleImportSpecificationBuilder::bot_id)
@@ -356,6 +377,7 @@ impl BotLocaleImportSpecificationBuilder {
             speech_detection_sensitivity: self.speech_detection_sensitivity,
             unified_speech_settings: self.unified_speech_settings,
             audio_filler_settings: self.audio_filler_settings,
+            speaker_diarization_settings: self.speaker_diarization_settings,
         })
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::delete_distribution_configuration::builders::DeleteDistri
 }
 /// Fluent builder constructing a request to `DeleteDistributionConfiguration`.
 ///
-/// <p>Deletes a distribution configuration.</p>
+/// <p>Deletes a distribution configuration. You can't delete a configuration that an image pipeline still references. The request fails with <code>ResourceDependencyException</code>. Update or delete the referencing pipelines first.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDistributionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

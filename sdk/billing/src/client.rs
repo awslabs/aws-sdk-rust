@@ -185,6 +185,8 @@ mod get_enterprise_support_contract_details;
 
 mod get_resource_policy;
 
+mod list_billing_view_segments;
+
 mod list_billing_views;
 
 mod list_enterprise_support_linked_account_charges;

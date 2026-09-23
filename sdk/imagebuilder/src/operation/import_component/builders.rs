@@ -22,7 +22,7 @@ impl crate::operation::import_component::builders::ImportComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportComponent`.
 ///
-/// <p>Imports a component and transforms its data into a component document.</p>
+/// <p>Imports a component and transforms its data into a component document. For the <code>SHELL</code> format, Image Builder wraps your script in a component document with a single step that runs the script.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ImportComponentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the component.</p>
+    /// <p>The name of the component. Image Builder generates the component ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a component with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the component already exists.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -135,7 +135,8 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes, you can assign any positive integer value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
@@ -154,7 +155,8 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes, you can assign any positive integer value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn set_semantic_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
@@ -173,7 +175,8 @@ impl ImportComponentFluentBuilder {
     /// </patch>
     /// </minor>
     /// </major></p>
-    /// <p><b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// <p><b>Assignment:</b> For the first three nodes, you can assign any positive integer value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn get_semantic_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_semantic_version()
@@ -248,17 +251,17 @@ impl ImportComponentFluentBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         self.inner.get_platform()
     }
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. For the <code>SHELL</code> format, this is the plain script content. You must specify exactly one of the <code>data</code> or <code>uri</code> properties. For scripts that exceed the inline length constraint, use the <code>uri</code> property.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. For the <code>SHELL</code> format, this is the plain script content. You must specify exactly one of the <code>data</code> or <code>uri</code> properties. For scripts that exceed the inline length constraint, use the <code>uri</code> property.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
+    /// <p>The data of the component. For the <code>SHELL</code> format, this is the plain script content. You must specify exactly one of the <code>data</code> or <code>uri</code> properties. For scripts that exceed the inline length constraint, use the <code>uri</code> property.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data()
     }
@@ -276,17 +279,17 @@ impl ImportComponentFluentBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uri()
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the KMS key that is used to encrypt this component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the component data with a KMS key that Image Builder owns.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -309,17 +312,17 @@ impl ImportComponentFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

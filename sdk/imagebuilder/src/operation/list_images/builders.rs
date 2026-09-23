@@ -22,7 +22,7 @@ impl crate::operation::list_images::builders::ListImagesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListImages`.
 ///
-/// <p>Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results.</p>
+/// <p>Returns the list of images that you have access to.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -183,17 +183,17 @@ impl ListImagesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.inner = self.inner.by_name(input);
         self
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_by_name(input);
         self
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         self.inner.get_by_name()
     }
@@ -225,17 +225,17 @@ impl ListImagesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
         self.inner = self.inner.include_deprecated(input);
         self
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_deprecated(input);
         self
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_deprecated()
     }

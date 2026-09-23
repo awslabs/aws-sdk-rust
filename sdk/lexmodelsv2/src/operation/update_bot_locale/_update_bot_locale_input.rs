@@ -25,6 +25,8 @@ pub struct UpdateBotLocaleInput {
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     /// <p>The new sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
     pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl UpdateBotLocaleInput {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -71,6 +73,10 @@ impl UpdateBotLocaleInput {
     pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
         self.speech_detection_sensitivity.as_ref()
     }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn speaker_diarization_settings(&self) -> ::std::option::Option<&crate::types::SpeakerDiarizationSettings> {
+        self.speaker_diarization_settings.as_ref()
+    }
 }
 impl UpdateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
@@ -94,6 +100,7 @@ pub struct UpdateBotLocaleInputBuilder {
     pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    pub(crate) speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl UpdateBotLocaleInputBuilder {
     /// <p>The unique identifier of the bot that contains the locale.</p>
@@ -254,6 +261,20 @@ impl UpdateBotLocaleInputBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         &self.speech_detection_sensitivity
     }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.speaker_diarization_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.speaker_diarization_settings = input;
+        self
+    }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        &self.speaker_diarization_settings
+    }
     /// Consumes the builder and constructs a [`UpdateBotLocaleInput`](crate::operation::update_bot_locale::UpdateBotLocaleInput).
     pub fn build(
         self,
@@ -270,6 +291,7 @@ impl UpdateBotLocaleInputBuilder {
             speech_recognition_settings: self.speech_recognition_settings,
             generative_ai_settings: self.generative_ai_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
+            speaker_diarization_settings: self.speaker_diarization_settings,
         })
     }
 }

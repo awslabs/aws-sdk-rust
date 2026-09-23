@@ -10,11 +10,17 @@ pub fn ser_re_encryption_attributes(
             crate::protocol_serde::shape_symmetric_encryption_attributes::ser_symmetric_encryption_attributes(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ReEncryptionAttributes::Asymmetric(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_3.key("Asymmetric").start_object();
+            crate::protocol_serde::shape_asymmetric_encryption_attributes::ser_asymmetric_encryption_attributes(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ReEncryptionAttributes::Dukpt(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_3.key("Dukpt").start_object();
-            crate::protocol_serde::shape_dukpt_encryption_attributes::ser_dukpt_encryption_attributes(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_3 = object_3.key("Dukpt").start_object();
+            crate::protocol_serde::shape_dukpt_encryption_attributes::ser_dukpt_encryption_attributes(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::ReEncryptionAttributes::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

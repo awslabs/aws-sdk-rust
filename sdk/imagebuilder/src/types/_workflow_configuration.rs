@@ -10,7 +10,7 @@ pub struct WorkflowConfiguration {
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowParameter>>,
     /// <p>Test workflows are defined within named runtime groups called parallel groups. The parallel group is the named group that contains this test workflow. Test workflows within a parallel group can run at the same time. Image Builder starts up to five test workflows in the group at the same time, and starts additional workflows as others complete, until all workflows in the group have completed. This field only applies for test workflows.</p>
     pub parallel_group: ::std::option::Option<::std::string::String>,
-    /// <p>The action to take if the workflow fails.</p>
+    /// <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a failed workflow is logged and image creation proceeds to the next workflow. If you don't set a value, the image build fails when the workflow fails. You can only set this property for test workflows.</p>
     pub on_failure: ::std::option::Option<crate::types::OnWorkflowFailure>,
 }
 impl WorkflowConfiguration {
@@ -29,7 +29,7 @@ impl WorkflowConfiguration {
     pub fn parallel_group(&self) -> ::std::option::Option<&str> {
         self.parallel_group.as_deref()
     }
-    /// <p>The action to take if the workflow fails.</p>
+    /// <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a failed workflow is logged and image creation proceeds to the next workflow. If you don't set a value, the image build fails when the workflow fails. You can only set this property for test workflows.</p>
     pub fn on_failure(&self) -> ::std::option::Option<&crate::types::OnWorkflowFailure> {
         self.on_failure.as_ref()
     }
@@ -100,17 +100,17 @@ impl WorkflowConfigurationBuilder {
     pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.parallel_group
     }
-    /// <p>The action to take if the workflow fails.</p>
+    /// <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a failed workflow is logged and image creation proceeds to the next workflow. If you don't set a value, the image build fails when the workflow fails. You can only set this property for test workflows.</p>
     pub fn on_failure(mut self, input: crate::types::OnWorkflowFailure) -> Self {
         self.on_failure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to take if the workflow fails.</p>
+    /// <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a failed workflow is logged and image creation proceeds to the next workflow. If you don't set a value, the image build fails when the workflow fails. You can only set this property for test workflows.</p>
     pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::OnWorkflowFailure>) -> Self {
         self.on_failure = input;
         self
     }
-    /// <p>The action to take if the workflow fails.</p>
+    /// <p>The action to take if the workflow fails. With <code>CONTINUE</code>, a failed workflow is logged and image creation proceeds to the next workflow. If you don't set a value, the image build fails when the workflow fails. You can only set this property for test workflows.</p>
     pub fn get_on_failure(&self) -> &::std::option::Option<crate::types::OnWorkflowFailure> {
         &self.on_failure
     }

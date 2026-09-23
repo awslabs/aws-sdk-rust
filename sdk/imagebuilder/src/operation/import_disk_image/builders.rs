@@ -27,6 +27,7 @@ impl crate::operation::import_disk_image::builders::ImportDiskImageInputBuilder 
 /// <li>
 /// <p>Windows 11 Enterprise</p></li>
 /// </ul>
+/// <p>The response returns as soon as Image Builder creates the new image resource in the <code>PENDING</code> state. The conversion from ISO file to AMI then runs asynchronously on an EC2 instance that Image Builder launches with the specified infrastructure configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportDiskImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -112,17 +113,17 @@ impl ImportDiskImageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the image resource that's created from the import.</p>
+    /// <p>The name of the image resource that's created from the import. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the image resource that's created from the import.</p>
+    /// <p>The name of the image resource that's created from the import. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the image resource that's created from the import.</p>
+    /// <p>The name of the image resource that's created from the import. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -168,31 +169,31 @@ impl ImportDiskImageFluentBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_platform()
     }
-    /// <p>The operating system version for the imported image. Allowed values include the following: <code>Microsoft Windows 11</code>.</p>
+    /// <p>The operating system version for the imported image. The only supported value is <code>Microsoft Windows 11</code>.</p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.os_version(input.into());
         self
     }
-    /// <p>The operating system version for the imported image. Allowed values include the following: <code>Microsoft Windows 11</code>.</p>
+    /// <p>The operating system version for the imported image. The only supported value is <code>Microsoft Windows 11</code>.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_os_version(input);
         self
     }
-    /// <p>The operating system version for the imported image. Allowed values include the following: <code>Microsoft Windows 11</code>.</p>
+    /// <p>The operating system version for the imported image. The only supported value is <code>Microsoft Windows 11</code>.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_os_version()
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role(input);
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions to import an image from a Microsoft ISO file. If you don't provide a role, Image Builder uses the Image Builder service-linked role in your account, and creates it if it doesn't exist.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role()
     }
@@ -210,31 +211,31 @@ impl ImportDiskImageFluentBuilder {
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_infrastructure_configuration_arn()
     }
-    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
+    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3, in <code>s3://bucket/key</code> format. The key must end with the <code>.iso</code>, <code>.ISO</code>, or <code>.Iso</code> extension, and the bucket must be owned by the account that makes the request.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uri(input.into());
         self
     }
-    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
+    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3, in <code>s3://bucket/key</code> format. The key must end with the <code>.iso</code>, <code>.ISO</code>, or <code>.Iso</code> extension, and the bucket must be owned by the account that makes the request.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uri(input);
         self
     }
-    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
+    /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3, in <code>s3://bucket/key</code> format. The key must end with the <code>.iso</code>, <code>.ISO</code>, or <code>.Iso</code> extension, and the bucket must be owned by the account that makes the request.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uri()
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. If you specify a log group name outside of the <code>/aws/imagebuilder/</code> namespace, you must also provide an <code>executionRole</code> that has permission to write to that log group.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
@@ -285,17 +286,17 @@ impl ImportDiskImageFluentBuilder {
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::WindowsConfiguration> {
         self.inner.get_windows_configuration()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

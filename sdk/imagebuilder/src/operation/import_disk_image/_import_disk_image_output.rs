@@ -5,7 +5,7 @@
 pub struct ImportDiskImageOutput {
     /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk file.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. The AMI doesn't exist yet when the response returns. The import runs asynchronously, and the output AMI appears in the image's output resources when the import completes.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ImportDiskImageOutput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk file.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. The AMI doesn't exist yet when the response returns. The import runs asynchronously, and the output AMI appears in the image's output resources when the import completes.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl ImportDiskImageOutputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk file.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. The AMI doesn't exist yet when the response returns. The import runs asynchronously, and the output AMI appears in the image's output resources when the import completes.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk file.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. The AMI doesn't exist yet when the response returns. The import runs asynchronously, and the output AMI appears in the image's output resources when the import completes.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk file.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. The AMI doesn't exist yet when the response returns. The import runs asynchronously, and the output AMI appears in the image's output resources when the import completes.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

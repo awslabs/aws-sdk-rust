@@ -3,13 +3,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsInput {
-    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    /// <p>A filter name and value pair that determines the type of aggregation that Image Builder returns. Use one of the following filter names:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code></p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code></p></li>
+    /// </ul>
+    /// <p>If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
     pub filter: ::std::option::Option<crate::types::Filter>,
     /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageScanFindingAggregationsInput {
-    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    /// <p>A filter name and value pair that determines the type of aggregation that Image Builder returns. Use one of the following filter names:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code></p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code></p></li>
+    /// </ul>
+    /// <p>If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::Filter> {
         self.filter.as_ref()
     }
@@ -33,17 +51,44 @@ pub struct ListImageScanFindingAggregationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageScanFindingAggregationsInputBuilder {
-    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    /// <p>A filter name and value pair that determines the type of aggregation that Image Builder returns. Use one of the following filter names:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code></p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code></p></li>
+    /// </ul>
+    /// <p>If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    /// <p>A filter name and value pair that determines the type of aggregation that Image Builder returns. Use one of the following filter names:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code></p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code></p></li>
+    /// </ul>
+    /// <p>If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Filter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
+    /// <p>A filter name and value pair that determines the type of aggregation that Image Builder returns. Use one of the following filter names:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code></p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code></p></li>
+    /// </ul>
+    /// <p>If you don't specify a filter, Image Builder returns an aggregation for your account.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         &self.filter
     }

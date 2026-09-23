@@ -5,7 +5,7 @@
 pub struct DistributeImageOutput {
     /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation creates to track the distribution. Use this ARN with <code>GetImage</code> to monitor distribution progress.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DistributeImageOutput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation creates to track the distribution. Use this ARN with <code>GetImage</code> to monitor distribution progress.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -54,17 +54,17 @@ impl DistributeImageOutputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation creates to track the distribution. Use this ARN with <code>GetImage</code> to monitor distribution progress.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation creates to track the distribution. Use this ARN with <code>GetImage</code> to monitor distribution progress.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image to be distributed.</p>
+    /// <p>The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation creates to track the distribution. Use this ARN with <code>GetImage</code> to monitor distribution progress.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

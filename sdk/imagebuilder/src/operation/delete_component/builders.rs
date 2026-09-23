@@ -22,7 +22,7 @@ impl crate::operation::delete_component::builders::DeleteComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteComponent`.
 ///
-/// <p>Deletes a component build version.</p>
+/// <p>Deletes a component build version. The request fails with <code>ResourceDependencyException</code> if an image recipe or container recipe references this component version. It also fails if the component build version is shared with other accounts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

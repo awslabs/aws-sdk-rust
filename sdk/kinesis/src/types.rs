@@ -11,6 +11,8 @@ pub use crate::types::_channel_description::ChannelDescription;
 
 pub use crate::types::_stream_mode_details::StreamModeDetails;
 
+pub use crate::types::_record_distribution_strategy::RecordDistributionStrategy;
+
 pub use crate::types::_minimum_throughput_billing_commitment_output::MinimumThroughputBillingCommitmentOutput;
 
 pub use crate::types::_stream_description::StreamDescription;
@@ -190,6 +192,8 @@ mod _put_records_result_entry;
 mod _record;
 
 mod _record_configuration;
+
+mod _record_distribution_strategy;
 
 mod _record_format_type;
 

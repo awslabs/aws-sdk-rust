@@ -12,8 +12,11 @@
 /// ```text
 /// # let format = unimplemented!();
 /// match format {
+///     Format::Aac => { /* ... */ },
+///     Format::Ac3 => { /* ... */ },
 ///     Format::Asf => { /* ... */ },
 ///     Format::Avi => { /* ... */ },
+///     Format::Eac3 => { /* ... */ },
 ///     Format::Flac => { /* ... */ },
 ///     Format::Matroska => { /* ... */ },
 ///     Format::Mp3 => { /* ... */ },
@@ -23,6 +26,8 @@
 ///     Format::Mxf => { /* ... */ },
 ///     Format::Ogg => { /* ... */ },
 ///     Format::Quicktime => { /* ... */ },
+///     Format::ThreeG2 => { /* ... */ },
+///     Format::ThreeGp => { /* ... */ },
 ///     Format::Wave => { /* ... */ },
 ///     Format::Webm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -54,9 +59,15 @@
 )]
 pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
+    Aac,
+    #[allow(missing_docs)] // documentation missing in model
+    Ac3,
+    #[allow(missing_docs)] // documentation missing in model
     Asf,
     #[allow(missing_docs)] // documentation missing in model
     Avi,
+    #[allow(missing_docs)] // documentation missing in model
+    Eac3,
     #[allow(missing_docs)] // documentation missing in model
     Flac,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,6 +87,10 @@ pub enum Format {
     #[allow(missing_docs)] // documentation missing in model
     Quicktime,
     #[allow(missing_docs)] // documentation missing in model
+    ThreeG2,
+    #[allow(missing_docs)] // documentation missing in model
+    ThreeGp,
+    #[allow(missing_docs)] // documentation missing in model
     Wave,
     #[allow(missing_docs)] // documentation missing in model
     Webm,
@@ -86,8 +101,11 @@ pub enum Format {
 impl ::std::convert::From<&str> for Format {
     fn from(s: &str) -> Self {
         match s {
+            "aac" => Format::Aac,
+            "ac3" => Format::Ac3,
             "asf" => Format::Asf,
             "avi" => Format::Avi,
+            "eac3" => Format::Eac3,
             "flac" => Format::Flac,
             "matroska" => Format::Matroska,
             "mp3" => Format::Mp3,
@@ -97,6 +115,8 @@ impl ::std::convert::From<&str> for Format {
             "mxf" => Format::Mxf,
             "ogg" => Format::Ogg,
             "quicktime" => Format::Quicktime,
+            "three_g2" => Format::ThreeG2,
+            "three_gp" => Format::ThreeGp,
             "wave" => Format::Wave,
             "webm" => Format::Webm,
             other => Format::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -114,8 +134,11 @@ impl Format {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Format::Aac => "aac",
+            Format::Ac3 => "ac3",
             Format::Asf => "asf",
             Format::Avi => "avi",
+            Format::Eac3 => "eac3",
             Format::Flac => "flac",
             Format::Matroska => "matroska",
             Format::Mp3 => "mp3",
@@ -125,6 +148,8 @@ impl Format {
             Format::Mxf => "mxf",
             Format::Ogg => "ogg",
             Format::Quicktime => "quicktime",
+            Format::ThreeG2 => "three_g2",
+            Format::ThreeGp => "three_gp",
             Format::Wave => "wave",
             Format::Webm => "webm",
             Format::Unknown(value) => value.as_str(),
@@ -133,8 +158,11 @@ impl Format {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "aac",
+            "ac3",
             "asf",
             "avi",
+            "eac3",
             "flac",
             "matroska",
             "mp3",
@@ -144,6 +172,8 @@ impl Format {
             "mxf",
             "ogg",
             "quicktime",
+            "three_g2",
+            "three_gp",
             "wave",
             "webm",
         ]
@@ -169,8 +199,11 @@ impl Format {
 impl ::std::fmt::Display for Format {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Format::Aac => write!(f, "aac"),
+            Format::Ac3 => write!(f, "ac3"),
             Format::Asf => write!(f, "asf"),
             Format::Avi => write!(f, "avi"),
+            Format::Eac3 => write!(f, "eac3"),
             Format::Flac => write!(f, "flac"),
             Format::Matroska => write!(f, "matroska"),
             Format::Mp3 => write!(f, "mp3"),
@@ -180,6 +213,8 @@ impl ::std::fmt::Display for Format {
             Format::Mxf => write!(f, "mxf"),
             Format::Ogg => write!(f, "ogg"),
             Format::Quicktime => write!(f, "quicktime"),
+            Format::ThreeG2 => write!(f, "three_g2"),
+            Format::ThreeGp => write!(f, "three_gp"),
             Format::Wave => write!(f, "wave"),
             Format::Webm => write!(f, "webm"),
             Format::Unknown(value) => write!(f, "{value}"),

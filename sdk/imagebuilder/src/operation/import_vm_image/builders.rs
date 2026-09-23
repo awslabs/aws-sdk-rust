@@ -22,8 +22,8 @@ impl crate::operation::import_vm_image::builders::ImportVmImageInputBuilder {
 }
 /// Fluent builder constructing a request to `ImportVmImage`.
 ///
-/// <p>When you export your virtual machine (VM) from its virtualization environment, that process creates a set of one or more disk container files that act as snapshots of your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a> action uses those files to import your VM and create an AMI. To import using the CLI command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a></p>
-/// <p>You can reference the task ID from the VM import to pull in the AMI that the import created as the base image for your Image Builder recipe.</p>
+/// <p>Creates an Image Builder image resource from an Amazon EC2 VM import task. The response returns as soon as Image Builder creates the image resource in the <code>PENDING</code> state. Image Builder then monitors the import task asynchronously. When the task completes, Image Builder records the AMI that it produced as the new image's output resource and marks the image <code>AVAILABLE</code>. You can then use the imported image as the base image for your recipes.</p>
+/// <p>To create the VM import task, use the Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a> operation, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a> CLI command.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportVmImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +109,17 @@ impl ImportVmImageFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the base image that is created by the import process.</p>
+    /// <p>The name of the base image that is created by the import process. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the base image that is created by the import process.</p>
+    /// <p>The name of the base image that is created by the import process. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the base image that is created by the import process.</p>
+    /// <p>The name of the base image that is created by the import process. Image Builder generates the image ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If an image with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the import creates a new build version for it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -224,31 +224,31 @@ impl ImportVmImageFluentBuilder {
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_os_version()
     }
-    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. The import task doesn't need to be complete when you call ImportVmImage - Image Builder monitors the task and finishes creating the image when the task completes.</p>
     pub fn vm_import_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vm_import_task_id(input.into());
         self
     }
-    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. The import task doesn't need to be complete when you call ImportVmImage - Image Builder monitors the task and finishes creating the image when the task completes.</p>
     pub fn set_vm_import_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vm_import_task_id(input);
         self
     }
-    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.</p>
+    /// <p>The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. The import task doesn't need to be complete when you call ImportVmImage - Image Builder monitors the task and finishes creating the image when the task completes.</p>
     pub fn get_vm_import_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vm_import_task_id()
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. For ImportVmImage, the log group name must be within the <code>/aws/imagebuilder/</code> namespace.</p>
     pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. For ImportVmImage, the log group name must be within the <code>/aws/imagebuilder/</code> namespace.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
-    /// <p>The logging configuration for the image build process.</p>
+    /// <p>The CloudWatch Logs log group where Image Builder sends the import logs. For ImportVmImage, the log group name must be within the <code>/aws/imagebuilder/</code> namespace.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
         self.inner.get_logging_configuration()
     }
@@ -271,17 +271,17 @@ impl ImportVmImageFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkflowBuildVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub workflow_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListWorkflowBuildVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowBuildVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn workflow_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_version_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListWorkflowBuildVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListWorkflowBuildVersionsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn workflow_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn set_workflow_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn get_workflow_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_version_arn
     }

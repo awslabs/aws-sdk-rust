@@ -76,6 +76,15 @@ where
                                 crate::protocol_serde::shape_audio_filler_settings::de_audio_filler_settings(tokens, _value, depth + 1)?,
                             );
                         }
+                        "speakerDiarizationSettings" => {
+                            builder = builder.set_speaker_diarization_settings(
+                                crate::protocol_serde::shape_speaker_diarization_settings::de_speaker_diarization_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -142,6 +151,12 @@ pub fn ser_bot_locale_import_specification(
         let mut object_10 = object.key("audioFillerSettings").start_object();
         crate::protocol_serde::shape_audio_filler_settings::ser_audio_filler_settings(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.speaker_diarization_settings {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("speakerDiarizationSettings").start_object();
+        crate::protocol_serde::shape_speaker_diarization_settings::ser_speaker_diarization_settings(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

@@ -9,15 +9,15 @@ pub struct GetWorkflowExecutionOutput {
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of workflow that Image Builder ran for the specified runtime instance of the workflow.</p>
     pub r#type: ::std::option::Option<crate::types::WorkflowType>,
-    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    /// <p>The current runtime status for the specified runtime instance of the workflow. <code>COMPLETED</code>, <code>FAILED</code>, <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and <code>SKIPPED</code> are terminal states.</p>
     pub status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     /// <p>The output message from the specified runtime instance of the workflow, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub total_step_count: i32,
     /// <p>A runtime count for the number of steps that ran successfully in the specified runtime instance of the workflow.</p>
     pub total_steps_succeeded: i32,
@@ -29,7 +29,7 @@ pub struct GetWorkflowExecutionOutput {
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime instance of the workflow finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
-    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    /// <p>The name of the parallel group that this runtime instance of the workflow ran in, if configured. Parallel groups apply only to test workflows.</p>
     pub parallel_group: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -46,7 +46,7 @@ impl GetWorkflowExecutionOutput {
     pub fn workflow_execution_id(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -54,7 +54,7 @@ impl GetWorkflowExecutionOutput {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::WorkflowType> {
         self.r#type.as_ref()
     }
-    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    /// <p>The current runtime status for the specified runtime instance of the workflow. <code>COMPLETED</code>, <code>FAILED</code>, <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and <code>SKIPPED</code> are terminal states.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowExecutionStatus> {
         self.status.as_ref()
     }
@@ -62,7 +62,7 @@ impl GetWorkflowExecutionOutput {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn total_step_count(&self) -> i32 {
         self.total_step_count
     }
@@ -86,7 +86,7 @@ impl GetWorkflowExecutionOutput {
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
-    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    /// <p>The name of the parallel group that this runtime instance of the workflow ran in, if configured. Parallel groups apply only to test workflows.</p>
     pub fn parallel_group(&self) -> ::std::option::Option<&str> {
         self.parallel_group.as_deref()
     }
@@ -166,17 +166,17 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow created.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
@@ -194,17 +194,17 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         &self.r#type
     }
-    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    /// <p>The current runtime status for the specified runtime instance of the workflow. <code>COMPLETED</code>, <code>FAILED</code>, <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and <code>SKIPPED</code> are terminal states.</p>
     pub fn status(mut self, input: crate::types::WorkflowExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    /// <p>The current runtime status for the specified runtime instance of the workflow. <code>COMPLETED</code>, <code>FAILED</code>, <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and <code>SKIPPED</code> are terminal states.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current runtime status for the specified runtime instance of the workflow.</p>
+    /// <p>The current runtime status for the specified runtime instance of the workflow. <code>COMPLETED</code>, <code>FAILED</code>, <code>ROLLBACK_COMPLETED</code>, <code>CANCELLED</code>, and <code>SKIPPED</code> are terminal states.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowExecutionStatus> {
         &self.status
     }
@@ -222,17 +222,17 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn total_step_count(mut self, input: i32) -> Self {
         self.total_step_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn set_total_step_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_step_count = input;
         self
     }
-    /// <p>The total number of steps in the specified runtime instance of the workflow that ran. This number should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn get_total_step_count(&self) -> &::std::option::Option<i32> {
         &self.total_step_count
     }
@@ -306,17 +306,17 @@ impl GetWorkflowExecutionOutputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }
-    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    /// <p>The name of the parallel group that this runtime instance of the workflow ran in, if configured. Parallel groups apply only to test workflows.</p>
     pub fn parallel_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parallel_group = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    /// <p>The name of the parallel group that this runtime instance of the workflow ran in, if configured. Parallel groups apply only to test workflows.</p>
     pub fn set_parallel_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parallel_group = input;
         self
     }
-    /// <p>Test workflows are defined within named runtime groups. The parallel group is a named group that contains one or more test workflows.</p>
+    /// <p>The name of the parallel group that this runtime instance of the workflow ran in, if configured. Parallel groups apply only to test workflows.</p>
     pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.parallel_group
     }

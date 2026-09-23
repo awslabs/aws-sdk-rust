@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryImageInput {
-    /// <p>The source image Amazon Resource Name (ARN) to retry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that you want to retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code> state.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl RetryImageInput {
-    /// <p>The source image Amazon Resource Name (ARN) to retry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that you want to retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code> state.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct RetryImageInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl RetryImageInputBuilder {
-    /// <p>The source image Amazon Resource Name (ARN) to retry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that you want to retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code> state.</p>
     /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source image Amazon Resource Name (ARN) to retry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that you want to retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code> state.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The source image Amazon Resource Name (ARN) to retry.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that you want to retry. The image must be in the <code>FAILED</code> or <code>CANCELLED</code> state.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

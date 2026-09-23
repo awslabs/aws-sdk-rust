@@ -19,13 +19,13 @@ pub struct ListImagesInput {
     /// <p><code>version</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub include_deprecated: ::std::option::Option<bool>,
 }
 impl ListImagesInput {
@@ -51,7 +51,7 @@ impl ListImagesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(&self) -> ::std::option::Option<bool> {
         self.by_name
     }
@@ -63,7 +63,7 @@ impl ListImagesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn include_deprecated(&self) -> ::std::option::Option<bool> {
         self.include_deprecated
     }
@@ -157,17 +157,17 @@ impl ListImagesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.by_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.by_name = input;
         self
     }
-    /// <p>Requests a list of images with a specific recipe name.</p>
+    /// <p>Specifies whether to return one entry per image name, with all versions of each image aggregated. Defaults to <code>false</code>, which returns one entry per image version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         &self.by_name
     }
@@ -199,17 +199,17 @@ impl ListImagesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
         self.include_deprecated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn set_include_deprecated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deprecated = input;
         self
     }
-    /// <p>Includes deprecated images in the response list.</p>
+    /// <p>Specifies whether to include deprecated Amazon-managed images in the results. Deprecated images that you own are always returned. Defaults to <code>false</code>.</p>
     pub fn get_include_deprecated(&self) -> &::std::option::Option<bool> {
         &self.include_deprecated
     }

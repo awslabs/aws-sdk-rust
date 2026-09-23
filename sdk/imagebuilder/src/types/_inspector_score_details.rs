@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InspectorScoreDetails {
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The CVSS score that Amazon Inspector assigned to the finding after applying its adjustments. It includes the score source, CVSS version, scoring vector, and the adjustments applied.</p>
     pub adjusted_cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl InspectorScoreDetails {
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The CVSS score that Amazon Inspector assigned to the finding after applying its adjustments. It includes the score source, CVSS version, scoring vector, and the adjustments applied.</p>
     pub fn adjusted_cvss(&self) -> ::std::option::Option<&crate::types::CvssScoreDetails> {
         self.adjusted_cvss.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct InspectorScoreDetailsBuilder {
     pub(crate) adjusted_cvss: ::std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl InspectorScoreDetailsBuilder {
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The CVSS score that Amazon Inspector assigned to the finding after applying its adjustments. It includes the score source, CVSS version, scoring vector, and the adjustments applied.</p>
     pub fn adjusted_cvss(mut self, input: crate::types::CvssScoreDetails) -> Self {
         self.adjusted_cvss = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The CVSS score that Amazon Inspector assigned to the finding after applying its adjustments. It includes the score source, CVSS version, scoring vector, and the adjustments applied.</p>
     pub fn set_adjusted_cvss(mut self, input: ::std::option::Option<crate::types::CvssScoreDetails>) -> Self {
         self.adjusted_cvss = input;
         self
     }
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The CVSS score that Amazon Inspector assigned to the finding after applying its adjustments. It includes the score source, CVSS version, scoring vector, and the adjustments applied.</p>
     pub fn get_adjusted_cvss(&self) -> &::std::option::Option<crate::types::CvssScoreDetails> {
         &self.adjusted_cvss
     }

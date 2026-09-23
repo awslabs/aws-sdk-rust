@@ -16,7 +16,7 @@ pub struct DistributionConfigurationSummary {
     pub date_updated: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the distribution configuration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A list of Regions where the container image is distributed to.</p>
+    /// <p>A list of the Regions that the distribution configuration distributes images to.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DistributionConfigurationSummary {
@@ -44,7 +44,7 @@ impl DistributionConfigurationSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>A list of Regions where the container image is distributed to.</p>
+    /// <p>A list of the Regions that the distribution configuration distributes images to.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
@@ -165,19 +165,19 @@ impl DistributionConfigurationSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>A list of Regions where the container image is distributed to.</p>
+    /// <p>A list of the Regions that the distribution configuration distributes images to.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of Regions where the container image is distributed to.</p>
+    /// <p>A list of the Regions that the distribution configuration distributes images to.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>A list of Regions where the container image is distributed to.</p>
+    /// <p>A list of the Regions that the distribution configuration distributes images to.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }

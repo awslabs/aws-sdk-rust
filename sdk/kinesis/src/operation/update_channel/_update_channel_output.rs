@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChannelOutput {
-    /// <p>The configuration and current status of the updated channel.</p>
+    /// <p>The configuration and current status of the channel after the update, including its ARN, destination configuration, and lifecycle state. Immediately after the request, the state is <code>UPDATING</code>.</p>
     pub channel_description: ::std::option::Option<crate::types::ChannelDescription>,
     _request_id: Option<String>,
 }
 impl UpdateChannelOutput {
-    /// <p>The configuration and current status of the updated channel.</p>
+    /// <p>The configuration and current status of the channel after the update, including its ARN, destination configuration, and lifecycle state. Immediately after the request, the state is <code>UPDATING</code>.</p>
     pub fn channel_description(&self) -> ::std::option::Option<&crate::types::ChannelDescription> {
         self.channel_description.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateChannelOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateChannelOutputBuilder {
-    /// <p>The configuration and current status of the updated channel.</p>
+    /// <p>The configuration and current status of the channel after the update, including its ARN, destination configuration, and lifecycle state. Immediately after the request, the state is <code>UPDATING</code>.</p>
     /// This field is required.
     pub fn channel_description(mut self, input: crate::types::ChannelDescription) -> Self {
         self.channel_description = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration and current status of the updated channel.</p>
+    /// <p>The configuration and current status of the channel after the update, including its ARN, destination configuration, and lifecycle state. Immediately after the request, the state is <code>UPDATING</code>.</p>
     pub fn set_channel_description(mut self, input: ::std::option::Option<crate::types::ChannelDescription>) -> Self {
         self.channel_description = input;
         self
     }
-    /// <p>The configuration and current status of the updated channel.</p>
+    /// <p>The configuration and current status of the channel after the update, including its ARN, destination configuration, and lifecycle state. Immediately after the request, the state is <code>UPDATING</code>.</p>
     pub fn get_channel_description(&self) -> &::std::option::Option<crate::types::ChannelDescription> {
         &self.channel_description
     }

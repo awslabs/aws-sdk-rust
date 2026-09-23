@@ -340,9 +340,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateLifecyc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateLifecyclePolicyError {
-    /// <p>You have exceeded the permitted request rate for the specific operation.</p>
+    /// <p>You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder calls on your behalf. Retry with an increasing or variable delay between requests.</p>
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
+    /// <p>A generic client error. This error usually indicates that the request failed a validation check, such as when a downstream service rejects a configured value.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The dry run operation of the resource was successful, and no resources or mutations were actually performed due to the dry run flag in the request.</p>
     DryRunOperationException(crate::types::error::DryRunOperationException),
@@ -350,13 +350,13 @@ pub enum CreateLifecyclePolicyError {
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
-    /// <p>You have requested an action that that the service doesn't support.</p>
+    /// <p>The request is malformed or otherwise invalid. Verify the request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The resource that you are trying to create already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
     /// <p>The resource that you are trying to operate on is currently in use. Review the message details and retry later.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    /// <p>An internal server error occurred while Image Builder processed the request. Retrying the request may succeed.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>You have exceeded the number of permitted resources or operations for this service. For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2 Image Builder endpoints and quotas</a>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

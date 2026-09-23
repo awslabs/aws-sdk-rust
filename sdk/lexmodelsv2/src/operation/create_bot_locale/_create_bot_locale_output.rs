@@ -34,6 +34,8 @@ pub struct CreateBotLocaleOutput {
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     /// <p>The sensitivity level for voice activity detection (VAD) that was specified for the bot locale.</p>
     pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    /// <p>The speaker diarization settings configured for the created bot locale.</p>
+    pub speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotLocaleOutput {
@@ -96,6 +98,10 @@ impl CreateBotLocaleOutput {
     pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
         self.speech_detection_sensitivity.as_ref()
     }
+    /// <p>The speaker diarization settings configured for the created bot locale.</p>
+    pub fn speaker_diarization_settings(&self) -> ::std::option::Option<&crate::types::SpeakerDiarizationSettings> {
+        self.speaker_diarization_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateBotLocaleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -127,6 +133,7 @@ pub struct CreateBotLocaleOutputBuilder {
     pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    pub(crate) speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotLocaleOutputBuilder {
@@ -335,6 +342,20 @@ impl CreateBotLocaleOutputBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         &self.speech_detection_sensitivity
     }
+    /// <p>The speaker diarization settings configured for the created bot locale.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.speaker_diarization_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The speaker diarization settings configured for the created bot locale.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.speaker_diarization_settings = input;
+        self
+    }
+    /// <p>The speaker diarization settings configured for the created bot locale.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        &self.speaker_diarization_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -361,6 +382,7 @@ impl CreateBotLocaleOutputBuilder {
             creation_date_time: self.creation_date_time,
             generative_ai_settings: self.generative_ai_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
+            speaker_diarization_settings: self.speaker_diarization_settings,
             _request_id: self._request_id,
         }
     }

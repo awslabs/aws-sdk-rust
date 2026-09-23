@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputResources {
-    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including copies that distribution created in each target Amazon Web Services Region and account.</p>
     pub amis: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>,
-    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    /// <p>The container images that Image Builder created when it built this image, stored in the output Amazon ECR repository.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
 }
 impl OutputResources {
-    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including copies that distribution created in each target Amazon Web Services Region and account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.amis.is_none()`.
     pub fn amis(&self) -> &[crate::types::Ami] {
         self.amis.as_deref().unwrap_or_default()
     }
-    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    /// <p>The container images that Image Builder created when it built this image, stored in the output Amazon ECR repository.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.containers.is_none()`.
     pub fn containers(&self) -> &[crate::types::Container] {
@@ -42,19 +42,19 @@ impl OutputResourcesBuilder {
     ///
     /// To override the contents of this collection use [`set_amis`](Self::set_amis).
     ///
-    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including copies that distribution created in each target Amazon Web Services Region and account.</p>
     pub fn amis(mut self, input: crate::types::Ami) -> Self {
         let mut v = self.amis.unwrap_or_default();
         v.push(input);
         self.amis = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including copies that distribution created in each target Amazon Web Services Region and account.</p>
     pub fn set_amis(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Ami>>) -> Self {
         self.amis = input;
         self
     }
-    /// <p>The Amazon EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including copies that distribution created in each target Amazon Web Services Region and account.</p>
     pub fn get_amis(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ami>> {
         &self.amis
     }
@@ -62,19 +62,19 @@ impl OutputResourcesBuilder {
     ///
     /// To override the contents of this collection use [`set_containers`](Self::set_containers).
     ///
-    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    /// <p>The container images that Image Builder created when it built this image, stored in the output Amazon ECR repository.</p>
     pub fn containers(mut self, input: crate::types::Container) -> Self {
         let mut v = self.containers.unwrap_or_default();
         v.push(input);
         self.containers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    /// <p>The container images that Image Builder created when it built this image, stored in the output Amazon ECR repository.</p>
     pub fn set_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>) -> Self {
         self.containers = input;
         self
     }
-    /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
+    /// <p>The container images that Image Builder created when it built this image, stored in the output Amazon ECR repository.</p>
     pub fn get_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Container>> {
         &self.containers
     }

@@ -28,6 +28,7 @@ impl super::Client {
     ///   - [`recommended_actions(Option<Vec::<String>>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::recommended_actions): <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     ///   - [`generative_ai_settings(Option<GenerativeAiSettings>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::generative_ai_settings): <p>Contains settings for Amazon Bedrock's generative AI features for your bot locale.</p>
     ///   - [`speech_detection_sensitivity(Option<SpeechDetectionSensitivity>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::speech_detection_sensitivity): <p>The sensitivity level for voice activity detection (VAD) configured for the bot locale.</p>
+    ///   - [`speaker_diarization_settings(Option<SpeakerDiarizationSettings>)`](crate::operation::describe_bot_locale::DescribeBotLocaleOutput::speaker_diarization_settings): <p>The speaker diarization settings configured for the bot locale.</p>
     /// - On failure, responds with [`SdkError<DescribeBotLocaleError>`](crate::operation::describe_bot_locale::DescribeBotLocaleError)
     pub fn describe_bot_locale(&self) -> crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder {
         crate::operation::describe_bot_locale::builders::DescribeBotLocaleFluentBuilder::new(self.handle.clone())

@@ -37,6 +37,8 @@ pub struct UpdateBotLocaleOutput {
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     /// <p>The updated sensitivity level for voice activity detection (VAD) in the bot locale.</p>
     pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    /// <p>The updated speaker diarization settings for the bot locale.</p>
+    pub speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
     _request_id: Option<String>,
 }
 impl UpdateBotLocaleOutput {
@@ -112,6 +114,10 @@ impl UpdateBotLocaleOutput {
     pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
         self.speech_detection_sensitivity.as_ref()
     }
+    /// <p>The updated speaker diarization settings for the bot locale.</p>
+    pub fn speaker_diarization_settings(&self) -> ::std::option::Option<&crate::types::SpeakerDiarizationSettings> {
+        self.speaker_diarization_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateBotLocaleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -146,6 +152,7 @@ pub struct UpdateBotLocaleOutputBuilder {
     pub(crate) recommended_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    pub(crate) speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
     _request_id: Option<String>,
 }
 impl UpdateBotLocaleOutputBuilder {
@@ -399,6 +406,20 @@ impl UpdateBotLocaleOutputBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         &self.speech_detection_sensitivity
     }
+    /// <p>The updated speaker diarization settings for the bot locale.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.speaker_diarization_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated speaker diarization settings for the bot locale.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.speaker_diarization_settings = input;
+        self
+    }
+    /// <p>The updated speaker diarization settings for the bot locale.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        &self.speaker_diarization_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -428,6 +449,7 @@ impl UpdateBotLocaleOutputBuilder {
             recommended_actions: self.recommended_actions,
             generative_ai_settings: self.generative_ai_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
+            speaker_diarization_settings: self.speaker_diarization_settings,
             _request_id: self._request_id,
         }
     }

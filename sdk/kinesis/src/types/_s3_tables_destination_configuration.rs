@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3TablesDestinationConfiguration {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes). The default value is 300 seconds.</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination. The default value is 300 seconds.</p>
     pub data_freshness_in_seconds: ::std::option::Option<i32>,
     /// <p>The dead-letter queue configuration for records that cannot be delivered. Required for streaming table destinations.</p>
     pub dead_letter_queue_s3_configuration: ::std::option::Option<crate::types::DeadLetterQueueS3Configuration>,
@@ -12,7 +12,7 @@ pub struct S3TablesDestinationConfiguration {
     pub s3_tables_configuration_list: ::std::vec::Vec<crate::types::S3TablesConfiguration>,
 }
 impl S3TablesDestinationConfiguration {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes). The default value is 300 seconds.</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination. The default value is 300 seconds.</p>
     pub fn data_freshness_in_seconds(&self) -> ::std::option::Option<i32> {
         self.data_freshness_in_seconds
     }
@@ -42,17 +42,17 @@ pub struct S3TablesDestinationConfigurationBuilder {
     pub(crate) s3_tables_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::S3TablesConfiguration>>,
 }
 impl S3TablesDestinationConfigurationBuilder {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes). The default value is 300 seconds.</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination. The default value is 300 seconds.</p>
     pub fn data_freshness_in_seconds(mut self, input: i32) -> Self {
         self.data_freshness_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes). The default value is 300 seconds.</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination. The default value is 300 seconds.</p>
     pub fn set_data_freshness_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_freshness_in_seconds = input;
         self
     }
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes). The default value is 300 seconds.</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination. The default value is 300 seconds.</p>
     pub fn get_data_freshness_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.data_freshness_in_seconds
     }

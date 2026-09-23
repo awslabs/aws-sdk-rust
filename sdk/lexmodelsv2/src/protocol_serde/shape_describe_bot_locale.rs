@@ -252,6 +252,11 @@ pub(crate) fn de_describe_bot_locale(
                             .transpose()?,
                     );
                 }
+                "speakerDiarizationSettings" => {
+                    builder = builder.set_speaker_diarization_settings(
+                        crate::protocol_serde::shape_speaker_diarization_settings::de_speaker_diarization_settings(tokens, _value, depth + 1)?,
+                    );
+                }
                 "speechDetectionSensitivity" => {
                     builder = builder.set_speech_detection_sensitivity(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

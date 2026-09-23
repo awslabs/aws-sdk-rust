@@ -9,8 +9,8 @@ pub fn ser_put_records_request_entry(
     if let Some(var_1) = &input.explicit_hash_key {
         object.key("ExplicitHashKey").string(var_1.as_str());
     }
-    {
-        object.key("PartitionKey").string(input.partition_key.as_str());
+    if let Some(var_2) = &input.partition_key {
+        object.key("PartitionKey").string(var_2.as_str());
     }
     Ok(())
 }

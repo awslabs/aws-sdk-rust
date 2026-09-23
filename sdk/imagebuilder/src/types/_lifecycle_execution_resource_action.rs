@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleExecutionResourceAction {
-    /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
+    /// <p>The name of the lifecycle action that was identified for the resource.</p>
     pub name: ::std::option::Option<crate::types::LifecycleExecutionResourceActionName>,
     /// <p>The reason why the lifecycle policy action is taken.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleExecutionResourceAction {
-    /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
+    /// <p>The name of the lifecycle action that was identified for the resource.</p>
     pub fn name(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceActionName> {
         self.name.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct LifecycleExecutionResourceActionBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl LifecycleExecutionResourceActionBuilder {
-    /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
+    /// <p>The name of the lifecycle action that was identified for the resource.</p>
     pub fn name(mut self, input: crate::types::LifecycleExecutionResourceActionName) -> Self {
         self.name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
+    /// <p>The name of the lifecycle action that was identified for the resource.</p>
     pub fn set_name(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceActionName>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the resource that was identified for a lifecycle policy action.</p>
+    /// <p>The name of the lifecycle action that was identified for the resource.</p>
     pub fn get_name(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceActionName> {
         &self.name
     }

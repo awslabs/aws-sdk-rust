@@ -18,27 +18,27 @@ pub struct InfrastructureConfiguration {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The subnet ID of the infrastructure configuration.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub logging: ::std::option::Option<crate::types::Logging>,
     /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
     pub key_pair: ::std::option::Option<::std::string::String>,
-    /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    /// <p>Indicates whether Image Builder terminates the build and test instances when the image build fails. When <code>false</code>, Image Builder retains the instance so that you can debug it.</p>
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was created.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub date_updated: ::std::option::Option<::std::string::String>,
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder launches during image creation.</p>
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance metadata option settings for the infrastructure configuration.</p>
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfiguration {
@@ -74,7 +74,7 @@ impl InfrastructureConfiguration {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
         self.logging.as_ref()
     }
@@ -82,12 +82,12 @@ impl InfrastructureConfiguration {
     pub fn key_pair(&self) -> ::std::option::Option<&str> {
         self.key_pair.as_deref()
     }
-    /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    /// <p>Indicates whether Image Builder terminates the build and test instances when the image build fails. When <code>false</code>, Image Builder retains the instance so that you can debug it.</p>
     pub fn terminate_instance_on_failure(&self) -> ::std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
@@ -100,7 +100,7 @@ impl InfrastructureConfiguration {
     pub fn date_updated(&self) -> ::std::option::Option<&str> {
         self.date_updated.as_deref()
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder launches during image creation.</p>
     pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.resource_tags.as_ref()
     }
@@ -112,7 +112,7 @@ impl InfrastructureConfiguration {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
@@ -257,17 +257,17 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn logging(mut self, input: crate::types::Logging) -> Self {
         self.logging = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
         self.logging = input;
         self
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         &self.logging
     }
@@ -285,36 +285,36 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_key_pair(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_pair
     }
-    /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    /// <p>Indicates whether Image Builder terminates the build and test instances when the image build fails. When <code>false</code>, Image Builder retains the instance so that you can debug it.</p>
     pub fn terminate_instance_on_failure(mut self, input: bool) -> Self {
         self.terminate_instance_on_failure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    /// <p>Indicates whether Image Builder terminates the build and test instances when the image build fails. When <code>false</code>, Image Builder retains the instance so that you can debug it.</p>
     pub fn set_terminate_instance_on_failure(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_instance_on_failure = input;
         self
     }
-    /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
+    /// <p>Indicates whether Image Builder terminates the build and test instances when the image build fails. When <code>false</code>, Image Builder retains the instance so that you can debug it.</p>
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
         &self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_arn
@@ -351,14 +351,14 @@ impl InfrastructureConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder launches during image creation.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.resource_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder launches during image creation.</p>
     pub fn set_resource_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -366,7 +366,7 @@ impl InfrastructureConfigurationBuilder {
         self.resource_tags = input;
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder launches during image creation.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.resource_tags
     }
@@ -404,17 +404,17 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn placement(mut self, input: crate::types::Placement) -> Self {
         self.placement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
         self.placement = input;
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }

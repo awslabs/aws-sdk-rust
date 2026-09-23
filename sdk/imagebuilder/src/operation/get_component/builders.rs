@@ -108,17 +108,17 @@ impl GetComponentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_build_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_build_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_build_version_arn()
     }

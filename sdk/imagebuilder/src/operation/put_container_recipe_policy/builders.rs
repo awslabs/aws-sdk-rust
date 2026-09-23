@@ -22,7 +22,7 @@ impl crate::operation::put_container_recipe_policy::builders::PutContainerRecipe
 }
 /// Fluent builder constructing a request to `PutContainerRecipePolicy`.
 ///
-/// <p>Applies a policy to a container image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> so that the resource is visible to all principals with whom the resource is shared.</p>
+/// <p>Applies a policy to a container recipe. The preferred way to share resources is with the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you use the PutContainerRecipePolicy operation instead, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>. Otherwise, the resource isn't visible to the principals that it's shared with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutContainerRecipePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

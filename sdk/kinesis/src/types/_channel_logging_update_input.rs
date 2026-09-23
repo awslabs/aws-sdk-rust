@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelLoggingUpdateInput {
-    /// <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+    /// <p>The updated Amazon CloudWatch Logs settings, including whether logging is enabled and the target log group and log stream.</p>
     pub cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsUpdateInput>,
 }
 impl ChannelLoggingUpdateInput {
-    /// <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+    /// <p>The updated Amazon CloudWatch Logs settings, including whether logging is enabled and the target log group and log stream.</p>
     pub fn cloud_watch_logs(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsUpdateInput> {
         self.cloud_watch_logs.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct ChannelLoggingUpdateInputBuilder {
     pub(crate) cloud_watch_logs: ::std::option::Option<crate::types::CloudWatchLogsUpdateInput>,
 }
 impl ChannelLoggingUpdateInputBuilder {
-    /// <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+    /// <p>The updated Amazon CloudWatch Logs settings, including whether logging is enabled and the target log group and log stream.</p>
     /// This field is required.
     pub fn cloud_watch_logs(mut self, input: crate::types::CloudWatchLogsUpdateInput) -> Self {
         self.cloud_watch_logs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+    /// <p>The updated Amazon CloudWatch Logs settings, including whether logging is enabled and the target log group and log stream.</p>
     pub fn set_cloud_watch_logs(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsUpdateInput>) -> Self {
         self.cloud_watch_logs = input;
         self
     }
-    /// <p>The updated Amazon CloudWatch Logs settings for the channel.</p>
+    /// <p>The updated Amazon CloudWatch Logs settings, including whether logging is enabled and the target log group and log stream.</p>
     pub fn get_cloud_watch_logs(&self) -> &::std::option::Option<crate::types::CloudWatchLogsUpdateInput> {
         &self.cloud_watch_logs
     }

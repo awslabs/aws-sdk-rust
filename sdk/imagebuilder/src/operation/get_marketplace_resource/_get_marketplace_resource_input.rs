@@ -7,7 +7,7 @@ pub struct GetMarketplaceResourceInput {
     pub resource_type: ::std::option::Option<crate::types::MarketplaceResourceType>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an Amazon Web Services Marketplace resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub resource_location: ::std::option::Option<::std::string::String>,
 }
 impl GetMarketplaceResourceInput {
@@ -19,7 +19,7 @@ impl GetMarketplaceResourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn resource_location(&self) -> ::std::option::Option<&str> {
         self.resource_location.as_deref()
     }
@@ -70,17 +70,17 @@ impl GetMarketplaceResourceInputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn resource_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn set_resource_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_location = input;
         self
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn get_resource_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_location
     }

@@ -142,17 +142,17 @@ impl ListLifecycleExecutionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource for which to get a list of lifecycle runtime instances.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to list lifecycle executions. Specify a lifecycle policy ARN to list its executions, or an image build version ARN to list the executions that <code>StartResourceStateUpdate</code> started for that image. Other ARN types aren't valid for this request.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource for which to get a list of lifecycle runtime instances.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to list lifecycle executions. Specify a lifecycle policy ARN to list its executions, or an image build version ARN to list the executions that <code>StartResourceStateUpdate</code> started for that image. Other ARN types aren't valid for this request.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource for which to get a list of lifecycle runtime instances.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource for which to list lifecycle executions. Specify a lifecycle policy ARN to list its executions, or an image build version ARN to list the executions that <code>StartResourceStateUpdate</code> started for that image. Other ARN types aren't valid for this request.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

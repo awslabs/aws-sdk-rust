@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageState {
-    /// <p>The status of the image.</p>
+    /// <p>The status of the image. A new image moves through build, test, and distribution statuses during creation, and ends in the <code>AVAILABLE</code>, <code>FAILED</code>, or <code>CANCELLED</code> state. The <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code> statuses come from later resource management actions.</p>
     pub status: ::std::option::Option<crate::types::ImageStatus>,
     /// <p>The reason for the status of the image.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ImageState {
     pub failure_context: ::std::option::Option<crate::types::ImageFailureContext>,
 }
 impl ImageState {
-    /// <p>The status of the image.</p>
+    /// <p>The status of the image. A new image moves through build, test, and distribution statuses during creation, and ends in the <code>AVAILABLE</code>, <code>FAILED</code>, or <code>CANCELLED</code> state. The <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code> statuses come from later resource management actions.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ImageStatus> {
         self.status.as_ref()
     }
@@ -41,17 +41,17 @@ pub struct ImageStateBuilder {
     pub(crate) failure_context: ::std::option::Option<crate::types::ImageFailureContext>,
 }
 impl ImageStateBuilder {
-    /// <p>The status of the image.</p>
+    /// <p>The status of the image. A new image moves through build, test, and distribution statuses during creation, and ends in the <code>AVAILABLE</code>, <code>FAILED</code>, or <code>CANCELLED</code> state. The <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code> statuses come from later resource management actions.</p>
     pub fn status(mut self, input: crate::types::ImageStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the image.</p>
+    /// <p>The status of the image. A new image moves through build, test, and distribution statuses during creation, and ends in the <code>AVAILABLE</code>, <code>FAILED</code>, or <code>CANCELLED</code> state. The <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code> statuses come from later resource management actions.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImageStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the image.</p>
+    /// <p>The status of the image. A new image moves through build, test, and distribution statuses during creation, and ends in the <code>AVAILABLE</code>, <code>FAILED</code>, or <code>CANCELLED</code> state. The <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code> statuses come from later resource management actions.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImageStatus> {
         &self.status
     }

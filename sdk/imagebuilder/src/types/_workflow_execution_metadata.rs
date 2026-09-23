@@ -14,7 +14,7 @@ pub struct WorkflowExecutionMetadata {
     pub status: ::std::option::Option<crate::types::WorkflowExecutionStatus>,
     /// <p>The runtime output message from the workflow, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub total_step_count: i32,
     /// <p>A runtime count for the number of steps in the workflow that ran successfully.</p>
     pub total_steps_succeeded: i32,
@@ -28,7 +28,7 @@ pub struct WorkflowExecutionMetadata {
     pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the test group that included the test workflow resource at runtime.</p>
     pub parallel_group: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    /// <p>Indicates whether a retry of the image build superseded this runtime instance of the workflow. When you retry a failed image build, Image Builder sets this flag to <code>true</code> on the original workflow executions that the retry re-ran.</p>
     pub retried: ::std::option::Option<bool>,
 }
 impl WorkflowExecutionMetadata {
@@ -52,7 +52,7 @@ impl WorkflowExecutionMetadata {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn total_step_count(&self) -> i32 {
         self.total_step_count
     }
@@ -80,7 +80,7 @@ impl WorkflowExecutionMetadata {
     pub fn parallel_group(&self) -> ::std::option::Option<&str> {
         self.parallel_group.as_deref()
     }
-    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    /// <p>Indicates whether a retry of the image build superseded this runtime instance of the workflow. When you retry a failed image build, Image Builder sets this flag to <code>true</code> on the original workflow executions that the retry re-ran.</p>
     pub fn retried(&self) -> ::std::option::Option<bool> {
         self.retried
     }
@@ -181,17 +181,17 @@ impl WorkflowExecutionMetadataBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn total_step_count(mut self, input: i32) -> Self {
         self.total_step_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn set_total_step_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_step_count = input;
         self
     }
-    /// <p>The total number of steps in the workflow. This should equal the sum of the step counts for steps that succeeded, were skipped, and failed.</p>
+    /// <p>The total number of steps that the workflow document defines for this runtime instance of the workflow. Image Builder sets this count before any steps run. The sum of succeeded, skipped, and failed steps only reaches this total if every step finishes in one of those states.</p>
     pub fn get_total_step_count(&self) -> &::std::option::Option<i32> {
         &self.total_step_count
     }
@@ -279,17 +279,17 @@ impl WorkflowExecutionMetadataBuilder {
     pub fn get_parallel_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.parallel_group
     }
-    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    /// <p>Indicates whether a retry of the image build superseded this runtime instance of the workflow. When you retry a failed image build, Image Builder sets this flag to <code>true</code> on the original workflow executions that the retry re-ran.</p>
     pub fn retried(mut self, input: bool) -> Self {
         self.retried = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    /// <p>Indicates whether a retry of the image build superseded this runtime instance of the workflow. When you retry a failed image build, Image Builder sets this flag to <code>true</code> on the original workflow executions that the retry re-ran.</p>
     pub fn set_retried(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retried = input;
         self
     }
-    /// <p>Indicates retry status for this runtime instance of the workflow.</p>
+    /// <p>Indicates whether a retry of the image build superseded this runtime instance of the workflow. When you retry a failed image build, Image Builder sets this flag to <code>true</code> on the original workflow executions that the retry re-ran.</p>
     pub fn get_retried(&self) -> &::std::option::Option<bool> {
         &self.retried
     }

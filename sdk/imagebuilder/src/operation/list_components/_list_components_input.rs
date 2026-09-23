@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentsInput {
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -14,6 +14,10 @@ pub struct ListComponentsInput {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -21,7 +25,7 @@ pub struct ListComponentsInput {
     /// <p><code>version</code></p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub by_name: ::std::option::Option<bool>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -29,7 +33,7 @@ pub struct ListComponentsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentsInput {
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Ownership> {
         self.owner.as_ref()
     }
@@ -42,6 +46,10 @@ impl ListComponentsInput {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -53,7 +61,7 @@ impl ListComponentsInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(&self) -> ::std::option::Option<bool> {
         self.by_name
     }
@@ -84,17 +92,17 @@ pub struct ListComponentsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentsInputBuilder {
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         &self.owner
     }
@@ -110,6 +118,10 @@ impl ListComponentsInputBuilder {
     /// <p><code>name</code></p></li>
     /// <li>
     /// <p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
     /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
@@ -132,6 +144,10 @@ impl ListComponentsInputBuilder {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -151,6 +167,10 @@ impl ListComponentsInputBuilder {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -160,17 +180,17 @@ impl ListComponentsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.by_name = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.by_name = input;
         self
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         &self.by_name
     }

@@ -23,7 +23,7 @@ impl crate::operation::delete_channel::builders::DeleteChannelInputBuilder {
 /// Fluent builder constructing a request to `DeleteChannel`.
 ///
 /// <p>Deletes the specified channel. Deleting a channel stops delivery from the source stream to the destination. Data already delivered to the destination is not deleted.</p>
-/// <p>A stream cannot be deleted while it has active channels. To delete the stream, first delete all channels attached to it. To find them, use <code>ListChannels</code> with a stream filter.</p>
+/// <p>A stream cannot be deleted while it has active channels. Use <code>ListChannels</code> with a stream filter to find the channels attached to a stream before deleting it.</p>
 /// <p>This operation has a call limit of 5 transactions per second (TPS) for each Amazon Web Services account. Exceeding 5 TPS results in a <code>LimitExceededException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteChannelFluentBuilder {

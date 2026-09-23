@@ -12,6 +12,7 @@
 /// ```text
 /// # let speechmodelpreference = unimplemented!();
 /// match speechmodelpreference {
+///     SpeechModelPreference::Advanced => { /* ... */ },
 ///     SpeechModelPreference::Deepgram => { /* ... */ },
 ///     SpeechModelPreference::Neural => { /* ... */ },
 ///     SpeechModelPreference::Standard => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum SpeechModelPreference {
     #[allow(missing_docs)] // documentation missing in model
+    Advanced,
+    #[allow(missing_docs)] // documentation missing in model
     Deepgram,
     #[allow(missing_docs)] // documentation missing in model
     Neural,
@@ -56,6 +59,7 @@ pub enum SpeechModelPreference {
 impl ::std::convert::From<&str> for SpeechModelPreference {
     fn from(s: &str) -> Self {
         match s {
+            "Advanced" => SpeechModelPreference::Advanced,
             "Deepgram" => SpeechModelPreference::Deepgram,
             "Neural" => SpeechModelPreference::Neural,
             "Standard" => SpeechModelPreference::Standard,
@@ -74,6 +78,7 @@ impl SpeechModelPreference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SpeechModelPreference::Advanced => "Advanced",
             SpeechModelPreference::Deepgram => "Deepgram",
             SpeechModelPreference::Neural => "Neural",
             SpeechModelPreference::Standard => "Standard",
@@ -82,7 +87,7 @@ impl SpeechModelPreference {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Deepgram", "Neural", "Standard"]
+        &["Advanced", "Deepgram", "Neural", "Standard"]
     }
 }
 impl ::std::convert::AsRef<str> for SpeechModelPreference {
@@ -105,6 +110,7 @@ impl SpeechModelPreference {
 impl ::std::fmt::Display for SpeechModelPreference {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SpeechModelPreference::Advanced => write!(f, "Advanced"),
             SpeechModelPreference::Deepgram => write!(f, "Deepgram"),
             SpeechModelPreference::Neural => write!(f, "Neural"),
             SpeechModelPreference::Standard => write!(f, "Standard"),

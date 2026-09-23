@@ -22,7 +22,7 @@ impl crate::operation::put_image_recipe_policy::builders::PutImageRecipePolicyIn
 }
 /// Fluent builder constructing a request to `PutImageRecipePolicy`.
 ///
-/// <p>Applies a policy to an image recipe. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> so that the resource is visible to all principals with whom the resource is shared.</p>
+/// <p>Applies a policy to an image recipe. The preferred way to share resources is with the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you use the PutImageRecipePolicy operation instead, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>. Otherwise, the resource isn't visible to the principals that it's shared with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutImageRecipePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

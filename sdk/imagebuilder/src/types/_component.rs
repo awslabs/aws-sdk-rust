@@ -24,13 +24,13 @@ pub struct Component {
     pub state: ::std::option::Option<crate::types::ComponentState>,
     /// <p>Contains parameter details for each of the parameters that the component document defined for the component.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>>,
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Component data contains the YAML document content for the component.</p>
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key identifier used to encrypt the component. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The encryption status of the component.</p>
+    /// <p>Indicates whether the component data is encrypted at rest. Image Builder encrypts all component data at rest, so this value is always <code>true</code>. This field is retained for backward compatibility.</p>
     pub encrypted: ::std::option::Option<bool>,
     /// <p>The date that Image Builder created the component.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
@@ -88,7 +88,7 @@ impl Component {
     pub fn parameters(&self) -> &[crate::types::ComponentParameterDetail] {
         self.parameters.as_deref().unwrap_or_default()
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -100,7 +100,7 @@ impl Component {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The encryption status of the component.</p>
+    /// <p>Indicates whether the component data is encrypted at rest. Image Builder encrypts all component data at rest, so this value is always <code>true</code>. This field is retained for backward compatibility.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
@@ -311,17 +311,17 @@ impl ComponentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentParameterDetail>> {
         &self.parameters
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
@@ -353,17 +353,17 @@ impl ComponentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The encryption status of the component.</p>
+    /// <p>Indicates whether the component data is encrypted at rest. Image Builder encrypts all component data at rest, so this value is always <code>true</code>. This field is retained for backward compatibility.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The encryption status of the component.</p>
+    /// <p>Indicates whether the component data is encrypted at rest. Image Builder encrypts all component data at rest, so this value is always <code>true</code>. This field is retained for backward compatibility.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>The encryption status of the component.</p>
+    /// <p>Indicates whether the component data is encrypted at rest. Image Builder encrypts all component data at rest, so this value is always <code>true</code>. This field is retained for backward compatibility.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }

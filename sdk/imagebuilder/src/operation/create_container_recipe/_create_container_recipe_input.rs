@@ -5,7 +5,7 @@
 pub struct CreateContainerRecipeInput {
     /// <p>The type of container to create.</p>
     pub container_type: ::std::option::Option<crate::types::ContainerType>,
-    /// <p>The name of the container recipe.</p>
+    /// <p>The name of the container recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the container recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the container recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -26,31 +26,31 @@ pub struct CreateContainerRecipeInput {
     /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: ::std::option::Option<::std::string::String>,
-    /// <p>The components included in the container recipe.</p>
+    /// <p>The components included in the container recipe. You can specify each component only one time in a recipe.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
     pub instance_configuration: ::std::option::Option<crate::types::InstanceConfiguration>,
-    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    /// <p>The Dockerfile template used to build your image, as an inline data blob. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.</p>
     pub dockerfile_template_data: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 URI for the Dockerfile that is used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile template that is used to build your container image. You must have permission to read the object. Image Builder reads the object once, when it creates the recipe, and stores its content in the recipe. Later changes to the S3 object don't affect the recipe. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties.</p>
     pub dockerfile_template_uri: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    /// <p>Specifies the operating system platform when you use a custom base image. Container recipes support only the Linux and Windows platforms.</p>
     pub platform_override: ::std::option::Option<crate::types::Platform>,
-    /// <p>Specifies the operating system version for the base image.</p>
+    /// <p>Specifies the operating system version for the base image. Use this property only when the base image is a container image from a registry. When the base image is an Image Builder image, the operating system version comes from the parent image.</p>
     pub image_os_version_override: ::std::option::Option<::std::string::String>,
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for the container recipe. This can be an Image Builder image resource ARN or a container image URI from a registry, for example <code>amazonlinux:latest</code>.</p>
     pub parent_image: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are attached to the container recipe.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The working directory for use during build and test workflows.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
-    /// <p>The destination repository for the container image.</p>
+    /// <p>The destination repository for the container image. The Amazon ECR repository must already exist in the Amazon Web Services Region where the build runs.</p>
     pub target_repository: ::std::option::Option<crate::types::TargetContainerRepository>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt the Dockerfile template. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateContainerRecipeInput {
@@ -58,7 +58,7 @@ impl CreateContainerRecipeInput {
     pub fn container_type(&self) -> ::std::option::Option<&crate::types::ContainerType> {
         self.container_type.as_ref()
     }
-    /// <p>The name of the container recipe.</p>
+    /// <p>The name of the container recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the container recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -85,7 +85,7 @@ impl CreateContainerRecipeInput {
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>The components included in the container recipe.</p>
+    /// <p>The components included in the container recipe. You can specify each component only one time in a recipe.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
@@ -95,23 +95,23 @@ impl CreateContainerRecipeInput {
     pub fn instance_configuration(&self) -> ::std::option::Option<&crate::types::InstanceConfiguration> {
         self.instance_configuration.as_ref()
     }
-    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    /// <p>The Dockerfile template used to build your image, as an inline data blob. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.</p>
     pub fn dockerfile_template_data(&self) -> ::std::option::Option<&str> {
         self.dockerfile_template_data.as_deref()
     }
-    /// <p>The Amazon S3 URI for the Dockerfile that is used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile template that is used to build your container image. You must have permission to read the object. Image Builder reads the object once, when it creates the recipe, and stores its content in the recipe. Later changes to the S3 object don't affect the recipe. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties.</p>
     pub fn dockerfile_template_uri(&self) -> ::std::option::Option<&str> {
         self.dockerfile_template_uri.as_deref()
     }
-    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    /// <p>Specifies the operating system platform when you use a custom base image. Container recipes support only the Linux and Windows platforms.</p>
     pub fn platform_override(&self) -> ::std::option::Option<&crate::types::Platform> {
         self.platform_override.as_ref()
     }
-    /// <p>Specifies the operating system version for the base image.</p>
+    /// <p>Specifies the operating system version for the base image. Use this property only when the base image is a container image from a registry. When the base image is an Image Builder image, the operating system version comes from the parent image.</p>
     pub fn image_os_version_override(&self) -> ::std::option::Option<&str> {
         self.image_os_version_override.as_deref()
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for the container recipe. This can be an Image Builder image resource ARN or a container image URI from a registry, for example <code>amazonlinux:latest</code>.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
@@ -123,7 +123,7 @@ impl CreateContainerRecipeInput {
     pub fn working_directory(&self) -> ::std::option::Option<&str> {
         self.working_directory.as_deref()
     }
-    /// <p>The destination repository for the container image.</p>
+    /// <p>The destination repository for the container image. The Amazon ECR repository must already exist in the Amazon Web Services Region where the build runs.</p>
     pub fn target_repository(&self) -> ::std::option::Option<&crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
@@ -131,11 +131,11 @@ impl CreateContainerRecipeInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -185,18 +185,18 @@ impl CreateContainerRecipeInputBuilder {
     pub fn get_container_type(&self) -> &::std::option::Option<crate::types::ContainerType> {
         &self.container_type
     }
-    /// <p>The name of the container recipe.</p>
+    /// <p>The name of the container recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the container recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the container recipe.</p>
+    /// <p>The name of the container recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the container recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the container recipe.</p>
+    /// <p>The name of the container recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the container recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -278,19 +278,19 @@ impl CreateContainerRecipeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
-    /// <p>The components included in the container recipe.</p>
+    /// <p>The components included in the container recipe. You can specify each component only one time in a recipe.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input);
         self.components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The components included in the container recipe.</p>
+    /// <p>The components included in the container recipe. You can specify each component only one time in a recipe.</p>
     pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
-    /// <p>The components included in the container recipe.</p>
+    /// <p>The components included in the container recipe. You can specify each component only one time in a recipe.</p>
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
@@ -308,74 +308,74 @@ impl CreateContainerRecipeInputBuilder {
     pub fn get_instance_configuration(&self) -> &::std::option::Option<crate::types::InstanceConfiguration> {
         &self.instance_configuration
     }
-    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    /// <p>The Dockerfile template used to build your image, as an inline data blob. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.</p>
     pub fn dockerfile_template_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dockerfile_template_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    /// <p>The Dockerfile template used to build your image, as an inline data blob. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.</p>
     pub fn set_dockerfile_template_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dockerfile_template_data = input;
         self
     }
-    /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
+    /// <p>The Dockerfile template used to build your image, as an inline data blob. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.</p>
     pub fn get_dockerfile_template_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.dockerfile_template_data
     }
-    /// <p>The Amazon S3 URI for the Dockerfile that is used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile template that is used to build your container image. You must have permission to read the object. Image Builder reads the object once, when it creates the recipe, and stores its content in the recipe. Later changes to the S3 object don't affect the recipe. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties.</p>
     pub fn dockerfile_template_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dockerfile_template_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 URI for the Dockerfile that is used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile template that is used to build your container image. You must have permission to read the object. Image Builder reads the object once, when it creates the recipe, and stores its content in the recipe. Later changes to the S3 object don't affect the recipe. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties.</p>
     pub fn set_dockerfile_template_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dockerfile_template_uri = input;
         self
     }
-    /// <p>The Amazon S3 URI for the Dockerfile that is used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile template that is used to build your container image. You must have permission to read the object. Image Builder reads the object once, when it creates the recipe, and stores its content in the recipe. Later changes to the S3 object don't affect the recipe. You must specify exactly one of the <code>dockerfileTemplateData</code> or <code>dockerfileTemplateUri</code> properties.</p>
     pub fn get_dockerfile_template_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.dockerfile_template_uri
     }
-    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    /// <p>Specifies the operating system platform when you use a custom base image. Container recipes support only the Linux and Windows platforms.</p>
     pub fn platform_override(mut self, input: crate::types::Platform) -> Self {
         self.platform_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    /// <p>Specifies the operating system platform when you use a custom base image. Container recipes support only the Linux and Windows platforms.</p>
     pub fn set_platform_override(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform_override = input;
         self
     }
-    /// <p>Specifies the operating system platform when you use a custom base image.</p>
+    /// <p>Specifies the operating system platform when you use a custom base image. Container recipes support only the Linux and Windows platforms.</p>
     pub fn get_platform_override(&self) -> &::std::option::Option<crate::types::Platform> {
         &self.platform_override
     }
-    /// <p>Specifies the operating system version for the base image.</p>
+    /// <p>Specifies the operating system version for the base image. Use this property only when the base image is a container image from a registry. When the base image is an Image Builder image, the operating system version comes from the parent image.</p>
     pub fn image_os_version_override(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_os_version_override = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the operating system version for the base image.</p>
+    /// <p>Specifies the operating system version for the base image. Use this property only when the base image is a container image from a registry. When the base image is an Image Builder image, the operating system version comes from the parent image.</p>
     pub fn set_image_os_version_override(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_os_version_override = input;
         self
     }
-    /// <p>Specifies the operating system version for the base image.</p>
+    /// <p>Specifies the operating system version for the base image. Use this property only when the base image is a container image from a registry. When the base image is an Image Builder image, the operating system version comes from the parent image.</p>
     pub fn get_image_os_version_override(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_os_version_override
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for the container recipe. This can be an Image Builder image resource ARN or a container image URI from a registry, for example <code>amazonlinux:latest</code>.</p>
     /// This field is required.
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for the container recipe. This can be an Image Builder image resource ARN or a container image URI from a registry, for example <code>amazonlinux:latest</code>.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
     }
-    /// <p>The base image for the container recipe.</p>
+    /// <p>The base image for the container recipe. This can be an Image Builder image resource ARN or a container image URI from a registry, for example <code>amazonlinux:latest</code>.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_image
     }
@@ -413,18 +413,18 @@ impl CreateContainerRecipeInputBuilder {
     pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.working_directory
     }
-    /// <p>The destination repository for the container image.</p>
+    /// <p>The destination repository for the container image. The Amazon ECR repository must already exist in the Amazon Web Services Region where the build runs.</p>
     /// This field is required.
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
         self.target_repository = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination repository for the container image.</p>
+    /// <p>The destination repository for the container image. The Amazon ECR repository must already exist in the Amazon Web Services Region where the build runs.</p>
     pub fn set_target_repository(mut self, input: ::std::option::Option<crate::types::TargetContainerRepository>) -> Self {
         self.target_repository = input;
         self
     }
-    /// <p>The destination repository for the container image.</p>
+    /// <p>The destination repository for the container image. The Amazon ECR repository must already exist in the Amazon Web Services Region where the build runs.</p>
     pub fn get_target_repository(&self) -> &::std::option::Option<crate::types::TargetContainerRepository> {
         &self.target_repository
     }
@@ -442,32 +442,32 @@ impl CreateContainerRecipeInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

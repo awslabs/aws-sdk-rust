@@ -8,9 +8,9 @@ pub struct LifecycleExecution {
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy that ran.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Contains information about associated resources that are identified for action by the runtime instance of the lifecycle policy.</p>
+    /// <p>A summary flag that indicates whether the lifecycle execution identified any resources to take lifecycle actions on.</p>
     pub resources_impacted_summary: ::std::option::Option<crate::types::LifecycleExecutionResourcesImpactedSummary>,
-    /// <p>Runtime state that reports if the policy action ran successfully, failed, or was skipped.</p>
+    /// <p>Runtime state that reports whether the lifecycle execution is in progress, succeeded, or failed.</p>
     pub state: ::std::option::Option<crate::types::LifecycleExecutionState>,
     /// <p>The timestamp when the lifecycle runtime instance started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -26,11 +26,11 @@ impl LifecycleExecution {
     pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_policy_arn.as_deref()
     }
-    /// <p>Contains information about associated resources that are identified for action by the runtime instance of the lifecycle policy.</p>
+    /// <p>A summary flag that indicates whether the lifecycle execution identified any resources to take lifecycle actions on.</p>
     pub fn resources_impacted_summary(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourcesImpactedSummary> {
         self.resources_impacted_summary.as_ref()
     }
-    /// <p>Runtime state that reports if the policy action ran successfully, failed, or was skipped.</p>
+    /// <p>Runtime state that reports whether the lifecycle execution is in progress, succeeded, or failed.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionState> {
         self.state.as_ref()
     }
@@ -90,31 +90,31 @@ impl LifecycleExecutionBuilder {
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }
-    /// <p>Contains information about associated resources that are identified for action by the runtime instance of the lifecycle policy.</p>
+    /// <p>A summary flag that indicates whether the lifecycle execution identified any resources to take lifecycle actions on.</p>
     pub fn resources_impacted_summary(mut self, input: crate::types::LifecycleExecutionResourcesImpactedSummary) -> Self {
         self.resources_impacted_summary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about associated resources that are identified for action by the runtime instance of the lifecycle policy.</p>
+    /// <p>A summary flag that indicates whether the lifecycle execution identified any resources to take lifecycle actions on.</p>
     pub fn set_resources_impacted_summary(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourcesImpactedSummary>) -> Self {
         self.resources_impacted_summary = input;
         self
     }
-    /// <p>Contains information about associated resources that are identified for action by the runtime instance of the lifecycle policy.</p>
+    /// <p>A summary flag that indicates whether the lifecycle execution identified any resources to take lifecycle actions on.</p>
     pub fn get_resources_impacted_summary(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourcesImpactedSummary> {
         &self.resources_impacted_summary
     }
-    /// <p>Runtime state that reports if the policy action ran successfully, failed, or was skipped.</p>
+    /// <p>Runtime state that reports whether the lifecycle execution is in progress, succeeded, or failed.</p>
     pub fn state(mut self, input: crate::types::LifecycleExecutionState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Runtime state that reports if the policy action ran successfully, failed, or was skipped.</p>
+    /// <p>Runtime state that reports whether the lifecycle execution is in progress, succeeded, or failed.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Runtime state that reports if the policy action ran successfully, failed, or was skipped.</p>
+    /// <p>Runtime state that reports whether the lifecycle execution is in progress, succeeded, or failed.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LifecycleExecutionState> {
         &self.state
     }

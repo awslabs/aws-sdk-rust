@@ -4,13 +4,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFindingsFilter {
-    /// <p>The name of the image scan finding filter. Filter names are case-sensitive.</p>
+    /// <p>The name of the image scan finding filter. Filter names are case-sensitive. Valid filter names are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
+    /// <li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
+    /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The filter values. Filter values are case-sensitive.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImageScanFindingsFilter {
-    /// <p>The name of the image scan finding filter. Filter names are case-sensitive.</p>
+    /// <p>The name of the image scan finding filter. Filter names are case-sensitive. Valid filter names are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
+    /// <li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
+    /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -36,17 +56,47 @@ pub struct ImageScanFindingsFilterBuilder {
     pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ImageScanFindingsFilterBuilder {
-    /// <p>The name of the image scan finding filter. Filter names are case-sensitive.</p>
+    /// <p>The name of the image scan finding filter. Filter names are case-sensitive. Valid filter names are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
+    /// <li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
+    /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the image scan finding filter. Filter names are case-sensitive.</p>
+    /// <p>The name of the image scan finding filter. Filter names are case-sensitive. Valid filter names are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
+    /// <li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
+    /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the image scan finding filter. Filter names are case-sensitive.</p>
+    /// <p>The name of the image scan finding filter. Filter names are case-sensitive. Valid filter names are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
+    /// <li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
+    /// <li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
+    /// <li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
+    /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

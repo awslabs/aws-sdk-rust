@@ -3,7 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImageBuildVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub image_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -25,7 +31,13 @@ pub struct ListImageBuildVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageBuildVersionsInput {
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn image_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_version_arn.as_deref()
     }
@@ -73,17 +85,35 @@ pub struct ListImageBuildVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImageBuildVersionsInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_version_arn
     }

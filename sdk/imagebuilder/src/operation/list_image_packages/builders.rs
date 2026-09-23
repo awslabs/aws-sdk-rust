@@ -114,17 +114,17 @@ impl ListImagePackagesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_image_packages::paginator::ListImagePackagesPaginator {
         crate::operation::list_image_packages::paginator::ListImagePackagesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_build_version_arn(input.into());
         self
     }
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_build_version_arn(input);
         self
     }
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_build_version_arn()
     }

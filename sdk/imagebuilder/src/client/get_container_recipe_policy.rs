@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`container_recipe_arn(impl Into<String>)`](crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder::container_recipe_arn) / [`set_container_recipe_arn(Option<String>)`](crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder::set_container_recipe_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p><br>
     /// - On success, responds with [`GetContainerRecipePolicyOutput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
-    ///   - [`policy(Option<String>)`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput::policy): <p>The container recipe policy object that is returned.</p>
+    ///   - [`policy(Option<String>)`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput::policy): <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     /// - On failure, responds with [`SdkError<GetContainerRecipePolicyError>`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError)
     pub fn get_container_recipe_policy(&self) -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder {
         crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyFluentBuilder::new(self.handle.clone())

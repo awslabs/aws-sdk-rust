@@ -22,7 +22,7 @@ impl crate::operation::get_marketplace_resource::builders::GetMarketplaceResourc
 }
 /// Fluent builder constructing a request to `GetMarketplaceResource`.
 ///
-/// <p>Verifies the subscription and performs resource dependency checks on the requested Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components, the response contains fields to download the components and their artifacts.</p>
+/// <p>Verifies the subscription and performs resource dependency checks on the requested Amazon Web Services Marketplace resource. The caller must be entitled to the resource. For Amazon Web Services Marketplace components, the response contains fields to download the components and their artifacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMarketplaceResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl GetMarketplaceResourceFluentBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn resource_location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_location(input.into());
         self
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn set_resource_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_location(input);
         self
     }
-    /// <p>The bucket path that you can specify to download the resource from Amazon S3.</p>
+    /// <p>The Amazon S3 location of the component artifact to retrieve, in <code>s3://bucket/key</code> form.</p>
     pub fn get_resource_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_location()
     }

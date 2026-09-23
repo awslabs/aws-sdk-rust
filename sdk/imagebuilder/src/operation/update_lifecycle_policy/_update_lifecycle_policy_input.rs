@@ -5,19 +5,19 @@
 pub struct UpdateLifecyclePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the lifecycle policy resource.</p>
     pub lifecycle_policy_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Optional description for the lifecycle policy.</p>
+    /// <p>Optional description for the lifecycle policy. Because the update replaces the entire configuration, omitting this property removes any existing description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. Defaults to <code>ENABLED</code> when omitted, so updating a disabled policy without setting this property re-enables it.</p>
     pub status: ::std::option::Option<crate::types::LifecyclePolicyStatus>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The type of image resource that the lifecycle policy applies to.</p>
+    /// <p>The type of image resource that the lifecycle policy applies to. The value must match the policy's existing resource type. You can't change the resource type of an existing lifecycle policy.</p>
     pub resource_type: ::std::option::Option<crate::types::LifecyclePolicyResourceType>,
     /// <p>The configuration details for a lifecycle policy resource.</p>
     pub policy_details: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>,
-    /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub resource_selection: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLifecyclePolicyInput {
@@ -25,19 +25,19 @@ impl UpdateLifecyclePolicyInput {
     pub fn lifecycle_policy_arn(&self) -> ::std::option::Option<&str> {
         self.lifecycle_policy_arn.as_deref()
     }
-    /// <p>Optional description for the lifecycle policy.</p>
+    /// <p>Optional description for the lifecycle policy. Because the update replaces the entire configuration, omitting this property removes any existing description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. Defaults to <code>ENABLED</code> when omitted, so updating a disabled policy without setting this property re-enables it.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyStatus> {
         self.status.as_ref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>The type of image resource that the lifecycle policy applies to.</p>
+    /// <p>The type of image resource that the lifecycle policy applies to. The value must match the policy's existing resource type. You can't change the resource type of an existing lifecycle policy.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceType> {
         self.resource_type.as_ref()
     }
@@ -47,11 +47,11 @@ impl UpdateLifecyclePolicyInput {
     pub fn policy_details(&self) -> &[crate::types::LifecyclePolicyDetail] {
         self.policy_details.as_deref().unwrap_or_default()
     }
-    /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn resource_selection(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyResourceSelection> {
         self.resource_selection.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -92,61 +92,61 @@ impl UpdateLifecyclePolicyInputBuilder {
     pub fn get_lifecycle_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_policy_arn
     }
-    /// <p>Optional description for the lifecycle policy.</p>
+    /// <p>Optional description for the lifecycle policy. Because the update replaces the entire configuration, omitting this property removes any existing description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Optional description for the lifecycle policy.</p>
+    /// <p>Optional description for the lifecycle policy. Because the update replaces the entire configuration, omitting this property removes any existing description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Optional description for the lifecycle policy.</p>
+    /// <p>Optional description for the lifecycle policy. Because the update replaces the entire configuration, omitting this property removes any existing description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. Defaults to <code>ENABLED</code> when omitted, so updating a disabled policy without setting this property re-enables it.</p>
     pub fn status(mut self, input: crate::types::LifecyclePolicyStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. Defaults to <code>ENABLED</code> when omitted, so updating a disabled policy without setting this property re-enables it.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. Defaults to <code>ENABLED</code> when omitted, so updating a disabled policy without setting this property re-enables it.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStatus> {
         &self.status
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
     /// This field is required.
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder uses to update the lifecycle policy.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>The type of image resource that the lifecycle policy applies to.</p>
+    /// <p>The type of image resource that the lifecycle policy applies to. The value must match the policy's existing resource type. You can't change the resource type of an existing lifecycle policy.</p>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::LifecyclePolicyResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of image resource that the lifecycle policy applies to.</p>
+    /// <p>The type of image resource that the lifecycle policy applies to. The value must match the policy's existing resource type. You can't change the resource type of an existing lifecycle policy.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of image resource that the lifecycle policy applies to.</p>
+    /// <p>The type of image resource that the lifecycle policy applies to. The value must match the policy's existing resource type. You can't change the resource type of an existing lifecycle policy.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceType> {
         &self.resource_type
     }
@@ -170,33 +170,33 @@ impl UpdateLifecyclePolicyInputBuilder {
     pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
         &self.policy_details
     }
-    /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     /// This field is required.
     pub fn resource_selection(mut self, input: crate::types::LifecyclePolicyResourceSelection) -> Self {
         self.resource_selection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn set_resource_selection(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>) -> Self {
         self.resource_selection = input;
         self
     }
-    /// <p>Selection criteria for resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn get_resource_selection(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceSelection> {
         &self.resource_selection
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

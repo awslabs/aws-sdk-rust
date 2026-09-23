@@ -7,7 +7,7 @@ pub struct GetComponentOutput {
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The component object specified in the request.</p>
     pub component: ::std::option::Option<crate::types::Component>,
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl GetComponentOutput {
     pub fn component(&self) -> ::std::option::Option<&crate::types::Component> {
         self.component.as_ref()
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
         self.latest_version_references.as_ref()
     }
@@ -75,17 +75,17 @@ impl GetComponentOutputBuilder {
     pub fn get_component(&self) -> &::std::option::Option<crate::types::Component> {
         &self.component
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
         self.latest_version_references = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
         self.latest_version_references = input;
         self
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
         &self.latest_version_references
     }

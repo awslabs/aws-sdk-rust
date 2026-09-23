@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicySummary {
-    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the lifecycle policy.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct LifecyclePolicySummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicySummary {
-    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -90,17 +90,17 @@ pub struct LifecyclePolicySummaryBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicySummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy summary resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the lifecycle policy.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

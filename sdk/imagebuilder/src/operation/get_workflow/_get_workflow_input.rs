@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowInput {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowInput {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p>
     pub fn workflow_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.workflow_build_version_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetWorkflowInputBuilder {
     pub(crate) workflow_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p>
     /// This field is required.
     pub fn workflow_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.workflow_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p>
     pub fn set_workflow_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workflow_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p>
     pub fn get_workflow_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_build_version_arn
     }

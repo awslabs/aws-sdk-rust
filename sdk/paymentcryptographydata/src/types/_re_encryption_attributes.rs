@@ -4,9 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ReEncryptionAttributes {
-    /// <p>Parameters that are required to encrypt plaintext data using DUKPT.</p>
+    /// <p>Specifies the parameters required to encrypt data using an asymmetric key pair. You must specify a <code>PaddingType</code>.</p>
+    Asymmetric(crate::types::AsymmetricEncryptionAttributes),
+    /// <p>Specifies the parameters required to encrypt data using DUKPT.</p>
     Dukpt(crate::types::DukptEncryptionAttributes),
-    /// <p>Parameters that are required to encrypt data using symmetric keys.</p>
+    /// <p>Specifies the parameters required to encrypt data using symmetric keys.</p>
     Symmetric(crate::types::SymmetricEncryptionAttributes),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -19,6 +21,19 @@ pub enum ReEncryptionAttributes {
     Unknown,
 }
 impl ReEncryptionAttributes {
+    /// Tries to convert the enum instance into [`Asymmetric`](crate::types::ReEncryptionAttributes::Asymmetric), extracting the inner [`AsymmetricEncryptionAttributes`](crate::types::AsymmetricEncryptionAttributes).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_asymmetric(&self) -> ::std::result::Result<&crate::types::AsymmetricEncryptionAttributes, &Self> {
+        if let ReEncryptionAttributes::Asymmetric(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Asymmetric`](crate::types::ReEncryptionAttributes::Asymmetric).
+    pub fn is_asymmetric(&self) -> bool {
+        self.as_asymmetric().is_ok()
+    }
     /// Tries to convert the enum instance into [`Dukpt`](crate::types::ReEncryptionAttributes::Dukpt), extracting the inner [`DukptEncryptionAttributes`](crate::types::DukptEncryptionAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dukpt(&self) -> ::std::result::Result<&crate::types::DukptEncryptionAttributes, &Self> {

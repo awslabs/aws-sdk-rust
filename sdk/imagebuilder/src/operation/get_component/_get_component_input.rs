@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInput {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn component_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.component_build_version_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetComponentInputBuilder {
     pub(crate) component_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     /// This field is required.
     pub fn component_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn set_component_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. Regex requires the suffix <code>/\d+$</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the component that you want to get. You can specify a build version ARN, or a component version ARN. The version can use the <code>x</code> wildcard in trailing positions, for example <code>1.0.x</code> or <code>1.x.x</code>. Version ARNs resolve to the latest available matching component build version.</p>
     pub fn get_component_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_build_version_arn
     }

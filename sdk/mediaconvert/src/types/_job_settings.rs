@@ -22,6 +22,8 @@ pub struct JobSettings {
     pub kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     /// Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all output groups. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
     pub motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
+    /// Array of motion image inserters for overlaying multiple independent motion graphics. Compositing order follows array index. Mutually exclusive with motionImageInserter.
+    pub motion_image_inserters: ::std::option::Option<::std::vec::Vec<crate::types::MotionImageInserter>>,
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
     pub nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 6.0.13 Nielsen NLM Watermark Engine Version 1.3.3 Nielsen Watermark Authenticator \[SID_TIC\] Version \[7.0.0\]
@@ -74,6 +76,12 @@ impl JobSettings {
     pub fn motion_image_inserter(&self) -> ::std::option::Option<&crate::types::MotionImageInserter> {
         self.motion_image_inserter.as_ref()
     }
+    /// Array of motion image inserters for overlaying multiple independent motion graphics. Compositing order follows array index. Mutually exclusive with motionImageInserter.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.motion_image_inserters.is_none()`.
+    pub fn motion_image_inserters(&self) -> &[crate::types::MotionImageInserter] {
+        self.motion_image_inserters.as_deref().unwrap_or_default()
+    }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
     pub fn nielsen_configuration(&self) -> ::std::option::Option<&crate::types::NielsenConfiguration> {
         self.nielsen_configuration.as_ref()
@@ -117,6 +125,7 @@ pub struct JobSettingsBuilder {
     pub(crate) inputs: ::std::option::Option<::std::vec::Vec<crate::types::Input>>,
     pub(crate) kantar_watermark: ::std::option::Option<crate::types::KantarWatermarkSettings>,
     pub(crate) motion_image_inserter: ::std::option::Option<crate::types::MotionImageInserter>,
+    pub(crate) motion_image_inserters: ::std::option::Option<::std::vec::Vec<crate::types::MotionImageInserter>>,
     pub(crate) nielsen_configuration: ::std::option::Option<crate::types::NielsenConfiguration>,
     pub(crate) nielsen_non_linear_watermark: ::std::option::Option<crate::types::NielsenNonLinearWatermarkSettings>,
     pub(crate) output_groups: ::std::option::Option<::std::vec::Vec<crate::types::OutputGroup>>,
@@ -265,6 +274,26 @@ impl JobSettingsBuilder {
     pub fn get_motion_image_inserter(&self) -> &::std::option::Option<crate::types::MotionImageInserter> {
         &self.motion_image_inserter
     }
+    /// Appends an item to `motion_image_inserters`.
+    ///
+    /// To override the contents of this collection use [`set_motion_image_inserters`](Self::set_motion_image_inserters).
+    ///
+    /// Array of motion image inserters for overlaying multiple independent motion graphics. Compositing order follows array index. Mutually exclusive with motionImageInserter.
+    pub fn motion_image_inserters(mut self, input: crate::types::MotionImageInserter) -> Self {
+        let mut v = self.motion_image_inserters.unwrap_or_default();
+        v.push(input);
+        self.motion_image_inserters = ::std::option::Option::Some(v);
+        self
+    }
+    /// Array of motion image inserters for overlaying multiple independent motion graphics. Compositing order follows array index. Mutually exclusive with motionImageInserter.
+    pub fn set_motion_image_inserters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MotionImageInserter>>) -> Self {
+        self.motion_image_inserters = input;
+        self
+    }
+    /// Array of motion image inserters for overlaying multiple independent motion graphics. Compositing order follows array index. Mutually exclusive with motionImageInserter.
+    pub fn get_motion_image_inserters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MotionImageInserter>> {
+        &self.motion_image_inserters
+    }
     /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs in the job.
     pub fn nielsen_configuration(mut self, input: crate::types::NielsenConfiguration) -> Self {
         self.nielsen_configuration = ::std::option::Option::Some(input);
@@ -353,6 +382,7 @@ impl JobSettingsBuilder {
             inputs: self.inputs,
             kantar_watermark: self.kantar_watermark,
             motion_image_inserter: self.motion_image_inserter,
+            motion_image_inserters: self.motion_image_inserters,
             nielsen_configuration: self.nielsen_configuration,
             nielsen_non_linear_watermark: self.nielsen_non_linear_watermark,
             output_groups: self.output_groups,

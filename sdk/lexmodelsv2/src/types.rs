@@ -27,6 +27,8 @@ pub use crate::types::_generative_ai_settings::GenerativeAiSettings;
 
 pub use crate::types::_speech_detection_sensitivity::SpeechDetectionSensitivity;
 
+pub use crate::types::_speaker_diarization_settings::SpeakerDiarizationSettings;
+
 pub use crate::types::_bot_replica_status::BotReplicaStatus;
 
 pub use crate::types::_export_resource_specification::ExportResourceSpecification;
@@ -1370,6 +1372,8 @@ mod _slot_value_resolution_strategy;
 mod _slot_value_selection_setting;
 
 mod _sort_order;
+
+mod _speaker_diarization_settings;
 
 mod _specifications;
 

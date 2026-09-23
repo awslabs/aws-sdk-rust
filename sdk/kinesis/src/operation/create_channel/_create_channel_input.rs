@@ -9,9 +9,9 @@ pub struct CreateChannelInput {
     pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The source stream configuration for the channel. Currently, one stream is supported per channel.</p>
     pub stream_configuration_list: ::std::option::Option<::std::vec::Vec<crate::types::ChannelStreamConfiguration>>,
-    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify this parameter when <code>S3TablesDestinationConfiguration</code> is not specified.</p>
     pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationConfiguration>,
-    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Specify this parameter when <code>S3DestinationConfiguration</code> is not specified.</p>
     pub s3_tables_destination_configuration: ::std::option::Option<crate::types::S3TablesDestinationConfiguration>,
     /// <p>The server-side encryption configuration that uses an Amazon Web Services KMS key to encrypt data delivered to the destination.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::ChannelEncryptionConfiguration>,
@@ -35,11 +35,11 @@ impl CreateChannelInput {
     pub fn stream_configuration_list(&self) -> &[crate::types::ChannelStreamConfiguration] {
         self.stream_configuration_list.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify this parameter when <code>S3TablesDestinationConfiguration</code> is not specified.</p>
     pub fn s3_destination_configuration(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3_destination_configuration.as_ref()
     }
-    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Specify this parameter when <code>S3DestinationConfiguration</code> is not specified.</p>
     pub fn s3_tables_destination_configuration(&self) -> ::std::option::Option<&crate::types::S3TablesDestinationConfiguration> {
         self.s3_tables_destination_configuration.as_ref()
     }
@@ -127,31 +127,31 @@ impl CreateChannelInputBuilder {
     pub fn get_stream_configuration_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChannelStreamConfiguration>> {
         &self.stream_configuration_list
     }
-    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify this parameter when <code>S3TablesDestinationConfiguration</code> is not specified.</p>
     pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
         self.s3_destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify this parameter when <code>S3TablesDestinationConfiguration</code> is not specified.</p>
     pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationConfiguration>) -> Self {
         self.s3_destination_configuration = input;
         self
     }
-    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to a general purpose Amazon S3 bucket. Specify this parameter when <code>S3TablesDestinationConfiguration</code> is not specified.</p>
     pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationConfiguration> {
         &self.s3_destination_configuration
     }
-    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Specify this parameter when <code>S3DestinationConfiguration</code> is not specified.</p>
     pub fn s3_tables_destination_configuration(mut self, input: crate::types::S3TablesDestinationConfiguration) -> Self {
         self.s3_tables_destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Specify this parameter when <code>S3DestinationConfiguration</code> is not specified.</p>
     pub fn set_s3_tables_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3TablesDestinationConfiguration>) -> Self {
         self.s3_tables_destination_configuration = input;
         self
     }
-    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. You must specify either <code>S3DestinationConfiguration</code> or <code>S3TablesDestinationConfiguration</code>, but not both.</p>
+    /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Specify this parameter when <code>S3DestinationConfiguration</code> is not specified.</p>
     pub fn get_s3_tables_destination_configuration(&self) -> &::std::option::Option<crate::types::S3TablesDestinationConfiguration> {
         &self.s3_tables_destination_configuration
     }

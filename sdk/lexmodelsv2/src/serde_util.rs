@@ -90,6 +90,15 @@ pub(crate) fn slot_value_selection_setting_correct_errors(
     builder
 }
 
+pub(crate) fn speaker_diarization_settings_correct_errors(
+    mut builder: crate::types::builders::SpeakerDiarizationSettingsBuilder,
+) -> crate::types::builders::SpeakerDiarizationSettingsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn test_set_discrepancy_errors_correct_errors(
     mut builder: crate::types::builders::TestSetDiscrepancyErrorsBuilder,
 ) -> crate::types::builders::TestSetDiscrepancyErrorsBuilder {

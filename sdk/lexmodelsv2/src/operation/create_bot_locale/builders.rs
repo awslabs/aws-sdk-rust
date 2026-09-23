@@ -295,4 +295,18 @@ impl CreateBotLocaleFluentBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         self.inner.get_speech_detection_sensitivity()
     }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.inner = self.inner.speaker_diarization_settings(input);
+        self
+    }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.inner = self.inner.set_speaker_diarization_settings(input);
+        self
+    }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        self.inner.get_speaker_diarization_settings()
+    }
 }

@@ -21,7 +21,9 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! EC2 Image Builder automates the creation, management, and deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured with software and settings to meet specific IT standards.
+//! EC2 Image Builder automates the creation, management, and deployment of customized, secure, and up-to-date server images. You can build Amazon Machine Images (AMIs) and container images that are pre-installed and pre-configured with software and settings to meet specific IT standards.
+//!
+//! For an introduction to the service concepts that these API operations work with, see [How Image Builder works](https://docs.aws.amazon.com/imagebuilder/latest/userguide/how-image-builder-works.html) in the _EC2 Image Builder User Guide_.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-imagebuilder = "1.127.0"
+//! aws-sdk-imagebuilder = "1.128.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

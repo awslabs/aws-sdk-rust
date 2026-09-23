@@ -16,7 +16,7 @@ pub struct RecordConfiguration {
     /// <p><code>BYTE_ARRAY</code> - Supported only for general purpose Amazon S3 destinations.</p></li>
     /// </ul>
     pub record_format_type: crate::types::RecordFormatType,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and <code>GSR_JSON</code> record formats.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table.</p>
     pub gsr_schema_arn: ::std::option::Option<::std::string::String>,
 }
 impl RecordConfiguration {
@@ -34,7 +34,7 @@ impl RecordConfiguration {
     pub fn record_format_type(&self) -> &crate::types::RecordFormatType {
         &self.record_format_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and <code>GSR_JSON</code> record formats.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table.</p>
     pub fn gsr_schema_arn(&self) -> ::std::option::Option<&str> {
         self.gsr_schema_arn.as_deref()
     }
@@ -99,17 +99,17 @@ impl RecordConfigurationBuilder {
     pub fn get_record_format_type(&self) -> &::std::option::Option<crate::types::RecordFormatType> {
         &self.record_format_type
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and <code>GSR_JSON</code> record formats.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table.</p>
     pub fn gsr_schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gsr_schema_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and <code>GSR_JSON</code> record formats.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table.</p>
     pub fn set_gsr_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gsr_schema_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table (Amazon S3 Tables), for both the <code>JSON</code> and <code>GSR_JSON</code> record formats.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema used to validate records. Required when the channel destination is a streaming table.</p>
     pub fn get_gsr_schema_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gsr_schema_arn
     }

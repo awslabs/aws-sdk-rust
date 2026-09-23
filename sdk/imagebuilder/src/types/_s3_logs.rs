@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Logs {
-    /// <p>The S3 bucket in which to store the logs.</p>
+    /// <p>The name of an existing Amazon S3 bucket where Image Builder saves build logs. The bucket isn't validated when you create or update the configuration, and Image Builder doesn't create it. The instance profile associated with this infrastructure configuration must have permission to write to the bucket.</p>
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    /// <p>The Amazon S3 key prefix under which Image Builder writes build and test logs in the bucket.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3Logs {
-    /// <p>The S3 bucket in which to store the logs.</p>
+    /// <p>The name of an existing Amazon S3 bucket where Image Builder saves build logs. The bucket isn't validated when you create or update the configuration, and Image Builder doesn't create it. The instance profile associated with this infrastructure configuration must have permission to write to the bucket.</p>
     pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
-    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    /// <p>The Amazon S3 key prefix under which Image Builder writes build and test logs in the bucket.</p>
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
@@ -34,31 +34,31 @@ pub struct S3LogsBuilder {
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3LogsBuilder {
-    /// <p>The S3 bucket in which to store the logs.</p>
+    /// <p>The name of an existing Amazon S3 bucket where Image Builder saves build logs. The bucket isn't validated when you create or update the configuration, and Image Builder doesn't create it. The instance profile associated with this infrastructure configuration must have permission to write to the bucket.</p>
     pub fn s3_bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The S3 bucket in which to store the logs.</p>
+    /// <p>The name of an existing Amazon S3 bucket where Image Builder saves build logs. The bucket isn't validated when you create or update the configuration, and Image Builder doesn't create it. The instance profile associated with this infrastructure configuration must have permission to write to the bucket.</p>
     pub fn set_s3_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_name = input;
         self
     }
-    /// <p>The S3 bucket in which to store the logs.</p>
+    /// <p>The name of an existing Amazon S3 bucket where Image Builder saves build logs. The bucket isn't validated when you create or update the configuration, and Image Builder doesn't create it. The instance profile associated with this infrastructure configuration must have permission to write to the bucket.</p>
     pub fn get_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_name
     }
-    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    /// <p>The Amazon S3 key prefix under which Image Builder writes build and test logs in the bucket.</p>
     pub fn s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    /// <p>The Amazon S3 key prefix under which Image Builder writes build and test logs in the bucket.</p>
     pub fn set_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_prefix = input;
         self
     }
-    /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
+    /// <p>The Amazon S3 key prefix under which Image Builder writes build and test logs in the bucket.</p>
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key_prefix
     }

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImage`](crate::operation::get_image::builders::GetImageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_build_version_arn(impl Into<String>)`](crate::operation::get_image::builders::GetImageFluentBuilder::image_build_version_arn) / [`set_image_build_version_arn(Option<String>)`](crate::operation::get_image::builders::GetImageFluentBuilder::set_image_build_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image that you want to get.</p><br>
+    ///   - [`image_build_version_arn(impl Into<String>)`](crate::operation::get_image::builders::GetImageFluentBuilder::image_build_version_arn) / [`set_image_build_version_arn(Option<String>)`](crate::operation::get_image::builders::GetImageFluentBuilder::set_image_build_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p><br>
     /// - On success, responds with [`GetImageOutput`](crate::operation::get_image::GetImageOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image::GetImageOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image(Option<Image>)`](crate::operation::get_image::GetImageOutput::image): <p>The image object.</p>
-    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_image::GetImageOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_image::GetImageOutput::latest_version_references): <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     /// - On failure, responds with [`SdkError<GetImageError>`](crate::operation::get_image::GetImageError)
     pub fn get_image(&self) -> crate::operation::get_image::builders::GetImageFluentBuilder {
         crate::operation::get_image::builders::GetImageFluentBuilder::new(self.handle.clone())

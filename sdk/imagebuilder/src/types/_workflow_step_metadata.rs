@@ -18,9 +18,9 @@ pub struct WorkflowStepMetadata {
     pub rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     /// <p>Detailed output message that the workflow step provides at runtime.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>Input parameters that Image Builder provides for the workflow step.</p>
+    /// <p>Input parameters that Image Builder provides for the workflow step, as a JSON-encoded string.</p>
     pub inputs: ::std::option::Option<::std::string::String>,
-    /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
+    /// <p>The output values that the workflow step produced for this runtime instance of the workflow, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub outputs: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the workflow step started.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
@@ -60,11 +60,11 @@ impl WorkflowStepMetadata {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Input parameters that Image Builder provides for the workflow step.</p>
+    /// <p>Input parameters that Image Builder provides for the workflow step, as a JSON-encoded string.</p>
     pub fn inputs(&self) -> ::std::option::Option<&str> {
         self.inputs.as_deref()
     }
-    /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
+    /// <p>The output values that the workflow step produced for this runtime instance of the workflow, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn outputs(&self) -> ::std::option::Option<&str> {
         self.outputs.as_deref()
     }
@@ -209,31 +209,31 @@ impl WorkflowStepMetadataBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>Input parameters that Image Builder provides for the workflow step.</p>
+    /// <p>Input parameters that Image Builder provides for the workflow step, as a JSON-encoded string.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inputs = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Input parameters that Image Builder provides for the workflow step.</p>
+    /// <p>Input parameters that Image Builder provides for the workflow step, as a JSON-encoded string.</p>
     pub fn set_inputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inputs = input;
         self
     }
-    /// <p>Input parameters that Image Builder provides for the workflow step.</p>
+    /// <p>Input parameters that Image Builder provides for the workflow step, as a JSON-encoded string.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::string::String> {
         &self.inputs
     }
-    /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
+    /// <p>The output values that the workflow step produced for this runtime instance of the workflow, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn outputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outputs = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
+    /// <p>The output values that the workflow step produced for this runtime instance of the workflow, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>The file names that the workflow step created as output for this runtime instance of the workflow.</p>
+    /// <p>The output values that the workflow step produced for this runtime instance of the workflow, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::string::String> {
         &self.outputs
     }

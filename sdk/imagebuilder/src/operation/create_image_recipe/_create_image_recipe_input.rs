@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImageRecipeInput {
-    /// <p>The name of the image recipe.</p>
+    /// <p>The name of the image recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the image recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image recipe.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ pub struct CreateImageRecipeInput {
     /// <p><b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub semantic_version: ::std::option::Option<::std::string::String>,
-    /// <p>The components included in the image recipe.</p>
+    /// <p>The components included in the image recipe. Components are optional. A recipe with no components bakes the base image without additional customization. You can specify each component only one time in a recipe. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
     /// <ul>
@@ -37,13 +37,13 @@ pub struct CreateImageRecipeInput {
     /// <li>
     /// <p>Amazon Web Services Marketplace product ID</p></li>
     /// </ul>
-    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI. The AMI must also be in the Region where you're creating the recipe.</p>
     pub parent_image: ::std::option::Option<::std::string::String>,
-    /// <p>The block device mappings of the image recipe.</p>
+    /// <p>The block device mappings that Image Builder applies to the build instance and the output AMI. For example, you can override the size of the base image's root volume or attach additional EBS volumes.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The tags of the image recipe.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The working directory used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
     /// <p>The additional settings and launch scripts for your build instances.</p>
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
@@ -53,13 +53,13 @@ pub struct CreateImageRecipeInput {
     /// <p>AMI watermarks are supported only for image recipes. AMIs with watermarks cannot be made public.</p>
     /// </note>
     pub ami_watermarks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateImageRecipeInput {
-    /// <p>The name of the image recipe.</p>
+    /// <p>The name of the image recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the image recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -86,7 +86,7 @@ impl CreateImageRecipeInput {
     pub fn semantic_version(&self) -> ::std::option::Option<&str> {
         self.semantic_version.as_deref()
     }
-    /// <p>The components included in the image recipe.</p>
+    /// <p>The components included in the image recipe. Components are optional. A recipe with no components bakes the base image without additional customization. You can specify each component only one time in a recipe. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
@@ -103,11 +103,11 @@ impl CreateImageRecipeInput {
     /// <li>
     /// <p>Amazon Web Services Marketplace product ID</p></li>
     /// </ul>
-    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI. The AMI must also be in the Region where you're creating the recipe.</p>
     pub fn parent_image(&self) -> ::std::option::Option<&str> {
         self.parent_image.as_deref()
     }
-    /// <p>The block device mappings of the image recipe.</p>
+    /// <p>The block device mappings that Image Builder applies to the build instance and the output AMI. For example, you can override the size of the base image's root volume or attach additional EBS volumes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
     pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
@@ -117,7 +117,7 @@ impl CreateImageRecipeInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The working directory used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn working_directory(&self) -> ::std::option::Option<&str> {
         self.working_directory.as_deref()
     }
@@ -137,11 +137,11 @@ impl CreateImageRecipeInput {
     pub fn ami_watermarks(&self) -> &[::std::string::String] {
         self.ami_watermarks.as_deref().unwrap_or_default()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
@@ -172,18 +172,18 @@ pub struct CreateImageRecipeInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateImageRecipeInputBuilder {
-    /// <p>The name of the image recipe.</p>
+    /// <p>The name of the image recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the image recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the image recipe.</p>
+    /// <p>The name of the image recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the image recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the image recipe.</p>
+    /// <p>The name of the image recipe. The recipe name, combined with the semantic version, must be unique to your account in each Amazon Web Services Region. Image Builder generates the image recipe ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -265,19 +265,19 @@ impl CreateImageRecipeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
-    /// <p>The components included in the image recipe.</p>
+    /// <p>The components included in the image recipe. Components are optional. A recipe with no components bakes the base image without additional customization. You can specify each component only one time in a recipe. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input);
         self.components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The components included in the image recipe.</p>
+    /// <p>The components included in the image recipe. Components are optional. A recipe with no components bakes the base image without additional customization. You can specify each component only one time in a recipe. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
-    /// <p>The components included in the image recipe.</p>
+    /// <p>The components included in the image recipe. Components are optional. A recipe with no components bakes the base image without additional customization. You can specify each component only one time in a recipe. Components with a status of <code>DEPRECATED</code> or <code>DISABLED</code> can't be added to new recipes.</p>
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
@@ -292,7 +292,7 @@ impl CreateImageRecipeInputBuilder {
     /// <li>
     /// <p>Amazon Web Services Marketplace product ID</p></li>
     /// </ul>
-    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI. The AMI must also be in the Region where you're creating the recipe.</p>
     /// This field is required.
     pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parent_image = ::std::option::Option::Some(input.into());
@@ -309,7 +309,7 @@ impl CreateImageRecipeInputBuilder {
     /// <li>
     /// <p>Amazon Web Services Marketplace product ID</p></li>
     /// </ul>
-    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI. The AMI must also be in the Region where you're creating the recipe.</p>
     pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_image = input;
         self
@@ -325,7 +325,7 @@ impl CreateImageRecipeInputBuilder {
     /// <li>
     /// <p>Amazon Web Services Marketplace product ID</p></li>
     /// </ul>
-    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI, and the AMI must be in the source Region.</p>
+    /// <p>If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have access to the AMI. The AMI must also be in the Region where you're creating the recipe.</p>
     pub fn get_parent_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_image
     }
@@ -333,19 +333,19 @@ impl CreateImageRecipeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>The block device mappings of the image recipe.</p>
+    /// <p>The block device mappings that Image Builder applies to the build instance and the output AMI. For example, you can override the size of the base image's root volume or attach additional EBS volumes.</p>
     pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The block device mappings of the image recipe.</p>
+    /// <p>The block device mappings that Image Builder applies to the build instance and the output AMI. For example, you can override the size of the base image's root volume or attach additional EBS volumes.</p>
     pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
-    /// <p>The block device mappings of the image recipe.</p>
+    /// <p>The block device mappings that Image Builder applies to the build instance and the output AMI. For example, you can override the size of the base image's root volume or attach additional EBS volumes.</p>
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }
@@ -369,17 +369,17 @@ impl CreateImageRecipeInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The working directory used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The working directory used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
-    /// <p>The working directory used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.working_directory
     }
@@ -443,32 +443,32 @@ impl CreateImageRecipeInputBuilder {
     pub fn get_ami_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ami_watermarks
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }

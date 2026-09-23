@@ -34,6 +34,9 @@ pub mod get_enterprise_support_contract_details;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `ListBillingViewSegments` operation.
+pub mod list_billing_view_segments;
+
 /// Types for the `ListBillingViews` operation.
 pub mod list_billing_views;
 

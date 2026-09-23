@@ -62,6 +62,8 @@ pub struct StreamDescriptionSummary {
     pub max_record_size_in_kib: ::std::option::Option<i32>,
     /// <p>The number of channels associated with the stream.</p>
     pub channel_count: ::std::option::Option<i32>,
+    /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
+    pub record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
 }
 impl StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
@@ -155,6 +157,10 @@ impl StreamDescriptionSummary {
     pub fn channel_count(&self) -> ::std::option::Option<i32> {
         self.channel_count
     }
+    /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
+    pub fn record_distribution_strategy(&self) -> ::std::option::Option<&crate::types::RecordDistributionStrategy> {
+        self.record_distribution_strategy.as_ref()
+    }
 }
 impl StreamDescriptionSummary {
     /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
@@ -182,6 +188,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
     pub(crate) channel_count: ::std::option::Option<i32>,
+    pub(crate) record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
 }
 impl StreamDescriptionSummaryBuilder {
     /// <p>The name of the stream being described.</p>
@@ -490,6 +497,20 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_channel_count(&self) -> &::std::option::Option<i32> {
         &self.channel_count
     }
+    /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
+    pub fn record_distribution_strategy(mut self, input: crate::types::RecordDistributionStrategy) -> Self {
+        self.record_distribution_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
+    pub fn set_record_distribution_strategy(mut self, input: ::std::option::Option<crate::types::RecordDistributionStrategy>) -> Self {
+        self.record_distribution_strategy = input;
+        self
+    }
+    /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
+    pub fn get_record_distribution_strategy(&self) -> &::std::option::Option<crate::types::RecordDistributionStrategy> {
+        &self.record_distribution_strategy
+    }
     /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_name`](crate::types::builders::StreamDescriptionSummaryBuilder::stream_name)
@@ -551,6 +572,7 @@ impl StreamDescriptionSummaryBuilder {
             warm_throughput: self.warm_throughput,
             max_record_size_in_kib: self.max_record_size_in_kib,
             channel_count: self.channel_count,
+            record_distribution_strategy: self.record_distribution_strategy,
         })
     }
 }

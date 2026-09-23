@@ -7,6 +7,8 @@ pub use crate::types::_pricing_plan::PricingPlanBuilder;
 
 pub use crate::types::_active_time_range::ActiveTimeRangeBuilder;
 
+pub use crate::types::_billing_view_segment_time_range::BillingViewSegmentTimeRangeBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_dimension_values::DimensionValuesBuilder;
@@ -38,6 +40,8 @@ pub use crate::types::_additional_charge::AdditionalChargeBuilder;
 pub use crate::types::_string_search::StringSearchBuilder;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
+
+pub use crate::types::_billing_view_segments_list_element::BillingViewSegmentsListElementBuilder;
 
 pub use crate::types::_linked_account_charge::LinkedAccountChargeBuilder;
 

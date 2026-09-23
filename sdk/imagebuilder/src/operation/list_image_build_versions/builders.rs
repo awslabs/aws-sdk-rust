@@ -114,17 +114,35 @@ impl ListImageBuildVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator {
         crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image version whose build versions you want to retrieve. The ARN must specify an exact version (<code><major>
+    /// .
+    /// <minor>
+    /// .
+    /// <patch></patch>
+    /// </minor>
+    /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
     pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_version_arn()
     }

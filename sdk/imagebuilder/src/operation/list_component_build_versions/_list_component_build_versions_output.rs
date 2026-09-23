@@ -5,7 +5,7 @@
 pub struct ListComponentBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The list of component summaries for the specified semantic version.</p>
+    /// <p>The list of component summaries. Each summary represents one build version of the specified component version, or of the components that your account owns if you didn't specify an ARN. Deprecated build versions aren't included.</p>
     pub component_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ListComponentBuildVersionsOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The list of component summaries for the specified semantic version.</p>
+    /// <p>The list of component summaries. Each summary represents one build version of the specified component version, or of the components that your account owns if you didn't specify an ARN. Deprecated build versions aren't included.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_summary_list.is_none()`.
     pub fn component_summary_list(&self) -> &[crate::types::ComponentSummary] {
@@ -67,19 +67,19 @@ impl ListComponentBuildVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_component_summary_list`](Self::set_component_summary_list).
     ///
-    /// <p>The list of component summaries for the specified semantic version.</p>
+    /// <p>The list of component summaries. Each summary represents one build version of the specified component version, or of the components that your account owns if you didn't specify an ARN. Deprecated build versions aren't included.</p>
     pub fn component_summary_list(mut self, input: crate::types::ComponentSummary) -> Self {
         let mut v = self.component_summary_list.unwrap_or_default();
         v.push(input);
         self.component_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of component summaries for the specified semantic version.</p>
+    /// <p>The list of component summaries. Each summary represents one build version of the specified component version, or of the components that your account owns if you didn't specify an ARN. Deprecated build versions aren't included.</p>
     pub fn set_component_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
         self.component_summary_list = input;
         self
     }
-    /// <p>The list of component summaries for the specified semantic version.</p>
+    /// <p>The list of component summaries. Each summary represents one build version of the specified component version, or of the components that your account owns if you didn't specify an ARN. Deprecated build versions aren't included.</p>
     pub fn get_component_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentSummary>> {
         &self.component_summary_list
     }

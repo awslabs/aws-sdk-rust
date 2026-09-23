@@ -13,7 +13,7 @@ pub struct S3StorageConfiguration {
     /// <p>The Amazon S3 storage class for delivered objects. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>STANDARD</code> - Default storage class for frequently accessed data. (default)</p></li>
+    /// <p><code>STANDARD</code> - The default storage class, for frequently accessed data.</p></li>
     /// <li>
     /// <p><code>INTELLIGENT_TIERING</code> - Automatically moves objects to the most cost-effective access tier based on usage patterns.</p></li>
     /// <li>
@@ -49,7 +49,7 @@ impl S3StorageConfiguration {
     /// <p>The Amazon S3 storage class for delivered objects. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>STANDARD</code> - Default storage class for frequently accessed data. (default)</p></li>
+    /// <p><code>STANDARD</code> - The default storage class, for frequently accessed data.</p></li>
     /// <li>
     /// <p><code>INTELLIGENT_TIERING</code> - Automatically moves objects to the most cost-effective access tier based on usage patterns.</p></li>
     /// <li>
@@ -136,7 +136,7 @@ impl S3StorageConfigurationBuilder {
     /// <p>The Amazon S3 storage class for delivered objects. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>STANDARD</code> - Default storage class for frequently accessed data. (default)</p></li>
+    /// <p><code>STANDARD</code> - The default storage class, for frequently accessed data.</p></li>
     /// <li>
     /// <p><code>INTELLIGENT_TIERING</code> - Automatically moves objects to the most cost-effective access tier based on usage patterns.</p></li>
     /// <li>
@@ -149,7 +149,7 @@ impl S3StorageConfigurationBuilder {
     /// <p>The Amazon S3 storage class for delivered objects. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>STANDARD</code> - Default storage class for frequently accessed data. (default)</p></li>
+    /// <p><code>STANDARD</code> - The default storage class, for frequently accessed data.</p></li>
     /// <li>
     /// <p><code>INTELLIGENT_TIERING</code> - Automatically moves objects to the most cost-effective access tier based on usage patterns.</p></li>
     /// <li>
@@ -162,7 +162,7 @@ impl S3StorageConfigurationBuilder {
     /// <p>The Amazon S3 storage class for delivered objects. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>STANDARD</code> - Default storage class for frequently accessed data. (default)</p></li>
+    /// <p><code>STANDARD</code> - The default storage class, for frequently accessed data.</p></li>
     /// <li>
     /// <p><code>INTELLIGENT_TIERING</code> - Automatically moves objects to the most cost-effective access tier based on usage patterns.</p></li>
     /// <li>

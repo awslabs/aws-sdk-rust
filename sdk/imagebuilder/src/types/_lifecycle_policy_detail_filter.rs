@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecyclePolicyDetailFilter {
-    /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+    /// <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You can only use the count filter with the <code>DELETE</code> action type.</p>
     pub r#type: crate::types::LifecyclePolicyDetailFilterType,
     /// <p>The number of units for the time period or for the count. For example, a value of <code>6</code> might refer to six months or six AMIs.</p><note>
     /// <p>For count-based filters, this value represents the minimum number of resources to keep on hand. If you have fewer resources than this number, the resource is excluded from lifecycle actions.</p>
@@ -16,7 +16,7 @@ pub struct LifecyclePolicyDetailFilter {
     pub retain_at_least: ::std::option::Option<i32>,
 }
 impl LifecyclePolicyDetailFilter {
-    /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+    /// <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You can only use the count filter with the <code>DELETE</code> action type.</p>
     pub fn r#type(&self) -> &crate::types::LifecyclePolicyDetailFilterType {
         &self.r#type
     }
@@ -52,18 +52,18 @@ pub struct LifecyclePolicyDetailFilterBuilder {
     pub(crate) retain_at_least: ::std::option::Option<i32>,
 }
 impl LifecyclePolicyDetailFilterBuilder {
-    /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+    /// <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You can only use the count filter with the <code>DELETE</code> action type.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::LifecyclePolicyDetailFilterType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+    /// <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You can only use the count filter with the <code>DELETE</code> action type.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailFilterType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Filter resources based on either <code>age</code> or <code>count</code>.</p>
+    /// <p>Filter resources based on either <code>AGE</code> or <code>COUNT</code>. You can only use the count filter with the <code>DELETE</code> action type.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailFilterType> {
         &self.r#type
     }

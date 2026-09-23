@@ -40,5 +40,8 @@ pub fn ser_create_stream_input_input(
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
+    if let Some(var_11) = &input.record_distribution_strategy {
+        object.key("RecordDistributionStrategy").string(var_11.as_str());
+    }
     Ok(())
 }

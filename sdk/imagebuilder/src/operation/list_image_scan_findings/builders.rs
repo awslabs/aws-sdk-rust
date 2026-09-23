@@ -22,7 +22,7 @@ impl crate::operation::list_image_scan_findings::builders::ListImageScanFindings
 }
 /// Fluent builder constructing a request to `ListImageScanFindings`.
 ///
-/// <p>Returns a list of image scan findings for your account.</p>
+/// <p>Returns a list of image scan findings for your account. Amazon Inspector generates the findings when it scans images that have scanning enabled.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImageScanFindingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,13 +122,13 @@ impl ListImageScanFindingsFluentBuilder {
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
     /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
     /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
     /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
     /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn filters(mut self, input: crate::types::ImageScanFindingsFilter) -> Self {
@@ -138,13 +138,13 @@ impl ListImageScanFindingsFluentBuilder {
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
     /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
     /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
     /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
     /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
@@ -154,13 +154,13 @@ impl ListImageScanFindingsFluentBuilder {
     /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
     /// <ul>
     /// <li>
-    /// <p><code>imageBuildVersionArn</code></p></li>
+    /// <p><code>imageBuildVersionArn</code> – Filters findings by the image build version that was scanned.</p></li>
     /// <li>
-    /// <p><code>imagePipelineArn</code></p></li>
+    /// <p><code>imagePipelineArn</code> – Filters findings by the pipeline that created the scanned image.</p></li>
     /// <li>
-    /// <p><code>vulnerabilityId</code></p></li>
+    /// <p><code>vulnerabilityId</code> – Filters findings by vulnerability ID, for example a CVE ID.</p></li>
     /// <li>
-    /// <p><code>severity</code></p></li>
+    /// <p><code>severity</code> – Filters findings by severity level.</p></li>
     /// </ul>
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageScanFindingsFilter>> {

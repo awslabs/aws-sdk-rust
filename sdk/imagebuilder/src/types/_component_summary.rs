@@ -18,13 +18,13 @@ pub struct ComponentSummary {
     pub state: ::std::option::Option<crate::types::ComponentState>,
     /// <p>The component type specifies whether Image Builder uses the component to build the image or only to test it.</p>
     pub r#type: ::std::option::Option<crate::types::ComponentType>,
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The change description for the current version of the component.</p>
+    /// <p>The change description for this version of the component.</p>
     pub change_description: ::std::option::Option<::std::string::String>,
-    /// <p>The original creation date of the component.</p>
+    /// <p>The date that Image Builder created this version of the component.</p>
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags that apply to the component.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -64,7 +64,7 @@ impl ComponentSummary {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ComponentType> {
         self.r#type.as_ref()
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
@@ -72,11 +72,11 @@ impl ComponentSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The change description for the current version of the component.</p>
+    /// <p>The change description for this version of the component.</p>
     pub fn change_description(&self) -> ::std::option::Option<&str> {
         self.change_description.as_deref()
     }
-    /// <p>The original creation date of the component.</p>
+    /// <p>The date that Image Builder created this version of the component.</p>
     pub fn date_created(&self) -> ::std::option::Option<&str> {
         self.date_created.as_deref()
     }
@@ -224,17 +224,17 @@ impl ComponentSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ComponentType> {
         &self.r#type
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>The owner of the component.</p>
+    /// <p>The owner of the component. The value is your account ID for components that you own, the sharing account's ID for shared components, or <code>Amazon</code>, <code>ThirdParty</code>, or <code>AWSMarketplace</code>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
@@ -252,31 +252,31 @@ impl ComponentSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The change description for the current version of the component.</p>
+    /// <p>The change description for this version of the component.</p>
     pub fn change_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.change_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The change description for the current version of the component.</p>
+    /// <p>The change description for this version of the component.</p>
     pub fn set_change_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_description = input;
         self
     }
-    /// <p>The change description for the current version of the component.</p>
+    /// <p>The change description for this version of the component.</p>
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_description
     }
-    /// <p>The original creation date of the component.</p>
+    /// <p>The date that Image Builder created this version of the component.</p>
     pub fn date_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.date_created = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The original creation date of the component.</p>
+    /// <p>The date that Image Builder created this version of the component.</p>
     pub fn set_date_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.date_created = input;
         self
     }
-    /// <p>The original creation date of the component.</p>
+    /// <p>The date that Image Builder created this version of the component.</p>
     pub fn get_date_created(&self) -> &::std::option::Option<::std::string::String> {
         &self.date_created
     }

@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorkflow`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workflow_build_version_arn(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::workflow_build_version_arn) / [`set_workflow_build_version_arn(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_workflow_build_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the workflow resource that you want to get.</p><br>
+    ///   - [`workflow_build_version_arn(impl Into<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::workflow_build_version_arn) / [`set_workflow_build_version_arn(Option<String>)`](crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::set_workflow_build_version_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the workflow resource that you want to get. You can specify a build version ARN, or a version ARN with or without wildcards (<code>x</code>) in its version segments. Image Builder resolves version and wildcard ARNs to the most recent matching build version.</p><br>
     /// - On success, responds with [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput) with field(s):
     ///   - [`workflow(Option<Workflow>)`](crate::operation::get_workflow::GetWorkflowOutput::workflow): <p>The workflow resource specified in the request.</p>
-    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_workflow::GetWorkflowOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_workflow::GetWorkflowOutput::latest_version_references): <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowError>`](crate::operation::get_workflow::GetWorkflowError)
     pub fn get_workflow(&self) -> crate::operation::get_workflow::builders::GetWorkflowFluentBuilder {
         crate::operation::get_workflow::builders::GetWorkflowFluentBuilder::new(self.handle.clone())

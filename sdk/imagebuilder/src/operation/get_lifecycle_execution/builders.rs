@@ -22,7 +22,7 @@ impl crate::operation::get_lifecycle_execution::builders::GetLifecycleExecutionI
 }
 /// Fluent builder constructing a request to `GetLifecycleExecution`.
 ///
-/// <p>Retrieves the runtime information for a specific runtime instance of the lifecycle policy.</p>
+/// <p>Retrieves runtime information for a lifecycle execution – a single run of lifecycle actions that a lifecycle policy or a <code>StartResourceStateUpdate</code> request started.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecycleExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

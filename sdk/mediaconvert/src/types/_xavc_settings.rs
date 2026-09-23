@@ -18,7 +18,7 @@ pub struct XavcSettings {
     pub framerate_numerator: ::std::option::Option<i32>,
     /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the output name and metric type. For example: videofile_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode. * SHOT_CHANGE: Shot Changes
     pub per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
-    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that when you choose XAVC_HD_INTRA_CBG, MediaConvert supports interlaced outputs only when they are top field first and your output frame rate is 25 or 29.97 fps.
     pub profile: ::std::option::Option<crate::types::XavcProfile>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Frame rate to 25.
     pub slow_pal: ::std::option::Option<crate::types::XavcSlowPal>,
@@ -70,7 +70,7 @@ impl XavcSettings {
     pub fn per_frame_metrics(&self) -> &[crate::types::FrameMetricType] {
         self.per_frame_metrics.as_deref().unwrap_or_default()
     }
-    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that when you choose XAVC_HD_INTRA_CBG, MediaConvert supports interlaced outputs only when they are top field first and your output frame rate is 25 or 29.97 fps.
     pub fn profile(&self) -> ::std::option::Option<&crate::types::XavcProfile> {
         self.profile.as_ref()
     }
@@ -245,17 +245,17 @@ impl XavcSettingsBuilder {
     pub fn get_per_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>> {
         &self.per_frame_metrics
     }
-    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that when you choose XAVC_HD_INTRA_CBG, MediaConvert supports interlaced outputs only when they are top field first and your output frame rate is 25 or 29.97 fps.
     pub fn profile(mut self, input: crate::types::XavcProfile) -> Self {
         self.profile = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that when you choose XAVC_HD_INTRA_CBG, MediaConvert supports interlaced outputs only when they are top field first and your output frame rate is 25 or 29.97 fps.
     pub fn set_profile(mut self, input: ::std::option::Option<crate::types::XavcProfile>) -> Self {
         self.profile = input;
         self
     }
-    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+    /// Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that when you choose XAVC_HD_INTRA_CBG, MediaConvert supports interlaced outputs only when they are top field first and your output frame rate is 25 or 29.97 fps.
     pub fn get_profile(&self) -> &::std::option::Option<crate::types::XavcProfile> {
         &self.profile
     }

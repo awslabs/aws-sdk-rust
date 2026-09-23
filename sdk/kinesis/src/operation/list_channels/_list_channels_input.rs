@@ -7,7 +7,7 @@ pub struct ListChannelsInput {
     pub stream_filter: ::std::option::Option<::std::vec::Vec<crate::types::StreamFilter>>,
     /// <p>The maximum number of channels to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 results are returned.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChannelsInput {
@@ -21,7 +21,7 @@ impl ListChannelsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -76,17 +76,17 @@ impl ListChannelsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+    /// <p>The pagination token returned by a previous call. Specify this token to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

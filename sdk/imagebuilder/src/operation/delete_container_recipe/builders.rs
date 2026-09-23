@@ -22,7 +22,7 @@ impl crate::operation::delete_container_recipe::builders::DeleteContainerRecipeI
 }
 /// Fluent builder constructing a request to `DeleteContainerRecipe`.
 ///
-/// <p>Deletes a container recipe.</p>
+/// <p>Deletes a container recipe. The request fails with <code>ResourceDependencyException</code> if the recipe is shared with other accounts, or if an image pipeline references it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContainerRecipeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

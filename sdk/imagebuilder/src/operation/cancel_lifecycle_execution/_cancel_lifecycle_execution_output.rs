@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelLifecycleExecutionOutput {
-    /// <p>The unique identifier for the image lifecycle runtime instance that was canceled.</p>
+    /// <p>The unique identifier of the lifecycle execution that the cancellation request applies to. The cancellation completes asynchronously.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelLifecycleExecutionOutput {
-    /// <p>The unique identifier for the image lifecycle runtime instance that was canceled.</p>
+    /// <p>The unique identifier of the lifecycle execution that the cancellation request applies to. The cancellation completes asynchronously.</p>
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct CancelLifecycleExecutionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelLifecycleExecutionOutputBuilder {
-    /// <p>The unique identifier for the image lifecycle runtime instance that was canceled.</p>
+    /// <p>The unique identifier of the lifecycle execution that the cancellation request applies to. The cancellation completes asynchronously.</p>
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the image lifecycle runtime instance that was canceled.</p>
+    /// <p>The unique identifier of the lifecycle execution that the cancellation request applies to. The cancellation completes asynchronously.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_execution_id = input;
         self
     }
-    /// <p>The unique identifier for the image lifecycle runtime instance that was canceled.</p>
+    /// <p>The unique identifier of the lifecycle execution that the cancellation request applies to. The cancellation completes asynchronously.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }

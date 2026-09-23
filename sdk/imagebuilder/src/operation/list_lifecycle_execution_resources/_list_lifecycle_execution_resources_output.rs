@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLifecycleExecutionResourcesOutput {
-    /// <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
+    /// <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the lifecycle runtime instance.</p>
     pub lifecycle_execution_state: ::std::option::Option<crate::types::LifecycleExecutionState>,
@@ -14,7 +14,7 @@ pub struct ListLifecycleExecutionResourcesOutput {
     _request_id: Option<String>,
 }
 impl ListLifecycleExecutionResourcesOutput {
-    /// <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
+    /// <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
@@ -56,17 +56,17 @@ pub struct ListLifecycleExecutionResourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListLifecycleExecutionResourcesOutputBuilder {
-    /// <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
+    /// <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
+    /// <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_execution_id = input;
         self
     }
-    /// <p>Runtime details for the specified runtime instance of the lifecycle policy.</p>
+    /// <p>The unique identifier for the runtime instance of the lifecycle policy.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }

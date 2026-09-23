@@ -342,9 +342,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportVmImage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ImportVmImageError {
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
+    /// <p>A generic client error. This error usually indicates that the request failed a validation check, such as when a downstream service rejects a configured value.</p>
     ClientException(crate::types::error::ClientException),
-    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    /// <p>An internal server error occurred while Image Builder processed the request. Retrying the request may succeed.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),

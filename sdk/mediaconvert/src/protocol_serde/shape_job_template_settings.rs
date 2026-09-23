@@ -69,41 +69,53 @@ pub fn ser_job_template_settings(
         crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.nielsen_configuration {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("nielsenConfiguration").start_object();
-        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_22, var_21)?;
-        object_22.finish();
-    }
-    if let Some(var_23) = &input.nielsen_non_linear_watermark {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("nielsenNonLinearWatermark").start_object();
-        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_24, var_23)?;
-        object_24.finish();
-    }
-    if let Some(var_25) = &input.output_groups {
-        let mut array_26 = object.key("outputGroups").start_array();
-        for item_27 in var_25 {
+    if let Some(var_21) = &input.motion_image_inserters {
+        let mut array_22 = object.key("motionImageInserters").start_array();
+        for item_23 in var_21 {
             {
                 #[allow(unused_mut)]
-                let mut object_28 = array_26.value().start_object();
-                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_28, item_27)?;
-                object_28.finish();
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_motion_image_inserter::ser_motion_image_inserter(&mut object_24, item_23)?;
+                object_24.finish();
             }
         }
-        array_26.finish();
+        array_22.finish();
     }
-    if let Some(var_29) = &input.timecode_config {
+    if let Some(var_25) = &input.nielsen_configuration {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("timecodeConfig").start_object();
-        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_30, var_29)?;
-        object_30.finish();
+        let mut object_26 = object.key("nielsenConfiguration").start_object();
+        crate::protocol_serde::shape_nielsen_configuration::ser_nielsen_configuration(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_31) = &input.timed_metadata_insertion {
+    if let Some(var_27) = &input.nielsen_non_linear_watermark {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("timedMetadataInsertion").start_object();
-        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_32, var_31)?;
-        object_32.finish();
+        let mut object_28 = object.key("nielsenNonLinearWatermark").start_object();
+        crate::protocol_serde::shape_nielsen_non_linear_watermark_settings::ser_nielsen_non_linear_watermark_settings(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.output_groups {
+        let mut array_30 = object.key("outputGroups").start_array();
+        for item_31 in var_29 {
+            {
+                #[allow(unused_mut)]
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_output_group::ser_output_group(&mut object_32, item_31)?;
+                object_32.finish();
+            }
+        }
+        array_30.finish();
+    }
+    if let Some(var_33) = &input.timecode_config {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("timecodeConfig").start_object();
+        crate::protocol_serde::shape_timecode_config::ser_timecode_config(&mut object_34, var_33)?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.timed_metadata_insertion {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("timedMetadataInsertion").start_object();
+        crate::protocol_serde::shape_timed_metadata_insertion::ser_timed_metadata_insertion(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }
@@ -183,6 +195,15 @@ where
                         "motionImageInserter" => {
                             builder = builder.set_motion_image_inserter(
                                 crate::protocol_serde::shape_motion_image_inserter::de_motion_image_inserter(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "motionImageInserters" => {
+                            builder = builder.set_motion_image_inserters(
+                                crate::protocol_serde::shape_list_of_motion_image_inserter::de_list_of_motion_image_inserter(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "nielsenConfiguration" => {

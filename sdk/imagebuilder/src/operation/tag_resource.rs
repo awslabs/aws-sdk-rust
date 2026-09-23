@@ -325,7 +325,7 @@ pub enum TagResourceError {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    /// <p>An internal server error occurred while Image Builder processed the request. Retrying the request may succeed.</p>
     ServiceException(crate::types::error::ServiceException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

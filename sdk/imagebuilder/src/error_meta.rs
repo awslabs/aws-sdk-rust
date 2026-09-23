@@ -5,9 +5,9 @@
 pub enum Error {
     /// <p>You do not have permissions to perform the requested operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>You have exceeded the permitted request rate for the specific operation.</p>
+    /// <p>You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder calls on your behalf. Retry with an increasing or variable delay between requests.</p>
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
-    /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
+    /// <p>A generic client error. This error usually indicates that the request failed a validation check, such as when a downstream service rejects a configured value.</p>
     ClientException(crate::types::error::ClientException),
     /// <p>The dry run operation of the resource was successful, and no resources or mutations were actually performed due to the dry run flag in the request.</p>
     DryRunOperationException(crate::types::error::DryRunOperationException),
@@ -17,13 +17,13 @@ pub enum Error {
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
     /// <p>You have provided an invalid pagination token in your request.</p>
     InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
-    /// <p>You have specified two or more mutually exclusive parameters. Review the error message for details.</p>
+    /// <p>You have specified a combination of parameters that isn't valid. For example, two mutually exclusive parameters, or a parameter without its required companion parameter. Review the error message for details.</p>
     InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The specified parameter is invalid. Review the available parameters for the API request.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The value that you provided for the specified parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>You have requested an action that that the service doesn't support.</p>
+    /// <p>The request is malformed or otherwise invalid. Verify the request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>Your version number is out of bounds or does not follow the required syntax.</p>
     InvalidVersionNumberException(crate::types::error::InvalidVersionNumberException),
@@ -35,7 +35,7 @@ pub enum Error {
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    /// <p>An internal server error occurred while Image Builder processed the request. Retrying the request may succeed.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>You have exceeded the number of permitted resources or operations for this service. For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2 Image Builder endpoints and quotas</a>.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),

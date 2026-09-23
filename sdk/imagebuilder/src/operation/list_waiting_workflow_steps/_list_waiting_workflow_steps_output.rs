@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWaitingWorkflowStepsOutput {
-    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
+    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account. Each step is paused at a <code>WaitForAction</code> step, and remains in the list until you respond with <code>SendWorkflowStepAction</code> or the wait times out.</p>
     pub steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWaitingWorkflowStepsOutput {
-    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
+    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account. Each step is paused at a <code>WaitForAction</code> step, and remains in the list until you respond with <code>SendWorkflowStepAction</code> or the wait times out.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.steps.is_none()`.
     pub fn steps(&self) -> &[crate::types::WorkflowStepExecution] {
@@ -46,19 +46,19 @@ impl ListWaitingWorkflowStepsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_steps`](Self::set_steps).
     ///
-    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
+    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account. Each step is paused at a <code>WaitForAction</code> step, and remains in the list until you respond with <code>SendWorkflowStepAction</code> or the wait times out.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStepExecution) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
         self.steps = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
+    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account. Each step is paused at a <code>WaitForAction</code> step, and remains in the list until you respond with <code>SendWorkflowStepAction</code> or the wait times out.</p>
     pub fn set_steps(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>>) -> Self {
         self.steps = input;
         self
     }
-    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account.</p>
+    /// <p>An array of the workflow steps that are waiting for action in your Amazon Web Services account. Each step is paused at a <code>WaitForAction</code> step, and remains in the list until you respond with <code>SendWorkflowStepAction</code> or the wait times out.</p>
     pub fn get_steps(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowStepExecution>> {
         &self.steps
     }

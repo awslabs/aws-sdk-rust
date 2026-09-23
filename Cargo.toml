@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/no-default-features",
-    "tests/telemetry",
     "tests/webassembly-wstd",
+    "tests/telemetry",
     "tests/webassembly-no-os"
 ]
 members = [
@@ -318,6 +318,7 @@ members = [
     "sdk/networkflowmonitor",
     "sdk/networkmanager",
     "sdk/networkmonitor",
+    "sdk/networksecuritymanager",
     "sdk/notifications",
     "sdk/notificationscontacts",
     "sdk/novaact",

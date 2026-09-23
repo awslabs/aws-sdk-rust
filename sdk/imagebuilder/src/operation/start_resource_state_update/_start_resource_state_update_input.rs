@@ -7,15 +7,15 @@ pub struct StartResourceStateUpdateInput {
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the lifecycle action to take for this request. For AMI-based images, valid values are <code>AVAILABLE</code>, <code>DEPRECATED</code>, <code>DISABLED</code>, and <code>DELETED</code>. For container-based images, only <code>DELETED</code> is supported.</p>
     pub state: ::std::option::Option<crate::types::ResourceState>,
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update image state. You must provide this property together with <code>includeResources</code>. Neither is valid without the other.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
+    /// <p>Specifies which underlying resources to update, in addition to the Image Builder image resource itself. Snapshots and containers are only valid for the <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must include its underlying resources. To delete only the Image Builder image record, use the <code>DeleteImage</code> operation instead.</p>
     pub include_resources: ::std::option::Option<crate::types::ResourceStateUpdateIncludeResources>,
-    /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
+    /// <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching AMIs and their snapshots are skipped. Exclusion rules only take effect when the request includes AMIs. If the target state is <code>DELETED</code> and any resource was skipped, the Image Builder image resource itself is also retained. For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image Builder updates the image resource's state regardless of exclusions.</p>
     pub exclusion_rules: ::std::option::Option<crate::types::ResourceStateUpdateExclusionRules>,
-    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
+    /// <p>The timestamp that indicates when resources are updated by a lifecycle action. This property is valid only when the target status is <code>DEPRECATED</code>, and the value must be a future time. If you don't specify a value, Image Builder begins the state update right away. For a scheduled deprecation, included AMIs get their EC2 deprecation time set immediately, and Image Builder schedules the image resource to transition to <code>DEPRECATED</code> at that time.</p>
     pub update_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartResourceStateUpdateInput {
@@ -27,23 +27,23 @@ impl StartResourceStateUpdateInput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceState> {
         self.state.as_ref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update image state. You must provide this property together with <code>includeResources</code>. Neither is valid without the other.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
+    /// <p>Specifies which underlying resources to update, in addition to the Image Builder image resource itself. Snapshots and containers are only valid for the <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must include its underlying resources. To delete only the Image Builder image record, use the <code>DeleteImage</code> operation instead.</p>
     pub fn include_resources(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateIncludeResources> {
         self.include_resources.as_ref()
     }
-    /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
+    /// <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching AMIs and their snapshots are skipped. Exclusion rules only take effect when the request includes AMIs. If the target state is <code>DELETED</code> and any resource was skipped, the Image Builder image resource itself is also retained. For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image Builder updates the image resource's state regardless of exclusions.</p>
     pub fn exclusion_rules(&self) -> ::std::option::Option<&crate::types::ResourceStateUpdateExclusionRules> {
         self.exclusion_rules.as_ref()
     }
-    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
+    /// <p>The timestamp that indicates when resources are updated by a lifecycle action. This property is valid only when the target status is <code>DEPRECATED</code>, and the value must be a future time. If you don't specify a value, Image Builder begins the state update right away. For a scheduled deprecation, included AMIs get their EC2 deprecation time set immediately, and Image Builder schedules the image resource to transition to <code>DEPRECATED</code> at that time.</p>
     pub fn update_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_at.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -98,74 +98,74 @@ impl StartResourceStateUpdateInputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ResourceState> {
         &self.state
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update image state. You must provide this property together with <code>includeResources</code>. Neither is valid without the other.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update image state. You must provide this property together with <code>includeResources</code>. Neither is valid without the other.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that’s used to update image state.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the IAM role that's used to update image state. You must provide this property together with <code>includeResources</code>. Neither is valid without the other.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
-    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
+    /// <p>Specifies which underlying resources to update, in addition to the Image Builder image resource itself. Snapshots and containers are only valid for the <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must include its underlying resources. To delete only the Image Builder image record, use the <code>DeleteImage</code> operation instead.</p>
     pub fn include_resources(mut self, input: crate::types::ResourceStateUpdateIncludeResources) -> Self {
         self.include_resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
+    /// <p>Specifies which underlying resources to update, in addition to the Image Builder image resource itself. Snapshots and containers are only valid for the <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must include its underlying resources. To delete only the Image Builder image record, use the <code>DeleteImage</code> operation instead.</p>
     pub fn set_include_resources(mut self, input: ::std::option::Option<crate::types::ResourceStateUpdateIncludeResources>) -> Self {
         self.include_resources = input;
         self
     }
-    /// <p>Specifies which image resources to include in the state update. When specified, the lifecycle action applies to underlying resources. These resources include AMIs, snapshots, and containers in addition to the Image Builder image resource. Requires <code>executionRole</code> to also be specified. To delete an image and its underlying resources, you must specify <code>includeResources</code>. To delete only the Image Builder image record without affecting underlying resources, use the <code>DeleteImage</code> API instead.</p>
+    /// <p>Specifies which underlying resources to update, in addition to the Image Builder image resource itself. Snapshots and containers are only valid for the <code>DELETED</code> state. To set an image to <code>DELETED</code>, you must include its underlying resources. To delete only the Image Builder image record, use the <code>DeleteImage</code> operation instead.</p>
     pub fn get_include_resources(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateIncludeResources> {
         &self.include_resources
     }
-    /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
+    /// <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching AMIs and their snapshots are skipped. Exclusion rules only take effect when the request includes AMIs. If the target state is <code>DELETED</code> and any resource was skipped, the Image Builder image resource itself is also retained. For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image Builder updates the image resource's state regardless of exclusions.</p>
     pub fn exclusion_rules(mut self, input: crate::types::ResourceStateUpdateExclusionRules) -> Self {
         self.exclusion_rules = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
+    /// <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching AMIs and their snapshots are skipped. Exclusion rules only take effect when the request includes AMIs. If the target state is <code>DELETED</code> and any resource was skipped, the Image Builder image resource itself is also retained. For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image Builder updates the image resource's state regardless of exclusions.</p>
     pub fn set_exclusion_rules(mut self, input: ::std::option::Option<crate::types::ResourceStateUpdateExclusionRules>) -> Self {
         self.exclusion_rules = input;
         self
     }
-    /// <p>Skip action on the image resource and associated resources if specified exclusion rules are met.</p>
+    /// <p>Rules that Image Builder evaluates against each of the image's AMIs. Matching AMIs and their snapshots are skipped. Exclusion rules only take effect when the request includes AMIs. If the target state is <code>DELETED</code> and any resource was skipped, the Image Builder image resource itself is also retained. For the <code>DEPRECATED</code> and <code>DISABLED</code> target states, Image Builder updates the image resource's state regardless of exclusions.</p>
     pub fn get_exclusion_rules(&self) -> &::std::option::Option<crate::types::ResourceStateUpdateExclusionRules> {
         &self.exclusion_rules
     }
-    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
+    /// <p>The timestamp that indicates when resources are updated by a lifecycle action. This property is valid only when the target status is <code>DEPRECATED</code>, and the value must be a future time. If you don't specify a value, Image Builder begins the state update right away. For a scheduled deprecation, included AMIs get their EC2 deprecation time set immediately, and Image Builder schedules the image resource to transition to <code>DEPRECATED</code> at that time.</p>
     pub fn update_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
+    /// <p>The timestamp that indicates when resources are updated by a lifecycle action. This property is valid only when the target status is <code>DEPRECATED</code>, and the value must be a future time. If you don't specify a value, Image Builder begins the state update right away. For a scheduled deprecation, included AMIs get their EC2 deprecation time set immediately, and Image Builder schedules the image resource to transition to <code>DEPRECATED</code> at that time.</p>
     pub fn set_update_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_at = input;
         self
     }
-    /// <p>Specifies the timestamp when the state transition takes effect. Use this parameter only when the target status is <code>DEPRECATED</code>. The value must be a future time.</p>
+    /// <p>The timestamp that indicates when resources are updated by a lifecycle action. This property is valid only when the target status is <code>DEPRECATED</code>, and the value must be a future time. If you don't specify a value, Image Builder begins the state update right away. For a scheduled deprecation, included AMIs get their EC2 deprecation time set immediately, and Image Builder schedules the image resource to transition to <code>DEPRECATED</code> at that time.</p>
     pub fn get_update_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_at
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

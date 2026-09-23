@@ -22,7 +22,7 @@ impl crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInput
 }
 /// Fluent builder constructing a request to `DeleteImagePipeline`.
 ///
-/// <p>Deletes an image pipeline.</p>
+/// <p>Deletes an image pipeline. Images that the pipeline created aren't deleted - remove those separately with <code>DeleteImage</code>. You can delete a pipeline while a build that it started is still running. The build continues independently.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteImagePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

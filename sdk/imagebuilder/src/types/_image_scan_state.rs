@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanState {
-    /// <p>The current state of vulnerability scans for the image.</p>
+    /// <p>The current state of vulnerability scans for the image. The scan starts as <code>PENDING</code> and moves through <code>SCANNING</code> and <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status to <code>ABANDONED</code> if the image reaches a terminal state before the scan finding collection completes. A scan can also end as <code>FAILED</code> or <code>TIMED_OUT</code>.</p>
     pub status: ::std::option::Option<crate::types::ImageScanStatus>,
     /// <p>The reason for the scan status for the image.</p>
     pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanState {
-    /// <p>The current state of vulnerability scans for the image.</p>
+    /// <p>The current state of vulnerability scans for the image. The scan starts as <code>PENDING</code> and moves through <code>SCANNING</code> and <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status to <code>ABANDONED</code> if the image reaches a terminal state before the scan finding collection completes. A scan can also end as <code>FAILED</code> or <code>TIMED_OUT</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ImageScanStatus> {
         self.status.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ImageScanStateBuilder {
     pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanStateBuilder {
-    /// <p>The current state of vulnerability scans for the image.</p>
+    /// <p>The current state of vulnerability scans for the image. The scan starts as <code>PENDING</code> and moves through <code>SCANNING</code> and <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status to <code>ABANDONED</code> if the image reaches a terminal state before the scan finding collection completes. A scan can also end as <code>FAILED</code> or <code>TIMED_OUT</code>.</p>
     pub fn status(mut self, input: crate::types::ImageScanStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current state of vulnerability scans for the image.</p>
+    /// <p>The current state of vulnerability scans for the image. The scan starts as <code>PENDING</code> and moves through <code>SCANNING</code> and <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status to <code>ABANDONED</code> if the image reaches a terminal state before the scan finding collection completes. A scan can also end as <code>FAILED</code> or <code>TIMED_OUT</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ImageScanStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current state of vulnerability scans for the image.</p>
+    /// <p>The current state of vulnerability scans for the image. The scan starts as <code>PENDING</code> and moves through <code>SCANNING</code> and <code>COLLECTING</code> to <code>COMPLETED</code>. Image Builder sets the status to <code>ABANDONED</code> if the image reaches a terminal state before the scan finding collection completes. A scan can also end as <code>FAILED</code> or <code>TIMED_OUT</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ImageScanStatus> {
         &self.status
     }

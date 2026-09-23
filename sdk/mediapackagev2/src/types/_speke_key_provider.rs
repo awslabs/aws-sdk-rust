@@ -19,6 +19,18 @@ pub struct SpekeKeyProvider {
     pub url: ::std::string::String,
     /// <p>The ARN for the certificate that you imported to Amazon Web Services Certificate Manager to add content key encryption to this endpoint. For this feature to work, your DRM key provider must support content key encryption.</p>
     pub certificate_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the SPEKE version used with your DRM key provider. If you don't specify a value, the default is <code>V2_0</code>.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>V2_0</code> - Follows the SPEKE Version 2.0 contract and signals only the content key index in key requests. This is the default.</p></li>
+    /// <li>
+    /// <p><code>V2_1</code> - Follows the SPEKE Version 2.1 contract and additionally supports signaling the start and end times a content key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE Version 2.0 payload</a>.</p>
+    pub speke_version: ::std::option::Option<crate::types::SpekeVersion>,
+    /// <p>The configuration that controls whether MediaPackage signals the start and end times a content key is used for, in the <code>ContentKeyPeriod</code> sent to your DRM key provider. Signaling this timing is supported only when key rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can update these settings on an existing origin endpoint.</p>
+    pub content_key_period_configuration: ::std::option::Option<crate::types::ContentKeyPeriodConfiguration>,
 }
 impl SpekeKeyProvider {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
@@ -52,6 +64,22 @@ impl SpekeKeyProvider {
     pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
+    /// <p>Specifies the SPEKE version used with your DRM key provider. If you don't specify a value, the default is <code>V2_0</code>.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>V2_0</code> - Follows the SPEKE Version 2.0 contract and signals only the content key index in key requests. This is the default.</p></li>
+    /// <li>
+    /// <p><code>V2_1</code> - Follows the SPEKE Version 2.1 contract and additionally supports signaling the start and end times a content key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE Version 2.0 payload</a>.</p>
+    pub fn speke_version(&self) -> ::std::option::Option<&crate::types::SpekeVersion> {
+        self.speke_version.as_ref()
+    }
+    /// <p>The configuration that controls whether MediaPackage signals the start and end times a content key is used for, in the <code>ContentKeyPeriod</code> sent to your DRM key provider. Signaling this timing is supported only when key rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can update these settings on an existing origin endpoint.</p>
+    pub fn content_key_period_configuration(&self) -> ::std::option::Option<&crate::types::ContentKeyPeriodConfiguration> {
+        self.content_key_period_configuration.as_ref()
+    }
 }
 impl SpekeKeyProvider {
     /// Creates a new builder-style object to manufacture [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
@@ -70,6 +98,8 @@ pub struct SpekeKeyProviderBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) speke_version: ::std::option::Option<crate::types::SpekeVersion>,
+    pub(crate) content_key_period_configuration: ::std::option::Option<crate::types::ContentKeyPeriodConfiguration>,
 }
 impl SpekeKeyProviderBuilder {
     /// <p>Configure one or more content encryption keys for your endpoints that use SPEKE Version 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use.</p>
@@ -175,6 +205,58 @@ impl SpekeKeyProviderBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
+    /// <p>Specifies the SPEKE version used with your DRM key provider. If you don't specify a value, the default is <code>V2_0</code>.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>V2_0</code> - Follows the SPEKE Version 2.0 contract and signals only the content key index in key requests. This is the default.</p></li>
+    /// <li>
+    /// <p><code>V2_1</code> - Follows the SPEKE Version 2.1 contract and additionally supports signaling the start and end times a content key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE Version 2.0 payload</a>.</p>
+    pub fn speke_version(mut self, input: crate::types::SpekeVersion) -> Self {
+        self.speke_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the SPEKE version used with your DRM key provider. If you don't specify a value, the default is <code>V2_0</code>.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>V2_0</code> - Follows the SPEKE Version 2.0 contract and signals only the content key index in key requests. This is the default.</p></li>
+    /// <li>
+    /// <p><code>V2_1</code> - Follows the SPEKE Version 2.1 contract and additionally supports signaling the start and end times a content key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE Version 2.0 payload</a>.</p>
+    pub fn set_speke_version(mut self, input: ::std::option::Option<crate::types::SpekeVersion>) -> Self {
+        self.speke_version = input;
+        self
+    }
+    /// <p>Specifies the SPEKE version used with your DRM key provider. If you don't specify a value, the default is <code>V2_0</code>.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>V2_0</code> - Follows the SPEKE Version 2.0 contract and signals only the content key index in key requests. This is the default.</p></li>
+    /// <li>
+    /// <p><code>V2_1</code> - Follows the SPEKE Version 2.1 contract and additionally supports signaling the start and end times a content key is used for, using <code>ContentKeyPeriodConfiguration</code>.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE Version 2.0 payload</a>.</p>
+    pub fn get_speke_version(&self) -> &::std::option::Option<crate::types::SpekeVersion> {
+        &self.speke_version
+    }
+    /// <p>The configuration that controls whether MediaPackage signals the start and end times a content key is used for, in the <code>ContentKeyPeriod</code> sent to your DRM key provider. Signaling this timing is supported only when key rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can update these settings on an existing origin endpoint.</p>
+    pub fn content_key_period_configuration(mut self, input: crate::types::ContentKeyPeriodConfiguration) -> Self {
+        self.content_key_period_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that controls whether MediaPackage signals the start and end times a content key is used for, in the <code>ContentKeyPeriod</code> sent to your DRM key provider. Signaling this timing is supported only when key rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can update these settings on an existing origin endpoint.</p>
+    pub fn set_content_key_period_configuration(mut self, input: ::std::option::Option<crate::types::ContentKeyPeriodConfiguration>) -> Self {
+        self.content_key_period_configuration = input;
+        self
+    }
+    /// <p>The configuration that controls whether MediaPackage signals the start and end times a content key is used for, in the <code>ContentKeyPeriod</code> sent to your DRM key provider. Signaling this timing is supported only when key rotation is enabled (<code>KeyRotationIntervalSeconds</code> is set to a non-zero value) and <code>SpekeVersion</code> is <code>V2_1</code>. You can update these settings on an existing origin endpoint.</p>
+    pub fn get_content_key_period_configuration(&self) -> &::std::option::Option<crate::types::ContentKeyPeriodConfiguration> {
+        &self.content_key_period_configuration
+    }
     /// Consumes the builder and constructs a [`SpekeKeyProvider`](crate::types::SpekeKeyProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`resource_id`](crate::types::builders::SpekeKeyProviderBuilder::resource_id)
@@ -209,6 +291,8 @@ impl SpekeKeyProviderBuilder {
                 )
             })?,
             certificate_arn: self.certificate_arn,
+            speke_version: self.speke_version,
+            content_key_period_configuration: self.content_key_period_configuration,
         })
     }
 }

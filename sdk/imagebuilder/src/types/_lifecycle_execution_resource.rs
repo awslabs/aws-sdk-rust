@@ -16,7 +16,7 @@ pub struct LifecycleExecutionResource {
     /// <p>Container images distributed to an ECR repository: image URI or SHA Digest</p></li>
     /// </ul>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>The runtime state for the lifecycle execution.</p>
+    /// <p>The runtime state of the lifecycle action for this resource.</p>
     pub state: ::std::option::Option<crate::types::LifecycleExecutionResourceState>,
     /// <p>The action to take for the identified resource.</p>
     pub action: ::std::option::Option<crate::types::LifecycleExecutionResourceAction>,
@@ -48,7 +48,7 @@ impl LifecycleExecutionResource {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>The runtime state for the lifecycle execution.</p>
+    /// <p>The runtime state of the lifecycle action for this resource.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::LifecycleExecutionResourceState> {
         self.state.as_ref()
     }
@@ -155,17 +155,17 @@ impl LifecycleExecutionResourceBuilder {
     pub fn get_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_id
     }
-    /// <p>The runtime state for the lifecycle execution.</p>
+    /// <p>The runtime state of the lifecycle action for this resource.</p>
     pub fn state(mut self, input: crate::types::LifecycleExecutionResourceState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The runtime state for the lifecycle execution.</p>
+    /// <p>The runtime state of the lifecycle action for this resource.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::LifecycleExecutionResourceState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The runtime state for the lifecycle execution.</p>
+    /// <p>The runtime state of the lifecycle action for this resource.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::LifecycleExecutionResourceState> {
         &self.state
     }

@@ -8,7 +8,7 @@ pub struct VideoProperties {
     pub bit_depth: ::std::option::Option<i32>,
     /// The bit rate of the video track, in bits per second.
     pub bit_rate: ::std::option::Option<i64>,
-    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions. These fields are returned for H.264 (AVC), H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer characteristics, and matrix coefficients) appears in these fields rather than in the top-level videoProperties.
     pub codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
     /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
@@ -40,7 +40,7 @@ impl VideoProperties {
     pub fn bit_rate(&self) -> ::std::option::Option<i64> {
         self.bit_rate
     }
-    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions. These fields are returned for H.264 (AVC), H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer characteristics, and matrix coefficients) appears in these fields rather than in the top-level videoProperties.
     pub fn codec_metadata(&self) -> ::std::option::Option<&crate::types::CodecMetadata> {
         self.codec_metadata.as_ref()
     }
@@ -139,17 +139,17 @@ impl VideoPropertiesBuilder {
     pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
         &self.bit_rate
     }
-    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions. These fields are returned for H.264 (AVC), H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer characteristics, and matrix coefficients) appears in these fields rather than in the top-level videoProperties.
     pub fn codec_metadata(mut self, input: crate::types::CodecMetadata) -> Self {
         self.codec_metadata = ::std::option::Option::Some(input);
         self
     }
-    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions. These fields are returned for H.264 (AVC), H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer characteristics, and matrix coefficients) appears in these fields rather than in the top-level videoProperties.
     pub fn set_codec_metadata(mut self, input: ::std::option::Option<crate::types::CodecMetadata>) -> Self {
         self.codec_metadata = input;
         self
     }
-    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions.
+    /// Codec-specific parameters parsed from the video essence headers. This information provides detailed technical specifications about how the video was encoded, including profile settings, resolution details, and color space information that can help you understand the source video characteristics and make informed encoding decisions. These fields are returned for H.264 (AVC), H.265 (HEVC), and MPEG-2 video, and might not be returned for other codecs. For MPEG-TS and MPEG-PS inputs, color information (color primaries, transfer characteristics, and matrix coefficients) appears in these fields rather than in the top-level videoProperties.
     pub fn get_codec_metadata(&self) -> &::std::option::Option<crate::types::CodecMetadata> {
         &self.codec_metadata
     }

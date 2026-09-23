@@ -108,17 +108,17 @@ impl CreateLifecyclePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the lifecycle policy to create.</p>
+    /// <p>The name of the lifecycle policy to create. Policy names must be unique to your account in each Amazon Web Services Region. Image Builder generates the policy ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. You can't change the name after creation.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the lifecycle policy to create.</p>
+    /// <p>The name of the lifecycle policy to create. Policy names must be unique to your account in each Amazon Web Services Region. Image Builder generates the policy ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. You can't change the name after creation.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the lifecycle policy to create.</p>
+    /// <p>The name of the lifecycle policy to create. Policy names must be unique to your account in each Amazon Web Services Region. Image Builder generates the policy ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. You can't change the name after creation.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -136,45 +136,45 @@ impl CreateLifecyclePolicyFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. If you don't specify a status, it defaults to <code>ENABLED</code>. Only enabled policies run on their schedule.</p>
     pub fn status(mut self, input: crate::types::LifecyclePolicyStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. If you don't specify a status, it defaults to <code>ENABLED</code>. Only enabled policies run on their schedule.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>Indicates whether the lifecycle policy resource is enabled.</p>
+    /// <p>Indicates whether the lifecycle policy resource is enabled. If you don't specify a status, it defaults to <code>ENABLED</code>. Only enabled policies run on their schedule.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifecyclePolicyStatus> {
         self.inner.get_status()
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions. You must have permission to pass the role, and the role's trust policy must allow the Image Builder service principal to assume it.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions. You must have permission to pass the role, and the role's trust policy must allow the Image Builder service principal to assume it.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role(input);
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to run lifecycle actions. You must have permission to pass the role, and the role's trust policy must allow the Image Builder service principal to assume it.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role()
     }
-    /// <p>The type of Image Builder resource that the lifecycle policy applies to.</p>
+    /// <p>The type of Image Builder resource that the lifecycle policy applies to. The resource type determines the allowed rule actions: policies for AMI-based Image Builder images support <code>DELETE</code>, <code>DEPRECATE</code>, and <code>DISABLE</code>, and policies for container-based Image Builder images support only <code>DELETE</code>. You can't change the resource type after creation.</p>
     pub fn resource_type(mut self, input: crate::types::LifecyclePolicyResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
-    /// <p>The type of Image Builder resource that the lifecycle policy applies to.</p>
+    /// <p>The type of Image Builder resource that the lifecycle policy applies to. The resource type determines the allowed rule actions: policies for AMI-based Image Builder images support <code>DELETE</code>, <code>DEPRECATE</code>, and <code>DISABLE</code>, and policies for container-based Image Builder images support only <code>DELETE</code>. You can't change the resource type after creation.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceType>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of Image Builder resource that the lifecycle policy applies to.</p>
+    /// <p>The type of Image Builder resource that the lifecycle policy applies to. The resource type determines the allowed rule actions: policies for AMI-based Image Builder images support <code>DELETE</code>, <code>DEPRECATE</code>, and <code>DISABLE</code>, and policies for container-based Image Builder images support only <code>DELETE</code>. You can't change the resource type after creation.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceType> {
         self.inner.get_resource_type()
     }
@@ -183,31 +183,31 @@ impl CreateLifecyclePolicyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_details`](Self::set_policy_details).
     ///
-    /// <p>Configuration details for the lifecycle policy rules.</p>
+    /// <p>Configuration details for the lifecycle policy rules. A policy can contain at most one rule per action type: one <code>DELETE</code>, one <code>DEPRECATE</code>, and one <code>DISABLE</code>.</p>
     pub fn policy_details(mut self, input: crate::types::LifecyclePolicyDetail) -> Self {
         self.inner = self.inner.policy_details(input);
         self
     }
-    /// <p>Configuration details for the lifecycle policy rules.</p>
+    /// <p>Configuration details for the lifecycle policy rules. A policy can contain at most one rule per action type: one <code>DELETE</code>, one <code>DEPRECATE</code>, and one <code>DISABLE</code>.</p>
     pub fn set_policy_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>>) -> Self {
         self.inner = self.inner.set_policy_details(input);
         self
     }
-    /// <p>Configuration details for the lifecycle policy rules.</p>
+    /// <p>Configuration details for the lifecycle policy rules. A policy can contain at most one rule per action type: one <code>DELETE</code>, one <code>DEPRECATE</code>, and one <code>DISABLE</code>.</p>
     pub fn get_policy_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifecyclePolicyDetail>> {
         self.inner.get_policy_details()
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn resource_selection(mut self, input: crate::types::LifecyclePolicyResourceSelection) -> Self {
         self.inner = self.inner.resource_selection(input);
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn set_resource_selection(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyResourceSelection>) -> Self {
         self.inner = self.inner.set_resource_selection(input);
         self
     }
-    /// <p>Selection criteria for the resources that the lifecycle policy applies to.</p>
+    /// <p>Selection criteria for the resources that the lifecycle policy applies to. You must specify exactly one selection criteria: either recipes or a tag map, not both.</p>
     pub fn get_resource_selection(&self) -> &::std::option::Option<crate::types::LifecyclePolicyResourceSelection> {
         self.inner.get_resource_selection()
     }
@@ -230,31 +230,31 @@ impl CreateLifecyclePolicyFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

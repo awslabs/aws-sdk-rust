@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLifecyclePoliciesInput {
-    /// <p>Streamline results based on one of the following values: <code>Name</code>, <code>Status</code>.</p>
+    /// <p>Use the following filters to streamline results: <code>name</code>, <code>resourceType</code>, and <code>status</code>. Filter names are matched exactly as shown.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListLifecyclePoliciesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLifecyclePoliciesInput {
-    /// <p>Streamline results based on one of the following values: <code>Name</code>, <code>Status</code>.</p>
+    /// <p>Use the following filters to streamline results: <code>name</code>, <code>resourceType</code>, and <code>status</code>. Filter names are matched exactly as shown.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -46,19 +46,19 @@ impl ListLifecyclePoliciesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Streamline results based on one of the following values: <code>Name</code>, <code>Status</code>.</p>
+    /// <p>Use the following filters to streamline results: <code>name</code>, <code>resourceType</code>, and <code>status</code>. Filter names are matched exactly as shown.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Streamline results based on one of the following values: <code>Name</code>, <code>Status</code>.</p>
+    /// <p>Use the following filters to streamline results: <code>name</code>, <code>resourceType</code>, and <code>status</code>. Filter names are matched exactly as shown.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Streamline results based on one of the following values: <code>Name</code>, <code>Status</code>.</p>
+    /// <p>Use the following filters to streamline results: <code>name</code>, <code>resourceType</code>, and <code>status</code>. Filter names are matched exactly as shown.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

@@ -9,9 +9,9 @@ pub struct Placement {
     /// <p>The tenancy of the instance. An instance with a tenancy of <code>dedicated</code> runs on single-tenant hardware. An instance with a tenancy of <code>host</code> runs on a Dedicated Host.</p>
     /// <p>If tenancy is set to <code>host</code>, then you can optionally specify one target for placement – either host ID or host resource group ARN. If automatic placement is enabled for your host, and you don't specify any placement target, Amazon EC2 will try to find an available host for your build and test instances.</p>
     pub tenancy: ::std::option::Option<crate::types::TenancyType>,
-    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the host ID, you must not specify the resource group ARN. If you specify both, Image Builder returns an error.</p>
+    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub host_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the resource group ARN, you must not specify the host ID. If you specify both, Image Builder returns an error.</p>
+    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl Placement {
@@ -24,11 +24,11 @@ impl Placement {
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::TenancyType> {
         self.tenancy.as_ref()
     }
-    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the host ID, you must not specify the resource group ARN. If you specify both, Image Builder returns an error.</p>
+    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn host_id(&self) -> ::std::option::Option<&str> {
         self.host_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the resource group ARN, you must not specify the host ID. If you specify both, Image Builder returns an error.</p>
+    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn host_resource_group_arn(&self) -> ::std::option::Option<&str> {
         self.host_resource_group_arn.as_deref()
     }
@@ -81,31 +81,31 @@ impl PlacementBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::TenancyType> {
         &self.tenancy
     }
-    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the host ID, you must not specify the resource group ARN. If you specify both, Image Builder returns an error.</p>
+    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the host ID, you must not specify the resource group ARN. If you specify both, Image Builder returns an error.</p>
+    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_id = input;
         self
     }
-    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the host ID, you must not specify the resource group ARN. If you specify both, Image Builder returns an error.</p>
+    /// <p>The ID of the Dedicated Host on which build and test instances run. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn get_host_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the resource group ARN, you must not specify the host ID. If you specify both, Image Builder returns an error.</p>
+    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn host_resource_group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the resource group ARN, you must not specify the host ID. If you specify both, Image Builder returns an error.</p>
+    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn set_host_resource_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_resource_group_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>. If you specify the resource group ARN, you must not specify the host ID. If you specify both, Image Builder returns an error.</p>
+    /// <p>The Amazon Resource Name (ARN) of the host resource group in which to launch build and test instances. This only applies if <code>tenancy</code> is <code>host</code>.</p>
     pub fn get_host_resource_group_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_resource_group_arn
     }

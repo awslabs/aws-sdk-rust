@@ -22,7 +22,7 @@ impl crate::operation::list_components::builders::ListComponentsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListComponents`.
 ///
-/// <p>Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to streamline results. Newly created components can take up to two minutes to appear in the ListComponents API Results.</p><note>
+/// <p>Returns the list of components that you have access to. By default, the response doesn't include components in the <code>DEPRECATED</code> state. To list deprecated components, use the <code>status</code> filter with the value <code>DEPRECATED</code>.</p><note>
 /// <p>The semantic version has four nodes: <major>
 /// .
 /// <minor>
@@ -128,17 +128,17 @@ impl ListComponentsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_components::paginator::ListComponentsPaginator {
         crate::operation::list_components::paginator::ListComponentsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);
         self
     }
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
     }
-    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, third party components, or components that other accounts have shared with you.</p>
+    /// <p>Filters results based on the type of owner for the component. By default, this request returns a list of components that your account owns. To see results for other types of owners, you can specify components that Amazon manages, components from the Amazon Web Services Marketplace, third party components, or components that other accounts have shared with you.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         self.inner.get_owner()
     }
@@ -155,6 +155,10 @@ impl ListComponentsFluentBuilder {
     /// <p><code>name</code></p></li>
     /// <li>
     /// <p><code>platform</code></p></li>
+    /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
     /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
@@ -175,6 +179,10 @@ impl ListComponentsFluentBuilder {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -194,6 +202,10 @@ impl ListComponentsFluentBuilder {
     /// <li>
     /// <p><code>platform</code></p></li>
     /// <li>
+    /// <p><code>productCodes</code></p></li>
+    /// <li>
+    /// <p><code>status</code></p></li>
+    /// <li>
     /// <p><code>supportedOsVersion</code></p></li>
     /// <li>
     /// <p><code>type</code></p></li>
@@ -203,17 +215,17 @@ impl ListComponentsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn by_name(mut self, input: bool) -> Self {
         self.inner = self.inner.by_name(input);
         self
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn set_by_name(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_by_name(input);
         self
     }
-    /// <p>Returns the list of components for the specified name.</p>
+    /// <p>Specifies whether to return one entry per component name, with all versions of each component aggregated. Defaults to <code>false</code>, which returns one entry per component version. You can't combine this option with the <code>version</code> filter.</p>
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         self.inner.get_by_name()
     }

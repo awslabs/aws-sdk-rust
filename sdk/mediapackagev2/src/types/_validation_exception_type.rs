@@ -20,6 +20,8 @@
 ///     ValidationExceptionType::CmafContainerTypeWithMssManifest => { /* ... */ },
 ///     ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType => { /* ... */ },
 ///     ValidationExceptionType::ContainerTypeImmutable => { /* ... */ },
+///     ValidationExceptionType::ContentKeyPeriodTimingRequiresSpekeV21 => { /* ... */ },
+///     ValidationExceptionType::ContentKeyPeriodTimingWithoutKeyRotation => { /* ... */ },
 ///     ValidationExceptionType::CustomAdTypesInvalidConfiguration => { /* ... */ },
 ///     ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => { /* ... */ },
 ///     ValidationExceptionType::DecryptSecretFailed => { /* ... */ },
@@ -186,6 +188,10 @@ pub enum ValidationExceptionType {
     CmafExcludeSegmentDrmMetadataIncompatibleContainerType,
     #[allow(missing_docs)] // documentation missing in model
     ContainerTypeImmutable,
+    #[allow(missing_docs)] // documentation missing in model
+    ContentKeyPeriodTimingRequiresSpekeV21,
+    #[allow(missing_docs)] // documentation missing in model
+    ContentKeyPeriodTimingWithoutKeyRotation,
     #[allow(missing_docs)] // documentation missing in model
     CustomAdTypesInvalidConfiguration,
     #[allow(missing_docs)] // documentation missing in model
@@ -447,6 +453,8 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
                 ValidationExceptionType::CmafExcludeSegmentDrmMetadataIncompatibleContainerType
             }
             "CONTAINER_TYPE_IMMUTABLE" => ValidationExceptionType::ContainerTypeImmutable,
+            "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1" => ValidationExceptionType::ContentKeyPeriodTimingRequiresSpekeV21,
+            "CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION" => ValidationExceptionType::ContentKeyPeriodTimingWithoutKeyRotation,
             "CUSTOM_AD_TYPES_INVALID_CONFIGURATION" => ValidationExceptionType::CustomAdTypesInvalidConfiguration,
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE" => ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile,
             "DECRYPT_SECRET_FAILED" => ValidationExceptionType::DecryptSecretFailed,
@@ -598,6 +606,8 @@ impl ValidationExceptionType {
                 "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE"
             }
             ValidationExceptionType::ContainerTypeImmutable => "CONTAINER_TYPE_IMMUTABLE",
+            ValidationExceptionType::ContentKeyPeriodTimingRequiresSpekeV21 => "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1",
+            ValidationExceptionType::ContentKeyPeriodTimingWithoutKeyRotation => "CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION",
             ValidationExceptionType::CustomAdTypesInvalidConfiguration => "CUSTOM_AD_TYPES_INVALID_CONFIGURATION",
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             ValidationExceptionType::DecryptSecretFailed => "DECRYPT_SECRET_FAILED",
@@ -738,6 +748,8 @@ impl ValidationExceptionType {
             "CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST",
             "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE",
             "CONTAINER_TYPE_IMMUTABLE",
+            "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1",
+            "CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION",
             "CUSTOM_AD_TYPES_INVALID_CONFIGURATION",
             "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE",
             "DECRYPT_SECRET_FAILED",
@@ -893,6 +905,8 @@ impl ::std::fmt::Display for ValidationExceptionType {
                 write!(f, "CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE")
             }
             ValidationExceptionType::ContainerTypeImmutable => write!(f, "CONTAINER_TYPE_IMMUTABLE"),
+            ValidationExceptionType::ContentKeyPeriodTimingRequiresSpekeV21 => write!(f, "CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1"),
+            ValidationExceptionType::ContentKeyPeriodTimingWithoutKeyRotation => write!(f, "CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION"),
             ValidationExceptionType::CustomAdTypesInvalidConfiguration => write!(f, "CUSTOM_AD_TYPES_INVALID_CONFIGURATION"),
             ValidationExceptionType::DashDvbAttributesWithoutDvbDashProfile => write!(f, "DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE"),
             ValidationExceptionType::DecryptSecretFailed => write!(f, "DECRYPT_SECRET_FAILED"),

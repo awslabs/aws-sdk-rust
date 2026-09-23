@@ -5,7 +5,7 @@
 pub struct GetImagePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The image policy object.</p>
+    /// <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetImagePolicyOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The image policy object.</p>
+    /// <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetImagePolicyOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The image policy object.</p>
+    /// <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The image policy object.</p>
+    /// <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The image policy object.</p>
+    /// <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

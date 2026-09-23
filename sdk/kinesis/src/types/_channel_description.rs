@@ -36,7 +36,7 @@ pub struct ChannelDescription {
     pub s3_destination_configuration: ::std::option::Option<crate::types::S3DestinationDescription>,
     /// <p>The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3 Tables. Present only when the channel destination is a streaming table.</p>
     pub s3_tables_destination_configuration: ::std::option::Option<crate::types::S3TablesDestinationDescription>,
-    /// <p>The server-side encryption configuration for the channel.</p>
+    /// <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses to encrypt data delivered to the channel's destination.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::ChannelEncryptionConfiguration>,
     /// <p>The Amazon CloudWatch Logs configuration for the channel.</p>
     pub logging_configuration: ::std::option::Option<crate::types::ChannelLoggingConfiguration>,
@@ -99,7 +99,7 @@ impl ChannelDescription {
     pub fn s3_tables_destination_configuration(&self) -> ::std::option::Option<&crate::types::S3TablesDestinationDescription> {
         self.s3_tables_destination_configuration.as_ref()
     }
-    /// <p>The server-side encryption configuration for the channel.</p>
+    /// <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses to encrypt data delivered to the channel's destination.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::ChannelEncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
@@ -321,17 +321,17 @@ impl ChannelDescriptionBuilder {
     pub fn get_s3_tables_destination_configuration(&self) -> &::std::option::Option<crate::types::S3TablesDestinationDescription> {
         &self.s3_tables_destination_configuration
     }
-    /// <p>The server-side encryption configuration for the channel.</p>
+    /// <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses to encrypt data delivered to the channel's destination.</p>
     pub fn encryption_configuration(mut self, input: crate::types::ChannelEncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The server-side encryption configuration for the channel.</p>
+    /// <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses to encrypt data delivered to the channel's destination.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ChannelEncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
-    /// <p>The server-side encryption configuration for the channel.</p>
+    /// <p>The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses to encrypt data delivered to the channel's destination.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::ChannelEncryptionConfiguration> {
         &self.encryption_configuration
     }

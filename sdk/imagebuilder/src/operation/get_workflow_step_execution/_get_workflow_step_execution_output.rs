@@ -5,13 +5,13 @@
 pub struct GetWorkflowStepExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you specified in the request.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the build version for the Image Builder workflow resource that defines this workflow step.</p>
     pub workflow_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub workflow_execution_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow step.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified runtime instance of the workflow step.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,23 +19,23 @@ pub struct GetWorkflowStepExecutionOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action that the specified step performs.</p>
     pub action: ::std::option::Option<::std::string::String>,
-    /// <p>The current status for the specified runtime version of the workflow step.</p>
+    /// <p>The current status for the specified runtime instance of the workflow step.</p>
     pub status: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>,
-    /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
+    /// <p>Reports on the rollback status of the specified runtime instance of the workflow step, if applicable. Rollback runs when the workflow execution fails, and undoes the work that completed steps performed.</p>
     pub rollback_status: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>,
     /// <p>The output message from the specified runtime instance of the workflow step, if applicable.</p>
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
+    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step, as a JSON-encoded string.</p>
     pub inputs: ::std::option::Option<::std::string::String>,
-    /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
+    /// <p>The output values that the specified runtime instance of the workflow step produced, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub outputs: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
+    /// <p>The timestamp when the specified runtime instance of the workflow step started.</p>
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the specified runtime instance of the workflow step finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
-    /// <p>The action to perform if the workflow step fails.</p>
+    /// <p>The action that the workflow takes if this step fails, as configured in the workflow document. <code>Abort</code> fails the workflow and rolls back completed steps. <code>Continue</code> proceeds to the next step. If the step doesn't set a value, it defaults to <code>Abort</code>.</p>
     pub on_failure: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum duration in seconds for this step to complete its action.</p>
+    /// <p>The maximum duration in seconds for this step to complete its action. If the workflow document doesn't set a timeout for the step, Image Builder applies the default timeout for the step's action. This field returns that value.</p>
     pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
     pub attempt_number: ::std::option::Option<i32>,
@@ -48,7 +48,7 @@ impl GetWorkflowStepExecutionOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you specified in the request.</p>
     pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
         self.step_execution_id.as_deref()
     }
@@ -60,7 +60,7 @@ impl GetWorkflowStepExecutionOutput {
     pub fn workflow_execution_id(&self) -> ::std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow step.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -76,11 +76,11 @@ impl GetWorkflowStepExecutionOutput {
     pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
-    /// <p>The current status for the specified runtime version of the workflow step.</p>
+    /// <p>The current status for the specified runtime instance of the workflow step.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionStatus> {
         self.status.as_ref()
     }
-    /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
+    /// <p>Reports on the rollback status of the specified runtime instance of the workflow step, if applicable. Rollback runs when the workflow execution fails, and undoes the work that completed steps performed.</p>
     pub fn rollback_status(&self) -> ::std::option::Option<&crate::types::WorkflowStepExecutionRollbackStatus> {
         self.rollback_status.as_ref()
     }
@@ -88,15 +88,15 @@ impl GetWorkflowStepExecutionOutput {
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
-    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
+    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step, as a JSON-encoded string.</p>
     pub fn inputs(&self) -> ::std::option::Option<&str> {
         self.inputs.as_deref()
     }
-    /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
+    /// <p>The output values that the specified runtime instance of the workflow step produced, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn outputs(&self) -> ::std::option::Option<&str> {
         self.outputs.as_deref()
     }
-    /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
+    /// <p>The timestamp when the specified runtime instance of the workflow step started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
@@ -104,11 +104,11 @@ impl GetWorkflowStepExecutionOutput {
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
-    /// <p>The action to perform if the workflow step fails.</p>
+    /// <p>The action that the workflow takes if this step fails, as configured in the workflow document. <code>Abort</code> fails the workflow and rolls back completed steps. <code>Continue</code> proceeds to the next step. If the step doesn't set a value, it defaults to <code>Abort</code>.</p>
     pub fn on_failure(&self) -> ::std::option::Option<&str> {
         self.on_failure.as_deref()
     }
-    /// <p>The maximum duration in seconds for this step to complete its action.</p>
+    /// <p>The maximum duration in seconds for this step to complete its action. If the workflow document doesn't set a timeout for the step, Image Builder applies the default timeout for the step's action. This field returns that value.</p>
     pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
@@ -173,17 +173,17 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you specified in the request.</p>
     pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you specified in the request.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
-    /// <p>The unique identifier for the runtime version of the workflow step that you specified in the request.</p>
+    /// <p>The unique identifier for the runtime instance of the workflow step that you specified in the request.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_execution_id
     }
@@ -215,17 +215,17 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_workflow_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.workflow_execution_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow step.</p>
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow step.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image resource build version that the specified runtime instance of the workflow step creates.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version that owns the specified runtime instance of the workflow step.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
@@ -271,31 +271,31 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }
-    /// <p>The current status for the specified runtime version of the workflow step.</p>
+    /// <p>The current status for the specified runtime instance of the workflow step.</p>
     pub fn status(mut self, input: crate::types::WorkflowStepExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status for the specified runtime version of the workflow step.</p>
+    /// <p>The current status for the specified runtime instance of the workflow step.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status for the specified runtime version of the workflow step.</p>
+    /// <p>The current status for the specified runtime instance of the workflow step.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionStatus> {
         &self.status
     }
-    /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
+    /// <p>Reports on the rollback status of the specified runtime instance of the workflow step, if applicable. Rollback runs when the workflow execution fails, and undoes the work that completed steps performed.</p>
     pub fn rollback_status(mut self, input: crate::types::WorkflowStepExecutionRollbackStatus) -> Self {
         self.rollback_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
+    /// <p>Reports on the rollback status of the specified runtime instance of the workflow step, if applicable. Rollback runs when the workflow execution fails, and undoes the work that completed steps performed.</p>
     pub fn set_rollback_status(mut self, input: ::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus>) -> Self {
         self.rollback_status = input;
         self
     }
-    /// <p>Reports on the rollback status of the specified runtime version of the workflow step, if applicable.</p>
+    /// <p>Reports on the rollback status of the specified runtime instance of the workflow step, if applicable. Rollback runs when the workflow execution fails, and undoes the work that completed steps performed.</p>
     pub fn get_rollback_status(&self) -> &::std::option::Option<crate::types::WorkflowStepExecutionRollbackStatus> {
         &self.rollback_status
     }
@@ -313,45 +313,45 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
+    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step, as a JSON-encoded string.</p>
     pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inputs = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
+    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step, as a JSON-encoded string.</p>
     pub fn set_inputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inputs = input;
         self
     }
-    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step.</p>
+    /// <p>Input parameters that Image Builder provided for the specified runtime instance of the workflow step, as a JSON-encoded string.</p>
     pub fn get_inputs(&self) -> &::std::option::Option<::std::string::String> {
         &self.inputs
     }
-    /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
+    /// <p>The output values that the specified runtime instance of the workflow step produced, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn outputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.outputs = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
+    /// <p>The output values that the specified runtime instance of the workflow step produced, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outputs = input;
         self
     }
-    /// <p>The file names that the specified runtime version of the workflow step created as output.</p>
+    /// <p>The output values that the specified runtime instance of the workflow step produced, as a JSON-encoded string. For example, a step that launches an instance outputs the instance ID. If the step failed, this field contains the error message.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::string::String> {
         &self.outputs
     }
-    /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
+    /// <p>The timestamp when the specified runtime instance of the workflow step started.</p>
     pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.start_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
+    /// <p>The timestamp when the specified runtime instance of the workflow step started.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The timestamp when the specified runtime version of the workflow step started.</p>
+    /// <p>The timestamp when the specified runtime instance of the workflow step started.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.start_time
     }
@@ -369,31 +369,31 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }
-    /// <p>The action to perform if the workflow step fails.</p>
+    /// <p>The action that the workflow takes if this step fails, as configured in the workflow document. <code>Abort</code> fails the workflow and rolls back completed steps. <code>Continue</code> proceeds to the next step. If the step doesn't set a value, it defaults to <code>Abort</code>.</p>
     pub fn on_failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.on_failure = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The action to perform if the workflow step fails.</p>
+    /// <p>The action that the workflow takes if this step fails, as configured in the workflow document. <code>Abort</code> fails the workflow and rolls back completed steps. <code>Continue</code> proceeds to the next step. If the step doesn't set a value, it defaults to <code>Abort</code>.</p>
     pub fn set_on_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.on_failure = input;
         self
     }
-    /// <p>The action to perform if the workflow step fails.</p>
+    /// <p>The action that the workflow takes if this step fails, as configured in the workflow document. <code>Abort</code> fails the workflow and rolls back completed steps. <code>Continue</code> proceeds to the next step. If the step doesn't set a value, it defaults to <code>Abort</code>.</p>
     pub fn get_on_failure(&self) -> &::std::option::Option<::std::string::String> {
         &self.on_failure
     }
-    /// <p>The maximum duration in seconds for this step to complete its action.</p>
+    /// <p>The maximum duration in seconds for this step to complete its action. If the workflow document doesn't set a timeout for the step, Image Builder applies the default timeout for the step's action. This field returns that value.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
         self.timeout_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum duration in seconds for this step to complete its action.</p>
+    /// <p>The maximum duration in seconds for this step to complete its action. If the workflow document doesn't set a timeout for the step, Image Builder applies the default timeout for the step's action. This field returns that value.</p>
     pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_seconds = input;
         self
     }
-    /// <p>The maximum duration in seconds for this step to complete its action.</p>
+    /// <p>The maximum duration in seconds for this step to complete its action. If the workflow document doesn't set a timeout for the step, Image Builder applies the default timeout for the step's action. This field returns that value.</p>
     pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.timeout_seconds
     }

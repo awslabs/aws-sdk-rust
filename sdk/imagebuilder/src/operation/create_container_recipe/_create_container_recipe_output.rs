@@ -9,7 +9,7 @@ pub struct CreateContainerRecipeOutput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub latest_version_references: ::std::option::Option<crate::types::LatestVersionReferences>,
     _request_id: Option<String>,
 }
@@ -26,7 +26,7 @@ impl CreateContainerRecipeOutput {
     pub fn container_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn latest_version_references(&self) -> ::std::option::Option<&crate::types::LatestVersionReferences> {
         self.latest_version_references.as_ref()
     }
@@ -96,17 +96,17 @@ impl CreateContainerRecipeOutputBuilder {
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_recipe_arn
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn latest_version_references(mut self, input: crate::types::LatestVersionReferences) -> Self {
         self.latest_version_references = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn set_latest_version_references(mut self, input: ::std::option::Option<crate::types::LatestVersionReferences>) -> Self {
         self.latest_version_references = input;
         self
     }
-    /// <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    /// <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     pub fn get_latest_version_references(&self) -> &::std::option::Option<crate::types::LatestVersionReferences> {
         &self.latest_version_references
     }

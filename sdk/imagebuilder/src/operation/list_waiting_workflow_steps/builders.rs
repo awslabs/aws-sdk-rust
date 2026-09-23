@@ -22,7 +22,7 @@ impl crate::operation::list_waiting_workflow_steps::builders::ListWaitingWorkflo
 }
 /// Fluent builder constructing a request to `ListWaitingWorkflowSteps`.
 ///
-/// <p>Retrieves a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.</p>
+/// <p>Lists the workflow steps in your Amazon Web Services account that have paused at a <code>WaitForAction</code> step, and are waiting for you to respond. To send a response, call <code>SendWorkflowStepAction</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWaitingWorkflowStepsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

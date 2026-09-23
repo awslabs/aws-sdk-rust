@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImageRecipe`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_recipe_arn(impl Into<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::set_image_recipe_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p><br>
+    ///   - [`image_recipe_arn(impl Into<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::set_image_recipe_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p><br>
     /// - On success, responds with [`GetImageRecipeOutput`](crate::operation::get_image_recipe::GetImageRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe(Option<ImageRecipe>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::image_recipe): <p>The image recipe object.</p>
-    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_image_recipe::GetImageRecipeOutput::latest_version_references): <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     /// - On failure, responds with [`SdkError<GetImageRecipeError>`](crate::operation::get_image_recipe::GetImageRecipeError)
     pub fn get_image_recipe(&self) -> crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder {
         crate::operation::get_image_recipe::builders::GetImageRecipeFluentBuilder::new(self.handle.clone())

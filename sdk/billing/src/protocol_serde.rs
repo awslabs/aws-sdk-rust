@@ -45,6 +45,8 @@ pub(crate) mod shape_get_enterprise_support_contract_details;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_list_billing_view_segments;
+
 pub(crate) mod shape_list_billing_views;
 
 pub(crate) mod shape_list_enterprise_support_linked_account_charges;
@@ -101,6 +103,8 @@ pub(crate) mod shape_get_resource_policy_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_billing_view_segments_input;
+
 pub(crate) mod shape_list_billing_views_input;
 
 pub(crate) mod shape_list_enterprise_support_linked_account_charges_input;
@@ -141,6 +145,10 @@ pub(crate) mod shape_billing_view_element;
 
 pub(crate) mod shape_billing_view_list;
 
+pub(crate) mod shape_billing_view_segment_time_range;
+
+pub(crate) mod shape_billing_view_segments_list;
+
 pub(crate) mod shape_billing_view_source_views_list;
 
 pub(crate) mod shape_charge_account_list;
@@ -176,6 +184,8 @@ pub(crate) mod shape_billing_preference_summary;
 pub(crate) mod shape_billing_view_health_status;
 
 pub(crate) mod shape_billing_view_list_element;
+
+pub(crate) mod shape_billing_view_segments_list_element;
 
 pub(crate) mod shape_charge_account;
 

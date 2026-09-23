@@ -6,8 +6,17 @@ pub fn ser_passthrough_settings(
     if let Some(var_1) = &input.frame_control {
         object.key("frameControl").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.video_selector_mode {
-        object.key("videoSelectorMode").string(var_2.as_str());
+    if let Some(var_2) = &input.gops_per_segment {
+        object.key("gopsPerSegment").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.segmentation_mode {
+        object.key("segmentationMode").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.video_selector_mode {
+        object.key("videoSelectorMode").string(var_4.as_str());
     }
     Ok(())
 }
@@ -38,6 +47,20 @@ where
                             builder = builder.set_frame_control(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FrameControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "gopsPerSegment" => {
+                            builder = builder.set_gops_per_segment(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "segmentationMode" => {
+                            builder = builder.set_segmentation_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PassthroughSegmentationMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`image_arn(impl Into<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::image_arn) / [`set_image_arn(Option<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::set_image_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p><br>
-    ///   - [`policy(impl Into<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::set_policy):<br>required: **true**<br><p>The policy to apply.</p><br>
+    ///   - [`policy(impl Into<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::policy) / [`set_policy(Option<String>)`](crate::operation::put_image_policy::builders::PutImagePolicyFluentBuilder::set_policy):<br>required: **true**<br><p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p><br>
     /// - On success, responds with [`PutImagePolicyOutput`](crate::operation::put_image_policy::PutImagePolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::put_image_policy::PutImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_arn(Option<String>)`](crate::operation::put_image_policy::PutImagePolicyOutput::image_arn): <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>

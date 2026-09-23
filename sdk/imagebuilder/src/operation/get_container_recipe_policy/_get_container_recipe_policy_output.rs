@@ -5,7 +5,7 @@
 pub struct GetContainerRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The container recipe policy object that is returned.</p>
+    /// <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl GetContainerRecipePolicyOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The container recipe policy object that is returned.</p>
+    /// <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -54,17 +54,17 @@ impl GetContainerRecipePolicyOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The container recipe policy object that is returned.</p>
+    /// <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The container recipe policy object that is returned.</p>
+    /// <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The container recipe policy object that is returned.</p>
+    /// <p>The resource policy for the container recipe, as a JSON policy document. If no policy has been applied, the response contains an empty JSON object (<code>{}</code>).</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

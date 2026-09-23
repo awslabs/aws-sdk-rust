@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImageRecipeInput {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p>
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageRecipeInput {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p>
     pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetImageRecipeInputBuilder {
     pub(crate) image_recipe_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageRecipeInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p>
     /// This field is required.
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p>
     pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You can use the <code>x</code> wildcard in trailing version positions to retrieve the latest matching version, for example <code>x.x.x</code> or <code>1.x.x</code>.</p>
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_recipe_arn
     }

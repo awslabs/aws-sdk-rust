@@ -57,29 +57,32 @@ pub fn ser_audio_selector(
     if let Some(var_15) = &input.selector_type {
         object.key("selectorType").string(var_15.as_str());
     }
-    if let Some(var_16) = &input.streams {
-        let mut array_17 = object.key("streams").start_array();
-        for item_18 in var_16 {
-            {
-                array_17.value().number(
-                    #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_18).into()),
-                );
-            }
-        }
-        array_17.finish();
+    if let Some(var_16) = &input.smpte337_passthrough {
+        object.key("smpte337Passthrough").string(var_16.as_str());
     }
-    if let Some(var_19) = &input.tracks {
-        let mut array_20 = object.key("tracks").start_array();
-        for item_21 in var_19 {
+    if let Some(var_17) = &input.streams {
+        let mut array_18 = object.key("streams").start_array();
+        for item_19 in var_17 {
             {
-                array_20.value().number(
+                array_18.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_21).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_19).into()),
                 );
             }
         }
-        array_20.finish();
+        array_18.finish();
+    }
+    if let Some(var_20) = &input.tracks {
+        let mut array_21 = object.key("tracks").start_array();
+        for item_22 in var_20 {
+            {
+                array_21.value().number(
+                    #[allow(clippy::useless_conversion)]
+                    ::aws_smithy_types::Number::NegInt((*item_22).into()),
+                );
+            }
+        }
+        array_21.finish();
     }
     Ok(())
 }
@@ -184,6 +187,13 @@ where
                             builder = builder.set_selector_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AudioSelectorType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "smpte337Passthrough" => {
+                            builder = builder.set_smpte337_passthrough(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AudioSmpte337Passthrough::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -749,6 +749,8 @@ pub use crate::types::_mpeg2_temporal_adaptive_quantization::Mpeg2TemporalAdapti
 
 pub use crate::types::_frame_control::FrameControl;
 
+pub use crate::types::_passthrough_segmentation_mode::PassthroughSegmentationMode;
+
 pub use crate::types::_video_selector_mode::VideoSelectorMode;
 
 pub use crate::types::_prores_chroma_sampling::ProresChromaSampling;
@@ -888,6 +890,8 @@ pub use crate::types::_audio_default_selection::AudioDefaultSelection;
 pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettings;
 
 pub use crate::types::_audio_selector_type::AudioSelectorType;
+
+pub use crate::types::_audio_smpte337_passthrough::AudioSmpte337Passthrough;
 
 pub use crate::types::_caption_source_settings::CaptionSourceSettings;
 
@@ -1502,6 +1506,8 @@ mod _audio_selector;
 mod _audio_selector_group;
 
 mod _audio_selector_type;
+
+mod _audio_smpte337_passthrough;
 
 mod _audio_type_control;
 
@@ -2452,6 +2458,8 @@ mod _output_settings;
 mod _pad_video;
 
 mod _partner_watermarking;
+
+mod _passthrough_segmentation_mode;
 
 mod _passthrough_settings;
 

@@ -213,4 +213,39 @@ impl CreateStreamFluentBuilder {
     pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_record_size_in_kib()
     }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn record_distribution_strategy(mut self, input: crate::types::RecordDistributionStrategy) -> Self {
+        self.inner = self.inner.record_distribution_strategy(input);
+        self
+    }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn set_record_distribution_strategy(mut self, input: ::std::option::Option<crate::types::RecordDistributionStrategy>) -> Self {
+        self.inner = self.inner.set_record_distribution_strategy(input);
+        self
+    }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn get_record_distribution_strategy(&self) -> &::std::option::Option<crate::types::RecordDistributionStrategy> {
+        self.inner.get_record_distribution_strategy()
+    }
 }

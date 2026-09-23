@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageInput {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetImageInputBuilder {
     pub(crate) image_build_version_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetImageInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p>
     /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image that you want to get. You can specify a full build version ARN, or a version ARN with or without wildcards (<code>x.x.x</code>, <code>1.x.x</code>, or <code>1.0.x</code>). A version or wildcard ARN resolves to the latest matching build version that has reached <code>AVAILABLE</code> status. Builds that were later deprecated, disabled, or deleted don't resolve. To get an image in any other state, such as a failed or in-progress build, specify the full build version ARN.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

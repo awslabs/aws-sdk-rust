@@ -6,7 +6,7 @@
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>The output image type. For an image recipe, this is always AMI. Container images are built from container recipes, a separate resource. This field isn't currently returned in responses.</p>
     pub r#type: ::std::option::Option<crate::types::ImageType>,
     /// <p>The name of the image recipe.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct ImageRecipe {
     pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The version of the image recipe.</p>
     pub version: ::std::option::Option<::std::string::String>,
-    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components that are included in the image recipe. A recipe can contain a maximum of 20 build and test components in any combination, by default. This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2 Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub components: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     /// <p>The base image for customizations specified in the image recipe. You can specify the parent image using one of the following options:</p>
     /// <ul>
@@ -38,9 +38,9 @@ pub struct ImageRecipe {
     pub date_created: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the image recipe.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub working_directory: ::std::option::Option<::std::string::String>,
-    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when Image Builder launches your build instance.</p>
     pub additional_instance_configuration: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     /// <p>Tags that are applied to the AMI that Image Builder creates during the Build phase prior to image distribution.</p>
     pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -52,7 +52,7 @@ impl ImageRecipe {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>The output image type. For an image recipe, this is always AMI. Container images are built from container recipes, a separate resource. This field isn't currently returned in responses.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageType> {
         self.r#type.as_ref()
     }
@@ -76,7 +76,7 @@ impl ImageRecipe {
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
-    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components that are included in the image recipe. A recipe can contain a maximum of 20 build and test components in any combination, by default. This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2 Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.components.is_none()`.
     pub fn components(&self) -> &[crate::types::ComponentConfiguration] {
@@ -110,11 +110,11 @@ impl ImageRecipe {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn working_directory(&self) -> ::std::option::Option<&str> {
         self.working_directory.as_deref()
     }
-    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when Image Builder launches your build instance.</p>
     pub fn additional_instance_configuration(&self) -> ::std::option::Option<&crate::types::AdditionalInstanceConfiguration> {
         self.additional_instance_configuration.as_ref()
     }
@@ -172,17 +172,17 @@ impl ImageRecipeBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>The output image type. For an image recipe, this is always AMI. Container images are built from container recipes, a separate resource. This field isn't currently returned in responses.</p>
     pub fn r#type(mut self, input: crate::types::ImageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>The output image type. For an image recipe, this is always AMI. Container images are built from container recipes, a separate resource. This field isn't currently returned in responses.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>The output image type. For an image recipe, this is always AMI. Container images are built from container recipes, a separate resource. This field isn't currently returned in responses.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
         &self.r#type
     }
@@ -260,19 +260,19 @@ impl ImageRecipeBuilder {
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
-    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components that are included in the image recipe. A recipe can contain a maximum of 20 build and test components in any combination, by default. This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2 Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn components(mut self, input: crate::types::ComponentConfiguration) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input);
         self.components = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components that are included in the image recipe. A recipe can contain a maximum of 20 build and test components in any combination, by default. This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2 Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_components(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
         self.components = input;
         self
     }
-    /// <p>The components that are included in the image recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
+    /// <p>The components that are included in the image recipe. A recipe can contain a maximum of 20 build and test components in any combination, by default. This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2 Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_components(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>> {
         &self.components
     }
@@ -374,31 +374,31 @@ impl ImageRecipeBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn working_directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.working_directory = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn set_working_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.working_directory = input;
         self
     }
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows. If you don't specify a working directory, Image Builder uses <code>/tmp</code> for Linux and macOS build instances, and <code>C:/</code> for Windows build instances.</p>
     pub fn get_working_directory(&self) -> &::std::option::Option<::std::string::String> {
         &self.working_directory
     }
-    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when Image Builder launches your build instance.</p>
     pub fn additional_instance_configuration(mut self, input: crate::types::AdditionalInstanceConfiguration) -> Self {
         self.additional_instance_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when Image Builder launches your build instance.</p>
     pub fn set_additional_instance_configuration(mut self, input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>) -> Self {
         self.additional_instance_configuration = input;
         self
     }
-    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when an instance is launched from your AMI.</p>
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to build and test your image configuration. Instance configuration adds a layer of control over those instances. You can define settings and add scripts to run when Image Builder launches your build instance.</p>
     pub fn get_additional_instance_configuration(&self) -> &::std::option::Option<crate::types::AdditionalInstanceConfiguration> {
         &self.additional_instance_configuration
     }

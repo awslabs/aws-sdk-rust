@@ -16,6 +16,15 @@ pub struct CreateStreamInput {
     pub warm_throughput_mibps: ::std::option::Option<i32>,
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub max_record_size_in_kib: ::std::option::Option<i32>,
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
 }
 impl CreateStreamInput {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
@@ -42,6 +51,17 @@ impl CreateStreamInput {
     pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
         self.max_record_size_in_kib
     }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn record_distribution_strategy(&self) -> ::std::option::Option<&crate::types::RecordDistributionStrategy> {
+        self.record_distribution_strategy.as_ref()
+    }
 }
 impl CreateStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
@@ -60,6 +80,7 @@ pub struct CreateStreamInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) warm_throughput_mibps: ::std::option::Option<i32>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
+    pub(crate) record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
 }
 impl CreateStreamInputBuilder {
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
@@ -153,6 +174,41 @@ impl CreateStreamInputBuilder {
     pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
         &self.max_record_size_in_kib
     }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn record_distribution_strategy(mut self, input: crate::types::RecordDistributionStrategy) -> Self {
+        self.record_distribution_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn set_record_distribution_strategy(mut self, input: ::std::option::Option<crate::types::RecordDistributionStrategy>) -> Self {
+        self.record_distribution_strategy = input;
+        self
+    }
+    /// <p>The record distribution strategy for the stream, which determines how Amazon Kinesis Data Streams distributes records across shards. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AUTO</code> – Amazon Kinesis Data Streams distributes records evenly across shards and ignores any partition key and <code>ExplicitHashKey</code> that producers supply. Use this value for stateless workloads that do not require partition-key ordering.</p></li>
+    /// <li>
+    /// <p><code>USER_PARTITION_KEY</code> – Producers must supply a partition key, which Amazon Kinesis Data Streams uses to determine shard placement. This is the default.</p></li>
+    /// </ul>
+    /// <p>The record distribution strategy is only supported for streams that use the on-demand capacity mode. If you do not specify this parameter, the stream uses <code>USER_PARTITION_KEY</code>.</p>
+    pub fn get_record_distribution_strategy(&self) -> &::std::option::Option<crate::types::RecordDistributionStrategy> {
+        &self.record_distribution_strategy
+    }
     /// Consumes the builder and constructs a [`CreateStreamInput`](crate::operation::create_stream::CreateStreamInput).
     pub fn build(
         self,
@@ -164,6 +220,7 @@ impl CreateStreamInputBuilder {
             tags: self.tags,
             warm_throughput_mibps: self.warm_throughput_mibps,
             max_record_size_in_kib: self.max_record_size_in_kib,
+            record_distribution_strategy: self.record_distribution_strategy,
         })
     }
 }

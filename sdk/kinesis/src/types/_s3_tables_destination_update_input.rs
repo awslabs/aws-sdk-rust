@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3TablesDestinationUpdateInput {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes).</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination.</p>
     pub data_freshness_in_seconds: i32,
 }
 impl S3TablesDestinationUpdateInput {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes).</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination.</p>
     pub fn data_freshness_in_seconds(&self) -> i32 {
         self.data_freshness_in_seconds
     }
@@ -27,18 +27,18 @@ pub struct S3TablesDestinationUpdateInputBuilder {
     pub(crate) data_freshness_in_seconds: ::std::option::Option<i32>,
 }
 impl S3TablesDestinationUpdateInputBuilder {
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes).</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination.</p>
     /// This field is required.
     pub fn data_freshness_in_seconds(mut self, input: i32) -> Self {
         self.data_freshness_in_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes).</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination.</p>
     pub fn set_data_freshness_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_freshness_in_seconds = input;
         self
     }
-    /// <p>The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds (5 to 15 minutes).</p>
+    /// <p>The maximum age, in seconds, of undelivered data before the channel delivers it to the destination.</p>
     pub fn get_data_freshness_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.data_freshness_in_seconds
     }

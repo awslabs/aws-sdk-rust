@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStateUpdateExclusionRules {
-    /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
+    /// <p>Defines criteria for AMIs that Image Builder should exclude from the resource state update.</p>
     pub amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
 impl ResourceStateUpdateExclusionRules {
-    /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
+    /// <p>Defines criteria for AMIs that Image Builder should exclude from the resource state update.</p>
     pub fn amis(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
         self.amis.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct ResourceStateUpdateExclusionRulesBuilder {
     pub(crate) amis: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>,
 }
 impl ResourceStateUpdateExclusionRulesBuilder {
-    /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
+    /// <p>Defines criteria for AMIs that Image Builder should exclude from the resource state update.</p>
     pub fn amis(mut self, input: crate::types::LifecyclePolicyDetailExclusionRulesAmis) -> Self {
         self.amis = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
+    /// <p>Defines criteria for AMIs that Image Builder should exclude from the resource state update.</p>
     pub fn set_amis(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>) -> Self {
         self.amis = input;
         self
     }
-    /// <p>Defines criteria for AMIs that are excluded from lifecycle actions.</p>
+    /// <p>Defines criteria for AMIs that Image Builder should exclude from the resource state update.</p>
     pub fn get_amis(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis> {
         &self.amis
     }

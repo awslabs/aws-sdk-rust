@@ -7,7 +7,7 @@ pub struct InstanceConfiguration {
     /// <p>The base image for a container build and test instance. This can contain an AMI ID or it can specify an Amazon Web Services Systems Manager (SSM) Parameter Store Parameter, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p>
     /// <p>If not specified, Image Builder uses the appropriate ECS-optimized AMI as a base image.</p>
     pub image: ::std::option::Option<::std::string::String>,
-    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    /// <p>Defines the block device mappings for the EC2 instance that Image Builder launches to build and test your container image.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
 }
 impl InstanceConfiguration {
@@ -16,7 +16,7 @@ impl InstanceConfiguration {
     pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
-    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    /// <p>Defines the block device mappings for the EC2 instance that Image Builder launches to build and test your container image.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
     pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMapping] {
@@ -59,19 +59,19 @@ impl InstanceConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    /// <p>Defines the block device mappings for the EC2 instance that Image Builder launches to build and test your container image.</p>
     pub fn block_device_mappings(mut self, input: crate::types::InstanceBlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    /// <p>Defines the block device mappings for the EC2 instance that Image Builder launches to build and test your container image.</p>
     pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>) -> Self {
         self.block_device_mappings = input;
         self
     }
-    /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
+    /// <p>Defines the block device mappings for the EC2 instance that Image Builder launches to build and test your container image.</p>
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>> {
         &self.block_device_mappings
     }

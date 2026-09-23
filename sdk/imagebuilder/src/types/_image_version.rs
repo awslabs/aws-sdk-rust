@@ -26,7 +26,7 @@ pub struct ImageVersion {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub r#type: ::std::option::Option<crate::types::ImageType>,
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -46,7 +46,7 @@ pub struct ImageVersion {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system platform of the image version, for example "Windows" or "Linux".</p>
     pub platform: ::std::option::Option<crate::types::Platform>,
-    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the image. For example, Amazon Linux 2023 or Microsoft Windows Server 2022.</p>
     pub os_version: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the image version.</p>
     pub owner: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ impl ImageVersion {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageType> {
         self.r#type.as_ref()
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -120,7 +120,7 @@ impl ImageVersion {
     pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the image. For example, Amazon Linux 2023 or Microsoft Windows Server 2022.</p>
     pub fn os_version(&self) -> ::std::option::Option<&str> {
         self.os_version.as_deref()
     }
@@ -264,7 +264,7 @@ impl ImageVersionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ImageType> {
         &self.r#type
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -285,7 +285,7 @@ impl ImageVersionBuilder {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -306,7 +306,7 @@ impl ImageVersionBuilder {
         self.version = input;
         self
     }
-    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p><note>
+    /// <p>The semantic version of the image. This version follows the semantic version syntax.</p><note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -340,17 +340,17 @@ impl ImageVersionBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         &self.platform
     }
-    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the image. For example, Amazon Linux 2023 or Microsoft Windows Server 2022.</p>
     pub fn os_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.os_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the image. For example, Amazon Linux 2023 or Microsoft Windows Server 2022.</p>
     pub fn set_os_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.os_version = input;
         self
     }
-    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
+    /// <p>The operating system version of the image. For example, Amazon Linux 2023 or Microsoft Windows Server 2022.</p>
     pub fn get_os_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.os_version
     }

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagePackagesInput {
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListImagePackagesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImagePackagesInput {
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListImagePackagesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListImagePackagesInputBuilder {
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     /// This field is required.
     pub fn image_build_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_build_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn set_image_build_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_build_version_arn = input;
         self
     }
-    /// <p>Filter results for the ListImagePackages request by the Image Build Version ARN</p>
+    /// <p>The Amazon Resource Name (ARN) of the image build version whose packages you want to list. The value must be a full build version ARN.</p>
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }

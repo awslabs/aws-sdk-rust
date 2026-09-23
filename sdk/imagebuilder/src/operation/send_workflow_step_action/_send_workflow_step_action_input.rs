@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendWorkflowStepActionInput {
-    /// <p>Uniquely identifies the workflow step that sent the step action.</p>
+    /// <p>Uniquely identifies the waiting workflow step that you send the action to. To get this identifier, call <code>ListWaitingWorkflowSteps</code>.</p>
     pub step_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the image build version associated with the workflow step execution. This value must match the image that owns the waiting step. If the ARN does not correspond to the image running the workflow, then the request fails with a validation error.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
+    /// <p>The action to perform on the paused workflow step. <code>RESUME</code> completes the waiting step, and the workflow continues. <code>STOP</code> fails the step, and the step's <code>onFailure</code> setting determines whether the workflow continues or aborts. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub action: ::std::option::Option<crate::types::WorkflowStepActionType>,
     /// <p>The reason for the action. This value is stored with the step execution record and is accessible in subsequent workflow steps via step output references.</p>
     pub reason: ::std::option::Option<::std::string::String>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl SendWorkflowStepActionInput {
-    /// <p>Uniquely identifies the workflow step that sent the step action.</p>
+    /// <p>Uniquely identifies the waiting workflow step that you send the action to. To get this identifier, call <code>ListWaitingWorkflowSteps</code>.</p>
     pub fn step_execution_id(&self) -> ::std::option::Option<&str> {
         self.step_execution_id.as_deref()
     }
@@ -23,7 +23,7 @@ impl SendWorkflowStepActionInput {
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
-    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
+    /// <p>The action to perform on the paused workflow step. <code>RESUME</code> completes the waiting step, and the workflow continues. <code>STOP</code> fails the step, and the step's <code>onFailure</code> setting determines whether the workflow continues or aborts. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::WorkflowStepActionType> {
         self.action.as_ref()
     }
@@ -31,7 +31,7 @@ impl SendWorkflowStepActionInput {
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct SendWorkflowStepActionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl SendWorkflowStepActionInputBuilder {
-    /// <p>Uniquely identifies the workflow step that sent the step action.</p>
+    /// <p>Uniquely identifies the waiting workflow step that you send the action to. To get this identifier, call <code>ListWaitingWorkflowSteps</code>.</p>
     /// This field is required.
     pub fn step_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.step_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Uniquely identifies the workflow step that sent the step action.</p>
+    /// <p>Uniquely identifies the waiting workflow step that you send the action to. To get this identifier, call <code>ListWaitingWorkflowSteps</code>.</p>
     pub fn set_step_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.step_execution_id = input;
         self
     }
-    /// <p>Uniquely identifies the workflow step that sent the step action.</p>
+    /// <p>Uniquely identifies the waiting workflow step that you send the action to. To get this identifier, call <code>ListWaitingWorkflowSteps</code>.</p>
     pub fn get_step_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.step_execution_id
     }
@@ -84,18 +84,18 @@ impl SendWorkflowStepActionInputBuilder {
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
-    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
+    /// <p>The action to perform on the paused workflow step. <code>RESUME</code> completes the waiting step, and the workflow continues. <code>STOP</code> fails the step, and the step's <code>onFailure</code> setting determines whether the workflow continues or aborts. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::WorkflowStepActionType) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
+    /// <p>The action to perform on the paused workflow step. <code>RESUME</code> completes the waiting step, and the workflow continues. <code>STOP</code> fails the step, and the step's <code>onFailure</code> setting determines whether the workflow continues or aborts. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::WorkflowStepActionType>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The action to perform on the paused workflow step. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
+    /// <p>The action to perform on the paused workflow step. <code>RESUME</code> completes the waiting step, and the workflow continues. <code>STOP</code> fails the step, and the step's <code>onFailure</code> setting determines whether the workflow continues or aborts. The workflow step must be in a waiting state to accept an action. The request fails if the step has already timed out or been actioned.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::WorkflowStepActionType> {
         &self.action
     }
@@ -113,18 +113,18 @@ impl SendWorkflowStepActionInputBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

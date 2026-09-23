@@ -135,6 +135,10 @@ pub use crate::types::_ism_encryption_method::IsmEncryptionMethod;
 
 pub use crate::types::_encryption_contract_configuration::EncryptionContractConfiguration;
 
+pub use crate::types::_speke_version::SpekeVersion;
+
+pub use crate::types::_content_key_period_configuration::ContentKeyPeriodConfiguration;
+
 pub use crate::types::_ad_marker_hls::AdMarkerHls;
 
 pub use crate::types::_scte_in_manifests::ScteInManifests;
@@ -159,6 +163,8 @@ pub use crate::types::_preset_speke20_video::PresetSpeke20Video;
 
 pub use crate::types::_drm_system::DrmSystem;
 
+pub use crate::types::_content_key_period_timing::ContentKeyPeriodTiming;
+
 pub use crate::types::_dash_dvb_metrics_reporting::DashDvbMetricsReporting;
 
 pub use crate::types::_dash_ttml_profile::DashTtmlProfile;
@@ -178,6 +184,10 @@ mod _cmaf_encryption_method;
 mod _conflict_exception_type;
 
 mod _container_type;
+
+mod _content_key_period_configuration;
+
+mod _content_key_period_timing;
 
 mod _create_dash_manifest_configuration;
 
@@ -314,6 +324,8 @@ mod _scte_in_segments;
 mod _segment;
 
 mod _speke_key_provider;
+
+mod _speke_version;
 
 mod _start_tag;
 

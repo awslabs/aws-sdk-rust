@@ -8,11 +8,11 @@ pub struct LifecyclePolicyDetailExclusionRulesAmis {
     pub is_public: bool,
     /// <p>Configures Amazon Web Services Regions that are excluded from the lifecycle action.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>The lifecycle action doesn't apply to AMIs that are shared with any of the specified Amazon Web Services accounts.</p>
     pub shared_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Configures Image Builder to exclude AMIs that were launched within the specified time period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded by this rule.</p>
     pub last_launched: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched>,
-    /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
+    /// <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and the value must match.</p>
     pub tag_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl LifecyclePolicyDetailExclusionRulesAmis {
@@ -26,17 +26,17 @@ impl LifecyclePolicyDetailExclusionRulesAmis {
     pub fn regions(&self) -> &[::std::string::String] {
         self.regions.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>The lifecycle action doesn't apply to AMIs that are shared with any of the specified Amazon Web Services accounts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shared_accounts.is_none()`.
     pub fn shared_accounts(&self) -> &[::std::string::String] {
         self.shared_accounts.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Configures Image Builder to exclude AMIs that were launched within the specified time period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded by this rule.</p>
     pub fn last_launched(&self) -> ::std::option::Option<&crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched> {
         self.last_launched.as_ref()
     }
-    /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
+    /// <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and the value must match.</p>
     pub fn tag_map(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tag_map.as_ref()
     }
@@ -97,33 +97,33 @@ impl LifecyclePolicyDetailExclusionRulesAmisBuilder {
     ///
     /// To override the contents of this collection use [`set_shared_accounts`](Self::set_shared_accounts).
     ///
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>The lifecycle action doesn't apply to AMIs that are shared with any of the specified Amazon Web Services accounts.</p>
     pub fn shared_accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.shared_accounts.unwrap_or_default();
         v.push(input.into());
         self.shared_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>The lifecycle action doesn't apply to AMIs that are shared with any of the specified Amazon Web Services accounts.</p>
     pub fn set_shared_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.shared_accounts = input;
         self
     }
-    /// <p>Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle action.</p>
+    /// <p>The lifecycle action doesn't apply to AMIs that are shared with any of the specified Amazon Web Services accounts.</p>
     pub fn get_shared_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.shared_accounts
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Configures Image Builder to exclude AMIs that were launched within the specified time period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded by this rule.</p>
     pub fn last_launched(mut self, input: crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched) -> Self {
         self.last_launched = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Configures Image Builder to exclude AMIs that were launched within the specified time period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded by this rule.</p>
     pub fn set_last_launched(mut self, input: ::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched>) -> Self {
         self.last_launched = input;
         self
     }
-    /// <p>Specifies configuration details for Image Builder to exclude the most recent resources from lifecycle actions.</p>
+    /// <p>Configures Image Builder to exclude AMIs that were launched within the specified time period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded by this rule.</p>
     pub fn get_last_launched(&self) -> &::std::option::Option<crate::types::LifecyclePolicyDetailExclusionRulesAmisLastLaunched> {
         &self.last_launched
     }
@@ -131,19 +131,19 @@ impl LifecyclePolicyDetailExclusionRulesAmisBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_map`](Self::set_tag_map).
     ///
-    /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
+    /// <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and the value must match.</p>
     pub fn tag_map(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tag_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tag_map = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
+    /// <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and the value must match.</p>
     pub fn set_tag_map(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tag_map = input;
         self
     }
-    /// <p>Lists tags that should be excluded from lifecycle actions for the AMIs that have them.</p>
+    /// <p>Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and the value must match.</p>
     pub fn get_tag_map(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tag_map
     }

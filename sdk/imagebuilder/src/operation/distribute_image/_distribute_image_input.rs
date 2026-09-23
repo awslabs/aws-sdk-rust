@@ -3,21 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DistributeImageInput {
-    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
+    /// <p>The source image to distribute. You can specify the source in any of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An AMI ID.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to the latest available build version.</p></li>
+    /// </ul>
+    /// <p>Whichever format you use, the source must resolve to an AMI in the current Amazon Web Services Region.</p>
     pub source_image: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration. The configuration defines target Regions, accounts, and AMI settings. The distribution configuration must be in the same Region as this operation.</p>
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role that Image Builder assumes to distribute the image.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to apply to the distributed image.</p>
+    /// <p>The tags to apply to the new Image Builder image resource that this operation creates. To tag the output AMIs, use <code>amiTags</code> in the distribution configuration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration for the distribution.</p>
     pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl DistributeImageInput {
-    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
+    /// <p>The source image to distribute. You can specify the source in any of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An AMI ID.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to the latest available build version.</p></li>
+    /// </ul>
+    /// <p>Whichever format you use, the source must resolve to an AMI in the current Amazon Web Services Region.</p>
     pub fn source_image(&self) -> ::std::option::Option<&str> {
         self.source_image.as_deref()
     }
@@ -29,11 +47,11 @@ impl DistributeImageInput {
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>The tags to apply to the distributed image.</p>
+    /// <p>The tags to apply to the new Image Builder image resource that this operation creates. To tag the output AMIs, use <code>amiTags</code> in the distribution configuration.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -61,18 +79,45 @@ pub struct DistributeImageInputBuilder {
     pub(crate) logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
 }
 impl DistributeImageInputBuilder {
-    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
+    /// <p>The source image to distribute. You can specify the source in any of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An AMI ID.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to the latest available build version.</p></li>
+    /// </ul>
+    /// <p>Whichever format you use, the source must resolve to an AMI in the current Amazon Web Services Region.</p>
     /// This field is required.
     pub fn source_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_image = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
+    /// <p>The source image to distribute. You can specify the source in any of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An AMI ID.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to the latest available build version.</p></li>
+    /// </ul>
+    /// <p>Whichever format you use, the source must resolve to an AMI in the current Amazon Web Services Region.</p>
     pub fn set_source_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_image = input;
         self
     }
-    /// <p>The source image to distribute. Specify an AMI identifier, SSM parameter path, or Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder image Amazon Resource Name (ARN), the image must be in the <code>AVAILABLE</code> state.</p>
+    /// <p>The source image to distribute. You can specify the source in any of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An AMI ID.</p></li>
+    /// <li>
+    /// <p>An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <code>ssm:</code>, followed by the parameter name or ARN.</p></li>
+    /// <li>
+    /// <p>An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to the latest available build version.</p></li>
+    /// </ul>
+    /// <p>Whichever format you use, the source must resolve to an AMI in the current Amazon Web Services Region.</p>
     pub fn get_source_image(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_image
     }
@@ -110,34 +155,34 @@ impl DistributeImageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to apply to the distributed image.</p>
+    /// <p>The tags to apply to the new Image Builder image resource that this operation creates. To tag the output AMIs, use <code>amiTags</code> in the distribution configuration.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to apply to the distributed image.</p>
+    /// <p>The tags to apply to the new Image Builder image resource that this operation creates. To tag the output AMIs, use <code>amiTags</code> in the distribution configuration.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to apply to the distributed image.</p>
+    /// <p>The tags to apply to the new Image Builder image resource that this operation creates. To tag the output AMIs, use <code>amiTags</code> in the distribution configuration.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

@@ -12,7 +12,7 @@ pub struct Ami {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Image status and the reason for that status.</p>
+    /// <p>The state of the AMI, which includes the status and, if applicable, the reason for that status.</p>
     pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>The account ID of the owner of the AMI.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl Ami {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Image status and the reason for that status.</p>
+    /// <p>The state of the AMI, which includes the status and, if applicable, the reason for that status.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::ImageState> {
         self.state.as_ref()
     }
@@ -118,17 +118,17 @@ impl AmiBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Image status and the reason for that status.</p>
+    /// <p>The state of the AMI, which includes the status and, if applicable, the reason for that status.</p>
     pub fn state(mut self, input: crate::types::ImageState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Image status and the reason for that status.</p>
+    /// <p>The state of the AMI, which includes the status and, if applicable, the reason for that status.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>Image status and the reason for that status.</p>
+    /// <p>The state of the AMI, which includes the status and, if applicable, the reason for that status.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::ImageState> {
         &self.state
     }

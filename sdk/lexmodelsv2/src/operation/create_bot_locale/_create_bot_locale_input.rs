@@ -36,6 +36,8 @@ pub struct CreateBotLocaleInput {
     pub generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     /// <p>The sensitivity level for voice activity detection (VAD) in the bot locale. This setting helps optimize speech recognition accuracy by adjusting how the system responds to background noise during voice interactions.</p>
     pub speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl CreateBotLocaleInput {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -93,6 +95,10 @@ impl CreateBotLocaleInput {
     pub fn speech_detection_sensitivity(&self) -> ::std::option::Option<&crate::types::SpeechDetectionSensitivity> {
         self.speech_detection_sensitivity.as_ref()
     }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn speaker_diarization_settings(&self) -> ::std::option::Option<&crate::types::SpeakerDiarizationSettings> {
+        self.speaker_diarization_settings.as_ref()
+    }
 }
 impl CreateBotLocaleInput {
     /// Creates a new builder-style object to manufacture [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
@@ -116,6 +122,7 @@ pub struct CreateBotLocaleInputBuilder {
     pub(crate) speech_recognition_settings: ::std::option::Option<crate::types::SpeechRecognitionSettings>,
     pub(crate) generative_ai_settings: ::std::option::Option<crate::types::GenerativeAiSettings>,
     pub(crate) speech_detection_sensitivity: ::std::option::Option<crate::types::SpeechDetectionSensitivity>,
+    pub(crate) speaker_diarization_settings: ::std::option::Option<crate::types::SpeakerDiarizationSettings>,
 }
 impl CreateBotLocaleInputBuilder {
     /// <p>The identifier of the bot to create the locale for.</p>
@@ -309,6 +316,20 @@ impl CreateBotLocaleInputBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         &self.speech_detection_sensitivity
     }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.speaker_diarization_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.speaker_diarization_settings = input;
+        self
+    }
+    /// <p>The speaker diarization settings to configure for the new bot locale. When enabled, Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming audio conversations.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        &self.speaker_diarization_settings
+    }
     /// Consumes the builder and constructs a [`CreateBotLocaleInput`](crate::operation::create_bot_locale::CreateBotLocaleInput).
     pub fn build(
         self,
@@ -325,6 +346,7 @@ impl CreateBotLocaleInputBuilder {
             speech_recognition_settings: self.speech_recognition_settings,
             generative_ai_settings: self.generative_ai_settings,
             speech_detection_sensitivity: self.speech_detection_sensitivity,
+            speaker_diarization_settings: self.speaker_diarization_settings,
         })
     }
 }

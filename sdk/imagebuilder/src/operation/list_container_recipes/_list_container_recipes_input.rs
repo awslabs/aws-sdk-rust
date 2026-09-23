@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainerRecipesInput {
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub owner: ::std::option::Option<crate::types::Ownership>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -23,7 +23,7 @@ pub struct ListContainerRecipesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerRecipesInput {
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Ownership> {
         self.owner.as_ref()
     }
@@ -69,17 +69,17 @@ pub struct ListContainerRecipesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListContainerRecipesInputBuilder {
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         &self.owner
     }

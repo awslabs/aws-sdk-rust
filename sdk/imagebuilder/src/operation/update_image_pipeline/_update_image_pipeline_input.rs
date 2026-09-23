@@ -7,33 +7,33 @@ pub struct UpdateImagePipelineInput {
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the image pipeline.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub image_recipe_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub container_recipe_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images created by this image pipeline.</p>
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images created by this image pipeline.</p>
     pub distribution_configuration_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub image_tests_configuration: ::std::option::Option<crate::types::ImageTestsConfiguration>,
     /// <p>Specifies whether to collect additional information about the image being created, including the operating system (OS) version and package list. Defaults to <code>true</code>.</p>
     pub enhanced_image_metadata_enabled: ::std::option::Option<bool>,
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. Because the update replaces the entire configuration, omitting this property removes any existing schedule. The pipeline then runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub schedule: ::std::option::Option<crate::types::Schedule>,
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. Defaults to <code>ENABLED</code> when omitted. To keep a pipeline disabled, include this property set to <code>DISABLED</code> in your update request.</p>
     pub status: ::std::option::Option<crate::types::PipelineStatus>,
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    /// <p>Contains the workflows to run for the pipeline.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
-    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub logging_configuration: ::std::option::Option<crate::types::PipelineLoggingConfiguration>,
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. If you omit this property, the pipeline reverts to the Image Builder service-linked role.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub image_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateImagePipelineInput {
@@ -45,23 +45,23 @@ impl UpdateImagePipelineInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn image_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn container_recipe_arn(&self) -> ::std::option::Option<&str> {
         self.container_recipe_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images created by this image pipeline.</p>
     pub fn infrastructure_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.infrastructure_configuration_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images created by this image pipeline.</p>
     pub fn distribution_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.distribution_configuration_arn.as_deref()
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn image_tests_configuration(&self) -> ::std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
@@ -69,37 +69,37 @@ impl UpdateImagePipelineInput {
     pub fn enhanced_image_metadata_enabled(&self) -> ::std::option::Option<bool> {
         self.enhanced_image_metadata_enabled
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. Because the update replaces the entire configuration, omitting this property removes any existing schedule. The pipeline then runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
         self.schedule.as_ref()
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. Defaults to <code>ENABLED</code> when omitted. To keep a pipeline disabled, include this property set to <code>DISABLED</code> in your update request.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::PipelineStatus> {
         self.status.as_ref()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
-    /// <p>Contains the workflows to run for the pipeline.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
     pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
         self.workflows.as_deref().unwrap_or_default()
     }
-    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::PipelineLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. If you omit this property, the pipeline reverts to the Image Builder service-linked role.</p>
     pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn image_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.image_tags.as_ref()
     }
@@ -162,74 +162,74 @@ impl UpdateImagePipelineInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn image_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn set_image_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_recipe_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images updated by this image pipeline.</p>
+    /// <p>The Amazon Resource Name (ARN) of the image recipe that configures images created by this image pipeline. You must specify either this property or <code>containerRecipeArn</code>, but not both.</p>
     pub fn get_image_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_recipe_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn container_recipe_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_recipe_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn set_container_recipe_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_recipe_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container pipeline to update.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container pipeline. You must specify either this property or <code>imageRecipeArn</code>, but not both.</p>
     pub fn get_container_recipe_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_recipe_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images created by this image pipeline.</p>
     /// This field is required.
     pub fn infrastructure_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images created by this image pipeline.</p>
     pub fn set_infrastructure_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.infrastructure_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image Builder uses to build images created by this image pipeline.</p>
     pub fn get_infrastructure_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.infrastructure_configuration_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images created by this image pipeline.</p>
     pub fn distribution_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.distribution_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images created by this image pipeline.</p>
     pub fn set_distribution_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distribution_configuration_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images that this image pipeline has updated.</p>
+    /// <p>The Amazon Resource Name (ARN) of the distribution configuration that Image Builder uses to configure and distribute images created by this image pipeline.</p>
     pub fn get_distribution_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_configuration_arn
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
         self.image_tests_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn set_image_tests_configuration(mut self, input: ::std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
         self.image_tests_configuration = input;
         self
     }
-    /// <p>The image test configuration of the image pipeline.</p>
+    /// <p>Specifies the test settings that Image Builder applies to images that this pipeline creates. If you don't provide test settings, Image Builder stores a default configuration with image tests enabled.</p>
     pub fn get_image_tests_configuration(&self) -> &::std::option::Option<crate::types::ImageTestsConfiguration> {
         &self.image_tests_configuration
     }
@@ -247,60 +247,60 @@ impl UpdateImagePipelineInputBuilder {
     pub fn get_enhanced_image_metadata_enabled(&self) -> &::std::option::Option<bool> {
         &self.enhanced_image_metadata_enabled
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. Because the update replaces the entire configuration, omitting this property removes any existing schedule. The pipeline then runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
         self.schedule = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. Because the update replaces the entire configuration, omitting this property removes any existing schedule. The pipeline then runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn set_schedule(mut self, input: ::std::option::Option<crate::types::Schedule>) -> Self {
         self.schedule = input;
         self
     }
-    /// <p>The schedule of the image pipeline.</p>
+    /// <p>The schedule of the image pipeline. Because the update replaces the entire configuration, omitting this property removes any existing schedule. The pipeline then runs only when you call <code>StartImagePipelineExecution</code>.</p>
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
         &self.schedule
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. Defaults to <code>ENABLED</code> when omitted. To keep a pipeline disabled, include this property set to <code>DISABLED</code> in your update request.</p>
     pub fn status(mut self, input: crate::types::PipelineStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. Defaults to <code>ENABLED</code> when omitted. To keep a pipeline disabled, include this property set to <code>DISABLED</code> in your update request.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::PipelineStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the image pipeline.</p>
+    /// <p>The status of the image pipeline. Defaults to <code>ENABLED</code> when omitted. To keep a pipeline disabled, include this property set to <code>DISABLED</code> in your update request.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PipelineStatus> {
         &self.status
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn set_image_scanning_configuration(mut self, input: ::std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
         self.image_scanning_configuration = input;
         self
     }
-    /// <p>Contains settings for vulnerability scans.</p>
+    /// <p>Contains settings for vulnerability scans that Amazon Inspector runs against the test instance during image creation.</p>
     pub fn get_image_scanning_configuration(&self) -> &::std::option::Option<crate::types::ImageScanningConfiguration> {
         &self.image_scanning_configuration
     }
@@ -308,47 +308,47 @@ impl UpdateImagePipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
     ///
-    /// <p>Contains the workflows to run for the pipeline.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
         let mut v = self.workflows.unwrap_or_default();
         v.push(input);
         self.workflows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains the workflows to run for the pipeline.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
         self.workflows = input;
         self
     }
-    /// <p>Contains the workflows to run for the pipeline.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         &self.workflows
     }
-    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn logging_configuration(mut self, input: crate::types::PipelineLoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::PipelineLoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>Update logging configuration for the output image that's created when the pipeline runs.</p>
+    /// <p>Specifies the logging configuration for the image pipeline. Use this to define custom CloudWatch Logs log groups for your pipeline execution logs and image build logs. The service manages log groups with names starting with <code>/aws/imagebuilder/</code> using the service-linked role. For custom log group names outside of this prefix, you must also provide an <code>executionRole</code>.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::PipelineLoggingConfiguration> {
         &self.logging_configuration
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. If you omit this property, the pipeline reverts to the Image Builder service-linked role.</p>
     pub fn execution_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. If you omit this property, the pipeline reverts to the Image Builder service-linked role.</p>
     pub fn set_execution_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
+    /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions. If you omit this property, the pipeline reverts to the Image Builder service-linked role.</p>
     pub fn get_execution_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role
     }
@@ -356,19 +356,19 @@ impl UpdateImagePipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
     ///
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn image_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.image_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.image_tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn set_image_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.image_tags = input;
         self
     }
-    /// <p>The tags to be applied to the images produced by this pipeline.</p>
+    /// <p>The tags that Image Builder applies to the Image Builder image resource that this pipeline's scheduled executions create. These tags don't apply to the output AMI. To tag output AMIs, use <code>amiTags</code> in the pipeline's distribution configuration.</p>
     pub fn get_image_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.image_tags
     }

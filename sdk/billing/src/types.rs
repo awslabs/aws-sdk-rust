@@ -9,6 +9,8 @@ pub use crate::types::_pricing_plan::PricingPlan;
 
 pub use crate::types::_active_time_range::ActiveTimeRange;
 
+pub use crate::types::_billing_view_segment_time_range::BillingViewSegmentTimeRange;
+
 pub use crate::types::_billing_feature::BillingFeature;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
@@ -45,6 +47,8 @@ pub use crate::types::_string_search::StringSearch;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElement;
 
+pub use crate::types::_billing_view_segments_list_element::BillingViewSegmentsListElement;
+
 pub use crate::types::_linked_account_charge::LinkedAccountCharge;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
@@ -71,6 +75,8 @@ pub use crate::types::_pricing_plan_tier::PricingPlanTier;
 
 pub use crate::types::_search_option::SearchOption;
 
+pub use crate::types::_billing_domain::BillingDomain;
+
 pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
 
 pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeriod;
@@ -84,6 +90,8 @@ mod _additional_charge;
 mod _amount;
 
 mod _application_type;
+
+mod _billing_domain;
 
 mod _billing_feature;
 
@@ -102,6 +110,10 @@ mod _billing_view_element;
 mod _billing_view_health_status;
 
 mod _billing_view_list_element;
+
+mod _billing_view_segment_time_range;
+
+mod _billing_view_segments_list_element;
 
 mod _billing_view_status;
 

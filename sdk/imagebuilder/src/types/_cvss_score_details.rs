@@ -6,7 +6,7 @@
 pub struct CvssScoreDetails {
     /// <p>The source for the CVSS score.</p>
     pub score_source: ::std::option::Option<::std::string::String>,
-    /// <p>The source of the finding.</p>
+    /// <p>The source of the CVSS data that the Amazon Inspector score for the finding is based on, for example NVD or a vendor security feed.</p>
     pub cvss_source: ::std::option::Option<::std::string::String>,
     /// <p>The CVSS version that generated the score.</p>
     pub version: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct CvssScoreDetails {
     pub score: ::std::option::Option<f64>,
     /// <p>A vector that measures the severity of the vulnerability.</p>
     pub scoring_vector: ::std::option::Option<::std::string::String>,
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The adjustments that Amazon Inspector applied to the base CVSS score to produce its own score for the finding. The list is empty when Amazon Inspector made no adjustments.</p>
     pub adjustments: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>,
 }
 impl CvssScoreDetails {
@@ -22,7 +22,7 @@ impl CvssScoreDetails {
     pub fn score_source(&self) -> ::std::option::Option<&str> {
         self.score_source.as_deref()
     }
-    /// <p>The source of the finding.</p>
+    /// <p>The source of the CVSS data that the Amazon Inspector score for the finding is based on, for example NVD or a vendor security feed.</p>
     pub fn cvss_source(&self) -> ::std::option::Option<&str> {
         self.cvss_source.as_deref()
     }
@@ -38,7 +38,7 @@ impl CvssScoreDetails {
     pub fn scoring_vector(&self) -> ::std::option::Option<&str> {
         self.scoring_vector.as_deref()
     }
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The adjustments that Amazon Inspector applied to the base CVSS score to produce its own score for the finding. The list is empty when Amazon Inspector made no adjustments.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.adjustments.is_none()`.
     pub fn adjustments(&self) -> &[crate::types::CvssScoreAdjustment] {
@@ -78,17 +78,17 @@ impl CvssScoreDetailsBuilder {
     pub fn get_score_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.score_source
     }
-    /// <p>The source of the finding.</p>
+    /// <p>The source of the CVSS data that the Amazon Inspector score for the finding is based on, for example NVD or a vendor security feed.</p>
     pub fn cvss_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cvss_source = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source of the finding.</p>
+    /// <p>The source of the CVSS data that the Amazon Inspector score for the finding is based on, for example NVD or a vendor security feed.</p>
     pub fn set_cvss_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cvss_source = input;
         self
     }
-    /// <p>The source of the finding.</p>
+    /// <p>The source of the CVSS data that the Amazon Inspector score for the finding is based on, for example NVD or a vendor security feed.</p>
     pub fn get_cvss_source(&self) -> &::std::option::Option<::std::string::String> {
         &self.cvss_source
     }
@@ -138,19 +138,19 @@ impl CvssScoreDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_adjustments`](Self::set_adjustments).
     ///
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The adjustments that Amazon Inspector applied to the base CVSS score to produce its own score for the finding. The list is empty when Amazon Inspector made no adjustments.</p>
     pub fn adjustments(mut self, input: crate::types::CvssScoreAdjustment) -> Self {
         let mut v = self.adjustments.unwrap_or_default();
         v.push(input);
         self.adjustments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The adjustments that Amazon Inspector applied to the base CVSS score to produce its own score for the finding. The list is empty when Amazon Inspector made no adjustments.</p>
     pub fn set_adjustments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>>) -> Self {
         self.adjustments = input;
         self
     }
-    /// <p>An object that contains details about an adjustment that Amazon Inspector made to the CVSS score for the finding.</p>
+    /// <p>The adjustments that Amazon Inspector applied to the base CVSS score to produce its own score for the finding. The list is empty when Amazon Inspector made no adjustments.</p>
     pub fn get_adjustments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CvssScoreAdjustment>> {
         &self.adjustments
     }

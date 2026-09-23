@@ -6,7 +6,7 @@
 pub struct WorkflowParameterDetail {
     /// <p>The name of this input parameter.</p>
     pub name: ::std::string::String,
-    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// <p>The type of input this parameter provides. Supported values are <code>string</code>, <code>integer</code>, <code>boolean</code>, and <code>stringList</code>.</p>
     pub r#type: ::std::string::String,
     /// <p>The default value of this parameter if no input is provided.</p>
     pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -19,7 +19,7 @@ impl WorkflowParameterDetail {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// <p>The type of input this parameter provides. Supported values are <code>string</code>, <code>integer</code>, <code>boolean</code>, and <code>stringList</code>.</p>
     pub fn r#type(&self) -> &str {
         use std::ops::Deref;
         self.r#type.deref()
@@ -67,18 +67,18 @@ impl WorkflowParameterDetailBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// <p>The type of input this parameter provides. Supported values are <code>string</code>, <code>integer</code>, <code>boolean</code>, and <code>stringList</code>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// <p>The type of input this parameter provides. Supported values are <code>string</code>, <code>integer</code>, <code>boolean</code>, and <code>stringList</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    /// <p>The type of input this parameter provides. Supported values are <code>string</code>, <code>integer</code>, <code>boolean</code>, and <code>stringList</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

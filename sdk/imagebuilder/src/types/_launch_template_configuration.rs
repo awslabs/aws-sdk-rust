@@ -8,7 +8,7 @@ pub struct LaunchTemplateConfiguration {
     pub launch_template_id: ::std::string::String,
     /// <p>The account ID that this configuration applies to.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Specifies whether to make the new launch template version that Image Builder creates the default version of the launch template. If you don't set a value, Image Builder treats it as <code>true</code>.</p>
     pub set_default_version: bool,
 }
 impl LaunchTemplateConfiguration {
@@ -21,7 +21,7 @@ impl LaunchTemplateConfiguration {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Specifies whether to make the new launch template version that Image Builder creates the default version of the launch template. If you don't set a value, Image Builder treats it as <code>true</code>.</p>
     pub fn set_default_version(&self) -> bool {
         self.set_default_version
     }
@@ -71,17 +71,17 @@ impl LaunchTemplateConfigurationBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Specifies whether to make the new launch template version that Image Builder creates the default version of the launch template. If you don't set a value, Image Builder treats it as <code>true</code>.</p>
     pub fn set_default_version(mut self, input: bool) -> Self {
         self.set_default_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Specifies whether to make the new launch template version that Image Builder creates the default version of the launch template. If you don't set a value, Image Builder treats it as <code>true</code>.</p>
     pub fn set_set_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.set_default_version = input;
         self
     }
-    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Specifies whether to make the new launch template version that Image Builder creates the default version of the launch template. If you don't set a value, Image Builder treats it as <code>true</code>.</p>
     pub fn get_set_default_version(&self) -> &::std::option::Option<bool> {
         &self.set_default_version
     }

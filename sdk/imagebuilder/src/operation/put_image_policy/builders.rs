@@ -22,7 +22,7 @@ impl crate::operation::put_image_policy::builders::PutImagePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `PutImagePolicy`.
 ///
-/// <p>Applies a policy to an image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> so that the resource is visible to all principals with whom the resource is shared.</p>
+/// <p>Applies a policy to an image. The preferred way to share resources is with the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>. If you use the PutImagePolicy operation instead, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>. Otherwise, the resource isn't visible to the principals that it's shared with.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutImagePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl PutImagePolicyFluentBuilder {
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_arn()
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy(input.into());
         self
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy(input);
         self
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }

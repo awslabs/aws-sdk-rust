@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiDistributionConfiguration {
-    /// <p>The name of the output AMI.</p>
+    /// <p>The name of the output AMI. The name must include the <code>{{ imagebuilder:buildDate }}</code> dynamic tag so that each build produces a uniquely named AMI. If you don't specify a name, Image Builder names the output AMI with the image name followed by the build timestamp, for example <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    /// <p>The description to apply to the distributed AMI. Image Builder sets this as the output AMI's description in each target Region and account. If you don't specify a description, the AMI in the build Region uses the image recipe's description, if the recipe has one. Copies distributed to other Regions and accounts don't receive a default description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of an account to which you want to distribute an image.</p>
+    /// <p>The Amazon Web Services account IDs to distribute the AMI to in this Region. Each listed account receives its own copy of the output AMI. If you don't specify accounts, Image Builder distributes the AMI only to your own account.</p>
     pub target_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to apply to AMIs distributed to this Region.</p>
     pub ami_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -18,15 +18,15 @@ pub struct AmiDistributionConfiguration {
     pub launch_permission: ::std::option::Option<crate::types::LaunchPermissionConfiguration>,
 }
 impl AmiDistributionConfiguration {
-    /// <p>The name of the output AMI.</p>
+    /// <p>The name of the output AMI. The name must include the <code>{{ imagebuilder:buildDate }}</code> dynamic tag so that each build produces a uniquely named AMI. If you don't specify a name, Image Builder names the output AMI with the image name followed by the build timestamp, for example <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    /// <p>The description to apply to the distributed AMI. Image Builder sets this as the output AMI's description in each target Region and account. If you don't specify a description, the AMI in the build Region uses the image recipe's description, if the recipe has one. Copies distributed to other Regions and accounts don't receive a default description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The ID of an account to which you want to distribute an image.</p>
+    /// <p>The Amazon Web Services account IDs to distribute the AMI to in this Region. Each listed account receives its own copy of the output AMI. If you don't specify accounts, Image Builder distributes the AMI only to your own account.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_account_ids.is_none()`.
     pub fn target_account_ids(&self) -> &[::std::string::String] {
@@ -64,31 +64,31 @@ pub struct AmiDistributionConfigurationBuilder {
     pub(crate) launch_permission: ::std::option::Option<crate::types::LaunchPermissionConfiguration>,
 }
 impl AmiDistributionConfigurationBuilder {
-    /// <p>The name of the output AMI.</p>
+    /// <p>The name of the output AMI. The name must include the <code>{{ imagebuilder:buildDate }}</code> dynamic tag so that each build produces a uniquely named AMI. If you don't specify a name, Image Builder names the output AMI with the image name followed by the build timestamp, for example <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the output AMI.</p>
+    /// <p>The name of the output AMI. The name must include the <code>{{ imagebuilder:buildDate }}</code> dynamic tag so that each build produces a uniquely named AMI. If you don't specify a name, Image Builder names the output AMI with the image name followed by the build timestamp, for example <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the output AMI.</p>
+    /// <p>The name of the output AMI. The name must include the <code>{{ imagebuilder:buildDate }}</code> dynamic tag so that each build produces a uniquely named AMI. If you don't specify a name, Image Builder names the output AMI with the image name followed by the build timestamp, for example <code>my-image 2022-10-26T22-30-05.912619Z</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    /// <p>The description to apply to the distributed AMI. Image Builder sets this as the output AMI's description in each target Region and account. If you don't specify a description, the AMI in the build Region uses the image recipe's description, if the recipe has one. Copies distributed to other Regions and accounts don't receive a default description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    /// <p>The description to apply to the distributed AMI. Image Builder sets this as the output AMI's description in each target Region and account. If you don't specify a description, the AMI in the build Region uses the image recipe's description, if the recipe has one. Copies distributed to other Regions and accounts don't receive a default description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of the AMI distribution configuration. Minimum and maximum length are in characters.</p>
+    /// <p>The description to apply to the distributed AMI. Image Builder sets this as the output AMI's description in each target Region and account. If you don't specify a description, the AMI in the build Region uses the image recipe's description, if the recipe has one. Copies distributed to other Regions and accounts don't receive a default description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -96,19 +96,19 @@ impl AmiDistributionConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_target_account_ids`](Self::set_target_account_ids).
     ///
-    /// <p>The ID of an account to which you want to distribute an image.</p>
+    /// <p>The Amazon Web Services account IDs to distribute the AMI to in this Region. Each listed account receives its own copy of the output AMI. If you don't specify accounts, Image Builder distributes the AMI only to your own account.</p>
     pub fn target_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_account_ids.unwrap_or_default();
         v.push(input.into());
         self.target_account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ID of an account to which you want to distribute an image.</p>
+    /// <p>The Amazon Web Services account IDs to distribute the AMI to in this Region. Each listed account receives its own copy of the output AMI. If you don't specify accounts, Image Builder distributes the AMI only to your own account.</p>
     pub fn set_target_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.target_account_ids = input;
         self
     }
-    /// <p>The ID of an account to which you want to distribute an image.</p>
+    /// <p>The Amazon Web Services account IDs to distribute the AMI to in this Region. Each listed account receives its own copy of the output AMI. If you don't specify accounts, Image Builder distributes the AMI only to your own account.</p>
     pub fn get_target_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.target_account_ids
     }

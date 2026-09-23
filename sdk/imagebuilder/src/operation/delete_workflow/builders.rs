@@ -22,7 +22,7 @@ impl crate::operation::delete_workflow::builders::DeleteWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteWorkflow`.
 ///
-/// <p>Deletes a specific workflow resource.</p>
+/// <p>Deletes a specific workflow resource. You can't delete a workflow build version while an image pipeline references it. The request fails with <code>ResourceDependencyException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

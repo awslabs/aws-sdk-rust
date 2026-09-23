@@ -5,11 +5,11 @@
 pub struct ListWorkflowExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    /// <p>An array of runtime details that represents each time a workflow ran for the requested image build version. Image Builder retains workflow execution records for a limited time, so this array can be empty for older image build versions.</p>
     pub workflow_executions: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
     /// <p>The resource Amazon Resource Name (ARN) of the image build version for which you requested a list of workflow runtime details.</p>
     pub image_build_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The output message from the list action, if applicable.</p>
+    /// <p>The failure reason for the image build version, if it's in a failed state. This comes from the image itself, not from an individual workflow, so it's available even when no workflow executions remain for the image.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service hasn't included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ impl ListWorkflowExecutionsOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    /// <p>An array of runtime details that represents each time a workflow ran for the requested image build version. Image Builder retains workflow execution records for a limited time, so this array can be empty for older image build versions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflow_executions.is_none()`.
     pub fn workflow_executions(&self) -> &[crate::types::WorkflowExecutionMetadata] {
@@ -30,7 +30,7 @@ impl ListWorkflowExecutionsOutput {
     pub fn image_build_version_arn(&self) -> ::std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
-    /// <p>The output message from the list action, if applicable.</p>
+    /// <p>The failure reason for the image build version, if it's in a failed state. This comes from the image itself, not from an individual workflow, so it's available even when no workflow executions remain for the image.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
@@ -81,19 +81,19 @@ impl ListWorkflowExecutionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflow_executions`](Self::set_workflow_executions).
     ///
-    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    /// <p>An array of runtime details that represents each time a workflow ran for the requested image build version. Image Builder retains workflow execution records for a limited time, so this array can be empty for older image build versions.</p>
     pub fn workflow_executions(mut self, input: crate::types::WorkflowExecutionMetadata) -> Self {
         let mut v = self.workflow_executions.unwrap_or_default();
         v.push(input);
         self.workflow_executions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    /// <p>An array of runtime details that represents each time a workflow ran for the requested image build version. Image Builder retains workflow execution records for a limited time, so this array can be empty for older image build versions.</p>
     pub fn set_workflow_executions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>>) -> Self {
         self.workflow_executions = input;
         self
     }
-    /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
+    /// <p>An array of runtime details that represents each time a workflow ran for the requested image build version. Image Builder retains workflow execution records for a limited time, so this array can be empty for older image build versions.</p>
     pub fn get_workflow_executions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowExecutionMetadata>> {
         &self.workflow_executions
     }
@@ -111,17 +111,17 @@ impl ListWorkflowExecutionsOutputBuilder {
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_build_version_arn
     }
-    /// <p>The output message from the list action, if applicable.</p>
+    /// <p>The failure reason for the image build version, if it's in a failed state. This comes from the image itself, not from an individual workflow, so it's available even when no workflow executions remain for the image.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The output message from the list action, if applicable.</p>
+    /// <p>The failure reason for the image build version, if it's in a failed state. This comes from the image itself, not from an individual workflow, so it's available even when no workflow executions remain for the image.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    /// <p>The output message from the list action, if applicable.</p>
+    /// <p>The failure reason for the image build version, if it's in a failed state. This comes from the image itself, not from an individual workflow, so it's available even when no workflow executions remain for the image.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

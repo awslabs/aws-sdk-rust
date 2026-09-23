@@ -262,4 +262,18 @@ impl UpdateBotLocaleFluentBuilder {
     pub fn get_speech_detection_sensitivity(&self) -> &::std::option::Option<crate::types::SpeechDetectionSensitivity> {
         self.inner.get_speech_detection_sensitivity()
     }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn speaker_diarization_settings(mut self, input: crate::types::SpeakerDiarizationSettings) -> Self {
+        self.inner = self.inner.speaker_diarization_settings(input);
+        self
+    }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn set_speaker_diarization_settings(mut self, input: ::std::option::Option<crate::types::SpeakerDiarizationSettings>) -> Self {
+        self.inner = self.inner.set_speaker_diarization_settings(input);
+        self
+    }
+    /// <p>The updated speaker diarization settings to apply to the bot locale. If you omit this field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker diarization off, set <code>enabled</code> to <code>false</code> explicitly.</p>
+    pub fn get_speaker_diarization_settings(&self) -> &::std::option::Option<crate::types::SpeakerDiarizationSettings> {
+        self.inner.get_speaker_diarization_settings()
+    }
 }

@@ -124,31 +124,31 @@ impl UpdateChannelFluentBuilder {
     pub fn get_channel_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_channel_arn()
     }
-    /// <p>The updated configuration for a general purpose Amazon S3 destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a general purpose Amazon S3 destination. Specify this parameter when the channel delivers to a general purpose Amazon S3 bucket. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn s3_destination_configuration(mut self, input: crate::types::S3DestinationUpdateInput) -> Self {
         self.inner = self.inner.s3_destination_configuration(input);
         self
     }
-    /// <p>The updated configuration for a general purpose Amazon S3 destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a general purpose Amazon S3 destination. Specify this parameter when the channel delivers to a general purpose Amazon S3 bucket. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn set_s3_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3DestinationUpdateInput>) -> Self {
         self.inner = self.inner.set_s3_destination_configuration(input);
         self
     }
-    /// <p>The updated configuration for a general purpose Amazon S3 destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a general purpose Amazon S3 destination. Specify this parameter when the channel delivers to a general purpose Amazon S3 bucket. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn get_s3_destination_configuration(&self) -> &::std::option::Option<crate::types::S3DestinationUpdateInput> {
         self.inner.get_s3_destination_configuration()
     }
-    /// <p>The updated configuration for a streaming table destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a streaming table destination. Specify this parameter when the channel delivers to streaming tables on Apache Iceberg in Amazon S3 Tables. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn s3_tables_destination_configuration(mut self, input: crate::types::S3TablesDestinationUpdateInput) -> Self {
         self.inner = self.inner.s3_tables_destination_configuration(input);
         self
     }
-    /// <p>The updated configuration for a streaming table destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a streaming table destination. Specify this parameter when the channel delivers to streaming tables on Apache Iceberg in Amazon S3 Tables. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn set_s3_tables_destination_configuration(mut self, input: ::std::option::Option<crate::types::S3TablesDestinationUpdateInput>) -> Self {
         self.inner = self.inner.set_s3_tables_destination_configuration(input);
         self
     }
-    /// <p>The updated configuration for a streaming table destination. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
+    /// <p>The updated configuration for a streaming table destination. Specify this parameter when the channel delivers to streaming tables on Apache Iceberg in Amazon S3 Tables. Only <code>DataFreshnessInSeconds</code> can be updated.</p>
     pub fn get_s3_tables_destination_configuration(&self) -> &::std::option::Option<crate::types::S3TablesDestinationUpdateInput> {
         self.inner.get_s3_tables_destination_configuration()
     }

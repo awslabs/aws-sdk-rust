@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsInput {
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub component_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -11,7 +11,7 @@ pub struct ListComponentBuildVersionsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentBuildVersionsInput {
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn component_version_arn(&self) -> ::std::option::Option<&str> {
         self.component_version_arn.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct ListComponentBuildVersionsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListComponentBuildVersionsInputBuilder {
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.component_version_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn set_component_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_version_arn = input;
         self
     }
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_version_arn
     }

@@ -114,17 +114,17 @@ impl ListContainerRecipesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator {
         crate::operation::list_container_recipes::paginator::ListContainerRecipesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);
         self
     }
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Ownership>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
     }
-    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
+    /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account. For container recipes, the valid owner values are <code>Self</code>, <code>Shared</code>, and <code>Amazon</code>.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Ownership> {
         self.inner.get_owner()
     }

@@ -5,7 +5,7 @@
 pub struct ImportVmImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. Image Builder records the AMI from the VM import task in the image's output resources after the task completes.</p>
     pub image_arn: ::std::option::Option<::std::string::String>,
     /// <p>The client token that uniquely identifies the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ImportVmImageOutput {
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. Image Builder records the AMI from the VM import task in the image's output resources after the task completes.</p>
     pub fn image_arn(&self) -> ::std::option::Option<&str> {
         self.image_arn.as_deref()
     }
@@ -61,17 +61,17 @@ impl ImportVmImageOutputBuilder {
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. Image Builder records the AMI from the VM import task in the image's output resources after the task completes.</p>
     pub fn image_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. Image Builder records the AMI from the VM import task in the image's output resources after the task completes.</p>
     pub fn set_image_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AMI that was created during the VM import process. This AMI is used as the base image for the recipe that imported the VM.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that this request created. Image Builder records the AMI from the VM import task in the image's output resources after the task completes.</p>
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_arn
     }

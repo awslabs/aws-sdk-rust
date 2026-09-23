@@ -114,17 +114,17 @@ impl ListWorkflowBuildVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_workflow_build_versions::paginator::ListWorkflowBuildVersionsPaginator {
         crate::operation::list_workflow_build_versions::paginator::ListWorkflowBuildVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn workflow_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_version_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn set_workflow_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_version_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions.</p>
+    /// <p>The Amazon Resource Name (ARN) of the workflow resource for which to get a list of build versions. The version segments can contain wildcards (<code>x</code>) to match multiple versions of the workflow. If you don't specify an ARN, the response lists build versions for all of the workflows in your account.</p>
     pub fn get_workflow_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_workflow_version_arn()
     }

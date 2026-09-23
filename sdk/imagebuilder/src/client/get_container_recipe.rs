@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetContainerRecipeOutput`](crate::operation::get_container_recipe::GetContainerRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`container_recipe(Option<ContainerRecipe>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::container_recipe): <p>The container recipe object that is returned.</p>
-    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::latest_version_references): <p>The resource ARNs with different wildcard variations of semantic versioning.</p>
+    ///   - [`latest_version_references(Option<LatestVersionReferences>)`](crate::operation::get_container_recipe::GetContainerRecipeOutput::latest_version_references): <p>A set of wildcard version ARNs that always reference the latest version of the resource. ARNs are included for the latest version overall, and for the latest versions within the same major, minor, and patch levels.</p>
     /// - On failure, responds with [`SdkError<GetContainerRecipeError>`](crate::operation::get_container_recipe::GetContainerRecipeError)
     pub fn get_container_recipe(&self) -> crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder {
         crate::operation::get_container_recipe::builders::GetContainerRecipeFluentBuilder::new(self.handle.clone())

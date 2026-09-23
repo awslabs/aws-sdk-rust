@@ -11,7 +11,8 @@ pub struct Record {
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (10 MiB).</p>
     pub data: ::aws_smithy_types::Blob,
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub partition_key: ::std::string::String,
+    /// <p>For a stream that uses the <code>AUTO</code> record distribution strategy, this value is not returned if the producer did not provide a partition key when writing the record. If the producer provided a partition key, the original value is returned even though it was not used to determine shard placement.</p>
+    pub partition_key: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -36,9 +37,9 @@ impl Record {
         &self.data
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn partition_key(&self) -> &str {
-        use std::ops::Deref;
-        self.partition_key.deref()
+    /// <p>For a stream that uses the <code>AUTO</code> record distribution strategy, this value is not returned if the producer did not provide a partition key when writing the record. If the producer provided a partition key, the original value is returned even though it was not used to determine shard placement.</p>
+    pub fn partition_key(&self) -> ::std::option::Option<&str> {
+        self.partition_key.as_deref()
     }
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
     /// <ul>
@@ -114,17 +115,19 @@ impl RecordBuilder {
         &self.data
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    /// This field is required.
+    /// <p>For a stream that uses the <code>AUTO</code> record distribution strategy, this value is not returned if the producer did not provide a partition key when writing the record. If the producer provided a partition key, the original value is returned even though it was not used to determine shard placement.</p>
     pub fn partition_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    /// <p>For a stream that uses the <code>AUTO</code> record distribution strategy, this value is not returned if the producer did not provide a partition key when writing the record. If the producer provided a partition key, the original value is returned even though it was not used to determine shard placement.</p>
     pub fn set_partition_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition_key = input;
         self
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
+    /// <p>For a stream that uses the <code>AUTO</code> record distribution strategy, this value is not returned if the producer did not provide a partition key when writing the record. If the producer provided a partition key, the original value is returned even though it was not used to determine shard placement.</p>
     pub fn get_partition_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.partition_key
     }
@@ -164,7 +167,6 @@ impl RecordBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`sequence_number`](crate::types::builders::RecordBuilder::sequence_number)
     /// - [`data`](crate::types::builders::RecordBuilder::data)
-    /// - [`partition_key`](crate::types::builders::RecordBuilder::partition_key)
     pub fn build(self) -> ::std::result::Result<crate::types::Record, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Record {
             sequence_number: self.sequence_number.ok_or_else(|| {
@@ -180,12 +182,7 @@ impl RecordBuilder {
                     "data was not specified but it is required when building Record",
                 )
             })?,
-            partition_key: self.partition_key.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "partition_key",
-                    "partition_key was not specified but it is required when building Record",
-                )
-            })?,
+            partition_key: self.partition_key,
             encryption_type: self.encryption_type,
         })
     }

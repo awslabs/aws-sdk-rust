@@ -23,6 +23,7 @@ impl crate::operation::delete_image::builders::DeleteImageInputBuilder {
 /// Fluent builder constructing a request to `DeleteImage`.
 ///
 /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>
+/// <p>The request fails with <code>ResourceDependencyException</code> if the image is shared with other accounts, or if other resources depend on it. It also fails while the image build is still running. Cancel an in-progress build with <code>CancelImageCreation</code> before you delete the image.</p>
 /// <ul>
 /// <li>
 /// <p>To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister your Linux AMI</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.</p></li>

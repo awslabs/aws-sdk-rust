@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`channel_arn(impl Into<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::set_channel_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the channel to describe.</p><br>
     /// - On success, responds with [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput) with field(s):
-    ///   - [`channel_description(Option<ChannelDescription>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_description): <p>The configuration and current status of the channel.</p>
+    ///   - [`channel_description(Option<ChannelDescription>)`](crate::operation::describe_channel::DescribeChannelOutput::channel_description): <p>The configuration and current status of the channel, including its ARN, source stream, destination configuration, and lifecycle state.</p>
     /// - On failure, responds with [`SdkError<DescribeChannelError>`](crate::operation::describe_channel::DescribeChannelError)
     pub fn describe_channel(&self) -> crate::operation::describe_channel::builders::DescribeChannelFluentBuilder {
         crate::operation::describe_channel::builders::DescribeChannelFluentBuilder::new(self.handle.clone())

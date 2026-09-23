@@ -22,7 +22,9 @@ impl crate::operation::update_infrastructure_configuration::builders::UpdateInfr
 }
 /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
 ///
-/// <p>Updates an infrastructure configuration. An infrastructure configuration defines the environment in which Image Builder builds and tests your image.</p>
+/// <p>Updates an infrastructure configuration. An infrastructure configuration defines the environment in which Image Builder builds and tests your image.</p><note>
+/// <p>This operation doesn't support selective updates. The request replaces the configuration, so include every setting that you want to keep. Omitted optional properties are cleared.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInfrastructureConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,31 +143,31 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
     ///
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability. If you don't specify instance types, Image Builder selects compatible instance types automatically. If you specify a Dedicated Host, Image Builder uses only instance types that the host supports.</p>
     pub fn instance_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_types(input.into());
         self
     }
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability. If you don't specify instance types, Image Builder selects compatible instance types automatically. If you specify a Dedicated Host, Image Builder uses only instance types that the host supports.</p>
     pub fn set_instance_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
-    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability.</p>
+    /// <p>The instance types of the infrastructure configuration. You can specify one or more instance types to use for this build. Image Builder picks one of these instance types based on availability. If you don't specify instance types, Image Builder selects compatible instance types automatically. If you specify a Dedicated Host, Image Builder uses only instance types that the host supports.</p>
     pub fn get_instance_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_instance_types()
     }
-    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI. The instance profile must exist in your account.</p>
     pub fn instance_profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_profile_name(input.into());
         self
     }
-    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI. The instance profile must exist in your account.</p>
     pub fn set_instance_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_profile_name(input);
         self
     }
-    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI. The instance profile must exist in your account.</p>
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_profile_name()
     }
@@ -188,31 +190,31 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
-    /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI. If you specify <code>subnetId</code>, you must also specify one or more security group IDs in <code>securityGroupIds</code>. Otherwise, the request fails.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
-    /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI. If you specify <code>subnetId</code>, you must also specify one or more security group IDs in <code>securityGroupIds</code>. Otherwise, the request fails.</p>
     pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
-    /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
+    /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI. If you specify <code>subnetId</code>, you must also specify one or more security group IDs in <code>securityGroupIds</code>. Otherwise, the request fails.</p>
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subnet_id()
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn logging(mut self, input: crate::types::Logging) -> Self {
         self.inner = self.inner.logging(input);
         self
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn set_logging(mut self, input: ::std::option::Option<crate::types::Logging>) -> Self {
         self.inner = self.inner.set_logging(input);
         self
     }
-    /// <p>The logging configuration of the infrastructure configuration.</p>
+    /// <p>The logging configuration of the infrastructure configuration. When you configure S3 logs, Image Builder writes logs from the build and test process to the specified bucket under the key prefix.</p>
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         self.inner.get_logging()
     }
@@ -244,22 +246,22 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
         self.inner.get_terminate_instance_on_failure()
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
-    /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
+    /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_arn()
@@ -269,12 +271,12 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs. Tag keys can't begin with <code>aws:</code> or match one of the following reserved keys: <code>CreatedBy</code>, <code>Ec2ImageBuilderArn</code>, <code>Name</code>, or <code>Tags</code>.</p>
     pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_tags(k.into(), v.into());
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs. Tag keys can't begin with <code>aws:</code> or match one of the following reserved keys: <code>CreatedBy</code>, <code>Ec2ImageBuilderArn</code>, <code>Name</code>, or <code>Tags</code>.</p>
     pub fn set_resource_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -282,11 +284,11 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
-    /// <p>The tags attached to the resource created by Image Builder.</p>
+    /// <p>The metadata tags to assign to the Amazon EC2 instance that Image Builder launches during the build process. Tags are formatted as key value pairs. Tag keys can't begin with <code>aws:</code> or match one of the following reserved keys: <code>CreatedBy</code>, <code>Ec2ImageBuilderArn</code>, <code>Name</code>, or <code>Tags</code>.</p>
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_resource_tags()
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
+    /// <p>The instance metadata service (IMDS) settings that Image Builder applies to the EC2 build and test instances it launches during image creation. If you don't set these options, the EC2 launch defaults for the instance apply. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
@@ -297,7 +299,7 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
         self.inner = self.inner.instance_metadata_options(input);
         self
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
+    /// <p>The instance metadata service (IMDS) settings that Image Builder applies to the EC2 build and test instances it launches during image creation. If you don't set these options, the EC2 launch defaults for the instance apply. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
@@ -308,7 +310,7 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
         self.inner = self.inner.set_instance_metadata_options(input);
         self
     }
-    /// <p>The instance metadata options that you can set for the HTTP requests that pipeline builds use to launch EC2 build and test instances. For more information about instance metadata options, see one of the following links:</p>
+    /// <p>The instance metadata service (IMDS) settings that Image Builder applies to the EC2 build and test instances it launches during image creation. If you don't set these options, the EC2 launch defaults for the instance apply. For more information about instance metadata options, see one of the following links:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for Linux instances.</p></li>
@@ -318,31 +320,31 @@ impl UpdateInfrastructureConfigurationFluentBuilder {
     pub fn get_instance_metadata_options(&self) -> &::std::option::Option<crate::types::InstanceMetadataOptions> {
         self.inner.get_instance_metadata_options()
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn placement(mut self, input: crate::types::Placement) -> Self {
         self.inner = self.inner.placement(input);
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
         self.inner = self.inner.set_placement(input);
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
+    /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         self.inner.get_placement()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

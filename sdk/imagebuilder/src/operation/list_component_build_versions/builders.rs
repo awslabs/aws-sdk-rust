@@ -22,7 +22,7 @@ impl crate::operation::list_component_build_versions::builders::ListComponentBui
 }
 /// Fluent builder constructing a request to `ListComponentBuildVersions`.
 ///
-/// <p>Returns the list of component build versions for the specified component version Amazon Resource Name (ARN).</p>
+/// <p>Returns a list of component build versions for the specified component version ARN. You can only list build versions for components that your account owns. Deprecated build versions aren't included in the results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComponentBuildVersionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListComponentBuildVersionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator {
         crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn component_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.component_version_arn(input.into());
         self
     }
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn set_component_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_component_version_arn(input);
         self
     }
-    /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
+    /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_component_version_arn()
     }

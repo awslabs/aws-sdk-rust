@@ -325,15 +325,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetImageRecip
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetImageRecipePolicyError {
-    /// <p>You have exceeded the permitted request rate for the specific operation.</p>
+    /// <p>You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder calls on your behalf. Retry with an increasing or variable delay between requests.</p>
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    /// <p>You have requested an action that that the service doesn't support.</p>
+    /// <p>The request is malformed or otherwise invalid. Verify the request and try again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>At least one of the resources referenced by your request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>This exception is thrown when the service encounters an unrecoverable exception.</p>
+    /// <p>An internal server error occurred while Image Builder processed the request. Retrying the request may succeed.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The service is unable to process your request at this time.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),

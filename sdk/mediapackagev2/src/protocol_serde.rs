@@ -265,6 +265,8 @@ pub(crate) mod shape_scte_filter_list;
 
 pub(crate) mod shape_speke_key_provider;
 
+pub(crate) mod shape_content_key_period_configuration;
+
 pub(crate) mod shape_dash_dvb_error_metrics;
 
 pub(crate) mod shape_drm_systems;

@@ -9,6 +9,16 @@ pub(crate) fn reflens_get_credit_allocation_history_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_billing_view_segments_output_output_next_token(
+    input: &crate::operation::list_billing_view_segments::ListBillingViewSegmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_billing_views_output_output_next_token(
     input: &crate::operation::list_billing_views::ListBillingViewsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -43,6 +53,13 @@ pub(crate) fn lens_get_credit_allocation_history_output_output_credit_allocation
     input: crate::operation::get_credit_allocation_history::GetCreditAllocationHistoryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CreditAllocationHistoryEntry>> {
     let input = input.credit_allocation_history_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_billing_view_segments_output_output_items(
+    input: crate::operation::list_billing_view_segments::ListBillingViewSegmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BillingViewSegmentsListElement>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 

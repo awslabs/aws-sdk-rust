@@ -6,7 +6,7 @@ impl super::Client {
     ///   - [`image_arn(impl Into<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::image_arn) / [`set_image_arn(Option<String>)`](crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::set_image_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the image whose policy you want to retrieve.</p><br>
     /// - On success, responds with [`GetImagePolicyOutput`](crate::operation::get_image_policy::GetImagePolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
-    ///   - [`policy(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::policy): <p>The image policy object.</p>
+    ///   - [`policy(Option<String>)`](crate::operation::get_image_policy::GetImagePolicyOutput::policy): <p>The resource policy for the image, as a JSON policy document. If the image has no policy applied, the response contains an empty JSON object (<code>{}</code>).</p>
     /// - On failure, responds with [`SdkError<GetImagePolicyError>`](crate::operation::get_image_policy::GetImagePolicyError)
     pub fn get_image_policy(&self) -> crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder {
         crate::operation::get_image_policy::builders::GetImagePolicyFluentBuilder::new(self.handle.clone())

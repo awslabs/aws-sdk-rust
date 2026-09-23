@@ -130,5 +130,8 @@ pub mod update_shard_count;
 /// Types for the `UpdateStreamMode` operation.
 pub mod update_stream_mode;
 
+/// Types for the `UpdateStreamRecordDistributionStrategy` operation.
+pub mod update_stream_record_distribution_strategy;
+
 /// Types for the `UpdateStreamWarmThroughput` operation.
 pub mod update_stream_warm_throughput;

@@ -245,6 +245,15 @@ pub(crate) fn get_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_billing_view_segments_output_output_correct_errors(
+    mut builder: crate::operation::list_billing_view_segments::builders::ListBillingViewSegmentsOutputBuilder,
+) -> crate::operation::list_billing_view_segments::builders::ListBillingViewSegmentsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_billing_views_output_output_correct_errors(
     mut builder: crate::operation::list_billing_views::builders::ListBillingViewsOutputBuilder,
 ) -> crate::operation::list_billing_views::builders::ListBillingViewsOutputBuilder {

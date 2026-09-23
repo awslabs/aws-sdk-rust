@@ -26,6 +26,8 @@ pub struct AudioSelector {
     pub remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     /// Specify how MediaConvert selects audio content within your input. The default is Track. PID: Select audio by specifying the Packet Identifier (PID) values for MPEG Transport Stream inputs. Use this when you know the exact PID values of your audio streams. Track: Default. Select audio by track number. This is the most common option and works with most input container formats. If more types of audio data get recognized in the future, these numberings may shift, but the numberings used for Stream mode will not. Language code: Select audio by language using an ISO 639-2 or ISO 639-3 three-letter code in all capital letters. Use this when your source has embedded language metadata and you want to select tracks based on their language. HLS rendition group: Select audio from an HLS rendition group. Use this when your input is an HLS package with multiple audio renditions and you want to select specific rendition groups. All PCM: Select all uncompressed PCM audio tracks from your input automatically. This is useful when you want to include all PCM audio tracks without specifying individual track numbers. Stream: Select audio by stream number. Stream numbers include all tracks in the source file, regardless of type, and correspond to either the order of tracks in the file, or if applicable, the stream number metadata of the track. Although all tracks count toward these stream numbers, in this audio selector context, only the stream number of a track containing audio data may be used. If your source file contains a track which is not recognized by the service, then the corresponding stream number will still be reserved for future use. If more types of audio data get recognized in the future, these numberings will not shift.
     pub selector_type: ::std::option::Option<crate::types::AudioSelectorType>,
+    /// Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default) to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby E programs as separate audio tracks for encoding. When this field is absent, the service defaults to Disabled (auto-unwrap).
+    pub smpte337_passthrough: ::std::option::Option<crate::types::AudioSmpte337Passthrough>,
     /// Identify a track from the input audio to include in this selector by entering the stream index number. These numberings count all tracks in the input file, but only a track containing audio data may be used here. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
     pub streams: ::std::option::Option<::std::vec::Vec<i32>>,
     /// Identify a track from the input audio to include in this selector by entering the track index number. These numberings include only tracks recognized as audio. If the service recognizes more types of audio tracks in the future, these numberings may shift. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
@@ -78,6 +80,10 @@ impl AudioSelector {
     pub fn selector_type(&self) -> ::std::option::Option<&crate::types::AudioSelectorType> {
         self.selector_type.as_ref()
     }
+    /// Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default) to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby E programs as separate audio tracks for encoding. When this field is absent, the service defaults to Disabled (auto-unwrap).
+    pub fn smpte337_passthrough(&self) -> ::std::option::Option<&crate::types::AudioSmpte337Passthrough> {
+        self.smpte337_passthrough.as_ref()
+    }
     /// Identify a track from the input audio to include in this selector by entering the stream index number. These numberings count all tracks in the input file, but only a track containing audio data may be used here. To include several tracks in a single audio selector, specify multiple tracks as follows. Using the console, enter a comma-separated list. For example, type "1,2,3" to include tracks 1 through 3.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.streams.is_none()`.
@@ -113,6 +119,7 @@ pub struct AudioSelectorBuilder {
     pub(crate) program_selection: ::std::option::Option<i32>,
     pub(crate) remix_settings: ::std::option::Option<crate::types::RemixSettings>,
     pub(crate) selector_type: ::std::option::Option<crate::types::AudioSelectorType>,
+    pub(crate) smpte337_passthrough: ::std::option::Option<crate::types::AudioSmpte337Passthrough>,
     pub(crate) streams: ::std::option::Option<::std::vec::Vec<i32>>,
     pub(crate) tracks: ::std::option::Option<::std::vec::Vec<i32>>,
 }
@@ -277,6 +284,20 @@ impl AudioSelectorBuilder {
     pub fn get_selector_type(&self) -> &::std::option::Option<crate::types::AudioSelectorType> {
         &self.selector_type
     }
+    /// Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default) to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby E programs as separate audio tracks for encoding. When this field is absent, the service defaults to Disabled (auto-unwrap).
+    pub fn smpte337_passthrough(mut self, input: crate::types::AudioSmpte337Passthrough) -> Self {
+        self.smpte337_passthrough = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default) to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby E programs as separate audio tracks for encoding. When this field is absent, the service defaults to Disabled (auto-unwrap).
+    pub fn set_smpte337_passthrough(mut self, input: ::std::option::Option<crate::types::AudioSmpte337Passthrough>) -> Self {
+        self.smpte337_passthrough = input;
+        self
+    }
+    /// Specify whether to pass SMPTE 337M-wrapped audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default) to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby E programs as separate audio tracks for encoding. When this field is absent, the service defaults to Disabled (auto-unwrap).
+    pub fn get_smpte337_passthrough(&self) -> &::std::option::Option<crate::types::AudioSmpte337Passthrough> {
+        &self.smpte337_passthrough
+    }
     /// Appends an item to `streams`.
     ///
     /// To override the contents of this collection use [`set_streams`](Self::set_streams).
@@ -331,6 +352,7 @@ impl AudioSelectorBuilder {
             program_selection: self.program_selection,
             remix_settings: self.remix_settings,
             selector_type: self.selector_type,
+            smpte337_passthrough: self.smpte337_passthrough,
             streams: self.streams,
             tracks: self.tracks,
         }

@@ -17,6 +17,8 @@ pub use crate::types::_speech_recognition_settings::SpeechRecognitionSettingsBui
 
 pub use crate::types::_generative_ai_settings::GenerativeAiSettingsBuilder;
 
+pub use crate::types::_speaker_diarization_settings::SpeakerDiarizationSettingsBuilder;
+
 pub use crate::types::_export_resource_specification::ExportResourceSpecificationBuilder;
 
 pub use crate::types::_dialog_code_hook_settings::DialogCodeHookSettingsBuilder;

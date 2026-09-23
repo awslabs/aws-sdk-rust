@@ -24,26 +24,32 @@ pub fn ser_update_bot_locale_input_input(
             ::aws_smithy_types::Number::Float((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.speech_detection_sensitivity {
-        object.key("speechDetectionSensitivity").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.speech_recognition_settings {
+    if let Some(var_7) = &input.speaker_diarization_settings {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("speechRecognitionSettings").start_object();
-        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("speakerDiarizationSettings").start_object();
+        crate::protocol_serde::shape_speaker_diarization_settings::ser_speaker_diarization_settings(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.unified_speech_settings {
+    if let Some(var_9) = &input.speech_detection_sensitivity {
+        object.key("speechDetectionSensitivity").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.speech_recognition_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("unifiedSpeechSettings").start_object();
-        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_11, var_10)?;
+        let mut object_11 = object.key("speechRecognitionSettings").start_object();
+        crate::protocol_serde::shape_speech_recognition_settings::ser_speech_recognition_settings(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.voice_settings {
+    if let Some(var_12) = &input.unified_speech_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("voiceSettings").start_object();
-        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_13, var_12)?;
+        let mut object_13 = object.key("unifiedSpeechSettings").start_object();
+        crate::protocol_serde::shape_unified_speech_settings::ser_unified_speech_settings(&mut object_13, var_12)?;
         object_13.finish();
+    }
+    if let Some(var_14) = &input.voice_settings {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("voiceSettings").start_object();
+        crate::protocol_serde::shape_voice_settings::ser_voice_settings(&mut object_15, var_14)?;
+        object_15.finish();
     }
     Ok(())
 }

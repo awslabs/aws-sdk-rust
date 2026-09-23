@@ -4,10 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schedule {
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>. You can specify a cron expression, or a rate expression such as <code>rate(1 day)</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub schedule_expression: ::std::option::Option<::std::string::String>,
-    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    /// <p>The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>, for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not specified, this defaults to UTC.</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The start condition configures when the pipeline should trigger a new image build, as follows. If no value is set Image Builder defaults to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>.</p>
     /// <ul>
@@ -17,18 +17,20 @@ pub struct Schedule {
     /// </note></li>
     /// <li>
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the recipe references its base image through an Amazon Web Services Systems Manager Parameter Store parameter, a change in the parameter's value also counts as an available dependency update.</p>
+    /// </note>
     pub pipeline_execution_start_condition: ::std::option::Option<crate::types::PipelineExecutionStartCondition>,
     /// <p>The policy that configures when Image Builder should automatically disable a pipeline that is failing.</p>
     pub auto_disable_policy: ::std::option::Option<crate::types::AutoDisablePolicy>,
 }
 impl Schedule {
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>. You can specify a cron expression, or a rate expression such as <code>rate(1 day)</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
-    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    /// <p>The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>, for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not specified, this defaults to UTC.</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -40,7 +42,9 @@ impl Schedule {
     /// </note></li>
     /// <li>
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the recipe references its base image through an Amazon Web Services Systems Manager Parameter Store parameter, a change in the parameter's value also counts as an available dependency update.</p>
+    /// </note>
     pub fn pipeline_execution_start_condition(&self) -> ::std::option::Option<&crate::types::PipelineExecutionStartCondition> {
         self.pipeline_execution_start_condition.as_ref()
     }
@@ -66,34 +70,34 @@ pub struct ScheduleBuilder {
     pub(crate) auto_disable_policy: ::std::option::Option<crate::types::AutoDisablePolicy>,
 }
 impl ScheduleBuilder {
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>. You can specify a cron expression, or a rate expression such as <code>rate(1 day)</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub fn schedule_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>. You can specify a cron expression, or a rate expression such as <code>rate(1 day)</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub fn set_schedule_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule_expression = input;
         self
     }
-    /// <p>The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.</p>
+    /// <p>The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>. You can specify a cron expression, or a rate expression such as <code>rate(1 day)</code>.</p>
     /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in EC2 Image Builder</a>.</p>
     pub fn get_schedule_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.schedule_expression
     }
-    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    /// <p>The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>, for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not specified, this defaults to UTC.</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    /// <p>The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>, for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not specified, this defaults to UTC.</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
-    /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>. If not specified this defaults to UTC.</p>
+    /// <p>The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>, for example <code>Etc/UTC</code> or <code>America/Los_Angeles</code>. If not specified, this defaults to UTC.</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }
@@ -105,7 +109,9 @@ impl ScheduleBuilder {
     /// </note></li>
     /// <li>
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the recipe references its base image through an Amazon Web Services Systems Manager Parameter Store parameter, a change in the parameter's value also counts as an available dependency update.</p>
+    /// </note>
     pub fn pipeline_execution_start_condition(mut self, input: crate::types::PipelineExecutionStartCondition) -> Self {
         self.pipeline_execution_start_condition = ::std::option::Option::Some(input);
         self
@@ -118,7 +124,9 @@ impl ScheduleBuilder {
     /// </note></li>
     /// <li>
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the recipe references its base image through an Amazon Web Services Systems Manager Parameter Store parameter, a change in the parameter's value also counts as an available dependency update.</p>
+    /// </note>
     pub fn set_pipeline_execution_start_condition(mut self, input: ::std::option::Option<crate::types::PipelineExecutionStartCondition>) -> Self {
         self.pipeline_execution_start_condition = input;
         self
@@ -131,7 +139,9 @@ impl ScheduleBuilder {
     /// </note></li>
     /// <li>
     /// <p><code>EXPRESSION_MATCH_ONLY</code> – This condition builds a new image every time the CRON expression matches the current time.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the recipe references its base image through an Amazon Web Services Systems Manager Parameter Store parameter, a change in the parameter's value also counts as an available dependency update.</p>
+    /// </note>
     pub fn get_pipeline_execution_start_condition(&self) -> &::std::option::Option<crate::types::PipelineExecutionStartCondition> {
         &self.pipeline_execution_start_condition
     }

@@ -5,7 +5,7 @@
 pub struct PutImagePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy should be applied to.</p>
     pub image_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutImagePolicyInput {
@@ -13,7 +13,7 @@ impl PutImagePolicyInput {
     pub fn image_arn(&self) -> ::std::option::Option<&str> {
         self.image_arn.as_deref()
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
@@ -48,18 +48,18 @@ impl PutImagePolicyInputBuilder {
     pub fn get_image_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_arn
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     /// This field is required.
     pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
-    /// <p>The policy to apply.</p>
+    /// <p>The resource policy to apply to the image, as a JSON policy document. Image Builder validates the policy with Amazon Web Services RAM before applying it, and rejects invalid policies with <code>InvalidParameterValueException</code>.</p>
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }

@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartResourceStateUpdateOutput {
-    /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
+    /// <p>Identifies the lifecycle execution that performs the resource state update. Image Builder only returns this field when it started a lifecycle execution for the update. Use it with <code>GetLifecycleExecution</code> to track progress.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The requested Amazon Resource Name (ARN) of the Image Builder resource for the asynchronous update.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartResourceStateUpdateOutput {
-    /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
+    /// <p>Identifies the lifecycle execution that performs the resource state update. Image Builder only returns this field when it started a lifecycle execution for the update. Use it with <code>GetLifecycleExecution</code> to track progress.</p>
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
@@ -40,17 +40,17 @@ pub struct StartResourceStateUpdateOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartResourceStateUpdateOutputBuilder {
-    /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
+    /// <p>Identifies the lifecycle execution that performs the resource state update. Image Builder only returns this field when it started a lifecycle execution for the update. Use it with <code>GetLifecycleExecution</code> to track progress.</p>
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
+    /// <p>Identifies the lifecycle execution that performs the resource state update. Image Builder only returns this field when it started a lifecycle execution for the update. Use it with <code>GetLifecycleExecution</code> to track progress.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_execution_id = input;
         self
     }
-    /// <p>Identifies the lifecycle runtime instance that started the resource state update.</p>
+    /// <p>Identifies the lifecycle execution that performs the resource state update. Image Builder only returns this field when it started a lifecycle execution for the update. Use it with <code>GetLifecycleExecution</code> to track progress.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }

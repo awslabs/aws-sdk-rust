@@ -22,7 +22,7 @@ impl crate::operation::create_workflow::builders::CreateWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateWorkflow`.
 ///
-/// <p>Creates a new workflow or a new version of an existing workflow.</p>
+/// <p>Creates a new workflow or a new version of an existing workflow. If a workflow with the same name and semantic version already exists, and your request changes its configuration, Image Builder creates a new build version. If the configuration is identical to the latest build version, the request fails because that workflow configuration already exists.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateWorkflowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the workflow to create.</p>
+    /// <p>The name of the workflow to create. Image Builder generates the workflow ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a workflow with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the workflow already exists.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the workflow to create.</p>
+    /// <p>The name of the workflow to create. Image Builder generates the workflow ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a workflow with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the workflow already exists.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the workflow to create.</p>
+    /// <p>The name of the workflow to create. Image Builder generates the workflow ARN from a normalized form of the name, so names that differ only in case, spaces, or underscores count as the same name. If a workflow with the same name and semantic version already exists in your account in the same Amazon Web Services Region, the request creates a new build version for it. If the content is also identical to the latest build version, the request fails because the workflow already exists.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -209,48 +209,48 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_change_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_change_description()
     }
-    /// <p>Contains the UTF-8 encoded YAML document content for the workflow. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
+    /// <p>The UTF-8 encoded YAML document content for the workflow, up to 16,000 characters. For larger documents, store the document in Amazon S3 and specify the <code>uri</code> property instead. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
-    /// <p>Contains the UTF-8 encoded YAML document content for the workflow. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
+    /// <p>The UTF-8 encoded YAML document content for the workflow, up to 16,000 characters. For larger documents, store the document in Amazon S3 and specify the <code>uri</code> property instead. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
-    /// <p>Contains the UTF-8 encoded YAML document content for the workflow. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.</p>
+    /// <p>The UTF-8 encoded YAML document content for the workflow, up to 16,000 characters. For larger documents, store the document in Amazon S3 and specify the <code>uri</code> property instead. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data()
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
-    /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
+    /// <p>The <code>uri</code> of a YAML workflow document file stored in Amazon S3. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. A workflow document that you provide from Amazon S3 can be up to your service quota for workflow size.</p>
+    /// <p>Alternatively, you can specify the YAML document inline, using the workflow <code>data</code> property. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uri(input.into());
         self
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
-    /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
+    /// <p>The <code>uri</code> of a YAML workflow document file stored in Amazon S3. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. A workflow document that you provide from Amazon S3 can be up to your service quota for workflow size.</p>
+    /// <p>Alternatively, you can specify the YAML document inline, using the workflow <code>data</code> property. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uri(input);
         self
     }
-    /// <p>The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. If you use Amazon S3, you can specify component content up to your service quota.</p>
-    /// <p>Alternatively, you can specify the YAML document inline, using the component <code>data</code> property. You cannot specify both properties.</p>
+    /// <p>The <code>uri</code> of a YAML workflow document file stored in Amazon S3. This must be an S3 URL (<code>s3://bucket/key</code>), and you must have permission to access the S3 bucket it points to. A workflow document that you provide from Amazon S3 can be up to your service quota for workflow size.</p>
+    /// <p>Alternatively, you can specify the YAML document inline, using the workflow <code>data</code> property. You must specify exactly one of the <code>data</code> or <code>uri</code> properties.</p>
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_uri()
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the workflow document with a KMS key that Image Builder owns.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the workflow document with a KMS key that Image Builder owns.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt this workflow resource. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you don't specify a key, Image Builder encrypts the workflow document with a KMS key that Image Builder owns.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
@@ -273,45 +273,45 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The phase in the image build process for which the workflow resource is responsible.</p>
+    /// <p>The image creation stage that this workflow applies to. Image Builder validates the workflow document steps against the stage you specify.</p>
     pub fn r#type(mut self, input: crate::types::WorkflowType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The phase in the image build process for which the workflow resource is responsible.</p>
+    /// <p>The image creation stage that this workflow applies to. Image Builder validates the workflow document steps against the stage you specify.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::WorkflowType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The phase in the image build process for which the workflow resource is responsible.</p>
+    /// <p>The image creation stage that this workflow applies to. Image Builder validates the workflow document steps against the stage you specify.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::WorkflowType> {
         self.inner.get_type()
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Validates the required permissions and request parameters without making the request. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
+    /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }

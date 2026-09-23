@@ -305,6 +305,8 @@ pub(crate) mod shape_list_of_input;
 
 pub(crate) mod shape_list_of_input_template;
 
+pub(crate) mod shape_list_of_motion_image_inserter;
+
 pub(crate) mod shape_list_of_output_group;
 
 pub(crate) mod shape_list_of_string;

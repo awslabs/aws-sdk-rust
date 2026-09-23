@@ -385,9 +385,6 @@ pub(crate) fn record_correct_errors(mut builder: crate::types::builders::RecordB
     if builder.data.is_none() {
         builder.data = Some(::aws_smithy_types::Blob::new(""))
     }
-    if builder.partition_key.is_none() {
-        builder.partition_key = Some(Default::default())
-    }
     builder
 }
 
