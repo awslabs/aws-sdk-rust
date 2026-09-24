@@ -515,6 +515,8 @@ pub(crate) mod shape_provider_input;
 
 pub(crate) mod shape_report_destination;
 
+pub(crate) mod shape_report_filters;
+
 pub(crate) mod shape_risk_type_list;
 
 pub(crate) mod shape_security_requirement_name_list;
@@ -611,6 +613,8 @@ pub(crate) mod shape_code_review_job_task_summary;
 
 pub(crate) mod shape_code_review_summary;
 
+pub(crate) mod shape_confidence_level_filter_list;
+
 pub(crate) mod shape_confluence_integration_input;
 
 pub(crate) mod shape_custom_header;
@@ -630,6 +634,8 @@ pub(crate) mod shape_endpoint;
 pub(crate) mod shape_endpoint_list;
 
 pub(crate) mod shape_finding;
+
+pub(crate) mod shape_finding_status_filter_list;
 
 pub(crate) mod shape_finding_summary;
 
@@ -673,6 +679,12 @@ pub(crate) mod shape_private_connection_summary;
 
 pub(crate) mod shape_provider_resource_capabilities;
 
+pub(crate) mod shape_report_filter_list;
+
+pub(crate) mod shape_risk_level_filter_list;
+
+pub(crate) mod shape_risk_type_filter_list;
+
 pub(crate) mod shape_s3_bucket_arns;
 
 pub(crate) mod shape_secret_arns;
@@ -696,6 +708,8 @@ pub(crate) mod shape_target_domain;
 pub(crate) mod shape_target_domain_summary;
 
 pub(crate) mod shape_task;
+
+pub(crate) mod shape_task_execution_status_filter_list;
 
 pub(crate) mod shape_task_summary;
 

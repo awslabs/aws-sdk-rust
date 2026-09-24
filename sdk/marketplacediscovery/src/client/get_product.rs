@@ -3,8 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProduct`](crate::operation::get_product::builders::GetProductFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`locale(impl Into<String>)`](crate::operation::get_product::builders::GetProductFluentBuilder::locale) / [`set_locale(Option<String>)`](crate::operation::get_product::builders::GetProductFluentBuilder::set_locale):<br>required: **false**<br><p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p><br>
     ///   - [`product_id(impl Into<String>)`](crate::operation::get_product::builders::GetProductFluentBuilder::product_id) / [`set_product_id(Option<String>)`](crate::operation::get_product::builders::GetProductFluentBuilder::set_product_id):<br>required: **true**<br><p>The unique identifier of the product to retrieve.</p><br>
     /// - On success, responds with [`GetProductOutput`](crate::operation::get_product::GetProductOutput) with field(s):
+    ///   - [`locale(Option<String>)`](crate::operation::get_product::GetProductOutput::locale): <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
     ///   - [`product_id(String)`](crate::operation::get_product::GetProductOutput::product_id): <p>The unique identifier of the product.</p>
     ///   - [`catalog(String)`](crate::operation::get_product::GetProductOutput::catalog): <p>The name of the catalog that the product belongs to.</p>
     ///   - [`product_name(String)`](crate::operation::get_product::GetProductOutput::product_name): <p>The human-readable display name of the product.</p>
@@ -19,6 +21,7 @@ impl super::Client {
     ///   - [`promotional_media(Vec::<PromotionalMedia>)`](crate::operation::get_product::GetProductOutput::promotional_media): <p>Embedded promotional media provided by the creator of the product, such as images and videos.</p>
     ///   - [`resources(Vec::<Resource>)`](crate::operation::get_product::GetProductOutput::resources): <p>Resources that provide further information about using the product or requesting support, such as documentation links, support contacts, and usage instructions.</p>
     ///   - [`seller_engagements(Vec::<SellerEngagement>)`](crate::operation::get_product::GetProductOutput::seller_engagements): <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    ///   - [`listing_id(String)`](crate::operation::get_product::GetProductOutput::listing_id): <p>The default listing identifier associated with the product.</p>
     /// - On failure, responds with [`SdkError<GetProductError>`](crate::operation::get_product::GetProductError)
     pub fn get_product(&self) -> crate::operation::get_product::builders::GetProductFluentBuilder {
         crate::operation::get_product::builders::GetProductFluentBuilder::new(self.handle.clone())

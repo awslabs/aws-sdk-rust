@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrustedCaCertificate {
-    /// <p>The source that AWS Security Agent reads the certificate from.</p>
+    /// <p>The source that Security Agent reads the certificate from.</p>
     pub source: ::std::option::Option<crate::types::CaCertificateSource>,
 }
 impl TrustedCaCertificate {
-    /// <p>The source that AWS Security Agent reads the certificate from.</p>
+    /// <p>The source that Security Agent reads the certificate from.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::CaCertificateSource> {
         self.source.as_ref()
     }
@@ -34,18 +34,18 @@ pub struct TrustedCaCertificateBuilder {
     pub(crate) source: ::std::option::Option<crate::types::CaCertificateSource>,
 }
 impl TrustedCaCertificateBuilder {
-    /// <p>The source that AWS Security Agent reads the certificate from.</p>
+    /// <p>The source that Security Agent reads the certificate from.</p>
     /// This field is required.
     pub fn source(mut self, input: crate::types::CaCertificateSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source that AWS Security Agent reads the certificate from.</p>
+    /// <p>The source that Security Agent reads the certificate from.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::CaCertificateSource>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The source that AWS Security Agent reads the certificate from.</p>
+    /// <p>The source that Security Agent reads the certificate from.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CaCertificateSource> {
         &self.source
     }

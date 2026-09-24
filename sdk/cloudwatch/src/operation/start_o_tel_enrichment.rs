@@ -222,7 +222,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartOTelEnr
         let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_start_o_tel_enrichment::ser_start_o_tel_enrichment_input(
             &input,
         )?);
-
+        if let Some(content_length) = body.content_length() {
+            let content_length = content_length.to_string();
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
+        }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
@@ -272,6 +275,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartOTelEnri
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartOTelEnrichmentError {
+    /// <p>The request failed validation. One or more input parameters do not satisfy the constraints that the operation requires.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -305,13 +310,19 @@ impl StartOTelEnrichmentError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartOTelEnrichmentError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
     }
 }
 impl ::std::error::Error for StartOTelEnrichmentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -319,6 +330,7 @@ impl ::std::error::Error for StartOTelEnrichmentError {
 impl ::std::fmt::Display for StartOTelEnrichmentError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -340,6 +352,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartOTelEnrichmentError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartOTelEnrichmentError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PaymentScheduleEntry {
-    /// <p>The relative offset from the renewal agreement start date when this installment is due, in ISO 8601 duration format. The offset uses months only or days only (for example, P1M or P30D); mixed units are not supported, and every offset in a schedule uses the same unit.</p>
+    /// <p>The relative offset from the renewal agreement start date when this installment is due, represented in ISO 8601 duration format (for example, P1M or P30D).</p>
     pub charge_date_offset: ::std::string::String,
-    /// <p>The percentage of the increased TCV to charge in this installment. All entries in a schedule sum to 100.00.</p>
+    /// <p>The percentage of the increased Total Contract Value (TCV) to charge in this installment. All entries in a schedule sum to 100.00.</p>
     pub charge_percentage: ::std::string::String,
-    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>, and this field does not apply when <code>chargeDateOffset</code> is expressed in days. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
+    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
     pub day_of_month: ::std::option::Option<i32>,
 }
 impl PaymentScheduleEntry {
-    /// <p>The relative offset from the renewal agreement start date when this installment is due, in ISO 8601 duration format. The offset uses months only or days only (for example, P1M or P30D); mixed units are not supported, and every offset in a schedule uses the same unit.</p>
+    /// <p>The relative offset from the renewal agreement start date when this installment is due, represented in ISO 8601 duration format (for example, P1M or P30D).</p>
     pub fn charge_date_offset(&self) -> &str {
         use std::ops::Deref;
         self.charge_date_offset.deref()
     }
-    /// <p>The percentage of the increased TCV to charge in this installment. All entries in a schedule sum to 100.00.</p>
+    /// <p>The percentage of the increased Total Contract Value (TCV) to charge in this installment. All entries in a schedule sum to 100.00.</p>
     pub fn charge_percentage(&self) -> &str {
         use std::ops::Deref;
         self.charge_percentage.deref()
     }
-    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>, and this field does not apply when <code>chargeDateOffset</code> is expressed in days. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
+    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
     pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
@@ -43,47 +43,47 @@ pub struct PaymentScheduleEntryBuilder {
     pub(crate) day_of_month: ::std::option::Option<i32>,
 }
 impl PaymentScheduleEntryBuilder {
-    /// <p>The relative offset from the renewal agreement start date when this installment is due, in ISO 8601 duration format. The offset uses months only or days only (for example, P1M or P30D); mixed units are not supported, and every offset in a schedule uses the same unit.</p>
+    /// <p>The relative offset from the renewal agreement start date when this installment is due, represented in ISO 8601 duration format (for example, P1M or P30D).</p>
     /// This field is required.
     pub fn charge_date_offset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charge_date_offset = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The relative offset from the renewal agreement start date when this installment is due, in ISO 8601 duration format. The offset uses months only or days only (for example, P1M or P30D); mixed units are not supported, and every offset in a schedule uses the same unit.</p>
+    /// <p>The relative offset from the renewal agreement start date when this installment is due, represented in ISO 8601 duration format (for example, P1M or P30D).</p>
     pub fn set_charge_date_offset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charge_date_offset = input;
         self
     }
-    /// <p>The relative offset from the renewal agreement start date when this installment is due, in ISO 8601 duration format. The offset uses months only or days only (for example, P1M or P30D); mixed units are not supported, and every offset in a schedule uses the same unit.</p>
+    /// <p>The relative offset from the renewal agreement start date when this installment is due, represented in ISO 8601 duration format (for example, P1M or P30D).</p>
     pub fn get_charge_date_offset(&self) -> &::std::option::Option<::std::string::String> {
         &self.charge_date_offset
     }
-    /// <p>The percentage of the increased TCV to charge in this installment. All entries in a schedule sum to 100.00.</p>
+    /// <p>The percentage of the increased Total Contract Value (TCV) to charge in this installment. All entries in a schedule sum to 100.00.</p>
     /// This field is required.
     pub fn charge_percentage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.charge_percentage = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The percentage of the increased TCV to charge in this installment. All entries in a schedule sum to 100.00.</p>
+    /// <p>The percentage of the increased Total Contract Value (TCV) to charge in this installment. All entries in a schedule sum to 100.00.</p>
     pub fn set_charge_percentage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charge_percentage = input;
         self
     }
-    /// <p>The percentage of the increased TCV to charge in this installment. All entries in a schedule sum to 100.00.</p>
+    /// <p>The percentage of the increased Total Contract Value (TCV) to charge in this installment. All entries in a schedule sum to 100.00.</p>
     pub fn get_charge_percentage(&self) -> &::std::option::Option<::std::string::String> {
         &self.charge_percentage
     }
-    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>, and this field does not apply when <code>chargeDateOffset</code> is expressed in days. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
+    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.day_of_month = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>, and this field does not apply when <code>chargeDateOffset</code> is expressed in days. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
+    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
     pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
-    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>, and this field does not apply when <code>chargeDateOffset</code> is expressed in days. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
+    /// <p>The optional calendar day of month on which the charge occurs. When absent, the charge day is derived from <code>chargeDateOffset</code>. For months with fewer days than the specified day, the charge occurs on the last day of the month. For example, if <code>dayOfMonth</code> is 31, the charge in April occurs on April 30.</p>
     pub fn get_day_of_month(&self) -> &::std::option::Option<i32> {
         &self.day_of_month
     }

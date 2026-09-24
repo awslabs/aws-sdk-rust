@@ -114,6 +114,20 @@ impl ListFulfillmentOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_fulfillment_options::paginator::ListFulfillmentOptionsPaginator {
         crate::operation::list_fulfillment_options::paginator::ListFulfillmentOptionsPaginator::new(self.handle, self.inner)
     }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.locale(input.into());
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_locale(input);
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_locale()
+    }
     /// <p>The unique identifier of the product for which to list fulfillment options.</p>
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());

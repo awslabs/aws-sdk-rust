@@ -6,7 +6,20 @@
 pub struct PurchaseOptionFilter {
     /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
     pub filter_type: crate::types::PurchaseOptionFilterType,
-    /// <p>The values to filter by. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
+    /// <li>
+    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
+    /// <li>
+    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
+    /// </ul>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
     pub filter_values: ::std::vec::Vec<::std::string::String>,
 }
 impl PurchaseOptionFilter {
@@ -14,7 +27,20 @@ impl PurchaseOptionFilter {
     pub fn filter_type(&self) -> &crate::types::PurchaseOptionFilterType {
         &self.filter_type
     }
-    /// <p>The values to filter by. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
+    /// <li>
+    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
+    /// <li>
+    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
+    /// </ul>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
     pub fn filter_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.filter_values.deref()
@@ -54,19 +80,58 @@ impl PurchaseOptionFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
-    /// <p>The values to filter by. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
+    /// <li>
+    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
+    /// <li>
+    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
+    /// </ul>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
     pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
         self.filter_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The values to filter by. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
+    /// <li>
+    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
+    /// <li>
+    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
+    /// </ul>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
     pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
-    /// <p>The values to filter by. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
+    /// <li>
+    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
+    /// <li>
+    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
+    /// <li>
+    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
+    /// </ul>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }

@@ -12,7 +12,7 @@ pub struct FirewallRuleTypeDefinition {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the rule type.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace product that backs the rule type. Absent for rule types that are managed by AWS and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
+    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services Marketplace product that backs the rule type. Absent for rule types that are managed by Amazon Web Services and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
     pub subscription_info: ::std::option::Option<crate::types::SubscriptionInfo>,
 }
 impl FirewallRuleTypeDefinition {
@@ -32,7 +32,7 @@ impl FirewallRuleTypeDefinition {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace product that backs the rule type. Absent for rule types that are managed by AWS and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
+    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services Marketplace product that backs the rule type. Absent for rule types that are managed by Amazon Web Services and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
     pub fn subscription_info(&self) -> ::std::option::Option<&crate::types::SubscriptionInfo> {
         self.subscription_info.as_ref()
     }
@@ -111,17 +111,17 @@ impl FirewallRuleTypeDefinitionBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace product that backs the rule type. Absent for rule types that are managed by AWS and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
+    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services Marketplace product that backs the rule type. Absent for rule types that are managed by Amazon Web Services and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
     pub fn subscription_info(mut self, input: crate::types::SubscriptionInfo) -> Self {
         self.subscription_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace product that backs the rule type. Absent for rule types that are managed by AWS and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
+    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services Marketplace product that backs the rule type. Absent for rule types that are managed by Amazon Web Services and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
     pub fn set_subscription_info(mut self, input: ::std::option::Option<crate::types::SubscriptionInfo>) -> Self {
         self.subscription_info = input;
         self
     }
-    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the AWS Marketplace product that backs the rule type. Absent for rule types that are managed by AWS and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
+    /// <p>For rule types that require an external subscription (today, only the <code>PartnerThreatProtection</code> variant), describes the Amazon Web Services Marketplace product that backs the rule type. Absent for rule types that are managed by Amazon Web Services and do not require a separate subscription. See <code>SubscriptionInfo</code>.</p>
     pub fn get_subscription_info(&self) -> &::std::option::Option<crate::types::SubscriptionInfo> {
         &self.subscription_info
     }

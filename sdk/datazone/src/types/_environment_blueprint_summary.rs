@@ -18,6 +18,8 @@ pub struct EnvironmentBlueprintSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the blueprint was enabled.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl EnvironmentBlueprintSummary {
     /// <p>The identifier of the blueprint.</p>
@@ -51,6 +53,10 @@ impl EnvironmentBlueprintSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(&self) -> ::std::option::Option<&crate::types::BlueprintCategory> {
+        self.blueprint_category.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EnvironmentBlueprintSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -62,6 +68,7 @@ impl ::std::fmt::Debug for EnvironmentBlueprintSummary {
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.finish()
     }
 }
@@ -83,6 +90,7 @@ pub struct EnvironmentBlueprintSummaryBuilder {
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl EnvironmentBlueprintSummaryBuilder {
     /// <p>The identifier of the blueprint.</p>
@@ -187,6 +195,20 @@ impl EnvironmentBlueprintSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(mut self, input: crate::types::BlueprintCategory) -> Self {
+        self.blueprint_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn set_blueprint_category(mut self, input: ::std::option::Option<crate::types::BlueprintCategory>) -> Self {
+        self.blueprint_category = input;
+        self
+    }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn get_blueprint_category(&self) -> &::std::option::Option<crate::types::BlueprintCategory> {
+        &self.blueprint_category
+    }
     /// Consumes the builder and constructs a [`EnvironmentBlueprintSummary`](crate::types::EnvironmentBlueprintSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::EnvironmentBlueprintSummaryBuilder::id)
@@ -216,6 +238,7 @@ impl EnvironmentBlueprintSummaryBuilder {
             provisioning_properties: self.provisioning_properties,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            blueprint_category: self.blueprint_category,
         })
     }
 }
@@ -229,6 +252,7 @@ impl ::std::fmt::Debug for EnvironmentBlueprintSummaryBuilder {
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.finish()
     }
 }

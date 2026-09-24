@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`log_config(Option<CloudWatchLog>)`](crate::operation::create_threat_model::CreateThreatModelOutput::log_config): <p>The CloudWatch Logs configuration for the threat model.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_threat_model::CreateThreatModelOutput::created_at): <p>The date and time the threat model was created, in UTC format.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::create_threat_model::CreateThreatModelOutput::updated_at): <p>The date and time the threat model was last updated, in UTC format.</p>
+    ///   - [`report_destination(Option<ReportDestination>)`](crate::operation::create_threat_model::CreateThreatModelOutput::report_destination): <p>The destination for publishing scan reports to an integrated document provider.</p>
     /// - On failure, responds with [`SdkError<CreateThreatModelError>`](crate::operation::create_threat_model::CreateThreatModelError)
     pub fn create_threat_model(&self) -> crate::operation::create_threat_model::builders::CreateThreatModelFluentBuilder {
         crate::operation::create_threat_model::builders::CreateThreatModelFluentBuilder::new(self.handle.clone())

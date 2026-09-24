@@ -13,6 +13,8 @@ pub struct CreateEnvironmentBlueprintInput {
     pub provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     /// <p>The user parameters of this Amazon DataZone blueprint.</p>
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    /// <p>The category of the Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which creates a blueprint that provisions the tooling resources of a project.</p>
+    pub blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl CreateEnvironmentBlueprintInput {
     /// <p>The identifier of the domain in which this blueprint is created.</p>
@@ -37,6 +39,10 @@ impl CreateEnvironmentBlueprintInput {
     pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
         self.user_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The category of the Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which creates a blueprint that provisions the tooling resources of a project.</p>
+    pub fn blueprint_category(&self) -> ::std::option::Option<&crate::types::BlueprintCategory> {
+        self.blueprint_category.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateEnvironmentBlueprintInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +52,7 @@ impl ::std::fmt::Debug for CreateEnvironmentBlueprintInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.finish()
     }
 }
@@ -65,6 +72,7 @@ pub struct CreateEnvironmentBlueprintInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub(crate) blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl CreateEnvironmentBlueprintInputBuilder {
     /// <p>The identifier of the domain in which this blueprint is created.</p>
@@ -146,6 +154,20 @@ impl CreateEnvironmentBlueprintInputBuilder {
     pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
         &self.user_parameters
     }
+    /// <p>The category of the Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which creates a blueprint that provisions the tooling resources of a project.</p>
+    pub fn blueprint_category(mut self, input: crate::types::BlueprintCategory) -> Self {
+        self.blueprint_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category of the Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which creates a blueprint that provisions the tooling resources of a project.</p>
+    pub fn set_blueprint_category(mut self, input: ::std::option::Option<crate::types::BlueprintCategory>) -> Self {
+        self.blueprint_category = input;
+        self
+    }
+    /// <p>The category of the Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which creates a blueprint that provisions the tooling resources of a project.</p>
+    pub fn get_blueprint_category(&self) -> &::std::option::Option<crate::types::BlueprintCategory> {
+        &self.blueprint_category
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentBlueprintInput`](crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintInput).
     pub fn build(
         self,
@@ -159,6 +181,7 @@ impl CreateEnvironmentBlueprintInputBuilder {
             description: self.description,
             provisioning_properties: self.provisioning_properties,
             user_parameters: self.user_parameters,
+            blueprint_category: self.blueprint_category,
         })
     }
 }
@@ -170,6 +193,7 @@ impl ::std::fmt::Debug for CreateEnvironmentBlueprintInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.finish()
     }
 }

@@ -20,60 +20,76 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "fulfillmentOptionId" => {
-                            builder = builder.set_fulfillment_option_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "fulfillmentOptionId" => {
+                                builder = builder.set_fulfillment_option_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "fulfillmentOptionType" => {
+                                builder = builder.set_fulfillment_option_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::FulfillmentOptionType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "fulfillmentOptionDisplayName" => {
+                                builder = builder.set_fulfillment_option_display_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "fulfillmentOptionVersion" => {
+                                builder = builder.set_fulfillment_option_version(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "releaseNotes" => {
+                                builder = builder.set_release_notes(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "usageInstructions" => {
+                                builder = builder.set_usage_instructions(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "recommendation" => {
+                                builder = builder.set_recommendation(
+                                    crate::protocol_serde::shape_sage_maker_model_recommendation::de_sage_maker_model_recommendation(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "supportedContentTypes" => {
+                                builder = builder.set_supported_content_types(
+                                    crate::protocol_serde::shape_sage_maker_model_content_type_list::de_sage_maker_model_content_type_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "supportedResponseMimeTypes" => {
+                                builder = builder.set_supported_response_mime_types(
+                                    crate::protocol_serde::shape_sage_maker_model_response_mime_type_list::de_sage_maker_model_response_mime_type_list(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "fulfillmentOptionType" => {
-                            builder = builder.set_fulfillment_option_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::FulfillmentOptionType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "fulfillmentOptionDisplayName" => {
-                            builder = builder.set_fulfillment_option_display_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "fulfillmentOptionVersion" => {
-                            builder = builder.set_fulfillment_option_version(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "releaseNotes" => {
-                            builder = builder.set_release_notes(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "usageInstructions" => {
-                            builder = builder.set_usage_instructions(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "recommendation" => {
-                            builder = builder.set_recommendation(
-                                crate::protocol_serde::shape_sage_maker_model_recommendation::de_sage_maker_model_recommendation(
-                                    tokens,
-                                    _value,
-                                    depth + 1,
-                                )?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

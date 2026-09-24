@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferTermsInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the offer whose terms to retrieve.</p>
     pub offer_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
@@ -11,6 +13,10 @@ pub struct GetOfferTermsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOfferTermsInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The unique identifier of the offer whose terms to retrieve.</p>
     pub fn offer_id(&self) -> ::std::option::Option<&str> {
         self.offer_id.as_deref()
@@ -35,11 +41,26 @@ impl GetOfferTermsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetOfferTermsInputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) offer_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetOfferTermsInputBuilder {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The unique identifier of the offer whose terms to retrieve.</p>
     /// This field is required.
     pub fn offer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -88,6 +109,7 @@ impl GetOfferTermsInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::get_offer_terms::GetOfferTermsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_offer_terms::GetOfferTermsInput {
+            locale: self.locale,
             offer_id: self.offer_id,
             max_results: self.max_results,
             next_token: self.next_token,

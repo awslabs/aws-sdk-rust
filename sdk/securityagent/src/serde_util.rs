@@ -567,6 +567,18 @@ pub(crate) fn code_review_settings_correct_errors(
     builder
 }
 
+pub(crate) fn report_destination_correct_errors(
+    mut builder: crate::types::builders::ReportDestinationBuilder,
+) -> crate::types::builders::ReportDestinationBuilder {
+    if builder.integration_id.is_none() {
+        builder.integration_id = Some(Default::default())
+    }
+    if builder.container_id.is_none() {
+        builder.container_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn agent_space_correct_errors(mut builder: crate::types::builders::AgentSpaceBuilder) -> crate::types::builders::AgentSpaceBuilder {
     if builder.agent_space_id.is_none() {
         builder.agent_space_id = Some(Default::default())

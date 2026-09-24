@@ -18,12 +18,14 @@ pub struct DescribeEventBusOutput {
     /// <p>The policy that enables the external account to send events to your account.</p>
     pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub log_config: ::std::option::Option<crate::types::LogConfig>,
     /// <p>The time the event bus was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the event bus was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub managed_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEventBusOutput {
@@ -54,7 +56,7 @@ impl DescribeEventBusOutput {
         self.policy.as_deref()
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn log_config(&self) -> ::std::option::Option<&crate::types::LogConfig> {
         self.log_config.as_ref()
     }
@@ -65,6 +67,10 @@ impl DescribeEventBusOutput {
     /// <p>The time the event bus was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
+    }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&str> {
+        self.managed_by.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeEventBusOutput {
@@ -92,6 +98,7 @@ pub struct DescribeEventBusOutputBuilder {
     pub(crate) log_config: ::std::option::Option<crate::types::LogConfig>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEventBusOutputBuilder {
@@ -186,19 +193,19 @@ impl DescribeEventBusOutputBuilder {
         &self.policy
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
         self.log_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.log_config = input;
         self
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
         &self.log_config
     }
@@ -230,6 +237,20 @@ impl DescribeEventBusOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -251,6 +272,7 @@ impl DescribeEventBusOutputBuilder {
             log_config: self.log_config,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            managed_by: self.managed_by,
             _request_id: self._request_id,
         }
     }

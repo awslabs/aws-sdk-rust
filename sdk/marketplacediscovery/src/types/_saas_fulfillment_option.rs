@@ -14,6 +14,12 @@ pub struct SaasFulfillmentOption {
     pub fulfillment_url: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to access and use this SaaS product.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time when the SaaS product became available for fulfillment.</p>
+    pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    pub launch_url: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    pub quick_launch: crate::types::SaasQuickLaunchStatus,
 }
 impl SaasFulfillmentOption {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -38,6 +44,18 @@ impl SaasFulfillmentOption {
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
+    /// <p>The date and time when the SaaS product became available for fulfillment.</p>
+    pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.available_from_time.as_ref()
+    }
+    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    pub fn launch_url(&self) -> ::std::option::Option<&str> {
+        self.launch_url.as_deref()
+    }
+    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    pub fn quick_launch(&self) -> &crate::types::SaasQuickLaunchStatus {
+        &self.quick_launch
+    }
 }
 impl SaasFulfillmentOption {
     /// Creates a new builder-style object to manufacture [`SaasFulfillmentOption`](crate::types::SaasFulfillmentOption).
@@ -55,6 +73,9 @@ pub struct SaasFulfillmentOptionBuilder {
     pub(crate) fulfillment_option_display_name: ::std::option::Option<::std::string::String>,
     pub(crate) fulfillment_url: ::std::option::Option<::std::string::String>,
     pub(crate) usage_instructions: ::std::option::Option<::std::string::String>,
+    pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) launch_url: ::std::option::Option<::std::string::String>,
+    pub(crate) quick_launch: ::std::option::Option<crate::types::SaasQuickLaunchStatus>,
 }
 impl SaasFulfillmentOptionBuilder {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -130,11 +151,55 @@ impl SaasFulfillmentOptionBuilder {
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
+    /// <p>The date and time when the SaaS product became available for fulfillment.</p>
+    pub fn available_from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.available_from_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the SaaS product became available for fulfillment.</p>
+    pub fn set_available_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.available_from_time = input;
+        self
+    }
+    /// <p>The date and time when the SaaS product became available for fulfillment.</p>
+    pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.available_from_time
+    }
+    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    pub fn launch_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    pub fn set_launch_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.launch_url = input;
+        self
+    }
+    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    pub fn get_launch_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.launch_url
+    }
+    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// This field is required.
+    pub fn quick_launch(mut self, input: crate::types::SaasQuickLaunchStatus) -> Self {
+        self.quick_launch = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    pub fn set_quick_launch(mut self, input: ::std::option::Option<crate::types::SaasQuickLaunchStatus>) -> Self {
+        self.quick_launch = input;
+        self
+    }
+    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    pub fn get_quick_launch(&self) -> &::std::option::Option<crate::types::SaasQuickLaunchStatus> {
+        &self.quick_launch
+    }
     /// Consumes the builder and constructs a [`SaasFulfillmentOption`](crate::types::SaasFulfillmentOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`fulfillment_option_id`](crate::types::builders::SaasFulfillmentOptionBuilder::fulfillment_option_id)
     /// - [`fulfillment_option_type`](crate::types::builders::SaasFulfillmentOptionBuilder::fulfillment_option_type)
     /// - [`fulfillment_option_display_name`](crate::types::builders::SaasFulfillmentOptionBuilder::fulfillment_option_display_name)
+    /// - [`quick_launch`](crate::types::builders::SaasFulfillmentOptionBuilder::quick_launch)
     pub fn build(self) -> ::std::result::Result<crate::types::SaasFulfillmentOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SaasFulfillmentOption {
             fulfillment_option_id: self.fulfillment_option_id.ok_or_else(|| {
@@ -157,6 +222,14 @@ impl SaasFulfillmentOptionBuilder {
             })?,
             fulfillment_url: self.fulfillment_url,
             usage_instructions: self.usage_instructions,
+            available_from_time: self.available_from_time,
+            launch_url: self.launch_url,
+            quick_launch: self.quick_launch.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "quick_launch",
+                    "quick_launch was not specified but it is required when building SaasFulfillmentOption",
+                )
+            })?,
         })
     }
 }

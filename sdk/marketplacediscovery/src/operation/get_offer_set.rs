@@ -185,6 +185,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOfferSetTe
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("locale") {
+            if let ::std::option::Option::Some(value) = input.locale.as_deref() {
+                captured.insert("locale", value);
+            }
+        }
         if requested.should_capture("offerSetId") {
             if let ::std::option::Option::Some(value) = input.offer_set_id.as_deref() {
                 captured.insert("offerSetId", value);

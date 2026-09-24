@@ -183,4 +183,18 @@ impl UpdateEnvironmentBlueprintFluentBuilder {
     pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
         self.inner.get_user_parameters()
     }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(mut self, input: crate::types::BlueprintCategory) -> Self {
+        self.inner = self.inner.blueprint_category(input);
+        self
+    }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn set_blueprint_category(mut self, input: ::std::option::Option<crate::types::BlueprintCategory>) -> Self {
+        self.inner = self.inner.set_blueprint_category(input);
+        self
+    }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn get_blueprint_category(&self) -> &::std::option::Option<crate::types::BlueprintCategory> {
+        self.inner.get_blueprint_category()
+    }
 }

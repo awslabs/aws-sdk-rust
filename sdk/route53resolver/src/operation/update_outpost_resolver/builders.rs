@@ -22,7 +22,9 @@ impl crate::operation::update_outpost_resolver::builders::UpdateOutpostResolverI
 }
 /// Fluent builder constructing a request to `UpdateOutpostResolver`.
 ///
-/// <p>You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an Outpost.</p>
+/// <p>You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an Outpost.</p><note>
+/// <p>This operation applies to first-generation Outposts only. On second-generation Outposts, Resolver is managed automatically by Amazon Web Services and can't be updated directly.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOutpostResolverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

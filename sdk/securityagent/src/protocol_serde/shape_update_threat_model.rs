@@ -89,6 +89,13 @@ pub(crate) fn de_update_threat_model(
                         depth + 1,
                     )?);
                 }
+                "reportDestination" => {
+                    builder = builder.set_report_destination(crate::protocol_serde::shape_report_destination::de_report_destination(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "scopeDocs" => {
                     builder = builder.set_scope_docs(crate::protocol_serde::shape_document_list::de_document_list(tokens, _value, depth + 1)?);
                 }

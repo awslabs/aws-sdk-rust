@@ -3,8 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOffer`](crate::operation::get_offer::builders::GetOfferFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`locale(impl Into<String>)`](crate::operation::get_offer::builders::GetOfferFluentBuilder::locale) / [`set_locale(Option<String>)`](crate::operation::get_offer::builders::GetOfferFluentBuilder::set_locale):<br>required: **false**<br><p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p><br>
     ///   - [`offer_id(impl Into<String>)`](crate::operation::get_offer::builders::GetOfferFluentBuilder::offer_id) / [`set_offer_id(Option<String>)`](crate::operation::get_offer::builders::GetOfferFluentBuilder::set_offer_id):<br>required: **true**<br><p>The unique identifier of the offer to retrieve.</p><br>
     /// - On success, responds with [`GetOfferOutput`](crate::operation::get_offer::GetOfferOutput) with field(s):
+    ///   - [`locale(Option<String>)`](crate::operation::get_offer::GetOfferOutput::locale): <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
     ///   - [`offer_id(String)`](crate::operation::get_offer::GetOfferOutput::offer_id): <p>The unique identifier of the offer.</p>
     ///   - [`catalog(String)`](crate::operation::get_offer::GetOfferOutput::catalog): <p>The name of the catalog that the offer belongs to.</p>
     ///   - [`offer_name(Option<String>)`](crate::operation::get_offer::GetOfferOutput::offer_name): <p>The display name of the offer. This is free-form text provided by the seller.</p>

@@ -20,6 +20,17 @@ pub fn ser_create_global_replication_group_input_input_input(
     if let Some(var_6) = &input.primary_replication_group_id {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("Tags");
+    if let Some(var_8) = &input.tags {
+        let mut list_10 = scope_7.start_list(false, Some("Tag"));
+        for item_9 in var_8 {
+            #[allow(unused_mut)]
+            let mut entry_11 = list_10.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_11, item_9)?;
+        }
+        list_10.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

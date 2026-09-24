@@ -62,13 +62,36 @@ pub(crate) fn de_get_o_tel_enrichment(
         crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
-        builder = match decoder.str()?.as_ref() {
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::OTelEnrichmentStatus::from(s.as_str()))?)),
-            _ => {
-                decoder.skip()?;
-                builder
-            }
-        };
+        builder =
+            match decoder.str()?.as_ref() {
+                "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::OTelEnrichmentStatus::from(s.as_str()))?)),
+                "IncludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_include_filters(Some(
+                        crate::protocol_serde::shape_o_tel_enrichment_metric_selector_list::de_o_tel_enrichment_metric_selector_list(
+                            decoder,
+                            depth + 1,
+                        )?,
+                    )))
+                })?,
+                "ExcludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_exclude_filters(Some(
+                        crate::protocol_serde::shape_o_tel_enrichment_metric_selector_list::de_o_tel_enrichment_metric_selector_list(
+                            decoder,
+                            depth + 1,
+                        )?,
+                    )))
+                })?,
+                "CreatedAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_created_at(Some(decoder.timestamp()?)))
+                })?,
+                "UpdatedAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_updated_at(Some(decoder.timestamp()?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
+                }
+            };
         Ok(builder)
     }
 

@@ -112,6 +112,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }
+                        "reportDestination" => {
+                            builder = builder.set_report_destination(crate::protocol_serde::shape_report_destination::de_report_destination(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

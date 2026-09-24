@@ -231,6 +231,8 @@ pub(crate) mod shape_validity_term;
 
 pub(crate) mod shape_variable_payment_term;
 
+pub(crate) mod shape_amazon_machine_image_ebs_volume;
+
 pub(crate) mod shape_amazon_machine_image_operating_system_list;
 
 pub(crate) mod shape_amazon_machine_image_recommendation;
@@ -259,7 +261,11 @@ pub(crate) mod shape_purchase_option_associated_entity;
 
 pub(crate) mod shape_sage_maker_algorithm_recommendation;
 
+pub(crate) mod shape_sage_maker_model_content_type_list;
+
 pub(crate) mod shape_sage_maker_model_recommendation;
+
+pub(crate) mod shape_sage_maker_model_response_mime_type_list;
 
 pub(crate) mod shape_schedule_list;
 
@@ -267,7 +273,11 @@ pub(crate) mod shape_term_template_list;
 
 pub(crate) mod shape_usage_based_rate_card_list;
 
+pub(crate) mod shape_amazon_machine_image_ebs_volume_type_list;
+
 pub(crate) mod shape_amazon_machine_image_operating_system;
+
+pub(crate) mod shape_amazon_machine_image_security_group_list;
 
 pub(crate) mod shape_aws_supported_service;
 
@@ -295,6 +305,8 @@ pub(crate) mod shape_term_template;
 
 pub(crate) mod shape_usage_based_rate_card_item;
 
+pub(crate) mod shape_amazon_machine_image_security_group;
+
 pub(crate) mod shape_constraints;
 
 pub(crate) mod shape_dimension_label_list;
@@ -304,6 +316,8 @@ pub(crate) mod shape_payment_schedule_term_template;
 pub(crate) mod shape_rate_card_list;
 
 pub(crate) mod shape_selector;
+
+pub(crate) mod shape_amazon_machine_image_cidr_ip_address_list;
 
 pub(crate) mod shape_dimension_label;
 

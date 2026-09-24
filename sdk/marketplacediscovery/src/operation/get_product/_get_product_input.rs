@@ -3,10 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the product to retrieve.</p>
     pub product_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProductInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The unique identifier of the product to retrieve.</p>
     pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
@@ -23,9 +29,24 @@ impl GetProductInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetProductInputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
 }
 impl GetProductInputBuilder {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The unique identifier of the product to retrieve.</p>
     /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -43,6 +64,9 @@ impl GetProductInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetProductInput`](crate::operation::get_product::GetProductInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_product::GetProductInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_product::GetProductInput { product_id: self.product_id })
+        ::std::result::Result::Ok(crate::operation::get_product::GetProductInput {
+            locale: self.locale,
+            product_id: self.product_id,
+        })
     }
 }

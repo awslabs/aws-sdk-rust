@@ -27,14 +27,26 @@ pub fn ser_create_code_review_input_input(
             ::aws_smithy_types::Number::Float((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.service_role {
-        object.key("serviceRole").string(var_8.as_str());
+    if let Some(var_8) = &input.report_destination {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("reportDestination").start_object();
+        crate::protocol_serde::shape_report_destination::ser_report_destination(&mut object_9, var_8)?;
+        object_9.finish();
     }
-    if let Some(var_9) = &input.title {
-        object.key("title").string(var_9.as_str());
+    if let Some(var_10) = &input.report_filters {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("reportFilters").start_object();
+        crate::protocol_serde::shape_report_filters::ser_report_filters(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_10) = &input.validation_mode {
-        object.key("validationMode").string(var_10.as_str());
+    if let Some(var_12) = &input.service_role {
+        object.key("serviceRole").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.title {
+        object.key("title").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.validation_mode {
+        object.key("validationMode").string(var_14.as_str());
     }
     Ok(())
 }

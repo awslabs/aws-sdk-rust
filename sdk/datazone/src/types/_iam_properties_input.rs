@@ -6,11 +6,17 @@
 pub struct IamPropertiesInput {
     /// <p>Specifies whether Amazon Web Services Glue lineage sync is enabled for a connection.</p>
     pub glue_lineage_sync_enabled: ::std::option::Option<bool>,
+    /// <p>The ARN of the IAM role to associate with the connection as the project user role. To use this operation, you must have <code>iam:PassRole</code> permission for this role.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IamPropertiesInput {
     /// <p>Specifies whether Amazon Web Services Glue lineage sync is enabled for a connection.</p>
     pub fn glue_lineage_sync_enabled(&self) -> ::std::option::Option<bool> {
         self.glue_lineage_sync_enabled
+    }
+    /// <p>The ARN of the IAM role to associate with the connection as the project user role. To use this operation, you must have <code>iam:PassRole</code> permission for this role.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
     }
 }
 impl IamPropertiesInput {
@@ -25,6 +31,7 @@ impl IamPropertiesInput {
 #[non_exhaustive]
 pub struct IamPropertiesInputBuilder {
     pub(crate) glue_lineage_sync_enabled: ::std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IamPropertiesInputBuilder {
     /// <p>Specifies whether Amazon Web Services Glue lineage sync is enabled for a connection.</p>
@@ -41,10 +48,25 @@ impl IamPropertiesInputBuilder {
     pub fn get_glue_lineage_sync_enabled(&self) -> &::std::option::Option<bool> {
         &self.glue_lineage_sync_enabled
     }
+    /// <p>The ARN of the IAM role to associate with the connection as the project user role. To use this operation, you must have <code>iam:PassRole</code> permission for this role.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role to associate with the connection as the project user role. To use this operation, you must have <code>iam:PassRole</code> permission for this role.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role to associate with the connection as the project user role. To use this operation, you must have <code>iam:PassRole</code> permission for this role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`IamPropertiesInput`](crate::types::IamPropertiesInput).
     pub fn build(self) -> crate::types::IamPropertiesInput {
         crate::types::IamPropertiesInput {
             glue_lineage_sync_enabled: self.glue_lineage_sync_enabled,
+            role_arn: self.role_arn,
         }
     }
 }

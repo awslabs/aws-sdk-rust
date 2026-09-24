@@ -89,6 +89,27 @@ pub fn de_list_tags_for_resource_http_error(
             }
             tmp
         }),
+        "GlobalReplicationGroupNotFoundFault" => {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::GlobalReplicationGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::GlobalReplicationGroupNotFoundFaultBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_global_replication_group_not_found_fault::de_global_replication_group_not_found_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidARN" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArnFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -96,6 +117,24 @@ pub fn de_list_tags_for_resource_http_error(
                 let mut output = crate::types::error::builders::InvalidArnFaultBuilder::default();
                 output = crate::protocol_serde::shape_invalid_arn_fault::de_invalid_arn_fault_xml_err(_response_body, output)
                     .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::list_tags_for_resource::ListTagsForResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

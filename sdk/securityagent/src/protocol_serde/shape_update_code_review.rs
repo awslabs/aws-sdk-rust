@@ -98,6 +98,16 @@ pub(crate) fn de_update_code_review(
                     builder = builder
                         .set_max_task_hours(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                 }
+                "reportDestination" => {
+                    builder = builder.set_report_destination(crate::protocol_serde::shape_report_destination::de_report_destination(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                "reportFilters" => {
+                    builder = builder.set_report_filters(crate::protocol_serde::shape_report_filters::de_report_filters(tokens, _value, depth + 1)?);
+                }
                 "serviceRole" => {
                     builder = builder.set_service_role(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

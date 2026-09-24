@@ -5,25 +5,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallRuleType {
-    /// <p>Configures the rule to match a third-party threat feed delivered through AWS Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
+    /// <p>Configures the rule to match a third-party threat feed delivered through Amazon Web Services Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
     pub partner_threat_protection: ::std::option::Option<crate::types::PartnerThreatProtectionConfig>,
-    /// <p>Configures the rule to match an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
     pub firewall_advanced_content_category: ::std::option::Option<crate::types::FirewallAdvancedContentCategoryConfig>,
-    /// <p>Configures the rule to match an AWS-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
     pub firewall_advanced_threat_category: ::std::option::Option<crate::types::FirewallAdvancedThreatCategoryConfig>,
     /// <p>Configures the rule to match a built-in DNS Firewall Advanced threat detector — <code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>. See <code>DnsThreatProtectionRuleTypeConfig</code>.</p>
     pub dns_threat_protection: ::std::option::Option<crate::types::DnsThreatProtectionRuleTypeConfig>,
 }
 impl FirewallRuleType {
-    /// <p>Configures the rule to match a third-party threat feed delivered through AWS Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
+    /// <p>Configures the rule to match a third-party threat feed delivered through Amazon Web Services Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
     pub fn partner_threat_protection(&self) -> ::std::option::Option<&crate::types::PartnerThreatProtectionConfig> {
         self.partner_threat_protection.as_ref()
     }
-    /// <p>Configures the rule to match an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
     pub fn firewall_advanced_content_category(&self) -> ::std::option::Option<&crate::types::FirewallAdvancedContentCategoryConfig> {
         self.firewall_advanced_content_category.as_ref()
     }
-    /// <p>Configures the rule to match an AWS-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
     pub fn firewall_advanced_threat_category(&self) -> ::std::option::Option<&crate::types::FirewallAdvancedThreatCategoryConfig> {
         self.firewall_advanced_threat_category.as_ref()
     }
@@ -49,26 +49,26 @@ pub struct FirewallRuleTypeBuilder {
     pub(crate) dns_threat_protection: ::std::option::Option<crate::types::DnsThreatProtectionRuleTypeConfig>,
 }
 impl FirewallRuleTypeBuilder {
-    /// <p>Configures the rule to match a third-party threat feed delivered through AWS Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
+    /// <p>Configures the rule to match a third-party threat feed delivered through Amazon Web Services Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
     pub fn partner_threat_protection(mut self, input: crate::types::PartnerThreatProtectionConfig) -> Self {
         self.partner_threat_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configures the rule to match a third-party threat feed delivered through AWS Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
+    /// <p>Configures the rule to match a third-party threat feed delivered through Amazon Web Services Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
     pub fn set_partner_threat_protection(mut self, input: ::std::option::Option<crate::types::PartnerThreatProtectionConfig>) -> Self {
         self.partner_threat_protection = input;
         self
     }
-    /// <p>Configures the rule to match a third-party threat feed delivered through AWS Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
+    /// <p>Configures the rule to match a third-party threat feed delivered through Amazon Web Services Marketplace. The calling account must hold an active subscription to the partner product named in <code>Partner</code>; if the subscription is missing or revoked, the rule is created with <code>Status</code> <code>CREATION_FAILED</code> and cannot be modified — only deleted. See <code>PartnerThreatProtectionConfig</code>.</p>
     pub fn get_partner_threat_protection(&self) -> &::std::option::Option<crate::types::PartnerThreatProtectionConfig> {
         &self.partner_threat_protection
     }
-    /// <p>Configures the rule to match an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
     pub fn firewall_advanced_content_category(mut self, input: crate::types::FirewallAdvancedContentCategoryConfig) -> Self {
         self.firewall_advanced_content_category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configures the rule to match an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
     pub fn set_firewall_advanced_content_category(
         mut self,
         input: ::std::option::Option<crate::types::FirewallAdvancedContentCategoryConfig>,
@@ -76,21 +76,21 @@ impl FirewallRuleTypeBuilder {
         self.firewall_advanced_content_category = input;
         self
     }
-    /// <p>Configures the rule to match an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>). See <code>FirewallAdvancedContentCategoryConfig</code>.</p>
     pub fn get_firewall_advanced_content_category(&self) -> &::std::option::Option<crate::types::FirewallAdvancedContentCategoryConfig> {
         &self.firewall_advanced_content_category
     }
-    /// <p>Configures the rule to match an AWS-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
     pub fn firewall_advanced_threat_category(mut self, input: crate::types::FirewallAdvancedThreatCategoryConfig) -> Self {
         self.firewall_advanced_threat_category = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configures the rule to match an AWS-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
     pub fn set_firewall_advanced_threat_category(mut self, input: ::std::option::Option<crate::types::FirewallAdvancedThreatCategoryConfig>) -> Self {
         self.firewall_advanced_threat_category = input;
         self
     }
-    /// <p>Configures the rule to match an AWS-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
+    /// <p>Configures the rule to match an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>). See <code>FirewallAdvancedThreatCategoryConfig</code>.</p>
     pub fn get_firewall_advanced_threat_category(&self) -> &::std::option::Option<crate::types::FirewallAdvancedThreatCategoryConfig> {
         &self.firewall_advanced_threat_category
     }

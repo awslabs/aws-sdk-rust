@@ -2,7 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct StartOTelEnrichmentInput {}
+pub struct StartOTelEnrichmentInput {
+    /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub include_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    /// <p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p>
+    /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+}
+impl StartOTelEnrichmentInput {
+    /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filters.is_none()`.
+    pub fn include_filters(&self) -> &[crate::types::OTelEnrichmentMetricSelector] {
+        self.include_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p>
+    /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_filters.is_none()`.
+    pub fn exclude_filters(&self) -> &[crate::types::OTelEnrichmentMetricSelector] {
+        self.exclude_filters.as_deref().unwrap_or_default()
+    }
+}
 impl StartOTelEnrichmentInput {
     /// Creates a new builder-style object to manufacture [`StartOTelEnrichmentInput`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput).
     pub fn builder() -> crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentInputBuilder {
@@ -13,13 +38,68 @@ impl StartOTelEnrichmentInput {
 /// A builder for [`StartOTelEnrichmentInput`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct StartOTelEnrichmentInputBuilder {}
+pub struct StartOTelEnrichmentInputBuilder {
+    pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+}
 impl StartOTelEnrichmentInputBuilder {
+    /// Appends an item to `include_filters`.
+    ///
+    /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
+    ///
+    /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn include_filters(mut self, input: crate::types::OTelEnrichmentMetricSelector) -> Self {
+        let mut v = self.include_filters.unwrap_or_default();
+        v.push(input);
+        self.include_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>) -> Self {
+        self.include_filters = input;
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
+        &self.include_filters
+    }
+    /// Appends an item to `exclude_filters`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
+    ///
+    /// <p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p>
+    /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn exclude_filters(mut self, input: crate::types::OTelEnrichmentMetricSelector) -> Self {
+        let mut v = self.exclude_filters.unwrap_or_default();
+        v.push(input);
+        self.exclude_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p>
+    /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>) -> Self {
+        self.exclude_filters = input;
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p>
+    /// <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p>
+    /// <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p>
+    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
+        &self.exclude_filters
+    }
     /// Consumes the builder and constructs a [`StartOTelEnrichmentInput`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput, ::aws_smithy_types::error::operation::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput {})
+        ::std::result::Result::Ok(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput {
+            include_filters: self.include_filters,
+            exclude_filters: self.exclude_filters,
+        })
     }
 }

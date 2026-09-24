@@ -30,6 +30,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_dataset_kms_key;
 
+pub(crate) mod shape_create_resource_metrics_configuration;
+
 pub(crate) mod shape_delete_alarm_mute_rule;
 
 pub(crate) mod shape_delete_alarms;
@@ -41,6 +43,8 @@ pub(crate) mod shape_delete_dashboards;
 pub(crate) mod shape_delete_insight_rules;
 
 pub(crate) mod shape_delete_metric_stream;
+
+pub(crate) mod shape_delete_resource_metrics_configuration;
 
 pub(crate) mod shape_describe_alarm_contributors;
 
@@ -81,6 +85,8 @@ pub(crate) mod shape_get_metric_stream;
 pub(crate) mod shape_get_metric_widget_image;
 
 pub(crate) mod shape_get_o_tel_enrichment;
+
+pub(crate) mod shape_get_resource_metrics_configuration;
 
 pub(crate) mod shape_list_alarm_mute_rules;
 
@@ -128,11 +134,17 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_o_tel_enrichment;
+
+pub(crate) mod shape_update_resource_metrics_configuration;
+
 pub(crate) mod shape_associate_dataset_kms_key_input;
 
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_resource_metrics_configuration_input;
 
 pub(crate) mod shape_dashboard_invalid_input_error;
 
@@ -149,6 +161,8 @@ pub(crate) mod shape_delete_dashboards_input;
 pub(crate) mod shape_delete_insight_rules_input;
 
 pub(crate) mod shape_delete_metric_stream_input;
+
+pub(crate) mod shape_delete_resource_metrics_configuration_input;
 
 pub(crate) mod shape_describe_alarm_contributors_input;
 
@@ -189,6 +203,8 @@ pub(crate) mod shape_get_metric_stream_input;
 pub(crate) mod shape_get_metric_widget_image_input;
 
 pub(crate) mod shape_get_o_tel_enrichment_input;
+
+pub(crate) mod shape_get_resource_metrics_configuration_input;
 
 pub(crate) mod shape_internal_service_fault;
 
@@ -264,6 +280,12 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_untag_resource_input;
 
+pub(crate) mod shape_update_o_tel_enrichment_input;
+
+pub(crate) mod shape_update_resource_metrics_configuration_input;
+
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_alarm_contributors;
 
 pub(crate) mod shape_alarm_history_items;
@@ -338,7 +360,15 @@ pub(crate) mod shape_metrics;
 
 pub(crate) mod shape_mute_targets;
 
+pub(crate) mod shape_o_tel_enrichment_metric_selector;
+
+pub(crate) mod shape_o_tel_enrichment_metric_selector_list;
+
 pub(crate) mod shape_owning_accounts;
+
+pub(crate) mod shape_resource_metric_selection;
+
+pub(crate) mod shape_resource_metrics_configuration;
 
 pub(crate) mod shape_rule;
 
@@ -402,6 +432,8 @@ pub(crate) mod shape_partial_failure;
 
 pub(crate) mod shape_range;
 
+pub(crate) mod shape_resource_metric_selection_list;
+
 pub(crate) mod shape_schedule;
 
 pub(crate) mod shape_schedule_configuration;
@@ -434,6 +466,8 @@ pub(crate) mod shape_metric_stream_statistics_additional_statistics;
 
 pub(crate) mod shape_metric_stream_statistics_include_metrics;
 
+pub(crate) mod shape_o_tel_enrichment_metric_name_list;
+
 pub(crate) mod shape_resource_list;
 
 pub(crate) mod shape_timestamps;
@@ -443,3 +477,5 @@ pub(crate) mod shape_anomaly_detector_excluded_time_ranges;
 pub(crate) mod shape_insight_rule_contributor_datapoint;
 
 pub(crate) mod shape_log_group_identifiers;
+
+pub(crate) mod shape_metric_name_list;

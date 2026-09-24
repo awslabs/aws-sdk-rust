@@ -3,8 +3,11 @@ pub fn ser_get_product_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_product::GetProductInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.product_id {
-        object.key("productId").string(var_1.as_str());
+    if let Some(var_1) = &input.locale {
+        object.key("locale").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.product_id {
+        object.key("productId").string(var_2.as_str());
     }
     Ok(())
 }

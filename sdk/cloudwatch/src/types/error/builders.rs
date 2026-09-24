@@ -34,3 +34,5 @@ pub use crate::types::error::_dashboard_invalid_input_error::DashboardInvalidInp
 pub use crate::types::error::_concurrent_modification_exception::ConcurrentModificationExceptionBuilder;
 
 pub use crate::types::error::_invalid_format_fault::InvalidFormatFaultBuilder;
+
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;

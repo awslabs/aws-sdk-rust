@@ -234,4 +234,32 @@ impl UpdateCodeReviewFluentBuilder {
     pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
         self.inner.get_max_task_hours()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.inner = self.inner.report_destination(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.inner = self.inner.set_report_destination(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        self.inner.get_report_destination()
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(mut self, input: crate::types::ReportFilters) -> Self {
+        self.inner = self.inner.report_filters(input);
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn set_report_filters(mut self, input: ::std::option::Option<crate::types::ReportFilters>) -> Self {
+        self.inner = self.inner.set_report_filters(input);
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn get_report_filters(&self) -> &::std::option::Option<crate::types::ReportFilters> {
+        self.inner.get_report_filters()
+    }
 }

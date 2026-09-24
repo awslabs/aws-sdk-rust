@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the product.</p>
     pub product_id: ::std::string::String,
     /// <p>The name of the catalog that the product belongs to.</p>
@@ -31,9 +33,15 @@ pub struct GetProductOutput {
     pub resources: ::std::vec::Vec<crate::types::Resource>,
     /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
     pub seller_engagements: ::std::vec::Vec<crate::types::SellerEngagement>,
+    /// <p>The default listing identifier associated with the product.</p>
+    pub listing_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetProductOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The unique identifier of the product.</p>
     pub fn product_id(&self) -> &str {
         use std::ops::Deref;
@@ -102,6 +110,11 @@ impl GetProductOutput {
         use std::ops::Deref;
         self.seller_engagements.deref()
     }
+    /// <p>The default listing identifier associated with the product.</p>
+    pub fn listing_id(&self) -> &str {
+        use std::ops::Deref;
+        self.listing_id.deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetProductOutput {
     fn request_id(&self) -> Option<&str> {
@@ -119,6 +132,7 @@ impl GetProductOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetProductOutputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
@@ -133,9 +147,24 @@ pub struct GetProductOutputBuilder {
     pub(crate) promotional_media: ::std::option::Option<::std::vec::Vec<crate::types::PromotionalMedia>>,
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) seller_engagements: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>,
+    pub(crate) listing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetProductOutputBuilder {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The unique identifier of the product.</p>
     /// This field is required.
     pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -376,6 +405,21 @@ impl GetProductOutputBuilder {
     pub fn get_seller_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>> {
         &self.seller_engagements
     }
+    /// <p>The default listing identifier associated with the product.</p>
+    /// This field is required.
+    pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.listing_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default listing identifier associated with the product.</p>
+    pub fn set_listing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.listing_id = input;
+        self
+    }
+    /// <p>The default listing identifier associated with the product.</p>
+    pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.listing_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -400,8 +444,10 @@ impl GetProductOutputBuilder {
     /// - [`promotional_media`](crate::operation::get_product::builders::GetProductOutputBuilder::promotional_media)
     /// - [`resources`](crate::operation::get_product::builders::GetProductOutputBuilder::resources)
     /// - [`seller_engagements`](crate::operation::get_product::builders::GetProductOutputBuilder::seller_engagements)
+    /// - [`listing_id`](crate::operation::get_product::builders::GetProductOutputBuilder::listing_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_product::GetProductOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_product::GetProductOutput {
+            locale: self.locale,
             product_id: self.product_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "product_id",
@@ -479,6 +525,12 @@ impl GetProductOutputBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "seller_engagements",
                     "seller_engagements was not specified but it is required when building GetProductOutput",
+                )
+            })?,
+            listing_id: self.listing_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "listing_id",
+                    "listing_id was not specified but it is required when building GetProductOutput",
                 )
             })?,
             _request_id: self._request_id,

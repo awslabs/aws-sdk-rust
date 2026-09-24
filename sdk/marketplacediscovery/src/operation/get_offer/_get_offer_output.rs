@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the offer.</p>
     pub offer_id: ::std::string::String,
     /// <p>The name of the catalog that the offer belongs to.</p>
@@ -28,6 +30,10 @@ pub struct GetOfferOutput {
     _request_id: Option<String>,
 }
 impl GetOfferOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The unique identifier of the offer.</p>
     pub fn offer_id(&self) -> &str {
         use std::ops::Deref;
@@ -94,6 +100,7 @@ impl GetOfferOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetOfferOutputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) offer_id: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) offer_name: ::std::option::Option<::std::string::String>,
@@ -108,6 +115,20 @@ pub struct GetOfferOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetOfferOutputBuilder {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The unique identifier of the offer.</p>
     /// This field is required.
     pub fn offer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -297,6 +318,7 @@ impl GetOfferOutputBuilder {
     /// - [`badges`](crate::operation::get_offer::builders::GetOfferOutputBuilder::badges)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_offer::GetOfferOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_offer::GetOfferOutput {
+            locale: self.locale,
             offer_id: self.offer_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offer_id",

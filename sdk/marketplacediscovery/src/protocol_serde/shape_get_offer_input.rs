@@ -3,8 +3,11 @@ pub fn ser_get_offer_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_offer::GetOfferInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.offer_id {
-        object.key("offerId").string(var_1.as_str());
+    if let Some(var_1) = &input.locale {
+        object.key("locale").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.offer_id {
+        object.key("offerId").string(var_2.as_str());
     }
     Ok(())
 }

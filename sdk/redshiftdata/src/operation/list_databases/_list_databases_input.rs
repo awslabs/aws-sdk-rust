@@ -83,7 +83,6 @@ impl ListDatabasesInputBuilder {
         &self.cluster_identifier
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.</p>
-    /// This field is required.
     pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database = ::std::option::Option::Some(input.into());
         self

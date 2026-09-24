@@ -13,6 +13,8 @@ pub struct UpdateEnvironmentBlueprintInput {
     pub provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     /// <p>The user parameters to be updated as part of the <code>UpdateEnvironmentBlueprint</code> action.</p>
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl UpdateEnvironmentBlueprintInput {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint is to be updated.</p>
@@ -37,6 +39,10 @@ impl UpdateEnvironmentBlueprintInput {
     pub fn user_parameters(&self) -> &[crate::types::CustomParameter] {
         self.user_parameters.as_deref().unwrap_or_default()
     }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(&self) -> ::std::option::Option<&crate::types::BlueprintCategory> {
+        self.blueprint_category.as_ref()
+    }
 }
 impl UpdateEnvironmentBlueprintInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentBlueprintInput`](crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintInput).
@@ -54,6 +60,7 @@ pub struct UpdateEnvironmentBlueprintInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
+    pub(crate) blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
 }
 impl UpdateEnvironmentBlueprintInputBuilder {
     /// <p>The identifier of the Amazon DataZone domain in which an environment blueprint is to be updated.</p>
@@ -134,6 +141,20 @@ impl UpdateEnvironmentBlueprintInputBuilder {
     pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>> {
         &self.user_parameters
     }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(mut self, input: crate::types::BlueprintCategory) -> Self {
+        self.blueprint_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn set_blueprint_category(mut self, input: ::std::option::Option<crate::types::BlueprintCategory>) -> Self {
+        self.blueprint_category = input;
+        self
+    }
+    /// <p>The category to update. The only valid value is <code>TOOLING</code>.</p>
+    pub fn get_blueprint_category(&self) -> &::std::option::Option<crate::types::BlueprintCategory> {
+        &self.blueprint_category
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentBlueprintInput`](crate::operation::update_environment_blueprint::UpdateEnvironmentBlueprintInput).
     pub fn build(
         self,
@@ -147,6 +168,7 @@ impl UpdateEnvironmentBlueprintInputBuilder {
             description: self.description,
             provisioning_properties: self.provisioning_properties,
             user_parameters: self.user_parameters,
+            blueprint_category: self.blueprint_category,
         })
     }
 }

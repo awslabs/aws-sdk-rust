@@ -327,8 +327,12 @@ pub enum RemoveTagsFromResourceError {
     CacheSecurityGroupNotFoundFault(crate::types::error::CacheSecurityGroupNotFoundFault),
     /// <p>The requested cache subnet group name does not refer to an existing cache subnet group.</p>
     CacheSubnetGroupNotFoundFault(crate::types::error::CacheSubnetGroupNotFoundFault),
+    /// <p>The Global datastore does not exist</p>
+    GlobalReplicationGroupNotFoundFault(crate::types::error::GlobalReplicationGroupNotFoundFault),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnFault(crate::types::error::InvalidArnFault),
+    /// <p>The value for a parameter is invalid.</p>
+    InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
     /// <p>The state of the serverless cache snapshot was not received. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
@@ -388,7 +392,9 @@ impl RemoveTagsFromResourceError {
             Self::CacheParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CacheSecurityGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CacheSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::GlobalReplicationGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidReplicationGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidServerlessCacheSnapshotStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidServerlessCacheStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -419,9 +425,17 @@ impl RemoveTagsFromResourceError {
     pub fn is_cache_subnet_group_not_found_fault(&self) -> bool {
         matches!(self, Self::CacheSubnetGroupNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::GlobalReplicationGroupNotFoundFault`.
+    pub fn is_global_replication_group_not_found_fault(&self) -> bool {
+        matches!(self, Self::GlobalReplicationGroupNotFoundFault(_))
+    }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::InvalidArnFault`.
     pub fn is_invalid_arn_fault(&self) -> bool {
         matches!(self, Self::InvalidArnFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::InvalidParameterValueException`.
+    pub fn is_invalid_parameter_value_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::InvalidReplicationGroupStateFault`.
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
@@ -475,7 +489,9 @@ impl ::std::error::Error for RemoveTagsFromResourceError {
             Self::CacheParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CacheSecurityGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CacheSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::GlobalReplicationGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidServerlessCacheSnapshotStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidServerlessCacheStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -498,7 +514,9 @@ impl ::std::fmt::Display for RemoveTagsFromResourceError {
             Self::CacheParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::CacheSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::CacheSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::GlobalReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::InvalidArnFault(_inner) => _inner.fmt(f),
+            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
             Self::InvalidServerlessCacheSnapshotStateFault(_inner) => _inner.fmt(f),
             Self::InvalidServerlessCacheStateFault(_inner) => _inner.fmt(f),
@@ -535,7 +553,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsFro
             Self::CacheParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CacheSecurityGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CacheSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::GlobalReplicationGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidServerlessCacheSnapshotStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidServerlessCacheStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

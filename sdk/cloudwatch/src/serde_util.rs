@@ -26,6 +26,18 @@ pub(crate) fn kms_key_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_resource_metrics_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_resource_metrics_configuration::builders::CreateResourceMetricsConfigurationOutputBuilder,
+) -> crate::operation::create_resource_metrics_configuration::builders::CreateResourceMetricsConfigurationOutputBuilder {
+    if builder.resource_metrics_configuration.is_none() {
+        builder.resource_metrics_configuration = {
+            let builder = crate::types::builders::ResourceMetricsConfigurationBuilder::default();
+            Some(crate::serde_util::resource_metrics_configuration_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_alarm_contributors_output_output_correct_errors(
     mut builder: crate::operation::describe_alarm_contributors::builders::DescribeAlarmContributorsOutputBuilder,
 ) -> crate::operation::describe_alarm_contributors::builders::DescribeAlarmContributorsOutputBuilder {
@@ -52,6 +64,45 @@ pub(crate) fn get_o_tel_enrichment_output_output_correct_errors(
 ) -> crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::OTelEnrichmentStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_resource_metrics_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_resource_metrics_configuration::builders::GetResourceMetricsConfigurationOutputBuilder,
+) -> crate::operation::get_resource_metrics_configuration::builders::GetResourceMetricsConfigurationOutputBuilder {
+    if builder.resource_metrics_configuration.is_none() {
+        builder.resource_metrics_configuration = {
+            let builder = crate::types::builders::ResourceMetricsConfigurationBuilder::default();
+            Some(crate::serde_util::resource_metrics_configuration_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_resource_metrics_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_resource_metrics_configuration::builders::UpdateResourceMetricsConfigurationOutputBuilder,
+) -> crate::operation::update_resource_metrics_configuration::builders::UpdateResourceMetricsConfigurationOutputBuilder {
+    if builder.resource_metrics_configuration.is_none() {
+        builder.resource_metrics_configuration = {
+            let builder = crate::types::builders::ResourceMetricsConfigurationBuilder::default();
+            Some(crate::serde_util::resource_metrics_configuration_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn resource_metrics_configuration_correct_errors(
+    mut builder: crate::types::builders::ResourceMetricsConfigurationBuilder,
+) -> crate::types::builders::ResourceMetricsConfigurationBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -140,6 +191,15 @@ pub(crate) fn metric_stream_statistics_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn o_tel_enrichment_metric_selector_correct_errors(
+    mut builder: crate::types::builders::OTelEnrichmentMetricSelectorBuilder,
+) -> crate::types::builders::OTelEnrichmentMetricSelectorBuilder {
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn schedule_correct_errors(mut builder: crate::types::builders::ScheduleBuilder) -> crate::types::builders::ScheduleBuilder {
     if builder.expression.is_none() {
         builder.expression = Some(Default::default())
@@ -168,6 +228,15 @@ pub(crate) fn managed_rule_state_correct_errors(
     }
     if builder.state.is_none() {
         builder.state = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_metric_selection_correct_errors(
+    mut builder: crate::types::builders::ResourceMetricSelectionBuilder,
+) -> crate::types::builders::ResourceMetricSelectionBuilder {
+    if builder.include_metrics.is_none() {
+        builder.include_metrics = Some(Default::default())
     }
     builder
 }

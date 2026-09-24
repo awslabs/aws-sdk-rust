@@ -20,6 +20,8 @@ pub struct ThreatModel {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch Logs configuration for the threat model.</p>
     pub log_config: ::std::option::Option<crate::types::CloudWatchLog>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
     /// <p>The date and time the threat model was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the threat model was last updated, in UTC format.</p>
@@ -63,6 +65,10 @@ impl ThreatModel {
     pub fn log_config(&self) -> ::std::option::Option<&crate::types::CloudWatchLog> {
         self.log_config.as_ref()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
     /// <p>The date and time the threat model was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -91,6 +97,7 @@ pub struct ThreatModelBuilder {
     pub(crate) scope_docs: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) log_config: ::std::option::Option<crate::types::CloudWatchLog>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -217,6 +224,20 @@ impl ThreatModelBuilder {
     pub fn get_log_config(&self) -> &::std::option::Option<crate::types::CloudWatchLog> {
         &self.log_config
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
     /// <p>The date and time the threat model was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -275,6 +296,7 @@ impl ThreatModelBuilder {
             scope_docs: self.scope_docs,
             service_role: self.service_role,
             log_config: self.log_config,
+            report_destination: self.report_destination,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

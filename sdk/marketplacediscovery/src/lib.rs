@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacediscovery = "1.17.0"
+//! aws-sdk-marketplacediscovery = "1.18.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -159,7 +159,7 @@ pub use config::Config;
 ///
 /// ```rust,ignore
 /// let result = client.get_listing()
-///     .listing_id("example")
+///     .locale("example")
 ///     .send()
 ///     .await;
 /// ```

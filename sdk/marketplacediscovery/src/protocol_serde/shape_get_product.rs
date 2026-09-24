@@ -163,6 +163,20 @@ pub(crate) fn de_get_product(
                 "highlights" => {
                     builder = builder.set_highlights(crate::protocol_serde::shape_highlight_list::de_highlight_list(tokens, _value, depth + 1)?);
                 }
+                "listingId" => {
+                    builder = builder.set_listing_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "locale" => {
+                    builder = builder.set_locale(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "logoThumbnailUrl" => {
                     builder = builder.set_logo_thumbnail_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

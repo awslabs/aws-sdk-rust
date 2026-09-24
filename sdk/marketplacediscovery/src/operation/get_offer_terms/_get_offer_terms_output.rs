@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferTermsOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The terms attached to the offer. Each element contains exactly one term type.</p>
     pub offer_terms: ::std::vec::Vec<crate::types::OfferTerm>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
@@ -10,6 +12,10 @@ pub struct GetOfferTermsOutput {
     _request_id: Option<String>,
 }
 impl GetOfferTermsOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The terms attached to the offer. Each element contains exactly one term type.</p>
     pub fn offer_terms(&self) -> &[crate::types::OfferTerm] {
         use std::ops::Deref;
@@ -36,11 +42,26 @@ impl GetOfferTermsOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetOfferTermsOutputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) offer_terms: ::std::option::Option<::std::vec::Vec<crate::types::OfferTerm>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOfferTermsOutputBuilder {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// Appends an item to `offer_terms`.
     ///
     /// To override the contents of this collection use [`set_offer_terms`](Self::set_offer_terms).
@@ -91,6 +112,7 @@ impl GetOfferTermsOutputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::get_offer_terms::GetOfferTermsOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_offer_terms::GetOfferTermsOutput {
+            locale: self.locale,
             offer_terms: self.offer_terms.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "offer_terms",

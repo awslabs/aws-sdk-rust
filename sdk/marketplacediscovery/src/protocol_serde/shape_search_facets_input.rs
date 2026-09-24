@@ -24,11 +24,14 @@ pub fn ser_search_facets_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("nextToken").string(var_8.as_str());
+    if let Some(var_8) = &input.locale {
+        object.key("locale").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.search_text {
-        object.key("searchText").string(var_9.as_str());
+    if let Some(var_9) = &input.next_token {
+        object.key("nextToken").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.search_text {
+        object.key("searchText").string(var_10.as_str());
     }
     Ok(())
 }

@@ -26,6 +26,10 @@ pub struct CreateCodeReviewOutput {
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
     pub max_task_hours: ::std::option::Option<f64>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub report_filters: ::std::option::Option<crate::types::ReportFilters>,
     _request_id: Option<String>,
 }
 impl CreateCodeReviewOutput {
@@ -74,6 +78,14 @@ impl CreateCodeReviewOutput {
     pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
         self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(&self) -> ::std::option::Option<&crate::types::ReportFilters> {
+        self.report_filters.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateCodeReviewOutput {
     fn request_id(&self) -> Option<&str> {
@@ -102,6 +114,8 @@ pub struct CreateCodeReviewOutputBuilder {
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     pub(crate) max_task_hours: ::std::option::Option<f64>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    pub(crate) report_filters: ::std::option::Option<crate::types::ReportFilters>,
     _request_id: Option<String>,
 }
 impl CreateCodeReviewOutputBuilder {
@@ -260,6 +274,34 @@ impl CreateCodeReviewOutputBuilder {
     pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
         &self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(mut self, input: crate::types::ReportFilters) -> Self {
+        self.report_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn set_report_filters(mut self, input: ::std::option::Option<crate::types::ReportFilters>) -> Self {
+        self.report_filters = input;
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn get_report_filters(&self) -> &::std::option::Option<crate::types::ReportFilters> {
+        &self.report_filters
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -292,6 +334,8 @@ impl CreateCodeReviewOutputBuilder {
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
             max_task_hours: self.max_task_hours,
+            report_destination: self.report_destination,
+            report_filters: self.report_filters,
             _request_id: self._request_id,
         })
     }

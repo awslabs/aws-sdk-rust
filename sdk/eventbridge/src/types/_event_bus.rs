@@ -16,6 +16,8 @@ pub struct EventBus {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the event bus was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub managed_by: ::std::option::Option<::std::string::String>,
 }
 impl EventBus {
     /// <p>The name of the event bus.</p>
@@ -42,6 +44,10 @@ impl EventBus {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&str> {
+        self.managed_by.as_deref()
+    }
 }
 impl EventBus {
     /// Creates a new builder-style object to manufacture [`EventBus`](crate::types::EventBus).
@@ -60,6 +66,7 @@ pub struct EventBusBuilder {
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by: ::std::option::Option<::std::string::String>,
 }
 impl EventBusBuilder {
     /// <p>The name of the event bus.</p>
@@ -146,6 +153,20 @@ impl EventBusBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn managed_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.managed_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>If the event bus was created on behalf of your account by an Amazon Web Services service, this field displays the principal name of the service that created the event bus.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`EventBus`](crate::types::EventBus).
     pub fn build(self) -> crate::types::EventBus {
         crate::types::EventBus {
@@ -155,6 +176,7 @@ impl EventBusBuilder {
             policy: self.policy,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            managed_by: self.managed_by,
         }
     }
 }

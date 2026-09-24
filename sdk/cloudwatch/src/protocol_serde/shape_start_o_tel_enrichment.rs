@@ -13,7 +13,30 @@ pub fn de_start_o_tel_enrichment_http_error(
         .map_err(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
-    Err(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::generic(generic))
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ValidationError" => crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_cbor_err(_response_body, output)
+                    .map_err(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        _ => crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::generic(generic),
+    })
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -28,6 +51,8 @@ pub fn de_start_o_tel_enrichment_http_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentOutputBuilder::default();
+        output = crate::protocol_serde::shape_start_o_tel_enrichment::de_start_o_tel_enrichment(_response_body, output)
+            .map_err(crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::unhandled)?;
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
@@ -42,4 +67,82 @@ pub fn ser_start_o_tel_enrichment_input(
         crate::protocol_serde::shape_start_o_tel_enrichment_input::ser_start_o_tel_enrichment_input_input(encoder, input)?;
     }
     Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+}
+
+pub(crate) fn de_start_o_tel_enrichment(
+    value: &[u8],
+    mut builder: crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentOutputBuilder,
+) -> ::std::result::Result<
+    crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentOutputBuilder,
+    ::aws_smithy_cbor::decode::DeserializeError,
+> {
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder =
+            match decoder.str()?.as_ref() {
+                "IncludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_include_filters(Some(
+                        crate::protocol_serde::shape_o_tel_enrichment_metric_selector_list::de_o_tel_enrichment_metric_selector_list(
+                            decoder,
+                            depth + 1,
+                        )?,
+                    )))
+                })?,
+                "ExcludeFilters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_exclude_filters(Some(
+                        crate::protocol_serde::shape_o_tel_enrichment_metric_selector_list::de_o_tel_enrichment_metric_selector_list(
+                            decoder,
+                            depth + 1,
+                        )?,
+                    )))
+                })?,
+                "CreatedAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_created_at(Some(decoder.timestamp()?)))
+                })?,
+                "UpdatedAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_updated_at(Some(decoder.timestamp()?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
+                }
+            };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
+                }
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
+            }
+        }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
+    }
+
+    Ok(builder)
 }

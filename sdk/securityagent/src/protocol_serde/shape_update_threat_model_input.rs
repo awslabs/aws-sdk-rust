@@ -21,26 +21,32 @@ pub fn ser_update_threat_model_input_input(
         crate::protocol_serde::shape_cloud_watch_log::ser_cloud_watch_log(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.scope_docs {
-        let mut array_8 = object.key("scopeDocs").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.report_destination {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("reportDestination").start_object();
+        crate::protocol_serde::shape_report_destination::ser_report_destination(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.scope_docs {
+        let mut array_10 = object.key("scopeDocs").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_document_info::ser_document_info(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_document_info::ser_document_info(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_8.finish();
+        array_10.finish();
     }
-    if let Some(var_11) = &input.service_role {
-        object.key("serviceRole").string(var_11.as_str());
+    if let Some(var_13) = &input.service_role {
+        object.key("serviceRole").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.threat_model_id {
-        object.key("threatModelId").string(var_12.as_str());
+    if let Some(var_14) = &input.threat_model_id {
+        object.key("threatModelId").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.title {
-        object.key("title").string(var_13.as_str());
+    if let Some(var_15) = &input.title {
+        object.key("title").string(var_15.as_str());
     }
     Ok(())
 }

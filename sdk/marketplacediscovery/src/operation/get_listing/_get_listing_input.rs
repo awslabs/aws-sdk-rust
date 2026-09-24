@@ -3,10 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListingInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the listing to retrieve.</p>
     pub listing_id: ::std::option::Option<::std::string::String>,
 }
 impl GetListingInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The unique identifier of the listing to retrieve.</p>
     pub fn listing_id(&self) -> ::std::option::Option<&str> {
         self.listing_id.as_deref()
@@ -23,9 +29,24 @@ impl GetListingInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetListingInputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
 }
 impl GetListingInputBuilder {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The unique identifier of the listing to retrieve.</p>
     /// This field is required.
     pub fn listing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -43,6 +64,9 @@ impl GetListingInputBuilder {
     }
     /// Consumes the builder and constructs a [`GetListingInput`](crate::operation::get_listing::GetListingInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_listing::GetListingInput { listing_id: self.listing_id })
+        ::std::result::Result::Ok(crate::operation::get_listing::GetListingInput {
+            locale: self.locale,
+            listing_id: self.listing_id,
+        })
     }
 }

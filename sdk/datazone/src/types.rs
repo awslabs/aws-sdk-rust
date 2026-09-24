@@ -147,6 +147,8 @@ pub use crate::types::_deployment_properties::DeploymentProperties;
 
 pub use crate::types::_action_parameters::ActionParameters;
 
+pub use crate::types::_blueprint_category::BlueprintCategory;
+
 pub use crate::types::_group_profile_status::GroupProfileStatus;
 
 pub use crate::types::_entity_type::EntityType;
@@ -1012,6 +1014,8 @@ mod _basic_authentication_credentials;
 mod _batch_get_attribute_output;
 
 mod _batch_put_attribute_output;
+
+mod _blueprint_category;
 
 mod _business_name_generation_configuration;
 

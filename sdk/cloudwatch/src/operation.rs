@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateDatasetKmsKey` operation.
 pub mod associate_dataset_kms_key;
 
+/// Types for the `CreateResourceMetricsConfiguration` operation.
+pub mod create_resource_metrics_configuration;
+
 /// Types for the `DeleteAlarmMuteRule` operation.
 pub mod delete_alarm_mute_rule;
 
@@ -21,6 +24,9 @@ pub mod delete_insight_rules;
 
 /// Types for the `DeleteMetricStream` operation.
 pub mod delete_metric_stream;
+
+/// Types for the `DeleteResourceMetricsConfiguration` operation.
+pub mod delete_resource_metrics_configuration;
 
 /// Types for the `DescribeAlarmContributors` operation.
 pub mod describe_alarm_contributors;
@@ -81,6 +87,9 @@ pub mod get_metric_widget_image;
 
 /// Types for the `GetOTelEnrichment` operation.
 pub mod get_o_tel_enrichment;
+
+/// Types for the `GetResourceMetricsConfiguration` operation.
+pub mod get_resource_metrics_configuration;
 
 /// Types for the `ListAlarmMuteRules` operation.
 pub mod list_alarm_mute_rules;
@@ -150,3 +159,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateOTelEnrichment` operation.
+pub mod update_o_tel_enrichment;
+
+/// Types for the `UpdateResourceMetricsConfiguration` operation.
+pub mod update_resource_metrics_configuration;

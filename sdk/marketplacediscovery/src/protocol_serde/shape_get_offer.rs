@@ -175,6 +175,13 @@ pub(crate) fn de_get_offer(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "locale" => {
+                    builder = builder.set_locale(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "offerId" => {
                     builder = builder.set_offer_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

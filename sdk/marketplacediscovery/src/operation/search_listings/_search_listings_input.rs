@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchListingsInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The search query text to find relevant listings.</p>
     pub search_text: ::std::option::Option<::std::string::String>,
     /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
@@ -17,6 +19,10 @@ pub struct SearchListingsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchListingsInput {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The search query text to find relevant listings.</p>
     pub fn search_text(&self) -> ::std::option::Option<&str> {
         self.search_text.as_deref()
@@ -55,6 +61,7 @@ impl SearchListingsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct SearchListingsInputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) search_text: ::std::option::Option<::std::string::String>,
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -63,6 +70,20 @@ pub struct SearchListingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchListingsInputBuilder {
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// <p>The search query text to find relevant listings.</p>
     pub fn search_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.search_text = ::std::option::Option::Some(input.into());
@@ -158,6 +179,7 @@ impl SearchListingsInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::search_listings::SearchListingsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_listings::SearchListingsInput {
+            locale: self.locale,
             search_text: self.search_text,
             filters: self.filters,
             max_results: self.max_results,

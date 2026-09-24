@@ -7,7 +7,11 @@ pub use crate::types::error::_cache_security_group_not_found_fault::CacheSecurit
 
 pub use crate::types::error::_cache_subnet_group_not_found_fault::CacheSubnetGroupNotFoundFault;
 
+pub use crate::types::error::_global_replication_group_not_found_fault::GlobalReplicationGroupNotFoundFault;
+
 pub use crate::types::error::_invalid_arn_fault::InvalidArnFault;
+
+pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueException;
 
 pub use crate::types::error::_invalid_replication_group_state_fault::InvalidReplicationGroupStateFault;
 
@@ -36,8 +40,6 @@ pub use crate::types::error::_authorization_already_exists_fault::AuthorizationA
 pub use crate::types::error::_invalid_cache_security_group_state_fault::InvalidCacheSecurityGroupStateFault;
 
 pub use crate::types::error::_invalid_parameter_combination_exception::InvalidParameterCombinationException;
-
-pub use crate::types::error::_invalid_parameter_value_exception::InvalidParameterValueException;
 
 pub use crate::types::error::_service_update_not_found_fault::ServiceUpdateNotFoundFault;
 
@@ -88,8 +90,6 @@ pub use crate::types::error::_invalid_subnet::InvalidSubnet;
 pub use crate::types::error::_subnet_not_allowed_fault::SubnetNotAllowedFault;
 
 pub use crate::types::error::_global_replication_group_already_exists_fault::GlobalReplicationGroupAlreadyExistsFault;
-
-pub use crate::types::error::_global_replication_group_not_found_fault::GlobalReplicationGroupNotFoundFault;
 
 pub use crate::types::error::_invalid_cache_cluster_state_fault::InvalidCacheClusterStateFault;
 

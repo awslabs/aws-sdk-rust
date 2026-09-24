@@ -18,6 +18,10 @@ pub struct SageMakerModelFulfillmentOption {
     pub usage_instructions: ::std::option::Option<::std::string::String>,
     /// <p>Recommended instance types for inference with this model.</p>
     pub recommendation: ::std::option::Option<crate::types::SageMakerModelRecommendation>,
+    /// <p>The MIME types that this model accepts as input.</p>
+    pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The MIME types that this model returns as output.</p>
+    pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SageMakerModelFulfillmentOption {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -50,6 +54,18 @@ impl SageMakerModelFulfillmentOption {
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::SageMakerModelRecommendation> {
         self.recommendation.as_ref()
     }
+    /// <p>The MIME types that this model accepts as input.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
+    pub fn supported_content_types(&self) -> &[::std::string::String] {
+        self.supported_content_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The MIME types that this model returns as output.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_response_mime_types.is_none()`.
+    pub fn supported_response_mime_types(&self) -> &[::std::string::String] {
+        self.supported_response_mime_types.as_deref().unwrap_or_default()
+    }
 }
 impl SageMakerModelFulfillmentOption {
     /// Creates a new builder-style object to manufacture [`SageMakerModelFulfillmentOption`](crate::types::SageMakerModelFulfillmentOption).
@@ -69,6 +85,8 @@ pub struct SageMakerModelFulfillmentOptionBuilder {
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
     pub(crate) usage_instructions: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation: ::std::option::Option<crate::types::SageMakerModelRecommendation>,
+    pub(crate) supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SageMakerModelFulfillmentOptionBuilder {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -172,6 +190,46 @@ impl SageMakerModelFulfillmentOptionBuilder {
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::SageMakerModelRecommendation> {
         &self.recommendation
     }
+    /// Appends an item to `supported_content_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
+    ///
+    /// <p>The MIME types that this model accepts as input.</p>
+    pub fn supported_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_content_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_content_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The MIME types that this model accepts as input.</p>
+    pub fn set_supported_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_content_types = input;
+        self
+    }
+    /// <p>The MIME types that this model accepts as input.</p>
+    pub fn get_supported_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_content_types
+    }
+    /// Appends an item to `supported_response_mime_types`.
+    ///
+    /// To override the contents of this collection use [`set_supported_response_mime_types`](Self::set_supported_response_mime_types).
+    ///
+    /// <p>The MIME types that this model returns as output.</p>
+    pub fn supported_response_mime_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supported_response_mime_types.unwrap_or_default();
+        v.push(input.into());
+        self.supported_response_mime_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The MIME types that this model returns as output.</p>
+    pub fn set_supported_response_mime_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supported_response_mime_types = input;
+        self
+    }
+    /// <p>The MIME types that this model returns as output.</p>
+    pub fn get_supported_response_mime_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supported_response_mime_types
+    }
     /// Consumes the builder and constructs a [`SageMakerModelFulfillmentOption`](crate::types::SageMakerModelFulfillmentOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`fulfillment_option_id`](crate::types::builders::SageMakerModelFulfillmentOptionBuilder::fulfillment_option_id)
@@ -201,6 +259,8 @@ impl SageMakerModelFulfillmentOptionBuilder {
             release_notes: self.release_notes,
             usage_instructions: self.usage_instructions,
             recommendation: self.recommendation,
+            supported_content_types: self.supported_content_types,
+            supported_response_mime_types: self.supported_response_mime_types,
         })
     }
 }

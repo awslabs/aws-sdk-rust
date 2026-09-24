@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
-    /// <p>The Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
     pub vpc_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.</p>
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfig {
-    /// <p>The Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
     pub fn vpc_arn(&self) -> ::std::option::Option<&str> {
         self.vpc_arn.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
     pub fn security_group_arns(&self) -> &[::std::string::String] {
         self.security_group_arns.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
     pub fn subnet_arns(&self) -> &[::std::string::String] {
@@ -45,17 +45,17 @@ pub struct VpcConfigBuilder {
     pub(crate) subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcConfigBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
     pub fn vpc_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
     pub fn set_vpc_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the VPC.</p>
+    /// <p>The Amazon Resource Name (ARN) or ID of the VPC.</p>
     pub fn get_vpc_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_arn
     }
@@ -63,19 +63,19 @@ impl VpcConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
         self.security_group_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }
@@ -83,19 +83,19 @@ impl VpcConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
         v.push(input.into());
         self.subnet_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.</p>
     pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_arns = input;
         self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.</p>
+    /// <p>The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.</p>
     pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_arns
     }

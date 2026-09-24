@@ -35,6 +35,8 @@ pub use crate::types::error::_concurrent_modification_exception::ConcurrentModif
 
 pub use crate::types::error::_invalid_format_fault::InvalidFormatFault;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
 mod _concurrent_modification_exception;
 
 mod _conflict_exception;
@@ -70,6 +72,8 @@ mod _resource_conflict;
 mod _resource_not_found;
 
 mod _resource_not_found_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

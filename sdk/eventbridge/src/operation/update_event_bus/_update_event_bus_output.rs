@@ -16,7 +16,7 @@ pub struct UpdateEventBusOutput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-event-delivery.html#eb-rule-dlq">Using dead-letter queues to process undelivered events</a> in the <i>EventBridge User Guide</i>.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub log_config: ::std::option::Option<crate::types::LogConfig>,
     _request_id: Option<String>,
 }
@@ -44,7 +44,7 @@ impl UpdateEventBusOutput {
         self.dead_letter_config.as_ref()
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn log_config(&self) -> ::std::option::Option<&crate::types::LogConfig> {
         self.log_config.as_ref()
     }
@@ -151,19 +151,19 @@ impl UpdateEventBusOutputBuilder {
         &self.dead_letter_config
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
         self.log_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.log_config = input;
         self
     }
     /// <p>The logging configuration settings for the event bus.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring logs for event buses</a> in the <i>EventBridge User Guide</i>.</p>
     pub fn get_log_config(&self) -> &::std::option::Option<crate::types::LogConfig> {
         &self.log_config
     }

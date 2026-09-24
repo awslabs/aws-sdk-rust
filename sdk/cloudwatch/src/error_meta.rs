@@ -39,6 +39,8 @@ pub enum Error {
     ResourceNotFound(crate::types::error::ResourceNotFound),
     /// <p>The named resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request failed validation. One or more input parameters do not satisfy the constraints that the operation requires.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -69,6 +71,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceConflict(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -108,6 +111,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceConflict(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -146,6 +150,46 @@ impl From<crate::operation::associate_dataset_kms_key::AssociateDatasetKmsKeyErr
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::associate_dataset_kms_key::AssociateDatasetKmsKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_resource_metrics_configuration::CreateResourceMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -307,6 +351,43 @@ impl From<crate::operation::delete_metric_stream::DeleteMetricStreamError> for E
                 Error::MissingRequiredParameterException(inner)
             }
             crate::operation::delete_metric_stream::DeleteMetricStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_resource_metrics_configuration::DeleteResourceMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -818,6 +899,41 @@ impl From<crate::operation::get_o_tel_enrichment::GetOTelEnrichmentError> for Er
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_resource_metrics_configuration::GetResourceMetricsConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1315,6 +1431,7 @@ where
 impl From<crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError> for Error {
     fn from(err: crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError) -> Self {
         match err {
+            crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1424,6 +1541,70 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError> for Error {
+    fn from(err: crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError) -> Self {
+        match err {
+            crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_o_tel_enrichment::UpdateOTelEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError> for Error {
+    fn from(err: crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError) -> Self {
+        match err {
+            crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_resource_metrics_configuration::UpdateResourceMetricsConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -1457,6 +1638,7 @@ impl ::std::error::Error for Error {
             Error::ResourceConflict(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -1482,6 +1664,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceConflict(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

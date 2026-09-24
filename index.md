@@ -262,6 +262,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon EventBridge | [aws-sdk-eventbridge](https://crates.io/crates/aws-sdk-eventbridge) ([docs](https://docs.rs/aws-sdk-eventbridge)) |
 | Amazon EventBridge Pipes | [aws-sdk-pipes](https://crates.io/crates/aws-sdk-pipes) ([docs](https://docs.rs/aws-sdk-pipes)) |
 | Amazon EventBridge Scheduler | [aws-sdk-scheduler](https://crates.io/crates/aws-sdk-scheduler) ([docs](https://docs.rs/aws-sdk-scheduler)) |
+| Amazon EventBridgeV2 | [aws-sdk-eventbridgev2](https://crates.io/crates/aws-sdk-eventbridgev2) ([docs](https://docs.rs/aws-sdk-eventbridgev2)) |
 | Amazon FSx | [aws-sdk-fsx](https://crates.io/crates/aws-sdk-fsx) ([docs](https://docs.rs/aws-sdk-fsx)) |
 | Amazon Forecast Query Service | [aws-sdk-forecastquery](https://crates.io/crates/aws-sdk-forecastquery) ([docs](https://docs.rs/aws-sdk-forecastquery)) |
 | Amazon Forecast Service | [aws-sdk-forecast](https://crates.io/crates/aws-sdk-forecast) ([docs](https://docs.rs/aws-sdk-forecast)) |

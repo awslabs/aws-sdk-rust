@@ -66,7 +66,7 @@ pub(crate) struct Handle {
 ///
 /// ```rust,ignore
 /// let result = client.get_listing()
-///     .listing_id("example")
+///     .locale("example")
 ///     .send()
 ///     .await;
 /// ```

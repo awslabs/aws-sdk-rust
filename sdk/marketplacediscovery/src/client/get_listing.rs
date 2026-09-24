@@ -3,8 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetListing`](crate::operation::get_listing::builders::GetListingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
+    ///   - [`locale(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::locale) / [`set_locale(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_locale):<br>required: **false**<br><p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p><br>
     ///   - [`listing_id(impl Into<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::listing_id) / [`set_listing_id(Option<String>)`](crate::operation::get_listing::builders::GetListingFluentBuilder::set_listing_id):<br>required: **true**<br><p>The unique identifier of the listing to retrieve.</p><br>
     /// - On success, responds with [`GetListingOutput`](crate::operation::get_listing::GetListingOutput) with field(s):
+    ///   - [`locale(Option<String>)`](crate::operation::get_listing::GetListingOutput::locale): <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
     ///   - [`associated_entities(Vec::<ListingAssociatedEntity>)`](crate::operation::get_listing::GetListingOutput::associated_entities): <p>The products and offers associated with this listing. Each entity contains product and offer information.</p>
     ///   - [`badges(Vec::<ListingBadge>)`](crate::operation::get_listing::GetListingOutput::badges): <p>Badges indicating special attributes of the listing, such as free tier eligibility, free trial availability, or Quick Launch support.</p>
     ///   - [`catalog(String)`](crate::operation::get_listing::GetListingOutput::catalog): <p>The name of the catalog that the listing belongs to.</p>

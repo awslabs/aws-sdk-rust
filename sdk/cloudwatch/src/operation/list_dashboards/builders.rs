@@ -24,6 +24,7 @@ impl crate::operation::list_dashboards::builders::ListDashboardsInputBuilder {
 ///
 /// <p>Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed.</p>
 /// <p><code>ListDashboards</code> returns up to 1000 results on one page. If there are more than 1000 dashboards, you can call <code>ListDashboards</code> again and include the value you received for <code>NextToken</code> in the first call, to receive the next 1000 results.</p>
+/// <p>You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in Region (Region that is disabled by default)</a> for your account. In that Region, <code>ListDashboards</code> can return an access denied error for up to 24 hours after you enable the Region. This delay occurs while dashboard data propagates. The error does not indicate a problem with your permissions. Because dashboards are global, you can call <code>ListDashboards</code> in any other enabled Region, or retry after propagation completes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDashboardsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

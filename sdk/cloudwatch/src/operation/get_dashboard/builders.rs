@@ -24,6 +24,7 @@ impl crate::operation::get_dashboard::builders::GetDashboardInputBuilder {
 ///
 /// <p>Displays the details of the dashboard that you specify.</p>
 /// <p>To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to create the copy.</p>
+/// <p>You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in Region (Region that is disabled by default)</a> for your account. In that Region, <code>GetDashboard</code> can return an access denied error for up to 24 hours after you enable the Region. This delay occurs while dashboard data propagates. The error does not indicate a problem with your permissions. Because dashboards are global, you can call <code>GetDashboard</code> in any other enabled Region, or retry after propagation completes.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDashboardFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

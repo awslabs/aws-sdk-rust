@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub target_type: ::std::option::Option<crate::types::LogTargetType>,
     /// <p>The name of the resource for which you are configuring logging.</p>
     pub target_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteV2LoggingLevelInput {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::LogTargetType> {
         self.target_type.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct DeleteV2LoggingLevelInputBuilder {
     pub(crate) target_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteV2LoggingLevelInputBuilder {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     /// This field is required.
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.target_type = input;
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
         &self.target_type
     }

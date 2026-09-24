@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListingOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The products and offers associated with this listing. Each entity contains product and offer information.</p>
     pub associated_entities: ::std::vec::Vec<crate::types::ListingAssociatedEntity>,
     /// <p>Badges indicating special attributes of the listing, such as free tier eligibility, free trial availability, or Quick Launch support.</p>
@@ -46,6 +48,10 @@ pub struct GetListingOutput {
     _request_id: Option<String>,
 }
 impl GetListingOutput {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(&self) -> ::std::option::Option<&str> {
+        self.locale.as_deref()
+    }
     /// <p>The products and offers associated with this listing. Each entity contains product and offer information.</p>
     pub fn associated_entities(&self) -> &[crate::types::ListingAssociatedEntity] {
         use std::ops::Deref;
@@ -160,6 +166,7 @@ impl GetListingOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetListingOutputBuilder {
+    pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) associated_entities: ::std::option::Option<::std::vec::Vec<crate::types::ListingAssociatedEntity>>,
     pub(crate) badges: ::std::option::Option<::std::vec::Vec<crate::types::ListingBadge>>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
@@ -183,6 +190,20 @@ pub struct GetListingOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetListingOutputBuilder {
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.locale = input;
+        self
+    }
+    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
+        &self.locale
+    }
     /// Appends an item to `associated_entities`.
     ///
     /// To override the contents of this collection use [`set_associated_entities`](Self::set_associated_entities).
@@ -566,6 +587,7 @@ impl GetListingOutputBuilder {
     /// - [`use_cases`](crate::operation::get_listing::builders::GetListingOutputBuilder::use_cases)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_listing::GetListingOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listing::GetListingOutput {
+            locale: self.locale,
             associated_entities: self.associated_entities.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "associated_entities",

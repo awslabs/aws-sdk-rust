@@ -18,6 +18,12 @@ pub struct CloudFormationFulfillmentOption {
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to deploy and use this CloudFormation template.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
+    pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A short description of the fulfillment option.</p>
+    pub short_description: ::std::option::Option<::std::string::String>,
+    /// <p>A detailed description of the fulfillment option.</p>
+    pub long_description: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationFulfillmentOption {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -51,6 +57,18 @@ impl CloudFormationFulfillmentOption {
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
+    /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
+    pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.available_from_time.as_ref()
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn short_description(&self) -> ::std::option::Option<&str> {
+        self.short_description.as_deref()
+    }
+    /// <p>A detailed description of the fulfillment option.</p>
+    pub fn long_description(&self) -> ::std::option::Option<&str> {
+        self.long_description.as_deref()
+    }
 }
 impl CloudFormationFulfillmentOption {
     /// Creates a new builder-style object to manufacture [`CloudFormationFulfillmentOption`](crate::types::CloudFormationFulfillmentOption).
@@ -70,6 +88,9 @@ pub struct CloudFormationFulfillmentOptionBuilder {
     pub(crate) fulfillment_option_version: ::std::option::Option<::std::string::String>,
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
     pub(crate) usage_instructions: ::std::option::Option<::std::string::String>,
+    pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) short_description: ::std::option::Option<::std::string::String>,
+    pub(crate) long_description: ::std::option::Option<::std::string::String>,
 }
 impl CloudFormationFulfillmentOptionBuilder {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -174,6 +195,48 @@ impl CloudFormationFulfillmentOptionBuilder {
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
+    /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
+    pub fn available_from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.available_from_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
+    pub fn set_available_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.available_from_time = input;
+        self
+    }
+    /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
+    pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.available_from_time
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.short_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.short_description = input;
+        self
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_description
+    }
+    /// <p>A detailed description of the fulfillment option.</p>
+    pub fn long_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.long_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A detailed description of the fulfillment option.</p>
+    pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.long_description = input;
+        self
+    }
+    /// <p>A detailed description of the fulfillment option.</p>
+    pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.long_description
+    }
     /// Consumes the builder and constructs a [`CloudFormationFulfillmentOption`](crate::types::CloudFormationFulfillmentOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`fulfillment_option_id`](crate::types::builders::CloudFormationFulfillmentOptionBuilder::fulfillment_option_id)
@@ -209,6 +272,9 @@ impl CloudFormationFulfillmentOptionBuilder {
             fulfillment_option_version: self.fulfillment_option_version,
             release_notes: self.release_notes,
             usage_instructions: self.usage_instructions,
+            available_from_time: self.available_from_time,
+            short_description: self.short_description,
+            long_description: self.long_description,
         })
     }
 }

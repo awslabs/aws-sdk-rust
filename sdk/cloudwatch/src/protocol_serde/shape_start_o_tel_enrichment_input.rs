@@ -4,6 +4,24 @@ pub fn ser_start_o_tel_enrichment_input_input(
     #[allow(unused)] input: &crate::operation::start_o_tel_enrichment::StartOTelEnrichmentInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     encoder.begin_map();
+    if let Some(var_1) = &input.include_filters {
+        encoder.str("IncludeFilters");
+        encoder.array((*var_1).len());
+        for item_2 in var_1 {
+            {
+                crate::protocol_serde::shape_o_tel_enrichment_metric_selector::ser_o_tel_enrichment_metric_selector(encoder, item_2)?;
+            }
+        }
+    }
+    if let Some(var_3) = &input.exclude_filters {
+        encoder.str("ExcludeFilters");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
+            {
+                crate::protocol_serde::shape_o_tel_enrichment_metric_selector::ser_o_tel_enrichment_metric_selector(encoder, item_4)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

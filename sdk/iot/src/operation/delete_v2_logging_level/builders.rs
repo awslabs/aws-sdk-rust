@@ -109,17 +109,17 @@ impl DeleteV2LoggingLevelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.inner = self.inner.target_type(input);
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.inner = self.inner.set_target_type(input);
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
         self.inner.get_target_type()
     }

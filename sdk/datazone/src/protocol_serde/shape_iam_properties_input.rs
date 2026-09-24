@@ -6,5 +6,8 @@ pub fn ser_iam_properties_input(
     if let Some(var_1) = &input.glue_lineage_sync_enabled {
         object.key("glueLineageSyncEnabled").boolean(*var_1);
     }
+    if let Some(var_2) = &input.role_arn {
+        object.key("roleArn").string(var_2.as_str());
+    }
     Ok(())
 }

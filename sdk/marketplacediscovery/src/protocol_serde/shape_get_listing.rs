@@ -189,6 +189,13 @@ pub(crate) fn de_get_listing(
                             .transpose()?,
                     );
                 }
+                "locale" => {
+                    builder = builder.set_locale(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "logoThumbnailUrl" => {
                     builder = builder.set_logo_thumbnail_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -3,29 +3,32 @@ pub fn ser_create_environment_blueprint_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_environment_blueprint::CreateEnvironmentBlueprintInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.blueprint_category {
+        object.key("blueprintCategory").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.provisioning_properties {
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.provisioning_properties {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("provisioningProperties").start_object();
-        crate::protocol_serde::shape_provisioning_properties::ser_provisioning_properties(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("provisioningProperties").start_object();
+        crate::protocol_serde::shape_provisioning_properties::ser_provisioning_properties(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.user_parameters {
-        let mut array_6 = object.key("userParameters").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.user_parameters {
+        let mut array_7 = object.key("userParameters").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_custom_parameter::ser_custom_parameter(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_custom_parameter::ser_custom_parameter(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

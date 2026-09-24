@@ -15,14 +15,17 @@ pub fn ser_list_purchase_options_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_5) = &input.locale {
+        object.key("locale").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
     Ok(())
 }

@@ -6,12 +6,20 @@
 pub struct AmazonMachineImageRecommendation {
     /// <p>The recommended EC2 instance type for this AMI.</p>
     pub instance_type: ::std::string::String,
+    /// <p>The recommended security group configurations for this AMI.</p>
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AmazonMachineImageSecurityGroup>>,
 }
 impl AmazonMachineImageRecommendation {
     /// <p>The recommended EC2 instance type for this AMI.</p>
     pub fn instance_type(&self) -> &str {
         use std::ops::Deref;
         self.instance_type.deref()
+    }
+    /// <p>The recommended security group configurations for this AMI.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
+    pub fn security_groups(&self) -> &[crate::types::AmazonMachineImageSecurityGroup] {
+        self.security_groups.as_deref().unwrap_or_default()
     }
 }
 impl AmazonMachineImageRecommendation {
@@ -26,6 +34,7 @@ impl AmazonMachineImageRecommendation {
 #[non_exhaustive]
 pub struct AmazonMachineImageRecommendationBuilder {
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::AmazonMachineImageSecurityGroup>>,
 }
 impl AmazonMachineImageRecommendationBuilder {
     /// <p>The recommended EC2 instance type for this AMI.</p>
@@ -43,6 +52,26 @@ impl AmazonMachineImageRecommendationBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
+    /// Appends an item to `security_groups`.
+    ///
+    /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+    ///
+    /// <p>The recommended security group configurations for this AMI.</p>
+    pub fn security_groups(mut self, input: crate::types::AmazonMachineImageSecurityGroup) -> Self {
+        let mut v = self.security_groups.unwrap_or_default();
+        v.push(input);
+        self.security_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The recommended security group configurations for this AMI.</p>
+    pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AmazonMachineImageSecurityGroup>>) -> Self {
+        self.security_groups = input;
+        self
+    }
+    /// <p>The recommended security group configurations for this AMI.</p>
+    pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AmazonMachineImageSecurityGroup>> {
+        &self.security_groups
+    }
     /// Consumes the builder and constructs a [`AmazonMachineImageRecommendation`](crate::types::AmazonMachineImageRecommendation).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_type`](crate::types::builders::AmazonMachineImageRecommendationBuilder::instance_type)
@@ -54,6 +83,7 @@ impl AmazonMachineImageRecommendationBuilder {
                     "instance_type was not specified but it is required when building AmazonMachineImageRecommendation",
                 )
             })?,
+            security_groups: self.security_groups,
         })
     }
 }

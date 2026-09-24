@@ -20,6 +20,8 @@ pub struct UpdateThreatModelInput {
     pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The updated CloudWatch Logs configuration for the threat model.</p>
     pub log_config: ::std::option::Option<crate::types::CloudWatchLog>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
 impl UpdateThreatModelInput {
     /// <p>The unique identifier of the threat model to update.</p>
@@ -56,6 +58,10 @@ impl UpdateThreatModelInput {
     pub fn log_config(&self) -> ::std::option::Option<&crate::types::CloudWatchLog> {
         self.log_config.as_ref()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
 }
 impl UpdateThreatModelInput {
     /// Creates a new builder-style object to manufacture [`UpdateThreatModelInput`](crate::operation::update_threat_model::UpdateThreatModelInput).
@@ -76,6 +82,7 @@ pub struct UpdateThreatModelInputBuilder {
     pub(crate) scope_docs: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) log_config: ::std::option::Option<crate::types::CloudWatchLog>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
 impl UpdateThreatModelInputBuilder {
     /// <p>The unique identifier of the threat model to update.</p>
@@ -198,6 +205,20 @@ impl UpdateThreatModelInputBuilder {
     pub fn get_log_config(&self) -> &::std::option::Option<crate::types::CloudWatchLog> {
         &self.log_config
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
     /// Consumes the builder and constructs a [`UpdateThreatModelInput`](crate::operation::update_threat_model::UpdateThreatModelInput).
     pub fn build(
         self,
@@ -211,6 +232,7 @@ impl UpdateThreatModelInputBuilder {
             scope_docs: self.scope_docs,
             service_role: self.service_role,
             log_config: self.log_config,
+            report_destination: self.report_destination,
         })
     }
 }

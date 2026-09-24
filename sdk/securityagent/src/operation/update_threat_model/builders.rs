@@ -225,4 +225,18 @@ impl UpdateThreatModelFluentBuilder {
     pub fn get_log_config(&self) -> &::std::option::Option<crate::types::CloudWatchLog> {
         self.inner.get_log_config()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.inner = self.inner.report_destination(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.inner = self.inner.set_report_destination(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        self.inner.get_report_destination()
+    }
 }

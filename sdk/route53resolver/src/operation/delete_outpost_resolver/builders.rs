@@ -22,7 +22,9 @@ impl crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverI
 }
 /// Fluent builder constructing a request to `DeleteOutpostResolver`.
 ///
-/// <p>Deletes a Resolver on the Outpost.</p>
+/// <p>Deletes a Resolver on the Outpost.</p><note>
+/// <p>This operation applies to first-generation Outposts only. On second-generation Outposts, Resolver is managed automatically by Amazon Web Services and can't be deleted directly. To opt out of Resolver on second-generation Outposts, contact Amazon Web Services Support.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOutpostResolverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

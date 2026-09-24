@@ -105,20 +105,20 @@ pub struct FirewallRule {
     /// <p>The rule type configuration for the firewall rule. This is a tagged union — exactly one of its members will be populated. Possible members are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FirewallAdvancedContentCategory</code> — an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
+    /// <p><code>FirewallAdvancedContentCategory</code> — an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
     /// <li>
-    /// <p><code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
+    /// <p><code>FirewallAdvancedThreatCategory</code> — an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
     /// <li>
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
-    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through AWS Marketplace.</p></li>
+    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
     /// </ul>
     /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
     pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's AWS Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -265,13 +265,13 @@ impl FirewallRule {
     /// <p>The rule type configuration for the firewall rule. This is a tagged union — exactly one of its members will be populated. Possible members are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FirewallAdvancedContentCategory</code> — an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
+    /// <p><code>FirewallAdvancedContentCategory</code> — an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
     /// <li>
-    /// <p><code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
+    /// <p><code>FirewallAdvancedThreatCategory</code> — an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
     /// <li>
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
-    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through AWS Marketplace.</p></li>
+    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
     /// </ul>
     /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
     pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
@@ -280,7 +280,7 @@ impl FirewallRule {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's AWS Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -761,13 +761,13 @@ impl FirewallRuleBuilder {
     /// <p>The rule type configuration for the firewall rule. This is a tagged union — exactly one of its members will be populated. Possible members are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FirewallAdvancedContentCategory</code> — an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
+    /// <p><code>FirewallAdvancedContentCategory</code> — an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
     /// <li>
-    /// <p><code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
+    /// <p><code>FirewallAdvancedThreatCategory</code> — an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
     /// <li>
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
-    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through AWS Marketplace.</p></li>
+    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
     /// </ul>
     /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
@@ -777,13 +777,13 @@ impl FirewallRuleBuilder {
     /// <p>The rule type configuration for the firewall rule. This is a tagged union — exactly one of its members will be populated. Possible members are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FirewallAdvancedContentCategory</code> — an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
+    /// <p><code>FirewallAdvancedContentCategory</code> — an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
     /// <li>
-    /// <p><code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
+    /// <p><code>FirewallAdvancedThreatCategory</code> — an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
     /// <li>
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
-    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through AWS Marketplace.</p></li>
+    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
     /// </ul>
     /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
@@ -793,13 +793,13 @@ impl FirewallRuleBuilder {
     /// <p>The rule type configuration for the firewall rule. This is a tagged union — exactly one of its members will be populated. Possible members are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>FirewallAdvancedContentCategory</code> — an AWS-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
+    /// <p><code>FirewallAdvancedContentCategory</code> — an Amazon Web Services-managed content category (for example, <code>VIOLENCE_AND_HATE_SPEECH</code>).</p></li>
     /// <li>
-    /// <p><code>FirewallAdvancedThreatCategory</code> — an AWS-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
+    /// <p><code>FirewallAdvancedThreatCategory</code> — an Amazon Web Services-managed advanced threat category (for example, <code>PHISHING</code>).</p></li>
     /// <li>
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
-    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through AWS Marketplace.</p></li>
+    /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
     /// </ul>
     /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
@@ -808,7 +808,7 @@ impl FirewallRuleBuilder {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's AWS Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -822,7 +822,7 @@ impl FirewallRuleBuilder {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's AWS Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -836,7 +836,7 @@ impl FirewallRuleBuilder {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's AWS Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>

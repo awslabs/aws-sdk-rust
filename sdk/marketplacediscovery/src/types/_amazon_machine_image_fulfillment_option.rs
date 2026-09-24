@@ -22,6 +22,18 @@ pub struct AmazonMachineImageFulfillmentOption {
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to deploy and use this fulfillment option.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
+    /// <p>The date and time when the AMI became available for fulfillment.</p>
+    pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The URL pattern for accessing the product when an instance is running.</p>
+    pub access_url_template: ::std::option::Option<::std::string::String>,
+    /// <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+    pub architecture: ::std::string::String,
+    /// <p>The alias of the AMI associated with this fulfillment option.</p>
+    pub ami_alias: ::std::option::Option<::std::string::String>,
+    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    pub ebs_volume: ::std::option::Option<crate::types::AmazonMachineImageEbsVolume>,
+    /// <p>A short description of the fulfillment option.</p>
+    pub short_description: ::std::option::Option<::std::string::String>,
 }
 impl AmazonMachineImageFulfillmentOption {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -64,6 +76,31 @@ impl AmazonMachineImageFulfillmentOption {
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
+    /// <p>The date and time when the AMI became available for fulfillment.</p>
+    pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.available_from_time.as_ref()
+    }
+    /// <p>The URL pattern for accessing the product when an instance is running.</p>
+    pub fn access_url_template(&self) -> ::std::option::Option<&str> {
+        self.access_url_template.as_deref()
+    }
+    /// <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+    pub fn architecture(&self) -> &str {
+        use std::ops::Deref;
+        self.architecture.deref()
+    }
+    /// <p>The alias of the AMI associated with this fulfillment option.</p>
+    pub fn ami_alias(&self) -> ::std::option::Option<&str> {
+        self.ami_alias.as_deref()
+    }
+    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    pub fn ebs_volume(&self) -> ::std::option::Option<&crate::types::AmazonMachineImageEbsVolume> {
+        self.ebs_volume.as_ref()
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn short_description(&self) -> ::std::option::Option<&str> {
+        self.short_description.as_deref()
+    }
 }
 impl AmazonMachineImageFulfillmentOption {
     /// Creates a new builder-style object to manufacture [`AmazonMachineImageFulfillmentOption`](crate::types::AmazonMachineImageFulfillmentOption).
@@ -85,6 +122,12 @@ pub struct AmazonMachineImageFulfillmentOptionBuilder {
     pub(crate) recommendation: ::std::option::Option<crate::types::AmazonMachineImageRecommendation>,
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
     pub(crate) usage_instructions: ::std::option::Option<::std::string::String>,
+    pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) access_url_template: ::std::option::Option<::std::string::String>,
+    pub(crate) architecture: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_volume: ::std::option::Option<crate::types::AmazonMachineImageEbsVolume>,
+    pub(crate) short_description: ::std::option::Option<::std::string::String>,
 }
 impl AmazonMachineImageFulfillmentOptionBuilder {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -223,6 +266,91 @@ impl AmazonMachineImageFulfillmentOptionBuilder {
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
+    /// <p>The date and time when the AMI became available for fulfillment.</p>
+    pub fn available_from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.available_from_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the AMI became available for fulfillment.</p>
+    pub fn set_available_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.available_from_time = input;
+        self
+    }
+    /// <p>The date and time when the AMI became available for fulfillment.</p>
+    pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.available_from_time
+    }
+    /// <p>The URL pattern for accessing the product when an instance is running.</p>
+    pub fn access_url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_url_template = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL pattern for accessing the product when an instance is running.</p>
+    pub fn set_access_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_url_template = input;
+        self
+    }
+    /// <p>The URL pattern for accessing the product when an instance is running.</p>
+    pub fn get_access_url_template(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_url_template
+    }
+    /// <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+    /// This field is required.
+    pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.architecture = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.architecture = input;
+        self
+    }
+    /// <p>The architecture of the AMI, such as <code>x86_64</code>.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture
+    }
+    /// <p>The alias of the AMI associated with this fulfillment option.</p>
+    pub fn ami_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami_alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias of the AMI associated with this fulfillment option.</p>
+    pub fn set_ami_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ami_alias = input;
+        self
+    }
+    /// <p>The alias of the AMI associated with this fulfillment option.</p>
+    pub fn get_ami_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ami_alias
+    }
+    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    pub fn ebs_volume(mut self, input: crate::types::AmazonMachineImageEbsVolume) -> Self {
+        self.ebs_volume = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    pub fn set_ebs_volume(mut self, input: ::std::option::Option<crate::types::AmazonMachineImageEbsVolume>) -> Self {
+        self.ebs_volume = input;
+        self
+    }
+    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    pub fn get_ebs_volume(&self) -> &::std::option::Option<crate::types::AmazonMachineImageEbsVolume> {
+        &self.ebs_volume
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.short_description = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.short_description = input;
+        self
+    }
+    /// <p>A short description of the fulfillment option.</p>
+    pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.short_description
+    }
     /// Consumes the builder and constructs a [`AmazonMachineImageFulfillmentOption`](crate::types::AmazonMachineImageFulfillmentOption).
     /// This method will fail if any of the following fields are not set:
     /// - [`fulfillment_option_id`](crate::types::builders::AmazonMachineImageFulfillmentOptionBuilder::fulfillment_option_id)
@@ -230,6 +358,7 @@ impl AmazonMachineImageFulfillmentOptionBuilder {
     /// - [`fulfillment_option_type`](crate::types::builders::AmazonMachineImageFulfillmentOptionBuilder::fulfillment_option_type)
     /// - [`fulfillment_option_display_name`](crate::types::builders::AmazonMachineImageFulfillmentOptionBuilder::fulfillment_option_display_name)
     /// - [`operating_systems`](crate::types::builders::AmazonMachineImageFulfillmentOptionBuilder::operating_systems)
+    /// - [`architecture`](crate::types::builders::AmazonMachineImageFulfillmentOptionBuilder::architecture)
     pub fn build(self) -> ::std::result::Result<crate::types::AmazonMachineImageFulfillmentOption, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::AmazonMachineImageFulfillmentOption {
             fulfillment_option_id: self.fulfillment_option_id.ok_or_else(|| {
@@ -266,6 +395,17 @@ impl AmazonMachineImageFulfillmentOptionBuilder {
             recommendation: self.recommendation,
             release_notes: self.release_notes,
             usage_instructions: self.usage_instructions,
+            available_from_time: self.available_from_time,
+            access_url_template: self.access_url_template,
+            architecture: self.architecture.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "architecture",
+                    "architecture was not specified but it is required when building AmazonMachineImageFulfillmentOption",
+                )
+            })?,
+            ami_alias: self.ami_alias,
+            ebs_volume: self.ebs_volume,
+            short_description: self.short_description,
         })
     }
 }

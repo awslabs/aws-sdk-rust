@@ -380,7 +380,13 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
             crate::operation::add_tags_to_resource::AddTagsToResourceError::CacheSubnetGroupNotFoundFault(inner) => {
                 Error::CacheSubnetGroupNotFoundFault(inner)
             }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::GlobalReplicationGroupNotFoundFault(inner) => {
+                Error::GlobalReplicationGroupNotFoundFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
@@ -842,6 +848,9 @@ impl From<crate::operation::create_global_replication_group::CreateGlobalReplica
             }
             crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::ServiceLinkedRoleNotFoundFault(inner) => {
                 Error::ServiceLinkedRoleNotFoundFault(inner)
+            }
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::TagQuotaPerResourceExceeded(inner) => {
+                Error::TagQuotaPerResourceExceeded(inner)
             }
             crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2543,7 +2552,13 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::CacheSubnetGroupNotFoundFault(inner) => {
                 Error::CacheSubnetGroupNotFoundFault(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::GlobalReplicationGroupNotFoundFault(inner) => {
+                Error::GlobalReplicationGroupNotFoundFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
@@ -3090,7 +3105,13 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::CacheSubnetGroupNotFoundFault(inner) => {
                 Error::CacheSubnetGroupNotFoundFault(inner)
             }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::GlobalReplicationGroupNotFoundFault(inner) => {
+                Error::GlobalReplicationGroupNotFoundFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidArnFault(inner) => Error::InvalidArnFault(inner),
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }

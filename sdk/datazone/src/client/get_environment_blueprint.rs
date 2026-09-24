@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`deployment_properties(Option<DeploymentProperties>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::deployment_properties): <p>The deployment properties of this Amazon DataZone blueprint.</p>
     ///   - [`user_parameters(Option<Vec::<CustomParameter>>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::user_parameters): <p>The user parameters of this blueprint.</p>
     ///   - [`glossary_terms(Option<Vec::<String>>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::glossary_terms): <p>The glossary terms attached to this Amazon DataZone blueprint.</p>
+    ///   - [`blueprint_category(Option<BlueprintCategory>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::blueprint_category): <p>The category of this Amazon DataZone blueprint. The only valid value is <code>TOOLING</code>, which indicates a blueprint that provisions the tooling resources of a project.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::created_at): <p>A timestamp of when this blueprint was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintOutput::updated_at): <p>The timestamp of when this blueprint was updated.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentBlueprintError>`](crate::operation::get_environment_blueprint::GetEnvironmentBlueprintError)

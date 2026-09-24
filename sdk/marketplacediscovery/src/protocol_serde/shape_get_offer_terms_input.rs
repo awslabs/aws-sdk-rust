@@ -3,17 +3,20 @@ pub fn ser_get_offer_terms_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_offer_terms::GetOfferTermsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.max_results {
+    if let Some(var_1) = &input.locale {
+        object.key("locale").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_1).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_2) = &input.next_token {
-        object.key("nextToken").string(var_2.as_str());
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.offer_id {
-        object.key("offerId").string(var_3.as_str());
+    if let Some(var_4) = &input.offer_id {
+        object.key("offerId").string(var_4.as_str());
     }
     Ok(())
 }

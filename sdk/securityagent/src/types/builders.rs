@@ -11,13 +11,15 @@ pub use crate::types::_assets::AssetsBuilder;
 
 pub use crate::types::_cloud_watch_log::CloudWatchLogBuilder;
 
+pub use crate::types::_report_destination::ReportDestinationBuilder;
+
+pub use crate::types::_report_filters::ReportFiltersBuilder;
+
 pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfigBuilder;
 
 pub use crate::types::_threat_anchor_shape::ThreatAnchorShapeBuilder;
-
-pub use crate::types::_report_destination::ReportDestinationBuilder;
 
 pub use crate::types::_artifact::ArtifactBuilder;
 

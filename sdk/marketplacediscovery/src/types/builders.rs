@@ -103,6 +103,8 @@ pub use crate::types::_listing_facet::ListingFacetBuilder;
 
 pub use crate::types::_amazon_machine_image_recommendation::AmazonMachineImageRecommendationBuilder;
 
+pub use crate::types::_amazon_machine_image_ebs_volume::AmazonMachineImageEbsVolumeBuilder;
+
 pub use crate::types::_sage_maker_algorithm_recommendation::SageMakerAlgorithmRecommendationBuilder;
 
 pub use crate::types::_sage_maker_model_recommendation::SageMakerModelRecommendationBuilder;
@@ -142,6 +144,8 @@ pub use crate::types::_selector::SelectorBuilder;
 pub use crate::types::_constraints::ConstraintsBuilder;
 
 pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplateBuilder;
+
+pub use crate::types::_amazon_machine_image_security_group::AmazonMachineImageSecurityGroupBuilder;
 
 pub use crate::types::_rate_card_item::RateCardItemBuilder;
 

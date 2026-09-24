@@ -22,7 +22,9 @@ impl crate::operation::create_outpost_resolver::builders::CreateOutpostResolverI
 }
 /// Fluent builder constructing a request to `CreateOutpostResolver`.
 ///
-/// <p>Creates a Route&nbsp;53 Resolver on an Outpost.</p>
+/// <p>Creates a Route&nbsp;53 Resolver on an Outpost.</p><note>
+/// <p>This operation applies to first-generation Outposts only. On second-generation Outposts, Resolver is enabled by default and managed automatically by Amazon Web Services, so you don't need to create it.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOutpostResolverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

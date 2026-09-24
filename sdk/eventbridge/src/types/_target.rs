@@ -25,8 +25,8 @@ pub struct Target {
     pub ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
     /// <p>If the event target is an Batch job, this contains the job definition, job name, and other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User Guide</i>.</p>
     pub batch_parameters: ::std::option::Option<crate::types::BatchParameters>,
-    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    /// <p>Contains the message group ID to use when the target is an Amazon SQS fair or FIFO queue.</p>
+    /// <p>If you specify a fair or FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
     /// <p>Contains the HTTP parameters to use when the target is a API Gateway endpoint or EventBridge ApiDestination.</p>
     /// <p>If you specify an API Gateway API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
@@ -87,8 +87,8 @@ impl Target {
     pub fn batch_parameters(&self) -> ::std::option::Option<&crate::types::BatchParameters> {
         self.batch_parameters.as_ref()
     }
-    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    /// <p>Contains the message group ID to use when the target is an Amazon SQS fair or FIFO queue.</p>
+    /// <p>If you specify a fair or FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn sqs_parameters(&self) -> ::std::option::Option<&crate::types::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
@@ -292,20 +292,20 @@ impl TargetBuilder {
     pub fn get_batch_parameters(&self) -> &::std::option::Option<crate::types::BatchParameters> {
         &self.batch_parameters
     }
-    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    /// <p>Contains the message group ID to use when the target is an Amazon SQS fair or FIFO queue.</p>
+    /// <p>If you specify a fair or FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn sqs_parameters(mut self, input: crate::types::SqsParameters) -> Self {
         self.sqs_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    /// <p>Contains the message group ID to use when the target is an Amazon SQS fair or FIFO queue.</p>
+    /// <p>If you specify a fair or FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn set_sqs_parameters(mut self, input: ::std::option::Option<crate::types::SqsParameters>) -> Self {
         self.sqs_parameters = input;
         self
     }
-    /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
-    /// <p>If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
+    /// <p>Contains the message group ID to use when the target is an Amazon SQS fair or FIFO queue.</p>
+    /// <p>If you specify a fair or FIFO queue as a target, the queue must have content-based deduplication enabled.</p>
     pub fn get_sqs_parameters(&self) -> &::std::option::Option<crate::types::SqsParameters> {
         &self.sqs_parameters
     }

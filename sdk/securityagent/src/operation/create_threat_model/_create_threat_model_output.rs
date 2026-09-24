@@ -24,6 +24,8 @@ pub struct CreateThreatModelOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the threat model was last updated, in UTC format.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
     _request_id: Option<String>,
 }
 impl CreateThreatModelOutput {
@@ -70,6 +72,10 @@ impl CreateThreatModelOutput {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateThreatModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -97,6 +103,7 @@ pub struct CreateThreatModelOutputBuilder {
     pub(crate) log_config: ::std::option::Option<crate::types::CloudWatchLog>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
     _request_id: Option<String>,
 }
 impl CreateThreatModelOutputBuilder {
@@ -247,6 +254,20 @@ impl CreateThreatModelOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -278,6 +299,7 @@ impl CreateThreatModelOutputBuilder {
             log_config: self.log_config,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            report_destination: self.report_destination,
             _request_id: self._request_id,
         })
     }

@@ -182,6 +182,8 @@ impl Client {
 
 mod associate_dataset_kms_key;
 
+mod create_resource_metrics_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -220,6 +222,8 @@ mod delete_dashboards;
 mod delete_insight_rules;
 
 mod delete_metric_stream;
+
+mod delete_resource_metrics_configuration;
 
 mod describe_alarm_contributors;
 
@@ -260,6 +264,8 @@ mod get_metric_stream;
 mod get_metric_widget_image;
 
 mod get_o_tel_enrichment;
+
+mod get_resource_metrics_configuration;
 
 mod list_alarm_mute_rules;
 
@@ -306,3 +312,7 @@ mod stop_o_tel_enrichment;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_o_tel_enrichment;
+
+mod update_resource_metrics_configuration;

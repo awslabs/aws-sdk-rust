@@ -5,12 +5,40 @@
 pub struct GetOTelEnrichmentOutput {
     /// <p>The status of OTel enrichment for the account. Valid values are <code>Running</code> (enrichment is enabled) and <code>Stopped</code> (enrichment is disabled).</p>
     pub status: ::std::option::Option<crate::types::OTelEnrichmentStatus>,
+    /// <p>The metric namespaces, and the metric names, that are enriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no include filters, which means that every supported namespace is in scope.</p>
+    pub include_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    /// <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
+    pub exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    /// <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetOTelEnrichmentOutput {
     /// <p>The status of OTel enrichment for the account. Valid values are <code>Running</code> (enrichment is enabled) and <code>Stopped</code> (enrichment is disabled).</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OTelEnrichmentStatus> {
         self.status.as_ref()
+    }
+    /// <p>The metric namespaces, and the metric names, that are enriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no include filters, which means that every supported namespace is in scope.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.include_filters.is_none()`.
+    pub fn include_filters(&self) -> &[crate::types::OTelEnrichmentMetricSelector] {
+        self.include_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exclude_filters.is_none()`.
+    pub fn exclude_filters(&self) -> &[crate::types::OTelEnrichmentMetricSelector] {
+        self.exclude_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOTelEnrichmentOutput {
@@ -30,6 +58,10 @@ impl GetOTelEnrichmentOutput {
 #[non_exhaustive]
 pub struct GetOTelEnrichmentOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::OTelEnrichmentStatus>,
+    pub(crate) include_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    pub(crate) exclude_filters: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetOTelEnrichmentOutputBuilder {
@@ -48,6 +80,74 @@ impl GetOTelEnrichmentOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OTelEnrichmentStatus> {
         &self.status
     }
+    /// Appends an item to `include_filters`.
+    ///
+    /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
+    ///
+    /// <p>The metric namespaces, and the metric names, that are enriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no include filters, which means that every supported namespace is in scope.</p>
+    pub fn include_filters(mut self, input: crate::types::OTelEnrichmentMetricSelector) -> Self {
+        let mut v = self.include_filters.unwrap_or_default();
+        v.push(input);
+        self.include_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, that are enriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no include filters, which means that every supported namespace is in scope.</p>
+    pub fn set_include_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>) -> Self {
+        self.include_filters = input;
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, that are enriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no include filters, which means that every supported namespace is in scope.</p>
+    pub fn get_include_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
+        &self.include_filters
+    }
+    /// Appends an item to `exclude_filters`.
+    ///
+    /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
+    ///
+    /// <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
+    pub fn exclude_filters(mut self, input: crate::types::OTelEnrichmentMetricSelector) -> Self {
+        let mut v = self.exclude_filters.unwrap_or_default();
+        v.push(input);
+        self.exclude_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
+    pub fn set_exclude_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>>) -> Self {
+        self.exclude_filters = input;
+        self
+    }
+    /// <p>The metric namespaces, and the metric names, that are left unenriched. This parameter is omitted when enrichment is stopped, and when enrichment is running with no exclude filters, which means that nothing is excluded.</p>
+    pub fn get_exclude_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OTelEnrichmentMetricSelector>> {
+        &self.exclude_filters
+    }
+    /// <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The date and time that enrichment started for the account. This parameter is omitted when enrichment is stopped.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The date and time that the enrichment configuration for the account was last stored.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -61,6 +161,10 @@ impl GetOTelEnrichmentOutputBuilder {
     pub fn build(self) -> crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput {
         crate::operation::get_o_tel_enrichment::GetOTelEnrichmentOutput {
             status: self.status,
+            include_filters: self.include_filters,
+            exclude_filters: self.exclude_filters,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
             _request_id: self._request_id,
         }
     }

@@ -34,6 +34,8 @@ pub struct ThreatModelJob {
     pub error_information: ::std::option::Option<crate::types::ErrorInformation>,
     /// <p>The system overview generated during threat modeling.</p>
     pub system_overview: ::std::option::Option<::std::string::String>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
 impl ThreatModelJob {
     /// <p>The unique identifier of the threat model job.</p>
@@ -104,6 +106,10 @@ impl ThreatModelJob {
     pub fn system_overview(&self) -> ::std::option::Option<&str> {
         self.system_overview.as_deref()
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
 }
 impl ThreatModelJob {
     /// Creates a new builder-style object to manufacture [`ThreatModelJob`](crate::types::ThreatModelJob).
@@ -131,6 +137,7 @@ pub struct ThreatModelJobBuilder {
     pub(crate) scope_docs: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
     pub(crate) error_information: ::std::option::Option<crate::types::ErrorInformation>,
     pub(crate) system_overview: ::std::option::Option<::std::string::String>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
 }
 impl ThreatModelJobBuilder {
     /// <p>The unique identifier of the threat model job.</p>
@@ -367,6 +374,20 @@ impl ThreatModelJobBuilder {
     pub fn get_system_overview(&self) -> &::std::option::Option<::std::string::String> {
         &self.system_overview
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
     /// Consumes the builder and constructs a [`ThreatModelJob`](crate::types::ThreatModelJob).
     pub fn build(self) -> crate::types::ThreatModelJob {
         crate::types::ThreatModelJob {
@@ -385,6 +406,7 @@ impl ThreatModelJobBuilder {
             scope_docs: self.scope_docs,
             error_information: self.error_information,
             system_overview: self.system_overview,
+            report_destination: self.report_destination,
         }
     }
 }

@@ -22,6 +22,10 @@ pub struct CodeReview {
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     /// <p>The maximum number of billable task hours allowed for jobs started from this code review. If a job reaches the configured limit, it is gracefully stopped. If not set, jobs run to completion with no budget cap.</p>
     pub max_task_hours: ::std::option::Option<f64>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub report_filters: ::std::option::Option<crate::types::ReportFilters>,
     /// <p>The date and time the code review was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the code review was last updated, in UTC format.</p>
@@ -67,6 +71,14 @@ impl CodeReview {
     pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
         self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(&self) -> ::std::option::Option<&crate::types::ReportFilters> {
+        self.report_filters.as_ref()
+    }
     /// <p>The date and time the code review was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -96,6 +108,8 @@ pub struct CodeReviewBuilder {
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     pub(crate) max_task_hours: ::std::option::Option<f64>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    pub(crate) report_filters: ::std::option::Option<crate::types::ReportFilters>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -230,6 +244,34 @@ impl CodeReviewBuilder {
     pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
         &self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(mut self, input: crate::types::ReportFilters) -> Self {
+        self.report_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn set_report_filters(mut self, input: ::std::option::Option<crate::types::ReportFilters>) -> Self {
+        self.report_filters = input;
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn get_report_filters(&self) -> &::std::option::Option<crate::types::ReportFilters> {
+        &self.report_filters
+    }
     /// <p>The date and time the code review was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -289,6 +331,8 @@ impl CodeReviewBuilder {
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
             max_task_hours: self.max_task_hours,
+            report_destination: self.report_destination,
+            report_filters: self.report_filters,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

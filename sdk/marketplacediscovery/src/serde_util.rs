@@ -176,6 +176,9 @@ pub(crate) fn get_product_output_output_correct_errors(
     if builder.seller_engagements.is_none() {
         builder.seller_engagements = Some(Default::default())
     }
+    if builder.listing_id.is_none() {
+        builder.listing_id = Some(Default::default())
+    }
     builder
 }
 
@@ -457,6 +460,9 @@ pub(crate) fn amazon_machine_image_fulfillment_option_correct_errors(
     }
     if builder.operating_systems.is_none() {
         builder.operating_systems = Some(Default::default())
+    }
+    if builder.architecture.is_none() {
+        builder.architecture = Some(Default::default())
     }
     builder
 }
@@ -860,6 +866,9 @@ pub(crate) fn saas_fulfillment_option_correct_errors(
     if builder.fulfillment_option_display_name.is_none() {
         builder.fulfillment_option_display_name = Some(Default::default())
     }
+    if builder.quick_launch.is_none() {
+        builder.quick_launch = "no value was set".parse::<crate::types::SaasQuickLaunchStatus>().ok()
+    }
     builder
 }
 
@@ -961,6 +970,15 @@ pub(crate) fn variable_payment_term_correct_errors(
     }
     if builder.max_total_charge_amount.is_none() {
         builder.max_total_charge_amount = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn amazon_machine_image_ebs_volume_correct_errors(
+    mut builder: crate::types::builders::AmazonMachineImageEbsVolumeBuilder,
+) -> crate::types::builders::AmazonMachineImageEbsVolumeBuilder {
+    if builder.volume_types.is_none() {
+        builder.volume_types = Some(Default::default())
     }
     builder
 }
@@ -1169,6 +1187,24 @@ pub(crate) fn usage_based_rate_card_item_correct_errors(
 ) -> crate::types::builders::UsageBasedRateCardItemBuilder {
     if builder.rate_card.is_none() {
         builder.rate_card = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn amazon_machine_image_security_group_correct_errors(
+    mut builder: crate::types::builders::AmazonMachineImageSecurityGroupBuilder,
+) -> crate::types::builders::AmazonMachineImageSecurityGroupBuilder {
+    if builder.protocol.is_none() {
+        builder.protocol = Some(Default::default())
+    }
+    if builder.from_port.is_none() {
+        builder.from_port = Some(Default::default())
+    }
+    if builder.to_port.is_none() {
+        builder.to_port = Some(Default::default())
+    }
+    if builder.cidr_ip_addresses.is_none() {
+        builder.cidr_ip_addresses = Some(Default::default())
     }
     builder
 }

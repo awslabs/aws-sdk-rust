@@ -19,6 +19,8 @@ pub struct UpdateEnvironmentBlueprintOutput {
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironmentBlueprint</code> action.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
     /// <p>The timestamp of when the environment blueprint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the blueprint was updated.</p>
@@ -65,6 +67,10 @@ impl UpdateEnvironmentBlueprintOutput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(&self) -> ::std::option::Option<&crate::types::BlueprintCategory> {
+        self.blueprint_category.as_ref()
+    }
     /// <p>The timestamp of when the environment blueprint was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -85,6 +91,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentBlueprintOutput {
         formatter.field("deployment_properties", &self.deployment_properties);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);
@@ -115,6 +122,7 @@ pub struct UpdateEnvironmentBlueprintOutputBuilder {
     pub(crate) deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::CustomParameter>>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blueprint_category: ::std::option::Option<crate::types::BlueprintCategory>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -248,6 +256,20 @@ impl UpdateEnvironmentBlueprintOutputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn blueprint_category(mut self, input: crate::types::BlueprintCategory) -> Self {
+        self.blueprint_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn set_blueprint_category(mut self, input: ::std::option::Option<crate::types::BlueprintCategory>) -> Self {
+        self.blueprint_category = input;
+        self
+    }
+    /// <p>The category of the environment blueprint. The only valid value is <code>TOOLING</code>.</p>
+    pub fn get_blueprint_category(&self) -> &::std::option::Option<crate::types::BlueprintCategory> {
+        &self.blueprint_category
+    }
     /// <p>The timestamp of when the environment blueprint was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -320,6 +342,7 @@ impl UpdateEnvironmentBlueprintOutputBuilder {
             deployment_properties: self.deployment_properties,
             user_parameters: self.user_parameters,
             glossary_terms: self.glossary_terms,
+            blueprint_category: self.blueprint_category,
             created_at: self.created_at,
             updated_at: self.updated_at,
             _request_id: self._request_id,
@@ -337,6 +360,7 @@ impl ::std::fmt::Debug for UpdateEnvironmentBlueprintOutputBuilder {
         formatter.field("deployment_properties", &self.deployment_properties);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("glossary_terms", &self.glossary_terms);
+        formatter.field("blueprint_category", &self.blueprint_category);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);

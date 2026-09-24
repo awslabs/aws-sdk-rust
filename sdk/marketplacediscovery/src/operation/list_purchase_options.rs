@@ -191,6 +191,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPurchaseO
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("locale") {
+            if let ::std::option::Option::Some(value) = input.locale.as_deref() {
+                captured.insert("locale", value);
+            }
+        }
         if requested.should_capture("nextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("nextToken", value);

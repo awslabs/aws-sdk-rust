@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub target_type: ::std::option::Option<crate::types::LogTargetType>,
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListV2LoggingLevelsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListV2LoggingLevelsInput {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::LogTargetType> {
         self.target_type.as_ref()
     }
@@ -40,17 +40,17 @@ pub struct ListV2LoggingLevelsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListV2LoggingLevelsInputBuilder {
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.target_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn set_target_type(mut self, input: ::std::option::Option<crate::types::LogTargetType>) -> Self {
         self.target_type = input;
         self
     }
-    /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
+    /// <p>The type of resource for which you are configuring logging. Must be <code>DEFAULT</code>, <code>THING_GROUP</code>, <code>CLIENT_ID</code>, <code>SOURCE_IP</code>, or <code>PRINCIPAL_ID</code>.</p>
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::LogTargetType> {
         &self.target_type
     }

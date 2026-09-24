@@ -2,8 +2,14 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`StartOTelEnrichment`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder) operation.
     ///
-    /// - The fluent builder takes no input, just [`send`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::send) it.
-    /// - On success, responds with [`StartOTelEnrichmentOutput`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput)
+    /// - The fluent builder is configurable:
+    ///   - [`include_filters(OTelEnrichmentMetricSelector)`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::include_filters) / [`set_include_filters(Option<Vec::<OTelEnrichmentMetricSelector>>)`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::set_include_filters):<br>required: **false**<br><p>The metric namespaces, and the metric names, to enrich. If this parameter is omitted, every namespace that Amazon CloudWatch supports for enrichment is in scope.</p> <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p><br>
+    ///   - [`exclude_filters(OTelEnrichmentMetricSelector)`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::exclude_filters) / [`set_exclude_filters(Option<Vec::<OTelEnrichmentMetricSelector>>)`](crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::set_exclude_filters):<br>required: **false**<br><p>The metric namespaces, and the metric names, to leave unenriched. If this parameter is omitted, nothing is excluded.</p> <p>Amazon CloudWatch applies <code>ExcludeFilters</code> after <code>IncludeFilters</code>, so a metric that both parameters match is not enriched.</p> <p>A maximum of 100 filters is allowed across <code>IncludeFilters</code> and <code>ExcludeFilters</code> combined.</p><br>
+    /// - On success, responds with [`StartOTelEnrichmentOutput`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput) with field(s):
+    ///   - [`include_filters(Option<Vec::<OTelEnrichmentMetricSelector>>)`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput::include_filters): <p>The include filters that are stored for the account.</p>
+    ///   - [`exclude_filters(Option<Vec::<OTelEnrichmentMetricSelector>>)`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput::exclude_filters): <p>The exclude filters that are stored for the account.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput::created_at): <p>The date and time that enrichment started for the account.</p>
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentOutput::updated_at): <p>The date and time that the enrichment configuration for the account was last stored.</p>
     /// - On failure, responds with [`SdkError<StartOTelEnrichmentError>`](crate::operation::start_o_tel_enrichment::StartOTelEnrichmentError)
     pub fn start_o_tel_enrichment(&self) -> crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder {
         crate::operation::start_o_tel_enrichment::builders::StartOTelEnrichmentFluentBuilder::new(self.handle.clone())

@@ -151,6 +151,10 @@ pub use crate::types::_price_increase::PriceIncrease;
 
 pub use crate::types::_amazon_machine_image_recommendation::AmazonMachineImageRecommendation;
 
+pub use crate::types::_amazon_machine_image_ebs_volume::AmazonMachineImageEbsVolume;
+
+pub use crate::types::_saas_quick_launch_status::SaasQuickLaunchStatus;
+
 pub use crate::types::_sage_maker_algorithm_recommendation::SageMakerAlgorithmRecommendation;
 
 pub use crate::types::_sage_maker_model_recommendation::SageMakerModelRecommendation;
@@ -195,6 +199,8 @@ pub use crate::types::_legal_document_type::LegalDocumentType;
 
 pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplate;
 
+pub use crate::types::_amazon_machine_image_security_group::AmazonMachineImageSecurityGroup;
+
 pub use crate::types::_selector_type::SelectorType;
 
 pub use crate::types::_rate_card_constraint_type::RateCardConstraintType;
@@ -207,11 +213,15 @@ pub use crate::types::_dimension_label_type::DimensionLabelType;
 
 pub use crate::types::_payment_schedule_entry::PaymentScheduleEntry;
 
+mod _amazon_machine_image_ebs_volume;
+
 mod _amazon_machine_image_fulfillment_option;
 
 mod _amazon_machine_image_operating_system;
 
 mod _amazon_machine_image_recommendation;
+
+mod _amazon_machine_image_security_group;
 
 mod _api_fulfillment_option;
 
@@ -362,6 +372,8 @@ mod _review_source_summary;
 mod _review_summary;
 
 mod _saas_fulfillment_option;
+
+mod _saas_quick_launch_status;
 
 mod _sage_maker_algorithm_fulfillment_option;
 

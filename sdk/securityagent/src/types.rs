@@ -29,6 +29,10 @@ pub use crate::types::_code_remediation_strategy::CodeRemediationStrategy;
 
 pub use crate::types::_validation_mode::ValidationMode;
 
+pub use crate::types::_report_destination::ReportDestination;
+
+pub use crate::types::_report_filters::ReportFilters;
+
 pub use crate::types::_membership_type::MembershipType;
 
 pub use crate::types::_membership_config::MembershipConfig;
@@ -44,8 +48,6 @@ pub use crate::types::_threat_anchor_shape::ThreatAnchorShape;
 pub use crate::types::_threat_status::ThreatStatus;
 
 pub use crate::types::_threat_actor::ThreatActor;
-
-pub use crate::types::_report_destination::ReportDestination;
 
 pub use crate::types::_artifact::Artifact;
 
@@ -532,6 +534,8 @@ mod _provider_resource_capabilities;
 mod _provider_type;
 
 mod _report_destination;
+
+mod _report_filters;
 
 mod _resource_config_dns_resolution;
 

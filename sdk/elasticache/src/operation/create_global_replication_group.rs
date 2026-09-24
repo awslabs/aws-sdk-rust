@@ -339,6 +339,8 @@ pub enum CreateGlobalReplicationGroupError {
     ReplicationGroupNotFoundFault(crate::types::error::ReplicationGroupNotFoundFault),
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
+    /// <p>The request cannot be processed because it would cause the resource to have more than the allowed number of tags. The maximum number of tags permitted on a resource is 50.</p>
+    TagQuotaPerResourceExceeded(crate::types::error::TagQuotaPerResourceExceeded),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -377,6 +379,7 @@ impl CreateGlobalReplicationGroupError {
             Self::InvalidReplicationGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceLinkedRoleNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::TagQuotaPerResourceExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -400,6 +403,10 @@ impl CreateGlobalReplicationGroupError {
     pub fn is_service_linked_role_not_found_fault(&self) -> bool {
         matches!(self, Self::ServiceLinkedRoleNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `CreateGlobalReplicationGroupError::TagQuotaPerResourceExceeded`.
+    pub fn is_tag_quota_per_resource_exceeded(&self) -> bool {
+        matches!(self, Self::TagQuotaPerResourceExceeded(_))
+    }
 }
 impl ::std::error::Error for CreateGlobalReplicationGroupError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -409,6 +416,7 @@ impl ::std::error::Error for CreateGlobalReplicationGroupError {
             Self::InvalidReplicationGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::TagQuotaPerResourceExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -421,6 +429,7 @@ impl ::std::fmt::Display for CreateGlobalReplicationGroupError {
             Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
             Self::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
+            Self::TagQuotaPerResourceExceeded(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -447,6 +456,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateGlobalR
             Self::InvalidReplicationGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceLinkedRoleNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::TagQuotaPerResourceExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

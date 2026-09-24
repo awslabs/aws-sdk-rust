@@ -22,6 +22,10 @@ pub struct UpdateCodeReviewInput {
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
     pub max_task_hours: ::std::option::Option<f64>,
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub report_filters: ::std::option::Option<crate::types::ReportFilters>,
 }
 impl UpdateCodeReviewInput {
     /// <p>The unique identifier of the code review to update.</p>
@@ -60,6 +64,14 @@ impl UpdateCodeReviewInput {
     pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
         self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(&self) -> ::std::option::Option<&crate::types::ReportDestination> {
+        self.report_destination.as_ref()
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(&self) -> ::std::option::Option<&crate::types::ReportFilters> {
+        self.report_filters.as_ref()
+    }
 }
 impl UpdateCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeReviewInput`](crate::operation::update_code_review::UpdateCodeReviewInput).
@@ -81,6 +93,8 @@ pub struct UpdateCodeReviewInputBuilder {
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
     pub(crate) max_task_hours: ::std::option::Option<f64>,
+    pub(crate) report_destination: ::std::option::Option<crate::types::ReportDestination>,
+    pub(crate) report_filters: ::std::option::Option<crate::types::ReportFilters>,
 }
 impl UpdateCodeReviewInputBuilder {
     /// <p>The unique identifier of the code review to update.</p>
@@ -211,6 +225,34 @@ impl UpdateCodeReviewInputBuilder {
     pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
         &self.max_task_hours
     }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn report_destination(mut self, input: crate::types::ReportDestination) -> Self {
+        self.report_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn set_report_destination(mut self, input: ::std::option::Option<crate::types::ReportDestination>) -> Self {
+        self.report_destination = input;
+        self
+    }
+    /// <p>The destination for publishing scan reports to an integrated document provider.</p>
+    pub fn get_report_destination(&self) -> &::std::option::Option<crate::types::ReportDestination> {
+        &self.report_destination
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn report_filters(mut self, input: crate::types::ReportFilters) -> Self {
+        self.report_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn set_report_filters(mut self, input: ::std::option::Option<crate::types::ReportFilters>) -> Self {
+        self.report_filters = input;
+        self
+    }
+    /// <p>The report-generation filters applied when the report is exported.</p>
+    pub fn get_report_filters(&self) -> &::std::option::Option<crate::types::ReportFilters> {
+        &self.report_filters
+    }
     /// Consumes the builder and constructs a [`UpdateCodeReviewInput`](crate::operation::update_code_review::UpdateCodeReviewInput).
     pub fn build(
         self,
@@ -225,6 +267,8 @@ impl UpdateCodeReviewInputBuilder {
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
             max_task_hours: self.max_task_hours,
+            report_destination: self.report_destination,
+            report_filters: self.report_filters,
         })
     }
 }

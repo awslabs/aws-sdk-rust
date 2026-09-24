@@ -6,5 +6,8 @@ pub fn ser_get_listing_input_input(
     if let Some(var_1) = &input.listing_id {
         object.key("listingId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.locale {
+        object.key("locale").string(var_2.as_str());
+    }
     Ok(())
 }

@@ -156,6 +156,13 @@ pub(crate) fn de_list_fulfillment_options(
                             crate::protocol_serde::shape_fulfillment_options_list::de_fulfillment_options_list(tokens, _value, depth + 1)?,
                         );
                     }
+                    "locale" => {
+                        builder = builder.set_locale(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "nextToken" => {
                         builder = builder.set_next_token(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
