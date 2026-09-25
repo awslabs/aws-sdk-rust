@@ -4,6 +4,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput,
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError,
@@ -108,6 +109,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_respons
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput,
     crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError,

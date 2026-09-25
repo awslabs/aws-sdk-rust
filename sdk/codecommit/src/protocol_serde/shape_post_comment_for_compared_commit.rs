@@ -4,6 +4,7 @@ pub fn de_post_comment_for_compared_commit_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput,
     crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
@@ -459,6 +460,7 @@ pub fn de_post_comment_for_compared_commit_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput,
     crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,

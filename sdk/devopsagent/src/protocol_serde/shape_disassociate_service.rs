@@ -4,6 +4,7 @@ pub fn de_disassociate_service_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_service::DisassociateServiceOutput,
     crate::operation::disassociate_service::DisassociateServiceError,
@@ -159,6 +160,7 @@ pub fn de_disassociate_service_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_service::DisassociateServiceOutput,
     crate::operation::disassociate_service::DisassociateServiceError,

@@ -8,6 +8,7 @@ impl super::Client {
     ///   - [`retrieval_query(impl Into<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::retrieval_query) / [`set_retrieval_query(Option<String>)`](crate::operation::retrieve::builders::RetrieveFluentBuilder::set_retrieval_query):<br>required: **true**<br><p>The query for content retrieval.</p><br>
     /// - On success, responds with [`RetrieveOutput`](crate::operation::retrieve::RetrieveOutput) with field(s):
     ///   - [`results(Vec::<RetrieveResult>)`](crate::operation::retrieve::RetrieveOutput::results): <p>The results of the content retrieval operation.</p>
+    ///   - [`errors(Option<Vec::<RetrieveError>>)`](crate::operation::retrieve::RetrieveOutput::errors): <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
     /// - On failure, responds with [`SdkError<RetrieveError>`](crate::operation::retrieve::RetrieveError)
     pub fn retrieve(&self) -> crate::operation::retrieve::builders::RetrieveFluentBuilder {
         crate::operation::retrieve::builders::RetrieveFluentBuilder::new(self.handle.clone())

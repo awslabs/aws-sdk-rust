@@ -24,6 +24,7 @@ impl crate::operation::get_face_liveness_session_results::builders::GetFaceLiven
 ///
 /// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100.</p>
 /// <p>The number of audit images returned by <code>GetFaceLivenessSessionResults</code> is defined by the <code>AuditImagesLimit</code> paramater when calling <code>CreateFaceLivenessSession</code>. Reference images are always returned when possible.</p>
+/// <p>For a session that has completed, the response can also include a <code>Feedback</code> list describing conditions that were detected in the selfie-video, such as low lighting or an obstructed face, and <code>Metadata</code> about the client that streamed the session.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

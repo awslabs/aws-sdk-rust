@@ -4,6 +4,7 @@ pub fn de_delete_proxy_session_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_proxy_session::DeleteProxySessionOutput,
     crate::operation::delete_proxy_session::DeleteProxySessionError,
@@ -136,6 +137,7 @@ pub fn de_delete_proxy_session_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_proxy_session::DeleteProxySessionOutput,
     crate::operation::delete_proxy_session::DeleteProxySessionError,

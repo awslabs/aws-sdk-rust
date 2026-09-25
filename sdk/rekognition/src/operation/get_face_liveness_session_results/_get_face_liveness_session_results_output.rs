@@ -15,6 +15,10 @@ pub struct GetFaceLivenessSessionResultsOutput {
     pub audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
     /// <p>Contains information regarding the challenge type used for the Face Liveness check.</p>
     pub challenge: ::std::option::Option<crate::types::Challenge>,
+    /// <p>A list of conditions that were detected in the Face Liveness video and that contributed to the returned <code>Confidence</code> score. Each item contains a code and a human-readable message. Feedback is returned only for sessions with a <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no such conditions were detected.</p>
+    pub feedback: ::std::option::Option<::std::vec::Vec<crate::types::FeedbackItem>>,
+    /// <p>Metadata about the client that streamed the video for the Face Liveness session.</p>
+    pub metadata: ::std::option::Option<crate::types::SessionMetadata>,
     _request_id: Option<String>,
 }
 impl GetFaceLivenessSessionResultsOutput {
@@ -45,6 +49,16 @@ impl GetFaceLivenessSessionResultsOutput {
     pub fn challenge(&self) -> ::std::option::Option<&crate::types::Challenge> {
         self.challenge.as_ref()
     }
+    /// <p>A list of conditions that were detected in the Face Liveness video and that contributed to the returned <code>Confidence</code> score. Each item contains a code and a human-readable message. Feedback is returned only for sessions with a <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no such conditions were detected.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.feedback.is_none()`.
+    pub fn feedback(&self) -> &[crate::types::FeedbackItem] {
+        self.feedback.as_deref().unwrap_or_default()
+    }
+    /// <p>Metadata about the client that streamed the video for the Face Liveness session.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::SessionMetadata> {
+        self.metadata.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetFaceLivenessSessionResultsOutput {
     fn request_id(&self) -> Option<&str> {
@@ -68,6 +82,8 @@ pub struct GetFaceLivenessSessionResultsOutputBuilder {
     pub(crate) reference_image: ::std::option::Option<crate::types::AuditImage>,
     pub(crate) audit_images: ::std::option::Option<::std::vec::Vec<crate::types::AuditImage>>,
     pub(crate) challenge: ::std::option::Option<crate::types::Challenge>,
+    pub(crate) feedback: ::std::option::Option<::std::vec::Vec<crate::types::FeedbackItem>>,
+    pub(crate) metadata: ::std::option::Option<crate::types::SessionMetadata>,
     _request_id: Option<String>,
 }
 impl GetFaceLivenessSessionResultsOutputBuilder {
@@ -163,6 +179,40 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     pub fn get_challenge(&self) -> &::std::option::Option<crate::types::Challenge> {
         &self.challenge
     }
+    /// Appends an item to `feedback`.
+    ///
+    /// To override the contents of this collection use [`set_feedback`](Self::set_feedback).
+    ///
+    /// <p>A list of conditions that were detected in the Face Liveness video and that contributed to the returned <code>Confidence</code> score. Each item contains a code and a human-readable message. Feedback is returned only for sessions with a <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no such conditions were detected.</p>
+    pub fn feedback(mut self, input: crate::types::FeedbackItem) -> Self {
+        let mut v = self.feedback.unwrap_or_default();
+        v.push(input);
+        self.feedback = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of conditions that were detected in the Face Liveness video and that contributed to the returned <code>Confidence</code> score. Each item contains a code and a human-readable message. Feedback is returned only for sessions with a <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no such conditions were detected.</p>
+    pub fn set_feedback(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FeedbackItem>>) -> Self {
+        self.feedback = input;
+        self
+    }
+    /// <p>A list of conditions that were detected in the Face Liveness video and that contributed to the returned <code>Confidence</code> score. Each item contains a code and a human-readable message. Feedback is returned only for sessions with a <code>Status</code> of <code>SUCCEEDED</code>, and the list is empty when no such conditions were detected.</p>
+    pub fn get_feedback(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeedbackItem>> {
+        &self.feedback
+    }
+    /// <p>Metadata about the client that streamed the video for the Face Liveness session.</p>
+    pub fn metadata(mut self, input: crate::types::SessionMetadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Metadata about the client that streamed the video for the Face Liveness session.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::SessionMetadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Metadata about the client that streamed the video for the Face Liveness session.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::SessionMetadata> {
+        &self.metadata
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -199,6 +249,8 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
             reference_image: self.reference_image,
             audit_images: self.audit_images,
             challenge: self.challenge,
+            feedback: self.feedback,
+            metadata: self.metadata,
             _request_id: self._request_id,
         })
     }

@@ -97,6 +97,8 @@ pub use crate::types::_result_data::ResultDataBuilder;
 
 pub use crate::types::_retrieve_result::RetrieveResultBuilder;
 
+pub use crate::types::_retrieve_error::RetrieveErrorBuilder;
+
 pub use crate::types::_session_summary::SessionSummaryBuilder;
 
 pub use crate::types::_content_association_data::ContentAssociationDataBuilder;
@@ -310,6 +312,8 @@ pub use crate::types::_suggested_message_data_details::SuggestedMessageDataDetai
 pub use crate::types::_notes_data_details::NotesDataDetailsBuilder;
 
 pub use crate::types::_notes_chunk_data_details::NotesChunkDataDetailsBuilder;
+
+pub use crate::types::_proactive_recommendation_data_details::ProactiveRecommendationDataDetailsBuilder;
 
 pub use crate::types::_hierarchical_chunking_level_configuration::HierarchicalChunkingLevelConfigurationBuilder;
 

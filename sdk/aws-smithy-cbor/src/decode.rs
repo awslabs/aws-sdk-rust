@@ -5,7 +5,7 @@
 
 use std::borrow::Cow;
 
-use aws_smithy_types::{BigInteger, Blob, DateTime};
+use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime};
 use minicbor::decode::Error;
 
 use crate::data::Type;
@@ -261,6 +261,98 @@ impl<'b> Decoder<'b> {
     /// string in network byte order. Plain CBOR integers (major types 0 and 1)
     /// are also accepted per preferred serialization rules.
     pub fn big_integer(&mut self) -> Result<BigInteger, DeserializeError> {
+        self.bigint()?
+            .to_string()
+            .parse()
+            .map_err(|_| DeserializeError::new(Error::message("invalid bignum value")))
+    }
+
+    /// Returns a `BigDecimal` from a CBOR decimal fraction.
+    ///
+    /// Per RFC 8949 §3.4.4, a decimal fraction is tag 4 followed by a
+    /// two-element array containing a base-10 exponent and an integer or
+    /// bignum mantissa.
+    pub fn big_decimal(&mut self) -> Result<BigDecimal, DeserializeError> {
+        let tag_position = self.decoder.position();
+        let tag = self.decoder.tag().map_err(DeserializeError::new)?;
+        if tag.as_u64() != 4 {
+            return Err(DeserializeError::new(
+                Error::message("expected CBOR tag 4 (decimal fraction)").at(tag_position),
+            ));
+        }
+
+        let len = self.decoder.array().map_err(DeserializeError::new)?;
+        if let Some(len) = len {
+            if len != 2 {
+                return Err(DeserializeError::new(Error::message(
+                    "expected decimal fraction array with two elements",
+                )));
+            }
+        }
+
+        let exponent = self.decimal_exponent()?;
+        let mantissa = self.bigint()?;
+
+        if len.is_none() {
+            match self.decoder.datatype().map_err(DeserializeError::new)? {
+                minicbor::data::Type::Break => {
+                    self.decoder.skip().map_err(DeserializeError::new)?;
+                }
+                _ => {
+                    return Err(DeserializeError::new(Error::message(
+                        "expected decimal fraction array with two elements",
+                    )));
+                }
+            }
+        }
+
+        let scale = exponent.checked_neg().ok_or_else(|| {
+            DeserializeError::new(Error::message(
+                "big decimal fraction exponent is outside the supported range",
+            ))
+        })?;
+        let value = bigdecimal::BigDecimal::new(mantissa, scale);
+        value
+            .to_string()
+            .parse()
+            .map_err(|_| DeserializeError::new(Error::message("invalid decimal fraction value")))
+    }
+
+    fn decimal_exponent(&mut self) -> Result<i64, DeserializeError> {
+        let value = match self.decoder.datatype().map_err(DeserializeError::new)? {
+            minicbor::data::Type::U8
+            | minicbor::data::Type::U16
+            | minicbor::data::Type::U32
+            | minicbor::data::Type::U64 => {
+                let value = self.decoder.u64().map_err(DeserializeError::new)?;
+                i64::try_from(value).map_err(|_| {
+                    DeserializeError::new(Error::message(
+                        "big decimal fraction exponent is outside the supported range",
+                    ))
+                })?
+            }
+            minicbor::data::Type::I8
+            | minicbor::data::Type::I16
+            | minicbor::data::Type::I32
+            | minicbor::data::Type::I64 => self.decoder.i64().map_err(DeserializeError::new)?,
+            minicbor::data::Type::Int => {
+                let value: i128 = self.decoder.int().map_err(DeserializeError::new)?.into();
+                i64::try_from(value).map_err(|_| {
+                    DeserializeError::new(Error::message(
+                        "big decimal fraction exponent is outside the supported range",
+                    ))
+                })?
+            }
+            _ => {
+                return Err(DeserializeError::new(Error::message(
+                    "expected integer decimal fraction exponent",
+                )));
+            }
+        };
+        Ok(value)
+    }
+
+    fn bigint(&mut self) -> Result<num_bigint::BigInt, DeserializeError> {
         use num_bigint::BigInt;
 
         match self.decoder.datatype().map_err(DeserializeError::new)? {
@@ -278,40 +370,28 @@ impl<'b> Decoder<'b> {
                         )));
                     }
                 };
-                value
-                    .to_string()
-                    .parse()
-                    .map_err(|_| DeserializeError::new(Error::message("invalid bignum value")))
+                Ok(value)
             }
             minicbor::data::Type::U8
             | minicbor::data::Type::U16
             | minicbor::data::Type::U32
             | minicbor::data::Type::U64 => {
                 let value = self.decoder.u64().map_err(DeserializeError::new)?;
-                value
-                    .to_string()
-                    .parse()
-                    .map_err(|_| DeserializeError::new(Error::message("invalid integer value")))
+                Ok(BigInt::from(value))
             }
             minicbor::data::Type::I8
             | minicbor::data::Type::I16
             | minicbor::data::Type::I32
             | minicbor::data::Type::I64 => {
                 let value = self.decoder.i64().map_err(DeserializeError::new)?;
-                value
-                    .to_string()
-                    .parse()
-                    .map_err(|_| DeserializeError::new(Error::message("invalid integer value")))
+                Ok(BigInt::from(value))
             }
             // Int covers CBOR major type 1 values that exceed i64 range
             // (argument > i64::MAX, i.e. values from -2^64 to -(i64::MAX+2)).
             minicbor::data::Type::Int => {
                 let int_val = self.decoder.int().map_err(DeserializeError::new)?;
                 let value: i128 = int_val.into();
-                BigInt::from(value)
-                    .to_string()
-                    .parse()
-                    .map_err(|_| DeserializeError::new(Error::message("invalid integer value")))
+                Ok(BigInt::from(value))
             }
             _ => Err(DeserializeError::new(Error::message(
                 "expected CBOR integer or bignum tag",
@@ -585,6 +665,117 @@ mod tests {
             .big_integer()
             .expect("should decode major type 1 > i64::MAX");
         assert_eq!(result.as_ref(), "-18446744073709551616");
+    }
+
+    #[test]
+    fn big_decimal_rfc8949_example() {
+        // RFC 8949 §3.4.4: 273.15 = tag 4([-2, 27315]).
+        let bytes = [0xc4, 0x82, 0x21, 0x19, 0x6a, 0xb3];
+        let mut decoder = Decoder::new(&bytes);
+        let result = decoder.big_decimal().expect("should decode");
+        assert_eq!(result.as_ref(), "273.15");
+    }
+
+    #[test]
+    fn big_decimal_round_trip_preserves_numeric_value() {
+        for value in [
+            "0",
+            "0.0",
+            "-0.0",
+            "+5",
+            ".5",
+            "5.",
+            "1.2300",
+            "-273.15",
+            "1.23e10",
+            "1e2",
+            "1.5E+3",
+            "1E-10",
+            "0.123456789012345678901234567890",
+            "18446744073709551616",
+            "-18446744073709551617",
+        ] {
+            let mut encoder = crate::Encoder::new(Vec::new());
+            encoder.big_decimal(&value.parse().unwrap());
+            let bytes = encoder.into_writer();
+            let mut decoder = Decoder::new(&bytes);
+            let result = decoder.big_decimal().expect("should decode");
+
+            // CBOR decimal fractions preserve the numeric value, but not the
+            // original spelling. BigDecimal equality compares its inner string, so compare the parsed values instead.
+            // See https://github.com/smithy-lang/smithy-rs/issues/4863
+            let actual: bigdecimal::BigDecimal = result.as_ref().parse().unwrap();
+            let expected: bigdecimal::BigDecimal = value.parse().unwrap();
+            assert_eq!(
+                actual,
+                expected,
+                "round-trip failed for {value}, decoded as {}",
+                result.as_ref()
+            );
+        }
+    }
+
+    #[test]
+    fn big_decimal_accepts_indefinite_array() {
+        let bytes = [0xc4, 0x9f, 0x21, 0x19, 0x6a, 0xb3, 0xff];
+        let mut decoder = Decoder::new(&bytes);
+        let result = decoder.big_decimal().expect("should decode");
+        assert_eq!(result.as_ref(), "273.15");
+    }
+
+    #[test]
+    fn big_decimal_rejects_invalid_tag() {
+        let bytes = [0x00, 0xc5, 0x82, 0x00, 0x01];
+        let mut decoder = Decoder::new(&bytes);
+        decoder.set_position(1);
+        let error = decoder.big_decimal().expect_err("tag 5 must be rejected");
+        assert_eq!(
+            error.to_string(),
+            "decode error at position 1: expected CBOR tag 4 (decimal fraction)"
+        );
+    }
+
+    #[test]
+    fn big_decimal_rejects_invalid_array_length() {
+        for bytes in [
+            &[0xc4, 0x81, 0x00][..],
+            &[0xc4, 0x83, 0x00, 0x01, 0x02][..],
+            &[0xc4, 0x9f, 0x00, 0x01, 0x02, 0xff][..],
+        ] {
+            let mut decoder = Decoder::new(bytes);
+            assert!(decoder.big_decimal().is_err());
+        }
+    }
+
+    #[test]
+    fn big_decimal_rejects_non_integer_components() {
+        for bytes in [&[0xc4, 0x82, 0xf4, 0x01][..], &[0xc4, 0x82, 0x00, 0xf4][..]] {
+            let mut decoder = Decoder::new(bytes);
+            assert!(decoder.big_decimal().is_err());
+        }
+    }
+
+    #[test]
+    fn big_decimal_rejects_unsupported_exponents() {
+        for bytes in [
+            // Exponent u64::MAX does not fit in bigdecimal's i64 scale.
+            &[
+                0xc4, 0x82, 0x1b, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01,
+            ][..],
+            // Exponent i64::MIN cannot be negated into a bigdecimal scale.
+            &[
+                0xc4, 0x82, 0x3b, 0x7f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x01,
+            ][..],
+        ] {
+            let mut decoder = Decoder::new(bytes);
+            let error = decoder
+                .big_decimal()
+                .expect_err("unsupported exponent must be rejected");
+            assert_eq!(
+                error.to_string(),
+                "decode error: big decimal fraction exponent is outside the supported range"
+            );
+        }
     }
 
     #[test]

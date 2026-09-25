@@ -4,6 +4,7 @@ pub fn de_describe_problem_observations_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
     crate::operation::describe_problem_observations::DescribeProblemObservationsError,
@@ -77,6 +78,7 @@ pub fn de_describe_problem_observations_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
     crate::operation::describe_problem_observations::DescribeProblemObservationsError,

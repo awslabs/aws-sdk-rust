@@ -4,6 +4,7 @@ pub fn de_update_connection_function_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_connection_function::UpdateConnectionFunctionOutput,
     crate::operation::update_connection_function::UpdateConnectionFunctionError,
@@ -138,6 +139,7 @@ pub fn de_update_connection_function_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_connection_function::UpdateConnectionFunctionOutput,
     crate::operation::update_connection_function::UpdateConnectionFunctionError,
@@ -149,9 +151,23 @@ pub fn de_update_connection_function_http_response(
             crate::protocol_serde::shape_update_connection_function_output::de_connection_function_summary_payload(_response_body)?,
         );
         output = output.set_e_tag(
-            crate::protocol_serde::shape_update_connection_function_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::update_connection_function::UpdateConnectionFunctionError::unhandled("Failed to parse ETag from header `ETag")
-            })?,
+            match crate::protocol_serde::shape_update_connection_function_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::update_connection_function::UpdateConnectionFunctionError::unhandled(
+                            "Failed to parse ETag from header `ETag`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

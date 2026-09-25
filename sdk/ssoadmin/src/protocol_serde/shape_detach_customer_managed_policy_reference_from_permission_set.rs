@@ -4,6 +4,7 @@ pub fn de_detach_customer_managed_policy_reference_from_permission_set_http_erro
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput,
     crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError,
@@ -124,6 +125,7 @@ pub fn de_detach_customer_managed_policy_reference_from_permission_set_http_resp
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput,
     crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError,

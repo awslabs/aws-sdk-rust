@@ -4,6 +4,7 @@ pub fn de_head_bucket_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::head_bucket::HeadBucketOutput, crate::operation::head_bucket::HeadBucketError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -42,37 +43,115 @@ pub fn de_head_bucket_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::head_bucket::HeadBucketOutput, crate::operation::head_bucket::HeadBucketError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::head_bucket::builders::HeadBucketOutputBuilder::default();
         output = output.set_access_point_alias(
-            crate::protocol_serde::shape_head_bucket_output::de_access_point_alias_header(_response_headers).map_err(|_| {
-                crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse AccessPointAlias from header `x-amz-access-point-alias")
-            })?,
+            match crate::protocol_serde::shape_head_bucket_output::de_access_point_alias_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-access-point-alias")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::head_bucket::HeadBucketError::unhandled(
+                            "Failed to parse AccessPointAlias from header `x-amz-access-point-alias`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_bucket_arn(
-            crate::protocol_serde::shape_head_bucket_output::de_bucket_arn_header(_response_headers)
-                .map_err(|_| crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse BucketArn from header `x-amz-bucket-arn"))?,
+            match crate::protocol_serde::shape_head_bucket_output::de_bucket_arn_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-bucket-arn")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::head_bucket::HeadBucketError::unhandled(
+                            "Failed to parse BucketArn from header `x-amz-bucket-arn`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_bucket_location_name(
-            crate::protocol_serde::shape_head_bucket_output::de_bucket_location_name_header(_response_headers).map_err(|_| {
-                crate::operation::head_bucket::HeadBucketError::unhandled(
-                    "Failed to parse BucketLocationName from header `x-amz-bucket-location-name",
-                )
-            })?,
+            match crate::protocol_serde::shape_head_bucket_output::de_bucket_location_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-bucket-location-name")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::head_bucket::HeadBucketError::unhandled(
+                            "Failed to parse BucketLocationName from header `x-amz-bucket-location-name`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_bucket_location_type(
-            crate::protocol_serde::shape_head_bucket_output::de_bucket_location_type_header(_response_headers).map_err(|_| {
-                crate::operation::head_bucket::HeadBucketError::unhandled(
-                    "Failed to parse BucketLocationType from header `x-amz-bucket-location-type",
-                )
-            })?,
+            match crate::protocol_serde::shape_head_bucket_output::de_bucket_location_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-bucket-location-type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::head_bucket::HeadBucketError::unhandled(
+                            "Failed to parse BucketLocationType from header `x-amz-bucket-location-type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_bucket_region(
-            crate::protocol_serde::shape_head_bucket_output::de_bucket_region_header(_response_headers).map_err(|_| {
-                crate::operation::head_bucket::HeadBucketError::unhandled("Failed to parse BucketRegion from header `x-amz-bucket-region")
-            })?,
+            match crate::protocol_serde::shape_head_bucket_output::de_bucket_region_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-bucket-region")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::head_bucket::HeadBucketError::unhandled(
+                            "Failed to parse BucketRegion from header `x-amz-bucket-region`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

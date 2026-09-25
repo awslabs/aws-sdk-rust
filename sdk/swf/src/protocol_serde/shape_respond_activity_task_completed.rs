@@ -4,6 +4,7 @@ pub fn de_respond_activity_task_completed_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput,
     crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
@@ -62,6 +63,7 @@ pub fn de_respond_activity_task_completed_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput,
     crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,

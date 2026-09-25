@@ -2,15 +2,15 @@
 pub(crate) fn de_application_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Application-Id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Application-Id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_configuration_profile_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Configuration-Profile-Id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Configuration-Profile-Id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_payload(
@@ -25,36 +25,36 @@ pub(crate) fn de_content_payload(
 pub(crate) fn de_content_type_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Type");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_description_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Description");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Description");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_kms_key_arn_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("KmsKeyArn");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("KmsKeyArn");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_version_label_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("VersionLabel");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("VersionLabel");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_version_number_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Version-Number");
-    let var_1 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("Version-Number");
+    let var_1 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",

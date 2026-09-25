@@ -4,6 +4,7 @@ pub fn de_delete_ml_input_channel_data_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_ml_input_channel_data::DeleteMlInputChannelDataOutput,
     crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError,
@@ -103,6 +104,7 @@ pub fn de_delete_ml_input_channel_data_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_ml_input_channel_data::DeleteMlInputChannelDataOutput,
     crate::operation::delete_ml_input_channel_data::DeleteMLInputChannelDataError,

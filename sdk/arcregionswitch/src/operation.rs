@@ -43,6 +43,9 @@ pub mod list_route53_health_checks;
 /// Types for the `ListRoute53HealthChecksInRegion` operation.
 pub mod list_route53_health_checks_in_region;
 
+/// Types for the `ListServiceQuotaWarnings` operation.
+pub mod list_service_quota_warnings;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 

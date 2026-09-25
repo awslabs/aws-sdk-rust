@@ -4,6 +4,7 @@ pub fn de_list_computation_model_resolve_to_resources_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesOutput,
     crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesError,
@@ -105,6 +106,7 @@ pub fn de_list_computation_model_resolve_to_resources_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesOutput,
     crate::operation::list_computation_model_resolve_to_resources::ListComputationModelResolveToResourcesError,

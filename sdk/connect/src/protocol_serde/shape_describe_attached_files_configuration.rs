@@ -4,6 +4,7 @@ pub fn de_describe_attached_files_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationOutput,
     crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError,
@@ -116,6 +117,7 @@ pub fn de_describe_attached_files_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationOutput,
     crate::operation::describe_attached_files_configuration::DescribeAttachedFilesConfigurationError,

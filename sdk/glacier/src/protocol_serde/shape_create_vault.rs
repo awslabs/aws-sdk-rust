@@ -4,6 +4,7 @@ pub fn de_create_vault_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_vault::CreateVaultOutput, crate::operation::create_vault::CreateVaultError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -109,13 +110,31 @@ pub fn de_create_vault_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_vault::CreateVaultOutput, crate::operation::create_vault::CreateVaultError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::create_vault::builders::CreateVaultOutputBuilder::default();
         output = output.set_location(
-            crate::protocol_serde::shape_create_vault_output::de_location_header(_response_headers)
-                .map_err(|_| crate::operation::create_vault::CreateVaultError::unhandled("Failed to parse location from header `Location"))?,
+            match crate::protocol_serde::shape_create_vault_output::de_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Location")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::create_vault::CreateVaultError::unhandled(
+                            "Failed to parse location from header `Location`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

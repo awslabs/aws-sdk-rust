@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "provisionMode" => {
+                            builder = builder.set_provision_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PaymentConnectorProvisionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

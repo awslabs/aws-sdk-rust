@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "generationId" => {
+                            builder = builder.set_generation_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "title" => {
                             builder = builder.set_title(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

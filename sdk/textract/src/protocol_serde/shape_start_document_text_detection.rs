@@ -4,6 +4,7 @@ pub fn de_start_document_text_detection_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
     crate::operation::start_document_text_detection::StartDocumentTextDetectionError,
@@ -221,6 +222,7 @@ pub fn de_start_document_text_detection_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_document_text_detection::StartDocumentTextDetectionOutput,
     crate::operation::start_document_text_detection::StartDocumentTextDetectionError,

@@ -4,6 +4,7 @@ pub fn de_get_metadata_transfer_job_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput,
     crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError,
@@ -108,6 +109,7 @@ pub fn de_get_metadata_transfer_job_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_metadata_transfer_job::GetMetadataTransferJobOutput,
     crate::operation::get_metadata_transfer_job::GetMetadataTransferJobError,

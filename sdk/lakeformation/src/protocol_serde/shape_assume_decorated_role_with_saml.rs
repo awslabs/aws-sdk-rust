@@ -4,6 +4,7 @@ pub fn de_assume_decorated_role_with_saml_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
     crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
@@ -109,6 +110,7 @@ pub fn de_assume_decorated_role_with_saml_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
     crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,

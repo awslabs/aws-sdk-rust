@@ -43,6 +43,8 @@ pub(crate) mod shape_list_route53_health_checks;
 
 pub(crate) mod shape_list_route53_health_checks_in_region;
 
+pub(crate) mod shape_list_service_quota_warnings;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_plan_execution;
@@ -95,6 +97,8 @@ pub(crate) mod shape_list_route53_health_checks_in_region_input;
 
 pub(crate) mod shape_list_route53_health_checks_input;
 
+pub(crate) mod shape_list_service_quota_warnings_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -129,6 +133,8 @@ pub(crate) mod shape_report_configuration;
 
 pub(crate) mod shape_route53_health_check_list;
 
+pub(crate) mod shape_service_quota_warning_summary_list;
+
 pub(crate) mod shape_step_states;
 
 pub(crate) mod shape_tags;
@@ -154,6 +160,8 @@ pub(crate) mod shape_report_output_configuration;
 pub(crate) mod shape_resource_warning;
 
 pub(crate) mod shape_route53_health_check;
+
+pub(crate) mod shape_service_quota_warning_summary;
 
 pub(crate) mod shape_step;
 

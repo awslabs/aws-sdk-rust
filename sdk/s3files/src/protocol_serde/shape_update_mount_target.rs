@@ -4,6 +4,7 @@ pub fn de_update_mount_target_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::update_mount_target::UpdateMountTargetOutput, crate::operation::update_mount_target::UpdateMountTargetError>
 {
     #[allow(unused_mut)]
@@ -95,6 +96,7 @@ pub fn de_update_mount_target_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::update_mount_target::UpdateMountTargetOutput, crate::operation::update_mount_target::UpdateMountTargetError>
 {
     Ok({

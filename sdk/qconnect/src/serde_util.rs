@@ -1298,6 +1298,21 @@ pub(crate) fn result_data_correct_errors(mut builder: crate::types::builders::Re
     builder
 }
 
+pub(crate) fn retrieve_error_correct_errors(
+    mut builder: crate::types::builders::RetrieveErrorBuilder,
+) -> crate::types::builders::RetrieveErrorBuilder {
+    if builder.association_id.is_none() {
+        builder.association_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::RetrieveErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn retrieve_result_correct_errors(
     mut builder: crate::types::builders::RetrieveResultBuilder,
 ) -> crate::types::builders::RetrieveResultBuilder {
@@ -1737,6 +1752,15 @@ pub(crate) fn parsing_prompt_correct_errors(
 ) -> crate::types::builders::ParsingPromptBuilder {
     if builder.parsing_prompt_text.is_none() {
         builder.parsing_prompt_text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn proactive_recommendation_data_details_correct_errors(
+    mut builder: crate::types::builders::ProactiveRecommendationDataDetailsBuilder,
+) -> crate::types::builders::ProactiveRecommendationDataDetailsBuilder {
+    if builder.next_message_token.is_none() {
+        builder.next_message_token = Some(Default::default())
     }
     builder
 }

@@ -4,6 +4,7 @@ pub fn de_create_backend_environment_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_backend_environment::CreateBackendEnvironmentOutput,
     crate::operation::create_backend_environment::CreateBackendEnvironmentError,
@@ -108,6 +109,7 @@ pub fn de_create_backend_environment_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_backend_environment::CreateBackendEnvironmentOutput,
     crate::operation::create_backend_environment::CreateBackendEnvironmentError,

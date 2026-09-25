@@ -4,6 +4,7 @@ pub fn de_list_applied_schema_arns_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput,
     crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
@@ -149,6 +150,7 @@ pub fn de_list_applied_schema_arns_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput,
     crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,

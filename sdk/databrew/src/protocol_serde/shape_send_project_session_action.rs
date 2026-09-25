@@ -4,6 +4,7 @@ pub fn de_send_project_session_action_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_project_session_action::SendProjectSessionActionOutput,
     crate::operation::send_project_session_action::SendProjectSessionActionError,
@@ -78,6 +79,7 @@ pub fn de_send_project_session_action_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_project_session_action::SendProjectSessionActionOutput,
     crate::operation::send_project_session_action::SendProjectSessionActionError,

@@ -213,6 +213,8 @@ pub use crate::types::_table::Table;
 
 pub use crate::types::_table_optimizer::TableOptimizer;
 
+pub use crate::types::_table_resource_share_type::TableResourceShareType;
+
 pub use crate::types::_table_version::TableVersion;
 
 pub use crate::types::_trigger::Trigger;
@@ -381,6 +383,8 @@ pub use crate::types::_session_status::SessionStatus;
 
 pub use crate::types::_table_identifier::TableIdentifier;
 
+pub use crate::types::_federated_table::FederatedTable;
+
 pub use crate::types::_view_definition_input::ViewDefinitionInput;
 
 pub use crate::types::_iceberg_input::IcebergInput;
@@ -532,8 +536,6 @@ pub use crate::types::_statement_state::StatementState;
 pub use crate::types::_statement_output::StatementOutput;
 
 pub use crate::types::_table_attributes::TableAttributes;
-
-pub use crate::types::_federated_table::FederatedTable;
 
 pub use crate::types::_view_definition::ViewDefinition;
 
@@ -2330,6 +2332,8 @@ mod _table_optimizer_run;
 mod _table_optimizer_type;
 
 mod _table_optimizer_vpc_configuration;
+
+mod _table_resource_share_type;
 
 mod _table_status;
 

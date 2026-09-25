@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_call_analytics_stream_transcription_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError,
@@ -22,165 +23,444 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
             )?,
         ));
         output = output.set_content_identification_type(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_content_identification_type_header(_response_headers)
-                .map_err(|_| {
-                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                    "Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_content_identification_type_header(
+                _response_headers,
+            ) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-content-identification-type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse ContentIdentificationType from header `x-amzn-transcribe-content-identification-type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_content_redaction_type(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_content_redaction_type_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_content_redaction_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-content-redaction-type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse ContentRedactionType from header `x-amzn-transcribe-content-redaction-type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_enable_partial_results_stabilization(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_enable_partial_results_stabilization_header(
-                _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                    "Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_enable_partial_results_stabilization_header(_response_headers) {
+                                ::std::result::Result::Ok(value) => value,
+                                ::std::result::Result::Err(err) => {
+                                    let _ = &err;
+                                    let has_unreadable_value = _response_headers
+                                                .get_all_bytes("x-amzn-transcribe-enable-partial-results-stabilization")
+                                                .any(|value| std::str::from_utf8(value).is_err());
+                                    if has_unreadable_value
+                                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                                    {
+                                        ::std::option::Option::None
+                                    } else {
+                                        return ::std::result::Result::Err(crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization`"));
+                                    }
+                                }
+                            }
         );
         output = output.set_identify_language(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_identify_language_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse IdentifyLanguage from header `x-amzn-transcribe-identify-language",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_identify_language_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-identify-language")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse IdentifyLanguage from header `x-amzn-transcribe-identify-language`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_language_code(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_code_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse LanguageCode from header `x-amzn-transcribe-language-code",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_code_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-language-code")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse LanguageCode from header `x-amzn-transcribe-language-code`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_language_model_name(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_model_name_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_model_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-language-model-name")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse LanguageModelName from header `x-amzn-transcribe-language-model-name`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_language_options(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_options_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse LanguageOptions from header `x-amzn-transcribe-language-options",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_language_options_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-language-options")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse LanguageOptions from header `x-amzn-transcribe-language-options`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_media_encoding(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_media_encoding_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_media_encoding_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-media-encoding")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse MediaEncoding from header `x-amzn-transcribe-media-encoding`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_media_sample_rate_hertz(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_media_sample_rate_hertz_header(_response_headers)
+            {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-sample-rate")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse MediaSampleRateHertz from header `x-amzn-transcribe-sample-rate`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_partial_results_stability(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_partial_results_stability_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_partial_results_stability_header(
+                _response_headers,
+            ) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-partial-results-stability")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse PartialResultsStability from header `x-amzn-transcribe-partial-results-stability`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_pii_entity_types(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_pii_entity_types_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_pii_entity_types_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-pii-entity-types")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse PiiEntityTypes from header `x-amzn-transcribe-pii-entity-types`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_preferred_language(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_preferred_language_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse PreferredLanguage from header `x-amzn-transcribe-preferred-language",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_preferred_language_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-preferred-language")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse PreferredLanguage from header `x-amzn-transcribe-preferred-language`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_request_id(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_request_id_header(_response_headers).map_err(|_| {
-                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                    "Failed to parse RequestId from header `x-amzn-request-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_request_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-request-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse RequestId from header `x-amzn-request-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                    "Failed to parse SessionId from header `x-amzn-transcribe-session-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-session-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse SessionId from header `x-amzn-transcribe-session-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_vocabulary_filter_method(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_method_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse VocabularyFilterMethod from header `x-amzn-transcribe-vocabulary-filter-method",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_method_header(_response_headers)
+            {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-method")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse VocabularyFilterMethod from header `x-amzn-transcribe-vocabulary-filter-method`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_vocabulary_filter_name(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_name_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-name")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse VocabularyFilterName from header `x-amzn-transcribe-vocabulary-filter-name`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_vocabulary_filter_names(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_names_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse VocabularyFilterNames from header `x-amzn-transcribe-vocabulary-filter-names",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_filter_names_header(_response_headers)
+            {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-names")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse VocabularyFilterNames from header `x-amzn-transcribe-vocabulary-filter-names`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_vocabulary_name(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_name_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-vocabulary-name")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_vocabulary_names(
-            crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_names_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
-                        "Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_call_analytics_stream_transcription_output::de_vocabulary_names_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-transcribe-vocabulary-names")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled(
+                                "Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output
@@ -194,6 +474,7 @@ pub fn de_start_call_analytics_stream_transcription_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionOutput,
     crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError,

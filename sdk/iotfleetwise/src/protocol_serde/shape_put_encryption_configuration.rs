@@ -4,6 +4,7 @@ pub fn de_put_encryption_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput,
     crate::operation::put_encryption_configuration::PutEncryptionConfigurationError,
@@ -113,6 +114,7 @@ pub fn de_put_encryption_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_encryption_configuration::PutEncryptionConfigurationOutput,
     crate::operation::put_encryption_configuration::PutEncryptionConfigurationError,

@@ -16,8 +16,8 @@ pub(crate) fn de_invalidation_payload(
 pub(crate) fn de_location_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Location");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Location");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub fn de_invalidation(inp: &[u8]) -> std::result::Result<crate::types::Invalidation, ::aws_smithy_xml::decode::XmlDecodeError> {

@@ -4,6 +4,7 @@ pub fn de_stop_runtime_session_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::stop_runtime_session::StopRuntimeSessionOutput,
     crate::operation::stop_runtime_session::StopRuntimeSessionError,
@@ -180,6 +181,7 @@ pub fn de_stop_runtime_session_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::stop_runtime_session::StopRuntimeSessionOutput,
     crate::operation::stop_runtime_session::StopRuntimeSessionError,
@@ -188,11 +190,25 @@ pub fn de_stop_runtime_session_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::stop_runtime_session::builders::StopRuntimeSessionOutputBuilder::default();
         output = output.set_runtime_session_id(
-            crate::protocol_serde::shape_stop_runtime_session_output::de_runtime_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::stop_runtime_session::StopRuntimeSessionError::unhandled(
-                    "Failed to parse runtimeSessionId from header `X-Amzn-Bedrock-AgentCore-Runtime-Session-Id",
-                )
-            })?,
+            match crate::protocol_serde::shape_stop_runtime_session_output::de_runtime_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Bedrock-AgentCore-Runtime-Session-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::stop_runtime_session::StopRuntimeSessionError::unhandled(
+                            "Failed to parse runtimeSessionId from header `X-Amzn-Bedrock-AgentCore-Runtime-Session-Id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_status_code(Some(_response_status as _));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

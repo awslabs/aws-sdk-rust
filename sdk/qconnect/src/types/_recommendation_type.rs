@@ -27,6 +27,7 @@
 ///     RecommendationType::IntentAnswerChunk => { /* ... */ },
 ///     RecommendationType::KnowledgeContent => { /* ... */ },
 ///     RecommendationType::NotesChunk => { /* ... */ },
+///     RecommendationType::ProactiveRecommendation => { /* ... */ },
 ///     RecommendationType::SuggestedMessage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -87,6 +88,8 @@ pub enum RecommendationType {
     #[allow(missing_docs)] // documentation missing in model
     NotesChunk,
     #[allow(missing_docs)] // documentation missing in model
+    ProactiveRecommendation,
+    #[allow(missing_docs)] // documentation missing in model
     SuggestedMessage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -110,6 +113,7 @@ impl ::std::convert::From<&str> for RecommendationType {
             "INTENT_ANSWER_CHUNK" => RecommendationType::IntentAnswerChunk,
             "KNOWLEDGE_CONTENT" => RecommendationType::KnowledgeContent,
             "NOTES_CHUNK" => RecommendationType::NotesChunk,
+            "PROACTIVE_RECOMMENDATION" => RecommendationType::ProactiveRecommendation,
             "SUGGESTED_MESSAGE" => RecommendationType::SuggestedMessage,
             other => RecommendationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -141,6 +145,7 @@ impl RecommendationType {
             RecommendationType::IntentAnswerChunk => "INTENT_ANSWER_CHUNK",
             RecommendationType::KnowledgeContent => "KNOWLEDGE_CONTENT",
             RecommendationType::NotesChunk => "NOTES_CHUNK",
+            RecommendationType::ProactiveRecommendation => "PROACTIVE_RECOMMENDATION",
             RecommendationType::SuggestedMessage => "SUGGESTED_MESSAGE",
             RecommendationType::Unknown(value) => value.as_str(),
         }
@@ -163,6 +168,7 @@ impl RecommendationType {
             "INTENT_ANSWER_CHUNK",
             "KNOWLEDGE_CONTENT",
             "NOTES_CHUNK",
+            "PROACTIVE_RECOMMENDATION",
             "SUGGESTED_MESSAGE",
         ]
     }
@@ -202,6 +208,7 @@ impl ::std::fmt::Display for RecommendationType {
             RecommendationType::IntentAnswerChunk => write!(f, "INTENT_ANSWER_CHUNK"),
             RecommendationType::KnowledgeContent => write!(f, "KNOWLEDGE_CONTENT"),
             RecommendationType::NotesChunk => write!(f, "NOTES_CHUNK"),
+            RecommendationType::ProactiveRecommendation => write!(f, "PROACTIVE_RECOMMENDATION"),
             RecommendationType::SuggestedMessage => write!(f, "SUGGESTED_MESSAGE"),
             RecommendationType::Unknown(value) => write!(f, "{value}"),
         }

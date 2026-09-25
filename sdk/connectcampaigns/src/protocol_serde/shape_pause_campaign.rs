@@ -4,6 +4,7 @@ pub fn de_pause_campaign_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::pause_campaign::PauseCampaignOutput, crate::operation::pause_campaign::PauseCampaignError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -25,9 +26,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -44,9 +61,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output)
@@ -63,9 +96,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -85,9 +134,25 @@ pub fn de_pause_campaign_http_error(
                 )
                 .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_invalid_campaign_state_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_invalid_campaign_state_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::invalid_campaign_state_exception_correct_errors(output)
@@ -104,9 +169,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
@@ -123,9 +204,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
@@ -142,9 +239,25 @@ pub fn de_pause_campaign_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::pause_campaign::PauseCampaignError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::pause_campaign::PauseCampaignError::unhandled("Failed to parse xAmzErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::pause_campaign::PauseCampaignError::unhandled(
+                                    "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
@@ -162,6 +275,7 @@ pub fn de_pause_campaign_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::pause_campaign::PauseCampaignOutput, crate::operation::pause_campaign::PauseCampaignError> {
     Ok({
         #[allow(unused_mut)]

@@ -26,6 +26,7 @@ pub struct BedrockEmbeddingModelConfiguration {
     pub video: ::std::option::Option<::std::vec::Vec<crate::types::VideoConfiguration>>,
     /// <p>Model-specific configuration for the embedding model, provided as a JSON object. Use this field to specify settings that apply to the embedding model that you selected, such as how audio and video files are divided into segments.</p>
     /// <p>The fields that this object accepts depend on the embedding model. For the settings that each model accepts, see the documentation for that model.</p>
+    /// <p>For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a> request that uses this field to configure a multimodal embedding model, see the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a> section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
     pub model_configuration: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl BedrockEmbeddingModelConfiguration {
@@ -63,6 +64,7 @@ impl BedrockEmbeddingModelConfiguration {
     }
     /// <p>Model-specific configuration for the embedding model, provided as a JSON object. Use this field to specify settings that apply to the embedding model that you selected, such as how audio and video files are divided into segments.</p>
     /// <p>The fields that this object accepts depend on the embedding model. For the settings that each model accepts, see the documentation for that model.</p>
+    /// <p>For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a> request that uses this field to configure a multimodal embedding model, see the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a> section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
     pub fn model_configuration(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.model_configuration.as_ref()
     }
@@ -191,18 +193,21 @@ impl BedrockEmbeddingModelConfigurationBuilder {
     }
     /// <p>Model-specific configuration for the embedding model, provided as a JSON object. Use this field to specify settings that apply to the embedding model that you selected, such as how audio and video files are divided into segments.</p>
     /// <p>The fields that this object accepts depend on the embedding model. For the settings that each model accepts, see the documentation for that model.</p>
+    /// <p>For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a> request that uses this field to configure a multimodal embedding model, see the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a> section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
     pub fn model_configuration(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.model_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Model-specific configuration for the embedding model, provided as a JSON object. Use this field to specify settings that apply to the embedding model that you selected, such as how audio and video files are divided into segments.</p>
     /// <p>The fields that this object accepts depend on the embedding model. For the settings that each model accepts, see the documentation for that model.</p>
+    /// <p>For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a> request that uses this field to configure a multimodal embedding model, see the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a> section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
     pub fn set_model_configuration(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.model_configuration = input;
         self
     }
     /// <p>Model-specific configuration for the embedding model, provided as a JSON object. Use this field to specify settings that apply to the embedding model that you selected, such as how audio and video files are divided into segments.</p>
     /// <p>The fields that this object accepts depend on the embedding model. For the settings that each model accepts, see the documentation for that model.</p>
+    /// <p>For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a> request that uses this field to configure a multimodal embedding model, see the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a> section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.</p>
     pub fn get_model_configuration(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.model_configuration
     }

@@ -281,6 +281,8 @@ pub use crate::types::_rist_router_output_configuration::RistRouterOutputConfigu
 
 pub use crate::types::_srt_listener_router_output_configuration::SrtListenerRouterOutputConfigurationBuilder;
 
+pub use crate::types::_rtmp_push_router_output_configuration::RtmpPushRouterOutputConfigurationBuilder;
+
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfigurationBuilder;
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigurationBuilder;
@@ -299,4 +301,8 @@ pub use crate::types::_srt_decryption_configuration::SrtDecryptionConfigurationB
 
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfigurationBuilder;
 
+pub use crate::types::_tls_encryption::TlsEncryptionBuilder;
+
 pub use crate::types::_interface::InterfaceBuilder;
+
+pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfigurationBuilder;

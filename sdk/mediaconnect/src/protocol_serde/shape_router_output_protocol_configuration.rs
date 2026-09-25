@@ -19,17 +19,23 @@ pub fn ser_router_output_protocol_configuration(
             )?;
             object_2.finish();
         }
+        crate::types::RouterOutputProtocolConfiguration::RtmpPush(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("rtmpPush").start_object();
+            crate::protocol_serde::shape_rtmp_push_router_output_configuration::ser_rtmp_push_router_output_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::RouterOutputProtocolConfiguration::SrtCaller(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_2.key("srtCaller").start_object();
-            crate::protocol_serde::shape_srt_caller_router_output_configuration::ser_srt_caller_router_output_configuration(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_2.key("srtCaller").start_object();
+            crate::protocol_serde::shape_srt_caller_router_output_configuration::ser_srt_caller_router_output_configuration(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::RouterOutputProtocolConfiguration::Rtp(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_2.key("rtp").start_object();
-            crate::protocol_serde::shape_rtp_router_output_configuration::ser_rtp_router_output_configuration(&mut object_4, inner)?;
-            object_4.finish();
+            let mut object_5 = object_2.key("rtp").start_object();
+            crate::protocol_serde::shape_rtp_router_output_configuration::ser_rtp_router_output_configuration(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::RouterOutputProtocolConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -94,6 +100,14 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SrtListener' cannot be null")
                             })?,
+                        )),
+                        "rtmpPush" => Some(crate::types::RouterOutputProtocolConfiguration::RtmpPush(
+                            crate::protocol_serde::shape_rtmp_push_router_output_configuration::de_rtmp_push_router_output_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'RtmpPush' cannot be null"))?,
                         )),
                         "srtCaller" => Some(crate::types::RouterOutputProtocolConfiguration::SrtCaller(
                             crate::protocol_serde::shape_srt_caller_router_output_configuration::de_srt_caller_router_output_configuration(

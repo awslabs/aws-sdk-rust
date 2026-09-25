@@ -4,6 +4,7 @@ pub fn de_describe_subscription_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_subscription::DescribeSubscriptionOutput,
     crate::operation::describe_subscription::DescribeSubscriptionError,
@@ -59,6 +60,7 @@ pub fn de_describe_subscription_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_subscription::DescribeSubscriptionOutput,
     crate::operation::describe_subscription::DescribeSubscriptionError,

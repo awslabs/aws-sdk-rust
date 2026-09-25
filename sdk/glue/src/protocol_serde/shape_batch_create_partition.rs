@@ -4,6 +4,7 @@ pub fn de_batch_create_partition_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_create_partition::BatchCreatePartitionOutput,
     crate::operation::batch_create_partition::BatchCreatePartitionError,
@@ -140,6 +141,7 @@ pub fn de_batch_create_partition_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_create_partition::BatchCreatePartitionOutput,
     crate::operation::batch_create_partition::BatchCreatePartitionError,

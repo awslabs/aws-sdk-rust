@@ -693,6 +693,8 @@ pub(crate) mod shape_rist_router_input_configuration;
 
 pub(crate) mod shape_rist_router_output_configuration;
 
+pub(crate) mod shape_rtmp_push_router_output_configuration;
+
 pub(crate) mod shape_rtp_router_input_configuration;
 
 pub(crate) mod shape_rtp_router_output_configuration;
@@ -717,6 +719,12 @@ pub(crate) mod shape_srt_decryption_configuration;
 
 pub(crate) mod shape_srt_encryption_configuration;
 
+pub(crate) mod shape_tls_encryption;
+
 pub(crate) mod shape_transport_stream;
 
 pub(crate) mod shape_interface;
+
+pub(crate) mod shape_tls_encryption_configuration;
+
+pub(crate) mod shape_public_tls_encryption_configuration;

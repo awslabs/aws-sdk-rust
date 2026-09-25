@@ -4,6 +4,7 @@ pub fn de_get_profile_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -82,18 +83,52 @@ pub fn de_get_profile_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_profile::GetProfileOutput, crate::operation::get_profile::GetProfileError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_profile::builders::GetProfileOutputBuilder::default();
         output = output.set_content_encoding(
-            crate::protocol_serde::shape_get_profile_output::de_content_encoding_header(_response_headers).map_err(|_| {
-                crate::operation::get_profile::GetProfileError::unhandled("Failed to parse contentEncoding from header `Content-Encoding")
-            })?,
+            match crate::protocol_serde::shape_get_profile_output::de_content_encoding_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Encoding")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_profile::GetProfileError::unhandled(
+                            "Failed to parse contentEncoding from header `Content-Encoding`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_profile_output::de_content_type_header(_response_headers)
-                .map_err(|_| crate::operation::get_profile::GetProfileError::unhandled("Failed to parse contentType from header `Content-Type"))?,
+            match crate::protocol_serde::shape_get_profile_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_profile::GetProfileError::unhandled(
+                            "Failed to parse contentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_profile(crate::protocol_serde::shape_get_profile_output::de_profile_payload(_response_body)?);
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

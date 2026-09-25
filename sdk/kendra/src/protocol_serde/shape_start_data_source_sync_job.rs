@@ -4,6 +4,7 @@ pub fn de_start_data_source_sync_job_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput,
     crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
@@ -138,6 +139,7 @@ pub fn de_start_data_source_sync_job_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput,
     crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,

@@ -165,6 +165,8 @@ pub use crate::types::_retrieval_filter_configuration::RetrievalFilterConfigurat
 
 pub use crate::types::_retrieve_result::RetrieveResult;
 
+pub use crate::types::_retrieve_error::RetrieveError;
+
 pub use crate::types::_session_summary::SessionSummary;
 
 pub use crate::types::_content_association_type::ContentAssociationType;
@@ -316,6 +318,8 @@ pub use crate::types::_query_result_type::QueryResultType;
 pub use crate::types::_filter_attribute::FilterAttribute;
 
 pub use crate::types::_reference_type::ReferenceType;
+
+pub use crate::types::_retrieve_error_code::RetrieveErrorCode;
 
 pub use crate::types::_filter::Filter;
 
@@ -496,6 +500,8 @@ pub use crate::types::_suggested_message_data_details::SuggestedMessageDataDetai
 pub use crate::types::_notes_data_details::NotesDataDetails;
 
 pub use crate::types::_notes_chunk_data_details::NotesChunkDataDetails;
+
+pub use crate::types::_proactive_recommendation_data_details::ProactiveRecommendationDataDetails;
 
 pub use crate::types::_hierarchical_chunking_level_configuration::HierarchicalChunkingLevelConfiguration;
 
@@ -933,6 +939,8 @@ mod _participant;
 
 mod _priority;
 
+mod _proactive_recommendation_data_details;
+
 mod _push_adm_message_template_content;
 
 mod _push_apns_message_template_content;
@@ -1014,6 +1022,10 @@ mod _result_data;
 mod _retrieval_configuration;
 
 mod _retrieval_filter_configuration;
+
+mod _retrieve_error;
+
+mod _retrieve_error_code;
 
 mod _retrieve_result;
 

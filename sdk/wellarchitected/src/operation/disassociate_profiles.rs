@@ -216,9 +216,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for Disassoci
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_disassociate_profiles::de_disassociate_profiles_http_error(status, headers, body)
+            crate::protocol_serde::shape_disassociate_profiles::de_disassociate_profiles_http_error(status, headers, body, _cfg)
         } else {
-            crate::protocol_serde::shape_disassociate_profiles::de_disassociate_profiles_http_response(status, headers, body)
+            crate::protocol_serde::shape_disassociate_profiles::de_disassociate_profiles_http_response(status, headers, body, _cfg)
         };
         crate::protocol_serde::type_erase_result(parse_result)
     }
@@ -308,10 +308,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateP
             .ok_or("failed to downcast to DisassociateProfilesInput")?;
 
         let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

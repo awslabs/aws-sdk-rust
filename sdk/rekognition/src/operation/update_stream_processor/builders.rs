@@ -22,6 +22,10 @@ impl crate::operation::update_stream_processor::builders::UpdateStreamProcessorI
 }
 /// Fluent builder constructing a request to `UpdateStreamProcessor`.
 ///
+/// <important>
+/// <p>Service availability notice: Streaming Video and Bulk Image Analysis is no longer available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition feature availability changes</a>.</p>
+/// <p><b>This change does not impact the availability of other Amazon Rekognition features.</b></p>
+/// </important>
 /// <p>Allows you to update a stream processor. You can change some settings and regions of interest and delete certain parameters.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStreamProcessorFluentBuilder {

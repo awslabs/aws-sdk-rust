@@ -4,6 +4,7 @@ pub fn de_disassociate_signin_delegate_groups_from_account_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput,
     crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountError,
@@ -147,6 +148,7 @@ pub fn de_disassociate_signin_delegate_groups_from_account_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountOutput,
     crate::operation::disassociate_signin_delegate_groups_from_account::DisassociateSigninDelegateGroupsFromAccountError,

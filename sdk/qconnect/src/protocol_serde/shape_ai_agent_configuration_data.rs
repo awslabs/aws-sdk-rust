@@ -6,6 +6,9 @@ pub fn ser_ai_agent_configuration_data(
     {
         object.key("aiAgentId").string(input.ai_agent_id.as_str());
     }
+    if let Some(var_1) = &input.enabled {
+        object.key("enabled").boolean(*var_1);
+    }
     Ok(())
 }
 
@@ -37,6 +40,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "enabled" => {
+                            builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

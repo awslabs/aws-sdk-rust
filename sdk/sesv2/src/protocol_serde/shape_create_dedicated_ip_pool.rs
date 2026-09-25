@@ -4,6 +4,7 @@ pub fn de_create_dedicated_ip_pool_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
     crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
@@ -109,6 +110,7 @@ pub fn de_create_dedicated_ip_pool_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
     crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,

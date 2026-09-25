@@ -4,6 +4,7 @@ pub fn de_invoke_endpoint_async_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput,
     crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
@@ -74,6 +75,7 @@ pub fn de_invoke_endpoint_async_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput,
     crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
@@ -84,18 +86,46 @@ pub fn de_invoke_endpoint_async_http_response(
         output = crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async(_response_body, output)
             .map_err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled)?;
         output = output.set_failure_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
-                    "Failed to parse FailureLocation from header `X-Amzn-SageMaker-FailureLocation",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_endpoint_async_output::de_failure_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-SageMaker-FailureLocation")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
+                            "Failed to parse FailureLocation from header `X-Amzn-SageMaker-FailureLocation`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_output_location(
-            crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
-                    "Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_endpoint_async_output::de_output_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-SageMaker-OutputLocation")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError::unhandled(
+                            "Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

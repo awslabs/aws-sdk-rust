@@ -77,6 +77,8 @@ pub use crate::types::_threat_evidence_shape::ThreatEvidenceShapeBuilder;
 
 pub use crate::types::_document_info::DocumentInfoBuilder;
 
+pub use crate::types::_actor_message::ActorMessageBuilder;
+
 pub use crate::types::_artifact_summary::ArtifactSummaryBuilder;
 
 pub use crate::types::_code_review_job_summary::CodeReviewJobSummaryBuilder;

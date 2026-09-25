@@ -65,3 +65,22 @@ where
         )),
     }
 }
+
+pub fn ser_federated_table(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::FederatedTable,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.identifier {
+        object.key("Identifier").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.database_identifier {
+        object.key("DatabaseIdentifier").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.connection_name {
+        object.key("ConnectionName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.connection_type {
+        object.key("ConnectionType").string(var_4.as_str());
+    }
+    Ok(())
+}

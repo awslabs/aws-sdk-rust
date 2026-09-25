@@ -33,6 +33,8 @@ pub use crate::types::_abbreviated_plan::AbbreviatedPlan;
 
 pub use crate::types::_route53_health_check::Route53HealthCheck;
 
+pub use crate::types::_service_quota_warning_summary::ServiceQuotaWarningSummary;
+
 pub use crate::types::_workflow::Workflow;
 
 pub use crate::types::_associated_alarm::AssociatedAlarm;
@@ -52,6 +54,8 @@ pub use crate::types::_execution_event_type::ExecutionEventType;
 pub use crate::types::_execution_block_type::ExecutionBlockType;
 
 pub use crate::types::_route53_health_check_status::Route53HealthCheckStatus;
+
+pub use crate::types::_service_quota_warning_status::ServiceQuotaWarningStatus;
 
 pub use crate::types::_workflow_target_action::WorkflowTargetAction;
 
@@ -118,6 +122,8 @@ pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
 pub use crate::types::_ec2_ungraceful::Ec2Ungraceful;
 
 pub use crate::types::_ec2_asg_capacity_monitoring_approach::Ec2AsgCapacityMonitoringApproach;
+
+pub use crate::types::_wait_elb_target_group_healthy::WaitElbTargetGroupHealthy;
 
 pub use crate::types::_global_aurora_default_behavior::GlobalAuroraDefaultBehavior;
 
@@ -337,6 +343,10 @@ mod _s3_report_output_configuration;
 
 mod _service;
 
+mod _service_quota_warning_status;
+
+mod _service_quota_warning_summary;
+
 mod _step;
 
 mod _step_state;
@@ -350,6 +360,8 @@ mod _trigger_condition;
 mod _update_plan_execution_action;
 
 mod _update_plan_execution_step_action;
+
+mod _wait_elb_target_group_healthy;
 
 mod _workflow;
 

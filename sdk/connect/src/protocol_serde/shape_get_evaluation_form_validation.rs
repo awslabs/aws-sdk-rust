@@ -4,6 +4,7 @@ pub fn de_get_evaluation_form_validation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationOutput,
     crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError,
@@ -95,6 +96,7 @@ pub fn de_get_evaluation_form_validation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationOutput,
     crate::operation::get_evaluation_form_validation::GetEvaluationFormValidationError,

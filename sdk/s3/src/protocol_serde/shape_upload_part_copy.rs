@@ -4,6 +4,7 @@ pub fn de_upload_part_copy_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::upload_part_copy::UploadPartCopyOutput, crate::operation::upload_part_copy::UploadPartCopyError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -19,61 +20,160 @@ pub fn de_upload_part_copy_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::upload_part_copy::UploadPartCopyOutput, crate::operation::upload_part_copy::UploadPartCopyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::upload_part_copy::builders::UploadPartCopyOutputBuilder::default();
         output = output.set_bucket_key_enabled(
-            crate::protocol_serde::shape_upload_part_copy_output::de_bucket_key_enabled_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_bucket_key_enabled_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_copy_part_result(crate::protocol_serde::shape_upload_part_copy_output::de_copy_part_result_payload(
             _response_body,
         )?);
         output = output.set_copy_source_version_id(
-            crate::protocol_serde::shape_upload_part_copy_output::de_copy_source_version_id_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_copy_source_version_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-copy-source-version-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse CopySourceVersionId from header `x-amz-copy-source-version-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_request_charged(
-            crate::protocol_serde::shape_upload_part_copy_output::de_request_charged_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_request_charged_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-request-charged")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse RequestCharged from header `x-amz-request-charged`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_sse_customer_algorithm(
-            crate::protocol_serde::shape_upload_part_copy_output::de_sse_customer_algorithm_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_sse_customer_algorithm_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-customer-algorithm")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse SSECustomerAlgorithm from header `x-amz-server-side-encryption-customer-algorithm`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_sse_customer_key_md5(
-            crate::protocol_serde::shape_upload_part_copy_output::de_sse_customer_key_md5_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_sse_customer_key_md5_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-customer-key-MD5")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse SSECustomerKeyMD5 from header `x-amz-server-side-encryption-customer-key-MD5`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_ssekms_key_id(
-            crate::protocol_serde::shape_upload_part_copy_output::de_ssekms_key_id_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_ssekms_key_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_server_side_encryption(
-            crate::protocol_serde::shape_upload_part_copy_output::de_server_side_encryption_header(_response_headers).map_err(|_| {
-                crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
-                    "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
-                )
-            })?,
+            match crate::protocol_serde::shape_upload_part_copy_output::de_server_side_encryption_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::upload_part_copy::UploadPartCopyError::unhandled(
+                            "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

@@ -4,6 +4,7 @@ pub fn de_restore_address_to_classic_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
     crate::operation::restore_address_to_classic::RestoreAddressToClassicError,
@@ -23,6 +24,7 @@ pub fn de_restore_address_to_classic_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput,
     crate::operation::restore_address_to_classic::RestoreAddressToClassicError,

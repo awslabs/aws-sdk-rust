@@ -4,6 +4,7 @@ pub fn de_detect_stack_resource_drift_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
     crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
@@ -23,6 +24,7 @@ pub fn de_detect_stack_resource_drift_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
     crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,

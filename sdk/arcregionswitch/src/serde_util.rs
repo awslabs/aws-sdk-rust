@@ -80,6 +80,15 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn list_service_quota_warnings_output_output_correct_errors(
+    mut builder: crate::operation::list_service_quota_warnings::builders::ListServiceQuotaWarningsOutputBuilder,
+) -> crate::operation::list_service_quota_warnings::builders::ListServiceQuotaWarningsOutputBuilder {
+    if builder.service_quota_warning_summaries.is_none() {
+        builder.service_quota_warning_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -200,6 +209,24 @@ pub(crate) fn route53_health_check_correct_errors(
     }
     if builder.region.is_none() {
         builder.region = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn service_quota_warning_summary_correct_errors(
+    mut builder: crate::types::builders::ServiceQuotaWarningSummaryBuilder,
+) -> crate::types::builders::ServiceQuotaWarningSummaryBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.quota_region.is_none() {
+        builder.quota_region = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ServiceQuotaWarningStatus>().ok()
+    }
+    if builder.plan_arn.is_none() {
+        builder.plan_arn = Some(Default::default())
     }
     builder
 }

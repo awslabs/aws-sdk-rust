@@ -4,6 +4,7 @@ pub fn de_merge_pull_request_by_three_way_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
     crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
@@ -722,6 +723,7 @@ pub fn de_merge_pull_request_by_three_way_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
     crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,

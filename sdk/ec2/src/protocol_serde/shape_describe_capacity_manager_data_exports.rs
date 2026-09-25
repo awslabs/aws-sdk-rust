@@ -4,6 +4,7 @@ pub fn de_describe_capacity_manager_data_exports_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsOutput,
     crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError,
@@ -21,6 +22,7 @@ pub fn de_describe_capacity_manager_data_exports_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsOutput,
     crate::operation::describe_capacity_manager_data_exports::DescribeCapacityManagerDataExportsError,

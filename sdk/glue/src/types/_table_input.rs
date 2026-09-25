@@ -47,6 +47,8 @@ pub struct TableInput {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>
     pub target_table: ::std::option::Option<crate::types::TableIdentifier>,
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog. Specify this field to create a federated table, which points to a table in an external metastore instead of describing data managed in the Glue Data Catalog.</p>
+    pub federated_table: ::std::option::Option<crate::types::FederatedTable>,
     /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
     pub view_definition: ::std::option::Option<crate::types::ViewDefinitionInput>,
 }
@@ -123,6 +125,10 @@ impl TableInput {
     pub fn target_table(&self) -> ::std::option::Option<&crate::types::TableIdentifier> {
         self.target_table.as_ref()
     }
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog. Specify this field to create a federated table, which points to a table in an external metastore instead of describing data managed in the Glue Data Catalog.</p>
+    pub fn federated_table(&self) -> ::std::option::Option<&crate::types::FederatedTable> {
+        self.federated_table.as_ref()
+    }
     /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
     pub fn view_definition(&self) -> ::std::option::Option<&crate::types::ViewDefinitionInput> {
         self.view_definition.as_ref()
@@ -152,6 +158,7 @@ pub struct TableInputBuilder {
     pub(crate) table_type: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) target_table: ::std::option::Option<crate::types::TableIdentifier>,
+    pub(crate) federated_table: ::std::option::Option<crate::types::FederatedTable>,
     pub(crate) view_definition: ::std::option::Option<crate::types::ViewDefinitionInput>,
 }
 impl TableInputBuilder {
@@ -401,6 +408,20 @@ impl TableInputBuilder {
     pub fn get_target_table(&self) -> &::std::option::Option<crate::types::TableIdentifier> {
         &self.target_table
     }
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog. Specify this field to create a federated table, which points to a table in an external metastore instead of describing data managed in the Glue Data Catalog.</p>
+    pub fn federated_table(mut self, input: crate::types::FederatedTable) -> Self {
+        self.federated_table = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog. Specify this field to create a federated table, which points to a table in an external metastore instead of describing data managed in the Glue Data Catalog.</p>
+    pub fn set_federated_table(mut self, input: ::std::option::Option<crate::types::FederatedTable>) -> Self {
+        self.federated_table = input;
+        self
+    }
+    /// <p>A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog. Specify this field to create a federated table, which points to a table in an external metastore instead of describing data managed in the Glue Data Catalog.</p>
+    pub fn get_federated_table(&self) -> &::std::option::Option<crate::types::FederatedTable> {
+        &self.federated_table
+    }
     /// <p>A structure that contains all the information that defines the view, including the dialect or dialects for the view, and the query.</p>
     pub fn view_definition(mut self, input: crate::types::ViewDefinitionInput) -> Self {
         self.view_definition = ::std::option::Option::Some(input);
@@ -438,6 +459,7 @@ impl TableInputBuilder {
             table_type: self.table_type,
             parameters: self.parameters,
             target_table: self.target_table,
+            federated_table: self.federated_table,
             view_definition: self.view_definition,
         })
     }

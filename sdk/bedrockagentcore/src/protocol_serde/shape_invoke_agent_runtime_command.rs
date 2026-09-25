@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_agent_runtime_command_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandOutput,
     crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError,
@@ -16,50 +17,146 @@ pub fn de_invoke_agent_runtime_command_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke_agent_runtime_command::builders::InvokeAgentRuntimeCommandOutputBuilder::default();
         output = output.set_baggage(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_baggage_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse baggage from header `baggage",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_baggage_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("baggage")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse baggage from header `baggage`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse contentType from header `Content-Type",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse contentType from header `Content-Type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_runtime_session_id(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_runtime_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse runtimeSessionId from header `X-Amzn-Bedrock-AgentCore-Runtime-Session-Id",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_runtime_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Bedrock-AgentCore-Runtime-Session-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse runtimeSessionId from header `X-Amzn-Bedrock-AgentCore-Runtime-Session-Id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_status_code(Some(_response_status as _));
         output = output.set_stream(Some(crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_stream_payload(
             _response_body,
         )?));
         output = output.set_trace_id(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_id_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse traceId from header `X-Amzn-Trace-Id",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Trace-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse traceId from header `X-Amzn-Trace-Id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_trace_parent(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_parent_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse traceParent from header `traceparent",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_parent_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("traceparent")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse traceParent from header `traceparent`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_trace_state(
-            crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_state_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
-                    "Failed to parse traceState from header `tracestate",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_agent_runtime_command_output::de_trace_state_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("tracestate")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError::unhandled(
+                                "Failed to parse traceState from header `tracestate`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::invoke_agent_runtime_command_output_output_correct_errors(output)
@@ -73,6 +170,7 @@ pub fn de_invoke_agent_runtime_command_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandOutput,
     crate::operation::invoke_agent_runtime_command::InvokeAgentRuntimeCommandError,

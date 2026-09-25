@@ -4,6 +4,7 @@ pub fn de_send_whats_app_call_event_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_whats_app_call_event::SendWhatsAppCallEventOutput,
     crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError,
@@ -169,6 +170,7 @@ pub fn de_send_whats_app_call_event_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_whats_app_call_event::SendWhatsAppCallEventOutput,
     crate::operation::send_whats_app_call_event::SendWhatsAppCallEventError,

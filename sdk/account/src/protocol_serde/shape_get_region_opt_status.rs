@@ -4,6 +4,7 @@ pub fn de_get_region_opt_status_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_region_opt_status::GetRegionOptStatusOutput,
     crate::operation::get_region_opt_status::GetRegionOptStatusError,
@@ -28,11 +29,25 @@ pub fn de_get_region_opt_status_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled)?;
                 output = output.set_error_type(
-                    crate::protocol_serde::shape_access_denied_exception::de_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
-                            "Failed to parse errorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
+                                    "Failed to parse errorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -49,11 +64,25 @@ pub fn de_get_region_opt_status_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled)?;
                 output = output.set_error_type(
-                    crate::protocol_serde::shape_internal_server_exception::de_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
-                            "Failed to parse errorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_internal_server_exception::de_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
+                                    "Failed to parse errorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -70,11 +99,25 @@ pub fn de_get_region_opt_status_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled)?;
                 output = output.set_error_type(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
-                            "Failed to parse errorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_too_many_requests_exception::de_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::get_region_opt_status::GetRegionOptStatusError::unhandled(
+                                    "Failed to parse errorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::too_many_requests_exception_correct_errors(output)
@@ -106,6 +149,7 @@ pub fn de_get_region_opt_status_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_region_opt_status::GetRegionOptStatusOutput,
     crate::operation::get_region_opt_status::GetRegionOptStatusError,

@@ -6,12 +6,18 @@
 pub struct AiAgentConfigurationData {
     /// <p>The ID of the AI Agent to be configured.</p>
     pub ai_agent_id: ::std::string::String,
+    /// <p>Indicates whether the AI Agent configured for this AI Agent type is enabled. When this value is omitted or set to true, the configured AI Agent runs; when set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this value to false is currently supported only for the <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to false are rejected with a validation error.</p>
+    pub enabled: ::std::option::Option<bool>,
 }
 impl AiAgentConfigurationData {
     /// <p>The ID of the AI Agent to be configured.</p>
     pub fn ai_agent_id(&self) -> &str {
         use std::ops::Deref;
         self.ai_agent_id.deref()
+    }
+    /// <p>Indicates whether the AI Agent configured for this AI Agent type is enabled. When this value is omitted or set to true, the configured AI Agent runs; when set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this value to false is currently supported only for the <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to false are rejected with a validation error.</p>
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
+        self.enabled
     }
 }
 impl AiAgentConfigurationData {
@@ -26,6 +32,7 @@ impl AiAgentConfigurationData {
 #[non_exhaustive]
 pub struct AiAgentConfigurationDataBuilder {
     pub(crate) ai_agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AiAgentConfigurationDataBuilder {
     /// <p>The ID of the AI Agent to be configured.</p>
@@ -43,6 +50,20 @@ impl AiAgentConfigurationDataBuilder {
     pub fn get_ai_agent_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ai_agent_id
     }
+    /// <p>Indicates whether the AI Agent configured for this AI Agent type is enabled. When this value is omitted or set to true, the configured AI Agent runs; when set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this value to false is currently supported only for the <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to false are rejected with a validation error.</p>
+    pub fn enabled(mut self, input: bool) -> Self {
+        self.enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the AI Agent configured for this AI Agent type is enabled. When this value is omitted or set to true, the configured AI Agent runs; when set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this value to false is currently supported only for the <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to false are rejected with a validation error.</p>
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enabled = input;
+        self
+    }
+    /// <p>Indicates whether the AI Agent configured for this AI Agent type is enabled. When this value is omitted or set to true, the configured AI Agent runs; when set to false, the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this value to false is currently supported only for the <code>ANSWER_RECOMMENDATION</code> AI Agent type; other requests to set it to false are rejected with a validation error.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`AiAgentConfigurationData`](crate::types::AiAgentConfigurationData).
     /// This method will fail if any of the following fields are not set:
     /// - [`ai_agent_id`](crate::types::builders::AiAgentConfigurationDataBuilder::ai_agent_id)
@@ -54,6 +75,7 @@ impl AiAgentConfigurationDataBuilder {
                     "ai_agent_id was not specified but it is required when building AiAgentConfigurationData",
                 )
             })?,
+            enabled: self.enabled,
         })
     }
 }

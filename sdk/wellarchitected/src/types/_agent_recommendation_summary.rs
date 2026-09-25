@@ -8,6 +8,8 @@ pub struct AgentRecommendationSummary {
     pub recommendation_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the associated profile.</p>
     pub profile_arn: ::std::string::String,
+    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the recommendation.</p>
     pub title: ::std::string::String,
     /// <p>A description of the recommendation.</p>
@@ -57,6 +59,10 @@ impl AgentRecommendationSummary {
     pub fn profile_arn(&self) -> &str {
         use std::ops::Deref;
         self.profile_arn.deref()
+    }
+    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    pub fn generation_id(&self) -> ::std::option::Option<&str> {
+        self.generation_id.as_deref()
     }
     /// <p>The title of the recommendation.</p>
     pub fn title(&self) -> &str {
@@ -149,6 +155,7 @@ impl ::std::fmt::Debug for AgentRecommendationSummary {
         let mut formatter = f.debug_struct("AgentRecommendationSummary");
         formatter.field("recommendation_arn", &self.recommendation_arn);
         formatter.field("profile_arn", &self.profile_arn);
+        formatter.field("generation_id", &self.generation_id);
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
@@ -184,6 +191,7 @@ impl AgentRecommendationSummary {
 pub struct AgentRecommendationSummaryBuilder {
     pub(crate) recommendation_arn: ::std::option::Option<::std::string::String>,
     pub(crate) profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) generation_id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::RecommendationType>,
@@ -234,6 +242,20 @@ impl AgentRecommendationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the associated profile.</p>
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_arn
+    }
+    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    pub fn generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.generation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.generation_id = input;
+        self
+    }
+    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.generation_id
     }
     /// <p>The title of the recommendation.</p>
     /// This field is required.
@@ -560,6 +582,7 @@ impl AgentRecommendationSummaryBuilder {
                     "profile_arn was not specified but it is required when building AgentRecommendationSummary",
                 )
             })?,
+            generation_id: self.generation_id,
             title: self.title.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",
@@ -642,6 +665,7 @@ impl ::std::fmt::Debug for AgentRecommendationSummaryBuilder {
         let mut formatter = f.debug_struct("AgentRecommendationSummaryBuilder");
         formatter.field("recommendation_arn", &self.recommendation_arn);
         formatter.field("profile_arn", &self.profile_arn);
+        formatter.field("generation_id", &self.generation_id);
         formatter.field("title", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);

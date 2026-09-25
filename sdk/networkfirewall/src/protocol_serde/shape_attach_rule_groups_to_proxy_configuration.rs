@@ -4,6 +4,7 @@ pub fn de_attach_rule_groups_to_proxy_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationOutput,
     crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError,
@@ -102,6 +103,7 @@ pub fn de_attach_rule_groups_to_proxy_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationOutput,
     crate::operation::attach_rule_groups_to_proxy_configuration::AttachRuleGroupsToProxyConfigurationError,

@@ -259,6 +259,8 @@ mod import_security_requirements;
 
 mod initiate_provider_registration;
 
+mod list_actor_messages;
+
 mod list_agent_spaces;
 
 mod list_applications;

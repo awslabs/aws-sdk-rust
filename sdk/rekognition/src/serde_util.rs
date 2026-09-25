@@ -102,6 +102,15 @@ pub(crate) fn challenge_correct_errors(mut builder: crate::types::builders::Chal
     builder
 }
 
+pub(crate) fn session_metadata_correct_errors(
+    mut builder: crate::types::builders::SessionMetadataBuilder,
+) -> crate::types::builders::SessionMetadataBuilder {
+    if builder.sdk_type.is_none() {
+        builder.sdk_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stream_processor_data_sharing_preference_correct_errors(
     mut builder: crate::types::builders::StreamProcessorDataSharingPreferenceBuilder,
 ) -> crate::types::builders::StreamProcessorDataSharingPreferenceBuilder {
@@ -125,6 +134,16 @@ pub(crate) fn connected_home_settings_correct_errors(
 ) -> crate::types::builders::ConnectedHomeSettingsBuilder {
     if builder.labels.is_none() {
         builder.labels = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn feedback_item_correct_errors(mut builder: crate::types::builders::FeedbackItemBuilder) -> crate::types::builders::FeedbackItemBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::FeedbackCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

@@ -14,6 +14,8 @@ pub struct Ec2AsgCapacityIncreaseConfiguration {
     pub target_percent: i32,
     /// <p>The monitoring approach that you specify EC2 Auto Scaling groups for the configuration.</p>
     pub capacity_monitoring_approach: crate::types::Ec2AsgCapacityMonitoringApproach,
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the group's new desired capacity calculated in the step.</p>
+    pub wait_elb_target_group_healthy: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>,
 }
 impl Ec2AsgCapacityIncreaseConfiguration {
     /// <p>The timeout value specified for the configuration.</p>
@@ -37,6 +39,10 @@ impl Ec2AsgCapacityIncreaseConfiguration {
     pub fn capacity_monitoring_approach(&self) -> &crate::types::Ec2AsgCapacityMonitoringApproach {
         &self.capacity_monitoring_approach
     }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the group's new desired capacity calculated in the step.</p>
+    pub fn wait_elb_target_group_healthy(&self) -> ::std::option::Option<&crate::types::WaitElbTargetGroupHealthy> {
+        self.wait_elb_target_group_healthy.as_ref()
+    }
 }
 impl Ec2AsgCapacityIncreaseConfiguration {
     /// Creates a new builder-style object to manufacture [`Ec2AsgCapacityIncreaseConfiguration`](crate::types::Ec2AsgCapacityIncreaseConfiguration).
@@ -54,6 +60,7 @@ pub struct Ec2AsgCapacityIncreaseConfigurationBuilder {
     pub(crate) ungraceful: ::std::option::Option<crate::types::Ec2Ungraceful>,
     pub(crate) target_percent: ::std::option::Option<i32>,
     pub(crate) capacity_monitoring_approach: ::std::option::Option<crate::types::Ec2AsgCapacityMonitoringApproach>,
+    pub(crate) wait_elb_target_group_healthy: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>,
 }
 impl Ec2AsgCapacityIncreaseConfigurationBuilder {
     /// <p>The timeout value specified for the configuration.</p>
@@ -132,6 +139,20 @@ impl Ec2AsgCapacityIncreaseConfigurationBuilder {
     pub fn get_capacity_monitoring_approach(&self) -> &::std::option::Option<crate::types::Ec2AsgCapacityMonitoringApproach> {
         &self.capacity_monitoring_approach
     }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the group's new desired capacity calculated in the step.</p>
+    pub fn wait_elb_target_group_healthy(mut self, input: crate::types::WaitElbTargetGroupHealthy) -> Self {
+        self.wait_elb_target_group_healthy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the group's new desired capacity calculated in the step.</p>
+    pub fn set_wait_elb_target_group_healthy(mut self, input: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>) -> Self {
+        self.wait_elb_target_group_healthy = input;
+        self
+    }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the group's new desired capacity calculated in the step.</p>
+    pub fn get_wait_elb_target_group_healthy(&self) -> &::std::option::Option<crate::types::WaitElbTargetGroupHealthy> {
+        &self.wait_elb_target_group_healthy
+    }
     /// Consumes the builder and constructs a [`Ec2AsgCapacityIncreaseConfiguration`](crate::types::Ec2AsgCapacityIncreaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`asgs`](crate::types::builders::Ec2AsgCapacityIncreaseConfigurationBuilder::asgs)
@@ -151,6 +172,7 @@ impl Ec2AsgCapacityIncreaseConfigurationBuilder {
                     .parse::<crate::types::Ec2AsgCapacityMonitoringApproach>()
                     .expect("static value validated to member"),
             ),
+            wait_elb_target_group_healthy: self.wait_elb_target_group_healthy,
         })
     }
 }

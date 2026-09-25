@@ -35,17 +35,20 @@ pub fn ser_get_tables_input_input(
         crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.include_status_details {
-        object.key("IncludeStatusDetails").boolean(*var_10);
+    if let Some(var_10) = &input.resource_share_type {
+        object.key("ResourceShareType").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.attributes_to_get {
-        let mut array_12 = object.key("AttributesToGet").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.include_status_details {
+        object.key("IncludeStatusDetails").boolean(*var_11);
+    }
+    if let Some(var_12) = &input.attributes_to_get {
+        let mut array_13 = object.key("AttributesToGet").start_array();
+        for item_14 in var_12 {
             {
-                array_12.value().string(item_13.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
     Ok(())
 }

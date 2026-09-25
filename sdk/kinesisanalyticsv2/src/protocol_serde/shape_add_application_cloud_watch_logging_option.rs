@@ -4,6 +4,7 @@ pub fn de_add_application_cloud_watch_logging_option_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
     crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,
@@ -127,6 +128,7 @@ pub fn de_add_application_cloud_watch_logging_option_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
     crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,

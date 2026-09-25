@@ -4,6 +4,7 @@ pub fn de_put_asset_model_interface_relationship_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipOutput,
     crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError,
@@ -129,6 +130,7 @@ pub fn de_put_asset_model_interface_relationship_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipOutput,
     crate::operation::put_asset_model_interface_relationship::PutAssetModelInterfaceRelationshipError,

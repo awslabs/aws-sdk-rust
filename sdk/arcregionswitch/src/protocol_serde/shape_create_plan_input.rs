@@ -45,30 +45,33 @@ pub fn ser_create_plan_input_input(
         encoder.str("reportConfiguration");
         crate::protocol_serde::shape_report_configuration::ser_report_configuration(encoder, var_11)?;
     }
-    if let Some(var_12) = &input.name {
-        encoder.str("name").str(var_12.as_str());
+    if let Some(var_12) = &input.service_quota_checks_enabled {
+        encoder.str("serviceQuotaChecksEnabled").boolean(*var_12);
     }
-    if let Some(var_13) = &input.regions {
+    if let Some(var_13) = &input.name {
+        encoder.str("name").str(var_13.as_str());
+    }
+    if let Some(var_14) = &input.regions {
         encoder.str("regions");
-        encoder.array((*var_13).len());
-        for item_14 in var_13 {
+        encoder.array((*var_14).len());
+        for item_15 in var_14 {
             {
-                encoder.str(item_14.as_str());
+                encoder.str(item_15.as_str());
             }
         }
     }
-    if let Some(var_15) = &input.recovery_approach {
-        encoder.str("recoveryApproach").str(var_15.as_str());
+    if let Some(var_16) = &input.recovery_approach {
+        encoder.str("recoveryApproach").str(var_16.as_str());
     }
-    if let Some(var_16) = &input.primary_region {
-        encoder.str("primaryRegion").str(var_16.as_str());
+    if let Some(var_17) = &input.primary_region {
+        encoder.str("primaryRegion").str(var_17.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_18) = &input.tags {
         encoder.str("tags");
-        encoder.map((*var_17).len());
-        for (key_18, value_19) in var_17 {
+        encoder.map((*var_18).len());
+        for (key_19, value_20) in var_18 {
             {
-                encoder.str(key_18.as_str()).str(value_19.as_str());
+                encoder.str(key_19.as_str()).str(value_20.as_str());
             }
         }
     }

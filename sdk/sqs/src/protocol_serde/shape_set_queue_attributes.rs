@@ -4,6 +4,7 @@ pub fn de_set_queue_attributes_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::set_queue_attributes::SetQueueAttributesOutput,
     crate::operation::set_queue_attributes::SetQueueAttributesError,
@@ -149,6 +150,7 @@ pub fn de_set_queue_attributes_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::set_queue_attributes::SetQueueAttributesOutput,
     crate::operation::set_queue_attributes::SetQueueAttributesError,

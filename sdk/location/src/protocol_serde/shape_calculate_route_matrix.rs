@@ -4,6 +4,7 @@ pub fn de_calculate_route_matrix_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
     crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
@@ -99,6 +100,7 @@ pub fn de_calculate_route_matrix_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
     crate::operation::calculate_route_matrix::CalculateRouteMatrixError,

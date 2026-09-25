@@ -4,6 +4,7 @@ pub fn de_put_snapshot_block_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::put_snapshot_block::PutSnapshotBlockOutput, crate::operation::put_snapshot_block::PutSnapshotBlockError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -121,21 +122,52 @@ pub fn de_put_snapshot_block_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::put_snapshot_block::PutSnapshotBlockOutput, crate::operation::put_snapshot_block::PutSnapshotBlockError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder::default();
         output = output.set_checksum(
-            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_header(_response_headers).map_err(|_| {
-                crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled("Failed to parse Checksum from header `x-amz-Checksum")
-            })?,
+            match crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-Checksum")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(
+                            "Failed to parse Checksum from header `x-amz-Checksum`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_algorithm(
-            crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_algorithm_header(_response_headers).map_err(|_| {
-                crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(
-                    "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_snapshot_block_output::de_checksum_algorithm_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-Checksum-Algorithm")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_snapshot_block::PutSnapshotBlockError::unhandled(
+                            "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

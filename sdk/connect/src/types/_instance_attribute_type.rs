@@ -12,6 +12,7 @@
 /// ```text
 /// # let instanceattributetype = unimplemented!();
 /// match instanceattributetype {
+///     InstanceAttributeType::AutoMuteAgentOnHold => { /* ... */ },
 ///     InstanceAttributeType::AutoResolveBestVoices => { /* ... */ },
 ///     InstanceAttributeType::ContactflowLogs => { /* ... */ },
 ///     InstanceAttributeType::ContactLens => { /* ... */ },
@@ -54,6 +55,8 @@
 )]
 pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
+    AutoMuteAgentOnHold,
+    #[allow(missing_docs)] // documentation missing in model
     AutoResolveBestVoices,
     #[allow(missing_docs)] // documentation missing in model
     ContactflowLogs,
@@ -86,6 +89,7 @@ pub enum InstanceAttributeType {
 impl ::std::convert::From<&str> for InstanceAttributeType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO_MUTE_AGENT_ON_HOLD" => InstanceAttributeType::AutoMuteAgentOnHold,
             "AUTO_RESOLVE_BEST_VOICES" => InstanceAttributeType::AutoResolveBestVoices,
             "CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
             "CONTACT_LENS" => InstanceAttributeType::ContactLens,
@@ -114,6 +118,7 @@ impl InstanceAttributeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceAttributeType::AutoMuteAgentOnHold => "AUTO_MUTE_AGENT_ON_HOLD",
             InstanceAttributeType::AutoResolveBestVoices => "AUTO_RESOLVE_BEST_VOICES",
             InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
             InstanceAttributeType::ContactLens => "CONTACT_LENS",
@@ -133,6 +138,7 @@ impl InstanceAttributeType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AUTO_MUTE_AGENT_ON_HOLD",
             "AUTO_RESOLVE_BEST_VOICES",
             "CONTACTFLOW_LOGS",
             "CONTACT_LENS",
@@ -169,6 +175,7 @@ impl InstanceAttributeType {
 impl ::std::fmt::Display for InstanceAttributeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InstanceAttributeType::AutoMuteAgentOnHold => write!(f, "AUTO_MUTE_AGENT_ON_HOLD"),
             InstanceAttributeType::AutoResolveBestVoices => write!(f, "AUTO_RESOLVE_BEST_VOICES"),
             InstanceAttributeType::ContactflowLogs => write!(f, "CONTACTFLOW_LOGS"),
             InstanceAttributeType::ContactLens => write!(f, "CONTACT_LENS"),

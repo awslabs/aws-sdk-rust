@@ -4,6 +4,7 @@ pub fn de_start_image_builder_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::start_image_builder::StartImageBuilderOutput, crate::operation::start_image_builder::StartImageBuilderError>
 {
     #[allow(unused_mut)]
@@ -111,6 +112,7 @@ pub fn de_start_image_builder_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::start_image_builder::StartImageBuilderOutput, crate::operation::start_image_builder::StartImageBuilderError>
 {
     Ok({

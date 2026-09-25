@@ -1905,6 +1905,24 @@ pub(crate) fn rist_router_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn rtmp_push_router_output_configuration_correct_errors(
+    mut builder: crate::types::builders::RtmpPushRouterOutputConfigurationBuilder,
+) -> crate::types::builders::RtmpPushRouterOutputConfigurationBuilder {
+    if builder.destination_address.is_none() {
+        builder.destination_address = Some(Default::default())
+    }
+    if builder.destination_port.is_none() {
+        builder.destination_port = Some(Default::default())
+    }
+    if builder.application_name.is_none() {
+        builder.application_name = Some(Default::default())
+    }
+    if builder.stream_name.is_none() {
+        builder.stream_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rtp_router_input_configuration_correct_errors(
     mut builder: crate::types::builders::RtpRouterInputConfigurationBuilder,
 ) -> crate::types::builders::RtpRouterInputConfigurationBuilder {
@@ -2023,6 +2041,15 @@ pub(crate) fn srt_encryption_configuration_correct_errors(
                 .build()
                 .ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn tls_encryption_correct_errors(
+    mut builder: crate::types::builders::TlsEncryptionBuilder,
+) -> crate::types::builders::TlsEncryptionBuilder {
+    if builder.encryption_configuration.is_none() {
+        builder.encryption_configuration = Some(crate::types::TlsEncryptionConfiguration::Unknown)
     }
     builder
 }

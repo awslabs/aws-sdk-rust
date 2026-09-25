@@ -4,6 +4,7 @@ pub fn de_save_browser_session_profile_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::save_browser_session_profile::SaveBrowserSessionProfileOutput,
     crate::operation::save_browser_session_profile::SaveBrowserSessionProfileError,
@@ -122,6 +123,7 @@ pub fn de_save_browser_session_profile_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::save_browser_session_profile::SaveBrowserSessionProfileOutput,
     crate::operation::save_browser_session_profile::SaveBrowserSessionProfileError,

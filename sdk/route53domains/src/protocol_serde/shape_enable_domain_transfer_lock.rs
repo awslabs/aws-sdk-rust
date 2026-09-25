@@ -4,6 +4,7 @@ pub fn de_enable_domain_transfer_lock_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput,
     crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockError,
@@ -108,6 +109,7 @@ pub fn de_enable_domain_transfer_lock_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockOutput,
     crate::operation::enable_domain_transfer_lock::EnableDomainTransferLockError,

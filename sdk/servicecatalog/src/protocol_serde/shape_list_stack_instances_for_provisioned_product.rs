@@ -4,6 +4,7 @@ pub fn de_list_stack_instances_for_provisioned_product_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
     crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,
@@ -77,6 +78,7 @@ pub fn de_list_stack_instances_for_provisioned_product_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
     crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError,

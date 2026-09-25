@@ -4,6 +4,7 @@ pub fn de_count_open_workflow_executions_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput,
     crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
@@ -62,6 +63,7 @@ pub fn de_count_open_workflow_executions_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput,
     crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,

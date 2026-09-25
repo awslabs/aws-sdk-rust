@@ -4,6 +4,7 @@ pub fn de_put_schema_from_json_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_schema_from_json::PutSchemaFromJsonOutput,
     crate::operation::put_schema_from_json::PutSchemaFromJsonError,
@@ -149,6 +150,7 @@ pub fn de_put_schema_from_json_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_schema_from_json::PutSchemaFromJsonOutput,
     crate::operation::put_schema_from_json::PutSchemaFromJsonError,

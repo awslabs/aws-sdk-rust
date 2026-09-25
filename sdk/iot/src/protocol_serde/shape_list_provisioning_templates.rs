@@ -4,6 +4,7 @@ pub fn de_list_provisioning_templates_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput,
     crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
@@ -93,6 +94,7 @@ pub fn de_list_provisioning_templates_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput,
     crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,

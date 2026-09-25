@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_assistant_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::invoke_assistant::InvokeAssistantOutput, crate::operation::invoke_assistant::InvokeAssistantError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -16,11 +17,25 @@ pub fn de_invoke_assistant_http_response(
             _response_body,
         )?));
         output = output.set_conversation_id(
-            crate::protocol_serde::shape_invoke_assistant_output::de_conversation_id_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_assistant::InvokeAssistantError::unhandled(
-                    "Failed to parse conversationId from header `x-amz-iotsitewise-assistant-conversation-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_assistant_output::de_conversation_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-iotsitewise-assistant-conversation-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke_assistant::InvokeAssistantError::unhandled(
+                            "Failed to parse conversationId from header `x-amz-iotsitewise-assistant-conversation-id`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::invoke_assistant_output_output_correct_errors(output)
@@ -34,6 +49,7 @@ pub fn de_invoke_assistant_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::invoke_assistant::InvokeAssistantOutput, crate::operation::invoke_assistant::InvokeAssistantError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)

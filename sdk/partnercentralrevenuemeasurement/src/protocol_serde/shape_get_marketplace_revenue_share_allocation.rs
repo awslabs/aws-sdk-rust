@@ -4,6 +4,7 @@ pub fn de_get_marketplace_revenue_share_allocation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_marketplace_revenue_share_allocation::GetMarketplaceRevenueShareAllocationOutput,
     crate::operation::get_marketplace_revenue_share_allocation::GetMarketplaceRevenueShareAllocationError,
@@ -114,6 +115,7 @@ pub fn de_get_marketplace_revenue_share_allocation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_marketplace_revenue_share_allocation::GetMarketplaceRevenueShareAllocationOutput,
     crate::operation::get_marketplace_revenue_share_allocation::GetMarketplaceRevenueShareAllocationError,

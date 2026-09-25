@@ -4,6 +4,7 @@ pub fn de_translate_key_material_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::translate_key_material::TranslateKeyMaterialOutput,
     crate::operation::translate_key_material::TranslateKeyMaterialError,
@@ -103,6 +104,7 @@ pub fn de_translate_key_material_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::translate_key_material::TranslateKeyMaterialOutput,
     crate::operation::translate_key_material::TranslateKeyMaterialError,

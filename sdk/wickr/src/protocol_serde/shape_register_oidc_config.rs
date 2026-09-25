@@ -4,6 +4,7 @@ pub fn de_register_oidc_config_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_oidc_config::RegisterOidcConfigOutput,
     crate::operation::register_oidc_config::RegisterOidcConfigError,
@@ -130,6 +131,7 @@ pub fn de_register_oidc_config_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_oidc_config::RegisterOidcConfigOutput,
     crate::operation::register_oidc_config::RegisterOidcConfigError,

@@ -2,8 +2,8 @@
 pub(crate) fn de_bucket_key_enabled_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-bucket-key-enabled");
-    let var_1 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled");
+    let var_1 = ::aws_smithy_http::header::read_many_primitive_bytes::<bool>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -18,20 +18,20 @@ pub(crate) fn de_bucket_key_enabled_header(
 pub(crate) fn de_ssekms_encryption_context_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-context");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-context");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_ssekms_key_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-aws-kms-key-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_server_side_encryption_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ServerSideEncryption>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

@@ -269,6 +269,8 @@ pub use crate::types::_payment_connector_provision_mode::PaymentConnectorProvisi
 
 pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
 
+pub use crate::types::_credential_rotation_config::CredentialRotationConfig;
+
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
 
 pub use crate::types::_agent_runtime::AgentRuntime;
@@ -522,6 +524,8 @@ pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
 pub use crate::types::_payment_connector_summary::PaymentConnectorSummary;
 
 pub use crate::types::_credentials_provider_configuration::CredentialsProviderConfiguration;
+
+pub use crate::types::_coinbase_cdp_rotation_targets::CoinbaseCdpRotationTargets;
 
 pub use crate::types::_code::Code;
 
@@ -794,6 +798,8 @@ pub use crate::types::_registry_record_credential_provider_configuration::Regist
 pub use crate::types::_updated_mcp_descriptor_fields::UpdatedMcpDescriptorFields;
 
 pub use crate::types::_updated_agent_skills_descriptor_fields::UpdatedAgentSkillsDescriptorFields;
+
+pub use crate::types::_coinbase_cdp_secret::CoinbaseCdpSecret;
 
 pub use crate::types::_inbound_token_claim_value_type::InboundTokenClaimValueType;
 
@@ -1161,6 +1167,10 @@ mod _coinbase_cdp_configuration_input;
 
 mod _coinbase_cdp_configuration_output;
 
+mod _coinbase_cdp_rotation_targets;
+
+mod _coinbase_cdp_secret;
+
 mod _component_configuration;
 
 mod _compute_configuration;
@@ -1214,6 +1224,8 @@ mod _credential_provider_configuration;
 mod _credential_provider_type;
 
 mod _credential_provider_vendor_type;
+
+mod _credential_rotation_config;
 
 mod _credentials_provider_configuration;
 

@@ -313,6 +313,8 @@ pub use crate::types::_private_endpoint_override::PrivateEndpointOverrideBuilder
 
 pub use crate::types::_payment_connector_summary::PaymentConnectorSummaryBuilder;
 
+pub use crate::types::_coinbase_cdp_rotation_targets::CoinbaseCdpRotationTargetsBuilder;
+
 pub use crate::types::_allowed_workload_configuration::AllowedWorkloadConfigurationBuilder;
 
 pub use crate::types::_session_storage_configuration::SessionStorageConfigurationBuilder;

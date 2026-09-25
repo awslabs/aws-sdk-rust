@@ -4,6 +4,7 @@ pub fn de_start_multicast_group_session_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput,
     crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
@@ -119,6 +120,7 @@ pub fn de_start_multicast_group_session_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput,
     crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,

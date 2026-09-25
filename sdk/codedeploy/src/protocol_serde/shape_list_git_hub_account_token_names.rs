@@ -4,6 +4,7 @@ pub fn de_list_git_hub_account_token_names_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput,
     crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
@@ -85,6 +86,7 @@ pub fn de_list_git_hub_account_token_names_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput,
     crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,

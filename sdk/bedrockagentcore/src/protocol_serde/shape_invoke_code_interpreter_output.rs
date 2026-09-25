@@ -2,8 +2,8 @@
 pub(crate) fn de_session_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-code-interpreter-session-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amzn-code-interpreter-session-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub fn de_stream_payload(

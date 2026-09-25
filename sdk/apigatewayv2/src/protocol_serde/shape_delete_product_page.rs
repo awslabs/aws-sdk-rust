@@ -4,6 +4,7 @@ pub fn de_delete_product_page_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_product_page::DeleteProductPageOutput, crate::operation::delete_product_page::DeleteProductPageError>
 {
     #[allow(unused_mut)]
@@ -87,6 +88,7 @@ pub fn de_delete_product_page_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_product_page::DeleteProductPageOutput, crate::operation::delete_product_page::DeleteProductPageError>
 {
     Ok({

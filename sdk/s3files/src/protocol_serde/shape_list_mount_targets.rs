@@ -4,6 +4,7 @@ pub fn de_list_mount_targets_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_mount_targets::ListMountTargetsOutput, crate::operation::list_mount_targets::ListMountTargetsError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -94,6 +95,7 @@ pub fn de_list_mount_targets_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_mount_targets::ListMountTargetsOutput, crate::operation::list_mount_targets::ListMountTargetsError> {
     Ok({
         #[allow(unused_mut)]

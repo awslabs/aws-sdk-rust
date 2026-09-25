@@ -4,6 +4,7 @@ pub fn de_delete_object_tagging_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_object_tagging::DeleteObjectTaggingOutput,
     crate::operation::delete_object_tagging::DeleteObjectTaggingError,
@@ -22,6 +23,7 @@ pub fn de_delete_object_tagging_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_object_tagging::DeleteObjectTaggingOutput,
     crate::operation::delete_object_tagging::DeleteObjectTaggingError,
@@ -30,11 +32,25 @@ pub fn de_delete_object_tagging_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder::default();
         output = output.set_version_id(
-            crate::protocol_serde::shape_delete_object_tagging_output::de_version_id_header(_response_headers).map_err(|_| {
-                crate::operation::delete_object_tagging::DeleteObjectTaggingError::unhandled(
-                    "Failed to parse VersionId from header `x-amz-version-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_delete_object_tagging_output::de_version_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-version-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::delete_object_tagging::DeleteObjectTaggingError::unhandled(
+                            "Failed to parse VersionId from header `x-amz-version-id`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

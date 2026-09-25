@@ -4,6 +4,7 @@ pub fn de_calculate_route_matrix_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
     crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
@@ -85,6 +86,7 @@ pub fn de_calculate_route_matrix_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
     crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
@@ -95,11 +97,25 @@ pub fn de_calculate_route_matrix_http_response(
         output = crate::protocol_serde::shape_calculate_route_matrix::de_calculate_route_matrix(_response_body, output)
             .map_err(crate::operation::calculate_route_matrix::CalculateRouteMatrixError::unhandled)?;
         output = output.set_pricing_bucket(
-            crate::protocol_serde::shape_calculate_route_matrix_output::de_pricing_bucket_header(_response_headers).map_err(|_| {
-                crate::operation::calculate_route_matrix::CalculateRouteMatrixError::unhandled(
-                    "Failed to parse PricingBucket from header `x-amz-geo-pricing-bucket",
-                )
-            })?,
+            match crate::protocol_serde::shape_calculate_route_matrix_output::de_pricing_bucket_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-geo-pricing-bucket")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::calculate_route_matrix::CalculateRouteMatrixError::unhandled(
+                            "Failed to parse PricingBucket from header `x-amz-geo-pricing-bucket`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::calculate_route_matrix_output_output_correct_errors(output)

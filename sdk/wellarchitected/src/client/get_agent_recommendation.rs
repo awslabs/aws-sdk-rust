@@ -8,6 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetAgentRecommendationOutput`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput) with field(s):
     ///   - [`recommendation_arn(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::recommendation_arn): <p>The Amazon Resource Name (ARN) of the recommendation.</p>
     ///   - [`profile_arn(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::profile_arn): <p>The Amazon Resource Name (ARN) of the associated profile.</p>
+    ///   - [`generation_id(Option<String>)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::generation_id): <p>The identifier of the generation process that produced this recommendation.</p>
     ///   - [`title(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::title): <p>The title of the recommendation.</p>
     ///   - [`description(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::description): <p>A description of the recommendation.</p>
     ///   - [`r#type(RecommendationType)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::type): <p>The type of the recommendation.</p>

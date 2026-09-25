@@ -4,6 +4,7 @@ pub fn de_get_wireless_gateway_task_definition_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput,
     crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionError,
@@ -115,6 +116,7 @@ pub fn de_get_wireless_gateway_task_definition_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionOutput,
     crate::operation::get_wireless_gateway_task_definition::GetWirelessGatewayTaskDefinitionError,

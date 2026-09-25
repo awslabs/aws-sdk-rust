@@ -4,6 +4,7 @@ pub fn de_disassociate_data_share_consumer_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput,
     crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
@@ -59,6 +60,7 @@ pub fn de_disassociate_data_share_consumer_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput,
     crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,

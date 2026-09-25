@@ -4,6 +4,7 @@ pub fn de_disable_sagemaker_servicecatalog_portfolio_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput,
     crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioError,
@@ -21,6 +22,7 @@ pub fn de_disable_sagemaker_servicecatalog_portfolio_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput,
     crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioError,

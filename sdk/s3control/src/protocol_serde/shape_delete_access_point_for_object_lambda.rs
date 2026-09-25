@@ -4,6 +4,7 @@ pub fn de_delete_access_point_for_object_lambda_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput,
     crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError,
@@ -21,6 +22,7 @@ pub fn de_delete_access_point_for_object_lambda_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput,
     crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError,

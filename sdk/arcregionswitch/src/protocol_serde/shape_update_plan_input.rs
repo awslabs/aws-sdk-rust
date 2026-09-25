@@ -48,6 +48,9 @@ pub fn ser_update_plan_input_input(
         encoder.str("reportConfiguration");
         crate::protocol_serde::shape_report_configuration::ser_report_configuration(encoder, var_12)?;
     }
+    if let Some(var_13) = &input.service_quota_checks_enabled {
+        encoder.str("serviceQuotaChecksEnabled").boolean(*var_13);
+    }
     encoder.end();
     Ok(())
 }

@@ -4,6 +4,7 @@ pub fn de_create_session_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_session::CreateSessionOutput, crate::operation::create_session::CreateSessionError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -42,6 +43,7 @@ pub fn de_create_session_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_session::CreateSessionOutput, crate::operation::create_session::CreateSessionError> {
     Ok({
         #[allow(unused_mut)]
@@ -49,32 +51,88 @@ pub fn de_create_session_http_response(
         output = crate::protocol_serde::shape_create_session::de_create_session(_response_body, output)
             .map_err(crate::operation::create_session::CreateSessionError::unhandled)?;
         output = output.set_bucket_key_enabled(
-            crate::protocol_serde::shape_create_session_output::de_bucket_key_enabled_header(_response_headers).map_err(|_| {
-                crate::operation::create_session::CreateSessionError::unhandled(
-                    "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_session_output::de_bucket_key_enabled_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::create_session::CreateSessionError::unhandled(
+                            "Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_ssekms_encryption_context(
-            crate::protocol_serde::shape_create_session_output::de_ssekms_encryption_context_header(_response_headers).map_err(|_| {
-                crate::operation::create_session::CreateSessionError::unhandled(
-                    "Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_session_output::de_ssekms_encryption_context_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-context")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::create_session::CreateSessionError::unhandled(
+                            "Failed to parse SSEKMSEncryptionContext from header `x-amz-server-side-encryption-context`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_ssekms_key_id(
-            crate::protocol_serde::shape_create_session_output::de_ssekms_key_id_header(_response_headers).map_err(|_| {
-                crate::operation::create_session::CreateSessionError::unhandled(
-                    "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_session_output::de_ssekms_key_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::create_session::CreateSessionError::unhandled(
+                            "Failed to parse SSEKMSKeyId from header `x-amz-server-side-encryption-aws-kms-key-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_server_side_encryption(
-            crate::protocol_serde::shape_create_session_output::de_server_side_encryption_header(_response_headers).map_err(|_| {
-                crate::operation::create_session::CreateSessionError::unhandled(
-                    "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_session_output::de_server_side_encryption_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::create_session::CreateSessionError::unhandled(
+                            "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

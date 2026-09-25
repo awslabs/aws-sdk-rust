@@ -24,6 +24,8 @@ pub enum DataDetails {
     NotesChunkData(crate::types::NotesChunkDataDetails),
     /// <p>Details about notes data.</p>
     NotesData(crate::types::NotesDataDetails),
+    /// <p>Details about a proactive recommendation, including the token used to retrieve its chunked response with <code>GetNextMessage</code>.</p>
+    ProactiveRecommendationData(crate::types::ProactiveRecommendationDataDetails),
     /// <p>Details about the content data.</p>
     SourceContentData(crate::types::SourceContentDataDetails),
     /// <p>Details about suggested message data.</p>
@@ -168,6 +170,19 @@ impl DataDetails {
     /// Returns true if this is a [`NotesData`](crate::types::DataDetails::NotesData).
     pub fn is_notes_data(&self) -> bool {
         self.as_notes_data().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ProactiveRecommendationData`](crate::types::DataDetails::ProactiveRecommendationData), extracting the inner [`ProactiveRecommendationDataDetails`](crate::types::ProactiveRecommendationDataDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_proactive_recommendation_data(&self) -> ::std::result::Result<&crate::types::ProactiveRecommendationDataDetails, &Self> {
+        if let DataDetails::ProactiveRecommendationData(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ProactiveRecommendationData`](crate::types::DataDetails::ProactiveRecommendationData).
+    pub fn is_proactive_recommendation_data(&self) -> bool {
+        self.as_proactive_recommendation_data().is_ok()
     }
     /// Tries to convert the enum instance into [`SourceContentData`](crate::types::DataDetails::SourceContentData), extracting the inner [`SourceContentDataDetails`](crate::types::SourceContentDataDetails).
     /// Returns `Err(&Self)` if it can't be converted.

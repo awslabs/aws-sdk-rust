@@ -4,6 +4,7 @@ pub fn de_apply_pending_maintenance_action_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput,
     crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
@@ -44,6 +45,7 @@ pub fn de_apply_pending_maintenance_action_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput,
     crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,

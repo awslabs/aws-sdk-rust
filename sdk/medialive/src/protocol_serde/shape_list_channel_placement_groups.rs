@@ -4,6 +4,7 @@ pub fn de_list_channel_placement_groups_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
     crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsError,
@@ -124,6 +125,7 @@ pub fn de_list_channel_placement_groups_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsOutput,
     crate::operation::list_channel_placement_groups::ListChannelPlacementGroupsError,

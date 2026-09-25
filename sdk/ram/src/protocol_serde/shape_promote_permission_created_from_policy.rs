@@ -4,6 +4,7 @@ pub fn de_promote_permission_created_from_policy_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
     crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,
@@ -165,6 +166,7 @@ pub fn de_promote_permission_created_from_policy_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput,
     crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError,

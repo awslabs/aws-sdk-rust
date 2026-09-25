@@ -2,22 +2,22 @@
 pub(crate) fn de_accept_ranges_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("accept-ranges");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("accept-ranges");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_archive_status_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ArchiveStatus>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-archive-status");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-archive-status");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_bucket_key_enabled_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-bucket-key-enabled");
-    let var_1 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled");
+    let var_1 = ::aws_smithy_http::header::read_many_primitive_bytes::<bool>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -32,113 +32,113 @@ pub(crate) fn de_bucket_key_enabled_header(
 pub(crate) fn de_cache_control_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Cache-Control");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Cache-Control");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_crc32_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-crc32");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-crc32");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_crc32_c_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-crc32c");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-crc32c");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_crc64_nvme_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-crc64nvme");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-crc64nvme");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_md5_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-md5");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-md5");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_sha1_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-sha1");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-sha1");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_sha256_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-sha256");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-sha256");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_sha512_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-sha512");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-sha512");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_type_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ChecksumType>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-type");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-type");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_xxhash128_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-xxhash128");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-xxhash128");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_xxhash3_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-xxhash3");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-xxhash3");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_xxhash64_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-checksum-xxhash64");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-checksum-xxhash64");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_disposition_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Disposition");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Disposition");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_encoding_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Encoding");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Encoding");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_language_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Language");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Language");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_length_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i64>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Length");
-    let var_2 = ::aws_smithy_http::header::read_many_primitive::<i64>(headers)?;
+    let headers = header_map.get_all_bytes("Content-Length");
+    let var_2 = ::aws_smithy_http::header::read_many_primitive_bytes::<i64>(headers)?;
     if var_2.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -153,22 +153,22 @@ pub(crate) fn de_content_length_header(
 pub(crate) fn de_content_range_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Range");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Range");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_content_type_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Type");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_delete_marker_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-delete-marker");
-    let var_3 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-delete-marker");
+    let var_3 = ::aws_smithy_http::header::read_many_primitive_bytes::<bool>(headers)?;
     if var_3.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -183,22 +183,23 @@ pub(crate) fn de_delete_marker_header(
 pub(crate) fn de_e_tag_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("ETag");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("ETag");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_expiration_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-expiration");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-expiration");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_expires_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Expires");
-    let var_4: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
+    let headers = header_map.get_all_bytes("Expires");
+    let var_4: Vec<::aws_smithy_types::DateTime> =
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_4.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -213,15 +214,16 @@ pub(crate) fn de_expires_header(
 pub(crate) fn de_expires_string_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("ExpiresString");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("ExpiresString");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_last_modified_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Last-Modified");
-    let var_5: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
+    let headers = header_map.get_all_bytes("Last-Modified");
+    let var_5: Vec<::aws_smithy_types::DateTime> =
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_5.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -239,9 +241,9 @@ pub(crate) fn de_metadata_prefix_header(
     ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ::aws_smithy_http::header::ParseError,
 > {
-    let headers = ::aws_smithy_http::header::headers_for_prefix(header_map.iter().map(|(k, _)| k), "x-amz-meta-");
+    let headers = ::aws_smithy_http::header::headers_for_prefix(header_map.iter_bytes().map(|(k, _)| k), "x-amz-meta-");
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
-                            let values = header_map.get_all(header_name);
+                            let values = header_map.get_all_bytes(header_name);
                             crate::protocol_serde::shape_head_object_output::de_metadata_inner(values).map(|v| (key.to_string(), v.expect(
                                 "we have checked there is at least one value for this header name; please file a bug report under https://github.com/smithy-lang/smithy-rs/issues"
                             )))
@@ -252,8 +254,8 @@ pub(crate) fn de_metadata_prefix_header(
 pub(crate) fn de_missing_meta_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-missing-meta");
-    let var_6 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-missing-meta");
+    let var_6 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_6.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -268,15 +270,15 @@ pub(crate) fn de_missing_meta_header(
 pub(crate) fn de_object_lock_event_hold_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ObjectLockEventHold>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-event-hold");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-object-lock-event-hold");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_object_lock_event_hold_duration_days_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-event-hold-duration-days");
-    let var_7 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-object-lock-event-hold-duration-days");
+    let var_7 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_7.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -291,8 +293,8 @@ pub(crate) fn de_object_lock_event_hold_duration_days_header(
 pub(crate) fn de_object_lock_event_hold_duration_years_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-event-hold-duration-years");
-    let var_8 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-object-lock-event-hold-duration-years");
+    let var_8 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_8.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -307,23 +309,23 @@ pub(crate) fn de_object_lock_event_hold_duration_years_header(
 pub(crate) fn de_object_lock_legal_hold_status_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ObjectLockLegalHoldStatus>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-legal-hold");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-object-lock-legal-hold");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_object_lock_mode_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ObjectLockMode>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-mode");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-object-lock-mode");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_object_lock_retain_until_date_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-object-lock-retain-until-date");
+    let headers = header_map.get_all_bytes("x-amz-object-lock-retain-until-date");
     let var_9: Vec<::aws_smithy_types::DateTime> =
-        ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?;
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::DateTimeWithOffset)?;
     if var_9.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -338,8 +340,8 @@ pub(crate) fn de_object_lock_retain_until_date_header(
 pub(crate) fn de_parts_count_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-mp-parts-count");
-    let var_10 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-mp-parts-count");
+    let var_10 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_10.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -354,64 +356,64 @@ pub(crate) fn de_parts_count_header(
 pub(crate) fn de_replication_status_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ReplicationStatus>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-replication-status");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-replication-status");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_request_charged_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::RequestCharged>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-request-charged");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_restore_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-restore");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-restore");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_sse_customer_algorithm_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-customer-algorithm");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-customer-algorithm");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_sse_customer_key_md5_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-customer-key-MD5");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-customer-key-MD5");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_ssekms_key_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption-aws-kms-key-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_server_side_encryption_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ServerSideEncryption>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-server-side-encryption");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-server-side-encryption");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_storage_class_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::StorageClass>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-storage-class");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-storage-class");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_tag_count_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-tagging-count");
-    let var_11 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-tagging-count");
+    let var_11 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_11.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -426,19 +428,19 @@ pub(crate) fn de_tag_count_header(
 pub(crate) fn de_version_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-version-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-version-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_website_redirect_location_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-website-redirect-location");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-website-redirect-location");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub fn de_metadata_inner<'a>(
-    headers: impl ::std::iter::Iterator<Item = &'a str>,
+    headers: impl ::std::iter::Iterator<Item = &'a [u8]>,
 ) -> std::result::Result<Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    ::aws_smithy_http::header::one_or_none(headers)
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

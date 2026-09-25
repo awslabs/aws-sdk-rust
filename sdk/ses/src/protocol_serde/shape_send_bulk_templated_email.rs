@@ -4,6 +4,7 @@ pub fn de_send_bulk_templated_email_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
     crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError,
@@ -137,6 +138,7 @@ pub fn de_send_bulk_templated_email_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
     crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError,

@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_model_with_response_stream_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
     crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
@@ -19,27 +20,73 @@ pub fn de_invoke_model_with_response_stream_http_response(
             crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_body_payload(_response_body)?,
         ));
         output = output.set_content_type(
-            crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
-                    "Failed to parse contentType from header `X-Amzn-Bedrock-Content-Type",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Bedrock-Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
+                                "Failed to parse contentType from header `X-Amzn-Bedrock-Content-Type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_performance_config_latency(
-            crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_performance_config_latency_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
-                        "Failed to parse performanceConfigLatency from header `X-Amzn-Bedrock-PerformanceConfig-Latency",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_performance_config_latency_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Bedrock-PerformanceConfig-Latency")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
+                                "Failed to parse performanceConfigLatency from header `X-Amzn-Bedrock-PerformanceConfig-Latency`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_service_tier(
-            crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_service_tier_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
-                    "Failed to parse serviceTier from header `X-Amzn-Bedrock-Service-Tier",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_model_with_response_stream_output::de_service_tier_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-Bedrock-Service-Tier")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError::unhandled(
+                                "Failed to parse serviceTier from header `X-Amzn-Bedrock-Service-Tier`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::invoke_model_with_response_stream_output_output_correct_errors(output)
@@ -53,6 +100,7 @@ pub fn de_invoke_model_with_response_stream_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamOutput,
     crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,

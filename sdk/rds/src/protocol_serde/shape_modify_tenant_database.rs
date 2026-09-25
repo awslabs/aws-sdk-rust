@@ -4,6 +4,7 @@ pub fn de_modify_tenant_database_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::modify_tenant_database::ModifyTenantDatabaseOutput,
     crate::operation::modify_tenant_database::ModifyTenantDatabaseError,
@@ -109,6 +110,7 @@ pub fn de_modify_tenant_database_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::modify_tenant_database::ModifyTenantDatabaseOutput,
     crate::operation::modify_tenant_database::ModifyTenantDatabaseError,

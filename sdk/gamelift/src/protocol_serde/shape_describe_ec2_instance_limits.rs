@@ -4,6 +4,7 @@ pub fn de_describe_ec2_instance_limits_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
     crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
@@ -93,6 +94,7 @@ pub fn de_describe_ec2_instance_limits_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
     crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,

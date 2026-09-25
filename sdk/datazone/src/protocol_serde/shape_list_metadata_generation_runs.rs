@@ -4,6 +4,7 @@ pub fn de_list_metadata_generation_runs_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsOutput,
     crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError,
@@ -113,6 +114,7 @@ pub fn de_list_metadata_generation_runs_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsOutput,
     crate::operation::list_metadata_generation_runs::ListMetadataGenerationRunsError,

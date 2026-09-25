@@ -6,7 +6,7 @@
 pub struct McpServerTargetConfiguration {
     /// <p>The endpoint for the MCP server target configuration.</p>
     pub endpoint: ::std::string::String,
-    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    /// <p>A static tool list for the MCP server target. It is supported for all credential providers. Dynamic tool discovery/synchronization will be disabled when a target is configured with mcpToolSchema.</p>
     pub mcp_tool_schema: ::std::option::Option<crate::types::McpToolSchemaConfiguration>,
     /// <p>The listing mode for the MCP server target configuration. MCP resources for default targets are cached at the control plane for faster access. MCP resources for dynamic targets will be dynamically retrieved when listing tools.</p>
     pub listing_mode: ::std::option::Option<crate::types::ListingMode>,
@@ -19,7 +19,7 @@ impl McpServerTargetConfiguration {
         use std::ops::Deref;
         self.endpoint.deref()
     }
-    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    /// <p>A static tool list for the MCP server target. It is supported for all credential providers. Dynamic tool discovery/synchronization will be disabled when a target is configured with mcpToolSchema.</p>
     pub fn mcp_tool_schema(&self) -> ::std::option::Option<&crate::types::McpToolSchemaConfiguration> {
         self.mcp_tool_schema.as_ref()
     }
@@ -64,17 +64,17 @@ impl McpServerTargetConfigurationBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    /// <p>A static tool list for the MCP server target. It is supported for all credential providers. Dynamic tool discovery/synchronization will be disabled when a target is configured with mcpToolSchema.</p>
     pub fn mcp_tool_schema(mut self, input: crate::types::McpToolSchemaConfiguration) -> Self {
         self.mcp_tool_schema = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    /// <p>A static tool list for the MCP server target. It is supported for all credential providers. Dynamic tool discovery/synchronization will be disabled when a target is configured with mcpToolSchema.</p>
     pub fn set_mcp_tool_schema(mut self, input: ::std::option::Option<crate::types::McpToolSchemaConfiguration>) -> Self {
         self.mcp_tool_schema = input;
         self
     }
-    /// <p>The tool schema configuration for the MCP server target. Supported only when the credential provider is configured with an authorization code grant type. Dynamic tool discovery/synchronization will be disabled when target is configured with mcpToolSchema.</p>
+    /// <p>A static tool list for the MCP server target. It is supported for all credential providers. Dynamic tool discovery/synchronization will be disabled when a target is configured with mcpToolSchema.</p>
     pub fn get_mcp_tool_schema(&self) -> &::std::option::Option<crate::types::McpToolSchemaConfiguration> {
         &self.mcp_tool_schema
     }

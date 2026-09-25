@@ -4,6 +4,7 @@ pub fn de_list_featured_results_sets_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput,
     crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError,
@@ -108,6 +109,7 @@ pub fn de_list_featured_results_sets_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_featured_results_sets::ListFeaturedResultsSetsOutput,
     crate::operation::list_featured_results_sets::ListFeaturedResultsSetsError,

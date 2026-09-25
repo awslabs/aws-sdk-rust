@@ -4,6 +4,7 @@ pub fn de_create_origin_access_control_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_origin_access_control::CreateOriginAccessControlOutput,
     crate::operation::create_origin_access_control::CreateOriginAccessControlError,
@@ -88,6 +89,7 @@ pub fn de_create_origin_access_control_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_origin_access_control::CreateOriginAccessControlOutput,
     crate::operation::create_origin_access_control::CreateOriginAccessControlError,
@@ -96,16 +98,48 @@ pub fn de_create_origin_access_control_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_create_origin_access_control_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::create_origin_access_control::CreateOriginAccessControlError::unhandled("Failed to parse ETag from header `ETag")
-            })?,
+            match crate::protocol_serde::shape_create_origin_access_control_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_origin_access_control::CreateOriginAccessControlError::unhandled(
+                                "Failed to parse ETag from header `ETag`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_location(
-            crate::protocol_serde::shape_create_origin_access_control_output::de_location_header(_response_headers).map_err(|_| {
-                crate::operation::create_origin_access_control::CreateOriginAccessControlError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_origin_access_control_output::de_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Location")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_origin_access_control::CreateOriginAccessControlError::unhandled(
+                                "Failed to parse Location from header `Location`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_origin_access_control(
             crate::protocol_serde::shape_create_origin_access_control_output::de_origin_access_control_payload(_response_body)?,

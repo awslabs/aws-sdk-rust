@@ -4,6 +4,7 @@ pub fn de_start_instance_onboarding_job_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput,
     crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
@@ -28,11 +29,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -49,11 +66,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output)
@@ -70,11 +103,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_internal_server_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -91,11 +140,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_resource_not_found_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
@@ -112,11 +177,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_throttling_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
@@ -133,11 +214,27 @@ pub fn de_start_instance_onboarding_job_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled)?;
                 output = output.set_x_amz_error_type(
-                    crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
-                            "Failed to parse xAmzErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_x_amz_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError::unhandled(
+                                        "Failed to parse xAmzErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
@@ -155,6 +252,7 @@ pub fn de_start_instance_onboarding_job_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput,
     crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,

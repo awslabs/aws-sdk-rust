@@ -4,6 +4,7 @@ pub fn de_exchange_code_for_token_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
     crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
@@ -44,6 +45,7 @@ pub fn de_exchange_code_for_token_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
     crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,

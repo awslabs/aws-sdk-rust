@@ -4,6 +4,7 @@ pub fn de_list_links_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_links::ListLinksOutput, crate::operation::list_links::ListLinksError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -25,9 +26,25 @@ pub fn de_list_links_http_error(
                 output = crate::protocol_serde::shape_internal_service_fault::de_internal_service_fault_json_err(_response_body, output)
                     .map_err(crate::operation::list_links::ListLinksError::unhandled)?;
                 output = output.set_amzn_error_type(
-                    crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::list_links::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_internal_service_fault::de_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::list_links::ListLinksError::unhandled(
+                                    "Failed to parse amznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -45,9 +62,25 @@ pub fn de_list_links_http_error(
                 output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_links::ListLinksError::unhandled)?;
                 output = output.set_amzn_error_type(
-                    crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::list_links::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_invalid_parameter_exception::de_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::list_links::ListLinksError::unhandled(
+                                    "Failed to parse amznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -65,9 +98,25 @@ pub fn de_list_links_http_error(
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::list_links::ListLinksError::unhandled)?;
                 output = output.set_amzn_error_type(
-                    crate::protocol_serde::shape_resource_not_found_exception::de_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::list_links::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType")
-                    })?,
+                    match crate::protocol_serde::shape_resource_not_found_exception::de_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::list_links::ListLinksError::unhandled(
+                                    "Failed to parse amznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -86,6 +135,7 @@ pub fn de_list_links_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_links::ListLinksOutput, crate::operation::list_links::ListLinksError> {
     Ok({
         #[allow(unused_mut)]

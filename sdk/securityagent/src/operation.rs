@@ -145,6 +145,9 @@ pub mod import_security_requirements;
 /// Types for the `InitiateProviderRegistration` operation.
 pub mod initiate_provider_registration;
 
+/// Types for the `ListActorMessages` operation.
+pub mod list_actor_messages;
+
 /// Types for the `ListAgentSpaces` operation.
 pub mod list_agent_spaces;
 

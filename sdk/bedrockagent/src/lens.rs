@@ -139,6 +139,16 @@ pub(crate) fn reflens_list_prompts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_vpc_configurations_output_output_next_token(
+    input: &crate::operation::list_vpc_configurations::ListVpcConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_agent_action_groups_output_output_action_group_summaries(
     input: crate::operation::list_agent_action_groups::ListAgentActionGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionGroupSummary>> {
@@ -234,5 +244,12 @@ pub(crate) fn lens_list_prompts_output_output_prompt_summaries(
     input: crate::operation::list_prompts::ListPromptsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptSummary>> {
     let input = input.prompt_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_vpc_configurations_output_output_items(
+    input: crate::operation::list_vpc_configurations::ListVpcConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::VpcConfigurationSummary>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

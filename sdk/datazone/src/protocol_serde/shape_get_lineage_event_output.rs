@@ -2,8 +2,9 @@
 pub(crate) fn de_created_at_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Created-At");
-    let var_1: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
+    let headers = header_map.get_all_bytes("Created-At");
+    let var_1: Vec<::aws_smithy_types::DateTime> =
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -18,15 +19,15 @@ pub(crate) fn de_created_at_header(
 pub(crate) fn de_created_by_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Created-By");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Created-By");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_domain_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Domain-Id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Domain-Id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_event_payload(
@@ -38,8 +39,9 @@ pub(crate) fn de_event_payload(
 pub(crate) fn de_event_time_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Event-Time");
-    let var_2: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
+    let headers = header_map.get_all_bytes("Event-Time");
+    let var_2: Vec<::aws_smithy_types::DateTime> =
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_2.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -54,13 +56,13 @@ pub(crate) fn de_event_time_header(
 pub(crate) fn de_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_processing_status_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::LineageEventProcessingStatus>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Processing-Status");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Processing-Status");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

@@ -4,6 +4,7 @@ pub fn de_register_webhook_with_third_party_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput,
     crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
@@ -62,6 +63,7 @@ pub fn de_register_webhook_with_third_party_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput,
     crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,

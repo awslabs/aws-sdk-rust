@@ -257,6 +257,33 @@ mod test {
         assert_eq!(response.headers().get("k"), Some("😹"))
     }
 
+    // A response carrying a header value that is not valid UTF-8 must convert successfully, and
+    // converting back out must reproduce the original octets rather than a re-encoded string.
+    #[test]
+    fn non_utf8_header_values_round_trip_byte_for_byte() {
+        // A lone 0xE9 is a valid HTTP header octet (obs-text per RFC 7230) but not valid UTF-8.
+        const NON_UTF8_VALUE: &[u8] = b"value-\xe9";
+
+        let response = http_1x::Response::builder()
+            .status(200)
+            .header(
+                "k",
+                http_1x::HeaderValue::from_bytes(NON_UTF8_VALUE).expect("valid header octets"),
+            )
+            .body(SdkBody::empty())
+            .unwrap();
+
+        let response: Response = response.try_into().expect("non-UTF-8 values are admitted");
+        assert_eq!(Some(NON_UTF8_VALUE), response.headers().get_bytes("k"));
+        assert_eq!(None, response.headers().get("k"));
+
+        let round_tripped = response.try_into_http1x().expect("converts back");
+        assert_eq!(
+            NON_UTF8_VALUE,
+            round_tripped.headers().get("k").unwrap().as_bytes()
+        );
+    }
+
     #[test]
     fn response_can_be_created() {
         let req = http_1x::Response::builder()

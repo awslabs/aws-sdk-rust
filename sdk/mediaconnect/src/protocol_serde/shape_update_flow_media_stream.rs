@@ -4,6 +4,7 @@ pub fn de_update_flow_media_stream_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
     crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
@@ -121,6 +122,7 @@ pub fn de_update_flow_media_stream_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
     crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,

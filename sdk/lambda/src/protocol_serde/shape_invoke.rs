@@ -4,6 +4,7 @@ pub fn de_invoke_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::invoke::InvokeOutput, crate::operation::invoke::InvokeError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -676,9 +677,25 @@ pub fn de_invoke_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::invoke::InvokeError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::invoke::InvokeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
-                    })?,
+                    match crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Retry-After")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::invoke::InvokeError::unhandled(
+                                    "Failed to parse retryAfterSeconds from header `Retry-After`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -715,27 +732,94 @@ pub fn de_invoke_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::invoke::InvokeOutput, crate::operation::invoke::InvokeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::invoke::builders::InvokeOutputBuilder::default();
         output = output.set_durable_execution_arn(
-            crate::protocol_serde::shape_invoke_output::de_durable_execution_arn_header(_response_headers).map_err(|_| {
-                crate::operation::invoke::InvokeError::unhandled("Failed to parse DurableExecutionArn from header `X-Amz-Durable-Execution-Arn")
-            })?,
+            match crate::protocol_serde::shape_invoke_output::de_durable_execution_arn_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amz-Durable-Execution-Arn")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke::InvokeError::unhandled(
+                            "Failed to parse DurableExecutionArn from header `X-Amz-Durable-Execution-Arn`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_executed_version(
-            crate::protocol_serde::shape_invoke_output::de_executed_version_header(_response_headers).map_err(|_| {
-                crate::operation::invoke::InvokeError::unhandled("Failed to parse ExecutedVersion from header `X-Amz-Executed-Version")
-            })?,
+            match crate::protocol_serde::shape_invoke_output::de_executed_version_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amz-Executed-Version")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke::InvokeError::unhandled(
+                            "Failed to parse ExecutedVersion from header `X-Amz-Executed-Version`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_function_error(
-            crate::protocol_serde::shape_invoke_output::de_function_error_header(_response_headers)
-                .map_err(|_| crate::operation::invoke::InvokeError::unhandled("Failed to parse FunctionError from header `X-Amz-Function-Error"))?,
+            match crate::protocol_serde::shape_invoke_output::de_function_error_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amz-Function-Error")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke::InvokeError::unhandled(
+                            "Failed to parse FunctionError from header `X-Amz-Function-Error`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_log_result(
-            crate::protocol_serde::shape_invoke_output::de_log_result_header(_response_headers)
-                .map_err(|_| crate::operation::invoke::InvokeError::unhandled("Failed to parse LogResult from header `X-Amz-Log-Result"))?,
+            match crate::protocol_serde::shape_invoke_output::de_log_result_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amz-Log-Result")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::invoke::InvokeError::unhandled(
+                            "Failed to parse LogResult from header `X-Amz-Log-Result`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_payload(crate::protocol_serde::shape_invoke_output::de_payload_payload(_response_body)?);
         output = output.set_status_code(Some(_response_status as _));

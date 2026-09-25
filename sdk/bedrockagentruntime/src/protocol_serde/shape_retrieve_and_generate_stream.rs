@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_retrieve_and_generate_stream_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamOutput,
     crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError,
@@ -16,11 +17,27 @@ pub fn de_retrieve_and_generate_stream_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::retrieve_and_generate_stream::builders::RetrieveAndGenerateStreamOutputBuilder::default();
         output = output.set_session_id(
-            crate::protocol_serde::shape_retrieve_and_generate_stream_output::de_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::unhandled(
-                    "Failed to parse sessionId from header `x-amzn-bedrock-knowledge-base-session-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_retrieve_and_generate_stream_output::de_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-bedrock-knowledge-base-session-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError::unhandled(
+                                "Failed to parse sessionId from header `x-amzn-bedrock-knowledge-base-session-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_stream(Some(crate::protocol_serde::shape_retrieve_and_generate_stream_output::de_stream_payload(
             _response_body,
@@ -37,6 +54,7 @@ pub fn de_retrieve_and_generate_stream_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamOutput,
     crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError,

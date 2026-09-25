@@ -4,6 +4,7 @@ pub fn de_list_attached_indices_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_attached_indices::ListAttachedIndicesOutput,
     crate::operation::list_attached_indices::ListAttachedIndicesError,
@@ -150,6 +151,7 @@ pub fn de_list_attached_indices_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_attached_indices::ListAttachedIndicesOutput,
     crate::operation::list_attached_indices::ListAttachedIndicesError,

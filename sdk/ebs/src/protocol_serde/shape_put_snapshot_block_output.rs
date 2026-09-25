@@ -2,13 +2,13 @@
 pub(crate) fn de_checksum_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-Checksum");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-Checksum");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_checksum_algorithm_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::ChecksumAlgorithm>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-Checksum-Algorithm");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-Checksum-Algorithm");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

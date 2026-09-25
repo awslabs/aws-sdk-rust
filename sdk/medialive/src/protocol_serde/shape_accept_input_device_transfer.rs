@@ -4,6 +4,7 @@ pub fn de_accept_input_device_transfer_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput,
     crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError,
@@ -178,6 +179,7 @@ pub fn de_accept_input_device_transfer_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput,
     crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError,

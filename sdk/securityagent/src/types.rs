@@ -145,6 +145,8 @@ pub use crate::types::_threat_evidence_shape::ThreatEvidenceShape;
 
 pub use crate::types::_document_info::DocumentInfo;
 
+pub use crate::types::_actor_message::ActorMessage;
+
 pub use crate::types::_artifact_summary::ArtifactSummary;
 
 pub use crate::types::_code_review_job_summary::CodeReviewJobSummary;
@@ -320,6 +322,8 @@ pub use crate::types::_access_type::AccessType;
 mod _access_type;
 
 mod _actor;
+
+mod _actor_message;
 
 mod _agent_space;
 

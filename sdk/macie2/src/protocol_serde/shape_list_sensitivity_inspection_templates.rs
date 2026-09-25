@@ -4,6 +4,7 @@ pub fn de_list_sensitivity_inspection_templates_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput,
     crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesError,
@@ -117,6 +118,7 @@ pub fn de_list_sensitivity_inspection_templates_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput,
     crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesError,

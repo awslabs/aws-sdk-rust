@@ -4,6 +4,7 @@ pub fn de_reject_portfolio_share_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::reject_portfolio_share::RejectPortfolioShareOutput,
     crate::operation::reject_portfolio_share::RejectPortfolioShareError,
@@ -44,6 +45,7 @@ pub fn de_reject_portfolio_share_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::reject_portfolio_share::RejectPortfolioShareOutput,
     crate::operation::reject_portfolio_share::RejectPortfolioShareError,

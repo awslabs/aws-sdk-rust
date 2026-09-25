@@ -4,6 +4,7 @@ pub fn de_list_assessment_run_agents_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
     crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
@@ -89,6 +90,7 @@ pub fn de_list_assessment_run_agents_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
     crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,

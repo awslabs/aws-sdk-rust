@@ -4,6 +4,7 @@ pub fn de_untag_open_id_connect_provider_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderOutput,
     crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
@@ -94,6 +95,7 @@ pub fn de_untag_open_id_connect_provider_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderOutput,
     crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,

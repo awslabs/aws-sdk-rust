@@ -4,6 +4,7 @@ pub fn de_get_table_maintenance_job_status_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_table_maintenance_job_status::GetTableMaintenanceJobStatusOutput,
     crate::operation::get_table_maintenance_job_status::GetTableMaintenanceJobStatusError,
@@ -127,6 +128,7 @@ pub fn de_get_table_maintenance_job_status_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_table_maintenance_job_status::GetTableMaintenanceJobStatusOutput,
     crate::operation::get_table_maintenance_job_status::GetTableMaintenanceJobStatusError,

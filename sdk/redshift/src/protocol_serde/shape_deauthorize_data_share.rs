@@ -4,6 +4,7 @@ pub fn de_deauthorize_data_share_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput,
     crate::operation::deauthorize_data_share::DeauthorizeDataShareError,
@@ -44,6 +45,7 @@ pub fn de_deauthorize_data_share_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::deauthorize_data_share::DeauthorizeDataShareOutput,
     crate::operation::deauthorize_data_share::DeauthorizeDataShareError,

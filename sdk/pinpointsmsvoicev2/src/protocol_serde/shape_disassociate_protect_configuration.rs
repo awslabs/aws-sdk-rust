@@ -4,6 +4,7 @@ pub fn de_disassociate_protect_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_protect_configuration::DisassociateProtectConfigurationOutput,
     crate::operation::disassociate_protect_configuration::DisassociateProtectConfigurationError,
@@ -126,6 +127,7 @@ pub fn de_disassociate_protect_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_protect_configuration::DisassociateProtectConfigurationOutput,
     crate::operation::disassociate_protect_configuration::DisassociateProtectConfigurationError,

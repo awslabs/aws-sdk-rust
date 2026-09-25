@@ -225,6 +225,8 @@ mod list_route53_health_checks;
 
 mod list_route53_health_checks_in_region;
 
+mod list_service_quota_warnings;
+
 mod list_tags_for_resource;
 
 mod start_plan_execution;

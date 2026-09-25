@@ -4,6 +4,7 @@ pub fn de_set_tags_for_resource_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
     crate::operation::set_tags_for_resource::SetTagsForResourceError,
@@ -100,6 +101,7 @@ pub fn de_set_tags_for_resource_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
     crate::operation::set_tags_for_resource::SetTagsForResourceError,

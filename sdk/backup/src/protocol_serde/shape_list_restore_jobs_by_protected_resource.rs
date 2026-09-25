@@ -4,6 +4,7 @@ pub fn de_list_restore_jobs_by_protected_resource_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceOutput,
     crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError,
@@ -105,6 +106,7 @@ pub fn de_list_restore_jobs_by_protected_resource_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceOutput,
     crate::operation::list_restore_jobs_by_protected_resource::ListRestoreJobsByProtectedResourceError,

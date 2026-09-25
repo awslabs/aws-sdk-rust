@@ -4,6 +4,7 @@ pub fn de_describe_cross_account_access_role_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput,
     crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError,
@@ -43,6 +44,7 @@ pub fn de_describe_cross_account_access_role_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleOutput,
     crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleError,

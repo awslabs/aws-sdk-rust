@@ -297,6 +297,8 @@ pub(crate) mod shape_list_workload_identities;
 
 pub(crate) mod shape_put_resource_policy;
 
+pub(crate) mod shape_rotate_payment_connector_credentials;
+
 pub(crate) mod shape_set_token_vault_cmk;
 
 pub(crate) mod shape_start_policy_generation;
@@ -493,6 +495,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retryable_conflict_exception;
 
+pub(crate) mod shape_rotate_payment_connector_credentials_input;
+
 pub(crate) mod shape_service_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -646,6 +650,8 @@ pub(crate) mod shape_content;
 pub(crate) mod shape_credential_provider_configuration;
 
 pub(crate) mod shape_credential_provider_configurations;
+
+pub(crate) mod shape_credential_rotation_config;
 
 pub(crate) mod shape_credentials_provider_configuration;
 
@@ -920,6 +926,8 @@ pub(crate) mod shape_code_interpreter_summary;
 pub(crate) mod shape_coinbase_cdp_configuration_input;
 
 pub(crate) mod shape_coinbase_cdp_configuration_output;
+
+pub(crate) mod shape_coinbase_cdp_rotation_targets;
 
 pub(crate) mod shape_configuration_bundle_action;
 

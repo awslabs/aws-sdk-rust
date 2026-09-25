@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_types::{BigInteger, Blob, DateTime};
+use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime};
 
 /// Macro for delegating method calls to the encoder.
 ///
@@ -133,13 +133,40 @@ impl Encoder {
     /// tag 3 (negative bignum). For tag 3, the byte string encodes `n` where
     /// the value is `-1 - n`.
     pub fn big_integer(&mut self, value: &BigInteger) -> &mut Self {
-        use num_bigint::{BigInt, Sign};
-
-        let n: BigInt = value
+        let value = value
             .as_ref()
             .parse()
             .expect("BigInteger contains invalid value");
-        let (sign, magnitude) = n.to_bytes_be();
+        self.bigint(&value)
+    }
+
+    /// Writes a `BigDecimal` as a decimal fraction per RFC 8949 §3.4.4.
+    ///
+    /// Decimal fractions use tag 4 followed by a two-element array containing
+    /// the base-10 exponent and mantissa. The mantissa uses the same preferred
+    /// integer or bignum representation as [`Self::big_integer`].
+    pub fn big_decimal(&mut self, value: &BigDecimal) -> &mut Self {
+        let value: bigdecimal::BigDecimal = value
+            .as_ref()
+            .parse()
+            .expect("BigDecimal contains invalid value");
+        let (mantissa, scale) = value.into_bigint_and_scale();
+        let exponent = scale
+            .checked_neg()
+            .expect("BigDecimal exponent is outside the supported range");
+
+        self.encoder
+            .tag(minicbor::data::Tag::new(4))
+            .expect(INFALLIBLE_WRITE);
+        self.array(2);
+        self.encoder.i64(exponent).expect(INFALLIBLE_WRITE);
+        self.bigint(&mantissa)
+    }
+
+    fn bigint(&mut self, value: &num_bigint::BigInt) -> &mut Self {
+        use num_bigint::{BigInt, Sign};
+
+        let (sign, magnitude) = value.to_bytes_be();
 
         match sign {
             Sign::Plus | Sign::NoSign => {
@@ -161,7 +188,7 @@ impl Encoder {
             Sign::Minus => {
                 // Tag 3 value = -1 - n, so n = -1 - value = |value| - 1.
                 let one = BigInt::from(1u8);
-                let n = (-n) - one;
+                let n = (-value) - one;
                 let (_, n_bytes) = n.to_bytes_be();
 
                 // Try preferred serialization as major type 1.
@@ -467,5 +494,65 @@ mod tests {
                                     // bytes[1] is the CBOR byte string length header.
         let payload_start = if bytes[1] < 0x58 { 2 } else { 3 };
         assert_ne!(bytes[payload_start], 0x00);
+    }
+
+    #[test]
+    fn decimal_fraction_rfc8949_example() {
+        // RFC 8949 §3.4.4: 273.15 = tag 4([-2, 27315]).
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_decimal(&"273.15".parse().unwrap());
+        assert_eq!(
+            encoder.into_writer(),
+            vec![0xc4, 0x82, 0x21, 0x19, 0x6a, 0xb3]
+        );
+    }
+
+    #[test]
+    fn decimal_fraction_scientific_notation() {
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_decimal(&"1.23e10".parse().unwrap());
+        // 1.23e10 = 123 * 10^8.
+        assert_eq!(encoder.into_writer(), vec![0xc4, 0x82, 0x08, 0x18, 0x7b]);
+    }
+
+    #[test]
+    fn decimal_fraction_preserves_scale() {
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_decimal(&"1.2300".parse().unwrap());
+        // 1.2300 = 12300 * 10^-4.
+        assert_eq!(
+            encoder.into_writer(),
+            vec![0xc4, 0x82, 0x23, 0x19, 0x30, 0x0c]
+        );
+    }
+
+    #[test]
+    fn decimal_fraction_uses_bignum_mantissa() {
+        let mut encoder = Encoder::new(Vec::new());
+        encoder.big_decimal(&"18446744073709551616".parse().unwrap());
+        assert_eq!(
+            encoder.into_writer(),
+            vec![
+                0xc4, 0x82, 0x00, 0xc2, 0x49, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            ]
+        );
+    }
+
+    #[test]
+    fn valid_big_decimal_can_be_encoded() {
+        for value in [
+            "0",
+            "+5",
+            "-0.0",
+            ".5",
+            "-.5",
+            "5.",
+            "1.5E+3",
+            "1e9223372036854775807",
+            "1e-9223372036854775807",
+        ] {
+            let mut encoder = Encoder::new(Vec::new());
+            encoder.big_decimal(&value.parse().unwrap());
+        }
     }
 }

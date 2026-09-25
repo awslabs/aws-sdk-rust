@@ -4,6 +4,7 @@ pub fn de_list_whats_app_flows_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_whats_app_flows::ListWhatsAppFlowsOutput,
     crate::operation::list_whats_app_flows::ListWhatsAppFlowsError,
@@ -150,6 +151,7 @@ pub fn de_list_whats_app_flows_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_whats_app_flows::ListWhatsAppFlowsOutput,
     crate::operation::list_whats_app_flows::ListWhatsAppFlowsError,

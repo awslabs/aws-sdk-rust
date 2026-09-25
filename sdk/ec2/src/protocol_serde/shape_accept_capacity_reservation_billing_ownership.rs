@@ -4,6 +4,7 @@ pub fn de_accept_capacity_reservation_billing_ownership_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipOutput,
     crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError,
@@ -21,6 +22,7 @@ pub fn de_accept_capacity_reservation_billing_ownership_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipOutput,
     crate::operation::accept_capacity_reservation_billing_ownership::AcceptCapacityReservationBillingOwnershipError,

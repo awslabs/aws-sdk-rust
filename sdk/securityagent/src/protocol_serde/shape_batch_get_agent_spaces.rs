@@ -4,6 +4,7 @@ pub fn de_batch_get_agent_spaces_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput,
     crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesError,
@@ -21,6 +22,7 @@ pub fn de_batch_get_agent_spaces_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesOutput,
     crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesError,

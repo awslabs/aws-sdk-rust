@@ -4,6 +4,7 @@ pub fn de_update_hosted_zone_features_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesOutput,
     crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError,
@@ -93,6 +94,7 @@ pub fn de_update_hosted_zone_features_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesOutput,
     crate::operation::update_hosted_zone_features::UpdateHostedZoneFeaturesError,

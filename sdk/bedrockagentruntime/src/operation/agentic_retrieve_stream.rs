@@ -202,9 +202,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AgenticRetrie
 #[derive(Debug)]
 struct AgenticRetrieveStreamResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AgenticRetrieveStreamResponseDeserializer {
-    fn deserialize_streaming(
+    fn deserialize_streaming_with_config(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
@@ -215,7 +216,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AgenticRe
             return ::std::option::Option::None;
         }
         ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_agentic_retrieve_stream::de_agentic_retrieve_stream_http_response(response),
+            crate::protocol_serde::shape_agentic_retrieve_stream::de_agentic_retrieve_stream_http_response(response, _cfg),
         ))
     }
 
@@ -231,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AgenticRe
                 response.status().as_u16(),
                 response.headers(),
                 body,
+                _cfg,
             ),
         )
     }

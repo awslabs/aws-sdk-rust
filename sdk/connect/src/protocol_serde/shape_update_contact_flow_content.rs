@@ -4,6 +4,7 @@ pub fn de_update_contact_flow_content_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput,
     crate::operation::update_contact_flow_content::UpdateContactFlowContentError,
@@ -124,6 +125,7 @@ pub fn de_update_contact_flow_content_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_contact_flow_content::UpdateContactFlowContentOutput,
     crate::operation::update_contact_flow_content::UpdateContactFlowContentError,

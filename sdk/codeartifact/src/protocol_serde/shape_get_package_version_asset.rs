@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_package_version_asset_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
     crate::operation::get_package_version_asset::GetPackageVersionAssetError,
@@ -19,25 +20,67 @@ pub fn de_get_package_version_asset_http_response(
             _response_body,
         )?));
         output = output.set_asset_name(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_asset_name_header(_response_headers).map_err(|_| {
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
-                    "Failed to parse assetName from header `X-AssetName",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_package_version_asset_output::de_asset_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-AssetName")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                            "Failed to parse assetName from header `X-AssetName`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_package_version(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_header(_response_headers).map_err(|_| {
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
-                    "Failed to parse packageVersion from header `X-PackageVersion",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-PackageVersion")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                            "Failed to parse packageVersion from header `X-PackageVersion`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_package_version_revision(
-            crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_revision_header(_response_headers).map_err(|_| {
-                crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
-                    "Failed to parse packageVersionRevision from header `X-PackageVersionRevision",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_package_version_asset_output::de_package_version_revision_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-PackageVersionRevision")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                            "Failed to parse packageVersionRevision from header `X-PackageVersionRevision`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
@@ -49,6 +92,7 @@ pub fn de_get_package_version_asset_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
     crate::operation::get_package_version_asset::GetPackageVersionAssetError,
@@ -133,11 +177,27 @@ pub fn de_get_package_version_asset_http_error(
                 output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Retry-After")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::get_package_version_asset::GetPackageVersionAssetError::unhandled(
+                                        "Failed to parse retryAfterSeconds from header `Retry-After`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)

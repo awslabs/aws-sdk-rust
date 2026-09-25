@@ -29,6 +29,17 @@ fn is_sensitive(name: &str) -> bool {
 }
 
 /// An immutable view of headers
+///
+/// Header values are stored exactly as received and are *not* required to be valid UTF-8: an HTTP
+/// header value may contain any octet in `0x80..=0xFF` (obs-text, RFC 7230), and an arbitrary
+/// sequence of those is not necessarily valid UTF-8. The string-typed accessors ([`get`](Headers::get), [`get_all`](Headers::get_all),
+/// [`iter`](Headers::iter), [`remove`](Headers::remove)) therefore yield only values that are
+/// valid UTF-8, and skip those that are not. Use the corresponding byte accessors
+/// ([`get_bytes`](Headers::get_bytes), [`get_all_bytes`](Headers::get_all_bytes),
+/// [`iter_bytes`](Headers::iter_bytes)) to observe every value.
+///
+/// Consequently [`len`](Headers::len) and [`contains_key`](Headers::contains_key) count and
+/// report values the string accessors skip.
 #[derive(Clone, Default)]
 pub struct Headers {
     pub(super) headers: http_1x::HeaderMap<HeaderValue>,
@@ -42,10 +53,16 @@ impl Debug for Headers {
             if is_sensitive(name) {
                 map.entry(
                     &name,
-                    &format_args!("** redacted (length={}) **", value.as_ref().len()),
+                    &format_args!("** redacted (length={}) **", value.as_bytes().len()),
                 );
             } else {
-                map.entry(&name, &value.as_ref());
+                match value.try_as_str() {
+                    Some(value) => map.entry(&name, &value),
+                    None => map.entry(
+                        &name,
+                        &format_args!("** non-utf8 (length={}) **", value.as_bytes().len()),
+                    ),
+                };
             }
         }
         map.finish()
@@ -72,7 +89,13 @@ impl<'a> Iterator for HeadersIter<'a> {
     type Item = (&'a str, &'a str);
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.inner.next().map(|(k, v)| (k.as_str(), v.as_ref()))
+        // Values that are not valid UTF-8 are skipped; use `Headers::iter_bytes` to see them.
+        loop {
+            let (name, value) = self.inner.next()?;
+            if let Some(value) = value.try_as_str() {
+                return Some((name.as_str(), value));
+            }
+        }
     }
 }
 
@@ -107,18 +130,59 @@ impl Headers {
 
     /// Returns the value for a given key
     ///
+    /// Returns `None` if the header is absent, or if its value is not valid UTF-8; use
+    /// [`get_bytes`](Self::get_bytes) to read a value of any encoding.
+    ///
     /// If multiple values are associated, the first value is returned
     /// See [HeaderMap::get](http_1x::HeaderMap::get)
     pub fn get(&self, key: impl AsRef<str>) -> Option<&str> {
-        self.headers.get(key.as_ref()).map(|v| v.as_ref())
+        self.headers.get(key.as_ref()).and_then(|v| v.try_as_str())
+    }
+
+    /// Returns the value for a given key, distinguishing an unreadable value from an absent header
+    ///
+    /// `Some(Ok(_))` is a value that is valid UTF-8, `Some(Err(_))` is the raw octets of one that is
+    /// not, and `None` means the header is absent. [`get`](Self::get) collapses the first two into
+    /// `None`, so use this where the difference matters.
+    ///
+    /// If multiple values are associated, the first value is returned.
+    pub fn try_get(&self, key: impl AsRef<str>) -> Option<Result<&str, &[u8]>> {
+        self.headers
+            .get(key.as_ref())
+            .map(|value| match value.try_as_str() {
+                Some(value) => Ok(value),
+                None => Err(value.as_bytes()),
+            })
     }
 
     /// Returns all values for a given key
+    ///
+    /// Values that are not valid UTF-8 are skipped; use
+    /// [`get_all_bytes`](Self::get_all_bytes) to read values of any encoding.
     pub fn get_all(&self, key: impl AsRef<str>) -> impl Iterator<Item = &str> {
         self.headers
             .get_all(key.as_ref())
             .iter()
-            .map(|v| v.as_ref())
+            .filter_map(|v| v.try_as_str())
+    }
+
+    /// Returns the value for a given key as raw bytes
+    ///
+    /// Unlike [`get`](Self::get), the returned bytes are not required to be valid UTF-8.
+    ///
+    /// If multiple values are associated, the first value is returned.
+    pub fn get_bytes(&self, key: impl AsRef<str>) -> Option<&[u8]> {
+        self.headers.get(key.as_ref()).map(|v| v.as_bytes())
+    }
+
+    /// Returns all values for a given key as raw bytes
+    ///
+    /// Unlike [`get_all`](Self::get_all), the returned bytes are not required to be valid UTF-8.
+    pub fn get_all_bytes(&self, key: impl AsRef<str>) -> impl Iterator<Item = &[u8]> {
+        self.headers
+            .get_all(key.as_ref())
+            .iter()
+            .map(|v| v.as_bytes())
     }
 
     /// Returns an iterator over the headers
@@ -126,6 +190,13 @@ impl Headers {
         HeadersIter {
             inner: self.headers.iter(),
         }
+    }
+
+    /// Returns an iterator over the headers, pairing each name with its raw value bytes
+    ///
+    /// Unlike [`iter`](Self::iter), the returned bytes are not required to be valid UTF-8.
+    pub fn iter_bytes(&self) -> impl Iterator<Item = (&str, &[u8])> {
+        self.headers.iter().map(|(k, v)| (k.as_str(), v.as_bytes()))
     }
 
     /// Returns the total number of **values** stored in the map
@@ -158,7 +229,7 @@ impl Headers {
         let value = header_value(value.into_maybe_static().unwrap(), false).unwrap();
         self.headers
             .insert(key, value)
-            .map(|old_value| old_value.into())
+            .and_then(|old_value| old_value.try_as_str().map(str::to_string))
     }
 
     /// Insert a value into the headers structure.
@@ -176,7 +247,7 @@ impl Headers {
         Ok(self
             .headers
             .insert(key, value)
-            .map(|old_value| old_value.into()))
+            .and_then(|old_value| old_value.try_as_str().map(str::to_string)))
     }
 
     /// Appends a value to a given key
@@ -204,11 +275,12 @@ impl Headers {
 
     /// Removes all headers with a given key
     ///
-    /// If there are multiple entries for this key, the first entry is returned
+    /// If there are multiple entries for this key, the first entry is returned. Returns `None`
+    /// if the first value is not valid UTF-8; the headers are removed either way.
     pub fn remove(&mut self, key: impl AsRef<str>) -> Option<String> {
         self.headers
             .remove(key.as_ref())
-            .map(|h| h.as_str().to_string())
+            .and_then(|h| h.try_as_str().map(str::to_string))
     }
 }
 
@@ -217,35 +289,28 @@ impl TryFrom<http_02x::HeaderMap> for Headers {
     type Error = HttpError;
 
     fn try_from(value: http_02x::HeaderMap) -> Result<Self, Self::Error> {
-        if let Some(utf8_error) = value.iter().find_map(|(k, v)| {
-            std::str::from_utf8(v.as_bytes())
-                .err()
-                .map(|err| NonUtf8Header::new(k.as_str().to_owned(), v.as_bytes().to_vec(), err))
-        }) {
-            Err(HttpError::non_utf8_header(utf8_error))
-        } else {
-            // `http` 0.2.x accepts some header names that `http` 1.x rejects (for example names
-            // containing `"`). Convert fallibly and surface an error instead of panicking.
-            //
-            // A `None` key in `HeaderMap`'s iterator means "same name as the previous entry"
-            // (multi-value headers), so the converted names are collected in order before being
-            // extended into the map to preserve that association.
-            let converted: Vec<(Option<http_1x::HeaderName>, HeaderValue)> = value
-                .into_iter()
-                .map(|(k, v)| {
-                    let name = k
-                        .map(|n| http_1x::HeaderName::from_bytes(n.as_str().as_bytes()))
-                        .transpose()
-                        .map_err(HttpError::invalid_header_name)?;
-                    Ok((name, HeaderValue::from_http02x(v).expect("validated above")))
-                })
-                .collect::<Result<_, HttpError>>()?;
-            let mut string_safe_headers: http_1x::HeaderMap<HeaderValue> = Default::default();
-            string_safe_headers.extend(converted);
-            Ok(Headers {
-                headers: string_safe_headers,
+        // Values are admitted regardless of encoding; see `Headers` for how non-UTF-8 values
+        // surface to readers.
+        //
+        // `http` 0.2.x accepts some header names that `http` 1.x rejects (for example names
+        // containing `"`). Convert fallibly and surface an error instead of panicking.
+        //
+        // A `None` key in `HeaderMap`'s iterator means "same name as the previous entry"
+        // (multi-value headers), so the converted names are collected in order before being
+        // extended into the map to preserve that association.
+        let converted: Vec<(Option<http_1x::HeaderName>, HeaderValue)> = value
+            .into_iter()
+            .map(|(k, v)| {
+                let name = k
+                    .map(|n| http_1x::HeaderName::from_bytes(n.as_str().as_bytes()))
+                    .transpose()
+                    .map_err(HttpError::invalid_header_name)?;
+                Ok((name, HeaderValue::from_http02x(v)))
             })
-        }
+            .collect::<Result<_, HttpError>>()?;
+        let mut headers: http_1x::HeaderMap<HeaderValue> = Default::default();
+        headers.extend(converted);
+        Ok(Headers { headers })
     }
 }
 
@@ -254,23 +319,16 @@ impl TryFrom<http_1x::HeaderMap> for Headers {
     type Error = HttpError;
 
     fn try_from(value: http_1x::HeaderMap) -> Result<Self, Self::Error> {
-        if let Some(utf8_error) = value.iter().find_map(|(k, v)| {
-            std::str::from_utf8(v.as_bytes())
-                .err()
-                .map(|err| NonUtf8Header::new(k.as_str().to_owned(), v.as_bytes().to_vec(), err))
-        }) {
-            Err(HttpError::non_utf8_header(utf8_error))
-        } else {
-            let mut string_safe_headers: http_1x::HeaderMap<HeaderValue> = Default::default();
-            string_safe_headers.extend(
-                value
-                    .into_iter()
-                    .map(|(k, v)| (k, HeaderValue::from_http1x(v).expect("validated above"))),
-            );
-            Ok(Headers {
-                headers: string_safe_headers,
-            })
-        }
+        // Values are admitted regardless of encoding; see `Headers` for how non-UTF-8 values
+        // surface to readers. This conversion is infallible, but the signature is retained
+        // because header names may be rejected by the `http` 0.2.x conversion above.
+        let mut headers: http_1x::HeaderMap<HeaderValue> = Default::default();
+        headers.extend(
+            value
+                .into_iter()
+                .map(|(k, v)| (k, HeaderValue::from_http1x(v))),
+        );
+        Ok(Headers { headers })
     }
 }
 
@@ -331,7 +389,7 @@ mod sealed {
             Ok(Cow::Owned(
                 std::str::from_utf8(self.as_bytes())
                     .map_err(|err| {
-                        HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                        HttpError::non_utf8_header(NonUtf8Header::new(
                             self.as_bytes().to_vec(),
                             err,
                         ))
@@ -342,10 +400,7 @@ mod sealed {
 
         fn as_str(&self) -> Result<&str, HttpError> {
             std::str::from_utf8(self.as_bytes()).map_err(|err| {
-                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
-                    self.as_bytes().to_vec(),
-                    err,
-                ))
+                HttpError::non_utf8_header(NonUtf8Header::new(self.as_bytes().to_vec(), err))
             })
         }
     }
@@ -383,7 +438,7 @@ mod sealed {
             Ok(Cow::Owned(
                 std::str::from_utf8(self.as_bytes())
                     .map_err(|err| {
-                        HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                        HttpError::non_utf8_header(NonUtf8Header::new(
                             self.as_bytes().to_vec(),
                             err,
                         ))
@@ -394,10 +449,7 @@ mod sealed {
 
         fn as_str(&self) -> Result<&str, HttpError> {
             std::str::from_utf8(self.as_bytes()).map_err(|err| {
-                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
-                    self.as_bytes().to_vec(),
-                    err,
-                ))
+                HttpError::non_utf8_header(NonUtf8Header::new(self.as_bytes().to_vec(), err))
             })
         }
     }
@@ -422,30 +474,20 @@ mod header_value {
     }
 
     impl HeaderValue {
+        // Encoding is not validated here. Callers that require UTF-8 go through
+        // `AsHeaderComponent`, which validates before reaching this point.
         #[cfg(feature = "http-02x")]
-        pub(crate) fn from_http02x(value: http_02x::HeaderValue) -> Result<Self, HttpError> {
-            let _ = std::str::from_utf8(value.as_bytes()).map_err(|err| {
-                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
-                    value.as_bytes().to_vec(),
-                    err,
-                ))
-            })?;
-            Ok(Self {
+        pub(crate) fn from_http02x(value: http_02x::HeaderValue) -> Self {
+            Self {
                 _private: Inner::H0(value),
-            })
+            }
         }
 
-        #[allow(dead_code)]
-        pub(crate) fn from_http1x(value: http_1x::HeaderValue) -> Result<Self, HttpError> {
-            let _ = std::str::from_utf8(value.as_bytes()).map_err(|err| {
-                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
-                    value.as_bytes().to_vec(),
-                    err,
-                ))
-            })?;
-            Ok(Self {
+        // Encoding is not validated here; see `from_http02x`.
+        pub(crate) fn from_http1x(value: http_1x::HeaderValue) -> Self {
+            Self {
                 _private: Inner::H1(value),
-            })
+            }
         }
 
         #[cfg(feature = "http-02x")]
@@ -467,13 +509,10 @@ mod header_value {
     }
 
     impl AsRef<str> for HeaderValue {
+        /// # Panics
+        /// If the value is not valid UTF-8. See [`HeaderValue::as_str`].
         fn as_ref(&self) -> &str {
-            let bytes = match &self._private {
-                #[cfg(feature = "http-02x")]
-                Inner::H0(v) => v.as_bytes(),
-                Inner::H1(v) => v.as_bytes(),
-            };
-            std::str::from_utf8(bytes).expect("unreachable—only strings may be stored")
+            std::str::from_utf8(self.as_bytes()).expect("header value is not valid UTF-8")
         }
     }
 
@@ -485,8 +524,35 @@ mod header_value {
 
     impl HeaderValue {
         /// Returns the string representation of this header value
+        ///
+        /// # Panics
+        /// If the value is not valid UTF-8. A `HeaderValue` stored in a [`Headers`] may be of any
+        /// encoding, so prefer [`try_as_str`](Self::try_as_str) or
+        /// [`as_bytes`](Self::as_bytes) unless the value is one you constructed yourself, which
+        /// is necessarily valid UTF-8 because the only public constructors ([`FromStr`] and
+        /// [`TryFrom<String>`]) take a `str`.
+        ///
+        /// No accessor on [`Headers`] hands out a `HeaderValue`, so this is not reachable through
+        /// one. Note [`From<HeaderValue> for String`](String::from) panics for the same reason.
         pub fn as_str(&self) -> &str {
             self.as_ref()
+        }
+
+        /// Returns the bytes of this header value exactly as they were received
+        ///
+        /// Unlike [`as_str`](Self::as_str), this is always available.
+        pub fn as_bytes(&self) -> &[u8] {
+            match &self._private {
+                #[cfg(feature = "http-02x")]
+                Inner::H0(v) => v.as_bytes(),
+                Inner::H1(v) => v.as_bytes(),
+            }
+        }
+
+        /// Returns the string representation of this header value, or `None` if it is not
+        /// valid UTF-8
+        pub fn try_as_str(&self) -> Option<&str> {
+            std::str::from_utf8(self.as_bytes()).ok()
         }
     }
 
@@ -504,8 +570,7 @@ mod header_value {
         fn try_from(value: String) -> Result<Self, Self::Error> {
             Ok(HeaderValue::from_http1x(
                 http_1x::HeaderValue::try_from(value).map_err(HttpError::invalid_header_value)?,
-            )
-            .expect("input was a string"))
+            ))
         }
     }
 }
@@ -546,7 +611,8 @@ fn header_value(value: MaybeStatic, panic_safe: bool) -> Result<HeaderValue, Htt
             http_1x::HeaderValue::try_from(s).map_err(HttpError::invalid_header_value)?
         }
     };
-    HeaderValue::from_http1x(header)
+    // `value` is a `Cow<'static, str>`, so the result is valid UTF-8 by construction.
+    Ok(HeaderValue::from_http1x(header))
 }
 
 #[cfg(test)]
@@ -623,12 +689,71 @@ mod tests {
     fn no_panic_try_append_invalid_header_value() {
         let mut headers = Headers::new();
         assert!(headers
-            .try_insert(
+            .try_append(
                 "foo",
                 // Valid header value with invalid UTF-8
                 http_1x::HeaderValue::from_bytes(&[0xC0, 0x80]).unwrap()
             )
             .is_err());
+    }
+
+    #[test]
+    fn header_value_exposes_bytes_and_checked_str() {
+        let value: HeaderValue = "hello".parse().expect("valid");
+        assert_eq!(b"hello", value.as_bytes());
+        assert_eq!(Some("hello"), value.try_as_str());
+        assert_eq!("hello", value.as_str());
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn byte_accessors_agree_with_str_accessors() {
+        let mut map = http_1x::HeaderMap::new();
+        map.append("single", http_1x::HeaderValue::from_static("v1"));
+        map.append("multi", http_1x::HeaderValue::from_static("m1"));
+        map.append("multi", http_1x::HeaderValue::from_static("m2"));
+        let headers = Headers::try_from(map).expect("all values are valid UTF-8");
+
+        assert_eq!(Some(b"v1".as_slice()), headers.get_bytes("single"));
+        assert_eq!(
+            headers.get("single").map(str::as_bytes),
+            headers.get_bytes("single")
+        );
+
+        let all_bytes: Vec<_> = headers.get_all_bytes("multi").collect();
+        assert_eq!(vec![b"m1".as_slice(), b"m2".as_slice()], all_bytes);
+        let all_str: Vec<_> = headers.get_all("multi").map(str::as_bytes).collect();
+        assert_eq!(all_str, all_bytes);
+
+        assert_eq!(None, headers.get_bytes("absent"));
+
+        let mut from_bytes: Vec<_> = headers.iter_bytes().collect();
+        from_bytes.sort();
+        let mut from_str: Vec<_> = headers.iter().map(|(k, v)| (k, v.as_bytes())).collect();
+        from_str.sort();
+        assert_eq!(from_str, from_bytes);
+    }
+
+    // Reported in review: `insert`/`try_insert` return the previous value, which reaches the
+    // panicking `AsRef<str>` when that value was admitted as non-UTF-8.
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn replacing_a_non_utf8_value_does_not_panic() {
+        for replace in [
+            (|h: &mut Headers| {
+                h.insert("bad", "replacement");
+            }) as fn(&mut Headers),
+            |h: &mut Headers| {
+                h.try_insert("bad", "replacement").expect("valid");
+            },
+        ] {
+            let mut map = http_1x::HeaderMap::new();
+            map.insert("bad", non_utf8_header_value());
+            let mut headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+            let res =
+                std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| replace(&mut headers)));
+            assert!(res.is_ok(), "replacing an admitted value must not panic");
+        }
     }
 
     proptest::proptest! {
@@ -663,6 +788,126 @@ mod tests {
             res.unwrap().is_err(),
             "expected an Err for a header name that http 1.x rejects"
         );
+    }
+
+    // A lone 0xE9 is a valid HTTP header octet (obs-text per RFC 7230) but is not valid UTF-8.
+    // Every user of this fixture builds a `HeaderMap` from one of the `http` crates, so it is dead
+    // code when neither is enabled.
+    #[cfg(any(feature = "http-1x", feature = "http-02x"))]
+    const NON_UTF8_VALUE: &[u8] = b"value-\xe9";
+
+    #[cfg(feature = "http-1x")]
+    fn non_utf8_header_value() -> http_1x::HeaderValue {
+        http_1x::HeaderValue::from_bytes(NON_UTF8_VALUE).expect("valid header octets")
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn non_utf8_values_are_admitted_and_readable_as_bytes() {
+        let mut map = http_1x::HeaderMap::new();
+        map.insert("ok", http_1x::HeaderValue::from_static("v"));
+        map.insert("bad", non_utf8_header_value());
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        // The value is present...
+        assert!(headers.contains_key("bad"));
+        assert_eq!(Some(NON_UTF8_VALUE), headers.get_bytes("bad"));
+        // ...but is not offered as a string.
+        assert_eq!(None, headers.get("bad"));
+
+        assert_eq!(Some("v"), headers.get("ok"));
+    }
+
+    #[cfg(feature = "http-02x")]
+    #[test]
+    fn non_utf8_values_are_admitted_from_an_http02x_headermap() {
+        let mut map = http_02x::HeaderMap::new();
+        map.insert(
+            "bad",
+            http_02x::HeaderValue::from_bytes(NON_UTF8_VALUE).expect("valid header octets"),
+        );
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+        assert_eq!(Some(NON_UTF8_VALUE), headers.get_bytes("bad"));
+        assert_eq!(None, headers.get("bad"));
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn a_non_utf8_value_does_not_hide_the_other_values_of_its_header() {
+        let mut map = http_1x::HeaderMap::new();
+        map.append("multi", http_1x::HeaderValue::from_static("v1"));
+        map.append("multi", non_utf8_header_value());
+        map.append("multi", http_1x::HeaderValue::from_static("v3"));
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        assert_eq!(
+            vec!["v1", "v3"],
+            headers.get_all("multi").collect::<Vec<_>>()
+        );
+        assert_eq!(
+            vec![b"v1".as_slice(), NON_UTF8_VALUE, b"v3".as_slice()],
+            headers.get_all_bytes("multi").collect::<Vec<_>>()
+        );
+        // `get` returns the first value, which here is valid UTF-8.
+        assert_eq!(Some("v1"), headers.get("multi"));
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn try_get_distinguishes_unreadable_from_absent() {
+        let mut map = http_1x::HeaderMap::new();
+        map.insert("ok", http_1x::HeaderValue::from_static("v"));
+        map.insert("bad", non_utf8_header_value());
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        assert_eq!(Some(Ok("v")), headers.try_get("ok"));
+        assert_eq!(Some(Err(NON_UTF8_VALUE)), headers.try_get("bad"));
+        assert_eq!(None, headers.try_get("absent"));
+
+        // `get` cannot tell the last two apart, which is why `try_get` exists.
+        assert_eq!(None, headers.get("bad"));
+        assert_eq!(None, headers.get("absent"));
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn iter_skips_non_utf8_values_and_iter_bytes_does_not() {
+        let mut map = http_1x::HeaderMap::new();
+        map.insert("a", non_utf8_header_value());
+        map.insert("b", http_1x::HeaderValue::from_static("v"));
+        map.insert("c", non_utf8_header_value());
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        assert_eq!(vec![("b", "v")], headers.iter().collect::<Vec<_>>());
+        assert_eq!(3, headers.iter_bytes().count());
+        // `len` counts stored values, including those `iter` skips.
+        assert_eq!(3, headers.len());
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn remove_drops_a_non_utf8_value_and_reports_none() {
+        let mut map = http_1x::HeaderMap::new();
+        map.insert("bad", non_utf8_header_value());
+        let mut headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        assert_eq!(None, headers.remove("bad"));
+        assert!(
+            !headers.contains_key("bad"),
+            "the header is removed regardless"
+        );
+    }
+
+    #[cfg(feature = "http-1x")]
+    #[test]
+    fn debug_marks_non_utf8_values_without_panicking() {
+        let mut map = http_1x::HeaderMap::new();
+        map.insert("bad", non_utf8_header_value());
+        let headers = Headers::try_from(map).expect("non-UTF-8 values are admitted");
+
+        let output = format!("{headers:?}");
+        assert!(output.contains("bad"), "{output}");
+        assert!(output.contains("non-utf8"), "{output}");
     }
 
     // Multi-value headers rely on the `None`-key semantics of `HeaderMap`'s iterator; make sure the

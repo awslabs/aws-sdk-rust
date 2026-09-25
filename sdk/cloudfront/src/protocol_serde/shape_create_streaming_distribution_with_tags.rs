@@ -4,6 +4,7 @@ pub fn de_create_streaming_distribution_with_tags_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput,
     crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError,
@@ -275,6 +276,7 @@ pub fn de_create_streaming_distribution_with_tags_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsOutput,
     crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError,
@@ -284,18 +286,48 @@ pub fn de_create_streaming_distribution_with_tags_http_response(
         let mut output =
             crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError::unhandled(
+                                "Failed to parse ETag from header `ETag`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_location(
-            crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_location_header(_response_headers).map_err(|_| {
-                crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Location")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTagsError::unhandled(
+                                "Failed to parse Location from header `Location`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_streaming_distribution(
             crate::protocol_serde::shape_create_streaming_distribution_with_tags_output::de_streaming_distribution_payload(_response_body)?,

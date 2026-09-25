@@ -2,8 +2,8 @@
 pub(crate) fn de_active_contexts_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-active-contexts");
-    let var_1: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-lex-active-contexts");
+    let var_1: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str_bytes(headers)?;
     let var_1: std::result::Result<Vec<_>, _> = var_1
         .iter()
         .map(|s| {
@@ -37,50 +37,50 @@ pub fn de_audio_stream_payload(
 pub(crate) fn de_content_type_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("Content-Type");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("Content-Type");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_dialog_state_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::DialogState>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-dialog-state");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-dialog-state");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_encoded_message_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-encoded-message");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-encoded-message");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_intent_name_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-intent-name");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-intent-name");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_message_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-message");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-message");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_message_format_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::MessageFormatType>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-message-format");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-message-format");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_session_attributes_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-session-attributes");
-    let var_2: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-lex-session-attributes");
+    let var_2: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str_bytes(headers)?;
     let var_2: std::result::Result<Vec<_>, _> = var_2
         .iter()
         .map(|s| {
@@ -106,22 +106,22 @@ pub(crate) fn de_session_attributes_header(
 pub(crate) fn de_session_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-session-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-session-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_slot_to_elicit_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-slot-to-elicit");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-lex-slot-to-elicit");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_slots_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-lex-slots");
-    let var_3: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str(headers)?;
+    let headers = header_map.get_all_bytes("x-amz-lex-slots");
+    let var_3: Vec<::std::string::String> = ::aws_smithy_http::header::read_many_from_str_bytes(headers)?;
     let var_3: std::result::Result<Vec<_>, _> = var_3
         .iter()
         .map(|s| {

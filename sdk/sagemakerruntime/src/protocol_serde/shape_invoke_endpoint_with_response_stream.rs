@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_endpoint_with_response_stream_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
     crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,
@@ -19,28 +20,73 @@ pub fn de_invoke_endpoint_with_response_stream_http_response(
             crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_body_payload(_response_body)?,
         ));
         output = output.set_content_type(
-            crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
-                    "Failed to parse ContentType from header `X-Amzn-SageMaker-Content-Type",
-                )
-            })?,
+            match crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-SageMaker-Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
+                                "Failed to parse ContentType from header `X-Amzn-SageMaker-Content-Type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_custom_attributes(
-            crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_custom_attributes_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
-                        "Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_custom_attributes_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("X-Amzn-SageMaker-Custom-Attributes")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
+                                "Failed to parse CustomAttributes from header `X-Amzn-SageMaker-Custom-Attributes`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_invoked_production_variant(
-            crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_invoked_production_variant_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
-                        "Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant",
-                    )
-                })?,
+            match crate::protocol_serde::shape_invoke_endpoint_with_response_stream_output::de_invoked_production_variant_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-Amzn-Invoked-Production-Variant")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError::unhandled(
+                                "Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output
@@ -54,6 +100,7 @@ pub fn de_invoke_endpoint_with_response_stream_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamOutput,
     crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamError,

@@ -14,6 +14,8 @@ pub struct EcsCapacityIncreaseConfiguration {
     pub target_percent: i32,
     /// <p>The monitoring approach specified for the configuration, for example, <code>Most_Recent</code>.</p>
     pub capacity_monitoring_approach: crate::types::EcsCapacityMonitoringApproach,
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the service's new desired task count calculated in the step.</p>
+    pub wait_elb_target_group_healthy: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>,
 }
 impl EcsCapacityIncreaseConfiguration {
     /// <p>The timeout value specified for the configuration.</p>
@@ -37,6 +39,10 @@ impl EcsCapacityIncreaseConfiguration {
     pub fn capacity_monitoring_approach(&self) -> &crate::types::EcsCapacityMonitoringApproach {
         &self.capacity_monitoring_approach
     }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the service's new desired task count calculated in the step.</p>
+    pub fn wait_elb_target_group_healthy(&self) -> ::std::option::Option<&crate::types::WaitElbTargetGroupHealthy> {
+        self.wait_elb_target_group_healthy.as_ref()
+    }
 }
 impl EcsCapacityIncreaseConfiguration {
     /// Creates a new builder-style object to manufacture [`EcsCapacityIncreaseConfiguration`](crate::types::EcsCapacityIncreaseConfiguration).
@@ -54,6 +60,7 @@ pub struct EcsCapacityIncreaseConfigurationBuilder {
     pub(crate) ungraceful: ::std::option::Option<crate::types::EcsUngraceful>,
     pub(crate) target_percent: ::std::option::Option<i32>,
     pub(crate) capacity_monitoring_approach: ::std::option::Option<crate::types::EcsCapacityMonitoringApproach>,
+    pub(crate) wait_elb_target_group_healthy: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>,
 }
 impl EcsCapacityIncreaseConfigurationBuilder {
     /// <p>The timeout value specified for the configuration.</p>
@@ -132,6 +139,20 @@ impl EcsCapacityIncreaseConfigurationBuilder {
     pub fn get_capacity_monitoring_approach(&self) -> &::std::option::Option<crate::types::EcsCapacityMonitoringApproach> {
         &self.capacity_monitoring_approach
     }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the service's new desired task count calculated in the step.</p>
+    pub fn wait_elb_target_group_healthy(mut self, input: crate::types::WaitElbTargetGroupHealthy) -> Self {
+        self.wait_elb_target_group_healthy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the service's new desired task count calculated in the step.</p>
+    pub fn set_wait_elb_target_group_healthy(mut self, input: ::std::option::Option<crate::types::WaitElbTargetGroupHealthy>) -> Self {
+        self.wait_elb_target_group_healthy = input;
+        self
+    }
+    /// <p>If enabled, the step completes only after each attached ELB target group reports a healthy target count that matches the service's new desired task count calculated in the step.</p>
+    pub fn get_wait_elb_target_group_healthy(&self) -> &::std::option::Option<crate::types::WaitElbTargetGroupHealthy> {
+        &self.wait_elb_target_group_healthy
+    }
     /// Consumes the builder and constructs a [`EcsCapacityIncreaseConfiguration`](crate::types::EcsCapacityIncreaseConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`services`](crate::types::builders::EcsCapacityIncreaseConfigurationBuilder::services)
@@ -151,6 +172,7 @@ impl EcsCapacityIncreaseConfigurationBuilder {
                     .parse::<crate::types::EcsCapacityMonitoringApproach>()
                     .expect("static value validated to member"),
             ),
+            wait_elb_target_group_healthy: self.wait_elb_target_group_healthy,
         })
     }
 }

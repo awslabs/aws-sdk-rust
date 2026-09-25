@@ -447,6 +447,8 @@ pub(crate) mod shape_face_model_version_list;
 
 pub(crate) mod shape_face_record_list;
 
+pub(crate) mod shape_feedback_list;
+
 pub(crate) mod shape_get_content_moderation_request_metadata;
 
 pub(crate) mod shape_get_label_detection_request_metadata;
@@ -514,6 +516,8 @@ pub(crate) mod shape_searched_user;
 pub(crate) mod shape_segment_detections;
 
 pub(crate) mod shape_segment_types_info;
+
+pub(crate) mod shape_session_metadata;
 
 pub(crate) mod shape_start_segment_detection_filters;
 
@@ -626,6 +630,8 @@ pub(crate) mod shape_face_match;
 pub(crate) mod shape_face_record;
 
 pub(crate) mod shape_face_search_settings;
+
+pub(crate) mod shape_feedback_item;
 
 pub(crate) mod shape_general_labels_settings;
 

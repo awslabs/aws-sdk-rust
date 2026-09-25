@@ -4,6 +4,7 @@ pub fn de_evaluate_pull_request_approval_rules_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput,
     crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError,
@@ -243,6 +244,7 @@ pub fn de_evaluate_pull_request_approval_rules_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput,
     crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError,

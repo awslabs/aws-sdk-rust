@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_object_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -14,28 +15,126 @@ pub fn de_get_object_http_response(
         let mut output = crate::operation::get_object::builders::GetObjectOutputBuilder::default();
         output = output.set_body(Some(crate::protocol_serde::shape_get_object_output::de_body_payload(_response_body)?));
         output = output.set_cache_control(
-            crate::protocol_serde::shape_get_object_output::de_cache_control_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse CacheControl from header `Cache-Control"))?,
+            match crate::protocol_serde::shape_get_object_output::de_cache_control_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Cache-Control")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                            "Failed to parse CacheControl from header `Cache-Control`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_length(
-            crate::protocol_serde::shape_get_object_output::de_content_length_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentLength from header `Content-Length"))?,
+            match crate::protocol_serde::shape_get_object_output::de_content_length_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Length")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                            "Failed to parse ContentLength from header `Content-Length`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_range(
-            crate::protocol_serde::shape_get_object_output::de_content_range_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentRange from header `Content-Range"))?,
+            match crate::protocol_serde::shape_get_object_output::de_content_range_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Range")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                            "Failed to parse ContentRange from header `Content-Range`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_object_output::de_content_type_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentType from header `Content-Type"))?,
+            match crate::protocol_serde::shape_get_object_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                            "Failed to parse ContentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
-        output = output.set_e_tag(
-            crate::protocol_serde::shape_get_object_output::de_e_tag_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse ETag from header `ETag"))?,
-        );
+        output = output.set_e_tag(match crate::protocol_serde::shape_get_object_output::de_e_tag_header(_response_headers) {
+            ::std::result::Result::Ok(value) => value,
+            ::std::result::Result::Err(err) => {
+                let _ = &err;
+                let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                if has_unreadable_value
+                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                {
+                    ::std::option::Option::None
+                } else {
+                    return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                        "Failed to parse ETag from header `ETag`",
+                    ));
+                }
+            }
+        });
         output = output.set_last_modified(
-            crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers)
-                .map_err(|_| crate::operation::get_object::GetObjectError::unhandled("Failed to parse LastModified from header `Last-Modified"))?,
+            match crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Last-Modified")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
+                            "Failed to parse LastModified from header `Last-Modified`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_status_code(Some(_response_status as _));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
@@ -48,6 +147,7 @@ pub fn de_get_object_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)

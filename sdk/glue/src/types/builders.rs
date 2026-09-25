@@ -289,6 +289,8 @@ pub use crate::types::_data_quality_encryption::DataQualityEncryptionBuilder;
 
 pub use crate::types::_table_identifier::TableIdentifierBuilder;
 
+pub use crate::types::_federated_table::FederatedTableBuilder;
+
 pub use crate::types::_view_definition_input::ViewDefinitionInputBuilder;
 
 pub use crate::types::_iceberg_input::IcebergInputBuilder;
@@ -394,8 +396,6 @@ pub use crate::types::_partition_index_descriptor::PartitionIndexDescriptorBuild
 pub use crate::types::_glue_policy::GluePolicyBuilder;
 
 pub use crate::types::_statement_output::StatementOutputBuilder;
-
-pub use crate::types::_federated_table::FederatedTableBuilder;
 
 pub use crate::types::_view_definition::ViewDefinitionBuilder;
 

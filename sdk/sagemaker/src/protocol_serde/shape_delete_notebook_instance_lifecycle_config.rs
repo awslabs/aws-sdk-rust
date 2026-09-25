@@ -4,6 +4,7 @@ pub fn de_delete_notebook_instance_lifecycle_config_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput,
     crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError,
@@ -21,6 +22,7 @@ pub fn de_delete_notebook_instance_lifecycle_config_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput,
     crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError,

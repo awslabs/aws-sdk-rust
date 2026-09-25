@@ -4,6 +4,7 @@ pub fn de_list_open_cypher_queries_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput,
     crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError,
@@ -329,6 +330,7 @@ pub fn de_list_open_cypher_queries_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_open_cypher_queries::ListOpenCypherQueriesOutput,
     crate::operation::list_open_cypher_queries::ListOpenCypherQueriesError,

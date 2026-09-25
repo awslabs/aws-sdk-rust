@@ -4,6 +4,7 @@ pub fn de_delete_vpn_connection_route_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput,
     crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteError,
@@ -23,6 +24,7 @@ pub fn de_delete_vpn_connection_route_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput,
     crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteError,

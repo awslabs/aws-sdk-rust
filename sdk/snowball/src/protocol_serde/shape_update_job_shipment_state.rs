@@ -4,6 +4,7 @@ pub fn de_update_job_shipment_state_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput,
     crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
@@ -63,6 +64,7 @@ pub fn de_update_job_shipment_state_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput,
     crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,

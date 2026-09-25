@@ -4,6 +4,7 @@ pub fn de_set_instance_health_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::set_instance_health::SetInstanceHealthOutput, crate::operation::set_instance_health::SetInstanceHealthError>
 {
     #[allow(unused_mut)]
@@ -42,6 +43,7 @@ pub fn de_set_instance_health_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::set_instance_health::SetInstanceHealthOutput, crate::operation::set_instance_health::SetInstanceHealthError>
 {
     Ok({

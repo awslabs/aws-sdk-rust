@@ -4,6 +4,7 @@ pub fn de_delete_replication_set_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_replication_set::DeleteReplicationSetOutput,
     crate::operation::delete_replication_set::DeleteReplicationSetError,
@@ -99,6 +100,7 @@ pub fn de_delete_replication_set_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_replication_set::DeleteReplicationSetOutput,
     crate::operation::delete_replication_set::DeleteReplicationSetError,

@@ -217,11 +217,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDomin
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
             crate::protocol_serde::shape_list_dominant_language_detection_jobs::de_list_dominant_language_detection_jobs_http_error(
-                status, headers, body,
+                status, headers, body, _cfg,
             )
         } else {
             crate::protocol_serde::shape_list_dominant_language_detection_jobs::de_list_dominant_language_detection_jobs_http_response(
-                status, headers, body,
+                status, headers, body, _cfg,
             )
         };
         crate::protocol_serde::type_erase_result(parse_result)

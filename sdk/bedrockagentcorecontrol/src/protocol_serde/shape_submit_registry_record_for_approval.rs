@@ -4,6 +4,7 @@ pub fn de_submit_registry_record_for_approval_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalOutput,
     crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError,
@@ -125,6 +126,7 @@ pub fn de_submit_registry_record_for_approval_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalOutput,
     crate::operation::submit_registry_record_for_approval::SubmitRegistryRecordForApprovalError,

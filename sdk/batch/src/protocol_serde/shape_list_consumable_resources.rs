@@ -4,6 +4,7 @@ pub fn de_list_consumable_resources_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_consumable_resources::ListConsumableResourcesOutput,
     crate::operation::list_consumable_resources::ListConsumableResourcesError,
@@ -63,6 +64,7 @@ pub fn de_list_consumable_resources_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_consumable_resources::ListConsumableResourcesOutput,
     crate::operation::list_consumable_resources::ListConsumableResourcesError,

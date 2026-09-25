@@ -215,6 +215,18 @@ pub(crate) fn create_prompt_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_vpc_configuration_output_output_correct_errors(
+    mut builder: crate::operation::create_vpc_configuration::builders::CreateVpcConfigurationOutputBuilder,
+) -> crate::operation::create_vpc_configuration::builders::CreateVpcConfigurationOutputBuilder {
+    if builder.vpc_configuration_id.is_none() {
+        builder.vpc_configuration_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VpcConfigurationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_agent_output_output_correct_errors(
     mut builder: crate::operation::delete_agent::builders::DeleteAgentOutputBuilder,
 ) -> crate::operation::delete_agent::builders::DeleteAgentOutputBuilder {
@@ -331,6 +343,18 @@ pub(crate) fn delete_resource_policy_output_output_correct_errors(
 ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder {
     if builder.resource_arn.is_none() {
         builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_vpc_configuration_output_output_correct_errors(
+    mut builder: crate::operation::delete_vpc_configuration::builders::DeleteVpcConfigurationOutputBuilder,
+) -> crate::operation::delete_vpc_configuration::builders::DeleteVpcConfigurationOutputBuilder {
+    if builder.vpc_configuration_id.is_none() {
+        builder.vpc_configuration_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VpcConfigurationStatus>().ok()
     }
     builder
 }
@@ -566,6 +590,18 @@ pub(crate) fn get_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_vpc_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_vpc_configuration::builders::GetVpcConfigurationOutputBuilder,
+) -> crate::operation::get_vpc_configuration::builders::GetVpcConfigurationOutputBuilder {
+    if builder.vpc_configuration.is_none() {
+        builder.vpc_configuration = {
+            let builder = crate::types::builders::VpcConfigurationBuilder::default();
+            crate::serde_util::vpc_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn list_agent_action_groups_output_output_correct_errors(
     mut builder: crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder,
 ) -> crate::operation::list_agent_action_groups::builders::ListAgentActionGroupsOutputBuilder {
@@ -688,6 +724,15 @@ pub(crate) fn list_prompts_output_output_correct_errors(
 ) -> crate::operation::list_prompts::builders::ListPromptsOutputBuilder {
     if builder.prompt_summaries.is_none() {
         builder.prompt_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_vpc_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_vpc_configurations::builders::ListVpcConfigurationsOutputBuilder,
+) -> crate::operation::list_vpc_configurations::builders::ListVpcConfigurationsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -1192,6 +1237,42 @@ pub(crate) fn ingestion_job_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn vpc_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcConfigurationBuilder,
+) -> crate::types::builders::VpcConfigurationBuilder {
+    if builder.vpc_configuration_id.is_none() {
+        builder.vpc_configuration_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VpcConfigurationStatus>().ok()
+    }
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.subnet_ids.is_none() {
+        builder.subnet_ids = Some(Default::default())
+    }
+    if builder.resource_target.is_none() {
+        builder.resource_target = Some(Default::default())
+    }
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.protocol.is_none() {
+        builder.protocol = "no value was set".parse::<crate::types::VpcProtocol>().ok()
+    }
+    if builder.resolution_mode.is_none() {
+        builder.resolution_mode = "no value was set".parse::<crate::types::VpcResolutionMode>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn flow_alias_concurrency_configuration_correct_errors(
     mut builder: crate::types::builders::FlowAliasConcurrencyConfigurationBuilder,
 ) -> crate::types::builders::FlowAliasConcurrencyConfigurationBuilder {
@@ -1589,6 +1670,36 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vpc_configuration_summary_correct_errors(
+    mut builder: crate::types::builders::VpcConfigurationSummaryBuilder,
+) -> crate::types::builders::VpcConfigurationSummaryBuilder {
+    if builder.vpc_configuration_id.is_none() {
+        builder.vpc_configuration_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VpcConfigurationStatus>().ok()
+    }
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.resource_target.is_none() {
+        builder.resource_target = Some(Default::default())
+    }
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.protocol.is_none() {
+        builder.protocol = "no value was set".parse::<crate::types::VpcProtocol>().ok()
+    }
+    if builder.resolution_mode.is_none() {
+        builder.resolution_mode = "no value was set".parse::<crate::types::VpcResolutionMode>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

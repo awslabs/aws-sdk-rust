@@ -4,6 +4,7 @@ pub fn de_import_public_key_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::import_public_key::ImportPublicKeyOutput, crate::operation::import_public_key::ImportPublicKeyError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -25,62 +26,172 @@ pub fn de_import_public_key_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_public_key::ImportPublicKeyError::unhandled)?;
                 output = output.set_access_control_allow_origin(
-                    crate::protocol_serde::shape_access_denied_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_access_control_allow_origin_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Allow-Origin")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_access_control_expose_headers(
-                    crate::protocol_serde::shape_access_denied_exception::de_access_control_expose_headers_header(_response_headers).map_err(
-                        |_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
-                            )
-                        },
-                    )?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_access_control_expose_headers_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Expose-Headers")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_cache_control(
-                    crate::protocol_serde::shape_access_denied_exception::de_cache_control_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse cacheControl from header `Cache-Control",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_cache_control_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Cache-Control")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse cacheControl from header `Cache-Control`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_content_security_policy(
-                    crate::protocol_serde::shape_access_denied_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_content_security_policy_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Content-Security-Policy")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_strict_transport_security(
-                    crate::protocol_serde::shape_access_denied_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_strict_transport_security_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Strict-Transport-Security")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_amzn_error_type(
-                    crate::protocol_serde::shape_access_denied_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_x_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xAmznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_content_type_options(
-                    crate::protocol_serde::shape_access_denied_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_x_content_type_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Content-Type-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_frame_options(
-                    crate::protocol_serde::shape_access_denied_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xFrameOptions from header `X-Frame-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_x_frame_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Frame-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xFrameOptions from header `X-Frame-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -98,60 +209,172 @@ pub fn de_import_public_key_http_error(
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_public_key::ImportPublicKeyError::unhandled)?;
                 output = output.set_access_control_allow_origin(
-                    crate::protocol_serde::shape_conflict_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_access_control_allow_origin_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Allow-Origin")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_access_control_expose_headers(
-                    crate::protocol_serde::shape_conflict_exception::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_access_control_expose_headers_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Expose-Headers")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_cache_control(
-                    crate::protocol_serde::shape_conflict_exception::de_cache_control_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse cacheControl from header `Cache-Control",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_cache_control_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Cache-Control")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse cacheControl from header `Cache-Control`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_content_security_policy(
-                    crate::protocol_serde::shape_conflict_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_content_security_policy_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Content-Security-Policy")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_strict_transport_security(
-                    crate::protocol_serde::shape_conflict_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_strict_transport_security_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Strict-Transport-Security")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_amzn_error_type(
-                    crate::protocol_serde::shape_conflict_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_x_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xAmznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_content_type_options(
-                    crate::protocol_serde::shape_conflict_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_x_content_type_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Content-Type-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_frame_options(
-                    crate::protocol_serde::shape_conflict_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xFrameOptions from header `X-Frame-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_conflict_exception::de_x_frame_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Frame-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xFrameOptions from header `X-Frame-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -169,60 +392,172 @@ pub fn de_import_public_key_http_error(
                 output = crate::protocol_serde::shape_pending_verification::de_pending_verification_json_err(_response_body, output)
                     .map_err(crate::operation::import_public_key::ImportPublicKeyError::unhandled)?;
                 output = output.set_access_control_allow_origin(
-                    crate::protocol_serde::shape_pending_verification::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_access_control_allow_origin_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Allow-Origin")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_access_control_expose_headers(
-                    crate::protocol_serde::shape_pending_verification::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_access_control_expose_headers_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Expose-Headers")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_cache_control(
-                    crate::protocol_serde::shape_pending_verification::de_cache_control_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse cacheControl from header `Cache-Control",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_cache_control_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Cache-Control")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse cacheControl from header `Cache-Control`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_content_security_policy(
-                    crate::protocol_serde::shape_pending_verification::de_content_security_policy_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_content_security_policy_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Content-Security-Policy")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_strict_transport_security(
-                    crate::protocol_serde::shape_pending_verification::de_strict_transport_security_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_strict_transport_security_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Strict-Transport-Security")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_amzn_error_type(
-                    crate::protocol_serde::shape_pending_verification::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_x_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xAmznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_content_type_options(
-                    crate::protocol_serde::shape_pending_verification::de_x_content_type_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_x_content_type_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Content-Type-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_frame_options(
-                    crate::protocol_serde::shape_pending_verification::de_x_frame_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xFrameOptions from header `X-Frame-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_pending_verification::de_x_frame_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Frame-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xFrameOptions from header `X-Frame-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -243,69 +578,172 @@ pub fn de_import_public_key_http_error(
                 )
                 .map_err(crate::operation::import_public_key::ImportPublicKeyError::unhandled)?;
                 output = output.set_access_control_allow_origin(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_access_control_allow_origin_header(_response_headers).map_err(
-                        |_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
-                            )
-                        },
-                    )?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_access_control_allow_origin_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Allow-Origin")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_access_control_expose_headers(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_access_control_expose_headers_header(_response_headers)
-                        .map_err(|_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
-                            )
-                        })?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_access_control_expose_headers_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Expose-Headers")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_cache_control(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_cache_control_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse cacheControl from header `Cache-Control",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_cache_control_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Cache-Control")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse cacheControl from header `Cache-Control`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_content_security_policy(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_content_security_policy_header(_response_headers).map_err(
-                        |_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
-                            )
-                        },
-                    )?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_content_security_policy_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Content-Security-Policy")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_strict_transport_security(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_strict_transport_security_header(_response_headers).map_err(
-                        |_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
-                            )
-                        },
-                    )?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_strict_transport_security_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Strict-Transport-Security")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_amzn_error_type(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xAmznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_content_type_options(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_content_type_options_header(_response_headers).map_err(
-                        |_| {
-                            crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                                "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
-                            )
-                        },
-                    )?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_content_type_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Content-Type-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_frame_options(
-                    crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xFrameOptions from header `X-Frame-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_service_quota_exceeded_exception::de_x_frame_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Frame-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xFrameOptions from header `X-Frame-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -323,60 +761,172 @@ pub fn de_import_public_key_http_error(
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::import_public_key::ImportPublicKeyError::unhandled)?;
                 output = output.set_access_control_allow_origin(
-                    crate::protocol_serde::shape_validation_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_access_control_allow_origin_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Allow-Origin")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_access_control_expose_headers(
-                    crate::protocol_serde::shape_validation_exception::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_access_control_expose_headers_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Access-Control-Expose-Headers")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_cache_control(
-                    crate::protocol_serde::shape_validation_exception::de_cache_control_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse cacheControl from header `Cache-Control",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_cache_control_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Cache-Control")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse cacheControl from header `Cache-Control`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_content_security_policy(
-                    crate::protocol_serde::shape_validation_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_content_security_policy_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Content-Security-Policy")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse contentSecurityPolicy from header `Content-Security-Policy`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_strict_transport_security(
-                    crate::protocol_serde::shape_validation_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_strict_transport_security_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Strict-Transport-Security")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse strictTransportSecurity from header `Strict-Transport-Security`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_amzn_error_type(
-                    crate::protocol_serde::shape_validation_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_x_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xAmznErrorType from header `x-amzn-ErrorType`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_content_type_options(
-                    crate::protocol_serde::shape_validation_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_x_content_type_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Content-Type-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xContentTypeOptions from header `X-Content-Type-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 output = output.set_x_frame_options(
-                    crate::protocol_serde::shape_validation_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
-                        crate::operation::import_public_key::ImportPublicKeyError::unhandled(
-                            "Failed to parse xFrameOptions from header `X-Frame-Options",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_validation_exception::de_x_frame_options_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("X-Frame-Options")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::import_public_key::ImportPublicKeyError::unhandled(
+                                    "Failed to parse xFrameOptions from header `X-Frame-Options`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -395,6 +945,7 @@ pub fn de_import_public_key_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::import_public_key::ImportPublicKeyOutput, crate::operation::import_public_key::ImportPublicKeyError> {
     Ok({
         #[allow(unused_mut)]

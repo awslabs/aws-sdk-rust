@@ -4,6 +4,7 @@ pub fn de_disassociate_time_series_from_asset_property_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
     crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,
@@ -98,6 +99,7 @@ pub fn de_disassociate_time_series_from_asset_property_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput,
     crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError,

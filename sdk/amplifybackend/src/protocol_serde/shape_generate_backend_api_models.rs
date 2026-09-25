@@ -4,6 +4,7 @@ pub fn de_generate_backend_api_models_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput,
     crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError,
@@ -93,6 +94,7 @@ pub fn de_generate_backend_api_models_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::generate_backend_api_models::GenerateBackendApiModelsOutput,
     crate::operation::generate_backend_api_models::GenerateBackendAPIModelsError,

@@ -81,6 +81,8 @@ pub use crate::types::_audit_image::AuditImage;
 
 pub use crate::types::_challenge::Challenge;
 
+pub use crate::types::_session_metadata::SessionMetadata;
+
 pub use crate::types::_face_search_sort_by::FaceSearchSortBy;
 
 pub use crate::types::_label_detection_sort_by::LabelDetectionSortBy;
@@ -221,6 +223,8 @@ pub use crate::types::_face_detection::FaceDetection;
 
 pub use crate::types::_challenge_type::ChallengeType;
 
+pub use crate::types::_feedback_item::FeedbackItem;
+
 pub use crate::types::_person_match::PersonMatch;
 
 pub use crate::types::_label_detection::LabelDetection;
@@ -324,6 +328,8 @@ pub use crate::types::_protective_equipment_type::ProtectiveEquipmentType;
 pub use crate::types::_text_types::TextTypes;
 
 pub use crate::types::_celebrity_detail::CelebrityDetail;
+
+pub use crate::types::_feedback_code::FeedbackCode;
 
 pub use crate::types::_person_detail::PersonDetail;
 
@@ -529,6 +535,10 @@ mod _face_search_settings;
 
 mod _face_search_sort_by;
 
+mod _feedback_code;
+
+mod _feedback_item;
+
 mod _gender;
 
 mod _gender_type;
@@ -682,6 +692,8 @@ mod _segment_detection;
 mod _segment_type;
 
 mod _segment_type_info;
+
+mod _session_metadata;
 
 mod _shot_segment;
 

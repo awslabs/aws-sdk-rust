@@ -14,7 +14,7 @@ pub struct CreateGraphUsingImportTaskInput {
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the number of dimensions for vector embeddings that will be loaded into the graph. The value is specified as <code>dimension=</code>value. Max = 65,535</p>
     pub vector_search_configuration: ::std::option::Option<crate::types::VectorSearchConfiguration>,
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 1, Min = 0, Max = 2.</p><important>
     /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
     /// </important>
     pub replica_count: ::std::option::Option<i32>,
@@ -62,7 +62,7 @@ impl CreateGraphUsingImportTaskInput {
     pub fn vector_search_configuration(&self) -> ::std::option::Option<&crate::types::VectorSearchConfiguration> {
         self.vector_search_configuration.as_ref()
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 1, Min = 0, Max = 2.</p><important>
     /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
     /// </important>
     pub fn replica_count(&self) -> ::std::option::Option<i32> {
@@ -219,21 +219,21 @@ impl CreateGraphUsingImportTaskInputBuilder {
     pub fn get_vector_search_configuration(&self) -> &::std::option::Option<crate::types::VectorSearchConfiguration> {
         &self.vector_search_configuration
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 1, Min = 0, Max = 2.</p><important>
     /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
     /// </important>
     pub fn replica_count(mut self, input: i32) -> Self {
         self.replica_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 1, Min = 0, Max = 2.</p><important>
     /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
     /// </important>
     pub fn set_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.replica_count = input;
         self
     }
-    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 0, Min = 0, Max = 2.</p><important>
+    /// <p>The number of replicas in other AZs to provision on the new graph after import. Default = 1, Min = 0, Max = 2.</p><important>
     /// <p>Additional charges equivalent to the m-NCUs selected for the graph apply for each replica.</p>
     /// </important>
     pub fn get_replica_count(&self) -> &::std::option::Option<i32> {

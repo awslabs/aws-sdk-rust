@@ -4,6 +4,7 @@ pub fn de_get_rate_based_rule_managed_keys_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput,
     crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
@@ -105,6 +106,7 @@ pub fn de_get_rate_based_rule_managed_keys_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput,
     crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,

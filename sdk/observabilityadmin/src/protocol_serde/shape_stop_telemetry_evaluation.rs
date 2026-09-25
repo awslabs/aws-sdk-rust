@@ -4,6 +4,7 @@ pub fn de_stop_telemetry_evaluation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationOutput,
     crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError,
@@ -32,11 +33,27 @@ pub fn de_stop_telemetry_evaluation_http_error(
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled)?;
                 output = output.set_amzn_error_type(
-                    crate::protocol_serde::shape_access_denied_exception::de_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
-                            "Failed to parse amznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_access_denied_exception::de_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
+                                        "Failed to parse amznErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -54,18 +71,50 @@ pub fn de_stop_telemetry_evaluation_http_error(
                 output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled)?;
                 output = output.set_amzn_error_type(
-                    crate::protocol_serde::shape_internal_server_exception::de_amzn_error_type_header(_response_headers).map_err(|_| {
-                        crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
-                            "Failed to parse amznErrorType from header `x-amzn-ErrorType",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_internal_server_exception::de_amzn_error_type_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("x-amzn-ErrorType")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
+                                        "Failed to parse amznErrorType from header `x-amzn-ErrorType`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Retry-After")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError::unhandled(
+                                        "Failed to parse retryAfterSeconds from header `Retry-After`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -114,6 +163,7 @@ pub fn de_stop_telemetry_evaluation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationOutput,
     crate::operation::stop_telemetry_evaluation::StopTelemetryEvaluationError,

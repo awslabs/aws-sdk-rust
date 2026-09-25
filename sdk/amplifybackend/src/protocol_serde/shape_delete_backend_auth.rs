@@ -4,6 +4,7 @@ pub fn de_delete_backend_auth_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthOutput, crate::operation::delete_backend_auth::DeleteBackendAuthError>
 {
     #[allow(unused_mut)]
@@ -87,6 +88,7 @@ pub fn de_delete_backend_auth_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_backend_auth::DeleteBackendAuthOutput, crate::operation::delete_backend_auth::DeleteBackendAuthError>
 {
     Ok({

@@ -4,6 +4,7 @@ pub fn de_list_discovered_endpoints_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsOutput,
     crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsError,
@@ -23,6 +24,7 @@ pub fn de_list_discovered_endpoints_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsOutput,
     crate::operation::list_discovered_endpoints::ListDiscoveredEndpointsError,

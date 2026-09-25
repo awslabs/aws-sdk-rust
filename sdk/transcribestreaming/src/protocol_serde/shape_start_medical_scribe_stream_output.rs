@@ -2,22 +2,22 @@
 pub(crate) fn de_language_code_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::MedicalScribeLanguageCode>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-language-code");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amzn-transcribe-language-code");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_media_encoding_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::MedicalScribeMediaEncoding>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-media-encoding");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amzn-transcribe-media-encoding");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_media_sample_rate_hertz_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-sample-rate");
-    let var_1 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let headers = header_map.get_all_bytes("x-amzn-transcribe-sample-rate");
+    let var_1 = ::aws_smithy_http::header::read_many_primitive_bytes::<i32>(headers)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -32,8 +32,8 @@ pub(crate) fn de_media_sample_rate_hertz_header(
 pub(crate) fn de_request_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-request-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amzn-request-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub fn de_result_stream_payload(
@@ -51,6 +51,6 @@ pub fn de_result_stream_payload(
 pub(crate) fn de_session_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-session-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amzn-transcribe-session-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

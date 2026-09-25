@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_image_frame_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_image_frame::GetImageFrameOutput, crate::operation::get_image_frame::GetImageFrameError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -13,9 +14,25 @@ pub fn de_get_image_frame_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_image_frame::builders::GetImageFrameOutputBuilder::default();
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_image_frame_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::get_image_frame::GetImageFrameError::unhandled("Failed to parse contentType from header `Content-Type")
-            })?,
+            match crate::protocol_serde::shape_get_image_frame_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_image_frame::GetImageFrameError::unhandled(
+                            "Failed to parse contentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_image_frame_blob(Some(crate::protocol_serde::shape_get_image_frame_output::de_image_frame_blob_payload(
             _response_body,
@@ -30,6 +47,7 @@ pub fn de_get_image_frame_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_image_frame::GetImageFrameOutput, crate::operation::get_image_frame::GetImageFrameError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)

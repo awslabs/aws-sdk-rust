@@ -4,6 +4,7 @@ pub fn de_batch_put_scheduled_update_group_action_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
     crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,
@@ -76,6 +77,7 @@ pub fn de_batch_put_scheduled_update_group_action_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput,
     crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionError,

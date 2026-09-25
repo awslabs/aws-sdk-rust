@@ -4,6 +4,7 @@ pub fn de_list_sub_check_rule_results_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsOutput,
     crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError,
@@ -63,6 +64,7 @@ pub fn de_list_sub_check_rule_results_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsOutput,
     crate::operation::list_sub_check_rule_results::ListSubCheckRuleResultsError,

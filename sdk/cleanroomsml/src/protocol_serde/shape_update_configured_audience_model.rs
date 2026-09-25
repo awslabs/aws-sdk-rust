@@ -4,6 +4,7 @@ pub fn de_update_configured_audience_model_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput,
     crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError,
@@ -102,6 +103,7 @@ pub fn de_update_configured_audience_model_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelOutput,
     crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError,

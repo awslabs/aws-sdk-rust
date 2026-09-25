@@ -225,6 +225,20 @@ impl CreatePlanFluentBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         self.inner.get_report_configuration()
     }
+    /// <p>Specifies whether to enable service quota checks for the Region switch plan.</p>
+    pub fn service_quota_checks_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.service_quota_checks_enabled(input);
+        self
+    }
+    /// <p>Specifies whether to enable service quota checks for the Region switch plan.</p>
+    pub fn set_service_quota_checks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_service_quota_checks_enabled(input);
+        self
+    }
+    /// <p>Specifies whether to enable service quota checks for the Region switch plan.</p>
+    pub fn get_service_quota_checks_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_service_quota_checks_enabled()
+    }
     /// <p>The name of a Region switch plan.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

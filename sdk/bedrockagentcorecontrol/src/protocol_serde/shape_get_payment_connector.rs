@@ -4,6 +4,7 @@ pub fn de_get_payment_connector_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_payment_connector::GetPaymentConnectorOutput,
     crate::operation::get_payment_connector::GetPaymentConnectorError,
@@ -103,6 +104,7 @@ pub fn de_get_payment_connector_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_payment_connector::GetPaymentConnectorOutput,
     crate::operation::get_payment_connector::GetPaymentConnectorError,
@@ -157,6 +159,12 @@ pub(crate) fn de_get_payment_connector(
                         )?,
                     );
                 }
+                "credentialsUpdatedAt" => {
+                    builder = builder.set_credentials_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -181,6 +189,13 @@ pub(crate) fn de_get_payment_connector(
                     builder = builder.set_payment_connector_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "provisionMode" => {
+                    builder = builder.set_provision_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PaymentConnectorProvisionMode::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

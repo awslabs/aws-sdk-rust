@@ -4,6 +4,7 @@ pub fn de_validate_configuration_settings_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
     crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
@@ -66,6 +67,7 @@ pub fn de_validate_configuration_settings_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
     crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,

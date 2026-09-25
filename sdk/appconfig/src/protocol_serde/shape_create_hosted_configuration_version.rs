@@ -4,6 +4,7 @@ pub fn de_create_hosted_configuration_version_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
     crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError,
@@ -132,6 +133,7 @@ pub fn de_create_hosted_configuration_version_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput,
     crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError,
@@ -140,56 +142,166 @@ pub fn de_create_hosted_configuration_version_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder::default();
         output = output.set_application_id(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_application_id_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse ApplicationId from header `Application-Id",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_application_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Application-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse ApplicationId from header `Application-Id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_configuration_profile_id(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_configuration_profile_id_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                        "Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_configuration_profile_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Configuration-Profile-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse ConfigurationProfileId from header `Configuration-Profile-Id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_content(crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_payload(_response_body)?);
         output = output.set_content_type(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse ContentType from header `Content-Type",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse ContentType from header `Content-Type`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_description(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_description_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse Description from header `Description",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_description_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Description")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse Description from header `Description`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_kms_key_arn(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_kms_key_arn_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse KmsKeyArn from header `KmsKeyArn",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_kms_key_arn_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("KmsKeyArn")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse KmsKeyArn from header `KmsKeyArn`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_version_label(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse VersionLabel from header `VersionLabel",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_label_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("VersionLabel")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse VersionLabel from header `VersionLabel`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_version_number(
-            crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_number_header(_response_headers).map_err(|_| {
-                crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
-                    "Failed to parse VersionNumber from header `Version-Number",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_hosted_configuration_version_output::de_version_number_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Version-Number")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError::unhandled(
+                                "Failed to parse VersionNumber from header `Version-Number`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

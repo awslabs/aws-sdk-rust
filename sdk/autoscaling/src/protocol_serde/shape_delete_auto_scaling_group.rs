@@ -4,6 +4,7 @@ pub fn de_delete_auto_scaling_group_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput,
     crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,
@@ -81,6 +82,7 @@ pub fn de_delete_auto_scaling_group_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupOutput,
     crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupError,

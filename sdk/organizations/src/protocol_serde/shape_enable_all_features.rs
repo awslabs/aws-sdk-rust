@@ -4,6 +4,7 @@ pub fn de_enable_all_features_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::enable_all_features::EnableAllFeaturesOutput, crate::operation::enable_all_features::EnableAllFeaturesError>
 {
     #[allow(unused_mut)]
@@ -160,6 +161,7 @@ pub fn de_enable_all_features_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::enable_all_features::EnableAllFeaturesOutput, crate::operation::enable_all_features::EnableAllFeaturesError>
 {
     Ok({

@@ -4,6 +4,7 @@ pub fn de_publish_state_machine_version_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput,
     crate::operation::publish_state_machine_version::PublishStateMachineVersionError,
@@ -124,6 +125,7 @@ pub fn de_publish_state_machine_version_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::publish_state_machine_version::PublishStateMachineVersionOutput,
     crate::operation::publish_state_machine_version::PublishStateMachineVersionError,

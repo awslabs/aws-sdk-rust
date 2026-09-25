@@ -4,6 +4,7 @@ pub fn de_disassociate_budget_from_resource_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput,
     crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceError,
@@ -47,6 +48,7 @@ pub fn de_disassociate_budget_from_resource_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput,
     crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceError,

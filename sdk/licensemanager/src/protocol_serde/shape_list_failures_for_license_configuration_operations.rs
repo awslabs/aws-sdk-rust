@@ -4,6 +4,7 @@ pub fn de_list_failures_for_license_configuration_operations_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput,
     crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError,
@@ -115,6 +116,7 @@ pub fn de_list_failures_for_license_configuration_operations_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsOutput,
     crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsError,

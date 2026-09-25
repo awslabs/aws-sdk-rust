@@ -4,6 +4,7 @@ pub fn de_restore_table_to_point_in_time_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
     crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
@@ -160,6 +161,7 @@ pub fn de_restore_table_to_point_in_time_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
     crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,

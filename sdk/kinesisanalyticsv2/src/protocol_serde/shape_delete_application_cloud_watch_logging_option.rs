@@ -4,6 +4,7 @@ pub fn de_delete_application_cloud_watch_logging_option_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput,
     crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError,
@@ -129,6 +130,7 @@ pub fn de_delete_application_cloud_watch_logging_option_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput,
     crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError,

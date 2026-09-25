@@ -433,6 +433,8 @@ pub use crate::types::_rist_router_output_configuration::RistRouterOutputConfigu
 
 pub use crate::types::_srt_listener_router_output_configuration::SrtListenerRouterOutputConfiguration;
 
+pub use crate::types::_rtmp_push_router_output_configuration::RtmpPushRouterOutputConfiguration;
+
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfiguration;
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfiguration;
@@ -453,7 +455,15 @@ pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionSta
 
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfiguration;
 
+pub use crate::types::_tls_encryption::TlsEncryption;
+
 pub use crate::types::_interface::Interface;
+
+pub use crate::types::_tls_encryption_type::TlsEncryptionType;
+
+pub use crate::types::_tls_encryption_configuration::TlsEncryptionConfiguration;
+
+pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfiguration;
 
 mod _add_bridge_flow_source_request;
 
@@ -737,6 +747,8 @@ mod _public_router_network_interface_configuration;
 
 mod _public_router_network_interface_rule;
 
+mod _public_tls_encryption_configuration;
+
 mod _range;
 
 mod _reservation;
@@ -821,6 +833,8 @@ mod _router_output_type;
 
 mod _routing_scope;
 
+mod _rtmp_push_router_output_configuration;
+
 mod _rtp_router_input_configuration;
 
 mod _rtp_router_output_configuration;
@@ -872,6 +886,12 @@ mod _tcs;
 mod _thumbnail_details;
 
 mod _thumbnail_state;
+
+mod _tls_encryption;
+
+mod _tls_encryption_configuration;
+
+mod _tls_encryption_type;
 
 mod _transport;
 

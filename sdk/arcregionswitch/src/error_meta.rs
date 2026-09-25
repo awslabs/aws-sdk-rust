@@ -443,6 +443,36 @@ impl From<crate::operation::list_route53_health_checks_in_region::ListRoute53Hea
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError> for Error {
+    fn from(err: crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError) -> Self {
+        match err {
+            crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_service_quota_warnings::ListServiceQuotaWarningsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

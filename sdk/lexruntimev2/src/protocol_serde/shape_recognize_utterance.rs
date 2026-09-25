@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_recognize_utterance_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::recognize_utterance::RecognizeUtteranceOutput,
     crate::operation::recognize_utterance::RecognizeUtteranceError,
@@ -19,63 +20,193 @@ pub fn de_recognize_utterance_http_response(
             _response_body,
         )?));
         output = output.set_content_type(
-            crate::protocol_serde::shape_recognize_utterance_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse contentType from header `Content-Type")
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse contentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_input_mode(
-            crate::protocol_serde::shape_recognize_utterance_output::de_input_mode_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse inputMode from header `x-amz-lex-input-mode",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_input_mode_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-input-mode")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse inputMode from header `x-amz-lex-input-mode`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_input_transcript(
-            crate::protocol_serde::shape_recognize_utterance_output::de_input_transcript_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse inputTranscript from header `x-amz-lex-input-transcript",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_input_transcript_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-input-transcript")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse inputTranscript from header `x-amz-lex-input-transcript`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_interpretations(
-            crate::protocol_serde::shape_recognize_utterance_output::de_interpretations_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse interpretations from header `x-amz-lex-interpretations",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_interpretations_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-interpretations")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse interpretations from header `x-amz-lex-interpretations`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_messages(
-            crate::protocol_serde::shape_recognize_utterance_output::de_messages_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled("Failed to parse messages from header `x-amz-lex-messages")
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_messages_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-messages")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse messages from header `x-amz-lex-messages`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_recognized_bot_member(
-            crate::protocol_serde::shape_recognize_utterance_output::de_recognized_bot_member_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse recognizedBotMember from header `x-amz-lex-recognized-bot-member",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_recognized_bot_member_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-recognized-bot-member")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse recognizedBotMember from header `x-amz-lex-recognized-bot-member`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_request_attributes(
-            crate::protocol_serde::shape_recognize_utterance_output::de_request_attributes_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse requestAttributes from header `x-amz-lex-request-attributes",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_request_attributes_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-request-attributes")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse requestAttributes from header `x-amz-lex-request-attributes`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_recognize_utterance_output::de_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse sessionId from header `x-amz-lex-session-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-session-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse sessionId from header `x-amz-lex-session-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_session_state(
-            crate::protocol_serde::shape_recognize_utterance_output::de_session_state_header(_response_headers).map_err(|_| {
-                crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
-                    "Failed to parse sessionState from header `x-amz-lex-session-state",
-                )
-            })?,
+            match crate::protocol_serde::shape_recognize_utterance_output::de_session_state_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-session-state")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::recognize_utterance::RecognizeUtteranceError::unhandled(
+                            "Failed to parse sessionState from header `x-amz-lex-session-state`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
@@ -87,6 +218,7 @@ pub fn de_recognize_utterance_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::recognize_utterance::RecognizeUtteranceOutput,
     crate::operation::recognize_utterance::RecognizeUtteranceError,

@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_medical_scribe_listening_session_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput,
     crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError,
@@ -17,61 +18,168 @@ pub fn de_start_medical_scribe_listening_session_http_response(
         let mut output =
             crate::operation::start_medical_scribe_listening_session::builders::StartMedicalScribeListeningSessionOutputBuilder::default();
         output = output.set_domain_id(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_domain_id_header(_response_headers).map_err(|_| {
-                crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                    "Failed to parse domainId from header `x-amzn-medscribe-domain-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_domain_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-domain-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse domainId from header `x-amzn-medscribe-domain-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_language_code(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_language_code_header(_response_headers).map_err(|_| {
-                crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                    "Failed to parse languageCode from header `x-amzn-medscribe-language-code",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_language_code_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-language-code")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse languageCode from header `x-amzn-medscribe-language-code`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_media_encoding(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_media_encoding_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                        "Failed to parse mediaEncoding from header `x-amzn-medscribe-media-encoding",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_media_encoding_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-media-encoding")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse mediaEncoding from header `x-amzn-medscribe-media-encoding`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_media_sample_rate_hertz(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_media_sample_rate_hertz_header(_response_headers)
-                .map_err(|_| {
-                    crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                        "Failed to parse mediaSampleRateHertz from header `x-amzn-medscribe-sample-rate",
-                    )
-                })?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_media_sample_rate_hertz_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-sample-rate")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse mediaSampleRateHertz from header `x-amzn-medscribe-sample-rate`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_request_id(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_request_id_header(_response_headers).map_err(|_| {
-                crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                    "Failed to parse requestId from header `x-amzn-request-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_request_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-request-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse requestId from header `x-amzn-request-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_response_stream(Some(
             crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_response_stream_payload(_response_body)?,
         ));
         output = output.set_session_id(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                    "Failed to parse sessionId from header `x-amzn-medscribe-session-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-session-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse sessionId from header `x-amzn-medscribe-session-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output = output.set_subscription_id(
-            crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_subscription_id_header(_response_headers).map_err(
-                |_| {
-                    crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
-                        "Failed to parse subscriptionId from header `x-amzn-medscribe-subscription-id",
-                    )
-                },
-            )?,
+            match crate::protocol_serde::shape_start_medical_scribe_listening_session_output::de_subscription_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amzn-medscribe-subscription-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError::unhandled(
+                                "Failed to parse subscriptionId from header `x-amzn-medscribe-subscription-id`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output
@@ -85,6 +193,7 @@ pub fn de_start_medical_scribe_listening_session_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput,
     crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError,

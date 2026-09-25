@@ -4,6 +4,7 @@ pub fn de_disassociate_fleet_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetOutput, crate::operation::disassociate_fleet::DisassociateFleetError>
 {
     #[allow(unused_mut)]
@@ -93,6 +94,7 @@ pub fn de_disassociate_fleet_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::disassociate_fleet::DisassociateFleetOutput, crate::operation::disassociate_fleet::DisassociateFleetError>
 {
     Ok({

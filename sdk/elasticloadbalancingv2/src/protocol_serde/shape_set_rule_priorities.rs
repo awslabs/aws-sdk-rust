@@ -4,6 +4,7 @@ pub fn de_set_rule_priorities_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, crate::operation::set_rule_priorities::SetRulePrioritiesError>
 {
     #[allow(unused_mut)]
@@ -75,6 +76,7 @@ pub fn de_set_rule_priorities_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::set_rule_priorities::SetRulePrioritiesOutput, crate::operation::set_rule_priorities::SetRulePrioritiesError>
 {
     Ok({

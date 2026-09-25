@@ -4,6 +4,7 @@ pub fn de_get_agent_recommendation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_agent_recommendation::GetAgentRecommendationOutput,
     crate::operation::get_agent_recommendation::GetAgentRecommendationError,
@@ -108,6 +109,7 @@ pub fn de_get_agent_recommendation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_agent_recommendation::GetAgentRecommendationOutput,
     crate::operation::get_agent_recommendation::GetAgentRecommendationError,
@@ -180,6 +182,13 @@ pub(crate) fn de_get_agent_recommendation(
                     builder = builder.set_effort(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::Effort::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "generationId" => {
+                    builder = builder.set_generation_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

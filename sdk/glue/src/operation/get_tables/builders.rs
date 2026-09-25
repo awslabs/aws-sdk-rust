@@ -220,6 +220,38 @@ impl GetTablesFluentBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
         self.inner.get_audit_context()
     }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn resource_share_type(mut self, input: crate::types::TableResourceShareType) -> Self {
+        self.inner = self.inner.resource_share_type(input);
+        self
+    }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::TableResourceShareType>) -> Self {
+        self.inner = self.inner.set_resource_share_type(input);
+        self
+    }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::TableResourceShareType> {
+        self.inner.get_resource_share_type()
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(mut self, input: bool) -> Self {
         self.inner = self.inner.include_status_details(input);

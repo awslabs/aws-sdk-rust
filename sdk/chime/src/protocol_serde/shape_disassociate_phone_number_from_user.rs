@@ -4,6 +4,7 @@ pub fn de_disassociate_phone_number_from_user_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput,
     crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserError,
@@ -144,6 +145,7 @@ pub fn de_disassociate_phone_number_from_user_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserOutput,
     crate::operation::disassociate_phone_number_from_user::DisassociatePhoneNumberFromUserError,

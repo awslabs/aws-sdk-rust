@@ -4,6 +4,7 @@ pub fn de_submit_multi_region_access_point_routes_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
     crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
@@ -21,6 +22,7 @@ pub fn de_submit_multi_region_access_point_routes_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
     crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,

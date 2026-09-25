@@ -10,6 +10,14 @@ pub struct PaymentConnectorSummary {
     pub name: ::std::string::String,
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub r#type: crate::types::PaymentConnectorType,
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed and you can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     /// <p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     pub status: crate::types::PaymentConnectorStatus,
     /// <p>The timestamp when the payment connector was last updated.</p>
@@ -29,6 +37,16 @@ impl PaymentConnectorSummary {
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub fn r#type(&self) -> &crate::types::PaymentConnectorType {
         &self.r#type
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed and you can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn provision_mode(&self) -> ::std::option::Option<&crate::types::PaymentConnectorProvisionMode> {
+        self.provision_mode.as_ref()
     }
     /// <p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     pub fn status(&self) -> &crate::types::PaymentConnectorStatus {
@@ -53,6 +71,7 @@ pub struct PaymentConnectorSummaryBuilder {
     pub(crate) payment_connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PaymentConnectorType>,
+    pub(crate) provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     pub(crate) status: ::std::option::Option<crate::types::PaymentConnectorStatus>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -101,6 +120,38 @@ impl PaymentConnectorSummaryBuilder {
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PaymentConnectorType> {
         &self.r#type
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed and you can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn provision_mode(mut self, input: crate::types::PaymentConnectorProvisionMode) -> Self {
+        self.provision_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed and you can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn set_provision_mode(mut self, input: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>) -> Self {
+        self.provision_mode = input;
+        self
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed and you can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn get_provision_mode(&self) -> &::std::option::Option<crate::types::PaymentConnectorProvisionMode> {
+        &self.provision_mode
     }
     /// <p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     /// This field is required.
@@ -159,6 +210,7 @@ impl PaymentConnectorSummaryBuilder {
                     "r#type was not specified but it is required when building PaymentConnectorSummary",
                 )
             })?,
+            provision_mode: self.provision_mode,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",

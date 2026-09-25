@@ -4,6 +4,7 @@ pub fn de_disable_vgw_route_propagation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput,
     crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
@@ -23,6 +24,7 @@ pub fn de_disable_vgw_route_propagation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput,
     crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,

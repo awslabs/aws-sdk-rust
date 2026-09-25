@@ -119,6 +119,8 @@ pub(crate) mod shape_import_security_requirements;
 
 pub(crate) mod shape_initiate_provider_registration;
 
+pub(crate) mod shape_list_actor_messages;
+
 pub(crate) mod shape_list_agent_spaces;
 
 pub(crate) mod shape_list_applications;
@@ -317,6 +319,8 @@ pub(crate) mod shape_initiate_provider_registration_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_list_actor_messages_input;
+
 pub(crate) mod shape_list_agent_spaces_input;
 
 pub(crate) mod shape_list_applications_input;
@@ -408,6 +412,8 @@ pub(crate) mod shape_update_threat_model_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_verify_target_domain_input;
+
+pub(crate) mod shape_actor_message_list;
 
 pub(crate) mod shape_agent_space_id_list;
 
@@ -582,6 +588,8 @@ pub(crate) mod shape_vpc_config;
 pub(crate) mod shape_actor;
 
 pub(crate) mod shape_actor_list;
+
+pub(crate) mod shape_actor_message;
 
 pub(crate) mod shape_agent_space;
 

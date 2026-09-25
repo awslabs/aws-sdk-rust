@@ -4,6 +4,7 @@ pub fn de_search_products_as_admin_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
     crate::operation::search_products_as_admin::SearchProductsAsAdminError,
@@ -59,6 +60,7 @@ pub fn de_search_products_as_admin_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
     crate::operation::search_products_as_admin::SearchProductsAsAdminError,

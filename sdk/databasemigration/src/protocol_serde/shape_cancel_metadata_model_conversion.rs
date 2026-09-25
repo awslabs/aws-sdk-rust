@@ -4,6 +4,7 @@ pub fn de_cancel_metadata_model_conversion_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionOutput,
     crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError,
@@ -77,6 +78,7 @@ pub fn de_cancel_metadata_model_conversion_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionOutput,
     crate::operation::cancel_metadata_model_conversion::CancelMetadataModelConversionError,

@@ -201,9 +201,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSnapshotBl
 #[derive(Debug)]
 struct GetSnapshotBlockResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSnapshotBlockResponseDeserializer {
-    fn deserialize_streaming(
+    fn deserialize_streaming_with_config(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
@@ -214,7 +215,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSnapsh
             return ::std::option::Option::None;
         }
         ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_get_snapshot_block::de_get_snapshot_block_http_response(response),
+            crate::protocol_serde::shape_get_snapshot_block::de_get_snapshot_block_http_response(response, _cfg),
         ))
     }
 
@@ -229,6 +230,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSnapsh
             response.status().as_u16(),
             response.headers(),
             body,
+            _cfg,
         ))
     }
 }
@@ -407,7 +409,7 @@ mod get_snapshot_block_test {
         #[allow(unused_mut)]
         let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
 
-        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = de.deserialize_streaming_with_config(&mut http_response, &test_cfg);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
                 ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(&::aws_smithy_protocol_test::decode_body_data(
@@ -471,7 +473,7 @@ mod get_snapshot_block_test {
         #[allow(unused_mut)]
         let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
 
-        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = de.deserialize_streaming_with_config(&mut http_response, &test_cfg);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
                 ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(&::aws_smithy_protocol_test::decode_body_data(

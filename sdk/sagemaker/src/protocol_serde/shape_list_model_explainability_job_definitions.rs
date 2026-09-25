@@ -4,6 +4,7 @@ pub fn de_list_model_explainability_job_definitions_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsOutput,
     crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsError,
@@ -21,6 +22,7 @@ pub fn de_list_model_explainability_job_definitions_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsOutput,
     crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsError,

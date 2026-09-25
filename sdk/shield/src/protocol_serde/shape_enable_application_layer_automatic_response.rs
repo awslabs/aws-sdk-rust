@@ -4,6 +4,7 @@ pub fn de_enable_application_layer_automatic_response_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput,
     crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseError,
@@ -150,6 +151,7 @@ pub fn de_enable_application_layer_automatic_response_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput,
     crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseError,

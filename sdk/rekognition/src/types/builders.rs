@@ -53,6 +53,8 @@ pub use crate::types::_audit_image::AuditImageBuilder;
 
 pub use crate::types::_challenge::ChallengeBuilder;
 
+pub use crate::types::_session_metadata::SessionMetadataBuilder;
+
 pub use crate::types::_get_label_detection_request_metadata::GetLabelDetectionRequestMetadataBuilder;
 
 pub use crate::types::_media_analysis_operations_config::MediaAnalysisOperationsConfigBuilder;
@@ -166,6 +168,8 @@ pub use crate::types::_celebrity_recognition::CelebrityRecognitionBuilder;
 pub use crate::types::_content_moderation_detection::ContentModerationDetectionBuilder;
 
 pub use crate::types::_face_detection::FaceDetectionBuilder;
+
+pub use crate::types::_feedback_item::FeedbackItemBuilder;
 
 pub use crate::types::_person_match::PersonMatchBuilder;
 

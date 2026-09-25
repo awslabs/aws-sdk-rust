@@ -4,6 +4,7 @@ pub fn de_list_audit_suppressions_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput,
     crate::operation::list_audit_suppressions::ListAuditSuppressionsError,
@@ -74,6 +75,7 @@ pub fn de_list_audit_suppressions_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_audit_suppressions::ListAuditSuppressionsOutput,
     crate::operation::list_audit_suppressions::ListAuditSuppressionsError,

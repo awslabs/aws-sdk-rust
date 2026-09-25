@@ -4,6 +4,7 @@ pub fn de_delete_chat_response_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationOutput,
     crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError,
@@ -120,6 +121,7 @@ pub fn de_delete_chat_response_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationOutput,
     crate::operation::delete_chat_response_configuration::DeleteChatResponseConfigurationError,

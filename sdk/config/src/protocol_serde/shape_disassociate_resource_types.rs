@@ -4,6 +4,7 @@ pub fn de_disassociate_resource_types_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_resource_types::DisassociateResourceTypesOutput,
     crate::operation::disassociate_resource_types::DisassociateResourceTypesError,
@@ -84,6 +85,7 @@ pub fn de_disassociate_resource_types_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_resource_types::DisassociateResourceTypesOutput,
     crate::operation::disassociate_resource_types::DisassociateResourceTypesError,

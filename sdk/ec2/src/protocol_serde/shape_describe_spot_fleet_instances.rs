@@ -4,6 +4,7 @@ pub fn de_describe_spot_fleet_instances_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput,
     crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,
@@ -23,6 +24,7 @@ pub fn de_describe_spot_fleet_instances_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesOutput,
     crate::operation::describe_spot_fleet_instances::DescribeSpotFleetInstancesError,

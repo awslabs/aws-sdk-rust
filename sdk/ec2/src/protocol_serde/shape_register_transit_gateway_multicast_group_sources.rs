@@ -4,6 +4,7 @@ pub fn de_register_transit_gateway_multicast_group_sources_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError,
@@ -21,6 +22,7 @@ pub fn de_register_transit_gateway_multicast_group_sources_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError,

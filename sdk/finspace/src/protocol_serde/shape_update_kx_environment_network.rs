@@ -4,6 +4,7 @@ pub fn de_update_kx_environment_network_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput,
     crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
@@ -119,6 +120,7 @@ pub fn de_update_kx_environment_network_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput,
     crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,

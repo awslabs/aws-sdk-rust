@@ -37,6 +37,9 @@ pub mod create_prompt;
 /// Types for the `CreatePromptVersion` operation.
 pub mod create_prompt_version;
 
+/// Types for the `CreateVpcConfiguration` operation.
+pub mod create_vpc_configuration;
+
 /// Types for the `DeleteAgent` operation.
 pub mod delete_agent;
 
@@ -72,6 +75,9 @@ pub mod delete_prompt;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
+
+/// Types for the `DeleteVpcConfiguration` operation.
+pub mod delete_vpc_configuration;
 
 /// Types for the `DisassociateAgentCollaborator` operation.
 pub mod disassociate_agent_collaborator;
@@ -124,6 +130,9 @@ pub mod get_prompt;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `GetVpcConfiguration` operation.
+pub mod get_vpc_configuration;
+
 /// Types for the `IngestKnowledgeBaseDocuments` operation.
 pub mod ingest_knowledge_base_documents;
 
@@ -171,6 +180,9 @@ pub mod list_prompts;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListVpcConfigurations` operation.
+pub mod list_vpc_configurations;
 
 /// Types for the `PrepareAgent` operation.
 pub mod prepare_agent;

@@ -4,6 +4,7 @@ pub fn de_create_usage_profile_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_usage_profile::CreateUsageProfileOutput,
     crate::operation::create_usage_profile::CreateUsageProfileError,
@@ -128,6 +129,7 @@ pub fn de_create_usage_profile_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_usage_profile::CreateUsageProfileOutput,
     crate::operation::create_usage_profile::CreateUsageProfileError,

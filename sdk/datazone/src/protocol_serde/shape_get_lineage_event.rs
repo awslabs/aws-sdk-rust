@@ -4,6 +4,7 @@ pub fn de_get_lineage_event_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_lineage_event::GetLineageEventOutput, crate::operation::get_lineage_event::GetLineageEventError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -110,41 +111,135 @@ pub fn de_get_lineage_event_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_lineage_event::GetLineageEventOutput, crate::operation::get_lineage_event::GetLineageEventError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::operation::get_lineage_event::builders::GetLineageEventOutputBuilder::default();
         output = output.set_created_at(
-            crate::protocol_serde::shape_get_lineage_event_output::de_created_at_header(_response_headers).map_err(|_| {
-                crate::operation::get_lineage_event::GetLineageEventError::unhandled("Failed to parse createdAt from header `Created-At")
-            })?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_created_at_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Created-At")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse createdAt from header `Created-At`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_created_by(
-            crate::protocol_serde::shape_get_lineage_event_output::de_created_by_header(_response_headers).map_err(|_| {
-                crate::operation::get_lineage_event::GetLineageEventError::unhandled("Failed to parse createdBy from header `Created-By")
-            })?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_created_by_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Created-By")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse createdBy from header `Created-By`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_domain_id(
-            crate::protocol_serde::shape_get_lineage_event_output::de_domain_id_header(_response_headers).map_err(|_| {
-                crate::operation::get_lineage_event::GetLineageEventError::unhandled("Failed to parse domainId from header `Domain-Id")
-            })?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_domain_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Domain-Id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse domainId from header `Domain-Id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_event(crate::protocol_serde::shape_get_lineage_event_output::de_event_payload(_response_body)?);
         output = output.set_event_time(
-            crate::protocol_serde::shape_get_lineage_event_output::de_event_time_header(_response_headers).map_err(|_| {
-                crate::operation::get_lineage_event::GetLineageEventError::unhandled("Failed to parse eventTime from header `Event-Time")
-            })?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_event_time_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Event-Time")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse eventTime from header `Event-Time`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_id(
-            crate::protocol_serde::shape_get_lineage_event_output::de_id_header(_response_headers)
-                .map_err(|_| crate::operation::get_lineage_event::GetLineageEventError::unhandled("Failed to parse id from header `Id"))?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("Id").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse id from header `Id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_processing_status(
-            crate::protocol_serde::shape_get_lineage_event_output::de_processing_status_header(_response_headers).map_err(|_| {
-                crate::operation::get_lineage_event::GetLineageEventError::unhandled(
-                    "Failed to parse processingStatus from header `Processing-Status",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_lineage_event_output::de_processing_status_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Processing-Status")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_lineage_event::GetLineageEventError::unhandled(
+                            "Failed to parse processingStatus from header `Processing-Status`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

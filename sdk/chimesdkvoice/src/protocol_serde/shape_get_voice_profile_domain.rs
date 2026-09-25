@@ -4,6 +4,7 @@ pub fn de_get_voice_profile_domain_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput,
     crate::operation::get_voice_profile_domain::GetVoiceProfileDomainError,
@@ -151,6 +152,7 @@ pub fn de_get_voice_profile_domain_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_voice_profile_domain::GetVoiceProfileDomainOutput,
     crate::operation::get_voice_profile_domain::GetVoiceProfileDomainError,

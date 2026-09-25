@@ -4,6 +4,7 @@ pub fn de_register_job_definition_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_job_definition::RegisterJobDefinitionOutput,
     crate::operation::register_job_definition::RegisterJobDefinitionError,
@@ -59,6 +60,7 @@ pub fn de_register_job_definition_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::register_job_definition::RegisterJobDefinitionOutput,
     crate::operation::register_job_definition::RegisterJobDefinitionError,

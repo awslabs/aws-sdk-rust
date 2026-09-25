@@ -71,11 +71,17 @@ pub fn ser_table_input(
         crate::protocol_serde::shape_table_identifier::ser_table_identifier(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.view_definition {
+    if let Some(var_20) = &input.federated_table {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("ViewDefinition").start_object();
-        crate::protocol_serde::shape_view_definition_input::ser_view_definition_input(&mut object_21, var_20)?;
+        let mut object_21 = object.key("FederatedTable").start_object();
+        crate::protocol_serde::shape_federated_table::ser_federated_table(&mut object_21, var_20)?;
         object_21.finish();
+    }
+    if let Some(var_22) = &input.view_definition {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("ViewDefinition").start_object();
+        crate::protocol_serde::shape_view_definition_input::ser_view_definition_input(&mut object_23, var_22)?;
+        object_23.finish();
     }
     Ok(())
 }

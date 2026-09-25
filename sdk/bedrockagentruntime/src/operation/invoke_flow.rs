@@ -206,9 +206,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeFlowTel
 #[derive(Debug)]
 struct InvokeFlowResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeFlowResponseDeserializer {
-    fn deserialize_streaming(
+    fn deserialize_streaming_with_config(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
@@ -219,7 +220,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeFlo
             return ::std::option::Option::None;
         }
         ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_invoke_flow::de_invoke_flow_http_response(response),
+            crate::protocol_serde::shape_invoke_flow::de_invoke_flow_http_response(response, _cfg),
         ))
     }
 
@@ -234,6 +235,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeFlo
             response.status().as_u16(),
             response.headers(),
             body,
+            _cfg,
         ))
     }
 }

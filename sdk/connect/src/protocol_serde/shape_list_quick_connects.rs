@@ -4,6 +4,7 @@ pub fn de_list_quick_connects_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_quick_connects::ListQuickConnectsOutput, crate::operation::list_quick_connects::ListQuickConnectsError>
 {
     #[allow(unused_mut)]
@@ -102,6 +103,7 @@ pub fn de_list_quick_connects_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_quick_connects::ListQuickConnectsOutput, crate::operation::list_quick_connects::ListQuickConnectsError>
 {
     Ok({

@@ -4,6 +4,7 @@ pub fn de_create_vector_bucket_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_vector_bucket::CreateVectorBucketOutput,
     crate::operation::create_vector_bucket::CreateVectorBucketError,
@@ -145,6 +146,7 @@ pub fn de_create_vector_bucket_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_vector_bucket::CreateVectorBucketOutput,
     crate::operation::create_vector_bucket::CreateVectorBucketError,

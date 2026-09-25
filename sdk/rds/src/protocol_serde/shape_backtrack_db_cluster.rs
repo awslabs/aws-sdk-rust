@@ -4,6 +4,7 @@ pub fn de_backtrack_db_cluster_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
     crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
@@ -60,6 +61,7 @@ pub fn de_backtrack_db_cluster_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
     crate::operation::backtrack_db_cluster::BacktrackDBClusterError,

@@ -4,6 +4,7 @@ pub fn de_describe_iam_policy_assignment_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput,
     crate::operation::describe_iam_policy_assignment::DescribeIAMPolicyAssignmentError,
@@ -130,6 +131,7 @@ pub fn de_describe_iam_policy_assignment_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput,
     crate::operation::describe_iam_policy_assignment::DescribeIAMPolicyAssignmentError,

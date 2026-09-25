@@ -4,6 +4,7 @@ pub fn de_start_segment_detection_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_segment_detection::StartSegmentDetectionOutput,
     crate::operation::start_segment_detection::StartSegmentDetectionError,
@@ -171,6 +172,7 @@ pub fn de_start_segment_detection_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_segment_detection::StartSegmentDetectionOutput,
     crate::operation::start_segment_detection::StartSegmentDetectionError,

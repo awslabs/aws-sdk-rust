@@ -238,4 +238,18 @@ impl UpdatePlanFluentBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         self.inner.get_report_configuration()
     }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn service_quota_checks_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.service_quota_checks_enabled(input);
+        self
+    }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn set_service_quota_checks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_service_quota_checks_enabled(input);
+        self
+    }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn get_service_quota_checks_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_service_quota_checks_enabled()
+    }
 }

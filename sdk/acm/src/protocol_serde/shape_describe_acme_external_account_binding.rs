@@ -4,6 +4,7 @@ pub fn de_describe_acme_external_account_binding_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingOutput,
     crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError,
@@ -115,6 +116,7 @@ pub fn de_describe_acme_external_account_binding_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingOutput,
     crate::operation::describe_acme_external_account_binding::DescribeAcmeExternalAccountBindingError,

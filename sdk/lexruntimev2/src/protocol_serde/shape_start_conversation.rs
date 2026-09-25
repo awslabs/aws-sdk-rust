@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_start_conversation_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::start_conversation::StartConversationOutput, crate::operation::start_conversation::StartConversationError>
 {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
@@ -28,6 +29,7 @@ pub fn de_start_conversation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::start_conversation::StartConversationOutput, crate::operation::start_conversation::StartConversationError>
 {
     #[allow(unused_mut)]

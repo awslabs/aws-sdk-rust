@@ -4,6 +4,7 @@ pub fn de_list_multipart_read_set_uploads_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
     crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
@@ -154,6 +155,7 @@ pub fn de_list_multipart_read_set_uploads_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
     crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,

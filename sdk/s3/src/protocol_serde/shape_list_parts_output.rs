@@ -2,8 +2,9 @@
 pub(crate) fn de_abort_date_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::aws_smithy_types::DateTime>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-abort-date");
-    let var_1: Vec<::aws_smithy_types::DateTime> = ::aws_smithy_http::header::many_dates(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
+    let headers = header_map.get_all_bytes("x-amz-abort-date");
+    let var_1: Vec<::aws_smithy_types::DateTime> =
+        ::aws_smithy_http::header::many_dates_bytes(headers, ::aws_smithy_types::date_time::Format::HttpDate)?;
     if var_1.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -18,13 +19,13 @@ pub(crate) fn de_abort_date_header(
 pub(crate) fn de_abort_rule_id_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-abort-rule-id");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-abort-rule-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
 pub(crate) fn de_request_charged_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
 ) -> ::std::result::Result<::std::option::Option<crate::types::RequestCharged>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amz-request-charged");
-    ::aws_smithy_http::header::one_or_none(headers)
+    let headers = header_map.get_all_bytes("x-amz-request-charged");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

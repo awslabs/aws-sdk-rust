@@ -4,6 +4,7 @@ pub fn de_search_agent_statuses_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::search_agent_statuses::SearchAgentStatusesOutput,
     crate::operation::search_agent_statuses::SearchAgentStatusesError,
@@ -104,6 +105,7 @@ pub fn de_search_agent_statuses_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::search_agent_statuses::SearchAgentStatusesOutput,
     crate::operation::search_agent_statuses::SearchAgentStatusesError,

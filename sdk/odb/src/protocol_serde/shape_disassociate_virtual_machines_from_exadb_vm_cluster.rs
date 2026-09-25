@@ -4,6 +4,7 @@ pub fn de_disassociate_virtual_machines_from_exadb_vm_cluster_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterOutput,
     crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError,
@@ -113,6 +114,7 @@ pub fn de_disassociate_virtual_machines_from_exadb_vm_cluster_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterOutput,
     crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError,

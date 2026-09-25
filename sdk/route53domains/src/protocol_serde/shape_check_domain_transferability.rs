@@ -4,6 +4,7 @@ pub fn de_check_domain_transferability_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput,
     crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
@@ -74,6 +75,7 @@ pub fn de_check_domain_transferability_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput,
     crate::operation::check_domain_transferability::CheckDomainTransferabilityError,

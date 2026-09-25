@@ -4,6 +4,7 @@ pub fn de_update_media_insights_pipeline_status_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput,
     crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError,
@@ -163,6 +164,7 @@ pub fn de_update_media_insights_pipeline_status_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusOutput,
     crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusError,

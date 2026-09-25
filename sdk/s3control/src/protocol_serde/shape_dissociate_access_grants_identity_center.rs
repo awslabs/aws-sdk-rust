@@ -4,6 +4,7 @@ pub fn de_dissociate_access_grants_identity_center_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterOutput,
     crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,
@@ -21,6 +22,7 @@ pub fn de_dissociate_access_grants_identity_center_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterOutput,
     crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,

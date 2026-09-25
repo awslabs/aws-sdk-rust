@@ -4,6 +4,7 @@ pub fn de_create_network_connector_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_network_connector::CreateNetworkConnectorOutput,
     crate::operation::create_network_connector::CreateNetworkConnectorError,
@@ -98,11 +99,27 @@ pub fn de_create_network_connector_http_error(
                 output = crate::protocol_serde::shape_too_many_requests_exception::de_too_many_requests_exception_json_err(_response_body, output)
                     .map_err(crate::operation::create_network_connector::CreateNetworkConnectorError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::create_network_connector::CreateNetworkConnectorError::unhandled(
-                            "Failed to parse retryAfterSeconds from header `Retry-After",
-                        )
-                    })?,
+                    match crate::protocol_serde::shape_too_many_requests_exception::de_retry_after_seconds_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Retry-After")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(
+                                    crate::operation::create_network_connector::CreateNetworkConnectorError::unhandled(
+                                        "Failed to parse retryAfterSeconds from header `Retry-After`",
+                                    ),
+                                );
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()
@@ -121,6 +138,7 @@ pub fn de_create_network_connector_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_network_connector::CreateNetworkConnectorOutput,
     crate::operation::create_network_connector::CreateNetworkConnectorError,

@@ -4,6 +4,7 @@ pub fn de_disassociate_benefit_application_resource_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_benefit_application_resource::DisassociateBenefitApplicationResourceOutput,
     crate::operation::disassociate_benefit_application_resource::DisassociateBenefitApplicationResourceError,
@@ -137,6 +138,7 @@ pub fn de_disassociate_benefit_application_resource_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::disassociate_benefit_application_resource::DisassociateBenefitApplicationResourceOutput,
     crate::operation::disassociate_benefit_application_resource::DisassociateBenefitApplicationResourceError,

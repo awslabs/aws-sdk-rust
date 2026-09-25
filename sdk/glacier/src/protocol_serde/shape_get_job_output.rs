@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_job_output_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_job_output::GetJobOutputOutput, crate::operation::get_job_output::GetJobOutputError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -13,32 +14,110 @@ pub fn de_get_job_output_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::get_job_output::builders::GetJobOutputOutputBuilder::default();
         output = output.set_accept_ranges(
-            crate::protocol_serde::shape_get_job_output_output::de_accept_ranges_header(_response_headers).map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse acceptRanges from header `Accept-Ranges")
-            })?,
+            match crate::protocol_serde::shape_get_job_output_output::de_accept_ranges_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Accept-Ranges")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_job_output::GetJobOutputError::unhandled(
+                            "Failed to parse acceptRanges from header `Accept-Ranges`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_archive_description(
-            crate::protocol_serde::shape_get_job_output_output::de_archive_description_header(_response_headers).map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled(
-                    "Failed to parse archiveDescription from header `x-amz-archive-description",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_job_output_output::de_archive_description_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-archive-description")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_job_output::GetJobOutputError::unhandled(
+                            "Failed to parse archiveDescription from header `x-amz-archive-description`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_body(Some(crate::protocol_serde::shape_get_job_output_output::de_body_payload(_response_body)?));
         output = output.set_checksum(
-            crate::protocol_serde::shape_get_job_output_output::de_checksum_header(_response_headers).map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse checksum from header `x-amz-sha256-tree-hash")
-            })?,
+            match crate::protocol_serde::shape_get_job_output_output::de_checksum_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-sha256-tree-hash")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_job_output::GetJobOutputError::unhandled(
+                            "Failed to parse checksum from header `x-amz-sha256-tree-hash`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_range(
-            crate::protocol_serde::shape_get_job_output_output::de_content_range_header(_response_headers).map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse contentRange from header `Content-Range")
-            })?,
+            match crate::protocol_serde::shape_get_job_output_output::de_content_range_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Range")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_job_output::GetJobOutputError::unhandled(
+                            "Failed to parse contentRange from header `Content-Range`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_get_job_output_output::de_content_type_header(_response_headers).map_err(|_| {
-                crate::operation::get_job_output::GetJobOutputError::unhandled("Failed to parse contentType from header `Content-Type")
-            })?,
+            match crate::protocol_serde::shape_get_job_output_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_job_output::GetJobOutputError::unhandled(
+                            "Failed to parse contentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_status(Some(_response_status as _));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
@@ -51,6 +130,7 @@ pub fn de_get_job_output_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_job_output::GetJobOutputOutput, crate::operation::get_job_output::GetJobOutputError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)

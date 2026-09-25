@@ -4,6 +4,7 @@ pub fn de_create_fleet_locations_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_fleet_locations::CreateFleetLocationsOutput,
     crate::operation::create_fleet_locations::CreateFleetLocationsError,
@@ -165,6 +166,7 @@ pub fn de_create_fleet_locations_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_fleet_locations::CreateFleetLocationsOutput,
     crate::operation::create_fleet_locations::CreateFleetLocationsError,

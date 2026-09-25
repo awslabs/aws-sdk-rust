@@ -185,6 +185,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListImportTas
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("graphIdentifier") {
+            if let ::std::option::Option::Some(value) = input.graph_identifier.as_deref() {
+                captured.insert("graphIdentifier", value);
+            }
+        }
         if requested.should_capture("nextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("nextToken", value);
@@ -210,9 +215,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListImpor
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_list_import_tasks::de_list_import_tasks_http_error(status, headers, body)
+            crate::protocol_serde::shape_list_import_tasks::de_list_import_tasks_http_error(status, headers, body, _cfg)
         } else {
-            crate::protocol_serde::shape_list_import_tasks::de_list_import_tasks_http_response(status, headers, body)
+            crate::protocol_serde::shape_list_import_tasks::de_list_import_tasks_http_response(status, headers, body, _cfg)
         };
         crate::protocol_serde::type_erase_result(parse_result)
     }
@@ -248,14 +253,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListImportTa
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_1) = &_input.graph_identifier {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_1));
+                        query.push_kv("graphIdentifier", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                    {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

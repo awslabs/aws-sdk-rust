@@ -4,6 +4,7 @@ pub fn de_list_bill_estimate_input_commitment_modifications_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_bill_estimate_input_commitment_modifications::ListBillEstimateInputCommitmentModificationsOutput,
     crate::operation::list_bill_estimate_input_commitment_modifications::ListBillEstimateInputCommitmentModificationsError,
@@ -113,6 +114,7 @@ pub fn de_list_bill_estimate_input_commitment_modifications_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_bill_estimate_input_commitment_modifications::ListBillEstimateInputCommitmentModificationsOutput,
     crate::operation::list_bill_estimate_input_commitment_modifications::ListBillEstimateInputCommitmentModificationsError,

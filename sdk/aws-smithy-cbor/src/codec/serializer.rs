@@ -119,24 +119,16 @@ impl ShapeSerializer for CborSerializer {
         Ok(())
     }
 
-    fn write_big_integer(
-        &mut self,
-        _schema: &Schema,
-        _value: &BigInteger,
-    ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "CBOR big integer not yet supported (smithy-rs#4611)".into(),
-        })
+    fn write_big_integer(&mut self, schema: &Schema, value: &BigInteger) -> Result<(), SerdeError> {
+        self.write_member_key(schema);
+        self.encoder.big_integer(value);
+        Ok(())
     }
 
-    fn write_big_decimal(
-        &mut self,
-        _schema: &Schema,
-        _value: &BigDecimal,
-    ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "CBOR big decimal not yet supported (smithy-rs#4611)".into(),
-        })
+    fn write_big_decimal(&mut self, schema: &Schema, value: &BigDecimal) -> Result<(), SerdeError> {
+        self.write_member_key(schema);
+        self.encoder.big_decimal(value);
+        Ok(())
     }
 
     fn write_string(&mut self, schema: &Schema, value: &str) -> Result<(), SerdeError> {
@@ -221,6 +213,22 @@ mod tests {
         let bytes = round_trip(|s| s.write_double(&DOUBLE, f64::INFINITY).unwrap());
         let mut dec = crate::Decoder::new(&bytes);
         assert_eq!(dec.double().unwrap(), f64::INFINITY);
+    }
+
+    #[test]
+    fn test_write_big_integer() {
+        let value = "18446744073709551616".parse().unwrap();
+        let bytes = round_trip(|s| s.write_big_integer(&BIG_INTEGER, &value).unwrap());
+        let mut dec = crate::Decoder::new(&bytes);
+        assert_eq!(dec.big_integer().unwrap(), value);
+    }
+
+    #[test]
+    fn test_write_big_decimal() {
+        let value = "273.15".parse().unwrap();
+        let bytes = round_trip(|s| s.write_big_decimal(&BIG_DECIMAL, &value).unwrap());
+        let mut dec = crate::Decoder::new(&bytes);
+        assert_eq!(dec.big_decimal().unwrap(), value);
     }
 
     #[test]

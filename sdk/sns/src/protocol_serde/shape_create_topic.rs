@@ -4,6 +4,7 @@ pub fn de_create_topic_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_topic::CreateTopicOutput, crate::operation::create_topic::CreateTopicError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -162,6 +163,7 @@ pub fn de_create_topic_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_topic::CreateTopicOutput, crate::operation::create_topic::CreateTopicError> {
     Ok({
         #[allow(unused_mut)]

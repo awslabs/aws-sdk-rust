@@ -4,6 +4,7 @@ pub fn de_create_reusable_delegation_set_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
     crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
@@ -147,6 +148,7 @@ pub fn de_create_reusable_delegation_set_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
     crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
@@ -157,11 +159,27 @@ pub fn de_create_reusable_delegation_set_http_response(
         output = crate::protocol_serde::shape_create_reusable_delegation_set::de_create_reusable_delegation_set(_response_body, output)
             .map_err(crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled)?;
         output = output.set_location(
-            crate::protocol_serde::shape_create_reusable_delegation_set_output::de_location_header(_response_headers).map_err(|_| {
-                crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled(
-                    "Failed to parse Location from header `Location",
-                )
-            })?,
+            match crate::protocol_serde::shape_create_reusable_delegation_set_output::de_location_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Location")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError::unhandled(
+                                "Failed to parse Location from header `Location`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         crate::serde_util::create_reusable_delegation_set_output_output_correct_errors(output)

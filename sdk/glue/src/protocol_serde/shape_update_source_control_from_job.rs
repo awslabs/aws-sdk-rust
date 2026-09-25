@@ -4,6 +4,7 @@ pub fn de_update_source_control_from_job_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput,
     crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,
@@ -137,6 +138,7 @@ pub fn de_update_source_control_from_job_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_source_control_from_job::UpdateSourceControlFromJobOutput,
     crate::operation::update_source_control_from_job::UpdateSourceControlFromJobError,

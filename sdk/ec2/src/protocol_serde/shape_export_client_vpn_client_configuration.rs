@@ -4,6 +4,7 @@ pub fn de_export_client_vpn_client_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput,
     crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationError,
@@ -21,6 +22,7 @@ pub fn de_export_client_vpn_client_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput,
     crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationError,

@@ -4,6 +4,7 @@ pub fn de_get_similar_profiles_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_similar_profiles::GetSimilarProfilesOutput,
     crate::operation::get_similar_profiles::GetSimilarProfilesError,
@@ -104,6 +105,7 @@ pub fn de_get_similar_profiles_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_similar_profiles::GetSimilarProfilesOutput,
     crate::operation::get_similar_profiles::GetSimilarProfilesError,

@@ -13,6 +13,7 @@
 /// # let routeroutputprotocol = unimplemented!();
 /// match routeroutputprotocol {
 ///     RouterOutputProtocol::Rist => { /* ... */ },
+///     RouterOutputProtocol::RtmpPush => { /* ... */ },
 ///     RouterOutputProtocol::Rtp => { /* ... */ },
 ///     RouterOutputProtocol::SrtCaller => { /* ... */ },
 ///     RouterOutputProtocol::SrtListener => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum RouterOutputProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Rist,
     #[allow(missing_docs)] // documentation missing in model
+    RtmpPush,
+    #[allow(missing_docs)] // documentation missing in model
     Rtp,
     #[allow(missing_docs)] // documentation missing in model
     SrtCaller,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for RouterOutputProtocol {
     fn from(s: &str) -> Self {
         match s {
             "RIST" => RouterOutputProtocol::Rist,
+            "RTMP_PUSH" => RouterOutputProtocol::RtmpPush,
             "RTP" => RouterOutputProtocol::Rtp,
             "SRT_CALLER" => RouterOutputProtocol::SrtCaller,
             "SRT_LISTENER" => RouterOutputProtocol::SrtListener,
@@ -79,6 +83,7 @@ impl RouterOutputProtocol {
     pub fn as_str(&self) -> &str {
         match self {
             RouterOutputProtocol::Rist => "RIST",
+            RouterOutputProtocol::RtmpPush => "RTMP_PUSH",
             RouterOutputProtocol::Rtp => "RTP",
             RouterOutputProtocol::SrtCaller => "SRT_CALLER",
             RouterOutputProtocol::SrtListener => "SRT_LISTENER",
@@ -87,7 +92,7 @@ impl RouterOutputProtocol {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RIST", "RTP", "SRT_CALLER", "SRT_LISTENER"]
+        &["RIST", "RTMP_PUSH", "RTP", "SRT_CALLER", "SRT_LISTENER"]
     }
 }
 impl ::std::convert::AsRef<str> for RouterOutputProtocol {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for RouterOutputProtocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RouterOutputProtocol::Rist => write!(f, "RIST"),
+            RouterOutputProtocol::RtmpPush => write!(f, "RTMP_PUSH"),
             RouterOutputProtocol::Rtp => write!(f, "RTP"),
             RouterOutputProtocol::SrtCaller => write!(f, "SRT_CALLER"),
             RouterOutputProtocol::SrtListener => write!(f, "SRT_LISTENER"),

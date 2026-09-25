@@ -4,6 +4,7 @@ pub fn de_delete_environment_host_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_environment_host::DeleteEnvironmentHostOutput,
     crate::operation::delete_environment_host::DeleteEnvironmentHostError,
@@ -57,6 +58,7 @@ pub fn de_delete_environment_host_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::delete_environment_host::DeleteEnvironmentHostOutput,
     crate::operation::delete_environment_host::DeleteEnvironmentHostError,

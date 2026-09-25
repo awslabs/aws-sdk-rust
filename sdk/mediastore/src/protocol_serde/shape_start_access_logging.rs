@@ -4,6 +4,7 @@ pub fn de_start_access_logging_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_access_logging::StartAccessLoggingOutput,
     crate::operation::start_access_logging::StartAccessLoggingError,
@@ -75,6 +76,7 @@ pub fn de_start_access_logging_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_access_logging::StartAccessLoggingOutput,
     crate::operation::start_access_logging::StartAccessLoggingError,

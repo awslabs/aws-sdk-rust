@@ -19,6 +19,8 @@ pub struct UpdatePlanInput {
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     /// <p>The updated report configuration for the plan.</p>
     pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub service_quota_checks_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the plan.</p>
@@ -57,6 +59,10 @@ impl UpdatePlanInput {
     pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
         self.report_configuration.as_ref()
     }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn service_quota_checks_enabled(&self) -> ::std::option::Option<bool> {
+        self.service_quota_checks_enabled
+    }
 }
 impl UpdatePlanInput {
     /// Creates a new builder-style object to manufacture [`UpdatePlanInput`](crate::operation::update_plan::UpdatePlanInput).
@@ -77,6 +83,7 @@ pub struct UpdatePlanInputBuilder {
     pub(crate) associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
+    pub(crate) service_quota_checks_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePlanInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the plan.</p>
@@ -214,6 +221,20 @@ impl UpdatePlanInputBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         &self.report_configuration
     }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn service_quota_checks_enabled(mut self, input: bool) -> Self {
+        self.service_quota_checks_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn set_service_quota_checks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.service_quota_checks_enabled = input;
+        self
+    }
+    /// <p>Specifies whether service quota checks are enabled for the Region switch plan.</p>
+    pub fn get_service_quota_checks_enabled(&self) -> &::std::option::Option<bool> {
+        &self.service_quota_checks_enabled
+    }
     /// Consumes the builder and constructs a [`UpdatePlanInput`](crate::operation::update_plan::UpdatePlanInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_plan::UpdatePlanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_plan::UpdatePlanInput {
@@ -225,6 +246,7 @@ impl UpdatePlanInputBuilder {
             associated_alarms: self.associated_alarms,
             triggers: self.triggers,
             report_configuration: self.report_configuration,
+            service_quota_checks_enabled: self.service_quota_checks_enabled,
         })
     }
 }

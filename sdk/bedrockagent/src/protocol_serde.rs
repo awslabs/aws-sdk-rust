@@ -47,6 +47,8 @@ pub(crate) mod shape_create_prompt;
 
 pub(crate) mod shape_create_prompt_version;
 
+pub(crate) mod shape_create_vpc_configuration;
+
 pub(crate) mod shape_delete_agent;
 
 pub(crate) mod shape_delete_agent_action_group;
@@ -70,6 +72,8 @@ pub(crate) mod shape_delete_knowledge_base_documents;
 pub(crate) mod shape_delete_prompt;
 
 pub(crate) mod shape_delete_resource_policy;
+
+pub(crate) mod shape_delete_vpc_configuration;
 
 pub(crate) mod shape_disassociate_agent_collaborator;
 
@@ -105,6 +109,8 @@ pub(crate) mod shape_get_prompt;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_get_vpc_configuration;
+
 pub(crate) mod shape_ingest_knowledge_base_documents;
 
 pub(crate) mod shape_list_agent_action_groups;
@@ -136,6 +142,8 @@ pub(crate) mod shape_list_knowledge_bases;
 pub(crate) mod shape_list_prompts;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_vpc_configurations;
 
 pub(crate) mod shape_prepare_agent;
 
@@ -208,6 +216,8 @@ pub(crate) mod shape_create_knowledge_base_input;
 pub(crate) mod shape_create_prompt_input;
 
 pub(crate) mod shape_create_prompt_version_input;
+
+pub(crate) mod shape_create_vpc_configuration_input;
 
 pub(crate) mod shape_delete_knowledge_base_documents_input;
 
@@ -373,6 +383,10 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_vector_ingestion_configuration;
 
+pub(crate) mod shape_vpc_configuration;
+
+pub(crate) mod shape_vpc_configuration_summary_list;
+
 pub(crate) mod shape_action_group_signature_params;
 
 pub(crate) mod shape_action_group_summary;
@@ -489,9 +503,13 @@ pub(crate) mod shape_share_point_data_source_configuration;
 
 pub(crate) mod shape_sql_knowledge_base_configuration;
 
+pub(crate) mod shape_subnet_id_list;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_vector_knowledge_base_configuration;
+
+pub(crate) mod shape_vpc_configuration_summary;
 
 pub(crate) mod shape_web_data_source_configuration;
 

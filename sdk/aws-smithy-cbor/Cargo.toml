@@ -9,7 +9,7 @@ harness = false
 
 [package]
 name = "aws-smithy-cbor"
-version = "0.62.1"
+version = "0.62.2"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Pérez <d@vidp.dev>"]
 description = "CBOR utilities for smithy-rs."
 edition = "2021"
@@ -23,6 +23,7 @@ cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
+bigdecimal = "0.4.9"
 num-bigint = "0.4.6"
 
 [dependencies.minicbor]
@@ -32,7 +33,7 @@ features = ["alloc", "half"]
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.17.0"
+version = "1.18.0"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
@@ -40,7 +41,7 @@ version = "0.2.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.8.0"
+version = "1.8.1"
 
 [dev-dependencies]
 criterion = "0.5.1"

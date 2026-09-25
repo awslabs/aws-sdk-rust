@@ -4,6 +4,7 @@ pub fn de_cancel_elasticsearch_service_software_update_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput,
     crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError,
@@ -111,6 +112,7 @@ pub fn de_cancel_elasticsearch_service_software_update_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput,
     crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError,

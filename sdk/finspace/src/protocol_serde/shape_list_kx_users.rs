@@ -4,6 +4,7 @@ pub fn de_list_kx_users_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_kx_users::ListKxUsersOutput, crate::operation::list_kx_users::ListKxUsersError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -101,6 +102,7 @@ pub fn de_list_kx_users_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::list_kx_users::ListKxUsersOutput, crate::operation::list_kx_users::ListKxUsersError> {
     Ok({
         #[allow(unused_mut)]

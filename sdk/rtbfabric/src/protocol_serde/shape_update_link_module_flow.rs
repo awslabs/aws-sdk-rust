@@ -4,6 +4,7 @@ pub fn de_update_link_module_flow_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput,
     crate::operation::update_link_module_flow::UpdateLinkModuleFlowError,
@@ -130,6 +131,7 @@ pub fn de_update_link_module_flow_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput,
     crate::operation::update_link_module_flow::UpdateLinkModuleFlowError,

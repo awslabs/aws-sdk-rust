@@ -4,6 +4,7 @@ pub fn de_get_automated_reasoning_policy_build_workflow_result_assets_http_error
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutput,
     crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,
@@ -108,6 +109,7 @@ pub fn de_get_automated_reasoning_policy_build_workflow_result_assets_http_respo
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutput,
     crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsError,

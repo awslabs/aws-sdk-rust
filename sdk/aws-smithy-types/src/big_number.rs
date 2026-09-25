@@ -14,12 +14,17 @@
 pub enum BigNumberError {
     /// The input string is not a valid number format.
     InvalidFormat(String),
+    /// The number's exponent is outside the supported range.
+    ExponentOutOfRange(String),
 }
 
 impl std::fmt::Display for BigNumberError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             BigNumberError::InvalidFormat(s) => write!(f, "invalid number format: {s}"),
+            BigNumberError::ExponentOutOfRange(s) => {
+                write!(f, "number exponent is outside the supported range: {s}")
+            }
         }
     }
 }
@@ -47,13 +52,42 @@ fn is_valid_big_integer(s: &str) -> bool {
 
 /// Validates that a string is a valid BigDecimal format.
 /// Allows digits, sign, decimal point, and scientific notation.
-fn is_valid_big_decimal(s: &str) -> bool {
-    if s.is_empty() {
-        return false;
+fn validate_big_decimal(s: &str) -> Result<(), BigNumberError> {
+    let invalid_format = || BigNumberError::InvalidFormat(s.to_string());
+    let exponent_out_of_range = || BigNumberError::ExponentOutOfRange(s.to_string());
+
+    let (coefficient, exponent) = match s.split_once(['e', 'E']) {
+        Some((coefficient, exponent)) => match exponent.parse::<i128>() {
+            Ok(exponent) => (coefficient, exponent),
+            Err(error)
+                if matches!(
+                    error.kind(),
+                    std::num::IntErrorKind::PosOverflow | std::num::IntErrorKind::NegOverflow
+                ) =>
+            {
+                return Err(exponent_out_of_range());
+            }
+            Err(_) => return Err(invalid_format()),
+        },
+        None => (s, 0),
+    };
+
+    let coefficient = coefficient.strip_prefix(['-', '+']).unwrap_or(coefficient);
+    let (integer, fraction) = coefficient.split_once('.').unwrap_or((coefficient, ""));
+
+    if (integer.is_empty() && fraction.is_empty())
+        || !integer
+            .bytes()
+            .chain(fraction.bytes())
+            .all(|byte| byte.is_ascii_digit())
+    {
+        return Err(invalid_format());
     }
 
-    s.chars()
-        .all(|c| matches!(c, '0'..='9' | '-' | '+' | '.' | 'e' | 'E'))
+    match (fraction.len() as i128).checked_sub(exponent) {
+        Some(scale) if (-(i64::MAX as i128)..=i64::MAX as i128).contains(&scale) => Ok(()),
+        _ => Err(exponent_out_of_range()),
+    }
 }
 
 /// A BigInteger represented as a string.
@@ -103,9 +137,7 @@ impl std::str::FromStr for BigDecimal {
     type Err = BigNumberError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        if !is_valid_big_decimal(s) {
-            return Err(BigNumberError::InvalidFormat(s.to_string()));
-        }
+        validate_big_decimal(s)?;
         Ok(Self(s.to_string()))
     }
 }
@@ -158,6 +190,44 @@ mod tests {
 
         let bd = BigDecimal::from_str("1.23E-10").unwrap();
         assert_eq!(bd.as_ref(), "1.23E-10");
+    }
+
+    #[test]
+    fn big_decimal_accepts_supported_formats() {
+        for value in ["0", "+5", "-0.0", ".5", "-.5", "5.", "1.5E+3"] {
+            assert!(BigDecimal::from_str(value).is_ok(), "{value}");
+        }
+    }
+
+    #[test]
+    fn big_decimal_rejects_malformed_values() {
+        for value in [
+            "1.2.3", "-", "+", ".", "e", "E", "1e", "1e+", "--5", "1-2", "12-34", "..", "1.2e3.4",
+            "+-1",
+        ] {
+            assert_eq!(
+                BigDecimal::from_str(value),
+                Err(BigNumberError::InvalidFormat(value.to_string())),
+                "{value}"
+            );
+        }
+    }
+
+    #[test]
+    fn big_decimal_rejects_out_of_range_exponents() {
+        for value in [
+            "1E99999999999999999999",
+            "1E-99999999999999999999",
+            "1e9223372036854775808",
+            "1e-9223372036854775808",
+            "1e999999999999999999999999999999999999999",
+        ] {
+            assert_eq!(
+                BigDecimal::from_str(value),
+                Err(BigNumberError::ExponentOutOfRange(value.to_string())),
+                "{value}"
+            );
+        }
     }
 
     #[test]

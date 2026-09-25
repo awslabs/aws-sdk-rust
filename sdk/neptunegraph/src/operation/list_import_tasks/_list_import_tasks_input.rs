@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportTasksInput {
+    /// <p>The unique identifier of the Neptune Analytics graph. When provided, the service returns only import tasks associated with this graph. If not specified, the service returns all import tasks.</p>
+    pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,6 +13,10 @@ pub struct ListImportTasksInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListImportTasksInput {
+    /// <p>The unique identifier of the Neptune Analytics graph. When provided, the service returns only import tasks associated with this graph. If not specified, the service returns all import tasks.</p>
+    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+        self.graph_identifier.as_deref()
+    }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -33,10 +39,25 @@ impl ListImportTasksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListImportTasksInputBuilder {
+    pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListImportTasksInputBuilder {
+    /// <p>The unique identifier of the Neptune Analytics graph. When provided, the service returns only import tasks associated with this graph. If not specified, the service returns all import tasks.</p>
+    pub fn graph_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.graph_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph. When provided, the service returns only import tasks associated with this graph. If not specified, the service returns all import tasks.</p>
+    pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.graph_identifier = input;
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph. When provided, the service returns only import tasks associated with this graph. If not specified, the service returns all import tasks.</p>
+    pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_identifier
+    }
     /// <p>Pagination token used to paginate output.</p>
     /// <p>When this value is provided as input, the service returns results from where the previous response left off. When this value is present in output, it indicates that there are more results to retrieve.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -76,6 +97,7 @@ impl ListImportTasksInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_import_tasks::ListImportTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_import_tasks::ListImportTasksInput {
+            graph_identifier: self.graph_identifier,
             next_token: self.next_token,
             max_results: self.max_results,
         })

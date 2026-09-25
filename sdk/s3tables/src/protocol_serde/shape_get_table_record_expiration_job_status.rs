@@ -4,6 +4,7 @@ pub fn de_get_table_record_expiration_job_status_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusOutput,
     crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError,
@@ -134,6 +135,7 @@ pub fn de_get_table_record_expiration_job_status_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusOutput,
     crate::operation::get_table_record_expiration_job_status::GetTableRecordExpirationJobStatusError,

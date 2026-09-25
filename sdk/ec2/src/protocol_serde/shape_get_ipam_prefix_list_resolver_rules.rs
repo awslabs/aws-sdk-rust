@@ -4,6 +4,7 @@ pub fn de_get_ipam_prefix_list_resolver_rules_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesOutput,
     crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError,
@@ -21,6 +22,7 @@ pub fn de_get_ipam_prefix_list_resolver_rules_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesOutput,
     crate::operation::get_ipam_prefix_list_resolver_rules::GetIpamPrefixListResolverRulesError,

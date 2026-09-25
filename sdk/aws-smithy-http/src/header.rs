@@ -51,17 +51,36 @@ impl Error for ParseError {
     }
 }
 
+const NON_UTF8_HEADER: &str = "header was not valid utf-8";
+
+/// Interpret raw header bytes as UTF-8, or fail with a [`ParseError`].
+fn str_from_utf8(bytes: &[u8]) -> Result<&str, ParseError> {
+    std::str::from_utf8(bytes).map_err(|_| ParseError::new(NON_UTF8_HEADER))
+}
+
 /// Read all the dates from the header map at `key` according the `format`
 ///
-/// This is separate from `read_many` below because we need to invoke `DateTime::read` to take advantage
-/// of comma-aware parsing
+/// This is separate from `read_many_bytes` below because we need to invoke `DateTime::read` to take
+/// advantage of comma-aware parsing
 pub fn many_dates<'a>(
     values: impl Iterator<Item = &'a str>,
     format: Format,
 ) -> Result<Vec<DateTime>, ParseError> {
+    many_dates_bytes(values.map(str::as_bytes), format)
+}
+
+/// Read all the dates from raw header values according to the `format`
+///
+/// Like [`many_dates`], but accepts raw bytes. A value that is not valid UTF-8 produces a
+/// [`ParseError`]: every Smithy protocol encodes timestamps as ASCII, so such a value is
+/// always malformed.
+pub fn many_dates_bytes<'a>(
+    values: impl Iterator<Item = &'a [u8]>,
+    format: Format,
+) -> Result<Vec<DateTime>, ParseError> {
     let mut out = vec![];
     for header in values {
-        let mut header = header;
+        let mut header = str_from_utf8(header)?;
         while !header.is_empty() {
             let (v, next) = DateTime::read(header, format, ',').map_err(|err| {
                 ParseError::new(format!("header could not be parsed as date: {err}"))
@@ -92,7 +111,20 @@ pub fn read_many_from_str<'a, T: FromStr>(
 where
     T::Err: Error + Send + Sync + 'static,
 {
-    read_many(values, |v: &str| {
+    read_many_from_str_bytes(values.map(str::as_bytes))
+}
+
+/// Convert raw header values into a `Vec<T>` where `T: FromStr`
+///
+/// Like [`read_many_from_str`], but accepts raw bytes. A value that is not valid UTF-8
+/// produces a [`ParseError`].
+pub fn read_many_from_str_bytes<'a, T: FromStr>(
+    values: impl Iterator<Item = &'a [u8]>,
+) -> Result<Vec<T>, ParseError>
+where
+    T::Err: Error + Send + Sync + 'static,
+{
+    read_many_bytes(values, |v: &str| {
         v.parse().map_err(|err| {
             ParseError::new("failed during `FromString` conversion").with_source(err)
         })
@@ -103,20 +135,31 @@ where
 pub fn read_many_primitive<'a, T: Parse>(
     values: impl Iterator<Item = &'a str>,
 ) -> Result<Vec<T>, ParseError> {
-    read_many(values, |v: &str| {
+    read_many_primitive_bytes(values.map(str::as_bytes))
+}
+
+/// Convert raw header values into a `Vec<T>` where `T: Parse`
+///
+/// Like [`read_many_primitive`], but accepts raw bytes. A value that is not valid UTF-8
+/// produces a [`ParseError`]: Smithy primitives are ASCII, so such a value is always
+/// malformed.
+pub fn read_many_primitive_bytes<'a, T: Parse>(
+    values: impl Iterator<Item = &'a [u8]>,
+) -> Result<Vec<T>, ParseError> {
+    read_many_bytes(values, |v: &str| {
         T::parse_smithy_primitive(v)
             .map_err(|err| ParseError::new("failed reading a list of primitives").with_source(err))
     })
 }
 
-/// Read many comma / header delimited values from HTTP headers for `FromStr` types
-fn read_many<'a, T>(
-    values: impl Iterator<Item = &'a str>,
+/// Read many comma / header delimited values from raw HTTP header bytes
+fn read_many_bytes<'a, T>(
+    values: impl Iterator<Item = &'a [u8]>,
     f: impl Fn(&str) -> Result<T, ParseError>,
 ) -> Result<Vec<T>, ParseError> {
     let mut out = vec![];
     for header in values {
-        let mut header = header.as_bytes();
+        let mut header = header;
         while !header.is_empty() {
             let (v, next) = read_one(header, &f)?;
             out.push(v);
@@ -128,9 +171,24 @@ fn read_many<'a, T>(
 
 /// Read exactly one or none from a headers iterator
 ///
-/// This function does not perform comma splitting like `read_many`
+/// This function does not perform comma splitting like [`read_many_from_str`]
 pub fn one_or_none<'a, T: FromStr>(
-    mut values: impl Iterator<Item = &'a str>,
+    values: impl Iterator<Item = &'a str>,
+) -> Result<Option<T>, ParseError>
+where
+    T::Err: Error + Send + Sync + 'static,
+{
+    one_or_none_bytes(values.map(str::as_bytes))
+}
+
+/// Read exactly one or none from a raw header bytes iterator
+///
+/// Like [`one_or_none`], but accepts raw bytes. A value that is not valid UTF-8 produces a
+/// [`ParseError`].
+///
+/// This function does not perform comma splitting like [`read_many_from_str_bytes`].
+pub fn one_or_none_bytes<'a, T: FromStr>(
+    mut values: impl Iterator<Item = &'a [u8]>,
 ) -> Result<Option<T>, ParseError>
 where
     T::Err: Error + Send + Sync + 'static,
@@ -140,7 +198,9 @@ where
         None => return Ok(None),
     };
     match values.next() {
-        None => T::from_str(first.trim())
+        // Checked before the UTF-8 conversion so that the "multiple values" error keeps
+        // precedence, matching `one_or_none`.
+        None => T::from_str(str_from_utf8(first)?.trim())
             .map_err(|err| ParseError::new("failed to parse string").with_source(err))
             .map(Some),
         Some(_) => Err(ParseError::new(
@@ -236,8 +296,8 @@ mod parse_multi_header {
     fn read_unquoted_value(input: &[u8]) -> Result<(Cow<'_, str>, &[u8]), ParseError> {
         let next_delim = input.iter().position(|&b| b == b',').unwrap_or(input.len());
         let (first, next) = input.split_at(next_delim);
-        let first = std::str::from_utf8(first)
-            .map_err(|_| ParseError::new("header was not valid utf-8"))?;
+        let first =
+            std::str::from_utf8(first).map_err(|_| ParseError::new(super::NON_UTF8_HEADER))?;
         Ok((Cow::Borrowed(first), then_comma(next).unwrap()))
     }
 
@@ -249,7 +309,7 @@ mod parse_multi_header {
                 b'"' if index == 0 || input[index - 1] != b'\\' => {
                     let mut inner = Cow::Borrowed(
                         std::str::from_utf8(&input[0..index])
-                            .map_err(|_| ParseError::new("header was not valid utf-8"))?,
+                            .map_err(|_| ParseError::new(super::NON_UTF8_HEADER))?,
                     );
                     inner = replace(inner, "\\\"", "\"");
                     inner = replace(inner, "\\\\", "\\");
@@ -360,8 +420,9 @@ pub fn append_merge_header_maps_http_1x(
 mod test {
     use super::quote_header_value;
     use crate::header::{
-        append_merge_header_maps, headers_for_prefix, many_dates, read_many_from_str,
-        read_many_primitive, set_request_header_if_absent, set_response_header_if_absent,
+        append_merge_header_maps, headers_for_prefix, many_dates, many_dates_bytes, one_or_none,
+        one_or_none_bytes, read_many_from_str, read_many_from_str_bytes, read_many_primitive,
+        read_many_primitive_bytes, set_request_header_if_absent, set_response_header_if_absent,
         ParseError,
     };
     use aws_smithy_runtime_api::http::Request;
@@ -495,6 +556,72 @@ mod test {
                 DateTime::from_secs_and_nanos(1234, 567_800_000),
                 DateTime::from_secs_and_nanos(9012, 345_600_000)
             ]
+        );
+    }
+
+    // A lone 0xE9 is a valid HTTP header octet (obs-text per RFC 7230) but is not valid UTF-8.
+    const NON_UTF8_VALUE: &[u8] = b"value-\xe9";
+
+    #[test]
+    fn bytes_helpers_agree_with_str_helpers_on_valid_utf8() {
+        assert_eq!(
+            one_or_none::<String>(["  foo  "].into_iter()).unwrap(),
+            one_or_none_bytes::<String>([b"  foo  ".as_slice()].into_iter()).unwrap(),
+        );
+        assert_eq!(
+            read_many_from_str::<String>(["\"foo,bar\",baz"].into_iter()).unwrap(),
+            read_many_from_str_bytes::<String>([b"\"foo,bar\",baz".as_slice()].into_iter())
+                .unwrap(),
+        );
+        assert_eq!(
+            read_many_primitive::<i16>(["1,2", "3"].into_iter()).unwrap(),
+            read_many_primitive_bytes::<i16>([b"1,2".as_slice(), b"3".as_slice()].into_iter())
+                .unwrap(),
+        );
+        assert_eq!(
+            many_dates(
+                ["Mon, 16 Dec 2019 23:48:18 GMT"].into_iter(),
+                Format::HttpDate
+            )
+            .unwrap(),
+            many_dates_bytes(
+                [b"Mon, 16 Dec 2019 23:48:18 GMT".as_slice()].into_iter(),
+                Format::HttpDate
+            )
+            .unwrap(),
+        );
+    }
+
+    #[test]
+    fn bytes_helpers_reject_non_utf8() {
+        let expected = "header was not valid utf-8";
+
+        let err = one_or_none_bytes::<String>([NON_UTF8_VALUE].into_iter()).expect_err("non-utf8");
+        assert!(err.to_string().contains(expected), "{err}");
+
+        let err =
+            read_many_from_str_bytes::<String>([NON_UTF8_VALUE].into_iter()).expect_err("non-utf8");
+        assert!(err.to_string().contains(expected), "{err}");
+
+        let err =
+            read_many_primitive_bytes::<i16>([NON_UTF8_VALUE].into_iter()).expect_err("non-utf8");
+        assert!(err.to_string().contains(expected), "{err}");
+
+        let err =
+            many_dates_bytes([NON_UTF8_VALUE].into_iter(), Format::HttpDate).expect_err("non-utf8");
+        assert!(err.to_string().contains(expected), "{err}");
+    }
+
+    #[test]
+    fn one_or_none_bytes_reports_multiple_before_non_utf8() {
+        // `one_or_none` checks for multiple values before inspecting the first one; the bytes
+        // variant must keep that precedence.
+        let err = one_or_none_bytes::<String>([NON_UTF8_VALUE, b"second".as_slice()].into_iter())
+            .expect_err("multiple values");
+        assert!(
+            err.to_string()
+                .contains("expected a single value but found multiple"),
+            "{err}"
         );
     }
 

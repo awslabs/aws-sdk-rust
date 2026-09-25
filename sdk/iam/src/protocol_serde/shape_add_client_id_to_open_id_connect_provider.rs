@@ -4,6 +4,7 @@ pub fn de_add_client_id_to_open_id_connect_provider_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput,
     crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError,
@@ -117,6 +118,7 @@ pub fn de_add_client_id_to_open_id_connect_provider_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput,
     crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError,

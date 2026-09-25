@@ -471,6 +471,8 @@ pub(crate) mod shape_rendering_configuration;
 
 pub(crate) mod shape_retrieval_configuration;
 
+pub(crate) mod shape_retrieve_error_list;
+
 pub(crate) mod shape_retrieve_result_list;
 
 pub(crate) mod shape_runtime_session_data;
@@ -640,6 +642,8 @@ pub(crate) mod shape_recommendation_trigger;
 pub(crate) mod shape_result_data;
 
 pub(crate) mod shape_retrieval_filter_configuration;
+
+pub(crate) mod shape_retrieve_error;
 
 pub(crate) mod shape_retrieve_result;
 
@@ -848,6 +852,8 @@ pub(crate) mod shape_multi_agent_instruction;
 pub(crate) mod shape_notes_chunk_data_details;
 
 pub(crate) mod shape_notes_data_details;
+
+pub(crate) mod shape_proactive_recommendation_data_details;
 
 pub(crate) mod shape_seed_url;
 

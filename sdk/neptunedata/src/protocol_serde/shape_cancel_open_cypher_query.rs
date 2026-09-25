@@ -4,6 +4,7 @@ pub fn de_cancel_open_cypher_query_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryOutput,
     crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError,
@@ -294,6 +295,7 @@ pub fn de_cancel_open_cypher_query_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryOutput,
     crate::operation::cancel_open_cypher_query::CancelOpenCypherQueryError,

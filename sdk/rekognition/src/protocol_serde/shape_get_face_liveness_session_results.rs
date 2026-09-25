@@ -4,6 +4,7 @@ pub fn de_get_face_liveness_session_results_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
     crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
@@ -126,6 +127,7 @@ pub fn de_get_face_liveness_session_results_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
     crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
@@ -194,6 +196,16 @@ pub(crate) fn de_get_face_liveness_session_results(
                 }
                 "Challenge" => {
                     builder = builder.set_challenge(crate::protocol_serde::shape_challenge::de_challenge(tokens, _value, depth + 1)?);
+                }
+                "Feedback" => {
+                    builder = builder.set_feedback(crate::protocol_serde::shape_feedback_list::de_feedback_list(tokens, _value, depth + 1)?);
+                }
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_session_metadata::de_session_metadata(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

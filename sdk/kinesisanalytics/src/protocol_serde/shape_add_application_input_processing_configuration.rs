@@ -4,6 +4,7 @@ pub fn de_add_application_input_processing_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
     crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,
@@ -113,6 +114,7 @@ pub fn de_add_application_input_processing_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput,
     crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError,

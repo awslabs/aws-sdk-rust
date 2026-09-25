@@ -26,6 +26,9 @@ pub fn ser_ec2_asg_capacity_increase_configuration(
     {
         encoder.str("capacityMonitoringApproach").str(input.capacity_monitoring_approach.as_str());
     }
+    if let Some(var_3) = &input.wait_elb_target_group_healthy {
+        encoder.str("waitELBTargetGroupHealthy").str(var_3.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -63,6 +66,10 @@ pub(crate) fn de_ec2_asg_capacity_increase_configuration(
                         .string()
                         .map(|s| crate::types::Ec2AsgCapacityMonitoringApproach::from(s.as_str()))?,
                 )))
+            })?,
+            "waitELBTargetGroupHealthy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder
+                    .set_wait_elb_target_group_healthy(Some(decoder.string().map(|s| crate::types::WaitElbTargetGroupHealthy::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

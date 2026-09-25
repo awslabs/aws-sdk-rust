@@ -40,25 +40,11 @@ enum Kind {
 pub(super) struct NonUtf8Header {
     error: Utf8Error,
     value: Vec<u8>,
-    name: Option<String>,
 }
 
 impl NonUtf8Header {
-    #[cfg(any(feature = "http-1x", feature = "http-02x"))]
-    pub(super) fn new(name: String, value: Vec<u8>, error: Utf8Error) -> Self {
-        Self {
-            error,
-            value,
-            name: Some(name),
-        }
-    }
-
-    pub(super) fn new_missing_name(value: Vec<u8>, error: Utf8Error) -> Self {
-        Self {
-            error,
-            value,
-            name: None,
-        }
+    pub(super) fn new(value: Vec<u8>, error: Utf8Error) -> Self {
+        Self { error, value }
     }
 }
 
@@ -158,11 +144,9 @@ impl Display for HttpError {
             MissingAuthority => write!(f, "endpoint must contain authority"),
             MissingScheme => write!(f, "endpoint must contain scheme"),
             NonUtf8Header(hv) => {
-                // In some cases, we won't know the key so we default to "<unknown>".
-                let key = hv.name.as_deref().unwrap_or("<unknown>");
                 let value = String::from_utf8_lossy(&hv.value);
                 let index = hv.error.valid_up_to();
-                write!(f, "header `{key}={value}` contains non-UTF8 octet at index {index}")
+                write!(f, "header value `{value}` contains non-UTF8 octet at index {index}")
             },
         }
     }

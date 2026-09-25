@@ -4,6 +4,7 @@ pub fn de_transact_write_items_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::transact_write_items::TransactWriteItemsOutput,
     crate::operation::transact_write_items::TransactWriteItemsError,
@@ -175,6 +176,7 @@ pub fn de_transact_write_items_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::transact_write_items::TransactWriteItemsOutput,
     crate::operation::transact_write_items::TransactWriteItemsError,

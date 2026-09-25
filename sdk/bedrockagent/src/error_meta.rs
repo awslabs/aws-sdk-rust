@@ -469,6 +469,44 @@ impl From<crate::operation::create_prompt_version::CreatePromptVersionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_configuration::CreateVpcConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_configuration::CreateVpcConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_vpc_configuration::CreateVpcConfigurationError> for Error {
+    fn from(err: crate::operation::create_vpc_configuration::CreateVpcConfigurationError) -> Self {
+        match err {
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_vpc_configuration::CreateVpcConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_agent::DeleteAgentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -829,6 +867,41 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError> for Error {
+    fn from(err: crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_vpc_configuration::DeleteVpcConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1352,6 +1425,36 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_configuration::GetVpcConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_configuration::GetVpcConfigurationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_vpc_configuration::GetVpcConfigurationError> for Error {
+    fn from(err: crate::operation::get_vpc_configuration::GetVpcConfigurationError) -> Self {
+        match err {
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_vpc_configuration::GetVpcConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsError, R>>
     for Error
@@ -1835,6 +1938,40 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_configurations::ListVpcConfigurationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_vpc_configurations::ListVpcConfigurationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_vpc_configurations::ListVpcConfigurationsError> for Error {
+    fn from(err: crate::operation::list_vpc_configurations::ListVpcConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_vpc_configurations::ListVpcConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

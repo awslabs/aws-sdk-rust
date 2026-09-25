@@ -160,6 +160,8 @@ mod create_prompt;
 
 mod create_prompt_version;
 
+mod create_vpc_configuration;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -211,6 +213,8 @@ mod delete_prompt;
 
 mod delete_resource_policy;
 
+mod delete_vpc_configuration;
+
 mod disassociate_agent_collaborator;
 
 mod disassociate_agent_knowledge_base;
@@ -245,6 +249,8 @@ mod get_prompt;
 
 mod get_resource_policy;
 
+mod get_vpc_configuration;
+
 mod ingest_knowledge_base_documents;
 
 mod list_agent_action_groups;
@@ -276,6 +282,8 @@ mod list_knowledge_bases;
 mod list_prompts;
 
 mod list_tags_for_resource;
+
+mod list_vpc_configurations;
 
 mod prepare_agent;
 

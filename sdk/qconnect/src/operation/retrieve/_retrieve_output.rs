@@ -5,6 +5,8 @@
 pub struct RetrieveOutput {
     /// <p>The results of the content retrieval operation.</p>
     pub results: ::std::vec::Vec<crate::types::RetrieveResult>,
+    /// <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveError>>,
     _request_id: Option<String>,
 }
 impl RetrieveOutput {
@@ -12,6 +14,12 @@ impl RetrieveOutput {
     pub fn results(&self) -> &[crate::types::RetrieveResult] {
         use std::ops::Deref;
         self.results.deref()
+    }
+    /// <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::RetrieveError] {
+        self.errors.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for RetrieveOutput {
@@ -31,6 +39,7 @@ impl RetrieveOutput {
 #[non_exhaustive]
 pub struct RetrieveOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveResult>>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveError>>,
     _request_id: Option<String>,
 }
 impl RetrieveOutputBuilder {
@@ -54,6 +63,26 @@ impl RetrieveOutputBuilder {
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveResult>> {
         &self.results
     }
+    /// Appends an item to `errors`.
+    ///
+    /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+    ///
+    /// <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
+    pub fn errors(mut self, input: crate::types::RetrieveError) -> Self {
+        let mut v = self.errors.unwrap_or_default();
+        v.push(input);
+        self.errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrieveError>>) -> Self {
+        self.errors = input;
+        self
+    }
+    /// <p>The per-association errors returned when one or more knowledge base associations fail during a <code>Retrieve</code> operation that spans multiple assistant associations. The overall operation still succeeds and returns the results from the associations that were queried successfully. This list contains one entry for each association that failed, up to a maximum of five.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrieveError>> {
+        &self.errors
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -74,6 +103,7 @@ impl RetrieveOutputBuilder {
                     "results was not specified but it is required when building RetrieveOutput",
                 )
             })?,
+            errors: self.errors,
             _request_id: self._request_id,
         })
     }

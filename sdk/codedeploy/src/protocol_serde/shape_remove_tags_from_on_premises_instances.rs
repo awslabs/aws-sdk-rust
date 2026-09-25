@@ -4,6 +4,7 @@ pub fn de_remove_tags_from_on_premises_instances_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
     crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError,
@@ -161,6 +162,7 @@ pub fn de_remove_tags_from_on_premises_instances_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesOutput,
     crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesError,

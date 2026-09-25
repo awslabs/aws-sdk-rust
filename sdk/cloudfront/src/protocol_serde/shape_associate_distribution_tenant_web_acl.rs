@@ -4,6 +4,7 @@ pub fn de_associate_distribution_tenant_web_acl_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebAclOutput,
     crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError,
@@ -125,6 +126,7 @@ pub fn de_associate_distribution_tenant_web_acl_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebAclOutput,
     crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError,
@@ -135,11 +137,25 @@ pub fn de_associate_distribution_tenant_web_acl_http_response(
         output = crate::protocol_serde::shape_associate_distribution_tenant_web_acl::de_associate_distribution_tenant_web_acl(_response_body, output)
             .map_err(crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::unhandled)?;
         output = output.set_e_tag(
-            crate::protocol_serde::shape_associate_distribution_tenant_web_acl_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::unhandled(
-                    "Failed to parse ETag from header `ETag",
-                )
-            })?,
+            match crate::protocol_serde::shape_associate_distribution_tenant_web_acl_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::associate_distribution_tenant_web_acl::AssociateDistributionTenantWebACLError::unhandled(
+                                "Failed to parse ETag from header `ETag`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()

@@ -4,6 +4,7 @@ pub fn de_reset_origin_endpoint_state_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateOutput,
     crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError,
@@ -123,6 +124,7 @@ pub fn de_reset_origin_endpoint_state_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateOutput,
     crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError,

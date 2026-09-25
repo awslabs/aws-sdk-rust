@@ -17,6 +17,8 @@ pub use crate::types::_abbreviated_plan::AbbreviatedPlanBuilder;
 
 pub use crate::types::_route53_health_check::Route53HealthCheckBuilder;
 
+pub use crate::types::_service_quota_warning_summary::ServiceQuotaWarningSummaryBuilder;
+
 pub use crate::types::_workflow::WorkflowBuilder;
 
 pub use crate::types::_associated_alarm::AssociatedAlarmBuilder;

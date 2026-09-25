@@ -16,9 +16,9 @@ pub(crate) fn de_response_headers_prefix_header(
     ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     ::aws_smithy_http::header::ParseError,
 > {
-    let headers = ::aws_smithy_http::header::headers_for_prefix(header_map.iter().map(|(k, _)| k), "");
+    let headers = ::aws_smithy_http::header::headers_for_prefix(header_map.iter_bytes().map(|(k, _)| k), "");
     let out: std::result::Result<_, _> = headers.map(|(key, header_name)| {
-                            let values = header_map.get_all(header_name);
+                            let values = header_map.get_all_bytes(header_name);
                             crate::protocol_serde::shape_send_api_asset_output::de_response_headers_inner(values).map(|v| (key.to_string(), v.expect(
                                 "we have checked there is at least one value for this header name; please file a bug report under https://github.com/smithy-lang/smithy-rs/issues"
                             )))
@@ -27,7 +27,7 @@ pub(crate) fn de_response_headers_prefix_header(
 }
 
 pub fn de_response_headers_inner<'a>(
-    headers: impl ::std::iter::Iterator<Item = &'a str>,
+    headers: impl ::std::iter::Iterator<Item = &'a [u8]>,
 ) -> std::result::Result<Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
-    ::aws_smithy_http::header::one_or_none(headers)
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
 }

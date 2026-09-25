@@ -4,6 +4,7 @@ pub fn de_start_autonomous_database_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_autonomous_database::StartAutonomousDatabaseOutput,
     crate::operation::start_autonomous_database::StartAutonomousDatabaseError,
@@ -117,6 +118,7 @@ pub fn de_start_autonomous_database_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_autonomous_database::StartAutonomousDatabaseOutput,
     crate::operation::start_autonomous_database::StartAutonomousDatabaseError,

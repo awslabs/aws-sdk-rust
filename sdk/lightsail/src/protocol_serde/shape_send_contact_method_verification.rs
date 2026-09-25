@@ -4,6 +4,7 @@ pub fn de_send_contact_method_verification_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
     crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
@@ -144,6 +145,7 @@ pub fn de_send_contact_method_verification_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
     crate::operation::send_contact_method_verification::SendContactMethodVerificationError,

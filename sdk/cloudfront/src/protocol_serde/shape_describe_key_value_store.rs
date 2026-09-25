@@ -4,6 +4,7 @@ pub fn de_describe_key_value_store_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput,
     crate::operation::describe_key_value_store::DescribeKeyValueStoreError,
@@ -89,6 +90,7 @@ pub fn de_describe_key_value_store_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_key_value_store::DescribeKeyValueStoreOutput,
     crate::operation::describe_key_value_store::DescribeKeyValueStoreError,
@@ -97,9 +99,23 @@ pub fn de_describe_key_value_store_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder::default();
         output = output.set_e_tag(
-            crate::protocol_serde::shape_describe_key_value_store_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::describe_key_value_store::DescribeKeyValueStoreError::unhandled("Failed to parse ETag from header `ETag")
-            })?,
+            match crate::protocol_serde::shape_describe_key_value_store_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::describe_key_value_store::DescribeKeyValueStoreError::unhandled(
+                            "Failed to parse ETag from header `ETag`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_key_value_store(crate::protocol_serde::shape_describe_key_value_store_output::de_key_value_store_payload(
             _response_body,

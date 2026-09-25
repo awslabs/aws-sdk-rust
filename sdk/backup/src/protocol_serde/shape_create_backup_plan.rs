@@ -4,6 +4,7 @@ pub fn de_create_backup_plan_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_backup_plan::CreateBackupPlanOutput, crate::operation::create_backup_plan::CreateBackupPlanError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -108,6 +109,7 @@ pub fn de_create_backup_plan_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_backup_plan::CreateBackupPlanOutput, crate::operation::create_backup_plan::CreateBackupPlanError> {
     Ok({
         #[allow(unused_mut)]

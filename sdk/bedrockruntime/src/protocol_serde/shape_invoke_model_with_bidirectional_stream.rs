@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_invoke_model_with_bidirectional_stream_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamOutput,
     crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError,
@@ -31,6 +32,7 @@ pub fn de_invoke_model_with_bidirectional_stream_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamOutput,
     crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError,

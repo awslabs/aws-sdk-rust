@@ -4,6 +4,7 @@ pub fn de_list_groups_for_entity_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_groups_for_entity::ListGroupsForEntityOutput,
     crate::operation::list_groups_for_entity::ListGroupsForEntityError,
@@ -107,6 +108,7 @@ pub fn de_list_groups_for_entity_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_groups_for_entity::ListGroupsForEntityOutput,
     crate::operation::list_groups_for_entity::ListGroupsForEntityError,

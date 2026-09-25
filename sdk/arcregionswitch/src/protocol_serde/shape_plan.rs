@@ -44,6 +44,9 @@ pub(crate) fn de_plan(
                     )?)),
                 )
             })?,
+            "serviceQuotaChecksEnabled" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_service_quota_checks_enabled(Some(decoder.boolean()?)))
+            })?,
             "name" => builder.set_name(Some(decoder.string()?)),
             "regions" => builder.set_regions(Some(crate::protocol_serde::shape_region_list::de_region_list(decoder, depth + 1)?)),
             "recoveryApproach" => builder.set_recovery_approach(Some(decoder.string().map(|s| crate::types::RecoveryApproach::from(s.as_str()))?)),

@@ -4,6 +4,7 @@ pub fn de_get_invalidation_for_distribution_tenant_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantOutput,
     crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError,
@@ -78,6 +79,7 @@ pub fn de_get_invalidation_for_distribution_tenant_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantOutput,
     crate::operation::get_invalidation_for_distribution_tenant::GetInvalidationForDistributionTenantError,

@@ -4,6 +4,7 @@ pub fn de_list_icd10_cm_inference_jobs_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
     crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
@@ -93,6 +94,7 @@ pub fn de_list_icd10_cm_inference_jobs_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
     crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,

@@ -20,6 +20,8 @@ pub struct Plan {
     pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     /// <p>The report configuration for a plan.</p>
     pub report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
+    /// <p>Indicates whether service quota checks are enabled for the Region switch plan. When enabled, Region switch compares the applied service quota values across the plan's Amazon Web Services Regions and creates a warning when a quota in one Region is lower than the value required for the matching resource in another Region. Service quota checks are advisory and don't prevent you from creating, evaluating, or executing a plan.</p>
+    pub service_quota_checks_enabled: ::std::option::Option<bool>,
     /// <p>The name for a plan.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Web Services Regions for a plan.</p>
@@ -73,6 +75,10 @@ impl Plan {
     pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ReportConfiguration> {
         self.report_configuration.as_ref()
     }
+    /// <p>Indicates whether service quota checks are enabled for the Region switch plan. When enabled, Region switch compares the applied service quota values across the plan's Amazon Web Services Regions and creates a warning when a quota in one Region is lower than the value required for the matching resource in another Region. Service quota checks are advisory and don't prevent you from creating, evaluating, or executing a plan.</p>
+    pub fn service_quota_checks_enabled(&self) -> ::std::option::Option<bool> {
+        self.service_quota_checks_enabled
+    }
     /// <p>The name for a plan.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -124,6 +130,7 @@ pub struct PlanBuilder {
     pub(crate) associated_alarms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssociatedAlarm>>,
     pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::Trigger>>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::ReportConfiguration>,
+    pub(crate) service_quota_checks_enabled: ::std::option::Option<bool>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) recovery_approach: ::std::option::Option<crate::types::RecoveryApproach>,
@@ -268,6 +275,20 @@ impl PlanBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ReportConfiguration> {
         &self.report_configuration
     }
+    /// <p>Indicates whether service quota checks are enabled for the Region switch plan. When enabled, Region switch compares the applied service quota values across the plan's Amazon Web Services Regions and creates a warning when a quota in one Region is lower than the value required for the matching resource in another Region. Service quota checks are advisory and don't prevent you from creating, evaluating, or executing a plan.</p>
+    pub fn service_quota_checks_enabled(mut self, input: bool) -> Self {
+        self.service_quota_checks_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether service quota checks are enabled for the Region switch plan. When enabled, Region switch compares the applied service quota values across the plan's Amazon Web Services Regions and creates a warning when a quota in one Region is lower than the value required for the matching resource in another Region. Service quota checks are advisory and don't prevent you from creating, evaluating, or executing a plan.</p>
+    pub fn set_service_quota_checks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.service_quota_checks_enabled = input;
+        self
+    }
+    /// <p>Indicates whether service quota checks are enabled for the Region switch plan. When enabled, Region switch compares the applied service quota values across the plan's Amazon Web Services Regions and creates a warning when a quota in one Region is lower than the value required for the matching resource in another Region. Service quota checks are advisory and don't prevent you from creating, evaluating, or executing a plan.</p>
+    pub fn get_service_quota_checks_enabled(&self) -> &::std::option::Option<bool> {
+        &self.service_quota_checks_enabled
+    }
     /// <p>The name for a plan.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -406,6 +427,7 @@ impl PlanBuilder {
             associated_alarms: self.associated_alarms,
             triggers: self.triggers,
             report_configuration: self.report_configuration,
+            service_quota_checks_enabled: self.service_quota_checks_enabled,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",

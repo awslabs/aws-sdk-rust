@@ -22,6 +22,10 @@ impl crate::operation::create_stream_processor::builders::CreateStreamProcessorI
 }
 /// Fluent builder constructing a request to `CreateStreamProcessor`.
 ///
+/// <important>
+/// <p>Service availability notice: Streaming Video and Bulk Image Analysis is no longer available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition feature availability changes</a>.</p>
+/// <p><b>This change does not impact the availability of other Amazon Rekognition features.</b></p>
+/// </important>
 /// <p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces or to detect labels in a streaming video.</p>
 /// <p>Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. There are two different settings for stream processors in Amazon Rekognition: detecting faces and detecting labels.</p>
 /// <ul>

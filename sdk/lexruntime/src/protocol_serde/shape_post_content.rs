@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_post_content_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -13,97 +14,364 @@ pub fn de_post_content_http_response(
         #[allow(unused_mut)]
         let mut output = crate::operation::post_content::builders::PostContentOutputBuilder::default();
         output = output.set_active_contexts(
-            crate::protocol_serde::shape_post_content_output::de_active_contexts_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse activeContexts from header `x-amz-lex-active-contexts")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_active_contexts_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-active-contexts")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse activeContexts from header `x-amz-lex-active-contexts`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_alternative_intents(
-            crate::protocol_serde::shape_post_content_output::de_alternative_intents_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse alternativeIntents from header `x-amz-lex-alternative-intents",
-                )
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_alternative_intents_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-alternative-intents")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse alternativeIntents from header `x-amz-lex-alternative-intents`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_audio_stream(Some(crate::protocol_serde::shape_post_content_output::de_audio_stream_payload(
             _response_body,
         )?));
         output = output.set_bot_version(
-            crate::protocol_serde::shape_post_content_output::de_bot_version_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse botVersion from header `x-amz-lex-bot-version")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_bot_version_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-bot-version")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse botVersion from header `x-amz-lex-bot-version`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_content_type(
-            crate::protocol_serde::shape_post_content_output::de_content_type_header(_response_headers)
-                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse contentType from header `Content-Type"))?,
+            match crate::protocol_serde::shape_post_content_output::de_content_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("Content-Type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse contentType from header `Content-Type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_dialog_state(
-            crate::protocol_serde::shape_post_content_output::de_dialog_state_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse dialogState from header `x-amz-lex-dialog-state")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_dialog_state_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-dialog-state")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse dialogState from header `x-amz-lex-dialog-state`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_encoded_input_transcript(
-            crate::protocol_serde::shape_post_content_output::de_encoded_input_transcript_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript",
-                )
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_encoded_input_transcript_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-encoded-input-transcript")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse encodedInputTranscript from header `x-amz-lex-encoded-input-transcript`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_encoded_message(
-            crate::protocol_serde::shape_post_content_output::de_encoded_message_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse encodedMessage from header `x-amz-lex-encoded-message")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_encoded_message_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-encoded-message")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse encodedMessage from header `x-amz-lex-encoded-message`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_input_transcript(
-            crate::protocol_serde::shape_post_content_output::de_input_transcript_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse inputTranscript from header `x-amz-lex-input-transcript")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_input_transcript_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-input-transcript")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse inputTranscript from header `x-amz-lex-input-transcript`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_intent_name(
-            crate::protocol_serde::shape_post_content_output::de_intent_name_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse intentName from header `x-amz-lex-intent-name")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_intent_name_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-intent-name")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse intentName from header `x-amz-lex-intent-name`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_message(
-            crate::protocol_serde::shape_post_content_output::de_message_header(_response_headers)
-                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse message from header `x-amz-lex-message"))?,
+            match crate::protocol_serde::shape_post_content_output::de_message_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-message")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse message from header `x-amz-lex-message`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_message_format(
-            crate::protocol_serde::shape_post_content_output::de_message_format_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse messageFormat from header `x-amz-lex-message-format")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_message_format_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-message-format")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse messageFormat from header `x-amz-lex-message-format`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_nlu_intent_confidence(
-            crate::protocol_serde::shape_post_content_output::de_nlu_intent_confidence_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence",
-                )
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_nlu_intent_confidence_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-nlu-intent-confidence")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse nluIntentConfidence from header `x-amz-lex-nlu-intent-confidence`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_sentiment_response(
-            crate::protocol_serde::shape_post_content_output::de_sentiment_response_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse sentimentResponse from header `x-amz-lex-sentiment")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_sentiment_response_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-sentiment")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse sentimentResponse from header `x-amz-lex-sentiment`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_session_attributes(
-            crate::protocol_serde::shape_post_content_output::de_session_attributes_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled(
-                    "Failed to parse sessionAttributes from header `x-amz-lex-session-attributes",
-                )
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_session_attributes_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-session-attributes")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse sessionAttributes from header `x-amz-lex-session-attributes`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_session_id(
-            crate::protocol_serde::shape_post_content_output::de_session_id_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_session_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-session-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse sessionId from header `x-amz-lex-session-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_slot_to_elicit(
-            crate::protocol_serde::shape_post_content_output::de_slot_to_elicit_header(_response_headers).map_err(|_| {
-                crate::operation::post_content::PostContentError::unhandled("Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit")
-            })?,
+            match crate::protocol_serde::shape_post_content_output::de_slot_to_elicit_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-slot-to-elicit")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse slotToElicit from header `x-amz-lex-slot-to-elicit`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_slots(
-            crate::protocol_serde::shape_post_content_output::de_slots_header(_response_headers)
-                .map_err(|_| crate::operation::post_content::PostContentError::unhandled("Failed to parse slots from header `x-amz-lex-slots"))?,
+            match crate::protocol_serde::shape_post_content_output::de_slots_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-lex-slots")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                            "Failed to parse slots from header `x-amz-lex-slots`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
@@ -115,6 +383,7 @@ pub fn de_post_content_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::post_content::PostContentOutput, crate::operation::post_content::PostContentError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -211,9 +480,25 @@ pub fn de_post_content_http_error(
                 output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
                     .map_err(crate::operation::post_content::PostContentError::unhandled)?;
                 output = output.set_retry_after_seconds(
-                    crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
-                        crate::operation::post_content::PostContentError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
-                    })?,
+                    match crate::protocol_serde::shape_limit_exceeded_exception::de_retry_after_seconds_header(_response_headers) {
+                        ::std::result::Result::Ok(value) => value,
+                        ::std::result::Result::Err(err) => {
+                            let _ = &err;
+                            let has_unreadable_value = _response_headers
+                                .get_all_bytes("Retry-After")
+                                .any(|value| std::str::from_utf8(value).is_err());
+                            if has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            {
+                                ::std::option::Option::None
+                            } else {
+                                return ::std::result::Result::Err(crate::operation::post_content::PostContentError::unhandled(
+                                    "Failed to parse retryAfterSeconds from header `Retry-After`",
+                                ));
+                            }
+                        }
+                    },
                 );
                 let output = output.meta(generic);
                 output.build()

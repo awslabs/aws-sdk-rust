@@ -4,6 +4,7 @@ pub fn de_batch_associate_analytics_data_set_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput,
     crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetError,
@@ -114,6 +115,7 @@ pub fn de_batch_associate_analytics_data_set_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetOutput,
     crate::operation::batch_associate_analytics_data_set::BatchAssociateAnalyticsDataSetError,

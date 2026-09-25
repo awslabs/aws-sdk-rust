@@ -26,7 +26,7 @@ libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-smithy-cbor]
 path = ".."
-version = "0.62.1"
+version = "0.62.2"
 
 [dependencies.aws-smithy-schema]
 path = "../../aws-smithy-schema"
@@ -34,7 +34,7 @@ version = "0.2.1"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.8.0"
+version = "1.8.1"
 
 [dependencies.arbitrary]
 version = "1"

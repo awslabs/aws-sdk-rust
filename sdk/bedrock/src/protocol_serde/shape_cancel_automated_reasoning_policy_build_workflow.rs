@@ -4,6 +4,7 @@ pub fn de_cancel_automated_reasoning_policy_build_workflow_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowOutput,
     crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError,
@@ -115,6 +116,7 @@ pub fn de_cancel_automated_reasoning_policy_build_workflow_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowOutput,
     crate::operation::cancel_automated_reasoning_policy_build_workflow::CancelAutomatedReasoningPolicyBuildWorkflowError,

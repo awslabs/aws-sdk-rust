@@ -19,6 +19,14 @@ pub struct GetTablesInput {
     pub query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure containing the Lake Formation <a href="https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html">audit context</a>.</p>
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub resource_share_type: ::std::option::Option<crate::types::TableResourceShareType>,
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub include_status_details: ::std::option::Option<bool>,
     /// <p>Specifies the table fields returned by the <code>GetTables</code> call. This parameter doesn’t accept an empty list. The request must include <code>NAME</code>.</p>
@@ -64,6 +72,16 @@ impl GetTablesInput {
     pub fn audit_context(&self) -> ::std::option::Option<&crate::types::AuditContext> {
         self.audit_context.as_ref()
     }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn resource_share_type(&self) -> ::std::option::Option<&crate::types::TableResourceShareType> {
+        self.resource_share_type.as_ref()
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(&self) -> ::std::option::Option<bool> {
         self.include_status_details
@@ -101,6 +119,7 @@ pub struct GetTablesInputBuilder {
     pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
     pub(crate) query_as_of_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) audit_context: ::std::option::Option<crate::types::AuditContext>,
+    pub(crate) resource_share_type: ::std::option::Option<crate::types::TableResourceShareType>,
     pub(crate) include_status_details: ::std::option::Option<bool>,
     pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>,
 }
@@ -218,6 +237,38 @@ impl GetTablesInputBuilder {
     pub fn get_audit_context(&self) -> &::std::option::Option<crate::types::AuditContext> {
         &self.audit_context
     }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn resource_share_type(mut self, input: crate::types::TableResourceShareType) -> Self {
+        self.resource_share_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn set_resource_share_type(mut self, input: ::std::option::Option<crate::types::TableResourceShareType>) -> Self {
+        self.resource_share_type = input;
+        self
+    }
+    /// <p>Specifies which tables the <code>GetTables</code> call returns. The allowable values are <code>FEDERATED</code> or <code>ALL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If set to <code>FEDERATED</code>, returns only federated tables, which reference an entity outside the Glue Data Catalog.</p></li>
+    /// <li>
+    /// <p>If set to <code>ALL</code>, returns all tables in the database, both federated and non-federated.</p></li>
+    /// </ul>
+    pub fn get_resource_share_type(&self) -> &::std::option::Option<crate::types::TableResourceShareType> {
+        &self.resource_share_type
+    }
     /// <p>Specifies whether to include status details related to a request to create or update an Glue Data Catalog view.</p>
     pub fn include_status_details(mut self, input: bool) -> Self {
         self.include_status_details = ::std::option::Option::Some(input);
@@ -284,6 +335,7 @@ impl GetTablesInputBuilder {
             transaction_id: self.transaction_id,
             query_as_of_time: self.query_as_of_time,
             audit_context: self.audit_context,
+            resource_share_type: self.resource_share_type,
             include_status_details: self.include_status_details,
             attributes_to_get: self.attributes_to_get,
         })

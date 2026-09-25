@@ -4,6 +4,7 @@ pub fn de_start_document_classification_job_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
     crate::operation::start_document_classification_job::StartDocumentClassificationJobError,
@@ -169,6 +170,7 @@ pub fn de_start_document_classification_job_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput,
     crate::operation::start_document_classification_job::StartDocumentClassificationJobError,

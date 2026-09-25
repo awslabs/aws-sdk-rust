@@ -209,9 +209,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SelectObjectC
 #[derive(Debug)]
 struct SelectObjectContentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SelectObjectContentResponseDeserializer {
-    fn deserialize_streaming(
+    fn deserialize_streaming_with_config(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
         #[allow(unused_mut)]
         let mut force_error = false;
@@ -223,7 +224,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SelectObj
             return ::std::option::Option::None;
         }
         ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
-            crate::protocol_serde::shape_select_object_content::de_select_object_content_http_response(response),
+            crate::protocol_serde::shape_select_object_content::de_select_object_content_http_response(response, _cfg),
         ))
     }
 
@@ -238,6 +239,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SelectObj
             response.status().as_u16(),
             response.headers(),
             body,
+            _cfg,
         ))
     }
 }

@@ -2,6 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_snapshot_block_http_response(
     response: &mut ::aws_smithy_runtime_api::http::Response,
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockOutput, crate::operation::get_snapshot_block::GetSnapshotBlockError> {
     let mut _response_body = ::aws_smithy_types::body::SdkBody::taken();
     std::mem::swap(&mut _response_body, response.body_mut());
@@ -16,21 +17,67 @@ pub fn de_get_snapshot_block_http_response(
             _response_body,
         )?));
         output = output.set_checksum(
-            crate::protocol_serde::shape_get_snapshot_block_output::de_checksum_header(_response_headers).map_err(|_| {
-                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled("Failed to parse Checksum from header `x-amz-Checksum")
-            })?,
+            match crate::protocol_serde::shape_get_snapshot_block_output::de_checksum_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-Checksum")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
+                            "Failed to parse Checksum from header `x-amz-Checksum`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_algorithm(
-            crate::protocol_serde::shape_get_snapshot_block_output::de_checksum_algorithm_header(_response_headers).map_err(|_| {
-                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
-                    "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm",
-                )
-            })?,
+            match crate::protocol_serde::shape_get_snapshot_block_output::de_checksum_algorithm_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-Checksum-Algorithm")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
+                            "Failed to parse ChecksumAlgorithm from header `x-amz-Checksum-Algorithm`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_data_length(
-            crate::protocol_serde::shape_get_snapshot_block_output::de_data_length_header(_response_headers).map_err(|_| {
-                crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled("Failed to parse DataLength from header `x-amz-Data-Length")
-            })?,
+            match crate::protocol_serde::shape_get_snapshot_block_output::de_data_length_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-Data-Length")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::get_snapshot_block::GetSnapshotBlockError::unhandled(
+                            "Failed to parse DataLength from header `x-amz-Data-Length`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
@@ -42,6 +89,7 @@ pub fn de_get_snapshot_block_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_snapshot_block::GetSnapshotBlockOutput, crate::operation::get_snapshot_block::GetSnapshotBlockError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)

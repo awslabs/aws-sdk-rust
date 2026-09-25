@@ -6,6 +6,8 @@
 pub enum RouterOutputProtocolConfiguration {
     /// <p>The configuration settings for a router output using the RIST (Reliable Internet Stream Transport) protocol, including the destination address and port.</p>
     Rist(crate::types::RistRouterOutputConfiguration),
+    /// <p>The configuration settings for a router output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified. These settings include the destination address and port, the application and stream names, and optional TLS encryption configuration.</p>
+    RtmpPush(crate::types::RtmpPushRouterOutputConfiguration),
     /// <p>The configuration settings for a router output using the RTP (Real-Time Transport Protocol) protocol, including the destination address and port, and forward error correction state.</p>
     Rtp(crate::types::RtpRouterOutputConfiguration),
     /// <p>The configuration settings for a router output using the SRT (Secure Reliable Transport) protocol in caller mode, including the destination address and port, minimum latency, stream ID, and encryption key configuration.</p>
@@ -35,6 +37,19 @@ impl RouterOutputProtocolConfiguration {
     /// Returns true if this is a [`Rist`](crate::types::RouterOutputProtocolConfiguration::Rist).
     pub fn is_rist(&self) -> bool {
         self.as_rist().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RtmpPush`](crate::types::RouterOutputProtocolConfiguration::RtmpPush), extracting the inner [`RtmpPushRouterOutputConfiguration`](crate::types::RtmpPushRouterOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rtmp_push(&self) -> ::std::result::Result<&crate::types::RtmpPushRouterOutputConfiguration, &Self> {
+        if let RouterOutputProtocolConfiguration::RtmpPush(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RtmpPush`](crate::types::RouterOutputProtocolConfiguration::RtmpPush).
+    pub fn is_rtmp_push(&self) -> bool {
+        self.as_rtmp_push().is_ok()
     }
     /// Tries to convert the enum instance into [`Rtp`](crate::types::RouterOutputProtocolConfiguration::Rtp), extracting the inner [`RtpRouterOutputConfiguration`](crate::types::RtpRouterOutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -11,6 +11,14 @@ pub struct GetPaymentConnectorOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub r#type: crate::types::PaymentConnectorType,
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials. Rotate them with the payment provider, then call <code>UpdatePaymentCredentialProvider</code>.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed. You can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     /// <p>The credential provider configurations for the payment connector.</p>
     pub credential_provider_configurations: ::std::vec::Vec<crate::types::CredentialsProviderConfiguration>,
     /// <p>The timestamp when the payment connector was created.</p>
@@ -21,6 +29,8 @@ pub struct GetPaymentConnectorOutput {
     pub status: crate::types::PaymentConnectorStatus,
     /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
     pub authorization_url: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the payment connector's current service-managed credentials took effect. It is first set when the credentials are provisioned and is updated by each rotation. This field is present only for payment connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+    pub credentials_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetPaymentConnectorOutput {
@@ -41,6 +51,16 @@ impl GetPaymentConnectorOutput {
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub fn r#type(&self) -> &crate::types::PaymentConnectorType {
         &self.r#type
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials. Rotate them with the payment provider, then call <code>UpdatePaymentCredentialProvider</code>.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed. You can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn provision_mode(&self) -> ::std::option::Option<&crate::types::PaymentConnectorProvisionMode> {
+        self.provision_mode.as_ref()
     }
     /// <p>The credential provider configurations for the payment connector.</p>
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialsProviderConfiguration] {
@@ -63,6 +83,10 @@ impl GetPaymentConnectorOutput {
     pub fn authorization_url(&self) -> ::std::option::Option<&str> {
         self.authorization_url.as_deref()
     }
+    /// <p>The timestamp when the payment connector's current service-managed credentials took effect. It is first set when the credentials are provisioned and is updated by each rotation. This field is present only for payment connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+    pub fn credentials_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.credentials_updated_at.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetPaymentConnectorOutput {
     fn request_id(&self) -> Option<&str> {
@@ -84,11 +108,13 @@ pub struct GetPaymentConnectorOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PaymentConnectorType>,
+    pub(crate) provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::PaymentConnectorStatus>,
     pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
+    pub(crate) credentials_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetPaymentConnectorOutputBuilder {
@@ -150,6 +176,38 @@ impl GetPaymentConnectorOutputBuilder {
     /// <p>The type of the payment connector, which determines the payment provider integration.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::PaymentConnectorType> {
         &self.r#type
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials. Rotate them with the payment provider, then call <code>UpdatePaymentCredentialProvider</code>.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed. You can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn provision_mode(mut self, input: crate::types::PaymentConnectorProvisionMode) -> Self {
+        self.provision_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials. Rotate them with the payment provider, then call <code>UpdatePaymentCredentialProvider</code>.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed. You can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn set_provision_mode(mut self, input: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>) -> Self {
+        self.provision_mode = input;
+        self
+    }
+    /// <p>Specifies how the payment connector was provisioned. Payment connectors that were created before this field was available return <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provided the credential provider configurations, so you own the credentials. Rotate them with the payment provider, then call <code>UpdatePaymentCredentialProvider</code>.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - AgentCore provisioned the credential provider for you, so the credentials are service-managed. You can rotate them with <code>RotatePaymentConnectorCredentials</code>.</p></li>
+    /// </ul>
+    pub fn get_provision_mode(&self) -> &::std::option::Option<crate::types::PaymentConnectorProvisionMode> {
+        &self.provision_mode
     }
     /// Appends an item to `credential_provider_configurations`.
     ///
@@ -233,6 +291,20 @@ impl GetPaymentConnectorOutputBuilder {
     pub fn get_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorization_url
     }
+    /// <p>The timestamp when the payment connector's current service-managed credentials took effect. It is first set when the credentials are provisioned and is updated by each rotation. This field is present only for payment connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+    pub fn credentials_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.credentials_updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the payment connector's current service-managed credentials took effect. It is first set when the credentials are provisioned and is updated by each rotation. This field is present only for payment connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+    pub fn set_credentials_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.credentials_updated_at = input;
+        self
+    }
+    /// <p>The timestamp when the payment connector's current service-managed credentials took effect. It is first set when the credentials are provisioned and is updated by each rotation. This field is present only for payment connectors with a <code>provisionMode</code> of <code>QUICK_CREATE</code>.</p>
+    pub fn get_credentials_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.credentials_updated_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -275,6 +347,7 @@ impl GetPaymentConnectorOutputBuilder {
                     "r#type was not specified but it is required when building GetPaymentConnectorOutput",
                 )
             })?,
+            provision_mode: self.provision_mode,
             credential_provider_configurations: self.credential_provider_configurations.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "credential_provider_configurations",
@@ -300,6 +373,7 @@ impl GetPaymentConnectorOutputBuilder {
                 )
             })?,
             authorization_url: self.authorization_url,
+            credentials_updated_at: self.credentials_updated_at,
             _request_id: self._request_id,
         })
     }

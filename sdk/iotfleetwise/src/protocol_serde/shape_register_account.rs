@@ -4,6 +4,7 @@ pub fn de_register_account_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::register_account::RegisterAccountOutput, crate::operation::register_account::RegisterAccountError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -110,6 +111,7 @@ pub fn de_register_account_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::register_account::RegisterAccountOutput, crate::operation::register_account::RegisterAccountError> {
     Ok({
         #[allow(unused_mut)]

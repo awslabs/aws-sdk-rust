@@ -4,6 +4,7 @@ pub fn de_associate_personas_to_entities_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput,
     crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,
@@ -127,6 +128,7 @@ pub fn de_associate_personas_to_entities_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput,
     crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesError,

@@ -4,6 +4,7 @@ pub fn de_get_security_requirement_pack_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_security_requirement_pack::GetSecurityRequirementPackOutput,
     crate::operation::get_security_requirement_pack::GetSecurityRequirementPackError,
@@ -99,6 +100,7 @@ pub fn de_get_security_requirement_pack_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_security_requirement_pack::GetSecurityRequirementPackOutput,
     crate::operation::get_security_requirement_pack::GetSecurityRequirementPackError,

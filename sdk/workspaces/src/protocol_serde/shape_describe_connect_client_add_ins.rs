@@ -4,6 +4,7 @@ pub fn de_describe_connect_client_add_ins_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput,
     crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,
@@ -82,6 +83,7 @@ pub fn de_describe_connect_client_add_ins_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsOutput,
     crate::operation::describe_connect_client_add_ins::DescribeConnectClientAddInsError,

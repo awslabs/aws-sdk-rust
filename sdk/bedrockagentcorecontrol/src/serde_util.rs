@@ -2258,6 +2258,24 @@ pub(crate) fn put_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn rotate_payment_connector_credentials_output_output_correct_errors(
+    mut builder: crate::operation::rotate_payment_connector_credentials::builders::RotatePaymentConnectorCredentialsOutputBuilder,
+) -> crate::operation::rotate_payment_connector_credentials::builders::RotatePaymentConnectorCredentialsOutputBuilder {
+    if builder.payment_connector_id.is_none() {
+        builder.payment_connector_id = Some(Default::default())
+    }
+    if builder.payment_manager_id.is_none() {
+        builder.payment_manager_id = Some(Default::default())
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PaymentConnectorStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn concurrent_modification_exception_correct_errors(
     mut builder: crate::types::error::builders::ConcurrentModificationExceptionBuilder,
 ) -> crate::types::error::builders::ConcurrentModificationExceptionBuilder {

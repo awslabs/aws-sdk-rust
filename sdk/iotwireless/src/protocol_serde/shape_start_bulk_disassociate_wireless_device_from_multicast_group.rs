@@ -4,6 +4,7 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_erro
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
     crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
@@ -108,6 +109,7 @@ pub fn de_start_bulk_disassociate_wireless_device_from_multicast_group_http_resp
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
     crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,

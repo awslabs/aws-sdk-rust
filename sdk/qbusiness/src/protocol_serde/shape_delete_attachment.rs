@@ -4,6 +4,7 @@ pub fn de_delete_attachment_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_attachment::DeleteAttachmentOutput, crate::operation::delete_attachment::DeleteAttachmentError> {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
@@ -110,6 +111,7 @@ pub fn de_delete_attachment_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::delete_attachment::DeleteAttachmentOutput, crate::operation::delete_attachment::DeleteAttachmentError> {
     Ok({
         #[allow(unused_mut)]

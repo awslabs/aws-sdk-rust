@@ -222,9 +222,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for HeadBucke
         }
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
         let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(status, headers, body)
+            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_error(status, headers, body, _cfg)
         } else {
-            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(status, headers, body)
+            crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(status, headers, body, _cfg)
         };
         crate::protocol_serde::type_erase_result(parse_result)
     }
@@ -363,7 +363,7 @@ mod head_bucket_test {
         #[allow(unused_mut)]
         let mut test_cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
 
-        let parsed = de.deserialize_streaming(&mut http_response);
+        let parsed = de.deserialize_streaming_with_config(&mut http_response, &test_cfg);
         let parsed = parsed.unwrap_or_else(|| {
             let http_response = http_response.map(|body| {
                 ::aws_smithy_types::body::SdkBody::from(::bytes::Bytes::copy_from_slice(&::aws_smithy_protocol_test::decode_body_data(

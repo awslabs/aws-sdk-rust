@@ -4,6 +4,7 @@ pub fn de_put_object_annotation_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_object_annotation::PutObjectAnnotationOutput,
     crate::operation::put_object_annotation::PutObjectAnnotationError,
@@ -135,6 +136,7 @@ pub fn de_put_object_annotation_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::put_object_annotation::PutObjectAnnotationOutput,
     crate::operation::put_object_annotation::PutObjectAnnotationError,
@@ -145,107 +147,317 @@ pub fn de_put_object_annotation_http_response(
         output = crate::protocol_serde::shape_put_object_annotation::de_put_object_annotation(_response_body, output)
             .map_err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled)?;
         output = output.set_checksum_crc32(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc32_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc32_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-crc32")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumCRC32 from header `x-amz-checksum-crc32`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_crc32_c(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc32_c_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc32_c_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-crc32c")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumCRC32C from header `x-amz-checksum-crc32c`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_crc64_nvme(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc64_nvme_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumCRC64NVME from header `x-amz-checksum-crc64nvme",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_crc64_nvme_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-crc64nvme")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumCRC64NVME from header `x-amz-checksum-crc64nvme`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_md5(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_md5_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumMD5 from header `x-amz-checksum-md5",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_md5_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-md5")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumMD5 from header `x-amz-checksum-md5`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_sha1(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha1_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha1_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-sha1")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumSHA1 from header `x-amz-checksum-sha1`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_sha256(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha256_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha256_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-sha256")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumSHA256 from header `x-amz-checksum-sha256`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_sha512(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha512_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumSHA512 from header `x-amz-checksum-sha512",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_sha512_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-sha512")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumSHA512 from header `x-amz-checksum-sha512`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_type(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_type_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumType from header `x-amz-checksum-type",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_type_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-type")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumType from header `x-amz-checksum-type`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_xxhash128(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash128_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumXXHASH128 from header `x-amz-checksum-xxhash128",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash128_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-xxhash128")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumXXHASH128 from header `x-amz-checksum-xxhash128`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_xxhash3(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash3_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumXXHASH3 from header `x-amz-checksum-xxhash3",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash3_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-xxhash3")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumXXHASH3 from header `x-amz-checksum-xxhash3`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_checksum_xxhash64(
-            crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash64_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ChecksumXXHASH64 from header `x-amz-checksum-xxhash64",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_checksum_xxhash64_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-checksum-xxhash64")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ChecksumXXHASH64 from header `x-amz-checksum-xxhash64`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_e_tag(
-            crate::protocol_serde::shape_put_object_annotation_output::de_e_tag_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled("Failed to parse ETag from header `ETag")
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_e_tag_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ETag from header `ETag`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_object_version_id(
-            crate::protocol_serde::shape_put_object_annotation_output::de_object_version_id_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ObjectVersionId from header `x-amz-object-version-id",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_object_version_id_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-object-version-id")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ObjectVersionId from header `x-amz-object-version-id`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_request_charged(
-            crate::protocol_serde::shape_put_object_annotation_output::de_request_charged_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse RequestCharged from header `x-amz-request-charged",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_request_charged_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-request-charged")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse RequestCharged from header `x-amz-request-charged`",
+                        ));
+                    }
+                }
+            },
         );
         output = output.set_server_side_encryption(
-            crate::protocol_serde::shape_put_object_annotation_output::de_server_side_encryption_header(_response_headers).map_err(|_| {
-                crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
-                    "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption",
-                )
-            })?,
+            match crate::protocol_serde::shape_put_object_annotation_output::de_server_side_encryption_header(_response_headers) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-server-side-encryption")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(crate::operation::put_object_annotation::PutObjectAnnotationError::unhandled(
+                            "Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption`",
+                        ));
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

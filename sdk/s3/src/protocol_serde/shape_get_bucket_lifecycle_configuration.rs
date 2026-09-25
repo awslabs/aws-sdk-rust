@@ -4,6 +4,7 @@ pub fn de_get_bucket_lifecycle_configuration_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput,
     crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError,
@@ -22,6 +23,7 @@ pub fn de_get_bucket_lifecycle_configuration_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationOutput,
     crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError,
@@ -32,14 +34,29 @@ pub fn de_get_bucket_lifecycle_configuration_http_response(
         output = crate::protocol_serde::shape_get_bucket_lifecycle_configuration::de_get_bucket_lifecycle_configuration(_response_body, output)
             .map_err(crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError::unhandled)?;
         output = output.set_transition_default_minimum_object_size(
-            crate::protocol_serde::shape_get_bucket_lifecycle_configuration_output::de_transition_default_minimum_object_size_header(
+            match crate::protocol_serde::shape_get_bucket_lifecycle_configuration_output::de_transition_default_minimum_object_size_header(
                 _response_headers,
-            )
-            .map_err(|_| {
-                crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError::unhandled(
-                    "Failed to parse TransitionDefaultMinimumObjectSize from header `x-amz-transition-default-minimum-object-size",
-                )
-            })?,
+            ) {
+                ::std::result::Result::Ok(value) => value,
+                ::std::result::Result::Err(err) => {
+                    let _ = &err;
+                    let has_unreadable_value = _response_headers
+                        .get_all_bytes("x-amz-transition-default-minimum-object-size")
+                        .any(|value| std::str::from_utf8(value).is_err());
+                    if has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    {
+                        ::std::option::Option::None
+                    } else {
+                        return ::std::result::Result::Err(
+                            crate::operation::get_bucket_lifecycle_configuration::GetBucketLifecycleConfigurationError::unhandled(
+                                "Failed to parse TransitionDefaultMinimumObjectSize from header `x-amz-transition-default-minimum-object-size`",
+                            ),
+                        );
+                    }
+                }
+            },
         );
         output._set_extended_request_id(crate::s3_request_id::RequestIdExt::extended_request_id(_response_headers).map(str::to_string));
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));

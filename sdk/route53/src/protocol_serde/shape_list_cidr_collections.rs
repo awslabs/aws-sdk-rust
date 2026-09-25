@@ -4,6 +4,7 @@ pub fn de_list_cidr_collections_http_error(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
     crate::operation::list_cidr_collections::ListCidrCollectionsError,
@@ -44,6 +45,7 @@ pub fn de_list_cidr_collections_http_response(
     _response_status: u16,
     _response_headers: &::aws_smithy_runtime_api::http::Headers,
     _response_body: &[u8],
+    _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<
     crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
     crate::operation::list_cidr_collections::ListCidrCollectionsError,

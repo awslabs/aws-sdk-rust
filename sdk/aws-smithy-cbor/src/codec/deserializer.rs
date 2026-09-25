@@ -226,15 +226,11 @@ impl ShapeDeserializer for CborDeserializer<'_> {
     }
 
     fn read_big_integer(&mut self, _schema: &Schema) -> Result<BigInteger, SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "CBOR big integer not yet supported (smithy-rs#4611)".into(),
-        })
+        self.decoder.big_integer().map_err(deser_err)
     }
 
     fn read_big_decimal(&mut self, _schema: &Schema) -> Result<BigDecimal, SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "CBOR big decimal not yet supported (smithy-rs#4611)".into(),
-        })
+        self.decoder.big_decimal().map_err(deser_err)
     }
 
     fn read_string(&mut self, _schema: &Schema) -> Result<String, SerdeError> {
@@ -445,6 +441,22 @@ mod tests {
         let bytes = make_deser(|s| s.write_double(&DOUBLE, f64::NEG_INFINITY).unwrap());
         let mut de = CborDeserializer::new(&bytes, 128);
         assert_eq!(de.read_double(&DOUBLE).unwrap(), f64::NEG_INFINITY);
+    }
+
+    #[test]
+    fn test_read_big_integer() {
+        let value = "18446744073709551616".parse().unwrap();
+        let bytes = make_deser(|s| s.write_big_integer(&BIG_INTEGER, &value).unwrap());
+        let mut de = CborDeserializer::new(&bytes, 128);
+        assert_eq!(de.read_big_integer(&BIG_INTEGER).unwrap(), value);
+    }
+
+    #[test]
+    fn test_read_big_decimal() {
+        let value = "273.15".parse().unwrap();
+        let bytes = make_deser(|s| s.write_big_decimal(&BIG_DECIMAL, &value).unwrap());
+        let mut de = CborDeserializer::new(&bytes, 128);
+        assert_eq!(de.read_big_decimal(&BIG_DECIMAL).unwrap(), value);
     }
 
     #[test]
