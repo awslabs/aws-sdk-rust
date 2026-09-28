@@ -189,6 +189,10 @@ mod list_billing_view_segments;
 
 mod list_billing_views;
 
+mod list_business_support_account_charges;
+
+mod list_business_support_subscription_history;
+
 mod list_enterprise_support_linked_account_charges;
 
 mod list_source_views_for_billing_view;

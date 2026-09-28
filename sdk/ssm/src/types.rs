@@ -39,6 +39,8 @@ pub use crate::types::_inventory_schema_delete_option::InventorySchemaDeleteOpti
 
 pub use crate::types::_inventory_deletion_summary::InventoryDeletionSummary;
 
+pub use crate::types::_deletion_mode::DeletionMode;
+
 pub use crate::types::_document_permission_type::DocumentPermissionType;
 
 pub use crate::types::_maintenance_window_resource_type::MaintenanceWindowResourceType;
@@ -694,6 +696,8 @@ mod _connection_status;
 mod _create_association_batch_request_entry;
 
 mod _credentials;
+
+mod _deletion_mode;
 
 mod _describe_activations_filter;
 

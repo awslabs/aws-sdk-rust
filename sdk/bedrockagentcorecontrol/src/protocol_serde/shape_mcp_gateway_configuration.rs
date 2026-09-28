@@ -20,40 +20,44 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "supportedVersions" => {
-                                builder = builder.set_supported_versions(
-                                    crate::protocol_serde::shape_mcp_supported_versions::de_mcp_supported_versions(tokens, _value, depth + 1)?,
-                                );
-                            }
-                            "instructions" => {
-                                builder = builder.set_instructions(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "searchType" => {
-                                builder = builder.set_search_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| crate::types::SearchType::from(u.as_ref())))
-                                        .transpose()?,
-                                );
-                            }
-                            "sessionConfiguration" => {
-                                builder = builder.set_session_configuration(
-                                    crate::protocol_serde::shape_session_configuration::de_session_configuration(tokens, _value, depth + 1)?,
-                                );
-                            }
-                            "streamingConfiguration" => {
-                                builder = builder.set_streaming_configuration(
-                                    crate::protocol_serde::shape_streaming_configuration::de_streaming_configuration(tokens, _value, depth + 1)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "supportedVersions" => {
+                            builder = builder.set_supported_versions(crate::protocol_serde::shape_mcp_supported_versions::de_mcp_supported_versions(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
-                    }
+                        "instructions" => {
+                            builder = builder.set_instructions(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "searchType" => {
+                            builder = builder.set_search_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SearchType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "sessionConfiguration" => {
+                            builder = builder.set_session_configuration(
+                                crate::protocol_serde::shape_session_configuration::de_session_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "streamingConfiguration" => {
+                            builder = builder.set_streaming_configuration(
+                                crate::protocol_serde::shape_streaming_configuration::de_streaming_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "disableMcpListToolsPagination" => {
+                            builder = builder
+                                .set_disable_mcp_list_tools_pagination(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -99,6 +103,9 @@ pub fn ser_mcp_gateway_configuration(
         let mut object_9 = object.key("streamingConfiguration").start_object();
         crate::protocol_serde::shape_streaming_configuration::ser_streaming_configuration(&mut object_9, var_8)?;
         object_9.finish();
+    }
+    if let Some(var_10) = &input.disable_mcp_list_tools_pagination {
+        object.key("disableMcpListToolsPagination").boolean(*var_10);
     }
     Ok(())
 }

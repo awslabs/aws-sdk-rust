@@ -178,6 +178,23 @@ impl UpdateRegistryFluentBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::UpdatedApprovalConfiguration> {
         self.inner.get_approval_configuration()
     }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn custom_metadata_schema_configuration(mut self, input: crate::types::UpdatedCustomMetadataSchemaConfiguration) -> Self {
+        self.inner = self.inner.custom_metadata_schema_configuration(input);
+        self
+    }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn set_custom_metadata_schema_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_custom_metadata_schema_configuration(input);
+        self
+    }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn get_custom_metadata_schema_configuration(&self) -> &::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration> {
+        self.inner.get_custom_metadata_schema_configuration()
+    }
     /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
     pub fn auto_detection_configuration(mut self, input: crate::types::UpdatedAutoDetectionConfiguration) -> Self {
         self.inner = self.inner.auto_detection_configuration(input);

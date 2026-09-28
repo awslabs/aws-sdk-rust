@@ -156,16 +156,19 @@ impl SearchDiscoverableRegistryRecordsFluentBuilder {
         self.inner.get_max_results()
     }
     /// <p>An optional structured JSON metadata filter that narrows the search results. Supports the field-level operators <code>$eq</code>, <code>$ne</code>, and <code>$in</code>, and the logical operators <code>$and</code> and <code>$or</code> on filterable fields.</p>
+    /// <p>You can also filter on custom metadata fields using the <code>customMetadata.{key}</code> prefix. For example, to filter by a custom metadata field: <code>{"customMetadata.environment": {"$eq": "production"}}</code>. Filter values must be strings, so match a boolean field on its string form: <code>{"customMetadata.requiresApproval": {"$eq": "true"}}</code>.</p>
     pub fn filters(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p>An optional structured JSON metadata filter that narrows the search results. Supports the field-level operators <code>$eq</code>, <code>$ne</code>, and <code>$in</code>, and the logical operators <code>$and</code> and <code>$or</code> on filterable fields.</p>
+    /// <p>You can also filter on custom metadata fields using the <code>customMetadata.{key}</code> prefix. For example, to filter by a custom metadata field: <code>{"customMetadata.environment": {"$eq": "production"}}</code>. Filter values must be strings, so match a boolean field on its string form: <code>{"customMetadata.requiresApproval": {"$eq": "true"}}</code>.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>An optional structured JSON metadata filter that narrows the search results. Supports the field-level operators <code>$eq</code>, <code>$ne</code>, and <code>$in</code>, and the logical operators <code>$and</code> and <code>$or</code> on filterable fields.</p>
+    /// <p>You can also filter on custom metadata fields using the <code>customMetadata.{key}</code> prefix. For example, to filter by a custom metadata field: <code>{"customMetadata.environment": {"$eq": "production"}}</code>. Filter values must be strings, so match a boolean field on its string form: <code>{"customMetadata.requiresApproval": {"$eq": "true"}}</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_filters()
     }

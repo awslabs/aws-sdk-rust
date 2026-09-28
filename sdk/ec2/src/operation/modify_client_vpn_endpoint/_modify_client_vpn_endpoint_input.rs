@@ -54,6 +54,8 @@ pub struct ModifyClientVpnEndpointInput {
     pub disconnect_on_session_timeout: ::std::option::Option<bool>,
     /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub device_posture_options: ::std::option::Option<crate::types::DevicePostureOptions>,
 }
 impl ModifyClientVpnEndpointInput {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -143,6 +145,10 @@ impl ModifyClientVpnEndpointInput {
     pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationInputStructure> {
         self.transit_gateway_configuration.as_ref()
     }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn device_posture_options(&self) -> ::std::option::Option<&crate::types::DevicePostureOptions> {
+        self.device_posture_options.as_ref()
+    }
 }
 impl ModifyClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
@@ -172,6 +178,7 @@ pub struct ModifyClientVpnEndpointInputBuilder {
     pub(crate) client_route_enforcement_options: ::std::option::Option<crate::types::ClientRouteEnforcementOptions>,
     pub(crate) disconnect_on_session_timeout: ::std::option::Option<bool>,
     pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    pub(crate) device_posture_options: ::std::option::Option<crate::types::DevicePostureOptions>,
 }
 impl ModifyClientVpnEndpointInputBuilder {
     /// <p>The ID of the Client VPN endpoint to modify.</p>
@@ -473,6 +480,20 @@ impl ModifyClientVpnEndpointInputBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
         &self.transit_gateway_configuration
     }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn device_posture_options(mut self, input: crate::types::DevicePostureOptions) -> Self {
+        self.device_posture_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureOptions>) -> Self {
+        self.device_posture_options = input;
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureOptions> {
+        &self.device_posture_options
+    }
     /// Consumes the builder and constructs a [`ModifyClientVpnEndpointInput`](crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointInput).
     pub fn build(
         self,
@@ -498,6 +519,7 @@ impl ModifyClientVpnEndpointInputBuilder {
             client_route_enforcement_options: self.client_route_enforcement_options,
             disconnect_on_session_timeout: self.disconnect_on_session_timeout,
             transit_gateway_configuration: self.transit_gateway_configuration,
+            device_posture_options: self.device_posture_options,
         })
     }
 }

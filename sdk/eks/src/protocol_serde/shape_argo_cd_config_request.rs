@@ -30,5 +30,8 @@ pub fn ser_argo_cd_config_request(
         crate::protocol_serde::shape_argo_cd_network_access_config_request::ser_argo_cd_network_access_config_request(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.endpoint_prefix {
+        object.key("endpointPrefix").string(var_10.as_str());
+    }
     Ok(())
 }

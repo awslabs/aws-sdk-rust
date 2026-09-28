@@ -28,6 +28,8 @@ pub struct RegistryRecordSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the registry record was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
+    pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl RegistryRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -83,6 +85,10 @@ impl RegistryRecordSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
+    pub fn custom_metadata(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.custom_metadata.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RegistryRecordSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -99,6 +105,7 @@ impl ::std::fmt::Debug for RegistryRecordSummary {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -125,6 +132,7 @@ pub struct RegistryRecordSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RegistryRecordStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl RegistryRecordSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -305,6 +313,20 @@ impl RegistryRecordSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
+    pub fn custom_metadata(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.custom_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.custom_metadata = input;
+        self
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.custom_metadata
+    }
     /// Consumes the builder and constructs a [`RegistryRecordSummary`](crate::types::RegistryRecordSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`registry_arn`](crate::types::builders::RegistryRecordSummaryBuilder::registry_arn)
@@ -375,6 +397,7 @@ impl RegistryRecordSummaryBuilder {
                     "updated_at was not specified but it is required when building RegistryRecordSummary",
                 )
             })?,
+            custom_metadata: self.custom_metadata,
         })
     }
 }
@@ -393,6 +416,7 @@ impl ::std::fmt::Debug for RegistryRecordSummaryBuilder {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

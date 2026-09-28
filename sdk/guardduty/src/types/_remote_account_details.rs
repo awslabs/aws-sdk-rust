@@ -8,6 +8,8 @@ pub struct RemoteAccountDetails {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
     pub affiliated: ::std::option::Option<bool>,
+    /// <p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>
+    pub aws_service_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoteAccountDetails {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
@@ -17,6 +19,10 @@ impl RemoteAccountDetails {
     /// <p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>
     pub fn affiliated(&self) -> ::std::option::Option<bool> {
         self.affiliated
+    }
+    /// <p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>
+    pub fn aws_service_name(&self) -> ::std::option::Option<&str> {
+        self.aws_service_name.as_deref()
     }
 }
 impl RemoteAccountDetails {
@@ -32,6 +38,7 @@ impl RemoteAccountDetails {
 pub struct RemoteAccountDetailsBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) affiliated: ::std::option::Option<bool>,
+    pub(crate) aws_service_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoteAccountDetailsBuilder {
     /// <p>The Amazon Web Services account ID of the remote API caller.</p>
@@ -62,11 +69,26 @@ impl RemoteAccountDetailsBuilder {
     pub fn get_affiliated(&self) -> &::std::option::Option<bool> {
         &self.affiliated
     }
+    /// <p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>
+    pub fn aws_service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_service_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>
+    pub fn set_aws_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_service_name = input;
+        self
+    }
+    /// <p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>
+    pub fn get_aws_service_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_service_name
+    }
     /// Consumes the builder and constructs a [`RemoteAccountDetails`](crate::types::RemoteAccountDetails).
     pub fn build(self) -> crate::types::RemoteAccountDetails {
         crate::types::RemoteAccountDetails {
             account_id: self.account_id,
             affiliated: self.affiliated,
+            aws_service_name: self.aws_service_name,
         }
     }
 }

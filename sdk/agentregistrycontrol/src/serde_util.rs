@@ -336,6 +336,18 @@ pub(crate) fn custom_jwt_authorizer_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn record_type_schema_override_correct_errors(
+    mut builder: crate::types::builders::RecordTypeSchemaOverrideBuilder,
+) -> crate::types::builders::RecordTypeSchemaOverrideBuilder {
+    if builder.record_type.is_none() {
+        builder.record_type = "no value was set".parse::<crate::types::RecordType>().ok()
+    }
+    if builder.schema.is_none() {
+        builder.schema = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn descriptor_source_from_url_correct_errors(
     mut builder: crate::types::builders::DescriptorSourceFromUrlBuilder,
 ) -> crate::types::builders::DescriptorSourceFromUrlBuilder {

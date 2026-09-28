@@ -19,17 +19,17 @@ pub fn ser_start_chat_contact_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("ClientToken").string(var_6.as_str());
+    if let Some(var_6) = &input.chat_streaming_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ChatStreamingConfiguration").start_object();
+        crate::protocol_serde::shape_chat_streaming_configuration::ser_chat_streaming_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.contact_flow_id {
-        object.key("ContactFlowId").string(var_7.as_str());
+    if let Some(var_8) = &input.client_token {
+        object.key("ClientToken").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.customer_id {
-        object.key("CustomerId").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.disconnect_on_customer_exit {
-        let mut array_10 = object.key("DisconnectOnCustomerExit").start_array();
+    if let Some(var_9) = &input.connection_types {
+        let mut array_10 = object.key("ConnectionTypes").start_array();
         for item_11 in var_9 {
             {
                 array_10.value().string(item_11.as_str());
@@ -37,57 +37,72 @@ pub fn ser_start_chat_contact_input_input(
         }
         array_10.finish();
     }
-    if let Some(var_12) = &input.initial_message {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("InitialMessage").start_object();
-        crate::protocol_serde::shape_chat_message::ser_chat_message(&mut object_13, var_12)?;
-        object_13.finish();
+    if let Some(var_12) = &input.contact_flow_id {
+        object.key("ContactFlowId").string(var_12.as_str());
     }
-    if let Some(var_14) = &input.instance_id {
-        object.key("InstanceId").string(var_14.as_str());
+    if let Some(var_13) = &input.customer_id {
+        object.key("CustomerId").string(var_13.as_str());
     }
-    if let Some(var_15) = &input.participant_configuration {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("ParticipantConfiguration").start_object();
-        crate::protocol_serde::shape_participant_configuration::ser_participant_configuration(&mut object_16, var_15)?;
-        object_16.finish();
+    if let Some(var_14) = &input.disconnect_on_customer_exit {
+        let mut array_15 = object.key("DisconnectOnCustomerExit").start_array();
+        for item_16 in var_14 {
+            {
+                array_15.value().string(item_16.as_str());
+            }
+        }
+        array_15.finish();
     }
-    if let Some(var_17) = &input.participant_details {
+    if let Some(var_17) = &input.initial_message {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ParticipantDetails").start_object();
-        crate::protocol_serde::shape_participant_details::ser_participant_details(&mut object_18, var_17)?;
+        let mut object_18 = object.key("InitialMessage").start_object();
+        crate::protocol_serde::shape_chat_message::ser_chat_message(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.persistent_chat {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("PersistentChat").start_object();
-        crate::protocol_serde::shape_persistent_chat::ser_persistent_chat(&mut object_20, var_19)?;
-        object_20.finish();
+    if let Some(var_19) = &input.instance_id {
+        object.key("InstanceId").string(var_19.as_str());
     }
-    if let Some(var_21) = &input.related_contact_id {
-        object.key("RelatedContactId").string(var_21.as_str());
-    }
-    if let Some(var_22) = &input.segment_attributes {
+    if let Some(var_20) = &input.participant_configuration {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("SegmentAttributes").start_object();
-        for (key_24, value_25) in var_22 {
-            {
-                #[allow(unused_mut)]
-                let mut object_26 = object_23.key(key_24.as_str()).start_object();
-                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_26, value_25)?;
-                object_26.finish();
-            }
-        }
+        let mut object_21 = object.key("ParticipantConfiguration").start_object();
+        crate::protocol_serde::shape_participant_configuration::ser_participant_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.participant_details {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("ParticipantDetails").start_object();
+        crate::protocol_serde::shape_participant_details::ser_participant_details(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_27) = &input.supported_messaging_content_types {
-        let mut array_28 = object.key("SupportedMessagingContentTypes").start_array();
-        for item_29 in var_27 {
+    if let Some(var_24) = &input.persistent_chat {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("PersistentChat").start_object();
+        crate::protocol_serde::shape_persistent_chat::ser_persistent_chat(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.segment_attributes {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("SegmentAttributes").start_object();
+        for (key_29, value_30) in var_27 {
             {
-                array_28.value().string(item_29.as_str());
+                #[allow(unused_mut)]
+                let mut object_31 = object_28.key(key_29.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_31, value_30)?;
+                object_31.finish();
             }
         }
-        array_28.finish();
+        object_28.finish();
+    }
+    if let Some(var_32) = &input.supported_messaging_content_types {
+        let mut array_33 = object.key("SupportedMessagingContentTypes").start_array();
+        for item_34 in var_32 {
+            {
+                array_33.value().string(item_34.as_str());
+            }
+        }
+        array_33.finish();
     }
     Ok(())
 }

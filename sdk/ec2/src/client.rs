@@ -788,6 +788,8 @@ mod delete_carrier_gateway;
 
 mod delete_client_vpn_endpoint;
 
+mod delete_client_vpn_endpoint_authorization_policy;
+
 mod delete_client_vpn_route;
 
 mod delete_coip_cidr;
@@ -1552,6 +1554,8 @@ mod get_capacity_manager_monitored_tag_keys;
 
 mod get_capacity_reservation_usage;
 
+mod get_client_vpn_endpoint_authorization_policy;
+
 mod get_coip_pool_usage;
 
 mod get_console_output;
@@ -1719,6 +1723,8 @@ mod modify_capacity_reservation;
 mod modify_capacity_reservation_fleet;
 
 mod modify_client_vpn_endpoint;
+
+mod modify_client_vpn_endpoint_authorization_policy;
 
 mod modify_default_credit_specification;
 

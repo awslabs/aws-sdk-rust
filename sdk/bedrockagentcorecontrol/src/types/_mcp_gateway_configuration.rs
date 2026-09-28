@@ -14,6 +14,8 @@ pub struct McpGatewayConfiguration {
     pub session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
     pub streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
+    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    pub disable_mcp_list_tools_pagination: ::std::option::Option<bool>,
 }
 impl McpGatewayConfiguration {
     /// <p>The supported versions of the Model Context Protocol. This field specifies which versions of the protocol the gateway can use.</p>
@@ -38,6 +40,10 @@ impl McpGatewayConfiguration {
     pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
+    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    pub fn disable_mcp_list_tools_pagination(&self) -> ::std::option::Option<bool> {
+        self.disable_mcp_list_tools_pagination
+    }
 }
 impl ::std::fmt::Debug for McpGatewayConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -47,6 +53,7 @@ impl ::std::fmt::Debug for McpGatewayConfiguration {
         formatter.field("search_type", &self.search_type);
         formatter.field("session_configuration", &self.session_configuration);
         formatter.field("streaming_configuration", &self.streaming_configuration);
+        formatter.field("disable_mcp_list_tools_pagination", &self.disable_mcp_list_tools_pagination);
         formatter.finish()
     }
 }
@@ -66,6 +73,7 @@ pub struct McpGatewayConfigurationBuilder {
     pub(crate) search_type: ::std::option::Option<crate::types::SearchType>,
     pub(crate) session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     pub(crate) streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
+    pub(crate) disable_mcp_list_tools_pagination: ::std::option::Option<bool>,
 }
 impl McpGatewayConfigurationBuilder {
     /// Appends an item to `supported_versions`.
@@ -144,6 +152,20 @@ impl McpGatewayConfigurationBuilder {
     pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::StreamingConfiguration> {
         &self.streaming_configuration
     }
+    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    pub fn disable_mcp_list_tools_pagination(mut self, input: bool) -> Self {
+        self.disable_mcp_list_tools_pagination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    pub fn set_disable_mcp_list_tools_pagination(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_mcp_list_tools_pagination = input;
+        self
+    }
+    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    pub fn get_disable_mcp_list_tools_pagination(&self) -> &::std::option::Option<bool> {
+        &self.disable_mcp_list_tools_pagination
+    }
     /// Consumes the builder and constructs a [`McpGatewayConfiguration`](crate::types::McpGatewayConfiguration).
     pub fn build(self) -> crate::types::McpGatewayConfiguration {
         crate::types::McpGatewayConfiguration {
@@ -152,6 +174,7 @@ impl McpGatewayConfigurationBuilder {
             search_type: self.search_type,
             session_configuration: self.session_configuration,
             streaming_configuration: self.streaming_configuration,
+            disable_mcp_list_tools_pagination: self.disable_mcp_list_tools_pagination,
         }
     }
 }
@@ -163,6 +186,7 @@ impl ::std::fmt::Debug for McpGatewayConfigurationBuilder {
         formatter.field("search_type", &self.search_type);
         formatter.field("session_configuration", &self.session_configuration);
         formatter.field("streaming_configuration", &self.streaming_configuration);
+        formatter.field("disable_mcp_list_tools_pagination", &self.disable_mcp_list_tools_pagination);
         formatter.finish()
     }
 }

@@ -69,6 +69,8 @@ pub struct CreateClientVpnEndpointInput {
     pub traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
     /// <p>The Transit Gateway configuration for the Client VPN endpoint. Use this parameter to associate the endpoint with a Transit Gateway instead of a VPC. You cannot specify both <code>TransitGatewayConfiguration</code> and <code>VpcId</code>/<code>SecurityGroupIds</code>.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub device_posture_options: ::std::option::Option<crate::types::DevicePostureOptions>,
 }
 impl CreateClientVpnEndpointInput {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
@@ -191,6 +193,10 @@ impl CreateClientVpnEndpointInput {
     pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationInputStructure> {
         self.transit_gateway_configuration.as_ref()
     }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn device_posture_options(&self) -> ::std::option::Option<&crate::types::DevicePostureOptions> {
+        self.device_posture_options.as_ref()
+    }
 }
 impl CreateClientVpnEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnEndpointInput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput).
@@ -226,6 +232,7 @@ pub struct CreateClientVpnEndpointInputBuilder {
     pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     pub(crate) traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
     pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
+    pub(crate) device_posture_options: ::std::option::Option<crate::types::DevicePostureOptions>,
 }
 impl CreateClientVpnEndpointInputBuilder {
     /// <p>The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. Client CIDR range must have a size of at least /22 and must not be greater than /12.</p>
@@ -639,6 +646,20 @@ impl CreateClientVpnEndpointInputBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
         &self.transit_gateway_configuration
     }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn device_posture_options(mut self, input: crate::types::DevicePostureOptions) -> Self {
+        self.device_posture_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureOptions>) -> Self {
+        self.device_posture_options = input;
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureOptions> {
+        &self.device_posture_options
+    }
     /// Consumes the builder and constructs a [`CreateClientVpnEndpointInput`](crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointInput).
     pub fn build(
         self,
@@ -670,6 +691,7 @@ impl CreateClientVpnEndpointInputBuilder {
             endpoint_ip_address_type: self.endpoint_ip_address_type,
             traffic_ip_address_type: self.traffic_ip_address_type,
             transit_gateway_configuration: self.transit_gateway_configuration,
+            device_posture_options: self.device_posture_options,
         })
     }
 }

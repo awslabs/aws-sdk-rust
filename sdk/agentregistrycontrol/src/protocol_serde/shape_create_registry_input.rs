@@ -18,33 +18,39 @@ pub fn ser_create_registry_input_input(
     if let Some(var_5) = &input.client_token {
         object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.discovery_configuration {
+    if let Some(var_6) = &input.custom_metadata_schema_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("discoveryConfiguration").start_object();
-        crate::protocol_serde::shape_discovery_configuration::ser_discovery_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_7 = object.key("customMetadataSchemaConfiguration").start_object();
+        crate::protocol_serde::shape_custom_metadata_schema_configuration::ser_custom_metadata_schema_configuration(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_9) = &input.encryption_configuration {
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.discovery_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("encryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("discoveryConfiguration").start_object();
+        crate::protocol_serde::shape_discovery_configuration::ser_discovery_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.name {
-        object.key("name").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_11) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_12 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
     Ok(())
 }

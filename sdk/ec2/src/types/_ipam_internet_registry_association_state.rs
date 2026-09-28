@@ -17,6 +17,9 @@
 ///     IpamInternetRegistryAssociationState::DeleteComplete => { /* ... */ },
 ///     IpamInternetRegistryAssociationState::DeleteFailed => { /* ... */ },
 ///     IpamInternetRegistryAssociationState::DeleteInProgress => { /* ... */ },
+///     IpamInternetRegistryAssociationState::DisableComplete => { /* ... */ },
+///     IpamInternetRegistryAssociationState::DisableFailed => { /* ... */ },
+///     IpamInternetRegistryAssociationState::DisableInProgress => { /* ... */ },
 ///     IpamInternetRegistryAssociationState::EnableComplete => { /* ... */ },
 ///     IpamInternetRegistryAssociationState::EnableFailed => { /* ... */ },
 ///     IpamInternetRegistryAssociationState::EnableInProgress => { /* ... */ },
@@ -60,6 +63,12 @@ pub enum IpamInternetRegistryAssociationState {
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    DisableComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    DisableFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DisableInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     EnableComplete,
     #[allow(missing_docs)] // documentation missing in model
     EnableFailed,
@@ -79,6 +88,9 @@ impl ::std::convert::From<&str> for IpamInternetRegistryAssociationState {
             "delete-complete" => IpamInternetRegistryAssociationState::DeleteComplete,
             "delete-failed" => IpamInternetRegistryAssociationState::DeleteFailed,
             "delete-in-progress" => IpamInternetRegistryAssociationState::DeleteInProgress,
+            "disable-complete" => IpamInternetRegistryAssociationState::DisableComplete,
+            "disable-failed" => IpamInternetRegistryAssociationState::DisableFailed,
+            "disable-in-progress" => IpamInternetRegistryAssociationState::DisableInProgress,
             "enable-complete" => IpamInternetRegistryAssociationState::EnableComplete,
             "enable-failed" => IpamInternetRegistryAssociationState::EnableFailed,
             "enable-in-progress" => IpamInternetRegistryAssociationState::EnableInProgress,
@@ -103,6 +115,9 @@ impl IpamInternetRegistryAssociationState {
             IpamInternetRegistryAssociationState::DeleteComplete => "delete-complete",
             IpamInternetRegistryAssociationState::DeleteFailed => "delete-failed",
             IpamInternetRegistryAssociationState::DeleteInProgress => "delete-in-progress",
+            IpamInternetRegistryAssociationState::DisableComplete => "disable-complete",
+            IpamInternetRegistryAssociationState::DisableFailed => "disable-failed",
+            IpamInternetRegistryAssociationState::DisableInProgress => "disable-in-progress",
             IpamInternetRegistryAssociationState::EnableComplete => "enable-complete",
             IpamInternetRegistryAssociationState::EnableFailed => "enable-failed",
             IpamInternetRegistryAssociationState::EnableInProgress => "enable-in-progress",
@@ -118,6 +133,9 @@ impl IpamInternetRegistryAssociationState {
             "delete-complete",
             "delete-failed",
             "delete-in-progress",
+            "disable-complete",
+            "disable-failed",
+            "disable-in-progress",
             "enable-complete",
             "enable-failed",
             "enable-in-progress",
@@ -150,6 +168,9 @@ impl ::std::fmt::Display for IpamInternetRegistryAssociationState {
             IpamInternetRegistryAssociationState::DeleteComplete => write!(f, "delete-complete"),
             IpamInternetRegistryAssociationState::DeleteFailed => write!(f, "delete-failed"),
             IpamInternetRegistryAssociationState::DeleteInProgress => write!(f, "delete-in-progress"),
+            IpamInternetRegistryAssociationState::DisableComplete => write!(f, "disable-complete"),
+            IpamInternetRegistryAssociationState::DisableFailed => write!(f, "disable-failed"),
+            IpamInternetRegistryAssociationState::DisableInProgress => write!(f, "disable-in-progress"),
             IpamInternetRegistryAssociationState::EnableComplete => write!(f, "enable-complete"),
             IpamInternetRegistryAssociationState::EnableFailed => write!(f, "enable-failed"),
             IpamInternetRegistryAssociationState::EnableInProgress => write!(f, "enable-in-progress"),

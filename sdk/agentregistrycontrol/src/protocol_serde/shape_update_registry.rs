@@ -190,6 +190,15 @@ pub(crate) fn de_update_registry(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "customMetadataSchemaConfiguration" => {
+                    builder = builder.set_custom_metadata_schema_configuration(
+                        crate::protocol_serde::shape_custom_metadata_schema_configuration::de_custom_metadata_schema_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

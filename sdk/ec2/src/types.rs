@@ -135,6 +135,8 @@ pub use crate::types::_traffic_ip_address_type::TrafficIpAddressType;
 
 pub use crate::types::_transit_gateway_configuration_input_structure::TransitGatewayConfigurationInputStructure;
 
+pub use crate::types::_device_posture_options::DevicePostureOptions;
+
 pub use crate::types::_client_vpn_endpoint_status::ClientVpnEndpointStatus;
 
 pub use crate::types::_client_vpn_route_status::ClientVpnRouteStatus;
@@ -467,6 +469,8 @@ pub use crate::types::_vpn_connection::VpnConnection;
 
 pub use crate::types::_vpn_gateway::VpnGateway;
 
+pub use crate::types::_client_vpn_authorization_policy_status::ClientVpnAuthorizationPolicyStatus;
+
 pub use crate::types::_instance_event_window_state_change::InstanceEventWindowStateChange;
 
 pub use crate::types::_byoasn::Byoasn;
@@ -590,6 +594,8 @@ pub use crate::types::_capacity_reservation_state::CapacityReservationState;
 pub use crate::types::_interruptible_capacity_allocation::InterruptibleCapacityAllocation;
 
 pub use crate::types::_interruption_info::InterruptionInfo;
+
+pub use crate::types::_client_vpn_authorization_policy_shadow_mode::ClientVpnAuthorizationPolicyShadowMode;
 
 pub use crate::types::_unlimited_supported_instance_family::UnlimitedSupportedInstanceFamily;
 
@@ -1909,6 +1915,8 @@ pub use crate::types::_certificate_authentication_request::CertificateAuthentica
 
 pub use crate::types::_federated_authentication_request::FederatedAuthenticationRequest;
 
+pub use crate::types::_client_vpn_trust_provider_request::ClientVpnTrustProviderRequest;
+
 pub use crate::types::_block_public_access_mode::BlockPublicAccessMode;
 
 pub use crate::types::_dhcp_configuration::DhcpConfiguration;
@@ -2086,6 +2094,8 @@ pub use crate::types::_client_login_banner_response_options::ClientLoginBannerRe
 pub use crate::types::_client_route_enforcement_response_options::ClientRouteEnforcementResponseOptions;
 
 pub use crate::types::_transit_gateway_configuration_describe_endpoint_structure::TransitGatewayConfigurationDescribeEndpointStructure;
+
+pub use crate::types::_device_posture_response_options::DevicePostureResponseOptions;
 
 pub use crate::types::_report_state::ReportState;
 
@@ -2445,6 +2455,8 @@ pub use crate::types::_health_check_path_source_response_object::HealthCheckPath
 
 pub use crate::types::_allocation_type::AllocationType;
 
+pub use crate::types::_client_vpn_device_trust_provider_type::ClientVpnDeviceTrustProviderType;
+
 pub use crate::types::_fleet_replacement_strategy::FleetReplacementStrategy;
 
 pub use crate::types::_reserved_capacity_fallback_market_type::ReservedCapacityFallbackMarketType;
@@ -2740,6 +2752,8 @@ pub use crate::types::_certificate_authentication::CertificateAuthentication;
 pub use crate::types::_federated_authentication::FederatedAuthentication;
 
 pub use crate::types::_client_vpn_endpoint_attribute_status_code::ClientVpnEndpointAttributeStatusCode;
+
+pub use crate::types::_client_vpn_trust_provider::ClientVpnTrustProvider;
 
 pub use crate::types::_fleet_spot_capacity_rebalance::FleetSpotCapacityRebalance;
 
@@ -3299,6 +3313,10 @@ mod _client_vpn_authentication_request;
 
 mod _client_vpn_authentication_type;
 
+mod _client_vpn_authorization_policy_shadow_mode;
+
+mod _client_vpn_authorization_policy_status;
+
 mod _client_vpn_authorization_rule_status;
 
 mod _client_vpn_authorization_rule_status_code;
@@ -3308,6 +3326,8 @@ mod _client_vpn_connection;
 mod _client_vpn_connection_status;
 
 mod _client_vpn_connection_status_code;
+
+mod _client_vpn_device_trust_provider_type;
 
 mod _client_vpn_endpoint;
 
@@ -3324,6 +3344,10 @@ mod _client_vpn_route;
 mod _client_vpn_route_status;
 
 mod _client_vpn_route_status_code;
+
+mod _client_vpn_trust_provider;
+
+mod _client_vpn_trust_provider_request;
 
 mod _cloud_watch_log_options;
 
@@ -3484,6 +3508,10 @@ mod _destination_options_request;
 mod _destination_options_response;
 
 mod _device_options;
+
+mod _device_posture_options;
+
+mod _device_posture_response_options;
 
 mod _device_trust_provider_type;
 

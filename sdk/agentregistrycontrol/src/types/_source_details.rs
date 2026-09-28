@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SourceDetails {
-    /// Source details for a record auto-detected from an AgentCore Gateway resource.
+    /// <p>The source details for a registry record that was auto-detected from an Amazon Bedrock AgentCore Gateway resource. Populated when the source type is <code>AWS::BedrockAgentCore::Gateway</code>.</p>
     AgentcoreGateway(crate::types::AgentCoreGatewaySourceDetails),
-    /// Source details for a record auto-detected from an AgentCore Runtime resource.
+    /// <p>The source details for a registry record that was auto-detected from an Amazon Bedrock AgentCore Runtime resource. Populated when the source type is <code>AWS::BedrockAgentCore::Runtime</code>.</p>
     AgentcoreRuntime(crate::types::AgentCoreRuntimeSourceDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

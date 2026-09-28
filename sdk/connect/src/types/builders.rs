@@ -289,13 +289,17 @@ pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
 
 pub use crate::types::_participant_configuration::ParticipantConfigurationBuilder;
 
+pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
+
+pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
+
+pub use crate::types::_websocket::WebsocketBuilder;
+
 pub use crate::types::_analytics_configuration::AnalyticsConfigurationBuilder;
 
 pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfigurationBuilder;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfigurationBuilder;
-
-pub use crate::types::_chat_streaming_configuration::ChatStreamingConfigurationBuilder;
 
 pub use crate::types::_inbound_email_content::InboundEmailContentBuilder;
 

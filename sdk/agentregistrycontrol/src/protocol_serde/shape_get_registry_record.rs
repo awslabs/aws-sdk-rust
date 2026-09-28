@@ -164,6 +164,19 @@ pub(crate) fn de_get_registry_record(
                 "createdByAutoDetection" => {
                     builder = builder.set_created_by_auto_detection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "customMetadata" => {
+                    builder = builder.set_custom_metadata(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                }
+                "customMetadataSchemaComplianceStatus" => {
+                    builder = builder.set_custom_metadata_schema_compliance_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| {
+                                s.to_unescaped()
+                                    .map(|u| crate::types::CustomMetadataSchemaComplianceStatus::from(u.as_ref()))
+                            })
+                            .transpose()?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

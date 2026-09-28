@@ -295,6 +295,9 @@ impl From<crate::operation::batch_create_partition::BatchCreatePartitionError> f
             crate::operation::batch_create_partition::BatchCreatePartitionError::AlreadyExistsException(inner) => {
                 Error::AlreadyExistsException(inner)
             }
+            crate::operation::batch_create_partition::BatchCreatePartitionError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::batch_create_partition::BatchCreatePartitionError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
@@ -361,6 +364,9 @@ where
 impl From<crate::operation::batch_delete_partition::BatchDeletePartitionError> for Error {
     fn from(err: crate::operation::batch_delete_partition::BatchDeletePartitionError) -> Self {
         match err {
+            crate::operation::batch_delete_partition::BatchDeletePartitionError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::batch_delete_partition::BatchDeletePartitionError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }
@@ -392,6 +398,9 @@ where
 impl From<crate::operation::batch_delete_table::BatchDeleteTableError> for Error {
     fn from(err: crate::operation::batch_delete_table::BatchDeleteTableError) -> Self {
         match err {
+            crate::operation::batch_delete_table::BatchDeleteTableError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::batch_delete_table::BatchDeleteTableError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::batch_delete_table::BatchDeleteTableError::GlueEncryptionException(inner) => Error::GlueEncryptionException(inner),
             crate::operation::batch_delete_table::BatchDeleteTableError::InternalServiceException(inner) => Error::InternalServiceException(inner),
@@ -880,6 +889,9 @@ where
 impl From<crate::operation::batch_update_partition::BatchUpdatePartitionError> for Error {
     fn from(err: crate::operation::batch_update_partition::BatchUpdatePartitionError) -> Self {
         match err {
+            crate::operation::batch_update_partition::BatchUpdatePartitionError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::batch_update_partition::BatchUpdatePartitionError::EntityNotFoundException(inner) => {
                 Error::EntityNotFoundException(inner)
             }

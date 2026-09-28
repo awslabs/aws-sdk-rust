@@ -12,7 +12,7 @@ pub struct GetEnterpriseSupportChargeSummaryOutput {
     pub billing_period_start_date: ::aws_smithy_types::DateTime,
     /// <p>The end date of the billing period.</p>
     pub billing_period_end_date: ::aws_smithy_types::DateTime,
-    /// <p>When true, the Support charge amount is estimated. When false, the Support charge amount is finalized.</p>
+    /// <p>Specifies whether the Support charge amount is estimated. When false, the charge amount is finalized.</p>
     pub is_estimated: bool,
     /// <p>The date the bill was generated.</p>
     pub bill_date: ::aws_smithy_types::DateTime,
@@ -55,7 +55,7 @@ impl GetEnterpriseSupportChargeSummaryOutput {
     pub fn billing_period_end_date(&self) -> &::aws_smithy_types::DateTime {
         &self.billing_period_end_date
     }
-    /// <p>When true, the Support charge amount is estimated. When false, the Support charge amount is finalized.</p>
+    /// <p>Specifies whether the Support charge amount is estimated. When false, the charge amount is finalized.</p>
     pub fn is_estimated(&self) -> bool {
         self.is_estimated
     }
@@ -202,18 +202,18 @@ impl GetEnterpriseSupportChargeSummaryOutputBuilder {
     pub fn get_billing_period_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.billing_period_end_date
     }
-    /// <p>When true, the Support charge amount is estimated. When false, the Support charge amount is finalized.</p>
+    /// <p>Specifies whether the Support charge amount is estimated. When false, the charge amount is finalized.</p>
     /// This field is required.
     pub fn is_estimated(mut self, input: bool) -> Self {
         self.is_estimated = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, the Support charge amount is estimated. When false, the Support charge amount is finalized.</p>
+    /// <p>Specifies whether the Support charge amount is estimated. When false, the charge amount is finalized.</p>
     pub fn set_is_estimated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_estimated = input;
         self
     }
-    /// <p>When true, the Support charge amount is estimated. When false, the Support charge amount is finalized.</p>
+    /// <p>Specifies whether the Support charge amount is estimated. When false, the charge amount is finalized.</p>
     pub fn get_is_estimated(&self) -> &::std::option::Option<bool> {
         &self.is_estimated
     }

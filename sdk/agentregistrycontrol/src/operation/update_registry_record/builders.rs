@@ -220,6 +220,20 @@ impl UpdateRegistryRecordFluentBuilder {
     pub fn get_record_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_record_version()
     }
+    /// <p>The updated custom metadata for the registry record. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Omit to leave the existing metadata unchanged. Supply the wrapper with a full replacement set to update, or with a null value to clear all metadata.</p>
+    pub fn custom_metadata(mut self, input: crate::types::UpdatedCustomMetadataMap) -> Self {
+        self.inner = self.inner.custom_metadata(input);
+        self
+    }
+    /// <p>The updated custom metadata for the registry record. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Omit to leave the existing metadata unchanged. Supply the wrapper with a full replacement set to update, or with a null value to clear all metadata.</p>
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<crate::types::UpdatedCustomMetadataMap>) -> Self {
+        self.inner = self.inner.set_custom_metadata(input);
+        self
+    }
+    /// <p>The updated custom metadata for the registry record. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Omit to leave the existing metadata unchanged. Supply the wrapper with a full replacement set to update, or with a null value to clear all metadata.</p>
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<crate::types::UpdatedCustomMetadataMap> {
+        self.inner.get_custom_metadata()
+    }
     /// <p>Whether to trigger synchronization of the record's descriptor content from its source</p>
     pub fn trigger_synchronization(mut self, input: bool) -> Self {
         self.inner = self.inner.trigger_synchronization(input);
@@ -239,17 +253,17 @@ impl UpdateRegistryRecordFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
     ///
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage re-assertion for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected. The source identity of an existing lineage is immutable; a re-assertion may only refresh the source details.</p>
     pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
         self.inner = self.inner.provenance(input);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage re-assertion for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected. The source identity of an existing lineage is immutable; a re-assertion may only refresh the source details.</p>
     pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
         self.inner = self.inner.set_provenance(input);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage re-assertion for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected. The source identity of an existing lineage is immutable; a re-assertion may only refresh the source details.</p>
     pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
         self.inner.get_provenance()
     }

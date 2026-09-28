@@ -405,4 +405,18 @@ impl ModifyClientVpnEndpointFluentBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
         self.inner.get_transit_gateway_configuration()
     }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn device_posture_options(mut self, input: crate::types::DevicePostureOptions) -> Self {
+        self.inner = self.inner.device_posture_options(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureOptions>) -> Self {
+        self.inner = self.inner.set_device_posture_options(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureOptions> {
+        self.inner.get_device_posture_options()
+    }
 }

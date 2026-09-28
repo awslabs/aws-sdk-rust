@@ -19,6 +19,8 @@ pub use crate::types::_vpc_config::VpcConfigBuilder;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfigBuilder;
 
+pub use crate::types::_ci_cd_configuration::CiCdConfigurationBuilder;
+
 pub use crate::types::_threat_anchor_shape::ThreatAnchorShapeBuilder;
 
 pub use crate::types::_artifact::ArtifactBuilder;
@@ -111,6 +113,8 @@ pub use crate::types::_threat_model_summary::ThreatModelSummaryBuilder;
 
 pub use crate::types::_threat_summary::ThreatSummaryBuilder;
 
+pub use crate::types::_scope_change::ScopeChangeBuilder;
+
 pub use crate::types::_integrated_resource_input_item::IntegratedResourceInputItemBuilder;
 
 pub use crate::types::_agent_space_summary::AgentSpaceSummaryBuilder;
@@ -148,6 +152,8 @@ pub use crate::types::_log_location::LogLocationBuilder;
 pub use crate::types::_code_remediation_task::CodeRemediationTaskBuilder;
 
 pub use crate::types::_verification_script::VerificationScriptBuilder;
+
+pub use crate::types::_scope_result::ScopeResultBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 

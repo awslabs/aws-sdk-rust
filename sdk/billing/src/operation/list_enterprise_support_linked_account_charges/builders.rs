@@ -140,31 +140,31 @@ impl ListEnterpriseSupportLinkedAccountChargesFluentBuilder {
     pub fn get_billing_month(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_billing_month()
     }
-    /// <p>An optional linked account ID to filter results to a specific account.</p>
+    /// <p>The linked account ID to filter results to a specific account. If you don't specify a value, the response includes charges for all linked accounts.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>An optional linked account ID to filter results to a specific account.</p>
+    /// <p>The linked account ID to filter results to a specific account. If you don't specify a value, the response includes charges for all linked accounts.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>An optional linked account ID to filter results to a specific account.</p>
+    /// <p>The linked account ID to filter results to a specific account. If you don't specify a value, the response includes charges for all linked accounts.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. Default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return per page.</p>
+    /// <p>The maximum number of results to return per page. Default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

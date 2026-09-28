@@ -28,6 +28,8 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 /// <p><code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p></li>
 /// <li>
 /// <p><code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). For more information about cross-account sharing of parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
+/// <li>
+/// <p><code>Document</code> – Shares the document using Resource Access Manager (RAM). For more information about sharing documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
@@ -155,5 +157,37 @@ impl DeleteResourcePolicyFluentBuilder {
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_hash()
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.inner = self.inner.deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.inner = self.inner.set_deletion_mode(input);
+        self
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        self.inner.get_deletion_mode()
     }
 }

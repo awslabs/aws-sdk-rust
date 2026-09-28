@@ -106,6 +106,11 @@ pub fn ser_modify_client_vpn_endpoint_input_input_input(
             scope_36, var_37,
         )?;
     }
+    #[allow(unused_mut)]
+    let mut scope_38 = writer.prefix("DevicePostureOptions");
+    if let Some(var_39) = &input.device_posture_options {
+        crate::protocol_serde::shape_device_posture_options::ser_device_posture_options(scope_38, var_39)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

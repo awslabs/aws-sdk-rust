@@ -49,6 +49,10 @@ pub use crate::types::_billing_view_list_element::BillingViewListElement;
 
 pub use crate::types::_billing_view_segments_list_element::BillingViewSegmentsListElement;
 
+pub use crate::types::_business_support_account_charge::BusinessSupportAccountCharge;
+
+pub use crate::types::_business_support_subscription_contract::BusinessSupportSubscriptionContract;
+
 pub use crate::types::_linked_account_charge::LinkedAccountCharge;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
@@ -77,7 +81,13 @@ pub use crate::types::_search_option::SearchOption;
 
 pub use crate::types::_billing_domain::BillingDomain;
 
+pub use crate::types::_business_support_discount::BusinessSupportDiscount;
+
 pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
+
+pub use crate::types::_business_support_tier_charge::BusinessSupportTierCharge;
+
+pub use crate::types::_business_support_service_spend::BusinessSupportServiceSpend;
 
 pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeriod;
 
@@ -120,6 +130,16 @@ mod _billing_view_status;
 mod _billing_view_status_reason;
 
 mod _billing_view_type;
+
+mod _business_support_account_charge;
+
+mod _business_support_discount;
+
+mod _business_support_service_spend;
+
+mod _business_support_subscription_contract;
+
+mod _business_support_tier_charge;
 
 mod _charge_account;
 

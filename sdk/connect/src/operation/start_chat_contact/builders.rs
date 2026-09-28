@@ -24,6 +24,7 @@ impl crate::operation::start_chat_contact::builders::StartChatContactInputBuilde
 ///
 /// <p>Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Connect Customer Participant Service.</p>
 /// <p>When a new chat contact is successfully created, clients must subscribe to the participant’s connection for the created chat within 5 minutes. This is achieved by invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> with WEBSOCKET and CONNECTION_CREDENTIALS.</p>
+/// <p>To receive connection information directly in the response, set <code>ConnectionTypes</code> on the request. To initiate real-time message streaming when the chat is created, set <code>ChatStreamingConfiguration</code> on the request. Both parameters are optional.</p>
 /// <p>A 429 error occurs in the following situations:</p>
 /// <ul>
 /// <li>
@@ -380,5 +381,62 @@ impl StartChatContactFluentBuilder {
     /// <p>A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.</p>
     pub fn get_disconnect_on_customer_exit(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DisconnectOnCustomerExitParticipantType>> {
         self.inner.get_disconnect_on_customer_exit()
+    }
+    ///
+    /// Appends an item to `ConnectionTypes`.
+    ///
+    /// To override the contents of this collection use [`set_connection_types`](Self::set_connection_types).
+    ///
+    /// <p>The types of connection information to return in the response. This parameter is optional.</p>
+    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
+    /// <p>If you omit this parameter, the response has no connection information.</p><note>
+    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// </note>
+    pub fn connection_types(mut self, input: crate::types::ConnectionType) -> Self {
+        self.inner = self.inner.connection_types(input);
+        self
+    }
+    /// <p>The types of connection information to return in the response. This parameter is optional.</p>
+    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
+    /// <p>If you omit this parameter, the response has no connection information.</p><note>
+    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// </note>
+    pub fn set_connection_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>) -> Self {
+        self.inner = self.inner.set_connection_types(input);
+        self
+    }
+    /// <p>The types of connection information to return in the response. This parameter is optional.</p>
+    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
+    /// <p>If you omit this parameter, the response has no connection information.</p><note>
+    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// </note>
+    pub fn get_connection_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
+        self.inner.get_connection_types()
+    }
+    /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
+    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
+    /// </note>
+    pub fn chat_streaming_configuration(mut self, input: crate::types::ChatStreamingConfiguration) -> Self {
+        self.inner = self.inner.chat_streaming_configuration(input);
+        self
+    }
+    /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
+    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
+    /// </note>
+    pub fn set_chat_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ChatStreamingConfiguration>) -> Self {
+        self.inner = self.inner.set_chat_streaming_configuration(input);
+        self
+    }
+    /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
+    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
+    /// </note>
+    pub fn get_chat_streaming_configuration(&self) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {
+        self.inner.get_chat_streaming_configuration()
     }
 }

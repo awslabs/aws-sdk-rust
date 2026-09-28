@@ -67,6 +67,8 @@ pub struct ClientVpnEndpoint {
     pub traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
     /// <p>The Transit Gateway configuration for the Client VPN endpoint.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure>,
+    /// <p>The device trust providers configured for the Client VPN endpoint, if applicable.</p>
+    pub device_posture_options: ::std::option::Option<crate::types::DevicePostureResponseOptions>,
 }
 impl ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -198,6 +200,10 @@ impl ClientVpnEndpoint {
     pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationDescribeEndpointStructure> {
         self.transit_gateway_configuration.as_ref()
     }
+    /// <p>The device trust providers configured for the Client VPN endpoint, if applicable.</p>
+    pub fn device_posture_options(&self) -> ::std::option::Option<&crate::types::DevicePostureResponseOptions> {
+        self.device_posture_options.as_ref()
+    }
 }
 impl ClientVpnEndpoint {
     /// Creates a new builder-style object to manufacture [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
@@ -238,6 +244,7 @@ pub struct ClientVpnEndpointBuilder {
     pub(crate) endpoint_ip_address_type: ::std::option::Option<crate::types::EndpointIpAddressType>,
     pub(crate) traffic_ip_address_type: ::std::option::Option<crate::types::TrafficIpAddressType>,
     pub(crate) transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure>,
+    pub(crate) device_posture_options: ::std::option::Option<crate::types::DevicePostureResponseOptions>,
 }
 impl ClientVpnEndpointBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -686,6 +693,20 @@ impl ClientVpnEndpointBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationDescribeEndpointStructure> {
         &self.transit_gateway_configuration
     }
+    /// <p>The device trust providers configured for the Client VPN endpoint, if applicable.</p>
+    pub fn device_posture_options(mut self, input: crate::types::DevicePostureResponseOptions) -> Self {
+        self.device_posture_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device trust providers configured for the Client VPN endpoint, if applicable.</p>
+    pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureResponseOptions>) -> Self {
+        self.device_posture_options = input;
+        self
+    }
+    /// <p>The device trust providers configured for the Client VPN endpoint, if applicable.</p>
+    pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureResponseOptions> {
+        &self.device_posture_options
+    }
     /// Consumes the builder and constructs a [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
     pub fn build(self) -> crate::types::ClientVpnEndpoint {
         crate::types::ClientVpnEndpoint {
@@ -717,6 +738,7 @@ impl ClientVpnEndpointBuilder {
             endpoint_ip_address_type: self.endpoint_ip_address_type,
             traffic_ip_address_type: self.traffic_ip_address_type,
             transit_gateway_configuration: self.transit_gateway_configuration,
+            device_posture_options: self.device_posture_options,
         }
     }
 }

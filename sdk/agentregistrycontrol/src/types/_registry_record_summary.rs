@@ -30,8 +30,10 @@ pub struct RegistryRecordSummary {
     pub created_by_auto_detection: ::std::option::Option<bool>,
     /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
-    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    /// <p>The condensed provenance lineage for the registry record. Each entry contains the source relation, source identifier, and source type of an auto-detection lineage entry. Populated for records created by auto-detection.</p>
     pub provenance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>,
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema.</p>
+    pub custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
 }
 impl RegistryRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -91,11 +93,15 @@ impl RegistryRecordSummary {
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
-    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    /// <p>The condensed provenance lineage for the registry record. Each entry contains the source relation, source identifier, and source type of an auto-detection lineage entry. Populated for records created by auto-detection.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance_summary_list.is_none()`.
     pub fn provenance_summary_list(&self) -> &[crate::types::ProvenanceSummary] {
         self.provenance_summary_list.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema.</p>
+    pub fn custom_metadata_schema_compliance_status(&self) -> ::std::option::Option<&crate::types::CustomMetadataSchemaComplianceStatus> {
+        self.custom_metadata_schema_compliance_status.as_ref()
     }
 }
 impl ::std::fmt::Debug for RegistryRecordSummary {
@@ -115,6 +121,7 @@ impl ::std::fmt::Debug for RegistryRecordSummary {
         formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
         formatter.field("created_by", &self.created_by);
         formatter.field("provenance_summary_list", &self.provenance_summary_list);
+        formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
         formatter.finish()
     }
 }
@@ -143,6 +150,7 @@ pub struct RegistryRecordSummaryBuilder {
     pub(crate) created_by_auto_detection: ::std::option::Option<bool>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) provenance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>,
+    pub(crate) custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
 }
 impl RegistryRecordSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -340,21 +348,38 @@ impl RegistryRecordSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_provenance_summary_list`](Self::set_provenance_summary_list).
     ///
-    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    /// <p>The condensed provenance lineage for the registry record. Each entry contains the source relation, source identifier, and source type of an auto-detection lineage entry. Populated for records created by auto-detection.</p>
     pub fn provenance_summary_list(mut self, input: crate::types::ProvenanceSummary) -> Self {
         let mut v = self.provenance_summary_list.unwrap_or_default();
         v.push(input);
         self.provenance_summary_list = ::std::option::Option::Some(v);
         self
     }
-    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    /// <p>The condensed provenance lineage for the registry record. Each entry contains the source relation, source identifier, and source type of an auto-detection lineage entry. Populated for records created by auto-detection.</p>
     pub fn set_provenance_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>) -> Self {
         self.provenance_summary_list = input;
         self
     }
-    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    /// <p>The condensed provenance lineage for the registry record. Each entry contains the source relation, source identifier, and source type of an auto-detection lineage entry. Populated for records created by auto-detection.</p>
     pub fn get_provenance_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>> {
         &self.provenance_summary_list
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema.</p>
+    pub fn custom_metadata_schema_compliance_status(mut self, input: crate::types::CustomMetadataSchemaComplianceStatus) -> Self {
+        self.custom_metadata_schema_compliance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema.</p>
+    pub fn set_custom_metadata_schema_compliance_status(
+        mut self,
+        input: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    ) -> Self {
+        self.custom_metadata_schema_compliance_status = input;
+        self
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema.</p>
+    pub fn get_custom_metadata_schema_compliance_status(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus> {
+        &self.custom_metadata_schema_compliance_status
     }
     /// Consumes the builder and constructs a [`RegistryRecordSummary`](crate::types::RegistryRecordSummary).
     /// This method will fail if any of the following fields are not set:
@@ -428,6 +453,7 @@ impl RegistryRecordSummaryBuilder {
             created_by_auto_detection: self.created_by_auto_detection,
             created_by: self.created_by,
             provenance_summary_list: self.provenance_summary_list,
+            custom_metadata_schema_compliance_status: self.custom_metadata_schema_compliance_status,
         })
     }
 }
@@ -448,6 +474,7 @@ impl ::std::fmt::Debug for RegistryRecordSummaryBuilder {
         formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
         formatter.field("created_by", &self.created_by);
         formatter.field("provenance_summary_list", &self.provenance_summary_list);
+        formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
         formatter.finish()
     }
 }

@@ -83,6 +83,8 @@ pub use crate::types::_client_route_enforcement_options::ClientRouteEnforcementO
 
 pub use crate::types::_transit_gateway_configuration_input_structure::TransitGatewayConfigurationInputStructureBuilder;
 
+pub use crate::types::_device_posture_options::DevicePostureOptionsBuilder;
+
 pub use crate::types::_client_vpn_endpoint_status::ClientVpnEndpointStatusBuilder;
 
 pub use crate::types::_client_vpn_route_status::ClientVpnRouteStatusBuilder;
@@ -1261,6 +1263,8 @@ pub use crate::types::_certificate_authentication_request::CertificateAuthentica
 
 pub use crate::types::_federated_authentication_request::FederatedAuthenticationRequestBuilder;
 
+pub use crate::types::_client_vpn_trust_provider_request::ClientVpnTrustProviderRequestBuilder;
+
 pub use crate::types::_dhcp_configuration::DhcpConfigurationBuilder;
 
 pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachmentBuilder;
@@ -1372,6 +1376,8 @@ pub use crate::types::_client_login_banner_response_options::ClientLoginBannerRe
 pub use crate::types::_client_route_enforcement_response_options::ClientRouteEnforcementResponseOptionsBuilder;
 
 pub use crate::types::_transit_gateway_configuration_describe_endpoint_structure::TransitGatewayConfigurationDescribeEndpointStructureBuilder;
+
+pub use crate::types::_device_posture_response_options::DevicePostureResponseOptionsBuilder;
 
 pub use crate::types::_elastic_gpu_health::ElasticGpuHealthBuilder;
 
@@ -1808,6 +1814,8 @@ pub use crate::types::_directory_service_authentication::DirectoryServiceAuthent
 pub use crate::types::_certificate_authentication::CertificateAuthenticationBuilder;
 
 pub use crate::types::_federated_authentication::FederatedAuthenticationBuilder;
+
+pub use crate::types::_client_vpn_trust_provider::ClientVpnTrustProviderBuilder;
 
 pub use crate::types::_fleet_spot_capacity_rebalance::FleetSpotCapacityRebalanceBuilder;
 

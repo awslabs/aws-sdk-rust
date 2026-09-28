@@ -29,6 +29,26 @@ pub(crate) fn reflens_list_billing_views_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_business_support_account_charges_output_output_next_token(
+    input: &crate::operation::list_business_support_account_charges::ListBusinessSupportAccountChargesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_business_support_subscription_history_output_output_next_token(
+    input: &crate::operation::list_business_support_subscription_history::ListBusinessSupportSubscriptionHistoryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_enterprise_support_linked_account_charges_output_output_next_token(
     input: &crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -67,6 +87,20 @@ pub(crate) fn lens_list_billing_views_output_output_billing_views(
     input: crate::operation::list_billing_views::ListBillingViewsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BillingViewListElement>> {
     let input = input.billing_views;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_business_support_account_charges_output_output_account_charges(
+    input: crate::operation::list_business_support_account_charges::ListBusinessSupportAccountChargesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BusinessSupportAccountCharge>> {
+    let input = input.account_charges;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_business_support_subscription_history_output_output_subscription_contracts(
+    input: crate::operation::list_business_support_subscription_history::ListBusinessSupportSubscriptionHistoryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BusinessSupportSubscriptionContract>> {
+    let input = input.subscription_contracts;
     ::std::option::Option::Some(input)
 }
 

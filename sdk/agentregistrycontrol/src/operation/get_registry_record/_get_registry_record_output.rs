@@ -30,12 +30,16 @@ pub struct GetRegistryRecordOutput {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. Populated for records created by auto-detection; each entry identifies the upstream source that the record was detected from.</p>
     pub provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
     /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
     pub created_by_auto_detection: ::std::option::Option<bool>,
     /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans.</p>
+    pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
+    pub custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
     _request_id: Option<String>,
 }
 impl GetRegistryRecordOutput {
@@ -95,7 +99,7 @@ impl GetRegistryRecordOutput {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. Populated for records created by auto-detection; each entry identifies the upstream source that the record was detected from.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance.is_none()`.
     pub fn provenance(&self) -> &[crate::types::Provenance] {
@@ -108,6 +112,14 @@ impl GetRegistryRecordOutput {
     /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans.</p>
+    pub fn custom_metadata(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.custom_metadata.as_ref()
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
+    pub fn custom_metadata_schema_compliance_status(&self) -> ::std::option::Option<&crate::types::CustomMetadataSchemaComplianceStatus> {
+        self.custom_metadata_schema_compliance_status.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetRegistryRecordOutput {
@@ -129,6 +141,8 @@ impl ::std::fmt::Debug for GetRegistryRecordOutput {
         formatter.field("provenance", &self.provenance);
         formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
         formatter.field("created_by", &self.created_by);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -165,6 +179,8 @@ pub struct GetRegistryRecordOutputBuilder {
     pub(crate) provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
     pub(crate) created_by_auto_detection: ::std::option::Option<bool>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
     _request_id: Option<String>,
 }
 impl GetRegistryRecordOutputBuilder {
@@ -362,19 +378,19 @@ impl GetRegistryRecordOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
     ///
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. Populated for records created by auto-detection; each entry identifies the upstream source that the record was detected from.</p>
     pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
         let mut v = self.provenance.unwrap_or_default();
         v.push(input);
         self.provenance = ::std::option::Option::Some(v);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. Populated for records created by auto-detection; each entry identifies the upstream source that the record was detected from.</p>
     pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
         self.provenance = input;
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. Populated for records created by auto-detection; each entry identifies the upstream source that the record was detected from.</p>
     pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
         &self.provenance
     }
@@ -405,6 +421,37 @@ impl GetRegistryRecordOutputBuilder {
     /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans.</p>
+    pub fn custom_metadata(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.custom_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans.</p>
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.custom_metadata = input;
+        self
+    }
+    /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans.</p>
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.custom_metadata
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
+    pub fn custom_metadata_schema_compliance_status(mut self, input: crate::types::CustomMetadataSchemaComplianceStatus) -> Self {
+        self.custom_metadata_schema_compliance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
+    pub fn set_custom_metadata_schema_compliance_status(
+        mut self,
+        input: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    ) -> Self {
+        self.custom_metadata_schema_compliance_status = input;
+        self
+    }
+    /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
+    pub fn get_custom_metadata_schema_compliance_status(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus> {
+        &self.custom_metadata_schema_compliance_status
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -485,6 +532,8 @@ impl GetRegistryRecordOutputBuilder {
             provenance: self.provenance,
             created_by_auto_detection: self.created_by_auto_detection,
             created_by: self.created_by,
+            custom_metadata: self.custom_metadata,
+            custom_metadata_schema_compliance_status: self.custom_metadata_schema_compliance_status,
             _request_id: self._request_id,
         })
     }
@@ -508,6 +557,8 @@ impl ::std::fmt::Debug for GetRegistryRecordOutputBuilder {
         formatter.field("provenance", &self.provenance);
         formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
         formatter.field("created_by", &self.created_by);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

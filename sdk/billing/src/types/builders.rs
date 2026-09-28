@@ -43,6 +43,10 @@ pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
 
 pub use crate::types::_billing_view_segments_list_element::BillingViewSegmentsListElementBuilder;
 
+pub use crate::types::_business_support_account_charge::BusinessSupportAccountChargeBuilder;
+
+pub use crate::types::_business_support_subscription_contract::BusinessSupportSubscriptionContractBuilder;
+
 pub use crate::types::_linked_account_charge::LinkedAccountChargeBuilder;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKeyBuilder;
@@ -52,6 +56,12 @@ pub use crate::types::_billing_period::BillingPeriodBuilder;
 pub use crate::types::_amount::AmountBuilder;
 
 pub use crate::types::_pricing_plan_tier::PricingPlanTierBuilder;
+
+pub use crate::types::_business_support_discount::BusinessSupportDiscountBuilder;
+
+pub use crate::types::_business_support_tier_charge::BusinessSupportTierChargeBuilder;
+
+pub use crate::types::_business_support_service_spend::BusinessSupportServiceSpendBuilder;
 
 pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeriodBuilder;
 

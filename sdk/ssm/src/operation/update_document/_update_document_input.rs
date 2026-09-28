@@ -17,7 +17,7 @@ pub struct UpdateDocumentInput {
     /// <p>If you change a document version for a State Manager association, Systems Manager immediately runs the association unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.</p>
     /// </note>
     pub document_version: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>Specify a new target type for the document.</p>
     pub target_type: ::std::option::Option<::std::string::String>,
@@ -51,7 +51,7 @@ impl UpdateDocumentInput {
     pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn document_format(&self) -> ::std::option::Option<&crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
@@ -179,17 +179,17 @@ impl UpdateDocumentInputBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.document_version
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.document_format = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.document_format = input;
         self
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
         &self.document_format
     }

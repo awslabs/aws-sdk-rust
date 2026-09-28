@@ -9,6 +9,14 @@ pub struct DeleteResourcePolicyInput {
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub policy_hash: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
@@ -22,6 +30,16 @@ impl DeleteResourcePolicyInput {
     /// <p>ID of the current policy version. The hash helps to prevent multiple calls from attempting to overwrite a policy.</p>
     pub fn policy_hash(&self) -> ::std::option::Option<&str> {
         self.policy_hash.as_deref()
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn deletion_mode(&self) -> ::std::option::Option<&crate::types::DeletionMode> {
+        self.deletion_mode.as_ref()
     }
 }
 impl DeleteResourcePolicyInput {
@@ -38,6 +56,7 @@ pub struct DeleteResourcePolicyInputBuilder {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) policy_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
 }
 impl DeleteResourcePolicyInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the resource to which the policies are attached.</p>
@@ -85,6 +104,38 @@ impl DeleteResourcePolicyInputBuilder {
     pub fn get_policy_hash(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_hash
     }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn deletion_mode(mut self, input: crate::types::DeletionMode) -> Self {
+        self.deletion_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn set_deletion_mode(mut self, input: ::std::option::Option<crate::types::DeletionMode>) -> Self {
+        self.deletion_mode = input;
+        self
+    }
+    /// <p>Specifies the intended outcome of the operation. Applies only to the <code>Document</code> resource type. The operation ignores this parameter for other resource types. Optional. Defaults to <code>RemoveSharing</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RemoveSharing</code> – Deletes the resource policy and removes sharing of the document.</p></li>
+    /// <li>
+    /// <p><code>RollbackMigration</code> – Reverts the document to Custom sharing, preserving existing consumer access, instead of removing the policy.</p></li>
+    /// </ul>
+    pub fn get_deletion_mode(&self) -> &::std::option::Option<crate::types::DeletionMode> {
+        &self.deletion_mode
+    }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
     pub fn build(
         self,
@@ -94,6 +145,7 @@ impl DeleteResourcePolicyInputBuilder {
             resource_arn: self.resource_arn,
             policy_id: self.policy_id,
             policy_hash: self.policy_hash,
+            deletion_mode: self.deletion_mode,
         })
     }
 }

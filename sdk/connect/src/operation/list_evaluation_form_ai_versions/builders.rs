@@ -108,6 +108,12 @@ impl ListEvaluationFormAIVersionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_evaluation_form_ai_versions::paginator::ListEvaluationFormAiVersionsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_evaluation_form_ai_versions::paginator::ListEvaluationFormAiVersionsPaginator {
+        crate::operation::list_evaluation_form_ai_versions::paginator::ListEvaluationFormAiVersionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

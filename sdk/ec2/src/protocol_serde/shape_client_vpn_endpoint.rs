@@ -354,6 +354,16 @@ pub fn de_client_vpn_endpoint(
                 builder = builder.set_transit_gateway_configuration(var_28);
             }
             ,
+            s if s.matches("devicePostureOptions") /* DevicePostureOptions com.amazonaws.ec2#ClientVpnEndpoint$DevicePostureOptions */ =>  {
+                let var_29 =
+                    Some(
+                        crate::protocol_serde::shape_device_posture_response_options::de_device_posture_response_options(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_device_posture_options(var_29);
+            }
+            ,
             _ => {}
         }
     }

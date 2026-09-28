@@ -225,19 +225,33 @@ impl CreateRegistryRecordFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
     ///
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
         self.inner = self.inner.provenance(input);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
         self.inner = self.inner.set_provenance(input);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
         self.inner.get_provenance()
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn custom_metadata(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.inner = self.inner.custom_metadata(input);
+        self
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.inner = self.inner.set_custom_metadata(input);
+        self
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        self.inner.get_custom_metadata()
     }
     ///
     /// Adds a key-value pair to `tags`.

@@ -203,17 +203,17 @@ impl UpdateDocumentFluentBuilder {
     pub fn get_document_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_document_version()
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
         self.inner = self.inner.document_format(input);
         self
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn set_document_format(mut self, input: ::std::option::Option<crate::types::DocumentFormat>) -> Self {
         self.inner = self.inner.set_document_format(input);
         self
     }
-    /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML documents. JSON is the default format.</p>
+    /// <p>Specify the document format for the new document version. The document format can be JSON, YAML, or TEXT. JSON is the default format.</p>
     pub fn get_document_format(&self) -> &::std::option::Option<crate::types::DocumentFormat> {
         self.inner.get_document_format()
     }

@@ -12,6 +12,8 @@ pub struct ArgoCdConfigRequest {
     pub rbac_role_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ArgoCdRoleMapping>>,
     /// <p>Configuration for network access to the Argo CD capability's managed API server endpoint. By default, the Argo CD server is accessible via a public endpoint. You can optionally specify one or more VPC endpoint IDs to enable private connectivity from your VPCs. When VPC endpoints are configured, public access is blocked and the Argo CD server is only accessible through the specified VPC endpoints.</p>
     pub network_access: ::std::option::Option<crate::types::ArgoCdNetworkAccessConfigRequest>,
+    /// <p>An optional prefix used to construct the hostname of the Argo CD server endpoint. If not specified, Amazon EKS automatically generates the endpoint. This value can't be changed after the capability is created.</p>
+    pub endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ArgoCdConfigRequest {
     /// <p>The Kubernetes namespace where Argo CD resources will be created. If not specified, the default namespace is used.</p>
@@ -32,6 +34,10 @@ impl ArgoCdConfigRequest {
     pub fn network_access(&self) -> ::std::option::Option<&crate::types::ArgoCdNetworkAccessConfigRequest> {
         self.network_access.as_ref()
     }
+    /// <p>An optional prefix used to construct the hostname of the Argo CD server endpoint. If not specified, Amazon EKS automatically generates the endpoint. This value can't be changed after the capability is created.</p>
+    pub fn endpoint_prefix(&self) -> ::std::option::Option<&str> {
+        self.endpoint_prefix.as_deref()
+    }
 }
 impl ArgoCdConfigRequest {
     /// Creates a new builder-style object to manufacture [`ArgoCdConfigRequest`](crate::types::ArgoCdConfigRequest).
@@ -48,6 +54,7 @@ pub struct ArgoCdConfigRequestBuilder {
     pub(crate) aws_idc: ::std::option::Option<crate::types::ArgoCdAwsIdcConfigRequest>,
     pub(crate) rbac_role_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ArgoCdRoleMapping>>,
     pub(crate) network_access: ::std::option::Option<crate::types::ArgoCdNetworkAccessConfigRequest>,
+    pub(crate) endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ArgoCdConfigRequestBuilder {
     /// <p>The Kubernetes namespace where Argo CD resources will be created. If not specified, the default namespace is used.</p>
@@ -113,6 +120,20 @@ impl ArgoCdConfigRequestBuilder {
     pub fn get_network_access(&self) -> &::std::option::Option<crate::types::ArgoCdNetworkAccessConfigRequest> {
         &self.network_access
     }
+    /// <p>An optional prefix used to construct the hostname of the Argo CD server endpoint. If not specified, Amazon EKS automatically generates the endpoint. This value can't be changed after the capability is created.</p>
+    pub fn endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional prefix used to construct the hostname of the Argo CD server endpoint. If not specified, Amazon EKS automatically generates the endpoint. This value can't be changed after the capability is created.</p>
+    pub fn set_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_prefix = input;
+        self
+    }
+    /// <p>An optional prefix used to construct the hostname of the Argo CD server endpoint. If not specified, Amazon EKS automatically generates the endpoint. This value can't be changed after the capability is created.</p>
+    pub fn get_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_prefix
+    }
     /// Consumes the builder and constructs a [`ArgoCdConfigRequest`](crate::types::ArgoCdConfigRequest).
     pub fn build(self) -> crate::types::ArgoCdConfigRequest {
         crate::types::ArgoCdConfigRequest {
@@ -120,6 +141,7 @@ impl ArgoCdConfigRequestBuilder {
             aws_idc: self.aws_idc,
             rbac_role_mappings: self.rbac_role_mappings,
             network_access: self.network_access,
+            endpoint_prefix: self.endpoint_prefix,
         }
     }
 }

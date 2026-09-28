@@ -97,6 +97,8 @@ pub(crate) mod shape_auto_detection;
 
 pub(crate) mod shape_auto_detection_configuration;
 
+pub(crate) mod shape_custom_metadata_schema_configuration;
+
 pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_discovery_configuration;
@@ -120,6 +122,10 @@ pub(crate) mod shape_resource_tags_map;
 pub(crate) mod shape_updated_approval_configuration;
 
 pub(crate) mod shape_updated_auto_detection_configuration;
+
+pub(crate) mod shape_updated_custom_metadata_map;
+
+pub(crate) mod shape_updated_custom_metadata_schema_configuration;
 
 pub(crate) mod shape_updated_description;
 
@@ -146,6 +152,10 @@ pub(crate) mod shape_custom_descriptor;
 pub(crate) mod shape_http_descriptor;
 
 pub(crate) mod shape_mcp_server_descriptor;
+
+pub(crate) mod shape_record_type_schema_override;
+
+pub(crate) mod shape_record_type_schema_override_list;
 
 pub(crate) mod shape_registry_record_summary;
 

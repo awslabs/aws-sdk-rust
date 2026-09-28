@@ -263,6 +263,39 @@ pub(crate) fn list_billing_views_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_business_support_account_charges_output_output_correct_errors(
+    mut builder: crate::operation::list_business_support_account_charges::builders::ListBusinessSupportAccountChargesOutputBuilder,
+) -> crate::operation::list_business_support_account_charges::builders::ListBusinessSupportAccountChargesOutputBuilder {
+    if builder.billing_month.is_none() {
+        builder.billing_month = Some(Default::default())
+    }
+    if builder.is_estimated.is_none() {
+        builder.is_estimated = Some(Default::default())
+    }
+    if builder.total_support_charge.is_none() {
+        builder.total_support_charge = Some(Default::default())
+    }
+    if builder.total_support_eligible_spend.is_none() {
+        builder.total_support_eligible_spend = Some(Default::default())
+    }
+    if builder.account_count.is_none() {
+        builder.account_count = Some(Default::default())
+    }
+    if builder.account_charges.is_none() {
+        builder.account_charges = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_business_support_subscription_history_output_output_correct_errors(
+    mut builder: crate::operation::list_business_support_subscription_history::builders::ListBusinessSupportSubscriptionHistoryOutputBuilder,
+) -> crate::operation::list_business_support_subscription_history::builders::ListBusinessSupportSubscriptionHistoryOutputBuilder {
+    if builder.subscription_contracts.is_none() {
+        builder.subscription_contracts = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_enterprise_support_linked_account_charges_output_output_correct_errors(
     mut builder: crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder,
 ) -> crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder {
@@ -317,6 +350,42 @@ pub(crate) fn billing_preference_summary_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = "no value was set".parse::<crate::types::PreferenceValue>().ok()
+    }
+    builder
+}
+
+pub(crate) fn business_support_account_charge_correct_errors(
+    mut builder: crate::types::builders::BusinessSupportAccountChargeBuilder,
+) -> crate::types::builders::BusinessSupportAccountChargeBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.support_plan_name.is_none() {
+        builder.support_plan_name = Some(Default::default())
+    }
+    if builder.total_charge.is_none() {
+        builder.total_charge = Some(Default::default())
+    }
+    if builder.total_usage_basis.is_none() {
+        builder.total_usage_basis = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn business_support_subscription_contract_correct_errors(
+    mut builder: crate::types::builders::BusinessSupportSubscriptionContractBuilder,
+) -> crate::types::builders::BusinessSupportSubscriptionContractBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.plan_name.is_none() {
+        builder.plan_name = Some(Default::default())
+    }
+    if builder.contract_start_date.is_none() {
+        builder.contract_start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.contract_end_date.is_none() {
+        builder.contract_end_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -519,6 +588,42 @@ pub(crate) fn tag_values_correct_errors(mut builder: crate::types::builders::Tag
     }
     if builder.values.is_none() {
         builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn business_support_service_spend_correct_errors(
+    mut builder: crate::types::builders::BusinessSupportServiceSpendBuilder,
+) -> crate::types::builders::BusinessSupportServiceSpendBuilder {
+    if builder.contributing_service.is_none() {
+        builder.contributing_service = Some(Default::default())
+    }
+    if builder.item_type.is_none() {
+        builder.item_type = Some(Default::default())
+    }
+    if builder.charge_amount.is_none() {
+        builder.charge_amount = Some(Default::default())
+    }
+    if builder.currency.is_none() {
+        builder.currency = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn business_support_tier_charge_correct_errors(
+    mut builder: crate::types::builders::BusinessSupportTierChargeBuilder,
+) -> crate::types::builders::BusinessSupportTierChargeBuilder {
+    if builder.tier_description.is_none() {
+        builder.tier_description = Some(Default::default())
+    }
+    if builder.tier_rate.is_none() {
+        builder.tier_rate = Some(Default::default())
+    }
+    if builder.usage_slice.is_none() {
+        builder.usage_slice = Some(Default::default())
+    }
+    if builder.tier_charge.is_none() {
+        builder.tier_charge = Some(Default::default())
     }
     builder
 }

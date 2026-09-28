@@ -513,4 +513,18 @@ impl CreateClientVpnEndpointFluentBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
         self.inner.get_transit_gateway_configuration()
     }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn device_posture_options(mut self, input: crate::types::DevicePostureOptions) -> Self {
+        self.inner = self.inner.device_posture_options(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureOptions>) -> Self {
+        self.inner = self.inner.set_device_posture_options(input);
+        self
+    }
+    /// <p>The device posture options for the Client VPN endpoint. Use this parameter to specify the device trust providers that the endpoint uses to evaluate the security posture of connecting devices.</p>
+    pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureOptions> {
+        self.inner.get_device_posture_options()
+    }
 }

@@ -19,8 +19,10 @@ pub struct CreateRegistryRecordInput {
     pub record_version: ::std::option::Option<::std::string::String>,
     /// <p>Client token for idempotency</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Tags to associate with the registry record</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -57,11 +59,15 @@ impl CreateRegistryRecordInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance.is_none()`.
     pub fn provenance(&self) -> &[crate::types::Provenance] {
         self.provenance.as_deref().unwrap_or_default()
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn custom_metadata(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.custom_metadata.as_ref()
     }
     /// <p>Tags to associate with the registry record</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInput {
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
         formatter.field("provenance", &self.provenance);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -104,6 +111,7 @@ pub struct CreateRegistryRecordInputBuilder {
     pub(crate) record_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
+    pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRegistryRecordInputBuilder {
@@ -227,21 +235,35 @@ impl CreateRegistryRecordInputBuilder {
     ///
     /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
     ///
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
         let mut v = self.provenance.unwrap_or_default();
         v.push(input);
         self.provenance = ::std::option::Option::Some(v);
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
         self.provenance = input;
         self
     }
-    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    /// <p>The provenance lineage entries for the registry record. This field is reserved for the Amazon Web Services Agent Registry auto-detection service principal. Requests that include this field from other callers are rejected.</p>
     pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
         &self.provenance
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn custom_metadata(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.custom_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn set_custom_metadata(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.custom_metadata = input;
+        self
+    }
+    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.custom_metadata
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -278,6 +300,7 @@ impl CreateRegistryRecordInputBuilder {
             record_version: self.record_version,
             client_token: self.client_token,
             provenance: self.provenance,
+            custom_metadata: self.custom_metadata,
             tags: self.tags,
         })
     }
@@ -294,6 +317,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInputBuilder {
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
         formatter.field("provenance", &self.provenance);
+        formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

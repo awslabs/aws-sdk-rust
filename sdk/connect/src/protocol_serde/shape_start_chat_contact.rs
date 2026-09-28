@@ -140,6 +140,13 @@ pub(crate) fn de_start_chat_contact(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ConnectionCredentials" => {
+                    builder = builder.set_connection_credentials(crate::protocol_serde::shape_connection_credentials::de_connection_credentials(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "ContactId" => {
                     builder = builder.set_contact_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -167,6 +174,16 @@ pub(crate) fn de_start_chat_contact(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "StreamingId" => {
+                    builder = builder.set_streaming_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "Websocket" => {
+                    builder = builder.set_websocket(crate::protocol_serde::shape_websocket::de_websocket(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

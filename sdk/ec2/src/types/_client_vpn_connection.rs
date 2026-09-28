@@ -34,6 +34,8 @@ pub struct ClientVpnConnection {
     pub connection_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The statuses returned by the client connect handler for posture compliance, if applicable.</p>
     pub posture_compliance_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The date and time the authorization policy was last evaluated for the client connection, if applicable.</p>
+    pub authorization_policy_last_evaluated_time: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnConnection {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
@@ -98,6 +100,10 @@ impl ClientVpnConnection {
     pub fn posture_compliance_statuses(&self) -> &[::std::string::String] {
         self.posture_compliance_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>The date and time the authorization policy was last evaluated for the client connection, if applicable.</p>
+    pub fn authorization_policy_last_evaluated_time(&self) -> ::std::option::Option<&str> {
+        self.authorization_policy_last_evaluated_time.as_deref()
+    }
 }
 impl ClientVpnConnection {
     /// Creates a new builder-style object to manufacture [`ClientVpnConnection`](crate::types::ClientVpnConnection).
@@ -125,6 +131,7 @@ pub struct ClientVpnConnectionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClientVpnConnectionStatus>,
     pub(crate) connection_end_time: ::std::option::Option<::std::string::String>,
     pub(crate) posture_compliance_statuses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) authorization_policy_last_evaluated_time: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnConnectionBuilder {
     /// <p>The ID of the Client VPN endpoint to which the client is connected.</p>
@@ -343,6 +350,20 @@ impl ClientVpnConnectionBuilder {
     pub fn get_posture_compliance_statuses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.posture_compliance_statuses
     }
+    /// <p>The date and time the authorization policy was last evaluated for the client connection, if applicable.</p>
+    pub fn authorization_policy_last_evaluated_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.authorization_policy_last_evaluated_time = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The date and time the authorization policy was last evaluated for the client connection, if applicable.</p>
+    pub fn set_authorization_policy_last_evaluated_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authorization_policy_last_evaluated_time = input;
+        self
+    }
+    /// <p>The date and time the authorization policy was last evaluated for the client connection, if applicable.</p>
+    pub fn get_authorization_policy_last_evaluated_time(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_policy_last_evaluated_time
+    }
     /// Consumes the builder and constructs a [`ClientVpnConnection`](crate::types::ClientVpnConnection).
     pub fn build(self) -> crate::types::ClientVpnConnection {
         crate::types::ClientVpnConnection {
@@ -361,6 +382,7 @@ impl ClientVpnConnectionBuilder {
             status: self.status,
             connection_end_time: self.connection_end_time,
             posture_compliance_statuses: self.posture_compliance_statuses,
+            authorization_policy_last_evaluated_time: self.authorization_policy_last_evaluated_time,
         }
     }
 }

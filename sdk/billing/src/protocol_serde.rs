@@ -49,6 +49,10 @@ pub(crate) mod shape_list_billing_view_segments;
 
 pub(crate) mod shape_list_billing_views;
 
+pub(crate) mod shape_list_business_support_account_charges;
+
+pub(crate) mod shape_list_business_support_subscription_history;
+
 pub(crate) mod shape_list_enterprise_support_linked_account_charges;
 
 pub(crate) mod shape_list_source_views_for_billing_view;
@@ -107,6 +111,10 @@ pub(crate) mod shape_list_billing_view_segments_input;
 
 pub(crate) mod shape_list_billing_views_input;
 
+pub(crate) mod shape_list_business_support_account_charges_input;
+
+pub(crate) mod shape_list_business_support_subscription_history_input;
+
 pub(crate) mod shape_list_enterprise_support_linked_account_charges_input;
 
 pub(crate) mod shape_list_source_views_for_billing_view_input;
@@ -151,6 +159,10 @@ pub(crate) mod shape_billing_view_segments_list;
 
 pub(crate) mod shape_billing_view_source_views_list;
 
+pub(crate) mod shape_business_support_account_charge_list;
+
+pub(crate) mod shape_business_support_subscription_contract_list;
+
 pub(crate) mod shape_charge_account_list;
 
 pub(crate) mod shape_contract_account_list;
@@ -187,6 +199,10 @@ pub(crate) mod shape_billing_view_list_element;
 
 pub(crate) mod shape_billing_view_segments_list_element;
 
+pub(crate) mod shape_business_support_account_charge;
+
+pub(crate) mod shape_business_support_subscription_contract;
+
 pub(crate) mod shape_charge_account;
 
 pub(crate) mod shape_contract_account;
@@ -215,6 +231,12 @@ pub(crate) mod shape_billing_period;
 
 pub(crate) mod shape_billing_view_status_reasons;
 
+pub(crate) mod shape_business_support_discount;
+
+pub(crate) mod shape_business_support_service_spend_list;
+
+pub(crate) mod shape_business_support_tier_charge_list;
+
 pub(crate) mod shape_pricing_plan_tier;
 
 pub(crate) mod shape_product_names;
@@ -226,6 +248,10 @@ pub(crate) mod shape_service_level_account_usage_list;
 pub(crate) mod shape_shareable_account_ids;
 
 pub(crate) mod shape_time_period_list;
+
+pub(crate) mod shape_business_support_service_spend;
+
+pub(crate) mod shape_business_support_tier_charge;
 
 pub(crate) mod shape_enterprise_support_time_period;
 

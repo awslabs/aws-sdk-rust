@@ -538,6 +538,9 @@ pub mod delete_carrier_gateway;
 /// Types for the `DeleteClientVpnEndpoint` operation.
 pub mod delete_client_vpn_endpoint;
 
+/// Types for the `DeleteClientVpnEndpointAuthorizationPolicy` operation.
+pub mod delete_client_vpn_endpoint_authorization_policy;
+
 /// Types for the `DeleteClientVpnRoute` operation.
 pub mod delete_client_vpn_route;
 
@@ -1684,6 +1687,9 @@ pub mod get_capacity_manager_monitored_tag_keys;
 /// Types for the `GetCapacityReservationUsage` operation.
 pub mod get_capacity_reservation_usage;
 
+/// Types for the `GetClientVpnEndpointAuthorizationPolicy` operation.
+pub mod get_client_vpn_endpoint_authorization_policy;
+
 /// Types for the `GetCoipPoolUsage` operation.
 pub mod get_coip_pool_usage;
 
@@ -1935,6 +1941,9 @@ pub mod modify_capacity_reservation_fleet;
 
 /// Types for the `ModifyClientVpnEndpoint` operation.
 pub mod modify_client_vpn_endpoint;
+
+/// Types for the `ModifyClientVpnEndpointAuthorizationPolicy` operation.
+pub mod modify_client_vpn_endpoint_authorization_policy;
 
 /// Types for the `ModifyDefaultCreditSpecification` operation.
 pub mod modify_default_credit_specification;

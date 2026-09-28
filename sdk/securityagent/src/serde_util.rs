@@ -1136,6 +1136,16 @@ pub(crate) fn integrated_repository_correct_errors(
     builder
 }
 
+pub(crate) fn scope_result_correct_errors(mut builder: crate::types::builders::ScopeResultBuilder) -> crate::types::builders::ScopeResultBuilder {
+    if builder.decision.is_none() {
+        builder.decision = "no value was set".parse::<crate::types::ScopeDecision>().ok()
+    }
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn trusted_ca_certificate_correct_errors(
     mut builder: crate::types::builders::TrustedCaCertificateBuilder,
 ) -> crate::types::builders::TrustedCaCertificateBuilder {
@@ -1211,6 +1221,19 @@ pub(crate) fn git_lab_repository_metadata_correct_errors(
     }
     if builder.namespace.is_none() {
         builder.namespace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn scope_change_correct_errors(mut builder: crate::types::builders::ScopeChangeBuilder) -> crate::types::builders::ScopeChangeBuilder {
+    if builder.integration_id.is_none() {
+        builder.integration_id = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.head_commit_sha.is_none() {
+        builder.head_commit_sha = Some(Default::default())
     }
     builder
 }

@@ -99,6 +99,9 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "customMetadata" => {
+                            builder = builder.set_custom_metadata(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -737,6 +737,10 @@ pub(crate) mod shape_delete_carrier_gateway_input;
 
 pub(crate) mod shape_delete_client_vpn_endpoint;
 
+pub(crate) mod shape_delete_client_vpn_endpoint_authorization_policy;
+
+pub(crate) mod shape_delete_client_vpn_endpoint_authorization_policy_input;
+
 pub(crate) mod shape_delete_client_vpn_endpoint_input;
 
 pub(crate) mod shape_delete_client_vpn_route;
@@ -2267,6 +2271,10 @@ pub(crate) mod shape_get_capacity_reservation_usage;
 
 pub(crate) mod shape_get_capacity_reservation_usage_input;
 
+pub(crate) mod shape_get_client_vpn_endpoint_authorization_policy;
+
+pub(crate) mod shape_get_client_vpn_endpoint_authorization_policy_input;
+
 pub(crate) mod shape_get_coip_pool_usage;
 
 pub(crate) mod shape_get_coip_pool_usage_input;
@@ -2600,6 +2608,10 @@ pub(crate) mod shape_modify_capacity_reservation_fleet_input;
 pub(crate) mod shape_modify_capacity_reservation_input;
 
 pub(crate) mod shape_modify_client_vpn_endpoint;
+
+pub(crate) mod shape_modify_client_vpn_endpoint_authorization_policy;
+
+pub(crate) mod shape_modify_client_vpn_endpoint_authorization_policy_input;
 
 pub(crate) mod shape_modify_client_vpn_endpoint_input;
 
@@ -3313,6 +3325,8 @@ pub(crate) mod shape_deregister_instance_tag_attribute_request;
 
 pub(crate) mod shape_destination_options_request;
 
+pub(crate) mod shape_device_posture_options;
+
 pub(crate) mod shape_disk_image;
 
 pub(crate) mod shape_disk_image_detail;
@@ -3694,6 +3708,8 @@ pub(crate) mod shape_client_vpn_route_set;
 pub(crate) mod shape_client_vpn_route_status;
 
 pub(crate) mod shape_client_vpn_security_group_id_set;
+
+pub(crate) mod shape_client_vpn_trust_provider_request;
 
 pub(crate) mod shape_coip_address_usage_set;
 
@@ -5423,6 +5439,8 @@ pub(crate) mod shape_describe_fleets_instances_set;
 
 pub(crate) mod shape_destination_options_response;
 
+pub(crate) mod shape_device_posture_response_options;
+
 pub(crate) mod shape_dhcp_configuration;
 
 pub(crate) mod shape_disable_fast_snapshot_restore_state_error_set;
@@ -5835,6 +5853,8 @@ pub(crate) mod shape_client_vpn_authentication;
 
 pub(crate) mod shape_client_vpn_endpoint_attribute_status;
 
+pub(crate) mod shape_client_vpn_trust_provider_set;
+
 pub(crate) mod shape_connection_tracking_specification;
 
 pub(crate) mod shape_core_count_list;
@@ -6036,6 +6056,8 @@ pub(crate) mod shape_block_device_mapping_response_list;
 pub(crate) mod shape_capacity_allocation_metadata_entry;
 
 pub(crate) mod shape_certificate_authentication;
+
+pub(crate) mod shape_client_vpn_trust_provider;
 
 pub(crate) mod shape_connection_tracking_specification_response;
 

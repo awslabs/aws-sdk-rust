@@ -52,6 +52,21 @@ pub fn de_connection_log_response_options(
                 builder = builder.set_cloudwatch_log_stream(var_3);
             }
             ,
+            s if s.matches("IncludeAuthorizationPolicyContext") /* IncludeAuthorizationPolicyContext com.amazonaws.ec2#ConnectionLogResponseOptions$IncludeAuthorizationPolicyContext */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_include_authorization_policy_context(var_4);
+            }
+            ,
             _ => {}
         }
     }

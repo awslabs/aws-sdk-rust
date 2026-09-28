@@ -403,6 +403,12 @@ pub use crate::types::_upload_url_metadata::UploadUrlMetadata;
 
 pub use crate::types::_participant_configuration::ParticipantConfiguration;
 
+pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
+
+pub use crate::types::_connection_credentials::ConnectionCredentials;
+
+pub use crate::types::_websocket::Websocket;
+
 pub use crate::types::_analytics_configuration::AnalyticsConfiguration;
 
 pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfiguration;
@@ -410,8 +416,6 @@ pub use crate::types::_auto_evaluation_configuration::AutoEvaluationConfiguratio
 pub use crate::types::_contact_media_processing_failure_mode::ContactMediaProcessingFailureMode;
 
 pub use crate::types::_voice_recording_configuration::VoiceRecordingConfiguration;
-
-pub use crate::types::_chat_streaming_configuration::ChatStreamingConfiguration;
 
 pub use crate::types::_inbound_email_content::InboundEmailContent;
 
@@ -916,6 +920,8 @@ pub use crate::types::_content_attributes::ContentAttributes;
 pub use crate::types::_response_mode::ResponseMode;
 
 pub use crate::types::_disconnect_on_customer_exit_participant_type::DisconnectOnCustomerExitParticipantType;
+
+pub use crate::types::_connection_type::ConnectionType;
 
 pub use crate::types::_analytics_mode::AnalyticsMode;
 
@@ -1791,7 +1797,11 @@ mod _condition;
 
 mod _configurable_notification_priority;
 
+mod _connection_credentials;
+
 mod _connection_data;
+
+mod _connection_type;
 
 mod _contact;
 
@@ -3138,6 +3148,8 @@ mod _voice_recording_track;
 mod _web_notification_content;
 
 mod _web_notification_source;
+
+mod _websocket;
 
 mod _widget_destination;
 

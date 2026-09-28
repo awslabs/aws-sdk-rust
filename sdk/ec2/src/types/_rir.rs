@@ -15,6 +15,7 @@
 ///     Rir::Apnic => { /* ... */ },
 ///     Rir::Arin => { /* ... */ },
 ///     Rir::Lacnic => { /* ... */ },
+///     Rir::Nicbr => { /* ... */ },
 ///     Rir::Ripe => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum Rir {
     #[allow(missing_docs)] // documentation missing in model
     Lacnic,
     #[allow(missing_docs)] // documentation missing in model
+    Nicbr,
+    #[allow(missing_docs)] // documentation missing in model
     Ripe,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for Rir {
             "apnic" => Rir::Apnic,
             "arin" => Rir::Arin,
             "lacnic" => Rir::Lacnic,
+            "nicbr" => Rir::Nicbr,
             "ripe" => Rir::Ripe,
             other => Rir::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl Rir {
             Rir::Apnic => "apnic",
             Rir::Arin => "arin",
             Rir::Lacnic => "lacnic",
+            Rir::Nicbr => "nicbr",
             Rir::Ripe => "ripe",
             Rir::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["apnic", "arin", "lacnic", "ripe"]
+        &["apnic", "arin", "lacnic", "nicbr", "ripe"]
     }
 }
 impl ::std::convert::AsRef<str> for Rir {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for Rir {
             Rir::Apnic => write!(f, "apnic"),
             Rir::Arin => write!(f, "arin"),
             Rir::Lacnic => write!(f, "lacnic"),
+            Rir::Nicbr => write!(f, "nicbr"),
             Rir::Ripe => write!(f, "ripe"),
             Rir::Unknown(value) => write!(f, "{value}"),
         }

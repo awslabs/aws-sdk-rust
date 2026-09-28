@@ -18,6 +18,8 @@ pub struct UpdateRegistryOutput {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Approval configuration for registry records</p>
     pub approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
+    /// <p>The custom metadata schema configuration for this registry, if one has been defined.</p>
+    pub custom_metadata_schema_configuration: ::std::option::Option<crate::types::CustomMetadataSchemaConfiguration>,
     /// <p>Current status of the registry</p>
     pub status: crate::types::RegistryStatus,
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
@@ -62,6 +64,10 @@ impl UpdateRegistryOutput {
     pub fn approval_configuration(&self) -> ::std::option::Option<&crate::types::ApprovalConfiguration> {
         self.approval_configuration.as_ref()
     }
+    /// <p>The custom metadata schema configuration for this registry, if one has been defined.</p>
+    pub fn custom_metadata_schema_configuration(&self) -> ::std::option::Option<&crate::types::CustomMetadataSchemaConfiguration> {
+        self.custom_metadata_schema_configuration.as_ref()
+    }
     /// <p>Current status of the registry</p>
     pub fn status(&self) -> &crate::types::RegistryStatus {
         &self.status
@@ -93,6 +99,7 @@ impl ::std::fmt::Debug for UpdateRegistryOutput {
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("approval_configuration", &self.approval_configuration);
+        formatter.field("custom_metadata_schema_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
         formatter.field("auto_detection", &self.auto_detection);
@@ -125,6 +132,7 @@ pub struct UpdateRegistryOutputBuilder {
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
+    pub(crate) custom_metadata_schema_configuration: ::std::option::Option<crate::types::CustomMetadataSchemaConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) auto_detection: ::std::option::Option<crate::types::AutoDetection>,
@@ -233,6 +241,20 @@ impl UpdateRegistryOutputBuilder {
     /// <p>Approval configuration for registry records</p>
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::ApprovalConfiguration> {
         &self.approval_configuration
+    }
+    /// <p>The custom metadata schema configuration for this registry, if one has been defined.</p>
+    pub fn custom_metadata_schema_configuration(mut self, input: crate::types::CustomMetadataSchemaConfiguration) -> Self {
+        self.custom_metadata_schema_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The custom metadata schema configuration for this registry, if one has been defined.</p>
+    pub fn set_custom_metadata_schema_configuration(mut self, input: ::std::option::Option<crate::types::CustomMetadataSchemaConfiguration>) -> Self {
+        self.custom_metadata_schema_configuration = input;
+        self
+    }
+    /// <p>The custom metadata schema configuration for this registry, if one has been defined.</p>
+    pub fn get_custom_metadata_schema_configuration(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaConfiguration> {
+        &self.custom_metadata_schema_configuration
     }
     /// <p>Current status of the registry</p>
     /// This field is required.
@@ -350,6 +372,7 @@ impl UpdateRegistryOutputBuilder {
             discovery_configuration: self.discovery_configuration,
             encryption_configuration: self.encryption_configuration,
             approval_configuration: self.approval_configuration,
+            custom_metadata_schema_configuration: self.custom_metadata_schema_configuration,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",
@@ -384,6 +407,7 @@ impl ::std::fmt::Debug for UpdateRegistryOutputBuilder {
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("approval_configuration", &self.approval_configuration);
+        formatter.field("custom_metadata_schema_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
         formatter.field("auto_detection", &self.auto_detection);

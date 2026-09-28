@@ -4769,6 +4769,40 @@ impl From<crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_client_vpn_endpoint_authorization_policy::DeleteClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_client_vpn_endpoint_authorization_policy::DeleteClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_client_vpn_endpoint_authorization_policy::DeleteClientVpnEndpointAuthorizationPolicyError> for Error {
+    fn from(err: crate::operation::delete_client_vpn_endpoint_authorization_policy::DeleteClientVpnEndpointAuthorizationPolicyError) -> Self {
+        match err {
+            crate::operation::delete_client_vpn_endpoint_authorization_policy::DeleteClientVpnEndpointAuthorizationPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -15233,6 +15267,40 @@ impl From<crate::operation::get_capacity_reservation_usage::GetCapacityReservati
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_client_vpn_endpoint_authorization_policy::GetClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_client_vpn_endpoint_authorization_policy::GetClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_client_vpn_endpoint_authorization_policy::GetClientVpnEndpointAuthorizationPolicyError> for Error {
+    fn from(err: crate::operation::get_client_vpn_endpoint_authorization_policy::GetClientVpnEndpointAuthorizationPolicyError) -> Self {
+        match err {
+            crate::operation::get_client_vpn_endpoint_authorization_policy::GetClientVpnEndpointAuthorizationPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_coip_pool_usage::GetCoipPoolUsageError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -17620,6 +17688,40 @@ impl From<crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointE
     fn from(err: crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointError) -> Self {
         match err {
             crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_client_vpn_endpoint_authorization_policy::ModifyClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_client_vpn_endpoint_authorization_policy::ModifyClientVpnEndpointAuthorizationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_client_vpn_endpoint_authorization_policy::ModifyClientVpnEndpointAuthorizationPolicyError> for Error {
+    fn from(err: crate::operation::modify_client_vpn_endpoint_authorization_policy::ModifyClientVpnEndpointAuthorizationPolicyError) -> Self {
+        match err {
+            crate::operation::modify_client_vpn_endpoint_authorization_policy::ModifyClientVpnEndpointAuthorizationPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

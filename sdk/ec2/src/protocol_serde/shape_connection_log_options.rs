@@ -19,5 +19,10 @@ pub fn ser_connection_log_options(
     if let Some(var_6) = &input.cloudwatch_log_stream {
         scope_5.string(var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("IncludeAuthorizationPolicyContext");
+    if let Some(var_8) = &input.include_authorization_policy_context {
+        scope_7.boolean(*var_8);
+    }
     Ok(())
 }

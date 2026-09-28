@@ -10,6 +10,8 @@ pub struct ConnectionLogResponseOptions {
     pub cloudwatch_log_group: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon CloudWatch Logs log stream to which connection logging data is published.</p>
     pub cloudwatch_log_stream: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the authorization policy evaluation context is included in the connection logs for the Client VPN endpoint.</p>
+    pub include_authorization_policy_context: ::std::option::Option<bool>,
 }
 impl ConnectionLogResponseOptions {
     /// <p>Indicates whether client connection logging is enabled for the Client VPN endpoint.</p>
@@ -23,6 +25,10 @@ impl ConnectionLogResponseOptions {
     /// <p>The name of the Amazon CloudWatch Logs log stream to which connection logging data is published.</p>
     pub fn cloudwatch_log_stream(&self) -> ::std::option::Option<&str> {
         self.cloudwatch_log_stream.as_deref()
+    }
+    /// <p>Specifies whether the authorization policy evaluation context is included in the connection logs for the Client VPN endpoint.</p>
+    pub fn include_authorization_policy_context(&self) -> ::std::option::Option<bool> {
+        self.include_authorization_policy_context
     }
 }
 impl ConnectionLogResponseOptions {
@@ -39,6 +45,7 @@ pub struct ConnectionLogResponseOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) cloudwatch_log_group: ::std::option::Option<::std::string::String>,
     pub(crate) cloudwatch_log_stream: ::std::option::Option<::std::string::String>,
+    pub(crate) include_authorization_policy_context: ::std::option::Option<bool>,
 }
 impl ConnectionLogResponseOptionsBuilder {
     /// <p>Indicates whether client connection logging is enabled for the Client VPN endpoint.</p>
@@ -83,12 +90,27 @@ impl ConnectionLogResponseOptionsBuilder {
     pub fn get_cloudwatch_log_stream(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloudwatch_log_stream
     }
+    /// <p>Specifies whether the authorization policy evaluation context is included in the connection logs for the Client VPN endpoint.</p>
+    pub fn include_authorization_policy_context(mut self, input: bool) -> Self {
+        self.include_authorization_policy_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the authorization policy evaluation context is included in the connection logs for the Client VPN endpoint.</p>
+    pub fn set_include_authorization_policy_context(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_authorization_policy_context = input;
+        self
+    }
+    /// <p>Specifies whether the authorization policy evaluation context is included in the connection logs for the Client VPN endpoint.</p>
+    pub fn get_include_authorization_policy_context(&self) -> &::std::option::Option<bool> {
+        &self.include_authorization_policy_context
+    }
     /// Consumes the builder and constructs a [`ConnectionLogResponseOptions`](crate::types::ConnectionLogResponseOptions).
     pub fn build(self) -> crate::types::ConnectionLogResponseOptions {
         crate::types::ConnectionLogResponseOptions {
             enabled: self.enabled,
             cloudwatch_log_group: self.cloudwatch_log_group,
             cloudwatch_log_stream: self.cloudwatch_log_stream,
+            include_authorization_policy_context: self.include_authorization_policy_context,
         }
     }
 }

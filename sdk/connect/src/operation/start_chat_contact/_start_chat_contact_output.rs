@@ -11,6 +11,12 @@ pub struct StartChatContactOutput {
     pub participant_token: ::std::option::Option<::std::string::String>,
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     pub continued_from_contact_id: ::std::option::Option<::std::string::String>,
+    /// <p>The connection credentials for the chat participant. Returned only when the request includes <code>CONNECTION_CREDENTIALS</code> in <code>ConnectionTypes</code>.</p>
+    pub connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    /// <p>The websocket for the chat participant. Returned only when the request includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+    pub websocket: ::std::option::Option<crate::types::Websocket>,
+    /// <p>The identifier of the streaming configuration enabled with the chat. Returned only when the request sets <code>ChatStreamingConfiguration</code>. Use this value to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+    pub streaming_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartChatContactOutput {
@@ -29,6 +35,18 @@ impl StartChatContactOutput {
     /// <p>The contactId from which a persistent chat session is started. This field is populated only for persistent chats.</p>
     pub fn continued_from_contact_id(&self) -> ::std::option::Option<&str> {
         self.continued_from_contact_id.as_deref()
+    }
+    /// <p>The connection credentials for the chat participant. Returned only when the request includes <code>CONNECTION_CREDENTIALS</code> in <code>ConnectionTypes</code>.</p>
+    pub fn connection_credentials(&self) -> ::std::option::Option<&crate::types::ConnectionCredentials> {
+        self.connection_credentials.as_ref()
+    }
+    /// <p>The websocket for the chat participant. Returned only when the request includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+    pub fn websocket(&self) -> ::std::option::Option<&crate::types::Websocket> {
+        self.websocket.as_ref()
+    }
+    /// <p>The identifier of the streaming configuration enabled with the chat. Returned only when the request sets <code>ChatStreamingConfiguration</code>. Use this value to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+    pub fn streaming_id(&self) -> ::std::option::Option<&str> {
+        self.streaming_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartChatContactOutput {
@@ -51,6 +69,9 @@ pub struct StartChatContactOutputBuilder {
     pub(crate) participant_id: ::std::option::Option<::std::string::String>,
     pub(crate) participant_token: ::std::option::Option<::std::string::String>,
     pub(crate) continued_from_contact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_credentials: ::std::option::Option<crate::types::ConnectionCredentials>,
+    pub(crate) websocket: ::std::option::Option<crate::types::Websocket>,
+    pub(crate) streaming_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartChatContactOutputBuilder {
@@ -110,6 +131,48 @@ impl StartChatContactOutputBuilder {
     pub fn get_continued_from_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.continued_from_contact_id
     }
+    /// <p>The connection credentials for the chat participant. Returned only when the request includes <code>CONNECTION_CREDENTIALS</code> in <code>ConnectionTypes</code>.</p>
+    pub fn connection_credentials(mut self, input: crate::types::ConnectionCredentials) -> Self {
+        self.connection_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection credentials for the chat participant. Returned only when the request includes <code>CONNECTION_CREDENTIALS</code> in <code>ConnectionTypes</code>.</p>
+    pub fn set_connection_credentials(mut self, input: ::std::option::Option<crate::types::ConnectionCredentials>) -> Self {
+        self.connection_credentials = input;
+        self
+    }
+    /// <p>The connection credentials for the chat participant. Returned only when the request includes <code>CONNECTION_CREDENTIALS</code> in <code>ConnectionTypes</code>.</p>
+    pub fn get_connection_credentials(&self) -> &::std::option::Option<crate::types::ConnectionCredentials> {
+        &self.connection_credentials
+    }
+    /// <p>The websocket for the chat participant. Returned only when the request includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+    pub fn websocket(mut self, input: crate::types::Websocket) -> Self {
+        self.websocket = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The websocket for the chat participant. Returned only when the request includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+    pub fn set_websocket(mut self, input: ::std::option::Option<crate::types::Websocket>) -> Self {
+        self.websocket = input;
+        self
+    }
+    /// <p>The websocket for the chat participant. Returned only when the request includes <code>WEBSOCKET</code> in <code>ConnectionTypes</code>.</p>
+    pub fn get_websocket(&self) -> &::std::option::Option<crate::types::Websocket> {
+        &self.websocket
+    }
+    /// <p>The identifier of the streaming configuration enabled with the chat. Returned only when the request sets <code>ChatStreamingConfiguration</code>. Use this value to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+    pub fn streaming_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.streaming_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the streaming configuration enabled with the chat. Returned only when the request sets <code>ChatStreamingConfiguration</code>. Use this value to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+    pub fn set_streaming_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.streaming_id = input;
+        self
+    }
+    /// <p>The identifier of the streaming configuration enabled with the chat. Returned only when the request sets <code>ChatStreamingConfiguration</code>. Use this value to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.</p>
+    pub fn get_streaming_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.streaming_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -126,6 +189,9 @@ impl StartChatContactOutputBuilder {
             participant_id: self.participant_id,
             participant_token: self.participant_token,
             continued_from_contact_id: self.continued_from_contact_id,
+            connection_credentials: self.connection_credentials,
+            websocket: self.websocket,
+            streaming_id: self.streaming_id,
             _request_id: self._request_id,
         }
     }

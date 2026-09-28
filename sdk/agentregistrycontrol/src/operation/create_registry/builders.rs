@@ -211,6 +211,20 @@ impl CreateRegistryFluentBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::ApprovalConfiguration> {
         self.inner.get_approval_configuration()
     }
+    /// <p>The optional custom metadata schema configuration for the registry. When provided, registry records can carry structured metadata validated against this schema.</p>
+    pub fn custom_metadata_schema_configuration(mut self, input: crate::types::CustomMetadataSchemaConfiguration) -> Self {
+        self.inner = self.inner.custom_metadata_schema_configuration(input);
+        self
+    }
+    /// <p>The optional custom metadata schema configuration for the registry. When provided, registry records can carry structured metadata validated against this schema.</p>
+    pub fn set_custom_metadata_schema_configuration(mut self, input: ::std::option::Option<crate::types::CustomMetadataSchemaConfiguration>) -> Self {
+        self.inner = self.inner.set_custom_metadata_schema_configuration(input);
+        self
+    }
+    /// <p>The optional custom metadata schema configuration for the registry. When provided, registry records can carry structured metadata validated against this schema.</p>
+    pub fn get_custom_metadata_schema_configuration(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaConfiguration> {
+        self.inner.get_custom_metadata_schema_configuration()
+    }
     /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
     pub fn auto_detection_configuration(mut self, input: crate::types::AutoDetectionConfiguration) -> Self {
         self.inner = self.inner.auto_detection_configuration(input);

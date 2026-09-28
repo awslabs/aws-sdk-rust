@@ -40,6 +40,12 @@ pub mod list_billing_view_segments;
 /// Types for the `ListBillingViews` operation.
 pub mod list_billing_views;
 
+/// Types for the `ListBusinessSupportAccountCharges` operation.
+pub mod list_business_support_account_charges;
+
+/// Types for the `ListBusinessSupportSubscriptionHistory` operation.
+pub mod list_business_support_subscription_history;
+
 /// Types for the `ListEnterpriseSupportLinkedAccountCharges` operation.
 pub mod list_enterprise_support_linked_account_charges;
 

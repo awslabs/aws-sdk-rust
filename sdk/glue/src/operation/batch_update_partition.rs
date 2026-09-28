@@ -327,6 +327,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchUpdatePa
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchUpdatePartitionError {
+    /// <p>Two processes are trying to modify a resource simultaneously.</p>
+    ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An encryption operation failed.</p>
@@ -370,6 +372,7 @@ impl BatchUpdatePartitionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::GlueEncryptionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -377,6 +380,10 @@ impl BatchUpdatePartitionError {
             Self::OperationTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `BatchUpdatePartitionError::ConcurrentModificationException`.
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(self, Self::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdatePartitionError::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
@@ -402,6 +409,7 @@ impl BatchUpdatePartitionError {
 impl ::std::error::Error for BatchUpdatePartitionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::GlueEncryptionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
@@ -414,6 +422,7 @@ impl ::std::error::Error for BatchUpdatePartitionError {
 impl ::std::fmt::Display for BatchUpdatePartitionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::GlueEncryptionException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
@@ -440,6 +449,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for BatchUpdatePartitionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchUpdatePartitionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::GlueEncryptionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

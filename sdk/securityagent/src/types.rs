@@ -41,6 +41,8 @@ pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfig;
 
+pub use crate::types::_ci_cd_configuration::CiCdConfiguration;
+
 pub use crate::types::_threat_severity::ThreatSeverity;
 
 pub use crate::types::_threat_anchor_shape::ThreatAnchorShape;
@@ -65,11 +67,11 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_membership_type_filter::MembershipTypeFilter;
 
+pub use crate::types::_job_type::JobType;
+
 pub use crate::types::_diff_source::DiffSource;
 
 pub use crate::types::_job_status::JobStatus;
-
-pub use crate::types::_job_type::JobType;
 
 pub use crate::types::_domain_verification_method::DomainVerificationMethod;
 
@@ -179,6 +181,8 @@ pub use crate::types::_threat_model_summary::ThreatModelSummary;
 
 pub use crate::types::_threat_summary::ThreatSummary;
 
+pub use crate::types::_scope_change::ScopeChange;
+
 pub use crate::types::_integrated_resource_input_item::IntegratedResourceInputItem;
 
 pub use crate::types::_dns_record_type::DnsRecordType;
@@ -225,6 +229,8 @@ pub use crate::types::_code_remediation_task::CodeRemediationTask;
 
 pub use crate::types::_verification_script::VerificationScript;
 
+pub use crate::types::_scope_result::ScopeResult;
+
 pub use crate::types::_endpoint::Endpoint;
 
 pub use crate::types::_actor::Actor;
@@ -270,6 +276,8 @@ pub use crate::types::_log_type::LogType;
 pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
 
 pub use crate::types::_code_location::CodeLocation;
+
+pub use crate::types::_scope_decision::ScopeDecision;
 
 pub use crate::types::_authentication::Authentication;
 
@@ -364,6 +372,8 @@ mod _bitbucket_resource_capabilities;
 mod _ca_certificate_source;
 
 mod _category;
+
+mod _ci_cd_configuration;
 
 mod _clean_up_strategy;
 
@@ -548,6 +558,12 @@ mod _resource_type;
 mod _risk_level;
 
 mod _risk_type;
+
+mod _scope_change;
+
+mod _scope_decision;
+
+mod _scope_result;
 
 mod _security_requirement_artifact;
 

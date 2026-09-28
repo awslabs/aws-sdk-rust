@@ -12,6 +12,7 @@
 /// ```text
 /// # let jobtype = unimplemented!();
 /// match jobtype {
+///     JobType::Cicd => { /* ... */ },
 ///     JobType::Full => { /* ... */ },
 ///     JobType::Revalidation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +43,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum JobType {
+    /// <p>A CI/CD pentest job that tests only the code changes in a single pipeline run, as determined by the scope changes supplied when the job is started.</p>
+    Cicd,
     /// <p>A full pentest job that executes all phases including scanning, managed execution, and guided exploration.</p>
     Full,
     /// <p>A targeted revalidation job that retests specific findings to determine whether they are still exploitable.</p>
@@ -53,6 +56,7 @@ pub enum JobType {
 impl ::std::convert::From<&str> for JobType {
     fn from(s: &str) -> Self {
         match s {
+            "CICD" => JobType::Cicd,
             "FULL" => JobType::Full,
             "REVALIDATION" => JobType::Revalidation,
             other => JobType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl JobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            JobType::Cicd => "CICD",
             JobType::Full => "FULL",
             JobType::Revalidation => "REVALIDATION",
             JobType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl JobType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL", "REVALIDATION"]
+        &["CICD", "FULL", "REVALIDATION"]
     }
 }
 impl ::std::convert::AsRef<str> for JobType {
@@ -100,6 +105,7 @@ impl JobType {
 impl ::std::fmt::Display for JobType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            JobType::Cicd => write!(f, "CICD"),
             JobType::Full => write!(f, "FULL"),
             JobType::Revalidation => write!(f, "REVALIDATION"),
             JobType::Unknown(value) => write!(f, "{value}"),

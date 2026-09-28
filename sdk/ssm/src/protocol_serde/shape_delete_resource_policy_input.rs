@@ -12,5 +12,8 @@ pub fn ser_delete_resource_policy_input_input(
     if let Some(var_3) = &input.policy_hash {
         object.key("PolicyHash").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.deletion_mode {
+        object.key("DeletionMode").string(var_4.as_str());
+    }
     Ok(())
 }

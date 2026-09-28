@@ -239,6 +239,16 @@ pub(crate) fn reflens_list_entity_security_profiles_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_evaluation_form_ai_versions_output_output_next_token(
+    input: &crate::operation::list_evaluation_form_ai_versions::ListEvaluationFormAiVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_evaluation_form_versions_output_output_next_token(
     input: &crate::operation::list_evaluation_form_versions::ListEvaluationFormVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1039,6 +1049,13 @@ pub(crate) fn lens_list_entity_security_profiles_output_output_security_profiles
     input: crate::operation::list_entity_security_profiles::ListEntitySecurityProfilesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SecurityProfileItem>> {
     let input = input.security_profiles?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_evaluation_form_ai_versions_output_output_ai_version_summaries(
+    input: crate::operation::list_evaluation_form_ai_versions::ListEvaluationFormAiVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormAiVersionSummary>> {
+    let input = input.ai_version_summaries;
     ::std::option::Option::Some(input)
 }
 

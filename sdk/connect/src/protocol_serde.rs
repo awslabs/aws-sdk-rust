@@ -1445,6 +1445,8 @@ pub(crate) mod shape_child_hours_of_operations_list;
 
 pub(crate) mod shape_claimed_phone_number_summary;
 
+pub(crate) mod shape_connection_credentials;
+
 pub(crate) mod shape_connection_data;
 
 pub(crate) mod shape_contact;
@@ -2004,6 +2006,8 @@ pub(crate) mod shape_voice_recording_configuration;
 pub(crate) mod shape_web_notification_content;
 
 pub(crate) mod shape_web_notification_source;
+
+pub(crate) mod shape_websocket;
 
 pub(crate) mod shape_widget_destination;
 

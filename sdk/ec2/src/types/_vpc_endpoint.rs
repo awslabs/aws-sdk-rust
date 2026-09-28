@@ -7,6 +7,7 @@ pub struct VpcEndpoint {
     /// <p>The ID of the endpoint.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     pub vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
@@ -18,9 +19,9 @@ pub struct VpcEndpoint {
     pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
     pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The subnets for the endpoint.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about the security groups that are associated with the network interface.</p>
     pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The IP address type for the endpoint.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
@@ -30,7 +31,7 @@ pub struct VpcEndpoint {
     pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
     pub requester_managed: ::std::option::Option<bool>,
-    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The network interfaces for the endpoint.</p>
     pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
     pub dns_entries: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
@@ -63,6 +64,7 @@ impl VpcEndpoint {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     pub fn vpc_endpoint_type(&self) -> ::std::option::Option<&crate::types::VpcEndpointType> {
         self.vpc_endpoint_type.as_ref()
     }
@@ -88,13 +90,13 @@ impl VpcEndpoint {
     pub fn route_table_ids(&self) -> &[::std::string::String] {
         self.route_table_ids.as_deref().unwrap_or_default()
     }
-    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The subnets for the endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
     }
-    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about the security groups that are associated with the network interface.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
     pub fn groups(&self) -> &[crate::types::SecurityGroupIdentifier] {
@@ -116,7 +118,7 @@ impl VpcEndpoint {
     pub fn requester_managed(&self) -> ::std::option::Option<bool> {
         self.requester_managed
     }
-    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The network interfaces for the endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_interface_ids.is_none()`.
     pub fn network_interface_ids(&self) -> &[::std::string::String] {
@@ -235,16 +237,19 @@ impl VpcEndpointBuilder {
         &self.vpc_endpoint_id
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
         self.vpc_endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.vpc_endpoint_type = input;
         self
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     pub fn get_vpc_endpoint_type(&self) -> &::std::option::Option<crate::types::VpcEndpointType> {
         &self.vpc_endpoint_type
     }
@@ -328,19 +333,19 @@ impl VpcEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The subnets for the endpoint.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The subnets for the endpoint.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>(Interface endpoint) The subnets for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The subnets for the endpoint.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
@@ -348,19 +353,19 @@ impl VpcEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
-    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about the security groups that are associated with the network interface.</p>
     pub fn groups(mut self, input: crate::types::SecurityGroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
         self.groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about the security groups that are associated with the network interface.</p>
     pub fn set_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>) -> Self {
         self.groups = input;
         self
     }
-    /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about the security groups that are associated with the network interface.</p>
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>> {
         &self.groups
     }
@@ -424,19 +429,19 @@ impl VpcEndpointBuilder {
     ///
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
-    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The network interfaces for the endpoint.</p>
     pub fn network_interface_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
         self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The network interfaces for the endpoint.</p>
     pub fn set_network_interface_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.network_interface_ids = input;
         self
     }
-    /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The network interfaces for the endpoint.</p>
     pub fn get_network_interface_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.network_interface_ids
     }

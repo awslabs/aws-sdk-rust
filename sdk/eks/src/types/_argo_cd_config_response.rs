@@ -14,6 +14,8 @@ pub struct ArgoCdConfigResponse {
     pub network_access: ::std::option::Option<crate::types::ArgoCdNetworkAccessConfigResponse>,
     /// <p>The URL of the Argo CD server. Use this URL to access the Argo CD web interface and API.</p>
     pub server_url: ::std::option::Option<::std::string::String>,
+    /// <p>The prefix that was configured for the hostname of the Argo CD server endpoint when the capability was created.</p>
+    pub endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ArgoCdConfigResponse {
     /// <p>The Kubernetes namespace where Argo CD resources are monitored by your Argo CD Capability.</p>
@@ -38,6 +40,10 @@ impl ArgoCdConfigResponse {
     pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
+    /// <p>The prefix that was configured for the hostname of the Argo CD server endpoint when the capability was created.</p>
+    pub fn endpoint_prefix(&self) -> ::std::option::Option<&str> {
+        self.endpoint_prefix.as_deref()
+    }
 }
 impl ArgoCdConfigResponse {
     /// Creates a new builder-style object to manufacture [`ArgoCdConfigResponse`](crate::types::ArgoCdConfigResponse).
@@ -55,6 +61,7 @@ pub struct ArgoCdConfigResponseBuilder {
     pub(crate) rbac_role_mappings: ::std::option::Option<::std::vec::Vec<crate::types::ArgoCdRoleMapping>>,
     pub(crate) network_access: ::std::option::Option<crate::types::ArgoCdNetworkAccessConfigResponse>,
     pub(crate) server_url: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_prefix: ::std::option::Option<::std::string::String>,
 }
 impl ArgoCdConfigResponseBuilder {
     /// <p>The Kubernetes namespace where Argo CD resources are monitored by your Argo CD Capability.</p>
@@ -133,6 +140,20 @@ impl ArgoCdConfigResponseBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_url
     }
+    /// <p>The prefix that was configured for the hostname of the Argo CD server endpoint when the capability was created.</p>
+    pub fn endpoint_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The prefix that was configured for the hostname of the Argo CD server endpoint when the capability was created.</p>
+    pub fn set_endpoint_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.endpoint_prefix = input;
+        self
+    }
+    /// <p>The prefix that was configured for the hostname of the Argo CD server endpoint when the capability was created.</p>
+    pub fn get_endpoint_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.endpoint_prefix
+    }
     /// Consumes the builder and constructs a [`ArgoCdConfigResponse`](crate::types::ArgoCdConfigResponse).
     pub fn build(self) -> crate::types::ArgoCdConfigResponse {
         crate::types::ArgoCdConfigResponse {
@@ -141,6 +162,7 @@ impl ArgoCdConfigResponseBuilder {
             rbac_role_mappings: self.rbac_role_mappings,
             network_access: self.network_access,
             server_url: self.server_url,
+            endpoint_prefix: self.endpoint_prefix,
         }
     }
 }

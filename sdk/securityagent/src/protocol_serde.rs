@@ -439,6 +439,8 @@ pub(crate) mod shape_batch_get_security_requirement_result_list;
 
 pub(crate) mod shape_batch_security_requirement_errors;
 
+pub(crate) mod shape_ci_cd_configuration;
+
 pub(crate) mod shape_cloud_watch_log;
 
 pub(crate) mod shape_code_review_id_list;
@@ -524,6 +526,8 @@ pub(crate) mod shape_report_destination;
 pub(crate) mod shape_report_filters;
 
 pub(crate) mod shape_risk_type_list;
+
+pub(crate) mod shape_scope_change;
 
 pub(crate) mod shape_security_requirement_name_list;
 
@@ -782,6 +786,10 @@ pub(crate) mod shape_integrated_resource_metadata;
 pub(crate) mod shape_log_location;
 
 pub(crate) mod shape_member_metadata;
+
+pub(crate) mod shape_scope_change_list;
+
+pub(crate) mod shape_scope_result;
 
 pub(crate) mod shape_skill_type_list;
 

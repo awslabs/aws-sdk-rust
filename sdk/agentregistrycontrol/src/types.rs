@@ -7,17 +7,23 @@ pub use crate::types::_descriptors::Descriptors;
 
 pub use crate::types::_registry_record_status::RegistryRecordStatus;
 
+pub use crate::types::_custom_metadata_schema_compliance_status::CustomMetadataSchemaComplianceStatus;
+
 pub use crate::types::_updated_display_name::UpdatedDisplayName;
 
 pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_updated_descriptors::UpdatedDescriptors;
 
+pub use crate::types::_updated_custom_metadata_map::UpdatedCustomMetadataMap;
+
 pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_discovery_configuration::DiscoveryConfiguration;
 
 pub use crate::types::_approval_configuration::ApprovalConfiguration;
+
+pub use crate::types::_custom_metadata_schema_configuration::CustomMetadataSchemaConfiguration;
 
 pub use crate::types::_auto_detection_configuration::AutoDetectionConfiguration;
 
@@ -28,6 +34,8 @@ pub use crate::types::_auto_detection::AutoDetection;
 pub use crate::types::_updated_discovery_configuration::UpdatedDiscoveryConfiguration;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfiguration;
+
+pub use crate::types::_updated_custom_metadata_schema_configuration::UpdatedCustomMetadataSchemaConfiguration;
 
 pub use crate::types::_updated_auto_detection_configuration::UpdatedAutoDetectionConfiguration;
 
@@ -98,6 +106,8 @@ pub use crate::types::_registry_filter_name::RegistryFilterName;
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfiguration;
 
 pub use crate::types::_auto_approval_rule::AutoApprovalRule;
+
+pub use crate::types::_record_type_schema_override::RecordTypeSchemaOverride;
 
 pub use crate::types::_provenance_summary::ProvenanceSummary;
 
@@ -231,6 +241,10 @@ mod _custom_descriptor;
 
 mod _custom_jwt_authorizer_configuration;
 
+mod _custom_metadata_schema_compliance_status;
+
+mod _custom_metadata_schema_configuration;
+
 mod _descriptor_source;
 
 mod _descriptor_source_from_url;
@@ -266,6 +280,8 @@ mod _provenance_relation;
 mod _provenance_summary;
 
 mod _record_type;
+
+mod _record_type_schema_override;
 
 mod _registry_authorizer_type;
 
@@ -332,6 +348,10 @@ mod _updated_auto_detection_configuration;
 mod _updated_custom_descriptor;
 
 mod _updated_custom_descriptor_fields;
+
+mod _updated_custom_metadata_map;
+
+mod _updated_custom_metadata_schema_configuration;
 
 mod _updated_data_schema_version;
 

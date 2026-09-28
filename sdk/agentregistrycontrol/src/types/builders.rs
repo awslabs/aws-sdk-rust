@@ -7,11 +7,15 @@ pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
 pub use crate::types::_updated_descriptors::UpdatedDescriptorsBuilder;
 
+pub use crate::types::_updated_custom_metadata_map::UpdatedCustomMetadataMapBuilder;
+
 pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
 pub use crate::types::_discovery_configuration::DiscoveryConfigurationBuilder;
 
 pub use crate::types::_approval_configuration::ApprovalConfigurationBuilder;
+
+pub use crate::types::_custom_metadata_schema_configuration::CustomMetadataSchemaConfigurationBuilder;
 
 pub use crate::types::_auto_detection_configuration::AutoDetectionConfigurationBuilder;
 
@@ -20,6 +24,8 @@ pub use crate::types::_auto_detection::AutoDetectionBuilder;
 pub use crate::types::_updated_discovery_configuration::UpdatedDiscoveryConfigurationBuilder;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfigurationBuilder;
+
+pub use crate::types::_updated_custom_metadata_schema_configuration::UpdatedCustomMetadataSchemaConfigurationBuilder;
 
 pub use crate::types::_updated_auto_detection_configuration::UpdatedAutoDetectionConfigurationBuilder;
 
@@ -70,6 +76,8 @@ pub use crate::types::_updated_http_descriptor::UpdatedHttpDescriptorBuilder;
 pub use crate::types::_updated_ag_ui_descriptor::UpdatedAgUiDescriptorBuilder;
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfigurationBuilder;
+
+pub use crate::types::_record_type_schema_override::RecordTypeSchemaOverrideBuilder;
 
 pub use crate::types::_provenance_summary::ProvenanceSummaryBuilder;
 

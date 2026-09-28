@@ -200,6 +200,19 @@ pub fn de_client_vpn_connection(
                 builder = builder.set_posture_compliance_statuses(var_15);
             }
             ,
+            s if s.matches("authorizationPolicyLastEvaluatedTime") /* AuthorizationPolicyLastEvaluatedTime com.amazonaws.ec2#ClientVpnConnection$AuthorizationPolicyLastEvaluatedTime */ =>  {
+                let var_16 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_authorization_policy_last_evaluated_time(var_16);
+            }
+            ,
             _ => {}
         }
     }

@@ -36,6 +36,24 @@ pub fn de_batch_create_partition_http_error(
             }
             tmp
         }),
+        "ConcurrentModificationException" => crate::operation::batch_create_partition::BatchCreatePartitionError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::batch_create_partition::BatchCreatePartitionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "EntityNotFoundException" => crate::operation::batch_create_partition::BatchCreatePartitionError::EntityNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

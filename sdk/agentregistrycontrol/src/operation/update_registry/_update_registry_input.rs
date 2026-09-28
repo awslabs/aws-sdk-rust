@@ -14,6 +14,8 @@ pub struct UpdateRegistryInput {
     pub discovery_configuration: ::std::option::Option<crate::types::UpdatedDiscoveryConfiguration>,
     /// <p>The updated approval configuration. The change applies only to records that move to PENDING_APPROVAL after the update; records already in PENDING_APPROVAL are unaffected.</p>
     pub approval_configuration: ::std::option::Option<crate::types::UpdatedApprovalConfiguration>,
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub custom_metadata_schema_configuration: ::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration>,
     /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
     pub auto_detection_configuration: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>,
 }
@@ -38,6 +40,10 @@ impl UpdateRegistryInput {
     pub fn approval_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedApprovalConfiguration> {
         self.approval_configuration.as_ref()
     }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn custom_metadata_schema_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedCustomMetadataSchemaConfiguration> {
+        self.custom_metadata_schema_configuration.as_ref()
+    }
     /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
     pub fn auto_detection_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedAutoDetectionConfiguration> {
         self.auto_detection_configuration.as_ref()
@@ -59,6 +65,7 @@ pub struct UpdateRegistryInputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::UpdatedDescription>,
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::UpdatedDiscoveryConfiguration>,
     pub(crate) approval_configuration: ::std::option::Option<crate::types::UpdatedApprovalConfiguration>,
+    pub(crate) custom_metadata_schema_configuration: ::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration>,
     pub(crate) auto_detection_configuration: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>,
 }
 impl UpdateRegistryInputBuilder {
@@ -133,6 +140,23 @@ impl UpdateRegistryInputBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::UpdatedApprovalConfiguration> {
         &self.approval_configuration
     }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn custom_metadata_schema_configuration(mut self, input: crate::types::UpdatedCustomMetadataSchemaConfiguration) -> Self {
+        self.custom_metadata_schema_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn set_custom_metadata_schema_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration>,
+    ) -> Self {
+        self.custom_metadata_schema_configuration = input;
+        self
+    }
+    /// <p>Updated custom metadata schema configuration for the registry. Omit to leave the existing schema unchanged. Schema evolution is additive only: you can add properties and enum values, but you cannot remove properties, change property types or formats, add or remove enum constraints, or remove record type overrides.</p>
+    pub fn get_custom_metadata_schema_configuration(&self) -> &::std::option::Option<crate::types::UpdatedCustomMetadataSchemaConfiguration> {
+        &self.custom_metadata_schema_configuration
+    }
     /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
     pub fn auto_detection_configuration(mut self, input: crate::types::UpdatedAutoDetectionConfiguration) -> Self {
         self.auto_detection_configuration = ::std::option::Option::Some(input);
@@ -157,6 +181,7 @@ impl UpdateRegistryInputBuilder {
             description: self.description,
             discovery_configuration: self.discovery_configuration,
             approval_configuration: self.approval_configuration,
+            custom_metadata_schema_configuration: self.custom_metadata_schema_configuration,
             auto_detection_configuration: self.auto_detection_configuration,
         })
     }

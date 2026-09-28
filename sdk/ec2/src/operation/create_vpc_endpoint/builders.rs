@@ -123,18 +123,21 @@ impl CreateVpcEndpointFluentBuilder {
         self.inner.get_dry_run()
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     /// <p>Default: Gateway</p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
         self.inner = self.inner.vpc_endpoint_type(input);
         self
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     /// <p>Default: Gateway</p>
     pub fn set_vpc_endpoint_type(mut self, input: ::std::option::Option<crate::types::VpcEndpointType>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_type(input);
         self
     }
     /// <p>The type of endpoint.</p>
+    /// <p>For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
     /// <p>Default: Gateway</p>
     pub fn get_vpc_endpoint_type(&self) -> &::std::option::Option<crate::types::VpcEndpointType> {
         self.inner.get_vpc_endpoint_type()
@@ -205,17 +208,17 @@ impl CreateVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet. For a <code>Tunnel</code> endpoint, the subnets must be in the Availability Zones of the resource gateway associated with the shared resource configuration. An endpoint network interface is created only in an Availability Zone that the resource gateway is also in.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet. For a <code>Tunnel</code> endpoint, the subnets must be in the Availability Zones of the resource gateway associated with the shared resource configuration. An endpoint network interface is created only in an Availability Zone that the resource gateway is also in.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
-    /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
+    /// <p>(Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the subnets in which to create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can specify only one subnet. For a <code>Tunnel</code> endpoint, the subnets must be in the Availability Zones of the resource gateway associated with the shared resource configuration. An endpoint network interface is created only in an Availability Zone that the resource gateway is also in.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_subnet_ids()
     }
@@ -224,17 +227,17 @@ impl CreateVpcEndpointFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn set_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
-    /// <p>(Interface endpoint) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
+    /// <p>(Interface, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the security groups to associate with the endpoint network interfaces. If this parameter is not specified, we use the default security group for the VPC.</p>
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
@@ -349,17 +352,41 @@ impl CreateVpcEndpointFluentBuilder {
     pub fn get_service_network_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_service_network_arn()
     }
-    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    /// <p>(Resource and Tunnel endpoints only) The Amazon Resource Name (ARN) of a resource configuration associated with the VPC endpoint. The type of resource configuration depends on the endpoint type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For a Resource endpoint, you can specify a resource configuration that is of type <code>SINGLE</code>, <code>GROUP</code>, or <code>ARN</code>. To reach a resource that belongs to a group, specify the parent <code>GROUP</code> resource configuration.</p></li>
+    /// <li>
+    /// <p>For a Tunnel endpoint, you can specify a resource configuration that is of type <code>CIDR</code>.</p></li>
+    /// </ul>
+    /// <p>For more information about the types of resource configurations, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/resource-configuration.html">Types of resource configurations</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
+    /// <p>This request fails if a VPC endpoint owned by a different Amazon Web Services account already exists on a resource gateway that is enabled for <code>ResourceGatewayCharges</code> payer responsibility.</p>
     pub fn resource_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    /// <p>(Resource and Tunnel endpoints only) The Amazon Resource Name (ARN) of a resource configuration associated with the VPC endpoint. The type of resource configuration depends on the endpoint type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For a Resource endpoint, you can specify a resource configuration that is of type <code>SINGLE</code>, <code>GROUP</code>, or <code>ARN</code>. To reach a resource that belongs to a group, specify the parent <code>GROUP</code> resource configuration.</p></li>
+    /// <li>
+    /// <p>For a Tunnel endpoint, you can specify a resource configuration that is of type <code>CIDR</code>.</p></li>
+    /// </ul>
+    /// <p>For more information about the types of resource configurations, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/resource-configuration.html">Types of resource configurations</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
+    /// <p>This request fails if a VPC endpoint owned by a different Amazon Web Services account already exists on a resource gateway that is enabled for <code>ResourceGatewayCharges</code> payer responsibility.</p>
     pub fn set_resource_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_configuration_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of a resource configuration that will be associated with the VPC endpoint of type resource.</p>
+    /// <p>(Resource and Tunnel endpoints only) The Amazon Resource Name (ARN) of a resource configuration associated with the VPC endpoint. The type of resource configuration depends on the endpoint type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For a Resource endpoint, you can specify a resource configuration that is of type <code>SINGLE</code>, <code>GROUP</code>, or <code>ARN</code>. To reach a resource that belongs to a group, specify the parent <code>GROUP</code> resource configuration.</p></li>
+    /// <li>
+    /// <p>For a Tunnel endpoint, you can specify a resource configuration that is of type <code>CIDR</code>.</p></li>
+    /// </ul>
+    /// <p>For more information about the types of resource configurations, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/resource-configuration.html">Types of resource configurations</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.</p>
+    /// <p>This request fails if a VPC endpoint owned by a different Amazon Web Services account already exists on a resource gateway that is enabled for <code>ResourceGatewayCharges</code> payer responsibility.</p>
     pub fn get_resource_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_configuration_arn()
     }
