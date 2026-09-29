@@ -161,6 +161,8 @@ pub use crate::types::_agentic_retrieve_message_content::AgenticRetrieveMessageC
 
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfigurationBuilder;
 
+pub use crate::types::_mantle_foundation_model_configuration::MantleFoundationModelConfigurationBuilder;
+
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_memory_retrieval_config::AgenticRetrieveMemoryRetrievalConfigBuilder;
@@ -226,6 +228,8 @@ pub use crate::types::_retrieval_result_location::RetrievalResultLocationBuilder
 pub use crate::types::_knowledge_base_retriever_configuration::KnowledgeBaseRetrieverConfigurationBuilder;
 
 pub use crate::types::_bedrock_foundation_model_model_configuration::BedrockFoundationModelModelConfigurationBuilder;
+
+pub use crate::types::_mantle_foundation_model_model_configuration::MantleFoundationModelModelConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_model_configuration::AgenticRetrieveBedrockRerankingModelConfigurationBuilder;
 

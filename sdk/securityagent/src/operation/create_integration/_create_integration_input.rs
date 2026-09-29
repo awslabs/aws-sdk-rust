@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateIntegrationInput {
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub provider: ::std::option::Option<crate::types::Provider>,
     /// <p>The provider-specific input required to create the integration.</p>
     pub input: ::std::option::Option<crate::types::ProviderInput>,
@@ -17,7 +17,7 @@ pub struct CreateIntegrationInput {
     pub private_connection_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateIntegrationInput {
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
@@ -61,18 +61,18 @@ pub struct CreateIntegrationInputBuilder {
     pub(crate) private_connection_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateIntegrationInputBuilder {
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }

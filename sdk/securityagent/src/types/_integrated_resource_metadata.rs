@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum IntegratedResourceMetadata {
+    /// <p>The Azure DevOps repository metadata.</p>
+    AzureDevOpsRepository(crate::types::AzureDevOpsRepositoryMetadata),
     /// <p>Metadata for an integrated Bitbucket repository.</p>
     BitbucketRepository(crate::types::BitbucketRepositoryMetadata),
     /// <p>Metadata for an integrated Confluence document.</p>
@@ -23,6 +25,19 @@ pub enum IntegratedResourceMetadata {
     Unknown,
 }
 impl IntegratedResourceMetadata {
+    /// Tries to convert the enum instance into [`AzureDevOpsRepository`](crate::types::IntegratedResourceMetadata::AzureDevOpsRepository), extracting the inner [`AzureDevOpsRepositoryMetadata`](crate::types::AzureDevOpsRepositoryMetadata).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure_dev_ops_repository(&self) -> ::std::result::Result<&crate::types::AzureDevOpsRepositoryMetadata, &Self> {
+        if let IntegratedResourceMetadata::AzureDevOpsRepository(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AzureDevOpsRepository`](crate::types::IntegratedResourceMetadata::AzureDevOpsRepository).
+    pub fn is_azure_dev_ops_repository(&self) -> bool {
+        self.as_azure_dev_ops_repository().is_ok()
+    }
     /// Tries to convert the enum instance into [`BitbucketRepository`](crate::types::IntegratedResourceMetadata::BitbucketRepository), extracting the inner [`BitbucketRepositoryMetadata`](crate::types::BitbucketRepositoryMetadata).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bitbucket_repository(&self) -> ::std::result::Result<&crate::types::BitbucketRepositoryMetadata, &Self> {

@@ -31,6 +31,8 @@ pub struct CreateServerlessCacheInput {
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
     /// <p>The IP protocol version used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with IPv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC endpoint, or <code>public</code> to access the cache over the internet. If not specified, defaults to <code>vpc</code>. This value cannot be changed after the serverless cache is created. Setting this to <code>public</code> requires Valkey 9 or above.</p>
+    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
 }
 impl CreateServerlessCacheInput {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
@@ -97,6 +99,10 @@ impl CreateServerlessCacheInput {
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC endpoint, or <code>public</code> to access the cache over the internet. If not specified, defaults to <code>vpc</code>. This value cannot be changed after the serverless cache is created. Setting this to <code>public</code> requires Valkey 9 or above.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+        self.connection_type.as_ref()
+    }
 }
 impl CreateServerlessCacheInput {
     /// Creates a new builder-style object to manufacture [`CreateServerlessCacheInput`](crate::operation::create_serverless_cache::CreateServerlessCacheInput).
@@ -123,6 +129,7 @@ pub struct CreateServerlessCacheInputBuilder {
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
+    pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
 }
 impl CreateServerlessCacheInputBuilder {
     /// <p>User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.</p>
@@ -347,6 +354,20 @@ impl CreateServerlessCacheInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC endpoint, or <code>public</code> to access the cache over the internet. If not specified, defaults to <code>vpc</code>. This value cannot be changed after the serverless cache is created. Setting this to <code>public</code> requires Valkey 9 or above.</p>
+    pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
+        self.connection_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC endpoint, or <code>public</code> to access the cache over the internet. If not specified, defaults to <code>vpc</code>. This value cannot be changed after the serverless cache is created. Setting this to <code>public</code> requires Valkey 9 or above.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. Use <code>vpc</code> to access the cache through a VPC endpoint, or <code>public</code> to access the cache over the internet. If not specified, defaults to <code>vpc</code>. This value cannot be changed after the serverless cache is created. Setting this to <code>public</code> requires Valkey 9 or above.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
+    }
     /// Consumes the builder and constructs a [`CreateServerlessCacheInput`](crate::operation::create_serverless_cache::CreateServerlessCacheInput).
     pub fn build(
         self,
@@ -367,6 +388,7 @@ impl CreateServerlessCacheInputBuilder {
             snapshot_retention_limit: self.snapshot_retention_limit,
             daily_snapshot_time: self.daily_snapshot_time,
             network_type: self.network_type,
+            connection_type: self.connection_type,
         })
     }
 }

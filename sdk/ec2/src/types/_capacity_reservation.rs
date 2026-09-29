@@ -127,6 +127,17 @@ pub struct CapacityReservation {
     pub original_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
     pub zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
+    /// <note>
+    /// <p>Only supported for UltraServers.</p>
+    /// </note>
+    /// <p>Indicates whether you can launch instances into the Capacity Reservation. A Capacity Reservation can have the following launch statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>launchable</code> - You can launch instances into the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>unlaunchable</code> - You can't launch instances into the Capacity Reservation. For example, the Capacity Reservation is not active.</p></li>
+    /// </ul>
+    pub launch_status: ::std::option::Option<crate::types::CapacityReservationLaunchStatus>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -326,6 +337,19 @@ impl CapacityReservation {
     pub fn zero_size_preference(&self) -> ::std::option::Option<&crate::types::ZeroSizePreference> {
         self.zero_size_preference.as_ref()
     }
+    /// <note>
+    /// <p>Only supported for UltraServers.</p>
+    /// </note>
+    /// <p>Indicates whether you can launch instances into the Capacity Reservation. A Capacity Reservation can have the following launch statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>launchable</code> - You can launch instances into the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>unlaunchable</code> - You can't launch instances into the Capacity Reservation. For example, the Capacity Reservation is not active.</p></li>
+    /// </ul>
+    pub fn launch_status(&self) -> ::std::option::Option<&crate::types::CapacityReservationLaunchStatus> {
+        self.launch_status.as_ref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -373,6 +397,7 @@ pub struct CapacityReservationBuilder {
     pub(crate) adjustment_details: ::std::option::Option<crate::types::CapacityReservationAdjustmentDetails>,
     pub(crate) original_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
+    pub(crate) launch_status: ::std::option::Option<crate::types::CapacityReservationLaunchStatus>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -1036,6 +1061,47 @@ impl CapacityReservationBuilder {
     pub fn get_zero_size_preference(&self) -> &::std::option::Option<crate::types::ZeroSizePreference> {
         &self.zero_size_preference
     }
+    /// <note>
+    /// <p>Only supported for UltraServers.</p>
+    /// </note>
+    /// <p>Indicates whether you can launch instances into the Capacity Reservation. A Capacity Reservation can have the following launch statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>launchable</code> - You can launch instances into the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>unlaunchable</code> - You can't launch instances into the Capacity Reservation. For example, the Capacity Reservation is not active.</p></li>
+    /// </ul>
+    pub fn launch_status(mut self, input: crate::types::CapacityReservationLaunchStatus) -> Self {
+        self.launch_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <note>
+    /// <p>Only supported for UltraServers.</p>
+    /// </note>
+    /// <p>Indicates whether you can launch instances into the Capacity Reservation. A Capacity Reservation can have the following launch statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>launchable</code> - You can launch instances into the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>unlaunchable</code> - You can't launch instances into the Capacity Reservation. For example, the Capacity Reservation is not active.</p></li>
+    /// </ul>
+    pub fn set_launch_status(mut self, input: ::std::option::Option<crate::types::CapacityReservationLaunchStatus>) -> Self {
+        self.launch_status = input;
+        self
+    }
+    /// <note>
+    /// <p>Only supported for UltraServers.</p>
+    /// </note>
+    /// <p>Indicates whether you can launch instances into the Capacity Reservation. A Capacity Reservation can have the following launch statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>launchable</code> - You can launch instances into the Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>unlaunchable</code> - You can't launch instances into the Capacity Reservation. For example, the Capacity Reservation is not active.</p></li>
+    /// </ul>
+    pub fn get_launch_status(&self) -> &::std::option::Option<crate::types::CapacityReservationLaunchStatus> {
+        &self.launch_status
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -1074,6 +1140,7 @@ impl CapacityReservationBuilder {
             adjustment_details: self.adjustment_details,
             original_start_date: self.original_start_date,
             zero_size_preference: self.zero_size_preference,
+            launch_status: self.launch_status,
         }
     }
 }

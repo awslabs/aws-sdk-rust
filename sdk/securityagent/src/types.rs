@@ -83,6 +83,8 @@ pub use crate::types::_integration_filter::IntegrationFilter;
 
 pub use crate::types::_provider_input::ProviderInput;
 
+pub use crate::types::_webhook_action::WebhookAction;
+
 pub use crate::types::_private_connection_type::PrivateConnectionType;
 
 pub use crate::types::_private_connection_status::PrivateConnectionStatus;
@@ -203,6 +205,10 @@ pub use crate::types::_bitbucket_integration_input::BitbucketIntegrationInput;
 
 pub use crate::types::_confluence_integration_input::ConfluenceIntegrationInput;
 
+pub use crate::types::_azure_dev_ops_integration_input::AzureDevOpsIntegrationInput;
+
+pub use crate::types::_bitbucket_data_center_integration_input::BitbucketDataCenterIntegrationInput;
+
 pub use crate::types::_private_connection_summary::PrivateConnectionSummary;
 
 pub use crate::types::_service_managed_input::ServiceManagedInput;
@@ -297,6 +303,8 @@ pub use crate::types::_bitbucket_repository_metadata::BitbucketRepositoryMetadat
 
 pub use crate::types::_confluence_document_metadata::ConfluenceDocumentMetadata;
 
+pub use crate::types::_azure_dev_ops_repository_metadata::AzureDevOpsRepositoryMetadata;
+
 pub use crate::types::_git_hub_resource_capabilities::GitHubResourceCapabilities;
 
 pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilities;
@@ -304,6 +312,8 @@ pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilities
 pub use crate::types::_bitbucket_resource_capabilities::BitbucketResourceCapabilities;
 
 pub use crate::types::_confluence_resource_capabilities::ConfluenceResourceCapabilities;
+
+pub use crate::types::_azure_dev_ops_resource_capabilities::AzureDevOpsResourceCapabilities;
 
 pub use crate::types::_user_metadata::UserMetadata;
 
@@ -314,6 +324,8 @@ pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResource;
 pub use crate::types::_bitbucket_repository_resource::BitbucketRepositoryResource;
 
 pub use crate::types::_confluence_document_resource::ConfluenceDocumentResource;
+
+pub use crate::types::_azure_dev_ops_repository_resource::AzureDevOpsRepositoryResource;
 
 pub use crate::types::_step_status::StepStatus;
 
@@ -355,11 +367,21 @@ mod _authentication_provider_type;
 
 mod _aws_resources;
 
+mod _azure_dev_ops_integration_input;
+
+mod _azure_dev_ops_repository_metadata;
+
+mod _azure_dev_ops_repository_resource;
+
+mod _azure_dev_ops_resource_capabilities;
+
 mod _batch_create_security_requirement_result;
 
 mod _batch_get_security_requirement_result;
 
 mod _batch_security_requirement_error;
+
+mod _bitbucket_data_center_integration_input;
 
 mod _bitbucket_integration_input;
 
@@ -654,6 +676,8 @@ mod _verification_script;
 mod _verification_script_env_var;
 
 mod _vpc_config;
+
+mod _webhook_action;
 
 /// Builders
 pub mod builders;

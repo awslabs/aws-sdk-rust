@@ -18,6 +18,8 @@ pub struct JobDetailsEntity {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     /// <p>The schema version.</p>
     pub schema_version: ::std::string::String,
+    /// <p>The Open Job Description extensions that the job template uses. This value is used by the worker agent.</p>
+    pub extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The path mapping rules.</p>
     pub path_mapping_rules: ::std::option::Option<::std::vec::Vec<crate::types::PathMappingRule>>,
 }
@@ -53,6 +55,12 @@ impl JobDetailsEntity {
         use std::ops::Deref;
         self.schema_version.deref()
     }
+    /// <p>The Open Job Description extensions that the job template uses. This value is used by the worker agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extensions.is_none()`.
+    pub fn extensions(&self) -> &[::std::string::String] {
+        self.extensions.as_deref().unwrap_or_default()
+    }
     /// <p>The path mapping rules.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.path_mapping_rules.is_none()`.
@@ -70,6 +78,7 @@ impl ::std::fmt::Debug for JobDetailsEntity {
         formatter.field("queue_role_arn", &self.queue_role_arn);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("schema_version", &self.schema_version);
+        formatter.field("extensions", &self.extensions);
         formatter.field("path_mapping_rules", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -92,6 +101,7 @@ pub struct JobDetailsEntityBuilder {
     pub(crate) queue_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
+    pub(crate) extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) path_mapping_rules: ::std::option::Option<::std::vec::Vec<crate::types::PathMappingRule>>,
 }
 impl JobDetailsEntityBuilder {
@@ -205,6 +215,26 @@ impl JobDetailsEntityBuilder {
     pub fn get_schema_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.schema_version
     }
+    /// Appends an item to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>The Open Job Description extensions that the job template uses. This value is used by the worker agent.</p>
+    pub fn extensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.extensions.unwrap_or_default();
+        v.push(input.into());
+        self.extensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Open Job Description extensions that the job template uses. This value is used by the worker agent.</p>
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>The Open Job Description extensions that the job template uses. This value is used by the worker agent.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.extensions
+    }
     /// Appends an item to `path_mapping_rules`.
     ///
     /// To override the contents of this collection use [`set_path_mapping_rules`](Self::set_path_mapping_rules).
@@ -254,6 +284,7 @@ impl JobDetailsEntityBuilder {
                     "schema_version was not specified but it is required when building JobDetailsEntity",
                 )
             })?,
+            extensions: self.extensions,
             path_mapping_rules: self.path_mapping_rules,
         })
     }
@@ -268,6 +299,7 @@ impl ::std::fmt::Debug for JobDetailsEntityBuilder {
         formatter.field("queue_role_arn", &self.queue_role_arn);
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
         formatter.field("schema_version", &self.schema_version);
+        formatter.field("extensions", &self.extensions);
         formatter.field("path_mapping_rules", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

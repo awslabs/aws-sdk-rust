@@ -335,6 +335,8 @@ mod update_finding;
 
 mod update_integrated_resources;
 
+mod update_integration;
+
 mod update_pentest;
 
 mod update_private_connection_certificate;

@@ -107,6 +107,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_storage_encryption_type::StorageEncryptionType;
 
+pub use crate::types::_target_resource_configuration::TargetResourceConfiguration;
+
 pub use crate::types::_upgrade_target::UpgradeTarget;
 
 pub use crate::types::_timezone::Timezone;
@@ -638,6 +640,8 @@ mod _target_connection_network_type;
 mod _target_health;
 
 mod _target_health_reason;
+
+mod _target_resource_configuration;
 
 mod _target_role;
 

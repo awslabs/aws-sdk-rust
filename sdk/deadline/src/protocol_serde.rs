@@ -777,6 +777,8 @@ pub(crate) mod shape_worker_summary;
 
 pub(crate) mod shape_assigned_session_actions;
 
+pub(crate) mod shape_boolean_string_list;
+
 pub(crate) mod shape_customer_managed_auto_scaling_configuration;
 
 pub(crate) mod shape_customer_managed_worker_capabilities;
@@ -791,6 +793,12 @@ pub(crate) mod shape_fleet_amount_capability;
 
 pub(crate) mod shape_fleet_attribute_capability;
 
+pub(crate) mod shape_float_string_list;
+
+pub(crate) mod shape_int_string_list;
+
+pub(crate) mod shape_int_string_list_list;
+
 pub(crate) mod shape_ipv4_addresses;
 
 pub(crate) mod shape_ipv6_addresses;
@@ -804,6 +812,10 @@ pub(crate) mod shape_job_details_entity;
 pub(crate) mod shape_job_details_error;
 
 pub(crate) mod shape_parameter_filter_expression;
+
+pub(crate) mod shape_parameter_string_list;
+
+pub(crate) mod shape_path_string_list;
 
 pub(crate) mod shape_persistent_volume_configuration;
 
@@ -820,6 +832,8 @@ pub(crate) mod shape_service_managed_ec2_instance_capabilities;
 pub(crate) mod shape_service_managed_ec2_instance_market_options;
 
 pub(crate) mod shape_session_action_definition_summary;
+
+pub(crate) mod shape_session_metadata;
 
 pub(crate) mod shape_stats;
 
@@ -863,6 +877,10 @@ pub(crate) mod shape_environment_enter_session_action_definition_summary;
 
 pub(crate) mod shape_environment_exit_session_action_definition_summary;
 
+pub(crate) mod shape_fleet_software_add_on;
+
+pub(crate) mod shape_fleet_software_add_ons;
+
 pub(crate) mod shape_instance_types;
 
 pub(crate) mod shape_job_details_job_attachment_settings;
@@ -870,6 +888,10 @@ pub(crate) mod shape_job_details_job_attachment_settings;
 pub(crate) mod shape_list_attribute_capability_value;
 
 pub(crate) mod shape_memory_mib_range;
+
+pub(crate) mod shape_nested_int_string_list;
+
+pub(crate) mod shape_openjd_extension_name_list;
 
 pub(crate) mod shape_output_relative_directories_list;
 

@@ -28,6 +28,12 @@ pub fn ser_provider_resource_capabilities(
             crate::protocol_serde::shape_confluence_resource_capabilities::ser_confluence_resource_capabilities(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::ProviderResourceCapabilities::AzureDevOps(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_4.key("azureDevOps").start_object();
+            crate::protocol_serde::shape_azure_dev_ops_resource_capabilities::ser_azure_dev_ops_resource_capabilities(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::ProviderResourceCapabilities::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProviderResourceCapabilities",
@@ -102,6 +108,16 @@ where
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'confluence' cannot be null")
+                            })?,
+                        )),
+                        "azureDevOps" => Some(crate::types::ProviderResourceCapabilities::AzureDevOps(
+                            crate::protocol_serde::shape_azure_dev_ops_resource_capabilities::de_azure_dev_ops_resource_capabilities(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureDevOps' cannot be null")
                             })?,
                         )),
                         _ => {

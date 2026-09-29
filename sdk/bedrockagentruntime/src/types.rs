@@ -221,6 +221,8 @@ pub use crate::types::_foundation_model_configuration_type::FoundationModelConfi
 
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfiguration;
 
+pub use crate::types::_mantle_foundation_model_configuration::MantleFoundationModelConfiguration;
+
 pub use crate::types::_agentic_retrieve_reranking_configuration_type::AgenticRetrieveRerankingConfigurationType;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfiguration;
@@ -340,6 +342,8 @@ pub use crate::types::_bedrock_session_content_block::BedrockSessionContentBlock
 pub use crate::types::_knowledge_base_retriever_configuration::KnowledgeBaseRetrieverConfiguration;
 
 pub use crate::types::_bedrock_foundation_model_model_configuration::BedrockFoundationModelModelConfiguration;
+
+pub use crate::types::_mantle_foundation_model_model_configuration::MantleFoundationModelModelConfiguration;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_model_configuration::AgenticRetrieveBedrockRerankingModelConfiguration;
 
@@ -1214,6 +1218,10 @@ mod _managed_search_configuration;
 mod _managed_search_reranking_configuration;
 
 mod _managed_search_reranking_configuration_type;
+
+mod _mantle_foundation_model_configuration;
+
+mod _mantle_foundation_model_model_configuration;
 
 mod _memory;
 

@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_groups_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_identity_stores_output_output_next_token(
+    input: &crate::operation::list_identity_stores::ListIdentityStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_users_output_output_next_token(
     input: &crate::operation::list_users::ListUsersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -57,6 +67,13 @@ pub(crate) fn lens_list_groups_output_output_groups(
     input: crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
     let input = input.groups;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_identity_stores_output_output_identity_stores(
+    input: crate::operation::list_identity_stores::ListIdentityStoresOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::IdentityStore>> {
+    let input = input.identity_stores;
     ::std::option::Option::Some(input)
 }
 

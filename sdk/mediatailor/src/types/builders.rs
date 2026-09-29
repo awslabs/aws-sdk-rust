@@ -43,6 +43,8 @@ pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeoutsB
 
 pub use crate::types::_ads_personalization_concurrency::AdsPersonalizationConcurrencyBuilder;
 
+pub use crate::types::_beaconing_configuration::BeaconingConfigurationBuilder;
+
 pub use crate::types::_dash_configuration::DashConfigurationBuilder;
 
 pub use crate::types::_hls_configuration::HlsConfigurationBuilder;
@@ -92,6 +94,8 @@ pub use crate::types::_ad_marker_passthrough::AdMarkerPassthroughBuilder;
 pub use crate::types::_http_request::HttpRequestBuilder;
 
 pub use crate::types::_vast_response::VastResponseBuilder;
+
+pub use crate::types::_client_side_beaconing_configuration::ClientSideBeaconingConfigurationBuilder;
 
 pub use crate::types::_prefetch_schedule::PrefetchScheduleBuilder;
 

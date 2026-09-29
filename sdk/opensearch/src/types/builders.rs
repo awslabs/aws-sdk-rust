@@ -285,11 +285,11 @@ pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStageBuilder;
 
+pub use crate::types::_validation_failure::ValidationFailureBuilder;
+
 pub use crate::types::_option_status::OptionStatusBuilder;
 
 pub use crate::types::_auto_tune_status::AutoTuneStatusBuilder;
-
-pub use crate::types::_validation_failure::ValidationFailureBuilder;
 
 pub use crate::types::_instance_limits::InstanceLimitsBuilder;
 

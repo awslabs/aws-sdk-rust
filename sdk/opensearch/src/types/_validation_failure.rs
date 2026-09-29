@@ -8,6 +8,8 @@ pub struct ValidationFailure {
     pub code: ::std::option::Option<::std::string::String>,
     /// <p>A message corresponding to the failure.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The severity of the validation failure.</p>
+    pub severity: ::std::option::Option<crate::types::ValidationFailureSeverity>,
 }
 impl ValidationFailure {
     /// <p>The error code of the failure.</p>
@@ -17,6 +19,10 @@ impl ValidationFailure {
     /// <p>A message corresponding to the failure.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
+    }
+    /// <p>The severity of the validation failure.</p>
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::ValidationFailureSeverity> {
+        self.severity.as_ref()
     }
 }
 impl ValidationFailure {
@@ -32,6 +38,7 @@ impl ValidationFailure {
 pub struct ValidationFailureBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<crate::types::ValidationFailureSeverity>,
 }
 impl ValidationFailureBuilder {
     /// <p>The error code of the failure.</p>
@@ -62,11 +69,26 @@ impl ValidationFailureBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The severity of the validation failure.</p>
+    pub fn severity(mut self, input: crate::types::ValidationFailureSeverity) -> Self {
+        self.severity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The severity of the validation failure.</p>
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ValidationFailureSeverity>) -> Self {
+        self.severity = input;
+        self
+    }
+    /// <p>The severity of the validation failure.</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ValidationFailureSeverity> {
+        &self.severity
+    }
     /// Consumes the builder and constructs a [`ValidationFailure`](crate::types::ValidationFailure).
     pub fn build(self) -> crate::types::ValidationFailure {
         crate::types::ValidationFailure {
             code: self.code,
             message: self.message,
+            severity: self.severity,
         }
     }
 }

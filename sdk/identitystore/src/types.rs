@@ -3,8 +3,6 @@ pub use crate::types::_access_denied_exception_reason::AccessDeniedExceptionReas
 
 pub use crate::types::_throttling_exception_reason::ThrottlingExceptionReason;
 
-pub use crate::types::_alternate_identifier::AlternateIdentifier;
-
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_resource_not_found_exception_reason::ResourceNotFoundExceptionReason;
@@ -15,23 +13,31 @@ pub use crate::types::_member_id::MemberId;
 
 pub use crate::types::_conflict_exception_reason::ConflictExceptionReason;
 
+pub use crate::types::_alternate_identifier::AlternateIdentifier;
+
+pub use crate::types::_network_configuration_details::NetworkConfigurationDetails;
+
+pub use crate::types::_network_configuration::NetworkConfiguration;
+
 pub use crate::types::_name::Name;
 
 pub use crate::types::_user_status::UserStatus;
 
-pub use crate::types::_external_id::ExternalId;
-
-pub use crate::types::_unique_attribute::UniqueAttribute;
+pub use crate::types::_group_membership::GroupMembership;
 
 pub use crate::types::_group_membership_existence_result::GroupMembershipExistenceResult;
-
-pub use crate::types::_group_membership::GroupMembership;
 
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_group::Group;
 
+pub use crate::types::_external_id::ExternalId;
+
 pub use crate::types::_attribute_operation::AttributeOperation;
+
+pub use crate::types::_unique_attribute::UniqueAttribute;
+
+pub use crate::types::_identity_store::IdentityStore;
 
 pub use crate::types::_user::User;
 
@@ -67,9 +73,15 @@ mod _group_membership;
 
 mod _group_membership_existence_result;
 
+mod _identity_store;
+
 mod _member_id;
 
 mod _name;
+
+mod _network_configuration;
+
+mod _network_configuration_details;
 
 mod _phone_number;
 

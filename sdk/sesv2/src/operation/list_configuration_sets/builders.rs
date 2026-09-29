@@ -115,6 +115,28 @@ impl ListConfigurationSetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator {
         crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator::new(self.handle, self.inner)
     }
+    ///
+    /// Adds a key-value pair to `Filter`.
+    ///
+    /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+    ///
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    pub fn filter(mut self, k: crate::types::ConfigurationSetFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filter(k, v.into());
+        self
+    }
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    pub fn set_filter(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>> {
+        self.inner.get_filter()
+    }
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

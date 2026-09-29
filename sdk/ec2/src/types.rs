@@ -975,6 +975,8 @@ pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfo;
 
+pub use crate::types::_capacity_reservation_launch_status::CapacityReservationLaunchStatus;
+
 pub use crate::types::_capacity_reservation_cancellation_quote_state::CapacityReservationCancellationQuoteState;
 
 pub use crate::types::_capacity_reservation_configuration::CapacityReservationConfiguration;
@@ -3236,6 +3238,8 @@ mod _capacity_reservation_group;
 mod _capacity_reservation_info;
 
 mod _capacity_reservation_instance_platform;
+
+mod _capacity_reservation_launch_status;
 
 mod _capacity_reservation_modification_quote;
 

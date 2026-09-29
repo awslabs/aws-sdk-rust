@@ -8,6 +8,8 @@ pub struct FoundationModelConfiguration {
     pub r#type: crate::types::FoundationModelConfigurationType,
     /// <p>The Bedrock foundation model configuration.</p>
     pub bedrock_foundation_model_configuration: ::std::option::Option<crate::types::BedrockFoundationModelConfiguration>,
+    /// <p>The Mantle foundation model configuration.</p>
+    pub mantle_foundation_model_configuration: ::std::option::Option<crate::types::MantleFoundationModelConfiguration>,
 }
 impl FoundationModelConfiguration {
     /// <p>The type of foundation model configuration.</p>
@@ -17,6 +19,10 @@ impl FoundationModelConfiguration {
     /// <p>The Bedrock foundation model configuration.</p>
     pub fn bedrock_foundation_model_configuration(&self) -> ::std::option::Option<&crate::types::BedrockFoundationModelConfiguration> {
         self.bedrock_foundation_model_configuration.as_ref()
+    }
+    /// <p>The Mantle foundation model configuration.</p>
+    pub fn mantle_foundation_model_configuration(&self) -> ::std::option::Option<&crate::types::MantleFoundationModelConfiguration> {
+        self.mantle_foundation_model_configuration.as_ref()
     }
 }
 impl FoundationModelConfiguration {
@@ -32,6 +38,7 @@ impl FoundationModelConfiguration {
 pub struct FoundationModelConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::FoundationModelConfigurationType>,
     pub(crate) bedrock_foundation_model_configuration: ::std::option::Option<crate::types::BedrockFoundationModelConfiguration>,
+    pub(crate) mantle_foundation_model_configuration: ::std::option::Option<crate::types::MantleFoundationModelConfiguration>,
 }
 impl FoundationModelConfigurationBuilder {
     /// <p>The type of foundation model configuration.</p>
@@ -66,6 +73,23 @@ impl FoundationModelConfigurationBuilder {
     pub fn get_bedrock_foundation_model_configuration(&self) -> &::std::option::Option<crate::types::BedrockFoundationModelConfiguration> {
         &self.bedrock_foundation_model_configuration
     }
+    /// <p>The Mantle foundation model configuration.</p>
+    pub fn mantle_foundation_model_configuration(mut self, input: crate::types::MantleFoundationModelConfiguration) -> Self {
+        self.mantle_foundation_model_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Mantle foundation model configuration.</p>
+    pub fn set_mantle_foundation_model_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MantleFoundationModelConfiguration>,
+    ) -> Self {
+        self.mantle_foundation_model_configuration = input;
+        self
+    }
+    /// <p>The Mantle foundation model configuration.</p>
+    pub fn get_mantle_foundation_model_configuration(&self) -> &::std::option::Option<crate::types::MantleFoundationModelConfiguration> {
+        &self.mantle_foundation_model_configuration
+    }
     /// Consumes the builder and constructs a [`FoundationModelConfiguration`](crate::types::FoundationModelConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::FoundationModelConfigurationBuilder::type)
@@ -78,6 +102,7 @@ impl FoundationModelConfigurationBuilder {
                 )
             })?,
             bedrock_foundation_model_configuration: self.bedrock_foundation_model_configuration,
+            mantle_foundation_model_configuration: self.mantle_foundation_model_configuration,
         })
     }
 }

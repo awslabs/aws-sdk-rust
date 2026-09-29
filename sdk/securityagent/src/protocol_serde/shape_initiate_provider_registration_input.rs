@@ -3,8 +3,20 @@ pub fn ser_initiate_provider_registration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::initiate_provider_registration::InitiateProviderRegistrationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.provider {
-        object.key("provider").string(var_1.as_str());
+    if let Some(var_1) = &input.client_id {
+        object.key("clientId").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.client_secret {
+        object.key("clientSecret").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.organization_name {
+        object.key("organizationName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.provider {
+        object.key("provider").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.target_url {
+        object.key("targetUrl").string(var_5.as_str());
     }
     Ok(())
 }

@@ -62,6 +62,8 @@ pub struct PlaybackConfiguration {
     pub ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
     /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
     pub ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+    pub beaconing_configuration: ::std::option::Option<crate::types::BeaconingConfiguration>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -180,6 +182,10 @@ impl PlaybackConfiguration {
     pub fn ads_personalization_concurrency(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationConcurrency> {
         self.ads_personalization_concurrency.as_ref()
     }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+    pub fn beaconing_configuration(&self) -> ::std::option::Option<&crate::types::BeaconingConfiguration> {
+        self.beaconing_configuration.as_ref()
+    }
 }
 impl PlaybackConfiguration {
     /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
@@ -222,6 +228,7 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
     pub(crate) ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
     pub(crate) ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
+    pub(crate) beaconing_configuration: ::std::option::Option<crate::types::BeaconingConfiguration>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -650,6 +657,20 @@ impl PlaybackConfigurationBuilder {
     pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
         &self.ads_personalization_concurrency
     }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+    pub fn beaconing_configuration(mut self, input: crate::types::BeaconingConfiguration) -> Self {
+        self.beaconing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+    pub fn set_beaconing_configuration(mut self, input: ::std::option::Option<crate::types::BeaconingConfiguration>) -> Self {
+        self.beaconing_configuration = input;
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response.</p>
+    pub fn get_beaconing_configuration(&self) -> &::std::option::Option<crate::types::BeaconingConfiguration> {
+        &self.beaconing_configuration
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -685,6 +706,7 @@ impl PlaybackConfigurationBuilder {
             function_mapping: self.function_mapping,
             ads_personalization_timeouts: self.ads_personalization_timeouts,
             ads_personalization_concurrency: self.ads_personalization_concurrency,
+            beaconing_configuration: self.beaconing_configuration,
         }
     }
 }

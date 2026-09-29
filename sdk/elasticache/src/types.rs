@@ -31,6 +31,8 @@ pub use crate::types::_durability::Durability;
 
 pub use crate::types::_cache_usage_limits::CacheUsageLimits;
 
+pub use crate::types::_connection_type::ConnectionType;
+
 pub use crate::types::_serverless_cache::ServerlessCache;
 
 pub use crate::types::_authentication_mode::AuthenticationMode;
@@ -250,6 +252,8 @@ mod _cloud_watch_logs_destination_details;
 mod _cluster_mode;
 
 mod _configure_shard;
+
+mod _connection_type;
 
 mod _customer_node_endpoint;
 

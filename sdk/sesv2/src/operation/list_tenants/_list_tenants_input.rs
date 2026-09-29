@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTenantsInput {
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
     /// <p>A token returned from a previous call to <code>ListTenants</code> to indicate the position in the list of tenants.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to show in a single call to <code>ListTenants</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListTenantsInput {
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
+        self.filter.as_ref()
+    }
     /// <p>A token returned from a previous call to <code>ListTenants</code> to indicate the position in the list of tenants.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -30,10 +36,34 @@ impl ListTenantsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListTenantsInputBuilder {
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) page_size: ::std::option::Option<i32>,
 }
 impl ListTenantsInputBuilder {
+    /// Adds a key-value pair to `filter`.
+    ///
+    /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+    ///
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn filter(mut self, k: crate::types::ListTenantsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.filter.unwrap_or_default();
+        hash_map.insert(k, v.into());
+        self.filter = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn set_filter(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
+    ) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
+        &self.filter
+    }
     /// <p>A token returned from a previous call to <code>ListTenants</code> to indicate the position in the list of tenants.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -65,6 +95,7 @@ impl ListTenantsInputBuilder {
     /// Consumes the builder and constructs a [`ListTenantsInput`](crate::operation::list_tenants::ListTenantsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_tenants::ListTenantsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_tenants::ListTenantsInput {
+            filter: self.filter,
             next_token: self.next_token,
             page_size: self.page_size,
         })

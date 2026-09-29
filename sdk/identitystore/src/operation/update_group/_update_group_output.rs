@@ -3,7 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGroupOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub identity_store_id: ::std::string::String,
+    /// <p>The identifier for a group in the identity store.</p>
+    pub group_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub group_arn: ::std::string::String,
+    /// <p>The revision of the group after the requested update is applied.</p>
+    pub revision: ::std::string::String,
     _request_id: Option<String>,
+}
+impl UpdateGroupOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn group_id(&self) -> &str {
+        use std::ops::Deref;
+        self.group_id.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.group_arn.deref()
+    }
+    /// <p>The revision of the group after the requested update is applied.</p>
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateGroupOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +51,73 @@ impl UpdateGroupOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateGroupOutputBuilder {
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateGroupOutputBuilder {
+    /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_id = input;
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    /// This field is required.
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_id = input;
+        self
+    }
+    /// <p>The identifier for a group in the identity store.</p>
+    pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    /// This field is required.
+    pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
+    /// <p>The revision of the group after the requested update is applied.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision of the group after the requested update is applied.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision = input;
+        self
+    }
+    /// <p>The revision of the group after the requested update is applied.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -34,9 +128,38 @@ impl UpdateGroupOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::operation::update_group::UpdateGroupOutput).
-    pub fn build(self) -> crate::operation::update_group::UpdateGroupOutput {
-        crate::operation::update_group::UpdateGroupOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::update_group::builders::UpdateGroupOutputBuilder::identity_store_id)
+    /// - [`group_id`](crate::operation::update_group::builders::UpdateGroupOutputBuilder::group_id)
+    /// - [`group_arn`](crate::operation::update_group::builders::UpdateGroupOutputBuilder::group_arn)
+    /// - [`revision`](crate::operation::update_group::builders::UpdateGroupOutputBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_group::UpdateGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_group::UpdateGroupOutput {
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building UpdateGroupOutput",
+                )
+            })?,
+            group_id: self.group_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_id",
+                    "group_id was not specified but it is required when building UpdateGroupOutput",
+                )
+            })?,
+            group_arn: self.group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_arn",
+                    "group_arn was not specified but it is required when building UpdateGroupOutput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building UpdateGroupOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

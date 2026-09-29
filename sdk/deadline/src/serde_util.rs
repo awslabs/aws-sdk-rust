@@ -2778,6 +2778,15 @@ pub(crate) fn v_cpu_count_range_correct_errors(
     builder
 }
 
+pub(crate) fn fleet_software_add_on_correct_errors(
+    mut builder: crate::types::builders::FleetSoftwareAddOnBuilder,
+) -> crate::types::builders::FleetSoftwareAddOnBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::FleetSoftwareAddOnName>().ok()
+    }
+    builder
+}
+
 pub(crate) fn path_mapping_rule_correct_errors(
     mut builder: crate::types::builders::PathMappingRuleBuilder,
 ) -> crate::types::builders::PathMappingRuleBuilder {

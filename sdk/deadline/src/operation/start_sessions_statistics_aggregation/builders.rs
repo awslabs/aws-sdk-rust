@@ -164,17 +164,17 @@ impl StartSessionsStatisticsAggregationFluentBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time()
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.timezone(input.into());
         self
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_timezone(input);
         self
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_timezone()
     }

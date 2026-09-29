@@ -991,6 +991,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_specification;
 
+pub(crate) mod shape_target_resource_configuration;
+
 pub(crate) mod shape_tenant_database_already_exists_fault;
 
 pub(crate) mod shape_tenant_database_not_found_fault;

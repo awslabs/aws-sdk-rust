@@ -471,6 +471,20 @@ pub fn de_capacity_reservation(
                 builder = builder.set_zero_size_preference(var_35);
             }
             ,
+            s if s.matches("launchStatus") /* LaunchStatus com.amazonaws.ec2#CapacityReservation$LaunchStatus */ =>  {
+                let var_36 =
+                    Some(
+                        Result::<crate::types::CapacityReservationLaunchStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::CapacityReservationLaunchStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_launch_status(var_36);
+            }
+            ,
             _ => {}
         }
     }

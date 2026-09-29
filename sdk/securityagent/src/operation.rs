@@ -259,6 +259,9 @@ pub mod update_finding;
 /// Types for the `UpdateIntegratedResources` operation.
 pub mod update_integrated_resources;
 
+/// Types for the `UpdateIntegration` operation.
+pub mod update_integration;
+
 /// Types for the `UpdatePentest` operation.
 pub mod update_pentest;
 

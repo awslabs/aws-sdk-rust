@@ -80,6 +80,17 @@ pub fn ser_create_blue_green_deployment_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_28 = writer.prefix("TargetResourceConfigurations");
+    if let Some(var_29) = &input.target_resource_configurations {
+        let mut list_31 = scope_28.start_list(false, Some("TargetResourceConfiguration"));
+        for item_30 in var_29 {
+            #[allow(unused_mut)]
+            let mut entry_32 = list_31.entry();
+            crate::protocol_serde::shape_target_resource_configuration::ser_target_resource_configuration(entry_32, item_30)?;
+        }
+        list_31.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

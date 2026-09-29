@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProviderResourceCapabilities {
+    /// <p>The Azure DevOps-specific resource capabilities.</p>
+    AzureDevOps(crate::types::AzureDevOpsResourceCapabilities),
     /// <p>Capabilities for an integrated Bitbucket repository.</p>
     Bitbucket(crate::types::BitbucketResourceCapabilities),
     /// <p>Capabilities for an integrated Confluence space.</p>
@@ -23,6 +25,19 @@ pub enum ProviderResourceCapabilities {
     Unknown,
 }
 impl ProviderResourceCapabilities {
+    /// Tries to convert the enum instance into [`AzureDevOps`](crate::types::ProviderResourceCapabilities::AzureDevOps), extracting the inner [`AzureDevOpsResourceCapabilities`](crate::types::AzureDevOpsResourceCapabilities).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure_dev_ops(&self) -> ::std::result::Result<&crate::types::AzureDevOpsResourceCapabilities, &Self> {
+        if let ProviderResourceCapabilities::AzureDevOps(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AzureDevOps`](crate::types::ProviderResourceCapabilities::AzureDevOps).
+    pub fn is_azure_dev_ops(&self) -> bool {
+        self.as_azure_dev_ops().is_ok()
+    }
     /// Tries to convert the enum instance into [`Bitbucket`](crate::types::ProviderResourceCapabilities::Bitbucket), extracting the inner [`BitbucketResourceCapabilities`](crate::types::BitbucketResourceCapabilities).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bitbucket(&self) -> ::std::result::Result<&crate::types::BitbucketResourceCapabilities, &Self> {

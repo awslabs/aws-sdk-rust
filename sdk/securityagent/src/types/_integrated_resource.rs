@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum IntegratedResource {
+    /// <p>The Azure DevOps repository resource information.</p>
+    AzureDevOpsRepository(crate::types::AzureDevOpsRepositoryResource),
     /// <p>A Bitbucket repository integrated as a resource.</p>
     BitbucketRepository(crate::types::BitbucketRepositoryResource),
     /// <p>A Confluence document (page) integrated as a resource.</p>
@@ -23,6 +25,19 @@ pub enum IntegratedResource {
     Unknown,
 }
 impl IntegratedResource {
+    /// Tries to convert the enum instance into [`AzureDevOpsRepository`](crate::types::IntegratedResource::AzureDevOpsRepository), extracting the inner [`AzureDevOpsRepositoryResource`](crate::types::AzureDevOpsRepositoryResource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure_dev_ops_repository(&self) -> ::std::result::Result<&crate::types::AzureDevOpsRepositoryResource, &Self> {
+        if let IntegratedResource::AzureDevOpsRepository(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AzureDevOpsRepository`](crate::types::IntegratedResource::AzureDevOpsRepository).
+    pub fn is_azure_dev_ops_repository(&self) -> bool {
+        self.as_azure_dev_ops_repository().is_ok()
+    }
     /// Tries to convert the enum instance into [`BitbucketRepository`](crate::types::IntegratedResource::BitbucketRepository), extracting the inner [`BitbucketRepositoryResource`](crate::types::BitbucketRepositoryResource).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bitbucket_repository(&self) -> ::std::result::Result<&crate::types::BitbucketRepositoryResource, &Self> {

@@ -453,6 +453,8 @@ pub use crate::types::_sync_input_job_attachments_session_action_definition_summ
 
 pub use crate::types::_accelerator_type::AcceleratorType;
 
+pub use crate::types::_fleet_software_add_on::FleetSoftwareAddOn;
+
 pub use crate::types::_path_mapping_rule::PathMappingRule;
 
 pub use crate::types::_assigned_session_action_definition::AssignedSessionActionDefinition;
@@ -460,6 +462,8 @@ pub use crate::types::_assigned_session_action_definition::AssignedSessionAction
 pub use crate::types::_range_constraint::RangeConstraint;
 
 pub use crate::types::_accelerator_selection::AcceleratorSelection;
+
+pub use crate::types::_fleet_software_add_on_name::FleetSoftwareAddOnName;
 
 pub use crate::types::_assigned_environment_enter_session_action_definition::AssignedEnvironmentEnterSessionActionDefinition;
 
@@ -654,6 +658,10 @@ mod _fleet_capabilities;
 mod _fleet_configuration;
 
 mod _fleet_member;
+
+mod _fleet_software_add_on;
+
+mod _fleet_software_add_on_name;
 
 mod _fleet_status;
 

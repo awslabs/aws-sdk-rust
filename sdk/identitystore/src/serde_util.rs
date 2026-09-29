@@ -2,11 +2,17 @@
 pub(crate) fn create_group_output_output_correct_errors(
     mut builder: crate::operation::create_group::builders::CreateGroupOutputBuilder,
 ) -> crate::operation::create_group::builders::CreateGroupOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.group_arn.is_none() {
+        builder.group_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }
@@ -14,11 +20,14 @@ pub(crate) fn create_group_output_output_correct_errors(
 pub(crate) fn create_group_membership_output_output_correct_errors(
     mut builder: crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder,
 ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.membership_id.is_none() {
         builder.membership_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
     }
     builder
 }
@@ -32,17 +41,29 @@ pub(crate) fn create_user_output_output_correct_errors(
     if builder.user_id.is_none() {
         builder.user_id = Some(Default::default())
     }
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
     builder
 }
 
 pub(crate) fn describe_group_output_output_correct_errors(
     mut builder: crate::operation::describe_group::builders::DescribeGroupOutputBuilder,
 ) -> crate::operation::describe_group::builders::DescribeGroupOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.group_arn.is_none() {
+        builder.group_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }
@@ -56,11 +77,26 @@ pub(crate) fn describe_group_membership_output_output_correct_errors(
     if builder.membership_id.is_none() {
         builder.membership_id = Some(Default::default())
     }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
     }
     if builder.member_id.is_none() {
         builder.member_id = Some(crate::types::MemberId::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn describe_identity_store_output_output_correct_errors(
+    mut builder: crate::operation::describe_identity_store::builders::DescribeIdentityStoreOutputBuilder,
+) -> crate::operation::describe_identity_store::builders::DescribeIdentityStoreOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
+    if builder.identity_store_arn.is_none() {
+        builder.identity_store_arn = Some(Default::default())
     }
     builder
 }
@@ -74,17 +110,26 @@ pub(crate) fn describe_user_output_output_correct_errors(
     if builder.user_id.is_none() {
         builder.user_id = Some(Default::default())
     }
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
     builder
 }
 
 pub(crate) fn get_group_id_output_output_correct_errors(
     mut builder: crate::operation::get_group_id::builders::GetGroupIdOutputBuilder,
 ) -> crate::operation::get_group_id::builders::GetGroupIdOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.group_arn.is_none() {
+        builder.group_arn = Some(Default::default())
     }
     builder
 }
@@ -92,11 +137,14 @@ pub(crate) fn get_group_id_output_output_correct_errors(
 pub(crate) fn get_group_membership_id_output_output_correct_errors(
     mut builder: crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder,
 ) -> crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.membership_id.is_none() {
         builder.membership_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
     }
     builder
 }
@@ -109,6 +157,9 @@ pub(crate) fn get_user_id_output_output_correct_errors(
     }
     if builder.user_id.is_none() {
         builder.user_id = Some(Default::default())
+    }
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
     }
     builder
 }
@@ -149,11 +200,77 @@ pub(crate) fn list_groups_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_identity_stores_output_output_correct_errors(
+    mut builder: crate::operation::list_identity_stores::builders::ListIdentityStoresOutputBuilder,
+) -> crate::operation::list_identity_stores::builders::ListIdentityStoresOutputBuilder {
+    if builder.identity_stores.is_none() {
+        builder.identity_stores = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_users_output_output_correct_errors(
     mut builder: crate::operation::list_users::builders::ListUsersOutputBuilder,
 ) -> crate::operation::list_users::builders::ListUsersOutputBuilder {
     if builder.users.is_none() {
         builder.users = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_group_output_output_correct_errors(
+    mut builder: crate::operation::update_group::builders::UpdateGroupOutputBuilder,
+) -> crate::operation::update_group::builders::UpdateGroupOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
+    if builder.group_id.is_none() {
+        builder.group_id = Some(Default::default())
+    }
+    if builder.group_arn.is_none() {
+        builder.group_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_identity_store_output_output_correct_errors(
+    mut builder: crate::operation::update_identity_store::builders::UpdateIdentityStoreOutputBuilder,
+) -> crate::operation::update_identity_store::builders::UpdateIdentityStoreOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
+    if builder.identity_store_arn.is_none() {
+        builder.identity_store_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_user_output_output_correct_errors(
+    mut builder: crate::operation::update_user::builders::UpdateUserOutputBuilder,
+) -> crate::operation::update_user::builders::UpdateUserOutputBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
+    if builder.user_id.is_none() {
+        builder.user_id = Some(Default::default())
+    }
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn network_configuration_details_correct_errors(
+    mut builder: crate::types::builders::NetworkConfigurationDetailsBuilder,
+) -> crate::types::builders::NetworkConfigurationDetailsBuilder {
+    if builder.vpce_access_required.is_none() {
+        builder.vpce_access_required = Some(Default::default())
     }
     builder
 }
@@ -169,11 +286,17 @@ pub(crate) fn external_id_correct_errors(mut builder: crate::types::builders::Ex
 }
 
 pub(crate) fn group_correct_errors(mut builder: crate::types::builders::GroupBuilder) -> crate::types::builders::GroupBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
     if builder.group_id.is_none() {
         builder.group_id = Some(Default::default())
     }
-    if builder.identity_store_id.is_none() {
-        builder.identity_store_id = Some(Default::default())
+    if builder.group_arn.is_none() {
+        builder.group_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }
@@ -183,6 +306,24 @@ pub(crate) fn group_membership_correct_errors(
 ) -> crate::types::builders::GroupMembershipBuilder {
     if builder.identity_store_id.is_none() {
         builder.identity_store_id = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn identity_store_correct_errors(
+    mut builder: crate::types::builders::IdentityStoreBuilder,
+) -> crate::types::builders::IdentityStoreBuilder {
+    if builder.identity_store_id.is_none() {
+        builder.identity_store_id = Some(Default::default())
+    }
+    if builder.identity_store_arn.is_none() {
+        builder.identity_store_arn = Some(Default::default())
     }
     builder
 }
@@ -200,6 +341,12 @@ pub(crate) fn user_correct_errors(mut builder: crate::types::builders::UserBuild
     }
     if builder.user_id.is_none() {
         builder.user_id = Some(Default::default())
+    }
+    if builder.user_arn.is_none() {
+        builder.user_arn = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }

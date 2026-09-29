@@ -109,6 +109,8 @@ pub use crate::types::_user_details::UserDetailsBuilder;
 
 pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfigBuilder;
 
+pub use crate::types::_sftp_port_with_options::SftpPortWithOptionsBuilder;
+
 pub use crate::types::_workflow_detail::WorkflowDetailBuilder;
 
 pub use crate::types::_ssh_public_key::SshPublicKeyBuilder;

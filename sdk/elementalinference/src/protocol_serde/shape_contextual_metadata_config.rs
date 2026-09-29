@@ -6,6 +6,9 @@ pub fn ser_contextual_metadata_config(
     if let Some(var_1) = &input.summary_generation {
         object.key("summaryGeneration").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.extended_analysis {
+        object.key("extendedAnalysis").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -35,6 +38,13 @@ where
                             builder = builder.set_summary_generation(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::SummaryGenerationMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "extendedAnalysis" => {
+                            builder = builder.set_extended_analysis(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExtendedAnalysisMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -64,6 +64,8 @@ pub struct Image {
     pub managed_software_included: ::std::option::Option<bool>,
     /// <p>The type of the image. Images created through AMI import have type "custom", while WorkSpaces Applications provided images have type "native". Custom images support additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized, and Accelerated instance families.</p>
     pub image_type: ::std::option::Option<crate::types::ImageType>,
+    /// <p>The software metadata associated with the image.</p>
+    pub image_software_metadata: ::std::option::Option<crate::types::ImageSoftwareMetadata>,
 }
 impl Image {
     /// <p>The name of the image.</p>
@@ -178,6 +180,10 @@ impl Image {
     pub fn image_type(&self) -> ::std::option::Option<&crate::types::ImageType> {
         self.image_type.as_ref()
     }
+    /// <p>The software metadata associated with the image.</p>
+    pub fn image_software_metadata(&self) -> ::std::option::Option<&crate::types::ImageSoftwareMetadata> {
+        self.image_software_metadata.as_ref()
+    }
 }
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
@@ -213,6 +219,7 @@ pub struct ImageBuilder {
     pub(crate) image_shared_with_others: ::std::option::Option<crate::types::ImageSharedWithOthers>,
     pub(crate) managed_software_included: ::std::option::Option<bool>,
     pub(crate) image_type: ::std::option::Option<crate::types::ImageType>,
+    pub(crate) image_software_metadata: ::std::option::Option<crate::types::ImageSoftwareMetadata>,
 }
 impl ImageBuilder {
     /// <p>The name of the image.</p>
@@ -598,6 +605,20 @@ impl ImageBuilder {
     pub fn get_image_type(&self) -> &::std::option::Option<crate::types::ImageType> {
         &self.image_type
     }
+    /// <p>The software metadata associated with the image.</p>
+    pub fn image_software_metadata(mut self, input: crate::types::ImageSoftwareMetadata) -> Self {
+        self.image_software_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The software metadata associated with the image.</p>
+    pub fn set_image_software_metadata(mut self, input: ::std::option::Option<crate::types::ImageSoftwareMetadata>) -> Self {
+        self.image_software_metadata = input;
+        self
+    }
+    /// <p>The software metadata associated with the image.</p>
+    pub fn get_image_software_metadata(&self) -> &::std::option::Option<crate::types::ImageSoftwareMetadata> {
+        &self.image_software_metadata
+    }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
@@ -624,6 +645,7 @@ impl ImageBuilder {
             image_shared_with_others: self.image_shared_with_others,
             managed_software_included: self.managed_software_included,
             image_type: self.image_type,
+            image_software_metadata: self.image_software_metadata,
         }
     }
 }

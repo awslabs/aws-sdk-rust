@@ -103,6 +103,13 @@ pub(crate) fn de_put_playback_configuration(
                         depth + 1,
                     )?);
                 }
+                "BeaconingConfiguration" => {
+                    builder = builder.set_beaconing_configuration(crate::protocol_serde::shape_beaconing_configuration::de_beaconing_configuration(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "Bumper" => {
                     builder = builder.set_bumper(crate::protocol_serde::shape_bumper::de_bumper(tokens, _value, depth + 1)?);
                 }

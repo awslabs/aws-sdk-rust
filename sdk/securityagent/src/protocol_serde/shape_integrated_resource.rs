@@ -28,6 +28,12 @@ pub fn ser_integrated_resource(
             crate::protocol_serde::shape_confluence_document_resource::ser_confluence_document_resource(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::IntegratedResource::AzureDevOpsRepository(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_2.key("azureDevOpsRepository").start_object();
+            crate::protocol_serde::shape_azure_dev_ops_repository_resource::ser_azure_dev_ops_repository_resource(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::IntegratedResource::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IntegratedResource",

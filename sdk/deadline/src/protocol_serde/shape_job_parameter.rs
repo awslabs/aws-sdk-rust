@@ -16,6 +16,72 @@ pub fn ser_job_parameter(
         crate::types::JobParameter::Path(inner) => {
             object_12.key("path").string(inner.as_str());
         }
+        crate::types::JobParameter::Bool(inner) => {
+            object_12.key("bool").string(inner.as_str());
+        }
+        crate::types::JobParameter::RangeExpr(inner) => {
+            object_12.key("rangeExpr").string(inner.as_str());
+        }
+        crate::types::JobParameter::StringList(inner) => {
+            let mut array_1 = object_12.key("stringList").start_array();
+            for item_2 in inner {
+                {
+                    array_1.value().string(item_2.as_str());
+                }
+            }
+            array_1.finish();
+        }
+        crate::types::JobParameter::PathList(inner) => {
+            let mut array_3 = object_12.key("pathList").start_array();
+            for item_4 in inner {
+                {
+                    array_3.value().string(item_4.as_str());
+                }
+            }
+            array_3.finish();
+        }
+        crate::types::JobParameter::IntList(inner) => {
+            let mut array_5 = object_12.key("intList").start_array();
+            for item_6 in inner {
+                {
+                    array_5.value().string(item_6.as_str());
+                }
+            }
+            array_5.finish();
+        }
+        crate::types::JobParameter::FloatList(inner) => {
+            let mut array_7 = object_12.key("floatList").start_array();
+            for item_8 in inner {
+                {
+                    array_7.value().string(item_8.as_str());
+                }
+            }
+            array_7.finish();
+        }
+        crate::types::JobParameter::BoolList(inner) => {
+            let mut array_9 = object_12.key("boolList").start_array();
+            for item_10 in inner {
+                {
+                    array_9.value().string(item_10.as_str());
+                }
+            }
+            array_9.finish();
+        }
+        crate::types::JobParameter::IntListList(inner) => {
+            let mut array_11 = object_12.key("intListList").start_array();
+            for item_12 in inner {
+                {
+                    let mut array_13 = array_11.value().start_array();
+                    for item_14 in item_12 {
+                        {
+                            array_13.value().string(item_14.as_str());
+                        }
+                    }
+                    array_13.finish();
+                }
+            }
+            array_11.finish();
+        }
         crate::types::JobParameter::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("JobParameter")),
     }
     Ok(())
@@ -83,6 +149,50 @@ where
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'path' cannot be null"))?,
+                        )),
+                        "bool" => Some(crate::types::JobParameter::Bool(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bool' cannot be null"))?,
+                        )),
+                        "rangeExpr" => Some(crate::types::JobParameter::RangeExpr(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rangeExpr' cannot be null")
+                                })?,
+                        )),
+                        "stringList" => Some(crate::types::JobParameter::StringList(
+                            crate::protocol_serde::shape_parameter_string_list::de_parameter_string_list(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stringList' cannot be null"),
+                            )?,
+                        )),
+                        "pathList" => Some(crate::types::JobParameter::PathList(
+                            crate::protocol_serde::shape_path_string_list::de_path_string_list(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'pathList' cannot be null")
+                            })?,
+                        )),
+                        "intList" => Some(crate::types::JobParameter::IntList(
+                            crate::protocol_serde::shape_int_string_list::de_int_string_list(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'intList' cannot be null")
+                            })?,
+                        )),
+                        "floatList" => Some(crate::types::JobParameter::FloatList(
+                            crate::protocol_serde::shape_float_string_list::de_float_string_list(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'floatList' cannot be null")
+                            })?,
+                        )),
+                        "boolList" => Some(crate::types::JobParameter::BoolList(
+                            crate::protocol_serde::shape_boolean_string_list::de_boolean_string_list(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'boolList' cannot be null"),
+                            )?,
+                        )),
+                        "intListList" => Some(crate::types::JobParameter::IntListList(
+                            crate::protocol_serde::shape_int_string_list_list::de_int_string_list_list(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'intListList' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

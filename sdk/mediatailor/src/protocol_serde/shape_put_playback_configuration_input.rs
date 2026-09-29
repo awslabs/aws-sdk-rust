@@ -36,99 +36,105 @@ pub fn ser_put_playback_configuration_input_input(
         crate::protocol_serde::shape_avail_suppression::ser_avail_suppression(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.bumper {
+    if let Some(var_12) = &input.beaconing_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Bumper").start_object();
-        crate::protocol_serde::shape_bumper::ser_bumper(&mut object_13, var_12)?;
+        let mut object_13 = object.key("BeaconingConfiguration").start_object();
+        crate::protocol_serde::shape_beaconing_configuration::ser_beaconing_configuration(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.cdn_configuration {
+    if let Some(var_14) = &input.bumper {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("CdnConfiguration").start_object();
-        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(&mut object_15, var_14)?;
+        let mut object_15 = object.key("Bumper").start_object();
+        crate::protocol_serde::shape_bumper::ser_bumper(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.configuration_aliases {
+    if let Some(var_16) = &input.cdn_configuration {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("ConfigurationAliases").start_object();
-        for (key_18, value_19) in var_16 {
-            {
-                #[allow(unused_mut)]
-                let mut object_20 = object_17.key(key_18.as_str()).start_object();
-                for (key_21, value_22) in value_19 {
-                    {
-                        object_20.key(key_21.as_str()).string(value_22.as_str());
-                    }
-                }
-                object_20.finish();
-            }
-        }
+        let mut object_17 = object.key("CdnConfiguration").start_object();
+        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_23) = &input.dash_configuration {
+    if let Some(var_18) = &input.configuration_aliases {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("DashConfiguration").start_object();
-        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_24, var_23)?;
-        object_24.finish();
-    }
-    if let Some(var_25) = &input.function_mapping {
-        #[allow(unused_mut)]
-        let mut object_26 = object.key("FunctionMapping").start_object();
-        for (key_27, value_28) in var_25 {
+        let mut object_19 = object.key("ConfigurationAliases").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                #[allow(unused_mut)]
+                let mut object_22 = object_19.key(key_20.as_str()).start_object();
+                for (key_23, value_24) in value_21 {
+                    {
+                        object_22.key(key_23.as_str()).string(value_24.as_str());
+                    }
+                }
+                object_22.finish();
             }
         }
+        object_19.finish();
+    }
+    if let Some(var_25) = &input.dash_configuration {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("DashConfiguration").start_object();
+        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_26, var_25)?;
         object_26.finish();
     }
-    if let Some(var_29) = &input.insertion_mode {
-        object.key("InsertionMode").string(var_29.as_str());
-    }
-    if let Some(var_30) = &input.live_pre_roll_configuration {
+    if let Some(var_27) = &input.function_mapping {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("LivePreRollConfiguration").start_object();
-        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_31, var_30)?;
-        object_31.finish();
-    }
-    if let Some(var_32) = &input.manifest_processing_rules {
-        #[allow(unused_mut)]
-        let mut object_33 = object.key("ManifestProcessingRules").start_object();
-        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_33, var_32)?;
-        object_33.finish();
-    }
-    if let Some(var_34) = &input.name {
-        object.key("Name").string(var_34.as_str());
-    }
-    if let Some(var_35) = &input.personalization_threshold_seconds {
-        object.key("PersonalizationThresholdSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_35).into()),
-        );
-    }
-    if let Some(var_36) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_36.as_str());
-    }
-    if let Some(var_37) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_38 = object.key("tags").start_object();
-        for (key_39, value_40) in var_37 {
+        let mut object_28 = object.key("FunctionMapping").start_object();
+        for (key_29, value_30) in var_27 {
             {
-                object_38.key(key_39.as_str()).string(value_40.as_str());
+                object_28.key(key_29.as_str()).string(value_30.as_str());
             }
         }
-        object_38.finish();
+        object_28.finish();
     }
-    if let Some(var_41) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_41.as_str());
+    if let Some(var_31) = &input.insertion_mode {
+        object.key("InsertionMode").string(var_31.as_str());
     }
-    if let Some(var_42) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_42.as_str());
-    }
-    if let Some(var_43) = &input.yield_optimization_configuration {
+    if let Some(var_32) = &input.live_pre_roll_configuration {
         #[allow(unused_mut)]
-        let mut object_44 = object.key("YieldOptimizationConfiguration").start_object();
-        crate::protocol_serde::shape_yield_optimization_configuration::ser_yield_optimization_configuration(&mut object_44, var_43)?;
-        object_44.finish();
+        let mut object_33 = object.key("LivePreRollConfiguration").start_object();
+        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_33, var_32)?;
+        object_33.finish();
+    }
+    if let Some(var_34) = &input.manifest_processing_rules {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("ManifestProcessingRules").start_object();
+        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_35, var_34)?;
+        object_35.finish();
+    }
+    if let Some(var_36) = &input.name {
+        object.key("Name").string(var_36.as_str());
+    }
+    if let Some(var_37) = &input.personalization_threshold_seconds {
+        object.key("PersonalizationThresholdSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_37).into()),
+        );
+    }
+    if let Some(var_38) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_38.as_str());
+    }
+    if let Some(var_39) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_40 = object.key("tags").start_object();
+        for (key_41, value_42) in var_39 {
+            {
+                object_40.key(key_41.as_str()).string(value_42.as_str());
+            }
+        }
+        object_40.finish();
+    }
+    if let Some(var_43) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_43.as_str());
+    }
+    if let Some(var_44) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_44.as_str());
+    }
+    if let Some(var_45) = &input.yield_optimization_configuration {
+        #[allow(unused_mut)]
+        let mut object_46 = object.key("YieldOptimizationConfiguration").start_object();
+        crate::protocol_serde::shape_yield_optimization_configuration::ser_yield_optimization_configuration(&mut object_46, var_45)?;
+        object_46.finish();
     }
     Ok(())
 }

@@ -413,6 +413,8 @@ pub use crate::types::_auto_tune_details::AutoTuneDetails;
 
 pub use crate::types::_change_progress_stage::ChangeProgressStage;
 
+pub use crate::types::_validation_failure::ValidationFailure;
+
 pub use crate::types::_option_status::OptionStatus;
 
 pub use crate::types::_auto_tune_status::AutoTuneStatus;
@@ -420,8 +422,6 @@ pub use crate::types::_auto_tune_status::AutoTuneStatus;
 pub use crate::types::_node_type::NodeType;
 
 pub use crate::types::_node_status::NodeStatus;
-
-pub use crate::types::_validation_failure::ValidationFailure;
 
 pub use crate::types::_insight_field_type::InsightFieldType;
 
@@ -452,6 +452,8 @@ pub use crate::types::_property_value_type::PropertyValueType;
 pub use crate::types::_natural_language_query_generation_current_state::NaturalLanguageQueryGenerationCurrentState;
 
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetails;
+
+pub use crate::types::_validation_failure_severity::ValidationFailureSeverity;
 
 pub use crate::types::_option_state::OptionState;
 
@@ -930,6 +932,8 @@ mod _upgrade_step_item;
 mod _use_case_status;
 
 mod _validation_failure;
+
+mod _validation_failure_severity;
 
 mod _version_status;
 

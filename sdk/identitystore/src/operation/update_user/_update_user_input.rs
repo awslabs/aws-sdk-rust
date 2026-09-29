@@ -4,18 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html">User</a>.</p>
     pub operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub revision: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInput {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
@@ -24,6 +30,10 @@ impl UpdateUserInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operations.is_none()`.
     pub fn operations(&self) -> &[crate::types::AttributeOperation] {
         self.operations.as_deref().unwrap_or_default()
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn revision(&self) -> ::std::option::Option<&str> {
+        self.revision.as_deref()
     }
 }
 impl UpdateUserInput {
@@ -40,35 +50,42 @@ pub struct UpdateUserInputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
 }
 impl UpdateUserInputBuilder {
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_store_id = input;
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     /// This field is required.
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
@@ -92,12 +109,27 @@ impl UpdateUserInputBuilder {
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
         &self.operations
     }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision = input;
+        self
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_user::UpdateUserInput {
             identity_store_id: self.identity_store_id,
             user_id: self.user_id,
             operations: self.operations,
+            revision: self.revision,
         })
     }
 }

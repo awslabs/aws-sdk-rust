@@ -24,6 +24,8 @@ pub struct ServiceManagedEc2InstanceCapabilities {
     pub custom_amounts: ::std::option::Option<::std::vec::Vec<crate::types::FleetAmountCapability>>,
     /// <p>The custom capability attributes to require for instances in this fleet.</p>
     pub custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributeCapability>>,
+    /// <p>The software add-ons that the service installs on worker hosts when they launch.</p>
+    pub software_add_ons: ::std::option::Option<::std::vec::Vec<crate::types::FleetSoftwareAddOn>>,
 }
 impl ServiceManagedEc2InstanceCapabilities {
     /// <p>The amount of vCPU to require for instances in this fleet.</p>
@@ -74,6 +76,12 @@ impl ServiceManagedEc2InstanceCapabilities {
     pub fn custom_attributes(&self) -> &[crate::types::FleetAttributeCapability] {
         self.custom_attributes.as_deref().unwrap_or_default()
     }
+    /// <p>The software add-ons that the service installs on worker hosts when they launch.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.software_add_ons.is_none()`.
+    pub fn software_add_ons(&self) -> &[crate::types::FleetSoftwareAddOn] {
+        self.software_add_ons.as_deref().unwrap_or_default()
+    }
 }
 impl ServiceManagedEc2InstanceCapabilities {
     /// Creates a new builder-style object to manufacture [`ServiceManagedEc2InstanceCapabilities`](crate::types::ServiceManagedEc2InstanceCapabilities).
@@ -96,6 +104,7 @@ pub struct ServiceManagedEc2InstanceCapabilitiesBuilder {
     pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_amounts: ::std::option::Option<::std::vec::Vec<crate::types::FleetAmountCapability>>,
     pub(crate) custom_attributes: ::std::option::Option<::std::vec::Vec<crate::types::FleetAttributeCapability>>,
+    pub(crate) software_add_ons: ::std::option::Option<::std::vec::Vec<crate::types::FleetSoftwareAddOn>>,
 }
 impl ServiceManagedEc2InstanceCapabilitiesBuilder {
     /// <p>The amount of vCPU to require for instances in this fleet.</p>
@@ -266,6 +275,26 @@ impl ServiceManagedEc2InstanceCapabilitiesBuilder {
     pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetAttributeCapability>> {
         &self.custom_attributes
     }
+    /// Appends an item to `software_add_ons`.
+    ///
+    /// To override the contents of this collection use [`set_software_add_ons`](Self::set_software_add_ons).
+    ///
+    /// <p>The software add-ons that the service installs on worker hosts when they launch.</p>
+    pub fn software_add_ons(mut self, input: crate::types::FleetSoftwareAddOn) -> Self {
+        let mut v = self.software_add_ons.unwrap_or_default();
+        v.push(input);
+        self.software_add_ons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The software add-ons that the service installs on worker hosts when they launch.</p>
+    pub fn set_software_add_ons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetSoftwareAddOn>>) -> Self {
+        self.software_add_ons = input;
+        self
+    }
+    /// <p>The software add-ons that the service installs on worker hosts when they launch.</p>
+    pub fn get_software_add_ons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetSoftwareAddOn>> {
+        &self.software_add_ons
+    }
     /// Consumes the builder and constructs a [`ServiceManagedEc2InstanceCapabilities`](crate::types::ServiceManagedEc2InstanceCapabilities).
     /// This method will fail if any of the following fields are not set:
     /// - [`os_family`](crate::types::builders::ServiceManagedEc2InstanceCapabilitiesBuilder::os_family)
@@ -294,6 +323,7 @@ impl ServiceManagedEc2InstanceCapabilitiesBuilder {
             excluded_instance_types: self.excluded_instance_types,
             custom_amounts: self.custom_amounts,
             custom_attributes: self.custom_attributes,
+            software_add_ons: self.software_add_ons,
         })
     }
 }

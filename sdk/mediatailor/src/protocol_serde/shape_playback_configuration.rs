@@ -217,6 +217,11 @@ where
                                 )?,
                             );
                         }
+                        "BeaconingConfiguration" => {
+                            builder = builder.set_beaconing_configuration(
+                                crate::protocol_serde::shape_beaconing_configuration::de_beaconing_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

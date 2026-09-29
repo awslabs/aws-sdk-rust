@@ -219,6 +219,8 @@ pub use crate::types::_recommendation_impact::RecommendationImpact;
 
 pub use crate::types::_suppressed_destination_attributes::SuppressedDestinationAttributes;
 
+pub use crate::types::_configuration_set_filter_key::ConfigurationSetFilterKey;
+
 pub use crate::types::_contact_list::ContactList;
 
 pub use crate::types::_subscription_status::SubscriptionStatus;
@@ -228,6 +230,8 @@ pub use crate::types::_topic_filter::TopicFilter;
 pub use crate::types::_contact::Contact;
 
 pub use crate::types::_custom_verification_email_template_metadata::CustomVerificationEmailTemplateMetadata;
+
+pub use crate::types::_identity_filter_key::IdentityFilterKey;
 
 pub use crate::types::_identity_info::IdentityInfo;
 
@@ -254,6 +258,8 @@ pub use crate::types::_suppressed_destination_summary::SuppressedDestinationSumm
 pub use crate::types::_list_tenant_resources_filter_key::ListTenantResourcesFilterKey;
 
 pub use crate::types::_tenant_resource::TenantResource;
+
+pub use crate::types::_list_tenants_filter_key::ListTenantsFilterKey;
 
 pub use crate::types::_tenant_info::TenantInfo;
 
@@ -389,6 +395,8 @@ mod _complaint;
 
 mod _configuration_overrides;
 
+mod _configuration_set_filter_key;
+
 mod _contact;
 
 mod _contact_language;
@@ -501,6 +509,8 @@ mod _identity_certificate;
 
 mod _identity_certificate_status;
 
+mod _identity_filter_key;
+
 mod _identity_info;
 
 mod _identity_type;
@@ -530,6 +540,8 @@ mod _list_management_options;
 mod _list_recommendations_filter_key;
 
 mod _list_tenant_resources_filter_key;
+
+mod _list_tenants_filter_key;
 
 mod _mail_from_attributes;
 

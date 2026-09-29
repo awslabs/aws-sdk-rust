@@ -9,5 +9,8 @@ pub fn ser_delete_group_input_input(
     if let Some(var_2) = &input.group_id {
         object.key("GroupId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.revision {
+        object.key("Revision").string(var_3.as_str());
+    }
     Ok(())
 }

@@ -179,6 +179,8 @@ mod describe_group;
 
 mod describe_group_membership;
 
+mod describe_identity_store;
+
 mod describe_user;
 
 mod get_group_id;
@@ -195,8 +197,12 @@ mod list_group_memberships_for_member;
 
 mod list_groups;
 
+mod list_identity_stores;
+
 mod list_users;
 
 mod update_group;
+
+mod update_identity_store;
 
 mod update_user;

@@ -47,6 +47,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_session_metadata::de_session_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

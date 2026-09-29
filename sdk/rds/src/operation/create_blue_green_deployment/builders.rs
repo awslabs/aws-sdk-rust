@@ -332,4 +332,47 @@ impl CreateBlueGreenDeploymentFluentBuilder {
     pub fn get_target_storage_throughput(&self) -> &::std::option::Option<i32> {
         self.inner.get_target_storage_throughput()
     }
+    ///
+    /// Appends an item to `TargetResourceConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_target_resource_configurations`](Self::set_target_resource_configurations).
+    ///
+    /// <p>Specifies resource-level configuration overrides for the green environment.</p>
+    /// <p>Each entry identifies a resource in the blue environment by its Amazon Resource Name (ARN). It defines the desired configuration for the corresponding resource in the green environment. Any resource that you don't include in this parameter retains the same configuration as its counterpart in the blue environment.</p>
+    /// <p>Use this parameter when one or more resources in the green environment require a different configuration than what they have in the blue environment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify the same <code>SourceArn</code> in more than one entry.</p></li>
+    /// </ul>
+    pub fn target_resource_configurations(mut self, input: crate::types::TargetResourceConfiguration) -> Self {
+        self.inner = self.inner.target_resource_configurations(input);
+        self
+    }
+    /// <p>Specifies resource-level configuration overrides for the green environment.</p>
+    /// <p>Each entry identifies a resource in the blue environment by its Amazon Resource Name (ARN). It defines the desired configuration for the corresponding resource in the green environment. Any resource that you don't include in this parameter retains the same configuration as its counterpart in the blue environment.</p>
+    /// <p>Use this parameter when one or more resources in the green environment require a different configuration than what they have in the blue environment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify the same <code>SourceArn</code> in more than one entry.</p></li>
+    /// </ul>
+    pub fn set_target_resource_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetResourceConfiguration>>,
+    ) -> Self {
+        self.inner = self.inner.set_target_resource_configurations(input);
+        self
+    }
+    /// <p>Specifies resource-level configuration overrides for the green environment.</p>
+    /// <p>Each entry identifies a resource in the blue environment by its Amazon Resource Name (ARN). It defines the desired configuration for the corresponding resource in the green environment. Any resource that you don't include in this parameter retains the same configuration as its counterpart in the blue environment.</p>
+    /// <p>Use this parameter when one or more resources in the green environment require a different configuration than what they have in the blue environment.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify the same <code>SourceArn</code> in more than one entry.</p></li>
+    /// </ul>
+    pub fn get_target_resource_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetResourceConfiguration>> {
+        self.inner.get_target_resource_configurations()
+    }
 }

@@ -9,5 +9,8 @@ pub fn ser_delete_user_input_input(
     if let Some(var_2) = &input.user_id {
         object.key("UserId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.revision {
+        object.key("Revision").string(var_3.as_str());
+    }
     Ok(())
 }

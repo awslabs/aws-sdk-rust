@@ -543,6 +543,8 @@ pub(crate) mod shape_fleet_errors;
 
 pub(crate) mod shape_image_builder_state_change_reason;
 
+pub(crate) mod shape_image_software_metadata;
+
 pub(crate) mod shape_image_state_change_reason;
 
 pub(crate) mod shape_metadata;

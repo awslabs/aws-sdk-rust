@@ -114,6 +114,28 @@ impl ListEmailIdentitiesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator {
         crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator::new(self.handle, self.inner)
     }
+    ///
+    /// Adds a key-value pair to `Filter`.
+    ///
+    /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+    ///
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    pub fn filter(mut self, k: crate::types::IdentityFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filter(k, v.into());
+        self
+    }
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    pub fn set_filter(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::IdentityFilterKey, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::IdentityFilterKey, ::std::string::String>> {
+        self.inner.get_filter()
+    }
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

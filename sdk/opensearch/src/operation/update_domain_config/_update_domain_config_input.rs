@@ -72,6 +72,8 @@ pub struct UpdateDomainConfigInput {
     pub use_case: ::std::option::Option<crate::types::DomainUseCase>,
     /// <p>The engine mode for the domain. The engine mode can't be changed after the domain is created. For valid values, see <code>EngineMode</code>.</p>
     pub engine_mode: ::std::option::Option<crate::types::EngineMode>,
+    /// <p>A list of advisory warning codes to accept for this configuration change. By default, any advisory warning blocks the change. Include the code of each warning you want to accept so the change can proceed. You can find warning codes in the<code>ValidationFailures</code> list returned by <code>DescribeDomainChangeProgress</code>and <code>DescribeDryRunProgress</code>. Critical validation failures cannot be accepted and always block the change. If you omit this parameter or pass an empty list, all warnings block the change. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p>
+    pub accepted_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
@@ -194,6 +196,12 @@ impl UpdateDomainConfigInput {
     pub fn engine_mode(&self) -> ::std::option::Option<&crate::types::EngineMode> {
         self.engine_mode.as_ref()
     }
+    /// <p>A list of advisory warning codes to accept for this configuration change. By default, any advisory warning blocks the change. Include the code of each warning you want to accept so the change can proceed. You can find warning codes in the<code>ValidationFailures</code> list returned by <code>DescribeDomainChangeProgress</code>and <code>DescribeDryRunProgress</code>. Critical validation failures cannot be accepted and always block the change. If you omit this parameter or pass an empty list, all warnings block the change. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accepted_warnings.is_none()`.
+    pub fn accepted_warnings(&self) -> &[::std::string::String] {
+        self.accepted_warnings.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
@@ -231,6 +239,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) automated_snapshot_pause_options: ::std::option::Option<crate::types::AutomatedSnapshotPauseRequestOptions>,
     pub(crate) use_case: ::std::option::Option<crate::types::DomainUseCase>,
     pub(crate) engine_mode: ::std::option::Option<crate::types::EngineMode>,
+    pub(crate) accepted_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
@@ -662,6 +671,26 @@ impl UpdateDomainConfigInputBuilder {
     pub fn get_engine_mode(&self) -> &::std::option::Option<crate::types::EngineMode> {
         &self.engine_mode
     }
+    /// Appends an item to `accepted_warnings`.
+    ///
+    /// To override the contents of this collection use [`set_accepted_warnings`](Self::set_accepted_warnings).
+    ///
+    /// <p>A list of advisory warning codes to accept for this configuration change. By default, any advisory warning blocks the change. Include the code of each warning you want to accept so the change can proceed. You can find warning codes in the<code>ValidationFailures</code> list returned by <code>DescribeDomainChangeProgress</code>and <code>DescribeDryRunProgress</code>. Critical validation failures cannot be accepted and always block the change. If you omit this parameter or pass an empty list, all warnings block the change. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p>
+    pub fn accepted_warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.accepted_warnings.unwrap_or_default();
+        v.push(input.into());
+        self.accepted_warnings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of advisory warning codes to accept for this configuration change. By default, any advisory warning blocks the change. Include the code of each warning you want to accept so the change can proceed. You can find warning codes in the<code>ValidationFailures</code> list returned by <code>DescribeDomainChangeProgress</code>and <code>DescribeDryRunProgress</code>. Critical validation failures cannot be accepted and always block the change. If you omit this parameter or pass an empty list, all warnings block the change. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p>
+    pub fn set_accepted_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.accepted_warnings = input;
+        self
+    }
+    /// <p>A list of advisory warning codes to accept for this configuration change. By default, any advisory warning blocks the change. Include the code of each warning you want to accept so the change can proceed. You can find warning codes in the<code>ValidationFailures</code> list returned by <code>DescribeDomainChangeProgress</code>and <code>DescribeDryRunProgress</code>. Critical validation failures cannot be accepted and always block the change. If you omit this parameter or pass an empty list, all warnings block the change. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p>
+    pub fn get_accepted_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accepted_warnings
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
@@ -693,6 +722,7 @@ impl UpdateDomainConfigInputBuilder {
             automated_snapshot_pause_options: self.automated_snapshot_pause_options,
             use_case: self.use_case,
             engine_mode: self.engine_mode,
+            accepted_warnings: self.accepted_warnings,
         })
     }
 }

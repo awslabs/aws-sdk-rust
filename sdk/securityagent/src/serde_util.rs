@@ -485,6 +485,15 @@ pub(crate) fn update_code_review_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_integration_output_output_correct_errors(
+    mut builder: crate::operation::update_integration::builders::UpdateIntegrationOutputBuilder,
+) -> crate::operation::update_integration::builders::UpdateIntegrationOutputBuilder {
+    if builder.integration_id.is_none() {
+        builder.integration_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_private_connection_certificate_output_output_correct_errors(
     mut builder: crate::operation::update_private_connection_certificate::builders::UpdatePrivateConnectionCertificateOutputBuilder,
 ) -> crate::operation::update_private_connection_certificate::builders::UpdatePrivateConnectionCertificateOutputBuilder {
@@ -1151,6 +1160,21 @@ pub(crate) fn trusted_ca_certificate_correct_errors(
 ) -> crate::types::builders::TrustedCaCertificateBuilder {
     if builder.source.is_none() {
         builder.source = Some(crate::types::CaCertificateSource::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn azure_dev_ops_repository_metadata_correct_errors(
+    mut builder: crate::types::builders::AzureDevOpsRepositoryMetadataBuilder,
+) -> crate::types::builders::AzureDevOpsRepositoryMetadataBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.organization.is_none() {
+        builder.organization = Some(Default::default())
     }
     builder
 }

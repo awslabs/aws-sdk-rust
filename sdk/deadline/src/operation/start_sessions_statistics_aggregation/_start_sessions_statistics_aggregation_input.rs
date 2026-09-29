@@ -11,7 +11,7 @@ pub struct StartSessionsStatisticsAggregationInput {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Linux timestamp of the date and time that the statistics end.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The period to aggregate the statistics.</p>
     pub period: ::std::option::Option<crate::types::Period>,
@@ -37,7 +37,7 @@ impl StartSessionsStatisticsAggregationInput {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
@@ -139,17 +139,17 @@ impl StartSessionsStatisticsAggregationInputBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.timezone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
-    /// <p>The timezone to use for the statistics. Use UTC notation such as "UTC+8."</p>
+    /// <p>The time zone to use for the statistics. Use UTC notation such as "UTC+8."</p>
     pub fn get_timezone(&self) -> &::std::option::Option<::std::string::String> {
         &self.timezone
     }

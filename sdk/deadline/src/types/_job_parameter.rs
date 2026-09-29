@@ -4,14 +4,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum JobParameter {
+    /// <p>A boolean value represented as a string. Accepted values are <code>true</code>, <code>false</code>, <code>yes</code>, <code>no</code>, <code>on</code>, <code>off</code>, <code>1</code>, and <code>0</code>, case-insensitive.</p>
+    Bool(::std::string::String),
+    /// <p>A list of boolean values, each represented as a string.</p>
+    BoolList(::std::vec::Vec<::std::string::String>),
     /// <p>A double precision IEEE-754 floating point number represented as a string.</p>
     Float(::std::string::String),
+    /// <p>A list of double precision IEEE-754 floating point numbers, each represented as a string.</p>
+    FloatList(::std::vec::Vec<::std::string::String>),
     /// <p>A signed integer represented as a string.</p>
     Int(::std::string::String),
+    /// <p>A list of signed integers, each represented as a string.</p>
+    IntList(::std::vec::Vec<::std::string::String>),
+    /// <p>A list of lists of signed integers, each represented as a string.</p>
+    IntListList(::std::vec::Vec<::std::vec::Vec<::std::string::String>>),
     /// <p>A file system path represented as a string.</p>
     Path(::std::string::String),
+    /// <p>A list of file system paths, each represented as a string.</p>
+    PathList(::std::vec::Vec<::std::string::String>),
+    /// <p>An Open Job Description range expression represented as a string, such as <code>1-10:2</code>.</p>
+    RangeExpr(::std::string::String),
     /// <p>A UTF-8 string.</p>
     String(::std::string::String),
+    /// <p>A list of UTF-8 strings.</p>
+    StringList(::std::vec::Vec<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,6 +39,32 @@ pub enum JobParameter {
     Unknown,
 }
 impl JobParameter {
+    /// Tries to convert the enum instance into [`Bool`](crate::types::JobParameter::Bool), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_bool(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let JobParameter::Bool(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Bool`](crate::types::JobParameter::Bool).
+    pub fn is_bool(&self) -> bool {
+        self.as_bool().is_ok()
+    }
+    /// Tries to convert the enum instance into [`BoolList`](crate::types::JobParameter::BoolList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_bool_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let JobParameter::BoolList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`BoolList`](crate::types::JobParameter::BoolList).
+    pub fn is_bool_list(&self) -> bool {
+        self.as_bool_list().is_ok()
+    }
     /// Tries to convert the enum instance into [`Float`](crate::types::JobParameter::Float), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_float(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -35,6 +77,19 @@ impl JobParameter {
     /// Returns true if this is a [`Float`](crate::types::JobParameter::Float).
     pub fn is_float(&self) -> bool {
         self.as_float().is_ok()
+    }
+    /// Tries to convert the enum instance into [`FloatList`](crate::types::JobParameter::FloatList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_float_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let JobParameter::FloatList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`FloatList`](crate::types::JobParameter::FloatList).
+    pub fn is_float_list(&self) -> bool {
+        self.as_float_list().is_ok()
     }
     /// Tries to convert the enum instance into [`Int`](crate::types::JobParameter::Int), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -49,6 +104,32 @@ impl JobParameter {
     pub fn is_int(&self) -> bool {
         self.as_int().is_ok()
     }
+    /// Tries to convert the enum instance into [`IntList`](crate::types::JobParameter::IntList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_int_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let JobParameter::IntList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntList`](crate::types::JobParameter::IntList).
+    pub fn is_int_list(&self) -> bool {
+        self.as_int_list().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IntListList`](crate::types::JobParameter::IntListList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_int_list_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::vec::Vec<::std::string::String>>, &Self> {
+        if let JobParameter::IntListList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntListList`](crate::types::JobParameter::IntListList).
+    pub fn is_int_list_list(&self) -> bool {
+        self.as_int_list_list().is_ok()
+    }
     /// Tries to convert the enum instance into [`Path`](crate::types::JobParameter::Path), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_path(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -62,6 +143,32 @@ impl JobParameter {
     pub fn is_path(&self) -> bool {
         self.as_path().is_ok()
     }
+    /// Tries to convert the enum instance into [`PathList`](crate::types::JobParameter::PathList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_path_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let JobParameter::PathList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PathList`](crate::types::JobParameter::PathList).
+    pub fn is_path_list(&self) -> bool {
+        self.as_path_list().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RangeExpr`](crate::types::JobParameter::RangeExpr), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_range_expr(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let JobParameter::RangeExpr(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RangeExpr`](crate::types::JobParameter::RangeExpr).
+    pub fn is_range_expr(&self) -> bool {
+        self.as_range_expr().is_ok()
+    }
     /// Tries to convert the enum instance into [`String`](crate::types::JobParameter::String), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -74,6 +181,19 @@ impl JobParameter {
     /// Returns true if this is a [`String`](crate::types::JobParameter::String).
     pub fn is_string(&self) -> bool {
         self.as_string().is_ok()
+    }
+    /// Tries to convert the enum instance into [`StringList`](crate::types::JobParameter::StringList), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_string_list(&self) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
+        if let JobParameter::StringList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`StringList`](crate::types::JobParameter::StringList).
+    pub fn is_string_list(&self) -> bool {
+        self.as_string_list().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

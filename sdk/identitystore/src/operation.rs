@@ -25,6 +25,9 @@ pub mod describe_group;
 /// Types for the `DescribeGroupMembership` operation.
 pub mod describe_group_membership;
 
+/// Types for the `DescribeIdentityStore` operation.
+pub mod describe_identity_store;
+
 /// Types for the `DescribeUser` operation.
 pub mod describe_user;
 
@@ -49,11 +52,17 @@ pub mod list_group_memberships_for_member;
 /// Types for the `ListGroups` operation.
 pub mod list_groups;
 
+/// Types for the `ListIdentityStores` operation.
+pub mod list_identity_stores;
+
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
 /// Types for the `UpdateGroup` operation.
 pub mod update_group;
+
+/// Types for the `UpdateIdentityStore` operation.
+pub mod update_identity_store;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;

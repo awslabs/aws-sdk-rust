@@ -248,6 +248,20 @@ pub fn de_serverless_cache(
                 builder = builder.set_network_type(var_19);
             }
             ,
+            s if s.matches("ConnectionType") /* ConnectionType com.amazonaws.elasticache#ServerlessCache$ConnectionType */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<crate::types::ConnectionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ConnectionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_connection_type(var_20);
+            }
+            ,
             _ => {}
         }
     }

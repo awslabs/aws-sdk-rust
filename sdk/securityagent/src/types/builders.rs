@@ -133,6 +133,10 @@ pub use crate::types::_bitbucket_integration_input::BitbucketIntegrationInputBui
 
 pub use crate::types::_confluence_integration_input::ConfluenceIntegrationInputBuilder;
 
+pub use crate::types::_azure_dev_ops_integration_input::AzureDevOpsIntegrationInputBuilder;
+
+pub use crate::types::_bitbucket_data_center_integration_input::BitbucketDataCenterIntegrationInputBuilder;
+
 pub use crate::types::_private_connection_summary::PrivateConnectionSummaryBuilder;
 
 pub use crate::types::_service_managed_input::ServiceManagedInputBuilder;
@@ -191,6 +195,8 @@ pub use crate::types::_bitbucket_repository_metadata::BitbucketRepositoryMetadat
 
 pub use crate::types::_confluence_document_metadata::ConfluenceDocumentMetadataBuilder;
 
+pub use crate::types::_azure_dev_ops_repository_metadata::AzureDevOpsRepositoryMetadataBuilder;
+
 pub use crate::types::_git_hub_resource_capabilities::GitHubResourceCapabilitiesBuilder;
 
 pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilitiesBuilder;
@@ -198,6 +204,8 @@ pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilities
 pub use crate::types::_bitbucket_resource_capabilities::BitbucketResourceCapabilitiesBuilder;
 
 pub use crate::types::_confluence_resource_capabilities::ConfluenceResourceCapabilitiesBuilder;
+
+pub use crate::types::_azure_dev_ops_resource_capabilities::AzureDevOpsResourceCapabilitiesBuilder;
 
 pub use crate::types::_user_metadata::UserMetadataBuilder;
 
@@ -208,6 +216,8 @@ pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResourceBuil
 pub use crate::types::_bitbucket_repository_resource::BitbucketRepositoryResourceBuilder;
 
 pub use crate::types::_confluence_document_resource::ConfluenceDocumentResourceBuilder;
+
+pub use crate::types::_azure_dev_ops_repository_resource::AzureDevOpsRepositoryResourceBuilder;
 
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetailsBuilder;
 

@@ -447,6 +447,8 @@ pub(crate) mod shape_knowledge_base_retriever_configuration;
 
 pub(crate) mod shape_managed_search_reranking_configuration;
 
+pub(crate) mod shape_mantle_foundation_model_configuration;
+
 pub(crate) mod shape_memory_session_summary;
 
 pub(crate) mod shape_message;
@@ -528,6 +530,8 @@ pub(crate) mod shape_inference_config;
 pub(crate) mod shape_invocation_inputs;
 
 pub(crate) mod shape_managed_search_bedrock_reranking_configuration;
+
+pub(crate) mod shape_mantle_foundation_model_model_configuration;
 
 pub(crate) mod shape_metadata_attribute_schema;
 

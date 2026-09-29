@@ -75,6 +75,8 @@ pub use crate::types::_application_config::ApplicationConfigBuilder;
 
 pub use crate::types::_image_state_change_reason::ImageStateChangeReasonBuilder;
 
+pub use crate::types::_image_software_metadata::ImageSoftwareMetadataBuilder;
+
 pub use crate::types::_storage_connector::StorageConnectorBuilder;
 
 pub use crate::types::_user_setting::UserSettingBuilder;

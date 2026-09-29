@@ -3,22 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGroupMembershipOutput {
-    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    pub membership_id: ::std::string::String,
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
+    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    pub membership_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the newly created group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub membership_arn: ::std::string::String,
     _request_id: Option<String>,
 }
 impl CreateGroupMembershipOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
+    }
     /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(&self) -> &str {
         use std::ops::Deref;
         self.membership_id.deref()
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
+    /// <p>The Amazon Resource Name (ARN) of the newly created group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn membership_arn(&self) -> &str {
         use std::ops::Deref;
-        self.identity_store_id.deref()
+        self.membership_arn.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateGroupMembershipOutput {
@@ -37,26 +44,12 @@ impl CreateGroupMembershipOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateGroupMembershipOutputBuilder {
-    pub(crate) membership_id: ::std::option::Option<::std::string::String>,
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateGroupMembershipOutputBuilder {
-    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    /// This field is required.
-    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.membership_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.membership_id = input;
-        self
-    }
-    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.membership_id
-    }
     /// <p>The globally unique identifier for the identity store.</p>
     /// This field is required.
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -72,6 +65,36 @@ impl CreateGroupMembershipOutputBuilder {
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.identity_store_id
     }
+    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    /// This field is required.
+    pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.membership_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    pub fn set_membership_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.membership_id = input;
+        self
+    }
+    /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
+    pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    /// This field is required.
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.membership_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.membership_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the newly created group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,23 +106,30 @@ impl CreateGroupMembershipOutputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateGroupMembershipOutput`](crate::operation::create_group_membership::CreateGroupMembershipOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`membership_id`](crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::membership_id)
     /// - [`identity_store_id`](crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::identity_store_id)
+    /// - [`membership_id`](crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::membership_id)
+    /// - [`membership_arn`](crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::membership_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_group_membership::CreateGroupMembershipOutput, ::aws_smithy_types::error::operation::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_group_membership::CreateGroupMembershipOutput {
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building CreateGroupMembershipOutput",
+                )
+            })?,
             membership_id: self.membership_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "membership_id",
                     "membership_id was not specified but it is required when building CreateGroupMembershipOutput",
                 )
             })?,
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
+            membership_arn: self.membership_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building CreateGroupMembershipOutput",
+                    "membership_arn",
+                    "membership_arn was not specified but it is required when building CreateGroupMembershipOutput",
                 )
             })?,
             _request_id: self._request_id,

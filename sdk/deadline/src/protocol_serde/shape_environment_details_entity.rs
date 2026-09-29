@@ -45,6 +45,20 @@ where
                         "template" => {
                             builder = builder.set_template(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
+                        "extensions" => {
+                            builder = builder.set_extensions(crate::protocol_serde::shape_openjd_extension_name_list::de_openjd_extension_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "resolvedSymbolTable" => {
+                            builder = builder.set_resolved_symbol_table(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

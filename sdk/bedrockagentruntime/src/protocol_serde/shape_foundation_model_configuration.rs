@@ -12,5 +12,11 @@ pub fn ser_foundation_model_configuration(
         crate::protocol_serde::shape_bedrock_foundation_model_configuration::ser_bedrock_foundation_model_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.mantle_foundation_model_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("mantleFoundationModelConfiguration").start_object();
+        crate::protocol_serde::shape_mantle_foundation_model_configuration::ser_mantle_foundation_model_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

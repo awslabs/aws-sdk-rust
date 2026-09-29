@@ -551,6 +551,8 @@ pub(crate) mod shape_vpc_options;
 
 pub(crate) mod shape_workspace_configuration_input;
 
+pub(crate) mod shape_accepted_warnings_list;
+
 pub(crate) mod shape_access_policies_status;
 
 pub(crate) mod shape_advanced_options_status;

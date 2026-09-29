@@ -109,30 +109,36 @@ impl UpdateGroupFluentBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// <p>You can specify the group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// <p>You can specify the group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
+    /// <p>You can specify the group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_id()
     }
@@ -154,5 +160,19 @@ impl UpdateGroupFluentBuilder {
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html">Group</a>.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
         self.inner.get_operations()
+    }
+    /// <p>The expected current revision of the group. When you provide this value, the update is applied only if it matches the current revision of the group in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.revision(input.into());
+        self
+    }
+    /// <p>The expected current revision of the group. When you provide this value, the update is applied only if it matches the current revision of the group in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_revision(input);
+        self
+    }
+    /// <p>The expected current revision of the group. When you provide this value, the update is applied only if it matches the current revision of the group in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision()
     }
 }

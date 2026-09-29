@@ -69,6 +69,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "extensions" => {
+                            builder = builder.set_extensions(crate::protocol_serde::shape_openjd_extension_name_list::de_openjd_extension_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "pathMappingRules" => {
                             builder = builder.set_path_mapping_rules(crate::protocol_serde::shape_path_mapping_rules::de_path_mapping_rules(
                                 tokens,

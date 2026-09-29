@@ -61,6 +61,8 @@ pub struct GetPlaybackConfigurationOutput {
     pub ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
     /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
     pub ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. MediaTailor always returns this setting. If you created the playback configuration before this setting existed, MediaTailor reports <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value MediaTailor uses for that configuration at playback time.</p>
+    pub beaconing_configuration: ::std::option::Option<crate::types::BeaconingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutput {
@@ -180,6 +182,10 @@ impl GetPlaybackConfigurationOutput {
     pub fn ads_personalization_concurrency(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationConcurrency> {
         self.ads_personalization_concurrency.as_ref()
     }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. MediaTailor always returns this setting. If you created the playback configuration before this setting existed, MediaTailor reports <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value MediaTailor uses for that configuration at playback time.</p>
+    pub fn beaconing_configuration(&self) -> ::std::option::Option<&crate::types::BeaconingConfiguration> {
+        self.beaconing_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetPlaybackConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -227,6 +233,7 @@ pub struct GetPlaybackConfigurationOutputBuilder {
     pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
     pub(crate) ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
     pub(crate) ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
+    pub(crate) beaconing_configuration: ::std::option::Option<crate::types::BeaconingConfiguration>,
     _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutputBuilder {
@@ -656,6 +663,20 @@ impl GetPlaybackConfigurationOutputBuilder {
     pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
         &self.ads_personalization_concurrency
     }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. MediaTailor always returns this setting. If you created the playback configuration before this setting existed, MediaTailor reports <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value MediaTailor uses for that configuration at playback time.</p>
+    pub fn beaconing_configuration(mut self, input: crate::types::BeaconingConfiguration) -> Self {
+        self.beaconing_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. MediaTailor always returns this setting. If you created the playback configuration before this setting existed, MediaTailor reports <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value MediaTailor uses for that configuration at playback time.</p>
+    pub fn set_beaconing_configuration(mut self, input: ::std::option::Option<crate::types::BeaconingConfiguration>) -> Self {
+        self.beaconing_configuration = input;
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. MediaTailor always returns this setting. If you created the playback configuration before this setting existed, MediaTailor reports <code>ReportingMode</code> as <code>INSIGHTS</code>. This is also the value MediaTailor uses for that configuration at playback time.</p>
+    pub fn get_beaconing_configuration(&self) -> &::std::option::Option<crate::types::BeaconingConfiguration> {
+        &self.beaconing_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -700,6 +721,7 @@ impl GetPlaybackConfigurationOutputBuilder {
             function_mapping: self.function_mapping,
             ads_personalization_timeouts: self.ads_personalization_timeouts,
             ads_personalization_concurrency: self.ads_personalization_concurrency,
+            beaconing_configuration: self.beaconing_configuration,
             _request_id: self._request_id,
         }
     }

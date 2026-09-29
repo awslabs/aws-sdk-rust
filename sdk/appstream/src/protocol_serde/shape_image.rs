@@ -97,6 +97,14 @@ pub(crate) fn de_image(
             "ImageType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_image_type(Some(decoder.string().map(|s| crate::types::ImageType::from(s.as_str()))?)))
             })?,
+            "ImageSoftwareMetadata" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_image_software_metadata(Some(crate::protocol_serde::shape_image_software_metadata::de_image_software_metadata(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

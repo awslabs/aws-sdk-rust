@@ -21,9 +21,13 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+//! The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). You can use the identity store API operations in this guide to manage your identity data programmatically. The scope of these APIs allows you to create, read, update, delete, and list users, groups, and memberships.
 //!
-//! This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.
+//! This guide also describes identity store operations that you can call and includes detailed information about data types and errors.
+//!
+//! If you use an external identity provider or Active Directory as your identity source, we recommend that you use the Create, Update, and Delete APIs with caution. Because IAM Identity Center doesn't support outbound synchronization, your identity source won't automatically update with the changes that you make to users or groups using these APIs.
+//!
+//! Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to programmatically access the identity store and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see [Amazon Web Services Builder Center Toolbox](http://aws.amazon.com/tools/).
 //!
 //! ## Getting Started
 //!
@@ -37,7 +41,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-identitystore = "1.115.0"
+//! aws-sdk-identitystore = "1.116.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

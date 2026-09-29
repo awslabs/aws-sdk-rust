@@ -12,6 +12,12 @@ pub struct SeverityCounts {
     pub high: ::std::option::Option<i64>,
     /// <p>The total count of critical severity findings.</p>
     pub critical: ::std::option::Option<i64>,
+    /// <p>The total count of low severity findings.</p>
+    pub low: ::std::option::Option<i64>,
+    /// <p>The total count of informational severity findings.</p>
+    pub informational: ::std::option::Option<i64>,
+    /// <p>The total count of untriaged findings.</p>
+    pub untriaged: ::std::option::Option<i64>,
 }
 impl SeverityCounts {
     /// <p>The total count of findings from all severities.</p>
@@ -30,6 +36,18 @@ impl SeverityCounts {
     pub fn critical(&self) -> ::std::option::Option<i64> {
         self.critical
     }
+    /// <p>The total count of low severity findings.</p>
+    pub fn low(&self) -> ::std::option::Option<i64> {
+        self.low
+    }
+    /// <p>The total count of informational severity findings.</p>
+    pub fn informational(&self) -> ::std::option::Option<i64> {
+        self.informational
+    }
+    /// <p>The total count of untriaged findings.</p>
+    pub fn untriaged(&self) -> ::std::option::Option<i64> {
+        self.untriaged
+    }
 }
 impl SeverityCounts {
     /// Creates a new builder-style object to manufacture [`SeverityCounts`](crate::types::SeverityCounts).
@@ -46,6 +64,9 @@ pub struct SeverityCountsBuilder {
     pub(crate) medium: ::std::option::Option<i64>,
     pub(crate) high: ::std::option::Option<i64>,
     pub(crate) critical: ::std::option::Option<i64>,
+    pub(crate) low: ::std::option::Option<i64>,
+    pub(crate) informational: ::std::option::Option<i64>,
+    pub(crate) untriaged: ::std::option::Option<i64>,
 }
 impl SeverityCountsBuilder {
     /// <p>The total count of findings from all severities.</p>
@@ -104,6 +125,48 @@ impl SeverityCountsBuilder {
     pub fn get_critical(&self) -> &::std::option::Option<i64> {
         &self.critical
     }
+    /// <p>The total count of low severity findings.</p>
+    pub fn low(mut self, input: i64) -> Self {
+        self.low = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total count of low severity findings.</p>
+    pub fn set_low(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.low = input;
+        self
+    }
+    /// <p>The total count of low severity findings.</p>
+    pub fn get_low(&self) -> &::std::option::Option<i64> {
+        &self.low
+    }
+    /// <p>The total count of informational severity findings.</p>
+    pub fn informational(mut self, input: i64) -> Self {
+        self.informational = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total count of informational severity findings.</p>
+    pub fn set_informational(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.informational = input;
+        self
+    }
+    /// <p>The total count of informational severity findings.</p>
+    pub fn get_informational(&self) -> &::std::option::Option<i64> {
+        &self.informational
+    }
+    /// <p>The total count of untriaged findings.</p>
+    pub fn untriaged(mut self, input: i64) -> Self {
+        self.untriaged = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total count of untriaged findings.</p>
+    pub fn set_untriaged(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.untriaged = input;
+        self
+    }
+    /// <p>The total count of untriaged findings.</p>
+    pub fn get_untriaged(&self) -> &::std::option::Option<i64> {
+        &self.untriaged
+    }
     /// Consumes the builder and constructs a [`SeverityCounts`](crate::types::SeverityCounts).
     pub fn build(self) -> crate::types::SeverityCounts {
         crate::types::SeverityCounts {
@@ -111,6 +174,9 @@ impl SeverityCountsBuilder {
             medium: self.medium,
             high: self.high,
             critical: self.critical,
+            low: self.low,
+            informational: self.informational,
+            untriaged: self.untriaged,
         }
     }
 }

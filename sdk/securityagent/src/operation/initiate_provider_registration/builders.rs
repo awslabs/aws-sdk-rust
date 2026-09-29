@@ -108,18 +108,74 @@ impl InitiateProviderRegistrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
+    /// <p>The provider to initiate registration with.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.inner = self.inner.provider(input);
         self
     }
-    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
+    /// <p>The provider to initiate registration with.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// <p>The provider to initiate registration with. Currently, only GITHUB is supported.</p>
+    /// <p>The provider to initiate registration with.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         self.inner.get_provider()
+    }
+    /// <p>The HTTPS URL of a self-managed provider instance. Omit for SaaS providers.</p>
+    pub fn target_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.target_url(input.into());
+        self
+    }
+    /// <p>The HTTPS URL of a self-managed provider instance. Omit for SaaS providers.</p>
+    pub fn set_target_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_target_url(input);
+        self
+    }
+    /// <p>The HTTPS URL of a self-managed provider instance. Omit for SaaS providers.</p>
+    pub fn get_target_url(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_target_url()
+    }
+    /// <p>The name of the organization to connect.</p>
+    pub fn organization_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organization_name(input.into());
+        self
+    }
+    /// <p>The name of the organization to connect.</p>
+    pub fn set_organization_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_organization_name(input);
+        self
+    }
+    /// <p>The name of the organization to connect.</p>
+    pub fn get_organization_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_organization_name()
+    }
+    /// <p>The client ID of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_id(input.into());
+        self
+    }
+    /// <p>The client ID of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_id(input);
+        self
+    }
+    /// <p>The client ID of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
+    /// <p>The client secret of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_secret(input.into());
+        self
+    }
+    /// <p>The client secret of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_secret(input);
+        self
+    }
+    /// <p>The client secret of the OAuth application registered on your self-managed provider instance.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_secret()
     }
 }

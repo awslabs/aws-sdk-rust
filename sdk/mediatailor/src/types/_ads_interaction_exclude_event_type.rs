@@ -14,6 +14,7 @@
 /// match adsinteractionexcludeeventtype {
 ///     AdsInteractionExcludeEventType::AdMarkerFound => { /* ... */ },
 ///     AdsInteractionExcludeEventType::BeaconFired => { /* ... */ },
+///     AdsInteractionExcludeEventType::BeaconReceived => { /* ... */ },
 ///     AdsInteractionExcludeEventType::EmptyVastResponse => { /* ... */ },
 ///     AdsInteractionExcludeEventType::EmptyVmapResponse => { /* ... */ },
 ///     AdsInteractionExcludeEventType::ErrorAdsInvalidResponse => { /* ... */ },
@@ -91,6 +92,8 @@ pub enum AdsInteractionExcludeEventType {
     AdMarkerFound,
     #[allow(missing_docs)] // documentation missing in model
     BeaconFired,
+    #[allow(missing_docs)] // documentation missing in model
+    BeaconReceived,
     #[allow(missing_docs)] // documentation missing in model
     EmptyVastResponse,
     #[allow(missing_docs)] // documentation missing in model
@@ -190,6 +193,7 @@ impl ::std::convert::From<&str> for AdsInteractionExcludeEventType {
         match s {
             "AD_MARKER_FOUND" => AdsInteractionExcludeEventType::AdMarkerFound,
             "BEACON_FIRED" => AdsInteractionExcludeEventType::BeaconFired,
+            "BEACON_RECEIVED" => AdsInteractionExcludeEventType::BeaconReceived,
             "EMPTY_VAST_RESPONSE" => AdsInteractionExcludeEventType::EmptyVastResponse,
             "EMPTY_VMAP_RESPONSE" => AdsInteractionExcludeEventType::EmptyVmapResponse,
             "ERROR_ADS_INVALID_RESPONSE" => AdsInteractionExcludeEventType::ErrorAdsInvalidResponse,
@@ -252,6 +256,7 @@ impl AdsInteractionExcludeEventType {
         match self {
             AdsInteractionExcludeEventType::AdMarkerFound => "AD_MARKER_FOUND",
             AdsInteractionExcludeEventType::BeaconFired => "BEACON_FIRED",
+            AdsInteractionExcludeEventType::BeaconReceived => "BEACON_RECEIVED",
             AdsInteractionExcludeEventType::EmptyVastResponse => "EMPTY_VAST_RESPONSE",
             AdsInteractionExcludeEventType::EmptyVmapResponse => "EMPTY_VMAP_RESPONSE",
             AdsInteractionExcludeEventType::ErrorAdsInvalidResponse => "ERROR_ADS_INVALID_RESPONSE",
@@ -305,6 +310,7 @@ impl AdsInteractionExcludeEventType {
         &[
             "AD_MARKER_FOUND",
             "BEACON_FIRED",
+            "BEACON_RECEIVED",
             "EMPTY_VAST_RESPONSE",
             "EMPTY_VMAP_RESPONSE",
             "ERROR_ADS_INVALID_RESPONSE",
@@ -375,6 +381,7 @@ impl ::std::fmt::Display for AdsInteractionExcludeEventType {
         match self {
             AdsInteractionExcludeEventType::AdMarkerFound => write!(f, "AD_MARKER_FOUND"),
             AdsInteractionExcludeEventType::BeaconFired => write!(f, "BEACON_FIRED"),
+            AdsInteractionExcludeEventType::BeaconReceived => write!(f, "BEACON_RECEIVED"),
             AdsInteractionExcludeEventType::EmptyVastResponse => write!(f, "EMPTY_VAST_RESPONSE"),
             AdsInteractionExcludeEventType::EmptyVmapResponse => write!(f, "EMPTY_VMAP_RESPONSE"),
             AdsInteractionExcludeEventType::ErrorAdsInvalidResponse => write!(f, "ERROR_ADS_INVALID_RESPONSE"),

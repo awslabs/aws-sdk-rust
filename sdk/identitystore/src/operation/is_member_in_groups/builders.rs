@@ -111,16 +111,19 @@ impl IsMemberInGroupsFluentBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
@@ -144,16 +147,19 @@ impl IsMemberInGroupsFluentBuilder {
     /// To override the contents of this collection use [`set_group_ids`](Self::set_group_ids).
     ///
     /// <p>A list of identifiers for groups in the identity store.</p>
+    /// <p>You can specify each group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_ids(input.into());
         self
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
+    /// <p>You can specify each group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn set_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_group_ids(input);
         self
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
+    /// <p>You can specify each group by ID or by Amazon Resource Name (ARN). For example, group ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code> or group ARN <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
     pub fn get_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_group_ids()
     }

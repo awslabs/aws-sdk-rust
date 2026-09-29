@@ -12,6 +12,7 @@
 /// ```text
 /// # let provider = unimplemented!();
 /// match provider {
+///     Provider::AzureDevops => { /* ... */ },
 ///     Provider::Bitbucket => { /* ... */ },
 ///     Provider::Confluence => { /* ... */ },
 ///     Provider::Github => { /* ... */ },
@@ -45,6 +46,8 @@
 )]
 pub enum Provider {
     #[allow(missing_docs)] // documentation missing in model
+    AzureDevops,
+    #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
     #[allow(missing_docs)] // documentation missing in model
     Confluence,
@@ -59,6 +62,7 @@ pub enum Provider {
 impl ::std::convert::From<&str> for Provider {
     fn from(s: &str) -> Self {
         match s {
+            "AZURE_DEVOPS" => Provider::AzureDevops,
             "BITBUCKET" => Provider::Bitbucket,
             "CONFLUENCE" => Provider::Confluence,
             "GITHUB" => Provider::Github,
@@ -78,6 +82,7 @@ impl Provider {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Provider::AzureDevops => "AZURE_DEVOPS",
             Provider::Bitbucket => "BITBUCKET",
             Provider::Confluence => "CONFLUENCE",
             Provider::Github => "GITHUB",
@@ -87,7 +92,7 @@ impl Provider {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BITBUCKET", "CONFLUENCE", "GITHUB", "GITLAB"]
+        &["AZURE_DEVOPS", "BITBUCKET", "CONFLUENCE", "GITHUB", "GITLAB"]
     }
 }
 impl ::std::convert::AsRef<str> for Provider {
@@ -110,6 +115,7 @@ impl Provider {
 impl ::std::fmt::Display for Provider {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Provider::AzureDevops => write!(f, "AZURE_DEVOPS"),
             Provider::Bitbucket => write!(f, "BITBUCKET"),
             Provider::Confluence => write!(f, "CONFLUENCE"),
             Provider::Github => write!(f, "GITHUB"),

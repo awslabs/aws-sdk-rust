@@ -69,6 +69,8 @@ pub use crate::types::_reserved_db_instance::ReservedDbInstanceBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_target_resource_configuration::TargetResourceConfigurationBuilder;
+
 pub use crate::types::_upgrade_target::UpgradeTargetBuilder;
 
 pub use crate::types::_timezone::TimezoneBuilder;

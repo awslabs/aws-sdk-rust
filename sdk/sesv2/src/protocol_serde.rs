@@ -323,7 +323,11 @@ pub(crate) mod shape_invalid_next_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_configuration_sets_input;
+
 pub(crate) mod shape_list_contacts_input;
+
+pub(crate) mod shape_list_email_identities_input;
 
 pub(crate) mod shape_list_email_identity_certificates_input;
 

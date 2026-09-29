@@ -16,6 +16,8 @@ pub struct IntegrationSummary {
     pub display_name: ::std::string::String,
     /// <p>The HTTPS URL of the customer self-hosted instance, such as a GitHub Enterprise Server or self-managed GitLab instance. This value is absent for SaaS integrations.</p>
     pub target_url: ::std::option::Option<::std::string::String>,
+    /// <p>The payload URL of the integration's webhook, once it has been created. The signing secret is never returned on a read.</p>
+    pub webhook_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
     pub private_connection_name: ::std::option::Option<::std::string::String>,
 }
@@ -47,6 +49,10 @@ impl IntegrationSummary {
     pub fn target_url(&self) -> ::std::option::Option<&str> {
         self.target_url.as_deref()
     }
+    /// <p>The payload URL of the integration's webhook, once it has been created. The signing secret is never returned on a read.</p>
+    pub fn webhook_url(&self) -> ::std::option::Option<&str> {
+        self.webhook_url.as_deref()
+    }
     /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
     pub fn private_connection_name(&self) -> ::std::option::Option<&str> {
         self.private_connection_name.as_deref()
@@ -69,6 +75,7 @@ pub struct IntegrationSummaryBuilder {
     pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_url: ::std::option::Option<::std::string::String>,
+    pub(crate) webhook_url: ::std::option::Option<::std::string::String>,
     pub(crate) private_connection_name: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationSummaryBuilder {
@@ -161,6 +168,20 @@ impl IntegrationSummaryBuilder {
     pub fn get_target_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_url
     }
+    /// <p>The payload URL of the integration's webhook, once it has been created. The signing secret is never returned on a read.</p>
+    pub fn webhook_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.webhook_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The payload URL of the integration's webhook, once it has been created. The signing secret is never returned on a read.</p>
+    pub fn set_webhook_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.webhook_url = input;
+        self
+    }
+    /// <p>The payload URL of the integration's webhook, once it has been created. The signing secret is never returned on a read.</p>
+    pub fn get_webhook_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.webhook_url
+    }
     /// <p>The name of the private connection used to reach the integration's self-hosted instance over private networking, if one is configured.</p>
     pub fn private_connection_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_connection_name = ::std::option::Option::Some(input.into());
@@ -215,6 +236,7 @@ impl IntegrationSummaryBuilder {
                 )
             })?,
             target_url: self.target_url,
+            webhook_url: self.webhook_url,
             private_connection_name: self.private_connection_name,
         })
     }

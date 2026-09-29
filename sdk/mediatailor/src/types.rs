@@ -53,6 +53,8 @@ pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeouts;
 
 pub use crate::types::_ads_personalization_concurrency::AdsPersonalizationConcurrency;
 
+pub use crate::types::_beaconing_configuration::BeaconingConfiguration;
+
 pub use crate::types::_dash_configuration::DashConfiguration;
 
 pub use crate::types::_hls_configuration::HlsConfiguration;
@@ -127,6 +129,8 @@ pub use crate::types::_aps_region::ApsRegion;
 
 pub use crate::types::_event_name::EventName;
 
+pub use crate::types::_client_side_beaconing_configuration::ClientSideBeaconingConfiguration;
+
 pub use crate::types::_prefetch_schedule::PrefetchSchedule;
 
 pub use crate::types::_traffic_shaping_type::TrafficShapingType;
@@ -187,6 +191,8 @@ pub use crate::types::_compression_method::CompressionMethod;
 
 pub use crate::types::_ad_sequencing_mode::AdSequencingMode;
 
+pub use crate::types::_client_side_beaconing_mode::ClientSideBeaconingMode;
+
 pub use crate::types::_avail_matching_criteria::AvailMatchingCriteria;
 
 pub use crate::types::_message_type::MessageType;
@@ -200,6 +206,8 @@ pub use crate::types::_relative_position::RelativePosition;
 pub use crate::types::_schedule_ad_break::ScheduleAdBreak;
 
 pub use crate::types::_pre_roll_ad_sequencing_mode::PreRollAdSequencingMode;
+
+pub use crate::types::_beacon_event_type::BeaconEventType;
 
 pub use crate::types::_operator::Operator;
 
@@ -255,6 +263,10 @@ mod _avail_suppression;
 
 mod _aws_service_request_configuration;
 
+mod _beacon_event_type;
+
+mod _beaconing_configuration;
+
 mod _bumper;
 
 mod _cdn_configuration;
@@ -262,6 +274,10 @@ mod _cdn_configuration;
 mod _channel;
 
 mod _channel_state;
+
+mod _client_side_beaconing_configuration;
+
+mod _client_side_beaconing_mode;
 
 mod _clip_range;
 

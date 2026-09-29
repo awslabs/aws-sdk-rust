@@ -891,6 +891,15 @@ pub(crate) fn decrypt_step_details_correct_errors(
     builder
 }
 
+pub(crate) fn sftp_port_with_options_correct_errors(
+    mut builder: crate::types::builders::SftpPortWithOptionsBuilder,
+) -> crate::types::builders::SftpPortWithOptionsBuilder {
+    if builder.sftp_port.is_none() {
+        builder.sftp_port = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn workflow_detail_correct_errors(
     mut builder: crate::types::builders::WorkflowDetailBuilder,
 ) -> crate::types::builders::WorkflowDetailBuilder {

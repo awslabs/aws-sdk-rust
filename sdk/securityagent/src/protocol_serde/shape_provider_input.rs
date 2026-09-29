@@ -28,6 +28,18 @@ pub fn ser_provider_input(
             crate::protocol_serde::shape_confluence_integration_input::ser_confluence_integration_input(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::ProviderInput::AzureDevOps(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_2.key("azureDevOps").start_object();
+            crate::protocol_serde::shape_azure_dev_ops_integration_input::ser_azure_dev_ops_integration_input(&mut object_5, inner)?;
+            object_5.finish();
+        }
+        crate::types::ProviderInput::BitbucketDataCenter(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_2.key("bitbucketDataCenter").start_object();
+            crate::protocol_serde::shape_bitbucket_data_center_integration_input::ser_bitbucket_data_center_integration_input(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::ProviderInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ProviderInput"))
         }

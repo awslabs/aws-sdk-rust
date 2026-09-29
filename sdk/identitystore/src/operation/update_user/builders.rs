@@ -109,30 +109,36 @@ impl UpdateUserFluentBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
+    /// <p>You can specify the identity store by ID or by Amazon Resource Name (ARN). For example, identity store ID <code>d-1234567890</code> or identity store ARN <code>arn:aws:identitystore::111122223333:identitystore/d-1234567890</code>.</p>
     pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identity_store_id()
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
     /// <p>The identifier for a user in the identity store.</p>
+    /// <p>You can specify the user by ID or by Amazon Resource Name (ARN). For example, user ID <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code> or user ARN <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
@@ -154,5 +160,19 @@ impl UpdateUserFluentBuilder {
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested user. These operations might add, replace, or remove an attribute. For more information on the attributes that can be added, replaced, or removed, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html">User</a>.</p>
     pub fn get_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>> {
         self.inner.get_operations()
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.revision(input.into());
+        self
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_revision(input);
+        self
+    }
+    /// <p>The expected current revision of the user. When you provide this value, the update is applied only if it matches the current revision of the user in the identity store, which prevents you from overwriting concurrent changes. If the value doesn't match, the operation fails with a <code>ConflictException</code>. If you don't provide this value, the update is applied unconditionally.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_revision()
     }
 }

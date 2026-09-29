@@ -12,6 +12,10 @@ pub struct EnvironmentDetailsEntity {
     pub schema_version: ::std::string::String,
     /// <p>The template used for the environment.</p>
     pub template: ::aws_smithy_types::Document,
+    /// <p>The Open Job Description extensions that the environment uses. This value is used by the worker agent.</p>
+    pub extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The resolved symbol table for the environment's expressions, serialized as JSON. This value is used by the worker agent.</p>
+    pub resolved_symbol_table: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentDetailsEntity {
     /// <p>The job ID.</p>
@@ -33,6 +37,16 @@ impl EnvironmentDetailsEntity {
     pub fn template(&self) -> &::aws_smithy_types::Document {
         &self.template
     }
+    /// <p>The Open Job Description extensions that the environment uses. This value is used by the worker agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.extensions.is_none()`.
+    pub fn extensions(&self) -> &[::std::string::String] {
+        self.extensions.as_deref().unwrap_or_default()
+    }
+    /// <p>The resolved symbol table for the environment's expressions, serialized as JSON. This value is used by the worker agent.</p>
+    pub fn resolved_symbol_table(&self) -> ::std::option::Option<&str> {
+        self.resolved_symbol_table.as_deref()
+    }
 }
 impl ::std::fmt::Debug for EnvironmentDetailsEntity {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -41,6 +55,8 @@ impl ::std::fmt::Debug for EnvironmentDetailsEntity {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("schema_version", &self.schema_version);
         formatter.field("template", &"*** Sensitive Data Redacted ***");
+        formatter.field("extensions", &self.extensions);
+        formatter.field("resolved_symbol_table", &self.resolved_symbol_table);
         formatter.finish()
     }
 }
@@ -59,6 +75,8 @@ pub struct EnvironmentDetailsEntityBuilder {
     pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) schema_version: ::std::option::Option<::std::string::String>,
     pub(crate) template: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) extensions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resolved_symbol_table: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentDetailsEntityBuilder {
     /// <p>The job ID.</p>
@@ -121,6 +139,40 @@ impl EnvironmentDetailsEntityBuilder {
     pub fn get_template(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.template
     }
+    /// Appends an item to `extensions`.
+    ///
+    /// To override the contents of this collection use [`set_extensions`](Self::set_extensions).
+    ///
+    /// <p>The Open Job Description extensions that the environment uses. This value is used by the worker agent.</p>
+    pub fn extensions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.extensions.unwrap_or_default();
+        v.push(input.into());
+        self.extensions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Open Job Description extensions that the environment uses. This value is used by the worker agent.</p>
+    pub fn set_extensions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.extensions = input;
+        self
+    }
+    /// <p>The Open Job Description extensions that the environment uses. This value is used by the worker agent.</p>
+    pub fn get_extensions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.extensions
+    }
+    /// <p>The resolved symbol table for the environment's expressions, serialized as JSON. This value is used by the worker agent.</p>
+    pub fn resolved_symbol_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resolved_symbol_table = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The resolved symbol table for the environment's expressions, serialized as JSON. This value is used by the worker agent.</p>
+    pub fn set_resolved_symbol_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resolved_symbol_table = input;
+        self
+    }
+    /// <p>The resolved symbol table for the environment's expressions, serialized as JSON. This value is used by the worker agent.</p>
+    pub fn get_resolved_symbol_table(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resolved_symbol_table
+    }
     /// Consumes the builder and constructs a [`EnvironmentDetailsEntity`](crate::types::EnvironmentDetailsEntity).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_id`](crate::types::builders::EnvironmentDetailsEntityBuilder::job_id)
@@ -153,6 +205,8 @@ impl EnvironmentDetailsEntityBuilder {
                     "template was not specified but it is required when building EnvironmentDetailsEntity",
                 )
             })?,
+            extensions: self.extensions,
+            resolved_symbol_table: self.resolved_symbol_table,
         })
     }
 }
@@ -163,6 +217,8 @@ impl ::std::fmt::Debug for EnvironmentDetailsEntityBuilder {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("schema_version", &self.schema_version);
         formatter.field("template", &"*** Sensitive Data Redacted ***");
+        formatter.field("extensions", &self.extensions);
+        formatter.field("resolved_symbol_table", &self.resolved_symbol_table);
         formatter.finish()
     }
 }

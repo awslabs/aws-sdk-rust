@@ -471,6 +471,8 @@ impl CreateServerFluentBuilder {
     /// <li>
     /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
     /// <li>
+    /// <p>To specify which ports your Transfer Family server listens to, use the <code>SftpPorts</code> parameter.</p></li>
+    /// <li>
     /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
     /// <li>
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
@@ -488,6 +490,8 @@ impl CreateServerFluentBuilder {
     /// <li>
     /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
     /// <li>
+    /// <p>To specify which ports your Transfer Family server listens to, use the <code>SftpPorts</code> parameter.</p></li>
+    /// <li>
     /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
     /// <li>
     /// <p><code>As2Transports</code> indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p></li>
@@ -504,6 +508,8 @@ impl CreateServerFluentBuilder {
     /// <p>To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.</p></li>
     /// <li>
     /// <p>To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code> command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command and upload files without needing to make any changes to your SFTP client, set the value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.</p></li>
+    /// <li>
+    /// <p>To specify which ports your Transfer Family server listens to, use the <code>SftpPorts</code> parameter.</p></li>
     /// <li>
     /// <p>To determine whether your Transfer Family server resumes recent, negotiated sessions through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.</p></li>
     /// <li>

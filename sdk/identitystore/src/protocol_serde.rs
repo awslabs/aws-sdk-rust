@@ -39,6 +39,8 @@ pub(crate) mod shape_describe_group;
 
 pub(crate) mod shape_describe_group_membership;
 
+pub(crate) mod shape_describe_identity_store;
+
 pub(crate) mod shape_describe_user;
 
 pub(crate) mod shape_get_group_id;
@@ -55,9 +57,13 @@ pub(crate) mod shape_list_group_memberships_for_member;
 
 pub(crate) mod shape_list_groups;
 
+pub(crate) mod shape_list_identity_stores;
+
 pub(crate) mod shape_list_users;
 
 pub(crate) mod shape_update_group;
+
+pub(crate) mod shape_update_identity_store;
 
 pub(crate) mod shape_update_user;
 
@@ -89,6 +95,8 @@ pub(crate) mod shape_describe_group_input;
 
 pub(crate) mod shape_describe_group_membership_input;
 
+pub(crate) mod shape_describe_identity_store_input;
+
 pub(crate) mod shape_describe_user_input;
 
 pub(crate) mod shape_get_group_id_input;
@@ -107,6 +115,8 @@ pub(crate) mod shape_list_group_memberships_input;
 
 pub(crate) mod shape_list_groups_input;
 
+pub(crate) mod shape_list_identity_stores_input;
+
 pub(crate) mod shape_list_users_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -116,6 +126,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_group_input;
+
+pub(crate) mod shape_update_identity_store_input;
 
 pub(crate) mod shape_update_user_input;
 
@@ -145,9 +157,15 @@ pub(crate) mod shape_group_memberships;
 
 pub(crate) mod shape_groups;
 
+pub(crate) mod shape_identity_stores;
+
 pub(crate) mod shape_member_id;
 
 pub(crate) mod shape_name;
+
+pub(crate) mod shape_network_configuration;
+
+pub(crate) mod shape_network_configuration_details;
 
 pub(crate) mod shape_phone_number;
 
@@ -171,6 +189,12 @@ pub(crate) mod shape_group_membership;
 
 pub(crate) mod shape_group_membership_existence_result;
 
+pub(crate) mod shape_identity_store;
+
+pub(crate) mod shape_ip_cidr_list;
+
 pub(crate) mod shape_unique_attribute;
 
 pub(crate) mod shape_user;
+
+pub(crate) mod shape_vpc_id_list;

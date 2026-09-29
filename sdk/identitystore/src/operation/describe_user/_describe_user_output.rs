@@ -7,6 +7,10 @@ pub struct DescribeUserOutput {
     pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a user in the identity store.</p>
     pub user_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub user_arn: ::std::string::String,
+    /// <p>The current revision of the user in the identity store. This value changes each time the user is modified.</p>
+    pub revision: ::std::string::String,
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
@@ -67,6 +71,16 @@ impl DescribeUserOutput {
     pub fn user_id(&self) -> &str {
         use std::ops::Deref;
         self.user_id.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_arn.deref()
+    }
+    /// <p>The current revision of the user in the identity store. This value changes each time the user is modified.</p>
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn user_name(&self) -> ::std::option::Option<&str> {
@@ -182,6 +196,8 @@ impl ::std::fmt::Debug for DescribeUserOutput {
         let mut formatter = f.debug_struct("DescribeUserOutput");
         formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("user_id", &self.user_id);
+        formatter.field("user_arn", &self.user_arn);
+        formatter.field("revision", &self.revision);
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("name", &self.name);
@@ -228,6 +244,8 @@ impl DescribeUserOutput {
 pub struct DescribeUserOutputBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     pub(crate) name: ::std::option::Option<crate::types::Name>,
@@ -284,6 +302,36 @@ impl DescribeUserOutputBuilder {
     /// <p>The identifier for a user in the identity store.</p>
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    /// This field is required.
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
+    /// <p>The current revision of the user in the identity store. This value changes each time the user is modified.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current revision of the user in the identity store. This value changes each time the user is modified.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision = input;
+        self
+    }
+    /// <p>The current revision of the user in the identity store. This value changes each time the user is modified.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
     }
     /// <p>A unique string used to identify the user. The length limit is 128 characters. This value can consist of letters, accented characters, symbols, numbers, and punctuation. This value is specified at the time the user is created and stored as an attribute of the user object in the identity store.</p>
     pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -679,6 +727,8 @@ impl DescribeUserOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::operation::describe_user::builders::DescribeUserOutputBuilder::identity_store_id)
     /// - [`user_id`](crate::operation::describe_user::builders::DescribeUserOutputBuilder::user_id)
+    /// - [`user_arn`](crate::operation::describe_user::builders::DescribeUserOutputBuilder::user_arn)
+    /// - [`revision`](crate::operation::describe_user::builders::DescribeUserOutputBuilder::revision)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_user::DescribeUserOutput, ::aws_smithy_types::error::operation::BuildError> {
@@ -693,6 +743,18 @@ impl DescribeUserOutputBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user_id",
                     "user_id was not specified but it is required when building DescribeUserOutput",
+                )
+            })?,
+            user_arn: self.user_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_arn",
+                    "user_arn was not specified but it is required when building DescribeUserOutput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building DescribeUserOutput",
                 )
             })?,
             user_name: self.user_name,
@@ -728,6 +790,8 @@ impl ::std::fmt::Debug for DescribeUserOutputBuilder {
         let mut formatter = f.debug_struct("DescribeUserOutputBuilder");
         formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("user_id", &self.user_id);
+        formatter.field("user_arn", &self.user_arn);
+        formatter.field("revision", &self.revision);
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("name", &self.name);

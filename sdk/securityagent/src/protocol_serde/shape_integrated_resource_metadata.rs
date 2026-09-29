@@ -60,6 +60,16 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'confluenceDocument' cannot be null")
                                 })?,
                         )),
+                        "azureDevOpsRepository" => Some(crate::types::IntegratedResourceMetadata::AzureDevOpsRepository(
+                            crate::protocol_serde::shape_azure_dev_ops_repository_metadata::de_azure_dev_ops_repository_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureDevOpsRepository' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::IntegratedResourceMetadata::Unknown)

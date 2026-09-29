@@ -108,17 +108,17 @@ impl CreateIntegrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.inner = self.inner.provider(input);
         self
     }
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
-    /// <p>The integration provider. Currently, only GITHUB is supported.</p>
+    /// <p>The integration provider.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         self.inner.get_provider()
     }

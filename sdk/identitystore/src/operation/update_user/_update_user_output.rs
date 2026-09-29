@@ -3,7 +3,37 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub identity_store_id: ::std::string::String,
+    /// <p>The identifier for a user in the identity store.</p>
+    pub user_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub user_arn: ::std::string::String,
+    /// <p>The revision of the user after the requested update is applied.</p>
+    pub revision: ::std::string::String,
     _request_id: Option<String>,
+}
+impl UpdateUserOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn user_id(&self) -> &str {
+        use std::ops::Deref;
+        self.user_id.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn user_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.user_arn.deref()
+    }
+    /// <p>The revision of the user after the requested update is applied.</p>
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateUserOutput {
     fn request_id(&self) -> Option<&str> {
@@ -21,9 +51,73 @@ impl UpdateUserOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateUserOutputBuilder {
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateUserOutputBuilder {
+    /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_id = input;
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    /// This field is required.
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_id = input;
+        self
+    }
+    /// <p>The identifier for a user in the identity store.</p>
+    pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    /// This field is required.
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the user in the identity store. For example, <code>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
+    pub fn get_user_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_arn
+    }
+    /// <p>The revision of the user after the requested update is applied.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision of the user after the requested update is applied.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision = input;
+        self
+    }
+    /// <p>The revision of the user after the requested update is applied.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -34,9 +128,38 @@ impl UpdateUserOutputBuilder {
         self
     }
     /// Consumes the builder and constructs a [`UpdateUserOutput`](crate::operation::update_user::UpdateUserOutput).
-    pub fn build(self) -> crate::operation::update_user::UpdateUserOutput {
-        crate::operation::update_user::UpdateUserOutput {
+    /// This method will fail if any of the following fields are not set:
+    /// - [`identity_store_id`](crate::operation::update_user::builders::UpdateUserOutputBuilder::identity_store_id)
+    /// - [`user_id`](crate::operation::update_user::builders::UpdateUserOutputBuilder::user_id)
+    /// - [`user_arn`](crate::operation::update_user::builders::UpdateUserOutputBuilder::user_arn)
+    /// - [`revision`](crate::operation::update_user::builders::UpdateUserOutputBuilder::revision)
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_user::UpdateUserOutput, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::operation::update_user::UpdateUserOutput {
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
+            user_id: self.user_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_id",
+                    "user_id was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
+            user_arn: self.user_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "user_arn",
+                    "user_arn was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building UpdateUserOutput",
+                )
+            })?,
             _request_id: self._request_id,
-        }
+        })
     }
 }

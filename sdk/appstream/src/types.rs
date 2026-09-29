@@ -123,6 +123,8 @@ pub use crate::types::_image_shared_with_others::ImageSharedWithOthers;
 
 pub use crate::types::_image_type::ImageType;
 
+pub use crate::types::_image_software_metadata::ImageSoftwareMetadata;
+
 pub use crate::types::_storage_connector::StorageConnector;
 
 pub use crate::types::_user_setting::UserSetting;
@@ -318,6 +320,8 @@ mod _image_builder_state_change_reason_code;
 mod _image_permissions;
 
 mod _image_shared_with_others;
+
+mod _image_software_metadata;
 
 mod _image_state;
 

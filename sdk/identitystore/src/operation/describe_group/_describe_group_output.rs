@@ -3,8 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeGroupOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a group in the identity store.</p>
     pub group_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub group_arn: ::std::string::String,
+    /// <p>The current revision of the group in the identity store. This value changes each time the group is modified.</p>
+    pub revision: ::std::string::String,
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ExternalId</code> objects that contains the identifiers issued to this resource by an external identity provider.</p>
@@ -19,15 +25,28 @@ pub struct DescribeGroupOutput {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user or system that last updated the group.</p>
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::string::String,
     _request_id: Option<String>,
 }
 impl DescribeGroupOutput {
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn identity_store_id(&self) -> &str {
+        use std::ops::Deref;
+        self.identity_store_id.deref()
+    }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(&self) -> &str {
         use std::ops::Deref;
         self.group_id.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn group_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.group_arn.deref()
+    }
+    /// <p>The current revision of the group in the identity store. This value changes each time the group is modified.</p>
+    pub fn revision(&self) -> &str {
+        use std::ops::Deref;
+        self.revision.deref()
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -59,16 +78,14 @@ impl DescribeGroupOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
-    }
 }
 impl ::std::fmt::Debug for DescribeGroupOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGroupOutput");
+        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("group_id", &self.group_id);
+        formatter.field("group_arn", &self.group_arn);
+        formatter.field("revision", &self.revision);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -76,7 +93,6 @@ impl ::std::fmt::Debug for DescribeGroupOutput {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_by", &self.updated_by);
-        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -97,7 +113,10 @@ impl DescribeGroupOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DescribeGroupOutputBuilder {
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) external_ids: ::std::option::Option<::std::vec::Vec<crate::types::ExternalId>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
@@ -105,10 +124,24 @@ pub struct DescribeGroupOutputBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
-    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeGroupOutputBuilder {
+    /// <p>The globally unique identifier for the identity store.</p>
+    /// This field is required.
+    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_id = input;
+        self
+    }
+    /// <p>The globally unique identifier for the identity store.</p>
+    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_id
+    }
     /// <p>The identifier for a group in the identity store.</p>
     /// This field is required.
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -123,6 +156,36 @@ impl DescribeGroupOutputBuilder {
     /// <p>The identifier for a group in the identity store.</p>
     pub fn get_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    /// This field is required.
+    pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group in the identity store. For example, <code>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</code>.</p>
+    pub fn get_group_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_arn
+    }
+    /// <p>The current revision of the group in the identity store. This value changes each time the group is modified.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The current revision of the group in the identity store. This value changes each time the group is modified.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.revision = input;
+        self
+    }
+    /// <p>The current revision of the group in the identity store. This value changes each time the group is modified.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.revision
     }
     /// <p>The group’s display name value. The length limit is 1,024 characters. This value can consist of letters, accented characters, symbols, numbers, punctuation, tab, new line, carriage return, space, and nonbreaking space in this attribute. This value is specified at the time that the group is created and stored as an attribute of the group object in the identity store.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -228,21 +291,6 @@ impl DescribeGroupOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
-    /// <p>The globally unique identifier for the identity store.</p>
-    /// This field is required.
-    pub fn identity_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.identity_store_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.identity_store_id = input;
-        self
-    }
-    /// <p>The globally unique identifier for the identity store.</p>
-    pub fn get_identity_store_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.identity_store_id
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -254,16 +302,36 @@ impl DescribeGroupOutputBuilder {
     }
     /// Consumes the builder and constructs a [`DescribeGroupOutput`](crate::operation::describe_group::DescribeGroupOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`group_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::group_id)
     /// - [`identity_store_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::identity_store_id)
+    /// - [`group_id`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::group_id)
+    /// - [`group_arn`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::group_arn)
+    /// - [`revision`](crate::operation::describe_group::builders::DescribeGroupOutputBuilder::revision)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupOutput {
+            identity_store_id: self.identity_store_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "identity_store_id",
+                    "identity_store_id was not specified but it is required when building DescribeGroupOutput",
+                )
+            })?,
             group_id: self.group_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "group_id",
                     "group_id was not specified but it is required when building DescribeGroupOutput",
+                )
+            })?,
+            group_arn: self.group_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "group_arn",
+                    "group_arn was not specified but it is required when building DescribeGroupOutput",
+                )
+            })?,
+            revision: self.revision.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "revision",
+                    "revision was not specified but it is required when building DescribeGroupOutput",
                 )
             })?,
             display_name: self.display_name,
@@ -273,12 +341,6 @@ impl DescribeGroupOutputBuilder {
             updated_at: self.updated_at,
             created_by: self.created_by,
             updated_by: self.updated_by,
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building DescribeGroupOutput",
-                )
-            })?,
             _request_id: self._request_id,
         })
     }
@@ -286,7 +348,10 @@ impl DescribeGroupOutputBuilder {
 impl ::std::fmt::Debug for DescribeGroupOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeGroupOutputBuilder");
+        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("group_id", &self.group_id);
+        formatter.field("group_arn", &self.group_arn);
+        formatter.field("revision", &self.revision);
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("external_ids", &self.external_ids);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
@@ -294,7 +359,6 @@ impl ::std::fmt::Debug for DescribeGroupOutputBuilder {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_by", &self.updated_by);
-        formatter.field("identity_store_id", &self.identity_store_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

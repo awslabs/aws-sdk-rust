@@ -148,6 +148,13 @@ pub(crate) fn de_get_group_membership_id(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "IdentityStoreId" => {
+                    builder = builder.set_identity_store_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "MembershipId" => {
                     builder = builder.set_membership_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -155,8 +162,8 @@ pub(crate) fn de_get_group_membership_id(
                             .transpose()?,
                     );
                 }
-                "IdentityStoreId" => {
-                    builder = builder.set_identity_store_id(
+                "MembershipArn" => {
+                    builder = builder.set_membership_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

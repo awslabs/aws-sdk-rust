@@ -199,6 +199,8 @@ pub use crate::types::_transfer_table_status::TransferTableStatus;
 
 pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfig;
 
+pub use crate::types::_sftp_port_with_options::SftpPortWithOptions;
+
 pub use crate::types::_as2_transport::As2Transport;
 
 pub use crate::types::_proxy_mode::ProxyMode;
@@ -227,6 +229,8 @@ pub use crate::types::_decrypt_step_details::DecryptStepDetails;
 
 pub use crate::types::_execution_step_result::ExecutionStepResult;
 
+pub use crate::types::_communication_mode::CommunicationMode;
+
 pub use crate::types::_input_file_location::InputFileLocation;
 
 pub use crate::types::_overwrite_existing::OverwriteExisting;
@@ -254,6 +258,8 @@ mod _certificate_status_type;
 mod _certificate_type;
 
 mod _certificate_usage_type;
+
+mod _communication_mode;
 
 mod _compression_enum;
 
@@ -432,6 +438,8 @@ mod _sftp_authentication_methods;
 mod _sftp_connector_config;
 
 mod _sftp_connector_connection_details;
+
+mod _sftp_port_with_options;
 
 mod _signing_alg;
 

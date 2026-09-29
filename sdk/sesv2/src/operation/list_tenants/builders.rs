@@ -115,6 +115,28 @@ impl ListTenantsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_tenants::paginator::ListTenantsPaginator {
         crate::operation::list_tenants::paginator::ListTenantsPaginator::new(self.handle, self.inner)
     }
+    ///
+    /// Adds a key-value pair to `Filter`.
+    ///
+    /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+    ///
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn filter(mut self, k: crate::types::ListTenantsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filter(k, v.into());
+        self
+    }
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn set_filter(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
+        self.inner.get_filter()
+    }
     /// <p>A token returned from a previous call to <code>ListTenants</code> to indicate the position in the list of tenants.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -6,20 +6,23 @@ pub fn ser_view_definition_input(
     if let Some(var_1) = &input.is_protected {
         object.key("IsProtected").boolean(*var_1);
     }
-    if let Some(var_2) = &input.definer {
-        object.key("Definer").string(var_2.as_str());
+    if let Some(var_2) = &input.is_managed {
+        object.key("IsManaged").boolean(*var_2);
     }
-    if let Some(var_3) = &input.representations {
-        let mut array_4 = object.key("Representations").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.definer {
+        object.key("Definer").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.representations {
+        let mut array_5 = object.key("Representations").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_view_representation_input::ser_view_representation_input(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_view_representation_input::ser_view_representation_input(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
     if input.view_version_id != 0 {
         object.key("ViewVersionId").number(
@@ -27,60 +30,60 @@ pub fn ser_view_definition_input(
             ::aws_smithy_types::Number::NegInt((input.view_version_id).into()),
         );
     }
-    if let Some(var_7) = &input.view_version_token {
-        object.key("ViewVersionToken").string(var_7.as_str());
+    if let Some(var_8) = &input.view_version_token {
+        object.key("ViewVersionToken").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.refresh_seconds {
+    if let Some(var_9) = &input.refresh_seconds {
         object.key("RefreshSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.last_refresh_type {
-        object.key("LastRefreshType").string(var_9.as_str());
+    if let Some(var_10) = &input.last_refresh_type {
+        object.key("LastRefreshType").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.sub_objects {
-        let mut array_11 = object.key("SubObjects").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.sub_objects {
+        let mut array_12 = object.key("SubObjects").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.sub_object_version_ids {
-        let mut array_14 = object.key("SubObjectVersionIds").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.sub_object_version_ids {
+        let mut array_15 = object.key("SubObjectVersionIds").start_array();
+        for item_16 in var_14 {
             {
-                array_14.value().number(
+                array_15.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_15).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_16).into()),
                 );
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.sub_objects_statistics {
-        let mut array_17 = object.key("SubObjectsStatistics").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.sub_objects_statistics {
+        let mut array_18 = object.key("SubObjectsStatistics").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_sub_object_statistics::ser_sub_object_statistics(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_sub_object_statistics::ser_sub_object_statistics(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
-    if let Some(var_20) = &input.spark_pipeline_info {
+    if let Some(var_21) = &input.spark_pipeline_info {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("SparkPipelineInfo").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_22 = object.key("SparkPipelineInfo").start_object();
+        for (key_23, value_24) in var_21 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_22.key(key_23.as_str()).string(value_24.as_str());
             }
         }
-        object_21.finish();
+        object_22.finish();
     }
     Ok(())
 }

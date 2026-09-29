@@ -322,6 +322,40 @@ impl From<crate::operation::describe_group_membership::DescribeGroupMembershipEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_identity_store::DescribeIdentityStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_identity_store::DescribeIdentityStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_identity_store::DescribeIdentityStoreError> for Error {
+    fn from(err: crate::operation::describe_identity_store::DescribeIdentityStoreError) -> Self {
+        match err {
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_identity_store::DescribeIdentityStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_user::DescribeUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -561,6 +595,31 @@ impl From<crate::operation::list_groups::ListGroupsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_identity_stores::ListIdentityStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_identity_stores::ListIdentityStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_identity_stores::ListIdentityStoresError> for Error {
+    fn from(err: crate::operation::list_identity_stores::ListIdentityStoresError) -> Self {
+        match err {
+            crate::operation::list_identity_stores::ListIdentityStoresError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_identity_stores::ListIdentityStoresError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_identity_stores::ListIdentityStoresError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_identity_stores::ListIdentityStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_identity_stores::ListIdentityStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users::ListUsersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -612,6 +671,37 @@ impl From<crate::operation::update_group::UpdateGroupError> for Error {
             crate::operation::update_group::UpdateGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_group::UpdateGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_group::UpdateGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_identity_store::UpdateIdentityStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_identity_store::UpdateIdentityStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_identity_store::UpdateIdentityStoreError> for Error {
+    fn from(err: crate::operation::update_identity_store::UpdateIdentityStoreError) -> Self {
+        match err {
+            crate::operation::update_identity_store::UpdateIdentityStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_identity_store::UpdateIdentityStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_identity_store::UpdateIdentityStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_identity_store::UpdateIdentityStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_identity_store::UpdateIdentityStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_identity_store::UpdateIdentityStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_identity_store::UpdateIdentityStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

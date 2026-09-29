@@ -49,6 +49,8 @@ pub use crate::types::_profanity_filter_mode::ProfanityFilterMode;
 
 pub use crate::types::_summary_generation_mode::SummaryGenerationMode;
 
+pub use crate::types::_extended_analysis_mode::ExtendedAnalysisMode;
+
 pub use crate::types::_template_group::TemplateGroup;
 
 mod _aspect_ratio;
@@ -72,6 +74,8 @@ mod _dictionary_language;
 mod _dictionary_status;
 
 mod _dictionary_summary;
+
+mod _extended_analysis_mode;
 
 mod _feed_association;
 

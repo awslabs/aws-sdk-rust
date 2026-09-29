@@ -31,6 +31,18 @@ pub struct ProtocolDetails {
     /// <p>If you want to preserve the original timestamp for your file, and modify other file attributes using <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.</p>
     /// </note>
     pub set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
+    /// <p>A property used with Transfer Family servers that use the SFTP protocol and have <code>PUBLIC</code> endpoints. This property accepts a list of up to three port configurations that the service opens on the server endpoint.</p>
+    /// <p>Each entry in the list consists of two parameters, the <code>SftpPort</code> and the <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SERVER_TALK_FIRST</code>: The server responds to initial TCP connections first. Many older clients expect that an SFTP server responds with its server string before starting SSH negotiations.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP connection only after receiving a data packet. Most modern clients support this behavior and send their client string along with the initial data packets for SSH negotiation. Additionally, this mode is more resilient to TCP retransmissions that can occur during the initial TCP connection.</p></li>
+    /// </ul>
+    /// <p>The following is an <code>SftpPorts</code> example for port 2222 with <code>CLIENT_TALK_FIRST</code>.</p>
+    /// <p><code>\[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } \]</code></p>
+    /// <p>If you don't specify any configurations during <code>CreateServer</code>, the service uses port 22 with <code>SERVER_TALK_FIRST</code> by default.</p>
+    pub sftp_ports: ::std::option::Option<::std::vec::Vec<crate::types::SftpPortWithOptions>>,
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     pub as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
     /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
@@ -70,6 +82,22 @@ impl ProtocolDetails {
     pub fn set_stat_option(&self) -> ::std::option::Option<&crate::types::SetStatOption> {
         self.set_stat_option.as_ref()
     }
+    /// <p>A property used with Transfer Family servers that use the SFTP protocol and have <code>PUBLIC</code> endpoints. This property accepts a list of up to three port configurations that the service opens on the server endpoint.</p>
+    /// <p>Each entry in the list consists of two parameters, the <code>SftpPort</code> and the <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SERVER_TALK_FIRST</code>: The server responds to initial TCP connections first. Many older clients expect that an SFTP server responds with its server string before starting SSH negotiations.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP connection only after receiving a data packet. Most modern clients support this behavior and send their client string along with the initial data packets for SSH negotiation. Additionally, this mode is more resilient to TCP retransmissions that can occur during the initial TCP connection.</p></li>
+    /// </ul>
+    /// <p>The following is an <code>SftpPorts</code> example for port 2222 with <code>CLIENT_TALK_FIRST</code>.</p>
+    /// <p><code>\[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } \]</code></p>
+    /// <p>If you don't specify any configurations during <code>CreateServer</code>, the service uses port 22 with <code>SERVER_TALK_FIRST</code> by default.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sftp_ports.is_none()`.
+    pub fn sftp_ports(&self) -> &[crate::types::SftpPortWithOptions] {
+        self.sftp_ports.as_deref().unwrap_or_default()
+    }
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.as2_transports.is_none()`.
@@ -95,6 +123,7 @@ pub struct ProtocolDetailsBuilder {
     pub(crate) passive_ip: ::std::option::Option<::std::string::String>,
     pub(crate) tls_session_resumption_mode: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
     pub(crate) set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
+    pub(crate) sftp_ports: ::std::option::Option<::std::vec::Vec<crate::types::SftpPortWithOptions>>,
     pub(crate) as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
     pub(crate) proxy_config: ::std::option::Option<crate::types::ProxyConfig>,
 }
@@ -204,6 +233,56 @@ impl ProtocolDetailsBuilder {
     pub fn get_set_stat_option(&self) -> &::std::option::Option<crate::types::SetStatOption> {
         &self.set_stat_option
     }
+    /// Appends an item to `sftp_ports`.
+    ///
+    /// To override the contents of this collection use [`set_sftp_ports`](Self::set_sftp_ports).
+    ///
+    /// <p>A property used with Transfer Family servers that use the SFTP protocol and have <code>PUBLIC</code> endpoints. This property accepts a list of up to three port configurations that the service opens on the server endpoint.</p>
+    /// <p>Each entry in the list consists of two parameters, the <code>SftpPort</code> and the <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SERVER_TALK_FIRST</code>: The server responds to initial TCP connections first. Many older clients expect that an SFTP server responds with its server string before starting SSH negotiations.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP connection only after receiving a data packet. Most modern clients support this behavior and send their client string along with the initial data packets for SSH negotiation. Additionally, this mode is more resilient to TCP retransmissions that can occur during the initial TCP connection.</p></li>
+    /// </ul>
+    /// <p>The following is an <code>SftpPorts</code> example for port 2222 with <code>CLIENT_TALK_FIRST</code>.</p>
+    /// <p><code>\[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } \]</code></p>
+    /// <p>If you don't specify any configurations during <code>CreateServer</code>, the service uses port 22 with <code>SERVER_TALK_FIRST</code> by default.</p>
+    pub fn sftp_ports(mut self, input: crate::types::SftpPortWithOptions) -> Self {
+        let mut v = self.sftp_ports.unwrap_or_default();
+        v.push(input);
+        self.sftp_ports = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A property used with Transfer Family servers that use the SFTP protocol and have <code>PUBLIC</code> endpoints. This property accepts a list of up to three port configurations that the service opens on the server endpoint.</p>
+    /// <p>Each entry in the list consists of two parameters, the <code>SftpPort</code> and the <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SERVER_TALK_FIRST</code>: The server responds to initial TCP connections first. Many older clients expect that an SFTP server responds with its server string before starting SSH negotiations.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP connection only after receiving a data packet. Most modern clients support this behavior and send their client string along with the initial data packets for SSH negotiation. Additionally, this mode is more resilient to TCP retransmissions that can occur during the initial TCP connection.</p></li>
+    /// </ul>
+    /// <p>The following is an <code>SftpPorts</code> example for port 2222 with <code>CLIENT_TALK_FIRST</code>.</p>
+    /// <p><code>\[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } \]</code></p>
+    /// <p>If you don't specify any configurations during <code>CreateServer</code>, the service uses port 22 with <code>SERVER_TALK_FIRST</code> by default.</p>
+    pub fn set_sftp_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SftpPortWithOptions>>) -> Self {
+        self.sftp_ports = input;
+        self
+    }
+    /// <p>A property used with Transfer Family servers that use the SFTP protocol and have <code>PUBLIC</code> endpoints. This property accepts a list of up to three port configurations that the service opens on the server endpoint.</p>
+    /// <p>Each entry in the list consists of two parameters, the <code>SftpPort</code> and the <code>CommunicationMode</code>. The <code>SftpPort</code> takes any integer from 2000 to 65535, or 22. <code>CommunicationMode</code> can be one of the following options:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>SERVER_TALK_FIRST</code>: The server responds to initial TCP connections first. Many older clients expect that an SFTP server responds with its server string before starting SSH negotiations.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_TALK_FIRST</code>: The server responds to the initial TCP connection only after receiving a data packet. Most modern clients support this behavior and send their client string along with the initial data packets for SSH negotiation. Additionally, this mode is more resilient to TCP retransmissions that can occur during the initial TCP connection.</p></li>
+    /// </ul>
+    /// <p>The following is an <code>SftpPorts</code> example for port 2222 with <code>CLIENT_TALK_FIRST</code>.</p>
+    /// <p><code>\[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } \]</code></p>
+    /// <p>If you don't specify any configurations during <code>CreateServer</code>, the service uses port 22 with <code>SERVER_TALK_FIRST</code> by default.</p>
+    pub fn get_sftp_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SftpPortWithOptions>> {
+        &self.sftp_ports
+    }
     /// Appends an item to `as2_transports`.
     ///
     /// To override the contents of this collection use [`set_as2_transports`](Self::set_as2_transports).
@@ -244,6 +323,7 @@ impl ProtocolDetailsBuilder {
             passive_ip: self.passive_ip,
             tls_session_resumption_mode: self.tls_session_resumption_mode,
             set_stat_option: self.set_stat_option,
+            sftp_ports: self.sftp_ports,
             as2_transports: self.as2_transports,
             proxy_config: self.proxy_config,
         }

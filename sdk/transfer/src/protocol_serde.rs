@@ -495,6 +495,8 @@ pub(crate) mod shape_service_managed_egress_ip_addresses;
 
 pub(crate) mod shape_service_metadata;
 
+pub(crate) mod shape_sftp_port_with_options;
+
 pub(crate) mod shape_ssh_public_keys;
 
 pub(crate) mod shape_structured_log_destinations;
@@ -544,6 +546,8 @@ pub(crate) mod shape_secret_version_stage_list;
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_sftp_connector_trusted_host_key_list;
+
+pub(crate) mod shape_sftp_ports;
 
 pub(crate) mod shape_ssh_public_key;
 

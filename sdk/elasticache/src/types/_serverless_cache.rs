@@ -42,6 +42,8 @@ pub struct ServerlessCache {
     pub daily_snapshot_time: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by the serverless cache. Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. <code>ipv6</code> is only supported with IPv6-only subnets. If not specified, defaults to <code>ipv4</code>, unless all provided subnets are IPv6-only, in which case it defaults to <code>ipv6</code>.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
+    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
 }
 impl ServerlessCache {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -124,6 +126,10 @@ impl ServerlessCache {
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
+    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
+        self.connection_type.as_ref()
+    }
 }
 impl ServerlessCache {
     /// Creates a new builder-style object to manufacture [`ServerlessCache`](crate::types::ServerlessCache).
@@ -155,6 +161,7 @@ pub struct ServerlessCacheBuilder {
     pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
+    pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
 }
 impl ServerlessCacheBuilder {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -435,6 +442,20 @@ impl ServerlessCacheBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
+    pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
+        self.connection_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
+    pub fn set_connection_type(mut self, input: ::std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input;
+        self
+    }
+    /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
+    pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
+        &self.connection_type
+    }
     /// Consumes the builder and constructs a [`ServerlessCache`](crate::types::ServerlessCache).
     pub fn build(self) -> crate::types::ServerlessCache {
         crate::types::ServerlessCache {
@@ -457,6 +478,7 @@ impl ServerlessCacheBuilder {
             snapshot_retention_limit: self.snapshot_retention_limit,
             daily_snapshot_time: self.daily_snapshot_time,
             network_type: self.network_type,
+            connection_type: self.connection_type,
         }
     }
 }

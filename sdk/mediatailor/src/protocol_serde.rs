@@ -189,6 +189,8 @@ pub(crate) mod shape_avail_suppression;
 
 pub(crate) mod shape_aws_service_request_configuration;
 
+pub(crate) mod shape_beaconing_configuration;
+
 pub(crate) mod shape_bumper;
 
 pub(crate) mod shape_cdn_configuration;
@@ -301,6 +303,8 @@ pub(crate) mod shape_avail_matching_criteria;
 
 pub(crate) mod shape_channel;
 
+pub(crate) mod shape_client_side_beaconing_configuration;
+
 pub(crate) mod shape_dash_playlist_settings;
 
 pub(crate) mod shape_function;
@@ -358,6 +362,8 @@ pub(crate) mod shape_vast_response;
 pub(crate) mod shape_vod_source;
 
 pub(crate) mod shape_ad_break_metadata_list;
+
+pub(crate) mod shape_beacon_event_type_list;
 
 pub(crate) mod shape_list_of_alternate_media;
 

@@ -12,6 +12,16 @@ pub struct TenantInfo {
     pub tenant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the tenant was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
+    pub sending_status: ::std::option::Option<crate::types::SendingStatus>,
 }
 impl TenantInfo {
     /// <p>The name of the tenant.</p>
@@ -30,6 +40,18 @@ impl TenantInfo {
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
+    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
+    pub fn sending_status(&self) -> ::std::option::Option<&crate::types::SendingStatus> {
+        self.sending_status.as_ref()
+    }
 }
 impl TenantInfo {
     /// Creates a new builder-style object to manufacture [`TenantInfo`](crate::types::TenantInfo).
@@ -46,6 +68,7 @@ pub struct TenantInfoBuilder {
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) sending_status: ::std::option::Option<crate::types::SendingStatus>,
 }
 impl TenantInfoBuilder {
     /// <p>The name of the tenant.</p>
@@ -104,6 +127,44 @@ impl TenantInfoBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
+    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
+    pub fn sending_status(mut self, input: crate::types::SendingStatus) -> Self {
+        self.sending_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
+    pub fn set_sending_status(mut self, input: ::std::option::Option<crate::types::SendingStatus>) -> Self {
+        self.sending_status = input;
+        self
+    }
+    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
+    pub fn get_sending_status(&self) -> &::std::option::Option<crate::types::SendingStatus> {
+        &self.sending_status
+    }
     /// Consumes the builder and constructs a [`TenantInfo`](crate::types::TenantInfo).
     pub fn build(self) -> crate::types::TenantInfo {
         crate::types::TenantInfo {
@@ -111,6 +172,7 @@ impl TenantInfoBuilder {
             tenant_id: self.tenant_id,
             tenant_arn: self.tenant_arn,
             created_timestamp: self.created_timestamp,
+            sending_status: self.sending_status,
         }
     }
 }

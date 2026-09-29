@@ -102,6 +102,11 @@ pub fn ser_create_serverless_cache_input_input_input(
     if let Some(var_40) = &input.network_type {
         scope_39.string(var_40.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_41 = writer.prefix("ConnectionType");
+    if let Some(var_42) = &input.connection_type {
+        scope_41.string(var_42.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

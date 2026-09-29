@@ -7,7 +7,9 @@ pub struct GroupMembership {
     /// <p>The globally unique identifier for the identity store.</p>
     pub identity_store_id: ::std::string::String,
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub membership_id: ::std::option::Option<::std::string::String>,
+    pub membership_id: ::std::string::String,
+    /// <p>The Amazon Resource Name (ARN) of the group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub membership_arn: ::std::string::String,
     /// <p>The identifier for a group in the identity store.</p>
     pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
@@ -28,8 +30,14 @@ impl GroupMembership {
         self.identity_store_id.deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
-    pub fn membership_id(&self) -> ::std::option::Option<&str> {
-        self.membership_id.as_deref()
+    pub fn membership_id(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_id.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn membership_arn(&self) -> &str {
+        use std::ops::Deref;
+        self.membership_arn.deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(&self) -> ::std::option::Option<&str> {
@@ -69,6 +77,7 @@ impl GroupMembership {
 pub struct GroupMembershipBuilder {
     pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) membership_id: ::std::option::Option<::std::string::String>,
+    pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
     pub(crate) group_id: ::std::option::Option<::std::string::String>,
     pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -93,6 +102,7 @@ impl GroupMembershipBuilder {
         &self.identity_store_id
     }
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
+    /// This field is required.
     pub fn membership_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.membership_id = ::std::option::Option::Some(input.into());
         self
@@ -105,6 +115,21 @@ impl GroupMembershipBuilder {
     /// <p>The identifier for a <code>GroupMembership</code> object in an identity store.</p>
     pub fn get_membership_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.membership_id
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    /// This field is required.
+    pub fn membership_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.membership_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn set_membership_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.membership_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the group membership in the identity store. For example, <code>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</code>.</p>
+    pub fn get_membership_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.membership_arn
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,6 +218,8 @@ impl GroupMembershipBuilder {
     /// Consumes the builder and constructs a [`GroupMembership`](crate::types::GroupMembership).
     /// This method will fail if any of the following fields are not set:
     /// - [`identity_store_id`](crate::types::builders::GroupMembershipBuilder::identity_store_id)
+    /// - [`membership_id`](crate::types::builders::GroupMembershipBuilder::membership_id)
+    /// - [`membership_arn`](crate::types::builders::GroupMembershipBuilder::membership_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::GroupMembership, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::GroupMembership {
             identity_store_id: self.identity_store_id.ok_or_else(|| {
@@ -201,7 +228,18 @@ impl GroupMembershipBuilder {
                     "identity_store_id was not specified but it is required when building GroupMembership",
                 )
             })?,
-            membership_id: self.membership_id,
+            membership_id: self.membership_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "membership_id",
+                    "membership_id was not specified but it is required when building GroupMembership",
+                )
+            })?,
+            membership_arn: self.membership_arn.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "membership_arn",
+                    "membership_arn was not specified but it is required when building GroupMembership",
+                )
+            })?,
             group_id: self.group_id,
             member_id: self.member_id,
             created_at: self.created_at,

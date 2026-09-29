@@ -6,6 +6,8 @@
 pub struct ViewDefinitionInput {
     /// <p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
     pub is_protected: ::std::option::Option<bool>,
+    /// <p>Specifies whether the materialized view is managed by Glue.</p>
+    pub is_managed: ::std::option::Option<bool>,
     /// <p>The definer of a view in SQL.</p>
     pub definer: ::std::option::Option<::std::string::String>,
     /// <p>A list of structures that contains the dialect of the view, and the query that defines the view.</p>
@@ -31,6 +33,10 @@ impl ViewDefinitionInput {
     /// <p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
     pub fn is_protected(&self) -> ::std::option::Option<bool> {
         self.is_protected
+    }
+    /// <p>Specifies whether the materialized view is managed by Glue.</p>
+    pub fn is_managed(&self) -> ::std::option::Option<bool> {
+        self.is_managed
     }
     /// <p>The definer of a view in SQL.</p>
     pub fn definer(&self) -> ::std::option::Option<&str> {
@@ -93,6 +99,7 @@ impl ViewDefinitionInput {
 #[non_exhaustive]
 pub struct ViewDefinitionInputBuilder {
     pub(crate) is_protected: ::std::option::Option<bool>,
+    pub(crate) is_managed: ::std::option::Option<bool>,
     pub(crate) definer: ::std::option::Option<::std::string::String>,
     pub(crate) representations: ::std::option::Option<::std::vec::Vec<crate::types::ViewRepresentationInput>>,
     pub(crate) view_version_id: ::std::option::Option<i64>,
@@ -118,6 +125,20 @@ impl ViewDefinitionInputBuilder {
     /// <p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>
     pub fn get_is_protected(&self) -> &::std::option::Option<bool> {
         &self.is_protected
+    }
+    /// <p>Specifies whether the materialized view is managed by Glue.</p>
+    pub fn is_managed(mut self, input: bool) -> Self {
+        self.is_managed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the materialized view is managed by Glue.</p>
+    pub fn set_is_managed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_managed = input;
+        self
+    }
+    /// <p>Specifies whether the materialized view is managed by Glue.</p>
+    pub fn get_is_managed(&self) -> &::std::option::Option<bool> {
+        &self.is_managed
     }
     /// <p>The definer of a view in SQL.</p>
     pub fn definer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -300,6 +321,7 @@ impl ViewDefinitionInputBuilder {
     pub fn build(self) -> crate::types::ViewDefinitionInput {
         crate::types::ViewDefinitionInput {
             is_protected: self.is_protected,
+            is_managed: self.is_managed,
             definer: self.definer,
             representations: self.representations,
             view_version_id: self.view_version_id.unwrap_or_default(),

@@ -4,27 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContextualMetadataConfig {
-    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output.</p>
+    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>ENABLED (default) – Elemental Inference generates a descriptive summary along with IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <p>ENABLED (default) – Elemental Inference populates the summary, objects, and actions fields, along with the IAB taxonomy and GARM suitability classifications.</p></li>
     /// <li>
-    /// <p>DISABLED – No descriptive summary is generated.</p></li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the summary, objects, and actions fields.</p></li>
     /// </ul>
     pub summary_generation: ::std::option::Option<crate::types::SummaryGenerationMode>,
-}
-impl ContextualMetadataConfig {
-    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output.</p>
+    /// <p>Specifies whether Elemental Inference generates extended analysis of the media content for this output. Extended analysis identifies the people, environments, brands, and on-screen text in the media content. This setting is independent of <code>summaryGeneration</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>ENABLED (default) – Elemental Inference generates a descriptive summary along with IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <p>ENABLED (default) – Elemental Inference populates the people, environments, brands, and on-screen text fields.</p></li>
     /// <li>
-    /// <p>DISABLED – No descriptive summary is generated.</p></li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
+    /// </ul>
+    pub extended_analysis: ::std::option::Option<crate::types::ExtendedAnalysisMode>,
+}
+impl ContextualMetadataConfig {
+    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ENABLED (default) – Elemental Inference populates the summary, objects, and actions fields, along with the IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the summary, objects, and actions fields.</p></li>
     /// </ul>
     pub fn summary_generation(&self) -> ::std::option::Option<&crate::types::SummaryGenerationMode> {
         self.summary_generation.as_ref()
+    }
+    /// <p>Specifies whether Elemental Inference generates extended analysis of the media content for this output. Extended analysis identifies the people, environments, brands, and on-screen text in the media content. This setting is independent of <code>summaryGeneration</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ENABLED (default) – Elemental Inference populates the people, environments, brands, and on-screen text fields.</p></li>
+    /// <li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
+    /// </ul>
+    pub fn extended_analysis(&self) -> ::std::option::Option<&crate::types::ExtendedAnalysisMode> {
+        self.extended_analysis.as_ref()
     }
 }
 impl ContextualMetadataConfig {
@@ -39,47 +59,84 @@ impl ContextualMetadataConfig {
 #[non_exhaustive]
 pub struct ContextualMetadataConfigBuilder {
     pub(crate) summary_generation: ::std::option::Option<crate::types::SummaryGenerationMode>,
+    pub(crate) extended_analysis: ::std::option::Option<crate::types::ExtendedAnalysisMode>,
 }
 impl ContextualMetadataConfigBuilder {
-    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output.</p>
+    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>ENABLED (default) – Elemental Inference generates a descriptive summary along with IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <p>ENABLED (default) – Elemental Inference populates the summary, objects, and actions fields, along with the IAB taxonomy and GARM suitability classifications.</p></li>
     /// <li>
-    /// <p>DISABLED – No descriptive summary is generated.</p></li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the summary, objects, and actions fields.</p></li>
     /// </ul>
     pub fn summary_generation(mut self, input: crate::types::SummaryGenerationMode) -> Self {
         self.summary_generation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output.</p>
+    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>ENABLED (default) – Elemental Inference generates a descriptive summary along with IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <p>ENABLED (default) – Elemental Inference populates the summary, objects, and actions fields, along with the IAB taxonomy and GARM suitability classifications.</p></li>
     /// <li>
-    /// <p>DISABLED – No descriptive summary is generated.</p></li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the summary, objects, and actions fields.</p></li>
     /// </ul>
     pub fn set_summary_generation(mut self, input: ::std::option::Option<crate::types::SummaryGenerationMode>) -> Self {
         self.summary_generation = input;
         self
     }
-    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output.</p>
+    /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>ENABLED (default) – Elemental Inference generates a descriptive summary along with IAB taxonomy and GARM suitability classifications.</p></li>
+    /// <p>ENABLED (default) – Elemental Inference populates the summary, objects, and actions fields, along with the IAB taxonomy and GARM suitability classifications.</p></li>
     /// <li>
-    /// <p>DISABLED – No descriptive summary is generated.</p></li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the summary, objects, and actions fields.</p></li>
     /// </ul>
     pub fn get_summary_generation(&self) -> &::std::option::Option<crate::types::SummaryGenerationMode> {
         &self.summary_generation
+    }
+    /// <p>Specifies whether Elemental Inference generates extended analysis of the media content for this output. Extended analysis identifies the people, environments, brands, and on-screen text in the media content. This setting is independent of <code>summaryGeneration</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ENABLED (default) – Elemental Inference populates the people, environments, brands, and on-screen text fields.</p></li>
+    /// <li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
+    /// </ul>
+    pub fn extended_analysis(mut self, input: crate::types::ExtendedAnalysisMode) -> Self {
+        self.extended_analysis = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Elemental Inference generates extended analysis of the media content for this output. Extended analysis identifies the people, environments, brands, and on-screen text in the media content. This setting is independent of <code>summaryGeneration</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ENABLED (default) – Elemental Inference populates the people, environments, brands, and on-screen text fields.</p></li>
+    /// <li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
+    /// </ul>
+    pub fn set_extended_analysis(mut self, input: ::std::option::Option<crate::types::ExtendedAnalysisMode>) -> Self {
+        self.extended_analysis = input;
+        self
+    }
+    /// <p>Specifies whether Elemental Inference generates extended analysis of the media content for this output. Extended analysis identifies the people, environments, brands, and on-screen text in the media content. This setting is independent of <code>summaryGeneration</code>.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>ENABLED (default) – Elemental Inference populates the people, environments, brands, and on-screen text fields.</p></li>
+    /// <li>
+    /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
+    /// </ul>
+    pub fn get_extended_analysis(&self) -> &::std::option::Option<crate::types::ExtendedAnalysisMode> {
+        &self.extended_analysis
     }
     /// Consumes the builder and constructs a [`ContextualMetadataConfig`](crate::types::ContextualMetadataConfig).
     pub fn build(self) -> crate::types::ContextualMetadataConfig {
         crate::types::ContextualMetadataConfig {
             summary_generation: self.summary_generation,
+            extended_analysis: self.extended_analysis,
         }
     }
 }

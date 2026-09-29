@@ -84,6 +84,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ValidationFailures" => {
+                            builder = builder.set_validation_failures(crate::protocol_serde::shape_validation_failures::de_validation_failures(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "AcceptedWarnings" => {
+                            builder = builder.set_accepted_warnings(crate::protocol_serde::shape_accepted_warnings_list::de_accepted_warnings_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

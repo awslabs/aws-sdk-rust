@@ -63,6 +63,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "webhookUrl" => {
+                            builder = builder.set_webhook_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "privateConnectionName" => {
                             builder = builder.set_private_connection_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

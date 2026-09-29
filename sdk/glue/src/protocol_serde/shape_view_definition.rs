@@ -24,6 +24,9 @@ where
                         "IsProtected" => {
                             builder = builder.set_is_protected(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "IsManaged" => {
+                            builder = builder.set_is_managed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "Definer" => {
                             builder = builder.set_definer(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

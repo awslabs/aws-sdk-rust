@@ -12,20 +12,32 @@ pub fn ser_protocol_details(
     if let Some(var_3) = &input.set_stat_option {
         object.key("SetStatOption").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.as2_transports {
-        let mut array_5 = object.key("As2Transports").start_array();
+    if let Some(var_4) = &input.sftp_ports {
+        let mut array_5 = object.key("SftpPorts").start_array();
         for item_6 in var_4 {
             {
-                array_5.value().string(item_6.as_str());
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_sftp_port_with_options::ser_sftp_port_with_options(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.proxy_config {
+    if let Some(var_8) = &input.as2_transports {
+        let mut array_9 = object.key("As2Transports").start_array();
+        for item_10 in var_8 {
+            {
+                array_9.value().string(item_10.as_str());
+            }
+        }
+        array_9.finish();
+    }
+    if let Some(var_11) = &input.proxy_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("ProxyConfig").start_object();
-        crate::protocol_serde::shape_proxy_config::ser_proxy_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("ProxyConfig").start_object();
+        crate::protocol_serde::shape_proxy_config::ser_proxy_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }
@@ -72,6 +84,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::SetStatOption::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "SftpPorts" => {
+                            builder = builder.set_sftp_ports(crate::protocol_serde::shape_sftp_ports::de_sftp_ports(tokens, _value, depth + 1)?);
                         }
                         "As2Transports" => {
                             builder = builder.set_as2_transports(crate::protocol_serde::shape_as2_transports::de_as2_transports(

@@ -12,8 +12,10 @@ pub struct DryRunProgressStatus {
     pub creation_date: ::std::string::String,
     /// <p>The timestamp when the dry run was last updated.</p>
     pub update_date: ::std::string::String,
-    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    /// <p>The validation failures that occurred as a result of the dry run.</p>
     pub validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
+    /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
+    pub accepted_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DryRunProgressStatus {
     /// <p>The unique identifier of the dry run.</p>
@@ -36,11 +38,17 @@ impl DryRunProgressStatus {
         use std::ops::Deref;
         self.update_date.deref()
     }
-    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    /// <p>The validation failures that occurred as a result of the dry run.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_failures.is_none()`.
     pub fn validation_failures(&self) -> &[crate::types::ValidationFailure] {
         self.validation_failures.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accepted_warnings.is_none()`.
+    pub fn accepted_warnings(&self) -> &[::std::string::String] {
+        self.accepted_warnings.as_deref().unwrap_or_default()
     }
 }
 impl DryRunProgressStatus {
@@ -59,6 +67,7 @@ pub struct DryRunProgressStatusBuilder {
     pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     pub(crate) update_date: ::std::option::Option<::std::string::String>,
     pub(crate) validation_failures: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>,
+    pub(crate) accepted_warnings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DryRunProgressStatusBuilder {
     /// <p>The unique identifier of the dry run.</p>
@@ -125,21 +134,41 @@ impl DryRunProgressStatusBuilder {
     ///
     /// To override the contents of this collection use [`set_validation_failures`](Self::set_validation_failures).
     ///
-    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    /// <p>The validation failures that occurred as a result of the dry run.</p>
     pub fn validation_failures(mut self, input: crate::types::ValidationFailure) -> Self {
         let mut v = self.validation_failures.unwrap_or_default();
         v.push(input);
         self.validation_failures = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    /// <p>The validation failures that occurred as a result of the dry run.</p>
     pub fn set_validation_failures(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>>) -> Self {
         self.validation_failures = input;
         self
     }
-    /// <p>Any validation failures that occurred as a result of the dry run.</p>
+    /// <p>The validation failures that occurred as a result of the dry run.</p>
     pub fn get_validation_failures(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationFailure>> {
         &self.validation_failures
+    }
+    /// Appends an item to `accepted_warnings`.
+    ///
+    /// To override the contents of this collection use [`set_accepted_warnings`](Self::set_accepted_warnings).
+    ///
+    /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
+    pub fn accepted_warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.accepted_warnings.unwrap_or_default();
+        v.push(input.into());
+        self.accepted_warnings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
+    pub fn set_accepted_warnings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.accepted_warnings = input;
+        self
+    }
+    /// <p>The list of advisory warning codes that were accepted for the configuration change.</p>
+    pub fn get_accepted_warnings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.accepted_warnings
     }
     /// Consumes the builder and constructs a [`DryRunProgressStatus`](crate::types::DryRunProgressStatus).
     /// This method will fail if any of the following fields are not set:
@@ -174,6 +203,7 @@ impl DryRunProgressStatusBuilder {
                 )
             })?,
             validation_failures: self.validation_failures,
+            accepted_warnings: self.accepted_warnings,
         })
     }
 }

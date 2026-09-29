@@ -12,6 +12,8 @@ pub struct AssignedSession {
     pub session_actions: ::std::vec::Vec<crate::types::AssignedSessionAction>,
     /// <p>The log configuration for the worker's assigned session.</p>
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
+    /// <p>Key-value hints that the service provides to guide how the session runs. This value is used by the worker agent.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AssignedSession {
     /// <p>The queue ID of the assigned session.</p>
@@ -33,6 +35,10 @@ impl AssignedSession {
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
         self.log_configuration.as_ref()
     }
+    /// <p>Key-value hints that the service provides to guide how the session runs. This value is used by the worker agent.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.metadata.as_ref()
+    }
 }
 impl AssignedSession {
     /// Creates a new builder-style object to manufacture [`AssignedSession`](crate::types::AssignedSession).
@@ -49,6 +55,7 @@ pub struct AssignedSessionBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_actions: ::std::option::Option<::std::vec::Vec<crate::types::AssignedSessionAction>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl AssignedSessionBuilder {
     /// <p>The queue ID of the assigned session.</p>
@@ -116,6 +123,26 @@ impl AssignedSessionBuilder {
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         &self.log_configuration
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>Key-value hints that the service provides to guide how the session runs. This value is used by the worker agent.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Key-value hints that the service provides to guide how the session runs. This value is used by the worker agent.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>Key-value hints that the service provides to guide how the session runs. This value is used by the worker agent.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`AssignedSession`](crate::types::AssignedSession).
     /// This method will fail if any of the following fields are not set:
     /// - [`queue_id`](crate::types::builders::AssignedSessionBuilder::queue_id)
@@ -142,6 +169,7 @@ impl AssignedSessionBuilder {
                 )
             })?,
             log_configuration: self.log_configuration,
+            metadata: self.metadata,
         })
     }
 }

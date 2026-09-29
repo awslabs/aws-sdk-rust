@@ -16,6 +16,7 @@
 ///     Runtime::Dotnet10 => { /* ... */ },
 ///     Runtime::Dotnet6 => { /* ... */ },
 ///     Runtime::Dotnet7 => { /* ... */ },
+///     Runtime::Dotnet8 => { /* ... */ },
 ///     Runtime::Go1X => { /* ... */ },
 ///     Runtime::Java11 => { /* ... */ },
 ///     Runtime::Java17 => { /* ... */ },
@@ -28,15 +29,20 @@
 ///     Runtime::Nodejs14X => { /* ... */ },
 ///     Runtime::Nodejs16X => { /* ... */ },
 ///     Runtime::Nodejs18X => { /* ... */ },
+///     Runtime::Nodejs20X => { /* ... */ },
 ///     Runtime::Nodejs22X => { /* ... */ },
 ///     Runtime::Nodejs24X => { /* ... */ },
 ///     Runtime::Python310 => { /* ... */ },
 ///     Runtime::Python311 => { /* ... */ },
+///     Runtime::Python312 => { /* ... */ },
+///     Runtime::Python313 => { /* ... */ },
+///     Runtime::Python314 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
 ///     Runtime::Python39 => { /* ... */ },
 ///     Runtime::Ruby27 => { /* ... */ },
 ///     Runtime::Ruby32 => { /* ... */ },
+///     Runtime::Ruby33 => { /* ... */ },
 ///     Runtime::Unsupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -75,6 +81,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Dotnet7,
     #[allow(missing_docs)] // documentation missing in model
+    Dotnet8,
+    #[allow(missing_docs)] // documentation missing in model
     Go1X,
     #[allow(missing_docs)] // documentation missing in model
     Java11,
@@ -99,6 +107,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs18X,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs20X,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs22X,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs24X,
@@ -106,6 +116,12 @@ pub enum Runtime {
     Python310,
     #[allow(missing_docs)] // documentation missing in model
     Python311,
+    #[allow(missing_docs)] // documentation missing in model
+    Python312,
+    #[allow(missing_docs)] // documentation missing in model
+    Python313,
+    #[allow(missing_docs)] // documentation missing in model
+    Python314,
     #[allow(missing_docs)] // documentation missing in model
     Python37,
     #[allow(missing_docs)] // documentation missing in model
@@ -116,6 +132,8 @@ pub enum Runtime {
     Ruby27,
     #[allow(missing_docs)] // documentation missing in model
     Ruby32,
+    #[allow(missing_docs)] // documentation missing in model
+    Ruby33,
     #[allow(missing_docs)] // documentation missing in model
     Unsupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -129,6 +147,7 @@ impl ::std::convert::From<&str> for Runtime {
             "DOTNET_10" => Runtime::Dotnet10,
             "DOTNET_6" => Runtime::Dotnet6,
             "DOTNET_7" => Runtime::Dotnet7,
+            "DOTNET_8" => Runtime::Dotnet8,
             "GO_1_X" => Runtime::Go1X,
             "JAVA_11" => Runtime::Java11,
             "JAVA_17" => Runtime::Java17,
@@ -141,15 +160,20 @@ impl ::std::convert::From<&str> for Runtime {
             "NODEJS_14_X" => Runtime::Nodejs14X,
             "NODEJS_16_X" => Runtime::Nodejs16X,
             "NODEJS_18_X" => Runtime::Nodejs18X,
+            "NODEJS_20_X" => Runtime::Nodejs20X,
             "NODEJS_22_X" => Runtime::Nodejs22X,
             "NODEJS_24_X" => Runtime::Nodejs24X,
             "PYTHON_3_10" => Runtime::Python310,
             "PYTHON_3_11" => Runtime::Python311,
+            "PYTHON_3_12" => Runtime::Python312,
+            "PYTHON_3_13" => Runtime::Python313,
+            "PYTHON_3_14" => Runtime::Python314,
             "PYTHON_3_7" => Runtime::Python37,
             "PYTHON_3_8" => Runtime::Python38,
             "PYTHON_3_9" => Runtime::Python39,
             "RUBY_2_7" => Runtime::Ruby27,
             "RUBY_3_2" => Runtime::Ruby32,
+            "RUBY_3_3" => Runtime::Ruby33,
             "UNSUPPORTED" => Runtime::Unsupported,
             other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -170,6 +194,7 @@ impl Runtime {
             Runtime::Dotnet10 => "DOTNET_10",
             Runtime::Dotnet6 => "DOTNET_6",
             Runtime::Dotnet7 => "DOTNET_7",
+            Runtime::Dotnet8 => "DOTNET_8",
             Runtime::Go1X => "GO_1_X",
             Runtime::Java11 => "JAVA_11",
             Runtime::Java17 => "JAVA_17",
@@ -182,15 +207,20 @@ impl Runtime {
             Runtime::Nodejs14X => "NODEJS_14_X",
             Runtime::Nodejs16X => "NODEJS_16_X",
             Runtime::Nodejs18X => "NODEJS_18_X",
+            Runtime::Nodejs20X => "NODEJS_20_X",
             Runtime::Nodejs22X => "NODEJS_22_X",
             Runtime::Nodejs24X => "NODEJS_24_X",
             Runtime::Python310 => "PYTHON_3_10",
             Runtime::Python311 => "PYTHON_3_11",
+            Runtime::Python312 => "PYTHON_3_12",
+            Runtime::Python313 => "PYTHON_3_13",
+            Runtime::Python314 => "PYTHON_3_14",
             Runtime::Python37 => "PYTHON_3_7",
             Runtime::Python38 => "PYTHON_3_8",
             Runtime::Python39 => "PYTHON_3_9",
             Runtime::Ruby27 => "RUBY_2_7",
             Runtime::Ruby32 => "RUBY_3_2",
+            Runtime::Ruby33 => "RUBY_3_3",
             Runtime::Unsupported => "UNSUPPORTED",
             Runtime::Unknown(value) => value.as_str(),
         }
@@ -202,6 +232,7 @@ impl Runtime {
             "DOTNET_10",
             "DOTNET_6",
             "DOTNET_7",
+            "DOTNET_8",
             "GO_1_X",
             "JAVA_11",
             "JAVA_17",
@@ -214,15 +245,20 @@ impl Runtime {
             "NODEJS_14_X",
             "NODEJS_16_X",
             "NODEJS_18_X",
+            "NODEJS_20_X",
             "NODEJS_22_X",
             "NODEJS_24_X",
             "PYTHON_3_10",
             "PYTHON_3_11",
+            "PYTHON_3_12",
+            "PYTHON_3_13",
+            "PYTHON_3_14",
             "PYTHON_3_7",
             "PYTHON_3_8",
             "PYTHON_3_9",
             "RUBY_2_7",
             "RUBY_3_2",
+            "RUBY_3_3",
             "UNSUPPORTED",
         ]
     }
@@ -251,6 +287,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Dotnet10 => write!(f, "DOTNET_10"),
             Runtime::Dotnet6 => write!(f, "DOTNET_6"),
             Runtime::Dotnet7 => write!(f, "DOTNET_7"),
+            Runtime::Dotnet8 => write!(f, "DOTNET_8"),
             Runtime::Go1X => write!(f, "GO_1_X"),
             Runtime::Java11 => write!(f, "JAVA_11"),
             Runtime::Java17 => write!(f, "JAVA_17"),
@@ -263,15 +300,20 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs14X => write!(f, "NODEJS_14_X"),
             Runtime::Nodejs16X => write!(f, "NODEJS_16_X"),
             Runtime::Nodejs18X => write!(f, "NODEJS_18_X"),
+            Runtime::Nodejs20X => write!(f, "NODEJS_20_X"),
             Runtime::Nodejs22X => write!(f, "NODEJS_22_X"),
             Runtime::Nodejs24X => write!(f, "NODEJS_24_X"),
             Runtime::Python310 => write!(f, "PYTHON_3_10"),
             Runtime::Python311 => write!(f, "PYTHON_3_11"),
+            Runtime::Python312 => write!(f, "PYTHON_3_12"),
+            Runtime::Python313 => write!(f, "PYTHON_3_13"),
+            Runtime::Python314 => write!(f, "PYTHON_3_14"),
             Runtime::Python37 => write!(f, "PYTHON_3_7"),
             Runtime::Python38 => write!(f, "PYTHON_3_8"),
             Runtime::Python39 => write!(f, "PYTHON_3_9"),
             Runtime::Ruby27 => write!(f, "RUBY_2_7"),
             Runtime::Ruby32 => write!(f, "RUBY_3_2"),
+            Runtime::Ruby33 => write!(f, "RUBY_3_3"),
             Runtime::Unsupported => write!(f, "UNSUPPORTED"),
             Runtime::Unknown(value) => write!(f, "{value}"),
         }

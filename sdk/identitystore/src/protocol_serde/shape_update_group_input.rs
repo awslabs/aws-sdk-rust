@@ -21,5 +21,8 @@ pub fn ser_update_group_input_input(
         }
         array_4.finish();
     }
+    if let Some(var_7) = &input.revision {
+        object.key("Revision").string(var_7.as_str());
+    }
     Ok(())
 }

@@ -4,8 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProviderInput {
+    /// <p>The Azure DevOps-specific input for creating an integration.</p>
+    AzureDevOps(crate::types::AzureDevOpsIntegrationInput),
     /// <p>The configuration for a Bitbucket integration.</p>
     Bitbucket(crate::types::BitbucketIntegrationInput),
+    /// <p>The Bitbucket Data Center-specific input for creating an integration.</p>
+    BitbucketDataCenter(crate::types::BitbucketDataCenterIntegrationInput),
     /// <p>The configuration for a Confluence integration.</p>
     Confluence(crate::types::ConfluenceIntegrationInput),
     /// <p>The GitHub-specific input for creating an integration.</p>
@@ -23,6 +27,19 @@ pub enum ProviderInput {
     Unknown,
 }
 impl ProviderInput {
+    /// Tries to convert the enum instance into [`AzureDevOps`](crate::types::ProviderInput::AzureDevOps), extracting the inner [`AzureDevOpsIntegrationInput`](crate::types::AzureDevOpsIntegrationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_azure_dev_ops(&self) -> ::std::result::Result<&crate::types::AzureDevOpsIntegrationInput, &Self> {
+        if let ProviderInput::AzureDevOps(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AzureDevOps`](crate::types::ProviderInput::AzureDevOps).
+    pub fn is_azure_dev_ops(&self) -> bool {
+        self.as_azure_dev_ops().is_ok()
+    }
     /// Tries to convert the enum instance into [`Bitbucket`](crate::types::ProviderInput::Bitbucket), extracting the inner [`BitbucketIntegrationInput`](crate::types::BitbucketIntegrationInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bitbucket(&self) -> ::std::result::Result<&crate::types::BitbucketIntegrationInput, &Self> {
@@ -35,6 +52,19 @@ impl ProviderInput {
     /// Returns true if this is a [`Bitbucket`](crate::types::ProviderInput::Bitbucket).
     pub fn is_bitbucket(&self) -> bool {
         self.as_bitbucket().is_ok()
+    }
+    /// Tries to convert the enum instance into [`BitbucketDataCenter`](crate::types::ProviderInput::BitbucketDataCenter), extracting the inner [`BitbucketDataCenterIntegrationInput`](crate::types::BitbucketDataCenterIntegrationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_bitbucket_data_center(&self) -> ::std::result::Result<&crate::types::BitbucketDataCenterIntegrationInput, &Self> {
+        if let ProviderInput::BitbucketDataCenter(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`BitbucketDataCenter`](crate::types::ProviderInput::BitbucketDataCenter).
+    pub fn is_bitbucket_data_center(&self) -> bool {
+        self.as_bitbucket_data_center().is_ok()
     }
     /// Tries to convert the enum instance into [`Confluence`](crate::types::ProviderInput::Confluence), extracting the inner [`ConfluenceIntegrationInput`](crate::types::ConfluenceIntegrationInput).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -308,6 +308,15 @@ pub(crate) fn channel_correct_errors(mut builder: crate::types::builders::Channe
     builder
 }
 
+pub(crate) fn client_side_beaconing_configuration_correct_errors(
+    mut builder: crate::types::builders::ClientSideBeaconingConfigurationBuilder,
+) -> crate::types::builders::ClientSideBeaconingConfigurationBuilder {
+    if builder.reporting_mode.is_none() {
+        builder.reporting_mode = "no value was set".parse::<crate::types::ClientSideBeaconingMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn function_correct_errors(mut builder: crate::types::builders::FunctionBuilder) -> crate::types::builders::FunctionBuilder {
     if builder.function_id.is_none() {
         builder.function_id = Some(Default::default())

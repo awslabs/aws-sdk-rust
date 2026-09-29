@@ -285,6 +285,8 @@ pub use crate::types::_task_run_session_action_definition_summary::TaskRunSessio
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition_summary::SyncInputJobAttachmentsSessionActionDefinitionSummaryBuilder;
 
+pub use crate::types::_fleet_software_add_on::FleetSoftwareAddOnBuilder;
+
 pub use crate::types::_path_mapping_rule::PathMappingRuleBuilder;
 
 pub use crate::types::_accelerator_selection::AcceleratorSelectionBuilder;

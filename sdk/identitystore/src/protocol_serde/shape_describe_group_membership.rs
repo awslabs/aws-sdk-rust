@@ -166,6 +166,13 @@ pub(crate) fn de_describe_group_membership(
                             .transpose()?,
                     );
                 }
+                "MembershipArn" => {
+                    builder = builder.set_membership_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "GroupId" => {
                     builder = builder.set_group_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

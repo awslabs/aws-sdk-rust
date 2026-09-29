@@ -195,6 +195,8 @@ pub(crate) mod shape_update_finding;
 
 pub(crate) mod shape_update_integrated_resources;
 
+pub(crate) mod shape_update_integration;
+
 pub(crate) mod shape_update_pentest;
 
 pub(crate) mod shape_update_private_connection_certificate;
@@ -396,6 +398,8 @@ pub(crate) mod shape_update_code_review_input;
 pub(crate) mod shape_update_finding_input;
 
 pub(crate) mod shape_update_integrated_resources_input;
+
+pub(crate) mod shape_update_integration_input;
 
 pub(crate) mod shape_update_pentest_input;
 
@@ -605,11 +609,15 @@ pub(crate) mod shape_artifact_metadata_item;
 
 pub(crate) mod shape_artifact_summary;
 
+pub(crate) mod shape_azure_dev_ops_integration_input;
+
 pub(crate) mod shape_batch_create_security_requirement_result;
 
 pub(crate) mod shape_batch_get_security_requirement_result;
 
 pub(crate) mod shape_batch_security_requirement_error;
+
+pub(crate) mod shape_bitbucket_data_center_integration_input;
 
 pub(crate) mod shape_bitbucket_integration_input;
 
@@ -753,6 +761,10 @@ pub(crate) mod shape_vpc_configs;
 
 pub(crate) mod shape_authentication;
 
+pub(crate) mod shape_azure_dev_ops_repository_resource;
+
+pub(crate) mod shape_azure_dev_ops_resource_capabilities;
+
 pub(crate) mod shape_bitbucket_repository_resource;
 
 pub(crate) mod shape_bitbucket_resource_capabilities;
@@ -796,6 +808,8 @@ pub(crate) mod shape_skill_type_list;
 pub(crate) mod shape_step_list;
 
 pub(crate) mod shape_verification_script;
+
+pub(crate) mod shape_azure_dev_ops_repository_metadata;
 
 pub(crate) mod shape_bitbucket_repository_metadata;
 

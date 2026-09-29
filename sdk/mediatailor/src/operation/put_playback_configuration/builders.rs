@@ -433,4 +433,18 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
         self.inner.get_ads_personalization_concurrency()
     }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. If you omit this setting, MediaTailor uses <code>INSIGHTS</code>.</p>
+    pub fn beaconing_configuration(mut self, input: crate::types::BeaconingConfiguration) -> Self {
+        self.inner = self.inner.beaconing_configuration(input);
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. If you omit this setting, MediaTailor uses <code>INSIGHTS</code>.</p>
+    pub fn set_beaconing_configuration(mut self, input: ::std::option::Option<crate::types::BeaconingConfiguration>) -> Self {
+        self.inner = self.inner.set_beaconing_configuration(input);
+        self
+    }
+    /// <p>The beaconing configuration for this playback configuration, which controls whether MediaTailor includes beacons of its own in the ad tracking response. If you omit this setting, MediaTailor uses <code>INSIGHTS</code>.</p>
+    pub fn get_beaconing_configuration(&self) -> &::std::option::Option<crate::types::BeaconingConfiguration> {
+        self.inner.get_beaconing_configuration()
+    }
 }
