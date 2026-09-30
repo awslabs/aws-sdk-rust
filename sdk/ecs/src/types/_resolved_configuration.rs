@@ -6,6 +6,8 @@
 pub struct ResolvedConfiguration {
     /// <p>The resolved load balancer configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
     pub load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionLoadBalancer>>,
+    /// <p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
+    pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionVpcLatticeConfiguration>>,
 }
 impl ResolvedConfiguration {
     /// <p>The resolved load balancer configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
@@ -13,6 +15,12 @@ impl ResolvedConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.load_balancers.is_none()`.
     pub fn load_balancers(&self) -> &[crate::types::ServiceRevisionLoadBalancer] {
         self.load_balancers.as_deref().unwrap_or_default()
+    }
+    /// <p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_lattice_configurations.is_none()`.
+    pub fn vpc_lattice_configurations(&self) -> &[crate::types::ServiceRevisionVpcLatticeConfiguration] {
+        self.vpc_lattice_configurations.as_deref().unwrap_or_default()
     }
 }
 impl ResolvedConfiguration {
@@ -27,6 +35,7 @@ impl ResolvedConfiguration {
 #[non_exhaustive]
 pub struct ResolvedConfigurationBuilder {
     pub(crate) load_balancers: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionLoadBalancer>>,
+    pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionVpcLatticeConfiguration>>,
 }
 impl ResolvedConfigurationBuilder {
     /// Appends an item to `load_balancers`.
@@ -49,10 +58,34 @@ impl ResolvedConfigurationBuilder {
     pub fn get_load_balancers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionLoadBalancer>> {
         &self.load_balancers
     }
+    /// Appends an item to `vpc_lattice_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_vpc_lattice_configurations`](Self::set_vpc_lattice_configurations).
+    ///
+    /// <p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
+    pub fn vpc_lattice_configurations(mut self, input: crate::types::ServiceRevisionVpcLatticeConfiguration) -> Self {
+        let mut v = self.vpc_lattice_configurations.unwrap_or_default();
+        v.push(input);
+        self.vpc_lattice_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
+    pub fn set_vpc_lattice_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionVpcLatticeConfiguration>>,
+    ) -> Self {
+        self.vpc_lattice_configurations = input;
+        self
+    }
+    /// <p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>
+    pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceRevisionVpcLatticeConfiguration>> {
+        &self.vpc_lattice_configurations
+    }
     /// Consumes the builder and constructs a [`ResolvedConfiguration`](crate::types::ResolvedConfiguration).
     pub fn build(self) -> crate::types::ResolvedConfiguration {
         crate::types::ResolvedConfiguration {
             load_balancers: self.load_balancers,
+            vpc_lattice_configurations: self.vpc_lattice_configurations,
         }
     }
 }

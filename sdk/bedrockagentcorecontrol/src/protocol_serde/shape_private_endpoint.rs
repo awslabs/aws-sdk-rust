@@ -77,19 +77,19 @@ where
 }
 
 pub fn ser_private_endpoint(
-    object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_15: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateEndpoint,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PrivateEndpoint::SelfManagedLatticeResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_11.key("selfManagedLatticeResource").start_object();
+            let mut object_1 = object_15.key("selfManagedLatticeResource").start_object();
             crate::protocol_serde::shape_self_managed_lattice_resource::ser_self_managed_lattice_resource(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::PrivateEndpoint::ManagedVpcResource(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_11.key("managedVpcResource").start_object();
+            let mut object_2 = object_15.key("managedVpcResource").start_object();
             crate::protocol_serde::shape_managed_vpc_resource::ser_managed_vpc_resource(&mut object_2, inner)?;
             object_2.finish();
         }

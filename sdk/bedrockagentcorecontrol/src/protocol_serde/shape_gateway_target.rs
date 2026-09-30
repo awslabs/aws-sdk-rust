@@ -131,6 +131,15 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "certificateConfigurations" => {
+                                builder = builder.set_certificate_configurations(
+                                    crate::protocol_serde::shape_certificate_configuration_list::de_certificate_configuration_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

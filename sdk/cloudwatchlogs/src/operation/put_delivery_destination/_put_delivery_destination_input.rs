@@ -24,6 +24,8 @@ pub struct PutDeliveryDestinationInput {
     /// </ul>
     /// <p>The delivery destination type determines the format and configuration options available for log delivery.</p>
     pub delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
+    /// <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to deliver to this delivery destination. The trust policy of the role must allow CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace delivery destinations.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -58,6 +60,10 @@ impl PutDeliveryDestinationInput {
     pub fn delivery_destination_type(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationType> {
         self.delivery_destination_type.as_ref()
     }
+    /// <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to deliver to this delivery destination. The trust policy of the role must allow CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace delivery destinations.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
     /// <p>For more information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a></p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -79,6 +85,7 @@ pub struct PutDeliveryDestinationInputBuilder {
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
     pub(crate) delivery_destination_configuration: ::std::option::Option<crate::types::DeliveryDestinationConfiguration>,
     pub(crate) delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutDeliveryDestinationInputBuilder {
@@ -178,6 +185,20 @@ impl PutDeliveryDestinationInputBuilder {
     pub fn get_delivery_destination_type(&self) -> &::std::option::Option<crate::types::DeliveryDestinationType> {
         &self.delivery_destination_type
     }
+    /// <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to deliver to this delivery destination. The trust policy of the role must allow CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace delivery destinations.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to deliver to this delivery destination. The trust policy of the role must allow CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace delivery destinations.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of an IAM role in your account that CloudWatch Logs assumes to deliver to this delivery destination. The trust policy of the role must allow CloudWatch Logs to assume it. This parameter is supported only for X-Ray trace delivery destinations.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -213,6 +234,7 @@ impl PutDeliveryDestinationInputBuilder {
             output_format: self.output_format,
             delivery_destination_configuration: self.delivery_destination_configuration,
             delivery_destination_type: self.delivery_destination_type,
+            role_arn: self.role_arn,
             tags: self.tags,
         })
     }

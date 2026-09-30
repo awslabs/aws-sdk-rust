@@ -31,33 +31,39 @@ pub fn ser_start_notebook_run_input_input(
     if let Some(var_10) = &input.notebook_identifier {
         object.key("notebookIdentifier").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.owning_project_identifier {
-        object.key("owningProjectIdentifier").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.parameters {
+    if let Some(var_11) = &input.notification_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("parameters").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_12 = object.key("notificationConfiguration").start_object();
+        crate::protocol_serde::shape_notification_config::ser_notification_config(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.owning_project_identifier {
+        object.key("owningProjectIdentifier").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("parameters").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_13.finish();
+        object_15.finish();
     }
-    if let Some(var_16) = &input.schedule_identifier {
-        object.key("scheduleIdentifier").string(var_16.as_str());
+    if let Some(var_18) = &input.schedule_identifier {
+        object.key("scheduleIdentifier").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.timeout_configuration {
+    if let Some(var_19) = &input.timeout_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("timeoutConfiguration").start_object();
-        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.trigger_source {
-        #[allow(unused_mut)]
-        let mut object_20 = object.key("triggerSource").start_object();
-        crate::protocol_serde::shape_trigger_source::ser_trigger_source(&mut object_20, var_19)?;
+        let mut object_20 = object.key("timeoutConfiguration").start_object();
+        crate::protocol_serde::shape_timeout_config::ser_timeout_config(&mut object_20, var_19)?;
         object_20.finish();
+    }
+    if let Some(var_21) = &input.trigger_source {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("triggerSource").start_object();
+        crate::protocol_serde::shape_trigger_source::ser_trigger_source(&mut object_22, var_21)?;
+        object_22.finish();
     }
     Ok(())
 }

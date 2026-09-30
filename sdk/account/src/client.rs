@@ -193,4 +193,8 @@ mod put_alternate_contact;
 
 mod put_contact_information;
 
+mod send_phone_number_verification;
+
 mod start_primary_email_update;
+
+mod verify_phone_number;

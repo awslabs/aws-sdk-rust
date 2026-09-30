@@ -30,6 +30,8 @@ pub struct UpdateComputeEnvironmentInput {
     pub context: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
     pub ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub eks_configuration: ::std::option::Option<crate::types::EksConfigurationUpdate>,
 }
 impl UpdateComputeEnvironmentInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -74,6 +76,10 @@ impl UpdateComputeEnvironmentInput {
     pub fn ecs_settings(&self) -> ::std::option::Option<&crate::types::EcsSettings> {
         self.ecs_settings.as_ref()
     }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn eks_configuration(&self) -> ::std::option::Option<&crate::types::EksConfigurationUpdate> {
+        self.eks_configuration.as_ref()
+    }
 }
 impl UpdateComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
@@ -94,6 +100,7 @@ pub struct UpdateComputeEnvironmentInputBuilder {
     pub(crate) update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
     pub(crate) ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
+    pub(crate) eks_configuration: ::std::option::Option<crate::types::EksConfigurationUpdate>,
 }
 impl UpdateComputeEnvironmentInputBuilder {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -239,6 +246,20 @@ impl UpdateComputeEnvironmentInputBuilder {
     pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
         &self.ecs_settings
     }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn eks_configuration(mut self, input: crate::types::EksConfigurationUpdate) -> Self {
+        self.eks_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfigurationUpdate>) -> Self {
+        self.eks_configuration = input;
+        self
+    }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_eks_configuration(&self) -> &::std::option::Option<crate::types::EksConfigurationUpdate> {
+        &self.eks_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
     pub fn build(
         self,
@@ -255,6 +276,7 @@ impl UpdateComputeEnvironmentInputBuilder {
             update_policy: self.update_policy,
             context: self.context,
             ecs_settings: self.ecs_settings,
+            eks_configuration: self.eks_configuration,
         })
     }
 }

@@ -11,6 +11,8 @@ pub struct IpSet {
     pub ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of IP addresses included in this IP set.</p>
     pub ip_address_family: ::std::option::Option<crate::types::IpAddressFamily>,
+    /// <p>The array of IP addresses in the IP address set, with detailed information about the IP addresses. An IP address set can have a maximum of two IP addresses.</p>
+    pub ip_address_details: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressDetail>>,
 }
 impl IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
@@ -28,6 +30,12 @@ impl IpSet {
     pub fn ip_address_family(&self) -> ::std::option::Option<&crate::types::IpAddressFamily> {
         self.ip_address_family.as_ref()
     }
+    /// <p>The array of IP addresses in the IP address set, with detailed information about the IP addresses. An IP address set can have a maximum of two IP addresses.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_address_details.is_none()`.
+    pub fn ip_address_details(&self) -> &[crate::types::IpAddressDetail] {
+        self.ip_address_details.as_deref().unwrap_or_default()
+    }
 }
 impl IpSet {
     /// Creates a new builder-style object to manufacture [`IpSet`](crate::types::IpSet).
@@ -43,6 +51,7 @@ pub struct IpSetBuilder {
     pub(crate) ip_family: ::std::option::Option<::std::string::String>,
     pub(crate) ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_family: ::std::option::Option<crate::types::IpAddressFamily>,
+    pub(crate) ip_address_details: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressDetail>>,
 }
 impl IpSetBuilder {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
@@ -96,12 +105,33 @@ impl IpSetBuilder {
     pub fn get_ip_address_family(&self) -> &::std::option::Option<crate::types::IpAddressFamily> {
         &self.ip_address_family
     }
+    /// Appends an item to `ip_address_details`.
+    ///
+    /// To override the contents of this collection use [`set_ip_address_details`](Self::set_ip_address_details).
+    ///
+    /// <p>The array of IP addresses in the IP address set, with detailed information about the IP addresses. An IP address set can have a maximum of two IP addresses.</p>
+    pub fn ip_address_details(mut self, input: crate::types::IpAddressDetail) -> Self {
+        let mut v = self.ip_address_details.unwrap_or_default();
+        v.push(input);
+        self.ip_address_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The array of IP addresses in the IP address set, with detailed information about the IP addresses. An IP address set can have a maximum of two IP addresses.</p>
+    pub fn set_ip_address_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpAddressDetail>>) -> Self {
+        self.ip_address_details = input;
+        self
+    }
+    /// <p>The array of IP addresses in the IP address set, with detailed information about the IP addresses. An IP address set can have a maximum of two IP addresses.</p>
+    pub fn get_ip_address_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpAddressDetail>> {
+        &self.ip_address_details
+    }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     pub fn build(self) -> crate::types::IpSet {
         crate::types::IpSet {
             ip_family: self.ip_family,
             ip_addresses: self.ip_addresses,
             ip_address_family: self.ip_address_family,
+            ip_address_details: self.ip_address_details,
         }
     }
 }

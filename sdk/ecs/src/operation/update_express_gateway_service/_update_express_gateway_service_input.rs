@@ -19,7 +19,7 @@ pub struct UpdateExpressGatewayServiceInput {
     pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The amount of memory (in MiB) used by the task.</p>
     pub memory: ::std::option::Option<::std::string::String>,
-    /// <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS applies this value to the task definition revision that it registers for the service. If you don't specify a value, the service keeps the architecture that it currently runs on.</p>
+    /// <p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -27,8 +27,8 @@ pub struct UpdateExpressGatewayServiceInput {
     /// <li>
     /// <p><code>ARM64</code> - The 64-bit ARM architecture.</p></li>
     /// </ul>
-    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Make sure that the container image that the service uses supports the architecture that you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
-    /// <p>You can't specify <code>cpuArchitecture</code> when you also specify <code>taskDefinitionArn</code>, because this value applies only to a task definition that Amazon ECS registers on your behalf.</p>
+    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
+    /// <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>
     pub cpu_architecture: ::std::option::Option<crate::types::ExpressCpuArchitecture>,
     /// <p>The auto-scaling configuration for the Express service.</p>
     pub scaling_target: ::std::option::Option<crate::types::ExpressGatewayScalingTarget>,
@@ -70,7 +70,7 @@ impl UpdateExpressGatewayServiceInput {
     pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
-    /// <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS applies this value to the task definition revision that it registers for the service. If you don't specify a value, the service keeps the architecture that it currently runs on.</p>
+    /// <p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -78,8 +78,8 @@ impl UpdateExpressGatewayServiceInput {
     /// <li>
     /// <p><code>ARM64</code> - The 64-bit ARM architecture.</p></li>
     /// </ul>
-    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Make sure that the container image that the service uses supports the architecture that you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
-    /// <p>You can't specify <code>cpuArchitecture</code> when you also specify <code>taskDefinitionArn</code>, because this value applies only to a task definition that Amazon ECS registers on your behalf.</p>
+    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
+    /// <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>
     pub fn cpu_architecture(&self) -> ::std::option::Option<&crate::types::ExpressCpuArchitecture> {
         self.cpu_architecture.as_ref()
     }
@@ -231,7 +231,7 @@ impl UpdateExpressGatewayServiceInputBuilder {
     pub fn get_memory(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory
     }
-    /// <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS applies this value to the task definition revision that it registers for the service. If you don't specify a value, the service keeps the architecture that it currently runs on.</p>
+    /// <p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -239,13 +239,13 @@ impl UpdateExpressGatewayServiceInputBuilder {
     /// <li>
     /// <p><code>ARM64</code> - The 64-bit ARM architecture.</p></li>
     /// </ul>
-    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Make sure that the container image that the service uses supports the architecture that you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
-    /// <p>You can't specify <code>cpuArchitecture</code> when you also specify <code>taskDefinitionArn</code>, because this value applies only to a task definition that Amazon ECS registers on your behalf.</p>
+    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
+    /// <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>
     pub fn cpu_architecture(mut self, input: crate::types::ExpressCpuArchitecture) -> Self {
         self.cpu_architecture = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS applies this value to the task definition revision that it registers for the service. If you don't specify a value, the service keeps the architecture that it currently runs on.</p>
+    /// <p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -253,13 +253,13 @@ impl UpdateExpressGatewayServiceInputBuilder {
     /// <li>
     /// <p><code>ARM64</code> - The 64-bit ARM architecture.</p></li>
     /// </ul>
-    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Make sure that the container image that the service uses supports the architecture that you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
-    /// <p>You can't specify <code>cpuArchitecture</code> when you also specify <code>taskDefinitionArn</code>, because this value applies only to a task definition that Amazon ECS registers on your behalf.</p>
+    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
+    /// <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>
     pub fn set_cpu_architecture(mut self, input: ::std::option::Option<crate::types::ExpressCpuArchitecture>) -> Self {
         self.cpu_architecture = input;
         self
     }
-    /// <p>The CPU architecture that the tasks in the Express service run on. Amazon ECS applies this value to the task definition revision that it registers for the service. If you don't specify a value, the service keeps the architecture that it currently runs on.</p>
+    /// <p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
@@ -267,8 +267,8 @@ impl UpdateExpressGatewayServiceInputBuilder {
     /// <li>
     /// <p><code>ARM64</code> - The 64-bit ARM architecture.</p></li>
     /// </ul>
-    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Make sure that the container image that the service uses supports the architecture that you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
-    /// <p>You can't specify <code>cpuArchitecture</code> when you also specify <code>taskDefinitionArn</code>, because this value applies only to a task definition that Amazon ECS registers on your behalf.</p>
+    /// <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p>
+    /// <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>
     pub fn get_cpu_architecture(&self) -> &::std::option::Option<crate::types::ExpressCpuArchitecture> {
         &self.cpu_architecture
     }

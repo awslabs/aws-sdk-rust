@@ -379,6 +379,8 @@ pub(crate) mod shape_export_summaries;
 
 pub(crate) mod shape_failure_exception;
 
+pub(crate) mod shape_filter_specification;
+
 pub(crate) mod shape_global_secondary_index;
 
 pub(crate) mod shape_global_secondary_index_auto_scaling_update;
@@ -622,6 +624,8 @@ pub(crate) mod shape_batch_statement_error;
 pub(crate) mod shape_binary_set_attribute_value;
 
 pub(crate) mod shape_expression_attribute_name_map;
+
+pub(crate) mod shape_expression_attribute_value_map;
 
 pub(crate) mod shape_global_secondary_index_description;
 

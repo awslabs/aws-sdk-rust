@@ -6,12 +6,16 @@
 pub enum EventMetadata {
     /// <p>Metadata specific to cluster-level events.</p>
     Cluster(crate::types::ClusterMetadata),
+    /// <p>Metadata specific to events about the external Slurm accounting database of the cluster.</p>
+    DatabaseConfiguration(crate::types::DatabaseConfigurationMetadata),
     /// <p>Metadata specific to instance-level events.</p>
     Instance(crate::types::InstanceMetadata),
     /// <p>Metadata specific to instance group-level events.</p>
     InstanceGroup(crate::types::InstanceGroupMetadata),
     /// <p>Metadata related to instance group scaling events.</p>
     InstanceGroupScaling(crate::types::InstanceGroupScalingMetadata),
+    /// <p>Metadata specific to events about the health of the Slurm components on the controller node of the cluster.</p>
+    SlurmHealth(crate::types::SlurmHealthMetadata),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -35,6 +39,19 @@ impl EventMetadata {
     /// Returns true if this is a [`Cluster`](crate::types::EventMetadata::Cluster).
     pub fn is_cluster(&self) -> bool {
         self.as_cluster().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DatabaseConfiguration`](crate::types::EventMetadata::DatabaseConfiguration), extracting the inner [`DatabaseConfigurationMetadata`](crate::types::DatabaseConfigurationMetadata).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_database_configuration(&self) -> ::std::result::Result<&crate::types::DatabaseConfigurationMetadata, &Self> {
+        if let EventMetadata::DatabaseConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DatabaseConfiguration`](crate::types::EventMetadata::DatabaseConfiguration).
+    pub fn is_database_configuration(&self) -> bool {
+        self.as_database_configuration().is_ok()
     }
     /// Tries to convert the enum instance into [`Instance`](crate::types::EventMetadata::Instance), extracting the inner [`InstanceMetadata`](crate::types::InstanceMetadata).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -74,6 +91,19 @@ impl EventMetadata {
     /// Returns true if this is a [`InstanceGroupScaling`](crate::types::EventMetadata::InstanceGroupScaling).
     pub fn is_instance_group_scaling(&self) -> bool {
         self.as_instance_group_scaling().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SlurmHealth`](crate::types::EventMetadata::SlurmHealth), extracting the inner [`SlurmHealthMetadata`](crate::types::SlurmHealthMetadata).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_slurm_health(&self) -> ::std::result::Result<&crate::types::SlurmHealthMetadata, &Self> {
+        if let EventMetadata::SlurmHealth(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SlurmHealth`](crate::types::EventMetadata::SlurmHealth).
+    pub fn is_slurm_health(&self) -> bool {
+        self.as_slurm_health().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

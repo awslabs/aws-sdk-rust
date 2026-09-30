@@ -66,5 +66,8 @@ pub fn ser_update_crawler_input_input(
     if let Some(var_21) = &input.crawler_security_configuration {
         object.key("CrawlerSecurityConfiguration").string(var_21.as_str());
     }
+    if let Some(var_22) = &input.catalog_id {
+        object.key("CatalogId").string(var_22.as_str());
+    }
     Ok(())
 }

@@ -79,6 +79,8 @@ pub use crate::types::_ip_address_family::IpAddressFamily;
 
 pub use crate::types::_custom_routing_protocol::CustomRoutingProtocol;
 
+pub use crate::types::_ip_address_detail::IpAddressDetail;
+
 mod _accelerator;
 
 mod _accelerator_attributes;
@@ -136,6 +138,8 @@ mod _endpoint_identifier;
 mod _health_check_protocol;
 
 mod _health_state;
+
+mod _ip_address_detail;
 
 mod _ip_address_family;
 

@@ -23,7 +23,9 @@ impl crate::operation::terminate_jobs::builders::TerminateJobsInputBuilder {
 /// Fluent builder constructing a request to `TerminateJobs`.
 ///
 /// <p>Terminates up to 50 jobs in a job queue. This is a bulk version of <code>TerminateJob</code>. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code> state are cancelled.</p>
-/// <p>Batch reports the result for each job individually in the response. Jobs that were processed successfully are reported in the <code>successful</code> list. Jobs that encountered errors are reported in the <code>errors</code> list. The response returns an HTTP status code of <code>200</code> even when some jobs encountered errors, so check the <code>errors</code> list. Jobs that can't be found are treated as successfully processed.</p>
+/// <p>Batch reports the result for each job individually in the response. Jobs that were processed successfully are reported in the <code>successful</code> list. Jobs that encountered errors are reported in the <code>errors</code> list. The response returns an HTTP status code of <code>200</code> even when some jobs encountered errors, so check the <code>errors</code> list. Jobs that can't be found are treated as successfully processed.</p><important>
+/// <p>This operation requires <code>batch:TerminateJob</code> permission for each job in the request. There is no separate <code>batch:TerminateJobs</code> IAM action. If a caller's IAM policy grants <code>batch:TerminateJob</code>, they can use both the singular <code>TerminateJob</code> and bulk <code>TerminateJobs</code> operations.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

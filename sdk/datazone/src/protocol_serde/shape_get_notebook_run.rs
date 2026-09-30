@@ -209,6 +209,13 @@ pub(crate) fn de_get_notebook_run(
                             .transpose()?,
                     );
                 }
+                "notificationConfiguration" => {
+                    builder = builder.set_notification_configuration(crate::protocol_serde::shape_notification_config::de_notification_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "owningProjectId" => {
                     builder = builder.set_owning_project_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

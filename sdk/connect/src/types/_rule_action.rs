@@ -32,6 +32,9 @@ pub struct RuleAction {
     pub submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
     /// <p>Information about the extract information action.</p>
     pub extract_information_action: ::std::option::Option<crate::types::ExtractInformationActionDefinition>,
+    /// <p>Information about the send in-app notification action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code> | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> | <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> | <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> | <code>OnScheduleTimeOffRequestActivity</code></p>
+    pub send_in_app_notification_action: ::std::option::Option<crate::types::SendInAppNotificationActionDefinition>,
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
@@ -84,6 +87,11 @@ impl RuleAction {
     pub fn extract_information_action(&self) -> ::std::option::Option<&crate::types::ExtractInformationActionDefinition> {
         self.extract_information_action.as_ref()
     }
+    /// <p>Information about the send in-app notification action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code> | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> | <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> | <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> | <code>OnScheduleTimeOffRequestActivity</code></p>
+    pub fn send_in_app_notification_action(&self) -> ::std::option::Option<&crate::types::SendInAppNotificationActionDefinition> {
+        self.send_in_app_notification_action.as_ref()
+    }
 }
 impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::types::RuleAction).
@@ -107,6 +115,7 @@ pub struct RuleActionBuilder {
     pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
     pub(crate) submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
     pub(crate) extract_information_action: ::std::option::Option<crate::types::ExtractInformationActionDefinition>,
+    pub(crate) send_in_app_notification_action: ::std::option::Option<crate::types::SendInAppNotificationActionDefinition>,
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
@@ -282,6 +291,23 @@ impl RuleActionBuilder {
     pub fn get_extract_information_action(&self) -> &::std::option::Option<crate::types::ExtractInformationActionDefinition> {
         &self.extract_information_action
     }
+    /// <p>Information about the send in-app notification action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code> | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> | <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> | <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> | <code>OnScheduleTimeOffRequestActivity</code></p>
+    pub fn send_in_app_notification_action(mut self, input: crate::types::SendInAppNotificationActionDefinition) -> Self {
+        self.send_in_app_notification_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the send in-app notification action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code> | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> | <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> | <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> | <code>OnScheduleTimeOffRequestActivity</code></p>
+    pub fn set_send_in_app_notification_action(mut self, input: ::std::option::Option<crate::types::SendInAppNotificationActionDefinition>) -> Self {
+        self.send_in_app_notification_action = input;
+        self
+    }
+    /// <p>Information about the send in-app notification action.</p>
+    /// <p>Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code> | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code> | <code>OnPostChatAnalysisAvailable</code> | <code>OnAfterCallWorkAvailable</code> | <code>OnAfterChatWorkAvailable</code> | <code>OnEmailAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code> | <code>OnCaseCreate</code> | <code>OnCaseUpdate</code> | <code>OnSlaBreach</code> | <code>OnSchedulePublish</code> | <code>OnScheduleUpdate</code> | <code>OnScheduleTimeOffRequestActivity</code></p>
+    pub fn get_send_in_app_notification_action(&self) -> &::std::option::Option<crate::types::SendInAppNotificationActionDefinition> {
+        &self.send_in_app_notification_action
+    }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::RuleActionBuilder::action_type)
@@ -303,6 +329,7 @@ impl RuleActionBuilder {
             end_associated_tasks_action: self.end_associated_tasks_action,
             submit_auto_evaluation_action: self.submit_auto_evaluation_action,
             extract_information_action: self.extract_information_action,
+            send_in_app_notification_action: self.send_in_app_notification_action,
         })
     }
 }

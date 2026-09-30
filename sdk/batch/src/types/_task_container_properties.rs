@@ -48,7 +48,7 @@ pub struct TaskContainerProperties {
     pub readonly_root_filesystem: ::std::option::Option<bool>,
     /// <p>The private repository authentication credentials to use.</p>
     pub repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub resource_requirements: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>,
     /// <p>The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying Sensitive Data</a> in the Amazon Elastic Container Service Developer Guide.</p>
     pub secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
@@ -163,7 +163,7 @@ impl TaskContainerProperties {
     pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
         self.repository_credentials.as_ref()
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_requirements.is_none()`.
     pub fn resource_requirements(&self) -> &[crate::types::ResourceRequirement] {
@@ -514,19 +514,19 @@ impl TaskContainerPropertiesBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
     ///
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn resource_requirements(mut self, input: crate::types::ResourceRequirement) -> Self {
         let mut v = self.resource_requirements.unwrap_or_default();
         v.push(input);
         self.resource_requirements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn set_resource_requirements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>>) -> Self {
         self.resource_requirements = input;
         self
     }
-    /// <p>The type and amount of a resource to assign to a container. The only supported resource is a GPU.</p>
+    /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     pub fn get_resource_requirements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceRequirement>> {
         &self.resource_requirements
     }

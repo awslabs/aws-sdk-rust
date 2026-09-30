@@ -7,7 +7,7 @@ pub struct UpdateNotificationContentInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the notification to update.</p>
     pub notification_id: ::std::option::Option<::std::string::String>,
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub content: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>,
 }
 impl UpdateNotificationContentInput {
@@ -19,7 +19,7 @@ impl UpdateNotificationContentInput {
     pub fn notification_id(&self) -> ::std::option::Option<&str> {
         self.notification_id.as_deref()
     }
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn content(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         self.content.as_ref()
     }
@@ -74,19 +74,19 @@ impl UpdateNotificationContentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn content(mut self, k: crate::types::LocaleCode, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.content.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.content = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         &self.content
     }

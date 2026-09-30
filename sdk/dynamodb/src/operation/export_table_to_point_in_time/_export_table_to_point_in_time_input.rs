@@ -35,6 +35,8 @@ pub struct ExportTableToPointInTimeInput {
     pub export_type: ::std::option::Option<crate::types::ExportType>,
     /// <p>Optional object containing the parameters specific to an incremental export.</p>
     pub incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub filter_specification: ::std::option::Option<crate::types::FilterSpecification>,
 }
 impl ExportTableToPointInTimeInput {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -91,6 +93,10 @@ impl ExportTableToPointInTimeInput {
     pub fn incremental_export_specification(&self) -> ::std::option::Option<&crate::types::IncrementalExportSpecification> {
         self.incremental_export_specification.as_ref()
     }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn filter_specification(&self) -> ::std::option::Option<&crate::types::FilterSpecification> {
+        self.filter_specification.as_ref()
+    }
 }
 impl ExportTableToPointInTimeInput {
     /// Creates a new builder-style object to manufacture [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
@@ -114,6 +120,7 @@ pub struct ExportTableToPointInTimeInputBuilder {
     pub(crate) export_format: ::std::option::Option<crate::types::ExportFormat>,
     pub(crate) export_type: ::std::option::Option<crate::types::ExportType>,
     pub(crate) incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
+    pub(crate) filter_specification: ::std::option::Option<crate::types::FilterSpecification>,
 }
 impl ExportTableToPointInTimeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -302,6 +309,20 @@ impl ExportTableToPointInTimeInputBuilder {
     pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
         &self.incremental_export_specification
     }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn filter_specification(mut self, input: crate::types::FilterSpecification) -> Self {
+        self.filter_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn set_filter_specification(mut self, input: ::std::option::Option<crate::types::FilterSpecification>) -> Self {
+        self.filter_specification = input;
+        self
+    }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn get_filter_specification(&self) -> &::std::option::Option<crate::types::FilterSpecification> {
+        &self.filter_specification
+    }
     /// Consumes the builder and constructs a [`ExportTableToPointInTimeInput`](crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput).
     pub fn build(
         self,
@@ -321,6 +342,7 @@ impl ExportTableToPointInTimeInputBuilder {
             export_format: self.export_format,
             export_type: self.export_type,
             incremental_export_specification: self.incremental_export_specification,
+            filter_specification: self.filter_specification,
         })
     }
 }

@@ -57,6 +57,8 @@ pub use crate::types::_compute_resource_update::ComputeResourceUpdateBuilder;
 
 pub use crate::types::_update_policy::UpdatePolicyBuilder;
 
+pub use crate::types::_eks_configuration_update::EksConfigurationUpdateBuilder;
+
 pub use crate::types::_cancel_jobs_error_detail::CancelJobsErrorDetailBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
@@ -64,6 +66,8 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 pub use crate::types::_compute_scaling_policy::ComputeScalingPolicyBuilder;
 
 pub use crate::types::_managed_instances_provider::ManagedInstancesProviderBuilder;
+
+pub use crate::types::_eks_access_entry::EksAccessEntryBuilder;
 
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrderBuilder;
 

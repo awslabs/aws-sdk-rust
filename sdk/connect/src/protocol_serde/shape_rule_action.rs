@@ -66,6 +66,15 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_extract_information_action_definition::ser_extract_information_action_definition(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.send_in_app_notification_action {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("SendInAppNotificationAction").start_object();
+        crate::protocol_serde::shape_send_in_app_notification_action_definition::ser_send_in_app_notification_action_definition(
+            &mut object_22,
+            var_21,
+        )?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -177,6 +186,11 @@ where
                                         _value,
                                         depth + 1,
                                     )?,
+                                );
+                            }
+                            "SendInAppNotificationAction" => {
+                                builder = builder.set_send_in_app_notification_action(
+                                    crate::protocol_serde::shape_send_in_app_notification_action_definition::de_send_in_app_notification_action_definition(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

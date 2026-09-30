@@ -309,4 +309,18 @@ impl UpdateCrawlerFluentBuilder {
     pub fn get_crawler_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_crawler_security_configuration()
     }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.catalog_id(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_catalog_id(input);
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_catalog_id()
+    }
 }

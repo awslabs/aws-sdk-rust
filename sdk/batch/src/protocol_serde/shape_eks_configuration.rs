@@ -9,6 +9,12 @@ pub fn ser_eks_configuration(
     if let Some(var_2) = &input.kubernetes_namespace {
         object.key("kubernetesNamespace").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.access_entry {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("accessEntry").start_object();
+        crate::protocol_serde::shape_eks_access_entry::ser_eks_access_entry(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +53,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "accessEntry" => {
+                            builder = builder.set_access_entry(crate::protocol_serde::shape_eks_access_entry::de_eks_access_entry(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

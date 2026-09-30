@@ -80,25 +80,25 @@ where
 }
 
 pub fn ser_target_configuration(
-    object_13: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_17: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TargetConfiguration::Mcp(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_13.key("mcp").start_object();
+            let mut object_1 = object_17.key("mcp").start_object();
             crate::protocol_serde::shape_mcp_target_configuration::ser_mcp_target_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::TargetConfiguration::Http(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_13.key("http").start_object();
+            let mut object_2 = object_17.key("http").start_object();
             crate::protocol_serde::shape_http_target_configuration::ser_http_target_configuration(&mut object_2, inner)?;
             object_2.finish();
         }
         crate::types::TargetConfiguration::Inference(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_13.key("inference").start_object();
+            let mut object_3 = object_17.key("inference").start_object();
             crate::protocol_serde::shape_inference_target_configuration::ser_inference_target_configuration(&mut object_3, inner)?;
             object_3.finish();
         }

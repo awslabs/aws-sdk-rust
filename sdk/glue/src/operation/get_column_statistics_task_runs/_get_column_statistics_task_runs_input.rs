@@ -11,6 +11,8 @@ pub struct GetColumnStatisticsTaskRunsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>A continuation token, if this is a continuation call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl GetColumnStatisticsTaskRunsInput {
     /// <p>The name of the database where the table resides.</p>
@@ -29,6 +31,10 @@ impl GetColumnStatisticsTaskRunsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl GetColumnStatisticsTaskRunsInput {
     /// Creates a new builder-style object to manufacture [`GetColumnStatisticsTaskRunsInput`](crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput).
@@ -45,6 +51,7 @@ pub struct GetColumnStatisticsTaskRunsInputBuilder {
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl GetColumnStatisticsTaskRunsInputBuilder {
     /// <p>The name of the database where the table resides.</p>
@@ -105,6 +112,20 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`GetColumnStatisticsTaskRunsInput`](crate::operation::get_column_statistics_task_runs::GetColumnStatisticsTaskRunsInput).
     pub fn build(
         self,
@@ -117,6 +138,7 @@ impl GetColumnStatisticsTaskRunsInputBuilder {
             table_name: self.table_name,
             max_results: self.max_results,
             next_token: self.next_token,
+            catalog_id: self.catalog_id,
         })
     }
 }

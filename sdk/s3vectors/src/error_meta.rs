@@ -552,6 +552,59 @@ impl From<crate::operation::list_vectors::ListVectorsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError> for Error {
+    fn from(err: crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError) -> Self {
+        match err {
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::RequestTimeoutException(inner) => {
+                Error::RequestTimeoutException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_vector_bucket_default_index_mode::PutVectorBucketDefaultIndexModeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_vector_bucket_policy::PutVectorBucketPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -712,6 +765,36 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index_mode::UpdateIndexModeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_index_mode::UpdateIndexModeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_index_mode::UpdateIndexModeError> for Error {
+    fn from(err: crate::operation::update_index_mode::UpdateIndexModeError) -> Self {
+        match err {
+            crate::operation::update_index_mode::UpdateIndexModeError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::update_index_mode::UpdateIndexModeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_index_mode::UpdateIndexModeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

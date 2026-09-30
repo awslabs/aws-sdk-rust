@@ -35,6 +35,8 @@ pub struct UpdateGatewayTargetOutput {
     pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     /// <p>The protocol type of the updated gateway target.</p>
     pub protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
+    /// <p>The private certificate authority (CA) configurations for the gateway target.</p>
+    pub certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutput {
@@ -110,6 +112,12 @@ impl UpdateGatewayTargetOutput {
     pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::TargetProtocolType> {
         self.protocol_type.as_ref()
     }
+    /// <p>The private certificate authority (CA) configurations for the gateway target.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_configurations.is_none()`.
+    pub fn certificate_configurations(&self) -> &[crate::types::CertificateConfiguration] {
+        self.certificate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -130,6 +138,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutput {
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
         formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -166,6 +175,7 @@ pub struct UpdateGatewayTargetOutputBuilder {
     pub(crate) private_endpoint_managed_resources: ::std::option::Option<::std::vec::Vec<crate::types::ManagedResourceDetails>>,
     pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::TargetProtocolType>,
+    pub(crate) certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayTargetOutputBuilder {
@@ -424,6 +434,26 @@ impl UpdateGatewayTargetOutputBuilder {
     pub fn get_protocol_type(&self) -> &::std::option::Option<crate::types::TargetProtocolType> {
         &self.protocol_type
     }
+    /// Appends an item to `certificate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_configurations`](Self::set_certificate_configurations).
+    ///
+    /// <p>The private certificate authority (CA) configurations for the gateway target.</p>
+    pub fn certificate_configurations(mut self, input: crate::types::CertificateConfiguration) -> Self {
+        let mut v = self.certificate_configurations.unwrap_or_default();
+        v.push(input);
+        self.certificate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the gateway target.</p>
+    pub fn set_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>) -> Self {
+        self.certificate_configurations = input;
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the gateway target.</p>
+    pub fn get_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>> {
+        &self.certificate_configurations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -498,6 +528,7 @@ impl UpdateGatewayTargetOutputBuilder {
             private_endpoint_managed_resources: self.private_endpoint_managed_resources,
             authorization_data: self.authorization_data,
             protocol_type: self.protocol_type,
+            certificate_configurations: self.certificate_configurations,
             _request_id: self._request_id,
         })
     }
@@ -521,6 +552,7 @@ impl ::std::fmt::Debug for UpdateGatewayTargetOutputBuilder {
         formatter.field("private_endpoint_managed_resources", &self.private_endpoint_managed_resources);
         formatter.field("authorization_data", &self.authorization_data);
         formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -81,6 +81,8 @@ pub use crate::types::_compute_resource_update::ComputeResourceUpdate;
 
 pub use crate::types::_update_policy::UpdatePolicy;
 
+pub use crate::types::_eks_configuration_update::EksConfigurationUpdate;
+
 pub use crate::types::_cancel_jobs_error_detail::CancelJobsErrorDetail;
 
 pub use crate::types::_cr_type::CrType;
@@ -92,6 +94,8 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 pub use crate::types::_compute_scaling_policy::ComputeScalingPolicy;
 
 pub use crate::types::_managed_instances_provider::ManagedInstancesProvider;
+
+pub use crate::types::_eks_access_entry::EksAccessEntry;
 
 pub use crate::types::_container_insights::ContainerInsights;
 
@@ -184,6 +188,10 @@ pub use crate::types::_ec2_configuration::Ec2Configuration;
 pub use crate::types::_instance_launch_template::InstanceLaunchTemplate;
 
 pub use crate::types::_infrastructure_optimization::InfrastructureOptimization;
+
+pub use crate::types::_eks_access_entry_desired_state::EksAccessEntryDesiredState;
+
+pub use crate::types::_eks_access_entry_status::EksAccessEntryStatus;
 
 pub use crate::types::_job_state_time_limit_actions_state::JobStateTimeLimitActionsState;
 
@@ -453,11 +461,19 @@ mod _efs_transit_encryption;
 
 mod _efs_volume_configuration;
 
+mod _eks_access_entry;
+
+mod _eks_access_entry_desired_state;
+
+mod _eks_access_entry_status;
+
 mod _eks_attempt_container_detail;
 
 mod _eks_attempt_detail;
 
 mod _eks_configuration;
+
+mod _eks_configuration_update;
 
 mod _eks_container;
 

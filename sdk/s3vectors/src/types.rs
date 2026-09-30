@@ -3,6 +3,8 @@ pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
 pub use crate::types::_vector_bucket::VectorBucket;
 
+pub use crate::types::_index_mode::IndexMode;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_data_type::DataType;
@@ -38,6 +40,8 @@ mod _encryption_configuration;
 mod _get_output_vector;
 
 mod _index;
+
+mod _index_mode;
 
 mod _index_summary;
 

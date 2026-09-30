@@ -12,6 +12,8 @@ pub struct VectorBucket {
     pub creation_time: ::aws_smithy_types::DateTime,
     /// <p>The encryption configuration for the vector bucket.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>The mode that is automatically assigned to new vector indexes in the vector bucket. Changing the default index mode doesn't affect existing vector indexes.</p>
+    pub default_index_mode: ::std::option::Option<crate::types::IndexMode>,
 }
 impl VectorBucket {
     /// <p>The name of the vector bucket.</p>
@@ -32,6 +34,10 @@ impl VectorBucket {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>The mode that is automatically assigned to new vector indexes in the vector bucket. Changing the default index mode doesn't affect existing vector indexes.</p>
+    pub fn default_index_mode(&self) -> ::std::option::Option<&crate::types::IndexMode> {
+        self.default_index_mode.as_ref()
+    }
 }
 impl VectorBucket {
     /// Creates a new builder-style object to manufacture [`VectorBucket`](crate::types::VectorBucket).
@@ -48,6 +54,7 @@ pub struct VectorBucketBuilder {
     pub(crate) vector_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) default_index_mode: ::std::option::Option<crate::types::IndexMode>,
 }
 impl VectorBucketBuilder {
     /// <p>The name of the vector bucket.</p>
@@ -109,6 +116,20 @@ impl VectorBucketBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// <p>The mode that is automatically assigned to new vector indexes in the vector bucket. Changing the default index mode doesn't affect existing vector indexes.</p>
+    pub fn default_index_mode(mut self, input: crate::types::IndexMode) -> Self {
+        self.default_index_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode that is automatically assigned to new vector indexes in the vector bucket. Changing the default index mode doesn't affect existing vector indexes.</p>
+    pub fn set_default_index_mode(mut self, input: ::std::option::Option<crate::types::IndexMode>) -> Self {
+        self.default_index_mode = input;
+        self
+    }
+    /// <p>The mode that is automatically assigned to new vector indexes in the vector bucket. Changing the default index mode doesn't affect existing vector indexes.</p>
+    pub fn get_default_index_mode(&self) -> &::std::option::Option<crate::types::IndexMode> {
+        &self.default_index_mode
+    }
     /// Consumes the builder and constructs a [`VectorBucket`](crate::types::VectorBucket).
     /// This method will fail if any of the following fields are not set:
     /// - [`vector_bucket_name`](crate::types::builders::VectorBucketBuilder::vector_bucket_name)
@@ -135,6 +156,7 @@ impl VectorBucketBuilder {
                 )
             })?,
             encryption_configuration: self.encryption_configuration,
+            default_index_mode: self.default_index_mode,
         })
     }
 }

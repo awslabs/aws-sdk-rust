@@ -3,44 +3,56 @@ pub fn ser_create_gateway_target_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_gateway_target::CreateGatewayTargetInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.credential_provider_configurations {
-        let mut array_3 = object.key("credentialProviderConfigurations").start_array();
-        for item_4 in var_2 {
+    if let Some(var_1) = &input.certificate_configurations {
+        let mut array_2 = object.key("certificateConfigurations").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_credential_provider_configuration::ser_credential_provider_configuration(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_certificate_configuration::ser_certificate_configuration(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_3.finish();
+        array_2.finish();
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_7) = &input.metadata_configuration {
+    if let Some(var_6) = &input.credential_provider_configurations {
+        let mut array_7 = object.key("credentialProviderConfigurations").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_credential_provider_configuration::ser_credential_provider_configuration(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_10) = &input.description {
+        object.key("description").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("metadataConfiguration").start_object();
-        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_metadata_configuration::ser_metadata_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_10) = &input.private_endpoint {
+    if let Some(var_14) = &input.private_endpoint {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("privateEndpoint").start_object();
-        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_15 = object.key("privateEndpoint").start_object();
+        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_12) = &input.target_configuration {
+    if let Some(var_16) = &input.target_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("targetConfiguration").start_object();
-        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_17 = object.key("targetConfiguration").start_object();
+        crate::protocol_serde::shape_target_configuration::ser_target_configuration(&mut object_17, var_16)?;
+        object_17.finish();
     }
     Ok(())
 }

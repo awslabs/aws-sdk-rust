@@ -15,6 +15,15 @@ pub struct QueryVectorsInput {
     pub query_vector: ::std::option::Option<crate::types::VectorData>,
     /// <p>Metadata filter to apply during the query. For more information about metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-metadata-filtering.html">Metadata filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub query_mode: ::std::option::Option<crate::types::IndexMode>,
     /// <p>Indicates whether to include metadata in the response. The default value is <code>false</code>.</p>
     pub return_metadata: ::std::option::Option<bool>,
     /// <p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p>
@@ -47,6 +56,17 @@ impl QueryVectorsInput {
     pub fn filter(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.filter.as_ref()
     }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn query_mode(&self) -> ::std::option::Option<&crate::types::IndexMode> {
+        self.query_mode.as_ref()
+    }
     /// <p>Indicates whether to include metadata in the response. The default value is <code>false</code>.</p>
     pub fn return_metadata(&self) -> ::std::option::Option<bool> {
         self.return_metadata
@@ -77,6 +97,7 @@ pub struct QueryVectorsInputBuilder {
     pub(crate) top_k: ::std::option::Option<i32>,
     pub(crate) query_vector: ::std::option::Option<crate::types::VectorData>,
     pub(crate) filter: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) query_mode: ::std::option::Option<crate::types::IndexMode>,
     pub(crate) return_metadata: ::std::option::Option<bool>,
     pub(crate) return_distance: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -168,6 +189,41 @@ impl QueryVectorsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.filter
     }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn query_mode(mut self, input: crate::types::IndexMode) -> Self {
+        self.query_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn set_query_mode(mut self, input: ::std::option::Option<crate::types::IndexMode>) -> Self {
+        self.query_mode = input;
+        self
+    }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn get_query_mode(&self) -> &::std::option::Option<crate::types::IndexMode> {
+        &self.query_mode
+    }
     /// <p>Indicates whether to include metadata in the response. The default value is <code>false</code>.</p>
     pub fn return_metadata(mut self, input: bool) -> Self {
         self.return_metadata = ::std::option::Option::Some(input);
@@ -221,6 +277,7 @@ impl QueryVectorsInputBuilder {
             top_k: self.top_k,
             query_vector: self.query_vector,
             filter: self.filter,
+            query_mode: self.query_mode,
             return_metadata: self.return_metadata,
             return_distance: self.return_distance,
             next_token: self.next_token,

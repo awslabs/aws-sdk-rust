@@ -5,12 +5,38 @@
 pub struct GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub contact_information: ::std::option::Option<crate::types::ContactInformation>,
+    /// <p>The verification status of the phone number in the primary contact information associated with an Amazon Web Services account. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> – A one-time passcode has been sent and is waiting to be submitted.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED</code> – The phone number has been verified.</p></li>
+    /// <li>
+    /// <p><code>UNVERIFIED</code> – The phone number has not been verified.</p></li>
+    /// <li>
+    /// <p><code>NOT_SUPPORTED</code> – Phone number verification isn't available for this account.</p></li>
+    /// </ul>
+    pub verification_status: ::std::option::Option<crate::types::PhoneNumberVerificationStatus>,
     _request_id: Option<String>,
 }
 impl GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub fn contact_information(&self) -> ::std::option::Option<&crate::types::ContactInformation> {
         self.contact_information.as_ref()
+    }
+    /// <p>The verification status of the phone number in the primary contact information associated with an Amazon Web Services account. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> – A one-time passcode has been sent and is waiting to be submitted.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED</code> – The phone number has been verified.</p></li>
+    /// <li>
+    /// <p><code>UNVERIFIED</code> – The phone number has not been verified.</p></li>
+    /// <li>
+    /// <p><code>NOT_SUPPORTED</code> – Phone number verification isn't available for this account.</p></li>
+    /// </ul>
+    pub fn verification_status(&self) -> ::std::option::Option<&crate::types::PhoneNumberVerificationStatus> {
+        self.verification_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetContactInformationOutput {
@@ -30,6 +56,7 @@ impl GetContactInformationOutput {
 #[non_exhaustive]
 pub struct GetContactInformationOutputBuilder {
     pub(crate) contact_information: ::std::option::Option<crate::types::ContactInformation>,
+    pub(crate) verification_status: ::std::option::Option<crate::types::PhoneNumberVerificationStatus>,
     _request_id: Option<String>,
 }
 impl GetContactInformationOutputBuilder {
@@ -47,6 +74,50 @@ impl GetContactInformationOutputBuilder {
     pub fn get_contact_information(&self) -> &::std::option::Option<crate::types::ContactInformation> {
         &self.contact_information
     }
+    /// <p>The verification status of the phone number in the primary contact information associated with an Amazon Web Services account. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> – A one-time passcode has been sent and is waiting to be submitted.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED</code> – The phone number has been verified.</p></li>
+    /// <li>
+    /// <p><code>UNVERIFIED</code> – The phone number has not been verified.</p></li>
+    /// <li>
+    /// <p><code>NOT_SUPPORTED</code> – Phone number verification isn't available for this account.</p></li>
+    /// </ul>
+    pub fn verification_status(mut self, input: crate::types::PhoneNumberVerificationStatus) -> Self {
+        self.verification_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The verification status of the phone number in the primary contact information associated with an Amazon Web Services account. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> – A one-time passcode has been sent and is waiting to be submitted.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED</code> – The phone number has been verified.</p></li>
+    /// <li>
+    /// <p><code>UNVERIFIED</code> – The phone number has not been verified.</p></li>
+    /// <li>
+    /// <p><code>NOT_SUPPORTED</code> – Phone number verification isn't available for this account.</p></li>
+    /// </ul>
+    pub fn set_verification_status(mut self, input: ::std::option::Option<crate::types::PhoneNumberVerificationStatus>) -> Self {
+        self.verification_status = input;
+        self
+    }
+    /// <p>The verification status of the phone number in the primary contact information associated with an Amazon Web Services account. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> – A one-time passcode has been sent and is waiting to be submitted.</p></li>
+    /// <li>
+    /// <p><code>VERIFIED</code> – The phone number has been verified.</p></li>
+    /// <li>
+    /// <p><code>UNVERIFIED</code> – The phone number has not been verified.</p></li>
+    /// <li>
+    /// <p><code>NOT_SUPPORTED</code> – Phone number verification isn't available for this account.</p></li>
+    /// </ul>
+    pub fn get_verification_status(&self) -> &::std::option::Option<crate::types::PhoneNumberVerificationStatus> {
+        &self.verification_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +131,7 @@ impl GetContactInformationOutputBuilder {
     pub fn build(self) -> crate::operation::get_contact_information::GetContactInformationOutput {
         crate::operation::get_contact_information::GetContactInformationOutput {
             contact_information: self.contact_information,
+            verification_status: self.verification_status,
             _request_id: self._request_id,
         }
     }

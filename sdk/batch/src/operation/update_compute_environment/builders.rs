@@ -250,4 +250,18 @@ impl UpdateComputeEnvironmentFluentBuilder {
     pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
         self.inner.get_ecs_settings()
     }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn eks_configuration(mut self, input: crate::types::EksConfigurationUpdate) -> Self {
+        self.inner = self.inner.eks_configuration(input);
+        self
+    }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfigurationUpdate>) -> Self {
+        self.inner = self.inner.set_eks_configuration(input);
+        self
+    }
+    /// <p>Updates the Amazon EKS configuration for the compute environment. Only specify this parameter if the compute environment's <code>containerOrchestrationType</code> is <code>EKS</code>. Currently, the <code>accessEntry</code> setting is the only Amazon EKS configuration that you can change after the compute environment is created. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_eks_configuration(&self) -> &::std::option::Option<crate::types::EksConfigurationUpdate> {
+        self.inner.get_eks_configuration()
+    }
 }

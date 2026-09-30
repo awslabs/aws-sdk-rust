@@ -7,6 +7,8 @@ pub struct StopColumnStatisticsTaskRunScheduleInput {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table for which to stop a column statistic task run schedule.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl StopColumnStatisticsTaskRunScheduleInput {
     /// <p>The name of the database where the table resides.</p>
@@ -16,6 +18,10 @@ impl StopColumnStatisticsTaskRunScheduleInput {
     /// <p>The name of the table for which to stop a column statistic task run schedule.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
+    }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
     }
 }
 impl StopColumnStatisticsTaskRunScheduleInput {
@@ -31,6 +37,7 @@ impl StopColumnStatisticsTaskRunScheduleInput {
 pub struct StopColumnStatisticsTaskRunScheduleInputBuilder {
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl StopColumnStatisticsTaskRunScheduleInputBuilder {
     /// <p>The name of the database where the table resides.</p>
@@ -63,6 +70,20 @@ impl StopColumnStatisticsTaskRunScheduleInputBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The ID of the Data Catalog where the table resides. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`StopColumnStatisticsTaskRunScheduleInput`](crate::operation::stop_column_statistics_task_run_schedule::StopColumnStatisticsTaskRunScheduleInput).
     pub fn build(
         self,
@@ -74,6 +95,7 @@ impl StopColumnStatisticsTaskRunScheduleInputBuilder {
             crate::operation::stop_column_statistics_task_run_schedule::StopColumnStatisticsTaskRunScheduleInput {
                 database_name: self.database_name,
                 table_name: self.table_name,
+                catalog_id: self.catalog_id,
             },
         )
     }

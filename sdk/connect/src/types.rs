@@ -1025,6 +1025,8 @@ pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvalu
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinition;
 
+pub use crate::types::_send_in_app_notification_action_definition::SendInAppNotificationActionDefinition;
+
 pub use crate::types::_pre_evaluation_filter::PreEvaluationFilter;
 
 pub use crate::types::_application_type::ApplicationType;
@@ -2920,6 +2922,8 @@ mod _security_profile_summary;
 mod _security_profiles_search_filter;
 
 mod _segment_attribute_value;
+
+mod _send_in_app_notification_action_definition;
 
 mod _send_notification_action_definition;
 

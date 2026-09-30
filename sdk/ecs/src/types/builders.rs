@@ -243,6 +243,8 @@ pub use crate::types::_service_connect_service::ServiceConnectServiceBuilder;
 
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfigurationBuilder;
 
+pub use crate::types::_vpc_lattice_advanced_configuration::VpcLatticeAdvancedConfigurationBuilder;
+
 pub use crate::types::_metric_configuration::MetricConfigurationBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;
@@ -356,6 +358,8 @@ pub use crate::types::_ebs_tag_specification::EbsTagSpecificationBuilder;
 pub use crate::types::_service_connect_service_resource::ServiceConnectServiceResourceBuilder;
 
 pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancerBuilder;
+
+pub use crate::types::_service_revision_vpc_lattice_configuration::ServiceRevisionVpcLatticeConfigurationBuilder;
 
 pub use crate::types::_managed_ingress_path::ManagedIngressPathBuilder;
 

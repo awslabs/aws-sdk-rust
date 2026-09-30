@@ -206,6 +206,20 @@ impl StartNotebookRunFluentBuilder {
     pub fn get_timeout_configuration(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
         self.inner.get_timeout_configuration()
     }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfig) -> Self {
+        self.inner = self.inner.notification_configuration(input);
+        self
+    }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
+        self.inner = self.inner.set_notification_configuration(input);
+        self
+    }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
+        self.inner.get_notification_configuration()
+    }
     /// <p>The source that triggered the notebook run.</p>
     pub fn trigger_source(mut self, input: crate::types::TriggerSource) -> Self {
         self.inner = self.inner.trigger_source(input);

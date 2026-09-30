@@ -2442,6 +2442,21 @@ pub(crate) fn primary_value_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn send_in_app_notification_action_definition_correct_errors(
+    mut builder: crate::types::builders::SendInAppNotificationActionDefinitionBuilder,
+) -> crate::types::builders::SendInAppNotificationActionDefinitionBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    if builder.recipient.is_none() {
+        builder.recipient = {
+            let builder = crate::types::builders::NotificationRecipientTypeBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn send_notification_action_definition_correct_errors(
     mut builder: crate::types::builders::SendNotificationActionDefinitionBuilder,
 ) -> crate::types::builders::SendNotificationActionDefinitionBuilder {

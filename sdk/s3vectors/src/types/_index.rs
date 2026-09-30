@@ -22,6 +22,15 @@ pub struct Index {
     pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     /// <p>The encryption configuration for a vector index. By default, if you don't specify, all new vectors in the vector index will use the encryption configuration of the vector bucket.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>The mode that determines how the vector index processes queries.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub index_mode: ::std::option::Option<crate::types::IndexMode>,
 }
 impl Index {
     /// <p>The name of the vector bucket that contains the vector index.</p>
@@ -63,6 +72,17 @@ impl Index {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>The mode that determines how the vector index processes queries.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn index_mode(&self) -> ::std::option::Option<&crate::types::IndexMode> {
+        self.index_mode.as_ref()
+    }
 }
 impl Index {
     /// Creates a new builder-style object to manufacture [`Index`](crate::types::Index).
@@ -84,6 +104,7 @@ pub struct IndexBuilder {
     pub(crate) distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) index_mode: ::std::option::Option<crate::types::IndexMode>,
 }
 impl IndexBuilder {
     /// <p>The name of the vector bucket that contains the vector index.</p>
@@ -219,6 +240,41 @@ impl IndexBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// <p>The mode that determines how the vector index processes queries.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn index_mode(mut self, input: crate::types::IndexMode) -> Self {
+        self.index_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mode that determines how the vector index processes queries.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn set_index_mode(mut self, input: ::std::option::Option<crate::types::IndexMode>) -> Self {
+        self.index_mode = input;
+        self
+    }
+    /// <p>The mode that determines how the vector index processes queries.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn get_index_mode(&self) -> &::std::option::Option<crate::types::IndexMode> {
+        &self.index_mode
+    }
     /// Consumes the builder and constructs a [`Index`](crate::types::Index).
     /// This method will fail if any of the following fields are not set:
     /// - [`vector_bucket_name`](crate::types::builders::IndexBuilder::vector_bucket_name)
@@ -274,6 +330,7 @@ impl IndexBuilder {
             })?,
             metadata_configuration: self.metadata_configuration,
             encryption_configuration: self.encryption_configuration,
+            index_mode: self.index_mode,
         })
     }
 }

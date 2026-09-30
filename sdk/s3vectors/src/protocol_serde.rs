@@ -51,6 +51,8 @@ pub(crate) mod shape_list_vector_buckets;
 
 pub(crate) mod shape_list_vectors;
 
+pub(crate) mod shape_put_vector_bucket_default_index_mode;
+
 pub(crate) mod shape_put_vector_bucket_policy;
 
 pub(crate) mod shape_put_vectors;
@@ -60,6 +62,8 @@ pub(crate) mod shape_query_vectors;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_index_mode;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -111,6 +115,8 @@ pub(crate) mod shape_list_vectors_input;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_put_vector_bucket_default_index_mode_input;
+
 pub(crate) mod shape_put_vector_bucket_policy_input;
 
 pub(crate) mod shape_put_vectors_input;
@@ -126,6 +132,8 @@ pub(crate) mod shape_service_unavailable_exception;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_too_many_requests_exception;
+
+pub(crate) mod shape_update_index_mode_input;
 
 pub(crate) mod shape_validation_exception;
 

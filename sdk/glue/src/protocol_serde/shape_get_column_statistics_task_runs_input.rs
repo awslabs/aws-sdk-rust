@@ -18,5 +18,8 @@ pub fn ser_get_column_statistics_task_runs_input_input(
     if let Some(var_4) = &input.next_token {
         object.key("NextToken").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.catalog_id {
+        object.key("CatalogID").string(var_5.as_str());
+    }
     Ok(())
 }

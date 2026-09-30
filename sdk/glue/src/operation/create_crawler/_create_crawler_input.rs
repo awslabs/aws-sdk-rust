@@ -33,6 +33,8 @@ pub struct CreateCrawlerInput {
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCrawlerInput {
     /// <p>Name of the new crawler.</p>
@@ -97,6 +99,10 @@ impl CreateCrawlerInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl CreateCrawlerInput {
     /// Creates a new builder-style object to manufacture [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
@@ -124,6 +130,7 @@ pub struct CreateCrawlerInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) crawler_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCrawlerInputBuilder {
     /// <p>Name of the new crawler.</p>
@@ -351,6 +358,20 @@ impl CreateCrawlerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If none is supplied, the Amazon Web Services account ID is used by default.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`CreateCrawlerInput`](crate::operation::create_crawler::CreateCrawlerInput).
     pub fn build(
         self,
@@ -371,6 +392,7 @@ impl CreateCrawlerInputBuilder {
             configuration: self.configuration,
             crawler_security_configuration: self.crawler_security_configuration,
             tags: self.tags,
+            catalog_id: self.catalog_id,
         })
     }
 }

@@ -253,6 +253,8 @@ pub(crate) mod shape_ecs_settings;
 
 pub(crate) mod shape_eks_configuration;
 
+pub(crate) mod shape_eks_configuration_update;
+
 pub(crate) mod shape_eks_properties;
 
 pub(crate) mod shape_eks_properties_override;
@@ -348,6 +350,8 @@ pub(crate) mod shape_consumable_resource_summary;
 pub(crate) mod shape_ec2_configuration;
 
 pub(crate) mod shape_ecs_task_properties;
+
+pub(crate) mod shape_eks_access_entry;
 
 pub(crate) mod shape_eks_pod_properties;
 

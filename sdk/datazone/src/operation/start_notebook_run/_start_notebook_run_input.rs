@@ -17,6 +17,8 @@ pub struct StartNotebookRunInput {
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfig>,
     /// <p>The timeout configuration for the notebook run. The default timeout is 720 minutes (12 hours) and the maximum is 1440 minutes (24 hours).</p>
     pub timeout_configuration: ::std::option::Option<crate::types::TimeoutConfig>,
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub notification_configuration: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>The source that triggered the notebook run.</p>
     pub trigger_source: ::std::option::Option<crate::types::TriggerSource>,
     /// <p>The metadata for the notebook run, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.</p>
@@ -55,6 +57,10 @@ impl StartNotebookRunInput {
     pub fn timeout_configuration(&self) -> ::std::option::Option<&crate::types::TimeoutConfig> {
         self.timeout_configuration.as_ref()
     }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
+        self.notification_configuration.as_ref()
+    }
     /// <p>The source that triggered the notebook run.</p>
     pub fn trigger_source(&self) -> ::std::option::Option<&crate::types::TriggerSource> {
         self.trigger_source.as_ref()
@@ -82,6 +88,7 @@ impl ::std::fmt::Debug for StartNotebookRunInput {
         formatter.field("compute_configuration", &self.compute_configuration);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("timeout_configuration", &self.timeout_configuration);
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("trigger_source", &self.trigger_source);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");
@@ -107,6 +114,7 @@ pub struct StartNotebookRunInputBuilder {
     pub(crate) compute_configuration: ::std::option::Option<crate::types::ComputeConfig>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfig>,
     pub(crate) timeout_configuration: ::std::option::Option<crate::types::TimeoutConfig>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfig>,
     pub(crate) trigger_source: ::std::option::Option<crate::types::TriggerSource>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -214,6 +222,20 @@ impl StartNotebookRunInputBuilder {
     pub fn get_timeout_configuration(&self) -> &::std::option::Option<crate::types::TimeoutConfig> {
         &self.timeout_configuration
     }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfig) -> Self {
+        self.notification_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
+        self.notification_configuration = input;
+        self
+    }
+    /// <p>The notification configuration for the notebook run. Use this to specify the notebook run states that trigger notifications.</p>
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
+        &self.notification_configuration
+    }
     /// <p>The source that triggered the notebook run.</p>
     pub fn trigger_source(mut self, input: crate::types::TriggerSource) -> Self {
         self.trigger_source = ::std::option::Option::Some(input);
@@ -294,6 +316,7 @@ impl StartNotebookRunInputBuilder {
             compute_configuration: self.compute_configuration,
             network_configuration: self.network_configuration,
             timeout_configuration: self.timeout_configuration,
+            notification_configuration: self.notification_configuration,
             trigger_source: self.trigger_source,
             metadata: self.metadata,
             parameters: self.parameters,
@@ -311,6 +334,7 @@ impl ::std::fmt::Debug for StartNotebookRunInputBuilder {
         formatter.field("compute_configuration", &self.compute_configuration);
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("timeout_configuration", &self.timeout_configuration);
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("trigger_source", &self.trigger_source);
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("parameters", &"*** Sensitive Data Redacted ***");

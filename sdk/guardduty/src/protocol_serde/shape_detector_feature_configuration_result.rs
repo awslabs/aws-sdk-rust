@@ -47,6 +47,13 @@ where
                                     crate::protocol_serde::shape_detector_additional_configuration_results::de_detector_additional_configuration_results(tokens, _value, depth + 1)?
                                 );
                             }
+                            "managedBy" => {
+                                builder = builder.set_managed_by(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ManagedBy::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

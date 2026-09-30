@@ -19,6 +19,7 @@
 ///     ActionType::EndAssociatedTasks => { /* ... */ },
 ///     ActionType::ExtractInformation => { /* ... */ },
 ///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
+///     ActionType::SendInAppNotification => { /* ... */ },
 ///     ActionType::SendNotification => { /* ... */ },
 ///     ActionType::SubmitAutoEvaluation => { /* ... */ },
 ///     ActionType::UpdateCase => { /* ... */ },
@@ -65,6 +66,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     GenerateEventbridgeEvent,
     #[allow(missing_docs)] // documentation missing in model
+    SendInAppNotification,
+    #[allow(missing_docs)] // documentation missing in model
     SendNotification,
     #[allow(missing_docs)] // documentation missing in model
     SubmitAutoEvaluation,
@@ -84,6 +87,7 @@ impl ::std::convert::From<&str> for ActionType {
             "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
             "EXTRACT_INFORMATION" => ActionType::ExtractInformation,
             "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
+            "SEND_IN_APP_NOTIFICATION" => ActionType::SendInAppNotification,
             "SEND_NOTIFICATION" => ActionType::SendNotification,
             "SUBMIT_AUTO_EVALUATION" => ActionType::SubmitAutoEvaluation,
             "UPDATE_CASE" => ActionType::UpdateCase,
@@ -109,6 +113,7 @@ impl ActionType {
             ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
             ActionType::ExtractInformation => "EXTRACT_INFORMATION",
             ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
+            ActionType::SendInAppNotification => "SEND_IN_APP_NOTIFICATION",
             ActionType::SendNotification => "SEND_NOTIFICATION",
             ActionType::SubmitAutoEvaluation => "SUBMIT_AUTO_EVALUATION",
             ActionType::UpdateCase => "UPDATE_CASE",
@@ -125,6 +130,7 @@ impl ActionType {
             "END_ASSOCIATED_TASKS",
             "EXTRACT_INFORMATION",
             "GENERATE_EVENTBRIDGE_EVENT",
+            "SEND_IN_APP_NOTIFICATION",
             "SEND_NOTIFICATION",
             "SUBMIT_AUTO_EVALUATION",
             "UPDATE_CASE",
@@ -158,6 +164,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),
             ActionType::ExtractInformation => write!(f, "EXTRACT_INFORMATION"),
             ActionType::GenerateEventbridgeEvent => write!(f, "GENERATE_EVENTBRIDGE_EVENT"),
+            ActionType::SendInAppNotification => write!(f, "SEND_IN_APP_NOTIFICATION"),
             ActionType::SendNotification => write!(f, "SEND_NOTIFICATION"),
             ActionType::SubmitAutoEvaluation => write!(f, "SUBMIT_AUTO_EVALUATION"),
             ActionType::UpdateCase => write!(f, "UPDATE_CASE"),

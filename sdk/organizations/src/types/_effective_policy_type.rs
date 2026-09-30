@@ -17,6 +17,7 @@
 ///     EffectivePolicyType::BedrockPolicy => { /* ... */ },
 ///     EffectivePolicyType::ChatbotPolicy => { /* ... */ },
 ///     EffectivePolicyType::DeclarativePolicyEc2 => { /* ... */ },
+///     EffectivePolicyType::GuarddutyPolicy => { /* ... */ },
 ///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::S3Policy => { /* ... */ },
@@ -62,6 +63,8 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
     #[allow(missing_docs)] // documentation missing in model
+    GuarddutyPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     InspectorPolicy,
     #[allow(missing_docs)] // documentation missing in model
     NetworkSecurityDirectorPolicy,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
             "BEDROCK_POLICY" => EffectivePolicyType::BedrockPolicy,
             "CHATBOT_POLICY" => EffectivePolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => EffectivePolicyType::DeclarativePolicyEc2,
+            "GUARDDUTY_POLICY" => EffectivePolicyType::GuarddutyPolicy,
             "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
             "NETWORK_SECURITY_DIRECTOR_POLICY" => EffectivePolicyType::NetworkSecurityDirectorPolicy,
             "S3_POLICY" => EffectivePolicyType::S3Policy,
@@ -111,6 +115,7 @@ impl EffectivePolicyType {
             EffectivePolicyType::BedrockPolicy => "BEDROCK_POLICY",
             EffectivePolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             EffectivePolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
+            EffectivePolicyType::GuarddutyPolicy => "GUARDDUTY_POLICY",
             EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             EffectivePolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             EffectivePolicyType::S3Policy => "S3_POLICY",
@@ -128,6 +133,7 @@ impl EffectivePolicyType {
             "BEDROCK_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
+            "GUARDDUTY_POLICY",
             "INSPECTOR_POLICY",
             "NETWORK_SECURITY_DIRECTOR_POLICY",
             "S3_POLICY",
@@ -162,6 +168,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::BedrockPolicy => write!(f, "BEDROCK_POLICY"),
             EffectivePolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             EffectivePolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
+            EffectivePolicyType::GuarddutyPolicy => write!(f, "GUARDDUTY_POLICY"),
             EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             EffectivePolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             EffectivePolicyType::S3Policy => write!(f, "S3_POLICY"),

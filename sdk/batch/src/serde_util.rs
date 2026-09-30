@@ -562,6 +562,15 @@ pub(crate) fn compute_environment_order_correct_errors(
     builder
 }
 
+pub(crate) fn eks_access_entry_correct_errors(
+    mut builder: crate::types::builders::EksAccessEntryBuilder,
+) -> crate::types::builders::EksAccessEntryBuilder {
+    if builder.desired_state.is_none() {
+        builder.desired_state = "no value was set".parse::<crate::types::EksAccessEntryDesiredState>().ok()
+    }
+    builder
+}
+
 pub(crate) fn ephemeral_storage_correct_errors(
     mut builder: crate::types::builders::EphemeralStorageBuilder,
 ) -> crate::types::builders::EphemeralStorageBuilder {

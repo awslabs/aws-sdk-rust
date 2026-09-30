@@ -56,3 +56,5 @@ pub use crate::types::_accelerator_event::AcceleratorEventBuilder;
 pub use crate::types::_custom_routing_destination_description::CustomRoutingDestinationDescriptionBuilder;
 
 pub use crate::types::_socket_address::SocketAddressBuilder;
+
+pub use crate::types::_ip_address_detail::IpAddressDetailBuilder;

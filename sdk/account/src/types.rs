@@ -11,6 +11,8 @@ pub use crate::types::_aws_account_state::AwsAccountState;
 
 pub use crate::types::_contact_information::ContactInformation;
 
+pub use crate::types::_phone_number_verification_status::PhoneNumberVerificationStatus;
+
 pub use crate::types::_primary_email_update_status::PrimaryEmailUpdateStatus;
 
 pub use crate::types::_region_opt_status::RegionOptStatus;
@@ -28,6 +30,8 @@ mod _alternate_contact_type;
 mod _aws_account_state;
 
 mod _contact_information;
+
+mod _phone_number_verification_status;
 
 mod _primary_email_update_status;
 

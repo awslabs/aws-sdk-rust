@@ -2431,6 +2431,8 @@ pub(crate) mod shape_security_profile_summary;
 
 pub(crate) mod shape_segment_attributes;
 
+pub(crate) mod shape_send_in_app_notification_action_definition;
+
 pub(crate) mod shape_send_notification_action_definition;
 
 pub(crate) mod shape_sentiment_configuration;

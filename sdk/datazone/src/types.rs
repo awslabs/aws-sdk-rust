@@ -77,6 +77,8 @@ pub use crate::types::_timeout_config::TimeoutConfig;
 
 pub use crate::types::_storage_config::StorageConfig;
 
+pub use crate::types::_notification_config::NotificationConfig;
+
 pub use crate::types::_trigger_source::TriggerSource;
 
 pub use crate::types::_notebook_run_error::NotebookRunError;
@@ -606,6 +608,8 @@ pub use crate::types::_domain_unit_user_properties::DomainUnitUserProperties;
 pub use crate::types::_domain_unit_group_properties::DomainUnitGroupProperties;
 
 pub use crate::types::_package_manager::PackageManager;
+
+pub use crate::types::_notify_on_state::NotifyOnState;
 
 pub use crate::types::_rule_scope_selection_mode::RuleScopeSelectionMode;
 
@@ -1465,6 +1469,8 @@ mod _notebook_summary;
 
 mod _notebook_type;
 
+mod _notification_config;
+
 mod _notification_output;
 
 mod _notification_resource;
@@ -1474,6 +1480,8 @@ mod _notification_resource_type;
 mod _notification_role;
 
 mod _notification_type;
+
+mod _notify_on_state;
 
 mod _o_auth2_client_application;
 

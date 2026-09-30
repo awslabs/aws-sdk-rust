@@ -8,6 +8,10 @@ pub struct EksConfiguration {
     pub eks_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^\[a-z0-9\](\[-a-z0-9\]*\[a-z0-9\])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
     pub kubernetes_namespace: ::std::option::Option<::std::string::String>,
+    /// <p>The Batch-managed Amazon EKS access entry for the compute environment. Set <code>desiredState</code> to declare whether Batch manages an access entry on the cluster. In a <code>DescribeComputeEnvironments</code> response, <code>desiredState</code> is the value that Batch recorded for the compute environment and <code>status</code> is the observed state of the access entry on the cluster. To change the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry"> <code>EksConfigurationUpdate.accessEntry</code> </a>.</p>
+    /// <p>Whether the entry is provisioned on the cluster depends on the cluster's <code>authenticationMode</code> and the <code>desiredState</code> recorded for each Batch compute environment targeting the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you don't specify this field, Batch doesn't record a <code>desiredState</code> for the compute environment and <code>DescribeComputeEnvironments</code> doesn't return one. For the purpose of provisioning the access entry, Batch behaves as it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+    pub access_entry: ::std::option::Option<crate::types::EksAccessEntry>,
 }
 impl EksConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>.</p>
@@ -17,6 +21,12 @@ impl EksConfiguration {
     /// <p>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The value can't left empty or null. It must be fewer than 64 characters long, can't be set to <code>default</code>, can't start with "<code>kube-</code>," and must match this regular expression: <code>^\[a-z0-9\](\[-a-z0-9\]*\[a-z0-9\])?$</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a> in the Kubernetes documentation.</p>
     pub fn kubernetes_namespace(&self) -> ::std::option::Option<&str> {
         self.kubernetes_namespace.as_deref()
+    }
+    /// <p>The Batch-managed Amazon EKS access entry for the compute environment. Set <code>desiredState</code> to declare whether Batch manages an access entry on the cluster. In a <code>DescribeComputeEnvironments</code> response, <code>desiredState</code> is the value that Batch recorded for the compute environment and <code>status</code> is the observed state of the access entry on the cluster. To change the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry"> <code>EksConfigurationUpdate.accessEntry</code> </a>.</p>
+    /// <p>Whether the entry is provisioned on the cluster depends on the cluster's <code>authenticationMode</code> and the <code>desiredState</code> recorded for each Batch compute environment targeting the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you don't specify this field, Batch doesn't record a <code>desiredState</code> for the compute environment and <code>DescribeComputeEnvironments</code> doesn't return one. For the purpose of provisioning the access entry, Batch behaves as it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+    pub fn access_entry(&self) -> ::std::option::Option<&crate::types::EksAccessEntry> {
+        self.access_entry.as_ref()
     }
 }
 impl EksConfiguration {
@@ -32,6 +42,7 @@ impl EksConfiguration {
 pub struct EksConfigurationBuilder {
     pub(crate) eks_cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) kubernetes_namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) access_entry: ::std::option::Option<crate::types::EksAccessEntry>,
 }
 impl EksConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i> </code>.</p>
@@ -64,11 +75,32 @@ impl EksConfigurationBuilder {
     pub fn get_kubernetes_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.kubernetes_namespace
     }
+    /// <p>The Batch-managed Amazon EKS access entry for the compute environment. Set <code>desiredState</code> to declare whether Batch manages an access entry on the cluster. In a <code>DescribeComputeEnvironments</code> response, <code>desiredState</code> is the value that Batch recorded for the compute environment and <code>status</code> is the observed state of the access entry on the cluster. To change the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry"> <code>EksConfigurationUpdate.accessEntry</code> </a>.</p>
+    /// <p>Whether the entry is provisioned on the cluster depends on the cluster's <code>authenticationMode</code> and the <code>desiredState</code> recorded for each Batch compute environment targeting the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you don't specify this field, Batch doesn't record a <code>desiredState</code> for the compute environment and <code>DescribeComputeEnvironments</code> doesn't return one. For the purpose of provisioning the access entry, Batch behaves as it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+    pub fn access_entry(mut self, input: crate::types::EksAccessEntry) -> Self {
+        self.access_entry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Batch-managed Amazon EKS access entry for the compute environment. Set <code>desiredState</code> to declare whether Batch manages an access entry on the cluster. In a <code>DescribeComputeEnvironments</code> response, <code>desiredState</code> is the value that Batch recorded for the compute environment and <code>status</code> is the observed state of the access entry on the cluster. To change the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry"> <code>EksConfigurationUpdate.accessEntry</code> </a>.</p>
+    /// <p>Whether the entry is provisioned on the cluster depends on the cluster's <code>authenticationMode</code> and the <code>desiredState</code> recorded for each Batch compute environment targeting the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you don't specify this field, Batch doesn't record a <code>desiredState</code> for the compute environment and <code>DescribeComputeEnvironments</code> doesn't return one. For the purpose of provisioning the access entry, Batch behaves as it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+    pub fn set_access_entry(mut self, input: ::std::option::Option<crate::types::EksAccessEntry>) -> Self {
+        self.access_entry = input;
+        self
+    }
+    /// <p>The Batch-managed Amazon EKS access entry for the compute environment. Set <code>desiredState</code> to declare whether Batch manages an access entry on the cluster. In a <code>DescribeComputeEnvironments</code> response, <code>desiredState</code> is the value that Batch recorded for the compute environment and <code>status</code> is the observed state of the access entry on the cluster. To change the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry"> <code>EksConfigurationUpdate.accessEntry</code> </a>.</p>
+    /// <p>Whether the entry is provisioned on the cluster depends on the cluster's <code>authenticationMode</code> and the <code>desiredState</code> recorded for each Batch compute environment targeting the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you don't specify this field, Batch doesn't record a <code>desiredState</code> for the compute environment and <code>DescribeComputeEnvironments</code> doesn't return one. For the purpose of provisioning the access entry, Batch behaves as it does for <code>INHERIT_FROM_CLUSTER</code>.</p>
+    pub fn get_access_entry(&self) -> &::std::option::Option<crate::types::EksAccessEntry> {
+        &self.access_entry
+    }
     /// Consumes the builder and constructs a [`EksConfiguration`](crate::types::EksConfiguration).
     pub fn build(self) -> crate::types::EksConfiguration {
         crate::types::EksConfiguration {
             eks_cluster_arn: self.eks_cluster_arn,
             kubernetes_namespace: self.kubernetes_namespace,
+            access_entry: self.access_entry,
         }
     }
 }

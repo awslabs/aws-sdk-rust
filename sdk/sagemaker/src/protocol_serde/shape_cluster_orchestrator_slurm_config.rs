@@ -6,6 +6,12 @@ pub fn ser_cluster_orchestrator_slurm_config(
     if let Some(var_1) = &input.slurm_config_strategy {
         object.key("SlurmConfigStrategy").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.accounting_database {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("AccountingDatabase").start_object();
+        crate::protocol_serde::shape_cluster_accounting_database::ser_cluster_accounting_database(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ClusterSlurmConfigStrategy::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "AccountingDatabase" => {
+                            builder = builder.set_accounting_database(
+                                crate::protocol_serde::shape_cluster_accounting_database::de_cluster_accounting_database(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

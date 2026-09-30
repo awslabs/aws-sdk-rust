@@ -46,5 +46,11 @@ pub mod put_alternate_contact;
 /// Types for the `PutContactInformation` operation.
 pub mod put_contact_information;
 
+/// Types for the `SendPhoneNumberVerification` operation.
+pub mod send_phone_number_verification;
+
 /// Types for the `StartPrimaryEmailUpdate` operation.
 pub mod start_primary_email_update;
+
+/// Types for the `VerifyPhoneNumber` operation.
+pub mod verify_phone_number;

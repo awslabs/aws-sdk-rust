@@ -555,6 +555,52 @@ impl From<crate::operation::put_contact_information::PutContactInformationError>
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError> for Error {
+    fn from(err: crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError) -> Self {
+        match err {
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::send_phone_number_verification::SendPhoneNumberVerificationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError, R>>
     for Error
 where
@@ -592,6 +638,35 @@ impl From<crate::operation::start_primary_email_update::StartPrimaryEmailUpdateE
                 Error::ValidationException(inner)
             }
             crate::operation::start_primary_email_update::StartPrimaryEmailUpdateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_phone_number::VerifyPhoneNumberError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::verify_phone_number::VerifyPhoneNumberError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::verify_phone_number::VerifyPhoneNumberError> for Error {
+    fn from(err: crate::operation::verify_phone_number::VerifyPhoneNumberError) -> Self {
+        match err {
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::verify_phone_number::VerifyPhoneNumberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

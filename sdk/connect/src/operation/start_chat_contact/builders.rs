@@ -388,36 +388,57 @@ impl StartChatContactFluentBuilder {
     /// To override the contents of this collection use [`set_connection_types`](Self::set_connection_types).
     ///
     /// <p>The types of connection information to return in the response. This parameter is optional.</p>
-    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>To receive connection information, specify one or both of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONNECTION_CREDENTIALS</code>: Returns a connection token.</p></li>
+    /// <li>
+    /// <p><code>WEBSOCKET</code>: Returns a websocket URL.</p></li>
+    /// </ul>
+    /// <p><code>WEBSOCKET</code> and <code>CONNECTION_CREDENTIALS</code> are the values this operation acts on. No other value returns connection information.</p>
     /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
     /// <p>If you omit this parameter, the response has no connection information.</p><note>
-    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// <p>When you start a new chat contact and the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it. When you retry a request with the same <code>ClientToken</code>, the response repeats the original contact and can omit a websocket URL if the chat has already ended.</p>
     /// </note>
     pub fn connection_types(mut self, input: crate::types::ConnectionType) -> Self {
         self.inner = self.inner.connection_types(input);
         self
     }
     /// <p>The types of connection information to return in the response. This parameter is optional.</p>
-    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>To receive connection information, specify one or both of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONNECTION_CREDENTIALS</code>: Returns a connection token.</p></li>
+    /// <li>
+    /// <p><code>WEBSOCKET</code>: Returns a websocket URL.</p></li>
+    /// </ul>
+    /// <p><code>WEBSOCKET</code> and <code>CONNECTION_CREDENTIALS</code> are the values this operation acts on. No other value returns connection information.</p>
     /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
     /// <p>If you omit this parameter, the response has no connection information.</p><note>
-    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// <p>When you start a new chat contact and the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it. When you retry a request with the same <code>ClientToken</code>, the response repeats the original contact and can omit a websocket URL if the chat has already ended.</p>
     /// </note>
     pub fn set_connection_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>>) -> Self {
         self.inner = self.inner.set_connection_types(input);
         self
     }
     /// <p>The types of connection information to return in the response. This parameter is optional.</p>
-    /// <p>Specify <code>CONNECTION_CREDENTIALS</code> to receive a connection token. Specify <code>WEBSOCKET</code> to receive a websocket URL. You can specify both. No other value returns connection information.</p>
+    /// <p>To receive connection information, specify one or both of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CONNECTION_CREDENTIALS</code>: Returns a connection token.</p></li>
+    /// <li>
+    /// <p><code>WEBSOCKET</code>: Returns a websocket URL.</p></li>
+    /// </ul>
+    /// <p><code>WEBSOCKET</code> and <code>CONNECTION_CREDENTIALS</code> are the values this operation acts on. No other value returns connection information.</p>
     /// <p>Request <code>WEBSOCKET</code> to get a URL the participant connects to directly. You do not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> for it. Request <code>CONNECTION_CREDENTIALS</code> on its own and the response returns a connection token but no websocket URL.</p>
     /// <p>If you omit this parameter, the response has no connection information.</p><note>
-    /// <p>If the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it.</p>
+    /// <p>When you start a new chat contact and the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it. When you retry a request with the same <code>ClientToken</code>, the response repeats the original contact and can omit a websocket URL if the chat has already ended.</p>
     /// </note>
     pub fn get_connection_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConnectionType>> {
         self.inner.get_connection_types()
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
-    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>Setting this parameter returns a <code>StreamingId</code> in the response, and you do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
     /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
     /// </note>
     pub fn chat_streaming_configuration(mut self, input: crate::types::ChatStreamingConfiguration) -> Self {
@@ -425,7 +446,7 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
-    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>Setting this parameter returns a <code>StreamingId</code> in the response, and you do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
     /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
     /// </note>
     pub fn set_chat_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ChatStreamingConfiguration>) -> Self {
@@ -433,7 +454,7 @@ impl StartChatContactFluentBuilder {
         self
     }
     /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.</p>
-    /// <p>When you set this parameter, the response includes <code>StreamingId</code>. You do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
+    /// <p>Setting this parameter returns a <code>StreamingId</code> in the response, and you do not need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.</p><note>
     /// <p>This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.</p>
     /// </note>
     pub fn get_chat_streaming_configuration(&self) -> &::std::option::Option<crate::types::ChatStreamingConfiguration> {

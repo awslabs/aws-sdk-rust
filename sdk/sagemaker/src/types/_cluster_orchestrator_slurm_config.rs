@@ -6,11 +6,21 @@
 pub struct ClusterOrchestratorSlurmConfig {
     /// <p>The strategy for managing partitions for the Slurm configuration. Valid values are <code>Managed</code>, <code>Overwrite</code>, and <code>Merge</code>.</p>
     pub slurm_config_strategy: ::std::option::Option<crate::types::ClusterSlurmConfigStrategy>,
+    /// <p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p><note>
+    /// <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+    /// </note>
+    pub accounting_database: ::std::option::Option<crate::types::ClusterAccountingDatabase>,
 }
 impl ClusterOrchestratorSlurmConfig {
     /// <p>The strategy for managing partitions for the Slurm configuration. Valid values are <code>Managed</code>, <code>Overwrite</code>, and <code>Merge</code>.</p>
     pub fn slurm_config_strategy(&self) -> ::std::option::Option<&crate::types::ClusterSlurmConfigStrategy> {
         self.slurm_config_strategy.as_ref()
+    }
+    /// <p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p><note>
+    /// <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+    /// </note>
+    pub fn accounting_database(&self) -> ::std::option::Option<&crate::types::ClusterAccountingDatabase> {
+        self.accounting_database.as_ref()
     }
 }
 impl ClusterOrchestratorSlurmConfig {
@@ -25,6 +35,7 @@ impl ClusterOrchestratorSlurmConfig {
 #[non_exhaustive]
 pub struct ClusterOrchestratorSlurmConfigBuilder {
     pub(crate) slurm_config_strategy: ::std::option::Option<crate::types::ClusterSlurmConfigStrategy>,
+    pub(crate) accounting_database: ::std::option::Option<crate::types::ClusterAccountingDatabase>,
 }
 impl ClusterOrchestratorSlurmConfigBuilder {
     /// <p>The strategy for managing partitions for the Slurm configuration. Valid values are <code>Managed</code>, <code>Overwrite</code>, and <code>Merge</code>.</p>
@@ -41,10 +52,31 @@ impl ClusterOrchestratorSlurmConfigBuilder {
     pub fn get_slurm_config_strategy(&self) -> &::std::option::Option<crate::types::ClusterSlurmConfigStrategy> {
         &self.slurm_config_strategy
     }
+    /// <p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p><note>
+    /// <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+    /// </note>
+    pub fn accounting_database(mut self, input: crate::types::ClusterAccountingDatabase) -> Self {
+        self.accounting_database = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p><note>
+    /// <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+    /// </note>
+    pub fn set_accounting_database(mut self, input: ::std::option::Option<crate::types::ClusterAccountingDatabase>) -> Self {
+        self.accounting_database = input;
+        self
+    }
+    /// <p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p><note>
+    /// <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p>
+    /// </note>
+    pub fn get_accounting_database(&self) -> &::std::option::Option<crate::types::ClusterAccountingDatabase> {
+        &self.accounting_database
+    }
     /// Consumes the builder and constructs a [`ClusterOrchestratorSlurmConfig`](crate::types::ClusterOrchestratorSlurmConfig).
     pub fn build(self) -> crate::types::ClusterOrchestratorSlurmConfig {
         crate::types::ClusterOrchestratorSlurmConfig {
             slurm_config_strategy: self.slurm_config_strategy,
+            accounting_database: self.accounting_database,
         }
     }
 }

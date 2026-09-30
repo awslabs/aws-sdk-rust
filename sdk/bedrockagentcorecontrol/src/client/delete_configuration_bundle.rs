@@ -5,6 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`bundle_id(impl Into<String>)`](crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleFluentBuilder::bundle_id) / [`set_bundle_id(Option<String>)`](crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleFluentBuilder::set_bundle_id):<br>required: **true**<br><p>The unique identifier of the configuration bundle to delete.</p><br>
     /// - On success, responds with [`DeleteConfigurationBundleOutput`](crate::operation::delete_configuration_bundle::DeleteConfigurationBundleOutput) with field(s):
+    ///   - [`bundle_arn(Option<String>)`](crate::operation::delete_configuration_bundle::DeleteConfigurationBundleOutput::bundle_arn): <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
     ///   - [`bundle_id(String)`](crate::operation::delete_configuration_bundle::DeleteConfigurationBundleOutput::bundle_id): <p>The unique identifier of the deleted configuration bundle.</p>
     ///   - [`status(ConfigurationBundleStatus)`](crate::operation::delete_configuration_bundle::DeleteConfigurationBundleOutput::status): <p>The status of the configuration bundle deletion operation.</p>
     /// - On failure, responds with [`SdkError<DeleteConfigurationBundleError>`](crate::operation::delete_configuration_bundle::DeleteConfigurationBundleError)

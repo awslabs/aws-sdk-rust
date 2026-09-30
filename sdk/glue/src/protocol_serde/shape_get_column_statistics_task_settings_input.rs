@@ -9,5 +9,8 @@ pub fn ser_get_column_statistics_task_settings_input_input(
     if let Some(var_2) = &input.table_name {
         object.key("TableName").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.catalog_id {
+        object.key("CatalogID").string(var_3.as_str());
+    }
     Ok(())
 }

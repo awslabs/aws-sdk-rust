@@ -27,7 +27,9 @@ impl crate::operation::cancel_jobs::builders::CancelJobsInputBuilder {
 /// <p>When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts to cancel all child jobs. The array parent job is cancelled when all child jobs are completed.</p>
 /// </note>
 /// <p>Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't cancelled. These jobs must be terminated with the <code>TerminateJob</code> or <code>TerminateJobs</code> operation.</p>
-/// <p>Batch reports the result for each job individually in the response. Jobs that were processed successfully are reported in the <code>successful</code> list. Jobs that encountered errors are reported in the <code>errors</code> list. The response returns an HTTP status code of <code>200</code> even when some jobs encountered errors, so check the <code>errors</code> list. Jobs that can't be found are treated as successfully processed.</p>
+/// <p>Batch reports the result for each job individually in the response. Jobs that were processed successfully are reported in the <code>successful</code> list. Jobs that encountered errors are reported in the <code>errors</code> list. The response returns an HTTP status code of <code>200</code> even when some jobs encountered errors, so check the <code>errors</code> list. Jobs that can't be found are treated as successfully processed.</p><important>
+/// <p>This operation requires <code>batch:CancelJob</code> permission for each job in the request. There is no separate <code>batch:CancelJobs</code> IAM action. If a caller's IAM policy grants <code>batch:CancelJob</code>, they can use both the singular <code>CancelJob</code> and bulk <code>CancelJobs</code> operations.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

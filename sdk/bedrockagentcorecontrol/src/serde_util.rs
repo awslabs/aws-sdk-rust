@@ -740,6 +740,9 @@ pub(crate) fn delete_code_interpreter_output_output_correct_errors(
 pub(crate) fn delete_configuration_bundle_output_output_correct_errors(
     mut builder: crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleOutputBuilder,
 ) -> crate::operation::delete_configuration_bundle::builders::DeleteConfigurationBundleOutputBuilder {
+    if builder.bundle_arn.is_none() {
+        builder.bundle_arn = Some(Default::default())
+    }
     if builder.bundle_id.is_none() {
         builder.bundle_id = Some(Default::default())
     }
@@ -4853,6 +4856,15 @@ pub(crate) fn runtime_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn s3_certificate_configuration_correct_errors(
+    mut builder: crate::types::builders::S3CertificateConfigurationBuilder,
+) -> crate::types::builders::S3CertificateConfigurationBuilder {
+    if builder.uri.is_none() {
+        builder.uri = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_files_access_point_configuration_correct_errors(
     mut builder: crate::types::builders::S3FilesAccessPointConfigurationBuilder,
 ) -> crate::types::builders::S3FilesAccessPointConfigurationBuilder {
@@ -4876,6 +4888,15 @@ pub(crate) fn s3_files_configuration_correct_errors(
     }
     if builder.file_system_arn.is_none() {
         builder.file_system_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn secrets_manager_certificate_configuration_correct_errors(
+    mut builder: crate::types::builders::SecretsManagerCertificateConfigurationBuilder,
+) -> crate::types::builders::SecretsManagerCertificateConfigurationBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }

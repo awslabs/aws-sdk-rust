@@ -30,6 +30,11 @@ where
                                 )?,
                             );
                         }
+                        "vpcLatticeConfigurations" => {
+                            builder = builder.set_vpc_lattice_configurations(
+                                    crate::protocol_serde::shape_service_revision_vpc_lattice_configurations::de_service_revision_vpc_lattice_configurations(tokens, _value, depth + 1)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

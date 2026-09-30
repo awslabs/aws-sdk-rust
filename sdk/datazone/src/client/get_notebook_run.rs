@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`timeout_configuration(Option<TimeoutConfig>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::timeout_configuration): <p>The timeout configuration of the notebook run.</p>
     ///   - [`environment_configuration(Option<EnvironmentConfig>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::environment_configuration): <p>The environment configuration of the notebook run, including image version and package settings.</p>
     ///   - [`storage_configuration(Option<StorageConfig>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::storage_configuration): <p>The storage configuration of the notebook run, including the Amazon Simple Storage Service path and KMS key ARN.</p>
+    ///   - [`notification_configuration(Option<NotificationConfig>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::notification_configuration): <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
     ///   - [`trigger_source(Option<TriggerSource>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::trigger_source): <p>The source that triggered the notebook run.</p>
     ///   - [`error(Option<NotebookRunError>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::error): <p>The error details if the notebook run failed.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_notebook_run::GetNotebookRunOutput::created_at): <p>The timestamp of when the notebook run was created.</p>

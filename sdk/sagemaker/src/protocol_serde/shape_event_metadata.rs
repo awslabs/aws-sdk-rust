@@ -61,6 +61,21 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Instance' cannot be null")
                             })?,
                         )),
+                        "DatabaseConfiguration" => Some(crate::types::EventMetadata::DatabaseConfiguration(
+                            crate::protocol_serde::shape_database_configuration_metadata::de_database_configuration_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'DatabaseConfiguration' cannot be null")
+                            })?,
+                        )),
+                        "SlurmHealth" => Some(crate::types::EventMetadata::SlurmHealth(
+                            crate::protocol_serde::shape_slurm_health_metadata::de_slurm_health_metadata(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'SlurmHealth' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::EventMetadata::Unknown)

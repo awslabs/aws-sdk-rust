@@ -76,5 +76,8 @@ pub fn ser_create_crawler_input_input(
         }
         object_23.finish();
     }
+    if let Some(var_26) = &input.catalog_id {
+        object.key("CatalogId").string(var_26.as_str());
+    }
     Ok(())
 }

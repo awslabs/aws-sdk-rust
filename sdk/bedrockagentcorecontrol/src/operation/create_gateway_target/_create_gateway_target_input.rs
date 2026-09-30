@@ -19,6 +19,8 @@ pub struct CreateGatewayTargetInput {
     pub metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     /// <p>The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>The private certificate authority (CA) configurations for the gateway target. Use this to have the gateway trust a private CA when it establishes TLS connections to the target endpoint. Provide each certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can specify only one certificate authority configuration in this list.</p>
+    pub certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
 }
 impl CreateGatewayTargetInput {
     /// <p>The identifier of the gateway to create a target for.</p>
@@ -55,6 +57,12 @@ impl CreateGatewayTargetInput {
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
     }
+    /// <p>The private certificate authority (CA) configurations for the gateway target. Use this to have the gateway trust a private CA when it establishes TLS connections to the target endpoint. Provide each certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can specify only one certificate authority configuration in this list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_configurations.is_none()`.
+    pub fn certificate_configurations(&self) -> &[crate::types::CertificateConfiguration] {
+        self.certificate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateGatewayTargetInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +75,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetInput {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.finish()
     }
 }
@@ -89,6 +98,7 @@ pub struct CreateGatewayTargetInputBuilder {
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialProviderConfiguration>>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::MetadataConfiguration>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
 }
 impl CreateGatewayTargetInputBuilder {
     /// <p>The identifier of the gateway to create a target for.</p>
@@ -214,6 +224,26 @@ impl CreateGatewayTargetInputBuilder {
     pub fn get_private_endpoint(&self) -> &::std::option::Option<crate::types::PrivateEndpoint> {
         &self.private_endpoint
     }
+    /// Appends an item to `certificate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_configurations`](Self::set_certificate_configurations).
+    ///
+    /// <p>The private certificate authority (CA) configurations for the gateway target. Use this to have the gateway trust a private CA when it establishes TLS connections to the target endpoint. Provide each certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can specify only one certificate authority configuration in this list.</p>
+    pub fn certificate_configurations(mut self, input: crate::types::CertificateConfiguration) -> Self {
+        let mut v = self.certificate_configurations.unwrap_or_default();
+        v.push(input);
+        self.certificate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the gateway target. Use this to have the gateway trust a private CA when it establishes TLS connections to the target endpoint. Provide each certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can specify only one certificate authority configuration in this list.</p>
+    pub fn set_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>) -> Self {
+        self.certificate_configurations = input;
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the gateway target. Use this to have the gateway trust a private CA when it establishes TLS connections to the target endpoint. Provide each certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can specify only one certificate authority configuration in this list.</p>
+    pub fn get_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>> {
+        &self.certificate_configurations
+    }
     /// Consumes the builder and constructs a [`CreateGatewayTargetInput`](crate::operation::create_gateway_target::CreateGatewayTargetInput).
     pub fn build(
         self,
@@ -228,6 +258,7 @@ impl CreateGatewayTargetInputBuilder {
             credential_provider_configurations: self.credential_provider_configurations,
             metadata_configuration: self.metadata_configuration,
             private_endpoint: self.private_endpoint,
+            certificate_configurations: self.certificate_configurations,
         })
     }
 }
@@ -242,6 +273,7 @@ impl ::std::fmt::Debug for CreateGatewayTargetInputBuilder {
         formatter.field("credential_provider_configurations", &self.credential_provider_configurations);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("private_endpoint", &self.private_endpoint);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.finish()
     }
 }

@@ -44,6 +44,8 @@ pub struct Crawler {
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the crawler should use Lake Formation credentials for the crawler instead of the IAM role credentials.</p>
     pub lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
+    /// <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl Crawler {
     /// <p>The name of the crawler.</p>
@@ -128,6 +130,10 @@ impl Crawler {
     pub fn lake_formation_configuration(&self) -> ::std::option::Option<&crate::types::LakeFormationConfiguration> {
         self.lake_formation_configuration.as_ref()
     }
+    /// <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl Crawler {
     /// Creates a new builder-style object to manufacture [`Crawler`](crate::types::Crawler).
@@ -160,6 +166,7 @@ pub struct CrawlerBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) crawler_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl CrawlerBuilder {
     /// <p>The name of the crawler.</p>
@@ -448,6 +455,20 @@ impl CrawlerBuilder {
     pub fn get_lake_formation_configuration(&self) -> &::std::option::Option<crate::types::LakeFormationConfiguration> {
         &self.lake_formation_configuration
     }
+    /// <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The ID of the Data Catalog in which the crawler's output is stored.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`Crawler`](crate::types::Crawler).
     pub fn build(self) -> crate::types::Crawler {
         crate::types::Crawler {
@@ -471,6 +492,7 @@ impl CrawlerBuilder {
             configuration: self.configuration,
             crawler_security_configuration: self.crawler_security_configuration,
             lake_formation_configuration: self.lake_formation_configuration,
+            catalog_id: self.catalog_id,
         }
     }
 }

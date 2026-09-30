@@ -375,6 +375,8 @@ pub use crate::types::_self_managed_lattice_resource::SelfManagedLatticeResource
 
 pub use crate::types::_managed_vpc_resource::ManagedVpcResource;
 
+pub use crate::types::_certificate_configuration::CertificateConfiguration;
+
 pub use crate::types::_managed_resource_details::ManagedResourceDetails;
 
 pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationData;
@@ -608,6 +610,10 @@ pub use crate::types::_credential_provider_type::CredentialProviderType;
 pub use crate::types::_credential_provider::CredentialProvider;
 
 pub use crate::types::_endpoint_ip_address_type::EndpointIpAddressType;
+
+pub use crate::types::_s3_certificate_configuration::S3CertificateConfiguration;
+
+pub use crate::types::_secrets_manager_certificate_configuration::SecretsManagerCertificateConfiguration;
 
 pub use crate::types::_target_type::TargetType;
 
@@ -1132,6 +1138,8 @@ mod _categorical_scale_definition;
 mod _cedar_policy;
 
 mod _certificate;
+
+mod _certificate_configuration;
 
 mod _certificate_location;
 
@@ -1841,6 +1849,8 @@ mod _runtime_metadata_configuration;
 
 mod _runtime_target_configuration;
 
+mod _s3_certificate_configuration;
+
 mod _s3_configuration;
 
 mod _s3_files_access_point_configuration;
@@ -1868,6 +1878,8 @@ mod _secret;
 mod _secret_reference;
 
 mod _secret_source_type;
+
+mod _secrets_manager_certificate_configuration;
 
 mod _secrets_manager_location;
 

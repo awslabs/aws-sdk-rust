@@ -65,6 +65,8 @@ pub use crate::types::_export_type::ExportType;
 
 pub use crate::types::_incremental_export_specification::IncrementalExportSpecification;
 
+pub use crate::types::_filter_specification::FilterSpecification;
+
 pub use crate::types::_s3_bucket_source::S3BucketSource;
 
 pub use crate::types::_input_format::InputFormat;
@@ -458,6 +460,8 @@ mod _export_type;
 mod _export_view_type;
 
 mod _failure_exception;
+
+mod _filter_specification;
 
 mod _get;
 

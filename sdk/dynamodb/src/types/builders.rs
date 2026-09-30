@@ -37,6 +37,8 @@ pub use crate::types::_enable_kinesis_streaming_configuration::EnableKinesisStre
 
 pub use crate::types::_incremental_export_specification::IncrementalExportSpecificationBuilder;
 
+pub use crate::types::_filter_specification::FilterSpecificationBuilder;
+
 pub use crate::types::_s3_bucket_source::S3BucketSourceBuilder;
 
 pub use crate::types::_input_format_options::InputFormatOptionsBuilder;

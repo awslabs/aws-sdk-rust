@@ -785,6 +785,8 @@ pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvalu
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinitionBuilder;
 
+pub use crate::types::_send_in_app_notification_action_definition::SendInAppNotificationActionDefinitionBuilder;
+
 pub use crate::types::_pre_evaluation_filter::PreEvaluationFilterBuilder;
 
 pub use crate::types::_primary_attribute_access_control_configuration_item::PrimaryAttributeAccessControlConfigurationItemBuilder;

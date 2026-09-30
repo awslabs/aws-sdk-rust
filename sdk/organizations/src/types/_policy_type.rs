@@ -17,6 +17,7 @@
 ///     PolicyType::BedrockPolicy => { /* ... */ },
 ///     PolicyType::ChatbotPolicy => { /* ... */ },
 ///     PolicyType::DeclarativePolicyEc2 => { /* ... */ },
+///     PolicyType::GuarddutyPolicy => { /* ... */ },
 ///     PolicyType::InspectorPolicy => { /* ... */ },
 ///     PolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
@@ -64,6 +65,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     DeclarativePolicyEc2,
     #[allow(missing_docs)] // documentation missing in model
+    GuarddutyPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     InspectorPolicy,
     #[allow(missing_docs)] // documentation missing in model
     NetworkSecurityDirectorPolicy,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "BEDROCK_POLICY" => PolicyType::BedrockPolicy,
             "CHATBOT_POLICY" => PolicyType::ChatbotPolicy,
             "DECLARATIVE_POLICY_EC2" => PolicyType::DeclarativePolicyEc2,
+            "GUARDDUTY_POLICY" => PolicyType::GuarddutyPolicy,
             "INSPECTOR_POLICY" => PolicyType::InspectorPolicy,
             "NETWORK_SECURITY_DIRECTOR_POLICY" => PolicyType::NetworkSecurityDirectorPolicy,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
@@ -119,6 +123,7 @@ impl PolicyType {
             PolicyType::BedrockPolicy => "BEDROCK_POLICY",
             PolicyType::ChatbotPolicy => "CHATBOT_POLICY",
             PolicyType::DeclarativePolicyEc2 => "DECLARATIVE_POLICY_EC2",
+            PolicyType::GuarddutyPolicy => "GUARDDUTY_POLICY",
             PolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             PolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
@@ -138,6 +143,7 @@ impl PolicyType {
             "BEDROCK_POLICY",
             "CHATBOT_POLICY",
             "DECLARATIVE_POLICY_EC2",
+            "GUARDDUTY_POLICY",
             "INSPECTOR_POLICY",
             "NETWORK_SECURITY_DIRECTOR_POLICY",
             "RESOURCE_CONTROL_POLICY",
@@ -174,6 +180,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::BedrockPolicy => write!(f, "BEDROCK_POLICY"),
             PolicyType::ChatbotPolicy => write!(f, "CHATBOT_POLICY"),
             PolicyType::DeclarativePolicyEc2 => write!(f, "DECLARATIVE_POLICY_EC2"),
+            PolicyType::GuarddutyPolicy => write!(f, "GUARDDUTY_POLICY"),
             PolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             PolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),

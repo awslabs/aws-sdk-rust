@@ -735,6 +735,8 @@ pub(crate) mod shape_volume_from;
 
 pub(crate) mod shape_volume_list;
 
+pub(crate) mod shape_vpc_lattice_advanced_configuration;
+
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_capacity_reservation_request;
@@ -913,6 +915,8 @@ pub(crate) mod shape_service_connect_tls_certificate_authority;
 
 pub(crate) mod shape_service_revision_load_balancers;
 
+pub(crate) mod shape_service_revision_vpc_lattice_configurations;
+
 pub(crate) mod shape_system_controls;
 
 pub(crate) mod shape_total_local_storage_gb_request;
@@ -974,6 +978,8 @@ pub(crate) mod shape_service_connect_service_resource;
 pub(crate) mod shape_service_connect_test_traffic_header_rules;
 
 pub(crate) mod shape_service_revision_load_balancer;
+
+pub(crate) mod shape_service_revision_vpc_lattice_configuration;
 
 pub(crate) mod shape_string_map;
 

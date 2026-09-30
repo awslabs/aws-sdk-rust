@@ -52,6 +52,8 @@ pub struct ExportDescription {
     pub export_type: ::std::option::Option<crate::types::ExportType>,
     /// <p>Optional object containing the parameters specific to an incremental export.</p>
     pub incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
+    /// <p>The filter criteria applied to the export. When present, only items that match the specified key conditions and filter expressions are included in the export output.</p>
+    pub filter_specification: ::std::option::Option<crate::types::FilterSpecification>,
 }
 impl ExportDescription {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
@@ -144,6 +146,10 @@ impl ExportDescription {
     pub fn incremental_export_specification(&self) -> ::std::option::Option<&crate::types::IncrementalExportSpecification> {
         self.incremental_export_specification.as_ref()
     }
+    /// <p>The filter criteria applied to the export. When present, only items that match the specified key conditions and filter expressions are included in the export output.</p>
+    pub fn filter_specification(&self) -> ::std::option::Option<&crate::types::FilterSpecification> {
+        self.filter_specification.as_ref()
+    }
 }
 impl ExportDescription {
     /// Creates a new builder-style object to manufacture [`ExportDescription`](crate::types::ExportDescription).
@@ -177,6 +183,7 @@ pub struct ExportDescriptionBuilder {
     pub(crate) item_count: ::std::option::Option<i64>,
     pub(crate) export_type: ::std::option::Option<crate::types::ExportType>,
     pub(crate) incremental_export_specification: ::std::option::Option<crate::types::IncrementalExportSpecification>,
+    pub(crate) filter_specification: ::std::option::Option<crate::types::FilterSpecification>,
 }
 impl ExportDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table export.</p>
@@ -491,6 +498,20 @@ impl ExportDescriptionBuilder {
     pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
         &self.incremental_export_specification
     }
+    /// <p>The filter criteria applied to the export. When present, only items that match the specified key conditions and filter expressions are included in the export output.</p>
+    pub fn filter_specification(mut self, input: crate::types::FilterSpecification) -> Self {
+        self.filter_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter criteria applied to the export. When present, only items that match the specified key conditions and filter expressions are included in the export output.</p>
+    pub fn set_filter_specification(mut self, input: ::std::option::Option<crate::types::FilterSpecification>) -> Self {
+        self.filter_specification = input;
+        self
+    }
+    /// <p>The filter criteria applied to the export. When present, only items that match the specified key conditions and filter expressions are included in the export output.</p>
+    pub fn get_filter_specification(&self) -> &::std::option::Option<crate::types::FilterSpecification> {
+        &self.filter_specification
+    }
     /// Consumes the builder and constructs a [`ExportDescription`](crate::types::ExportDescription).
     pub fn build(self) -> crate::types::ExportDescription {
         crate::types::ExportDescription {
@@ -515,6 +536,7 @@ impl ExportDescriptionBuilder {
             item_count: self.item_count,
             export_type: self.export_type,
             incremental_export_specification: self.incremental_export_specification,
+            filter_specification: self.filter_specification,
         }
     }
 }

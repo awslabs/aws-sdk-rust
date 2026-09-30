@@ -35,6 +35,8 @@ pub use crate::types::_timeout_config::TimeoutConfigBuilder;
 
 pub use crate::types::_storage_config::StorageConfigBuilder;
 
+pub use crate::types::_notification_config::NotificationConfigBuilder;
+
 pub use crate::types::_trigger_source::TriggerSourceBuilder;
 
 pub use crate::types::_notebook_run_error::NotebookRunErrorBuilder;

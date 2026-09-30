@@ -22,7 +22,7 @@ impl crate::operation::put_account_policy::builders::PutAccountPolicyInputBuilde
 }
 /// Fluent builder constructing a request to `PutAccountPolicy`.
 ///
-/// <p>Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account.</p><important>
+/// <p>Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account. Account-level policies are Region-specific: a policy applies only to log groups in the Region where you create it. To apply a policy across multiple Regions, create the policy separately in each Region.</p><important>
 /// <p><code>PutAccountPolicy</code> is an account-wide administrative operation intended for CloudWatch Logs administrators. Because it affects all log groups (or a broad subset) in the account, you should grant <code>logs:PutAccountPolicy</code> permissions only to administrators who manage logging configuration across the account, not to application teams or individual log group owners.</p>
 /// </important>
 /// <p><b>Conflict resolution between account-level and log-group-level policies</b></p>

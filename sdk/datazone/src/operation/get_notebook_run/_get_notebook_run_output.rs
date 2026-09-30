@@ -31,6 +31,8 @@ pub struct GetNotebookRunOutput {
     pub environment_configuration: ::std::option::Option<crate::types::EnvironmentConfig>,
     /// <p>The storage configuration of the notebook run, including the Amazon Simple Storage Service path and KMS key ARN.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfig>,
+    /// <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
+    pub notification_configuration: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>The source that triggered the notebook run.</p>
     pub trigger_source: ::std::option::Option<crate::types::TriggerSource>,
     /// <p>The error details if the notebook run failed.</p>
@@ -112,6 +114,10 @@ impl GetNotebookRunOutput {
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfig> {
         self.storage_configuration.as_ref()
     }
+    /// <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
+    pub fn notification_configuration(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
+        self.notification_configuration.as_ref()
+    }
     /// <p>The source that triggered the notebook run.</p>
     pub fn trigger_source(&self) -> ::std::option::Option<&crate::types::TriggerSource> {
         self.trigger_source.as_ref()
@@ -162,6 +168,7 @@ impl ::std::fmt::Debug for GetNotebookRunOutput {
         formatter.field("timeout_configuration", &self.timeout_configuration);
         formatter.field("environment_configuration", &self.environment_configuration);
         formatter.field("storage_configuration", &self.storage_configuration);
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("trigger_source", &self.trigger_source);
         formatter.field("error", &self.error);
         formatter.field("created_at", &self.created_at);
@@ -204,6 +211,7 @@ pub struct GetNotebookRunOutputBuilder {
     pub(crate) timeout_configuration: ::std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) environment_configuration: ::std::option::Option<crate::types::EnvironmentConfig>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfig>,
+    pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfig>,
     pub(crate) trigger_source: ::std::option::Option<crate::types::TriggerSource>,
     pub(crate) error: ::std::option::Option<crate::types::NotebookRunError>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -434,6 +442,20 @@ impl GetNotebookRunOutputBuilder {
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfig> {
         &self.storage_configuration
     }
+    /// <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
+    pub fn notification_configuration(mut self, input: crate::types::NotificationConfig) -> Self {
+        self.notification_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
+    pub fn set_notification_configuration(mut self, input: ::std::option::Option<crate::types::NotificationConfig>) -> Self {
+        self.notification_configuration = input;
+        self
+    }
+    /// <p>The notification configuration of the notebook run, including the notebook run states that trigger notifications.</p>
+    pub fn get_notification_configuration(&self) -> &::std::option::Option<crate::types::NotificationConfig> {
+        &self.notification_configuration
+    }
     /// <p>The source that triggered the notebook run.</p>
     pub fn trigger_source(mut self, input: crate::types::TriggerSource) -> Self {
         self.trigger_source = ::std::option::Option::Some(input);
@@ -605,6 +627,7 @@ impl GetNotebookRunOutputBuilder {
             timeout_configuration: self.timeout_configuration,
             environment_configuration: self.environment_configuration,
             storage_configuration: self.storage_configuration,
+            notification_configuration: self.notification_configuration,
             trigger_source: self.trigger_source,
             error: self.error,
             created_at: self.created_at,
@@ -634,6 +657,7 @@ impl ::std::fmt::Debug for GetNotebookRunOutputBuilder {
         formatter.field("timeout_configuration", &self.timeout_configuration);
         formatter.field("environment_configuration", &self.environment_configuration);
         formatter.field("storage_configuration", &self.storage_configuration);
+        formatter.field("notification_configuration", &self.notification_configuration);
         formatter.field("trigger_source", &self.trigger_source);
         formatter.field("error", &self.error);
         formatter.field("created_at", &self.created_at);

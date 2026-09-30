@@ -26,6 +26,8 @@ pub struct DeliveryDestination {
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.</p>
     pub delivery_destination_configuration: ::std::option::Option<crate::types::DeliveryDestinationConfiguration>,
+    /// <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination. This field is present only for X-Ray trace delivery destinations that were created with a role.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags that have been assigned to this delivery destination.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -50,6 +52,10 @@ impl DeliveryDestination {
     pub fn delivery_destination_configuration(&self) -> ::std::option::Option<&crate::types::DeliveryDestinationConfiguration> {
         self.delivery_destination_configuration.as_ref()
     }
+    /// <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination. This field is present only for X-Ray trace delivery destinations that were created with a role.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
     /// <p>The tags that have been assigned to this delivery destination.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -71,6 +77,7 @@ pub struct DeliveryDestinationBuilder {
     pub(crate) delivery_destination_type: ::std::option::Option<crate::types::DeliveryDestinationType>,
     pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
     pub(crate) delivery_destination_configuration: ::std::option::Option<crate::types::DeliveryDestinationConfiguration>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeliveryDestinationBuilder {
@@ -144,6 +151,20 @@ impl DeliveryDestinationBuilder {
     pub fn get_delivery_destination_configuration(&self) -> &::std::option::Option<crate::types::DeliveryDestinationConfiguration> {
         &self.delivery_destination_configuration
     }
+    /// <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination. This field is present only for X-Ray trace delivery destinations that were created with a role.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination. This field is present only for X-Ray trace delivery destinations that were created with a role.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination. This field is present only for X-Ray trace delivery destinations that were created with a role.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -172,6 +193,7 @@ impl DeliveryDestinationBuilder {
             delivery_destination_type: self.delivery_destination_type,
             output_format: self.output_format,
             delivery_destination_configuration: self.delivery_destination_configuration,
+            role_arn: self.role_arn,
             tags: self.tags,
         }
     }

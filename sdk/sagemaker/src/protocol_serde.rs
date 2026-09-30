@@ -3353,6 +3353,8 @@ pub(crate) mod shape_clarify_inference_config;
 
 pub(crate) mod shape_clarify_shap_config;
 
+pub(crate) mod shape_cluster_accounting_database;
+
 pub(crate) mod shape_cluster_auto_patch_config_details;
 
 pub(crate) mod shape_cluster_availability_zones;
@@ -3767,6 +3769,8 @@ pub(crate) mod shape_condition_step_metadata;
 
 pub(crate) mod shape_continuous_parameter_range_specification;
 
+pub(crate) mod shape_database_configuration_metadata;
+
 pub(crate) mod shape_device_names;
 
 pub(crate) mod shape_ec2_capacity_reservations_list;
@@ -3852,6 +3856,8 @@ pub(crate) mod shape_recommendation_job_supported_content_types;
 pub(crate) mod shape_register_model_step_metadata;
 
 pub(crate) mod shape_reserved_capacity_offering;
+
+pub(crate) mod shape_slurm_health_metadata;
 
 pub(crate) mod shape_space_idle_settings;
 

@@ -18,7 +18,7 @@ pub struct TelemetryDestinationConfiguration {
     pub elb_load_balancer_logging_parameters: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>,
     /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
     pub waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
-    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment managers, or Elastic Load Balancing Application Load Balancers.</p>
     pub log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
     /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
     pub msk_monitoring_parameters: ::std::option::Option<crate::types::MskMonitoringParameters>,
@@ -54,7 +54,7 @@ impl TelemetryDestinationConfiguration {
     pub fn waf_logging_parameters(&self) -> ::std::option::Option<&crate::types::WafLoggingParameters> {
         self.waf_logging_parameters.as_ref()
     }
-    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment managers, or Elastic Load Balancing Application Load Balancers.</p>
     pub fn log_delivery_parameters(&self) -> ::std::option::Option<&crate::types::LogDeliveryParameters> {
         self.log_delivery_parameters.as_ref()
     }
@@ -188,17 +188,17 @@ impl TelemetryDestinationConfigurationBuilder {
     pub fn get_waf_logging_parameters(&self) -> &::std::option::Option<crate::types::WafLoggingParameters> {
         &self.waf_logging_parameters
     }
-    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment managers, or Elastic Load Balancing Application Load Balancers.</p>
     pub fn log_delivery_parameters(mut self, input: crate::types::LogDeliveryParameters) -> Self {
         self.log_delivery_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment managers, or Elastic Load Balancing Application Load Balancers.</p>
     pub fn set_log_delivery_parameters(mut self, input: ::std::option::Option<crate::types::LogDeliveryParameters>) -> Self {
         self.log_delivery_parameters = input;
         self
     }
-    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment managers, or Elastic Load Balancing Application Load Balancers.</p>
     pub fn get_log_delivery_parameters(&self) -> &::std::option::Option<crate::types::LogDeliveryParameters> {
         &self.log_delivery_parameters
     }

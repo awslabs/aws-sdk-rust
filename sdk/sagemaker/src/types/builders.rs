@@ -1039,6 +1039,8 @@ pub use crate::types::_environment_config::EnvironmentConfigBuilder;
 
 pub use crate::types::_f_sx_lustre_config::FSxLustreConfigBuilder;
 
+pub use crate::types::_cluster_accounting_database::ClusterAccountingDatabaseBuilder;
+
 pub use crate::types::_priority_class::PriorityClassBuilder;
 
 pub use crate::types::_compute_quota_resource_config::ComputeQuotaResourceConfigBuilder;
@@ -1446,6 +1448,10 @@ pub use crate::types::_instance_group_metadata::InstanceGroupMetadataBuilder;
 pub use crate::types::_instance_group_scaling_metadata::InstanceGroupScalingMetadataBuilder;
 
 pub use crate::types::_instance_metadata::InstanceMetadataBuilder;
+
+pub use crate::types::_database_configuration_metadata::DatabaseConfigurationMetadataBuilder;
+
+pub use crate::types::_slurm_health_metadata::SlurmHealthMetadataBuilder;
 
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfigBuilder;
 

@@ -15,26 +15,29 @@ pub fn ser_query_vectors_input_input(
     if let Some(var_4) = &input.next_token {
         object.key("nextToken").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.query_vector {
+    if let Some(var_5) = &input.query_mode {
+        object.key("queryMode").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.query_vector {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("queryVector").start_object();
-        crate::protocol_serde::shape_vector_data::ser_vector_data(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("queryVector").start_object();
+        crate::protocol_serde::shape_vector_data::ser_vector_data(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.return_distance {
-        object.key("returnDistance").boolean(*var_7);
+    if let Some(var_8) = &input.return_distance {
+        object.key("returnDistance").boolean(*var_8);
     }
-    if let Some(var_8) = &input.return_metadata {
-        object.key("returnMetadata").boolean(*var_8);
+    if let Some(var_9) = &input.return_metadata {
+        object.key("returnMetadata").boolean(*var_9);
     }
-    if let Some(var_9) = &input.top_k {
+    if let Some(var_10) = &input.top_k {
         object.key("topK").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.vector_bucket_name {
-        object.key("vectorBucketName").string(var_10.as_str());
+    if let Some(var_11) = &input.vector_bucket_name {
+        object.key("vectorBucketName").string(var_11.as_str());
     }
     Ok(())
 }

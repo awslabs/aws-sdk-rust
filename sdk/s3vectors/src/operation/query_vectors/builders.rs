@@ -213,6 +213,41 @@ impl QueryVectorsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_filter()
     }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn query_mode(mut self, input: crate::types::IndexMode) -> Self {
+        self.inner = self.inner.query_mode(input);
+        self
+    }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn set_query_mode(mut self, input: ::std::option::Option<crate::types::IndexMode>) -> Self {
+        self.inner = self.inner.set_query_mode(input);
+        self
+    }
+    /// <p>The mode to use to process the query. If you don't specify a query mode, the operation uses the mode that's currently configured for the vector index.</p>
+    /// <p>Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLASSIC</code> - Applies metadata filters during the vector search. You can't specify <code>CLASSIC</code> for an <code>ENHANCED</code> index.</p></li>
+    /// <li>
+    /// <p><code>ENHANCED</code> - Applies metadata filters before the vector search.</p></li>
+    /// </ul>
+    pub fn get_query_mode(&self) -> &::std::option::Option<crate::types::IndexMode> {
+        self.inner.get_query_mode()
+    }
     /// <p>Indicates whether to include metadata in the response. The default value is <code>false</code>.</p>
     pub fn return_metadata(mut self, input: bool) -> Self {
         self.inner = self.inner.return_metadata(input);

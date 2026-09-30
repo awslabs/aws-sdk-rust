@@ -39,6 +39,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IpAddressDetails" => {
+                            builder = builder.set_ip_address_details(crate::protocol_serde::shape_ip_address_details::de_ip_address_details(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

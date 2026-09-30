@@ -1579,6 +1579,8 @@ pub use crate::types::_f_sx_lustre_config::FSxLustreConfig;
 
 pub use crate::types::_cluster_slurm_config_strategy::ClusterSlurmConfigStrategy;
 
+pub use crate::types::_cluster_accounting_database::ClusterAccountingDatabase;
+
 pub use crate::types::_priority_class::PriorityClass;
 
 pub use crate::types::_target_platform_os::TargetPlatformOs;
@@ -2135,6 +2137,10 @@ pub use crate::types::_instance_group_scaling_metadata::InstanceGroupScalingMeta
 
 pub use crate::types::_instance_metadata::InstanceMetadata;
 
+pub use crate::types::_database_configuration_metadata::DatabaseConfigurationMetadata;
+
+pub use crate::types::_slurm_health_metadata::SlurmHealthMetadata;
+
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfig;
@@ -2290,6 +2296,14 @@ pub use crate::types::_metric_set_source::MetricSetSource;
 pub use crate::types::_capacity_reservation::CapacityReservation;
 
 pub use crate::types::_additional_enis::AdditionalEnis;
+
+pub use crate::types::_database_configuration_rollback_status::DatabaseConfigurationRollbackStatus;
+
+pub use crate::types::_slurm_health_component::SlurmHealthComponent;
+
+pub use crate::types::_slurm_health_status::SlurmHealthStatus;
+
+pub use crate::types::_slurm_health_reason::SlurmHealthReason;
 
 pub use crate::types::_cluster_kubernetes_taint_effect::ClusterKubernetesTaintEffect;
 
@@ -2755,6 +2769,8 @@ mod _clarify_text_granularity;
 
 mod _clarify_text_language;
 
+mod _cluster_accounting_database;
+
 mod _cluster_auto_patch_config;
 
 mod _cluster_auto_patch_config_details;
@@ -2984,6 +3000,10 @@ mod _data_quality_job_input;
 mod _data_source;
 
 mod _data_source_name;
+
+mod _database_configuration_metadata;
+
+mod _database_configuration_rollback_status;
 
 mod _dataset_definition;
 
@@ -4334,6 +4354,14 @@ mod _sharing_type;
 mod _shuffle_config;
 
 mod _skip_model_validation;
+
+mod _slurm_health_component;
+
+mod _slurm_health_metadata;
+
+mod _slurm_health_reason;
+
+mod _slurm_health_status;
 
 mod _software_update_status;
 

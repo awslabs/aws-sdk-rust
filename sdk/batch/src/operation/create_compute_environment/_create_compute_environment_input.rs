@@ -34,7 +34,7 @@ pub struct CreateComputeEnvironmentInput {
     /// <p>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a> and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a> API operations. These tags don't propagate to the underlying compute resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
-    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     /// <p>Reserved.</p>
@@ -87,7 +87,7 @@ impl CreateComputeEnvironmentInput {
         self.tags.as_ref()
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
-    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn eks_configuration(&self) -> ::std::option::Option<&crate::types::EksConfiguration> {
         self.eks_configuration.as_ref()
@@ -276,21 +276,21 @@ impl CreateComputeEnvironmentInputBuilder {
         &self.tags
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
-    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn eks_configuration(mut self, input: crate::types::EksConfiguration) -> Self {
         self.eks_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
-    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn set_eks_configuration(mut self, input: ::std::option::Option<crate::types::EksConfiguration>) -> Self {
         self.eks_configuration = input;
         self
     }
     /// <p>The details for the Amazon EKS cluster that supports the compute environment.</p><note>
-    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>.</p>
+    /// <p>To create a compute environment that uses EKS resources, the caller must have permissions to call <code>eks:DescribeCluster</code>. Additional Amazon EKS permissions are required for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon EKS access entry authentication</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     pub fn get_eks_configuration(&self) -> &::std::option::Option<crate::types::EksConfiguration> {
         &self.eks_configuration

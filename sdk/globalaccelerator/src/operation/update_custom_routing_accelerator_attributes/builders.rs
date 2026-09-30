@@ -158,21 +158,21 @@ impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
         self.inner.get_flow_logs_s3_bucket()
     }
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn flow_logs_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_logs_s3_prefix(input.into());
         self
     }
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn set_flow_logs_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_logs_s3_prefix(input);
         self
     }
     /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
-    /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+    /// <p>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn get_flow_logs_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_logs_s3_prefix()

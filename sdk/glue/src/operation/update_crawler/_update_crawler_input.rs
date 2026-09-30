@@ -31,6 +31,8 @@ pub struct UpdateCrawlerInput {
     pub configuration: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
     pub crawler_security_configuration: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCrawlerInput {
     /// <p>Name of the new crawler.</p>
@@ -91,6 +93,10 @@ impl UpdateCrawlerInput {
     pub fn crawler_security_configuration(&self) -> ::std::option::Option<&str> {
         self.crawler_security_configuration.as_deref()
     }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
+        self.catalog_id.as_deref()
+    }
 }
 impl UpdateCrawlerInput {
     /// Creates a new builder-style object to manufacture [`UpdateCrawlerInput`](crate::operation::update_crawler::UpdateCrawlerInput).
@@ -117,6 +123,7 @@ pub struct UpdateCrawlerInputBuilder {
     pub(crate) lake_formation_configuration: ::std::option::Option<crate::types::LakeFormationConfiguration>,
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) crawler_security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCrawlerInputBuilder {
     /// <p>Name of the new crawler.</p>
@@ -322,6 +329,20 @@ impl UpdateCrawlerInputBuilder {
     pub fn get_crawler_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.crawler_security_configuration
     }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_id = input;
+        self
+    }
+    /// <p>The ID of the Data Catalog in which to store the crawler's output. If you omit this value, the existing value on the crawler is preserved.</p>
+    pub fn get_catalog_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_id
+    }
     /// Consumes the builder and constructs a [`UpdateCrawlerInput`](crate::operation::update_crawler::UpdateCrawlerInput).
     pub fn build(
         self,
@@ -341,6 +362,7 @@ impl UpdateCrawlerInputBuilder {
             lake_formation_configuration: self.lake_formation_configuration,
             configuration: self.configuration,
             crawler_security_configuration: self.crawler_security_configuration,
+            catalog_id: self.catalog_id,
         })
     }
 }

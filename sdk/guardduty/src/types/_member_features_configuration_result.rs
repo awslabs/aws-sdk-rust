@@ -12,6 +12,8 @@ pub struct MemberFeaturesConfigurationResult {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
     pub additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
+    /// <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
 }
 impl MemberFeaturesConfigurationResult {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
@@ -32,6 +34,10 @@ impl MemberFeaturesConfigurationResult {
     pub fn additional_configuration(&self) -> &[crate::types::MemberAdditionalConfigurationResult] {
         self.additional_configuration.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
+    }
 }
 impl MemberFeaturesConfigurationResult {
     /// Creates a new builder-style object to manufacture [`MemberFeaturesConfigurationResult`](crate::types::MemberFeaturesConfigurationResult).
@@ -48,6 +54,7 @@ pub struct MemberFeaturesConfigurationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) additional_configuration: ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
 }
 impl MemberFeaturesConfigurationResultBuilder {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
@@ -115,6 +122,20 @@ impl MemberFeaturesConfigurationResultBuilder {
     pub fn get_additional_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>> {
         &self.additional_configuration
     }
+    /// <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`MemberFeaturesConfigurationResult`](crate::types::MemberFeaturesConfigurationResult).
     pub fn build(self) -> crate::types::MemberFeaturesConfigurationResult {
         crate::types::MemberFeaturesConfigurationResult {
@@ -122,6 +143,7 @@ impl MemberFeaturesConfigurationResultBuilder {
             status: self.status,
             updated_at: self.updated_at,
             additional_configuration: self.additional_configuration,
+            managed_by: self.managed_by,
         }
     }
 }

@@ -6186,6 +6186,18 @@ pub(crate) fn clarify_shap_config_correct_errors(
     builder
 }
 
+pub(crate) fn cluster_accounting_database_correct_errors(
+    mut builder: crate::types::builders::ClusterAccountingDatabaseBuilder,
+) -> crate::types::builders::ClusterAccountingDatabaseBuilder {
+    if builder.endpoint.is_none() {
+        builder.endpoint = Some(Default::default())
+    }
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cluster_slurm_config_details_correct_errors(
     mut builder: crate::types::builders::ClusterSlurmConfigDetailsBuilder,
 ) -> crate::types::builders::ClusterSlurmConfigDetailsBuilder {
@@ -7308,6 +7320,18 @@ pub(crate) fn s3_file_system_config_correct_errors(
 ) -> crate::types::builders::S3FileSystemConfigBuilder {
     if builder.s3_uri.is_none() {
         builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn slurm_health_metadata_correct_errors(
+    mut builder: crate::types::builders::SlurmHealthMetadataBuilder,
+) -> crate::types::builders::SlurmHealthMetadataBuilder {
+    if builder.component.is_none() {
+        builder.component = "no value was set".parse::<crate::types::SlurmHealthComponent>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::SlurmHealthStatus>().ok()
     }
     builder
 }

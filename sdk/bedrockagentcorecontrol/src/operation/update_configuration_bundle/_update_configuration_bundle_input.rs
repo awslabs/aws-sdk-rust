@@ -222,6 +222,7 @@ impl UpdateConfigurationBundleInputBuilder {
         &self.branch_name
     }
     /// <p>A commit message describing the changes in this version.</p>
+    /// This field is required.
     pub fn commit_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.commit_message = ::std::option::Option::Some(input.into());
         self

@@ -53,7 +53,11 @@ pub(crate) mod shape_put_alternate_contact;
 
 pub(crate) mod shape_put_contact_information;
 
+pub(crate) mod shape_send_phone_number_verification;
+
 pub(crate) mod shape_start_primary_email_update;
+
+pub(crate) mod shape_verify_phone_number;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -103,11 +107,15 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_unavailable_exception;
 
+pub(crate) mod shape_send_phone_number_verification_input;
+
 pub(crate) mod shape_start_primary_email_update_input;
 
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_verify_phone_number_input;
 
 pub(crate) mod shape_alternate_contact;
 

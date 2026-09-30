@@ -807,6 +807,8 @@ pub(crate) mod shape_notebook_run_summary_list;
 
 pub(crate) mod shape_notebook_summary_list;
 
+pub(crate) mod shape_notification_config;
+
 pub(crate) mod shape_notifications_list;
 
 pub(crate) mod shape_output_location;
@@ -1128,6 +1130,8 @@ pub(crate) mod shape_notebook_run_summary;
 pub(crate) mod shape_notebook_summary;
 
 pub(crate) mod shape_notification_output;
+
+pub(crate) mod shape_notify_on_states;
 
 pub(crate) mod shape_override_domain_unit_owners_policy_grant_detail;
 

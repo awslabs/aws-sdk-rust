@@ -141,17 +141,17 @@ impl UpdateNotificationContentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn content(mut self, k: crate::types::LocaleCode, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(k, v.into());
         self
     }
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+    /// <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         self.inner.get_content()
     }

@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationBundleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+    pub bundle_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the deleted configuration bundle.</p>
     pub bundle_id: ::std::string::String,
     /// <p>The status of the configuration bundle deletion operation.</p>
@@ -10,6 +12,10 @@ pub struct DeleteConfigurationBundleOutput {
     _request_id: Option<String>,
 }
 impl DeleteConfigurationBundleOutput {
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+    pub fn bundle_arn(&self) -> ::std::option::Option<&str> {
+        self.bundle_arn.as_deref()
+    }
     /// <p>The unique identifier of the deleted configuration bundle.</p>
     pub fn bundle_id(&self) -> &str {
         use std::ops::Deref;
@@ -36,11 +42,27 @@ impl DeleteConfigurationBundleOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DeleteConfigurationBundleOutputBuilder {
+    pub(crate) bundle_arn: ::std::option::Option<::std::string::String>,
     pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ConfigurationBundleStatus>,
     _request_id: Option<String>,
 }
 impl DeleteConfigurationBundleOutputBuilder {
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+    /// This field is required.
+    pub fn bundle_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bundle_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+    pub fn set_bundle_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.bundle_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the deleted configuration bundle.</p>
+    pub fn get_bundle_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.bundle_arn
+    }
     /// <p>The unique identifier of the deleted configuration bundle.</p>
     /// This field is required.
     pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -91,6 +113,7 @@ impl DeleteConfigurationBundleOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_configuration_bundle::DeleteConfigurationBundleOutput {
+            bundle_arn: self.bundle_arn,
             bundle_id: self.bundle_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "bundle_id",

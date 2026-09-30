@@ -292,4 +292,18 @@ impl ExportTableToPointInTimeFluentBuilder {
     pub fn get_incremental_export_specification(&self) -> &::std::option::Option<crate::types::IncrementalExportSpecification> {
         self.inner.get_incremental_export_specification()
     }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn filter_specification(mut self, input: crate::types::FilterSpecification) -> Self {
+        self.inner = self.inner.filter_specification(input);
+        self
+    }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn set_filter_specification(mut self, input: ::std::option::Option<crate::types::FilterSpecification>) -> Self {
+        self.inner = self.inner.set_filter_specification(input);
+        self
+    }
+    /// <p>The criteria used to filter which items are included in the point-in-time export. When you specify this parameter, only items that match the key conditions and filter expressions are exported.</p>
+    pub fn get_filter_specification(&self) -> &::std::option::Option<crate::types::FilterSpecification> {
+        self.inner.get_filter_specification()
+    }
 }

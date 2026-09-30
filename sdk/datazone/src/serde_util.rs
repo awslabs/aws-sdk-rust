@@ -2422,6 +2422,15 @@ pub(crate) fn notebook_run_error_correct_errors(
     builder
 }
 
+pub(crate) fn notification_config_correct_errors(
+    mut builder: crate::types::builders::NotificationConfigBuilder,
+) -> crate::types::builders::NotificationConfigBuilder {
+    if builder.notify_on.is_none() {
+        builder.notify_on = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn time_series_data_point_form_output_correct_errors(
     mut builder: crate::types::builders::TimeSeriesDataPointFormOutputBuilder,
 ) -> crate::types::builders::TimeSeriesDataPointFormOutputBuilder {

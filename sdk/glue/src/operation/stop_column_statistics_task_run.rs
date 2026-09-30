@@ -195,6 +195,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopColumnSta
                 captured.insert("TableName", value);
             }
         }
+        if requested.should_capture("CatalogID") {
+            if let ::std::option::Option::Some(value) = input.catalog_id.as_deref() {
+                captured.insert("CatalogID", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

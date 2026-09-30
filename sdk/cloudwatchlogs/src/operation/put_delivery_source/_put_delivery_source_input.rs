@@ -7,41 +7,48 @@ pub struct PutDeliverySourceInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code> and for Amazon Web Services Security Hub, use <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</code></p>
+    /// <p>For the <code>INSIGHTS_QUERY_LOGS</code> log type, use a wildcard log group ARN, such as <code>arn:aws:logs:us-east-1:111122223333:log-group:*</code>. Amazon Web Services does not support a specific log group ARN for this log type.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Web Services Amplify, the valid values are <code>ACCESS_LOGS</code> and <code>WAF_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For query execution logs from CloudWatch Logs Insights, the valid value is <code>INSIGHTS_QUERY_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Elemental Inference, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
@@ -53,23 +60,29 @@ pub struct PutDeliverySourceInput {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Q in Connect AI agents, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>AGENT_METADATA_LOGS</code>, <code>CHAT_LOGS</code>, <code>DLP_LOGS</code>, <code>FEEDBACK_LOGS</code>, <code>INDEX_USAGE_LOGS</code>, and <code>KB_FILE_SYNC_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Route&nbsp;53 Global Resolver, the valid value is <code>GLOBAL_RESOLVER_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Web Services Security Hub, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
+    /// <p>For Amazon Web Services Shield Advanced, the valid value is <code>FLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon VPC Route Server, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub log_type: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of key-value pairs to associate with the resource.</p>
@@ -85,43 +98,50 @@ impl PutDeliverySourceInput {
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code> and for Amazon Web Services Security Hub, use <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</code></p>
+    /// <p>For the <code>INSIGHTS_QUERY_LOGS</code> log type, use a wildcard log group ARN, such as <code>arn:aws:logs:us-east-1:111122223333:log-group:*</code>. Amazon Web Services does not support a specific log group ARN for this log type.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Web Services Amplify, the valid values are <code>ACCESS_LOGS</code> and <code>WAF_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For query execution logs from CloudWatch Logs Insights, the valid value is <code>INSIGHTS_QUERY_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Elemental Inference, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
@@ -133,23 +153,29 @@ impl PutDeliverySourceInput {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Q in Connect AI agents, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>AGENT_METADATA_LOGS</code>, <code>CHAT_LOGS</code>, <code>DLP_LOGS</code>, <code>FEEDBACK_LOGS</code>, <code>INDEX_USAGE_LOGS</code>, and <code>KB_FILE_SYNC_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Route&nbsp;53 Global Resolver, the valid value is <code>GLOBAL_RESOLVER_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Web Services Security Hub, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
+    /// <p>For Amazon Web Services Shield Advanced, the valid value is <code>FLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon VPC Route Server, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn log_type(&self) -> ::std::option::Option<&str> {
         self.log_type.as_deref()
@@ -199,6 +225,7 @@ impl PutDeliverySourceInputBuilder {
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code> and for Amazon Web Services Security Hub, use <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</code></p>
+    /// <p>For the <code>INSIGHTS_QUERY_LOGS</code> log type, use a wildcard log group ARN, such as <code>arn:aws:logs:us-east-1:111122223333:log-group:*</code>. Amazon Web Services does not support a specific log group ARN for this log type.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
@@ -206,49 +233,57 @@ impl PutDeliverySourceInputBuilder {
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code> and for Amazon Web Services Security Hub, use <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</code></p>
+    /// <p>For the <code>INSIGHTS_QUERY_LOGS</code> log type, use a wildcard log group ARN, such as <code>arn:aws:logs:us-east-1:111122223333:log-group:*</code>. Amazon Web Services does not support a specific log group ARN for this log type.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The ARN of the Amazon Web Services resource that is generating and sending logs. For example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code></p>
     /// <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use <code>arn:aws:securityhub:us-east-1:111122223333:hub/*</code> and for Amazon Web Services Security Hub, use <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/*</code></p>
+    /// <p>For the <code>INSIGHTS_QUERY_LOGS</code> log type, use a wildcard log group ARN, such as <code>arn:aws:logs:us-east-1:111122223333:log-group:*</code>. Amazon Web Services does not support a specific log group ARN for this log type.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Web Services Amplify, the valid values are <code>ACCESS_LOGS</code> and <code>WAF_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For query execution logs from CloudWatch Logs Insights, the valid value is <code>INSIGHTS_QUERY_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Elemental Inference, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
@@ -260,23 +295,29 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Q in Connect AI agents, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>AGENT_METADATA_LOGS</code>, <code>CHAT_LOGS</code>, <code>DLP_LOGS</code>, <code>FEEDBACK_LOGS</code>, <code>INDEX_USAGE_LOGS</code>, and <code>KB_FILE_SYNC_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Route&nbsp;53 Global Resolver, the valid value is <code>GLOBAL_RESOLVER_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Web Services Security Hub, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
+    /// <p>For Amazon Web Services Shield Advanced, the valid value is <code>FLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon VPC Route Server, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn log_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -286,37 +327,43 @@ impl PutDeliverySourceInputBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Web Services Amplify, the valid values are <code>ACCESS_LOGS</code> and <code>WAF_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For query execution logs from CloudWatch Logs Insights, the valid value is <code>INSIGHTS_QUERY_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Elemental Inference, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
@@ -328,23 +375,29 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Q in Connect AI agents, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>AGENT_METADATA_LOGS</code>, <code>CHAT_LOGS</code>, <code>DLP_LOGS</code>, <code>FEEDBACK_LOGS</code>, <code>INDEX_USAGE_LOGS</code>, and <code>KB_FILE_SYNC_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Route&nbsp;53 Global Resolver, the valid value is <code>GLOBAL_RESOLVER_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Web Services Security Hub, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
+    /// <p>For Amazon Web Services Shield Advanced, the valid value is <code>FLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon VPC Route Server, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn set_log_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_type = input;
@@ -353,37 +406,43 @@ impl PutDeliverySourceInputBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Amazon Web Services Amplify, the valid values are <code>ACCESS_LOGS</code> and <code>WAF_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Identity, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock AgentCore Memory, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Bedrock AgentCore Gateway, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Bedrock AgentCore Payments, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Runtime, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock AgentCore Tools, the valid values are <code>APPLICATION_LOGS</code>, <code>USAGE_LOGS</code>, and <code>TRACES</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
     /// <li>
     /// <p>For CloudFront, the valid value is <code>ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <p>For query execution logs from CloudWatch Logs Insights, the valid value is <code>INSIGHTS_QUERY_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
+    /// <p>For DevOps Agent, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Auto Mode, the valid values are <code>AUTO_MODE_BLOCK_STORAGE_LOGS</code>, <code>AUTO_MODE_COMPUTE_LOGS</code>, <code>AUTO_MODE_IPAM_LOGS</code>, and <code>AUTO_MODE_LOAD_BALANCING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon EKS Capability Logs, the valid values are <code>EKS_CAPABILITY_ACK_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATION_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_APPLICATIONSET_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_COMMITSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_REPOSERVER_LOGS</code>, <code>EKS_CAPABILITY_ARGOCD_SERVER_LOGS</code>, and <code>EKS_CAPABILITY_KRO_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Elemental Inference, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaPackage, the valid values are <code>EGRESS_ACCESS_LOGS</code> and <code>INGRESS_ACCESS_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
     /// <li>
@@ -395,23 +454,29 @@ impl PutDeliverySourceInputBuilder {
     /// <li>
     /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>CHAT_LOGS</code>, <code>FEEDBACK_LOGS</code>, and <code>INDEX_USAGE_LOGS</code>.</p></li>
-    /// <li>
-    /// <p>For Amazon Web Services RTB Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Q in Connect AI agents, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Quick, the valid values are <code>AGENT_HOURS_LOGS</code>, <code>AGENT_METADATA_LOGS</code>, <code>CHAT_LOGS</code>, <code>DLP_LOGS</code>, <code>FEEDBACK_LOGS</code>, <code>INDEX_USAGE_LOGS</code>, and <code>KB_FILE_SYNC_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Route&nbsp;53 Global Resolver, the valid value is <code>GLOBAL_RESOLVER_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services RTB Fabric, the valid value is <code>APPLICATION_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon S3, the valid value is <code>S3_SERVER_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
-    /// <li>
     /// <p>For Amazon Web Services Security Hub, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon Web Services Security Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon SES mail manager, the valid values are <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
+    /// <p>For Amazon Web Services Shield Advanced, the valid value is <code>FLOW_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon VPC Route Server, the valid value is <code>EVENT_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon WorkMail, the valid values are <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>, <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p></li>
     /// </ul>
     pub fn get_log_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_type

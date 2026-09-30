@@ -12,6 +12,12 @@ pub fn ser_vpc_lattice_configuration(
     {
         object.key("portName").string(input.port_name.as_str());
     }
+    if let Some(var_1) = &input.advanced_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("advancedConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_lattice_advanced_configuration::ser_vpc_lattice_advanced_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -56,6 +62,15 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "advancedConfiguration" => {
+                            builder = builder.set_advanced_configuration(
+                                crate::protocol_serde::shape_vpc_lattice_advanced_configuration::de_vpc_lattice_advanced_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

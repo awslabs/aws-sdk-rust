@@ -43,6 +43,9 @@ pub mod list_vector_buckets;
 /// Types for the `ListVectors` operation.
 pub mod list_vectors;
 
+/// Types for the `PutVectorBucketDefaultIndexMode` operation.
+pub mod put_vector_bucket_default_index_mode;
+
 /// Types for the `PutVectorBucketPolicy` operation.
 pub mod put_vector_bucket_policy;
 
@@ -57,3 +60,6 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateIndexMode` operation.
+pub mod update_index_mode;

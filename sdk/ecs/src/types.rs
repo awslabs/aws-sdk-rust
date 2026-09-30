@@ -391,6 +391,8 @@ pub use crate::types::_service_connect_include_query_parameters::ServiceConnectI
 
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfiguration;
 
+pub use crate::types::_vpc_lattice_advanced_configuration::VpcLatticeAdvancedConfiguration;
+
 pub use crate::types::_metric_configuration::MetricConfiguration;
 
 pub use crate::types::_deployment::Deployment;
@@ -560,6 +562,8 @@ pub use crate::types::_service_connect_service_resource::ServiceConnectServiceRe
 pub use crate::types::_access_type::AccessType;
 
 pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancer;
+
+pub use crate::types::_service_revision_vpc_lattice_configuration::ServiceRevisionVpcLatticeConfiguration;
 
 pub use crate::types::_managed_ingress_path::ManagedIngressPath;
 
@@ -1123,6 +1127,8 @@ mod _service_revision_overrides;
 
 mod _service_revision_summary;
 
+mod _service_revision_vpc_lattice_configuration;
+
 mod _service_volume_configuration;
 
 mod _session;
@@ -1208,6 +1214,8 @@ mod _version_info;
 mod _volume;
 
 mod _volume_from;
+
+mod _vpc_lattice_advanced_configuration;
 
 mod _vpc_lattice_configuration;
 

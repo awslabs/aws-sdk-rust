@@ -365,6 +365,10 @@ pub use crate::types::_inference_connector_target_configuration::InferenceConnec
 
 pub use crate::types::_inference_provider_target_configuration::InferenceProviderTargetConfigurationBuilder;
 
+pub use crate::types::_s3_certificate_configuration::S3CertificateConfigurationBuilder;
+
+pub use crate::types::_secrets_manager_certificate_configuration::SecretsManagerCertificateConfigurationBuilder;
+
 pub use crate::types::_harness_skill_s3_source::HarnessSkillS3SourceBuilder;
 
 pub use crate::types::_harness_skill_git_source::HarnessSkillGitSourceBuilder;

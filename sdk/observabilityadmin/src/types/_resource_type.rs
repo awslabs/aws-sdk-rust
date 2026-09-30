@@ -17,6 +17,7 @@
 ///     ResourceType::AwsBedrockAgentcoreCodeInterpreter => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreGateway => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreMemory => { /* ... */ },
+///     ResourceType::AwsBedrockAgentcorePaymentManager => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreRuntime => { /* ... */ },
 ///     ResourceType::AwsBedrockAgentcoreWorkloadIdentity => { /* ... */ },
 ///     ResourceType::AwsCloudfrontDistribution => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsBedrockAgentcoreMemory,
     #[allow(missing_docs)] // documentation missing in model
+    AwsBedrockAgentcorePaymentManager,
+    #[allow(missing_docs)] // documentation missing in model
     AwsBedrockAgentcoreRuntime,
     #[allow(missing_docs)] // documentation missing in model
     AwsBedrockAgentcoreWorkloadIdentity,
@@ -115,6 +118,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::BedrockAgentCore::CodeInterpreter" => ResourceType::AwsBedrockAgentcoreCodeInterpreter,
             "AWS::BedrockAgentCore::Gateway" => ResourceType::AwsBedrockAgentcoreGateway,
             "AWS::BedrockAgentCore::Memory" => ResourceType::AwsBedrockAgentcoreMemory,
+            "AWS::BedrockAgentCore::PaymentManager" => ResourceType::AwsBedrockAgentcorePaymentManager,
             "AWS::BedrockAgentCore::Runtime" => ResourceType::AwsBedrockAgentcoreRuntime,
             "AWS::BedrockAgentCore::WorkloadIdentity" => ResourceType::AwsBedrockAgentcoreWorkloadIdentity,
             "AWS::CloudFront::Distribution" => ResourceType::AwsCloudfrontDistribution,
@@ -151,6 +155,7 @@ impl ResourceType {
             ResourceType::AwsBedrockAgentcoreCodeInterpreter => "AWS::BedrockAgentCore::CodeInterpreter",
             ResourceType::AwsBedrockAgentcoreGateway => "AWS::BedrockAgentCore::Gateway",
             ResourceType::AwsBedrockAgentcoreMemory => "AWS::BedrockAgentCore::Memory",
+            ResourceType::AwsBedrockAgentcorePaymentManager => "AWS::BedrockAgentCore::PaymentManager",
             ResourceType::AwsBedrockAgentcoreRuntime => "AWS::BedrockAgentCore::Runtime",
             ResourceType::AwsBedrockAgentcoreWorkloadIdentity => "AWS::BedrockAgentCore::WorkloadIdentity",
             ResourceType::AwsCloudfrontDistribution => "AWS::CloudFront::Distribution",
@@ -178,6 +183,7 @@ impl ResourceType {
             "AWS::BedrockAgentCore::CodeInterpreter",
             "AWS::BedrockAgentCore::Gateway",
             "AWS::BedrockAgentCore::Memory",
+            "AWS::BedrockAgentCore::PaymentManager",
             "AWS::BedrockAgentCore::Runtime",
             "AWS::BedrockAgentCore::WorkloadIdentity",
             "AWS::CloudFront::Distribution",
@@ -222,6 +228,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsBedrockAgentcoreCodeInterpreter => write!(f, "AWS::BedrockAgentCore::CodeInterpreter"),
             ResourceType::AwsBedrockAgentcoreGateway => write!(f, "AWS::BedrockAgentCore::Gateway"),
             ResourceType::AwsBedrockAgentcoreMemory => write!(f, "AWS::BedrockAgentCore::Memory"),
+            ResourceType::AwsBedrockAgentcorePaymentManager => write!(f, "AWS::BedrockAgentCore::PaymentManager"),
             ResourceType::AwsBedrockAgentcoreRuntime => write!(f, "AWS::BedrockAgentCore::Runtime"),
             ResourceType::AwsBedrockAgentcoreWorkloadIdentity => write!(f, "AWS::BedrockAgentCore::WorkloadIdentity"),
             ResourceType::AwsCloudfrontDistribution => write!(f, "AWS::CloudFront::Distribution"),

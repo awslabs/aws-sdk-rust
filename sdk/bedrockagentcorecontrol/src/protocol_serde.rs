@@ -615,6 +615,10 @@ pub(crate) mod shape_capacity_provider_list;
 
 pub(crate) mod shape_certificate;
 
+pub(crate) mod shape_certificate_configuration;
+
+pub(crate) mod shape_certificate_configuration_list;
+
 pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_clustering_config;
@@ -1139,6 +1143,8 @@ pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_route_to_target_action;
 
+pub(crate) mod shape_s3_certificate_configuration;
+
 pub(crate) mod shape_s3_files_access_point_configuration;
 
 pub(crate) mod shape_s3_files_configuration;
@@ -1152,6 +1158,8 @@ pub(crate) mod shape_salesforce_oauth2_provider_config_input;
 pub(crate) mod shape_salesforce_oauth2_provider_config_output;
 
 pub(crate) mod shape_sampling_config;
+
+pub(crate) mod shape_secrets_manager_certificate_configuration;
 
 pub(crate) mod shape_self_managed_lattice_resource;
 

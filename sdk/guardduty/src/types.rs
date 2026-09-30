@@ -287,6 +287,8 @@ pub use crate::types::_kubernetes_audit_logs_configuration_result::KubernetesAud
 
 pub use crate::types::_detector_feature_result::DetectorFeatureResult;
 
+pub use crate::types::_managed_by::ManagedBy;
+
 pub use crate::types::_resource::Resource;
 
 pub use crate::types::_service::Service;
@@ -1122,6 +1124,8 @@ mod _malware_protection_scan_type;
 mod _malware_scan;
 
 mod _malware_scan_details;
+
+mod _managed_by;
 
 mod _management_type;
 

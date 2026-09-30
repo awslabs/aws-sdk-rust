@@ -10,6 +10,8 @@ pub struct VpcLatticeConfiguration {
     pub target_group_arn: ::std::string::String,
     /// <p>The name of the port mapping to register in the VPC Lattice target group. This is the name of the <code>portMapping</code> you defined in your task definition.</p>
     pub port_name: ::std::string::String,
+    /// <p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub advanced_configuration: ::std::option::Option<crate::types::VpcLatticeAdvancedConfiguration>,
 }
 impl VpcLatticeConfiguration {
     /// <p>The ARN of the IAM role to associate with this VPC Lattice configuration. This is the Amazon ECS infrastructure IAM role that is used to manage your VPC Lattice infrastructure.</p>
@@ -27,6 +29,10 @@ impl VpcLatticeConfiguration {
         use std::ops::Deref;
         self.port_name.deref()
     }
+    /// <p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn advanced_configuration(&self) -> ::std::option::Option<&crate::types::VpcLatticeAdvancedConfiguration> {
+        self.advanced_configuration.as_ref()
+    }
 }
 impl VpcLatticeConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcLatticeConfiguration`](crate::types::VpcLatticeConfiguration).
@@ -42,6 +48,7 @@ pub struct VpcLatticeConfigurationBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) target_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) port_name: ::std::option::Option<::std::string::String>,
+    pub(crate) advanced_configuration: ::std::option::Option<crate::types::VpcLatticeAdvancedConfiguration>,
 }
 impl VpcLatticeConfigurationBuilder {
     /// <p>The ARN of the IAM role to associate with this VPC Lattice configuration. This is the Amazon ECS infrastructure IAM role that is used to manage your VPC Lattice infrastructure.</p>
@@ -89,6 +96,20 @@ impl VpcLatticeConfigurationBuilder {
     pub fn get_port_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.port_name
     }
+    /// <p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn advanced_configuration(mut self, input: crate::types::VpcLatticeAdvancedConfiguration) -> Self {
+        self.advanced_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_advanced_configuration(mut self, input: ::std::option::Option<crate::types::VpcLatticeAdvancedConfiguration>) -> Self {
+        self.advanced_configuration = input;
+        self
+    }
+    /// <p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_advanced_configuration(&self) -> &::std::option::Option<crate::types::VpcLatticeAdvancedConfiguration> {
+        &self.advanced_configuration
+    }
     /// Consumes the builder and constructs a [`VpcLatticeConfiguration`](crate::types::VpcLatticeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`role_arn`](crate::types::builders::VpcLatticeConfigurationBuilder::role_arn)
@@ -114,6 +135,7 @@ impl VpcLatticeConfigurationBuilder {
                     "port_name was not specified but it is required when building VpcLatticeConfiguration",
                 )
             })?,
+            advanced_configuration: self.advanced_configuration,
         })
     }
 }

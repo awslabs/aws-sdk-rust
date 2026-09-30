@@ -10,6 +10,8 @@ pub struct MemberAdditionalConfigurationResult {
     pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>
+    pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
 }
 impl MemberAdditionalConfigurationResult {
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
@@ -23,6 +25,10 @@ impl MemberAdditionalConfigurationResult {
     /// <p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
+    }
+    /// <p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ManagedBy> {
+        self.managed_by.as_ref()
     }
 }
 impl MemberAdditionalConfigurationResult {
@@ -39,6 +45,7 @@ pub struct MemberAdditionalConfigurationResultBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
 }
 impl MemberAdditionalConfigurationResultBuilder {
     /// <p>Indicates the name of the additional configuration that is set for the member account.</p>
@@ -83,12 +90,27 @@ impl MemberAdditionalConfigurationResultBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>
+    pub fn managed_by(mut self, input: crate::types::ManagedBy) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ManagedBy>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ManagedBy> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`MemberAdditionalConfigurationResult`](crate::types::MemberAdditionalConfigurationResult).
     pub fn build(self) -> crate::types::MemberAdditionalConfigurationResult {
         crate::types::MemberAdditionalConfigurationResult {
             name: self.name,
             status: self.status,
             updated_at: self.updated_at,
+            managed_by: self.managed_by,
         }
     }
 }

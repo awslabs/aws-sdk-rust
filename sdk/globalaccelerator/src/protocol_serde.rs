@@ -401,6 +401,10 @@ pub(crate) mod shape_socket_address;
 
 pub(crate) mod shape_socket_addresses;
 
+pub(crate) mod shape_ip_address_details;
+
 pub(crate) mod shape_ip_addresses;
 
 pub(crate) mod shape_protocols;
+
+pub(crate) mod shape_ip_address_detail;
