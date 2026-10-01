@@ -1101,6 +1101,10 @@ pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTime
 
 pub use crate::types::_filter_cross_sheet_control::FilterCrossSheetControlBuilder;
 
+pub use crate::types::_hierarchy_filter_list_control::HierarchyFilterListControlBuilder;
+
+pub use crate::types::_hierarchy_filter_drop_down_control::HierarchyFilterDropDownControlBuilder;
+
 pub use crate::types::_table_visual::TableVisualBuilder;
 
 pub use crate::types::_pivot_table_visual::PivotTableVisualBuilder;
@@ -1186,6 +1190,8 @@ pub use crate::types::_relative_dates_filter::RelativeDatesFilterBuilder;
 pub use crate::types::_top_bottom_filter::TopBottomFilterBuilder;
 
 pub use crate::types::_nested_filter::NestedFilterBuilder;
+
+pub use crate::types::_hierarchy_filter::HierarchyFilterBuilder;
 
 pub use crate::types::_null_value_format_configuration::NullValueFormatConfigurationBuilder;
 
@@ -1281,6 +1287,10 @@ pub use crate::types::_filter_selectable_values::FilterSelectableValuesBuilder;
 
 pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptionsBuilder;
 
+pub use crate::types::_hierarchy_filter_list_control_display_options::HierarchyFilterListControlDisplayOptionsBuilder;
+
+pub use crate::types::_hierarchy_filter_drop_down_control_display_options::HierarchyFilterDropDownControlDisplayOptionsBuilder;
+
 pub use crate::types::_visual_title_label_options::VisualTitleLabelOptionsBuilder;
 
 pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptionsBuilder;
@@ -1375,6 +1385,8 @@ pub use crate::types::_anchor_date_configuration::AnchorDateConfigurationBuilder
 
 pub use crate::types::_inner_filter::InnerFilterBuilder;
 
+pub use crate::types::_hierarchy_filter_node::HierarchyFilterNodeBuilder;
+
 pub use crate::types::_sheet_visual_scoping_configuration::SheetVisualScopingConfigurationBuilder;
 
 pub use crate::types::_number_display_format_configuration::NumberDisplayFormatConfigurationBuilder;
@@ -1448,6 +1460,8 @@ pub use crate::types::_list_control_select_all_options::ListControlSelectAllOpti
 pub use crate::types::_control_sort_configuration::ControlSortConfigurationBuilder;
 
 pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptionsBuilder;
+
+pub use crate::types::_hierarchy_filter_list_control_search_options::HierarchyFilterListControlSearchOptionsBuilder;
 
 pub use crate::types::_short_format_text::ShortFormatTextBuilder;
 
@@ -1632,6 +1646,8 @@ pub use crate::types::_attribute_aggregation_function::AttributeAggregationFunct
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfigurationBuilder;
 
 pub use crate::types::_category_inner_filter::CategoryInnerFilterBuilder;
+
+pub use crate::types::_hierarchy_filter_level::HierarchyFilterLevelBuilder;
 
 pub use crate::types::_numeric_separator_configuration::NumericSeparatorConfigurationBuilder;
 
@@ -1850,6 +1866,10 @@ pub use crate::types::_default_text_area_control_options::DefaultTextAreaControl
 pub use crate::types::_default_slider_control_options::DefaultSliderControlOptionsBuilder;
 
 pub use crate::types::_default_relative_date_time_control_options::DefaultRelativeDateTimeControlOptionsBuilder;
+
+pub use crate::types::_default_hierarchy_filter_list_control_options::DefaultHierarchyFilterListControlOptionsBuilder;
+
+pub use crate::types::_default_hierarchy_filter_drop_down_control_options::DefaultHierarchyFilterDropDownControlOptionsBuilder;
 
 pub use crate::types::_percentile_aggregation::PercentileAggregationBuilder;
 

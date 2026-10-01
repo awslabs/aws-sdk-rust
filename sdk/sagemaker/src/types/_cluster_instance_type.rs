@@ -60,6 +60,7 @@
 ///     ClusterInstanceType::MlC7GLarge => { /* ... */ },
 ///     ClusterInstanceType::MlC7GMedium => { /* ... */ },
 ///     ClusterInstanceType::MlC7GXlarge => { /* ... */ },
+///     ClusterInstanceType::MlC8A16Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlC8G12Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlC8G16Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlC8G24Xlarge => { /* ... */ },
@@ -173,6 +174,7 @@
 ///     ClusterInstanceType::MlM7I8Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlM7ILarge => { /* ... */ },
 ///     ClusterInstanceType::MlM7IXlarge => { /* ... */ },
+///     ClusterInstanceType::MlM8A16Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlM8G12Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlM8G16Xlarge => { /* ... */ },
 ///     ClusterInstanceType::MlM8G24Xlarge => { /* ... */ },
@@ -343,6 +345,8 @@ pub enum ClusterInstanceType {
     MlC7GMedium,
     #[allow(missing_docs)] // documentation missing in model
     MlC7GXlarge,
+    #[allow(missing_docs)] // documentation missing in model
+    MlC8A16Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlC8G12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
@@ -570,6 +574,8 @@ pub enum ClusterInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlM7IXlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlM8A16Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlM8G12Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlM8G16Xlarge,
@@ -716,6 +722,7 @@ impl ::std::convert::From<&str> for ClusterInstanceType {
             "ml.c7g.large" => ClusterInstanceType::MlC7GLarge,
             "ml.c7g.medium" => ClusterInstanceType::MlC7GMedium,
             "ml.c7g.xlarge" => ClusterInstanceType::MlC7GXlarge,
+            "ml.c8a.16xlarge" => ClusterInstanceType::MlC8A16Xlarge,
             "ml.c8g.12xlarge" => ClusterInstanceType::MlC8G12Xlarge,
             "ml.c8g.16xlarge" => ClusterInstanceType::MlC8G16Xlarge,
             "ml.c8g.24xlarge" => ClusterInstanceType::MlC8G24Xlarge,
@@ -829,6 +836,7 @@ impl ::std::convert::From<&str> for ClusterInstanceType {
             "ml.m7i.8xlarge" => ClusterInstanceType::MlM7I8Xlarge,
             "ml.m7i.large" => ClusterInstanceType::MlM7ILarge,
             "ml.m7i.xlarge" => ClusterInstanceType::MlM7IXlarge,
+            "ml.m8a.16xlarge" => ClusterInstanceType::MlM8A16Xlarge,
             "ml.m8g.12xlarge" => ClusterInstanceType::MlM8G12Xlarge,
             "ml.m8g.16xlarge" => ClusterInstanceType::MlM8G16Xlarge,
             "ml.m8g.24xlarge" => ClusterInstanceType::MlM8G24Xlarge,
@@ -938,6 +946,7 @@ impl ClusterInstanceType {
             ClusterInstanceType::MlC7GLarge => "ml.c7g.large",
             ClusterInstanceType::MlC7GMedium => "ml.c7g.medium",
             ClusterInstanceType::MlC7GXlarge => "ml.c7g.xlarge",
+            ClusterInstanceType::MlC8A16Xlarge => "ml.c8a.16xlarge",
             ClusterInstanceType::MlC8G12Xlarge => "ml.c8g.12xlarge",
             ClusterInstanceType::MlC8G16Xlarge => "ml.c8g.16xlarge",
             ClusterInstanceType::MlC8G24Xlarge => "ml.c8g.24xlarge",
@@ -1051,6 +1060,7 @@ impl ClusterInstanceType {
             ClusterInstanceType::MlM7I8Xlarge => "ml.m7i.8xlarge",
             ClusterInstanceType::MlM7ILarge => "ml.m7i.large",
             ClusterInstanceType::MlM7IXlarge => "ml.m7i.xlarge",
+            ClusterInstanceType::MlM8A16Xlarge => "ml.m8a.16xlarge",
             ClusterInstanceType::MlM8G12Xlarge => "ml.m8g.12xlarge",
             ClusterInstanceType::MlM8G16Xlarge => "ml.m8g.16xlarge",
             ClusterInstanceType::MlM8G24Xlarge => "ml.m8g.24xlarge",
@@ -1151,6 +1161,7 @@ impl ClusterInstanceType {
             "ml.c7g.large",
             "ml.c7g.medium",
             "ml.c7g.xlarge",
+            "ml.c8a.16xlarge",
             "ml.c8g.12xlarge",
             "ml.c8g.16xlarge",
             "ml.c8g.24xlarge",
@@ -1264,6 +1275,7 @@ impl ClusterInstanceType {
             "ml.m7i.8xlarge",
             "ml.m7i.large",
             "ml.m7i.xlarge",
+            "ml.m8a.16xlarge",
             "ml.m8g.12xlarge",
             "ml.m8g.16xlarge",
             "ml.m8g.24xlarge",
@@ -1381,6 +1393,7 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlC7GLarge => write!(f, "ml.c7g.large"),
             ClusterInstanceType::MlC7GMedium => write!(f, "ml.c7g.medium"),
             ClusterInstanceType::MlC7GXlarge => write!(f, "ml.c7g.xlarge"),
+            ClusterInstanceType::MlC8A16Xlarge => write!(f, "ml.c8a.16xlarge"),
             ClusterInstanceType::MlC8G12Xlarge => write!(f, "ml.c8g.12xlarge"),
             ClusterInstanceType::MlC8G16Xlarge => write!(f, "ml.c8g.16xlarge"),
             ClusterInstanceType::MlC8G24Xlarge => write!(f, "ml.c8g.24xlarge"),
@@ -1494,6 +1507,7 @@ impl ::std::fmt::Display for ClusterInstanceType {
             ClusterInstanceType::MlM7I8Xlarge => write!(f, "ml.m7i.8xlarge"),
             ClusterInstanceType::MlM7ILarge => write!(f, "ml.m7i.large"),
             ClusterInstanceType::MlM7IXlarge => write!(f, "ml.m7i.xlarge"),
+            ClusterInstanceType::MlM8A16Xlarge => write!(f, "ml.m8a.16xlarge"),
             ClusterInstanceType::MlM8G12Xlarge => write!(f, "ml.m8g.12xlarge"),
             ClusterInstanceType::MlM8G16Xlarge => write!(f, "ml.m8g.16xlarge"),
             ClusterInstanceType::MlM8G24Xlarge => write!(f, "ml.m8g.24xlarge"),

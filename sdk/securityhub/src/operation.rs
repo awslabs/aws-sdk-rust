@@ -235,6 +235,9 @@ pub mod get_members;
 /// Types for the `GetRecommendedPolicyV2` operation.
 pub mod get_recommended_policy_v2;
 
+/// Types for the `GetRemediationsV2` operation.
+pub mod get_remediations_v2;
+
 /// Types for the `GetResourcesStatisticsV2` operation.
 pub mod get_resources_statistics_v2;
 
@@ -273,6 +276,9 @@ pub mod list_connectors_v2;
 
 /// Types for the `ListEnabledProductsForImport` operation.
 pub mod list_enabled_products_for_import;
+
+/// Types for the `ListExposuresByRemediationV2` operation.
+pub mod list_exposures_by_remediation_v2;
 
 /// Types for the `ListFindingAggregators` operation.
 pub mod list_finding_aggregators;

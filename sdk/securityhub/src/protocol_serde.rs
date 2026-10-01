@@ -179,6 +179,8 @@ pub(crate) mod shape_get_members;
 
 pub(crate) mod shape_get_recommended_policy_v2;
 
+pub(crate) mod shape_get_remediations_v2;
+
 pub(crate) mod shape_get_resources_statistics_v2;
 
 pub(crate) mod shape_get_resources_trends_v2;
@@ -204,6 +206,8 @@ pub(crate) mod shape_list_connectors;
 pub(crate) mod shape_list_connectors_v2;
 
 pub(crate) mod shape_list_enabled_products_for_import;
+
+pub(crate) mod shape_list_exposures_by_remediation_v2;
 
 pub(crate) mod shape_list_finding_aggregators;
 
@@ -357,6 +361,8 @@ pub(crate) mod shape_get_insights_input;
 
 pub(crate) mod shape_get_members_input;
 
+pub(crate) mod shape_get_remediations_v2_input;
+
 pub(crate) mod shape_get_resources_statistics_v2_input;
 
 pub(crate) mod shape_get_resources_trends_v2_input;
@@ -376,6 +382,8 @@ pub(crate) mod shape_invite_members_input;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_configuration_policy_associations_input;
+
+pub(crate) mod shape_list_exposures_by_remediation_v2_input;
 
 pub(crate) mod shape_list_free_trial_statuses_v2_input;
 
@@ -495,6 +503,8 @@ pub(crate) mod shape_cspm_provider_detail;
 
 pub(crate) mod shape_cspm_provider_update_configuration;
 
+pub(crate) mod shape_exposure_finding_items_list;
+
 pub(crate) mod shape_features;
 
 pub(crate) mod shape_finding_aggregator_list;
@@ -554,6 +564,14 @@ pub(crate) mod shape_recommendation_error;
 pub(crate) mod shape_recommendation_steps;
 
 pub(crate) mod shape_related_finding;
+
+pub(crate) mod shape_remediation_filters;
+
+pub(crate) mod shape_remediation_resource;
+
+pub(crate) mod shape_remediation_trait;
+
+pub(crate) mod shape_remediation_v2_item_list;
 
 pub(crate) mod shape_resource_group_by_rule;
 
@@ -671,6 +689,8 @@ pub(crate) mod shape_date_filter;
 
 pub(crate) mod shape_detection;
 
+pub(crate) mod shape_exposure_finding;
+
 pub(crate) mod shape_external_integration_configuration;
 
 pub(crate) mod shape_feature_detail;
@@ -734,6 +754,10 @@ pub(crate) mod shape_product_v2;
 pub(crate) mod shape_recommendation_step;
 
 pub(crate) mod shape_remediation;
+
+pub(crate) mod shape_remediation_composite_filter;
+
+pub(crate) mod shape_remediation_v2_item;
 
 pub(crate) mod shape_resource;
 
@@ -878,6 +902,14 @@ pub(crate) mod shape_recommendation;
 pub(crate) mod shape_related_finding_list;
 
 pub(crate) mod shape_related_requirements_list;
+
+pub(crate) mod shape_remediation_guidance;
+
+pub(crate) mod shape_remediation_outcome;
+
+pub(crate) mod shape_remediation_string_filter;
+
+pub(crate) mod shape_remediation_summary_detail;
 
 pub(crate) mod shape_resource_details;
 
@@ -1177,6 +1209,8 @@ pub(crate) mod shape_indicator;
 
 pub(crate) mod shape_ip_filter_list;
 
+pub(crate) mod shape_kb_article_list;
+
 pub(crate) mod shape_keyword_filter_list;
 
 pub(crate) mod shape_map_filter_list;
@@ -1188,6 +1222,18 @@ pub(crate) mod shape_network_path_component_details;
 pub(crate) mod shape_number_filter_list;
 
 pub(crate) mod shape_port_probe_detail;
+
+pub(crate) mod shape_remediation_guidance_context;
+
+pub(crate) mod shape_remediation_guidance_examples;
+
+pub(crate) mod shape_remediation_guidance_metadata;
+
+pub(crate) mod shape_remediation_guidance_specification;
+
+pub(crate) mod shape_remediation_string_filter_condition;
+
+pub(crate) mod shape_remediation_string_list;
 
 pub(crate) mod shape_resource_findings_summary;
 
@@ -1687,6 +1733,8 @@ pub(crate) mod shape_ip_organization_details;
 
 pub(crate) mod shape_ipv6_cidr_block_association;
 
+pub(crate) mod shape_kb_article;
+
 pub(crate) mod shape_load_balancer_state;
 
 pub(crate) mod shape_network_autonomous_system;
@@ -1712,6 +1760,10 @@ pub(crate) mod shape_ocsf_string_filter_list;
 pub(crate) mod shape_port_probe_detail_list;
 
 pub(crate) mod shape_propagating_vgw_set_details;
+
+pub(crate) mod shape_remediation_parameter_list;
+
+pub(crate) mod shape_remediation_step_list;
 
 pub(crate) mod shape_resource_severity_breakdown;
 
@@ -1984,6 +2036,10 @@ pub(crate) mod shape_icmp_type_code;
 pub(crate) mod shape_integer_list;
 
 pub(crate) mod shape_port_range_from_to;
+
+pub(crate) mod shape_remediation_parameter;
+
+pub(crate) mod shape_remediation_step;
 
 pub(crate) mod shape_rule_group_source;
 

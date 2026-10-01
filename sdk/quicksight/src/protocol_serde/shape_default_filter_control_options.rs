@@ -48,6 +48,24 @@ pub fn ser_default_filter_control_options(
         )?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.default_hierarchy_list {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("DefaultHierarchyList").start_object();
+        crate::protocol_serde::shape_default_hierarchy_filter_list_control_options::ser_default_hierarchy_filter_list_control_options(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.default_hierarchy_dropdown {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("DefaultHierarchyDropdown").start_object();
+        crate::protocol_serde::shape_default_hierarchy_filter_drop_down_control_options::ser_default_hierarchy_filter_drop_down_control_options(
+            &mut object_18,
+            var_17,
+        )?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -123,6 +141,16 @@ where
                             "DefaultRelativeDateTimeOptions" => {
                                 builder = builder.set_default_relative_date_time_options(
                                     crate::protocol_serde::shape_default_relative_date_time_control_options::de_default_relative_date_time_control_options(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "DefaultHierarchyList" => {
+                                builder = builder.set_default_hierarchy_list(
+                                    crate::protocol_serde::shape_default_hierarchy_filter_list_control_options::de_default_hierarchy_filter_list_control_options(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "DefaultHierarchyDropdown" => {
+                                builder = builder.set_default_hierarchy_dropdown(
+                                    crate::protocol_serde::shape_default_hierarchy_filter_drop_down_control_options::de_default_hierarchy_filter_drop_down_control_options(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

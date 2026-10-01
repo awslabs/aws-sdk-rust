@@ -29,6 +29,8 @@ pub use crate::types::_insight_results::InsightResultsBuilder;
 
 pub use crate::types::_recommendation_error::RecommendationErrorBuilder;
 
+pub use crate::types::_remediation_filters::RemediationFiltersBuilder;
+
 pub use crate::types::_resource_scopes::ResourceScopesBuilder;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFiltersBuilder;
@@ -38,6 +40,10 @@ pub use crate::types::_resources_filters::ResourcesFiltersBuilder;
 pub use crate::types::_security_control_definition::SecurityControlDefinitionBuilder;
 
 pub use crate::types::_association_filters::AssociationFiltersBuilder;
+
+pub use crate::types::_remediation_resource::RemediationResourceBuilder;
+
+pub use crate::types::_remediation_trait::RemediationTraitBuilder;
 
 pub use crate::types::_unprocessed_automation_rule::UnprocessedAutomationRuleBuilder;
 
@@ -131,6 +137,8 @@ pub use crate::types::_insight::InsightBuilder;
 
 pub use crate::types::_member::MemberBuilder;
 
+pub use crate::types::_remediation_v2_item::RemediationV2ItemBuilder;
+
 pub use crate::types::_resource_group_by_rule::ResourceGroupByRuleBuilder;
 
 pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResultBuilder;
@@ -148,6 +156,8 @@ pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummaryB
 pub use crate::types::_cspm_connector_summary::CspmConnectorSummaryBuilder;
 
 pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
+
+pub use crate::types::_exposure_finding::ExposureFindingBuilder;
 
 pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
 
@@ -233,6 +243,14 @@ pub use crate::types::_insight_result_value::InsightResultValueBuilder;
 
 pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStepBuilder;
 
+pub use crate::types::_remediation_composite_filter::RemediationCompositeFilterBuilder;
+
+pub use crate::types::_remediation_outcome::RemediationOutcomeBuilder;
+
+pub use crate::types::_remediation_summary_detail::RemediationSummaryDetailBuilder;
+
+pub use crate::types::_remediation_guidance::RemediationGuidanceBuilder;
+
 pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilterBuilder;
 
 pub use crate::types::_resources_trends_values::ResourcesTrendsValuesBuilder;
@@ -282,6 +300,14 @@ pub use crate::types::_finding_history_update::FindingHistoryUpdateBuilder;
 pub use crate::types::_group_by_value::GroupByValueBuilder;
 
 pub use crate::types::_severity_trends_count::SeverityTrendsCountBuilder;
+
+pub use crate::types::_remediation_guidance_context::RemediationGuidanceContextBuilder;
+
+pub use crate::types::_remediation_guidance_specification::RemediationGuidanceSpecificationBuilder;
+
+pub use crate::types::_remediation_guidance_examples::RemediationGuidanceExamplesBuilder;
+
+pub use crate::types::_remediation_guidance_metadata::RemediationGuidanceMetadataBuilder;
 
 pub use crate::types::_resources_count::ResourcesCountBuilder;
 
@@ -334,6 +360,10 @@ pub use crate::types::_ocsf_number_filter::OcsfNumberFilterBuilder;
 pub use crate::types::_ocsf_map_filter::OcsfMapFilterBuilder;
 
 pub use crate::types::_ocsf_ip_filter::OcsfIpFilterBuilder;
+
+pub use crate::types::_remediation_string_filter::RemediationStringFilterBuilder;
+
+pub use crate::types::_kb_article::KbArticleBuilder;
 
 pub use crate::types::_resources_trends_string_filter::ResourcesTrendsStringFilterBuilder;
 
@@ -594,6 +624,12 @@ pub use crate::types::_network_endpoint::NetworkEndpointBuilder;
 pub use crate::types::_signal::SignalBuilder;
 
 pub use crate::types::_indicator::IndicatorBuilder;
+
+pub use crate::types::_remediation_string_filter_condition::RemediationStringFilterConditionBuilder;
+
+pub use crate::types::_remediation_parameter::RemediationParameterBuilder;
+
+pub use crate::types::_remediation_step::RemediationStepBuilder;
 
 pub use crate::types::_classification_status::ClassificationStatusBuilder;
 

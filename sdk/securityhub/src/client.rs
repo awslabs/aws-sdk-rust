@@ -319,6 +319,8 @@ mod get_members;
 
 mod get_recommended_policy_v2;
 
+mod get_remediations_v2;
+
 mod get_resources_statistics_v2;
 
 mod get_resources_trends_v2;
@@ -344,6 +346,8 @@ mod list_connectors;
 mod list_connectors_v2;
 
 mod list_enabled_products_for_import;
+
+mod list_exposures_by_remediation_v2;
 
 mod list_finding_aggregators;
 

@@ -51,6 +51,12 @@ pub fn ser_filter(
         crate::protocol_serde::shape_nested_filter::ser_nested_filter(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.hierarchy_filter {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("HierarchyFilter").start_object();
+        crate::protocol_serde::shape_hierarchy_filter::ser_hierarchy_filter(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -124,6 +130,13 @@ where
                         "NestedFilter" => {
                             builder =
                                 builder.set_nested_filter(crate::protocol_serde::shape_nested_filter::de_nested_filter(tokens, _value, depth + 1)?);
+                        }
+                        "HierarchyFilter" => {
+                            builder = builder.set_hierarchy_filter(crate::protocol_serde::shape_hierarchy_filter::de_hierarchy_filter(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

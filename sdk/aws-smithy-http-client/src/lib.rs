@@ -12,6 +12,7 @@
 //! # Crate Features
 //!
 //! - `default-client`: Enable default HTTP client implementation (based on hyper 1.x).
+//! - `rt-tokio`: Enable Tokio-specific runtime adapters for the default client.
 //! - `rustls-ring`: Enable TLS provider based on `rustls` using `ring` as the crypto provider
 //! - `rustls-aws-lc`: Enable TLS provider based on `rustls` using `aws-lc` as the crypto provider
 //! - `rustls-aws-lc-fips`: Same as `rustls-aws-lc` feature but using a FIPS compliant version of `aws-lc`
@@ -42,7 +43,9 @@ pub mod hyper_014 {
 #[cfg(feature = "default-client")]
 pub(crate) mod client;
 #[cfg(feature = "default-client")]
-pub use client::{default_connector, proxy, tls, Builder, Connector, ConnectorBuilder};
+mod sync;
+#[cfg(feature = "default-client")]
+pub use client::{default_connector, pool, proxy, tls, Builder, Connector, ConnectorBuilder};
 
 #[cfg(feature = "test-util")]
 pub mod test_util;

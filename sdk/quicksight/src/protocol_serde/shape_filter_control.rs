@@ -51,6 +51,18 @@ pub fn ser_filter_control(
         crate::protocol_serde::shape_filter_cross_sheet_control::ser_filter_cross_sheet_control(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.hierarchy_list {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("HierarchyList").start_object();
+        crate::protocol_serde::shape_hierarchy_filter_list_control::ser_hierarchy_filter_list_control(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.hierarchy_dropdown {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("HierarchyDropdown").start_object();
+        crate::protocol_serde::shape_hierarchy_filter_drop_down_control::ser_hierarchy_filter_drop_down_control(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -132,6 +144,24 @@ where
                         "CrossSheet" => {
                             builder = builder.set_cross_sheet(
                                 crate::protocol_serde::shape_filter_cross_sheet_control::de_filter_cross_sheet_control(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "HierarchyList" => {
+                            builder = builder.set_hierarchy_list(
+                                crate::protocol_serde::shape_hierarchy_filter_list_control::de_hierarchy_filter_list_control(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "HierarchyDropdown" => {
+                            builder = builder.set_hierarchy_dropdown(
+                                crate::protocol_serde::shape_hierarchy_filter_drop_down_control::de_hierarchy_filter_drop_down_control(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

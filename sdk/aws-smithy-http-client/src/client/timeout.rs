@@ -205,6 +205,43 @@ where
     }
 }
 
+/// Which operation timeout is being applied.
+#[derive(Clone, Copy, Debug)]
+pub(crate) enum TimeoutKind {
+    Connect,
+    Read,
+}
+
+impl TimeoutKind {
+    fn label(self) -> &'static str {
+        match self {
+            Self::Connect => "HTTP connect",
+            Self::Read => "HTTP read",
+        }
+    }
+}
+
+/// Applies an optional operation timeout to `future`.
+pub(crate) fn maybe_timeout_future<F, T, E>(
+    future: F,
+    duration: Option<Duration>,
+    sleep: Option<&SharedAsyncSleep>,
+    kind: TimeoutKind,
+) -> MaybeTimeoutFuture<F>
+where
+    F: Future<Output = Result<T, E>>,
+    E: Into<BoxError>,
+{
+    match (duration, sleep) {
+        (Some(duration), Some(sleep)) => MaybeTimeoutFuture::Timeout {
+            timeout: Timeout::new(future, sleep.sleep(duration)),
+            error_type: kind.label(),
+            duration,
+        },
+        _ => MaybeTimeoutFuture::NoTimeout { future },
+    }
+}
+
 #[cfg(test)]
 pub(crate) mod test {
     use hyper::rt::ReadBufCursor;

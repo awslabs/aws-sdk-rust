@@ -346,6 +346,11 @@ impl<B> Request<B> {
     pub fn add_extension<T: Send + Sync + Clone + 'static>(&mut self, extension: T) {
         self.extensions.insert(extension.clone());
     }
+
+    /// Returns an extension previously added to this request.
+    pub fn extension<T: Send + Sync + 'static>(&self) -> Option<&T> {
+        self.extensions.get()
+    }
 }
 
 impl Request<SdkBody> {

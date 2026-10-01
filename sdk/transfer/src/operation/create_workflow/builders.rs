@@ -233,4 +233,32 @@ impl CreateWorkflowFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `StructuredLogDestinations`.
+    ///
+    /// To override the contents of this collection use [`set_structured_log_destinations`](Self::set_structured_log_destinations).
+    ///
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn structured_log_destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.structured_log_destinations(input.into());
+        self
+    }
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn set_structured_log_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_structured_log_destinations(input);
+        self
+    }
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_structured_log_destinations()
+    }
 }

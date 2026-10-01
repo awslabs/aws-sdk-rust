@@ -236,7 +236,7 @@ pub(crate) mod build_connector {
 }
 
 pub(crate) mod connect {
-    use crate::client::connect::{Conn, Connecting};
+    use crate::client::connect::{Conn, ConnectPathInner, Connecting};
     use crate::client::proxy::ProxyConfig;
     use aws_smithy_runtime_api::box_error::BoxError;
     use http_1x::uri::Scheme;
@@ -247,11 +247,61 @@ pub(crate) mod connect {
     use std::error::Error;
     use std::sync::Arc;
     use std::{
+        future::Future,
         io::IoSlice,
         pin::Pin,
         task::{Context, Poll},
     };
     use tower::Service;
+
+    /// Restores the source chain omitted by `s2n-tls-hyper`'s error wrapper.
+    #[derive(Debug)]
+    struct S2nConnectorError(s2n_tls_hyper::error::Error);
+
+    impl std::fmt::Display for S2nConnectorError {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            self.0.fmt(f)
+        }
+    }
+
+    impl Error for S2nConnectorError {
+        fn source(&self) -> Option<&(dyn Error + 'static)> {
+            match &self.0 {
+                s2n_tls_hyper::error::Error::HttpError(error) => Some(error.as_ref()),
+                s2n_tls_hyper::error::Error::TlsError(error) => Some(error),
+                _ => Some(&self.0),
+            }
+        }
+    }
+
+    fn box_s2n_connector_error(error: s2n_tls_hyper::error::Error) -> BoxError {
+        Box::new(S2nConnectorError(error))
+    }
+
+    /// Adapts s2n connector errors before another connector wraps them.
+    #[derive(Clone)]
+    struct S2nErrorSourceConnector<C>(C);
+
+    impl<C> Service<Uri> for S2nErrorSourceConnector<C>
+    where
+        C: Service<Uri, Error = s2n_tls_hyper::error::Error>,
+        C::Future: Send + 'static,
+        C::Response: 'static,
+    {
+        type Response = C::Response;
+        type Error = S2nConnectorError;
+        type Future =
+            Pin<Box<dyn Future<Output = Result<Self::Response, Self::Error>> + Send + 'static>>;
+
+        fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+            self.0.poll_ready(cx).map_err(S2nConnectorError)
+        }
+
+        fn call(&mut self, request: Uri) -> Self::Future {
+            let future = self.0.call(request);
+            Box::pin(async move { future.await.map_err(S2nConnectorError) })
+        }
+    }
 
     #[derive(Clone)]
     pub(crate) struct S2nTlsConnector<R> {
@@ -294,7 +344,7 @@ pub(crate) mod connect {
         type Future = Connecting;
 
         fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
-            self.https.poll_ready(cx).map_err(Into::into)
+            self.https.poll_ready(cx).map_err(box_s2n_connector_error)
         }
 
         fn call(&mut self, dst: Uri) -> Self::Future {
@@ -331,10 +381,10 @@ pub(crate) mod connect {
         fn handle_direct_connection(&mut self, dst: Uri) -> Connecting {
             let fut = self.https.call(dst);
             Box::pin(async move {
-                let conn = fut.await?;
+                let conn = fut.await.map_err(box_s2n_connector_error)?;
                 Ok(Conn {
                     inner: Box::new(conn),
-                    is_proxy: false,
+                    connect_path: ConnectPathInner::Direct,
                 })
             })
         }
@@ -346,12 +396,13 @@ pub(crate) mod connect {
         ) -> Connecting {
             // For HTTP through proxy, connect to the proxy and let it handle the request
             let proxy_uri = intercept.uri().clone();
+            let connect_path = ConnectPathInner::forward_proxy(intercept.basic_auth().cloned());
             let fut = self.https.call(proxy_uri);
             Box::pin(async move {
-                let conn = fut.await?;
+                let conn = fut.await.map_err(box_s2n_connector_error)?;
                 Ok(Conn {
                     inner: Box::new(conn),
-                    is_proxy: true,
+                    connect_path,
                 })
             })
         }
@@ -365,9 +416,10 @@ pub(crate) mod connect {
             // 1. Establish CONNECT tunnel using the HTTPS connector
             // 2. Perform manual TLS handshake over the tunneled stream
 
+            let connector = S2nErrorSourceConnector(self.https.clone());
             let tunnel = hyper_util::client::legacy::connect::proxy::Tunnel::new(
                 intercept.uri().clone(),
-                self.https.clone(),
+                connector,
             );
 
             // Configure tunnel with authentication if present
@@ -383,10 +435,7 @@ pub(crate) mod connect {
             Box::pin(async move {
                 // Stage 1: Establish CONNECT tunnel
                 tracing::trace!("tunneling HTTPS over proxy using s2n-tls");
-                let tunneled = tunnel
-                    .call(dst_clone.clone())
-                    .await
-                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {e}")))?;
+                let tunneled = tunnel.call(dst_clone.clone()).await?;
 
                 // Stage 2: Manual TLS handshake over tunneled stream
                 let host = dst_clone
@@ -404,7 +453,7 @@ pub(crate) mod connect {
                     inner: Box::new(S2nTlsConn {
                         inner: TokioIo::new(tls_stream),
                     }),
-                    is_proxy: true,
+                    connect_path: ConnectPathInner::ProxyTunnel,
                 })
             })
         }

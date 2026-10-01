@@ -8,6 +8,10 @@
 
 set -e
 
+echo "### Checking standalone and pairwise feature combinations"
+cargo hack check --feature-powerset --depth 2 --exclude-all-features \
+    --exclude-features __rustls
+
 echo "### Testing with the wire harness, Rustls/AWS-LC, and s2n-tls"
 cargo test --features wire-mock,rustls-aws-lc,s2n-tls
 
@@ -16,4 +20,8 @@ cargo test --no-default-features --features default-client --test proxy_tests --
 
 echo "### Testing unstable custom rustls crypto provider"
 # Enabling ring because the tests use it as the "custom" provider, and it transitively enables __rustls
-RUSTFLAGS="--cfg aws_sdk_unstable" cargo test --features rustls-ring
+RUSTFLAGS="--cfg aws_sdk_unstable" cargo test --features rustls-ring,rt-tokio
+
+echo "### Running connection pool Loom models"
+RUSTFLAGS="${RUSTFLAGS:-} --cfg smithy_http_client_loom -D warnings" \
+    cargo test --lib --features default-client,rt-tokio

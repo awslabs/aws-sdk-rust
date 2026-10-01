@@ -20,6 +20,8 @@ pub struct OriginAccessControlSummary {
     /// <p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
+    /// <li>
+    /// <p><code>always-amz-auth</code> – CloudFront signs all origin requests with Amazon authentication headers, and forwards the viewer's <code>Authorization</code> header to the origin if one is present. This value is only valid with Lambda-Web origins.</p></li>
     /// </ul>
     pub signing_behavior: crate::types::OriginAccessControlSigningBehaviors,
     /// <p>The type of origin that this origin access control is for.</p>
@@ -53,6 +55,8 @@ impl OriginAccessControlSummary {
     /// <p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
+    /// <li>
+    /// <p><code>always-amz-auth</code> – CloudFront signs all origin requests with Amazon authentication headers, and forwards the viewer's <code>Authorization</code> header to the origin if one is present. This value is only valid with Lambda-Web origins.</p></li>
     /// </ul>
     pub fn signing_behavior(&self) -> &crate::types::OriginAccessControlSigningBehaviors {
         &self.signing_behavior
@@ -149,6 +153,8 @@ impl OriginAccessControlSummaryBuilder {
     /// <p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
+    /// <li>
+    /// <p><code>always-amz-auth</code> – CloudFront signs all origin requests with Amazon authentication headers, and forwards the viewer's <code>Authorization</code> header to the origin if one is present. This value is only valid with Lambda-Web origins.</p></li>
     /// </ul>
     /// This field is required.
     pub fn signing_behavior(mut self, input: crate::types::OriginAccessControlSigningBehaviors) -> Self {
@@ -163,6 +169,8 @@ impl OriginAccessControlSummaryBuilder {
     /// <p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
+    /// <li>
+    /// <p><code>always-amz-auth</code> – CloudFront signs all origin requests with Amazon authentication headers, and forwards the viewer's <code>Authorization</code> header to the origin if one is present. This value is only valid with Lambda-Web origins.</p></li>
     /// </ul>
     pub fn set_signing_behavior(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>) -> Self {
         self.signing_behavior = input;
@@ -176,6 +184,8 @@ impl OriginAccessControlSummaryBuilder {
     /// <p><code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code> header from the viewer request if necessary.</p></li>
     /// <li>
     /// <p><code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p></li>
+    /// <li>
+    /// <p><code>always-amz-auth</code> – CloudFront signs all origin requests with Amazon authentication headers, and forwards the viewer's <code>Authorization</code> header to the origin if one is present. This value is only valid with Lambda-Web origins.</p></li>
     /// </ul>
     pub fn get_signing_behavior(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningBehaviors> {
         &self.signing_behavior

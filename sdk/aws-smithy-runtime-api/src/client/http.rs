@@ -50,6 +50,8 @@
 //! [`tower`]: https://crates.io/crates/tower
 //! [`aws-smithy-runtime`]: https://crates.io/crates/aws-smithy-runtime
 
+pub mod telemetry;
+
 use crate::box_error::BoxError;
 use crate::client::connector_metadata::ConnectorMetadata;
 use crate::client::orchestrator::{HttpRequest, HttpResponse};

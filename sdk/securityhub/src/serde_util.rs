@@ -245,6 +245,15 @@ pub(crate) fn get_insights_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_remediations_v2_output_output_correct_errors(
+    mut builder: crate::operation::get_remediations_v2::builders::GetRemediationsV2OutputBuilder,
+) -> crate::operation::get_remediations_v2::builders::GetRemediationsV2OutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_resources_statistics_v2_output_output_correct_errors(
     mut builder: crate::operation::get_resources_statistics_v2::builders::GetResourcesStatisticsV2OutputBuilder,
 ) -> crate::operation::get_resources_statistics_v2::builders::GetResourcesStatisticsV2OutputBuilder {
@@ -301,6 +310,33 @@ pub(crate) fn list_connectors_v2_output_output_correct_errors(
 ) -> crate::operation::list_connectors_v2::builders::ListConnectorsV2OutputBuilder {
     if builder.connectors.is_none() {
         builder.connectors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_exposures_by_remediation_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_exposures_by_remediation_v2::builders::ListExposuresByRemediationV2OutputBuilder,
+) -> crate::operation::list_exposures_by_remediation_v2::builders::ListExposuresByRemediationV2OutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    if builder.target_uid.is_none() {
+        builder.target_uid = Some(Default::default())
+    }
+    if builder.resource.is_none() {
+        builder.resource = {
+            let builder = crate::types::builders::RemediationResourceBuilder::default();
+            Some(crate::serde_util::remediation_resource_correct_errors(builder).build())
+        }
+    }
+    if builder.total_count.is_none() {
+        builder.total_count = Some(Default::default())
+    }
+    if builder.r#trait.is_none() {
+        builder.r#trait = {
+            let builder = crate::types::builders::RemediationTraitBuilder::default();
+            Some(crate::serde_util::remediation_trait_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -398,6 +434,42 @@ pub(crate) fn security_control_definition_correct_errors(
     }
     if builder.current_region_availability.is_none() {
         builder.current_region_availability = "no value was set".parse::<crate::types::RegionAvailabilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn remediation_resource_correct_errors(
+    mut builder: crate::types::builders::RemediationResourceBuilder,
+) -> crate::types::builders::RemediationResourceBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.resource_region.is_none() {
+        builder.resource_region = Some(Default::default())
+    }
+    if builder.cloud_provider.is_none() {
+        builder.cloud_provider = "no value was set".parse::<crate::types::CloudProviderName>().ok()
+    }
+    builder
+}
+
+pub(crate) fn remediation_trait_correct_errors(
+    mut builder: crate::types::builders::RemediationTraitBuilder,
+) -> crate::types::builders::RemediationTraitBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
     }
     builder
 }
@@ -542,6 +614,27 @@ pub(crate) fn connector_summary_correct_errors(
     builder
 }
 
+pub(crate) fn exposure_finding_correct_errors(
+    mut builder: crate::types::builders::ExposureFindingBuilder,
+) -> crate::types::builders::ExposureFindingBuilder {
+    if builder.metadata_uid.is_none() {
+        builder.metadata_uid = Some(Default::default())
+    }
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.previous_severity.is_none() {
+        builder.previous_severity = "no value was set".parse::<crate::types::ExposureSeverity>().ok()
+    }
+    if builder.projected_severity.is_none() {
+        builder.projected_severity = "no value was set".parse::<crate::types::ExposureSeverity>().ok()
+    }
+    if builder.impact.is_none() {
+        builder.impact = "no value was set".parse::<crate::types::ExposureImpact>().ok()
+    }
+    builder
+}
+
 pub(crate) fn import_findings_error_correct_errors(
     mut builder: crate::types::builders::ImportFindingsErrorBuilder,
 ) -> crate::types::builders::ImportFindingsErrorBuilder {
@@ -579,6 +672,45 @@ pub(crate) fn insight_correct_errors(mut builder: crate::types::builders::Insigh
 pub(crate) fn product_correct_errors(mut builder: crate::types::builders::ProductBuilder) -> crate::types::builders::ProductBuilder {
     if builder.product_arn.is_none() {
         builder.product_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn remediation_v2_item_correct_errors(
+    mut builder: crate::types::builders::RemediationV2ItemBuilder,
+) -> crate::types::builders::RemediationV2ItemBuilder {
+    if builder.target_uid.is_none() {
+        builder.target_uid = Some(Default::default())
+    }
+    if builder.outcome.is_none() {
+        builder.outcome = {
+            let builder = crate::types::builders::RemediationOutcomeBuilder::default();
+            Some(crate::serde_util::remediation_outcome_correct_errors(builder).build())
+        }
+    }
+    if builder.priority.is_none() {
+        builder.priority = "no value was set".parse::<crate::types::RemediationPriority>().ok()
+    }
+    if builder.remediation_summary.is_none() {
+        builder.remediation_summary = {
+            let builder = crate::types::builders::RemediationSummaryDetailBuilder::default();
+            Some(crate::serde_util::remediation_summary_detail_correct_errors(builder).build())
+        }
+    }
+    if builder.resource.is_none() {
+        builder.resource = {
+            let builder = crate::types::builders::RemediationResourceBuilder::default();
+            Some(crate::serde_util::remediation_resource_correct_errors(builder).build())
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RemediationStatus>().ok()
+    }
+    if builder.r#trait.is_none() {
+        builder.r#trait = {
+            let builder = crate::types::builders::RemediationTraitBuilder::default();
+            Some(crate::serde_util::remediation_trait_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -850,6 +982,72 @@ pub(crate) fn patch_summary_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn remediation_guidance_correct_errors(
+    mut builder: crate::types::builders::RemediationGuidanceBuilder,
+) -> crate::types::builders::RemediationGuidanceBuilder {
+    if builder.target_type_name.is_none() {
+        builder.target_type_name = Some(Default::default())
+    }
+    if builder.pattern.is_none() {
+        builder.pattern = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.context.is_none() {
+        builder.context = {
+            let builder = crate::types::builders::RemediationGuidanceContextBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.specification.is_none() {
+        builder.specification = {
+            let builder = crate::types::builders::RemediationGuidanceSpecificationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.examples.is_none() {
+        builder.examples = {
+            let builder = crate::types::builders::RemediationGuidanceExamplesBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = {
+            let builder = crate::types::builders::RemediationGuidanceMetadataBuilder::default();
+            Some(crate::serde_util::remediation_guidance_metadata_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn remediation_outcome_correct_errors(
+    mut builder: crate::types::builders::RemediationOutcomeBuilder,
+) -> crate::types::builders::RemediationOutcomeBuilder {
+    if builder.resolved_findings_count.is_none() {
+        builder.resolved_findings_count = Some(Default::default())
+    }
+    if builder.severity_reduction_findings_count.is_none() {
+        builder.severity_reduction_findings_count = Some(Default::default())
+    }
+    if builder.severity_unchanged_count.is_none() {
+        builder.severity_unchanged_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn remediation_summary_detail_correct_errors(
+    mut builder: crate::types::builders::RemediationSummaryDetailBuilder,
+) -> crate::types::builders::RemediationSummaryDetailBuilder {
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
+    }
+    if builder.is_immediate.is_none() {
+        builder.is_immediate = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resources_trends_values_correct_errors(
     mut builder: crate::types::builders::ResourcesTrendsValuesBuilder,
 ) -> crate::types::builders::ResourcesTrendsValuesBuilder {
@@ -954,6 +1152,30 @@ pub(crate) fn related_finding_correct_errors(
     builder
 }
 
+pub(crate) fn remediation_guidance_metadata_correct_errors(
+    mut builder: crate::types::builders::RemediationGuidanceMetadataBuilder,
+) -> crate::types::builders::RemediationGuidanceMetadataBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.exposure_type.is_none() {
+        builder.exposure_type = Some(Default::default())
+    }
+    if builder.trait_titles.is_none() {
+        builder.trait_titles = Some(Default::default())
+    }
+    if builder.reversibility.is_none() {
+        builder.reversibility = Some(Default::default())
+    }
+    if builder.fix_effect.is_none() {
+        builder.fix_effect = Some(Default::default())
+    }
+    if builder.risk_level.is_none() {
+        builder.risk_level = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_correct_errors(mut builder: crate::types::builders::ResourceBuilder) -> crate::types::builders::ResourceBuilder {
     if builder.r#type.is_none() {
         builder.r#type = Some(Default::default())
@@ -1037,6 +1259,16 @@ pub(crate) fn vulnerability_correct_errors(
     builder
 }
 
+pub(crate) fn kb_article_correct_errors(mut builder: crate::types::builders::KbArticleBuilder) -> crate::types::builders::KbArticleBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn status_reason_correct_errors(mut builder: crate::types::builders::StatusReasonBuilder) -> crate::types::builders::StatusReasonBuilder {
     if builder.reason_code.is_none() {
         builder.reason_code = Some(Default::default())
@@ -1059,6 +1291,39 @@ pub(crate) fn note_update_correct_errors(mut builder: crate::types::builders::No
     }
     if builder.updated_by.is_none() {
         builder.updated_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn remediation_parameter_correct_errors(
+    mut builder: crate::types::builders::RemediationParameterBuilder,
+) -> crate::types::builders::RemediationParameterBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn remediation_step_correct_errors(
+    mut builder: crate::types::builders::RemediationStepBuilder,
+) -> crate::types::builders::RemediationStepBuilder {
+    if builder.phase.is_none() {
+        builder.phase = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.service.is_none() {
+        builder.service = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = Some(Default::default())
     }
     builder
 }

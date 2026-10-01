@@ -29,6 +29,11 @@ pub struct CreateWorkflowInput {
     pub on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached to workflows for any purpose.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkflowInput {
     /// <p>A textual description for the workflow.</p>
@@ -71,6 +76,15 @@ impl CreateWorkflowInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.structured_log_destinations.is_none()`.
+    pub fn structured_log_destinations(&self) -> &[::std::string::String] {
+        self.structured_log_destinations.as_deref().unwrap_or_default()
+    }
 }
 impl CreateWorkflowInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
@@ -87,6 +101,7 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     pub(crate) on_exception_steps: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowStep>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkflowInputBuilder {
     /// <p>A textual description for the workflow.</p>
@@ -217,6 +232,35 @@ impl CreateWorkflowInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Appends an item to `structured_log_destinations`.
+    ///
+    /// To override the contents of this collection use [`set_structured_log_destinations`](Self::set_structured_log_destinations).
+    ///
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn structured_log_destinations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.structured_log_destinations.unwrap_or_default();
+        v.push(input.into());
+        self.structured_log_destinations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn set_structured_log_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.structured_log_destinations = input;
+        self
+    }
+    /// <p>Specifies the log groups to which your workflow logs are sent.</p>
+    /// <p>To specify a log group, you must provide the ARN for an existing log group. In this case, the format of the log group is as follows:</p>
+    /// <p><code>arn:partition:logs:region-name:amazon-account-id:log-group:log-group-name:*</code></p>
+    /// <p>For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code></p>
+    pub fn get_structured_log_destinations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.structured_log_destinations
+    }
     /// Consumes the builder and constructs a [`CreateWorkflowInput`](crate::operation::create_workflow::CreateWorkflowInput).
     pub fn build(
         self,
@@ -226,6 +270,7 @@ impl CreateWorkflowInputBuilder {
             steps: self.steps,
             on_exception_steps: self.on_exception_steps,
             tags: self.tags,
+            structured_log_destinations: self.structured_log_destinations,
         })
     }
 }

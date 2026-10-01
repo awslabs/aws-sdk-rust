@@ -37,6 +37,9 @@ pub mod describe_events_for_organization;
 /// Types for the `DescribeHealthServiceStatusForOrganization` operation.
 pub mod describe_health_service_status_for_organization;
 
+/// Types for the `DescribeServiceLifecycle` operation.
+pub mod describe_service_lifecycle;
+
 /// Types for the `DisableHealthServiceAccessForOrganization` operation.
 pub mod disable_health_service_access_for_organization;
 

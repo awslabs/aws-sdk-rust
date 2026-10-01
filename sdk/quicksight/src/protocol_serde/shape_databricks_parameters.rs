@@ -15,6 +15,15 @@ pub fn ser_databricks_parameters(
     {
         object.key("SqlEndpointPath").string(input.sql_endpoint_path.as_str());
     }
+    if let Some(var_1) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.o_auth_parameters {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("OAuthParameters").start_object();
+        crate::protocol_serde::shape_o_auth_parameters::ser_o_auth_parameters(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -60,6 +69,20 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "AuthenticationType" => {
+                            builder = builder.set_authentication_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AuthenticationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "OAuthParameters" => {
+                            builder = builder.set_o_auth_parameters(crate::protocol_serde::shape_o_auth_parameters::de_o_auth_parameters(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

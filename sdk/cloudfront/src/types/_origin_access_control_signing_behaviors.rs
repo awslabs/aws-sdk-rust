@@ -13,6 +13,7 @@
 /// # let originaccesscontrolsigningbehaviors = unimplemented!();
 /// match originaccesscontrolsigningbehaviors {
 ///     OriginAccessControlSigningBehaviors::Always => { /* ... */ },
+///     OriginAccessControlSigningBehaviors::AlwaysAmzAuth => { /* ... */ },
 ///     OriginAccessControlSigningBehaviors::Never => { /* ... */ },
 ///     OriginAccessControlSigningBehaviors::NoOverride => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum OriginAccessControlSigningBehaviors {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
+    AlwaysAmzAuth,
+    #[allow(missing_docs)] // documentation missing in model
     Never,
     #[allow(missing_docs)] // documentation missing in model
     NoOverride,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for OriginAccessControlSigningBehaviors {
     fn from(s: &str) -> Self {
         match s {
             "always" => OriginAccessControlSigningBehaviors::Always,
+            "always-amz-auth" => OriginAccessControlSigningBehaviors::AlwaysAmzAuth,
             "never" => OriginAccessControlSigningBehaviors::Never,
             "no-override" => OriginAccessControlSigningBehaviors::NoOverride,
             other => OriginAccessControlSigningBehaviors::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl OriginAccessControlSigningBehaviors {
     pub fn as_str(&self) -> &str {
         match self {
             OriginAccessControlSigningBehaviors::Always => "always",
+            OriginAccessControlSigningBehaviors::AlwaysAmzAuth => "always-amz-auth",
             OriginAccessControlSigningBehaviors::Never => "never",
             OriginAccessControlSigningBehaviors::NoOverride => "no-override",
             OriginAccessControlSigningBehaviors::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl OriginAccessControlSigningBehaviors {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["always", "never", "no-override"]
+        &["always", "always-amz-auth", "never", "no-override"]
     }
 }
 impl ::std::convert::AsRef<str> for OriginAccessControlSigningBehaviors {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for OriginAccessControlSigningBehaviors {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OriginAccessControlSigningBehaviors::Always => write!(f, "always"),
+            OriginAccessControlSigningBehaviors::AlwaysAmzAuth => write!(f, "always-amz-auth"),
             OriginAccessControlSigningBehaviors::Never => write!(f, "never"),
             OriginAccessControlSigningBehaviors::NoOverride => write!(f, "no-override"),
             OriginAccessControlSigningBehaviors::Unknown(value) => write!(f, "{value}"),

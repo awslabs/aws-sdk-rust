@@ -365,13 +365,10 @@ where
         let mut client = self.client.clone();
         let fut = client.call(request);
         HttpConnectorFuture::new(async move {
-            let response = fut
-                .await
-                .map_err(downcast_error)?
-                .map(SdkBody::from_body_0_4);
-            match HttpResponse::try_from(response) {
-                Ok(response) => Ok(response),
-                Err(err) => Err(ConnectorError::other(err.into(), None)),
+            match fut.await {
+                Ok(response) => HttpResponse::try_from(response.map(SdkBody::from_body_0_4))
+                    .map_err(|err| ConnectorError::other(err.into(), None)),
+                Err(err) => Err(downcast_error(err)),
             }
         })
     }
@@ -491,7 +488,6 @@ where
                     .hyper_builder(self.client_builder.clone())
                     .connector_settings(settings.clone());
                 builder.set_sleep_impl(components.sleep_impl());
-
                 let start = components.time_source().map(|ts| ts.now());
                 let tcp_connector = (self.tcp_connector_fn)();
                 let end = components.time_source().map(|ts| ts.now());

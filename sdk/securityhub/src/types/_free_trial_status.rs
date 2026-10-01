@@ -12,7 +12,7 @@ pub struct FreeTrialStatus {
     /// <p><code>SECURITY_HUB_V2_MULTI_CLOUD_AZURE</code> specifies Security Hub coverage for Microsoft Azure resources.</p></li>
     /// </ul>
     pub feature_type: ::std::option::Option<crate::types::FreeTrialType>,
-    /// <p>Whether the free trial period is currently active. Valid values:</p>
+    /// <p>Specifies whether the free trial period is currently active. Valid values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> specifies that the free trial period is ongoing.</p></li>
@@ -37,7 +37,7 @@ impl FreeTrialStatus {
     pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FreeTrialType> {
         self.feature_type.as_ref()
     }
-    /// <p>Whether the free trial period is currently active. Valid values:</p>
+    /// <p>Specifies whether the free trial period is currently active. Valid values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> specifies that the free trial period is ongoing.</p></li>
@@ -107,7 +107,7 @@ impl FreeTrialStatusBuilder {
     pub fn get_feature_type(&self) -> &::std::option::Option<crate::types::FreeTrialType> {
         &self.feature_type
     }
-    /// <p>Whether the free trial period is currently active. Valid values:</p>
+    /// <p>Specifies whether the free trial period is currently active. Valid values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> specifies that the free trial period is ongoing.</p></li>
@@ -120,7 +120,7 @@ impl FreeTrialStatusBuilder {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the free trial period is currently active. Valid values:</p>
+    /// <p>Specifies whether the free trial period is currently active. Valid values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> specifies that the free trial period is ongoing.</p></li>
@@ -132,7 +132,7 @@ impl FreeTrialStatusBuilder {
         self.status = input;
         self
     }
-    /// <p>Whether the free trial period is currently active. Valid values:</p>
+    /// <p>Specifies whether the free trial period is currently active. Valid values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> specifies that the free trial period is ongoing.</p></li>

@@ -40,7 +40,7 @@ version = "0.64.1"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.18.0"
+version = "1.19.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

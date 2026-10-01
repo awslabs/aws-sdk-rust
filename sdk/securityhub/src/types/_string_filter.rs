@@ -10,7 +10,9 @@ pub struct StringFilter {
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li>
-    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string CloudFront.</p></li>
+    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string <code>CloudFront</code>.</p></li>
+    /// <li>
+    /// <p>To search for values that contain a word matching the filter value, regardless of case, use <code>CONTAINS_WORD</code>. For example, the filter <code>Title CONTAINS_WORD lambda</code> matches a finding whose <code>Title</code> is <code>GuardDuty Lambda Protection</code>, because the <code>Title</code> contains the word Lambda. Including special characters in the filter value might produce unexpected search results.</p></li>
     /// <li>
     /// <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, the filter <code>AwsAccountId EQUALS 123456789012</code> only matches findings that have an account ID of <code>123456789012</code>.</p></li>
     /// <li>
@@ -52,7 +54,9 @@ impl StringFilter {
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li>
-    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string CloudFront.</p></li>
+    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string <code>CloudFront</code>.</p></li>
+    /// <li>
+    /// <p>To search for values that contain a word matching the filter value, regardless of case, use <code>CONTAINS_WORD</code>. For example, the filter <code>Title CONTAINS_WORD lambda</code> matches a finding whose <code>Title</code> is <code>GuardDuty Lambda Protection</code>, because the <code>Title</code> contains the word Lambda. Including special characters in the filter value might produce unexpected search results.</p></li>
     /// <li>
     /// <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, the filter <code>AwsAccountId EQUALS 123456789012</code> only matches findings that have an account ID of <code>123456789012</code>.</p></li>
     /// <li>
@@ -120,7 +124,9 @@ impl StringFilterBuilder {
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li>
-    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string CloudFront.</p></li>
+    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string <code>CloudFront</code>.</p></li>
+    /// <li>
+    /// <p>To search for values that contain a word matching the filter value, regardless of case, use <code>CONTAINS_WORD</code>. For example, the filter <code>Title CONTAINS_WORD lambda</code> matches a finding whose <code>Title</code> is <code>GuardDuty Lambda Protection</code>, because the <code>Title</code> contains the word Lambda. Including special characters in the filter value might produce unexpected search results.</p></li>
     /// <li>
     /// <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, the filter <code>AwsAccountId EQUALS 123456789012</code> only matches findings that have an account ID of <code>123456789012</code>.</p></li>
     /// <li>
@@ -159,7 +165,9 @@ impl StringFilterBuilder {
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li>
-    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string CloudFront.</p></li>
+    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string <code>CloudFront</code>.</p></li>
+    /// <li>
+    /// <p>To search for values that contain a word matching the filter value, regardless of case, use <code>CONTAINS_WORD</code>. For example, the filter <code>Title CONTAINS_WORD lambda</code> matches a finding whose <code>Title</code> is <code>GuardDuty Lambda Protection</code>, because the <code>Title</code> contains the word Lambda. Including special characters in the filter value might produce unexpected search results.</p></li>
     /// <li>
     /// <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, the filter <code>AwsAccountId EQUALS 123456789012</code> only matches findings that have an account ID of <code>123456789012</code>.</p></li>
     /// <li>
@@ -198,7 +206,9 @@ impl StringFilterBuilder {
     /// <p>To search for values that have the filter value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li>
-    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string CloudFront.</p></li>
+    /// <p>To search for values that include the filter value, use <code>CONTAINS</code>. For example, the filter <code>Title CONTAINS CloudFront</code> matches findings that have a <code>Title</code> that includes the string <code>CloudFront</code>.</p></li>
+    /// <li>
+    /// <p>To search for values that contain a word matching the filter value, regardless of case, use <code>CONTAINS_WORD</code>. For example, the filter <code>Title CONTAINS_WORD lambda</code> matches a finding whose <code>Title</code> is <code>GuardDuty Lambda Protection</code>, because the <code>Title</code> contains the word Lambda. Including special characters in the filter value might produce unexpected search results.</p></li>
     /// <li>
     /// <p>To search for values that exactly match the filter value, use <code>EQUALS</code>. For example, the filter <code>AwsAccountId EQUALS 123456789012</code> only matches findings that have an account ID of <code>123456789012</code>.</p></li>
     /// <li>

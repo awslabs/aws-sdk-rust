@@ -7,6 +7,8 @@ pub use crate::types::_organization_event_filter::OrganizationEventFilterBuilder
 
 pub use crate::types::_event_type_filter::EventTypeFilterBuilder;
 
+pub use crate::types::_service_lifecycle_filter::ServiceLifecycleFilterBuilder;
+
 pub use crate::types::_affected_entity::AffectedEntityBuilder;
 
 pub use crate::types::_event_account_filter::EventAccountFilterBuilder;
@@ -37,6 +39,10 @@ pub use crate::types::_organization_event::OrganizationEventBuilder;
 
 pub use crate::types::_event_type::EventTypeBuilder;
 
+pub use crate::types::_service_lifecycle::ServiceLifecycleBuilder;
+
 pub use crate::types::_event_description::EventDescriptionBuilder;
 
 pub use crate::types::_account_entity_aggregate::AccountEntityAggregateBuilder;
+
+pub use crate::types::_lifecycle_event::LifecycleEventBuilder;

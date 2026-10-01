@@ -1465,6 +1465,10 @@ pub use crate::types::_filter_relative_date_time_control::FilterRelativeDateTime
 
 pub use crate::types::_filter_cross_sheet_control::FilterCrossSheetControl;
 
+pub use crate::types::_hierarchy_filter_list_control::HierarchyFilterListControl;
+
+pub use crate::types::_hierarchy_filter_drop_down_control::HierarchyFilterDropDownControl;
+
 pub use crate::types::_table_visual::TableVisual;
 
 pub use crate::types::_pivot_table_visual::PivotTableVisual;
@@ -1552,6 +1556,8 @@ pub use crate::types::_relative_dates_filter::RelativeDatesFilter;
 pub use crate::types::_top_bottom_filter::TopBottomFilter;
 
 pub use crate::types::_nested_filter::NestedFilter;
+
+pub use crate::types::_hierarchy_filter::HierarchyFilter;
 
 pub use crate::types::_null_value_format_configuration::NullValueFormatConfiguration;
 
@@ -1683,6 +1689,10 @@ pub use crate::types::_sheet_control_slider_type::SheetControlSliderType;
 
 pub use crate::types::_relative_date_time_control_display_options::RelativeDateTimeControlDisplayOptions;
 
+pub use crate::types::_hierarchy_filter_list_control_display_options::HierarchyFilterListControlDisplayOptions;
+
+pub use crate::types::_hierarchy_filter_drop_down_control_display_options::HierarchyFilterDropDownControlDisplayOptions;
+
 pub use crate::types::_visual_title_label_options::VisualTitleLabelOptions;
 
 pub use crate::types::_visual_subtitle_label_options::VisualSubtitleLabelOptions;
@@ -1787,6 +1797,10 @@ pub use crate::types::_relative_date_type::RelativeDateType;
 
 pub use crate::types::_inner_filter::InnerFilter;
 
+pub use crate::types::_hierarchy_filter_node::HierarchyFilterNode;
+
+pub use crate::types::_hierarchy_filter_match_operator::HierarchyFilterMatchOperator;
+
 pub use crate::types::_sheet_visual_scoping_configuration::SheetVisualScopingConfiguration;
 
 pub use crate::types::_number_display_format_configuration::NumberDisplayFormatConfiguration;
@@ -1888,6 +1902,8 @@ pub use crate::types::_list_control_select_all_options::ListControlSelectAllOpti
 pub use crate::types::_control_sort_configuration::ControlSortConfiguration;
 
 pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptions;
+
+pub use crate::types::_hierarchy_filter_list_control_search_options::HierarchyFilterListControlSearchOptions;
 
 pub use crate::types::_short_format_text::ShortFormatText;
 
@@ -2094,6 +2110,8 @@ pub use crate::types::_anchor_option::AnchorOption;
 pub use crate::types::_aggregation_sort_configuration::AggregationSortConfiguration;
 
 pub use crate::types::_category_inner_filter::CategoryInnerFilter;
+
+pub use crate::types::_hierarchy_filter_level::HierarchyFilterLevel;
 
 pub use crate::types::_filter_visual_scope::FilterVisualScope;
 
@@ -2394,6 +2412,10 @@ pub use crate::types::_default_text_area_control_options::DefaultTextAreaControl
 pub use crate::types::_default_slider_control_options::DefaultSliderControlOptions;
 
 pub use crate::types::_default_relative_date_time_control_options::DefaultRelativeDateTimeControlOptions;
+
+pub use crate::types::_default_hierarchy_filter_list_control_options::DefaultHierarchyFilterListControlOptions;
+
+pub use crate::types::_default_hierarchy_filter_drop_down_control_options::DefaultHierarchyFilterDropDownControlOptions;
 
 pub use crate::types::_simple_numerical_aggregation_function::SimpleNumericalAggregationFunction;
 
@@ -3849,6 +3871,10 @@ mod _default_free_form_layout_configuration;
 
 mod _default_grid_layout_configuration;
 
+mod _default_hierarchy_filter_drop_down_control_options;
+
+mod _default_hierarchy_filter_list_control_options;
+
 mod _default_interactive_layout_configuration;
 
 mod _default_new_sheet_configuration;
@@ -4264,6 +4290,24 @@ mod _heat_map_field_wells;
 mod _heat_map_sort_configuration;
 
 mod _heat_map_visual;
+
+mod _hierarchy_filter;
+
+mod _hierarchy_filter_drop_down_control;
+
+mod _hierarchy_filter_drop_down_control_display_options;
+
+mod _hierarchy_filter_level;
+
+mod _hierarchy_filter_list_control;
+
+mod _hierarchy_filter_list_control_display_options;
+
+mod _hierarchy_filter_list_control_search_options;
+
+mod _hierarchy_filter_match_operator;
+
+mod _hierarchy_filter_node;
 
 mod _histogram_aggregated_field_wells;
 

@@ -21,6 +21,10 @@ pub struct FilterControl {
     pub relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
     /// <p>A control from a filter that is scoped across more than one sheet. This represents your filter control on a sheet</p>
     pub cross_sheet: ::std::option::Option<crate::types::FilterCrossSheetControl>,
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub hierarchy_list: ::std::option::Option<crate::types::HierarchyFilterListControl>,
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a dropdown list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub hierarchy_dropdown: ::std::option::Option<crate::types::HierarchyFilterDropDownControl>,
 }
 impl FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
@@ -55,6 +59,14 @@ impl FilterControl {
     pub fn cross_sheet(&self) -> ::std::option::Option<&crate::types::FilterCrossSheetControl> {
         self.cross_sheet.as_ref()
     }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn hierarchy_list(&self) -> ::std::option::Option<&crate::types::HierarchyFilterListControl> {
+        self.hierarchy_list.as_ref()
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a dropdown list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn hierarchy_dropdown(&self) -> ::std::option::Option<&crate::types::HierarchyFilterDropDownControl> {
+        self.hierarchy_dropdown.as_ref()
+    }
 }
 impl FilterControl {
     /// Creates a new builder-style object to manufacture [`FilterControl`](crate::types::FilterControl).
@@ -75,6 +87,8 @@ pub struct FilterControlBuilder {
     pub(crate) slider: ::std::option::Option<crate::types::FilterSliderControl>,
     pub(crate) relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
     pub(crate) cross_sheet: ::std::option::Option<crate::types::FilterCrossSheetControl>,
+    pub(crate) hierarchy_list: ::std::option::Option<crate::types::HierarchyFilterListControl>,
+    pub(crate) hierarchy_dropdown: ::std::option::Option<crate::types::HierarchyFilterDropDownControl>,
 }
 impl FilterControlBuilder {
     /// <p>A control from a date filter that is used to specify date and time.</p>
@@ -189,6 +203,34 @@ impl FilterControlBuilder {
     pub fn get_cross_sheet(&self) -> &::std::option::Option<crate::types::FilterCrossSheetControl> {
         &self.cross_sheet
     }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn hierarchy_list(mut self, input: crate::types::HierarchyFilterListControl) -> Self {
+        self.hierarchy_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn set_hierarchy_list(mut self, input: ::std::option::Option<crate::types::HierarchyFilterListControl>) -> Self {
+        self.hierarchy_list = input;
+        self
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn get_hierarchy_list(&self) -> &::std::option::Option<crate::types::HierarchyFilterListControl> {
+        &self.hierarchy_list
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a dropdown list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn hierarchy_dropdown(mut self, input: crate::types::HierarchyFilterDropDownControl) -> Self {
+        self.hierarchy_dropdown = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a dropdown list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn set_hierarchy_dropdown(mut self, input: ::std::option::Option<crate::types::HierarchyFilterDropDownControl>) -> Self {
+        self.hierarchy_dropdown = input;
+        self
+    }
+    /// <p>A control from a hierarchy filter that displays the hierarchy as a dropdown list. You can expand a value to see and select the values beneath it, and select either a single value or multiple values.</p>
+    pub fn get_hierarchy_dropdown(&self) -> &::std::option::Option<crate::types::HierarchyFilterDropDownControl> {
+        &self.hierarchy_dropdown
+    }
     /// Consumes the builder and constructs a [`FilterControl`](crate::types::FilterControl).
     pub fn build(self) -> crate::types::FilterControl {
         crate::types::FilterControl {
@@ -200,6 +242,8 @@ impl FilterControlBuilder {
             slider: self.slider,
             relative_date_time: self.relative_date_time,
             cross_sheet: self.cross_sheet,
+            hierarchy_list: self.hierarchy_list,
+            hierarchy_dropdown: self.hierarchy_dropdown,
         }
     }
 }

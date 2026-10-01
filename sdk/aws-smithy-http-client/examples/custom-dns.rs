@@ -4,6 +4,7 @@
  */
 
 use aws_smithy_http_client::{
+    pool::{Client as PoolClient, ConnectionPool},
     tls::{self, rustls_provider::CryptoMode},
     Builder,
 };
@@ -20,7 +21,15 @@ impl ResolveDns for StaticResolver {
 }
 
 fn main() {
-    let _client = Builder::new()
+    let _legacy_client = Builder::new()
         .tls_provider(tls::Provider::Rustls(CryptoMode::Ring))
         .build_with_resolver(StaticResolver);
+
+    let pool = ConnectionPool::builder()
+        .dns_resolver(StaticResolver)
+        .tls_provider(tls::Provider::Rustls(CryptoMode::Ring))
+        .build_https()
+        .expect("valid connection pool");
+    let _partitioned_client =
+        PoolClient::new(&pool).expect("pool contains the anonymous partition");
 }

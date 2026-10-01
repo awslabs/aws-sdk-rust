@@ -2387,6 +2387,12 @@ pub(crate) mod shape_gutter_style;
 
 pub(crate) mod shape_heat_map_visual;
 
+pub(crate) mod shape_hierarchy_filter;
+
+pub(crate) mod shape_hierarchy_filter_drop_down_control;
+
+pub(crate) mod shape_hierarchy_filter_list_control;
+
 pub(crate) mod shape_histogram_visual;
 
 pub(crate) mod shape_identifier;
@@ -2739,6 +2745,14 @@ pub(crate) mod shape_grid_layout_configuration;
 
 pub(crate) mod shape_heat_map_configuration;
 
+pub(crate) mod shape_hierarchy_filter_drop_down_control_display_options;
+
+pub(crate) mod shape_hierarchy_filter_level;
+
+pub(crate) mod shape_hierarchy_filter_list_control_display_options;
+
+pub(crate) mod shape_hierarchy_filter_node;
+
 pub(crate) mod shape_histogram_configuration;
 
 pub(crate) mod shape_image;
@@ -3037,6 +3051,8 @@ pub(crate) mod shape_heat_map_field_wells;
 
 pub(crate) mod shape_heat_map_sort_configuration;
 
+pub(crate) mod shape_hierarchy_filter_list_control_search_options;
+
 pub(crate) mod shape_histogram_bin_options;
 
 pub(crate) mod shape_histogram_field_wells;
@@ -3293,6 +3309,10 @@ pub(crate) mod shape_default_filter_drop_down_control_options;
 
 pub(crate) mod shape_default_filter_list_control_options;
 
+pub(crate) mod shape_default_hierarchy_filter_drop_down_control_options;
+
+pub(crate) mod shape_default_hierarchy_filter_list_control_options;
+
 pub(crate) mod shape_default_relative_date_time_control_options;
 
 pub(crate) mod shape_default_slider_control_options;
@@ -3362,6 +3382,8 @@ pub(crate) mod shape_grid_layout_screen_canvas_size_options;
 pub(crate) mod shape_growth_rate_computation;
 
 pub(crate) mod shape_heat_map_aggregated_field_wells;
+
+pub(crate) mod shape_hierarchy_filter_level_list;
 
 pub(crate) mod shape_histogram_aggregated_field_wells;
 
@@ -3634,6 +3656,10 @@ pub(crate) mod shape_global_table_border_options;
 pub(crate) mod shape_grid_layout_element_list;
 
 pub(crate) mod shape_header_footer_section_configuration_list;
+
+pub(crate) mod shape_hierarchy_filter_node_list;
+
+pub(crate) mod shape_hierarchy_values_list;
 
 pub(crate) mod shape_image_custom_action_operation_list;
 

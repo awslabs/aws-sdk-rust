@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/telemetry",
-    "tests/no-default-features",
     "tests/webassembly-wstd",
-    "tests/webassembly-no-os"
+    "tests/webassembly-no-os",
+    "tests/no-default-features",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -193,6 +193,7 @@ members = [
     "sdk/emr",
     "sdk/emrcontainers",
     "sdk/emrserverless",
+    "sdk/endusermessaging",
     "sdk/entityresolution",
     "sdk/eventbridge",
     "sdk/eventbridgev2",
@@ -265,6 +266,7 @@ members = [
     "sdk/lambda",
     "sdk/lambdacore",
     "sdk/lambdamicrovms",
+    "sdk/lambdaweb",
     "sdk/launchwizard",
     "sdk/lexmodelbuilding",
     "sdk/lexmodelsv2",

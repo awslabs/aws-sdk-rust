@@ -11,6 +11,8 @@ pub use crate::types::_organization_event_filter::OrganizationEventFilter;
 
 pub use crate::types::_event_type_filter::EventTypeFilter;
 
+pub use crate::types::_service_lifecycle_filter::ServiceLifecycleFilter;
+
 pub use crate::types::_affected_entity::AffectedEntity;
 
 pub use crate::types::_event_account_filter::EventAccountFilter;
@@ -41,6 +43,8 @@ pub use crate::types::_organization_event::OrganizationEvent;
 
 pub use crate::types::_event_type::EventType;
 
+pub use crate::types::_service_lifecycle::ServiceLifecycle;
+
 pub use crate::types::_entity_status_code::EntityStatusCode;
 
 pub use crate::types::_event_actionability::EventActionability;
@@ -58,6 +62,8 @@ pub use crate::types::_event_type_actionability::EventTypeActionability;
 pub use crate::types::_event_type_persona::EventTypePersona;
 
 pub use crate::types::_account_entity_aggregate::AccountEntityAggregate;
+
+pub use crate::types::_lifecycle_event::LifecycleEvent;
 
 mod _account_entity_aggregate;
 
@@ -107,6 +113,8 @@ mod _event_type_filter;
 
 mod _event_type_persona;
 
+mod _lifecycle_event;
+
 mod _organization_affected_entities_error_item;
 
 mod _organization_entity_aggregate;
@@ -118,6 +126,10 @@ mod _organization_event_details;
 mod _organization_event_details_error_item;
 
 mod _organization_event_filter;
+
+mod _service_lifecycle;
+
+mod _service_lifecycle_filter;
 
 /// Builders
 pub mod builders;

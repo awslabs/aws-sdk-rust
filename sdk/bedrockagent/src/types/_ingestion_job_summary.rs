@@ -18,6 +18,9 @@ pub struct IngestionJobSummary {
     pub started_at: ::aws_smithy_types::DateTime,
     /// <p>The time the data ingestion job was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub text_ready_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains statistics for the data ingestion job.</p>
     pub statistics: ::std::option::Option<crate::types::IngestionJobStatistics>,
 }
@@ -53,6 +56,11 @@ impl IngestionJobSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn text_ready_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.text_ready_at.as_ref()
+    }
     /// <p>Contains statistics for the data ingestion job.</p>
     pub fn statistics(&self) -> ::std::option::Option<&crate::types::IngestionJobStatistics> {
         self.statistics.as_ref()
@@ -76,6 +84,7 @@ pub struct IngestionJobSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::IngestionJobStatus>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) text_ready_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) statistics: ::std::option::Option<crate::types::IngestionJobStatistics>,
 }
 impl IngestionJobSummaryBuilder {
@@ -183,6 +192,23 @@ impl IngestionJobSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn text_ready_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.text_ready_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn set_text_ready_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.text_ready_at = input;
+        self
+    }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn get_text_ready_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.text_ready_at
+    }
     /// <p>Contains statistics for the data ingestion job.</p>
     pub fn statistics(mut self, input: crate::types::IngestionJobStatistics) -> Self {
         self.statistics = ::std::option::Option::Some(input);
@@ -244,6 +270,7 @@ impl IngestionJobSummaryBuilder {
                     "updated_at was not specified but it is required when building IngestionJobSummary",
                 )
             })?,
+            text_ready_at: self.text_ready_at,
             statistics: self.statistics,
         })
     }

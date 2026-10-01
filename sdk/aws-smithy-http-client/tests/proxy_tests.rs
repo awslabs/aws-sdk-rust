@@ -3,1198 +3,1002 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Integration tests for proxy functionality
+//! Proxy behavior contracts shared by the legacy and partitioned connection pools.
 //!
-//! These tests verify that proxy configuration works end-to-end with real HTTP requests
-//! using mock proxy servers.
+//! Each contract is backend-neutral and has an explicit runner for every client
+//! implementation that must preserve the behavior.
+
 #![cfg(feature = "default-client")]
 
-use aws_smithy_async::time::SystemTimeSource;
+mod common {
+    #[allow(dead_code)]
+    pub(crate) mod client;
+    #[cfg(all(
+        feature = "wire-mock",
+        any(feature = "rustls-ring", feature = "s2n-tls")
+    ))]
+    #[allow(dead_code)]
+    pub(crate) mod h2;
+    pub(crate) mod proxy;
+    #[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+    pub(crate) mod tls;
+}
+
+use aws_smithy_http_client::proxy::ProxyConfig;
 #[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
 use aws_smithy_http_client::tls;
-use aws_smithy_http_client::{proxy::ProxyConfig, Connector};
-use aws_smithy_runtime_api::client::http::{
-    http_client_fn, HttpClient, HttpConnector, HttpConnectorSettings, SharedHttpConnector,
+use aws_smithy_runtime_api::box_error::BoxError;
+#[cfg(any(
+    feature = "rustls-aws-lc",
+    feature = "rustls-aws-lc-fips",
+    feature = "rustls-ring",
+    feature = "s2n-tls"
+))]
+use aws_smithy_runtime_api::client::dns::{
+    DnsFuture, ResolveDns, ResolveDnsError, SharedDnsResolver,
 };
+use aws_smithy_runtime_api::client::http::{HttpConnector, SharedHttpClient, SharedHttpConnector};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
-use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-use base64::Engine;
-use http_1x::{Request, Response, StatusCode};
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+use common::client::HttpsClientBackend;
+use common::client::{
+    self as test_client, BackendConfig, HttpClientBackend, HyperUtilLegacyPool,
+    PartitionedConnectionPool,
+};
+#[cfg(all(
+    feature = "wire-mock",
+    any(feature = "rustls-ring", feature = "s2n-tls")
+))]
+use common::h2::{
+    H2ConnectionPlan, H2ConnectionScript, H2Event, H2Response, H2StreamScript, H2TestServer,
+};
+use common::proxy::{basic_authorization, MockHttpServer};
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+use common::proxy::{MockConnectProxy, MockTlsOrigin};
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+use common::tls as test_tls;
+use http_1x::{Response, StatusCode};
 use http_body_util::BodyExt;
-use hyper::body::Incoming;
-use hyper::service::service_fn;
-use hyper_util::rt::TokioIo;
-use std::collections::HashMap;
-use std::convert::Infallible;
-use std::net::SocketAddr;
-use std::sync::{Arc, Mutex};
+use std::future::Future;
 use std::time::Duration;
-use tokio::net::TcpListener;
-use tokio::sync::oneshot;
 
-// ================================================================================================
-// Test Utilities (Mock Proxy Server)
-// ================================================================================================
-
-/// Mock HTTP server that acts as a proxy endpoint for testing
-#[derive(Debug)]
-struct MockProxyServer {
-    conn_count: Arc<()>,
-    addr: SocketAddr,
-    shutdown_tx: Option<oneshot::Sender<()>>,
-    request_log: Arc<Mutex<Vec<RecordedRequest>>>,
+struct TestClient {
+    _client: SharedHttpClient,
+    connector: SharedHttpConnector,
 }
 
-/// A recorded request received by the mock proxy server
-#[derive(Debug, Clone)]
-struct RecordedRequest {
-    method: String,
-    uri: String,
-    headers: HashMap<String, String>,
+fn http_client(backend: &dyn HttpClientBackend, config: BackendConfig) -> TestClient {
+    let client = backend.build(config);
+    let connector = test_client::connector(&client);
+    TestClient {
+        _client: client,
+        connector,
+    }
 }
 
-impl MockProxyServer {
-    /// Create a new mock proxy server with a custom request handler
-    async fn new<F>(handler: F) -> Self
-    where
-        F: Fn(RecordedRequest) -> Response<String> + Send + Sync + 'static,
-    {
-        let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
-        let addr = listener.local_addr().unwrap();
-        let (shutdown_tx, shutdown_rx) = oneshot::channel();
-        let request_log = Arc::new(Mutex::new(Vec::new()));
-        let request_log_clone = request_log.clone();
-        let conn_count = Arc::new(());
-        let server_conn_count = conn_count.clone();
-
-        let handler = Arc::new(handler);
-
-        tokio::spawn(async move {
-            let mut shutdown_rx = shutdown_rx;
-
-            loop {
-                tokio::select! {
-                    result = listener.accept() => {
-                        match result {
-                            Ok((stream, _)) => {
-                                let io = TokioIo::new(stream);
-                                let handler = handler.clone();
-                                let request_log = request_log_clone.clone();
-
-                                let stream_conn_count = server_conn_count.clone();
-                                tokio::spawn(async move {
-                                    let _stream_conn_count = stream_conn_count;
-                                    let service = service_fn(move |req: Request<Incoming>| {
-                                        let handler = handler.clone();
-                                        let request_log = request_log.clone();
-
-                                        async move {
-                                            // Record the request
-                                            let recorded = RecordedRequest {
-                                                method: req.method().to_string(),
-                                                uri: req.uri().to_string(),
-                                                headers: req.headers().iter()
-                                                    .map(|(k, v)| (k.to_string(), v.to_str().unwrap_or("").to_string()))
-                                                    .collect(),
-                                            };
-
-                                            request_log.lock().unwrap().push(recorded.clone());
-
-                                            // Call the handler
-                                            let response = handler(recorded);
-
-                                            // Convert to hyper response
-                                            let (parts, body) = response.into_parts();
-                                            let hyper_response = Response::from_parts(parts, body);
-
-                                            Ok::<_, Infallible>(hyper_response)
-                                        }
-                                    });
-
-                                    if let Err(err) = hyper::server::conn::http1::Builder::new()
-                                        .serve_connection(io, service)
-                                        .await
-                                    {
-                                        eprintln!("Mock proxy server connection error: {}", err);
-                                    }
-                                });
-                            }
-                            Err(_) => break,
-                        }
-                    }
-                    _ = &mut shutdown_rx => {
-                        break;
-                    }
-                }
-            }
-        });
-
-        Self {
-            addr,
-            shutdown_tx: Some(shutdown_tx),
-            request_log,
-            conn_count,
-        }
+fn proxy_backend_config(proxy_config: ProxyConfig) -> BackendConfig {
+    BackendConfig {
+        proxy_config: Some(proxy_config),
+        ..Default::default()
     }
+}
 
-    /// Return the number of active connections to this server
-    fn conn_count(&self) -> usize {
-        // 1 reference for the struct MockProxyServer, 1 reference for the
-        // socket task.
-        Arc::strong_count(&self.conn_count)
-            .checked_sub(2)
-            .expect("de-count 2 refs")
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+fn https_client(
+    backend: &dyn HttpsClientBackend,
+    config: BackendConfig,
+    provider: tls::Provider,
+    tls_context: tls::TlsContext,
+) -> TestClient {
+    let client = backend.build_https(config, provider, tls_context);
+    let connector = test_client::connector(&client);
+    TestClient {
+        _client: client,
+        connector,
     }
+}
 
-    /// Create a simple mock proxy that returns a fixed response
-    async fn with_response(status: StatusCode, body: &str) -> Self {
-        let body = body.to_string();
-        Self::new(move |_req| {
-            Response::builder()
-                .status(status)
-                .body(body.clone())
-                .unwrap()
-        })
+async fn send_request(
+    client: &TestClient,
+    request: HttpRequest,
+) -> Result<(StatusCode, String), BoxError> {
+    let response = client.connector.call(request).await?;
+    let status = StatusCode::from_u16(response.status().as_u16())?;
+    let body = response.into_body().collect().await?.to_bytes();
+    Ok((status, String::from_utf8(body.to_vec())?))
+}
+
+async fn get(client: &TestClient, uri: &str) -> Result<(StatusCode, String), BoxError> {
+    send_request(client, HttpRequest::get(uri)?).await
+}
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+#[derive(Clone, Debug)]
+struct FailingDns;
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+impl ResolveDns for FailingDns {
+    fn resolve_dns<'a>(&'a self, name: &'a str) -> DnsFuture<'a> {
+        DnsFuture::ready(Err(ResolveDnsError::new(std::io::Error::other(format!(
+            "intentional DNS failure for {name}"
+        )))))
+    }
+}
+
+#[cfg(all(
+    feature = "wire-mock",
+    any(feature = "rustls-ring", feature = "s2n-tls")
+))]
+async fn h2_forward_proxy_applies_configured_authentication(
+    backend: &dyn HttpsClientBackend,
+    provider: tls::Provider,
+) {
+    let server = H2TestServer::builder()
+        .connections(H2ConnectionPlan::queue([H2ConnectionScript::new().route(
+            "/protected",
+            H2StreamScript::respond(H2Response::ok("authenticated over H2")),
+        )]))
+        .start()
         .await
-    }
+        .expect("H2 forward proxy should start");
+    let config = ProxyConfig::http(server.url("/"))
+        .expect("valid proxy URI")
+        .with_basic_auth("h2user", "h2pass");
+    let client = https_client(
+        backend,
+        proxy_backend_config(config),
+        provider,
+        test_tls::SERVER_IDENTITY.client_context(),
+    );
 
-    /// Create a mock proxy that validates basic authentication
-    async fn with_auth_validation(expected_user: &str, expected_pass: &str) -> Self {
-        let expected_auth = format!(
-            "Basic {}",
-            base64::prelude::BASE64_STANDARD.encode(format!("{}:{}", expected_user, expected_pass))
-        );
+    assert_eq!(
+        (StatusCode::OK, "authenticated over H2".to_string()),
+        get(&client, "http://origin.test/protected")
+            .await
+            .expect("H2 forward-proxy request should succeed")
+    );
+    let expected = basic_authorization("h2user", "h2pass");
+    let authorization = server.events().into_iter().find_map(|event| match event {
+        H2Event::StreamAccepted {
+            path,
+            proxy_authorization,
+            ..
+        } if path == "/protected" => proxy_authorization,
+        _ => None,
+    });
+    assert_eq!(Some(expected), authorization);
 
-        Self::new(move |req| {
-            if let Some(auth_header) = req.headers.get("proxy-authorization") {
-                if auth_header == &expected_auth {
-                    Response::builder()
-                        .status(StatusCode::OK)
-                        .body("authenticated".to_string())
-                        .unwrap()
-                } else {
-                    Response::builder()
-                        .status(StatusCode::PROXY_AUTHENTICATION_REQUIRED)
-                        .body("invalid credentials".to_string())
-                        .unwrap()
-                }
-            } else {
-                Response::builder()
-                    .status(StatusCode::PROXY_AUTHENTICATION_REQUIRED)
-                    .header("proxy-authenticate", "Basic realm=\"proxy\"")
-                    .body("authentication required".to_string())
-                    .unwrap()
-            }
-        })
+    drop(client);
+    server
+        .shutdown()
         .await
-    }
-
-    /// Get the address this server is listening on
-    fn addr(&self) -> SocketAddr {
-        self.addr
-    }
-
-    /// Get all requests received by this server
-    fn requests(&self) -> Vec<RecordedRequest> {
-        self.request_log.lock().unwrap().clone()
-    }
+        .expect("clean H2 forward-proxy shutdown");
 }
 
-impl Drop for MockProxyServer {
-    fn drop(&mut self) {
-        if let Some(tx) = self.shutdown_tx.take() {
-            let _ = tx.send(());
-        }
-    }
+#[cfg(all(feature = "wire-mock", feature = "rustls-ring"))]
+#[tokio::test]
+async fn test_h2_forward_proxy_auth_with_rustls_and_hyper_util_legacy_pool() {
+    h2_forward_proxy_applies_configured_authentication(
+        &HyperUtilLegacyPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
 }
 
-/// Utility for running tests with specific environment variables
+#[cfg(all(feature = "wire-mock", feature = "rustls-ring"))]
+#[tokio::test]
+async fn test_h2_forward_proxy_auth_with_rustls_and_partitioned_connection_pool() {
+    h2_forward_proxy_applies_configured_authentication(
+        &PartitionedConnectionPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(all(feature = "wire-mock", feature = "s2n-tls"))]
+#[tokio::test]
+async fn test_h2_forward_proxy_auth_with_s2n_tls_and_hyper_util_legacy_pool() {
+    h2_forward_proxy_applies_configured_authentication(&HyperUtilLegacyPool, tls::Provider::S2nTls)
+        .await;
+}
+
+#[cfg(all(feature = "wire-mock", feature = "s2n-tls"))]
+#[tokio::test]
+async fn test_h2_forward_proxy_auth_with_s2n_tls_and_partitioned_connection_pool() {
+    h2_forward_proxy_applies_configured_authentication(
+        &PartitionedConnectionPool,
+        tls::Provider::S2nTls,
+    )
+    .await;
+}
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn https_proxy_dns_failure_remains_retryable_io(
+    backend: &dyn HttpsClientBackend,
+    provider: tls::Provider,
+) {
+    let client = https_client(
+        backend,
+        BackendConfig {
+            proxy_config: Some(
+                ProxyConfig::all("http://proxy.invalid:8080").expect("valid proxy URI"),
+            ),
+            dns_resolver: Some(SharedDnsResolver::new(FailingDns)),
+            ..Default::default()
+        },
+        provider,
+        tls::TlsContext::default(),
+    );
+
+    let error = test_client::send_request(
+        &client.connector,
+        HttpRequest::get("https://origin.test/protected").expect("valid request"),
+    )
+    .await
+    .expect_err("proxy DNS failure must fail the request");
+    assert!(
+        error.is_io(),
+        "HTTPS proxy DNS failure should remain retryable I/O, got {error:?}"
+    );
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_proxy_dns_failure_with_rustls_and_hyper_util_legacy_pool() {
+    https_proxy_dns_failure_remains_retryable_io(
+        &HyperUtilLegacyPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_proxy_dns_failure_with_rustls_and_partitioned_connection_pool() {
+    https_proxy_dns_failure_remains_retryable_io(
+        &PartitionedConnectionPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_proxy_dns_failure_with_s2n_tls_and_hyper_util_legacy_pool() {
+    https_proxy_dns_failure_remains_retryable_io(&HyperUtilLegacyPool, tls::Provider::S2nTls).await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_proxy_dns_failure_with_s2n_tls_and_partitioned_connection_pool() {
+    https_proxy_dns_failure_remains_retryable_io(&PartitionedConnectionPool, tls::Provider::S2nTls)
+        .await;
+}
+
 #[allow(clippy::await_holding_lock)]
 async fn with_env_vars<F, Fut, R>(vars: &[(&str, &str)], test: F) -> R
 where
     F: FnOnce() -> Fut,
-    Fut: std::future::Future<Output = R>,
+    Fut: Future<Output = R>,
 {
-    // Use a static mutex to serialize environment variable tests
     static ENV_MUTEX: std::sync::Mutex<()> = std::sync::Mutex::new(());
-    let _guard = ENV_MUTEX.lock().unwrap();
-
-    // Save original environment
-    let original_vars: Vec<_> = vars
+    let _guard = ENV_MUTEX.lock().expect("environment lock is not poisoned");
+    let previous: Vec<_> = vars
         .iter()
-        .map(|(key, _)| (*key, std::env::var(key)))
+        .map(|(name, _)| (*name, std::env::var(name)))
         .collect();
 
-    // Set test environment variables
-    for (key, value) in vars {
-        std::env::set_var(key, value);
+    for (name, value) in vars {
+        std::env::set_var(name, value);
     }
-
-    // Run the test
     let result = test().await;
-
-    // Restore original environment
-    for (key, original_value) in original_vars {
-        match original_value {
-            Ok(val) => std::env::set_var(key, val),
-            Err(_) => std::env::remove_var(key),
+    for (name, value) in previous {
+        match value {
+            Ok(value) => std::env::set_var(name, value),
+            Err(_) => std::env::remove_var(name),
         }
     }
-
     result
 }
 
-/// Helper function to make HTTP requests through a proxy-configured connector
-async fn make_http_request_through_proxy(
-    proxy_config: ProxyConfig,
-    target_url: &str,
-) -> Result<(StatusCode, String), Box<dyn std::error::Error + Send + Sync>> {
-    make_http_request_through_proxy_with_pool_timeout(
-        proxy_config,
-        Some(Duration::from_secs(90)),
-        target_url,
-    )
-    .await
-    .map(|(status, res, _client)| (status, res))
-}
-
-/// Helper function to make HTTP requests through a proxy-configured connector
-async fn make_http_request_through_proxy_with_pool_timeout(
-    proxy_config: ProxyConfig,
-    pool_idle_timeout: Option<Duration>,
-    target_url: &str,
-) -> Result<(StatusCode, String, SharedHttpConnector), Box<dyn std::error::Error + Send + Sync>> {
-    // Create an HttpClient using http_client_fn with proxy-configured connector
-    let http_client = http_client_fn(move |settings, _components| {
-        let connector = Connector::builder()
-            .proxy_config(proxy_config.clone())
-            .pool_idle_timeout(pool_idle_timeout)
-            .connector_settings(settings.clone())
-            .build_http();
-
-        aws_smithy_runtime_api::client::http::SharedHttpConnector::new(connector)
-    });
-
-    // Set up runtime components (following smoke_test_client pattern)
-    let connector_settings = HttpConnectorSettings::builder().build();
-    let runtime_components = RuntimeComponentsBuilder::for_tests()
-        .with_time_source(Some(SystemTimeSource::new()))
-        .build()
-        .unwrap();
-
-    // Get the HTTP connector from the client
-    let http_connector = http_client.http_connector(&connector_settings, &runtime_components);
-
-    // Create and make the HTTP request
-    let request = HttpRequest::get(target_url)
-        .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)?;
-
-    let response = http_connector.call(request).await?;
-
-    // Extract status and body
-    let status = response.status();
-    let body_bytes = response.into_body().collect().await?.to_bytes();
-    let body_string = String::from_utf8(body_bytes.to_vec())?;
-
-    Ok((status.into(), body_string, http_connector))
-}
-
-// test the pool idle timeout. The test is in this file because it has a convenient
-// infrastructure for making a server that answers smithy requests.
-#[tokio::test(start_paused = false)]
-// can't set start_paused due to <https://github.com/hyperium/hyper/issues/3950>
-async fn test_http_proxy_connection_pool_timeout() {
-    const TIMEOUT: Duration = Duration::from_secs(10);
-
-    // Create a mock proxy server that validates the request was routed through it
-    let mock_proxy = MockProxyServer::new(|req| {
-        // Validate that this looks like a proxy request
-        assert_eq!(req.method, "GET");
-        // For HTTP proxy, the URI should be the full target URL
-        assert_eq!(req.uri, "http://aws.amazon.com/api/data");
-
-        // Return a successful response that we can identify
+async fn http_forward_proxy_uses_absolute_form(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::new(|request| {
+        assert_eq!("GET", request.method);
+        assert_eq!("http://api.example.com/v1/data", request.uri);
+        assert_eq!(
+            Some(&"api.example.com".to_string()),
+            request.headers.get("host")
+        );
         Response::builder()
             .status(StatusCode::OK)
-            .body("proxied response from mock server".to_string())
-            .unwrap()
+            .body("proxied".to_string())
+            .expect("valid response")
     })
     .await;
-    // make sure that conn_count for an empty proxy is 0
-    assert_eq!(mock_proxy.conn_count(), 0);
-    tracing::info!("Start!");
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = http_client(backend, proxy_backend_config(config));
 
-    // Configure connector with HTTP proxy
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // Make an HTTP request through the proxy - use safe domain
-    let target_url = "http://aws.amazon.com/api/data";
-    let start = tokio::time::Instant::now();
-    let result =
-        make_http_request_through_proxy_with_pool_timeout(proxy_config, Some(TIMEOUT), target_url)
-            .await;
-    // hold _connector to avoid the timer being dropped
-    let (status, body, _connector) = result.expect("HTTP request through proxy should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "proxied response from mock server");
-
-    // Verify the mock proxy received the expected request
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-    assert_eq!(requests[0].method, "GET");
-    assert_eq!(requests[0].uri, target_url);
-
-    // after making a request, conn count is 1
-    assert_eq!(mock_proxy.conn_count(), 1);
-
-    // sleep 1 second below the idle timeout, conn count is still 1
-    tokio::time::sleep_until(start + TIMEOUT - Duration::from_secs(1)).await;
-    assert_eq!(mock_proxy.conn_count(), 1);
-
-    // sleep 2 more seconds, the connection should be disconnected, conn count should be 0
-    tokio::time::sleep(Duration::from_secs(3)).await;
-    assert_eq!(mock_proxy.conn_count(), 0);
+    assert_eq!(
+        (StatusCode::OK, "proxied".to_string()),
+        get(&client, "http://api.example.com/v1/data")
+            .await
+            .expect("proxy request succeeds")
+    );
+    assert_eq!(1, proxy.requests().len());
 }
 
 #[tokio::test]
-async fn test_http_proxy_basic_request() {
-    // Create a mock proxy server that validates the request was routed through it
-    let mock_proxy = MockProxyServer::new(|req| {
-        // Validate that this looks like a proxy request
-        assert_eq!(req.method, "GET");
-        // For HTTP proxy, the URI should be the full target URL
-        assert_eq!(req.uri, "http://aws.amazon.com/api/data");
-
-        // Return a successful response that we can identify
-        Response::builder()
-            .status(StatusCode::OK)
-            .body("proxied response from mock server".to_string())
-            .unwrap()
-    })
-    .await;
-
-    // Configure connector with HTTP proxy
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // Make an HTTP request through the proxy - use safe domain
-    let target_url = "http://aws.amazon.com/api/data";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    let (status, body) = result.expect("HTTP request through proxy should succeed");
-
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "proxied response from mock server");
-
-    // Verify the mock proxy received the expected request
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-    assert_eq!(requests[0].method, "GET");
-    assert_eq!(requests[0].uri, target_url);
+async fn test_http_forward_proxy_uses_absolute_form_with_hyper_util_legacy_pool() {
+    http_forward_proxy_uses_absolute_form(&HyperUtilLegacyPool).await;
 }
 
 #[tokio::test]
-async fn test_proxy_authentication() {
-    // Create a mock proxy that requires authentication
-    let mock_proxy = MockProxyServer::with_auth_validation("testuser", "testpass").await;
+async fn test_http_forward_proxy_uses_absolute_form_with_partitioned_connection_pool() {
+    http_forward_proxy_uses_absolute_form(&PartitionedConnectionPool).await;
+}
 
-    // Configure connector with authenticated proxy
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr()))
-        .unwrap()
+#[cfg(any(
+    feature = "rustls-aws-lc",
+    feature = "rustls-aws-lc-fips",
+    feature = "rustls-ring",
+    feature = "s2n-tls"
+))]
+async fn custom_dns_resolver_is_used_for_proxy_connections(backend: &dyn HttpClientBackend) {
+    const PROXY_HOST: &str = "proxy.test";
+
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "proxied through custom DNS").await;
+    let resolver = proxy.dns_resolver(PROXY_HOST);
+    let proxy_config = ProxyConfig::http(format!("http://{PROXY_HOST}:{}", proxy.addr().port()))
+        .expect("valid proxy URI");
+    let client = http_client(
+        backend,
+        BackendConfig {
+            dns_resolver: Some(SharedDnsResolver::new(resolver.clone())),
+            ..proxy_backend_config(proxy_config)
+        },
+    );
+
+    assert_eq!(
+        (StatusCode::OK, "proxied through custom DNS".to_string()),
+        get(&client, "http://origin.test/custom-dns-proxy")
+            .await
+            .expect("proxy request succeeds")
+    );
+    assert_eq!(vec![PROXY_HOST.to_string()], resolver.lookups());
+    assert_eq!(
+        "http://origin.test/custom-dns-proxy",
+        proxy.requests()[0].uri
+    );
+}
+
+#[cfg(any(
+    feature = "rustls-aws-lc",
+    feature = "rustls-aws-lc-fips",
+    feature = "rustls-ring",
+    feature = "s2n-tls"
+))]
+#[tokio::test]
+async fn test_custom_dns_resolver_is_used_for_proxy_connections_with_hyper_util_legacy_pool() {
+    custom_dns_resolver_is_used_for_proxy_connections(&HyperUtilLegacyPool).await;
+}
+
+#[cfg(any(
+    feature = "rustls-aws-lc",
+    feature = "rustls-aws-lc-fips",
+    feature = "rustls-ring",
+    feature = "s2n-tls"
+))]
+#[tokio::test]
+async fn test_custom_dns_resolver_is_used_for_proxy_connections_with_partitioned_connection_pool() {
+    custom_dns_resolver_is_used_for_proxy_connections(&PartitionedConnectionPool).await;
+}
+
+async fn configured_proxy_authentication_is_applied(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_auth_validation("testuser", "testpass").await;
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
         .with_basic_auth("testuser", "testpass");
+    let client = http_client(backend, proxy_backend_config(config));
 
-    // Make request through authenticated proxy - use safe domain
-    let target_url = "http://aws.amazon.com/protected/resource";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    let (status, body) = result.expect("Authenticated proxy request should succeed");
-
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "authenticated");
-
-    // Verify the proxy received the request with correct auth
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-
-    let expected_auth = format!(
-        "Basic {}",
-        base64::prelude::BASE64_STANDARD.encode("testuser:testpass")
+    assert_eq!(
+        (StatusCode::OK, "authenticated".to_string()),
+        get(&client, "http://service.test/protected")
+            .await
+            .expect("authenticated proxy request succeeds")
     );
     assert_eq!(
-        requests[0].headers.get("proxy-authorization"),
-        Some(&expected_auth)
-    );
-}
-
-/// Tests URL-embedded proxy authentication (http://user:pass@proxy.com format)
-/// Verifies that credentials in the proxy URL are properly extracted and used
-#[tokio::test]
-async fn test_proxy_url_embedded_auth() {
-    let mock_proxy = MockProxyServer::with_auth_validation("urluser", "urlpass").await;
-
-    // Configure proxy with credentials embedded in URL
-    let proxy_url = format!("http://urluser:urlpass@{}", mock_proxy.addr());
-    let proxy_config = ProxyConfig::http(proxy_url).unwrap();
-
-    // Make request through proxy with URL-embedded auth
-    let target_url = "http://aws.amazon.com/api/test";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    let (status, body) = result.expect("URL-embedded auth proxy request should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "authenticated");
-
-    // Verify the proxy received the request with correct auth
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-
-    let expected_auth = format!(
-        "Basic {}",
-        base64::prelude::BASE64_STANDARD.encode("urluser:urlpass")
-    );
-    assert_eq!(
-        requests[0].headers.get("proxy-authorization"),
-        Some(&expected_auth)
-    );
-}
-
-/// Tests authentication precedence: URL-embedded credentials should take precedence over programmatic auth
-/// Verifies that when both URL auth and with_basic_auth() are provided, URL auth wins
-#[tokio::test]
-async fn test_proxy_auth_precedence() {
-    let mock_proxy = MockProxyServer::with_auth_validation("urluser", "urlpass").await;
-
-    // Configure proxy with URL-embedded auth AND programmatic auth
-    // URL auth should take precedence
-    let proxy_url = format!("http://urluser:urlpass@{}", mock_proxy.addr());
-    let proxy_config = ProxyConfig::http(proxy_url)
-        .unwrap()
-        .with_basic_auth("programmatic", "auth"); // This should be ignored
-
-    // Make request - should use URL-embedded auth, not programmatic auth
-    let target_url = "http://aws.amazon.com/precedence/test";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    let (status, body) = result.expect("Auth precedence test should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "authenticated");
-
-    // Verify the proxy received the request with URL-embedded auth (not programmatic)
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-
-    let expected_auth = format!(
-        "Basic {}",
-        base64::prelude::BASE64_STANDARD.encode("urluser:urlpass")
-    );
-    assert_eq!(
-        requests[0].headers.get("proxy-authorization"),
-        Some(&expected_auth)
+        Some(&basic_authorization("testuser", "testpass")),
+        proxy.requests()[0].headers.get("proxy-authorization")
     );
 }
 
 #[tokio::test]
-async fn test_proxy_from_environment_variables() {
-    let mock_proxy = MockProxyServer::with_response(StatusCode::OK, "env proxy response").await;
+async fn test_configured_proxy_authentication_with_hyper_util_legacy_pool() {
+    configured_proxy_authentication_is_applied(&HyperUtilLegacyPool).await;
+}
 
+#[tokio::test]
+async fn test_configured_proxy_authentication_with_partitioned_connection_pool() {
+    configured_proxy_authentication_is_applied(&PartitionedConnectionPool).await;
+}
+
+async fn caller_proxy_authorization_is_preserved(backend: &dyn HttpClientBackend) {
+    let caller_authorization = basic_authorization("caller", "credentials");
+    let expected = caller_authorization.clone();
+    let proxy = MockHttpServer::new(move |request| {
+        assert_eq!(Some(&expected), request.headers.get("proxy-authorization"));
+        Response::builder()
+            .status(StatusCode::OK)
+            .body("caller authorization".to_string())
+            .expect("valid response")
+    })
+    .await;
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
+        .with_basic_auth("configured", "credentials");
+    let client = http_client(backend, proxy_backend_config(config));
+    let mut request = HttpRequest::get("http://service.test/caller-auth").expect("valid request");
+    request
+        .headers_mut()
+        .insert("proxy-authorization", caller_authorization);
+
+    assert_eq!(
+        (StatusCode::OK, "caller authorization".to_string()),
+        send_request(&client, request)
+            .await
+            .expect("caller authorization request succeeds")
+    );
+}
+
+#[tokio::test]
+async fn test_caller_proxy_authorization_is_preserved_with_hyper_util_legacy_pool() {
+    caller_proxy_authorization_is_preserved(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_caller_proxy_authorization_is_preserved_with_partitioned_connection_pool() {
+    caller_proxy_authorization_is_preserved(&PartitionedConnectionPool).await;
+}
+
+async fn proxy_url_authentication_is_applied(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_auth_validation("urluser", "urlpass").await;
+    let config =
+        ProxyConfig::http(format!("http://urluser:urlpass@{}", proxy.addr())).expect("valid proxy");
+    let client = http_client(backend, proxy_backend_config(config));
+
+    assert_eq!(
+        StatusCode::OK,
+        get(&client, "http://service.test/url-auth")
+            .await
+            .expect("URL-authenticated request succeeds")
+            .0
+    );
+    assert_eq!(
+        Some(&basic_authorization("urluser", "urlpass")),
+        proxy.requests()[0].headers.get("proxy-authorization")
+    );
+}
+
+#[tokio::test]
+async fn test_proxy_url_authentication_with_hyper_util_legacy_pool() {
+    proxy_url_authentication_is_applied(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_proxy_url_authentication_with_partitioned_connection_pool() {
+    proxy_url_authentication_is_applied(&PartitionedConnectionPool).await;
+}
+
+async fn proxy_url_authentication_precedes_configured_authentication(
+    backend: &dyn HttpClientBackend,
+) {
+    let proxy = MockHttpServer::with_auth_validation("urluser", "urlpass").await;
+    let config = ProxyConfig::http(format!("http://urluser:urlpass@{}", proxy.addr()))
+        .expect("valid proxy")
+        .with_basic_auth("configured", "credentials");
+    let client = http_client(backend, proxy_backend_config(config));
+
+    assert_eq!(
+        StatusCode::OK,
+        get(&client, "http://service.test/auth-precedence")
+            .await
+            .expect("proxy request succeeds")
+            .0
+    );
+    assert_eq!(
+        Some(&basic_authorization("urluser", "urlpass")),
+        proxy.requests()[0].headers.get("proxy-authorization")
+    );
+}
+
+#[tokio::test]
+async fn test_proxy_url_authentication_precedence_with_hyper_util_legacy_pool() {
+    proxy_url_authentication_precedes_configured_authentication(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_proxy_url_authentication_precedence_with_partitioned_connection_pool() {
+    proxy_url_authentication_precedes_configured_authentication(&PartitionedConnectionPool).await;
+}
+
+async fn environment_proxy_is_used(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "environment proxy").await;
+    let proxy_uri = format!("http://{}", proxy.addr());
     with_env_vars(
         &[
-            ("HTTP_PROXY", &format!("http://{}", mock_proxy.addr())),
+            ("HTTP_PROXY", &proxy_uri),
             ("NO_PROXY", "localhost,127.0.0.1"),
         ],
         || async {
-            // Create connector with environment-based proxy config
-            let proxy_config = ProxyConfig::from_env();
-
-            // Make request through environment-configured proxy
-            let target_url = "http://aws.amazon.com/v1/data";
-            let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-            let (status, body) = result.expect("Environment proxy request should succeed");
-
-            assert_eq!(status, StatusCode::OK);
-            assert_eq!(body, "env proxy response");
-
-            // Verify the proxy received the request
-            let requests = mock_proxy.requests();
-            assert_eq!(requests.len(), 1);
-            assert_eq!(requests[0].uri, target_url);
+            let client = http_client(backend, proxy_backend_config(ProxyConfig::from_env()));
+            assert_eq!(
+                (StatusCode::OK, "environment proxy".to_string()),
+                get(&client, "http://service.test/environment")
+                    .await
+                    .expect("environment proxy request succeeds")
+            );
         },
     )
     .await;
+    assert_eq!("http://service.test/environment", proxy.requests()[0].uri);
 }
 
-/// Tests that NO_PROXY bypass rules work correctly
-/// Verifies that requests to bypassed hosts do not go through the proxy
 #[tokio::test]
-async fn test_no_proxy_bypass_rules() {
-    let mock_proxy = MockProxyServer::with_response(StatusCode::OK, "should not reach here").await;
-
-    // Create a second mock server that will act as the "direct" target
-    let direct_server = MockProxyServer::with_response(StatusCode::OK, "direct connection").await;
-
-    // Configure proxy with NO_PROXY rules that include the direct server's address
-    // Use just the IP address for the NO_PROXY rule
-    let direct_ip = "127.0.0.1";
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr()))
-        .unwrap()
-        .no_proxy(direct_ip);
-
-    // Make request to the direct server (should bypass proxy due to NO_PROXY rule)
-    let result = make_http_request_through_proxy(
-        proxy_config,
-        &format!("http://{}/test", direct_server.addr()),
-    )
-    .await;
-
-    let (status, body) = result.expect("Direct connection should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "direct connection");
-
-    // Verify the mock proxy received no requests (bypassed)
-    let proxy_requests = mock_proxy.requests();
-    assert_eq!(
-        proxy_requests.len(),
-        0,
-        "Proxy should not have received any requests due to NO_PROXY bypass"
-    );
-
-    // Verify the direct server received the request
-    let direct_requests = direct_server.requests();
-    assert_eq!(
-        direct_requests.len(),
-        1,
-        "Direct server should have received the request"
-    );
+async fn test_environment_proxy_with_hyper_util_legacy_pool() {
+    environment_proxy_is_used(&HyperUtilLegacyPool).await;
 }
 
-/// Tests that disabled proxy configuration results in direct connections
-/// Verifies that ProxyConfig::disabled() bypasses all proxy logic
 #[tokio::test]
-async fn test_proxy_disabled() {
-    // Create a direct target server
-    let direct_server = MockProxyServer::with_response(StatusCode::OK, "direct connection").await;
+async fn test_environment_proxy_with_partitioned_connection_pool() {
+    environment_proxy_is_used(&PartitionedConnectionPool).await;
+}
 
-    // Create a disabled proxy configuration
-    let proxy_config = ProxyConfig::disabled();
+async fn no_proxy_bypasses_proxy(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "unexpected proxy").await;
+    let origin = MockHttpServer::with_response(StatusCode::OK, "direct").await;
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
+        .no_proxy("127.0.0.1");
+    let client = http_client(backend, proxy_backend_config(config));
 
-    // Make request with disabled proxy (should go direct to our mock server)
-    let result = make_http_request_through_proxy(
-        proxy_config,
-        &format!("http://{}/get", direct_server.addr()),
-    )
-    .await;
-
-    let (status, body) = result.expect("Direct connection should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "direct connection");
-
-    // Verify the direct server received the request
-    let requests = direct_server.requests();
     assert_eq!(
-        requests.len(),
-        1,
-        "Direct server should have received the request"
+        (StatusCode::OK, "direct".to_string()),
+        get(&client, &format!("http://{}/bypass", origin.addr()))
+            .await
+            .expect("direct request succeeds")
     );
-    assert_eq!(requests[0].method, "GET");
-    // For direct connections, the URI might be just the path part
+    assert!(proxy.requests().is_empty());
+    assert_eq!("/bypass", origin.requests()[0].uri);
+}
+
+#[tokio::test]
+async fn test_no_proxy_bypass_with_hyper_util_legacy_pool() {
+    no_proxy_bypasses_proxy(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_no_proxy_bypass_with_partitioned_connection_pool() {
+    no_proxy_bypasses_proxy(&PartitionedConnectionPool).await;
+}
+
+async fn disabled_proxy_uses_direct_origin_form(backend: &dyn HttpClientBackend) {
+    let origin = MockHttpServer::with_response(StatusCode::OK, "direct").await;
+    let client = http_client(backend, proxy_backend_config(ProxyConfig::disabled()));
+
+    assert_eq!(
+        (StatusCode::OK, "direct".to_string()),
+        get(&client, &format!("http://{}/direct", origin.addr()))
+            .await
+            .expect("direct request succeeds")
+    );
+    assert_eq!("/direct", origin.requests()[0].uri);
+}
+
+#[tokio::test]
+async fn test_disabled_proxy_uses_direct_origin_form_with_hyper_util_legacy_pool() {
+    disabled_proxy_uses_direct_origin_form(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_disabled_proxy_uses_direct_origin_form_with_partitioned_connection_pool() {
+    disabled_proxy_uses_direct_origin_form(&PartitionedConnectionPool).await;
+}
+
+async fn https_only_proxy_bypasses_http(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "unexpected proxy").await;
+    let origin = MockHttpServer::with_response(StatusCode::OK, "direct HTTP").await;
+    let config =
+        ProxyConfig::https(format!("http://{}", proxy.addr())).expect("valid proxy configuration");
+    let client = http_client(backend, proxy_backend_config(config));
+
+    assert_eq!(
+        (StatusCode::OK, "direct HTTP".to_string()),
+        get(&client, &format!("http://{}/http-only", origin.addr()))
+            .await
+            .expect("direct HTTP request succeeds")
+    );
+    assert!(proxy.requests().is_empty());
+}
+
+#[tokio::test]
+async fn test_https_only_proxy_bypasses_http_with_hyper_util_legacy_pool() {
+    https_only_proxy_bypasses_http(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_https_only_proxy_bypasses_http_with_partitioned_connection_pool() {
+    https_only_proxy_bypasses_http(&PartitionedConnectionPool).await;
+}
+
+async fn all_traffic_proxy_forwards_http(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "all traffic").await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = http_client(backend, proxy_backend_config(config));
+
+    assert_eq!(
+        (StatusCode::OK, "all traffic".to_string()),
+        get(&client, "http://service.test/all")
+            .await
+            .expect("all-traffic proxy request succeeds")
+    );
+    assert_eq!("http://service.test/all", proxy.requests()[0].uri);
+}
+
+#[tokio::test]
+async fn test_all_traffic_proxy_forwards_http_with_hyper_util_legacy_pool() {
+    all_traffic_proxy_forwards_http(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_all_traffic_proxy_forwards_http_with_partitioned_connection_pool() {
+    all_traffic_proxy_forwards_http(&PartitionedConnectionPool).await;
+}
+
+async fn unreachable_proxy_fails(backend: &dyn HttpClientBackend) {
+    let config = ProxyConfig::http("http://127.0.0.1:1").expect("valid proxy");
+    let client = http_client(backend, proxy_backend_config(config));
     assert!(
-        requests[0].uri == format!("http://{}/get", direct_server.addr())
-            || requests[0].uri == "/get",
-        "URI should be either full URL or path, got: {}",
-        requests[0].uri
+        get(&client, "http://service.test/unreachable")
+            .await
+            .is_err(),
+        "an unreachable proxy must fail the request"
     );
 }
 
-/// Tests HTTPS-only proxy configuration
-/// Verifies that HTTP requests bypass HTTPS-only proxies
 #[tokio::test]
-async fn test_https_proxy_configuration() {
-    let mock_proxy = MockProxyServer::with_response(StatusCode::OK, "https proxy response").await;
-
-    // Create a direct target server for HTTP requests
-    let direct_server =
-        MockProxyServer::with_response(StatusCode::OK, "direct http connection").await;
-
-    // Configure HTTPS-only proxy
-    let proxy_config = ProxyConfig::https(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // Test: HTTP request should NOT go through HTTPS-only proxy, should go direct
-    let target_url = format!("http://{}/api", direct_server.addr());
-    let result = make_http_request_through_proxy(proxy_config.clone(), &target_url).await;
-
-    // The HTTP request should succeed by going directly to our mock server
-    let (status, body) = result.expect("HTTP request should succeed via direct connection");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "direct http connection");
-
-    // Verify the HTTPS-only proxy received no requests
-    let proxy_requests = mock_proxy.requests();
-    assert_eq!(
-        proxy_requests.len(),
-        0,
-        "HTTP request should not go through HTTPS-only proxy"
-    );
-
-    // Verify the direct server received the request
-    let direct_requests = direct_server.requests();
-    assert_eq!(
-        direct_requests.len(),
-        1,
-        "Direct server should have received the HTTP request"
-    );
+async fn test_unreachable_proxy_fails_with_hyper_util_legacy_pool() {
+    unreachable_proxy_fails(&HyperUtilLegacyPool).await;
 }
 
-/// Tests all-traffic proxy configuration
-/// Verifies that both HTTP and HTTPS requests go through all-traffic proxies
 #[tokio::test]
-async fn test_all_traffic_proxy() {
-    let mock_proxy = MockProxyServer::with_response(StatusCode::OK, "all traffic proxy").await;
-
-    // Configure proxy for all traffic
-    let proxy_config = ProxyConfig::all(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // HTTP request should go through the proxy
-    let target_url = "http://aws.amazon.com/api/endpoint";
-    let result = make_http_request_through_proxy(proxy_config.clone(), target_url).await;
-
-    let (status, body) = result.expect("HTTP request through all-traffic proxy should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "all traffic proxy");
-
-    // Verify the proxy received the HTTP request
-    let requests = mock_proxy.requests();
-    assert_eq!(
-        requests.len(),
-        1,
-        "Proxy should have received exactly one request"
-    );
-    assert_eq!(requests[0].method, "GET");
-    assert_eq!(requests[0].uri, target_url);
+async fn test_unreachable_proxy_fails_with_partitioned_connection_pool() {
+    unreachable_proxy_fails(&PartitionedConnectionPool).await;
 }
 
-/// Tests proxy connection failure handling
-/// Verifies that unreachable proxy servers result in appropriate connection errors
-#[tokio::test]
-async fn test_proxy_connection_failure() {
-    // Configure proxy pointing to non-existent server
-    let proxy_config = ProxyConfig::http("http://127.0.0.1:1").unwrap(); // Port 1 should be unavailable
-
-    // Make request through non-existent proxy - use a safe domain that won't cause issues
-    let target_url = "http://aws.amazon.com/api/test";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    // The request should fail with a connection error
-    assert!(
-        result.is_err(),
-        "Request should fail when proxy is unreachable"
-    );
-
-    let error = result.unwrap_err();
-    let error_msg = error.to_string().to_lowercase();
-
-    // Verify it's a connection-related error (not a different kind of error)
-    assert!(
-        error_msg.contains("connection")
-            || error_msg.contains("refused")
-            || error_msg.contains("unreachable")
-            || error_msg.contains("timeout")
-            || error_msg.contains("connect")
-            || error_msg.contains("io error"), // Include generic IO errors
-        "Error should be connection-related, got: {}",
-        error
-    );
-}
-
-/// Tests proxy authentication failure handling
-/// Verifies that incorrect proxy credentials result in 407 Proxy Authentication Required
-#[tokio::test]
-async fn test_proxy_authentication_failure() {
-    let mock_proxy = MockProxyServer::with_auth_validation("correct", "password").await;
-
-    // Configure proxy with wrong credentials
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr()))
-        .unwrap()
+async fn incorrect_proxy_authentication_returns_407(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_auth_validation("correct", "password").await;
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
         .with_basic_auth("wrong", "credentials");
+    let client = http_client(backend, proxy_backend_config(config));
 
-    // Make request with wrong credentials - use safe domain
-    let target_url = "http://aws.amazon.com/secure/api";
-    let result = make_http_request_through_proxy(proxy_config, target_url).await;
-
-    // The request should return 407 Proxy Authentication Required
-    let (status, _body) = result.expect("Request should complete (even with auth failure)");
-    assert_eq!(status, StatusCode::PROXY_AUTHENTICATION_REQUIRED);
-
-    // Verify the proxy received the request (even though auth failed)
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1, "Proxy should have received the request");
-
-    // Verify the wrong credentials were sent
-    let expected_wrong_auth = format!(
-        "Basic {}",
-        base64::prelude::BASE64_STANDARD.encode("wrong:credentials")
+    assert_eq!(
+        StatusCode::PROXY_AUTHENTICATION_REQUIRED,
+        get(&client, "http://service.test/denied")
+            .await
+            .expect("proxy response is returned")
+            .0
     );
     assert_eq!(
-        requests[0].headers.get("proxy-authorization"),
-        Some(&expected_wrong_auth)
+        Some(&basic_authorization("wrong", "credentials")),
+        proxy.requests()[0].headers.get("proxy-authorization")
     );
 }
 
-/// Tests that ProxyConfig::disabled() overrides environment proxy settings
-/// Verifies that explicit proxy disabling takes precedence over environment variables
 #[tokio::test]
-async fn test_explicit_proxy_disable_overrides_environment() {
-    let mock_proxy = MockProxyServer::new(|_req| {
-        panic!("Request should not reach proxy when explicitly disabled");
+async fn test_incorrect_proxy_authentication_returns_407_with_hyper_util_legacy_pool() {
+    incorrect_proxy_authentication_returns_407(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_incorrect_proxy_authentication_returns_407_with_partitioned_connection_pool() {
+    incorrect_proxy_authentication_returns_407(&PartitionedConnectionPool).await;
+}
+
+async fn disabled_proxy_overrides_environment(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "unexpected proxy").await;
+    let origin = MockHttpServer::with_response(StatusCode::OK, "direct").await;
+    let proxy_uri = format!("http://{}", proxy.addr());
+    with_env_vars(&[("HTTP_PROXY", &proxy_uri)], || async {
+        let client = http_client(backend, proxy_backend_config(ProxyConfig::disabled()));
+        assert_eq!(
+            (StatusCode::OK, "direct".to_string()),
+            get(&client, &format!("http://{}/disabled", origin.addr()))
+                .await
+                .expect("direct request succeeds")
+        );
     })
     .await;
+    assert!(proxy.requests().is_empty());
+    assert_eq!("/disabled", origin.requests()[0].uri);
+}
 
-    // Create a direct target server
-    let direct_server = MockProxyServer::with_response(StatusCode::OK, "direct connection").await;
+#[tokio::test]
+async fn test_disabled_proxy_overrides_environment_with_hyper_util_legacy_pool() {
+    disabled_proxy_overrides_environment(&HyperUtilLegacyPool).await;
+}
 
-    with_env_vars(
-        &[("HTTP_PROXY", &format!("http://{}", mock_proxy.addr()))],
-        || async {
-            // Create connector with explicitly disabled proxy (should override environment)
-            let proxy_config = ProxyConfig::disabled();
+#[tokio::test]
+async fn test_disabled_proxy_overrides_environment_with_partitioned_connection_pool() {
+    disabled_proxy_overrides_environment(&PartitionedConnectionPool).await;
+}
 
-            // Make request - should go direct despite HTTP_PROXY environment variable
-            let target_url = format!("http://{}/test", direct_server.addr());
-            let result = make_http_request_through_proxy(proxy_config, &target_url).await;
-
-            let (status, body) = result.expect("Direct connection should succeed");
-            assert_eq!(status, StatusCode::OK);
-            assert_eq!(body, "direct connection");
-
-            // Verify the proxy received no requests (disabled)
-            let proxy_requests = mock_proxy.requests();
-            assert_eq!(
-                proxy_requests.len(),
-                0,
-                "Proxy should not receive requests when explicitly disabled"
-            );
-
-            // Verify the direct server received the request
-            let direct_requests = direct_server.requests();
-            assert_eq!(
-                direct_requests.len(),
-                1,
-                "Direct server should have received the request"
-            );
+async fn idle_proxy_connection_is_evicted(backend: &dyn HttpClientBackend) {
+    let proxy = MockHttpServer::with_response(StatusCode::OK, "proxied").await;
+    let config = ProxyConfig::http(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = http_client(
+        backend,
+        BackendConfig {
+            pool_idle_timeout: Some(Duration::from_millis(100)),
+            ..proxy_backend_config(config)
         },
-    )
-    .await;
-}
-
-// ================================================================================================
-// HTTPS/CONNECT Tunneling Tests
-// ================================================================================================
-//
-// These tests are for HTTPS tunneling through HTTP proxies using the CONNECT method.
-
-/// Helper function to make HTTPS requests through proxy using TLS providers
-/// This is similar to make_http_request_through_proxy but uses TLS-enabled connectors
-#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
-async fn make_https_request_through_proxy(
-    proxy_config: ProxyConfig,
-    target_url: &str,
-    tls_provider: tls::Provider,
-) -> Result<(StatusCode, String), Box<dyn std::error::Error + Send + Sync>> {
-    let http_client = http_client_fn(move |settings, _components| {
-        let connector = Connector::builder()
-            .proxy_config(proxy_config.clone())
-            .connector_settings(settings.clone())
-            .tls_provider(tls_provider.clone())
-            .build();
-
-        aws_smithy_runtime_api::client::http::SharedHttpConnector::new(connector)
-    });
-
-    let connector_settings = HttpConnectorSettings::builder().build();
-    let runtime_components = RuntimeComponentsBuilder::for_tests()
-        .with_time_source(Some(SystemTimeSource::new()))
-        .build()
-        .unwrap();
-
-    let http_connector = http_client.http_connector(&connector_settings, &runtime_components);
-
-    let request = HttpRequest::get(target_url)
-        .map_err(|e| Box::new(e) as Box<dyn std::error::Error + Send + Sync>)?;
-
-    let response = http_connector.call(request).await?;
-
-    let status = response.status();
-    let body_bytes = response.into_body().collect().await?.to_bytes();
-    let body_string = String::from_utf8(body_bytes.to_vec())?;
-
-    Ok((status.into(), body_string))
-}
-
-/// Generic test function for HTTPS CONNECT with authentication
-/// Tests that HTTPS requests through HTTP proxy use CONNECT method with proper auth headers
-#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
-async fn run_https_connect_with_auth_test(tls_provider: tls::Provider, provider_name: &str) {
-    let mock_proxy = MockProxyServer::new(|req| {
-        // For HTTPS through HTTP proxy, we should see a CONNECT request
-        assert_eq!(req.method, "CONNECT");
-        assert_eq!(req.uri, "secure.aws.amazon.com:443");
-
-        // Verify authentication header is present
-        let expected_auth = format!(
-            "Basic {}",
-            base64::prelude::BASE64_STANDARD.encode("connectuser:connectpass")
-        );
-        assert_eq!(req.headers.get("proxy-authorization"), Some(&expected_auth));
-
-        // Return 400 to avoid dealing with actual TLS tunneling
-        // The important part is that we got the CONNECT request with correct auth
-        Response::builder()
-            .status(StatusCode::BAD_REQUEST)
-            .body("CONNECT tunnel setup failed".to_string())
-            .unwrap()
-    })
-    .await;
-
-    // Configure proxy with authentication
-    let proxy_config = ProxyConfig::all(format!("http://{}", mock_proxy.addr()))
-        .unwrap()
-        .with_basic_auth("connectuser", "connectpass");
-
-    // Make HTTPS request - should trigger CONNECT method
-    let target_url = "https://secure.aws.amazon.com/api/secure";
-    let result = make_https_request_through_proxy(proxy_config, target_url, tls_provider).await;
-
-    // We expect this to fail with a connection error since we returned 400
-    // The important thing is that the CONNECT request was made correctly
-    assert!(
-        result.is_err(),
-        "CONNECT tunnel should fail with 400 response for {}",
-        provider_name
     );
 
-    // Verify the proxy received the CONNECT request
-    let requests = mock_proxy.requests();
     assert_eq!(
-        requests.len(),
-        1,
-        "Proxy should have received exactly one CONNECT request for {}",
-        provider_name
+        StatusCode::OK,
+        get(&client, "http://service.test/idle")
+            .await
+            .expect("proxy request succeeds")
+            .0
     );
-}
+    assert_eq!(1, proxy.connection_count());
 
-/// Generic test function for CONNECT without authentication (should get 407)
-/// Tests that HTTPS requests without auth get proper 407 response
-#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
-async fn run_https_connect_auth_required_test(tls_provider: tls::Provider, provider_name: &str) {
-    let mock_proxy = MockProxyServer::new(|req| {
-        // For HTTPS through HTTP proxy, we should see a CONNECT request
-        assert_eq!(req.method, "CONNECT");
-        assert_eq!(req.uri, "secure.aws.amazon.com:443");
-
-        // No auth header should be present
-        assert!(!req.headers.contains_key("proxy-authorization"));
-
-        // Return 407 Proxy Authentication Required
-        Response::builder()
-            .status(StatusCode::PROXY_AUTHENTICATION_REQUIRED)
-            .body("Proxy authentication required for CONNECT".to_string())
-            .unwrap()
-    })
-    .await;
-
-    // Configure proxy without authentication
-    let proxy_config = ProxyConfig::all(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // Make HTTPS request - should trigger CONNECT method and get 407
-    let target_url = "https://secure.aws.amazon.com/api/secure";
-    let result = make_https_request_through_proxy(proxy_config, target_url, tls_provider).await;
-
-    // We expect this to fail with a connection error since we returned 407
-    assert!(
-        result.is_err(),
-        "CONNECT tunnel should fail with 407 response for {}",
-        provider_name
-    );
-
-    let error_msg = result.unwrap_err().to_string();
-    let error_msg_lower = error_msg.to_lowercase();
-
-    // The important thing is that the request failed (which means CONNECT was attempted)
-    // The specific error message format is less critical for this test
-    // We accept either specific proxy auth errors OR generic connection errors
-    // since both indicate the CONNECT tunnel attempt was made
-    assert!(
-        error_msg_lower.contains("407")
-            || error_msg_lower.contains("proxy")
-            || error_msg_lower.contains("auth")
-            || error_msg_lower.contains("io error")
-            || error_msg_lower.contains("connection"),
-        "Error should be connection-related (indicating CONNECT was attempted) for {}, got: {}",
-        provider_name,
-        error_msg
-    );
-
-    // Verify the proxy received the CONNECT request
-    let requests = mock_proxy.requests();
-    assert_eq!(
-        requests.len(),
-        1,
-        "Proxy should have received exactly one CONNECT request for {}",
-        provider_name
-    );
-}
-
-/// Tests HTTPS tunneling through HTTP proxy with CONNECT method (rustls provider)
-/// Verifies that HTTPS requests through HTTP proxy use CONNECT method with authentication
-#[cfg(feature = "rustls-ring")]
-#[tokio::test]
-async fn test_https_connect_with_auth_rustls() {
-    run_https_connect_with_auth_test(
-        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
-        "rustls",
-    )
-    .await;
-}
-
-/// Tests CONNECT method without authentication (should get 407) - rustls provider
-/// Verifies that HTTPS requests without auth get proper 407 response
-#[cfg(feature = "rustls-ring")]
-#[tokio::test]
-async fn test_https_connect_auth_required_rustls() {
-    run_https_connect_auth_required_test(
-        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
-        "rustls",
-    )
-    .await;
-}
-
-/// Tests HTTPS tunneling through HTTP proxy with CONNECT method (s2n-tls provider)
-/// Verifies that HTTPS requests through HTTP proxy use CONNECT method with authentication
-#[cfg(feature = "s2n-tls")]
-#[tokio::test]
-async fn test_https_connect_with_auth_s2n_tls() {
-    run_https_connect_with_auth_test(tls::Provider::S2nTls, "s2n-tls").await;
-}
-
-/// Tests CONNECT method without authentication (should get 407) - s2n-tls provider
-/// Verifies that HTTPS requests without auth get proper 407 response
-#[cfg(feature = "s2n-tls")]
-#[tokio::test]
-async fn test_https_connect_auth_required_s2n_tls() {
-    run_https_connect_auth_required_test(tls::Provider::S2nTls, "s2n-tls").await;
-}
-
-/// Tests that HTTP requests through proxy use absolute URI form
-/// Verifies that the full URL (including hostname) is sent to the proxy
-#[tokio::test]
-async fn test_http_proxy_absolute_uri_form() {
-    let target_host = "api.example.com";
-    let target_path = "/v1/data";
-    let expected_absolute_uri = format!("http://{}{}", target_host, target_path);
-
-    // Clone for use in closure
-    let expected_uri_clone = expected_absolute_uri.clone();
-    let target_host_clone = target_host.to_string();
-
-    let mock_proxy = MockProxyServer::new(move |req| {
-        // For HTTP through proxy, we should see the full absolute URI
-        assert_eq!(req.method, "GET");
-        assert_eq!(req.uri, expected_uri_clone);
-
-        // Host header should still be present
-        assert_eq!(req.headers.get("host"), Some(&target_host_clone));
-
-        Response::builder()
-            .status(StatusCode::OK)
-            .body("proxied response".to_string())
-            .unwrap()
-    })
-    .await;
-
-    let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    let result = make_http_request_through_proxy(proxy_config, &expected_absolute_uri).await;
-
-    let (status, body) = result.expect("HTTP request through proxy should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "proxied response");
-
-    // Verify the proxy received the request with absolute URI
-    let requests = mock_proxy.requests();
-    assert_eq!(requests.len(), 1);
-    assert_eq!(requests[0].uri, expected_absolute_uri);
-}
-
-/// Tests that direct HTTP requests (no proxy) use origin form URI
-/// Verifies that only the path is sent when connecting directly
-#[tokio::test]
-async fn test_direct_http_origin_uri_form() {
-    let target_path = "/v1/data";
-
-    // Create a direct target server (no proxy)
-    let direct_server = MockProxyServer::new(move |req| {
-        // For direct connections, we should see only the path (origin form)
-        assert_eq!(req.method, "GET");
-        // The URI should be just the path part, not the full URL
-        assert!(
-            req.uri == target_path || req.uri.ends_with(target_path),
-            "Expected origin form URI ending with '{}', got '{}'",
-            target_path,
-            req.uri
-        );
-
-        Response::builder()
-            .status(StatusCode::OK)
-            .body("direct response".to_string())
-            .unwrap()
-    })
-    .await;
-
-    // Use disabled proxy to ensure direct connection
-    let proxy_config = ProxyConfig::disabled();
-
-    let target_url = format!("http://{}{}", direct_server.addr(), target_path);
-    let result = make_http_request_through_proxy(proxy_config, &target_url).await;
-
-    let (status, body) = result.expect("Direct HTTP request should succeed");
-    assert_eq!(status, StatusCode::OK);
-    assert_eq!(body, "direct response");
-
-    // Verify the server received the request
-    let requests = direct_server.requests();
-    assert_eq!(requests.len(), 1);
-}
-
-/// Tests URI form handling with different proxy configurations
-/// Verifies that URI form changes based on proxy vs direct connection
-#[tokio::test]
-async fn test_uri_form_proxy_vs_direct() {
-    let target_host = "test.example.com";
-    let target_path = "/api/test";
-    let full_url = format!("http://{}{}", target_host, target_path);
-
-    // Test 1: Through proxy - should use absolute form
-    {
-        // Clone for use in closure
-        let target_host_clone = target_host.to_string();
-        let target_path_clone = target_path.to_string();
-
-        let mock_proxy = MockProxyServer::new(move |req| {
-            // Should receive absolute URI
-            assert!(req.uri.starts_with("http://"));
-            assert!(req.uri.contains(&target_host_clone));
-            assert!(req.uri.contains(&target_path_clone));
-
-            Response::builder()
-                .status(StatusCode::OK)
-                .body("proxy response".to_string())
-                .unwrap()
-        })
-        .await;
-
-        let proxy_config = ProxyConfig::http(format!("http://{}", mock_proxy.addr())).unwrap();
-        let result = make_http_request_through_proxy(proxy_config, &full_url).await;
-
-        assert!(result.is_ok(), "Proxy request should succeed");
-        let requests = mock_proxy.requests();
-        assert_eq!(requests.len(), 1);
-        assert_eq!(requests[0].uri, full_url);
-    }
-
-    // Test 2: Direct connection - should use origin form
-    {
-        let target_path_clone = target_path.to_string();
-
-        let direct_server = MockProxyServer::new(move |req| {
-            // Should receive only the path part
-            assert!(!req.uri.starts_with("http://"));
-            assert!(req.uri == target_path_clone || req.uri.ends_with(&target_path_clone));
-
-            Response::builder()
-                .status(StatusCode::OK)
-                .body("direct response".to_string())
-                .unwrap()
-        })
-        .await;
-
-        let proxy_config = ProxyConfig::disabled();
-        let direct_url = format!("http://{}{}", direct_server.addr(), target_path);
-        let result = make_http_request_through_proxy(proxy_config, &direct_url).await;
-
-        assert!(result.is_ok(), "Direct request should succeed");
-        let requests = direct_server.requests();
-        assert_eq!(requests.len(), 1);
-    }
-}
-
-/// Generic test function for CONNECT URI form validation
-/// Tests that CONNECT requests use the correct host:port format
-#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
-async fn run_connect_uri_form_test(tls_provider: tls::Provider, provider_name: &str) {
-    let target_host = "secure.example.com";
-    let target_port = 443;
-    let expected_connect_uri = format!("{}:{}", target_host, target_port);
-
-    // Clone for use in closure
-    let expected_uri_clone = expected_connect_uri.clone();
-
-    let mock_proxy = MockProxyServer::new(move |req| {
-        if req.method == "CONNECT" {
-            // CONNECT should use host:port format
-            assert_eq!(req.uri, expected_uri_clone);
-
-            // CONNECT requests should not have a Host header in the CONNECT line
-            // (the Host header is for the tunneled HTTP request, not the CONNECT)
-
-            Response::builder()
-                .status(StatusCode::OK)
-                .body("Connection established".to_string())
-                .unwrap()
-        } else {
-            // This shouldn't happen in our test, but handle it gracefully
-            Response::builder()
-                .status(StatusCode::BAD_REQUEST)
-                .body("Unexpected non-CONNECT request".to_string())
-                .unwrap()
+    tokio::time::timeout(Duration::from_secs(2), async {
+        while proxy.connection_count() != 0 {
+            tokio::time::sleep(Duration::from_millis(10)).await;
         }
     })
-    .await;
-
-    let proxy_config = ProxyConfig::all(format!("http://{}", mock_proxy.addr())).unwrap();
-
-    // Try to make an HTTPS request - this should trigger CONNECT
-    let target_url = format!("https://{}/api/secure", target_host);
-
-    let _result = make_https_request_through_proxy(proxy_config, &target_url, tls_provider).await;
-
-    // The request will likely fail due to our mock setup, but that's OK
-    // The important thing is that the CONNECT request was made with correct URI
-    let requests = mock_proxy.requests();
-    assert_eq!(
-        requests.len(),
-        1,
-        "Should have received exactly one CONNECT request for {}",
-        provider_name
-    );
-    assert_eq!(requests[0].method, "CONNECT");
-    assert_eq!(requests[0].uri, expected_connect_uri);
+    .await
+    .expect("idle proxy connection should close");
 }
 
-/// Tests CONNECT method URI form for HTTPS tunneling - rustls provider
-/// Verifies that CONNECT requests use the correct host:port format
+#[tokio::test]
+async fn test_idle_proxy_connection_is_evicted_with_hyper_util_legacy_pool() {
+    idle_proxy_connection_is_evicted(&HyperUtilLegacyPool).await;
+}
+
+#[tokio::test]
+async fn test_idle_proxy_connection_is_evicted_with_partitioned_connection_pool() {
+    idle_proxy_connection_is_evicted(&PartitionedConnectionPool).await;
+}
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn https_connect_uses_authority_form_and_authentication(
+    backend: &dyn HttpsClientBackend,
+    provider: tls::Provider,
+) {
+    let expected = basic_authorization("connectuser", "connectpass");
+    let expected_for_handler = expected.clone();
+    let proxy = MockHttpServer::new(move |request| {
+        assert_eq!("CONNECT", request.method);
+        assert_eq!("secure.example.com:443", request.uri);
+        assert_eq!(
+            Some(&expected_for_handler),
+            request.headers.get("proxy-authorization")
+        );
+        Response::builder()
+            .status(StatusCode::BAD_REQUEST)
+            .body("tunnel rejected".to_string())
+            .expect("valid response")
+    })
+    .await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
+        .with_basic_auth("connectuser", "connectpass");
+    let client = https_client(
+        backend,
+        proxy_backend_config(config),
+        provider,
+        tls::TlsContext::default(),
+    );
+
+    assert!(
+        get(&client, "https://secure.example.com/private")
+            .await
+            .is_err(),
+        "a rejected CONNECT request must fail"
+    );
+    assert_eq!(1, proxy.requests().len());
+}
+
 #[cfg(feature = "rustls-ring")]
 #[tokio::test]
-async fn test_connect_uri_form_rustls() {
-    run_connect_uri_form_test(
+async fn test_https_connect_form_and_auth_with_rustls_and_hyper_util_legacy_pool() {
+    https_connect_uses_authority_form_and_authentication(
+        &HyperUtilLegacyPool,
         tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
-        "rustls",
     )
     .await;
 }
 
-/// Tests CONNECT method URI form for HTTPS tunneling - s2n-tls provider
-/// Verifies that CONNECT requests use the correct host:port format
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_connect_form_and_auth_with_rustls_and_partitioned_connection_pool() {
+    https_connect_uses_authority_form_and_authentication(
+        &PartitionedConnectionPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
 #[cfg(feature = "s2n-tls")]
 #[tokio::test]
-async fn test_connect_uri_form_s2n_tls() {
-    run_connect_uri_form_test(tls::Provider::S2nTls, "s2n-tls").await;
+async fn test_https_connect_form_and_auth_with_s2n_tls_and_hyper_util_legacy_pool() {
+    https_connect_uses_authority_form_and_authentication(
+        &HyperUtilLegacyPool,
+        tls::Provider::S2nTls,
+    )
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_connect_form_and_auth_with_s2n_tls_and_partitioned_connection_pool() {
+    https_connect_uses_authority_form_and_authentication(
+        &PartitionedConnectionPool,
+        tls::Provider::S2nTls,
+    )
+    .await;
+}
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn https_connect_without_authentication_is_rejected(
+    backend: &dyn HttpsClientBackend,
+    provider: tls::Provider,
+) {
+    let proxy = MockHttpServer::new(|request| {
+        assert_eq!("CONNECT", request.method);
+        assert_eq!("secure.example.com:443", request.uri);
+        assert!(!request.headers.contains_key("proxy-authorization"));
+        Response::builder()
+            .status(StatusCode::PROXY_AUTHENTICATION_REQUIRED)
+            .body("authentication required".to_string())
+            .expect("valid response")
+    })
+    .await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = https_client(
+        backend,
+        proxy_backend_config(config),
+        provider,
+        tls::TlsContext::default(),
+    );
+
+    assert!(
+        get(&client, "https://secure.example.com/private")
+            .await
+            .is_err(),
+        "a 407 CONNECT response must fail"
+    );
+    assert_eq!(1, proxy.requests().len());
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_connect_without_auth_with_rustls_and_hyper_util_legacy_pool() {
+    https_connect_without_authentication_is_rejected(
+        &HyperUtilLegacyPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_connect_without_auth_with_rustls_and_partitioned_connection_pool() {
+    https_connect_without_authentication_is_rejected(
+        &PartitionedConnectionPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_connect_without_auth_with_s2n_tls_and_hyper_util_legacy_pool() {
+    https_connect_without_authentication_is_rejected(&HyperUtilLegacyPool, tls::Provider::S2nTls)
+        .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_connect_without_auth_with_s2n_tls_and_partitioned_connection_pool() {
+    https_connect_without_authentication_is_rejected(
+        &PartitionedConnectionPool,
+        tls::Provider::S2nTls,
+    )
+    .await;
+}
+
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn tunneled_https_request_uses_origin_form(
+    backend: &dyn HttpsClientBackend,
+    provider: tls::Provider,
+) {
+    let origin = MockTlsOrigin::new("tunneled response").await;
+    let authorization = basic_authorization("connectuser", "connectpass");
+    let proxy = MockConnectProxy::relay_to(origin.addr(), Some(authorization.clone())).await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr()))
+        .expect("valid proxy")
+        .with_basic_auth("connectuser", "connectpass");
+    let client = https_client(
+        backend,
+        proxy_backend_config(config),
+        provider,
+        test_tls::SERVER_IDENTITY.client_context(),
+    );
+    let target = format!("https://localhost:{}/inside?value=1", origin.addr().port());
+
+    assert_eq!(
+        (StatusCode::OK, "tunneled response".to_string()),
+        get(&client, &target)
+            .await
+            .expect("tunneled HTTPS request succeeds")
+    );
+
+    let proxy_requests = proxy.requests();
+    assert_eq!(1, proxy_requests.len());
+    assert_eq!("CONNECT", proxy_requests[0].method);
+    assert_eq!(
+        format!("localhost:{}", origin.addr().port()),
+        proxy_requests[0].uri
+    );
+    assert_eq!(
+        Some(&authorization),
+        proxy_requests[0].headers.get("proxy-authorization")
+    );
+
+    let origin_requests = origin.requests();
+    assert_eq!(1, origin_requests.len());
+    assert_eq!("GET", origin_requests[0].method);
+    assert_eq!("/inside?value=1", origin_requests[0].uri);
+    assert!(
+        !origin_requests[0]
+            .headers
+            .contains_key("proxy-authorization"),
+        "proxy credentials must not cross the CONNECT tunnel"
+    );
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_tunneled_https_origin_form_with_rustls_and_hyper_util_legacy_pool() {
+    tunneled_https_request_uses_origin_form(
+        &HyperUtilLegacyPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_tunneled_https_origin_form_with_rustls_and_partitioned_connection_pool() {
+    tunneled_https_request_uses_origin_form(
+        &PartitionedConnectionPool,
+        tls::Provider::rustls(tls::rustls_provider::CryptoMode::Ring),
+    )
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_tunneled_https_origin_form_with_s2n_tls_and_hyper_util_legacy_pool() {
+    tunneled_https_request_uses_origin_form(&HyperUtilLegacyPool, tls::Provider::S2nTls).await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_tunneled_https_origin_form_with_s2n_tls_and_partitioned_connection_pool() {
+    tunneled_https_request_uses_origin_form(&PartitionedConnectionPool, tls::Provider::S2nTls)
+        .await;
 }

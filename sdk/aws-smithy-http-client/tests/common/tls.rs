@@ -3,48 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! TLS setup shared by integration-test servers and clients.
+//! TLS identity and configuration shared by integration tests.
 
-use aws_smithy_http_client::tls::{TlsContext, TrustStore};
+use aws_smithy_http_client::tls::{TlsContext, TlsContextBuilder, TrustStore};
 use rustls_pki_types::{CertificateDer, PrivateKeyDer};
 use std::fs;
 use std::io;
 use std::sync::Arc;
 use tokio_rustls::{rustls, rustls::ServerConfig, TlsAcceptor};
 
-const SERVER_CERT_PATH: &str = "tests/server.pem";
-const SERVER_KEY_PATH: &str = "tests/server.rsa";
+/// PEM-backed identity used by integration-test TLS servers.
+///
+/// The certificate contains `localhost` and `sdktest.com` as subject
+/// alternative names.
+pub(crate) const SERVER_IDENTITY: TestTlsIdentity =
+    TestTlsIdentity::from_pem("tests/server.pem", "tests/server.rsa");
 
-pub(crate) fn server_tls_acceptor(alpn_protocols: &[&[u8]]) -> io::Result<TlsAcceptor> {
-    // Set the process-wide crypto provider used by the test server.
-    let _ = rustls::crypto::aws_lc_rs::default_provider().install_default();
-
-    let certs = load_certs(SERVER_CERT_PATH)?;
-    let key = load_private_key(SERVER_KEY_PATH)?;
-    let mut server_config = ServerConfig::builder()
-        .with_no_client_auth()
-        .with_single_cert(certs, key)
-        .map_err(|err| error(err.to_string()))?;
-    server_config.alpn_protocols = alpn_protocols
-        .iter()
-        .map(|protocol| protocol.to_vec())
-        .collect();
-
-    Ok(TlsAcceptor::from(Arc::new(server_config)))
+/// Certificate and private-key material for one test TLS identity.
+#[derive(Clone, Copy, Debug)]
+pub(crate) struct TestTlsIdentity {
+    certificate_path: &'static str,
+    private_key_path: &'static str,
 }
 
-pub(crate) fn server_tls_context() -> TlsContext {
-    TlsContext::builder()
-        .with_trust_store(server_trust_store())
-        .build()
-        .expect("failed to build TlsContext with test server certificate")
-}
+impl TestTlsIdentity {
+    const fn from_pem(certificate_path: &'static str, private_key_path: &'static str) -> Self {
+        Self {
+            certificate_path,
+            private_key_path,
+        }
+    }
 
-/// A [`TrustStore`] containing only the test server certificate.
-pub(crate) fn server_trust_store() -> TrustStore {
-    let pem_contents =
-        fs::read(SERVER_CERT_PATH).expect("failed to read server certificate for test TLS context");
-    TrustStore::empty().with_pem_certificate(pem_contents)
+    /// Builds a server acceptor using this identity and ALPN protocol list.
+    pub(crate) fn acceptor(&self, alpn_protocols: &[&[u8]]) -> io::Result<TlsAcceptor> {
+        // The test server uses one process-wide rustls crypto provider.
+        let _ = rustls::crypto::aws_lc_rs::default_provider().install_default();
+
+        let certs = load_certs(self.certificate_path)?;
+        let key = load_private_key(self.private_key_path)?;
+        let mut server_config = ServerConfig::builder()
+            .with_no_client_auth()
+            .with_single_cert(certs, key)
+            .map_err(|err| error(err.to_string()))?;
+        server_config.alpn_protocols = alpn_protocols
+            .iter()
+            .map(|protocol| protocol.to_vec())
+            .collect();
+
+        Ok(TlsAcceptor::from(Arc::new(server_config)))
+    }
+
+    /// Returns a client TLS context builder that trusts this identity.
+    pub(crate) fn client_context_builder(&self) -> TlsContextBuilder {
+        TlsContext::builder().with_trust_store(self.trust_store())
+    }
+
+    /// Builds a client TLS context that trusts this identity.
+    pub(crate) fn client_context(&self) -> TlsContext {
+        self.client_context_builder()
+            .build()
+            .expect("test TLS identity produces a valid client context")
+    }
+
+    fn trust_store(&self) -> TrustStore {
+        let pem_contents =
+            fs::read(self.certificate_path).expect("failed to read test TLS identity certificate");
+        TrustStore::empty().with_pem_certificate(pem_contents)
+    }
 }
 
 fn error(err: String) -> io::Error {

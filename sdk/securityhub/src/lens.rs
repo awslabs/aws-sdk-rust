@@ -119,6 +119,16 @@ pub(crate) fn reflens_get_recommended_policy_v2_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_remediations_v2_output_output_next_token(
+    input: &crate::operation::get_remediations_v2::GetRemediationsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_resources_trends_v2_output_output_next_token(
     input: &crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -171,6 +181,16 @@ pub(crate) fn reflens_list_configuration_policy_associations_output_output_next_
 
 pub(crate) fn reflens_list_enabled_products_for_import_output_output_next_token(
     input: &crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_exposures_by_remediation_v2_output_output_next_token(
+    input: &crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -333,6 +353,13 @@ pub(crate) fn lens_get_recommended_policy_v2_output_output_recommendation_steps(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_remediations_v2_output_output_items(
+    input: crate::operation::get_remediations_v2::GetRemediationsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RemediationV2Item>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_resources_trends_v2_output_output_trends_metrics(
     input: crate::operation::get_resources_trends_v2::GetResourcesTrendsV2Output,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourcesTrendsMetricsResult>> {
@@ -372,6 +399,13 @@ pub(crate) fn lens_list_enabled_products_for_import_output_output_product_subscr
     input: crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.product_subscriptions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_exposures_by_remediation_v2_output_output_items(
+    input: crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExposureFinding>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

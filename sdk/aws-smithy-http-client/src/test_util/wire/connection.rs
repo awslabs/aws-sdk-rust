@@ -107,6 +107,8 @@ pub enum ConnectionCloseReason {
     HarnessShutdown,
     /// The script failed.
     ScriptFailed,
+    /// The harness dropped the transport without a protocol close signal.
+    ScriptedTransportAbort,
 }
 
 /// An event recorded by the harness.

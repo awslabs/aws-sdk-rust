@@ -22,6 +22,8 @@ pub struct Filter {
     pub top_bottom_filter: ::std::option::Option<crate::types::TopBottomFilter>,
     /// <p>A <code>NestedFilter</code> filters data with a subset of data that is defined by the nested inner filter.</p>
     pub nested_filter: ::std::option::Option<crate::types::NestedFilter>,
+    /// <p>A <code>HierarchyFilter</code> filters data by drilling down through an ordered list of columns. Each level in the list narrows the data by one column, and the selected values at each level determine which values are available at the next.</p>
+    pub hierarchy_filter: ::std::option::Option<crate::types::HierarchyFilter>,
 }
 impl Filter {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
@@ -57,6 +59,10 @@ impl Filter {
     pub fn nested_filter(&self) -> ::std::option::Option<&crate::types::NestedFilter> {
         self.nested_filter.as_ref()
     }
+    /// <p>A <code>HierarchyFilter</code> filters data by drilling down through an ordered list of columns. Each level in the list narrows the data by one column, and the selected values at each level determine which values are available at the next.</p>
+    pub fn hierarchy_filter(&self) -> ::std::option::Option<&crate::types::HierarchyFilter> {
+        self.hierarchy_filter.as_ref()
+    }
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::types::Filter).
@@ -77,6 +83,7 @@ pub struct FilterBuilder {
     pub(crate) relative_dates_filter: ::std::option::Option<crate::types::RelativeDatesFilter>,
     pub(crate) top_bottom_filter: ::std::option::Option<crate::types::TopBottomFilter>,
     pub(crate) nested_filter: ::std::option::Option<crate::types::NestedFilter>,
+    pub(crate) hierarchy_filter: ::std::option::Option<crate::types::HierarchyFilter>,
 }
 impl FilterBuilder {
     /// <p>A <code>CategoryFilter</code> filters text values.</p>
@@ -194,6 +201,20 @@ impl FilterBuilder {
     pub fn get_nested_filter(&self) -> &::std::option::Option<crate::types::NestedFilter> {
         &self.nested_filter
     }
+    /// <p>A <code>HierarchyFilter</code> filters data by drilling down through an ordered list of columns. Each level in the list narrows the data by one column, and the selected values at each level determine which values are available at the next.</p>
+    pub fn hierarchy_filter(mut self, input: crate::types::HierarchyFilter) -> Self {
+        self.hierarchy_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>HierarchyFilter</code> filters data by drilling down through an ordered list of columns. Each level in the list narrows the data by one column, and the selected values at each level determine which values are available at the next.</p>
+    pub fn set_hierarchy_filter(mut self, input: ::std::option::Option<crate::types::HierarchyFilter>) -> Self {
+        self.hierarchy_filter = input;
+        self
+    }
+    /// <p>A <code>HierarchyFilter</code> filters data by drilling down through an ordered list of columns. Each level in the list narrows the data by one column, and the selected values at each level determine which values are available at the next.</p>
+    pub fn get_hierarchy_filter(&self) -> &::std::option::Option<crate::types::HierarchyFilter> {
+        &self.hierarchy_filter
+    }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
@@ -205,6 +226,7 @@ impl FilterBuilder {
             relative_dates_filter: self.relative_dates_filter,
             top_bottom_filter: self.top_bottom_filter,
             nested_filter: self.nested_filter,
+            hierarchy_filter: self.hierarchy_filter,
         }
     }
 }

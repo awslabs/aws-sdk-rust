@@ -33,6 +33,9 @@ pub struct IngestionJob {
     /// <p>The time the data ingestion job was last updated.</p>
     /// <p>If you stop a data ingestion job, the <code>updatedAt</code> time is the time the job was stopped.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub text_ready_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IngestionJob {
     /// <p>The unique identifier of the knowledge for the data ingestion job.</p>
@@ -78,6 +81,11 @@ impl IngestionJob {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn text_ready_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.text_ready_at.as_ref()
+    }
 }
 impl IngestionJob {
     /// Creates a new builder-style object to manufacture [`IngestionJob`](crate::types::IngestionJob).
@@ -99,6 +107,7 @@ pub struct IngestionJobBuilder {
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) text_ready_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl IngestionJobBuilder {
     /// <p>The unique identifier of the knowledge for the data ingestion job.</p>
@@ -245,6 +254,23 @@ impl IngestionJobBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn text_ready_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.text_ready_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn set_text_ready_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.text_ready_at = input;
+        self
+    }
+    /// <p>The time at which all text content in the data ingestion job finished extraction and became available to query.</p>
+    /// <p>This time isn't returned until text extraction is complete for all the documents in the job.</p>
+    pub fn get_text_ready_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.text_ready_at
+    }
     /// Consumes the builder and constructs a [`IngestionJob`](crate::types::IngestionJob).
     /// This method will fail if any of the following fields are not set:
     /// - [`knowledge_base_id`](crate::types::builders::IngestionJobBuilder::knowledge_base_id)
@@ -294,6 +320,7 @@ impl IngestionJobBuilder {
                     "updated_at was not specified but it is required when building IngestionJob",
                 )
             })?,
+            text_ready_at: self.text_ready_at,
         })
     }
 }

@@ -2,6 +2,10 @@
 
 HTTP client abstractions for generated smithy clients.
 
+## Design documents
+
+- [HTTP connection pool](docs/design/connection-pool.md)
+
 ## Connection test harness
 
 The `wire-mock` feature exposes a deterministic connection-level test harness at

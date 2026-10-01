@@ -33,7 +33,6 @@ use aws_smithy_http_client::test_util::wire::connection::{
     ConnectionTestHarness, EndpointPlan, HarnessError, Http1Response, Http1Script, ManualGate,
     SocketScript,
 };
-use aws_smithy_http_client::Builder;
 use aws_smithy_runtime_api::client::connection::{
     CaptureSmithyConnection, ConnectionMetadata as SmithyConnectionMetadata,
 };
@@ -44,27 +43,15 @@ use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::retry::ErrorKind;
 use common::client as test_client;
-use common::client::{BackendConfig, HyperUtilLegacyPool};
+use common::client::{
+    BackendConfig, HttpClientBackend, HyperUtilLegacyPool, PartitionedConnectionPool,
+};
 use http_body_util::BodyExt;
 use std::collections::HashSet;
 use std::net::{IpAddr, Ipv4Addr};
 use std::time::Duration;
 
 const IP1: IpAddr = IpAddr::V4(Ipv4Addr::LOCALHOST);
-
-trait HttpClientBackend {
-    fn build(&self, config: BackendConfig) -> SharedHttpClient;
-}
-
-impl HttpClientBackend for HyperUtilLegacyPool {
-    fn build(&self, config: BackendConfig) -> SharedHttpClient {
-        let mut builder = Builder::new();
-        if let Some(pool_idle_timeout) = config.pool_idle_timeout {
-            builder = builder.pool_idle_timeout(pool_idle_timeout);
-        }
-        builder.build_http()
-    }
-}
 
 fn request_with_body(url: &str, body: &[u8]) -> HttpRequest {
     let mut request = HttpRequest::new(SdkBody::from(body.to_vec()));
@@ -220,6 +207,11 @@ mod reuse_and_lifecycle {
         fully_consumed_responses_reuse_connection(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_fully_consumed_responses_reuse_connection_with_partitioned_connection_pool() {
+        fully_consumed_responses_reuse_connection(&PartitionedConnectionPool).await;
+    }
+
     /// An idle pooled connection is closed after its configured timeout and then replaced.
     async fn idle_connection_is_evicted_after_timeout(backend: &dyn HttpClientBackend) {
         let idle_timeout = Duration::from_millis(100);
@@ -236,6 +228,7 @@ mod reuse_and_lifecycle {
             .expect("harness should start");
         let client = backend.build(BackendConfig {
             pool_idle_timeout: Some(idle_timeout),
+            ..Default::default()
         });
         let connector = test_client::connector(&client);
 
@@ -278,6 +271,11 @@ mod reuse_and_lifecycle {
         idle_connection_is_evicted_after_timeout(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_idle_connection_is_evicted_after_timeout_with_partitioned_connection_pool() {
+        idle_connection_is_evicted_after_timeout(&PartitionedConnectionPool).await;
+    }
+
     /// Idle eviction does not interrupt a response body that is still being consumed.
     async fn active_response_body_survives_idle_timeout(backend: &dyn HttpClientBackend) {
         let idle_timeout = Duration::from_millis(100);
@@ -299,6 +297,7 @@ mod reuse_and_lifecycle {
             .expect("harness should start");
         let client = backend.build(BackendConfig {
             pool_idle_timeout: Some(idle_timeout),
+            ..Default::default()
         });
         let connector = test_client::connector(&client);
 
@@ -344,6 +343,11 @@ mod reuse_and_lifecycle {
     #[tokio::test]
     async fn test_active_response_body_survives_idle_timeout_with_hyper_util_legacy_pool() {
         active_response_body_survives_idle_timeout(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_active_response_body_survives_idle_timeout_with_partitioned_connection_pool() {
+        active_response_body_survives_idle_timeout(&PartitionedConnectionPool).await;
     }
 
     /// A held H1 response keeps its connection checked out, so another request opens a second.
@@ -399,6 +403,11 @@ mod reuse_and_lifecycle {
     #[tokio::test]
     async fn test_held_response_body_allows_second_connection_with_hyper_util_legacy_pool() {
         held_response_body_allows_second_connection(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_held_response_body_allows_second_connection_with_partitioned_connection_pool() {
+        held_response_body_allows_second_connection(&PartitionedConnectionPool).await;
     }
 
     /// Pins an opportunistic optimization in the hyper-util legacy pool: when the
@@ -578,6 +587,13 @@ mod reuse_and_lifecycle {
         dropping_unavailable_response_remainder_retires_connection(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_dropping_unavailable_response_remainder_retires_connection_with_partitioned_connection_pool(
+    ) {
+        dropping_unavailable_response_remainder_retires_connection(&PartitionedConnectionPool)
+            .await;
+    }
+
     /// A server-closed idle keep-alive connection is replaced before the next request.
     async fn stale_idle_connection_is_replaced(backend: &dyn HttpClientBackend) {
         let close_gate = ManualGate::new();
@@ -651,6 +667,11 @@ mod reuse_and_lifecycle {
     #[tokio::test]
     async fn test_stale_idle_connection_is_replaced_with_hyper_util_legacy_pool() {
         stale_idle_connection_is_replaced(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_stale_idle_connection_is_replaced_with_partitioned_connection_pool() {
+        stale_idle_connection_is_replaced(&PartitionedConnectionPool).await;
     }
 
     /// A server close that the pool has not yet observed must not surface an error: the
@@ -736,6 +757,12 @@ mod reuse_and_lifecycle {
         request_on_an_unobserved_stale_connection_still_succeeds(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_request_on_an_unobserved_stale_connection_still_succeeds_with_partitioned_connection_pool(
+    ) {
+        request_on_an_unobserved_stale_connection_still_succeeds(&PartitionedConnectionPool).await;
+    }
+
     /// A response carrying `Connection: close` prevents subsequent reuse of its connection.
     async fn connection_close_response_is_not_reused(backend: &dyn HttpClientBackend) {
         let harness = ConnectionTestHarness::builder()
@@ -803,6 +830,11 @@ mod reuse_and_lifecycle {
     async fn test_connection_close_response_is_not_reused_with_hyper_util_legacy_pool() {
         connection_close_response_is_not_reused(&HyperUtilLegacyPool).await;
     }
+
+    #[tokio::test]
+    async fn test_connection_close_response_is_not_reused_with_partitioned_connection_pool() {
+        connection_close_response_is_not_reused(&PartitionedConnectionPool).await;
+    }
 }
 
 mod routing_and_status {
@@ -842,6 +874,12 @@ mod routing_and_status {
     #[tokio::test]
     async fn test_direct_request_uses_origin_form_and_host_header_with_hyper_util_legacy_pool() {
         direct_request_uses_origin_form_and_host_header(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_direct_request_uses_origin_form_and_host_header_with_partitioned_connection_pool()
+    {
+        direct_request_uses_origin_form_and_host_header(&PartitionedConnectionPool).await;
     }
 
     /// Connections are pooled by origin authority even when two origins reach the same endpoint.
@@ -914,6 +952,11 @@ mod routing_and_status {
         different_origins_do_not_share_connections(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_different_origins_do_not_share_connections_with_partitioned_connection_pool() {
+        different_origins_do_not_share_connections(&PartitionedConnectionPool).await;
+    }
+
     /// An HTTP server-error status does not by itself make the underlying connection unusable.
     async fn raw_server_error_response_does_not_poison_connection(backend: &dyn HttpClientBackend) {
         let harness = ConnectionTestHarness::builder()
@@ -955,6 +998,12 @@ mod routing_and_status {
     async fn test_raw_server_error_response_does_not_poison_connection_with_hyper_util_legacy_pool()
     {
         raw_server_error_response_does_not_poison_connection(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_raw_server_error_response_does_not_poison_connection_with_partitioned_connection_pool(
+    ) {
+        raw_server_error_response_does_not_poison_connection(&PartitionedConnectionPool).await;
     }
 }
 
@@ -1015,6 +1064,12 @@ mod connection_metadata {
     async fn test_captured_connection_addresses_and_poison_prevent_reuse_with_hyper_util_legacy_pool(
     ) {
         captured_connection_addresses_and_poison_prevent_reuse(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_captured_connection_addresses_and_poison_prevent_reuse_with_partitioned_connection_pool(
+    ) {
+        captured_connection_addresses_and_poison_prevent_reuse(&PartitionedConnectionPool).await;
     }
 
     /// Poisoning an active connection lets its current body complete but prevents later reuse.
@@ -1093,6 +1148,15 @@ mod connection_metadata {
             .await;
     }
 
+    #[tokio::test]
+    async fn test_poisoning_active_connection_allows_body_completion_and_prevents_reuse_with_partitioned_connection_pool(
+    ) {
+        poisoning_active_connection_allows_body_completion_and_prevents_reuse(
+            &PartitionedConnectionPool,
+        )
+        .await;
+    }
+
     /// Capturing and dropping connection metadata without poisoning it does not affect reuse.
     async fn captured_connection_without_poison_is_reused(backend: &dyn HttpClientBackend) {
         let harness = ConnectionTestHarness::builder()
@@ -1135,6 +1199,11 @@ mod connection_metadata {
     async fn test_captured_connection_without_poison_is_reused_with_hyper_util_legacy_pool() {
         captured_connection_without_poison_is_reused(&HyperUtilLegacyPool).await;
     }
+
+    #[tokio::test]
+    async fn test_captured_connection_without_poison_is_reused_with_partitioned_connection_pool() {
+        captured_connection_without_poison_is_reused(&PartitionedConnectionPool).await;
+    }
 }
 
 mod failures_and_timeouts {
@@ -1166,6 +1235,11 @@ mod failures_and_timeouts {
     #[tokio::test]
     async fn test_reset_on_accept_is_io_error_with_hyper_util_legacy_pool() {
         reset_on_accept_is_io_error(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_reset_on_accept_is_io_error_with_partitioned_connection_pool() {
+        reset_on_accept_is_io_error(&PartitionedConnectionPool).await;
     }
 
     /// A reset after the complete request but before response headers is an I/O connector error.
@@ -1204,6 +1278,11 @@ mod failures_and_timeouts {
     #[tokio::test]
     async fn test_reset_after_complete_request_is_io_error_with_hyper_util_legacy_pool() {
         reset_after_complete_request_is_io_error(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_reset_after_complete_request_is_io_error_with_partitioned_connection_pool() {
+        reset_after_complete_request_is_io_error(&PartitionedConnectionPool).await;
     }
 
     /// A reset after response headers preserves the response and fails only its body
@@ -1301,6 +1380,11 @@ mod failures_and_timeouts {
     #[tokio::test]
     async fn test_reset_during_response_body_fails_body_only_with_hyper_util_legacy_pool() {
         reset_during_response_body_fails_body_only(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_reset_during_response_body_fails_body_only_with_partitioned_connection_pool() {
+        reset_during_response_body_fails_body_only(&PartitionedConnectionPool).await;
     }
 
     /// A clean EOF (server half-close) after response headers preserves the response and
@@ -1407,6 +1491,12 @@ mod failures_and_timeouts {
         clean_eof_during_response_body_fails_body_only(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_clean_eof_during_response_body_fails_body_only_with_partitioned_connection_pool()
+    {
+        clean_eof_during_response_body_fails_body_only(&PartitionedConnectionPool).await;
+    }
+
     /// A clean EOF before response headers is classified as a transient non-I/O error.
     async fn clean_eof_before_response_is_transient_other(backend: &dyn HttpClientBackend) {
         let harness = ConnectionTestHarness::builder()
@@ -1443,6 +1533,11 @@ mod failures_and_timeouts {
     #[tokio::test]
     async fn test_clean_eof_before_response_is_transient_other_with_hyper_util_legacy_pool() {
         clean_eof_before_response_is_transient_other(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_clean_eof_before_response_is_transient_other_with_partitioned_connection_pool() {
+        clean_eof_before_response_is_transient_other(&PartitionedConnectionPool).await;
     }
 
     /// Exceeding the configured response-read deadline is reported as a timeout.
@@ -1505,6 +1600,11 @@ mod failures_and_timeouts {
     #[tokio::test]
     async fn test_read_timeout_is_timeout_error_with_hyper_util_legacy_pool() {
         read_timeout_is_timeout_error(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_read_timeout_is_timeout_error_with_partitioned_connection_pool() {
+        read_timeout_is_timeout_error(&PartitionedConnectionPool).await;
     }
 }
 
@@ -1595,6 +1695,13 @@ mod protocol_edge_cases {
         head_response_with_content_length_does_not_desync_connection(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_head_response_with_content_length_does_not_desync_connection_with_partitioned_connection_pool(
+    ) {
+        head_response_with_content_length_does_not_desync_connection(&PartitionedConnectionPool)
+            .await;
+    }
+
     /// A 204 No Content response has no body by definition, and a well-behaved server
     /// omits Content-Length entirely. The client must treat the response as complete and
     /// return the connection to the pool for reuse.
@@ -1652,6 +1759,11 @@ mod protocol_edge_cases {
         no_content_response_is_reused(&HyperUtilLegacyPool).await;
     }
 
+    #[tokio::test]
+    async fn test_no_content_response_is_reused_with_partitioned_connection_pool() {
+        no_content_response_is_reused(&PartitionedConnectionPool).await;
+    }
+
     /// A 304 Not Modified response carries no body even when Content-Length is present
     /// echoing the original resource size. The connection must remain reusable.
     async fn not_modified_response_is_reused(backend: &dyn HttpClientBackend) {
@@ -1707,6 +1819,11 @@ mod protocol_edge_cases {
     #[tokio::test]
     async fn test_not_modified_response_is_reused_with_hyper_util_legacy_pool() {
         not_modified_response_is_reused(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_not_modified_response_is_reused_with_partitioned_connection_pool() {
+        not_modified_response_is_reused(&PartitionedConnectionPool).await;
     }
 }
 
@@ -1772,6 +1889,11 @@ mod concurrency {
     #[tokio::test]
     async fn test_concurrent_requests_open_distinct_connections_with_hyper_util_legacy_pool() {
         concurrent_requests_open_distinct_connections(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_concurrent_requests_open_distinct_connections_with_partitioned_connection_pool() {
+        concurrent_requests_open_distinct_connections(&PartitionedConnectionPool).await;
     }
 
     // Not covered here: the idle cap, i.e. dropping a returning connection when the idle
@@ -1877,19 +1999,76 @@ mod concurrency {
     ) {
         request_is_not_written_before_the_previous_response_completes(&HyperUtilLegacyPool).await;
     }
+
+    #[tokio::test]
+    async fn test_request_is_not_written_before_the_previous_response_completes_with_partitioned_connection_pool(
+    ) {
+        request_is_not_written_before_the_previous_response_completes(&PartitionedConnectionPool)
+            .await;
+    }
 }
 
-// A DNS resolver can only be installed through `Builder::build_with_resolver`, which is
-// available once a TLS provider is selected, so these tests need a TLS feature even though
-// they speak plaintext HTTP. `CryptoMode::Ring` requires `rustls-ring` specifically.
-#[cfg(feature = "rustls-ring")]
+// The legacy backend's custom-resolver constructor requires a TLS provider even though this
+// contract speaks plaintext HTTP.
+#[cfg(any(
+    feature = "rustls-aws-lc",
+    feature = "rustls-aws-lc-fips",
+    feature = "rustls-ring",
+    feature = "s2n-tls"
+))]
 mod dns_resolution {
     use super::*;
-    use aws_smithy_http_client::tls;
+    use aws_smithy_runtime_api::client::dns::SharedDnsResolver;
+
+    /// A configured resolver supplies the address used for an origin connection.
+    async fn custom_dns_resolver_is_used_for_origin(backend: &dyn HttpClientBackend) {
+        const HOST: &str = "custom-dns.test";
+
+        let harness = ConnectionTestHarness::builder()
+            .endpoint(
+                IP1,
+                Http1Script::responses([Http1Response::ok().body("custom dns")]),
+            )
+            .dns(HOST, [IP1])
+            .build()
+            .await
+            .expect("harness should start");
+        let client = backend.build(BackendConfig {
+            dns_resolver: Some(SharedDnsResolver::new(harness.dns_resolver())),
+            ..Default::default()
+        });
+        let connector = test_client::connector(&client);
+        let url = format!("http://{HOST}:{}/custom-dns", harness.port());
+
+        let (status, body) = test_client::get_and_collect(&connector, &url).await;
+        assert_eq!((status, body.as_slice()), (200, b"custom dns".as_slice()));
+        assert_eq!(1, harness.dns_lookup_count());
+        assert_eq!(
+            vec![(
+                "/custom-dns".to_string(),
+                Some(format!("{HOST}:{}", harness.port()))
+            )],
+            harness.http_requests()
+        );
+
+        shutdown_harness(harness, connector, client)
+            .await
+            .expect("clean harness shutdown");
+    }
+
+    #[tokio::test]
+    async fn test_custom_dns_resolver_is_used_for_origin_with_hyper_util_legacy_pool() {
+        custom_dns_resolver_is_used_for_origin(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_custom_dns_resolver_is_used_for_origin_with_partitioned_connection_pool() {
+        custom_dns_resolver_is_used_for_origin(&PartitionedConnectionPool).await;
+    }
 
     /// A hostname with no DNS entry fails the request at resolution, before any TCP
     /// connection is attempted.
-    async fn unresolvable_hostname_fails_before_connect() {
+    async fn unresolvable_hostname_fails_before_connect(backend: &dyn HttpClientBackend) {
         // The endpoint is never connected to. It exists because a harness requires at
         // least one endpoint, and it supplies the port used to build the request URL.
         let harness = ConnectionTestHarness::builder()
@@ -1897,11 +2076,10 @@ mod dns_resolution {
             .build()
             .await
             .expect("harness should start");
-        let client = Builder::new()
-            .tls_provider(tls::Provider::Rustls(
-                tls::rustls_provider::CryptoMode::Ring,
-            ))
-            .build_with_resolver(harness.dns_resolver());
+        let client = backend.build(BackendConfig {
+            dns_resolver: Some(SharedDnsResolver::new(harness.dns_resolver())),
+            ..Default::default()
+        });
         let connector = test_client::connector(&client);
 
         let url = format!("http://unknown.test:{}/", harness.port());
@@ -1945,6 +2123,11 @@ mod dns_resolution {
 
     #[tokio::test]
     async fn test_unresolvable_hostname_fails_before_connect_with_hyper_util_legacy_pool() {
-        unresolvable_hostname_fails_before_connect().await;
+        unresolvable_hostname_fails_before_connect(&HyperUtilLegacyPool).await;
+    }
+
+    #[tokio::test]
+    async fn test_unresolvable_hostname_fails_before_connect_with_partitioned_connection_pool() {
+        unresolvable_hostname_fails_before_connect(&PartitionedConnectionPool).await;
     }
 }

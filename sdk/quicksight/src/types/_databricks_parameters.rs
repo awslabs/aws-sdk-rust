@@ -10,6 +10,10 @@ pub struct DatabricksParameters {
     pub port: i32,
     /// <p>The HTTP path of the Databricks data source.</p>
     pub sql_endpoint_path: ::std::string::String,
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    /// <p>An object that contains information needed to create a data source connection between an Quick Sight account and Databricks.</p>
+    pub o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl DatabricksParameters {
     /// <p>The host name of the Databricks data source.</p>
@@ -26,6 +30,14 @@ impl DatabricksParameters {
         use std::ops::Deref;
         self.sql_endpoint_path.deref()
     }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
+        self.authentication_type.as_ref()
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Quick Sight account and Databricks.</p>
+    pub fn o_auth_parameters(&self) -> ::std::option::Option<&crate::types::OAuthParameters> {
+        self.o_auth_parameters.as_ref()
+    }
 }
 impl DatabricksParameters {
     /// Creates a new builder-style object to manufacture [`DatabricksParameters`](crate::types::DatabricksParameters).
@@ -41,6 +53,8 @@ pub struct DatabricksParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) sql_endpoint_path: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) o_auth_parameters: ::std::option::Option<crate::types::OAuthParameters>,
 }
 impl DatabricksParametersBuilder {
     /// <p>The host name of the Databricks data source.</p>
@@ -88,6 +102,34 @@ impl DatabricksParametersBuilder {
     pub fn get_sql_endpoint_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.sql_endpoint_path
     }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
+        self.authentication_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.authentication_type = input;
+        self
+    }
+    /// <p>The authentication type that you want to use for your connection. This parameter accepts OAuth and non-OAuth authentication types.</p>
+    pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::AuthenticationType> {
+        &self.authentication_type
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Quick Sight account and Databricks.</p>
+    pub fn o_auth_parameters(mut self, input: crate::types::OAuthParameters) -> Self {
+        self.o_auth_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Quick Sight account and Databricks.</p>
+    pub fn set_o_auth_parameters(mut self, input: ::std::option::Option<crate::types::OAuthParameters>) -> Self {
+        self.o_auth_parameters = input;
+        self
+    }
+    /// <p>An object that contains information needed to create a data source connection between an Quick Sight account and Databricks.</p>
+    pub fn get_o_auth_parameters(&self) -> &::std::option::Option<crate::types::OAuthParameters> {
+        &self.o_auth_parameters
+    }
     /// Consumes the builder and constructs a [`DatabricksParameters`](crate::types::DatabricksParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`host`](crate::types::builders::DatabricksParametersBuilder::host)
@@ -113,6 +155,8 @@ impl DatabricksParametersBuilder {
                     "sql_endpoint_path was not specified but it is required when building DatabricksParameters",
                 )
             })?,
+            authentication_type: self.authentication_type,
+            o_auth_parameters: self.o_auth_parameters,
         })
     }
 }

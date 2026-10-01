@@ -9,6 +9,8 @@ allowed_external_types = [
     "tokio::io::async_read::AsyncRead",
     "tokio::io::async_write::AsyncWrite",
     "http::uri::Uri",
+    "http::uri::scheme::Scheme",
+    "tokio::runtime::handle::Handle",
     # Used in trait bounds for legacy hyper connector build method
     "tower_service::Service",
 

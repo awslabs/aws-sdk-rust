@@ -2702,6 +2702,34 @@ impl From<crate::operation::get_recommended_policy_v2::GetRecommendedPolicyV2Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_remediations_v2::GetRemediationsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_remediations_v2::GetRemediationsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_remediations_v2::GetRemediationsV2Error> for Error {
+    fn from(err: crate::operation::get_remediations_v2::GetRemediationsV2Error) -> Self {
+        match err {
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_remediations_v2::GetRemediationsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resources_statistics_v2::GetResourcesStatisticsV2Error, R>>
     for Error
 where
@@ -3143,6 +3171,49 @@ impl From<crate::operation::list_enabled_products_for_import::ListEnabledProduct
                 Error::LimitExceededException(inner)
             }
             crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error> for Error {
+    fn from(err: crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error) -> Self {
+        match err {
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

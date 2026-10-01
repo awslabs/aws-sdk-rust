@@ -18,6 +18,10 @@ pub struct DefaultFilterControlOptions {
     pub default_slider_options: ::std::option::Option<crate::types::DefaultSliderControlOptions>,
     /// <p>The default options that correspond to the <code>RelativeDateTime</code> filter control type.</p>
     pub default_relative_date_time_options: ::std::option::Option<crate::types::DefaultRelativeDateTimeControlOptions>,
+    /// <p>The default options that correspond to the <code>HierarchyList</code> filter control type.</p>
+    pub default_hierarchy_list: ::std::option::Option<crate::types::DefaultHierarchyFilterListControlOptions>,
+    /// <p>The default options that correspond to the <code>HierarchyDropdown</code> filter control type.</p>
+    pub default_hierarchy_dropdown: ::std::option::Option<crate::types::DefaultHierarchyFilterDropDownControlOptions>,
 }
 impl DefaultFilterControlOptions {
     /// <p>The default options that correspond to the filter control type of a <code>DateTimePicker</code>.</p>
@@ -48,6 +52,14 @@ impl DefaultFilterControlOptions {
     pub fn default_relative_date_time_options(&self) -> ::std::option::Option<&crate::types::DefaultRelativeDateTimeControlOptions> {
         self.default_relative_date_time_options.as_ref()
     }
+    /// <p>The default options that correspond to the <code>HierarchyList</code> filter control type.</p>
+    pub fn default_hierarchy_list(&self) -> ::std::option::Option<&crate::types::DefaultHierarchyFilterListControlOptions> {
+        self.default_hierarchy_list.as_ref()
+    }
+    /// <p>The default options that correspond to the <code>HierarchyDropdown</code> filter control type.</p>
+    pub fn default_hierarchy_dropdown(&self) -> ::std::option::Option<&crate::types::DefaultHierarchyFilterDropDownControlOptions> {
+        self.default_hierarchy_dropdown.as_ref()
+    }
 }
 impl DefaultFilterControlOptions {
     /// Creates a new builder-style object to manufacture [`DefaultFilterControlOptions`](crate::types::DefaultFilterControlOptions).
@@ -67,6 +79,8 @@ pub struct DefaultFilterControlOptionsBuilder {
     pub(crate) default_text_area_options: ::std::option::Option<crate::types::DefaultTextAreaControlOptions>,
     pub(crate) default_slider_options: ::std::option::Option<crate::types::DefaultSliderControlOptions>,
     pub(crate) default_relative_date_time_options: ::std::option::Option<crate::types::DefaultRelativeDateTimeControlOptions>,
+    pub(crate) default_hierarchy_list: ::std::option::Option<crate::types::DefaultHierarchyFilterListControlOptions>,
+    pub(crate) default_hierarchy_dropdown: ::std::option::Option<crate::types::DefaultHierarchyFilterDropDownControlOptions>,
 }
 impl DefaultFilterControlOptionsBuilder {
     /// <p>The default options that correspond to the filter control type of a <code>DateTimePicker</code>.</p>
@@ -170,6 +184,37 @@ impl DefaultFilterControlOptionsBuilder {
     pub fn get_default_relative_date_time_options(&self) -> &::std::option::Option<crate::types::DefaultRelativeDateTimeControlOptions> {
         &self.default_relative_date_time_options
     }
+    /// <p>The default options that correspond to the <code>HierarchyList</code> filter control type.</p>
+    pub fn default_hierarchy_list(mut self, input: crate::types::DefaultHierarchyFilterListControlOptions) -> Self {
+        self.default_hierarchy_list = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default options that correspond to the <code>HierarchyList</code> filter control type.</p>
+    pub fn set_default_hierarchy_list(mut self, input: ::std::option::Option<crate::types::DefaultHierarchyFilterListControlOptions>) -> Self {
+        self.default_hierarchy_list = input;
+        self
+    }
+    /// <p>The default options that correspond to the <code>HierarchyList</code> filter control type.</p>
+    pub fn get_default_hierarchy_list(&self) -> &::std::option::Option<crate::types::DefaultHierarchyFilterListControlOptions> {
+        &self.default_hierarchy_list
+    }
+    /// <p>The default options that correspond to the <code>HierarchyDropdown</code> filter control type.</p>
+    pub fn default_hierarchy_dropdown(mut self, input: crate::types::DefaultHierarchyFilterDropDownControlOptions) -> Self {
+        self.default_hierarchy_dropdown = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default options that correspond to the <code>HierarchyDropdown</code> filter control type.</p>
+    pub fn set_default_hierarchy_dropdown(
+        mut self,
+        input: ::std::option::Option<crate::types::DefaultHierarchyFilterDropDownControlOptions>,
+    ) -> Self {
+        self.default_hierarchy_dropdown = input;
+        self
+    }
+    /// <p>The default options that correspond to the <code>HierarchyDropdown</code> filter control type.</p>
+    pub fn get_default_hierarchy_dropdown(&self) -> &::std::option::Option<crate::types::DefaultHierarchyFilterDropDownControlOptions> {
+        &self.default_hierarchy_dropdown
+    }
     /// Consumes the builder and constructs a [`DefaultFilterControlOptions`](crate::types::DefaultFilterControlOptions).
     pub fn build(self) -> crate::types::DefaultFilterControlOptions {
         crate::types::DefaultFilterControlOptions {
@@ -180,6 +225,8 @@ impl DefaultFilterControlOptionsBuilder {
             default_text_area_options: self.default_text_area_options,
             default_slider_options: self.default_slider_options,
             default_relative_date_time_options: self.default_relative_date_time_options,
+            default_hierarchy_list: self.default_hierarchy_list,
+            default_hierarchy_dropdown: self.default_hierarchy_dropdown,
         }
     }
 }

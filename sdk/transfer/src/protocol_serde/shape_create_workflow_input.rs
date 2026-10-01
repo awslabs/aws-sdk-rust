@@ -42,5 +42,14 @@ pub fn ser_create_workflow_input_input(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.structured_log_destinations {
+        let mut array_15 = object.key("StructuredLogDestinations").start_array();
+        for item_16 in var_14 {
+            {
+                array_15.value().string(item_16.as_str());
+            }
+        }
+        array_15.finish();
+    }
     Ok(())
 }

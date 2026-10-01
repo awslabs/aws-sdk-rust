@@ -573,7 +573,7 @@ pub(crate) enum ConnectionStatus {
     Unknown,
 
     /// The request connected to the remote prior to failure
-    Connected(ConnectionMetadata),
+    Connected(Box<ConnectionMetadata>),
 }
 
 impl Display for ConnectorError {
@@ -607,7 +607,7 @@ impl ConnectorError {
 
     /// Include connection information along with this error
     pub fn with_connection(mut self, info: ConnectionMetadata) -> Self {
-        self.connection = ConnectionStatus::Connected(info);
+        self.connection = ConnectionStatus::Connected(Box::new(info));
         self
     }
 

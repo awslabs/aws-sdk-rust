@@ -15,6 +15,7 @@ use aws_smithy_http_client::test_util::wire::connection::{ConnectionCloseReason,
 use bytes::Bytes;
 use h2::server::SendResponse;
 use h2::Reason;
+use h2::RecvStream;
 use http_1x::{Method, Response, StatusCode};
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
@@ -91,6 +92,7 @@ pub(crate) enum H2Event {
         stream_id: u32,
         method: Method,
         path: String,
+        proxy_authorization: Option<String>,
     },
     ResponseCompleted {
         connection_id: H2ConnectionId,
@@ -196,12 +198,35 @@ impl H2Response {
 #[derive(Clone, Debug)]
 pub(crate) enum H2StreamScript {
     Respond(H2Response),
+    /// Waits at the response-head boundary before sending the response.
+    RespondAfter {
+        response: H2Response,
+        send: GateWaiter,
+    },
+    /// Sends the response before a gate permits the request body to be drained.
+    RespondBeforeReceivingRequestBody {
+        response: H2Response,
+        receive: GateWaiter,
+    },
     Reset(Reason),
 }
 
 impl H2StreamScript {
     pub(crate) fn respond(response: H2Response) -> Self {
         Self::Respond(response)
+    }
+
+    /// Delays the response head until the gate is released.
+    pub(crate) fn respond_after(response: H2Response, send: GateWaiter) -> Self {
+        Self::RespondAfter { response, send }
+    }
+
+    /// Delays request-body reads until after the response and gate release.
+    pub(crate) fn respond_before_receiving_request_body(
+        response: H2Response,
+        receive: GateWaiter,
+    ) -> Self {
+        Self::RespondBeforeReceivingRequestBody { response, receive }
     }
 
     pub(crate) fn reset(reason: Reason) -> Self {
@@ -214,6 +239,18 @@ pub(crate) struct H2ConnectionScript {
     routes: HashMap<String, H2StreamScript>,
     fallback: Option<H2StreamScript>,
     allow_handshake_abandonment: bool,
+    goaway_on_ready: bool,
+    client_close_behavior: ClientCloseBehavior,
+}
+
+/// How a scripted connection handles active stream tasks after client close.
+#[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
+enum ClientCloseBehavior {
+    /// Wait for stream scripts and report their failures.
+    #[default]
+    Drain,
+    /// Abort scripts that a test deliberately leaves blocked.
+    AbortStreams,
 }
 
 impl H2ConnectionScript {
@@ -237,6 +274,20 @@ impl H2ConnectionScript {
 
     pub(crate) fn allow_handshake_abandonment(mut self) -> Self {
         self.allow_handshake_abandonment = true;
+        self
+    }
+
+    pub(crate) fn goaway_on_ready(mut self) -> Self {
+        self.goaway_on_ready = true;
+        self
+    }
+
+    /// Aborts active stream scripts when the client closes the connection.
+    ///
+    /// Use this only when the test intentionally strands a stream while
+    /// terminating the runtime that owns its transport.
+    pub(crate) fn abort_streams_on_client_close(mut self) -> Self {
+        self.client_close_behavior = ClientCloseBehavior::AbortStreams;
         self
     }
 
@@ -374,6 +425,7 @@ impl SharedState {
 #[derive(Debug)]
 enum ConnectionCommand {
     GracefulShutdown(oneshot::Sender<()>),
+    AbortTransport(oneshot::Sender<()>),
 }
 
 #[derive(Debug, Default)]
@@ -391,7 +443,8 @@ impl H2ServerBuilder {
         let connections = self
             .connections
             .ok_or_else(|| H2HarnessError::new("an H2 connection plan is required"))?;
-        let tls_acceptor = tls::server_tls_acceptor(&[b"h2"])
+        let tls_acceptor = tls::SERVER_IDENTITY
+            .acceptor(&[b"h2"])
             .map_err(|err| H2HarnessError::new(format!("failed to configure TLS: {err}")))?;
         let listener = TcpListener::bind("127.0.0.1:0")
             .await
@@ -508,6 +561,34 @@ impl H2TestServer {
             .map_err(|_| {
                 H2HarnessError::new(format!(
                     "H2 connection {connection_id:?} closed before graceful shutdown started"
+                ))
+            })
+    }
+
+    /// Drops one active transport without sending GOAWAY.
+    pub(crate) async fn abort_transport(
+        &self,
+        connection_id: H2ConnectionId,
+    ) -> Result<(), H2HarnessError> {
+        let control = self.state.control(connection_id).ok_or_else(|| {
+            H2HarnessError::new(format!("H2 connection {connection_id:?} is not active"))
+        })?;
+        let (acknowledged, ack) = oneshot::channel();
+        control
+            .send(ConnectionCommand::AbortTransport(acknowledged))
+            .map_err(|_| {
+                H2HarnessError::new(format!("failed to abort H2 transport {connection_id:?}"))
+            })?;
+        tokio::time::timeout(WAIT, ack)
+            .await
+            .map_err(|_| {
+                H2HarnessError::new(format!(
+                    "timed out waiting to abort H2 transport {connection_id:?}"
+                ))
+            })?
+            .map_err(|_| {
+                H2HarnessError::new(format!(
+                    "H2 connection {connection_id:?} closed before its transport was aborted"
                 ))
             })
     }
@@ -710,10 +791,14 @@ async fn drive_connection(
             Ok(Err(err)) => return Err(H2HarnessError::new(format!("H2 handshake failed: {err}"))),
         };
     state.record_event(H2Event::H2Ready { connection_id });
+    if script.goaway_on_ready {
+        connection.abrupt_shutdown(Reason::NO_ERROR);
+    }
 
     let mut stream_tasks = JoinSet::new();
     let mut shutting_down = false;
-    let mut graceful_shutdown = false;
+    let mut transport_aborted = false;
+    let mut graceful_shutdown = script.goaway_on_ready;
     let mut control_open = true;
     // Tracks whether the connection ended because the client closed it (accept returned None)
     // vs. a scripted GOAWAY completing.
@@ -734,6 +819,11 @@ async fn drive_connection(
                         connection.graceful_shutdown();
                         let _ = acknowledged.send(());
                     }
+                    Some(ConnectionCommand::AbortTransport(acknowledged)) => {
+                        transport_aborted = true;
+                        let _ = acknowledged.send(());
+                        break;
+                    }
                     None => control_open = false,
                 }
             }
@@ -743,11 +833,16 @@ async fn drive_connection(
                         let stream_id = respond.stream_id().as_u32();
                         let method = request.method().clone();
                         let path = request.uri().path().to_string();
+                        let proxy_authorization = request
+                            .headers()
+                            .get(http_1x::header::PROXY_AUTHORIZATION)
+                            .map(|value| value.to_str().unwrap_or_default().to_string());
                         state.record_event(H2Event::StreamAccepted {
                             connection_id,
                             stream_id,
                             method,
                             path: path.clone(),
+                            proxy_authorization,
                         });
                         let Some(stream_script) = script.script_for(&path) else {
                             respond.send_reset(Reason::PROTOCOL_ERROR);
@@ -755,25 +850,32 @@ async fn drive_connection(
                                 "connection {connection_id:?} received unscripted H2 path {path:?}"
                             )));
                         };
-                        // Scripts cover the response side only, so the request body is
-                        // never read. Dropping the `RecvStream` marks the stream as no
-                        // longer receiving: h2 then discards incoming DATA without
-                        // charging the stream window and releases the connection
-                        // capacity, so a client streaming a request body runs to
-                        // completion. Holding it instead would charge the window on
-                        // every DATA frame and never refund it, stalling the client
-                        // once the send window is exhausted.
+                        let held_request = match &stream_script {
+                            H2StreamScript::RespondBeforeReceivingRequestBody { receive, .. } => {
+                                Some((request.into_body(), receive.clone()))
+                            }
+                            _ => {
+                                drop(request);
+                                None
+                            }
+                        };
+                        // Most scripts cover the response side only. Dropping their
+                        // `RecvStream` marks the stream as no longer receiving: h2
+                        // then discards incoming DATA without charging the stream
+                        // window and releases connection capacity, so a client
+                        // streaming a request body runs to completion.
                         //
-                        // TODO(test-utils): to script request bodies, pass
-                        // `request.into_body()` into `run_stream` and drive it there,
-                        // calling `release_capacity()` as chunks are consumed.
-                        drop(request);
+                        // A lifetime contract may retain a pending request body
+                        // behind a gate without reading DATA. General request-body
+                        // scripts must drive `RecvStream` and call
+                        // `release_capacity()` as chunks are consumed.
                         stream_tasks.spawn(run_stream(
                             connection_id,
                             stream_id,
                             stream_script,
                             respond,
                             state.clone(),
+                            held_request,
                         ));
                     }
                     Some(Err(err)) => {
@@ -798,10 +900,18 @@ async fn drive_connection(
         }
     }
 
-    if shutting_down {
+    let abort_streams = shutting_down
+        || transport_aborted
+        || (client_initiated_close
+            && script.client_close_behavior == ClientCloseBehavior::AbortStreams);
+    if abort_streams {
         stream_tasks.abort_all();
         while stream_tasks.join_next().await.is_some() {}
-        Ok(ConnectionCloseReason::HarnessShutdown)
+        Ok(aborted_connection_close_reason(
+            transport_aborted,
+            shutting_down,
+            client_initiated_close,
+        ))
     } else {
         let drain = async {
             while let Some(completed) = stream_tasks.join_next().await {
@@ -823,6 +933,29 @@ async fn drive_connection(
     }
 }
 
+fn aborted_connection_close_reason(
+    transport_aborted: bool,
+    shutting_down: bool,
+    client_initiated_close: bool,
+) -> ConnectionCloseReason {
+    debug_assert!(transport_aborted || shutting_down || client_initiated_close);
+    if transport_aborted {
+        ConnectionCloseReason::ScriptedTransportAbort
+    } else if shutting_down {
+        ConnectionCloseReason::HarnessShutdown
+    } else {
+        ConnectionCloseReason::ClientClosed
+    }
+}
+
+#[test]
+fn harness_shutdown_precedes_client_close() {
+    assert_eq!(
+        ConnectionCloseReason::HarnessShutdown,
+        aborted_connection_close_reason(false, true, true,)
+    );
+}
+
 fn record_stream_task_result(
     state: &SharedState,
     completed: Option<Result<Result<(), H2HarnessError>, tokio::task::JoinError>>,
@@ -842,7 +975,13 @@ async fn run_stream(
     script: H2StreamScript,
     mut respond: SendResponse<Bytes>,
     state: Arc<SharedState>,
+    held_request: Option<(RecvStream, GateWaiter)>,
 ) -> Result<(), H2HarnessError> {
+    if let H2StreamScript::RespondAfter { send, .. } = &script {
+        send.wait()
+            .await
+            .map_err(|err| H2HarnessError::new(format!("H2 response-head gate failed: {err}")))?;
+    }
     match script {
         H2StreamScript::Reset(reason) => {
             respond.send_reset(reason);
@@ -852,7 +991,12 @@ async fn run_stream(
                 reason,
             });
         }
-        H2StreamScript::Respond(response) => {
+        H2StreamScript::Respond(response)
+        | H2StreamScript::RespondAfter { response, send: _ }
+        | H2StreamScript::RespondBeforeReceivingRequestBody {
+            response,
+            receive: _,
+        } => {
             let end_stream =
                 matches!(&response.body, H2BodyPlan::Complete(body) if body.is_empty());
             let response_head = Response::builder()
@@ -869,6 +1013,7 @@ async fn run_stream(
                     connection_id,
                     stream_id,
                 });
+                receive_request_body(held_request).await?;
                 return Ok(());
             }
 
@@ -956,6 +1101,32 @@ async fn run_stream(
                 }
             }
         }
+    }
+    receive_request_body(held_request).await?;
+    Ok(())
+}
+
+/// Waits for the test, then consumes a retained request body through end-of-stream.
+async fn receive_request_body(
+    held_request: Option<(RecvStream, GateWaiter)>,
+) -> Result<(), H2HarnessError> {
+    let Some((mut request_body, receive)) = held_request else {
+        return Ok(());
+    };
+    receive
+        .wait()
+        .await
+        .map_err(|err| H2HarnessError::new(format!("H2 request-body gate failed: {err}")))?;
+    while let Some(chunk) = request_body.data().await {
+        let chunk = chunk.map_err(|err| {
+            H2HarnessError::new(format!("failed while receiving H2 request body: {err}"))
+        })?;
+        request_body
+            .flow_control()
+            .release_capacity(chunk.len())
+            .map_err(|err| {
+                H2HarnessError::new(format!("failed to release H2 request capacity: {err}"))
+            })?;
     }
     Ok(())
 }

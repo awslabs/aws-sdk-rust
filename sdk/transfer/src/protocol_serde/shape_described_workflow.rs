@@ -55,6 +55,11 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                         }
+                        "StructuredLogDestinations" => {
+                            builder = builder.set_structured_log_destinations(
+                                crate::protocol_serde::shape_structured_log_destinations::de_structured_log_destinations(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

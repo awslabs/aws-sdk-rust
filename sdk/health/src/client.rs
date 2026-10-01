@@ -187,6 +187,8 @@ mod describe_events_for_organization;
 
 mod describe_health_service_status_for_organization;
 
+mod describe_service_lifecycle;
+
 mod disable_health_service_access_for_organization;
 
 mod enable_health_service_access_for_organization;

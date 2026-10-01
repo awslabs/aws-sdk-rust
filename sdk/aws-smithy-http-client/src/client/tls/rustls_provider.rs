@@ -309,26 +309,42 @@ pub(crate) mod build_connector {
     }
 
     pub(crate) fn wrap_connector<R>(
-        mut conn: HttpConnector<R>,
+        conn: HttpConnector<R>,
         crypto_mode: CryptoMode,
         tls_context: &TlsContext,
         proxy_config: crate::client::proxy::ProxyConfig,
     ) -> super::connect::RustTlsConnector<R> {
-        let client_config = create_rustls_client_config(crypto_mode, tls_context);
+        wrap_connector_with_alpn(
+            conn,
+            crypto_mode,
+            tls_context,
+            proxy_config,
+            &[b"h2", b"http/1.1"],
+        )
+    }
+
+    /// Wraps an HTTP connector with the ALPN offer selected for one pool attempt.
+    pub(crate) fn wrap_connector_with_alpn<R>(
+        mut conn: HttpConnector<R>,
+        crypto_mode: CryptoMode,
+        tls_context: &TlsContext,
+        proxy_config: crate::client::proxy::ProxyConfig,
+        alpn_protocols: &[&[u8]],
+    ) -> super::connect::RustTlsConnector<R> {
+        let mut client_config = create_rustls_client_config(crypto_mode, tls_context);
+        client_config.alpn_protocols = alpn_protocols
+            .iter()
+            .map(|protocol| protocol.to_vec())
+            .collect();
         conn.enforce_http(false);
-        let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
-            .with_tls_config(client_config.clone())
-            .https_or_http()
-            .enable_http1()
-            .enable_http2()
-            .wrap_connector(conn);
+        let https_connector = hyper_rustls::HttpsConnector::from((conn, client_config.clone()));
 
         super::connect::RustTlsConnector::new(https_connector, client_config, proxy_config)
     }
 }
 
 pub(crate) mod connect {
-    use crate::client::connect::{Conn, Connecting};
+    use crate::client::connect::{Conn, ConnectPathInner, Connecting};
     use crate::client::proxy::ProxyConfig;
     use aws_smithy_runtime_api::box_error::BoxError;
     use http_1x::uri::Scheme;
@@ -432,7 +448,7 @@ pub(crate) mod connect {
                 let conn = fut.await?;
                 Ok(Conn {
                     inner: Box::new(conn),
-                    is_proxy: false,
+                    connect_path: ConnectPathInner::Direct,
                 })
             })
         }
@@ -444,12 +460,13 @@ pub(crate) mod connect {
         ) -> Connecting {
             // For HTTP through proxy, connect to the proxy and let it handle the request
             let proxy_uri = intercept.uri().clone();
+            let connect_path = ConnectPathInner::forward_proxy(intercept.basic_auth().cloned());
             let fut = self.https.call(proxy_uri);
             Box::pin(async move {
                 let conn = fut.await?;
                 Ok(Conn {
                     inner: Box::new(conn),
-                    is_proxy: true,
+                    connect_path,
                 })
             })
         }
@@ -482,10 +499,7 @@ pub(crate) mod connect {
             Box::pin(async move {
                 // Establish CONNECT tunnel
                 tracing::trace!("tunneling HTTPS over proxy");
-                let tunneled = tunnel
-                    .call(dst_clone.clone())
-                    .await
-                    .map_err(|e| BoxError::from(format!("CONNECT tunnel failed: {e}")))?;
+                let tunneled = tunnel.call(dst_clone.clone()).await?;
 
                 // Stage 2: Manual TLS handshake over tunneled stream
                 let host = dst_clone
@@ -504,7 +518,7 @@ pub(crate) mod connect {
                     inner: Box::new(RustTlsConn {
                         inner: TokioIo::new(tls_connector),
                     }),
-                    is_proxy: true,
+                    connect_path: ConnectPathInner::ProxyTunnel,
                 })
             })
         }

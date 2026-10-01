@@ -47,6 +47,8 @@ pub(crate) mod shape_describe_events_for_organization;
 
 pub(crate) mod shape_describe_health_service_status_for_organization;
 
+pub(crate) mod shape_describe_service_lifecycle;
+
 pub(crate) mod shape_disable_health_service_access_for_organization;
 
 pub(crate) mod shape_enable_health_service_access_for_organization;
@@ -82,6 +84,8 @@ pub(crate) mod shape_describe_event_types_input;
 pub(crate) mod shape_describe_events_for_organization_input;
 
 pub(crate) mod shape_describe_events_input;
+
+pub(crate) mod shape_describe_service_lifecycle_input;
 
 pub(crate) mod shape_invalid_pagination_token;
 
@@ -125,6 +129,10 @@ pub(crate) mod shape_organization_event_filter;
 
 pub(crate) mod shape_organization_event_list;
 
+pub(crate) mod shape_service_lifecycle_filter;
+
+pub(crate) mod shape_service_lifecycle_list;
+
 pub(crate) mod shape_affected_entity;
 
 pub(crate) mod shape_date_time_range;
@@ -151,6 +159,8 @@ pub(crate) mod shape_organization_event_details;
 
 pub(crate) mod shape_organization_event_details_error_item;
 
+pub(crate) mod shape_service_lifecycle;
+
 pub(crate) mod shape_account_entity_aggregates_list;
 
 pub(crate) mod shape_entity_metadata;
@@ -165,6 +175,14 @@ pub(crate) mod shape_event_persona_list;
 
 pub(crate) mod shape_event_type_persona_list;
 
+pub(crate) mod shape_lifecycle_event_list;
+
 pub(crate) mod shape_tag_set;
 
 pub(crate) mod shape_account_entity_aggregate;
+
+pub(crate) mod shape_lifecycle_event;
+
+pub(crate) mod shape_impact_risk_list;
+
+pub(crate) mod shape_region_list;

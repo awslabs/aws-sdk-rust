@@ -81,6 +81,10 @@ pub use crate::types::_recommendation_error::RecommendationError;
 
 pub use crate::types::_recommendation_status::RecommendationStatus;
 
+pub use crate::types::_remediation_filters::RemediationFilters;
+
+pub use crate::types::_guidance_format::GuidanceFormat;
+
 pub use crate::types::_resource_scopes::ResourceScopes;
 
 pub use crate::types::_resources_trends_filters::ResourcesTrendsFilters;
@@ -94,6 +98,10 @@ pub use crate::types::_association_filters::AssociationFilters;
 pub use crate::types::_cspm_connector_provider_name::CspmConnectorProviderName;
 
 pub use crate::types::_connector_provider_name::ConnectorProviderName;
+
+pub use crate::types::_remediation_resource::RemediationResource;
+
+pub use crate::types::_remediation_trait::RemediationTrait;
 
 pub use crate::types::_cspm_provider_update_configuration::CspmProviderUpdateConfiguration;
 
@@ -209,6 +217,8 @@ pub use crate::types::_member::Member;
 
 pub use crate::types::_recommendation_step::RecommendationStep;
 
+pub use crate::types::_remediation_v2_item::RemediationV2Item;
+
 pub use crate::types::_resource_group_by_rule::ResourceGroupByRule;
 
 pub use crate::types::_resources_trends_metrics_result::ResourcesTrendsMetricsResult;
@@ -232,6 +242,10 @@ pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummary;
 pub use crate::types::_cspm_connector_summary::CspmConnectorSummary;
 
 pub use crate::types::_connector_summary::ConnectorSummary;
+
+pub use crate::types::_exposure_finding::ExposureFinding;
+
+pub use crate::types::_cloud_provider_name::CloudProviderName;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
 
@@ -343,6 +357,18 @@ pub use crate::types::_insight_result_value::InsightResultValue;
 
 pub use crate::types::_unused_permissions_recommendation_step::UnusedPermissionsRecommendationStep;
 
+pub use crate::types::_remediation_composite_filter::RemediationCompositeFilter;
+
+pub use crate::types::_remediation_outcome::RemediationOutcome;
+
+pub use crate::types::_remediation_priority::RemediationPriority;
+
+pub use crate::types::_remediation_summary_detail::RemediationSummaryDetail;
+
+pub use crate::types::_remediation_status::RemediationStatus;
+
+pub use crate::types::_remediation_guidance::RemediationGuidance;
+
 pub use crate::types::_resource_group_by_field::ResourceGroupByField;
 
 pub use crate::types::_resources_trends_composite_filter::ResourcesTrendsCompositeFilter;
@@ -366,6 +392,10 @@ pub use crate::types::_parameter_definition::ParameterDefinition;
 pub use crate::types::_cspm_provider_summary::CspmProviderSummary;
 
 pub use crate::types::_provider_summary::ProviderSummary;
+
+pub use crate::types::_exposure_severity::ExposureSeverity;
+
+pub use crate::types::_exposure_impact::ExposureImpact;
 
 pub use crate::types::_admin_status::AdminStatus;
 
@@ -429,6 +459,14 @@ pub use crate::types::_group_by_value::GroupByValue;
 
 pub use crate::types::_severity_trends_count::SeverityTrendsCount;
 
+pub use crate::types::_remediation_guidance_context::RemediationGuidanceContext;
+
+pub use crate::types::_remediation_guidance_specification::RemediationGuidanceSpecification;
+
+pub use crate::types::_remediation_guidance_examples::RemediationGuidanceExamples;
+
+pub use crate::types::_remediation_guidance_metadata::RemediationGuidanceMetadata;
+
 pub use crate::types::_resources_count::ResourcesCount;
 
 pub use crate::types::_resource_findings_summary::ResourceFindingsSummary;
@@ -454,8 +492,6 @@ pub use crate::types::_threat_intel_indicator_type::ThreatIntelIndicatorType;
 pub use crate::types::_threat_intel_indicator_category::ThreatIntelIndicatorCategory;
 
 pub use crate::types::_partition::Partition;
-
-pub use crate::types::_cloud_provider_name::CloudProviderName;
 
 pub use crate::types::_resource_owner::ResourceOwner;
 
@@ -502,6 +538,10 @@ pub use crate::types::_ocsf_number_filter::OcsfNumberFilter;
 pub use crate::types::_ocsf_map_filter::OcsfMapFilter;
 
 pub use crate::types::_ocsf_ip_filter::OcsfIpFilter;
+
+pub use crate::types::_remediation_string_filter::RemediationStringFilter;
+
+pub use crate::types::_kb_article::KbArticle;
 
 pub use crate::types::_resources_trends_string_filter::ResourcesTrendsStringFilter;
 
@@ -778,6 +818,14 @@ pub use crate::types::_ocsf_number_field::OcsfNumberField;
 pub use crate::types::_ocsf_map_field::OcsfMapField;
 
 pub use crate::types::_ocsf_ip_field::OcsfIpField;
+
+pub use crate::types::_remediation_string_field::RemediationStringField;
+
+pub use crate::types::_remediation_string_filter_condition::RemediationStringFilterCondition;
+
+pub use crate::types::_remediation_parameter::RemediationParameter;
+
+pub use crate::types::_remediation_step::RemediationStep;
 
 pub use crate::types::_resources_trends_string_field::ResourcesTrendsStringField;
 
@@ -2905,6 +2953,12 @@ mod _enum_configuration_options;
 
 mod _enum_list_configuration_options;
 
+mod _exposure_finding;
+
+mod _exposure_impact;
+
+mod _exposure_severity;
+
 mod _external_integration_configuration;
 
 mod _feature_detail;
@@ -2967,6 +3021,8 @@ mod _group_by_rule;
 
 mod _group_by_value;
 
+mod _guidance_format;
+
 mod _health_check;
 
 mod _health_issue;
@@ -3006,6 +3062,8 @@ mod _jira_cloud_detail;
 mod _jira_cloud_provider_configuration;
 
 mod _jira_cloud_update_configuration;
+
+mod _kb_article;
 
 mod _keyword_filter;
 
@@ -3146,6 +3204,44 @@ mod _region_availability_status;
 mod _related_finding;
 
 mod _remediation;
+
+mod _remediation_composite_filter;
+
+mod _remediation_filters;
+
+mod _remediation_guidance;
+
+mod _remediation_guidance_context;
+
+mod _remediation_guidance_examples;
+
+mod _remediation_guidance_metadata;
+
+mod _remediation_guidance_specification;
+
+mod _remediation_outcome;
+
+mod _remediation_parameter;
+
+mod _remediation_priority;
+
+mod _remediation_resource;
+
+mod _remediation_status;
+
+mod _remediation_step;
+
+mod _remediation_string_field;
+
+mod _remediation_string_filter;
+
+mod _remediation_string_filter_condition;
+
+mod _remediation_summary_detail;
+
+mod _remediation_trait;
+
+mod _remediation_v2_item;
 
 mod _resource;
 

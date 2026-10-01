@@ -3620,6 +3620,54 @@ pub(crate) fn heat_map_visual_correct_errors(
     builder
 }
 
+pub(crate) fn hierarchy_filter_correct_errors(
+    mut builder: crate::types::builders::HierarchyFilterBuilder,
+) -> crate::types::builders::HierarchyFilterBuilder {
+    if builder.filter_id.is_none() {
+        builder.filter_id = Some(Default::default())
+    }
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.hierarchy_levels.is_none() {
+        builder.hierarchy_levels = Some(Default::default())
+    }
+    if builder.null_option.is_none() {
+        builder.null_option = "no value was set".parse::<crate::types::FilterNullOption>().ok()
+    }
+    if builder.match_operator.is_none() {
+        builder.match_operator = "no value was set".parse::<crate::types::HierarchyFilterMatchOperator>().ok()
+    }
+    builder
+}
+
+pub(crate) fn hierarchy_filter_drop_down_control_correct_errors(
+    mut builder: crate::types::builders::HierarchyFilterDropDownControlBuilder,
+) -> crate::types::builders::HierarchyFilterDropDownControlBuilder {
+    if builder.filter_control_id.is_none() {
+        builder.filter_control_id = Some(Default::default())
+    }
+    if builder.source_filter_id.is_none() {
+        builder.source_filter_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn hierarchy_filter_list_control_correct_errors(
+    mut builder: crate::types::builders::HierarchyFilterListControlBuilder,
+) -> crate::types::builders::HierarchyFilterListControlBuilder {
+    if builder.filter_control_id.is_none() {
+        builder.filter_control_id = Some(Default::default())
+    }
+    if builder.source_filter_id.is_none() {
+        builder.source_filter_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn histogram_visual_correct_errors(
     mut builder: crate::types::builders::HistogramVisualBuilder,
 ) -> crate::types::builders::HistogramVisualBuilder {
@@ -4259,6 +4307,18 @@ pub(crate) fn grid_layout_screen_canvas_size_options_correct_errors(
     builder
 }
 
+pub(crate) fn hierarchy_filter_node_correct_errors(
+    mut builder: crate::types::builders::HierarchyFilterNodeBuilder,
+) -> crate::types::builders::HierarchyFilterNodeBuilder {
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn image_custom_action_correct_errors(
     mut builder: crate::types::builders::ImageCustomActionBuilder,
 ) -> crate::types::builders::ImageCustomActionBuilder {
@@ -4535,6 +4595,18 @@ pub(crate) fn geocode_preference_correct_errors(
     }
     if builder.preference.is_none() {
         builder.preference = Some(crate::types::GeocodePreferenceValue::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn hierarchy_filter_level_correct_errors(
+    mut builder: crate::types::builders::HierarchyFilterLevelBuilder,
+) -> crate::types::builders::HierarchyFilterLevelBuilder {
+    if builder.column.is_none() {
+        builder.column = {
+            let builder = crate::types::builders::ColumnIdentifierBuilder::default();
+            crate::serde_util::column_identifier_correct_errors(builder).build().ok()
+        }
     }
     builder
 }

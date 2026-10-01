@@ -44,7 +44,7 @@ pub struct CopyImageInput {
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
     /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts, except tags with the <code>ec2:SharedTag/</code> prefix. For more information about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing tags</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub copy_image_tags: ::std::option::Option<bool>,
@@ -130,7 +130,7 @@ impl CopyImageInput {
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
     /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts, except tags with the <code>ec2:SharedTag/</code> prefix. For more information about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing tags</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn copy_image_tags(&self) -> ::std::option::Option<bool> {
@@ -375,7 +375,7 @@ impl CopyImageInputBuilder {
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
     /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts, except tags with the <code>ec2:SharedTag/</code> prefix. For more information about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing tags</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn copy_image_tags(mut self, input: bool) -> Self {
@@ -388,7 +388,7 @@ impl CopyImageInputBuilder {
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
     /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts, except tags with the <code>ec2:SharedTag/</code> prefix. For more information about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing tags</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn set_copy_image_tags(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -401,7 +401,7 @@ impl CopyImageInputBuilder {
     /// <li>
     /// <p>System tags (prefixed with <code>aws:</code>)</p></li>
     /// <li>
-    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts</p></li>
+    /// <p>For public and shared AMIs, user-defined tags that are attached by other Amazon Web Services accounts, except tags with the <code>ec2:SharedTag/</code> prefix. For more information about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing tags</a> in the <i>Amazon EC2 User Guide</i>.</p></li>
     /// </ul>
     /// <p>Default: Your user-defined AMI tags are not copied.</p>
     pub fn get_copy_image_tags(&self) -> &::std::option::Option<bool> {
