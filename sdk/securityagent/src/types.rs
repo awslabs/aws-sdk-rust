@@ -339,6 +339,16 @@ pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
 
 pub use crate::types::_access_type::AccessType;
 
+pub use crate::types::_trigger_filter_group::TriggerFilterGroup;
+
+pub use crate::types::_trigger_event::TriggerEvent;
+
+pub use crate::types::_trigger_filter::TriggerFilter;
+
+pub use crate::types::_trigger_filter_type::TriggerFilterType;
+
+pub use crate::types::_trigger_filter_match_mode::TriggerFilterMatchMode;
+
 mod _access_type;
 
 mod _actor;
@@ -652,6 +662,16 @@ mod _threat_severity;
 mod _threat_status;
 
 mod _threat_summary;
+
+mod _trigger_event;
+
+mod _trigger_filter;
+
+mod _trigger_filter_group;
+
+mod _trigger_filter_match_mode;
+
+mod _trigger_filter_type;
 
 mod _trusted_ca_certificate;
 

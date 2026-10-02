@@ -85,6 +85,10 @@
 ///     ValidationExceptionType::MultiviewConfigurationRequired => { /* ... */ },
 ///     ValidationExceptionType::MultiviewDuplicateLayout => { /* ... */ },
 ///     ValidationExceptionType::MultiviewDuplicateSource => { /* ... */ },
+///     ValidationExceptionType::MultiviewFilterConfigurationNotAllowed => { /* ... */ },
+///     ValidationExceptionType::MultiviewFilterLayoutNotAvailable => { /* ... */ },
+///     ValidationExceptionType::MultiviewFilterSourceCountMismatch => { /* ... */ },
+///     ValidationExceptionType::MultiviewFilterSourceNotAvailable => { /* ... */ },
 ///     ValidationExceptionType::MultiviewInputSwitchNotAllowed => { /* ... */ },
 ///     ValidationExceptionType::MultiviewInputTypeWithFilterConfiguration => { /* ... */ },
 ///     ValidationExceptionType::MultiviewInputTypeWithHarvestJob => { /* ... */ },
@@ -100,10 +104,12 @@
 ///     ValidationExceptionType::MultiviewOutputHeaderNotAllowed => { /* ... */ },
 ///     ValidationExceptionType::MultiviewResetNotAllowed => { /* ... */ },
 ///     ValidationExceptionType::MultiviewScteRequiresAvailsPeriodTrigger => { /* ... */ },
+///     ValidationExceptionType::MultiviewSourceChannelLimitExceeded => { /* ... */ },
 ///     ValidationExceptionType::MultiviewSourceInvalidInputType => { /* ... */ },
 ///     ValidationExceptionType::MultiviewSourceNonEpochLocked => { /* ... */ },
 ///     ValidationExceptionType::MultiviewSourceNotFound => { /* ... */ },
 ///     ValidationExceptionType::MultiviewStartoverWindowNotAllowed => { /* ... */ },
+///     ValidationExceptionType::MultiviewTsUseAudioRenditionGroupDisabled => { /* ... */ },
 ///     ValidationExceptionType::NoneModeWithTimingSource => { /* ... */ },
 ///     ValidationExceptionType::NonEpochLockedWithForceEndpointErrorConfiguration => { /* ... */ },
 ///     ValidationExceptionType::NumManifestsHigh => { /* ... */ },
@@ -319,6 +325,14 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     MultiviewDuplicateSource,
     #[allow(missing_docs)] // documentation missing in model
+    MultiviewFilterConfigurationNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiviewFilterLayoutNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiviewFilterSourceCountMismatch,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiviewFilterSourceNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     MultiviewInputSwitchNotAllowed,
     #[allow(missing_docs)] // documentation missing in model
     MultiviewInputTypeWithFilterConfiguration,
@@ -349,6 +363,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     MultiviewScteRequiresAvailsPeriodTrigger,
     #[allow(missing_docs)] // documentation missing in model
+    MultiviewSourceChannelLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     MultiviewSourceInvalidInputType,
     #[allow(missing_docs)] // documentation missing in model
     MultiviewSourceNonEpochLocked,
@@ -356,6 +372,8 @@ pub enum ValidationExceptionType {
     MultiviewSourceNotFound,
     #[allow(missing_docs)] // documentation missing in model
     MultiviewStartoverWindowNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    MultiviewTsUseAudioRenditionGroupDisabled,
     #[allow(missing_docs)] // documentation missing in model
     NoneModeWithTimingSource,
     #[allow(missing_docs)] // documentation missing in model
@@ -520,6 +538,10 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "MULTIVIEW_CONFIGURATION_REQUIRED" => ValidationExceptionType::MultiviewConfigurationRequired,
             "MULTIVIEW_DUPLICATE_LAYOUT" => ValidationExceptionType::MultiviewDuplicateLayout,
             "MULTIVIEW_DUPLICATE_SOURCE" => ValidationExceptionType::MultiviewDuplicateSource,
+            "MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED" => ValidationExceptionType::MultiviewFilterConfigurationNotAllowed,
+            "MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE" => ValidationExceptionType::MultiviewFilterLayoutNotAvailable,
+            "MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH" => ValidationExceptionType::MultiviewFilterSourceCountMismatch,
+            "MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE" => ValidationExceptionType::MultiviewFilterSourceNotAvailable,
             "MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED" => ValidationExceptionType::MultiviewInputSwitchNotAllowed,
             "MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION" => ValidationExceptionType::MultiviewInputTypeWithFilterConfiguration,
             "MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB" => ValidationExceptionType::MultiviewInputTypeWithHarvestJob,
@@ -535,10 +557,12 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED" => ValidationExceptionType::MultiviewOutputHeaderNotAllowed,
             "MULTIVIEW_RESET_NOT_ALLOWED" => ValidationExceptionType::MultiviewResetNotAllowed,
             "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER" => ValidationExceptionType::MultiviewScteRequiresAvailsPeriodTrigger,
+            "MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED" => ValidationExceptionType::MultiviewSourceChannelLimitExceeded,
             "MULTIVIEW_SOURCE_INVALID_INPUT_TYPE" => ValidationExceptionType::MultiviewSourceInvalidInputType,
             "MULTIVIEW_SOURCE_NON_EPOCH_LOCKED" => ValidationExceptionType::MultiviewSourceNonEpochLocked,
             "MULTIVIEW_SOURCE_NOT_FOUND" => ValidationExceptionType::MultiviewSourceNotFound,
             "MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED" => ValidationExceptionType::MultiviewStartoverWindowNotAllowed,
+            "MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED" => ValidationExceptionType::MultiviewTsUseAudioRenditionGroupDisabled,
             "NONE_MODE_WITH_TIMING_SOURCE" => ValidationExceptionType::NoneModeWithTimingSource,
             "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION" => ValidationExceptionType::NonEpochLockedWithForceEndpointErrorConfiguration,
             "NUM_MANIFESTS_HIGH" => ValidationExceptionType::NumManifestsHigh,
@@ -673,6 +697,10 @@ impl ValidationExceptionType {
             ValidationExceptionType::MultiviewConfigurationRequired => "MULTIVIEW_CONFIGURATION_REQUIRED",
             ValidationExceptionType::MultiviewDuplicateLayout => "MULTIVIEW_DUPLICATE_LAYOUT",
             ValidationExceptionType::MultiviewDuplicateSource => "MULTIVIEW_DUPLICATE_SOURCE",
+            ValidationExceptionType::MultiviewFilterConfigurationNotAllowed => "MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED",
+            ValidationExceptionType::MultiviewFilterLayoutNotAvailable => "MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE",
+            ValidationExceptionType::MultiviewFilterSourceCountMismatch => "MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH",
+            ValidationExceptionType::MultiviewFilterSourceNotAvailable => "MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE",
             ValidationExceptionType::MultiviewInputSwitchNotAllowed => "MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED",
             ValidationExceptionType::MultiviewInputTypeWithFilterConfiguration => "MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION",
             ValidationExceptionType::MultiviewInputTypeWithHarvestJob => "MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB",
@@ -688,10 +716,12 @@ impl ValidationExceptionType {
             ValidationExceptionType::MultiviewOutputHeaderNotAllowed => "MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED",
             ValidationExceptionType::MultiviewResetNotAllowed => "MULTIVIEW_RESET_NOT_ALLOWED",
             ValidationExceptionType::MultiviewScteRequiresAvailsPeriodTrigger => "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER",
+            ValidationExceptionType::MultiviewSourceChannelLimitExceeded => "MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED",
             ValidationExceptionType::MultiviewSourceInvalidInputType => "MULTIVIEW_SOURCE_INVALID_INPUT_TYPE",
             ValidationExceptionType::MultiviewSourceNonEpochLocked => "MULTIVIEW_SOURCE_NON_EPOCH_LOCKED",
             ValidationExceptionType::MultiviewSourceNotFound => "MULTIVIEW_SOURCE_NOT_FOUND",
             ValidationExceptionType::MultiviewStartoverWindowNotAllowed => "MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED",
+            ValidationExceptionType::MultiviewTsUseAudioRenditionGroupDisabled => "MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED",
             ValidationExceptionType::NoneModeWithTimingSource => "NONE_MODE_WITH_TIMING_SOURCE",
             ValidationExceptionType::NonEpochLockedWithForceEndpointErrorConfiguration => "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION",
             ValidationExceptionType::NumManifestsHigh => "NUM_MANIFESTS_HIGH",
@@ -813,6 +843,10 @@ impl ValidationExceptionType {
             "MULTIVIEW_CONFIGURATION_REQUIRED",
             "MULTIVIEW_DUPLICATE_LAYOUT",
             "MULTIVIEW_DUPLICATE_SOURCE",
+            "MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED",
+            "MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE",
+            "MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH",
+            "MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE",
             "MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED",
             "MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION",
             "MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB",
@@ -828,10 +862,12 @@ impl ValidationExceptionType {
             "MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED",
             "MULTIVIEW_RESET_NOT_ALLOWED",
             "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER",
+            "MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED",
             "MULTIVIEW_SOURCE_INVALID_INPUT_TYPE",
             "MULTIVIEW_SOURCE_NON_EPOCH_LOCKED",
             "MULTIVIEW_SOURCE_NOT_FOUND",
             "MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED",
+            "MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED",
             "NONE_MODE_WITH_TIMING_SOURCE",
             "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION",
             "NUM_MANIFESTS_HIGH",
@@ -976,6 +1012,10 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::MultiviewConfigurationRequired => write!(f, "MULTIVIEW_CONFIGURATION_REQUIRED"),
             ValidationExceptionType::MultiviewDuplicateLayout => write!(f, "MULTIVIEW_DUPLICATE_LAYOUT"),
             ValidationExceptionType::MultiviewDuplicateSource => write!(f, "MULTIVIEW_DUPLICATE_SOURCE"),
+            ValidationExceptionType::MultiviewFilterConfigurationNotAllowed => write!(f, "MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED"),
+            ValidationExceptionType::MultiviewFilterLayoutNotAvailable => write!(f, "MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE"),
+            ValidationExceptionType::MultiviewFilterSourceCountMismatch => write!(f, "MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH"),
+            ValidationExceptionType::MultiviewFilterSourceNotAvailable => write!(f, "MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE"),
             ValidationExceptionType::MultiviewInputSwitchNotAllowed => write!(f, "MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED"),
             ValidationExceptionType::MultiviewInputTypeWithFilterConfiguration => write!(f, "MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION"),
             ValidationExceptionType::MultiviewInputTypeWithHarvestJob => write!(f, "MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB"),
@@ -991,10 +1031,12 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::MultiviewOutputHeaderNotAllowed => write!(f, "MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED"),
             ValidationExceptionType::MultiviewResetNotAllowed => write!(f, "MULTIVIEW_RESET_NOT_ALLOWED"),
             ValidationExceptionType::MultiviewScteRequiresAvailsPeriodTrigger => write!(f, "MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER"),
+            ValidationExceptionType::MultiviewSourceChannelLimitExceeded => write!(f, "MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED"),
             ValidationExceptionType::MultiviewSourceInvalidInputType => write!(f, "MULTIVIEW_SOURCE_INVALID_INPUT_TYPE"),
             ValidationExceptionType::MultiviewSourceNonEpochLocked => write!(f, "MULTIVIEW_SOURCE_NON_EPOCH_LOCKED"),
             ValidationExceptionType::MultiviewSourceNotFound => write!(f, "MULTIVIEW_SOURCE_NOT_FOUND"),
             ValidationExceptionType::MultiviewStartoverWindowNotAllowed => write!(f, "MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED"),
+            ValidationExceptionType::MultiviewTsUseAudioRenditionGroupDisabled => write!(f, "MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED"),
             ValidationExceptionType::NoneModeWithTimingSource => write!(f, "NONE_MODE_WITH_TIMING_SOURCE"),
             ValidationExceptionType::NonEpochLockedWithForceEndpointErrorConfiguration => {
                 write!(f, "NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION")

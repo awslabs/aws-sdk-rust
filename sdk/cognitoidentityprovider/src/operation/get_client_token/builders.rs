@@ -22,7 +22,7 @@ impl crate::operation::get_client_token::builders::GetClientTokenInputBuilder {
 }
 /// Fluent builder constructing a request to `GetClientToken`.
 ///
-/// <p>Issues an access token for machine-to-machine (M2M) authorization. Your app client provides its client ID and secret, and receives an access token that authorizes requests to your resource servers. <code>GetClientToken</code> provides the same functionality as the OAuth2 client-credentials grant; both authorize an application rather than a user.</p>
+/// <p>Issues an access token for machine-to-machine (M2M) authorization. Your app client provides its client ID and secret, and receives an access token that authorizes requests to your resource servers.</p>
 /// <p>To use this operation, you must configure the app client with a client secret and enable the <code>ALLOW_CLIENT_TOKEN_AUTH</code> authentication flow. The <code>ALLOW_CLIENT_TOKEN_AUTH</code> flow is mutually exclusive with user authentication flows. It must be the only authentication flow that you configure for the app client. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Scopes, M2M, and resource servers</a>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>

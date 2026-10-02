@@ -22,7 +22,9 @@ impl crate::operation::delete_web_function_endpoint::builders::DeleteWebFunction
 }
 /// Fluent builder constructing a request to `DeleteWebFunctionEndpoint`.
 ///
-/// <p>Deletes a web function endpoint.</p>
+/// <p>Deletes a web function endpoint.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWebFunctionEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

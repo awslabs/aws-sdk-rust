@@ -17,7 +17,7 @@ pub struct ListAvailablePhoneNumbersInput {
     /// <p>The Amazon Resource Name (ARN) of the registration.</p></li>
     /// </ul>
     pub registration_id: ::std::option::Option<::std::string::String>,
-    /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List API.
+    /// <p>An optional selection preference used to return only phone numbers that match a specific digit pattern, such as numbers that start with, end with, or contain a particular sequence. You can specify at most one preference. Number preferences apply only to <code>TEN_DLC</code> numbers in the <code>US</code>.</p>
     pub number_preference: ::std::option::Option<::std::vec::Vec<crate::types::NumberPreferenceItem>>,
     /// <p>The token returned from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl ListAvailablePhoneNumbersInput {
     pub fn registration_id(&self) -> ::std::option::Option<&str> {
         self.registration_id.as_deref()
     }
-    /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List API.
+    /// <p>An optional selection preference used to return only phone numbers that match a specific digit pattern, such as numbers that start with, end with, or contain a particular sequence. You can specify at most one preference. Number preferences apply only to <code>TEN_DLC</code> numbers in the <code>US</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_preference.is_none()`.
     pub fn number_preference(&self) -> &[crate::types::NumberPreferenceItem] {
@@ -170,19 +170,19 @@ impl ListAvailablePhoneNumbersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_number_preference`](Self::set_number_preference).
     ///
-    /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List API.
+    /// <p>An optional selection preference used to return only phone numbers that match a specific digit pattern, such as numbers that start with, end with, or contain a particular sequence. You can specify at most one preference. Number preferences apply only to <code>TEN_DLC</code> numbers in the <code>US</code>.</p>
     pub fn number_preference(mut self, input: crate::types::NumberPreferenceItem) -> Self {
         let mut v = self.number_preference.unwrap_or_default();
         v.push(input);
         self.number_preference = ::std::option::Option::Some(v);
         self
     }
-    /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List API.
+    /// <p>An optional selection preference used to return only phone numbers that match a specific digit pattern, such as numbers that start with, end with, or contain a particular sequence. You can specify at most one preference. Number preferences apply only to <code>TEN_DLC</code> numbers in the <code>US</code>.</p>
     pub fn set_number_preference(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberPreferenceItem>>) -> Self {
         self.number_preference = input;
         self
     }
-    /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List API.
+    /// <p>An optional selection preference used to return only phone numbers that match a specific digit pattern, such as numbers that start with, end with, or contain a particular sequence. You can specify at most one preference. Number preferences apply only to <code>TEN_DLC</code> numbers in the <code>US</code>.</p>
     pub fn get_number_preference(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberPreferenceItem>> {
         &self.number_preference
     }

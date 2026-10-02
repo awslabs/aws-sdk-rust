@@ -22,7 +22,9 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// <p>Removes the resource-based policy from a web function.</p>
+/// <p>Removes the resource-based policy from a web function.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

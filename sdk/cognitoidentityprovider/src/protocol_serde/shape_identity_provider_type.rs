@@ -60,6 +60,13 @@ where
                                     crate::protocol_serde::shape_idp_identifiers_list_type::de_idp_identifiers_list_type(tokens, _value, depth + 1)?,
                                 );
                             }
+                            "AcrMapping" => {
+                                builder = builder.set_acr_mapping(crate::protocol_serde::shape_acr_mapping_type::de_acr_mapping_type(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
                             "LastModifiedDate" => {
                                 builder = builder.set_last_modified_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                     tokens.next(),

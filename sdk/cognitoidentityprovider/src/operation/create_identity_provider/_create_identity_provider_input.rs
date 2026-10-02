@@ -62,6 +62,9 @@ pub struct CreateIdentityProviderInput {
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of IdP identifiers, for example <code>"IdPIdentifiers": \[ "MyIdP", "MyIdP2" \]</code>. Identifiers are friendly names that you can pass in the <code>idp_identifier</code> query parameter of requests to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize endpoint</a> to silently redirect to sign-in with the associated IdP. Identifiers in a domain format also enable the use of <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address matching with SAML providers</a>.</p>
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). The map is keyed by level, from <code>Level1</code> through <code>Level4</code>, and each value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito uses this mapping to translate a requested user pool ACR level to the value that the IdP expects, and to map an ACR value that the IdP returns back to a user pool level. When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIdentityProviderInput {
     /// <p>The Id of the user pool where you want to create an IdP.</p>
@@ -137,6 +140,11 @@ impl CreateIdentityProviderInput {
     pub fn idp_identifiers(&self) -> &[::std::string::String] {
         self.idp_identifiers.as_deref().unwrap_or_default()
     }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). The map is keyed by level, from <code>Level1</code> through <code>Level4</code>, and each value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito uses this mapping to translate a requested user pool ACR level to the value that the IdP expects, and to map an ACR value that the IdP returns back to a user pool level. When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn acr_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.acr_mapping.as_ref()
+    }
 }
 impl CreateIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
@@ -155,6 +163,7 @@ pub struct CreateIdentityProviderInputBuilder {
     pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIdentityProviderInputBuilder {
     /// <p>The Id of the user pool where you want to create an IdP.</p>
@@ -417,6 +426,32 @@ impl CreateIdentityProviderInputBuilder {
     pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.idp_identifiers
     }
+    /// Adds a key-value pair to `acr_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_acr_mapping`](Self::set_acr_mapping).
+    ///
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). The map is keyed by level, from <code>Level1</code> through <code>Level4</code>, and each value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito uses this mapping to translate a requested user pool ACR level to the value that the IdP expects, and to map an ACR value that the IdP returns back to a user pool level. When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn acr_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.acr_mapping.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.acr_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). The map is keyed by level, from <code>Level1</code> through <code>Level4</code>, and each value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito uses this mapping to translate a requested user pool ACR level to the value that the IdP expects, and to map an ACR value that the IdP returns back to a user pool level. When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn set_acr_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.acr_mapping = input;
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). The map is keyed by level, from <code>Level1</code> through <code>Level4</code>, and each value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito uses this mapping to translate a requested user pool ACR level to the value that the IdP expects, and to map an ACR value that the IdP returns back to a user pool level. When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to the lowest level. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn get_acr_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.acr_mapping
+    }
     /// Consumes the builder and constructs a [`CreateIdentityProviderInput`](crate::operation::create_identity_provider::CreateIdentityProviderInput).
     pub fn build(
         self,
@@ -431,6 +466,7 @@ impl CreateIdentityProviderInputBuilder {
             provider_details: self.provider_details,
             attribute_mapping: self.attribute_mapping,
             idp_identifiers: self.idp_identifiers,
+            acr_mapping: self.acr_mapping,
         })
     }
 }

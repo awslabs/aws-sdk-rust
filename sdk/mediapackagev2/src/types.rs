@@ -143,6 +143,8 @@ pub use crate::types::_ad_marker_hls::AdMarkerHls;
 
 pub use crate::types::_scte_in_manifests::ScteInManifests;
 
+pub use crate::types::_multiview_filter_configuration::MultiviewFilterConfiguration;
+
 pub use crate::types::_dash_period_trigger::DashPeriodTrigger;
 
 pub use crate::types::_ad_marker_dash::AdMarkerDash;
@@ -290,6 +292,8 @@ mod _list_mss_manifest_configuration;
 mod _mss_manifest_layout;
 
 mod _multiview_configuration;
+
+mod _multiview_filter_configuration;
 
 mod _multiview_layout_type;
 

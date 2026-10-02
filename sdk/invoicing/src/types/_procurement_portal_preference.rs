@@ -30,10 +30,14 @@ pub struct ProcurementPortalPreference {
     pub test_env_preference: ::std::option::Option<crate::types::TestEnvPreference>,
     /// <p>Indicates whether e-invoice delivery is enabled for this procurement portal preference.</p>
     pub einvoice_delivery_enabled: bool,
-    /// <p>The configuration settings that specify how e-invoices are delivered to the procurement portal.</p>
+    /// <p>The e-invoice delivery configuration including document types, attachment types, and customization settings.</p>
     pub einvoice_delivery_preference: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>,
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference.</p>
     pub purchase_order_retrieval_enabled: bool,
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub marketplace_punch_out_enabled: ::std::option::Option<bool>,
+    /// <p>The Marketplace PunchOut configuration for this procurement portal preference. This is present when <code>MarketplacePunchOutEnabled</code> is <code>true</code>.</p>
+    pub marketplace_punch_out_preference: ::std::option::Option<crate::types::MarketplacePunchOutPreference>,
     /// <p>List of contact information for portal administrators and technical contacts.</p>
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     /// <p>The current status of the e-invoice delivery preference.</p>
@@ -108,13 +112,21 @@ impl ProcurementPortalPreference {
     pub fn einvoice_delivery_enabled(&self) -> bool {
         self.einvoice_delivery_enabled
     }
-    /// <p>The configuration settings that specify how e-invoices are delivered to the procurement portal.</p>
+    /// <p>The e-invoice delivery configuration including document types, attachment types, and customization settings.</p>
     pub fn einvoice_delivery_preference(&self) -> ::std::option::Option<&crate::types::EinvoiceDeliveryPreference> {
         self.einvoice_delivery_preference.as_ref()
     }
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference.</p>
     pub fn purchase_order_retrieval_enabled(&self) -> bool {
         self.purchase_order_retrieval_enabled
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn marketplace_punch_out_enabled(&self) -> ::std::option::Option<bool> {
+        self.marketplace_punch_out_enabled
+    }
+    /// <p>The Marketplace PunchOut configuration for this procurement portal preference. This is present when <code>MarketplacePunchOutEnabled</code> is <code>true</code>.</p>
+    pub fn marketplace_punch_out_preference(&self) -> ::std::option::Option<&crate::types::MarketplacePunchOutPreference> {
+        self.marketplace_punch_out_preference.as_ref()
     }
     /// <p>List of contact information for portal administrators and technical contacts.</p>
     ///
@@ -177,6 +189,8 @@ pub struct ProcurementPortalPreferenceBuilder {
     pub(crate) einvoice_delivery_enabled: ::std::option::Option<bool>,
     pub(crate) einvoice_delivery_preference: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>,
     pub(crate) purchase_order_retrieval_enabled: ::std::option::Option<bool>,
+    pub(crate) marketplace_punch_out_enabled: ::std::option::Option<bool>,
+    pub(crate) marketplace_punch_out_preference: ::std::option::Option<crate::types::MarketplacePunchOutPreference>,
     pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     pub(crate) einvoice_delivery_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
     pub(crate) einvoice_delivery_preference_status_reason: ::std::option::Option<::std::string::String>,
@@ -377,17 +391,17 @@ impl ProcurementPortalPreferenceBuilder {
     pub fn get_einvoice_delivery_enabled(&self) -> &::std::option::Option<bool> {
         &self.einvoice_delivery_enabled
     }
-    /// <p>The configuration settings that specify how e-invoices are delivered to the procurement portal.</p>
+    /// <p>The e-invoice delivery configuration including document types, attachment types, and customization settings.</p>
     pub fn einvoice_delivery_preference(mut self, input: crate::types::EinvoiceDeliveryPreference) -> Self {
         self.einvoice_delivery_preference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration settings that specify how e-invoices are delivered to the procurement portal.</p>
+    /// <p>The e-invoice delivery configuration including document types, attachment types, and customization settings.</p>
     pub fn set_einvoice_delivery_preference(mut self, input: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>) -> Self {
         self.einvoice_delivery_preference = input;
         self
     }
-    /// <p>The configuration settings that specify how e-invoices are delivered to the procurement portal.</p>
+    /// <p>The e-invoice delivery configuration including document types, attachment types, and customization settings.</p>
     pub fn get_einvoice_delivery_preference(&self) -> &::std::option::Option<crate::types::EinvoiceDeliveryPreference> {
         &self.einvoice_delivery_preference
     }
@@ -405,6 +419,34 @@ impl ProcurementPortalPreferenceBuilder {
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference.</p>
     pub fn get_purchase_order_retrieval_enabled(&self) -> &::std::option::Option<bool> {
         &self.purchase_order_retrieval_enabled
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn marketplace_punch_out_enabled(mut self, input: bool) -> Self {
+        self.marketplace_punch_out_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn set_marketplace_punch_out_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.marketplace_punch_out_enabled = input;
+        self
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn get_marketplace_punch_out_enabled(&self) -> &::std::option::Option<bool> {
+        &self.marketplace_punch_out_enabled
+    }
+    /// <p>The Marketplace PunchOut configuration for this procurement portal preference. This is present when <code>MarketplacePunchOutEnabled</code> is <code>true</code>.</p>
+    pub fn marketplace_punch_out_preference(mut self, input: crate::types::MarketplacePunchOutPreference) -> Self {
+        self.marketplace_punch_out_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Marketplace PunchOut configuration for this procurement portal preference. This is present when <code>MarketplacePunchOutEnabled</code> is <code>true</code>.</p>
+    pub fn set_marketplace_punch_out_preference(mut self, input: ::std::option::Option<crate::types::MarketplacePunchOutPreference>) -> Self {
+        self.marketplace_punch_out_preference = input;
+        self
+    }
+    /// <p>The Marketplace PunchOut configuration for this procurement portal preference. This is present when <code>MarketplacePunchOutEnabled</code> is <code>true</code>.</p>
+    pub fn get_marketplace_punch_out_preference(&self) -> &::std::option::Option<crate::types::MarketplacePunchOutPreference> {
+        &self.marketplace_punch_out_preference
     }
     /// Appends an item to `contacts`.
     ///
@@ -606,6 +648,8 @@ impl ProcurementPortalPreferenceBuilder {
                     "purchase_order_retrieval_enabled was not specified but it is required when building ProcurementPortalPreference",
                 )
             })?,
+            marketplace_punch_out_enabled: self.marketplace_punch_out_enabled,
+            marketplace_punch_out_preference: self.marketplace_punch_out_preference,
             contacts: self.contacts,
             einvoice_delivery_preference_status: self.einvoice_delivery_preference_status,
             einvoice_delivery_preference_status_reason: self.einvoice_delivery_preference_status_reason,

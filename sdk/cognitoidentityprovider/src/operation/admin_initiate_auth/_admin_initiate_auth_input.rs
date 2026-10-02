@@ -54,6 +54,12 @@ pub struct AdminInitiateAuthInput {
     /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
     /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
+    /// <p><code>TARGET_ACR_VALUES</code>. An optional, space-separated list of the authentication context class reference (ACR) level URIs that you want the user to reach. List the levels in priority order, from highest to lowest. Amazon Cognito attempts the highest-priority level that the user can satisfy, and falls back through the list. Amazon Cognito ignores any value that it doesn't recognize. If none of the requested values are valid, Amazon Cognito returns an error.</p>
+    /// <p>Requesting step-up authentication with this parameter requires the Essentials or Plus feature plan. On a lower feature plan, AdminInitiateAuth returns a FeatureUnavailableInTierException. <code>USERNAME</code> is required. When you provide an <code>ACCESS_TOKEN</code>, you must also provide <code>TARGET_ACR_VALUES</code>. Amazon Cognito returns an error if you provide an <code>ACCESS_TOKEN</code> without <code>TARGET_ACR_VALUES</code>. The <code>USERNAME</code> that you provide must match the user that the <code>ACCESS_TOKEN</code> was issued for.</p>
+    /// <p>For more information about step-up authentication and how Amazon Cognito handles multi-factor authentication requirements, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html">Step-up authentication with ACR and AMR</a> in the <i>Amazon Cognito Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>MAX_AGE</code>. An optional integer that sets the maximum number of seconds allowed since the user last authenticated. If the user's most recent authentication is older than this value, Amazon Cognito discards the authentication-methods credit from any access token that you provide and processes the request as a fresh authentication toward the target level. The access token itself remains valid.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -208,6 +214,12 @@ impl AdminInitiateAuthInput {
     /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
     /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
+    /// <p><code>TARGET_ACR_VALUES</code>. An optional, space-separated list of the authentication context class reference (ACR) level URIs that you want the user to reach. List the levels in priority order, from highest to lowest. Amazon Cognito attempts the highest-priority level that the user can satisfy, and falls back through the list. Amazon Cognito ignores any value that it doesn't recognize. If none of the requested values are valid, Amazon Cognito returns an error.</p>
+    /// <p>Requesting step-up authentication with this parameter requires the Essentials or Plus feature plan. On a lower feature plan, AdminInitiateAuth returns a FeatureUnavailableInTierException. <code>USERNAME</code> is required. When you provide an <code>ACCESS_TOKEN</code>, you must also provide <code>TARGET_ACR_VALUES</code>. Amazon Cognito returns an error if you provide an <code>ACCESS_TOKEN</code> without <code>TARGET_ACR_VALUES</code>. The <code>USERNAME</code> that you provide must match the user that the <code>ACCESS_TOKEN</code> was issued for.</p>
+    /// <p>For more information about step-up authentication and how Amazon Cognito handles multi-factor authentication requirements, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html">Step-up authentication with ACR and AMR</a> in the <i>Amazon Cognito Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>MAX_AGE</code>. An optional integer that sets the maximum number of seconds allowed since the user last authenticated. If the user's most recent authentication is older than this value, Amazon Cognito discards the authentication-methods credit from any access token that you provide and processes the request as a fresh authentication toward the target level. The access token itself remains valid.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -507,6 +519,12 @@ impl AdminInitiateAuthInputBuilder {
     /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
     /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
+    /// <p><code>TARGET_ACR_VALUES</code>. An optional, space-separated list of the authentication context class reference (ACR) level URIs that you want the user to reach. List the levels in priority order, from highest to lowest. Amazon Cognito attempts the highest-priority level that the user can satisfy, and falls back through the list. Amazon Cognito ignores any value that it doesn't recognize. If none of the requested values are valid, Amazon Cognito returns an error.</p>
+    /// <p>Requesting step-up authentication with this parameter requires the Essentials or Plus feature plan. On a lower feature plan, AdminInitiateAuth returns a FeatureUnavailableInTierException. <code>USERNAME</code> is required. When you provide an <code>ACCESS_TOKEN</code>, you must also provide <code>TARGET_ACR_VALUES</code>. Amazon Cognito returns an error if you provide an <code>ACCESS_TOKEN</code> without <code>TARGET_ACR_VALUES</code>. The <code>USERNAME</code> that you provide must match the user that the <code>ACCESS_TOKEN</code> was issued for.</p>
+    /// <p>For more information about step-up authentication and how Amazon Cognito handles multi-factor authentication requirements, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html">Step-up authentication with ACR and AMR</a> in the <i>Amazon Cognito Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>MAX_AGE</code>. An optional integer that sets the maximum number of seconds allowed since the user last authenticated. If the user's most recent authentication is older than this value, Amazon Cognito discards the authentication-methods credit from any access token that you provide and processes the request as a fresh authentication toward the target level. The access token itself remains valid.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -577,6 +595,12 @@ impl AdminInitiateAuthInputBuilder {
     /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
     /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
+    /// <p><code>TARGET_ACR_VALUES</code>. An optional, space-separated list of the authentication context class reference (ACR) level URIs that you want the user to reach. List the levels in priority order, from highest to lowest. Amazon Cognito attempts the highest-priority level that the user can satisfy, and falls back through the list. Amazon Cognito ignores any value that it doesn't recognize. If none of the requested values are valid, Amazon Cognito returns an error.</p>
+    /// <p>Requesting step-up authentication with this parameter requires the Essentials or Plus feature plan. On a lower feature plan, AdminInitiateAuth returns a FeatureUnavailableInTierException. <code>USERNAME</code> is required. When you provide an <code>ACCESS_TOKEN</code>, you must also provide <code>TARGET_ACR_VALUES</code>. Amazon Cognito returns an error if you provide an <code>ACCESS_TOKEN</code> without <code>TARGET_ACR_VALUES</code>. The <code>USERNAME</code> that you provide must match the user that the <code>ACCESS_TOKEN</code> was issued for.</p>
+    /// <p>For more information about step-up authentication and how Amazon Cognito handles multi-factor authentication requirements, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html">Step-up authentication with ACR and AMR</a> in the <i>Amazon Cognito Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>MAX_AGE</code>. An optional integer that sets the maximum number of seconds allowed since the user last authenticated. If the user's most recent authentication is older than this value, Amazon Cognito discards the authentication-methods credit from any access token that you provide and processes the request as a fresh authentication toward the target level. The access token itself remains valid.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -644,6 +668,12 @@ impl AdminInitiateAuthInputBuilder {
     /// <p><code>USERNAME</code> (required)</p></li>
     /// <li>
     /// <p><code>PREFERRED_CHALLENGE</code>. If you don't provide a value for <code>PREFERRED_CHALLENGE</code>, Amazon Cognito responds with the <code>AvailableChallenges</code> parameter that specifies the available sign-in methods.</p></li>
+    /// <li>
+    /// <p><code>TARGET_ACR_VALUES</code>. An optional, space-separated list of the authentication context class reference (ACR) level URIs that you want the user to reach. List the levels in priority order, from highest to lowest. Amazon Cognito attempts the highest-priority level that the user can satisfy, and falls back through the list. Amazon Cognito ignores any value that it doesn't recognize. If none of the requested values are valid, Amazon Cognito returns an error.</p>
+    /// <p>Requesting step-up authentication with this parameter requires the Essentials or Plus feature plan. On a lower feature plan, AdminInitiateAuth returns a FeatureUnavailableInTierException. <code>USERNAME</code> is required. When you provide an <code>ACCESS_TOKEN</code>, you must also provide <code>TARGET_ACR_VALUES</code>. Amazon Cognito returns an error if you provide an <code>ACCESS_TOKEN</code> without <code>TARGET_ACR_VALUES</code>. The <code>USERNAME</code> that you provide must match the user that the <code>ACCESS_TOKEN</code> was issued for.</p>
+    /// <p>For more information about step-up authentication and how Amazon Cognito handles multi-factor authentication requirements, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-step-up-authentication.html">Step-up authentication with ACR and AMR</a> in the <i>Amazon Cognito Developer Guide</i>.</p></li>
+    /// <li>
+    /// <p><code>MAX_AGE</code>. An optional integer that sets the maximum number of seconds allowed since the user last authenticated. If the user's most recent authentication is older than this value, Amazon Cognito discards the authentication-methods credit from any access token that you provide and processes the request as a fresh authentication toward the target level. The access token itself remains valid.</p></li>
     /// </ul>
     /// </dd>
     /// <dt>

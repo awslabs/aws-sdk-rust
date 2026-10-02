@@ -22,7 +22,9 @@ impl crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuil
 }
 /// Fluent builder constructing a request to `GetResourcePolicy`.
 ///
-/// <p>Retrieves the resource-based policy attached to a web function.</p>
+/// <p>Retrieves the resource-based policy attached to a web function.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -16,6 +16,8 @@
 ///     PhoneNumberType::Landline => { /* ... */ },
 ///     PhoneNumberType::Mobile => { /* ... */ },
 ///     PhoneNumberType::Other => { /* ... */ },
+///     PhoneNumberType::Prepaid => { /* ... */ },
+///     PhoneNumberType::Voip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +54,10 @@ pub enum PhoneNumberType {
     Mobile,
     #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
+    Prepaid,
+    #[allow(missing_docs)] // documentation missing in model
+    Voip,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +69,8 @@ impl ::std::convert::From<&str> for PhoneNumberType {
             "LANDLINE" => PhoneNumberType::Landline,
             "MOBILE" => PhoneNumberType::Mobile,
             "OTHER" => PhoneNumberType::Other,
+            "PREPAID" => PhoneNumberType::Prepaid,
+            "VOIP" => PhoneNumberType::Voip,
             other => PhoneNumberType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +90,14 @@ impl PhoneNumberType {
             PhoneNumberType::Landline => "LANDLINE",
             PhoneNumberType::Mobile => "MOBILE",
             PhoneNumberType::Other => "OTHER",
+            PhoneNumberType::Prepaid => "PREPAID",
+            PhoneNumberType::Voip => "VOIP",
             PhoneNumberType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVALID", "LANDLINE", "MOBILE", "OTHER"]
+        &["INVALID", "LANDLINE", "MOBILE", "OTHER", "PREPAID", "VOIP"]
     }
 }
 impl ::std::convert::AsRef<str> for PhoneNumberType {
@@ -114,6 +124,8 @@ impl ::std::fmt::Display for PhoneNumberType {
             PhoneNumberType::Landline => write!(f, "LANDLINE"),
             PhoneNumberType::Mobile => write!(f, "MOBILE"),
             PhoneNumberType::Other => write!(f, "OTHER"),
+            PhoneNumberType::Prepaid => write!(f, "PREPAID"),
+            PhoneNumberType::Voip => write!(f, "VOIP"),
             PhoneNumberType::Unknown(value) => write!(f, "{value}"),
         }
     }

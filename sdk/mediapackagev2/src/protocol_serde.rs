@@ -261,6 +261,8 @@ pub(crate) mod shape_list_low_latency_hls_manifests;
 
 pub(crate) mod shape_list_mss_manifests;
 
+pub(crate) mod shape_multiview_filter_configuration;
+
 pub(crate) mod shape_scte_filter_list;
 
 pub(crate) mod shape_speke_key_provider;

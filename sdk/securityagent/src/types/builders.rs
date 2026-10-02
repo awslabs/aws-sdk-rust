@@ -222,3 +222,7 @@ pub use crate::types::_azure_dev_ops_repository_resource::AzureDevOpsRepositoryR
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetailsBuilder;
 
 pub use crate::types::_verification_script_env_var::VerificationScriptEnvVarBuilder;
+
+pub use crate::types::_trigger_filter_group::TriggerFilterGroupBuilder;
+
+pub use crate::types::_trigger_filter::TriggerFilterBuilder;

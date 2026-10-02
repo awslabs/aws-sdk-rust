@@ -357,4 +357,29 @@ impl UpdateIdentityProviderFluentBuilder {
     pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_idp_identifiers()
     }
+    ///
+    /// Adds a key-value pair to `AcrMapping`.
+    ///
+    /// To override the contents of this collection use [`set_acr_mapping`](Self::set_acr_mapping).
+    ///
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn acr_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.acr_mapping(k.into(), v.into());
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn set_acr_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.inner = self.inner.set_acr_mapping(input);
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn get_acr_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_acr_mapping()
+    }
 }

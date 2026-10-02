@@ -22,7 +22,9 @@ impl crate::operation::list_web_functions::builders::ListWebFunctionsInputBuilde
 }
 /// Fluent builder constructing a request to `ListWebFunctions`.
 ///
-/// <p>Lists web functions in your account. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>Lists web functions in your account. We recommend using pagination to ensure that the operation returns quickly and successfully.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWebFunctionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

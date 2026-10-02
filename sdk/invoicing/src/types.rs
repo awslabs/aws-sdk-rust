@@ -15,6 +15,8 @@ pub use crate::types::_test_env_preference_input::TestEnvPreferenceInput;
 
 pub use crate::types::_einvoice_delivery_preference::EinvoiceDeliveryPreference;
 
+pub use crate::types::_marketplace_punch_out_preference::MarketplacePunchOutPreference;
+
 pub use crate::types::_invoice_pdf::InvoicePdf;
 
 pub use crate::types::_procurement_portal_preference::ProcurementPortalPreference;
@@ -174,6 +176,8 @@ mod _invoice_unit;
 mod _invoice_unit_rule;
 
 mod _list_invoice_summaries_resource_type;
+
+mod _marketplace_punch_out_preference;
 
 mod _procurement_portal;
 

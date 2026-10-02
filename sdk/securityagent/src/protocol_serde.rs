@@ -837,6 +837,8 @@ pub(crate) mod shape_step;
 
 pub(crate) mod shape_subnet_arns;
 
+pub(crate) mod shape_trigger_filter_group;
+
 pub(crate) mod shape_uri_list;
 
 pub(crate) mod shape_user_metadata;
@@ -845,4 +847,14 @@ pub(crate) mod shape_verification_script_env_var_list;
 
 pub(crate) mod shape_code_remediation_task_details;
 
+pub(crate) mod shape_trigger_filter;
+
+pub(crate) mod shape_trigger_filter_groups;
+
 pub(crate) mod shape_verification_script_env_var;
+
+pub(crate) mod shape_trigger_event_list;
+
+pub(crate) mod shape_trigger_filter_list;
+
+pub(crate) mod shape_trigger_regex_pattern_list;

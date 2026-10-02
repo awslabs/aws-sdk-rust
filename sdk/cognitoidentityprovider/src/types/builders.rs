@@ -141,6 +141,8 @@ pub use crate::types::_message_template_type::MessageTemplateTypeBuilder;
 
 pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsTypeBuilder;
 
+pub use crate::types::_acr_level_config_type::AcrLevelConfigTypeBuilder;
+
 pub use crate::types::_failover_type::FailoverTypeBuilder;
 
 pub use crate::types::_provider_description::ProviderDescriptionBuilder;

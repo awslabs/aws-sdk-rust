@@ -17,8 +17,10 @@ pub struct CarrierLookupOutput {
     pub mnc: ::std::option::Option<::std::string::String>,
     /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
     pub carrier: ::std::option::Option<::std::string::String>,
-    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
+    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
     pub phone_number_type: crate::types::PhoneNumberType,
+    /// <p>The phone number exactly as you supplied it in the request. This field is returned only when you set <code>EnableCleansing</code> to <code>true</code>, the phone number was cleansed, and a normalized E.164 phone number was returned in the <code>E164PhoneNumber</code> field.</p>
+    pub original_phone_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CarrierLookupOutput {
@@ -51,9 +53,13 @@ impl CarrierLookupOutput {
     pub fn carrier(&self) -> ::std::option::Option<&str> {
         self.carrier.as_deref()
     }
-    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
+    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
     pub fn phone_number_type(&self) -> &crate::types::PhoneNumberType {
         &self.phone_number_type
+    }
+    /// <p>The phone number exactly as you supplied it in the request. This field is returned only when you set <code>EnableCleansing</code> to <code>true</code>, the phone number was cleansed, and a normalized E.164 phone number was returned in the <code>E164PhoneNumber</code> field.</p>
+    pub fn original_phone_number(&self) -> ::std::option::Option<&str> {
+        self.original_phone_number.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CarrierLookupOutput {
@@ -80,6 +86,7 @@ pub struct CarrierLookupOutputBuilder {
     pub(crate) mnc: ::std::option::Option<::std::string::String>,
     pub(crate) carrier: ::std::option::Option<::std::string::String>,
     pub(crate) phone_number_type: ::std::option::Option<crate::types::PhoneNumberType>,
+    pub(crate) original_phone_number: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CarrierLookupOutputBuilder {
@@ -182,20 +189,34 @@ impl CarrierLookupOutputBuilder {
     pub fn get_carrier(&self) -> &::std::option::Option<::std::string::String> {
         &self.carrier
     }
-    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
+    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
     /// This field is required.
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
         self.phone_number_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
+    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
     pub fn set_phone_number_type(mut self, input: ::std::option::Option<crate::types::PhoneNumberType>) -> Self {
         self.phone_number_type = input;
         self
     }
-    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
+    /// <p>Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID, OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers are unlikely to belong to actual recipients.</p>
     pub fn get_phone_number_type(&self) -> &::std::option::Option<crate::types::PhoneNumberType> {
         &self.phone_number_type
+    }
+    /// <p>The phone number exactly as you supplied it in the request. This field is returned only when you set <code>EnableCleansing</code> to <code>true</code>, the phone number was cleansed, and a normalized E.164 phone number was returned in the <code>E164PhoneNumber</code> field.</p>
+    pub fn original_phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.original_phone_number = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The phone number exactly as you supplied it in the request. This field is returned only when you set <code>EnableCleansing</code> to <code>true</code>, the phone number was cleansed, and a normalized E.164 phone number was returned in the <code>E164PhoneNumber</code> field.</p>
+    pub fn set_original_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.original_phone_number = input;
+        self
+    }
+    /// <p>The phone number exactly as you supplied it in the request. This field is returned only when you set <code>EnableCleansing</code> to <code>true</code>, the phone number was cleansed, and a normalized E.164 phone number was returned in the <code>E164PhoneNumber</code> field.</p>
+    pub fn get_original_phone_number(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_phone_number
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -232,6 +253,7 @@ impl CarrierLookupOutputBuilder {
                     "phone_number_type was not specified but it is required when building CarrierLookupOutput",
                 )
             })?,
+            original_phone_number: self.original_phone_number,
             _request_id: self._request_id,
         })
     }

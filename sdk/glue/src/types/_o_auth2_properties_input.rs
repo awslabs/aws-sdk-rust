@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2PropertiesInput {
-    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>The client application type in the CreateConnection request. For example, <code>AWS_MANAGED</code> or <code>USER_MANAGED</code>.</p>
     pub o_auth2_client_application: ::std::option::Option<crate::types::OAuth2ClientApplication>,
@@ -18,7 +18,7 @@ pub struct OAuth2PropertiesInput {
     pub o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl OAuth2PropertiesInput {
-    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn o_auth2_grant_type(&self) -> ::std::option::Option<&crate::types::OAuth2GrantType> {
         self.o_auth2_grant_type.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct OAuth2PropertiesInputBuilder {
     pub(crate) o_auth2_credentials: ::std::option::Option<crate::types::OAuth2Credentials>,
 }
 impl OAuth2PropertiesInputBuilder {
-    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
         self.o_auth2_grant_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn set_o_auth2_grant_type(mut self, input: ::std::option::Option<crate::types::OAuth2GrantType>) -> Self {
         self.o_auth2_grant_type = input;
         self
     }
-    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type in the CreateConnection request. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn get_o_auth2_grant_type(&self) -> &::std::option::Option<crate::types::OAuth2GrantType> {
         &self.o_auth2_grant_type
     }

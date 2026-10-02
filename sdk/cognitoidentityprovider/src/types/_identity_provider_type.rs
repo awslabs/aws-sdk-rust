@@ -63,6 +63,8 @@ pub struct IdentityProviderType {
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A list of IdP identifiers. IdP identifiers are strings that represent friendly names or domain names of IdPs, for example <code>MyIdP</code> or <code>auth.example.com</code>. You can choose to route user authorization requests to the right IdP with either IdP identifiers or IdP names. For more information, see <code>identity_provider</code> and <code>idp_identifier</code> at <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html#get-authorize-request-parameters">Authorize endpoint</a>.</p>
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP), so that your application gets a consistent step-up experience regardless of which IdP authenticated the user. The map is keyed by level, from <code>Level1</code> through <code>Level4</code>.</p>
+    pub acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
@@ -142,6 +144,10 @@ impl IdentityProviderType {
     pub fn idp_identifiers(&self) -> &[::std::string::String] {
         self.idp_identifiers.as_deref().unwrap_or_default()
     }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP), so that your application gets a consistent step-up experience regardless of which IdP authenticated the user. The map is keyed by level, from <code>Level1</code> through <code>Level4</code>.</p>
+    pub fn acr_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.acr_mapping.as_ref()
+    }
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
@@ -168,6 +174,7 @@ pub struct IdentityProviderTypeBuilder {
     pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -429,6 +436,29 @@ impl IdentityProviderTypeBuilder {
     pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.idp_identifiers
     }
+    /// Adds a key-value pair to `acr_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_acr_mapping`](Self::set_acr_mapping).
+    ///
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP), so that your application gets a consistent step-up experience regardless of which IdP authenticated the user. The map is keyed by level, from <code>Level1</code> through <code>Level4</code>.</p>
+    pub fn acr_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.acr_mapping.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.acr_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP), so that your application gets a consistent step-up experience regardless of which IdP authenticated the user. The map is keyed by level, from <code>Level1</code> through <code>Level4</code>.</p>
+    pub fn set_acr_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.acr_mapping = input;
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP), so that your application gets a consistent step-up experience regardless of which IdP authenticated the user. The map is keyed by level, from <code>Level1</code> through <code>Level4</code>.</p>
+    pub fn get_acr_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.acr_mapping
+    }
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
@@ -466,6 +496,7 @@ impl IdentityProviderTypeBuilder {
             provider_details: self.provider_details,
             attribute_mapping: self.attribute_mapping,
             idp_identifiers: self.idp_identifiers,
+            acr_mapping: self.acr_mapping,
             last_modified_date: self.last_modified_date,
             creation_date: self.creation_date,
         }

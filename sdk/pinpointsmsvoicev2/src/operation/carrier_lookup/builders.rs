@@ -122,4 +122,18 @@ impl CarrierLookupFluentBuilder {
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_phone_number()
     }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn enable_cleansing(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_cleansing(input);
+        self
+    }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn set_enable_cleansing(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_cleansing(input);
+        self
+    }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn get_enable_cleansing(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_cleansing()
+    }
 }

@@ -23,7 +23,9 @@ impl crate::operation::create_web_function_endpoint::builders::CreateWebFunction
 /// Fluent builder constructing a request to `CreateWebFunctionEndpoint`.
 ///
 /// <p>Creates an endpoint for a web function. An endpoint exposes the web function over HTTPS and routes traffic to one or more revisions.</p>
-/// <p>To use this operation, you must have the <code>CreateWebFunctionEndpoint</code> permission on the web function, not on the endpoint being created.</p>
+/// <p>To use this operation, you must have the <code>CreateWebFunctionEndpoint</code> permission on the web function, not on the endpoint being created.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebFunctionEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

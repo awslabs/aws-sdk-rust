@@ -490,6 +490,11 @@ pub(crate) fn de_respond_to_auth_challenge(
                             crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens, _value, depth + 1)?,
                         );
                     }
+                    "AvailableChallenges" => {
+                        builder = builder.set_available_challenges(
+                            crate::protocol_serde::shape_available_challenge_list_type::de_available_challenge_list_type(tokens, _value, depth + 1)?,
+                        );
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }

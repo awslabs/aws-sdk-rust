@@ -87,6 +87,10 @@ where
                             builder = builder
                                 .set_purchase_order_retrieval_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "MarketplacePunchOutEnabled" => {
+                            builder =
+                                builder.set_marketplace_punch_out_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "EinvoiceDeliveryPreferenceStatus" => {
                             builder = builder.set_einvoice_delivery_preference_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

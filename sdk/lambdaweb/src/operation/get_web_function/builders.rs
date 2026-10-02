@@ -22,7 +22,9 @@ impl crate::operation::get_web_function::builders::GetWebFunctionInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWebFunction`.
 ///
-/// <p>Retrieves details about a web function, including its current state and configuration.</p>
+/// <p>Retrieves details about a web function, including its current state and configuration.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

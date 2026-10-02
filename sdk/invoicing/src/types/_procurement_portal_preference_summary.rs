@@ -24,6 +24,8 @@ pub struct ProcurementPortalPreferenceSummary {
     pub einvoice_delivery_enabled: bool,
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference.</p>
     pub purchase_order_retrieval_enabled: bool,
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub marketplace_punch_out_enabled: ::std::option::Option<bool>,
     /// <p>The current status of the e-invoice delivery preference in this summary.</p>
     pub einvoice_delivery_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
     /// <p>The reason for the current e-invoice delivery preference status in this summary.</p>
@@ -84,6 +86,10 @@ impl ProcurementPortalPreferenceSummary {
     pub fn purchase_order_retrieval_enabled(&self) -> bool {
         self.purchase_order_retrieval_enabled
     }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn marketplace_punch_out_enabled(&self) -> ::std::option::Option<bool> {
+        self.marketplace_punch_out_enabled
+    }
     /// <p>The current status of the e-invoice delivery preference in this summary.</p>
     pub fn einvoice_delivery_preference_status(&self) -> ::std::option::Option<&crate::types::ProcurementPortalPreferenceStatus> {
         self.einvoice_delivery_preference_status.as_ref()
@@ -134,6 +140,7 @@ pub struct ProcurementPortalPreferenceSummaryBuilder {
     pub(crate) selector: ::std::option::Option<crate::types::ProcurementPortalPreferenceSelector>,
     pub(crate) einvoice_delivery_enabled: ::std::option::Option<bool>,
     pub(crate) purchase_order_retrieval_enabled: ::std::option::Option<bool>,
+    pub(crate) marketplace_punch_out_enabled: ::std::option::Option<bool>,
     pub(crate) einvoice_delivery_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
     pub(crate) einvoice_delivery_preference_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) purchase_order_retrieval_preference_status: ::std::option::Option<crate::types::ProcurementPortalPreferenceStatus>,
@@ -291,6 +298,20 @@ impl ProcurementPortalPreferenceSummaryBuilder {
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference.</p>
     pub fn get_purchase_order_retrieval_enabled(&self) -> &::std::option::Option<bool> {
         &self.purchase_order_retrieval_enabled
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn marketplace_punch_out_enabled(mut self, input: bool) -> Self {
+        self.marketplace_punch_out_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn set_marketplace_punch_out_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.marketplace_punch_out_enabled = input;
+        self
+    }
+    /// <p>Indicates whether Marketplace PunchOut is enabled for this procurement portal preference. Defaults to <code>false</code>.</p>
+    pub fn get_marketplace_punch_out_enabled(&self) -> &::std::option::Option<bool> {
+        &self.marketplace_punch_out_enabled
     }
     /// <p>The current status of the e-invoice delivery preference in this summary.</p>
     pub fn einvoice_delivery_preference_status(mut self, input: crate::types::ProcurementPortalPreferenceStatus) -> Self {
@@ -467,6 +488,7 @@ impl ProcurementPortalPreferenceSummaryBuilder {
                     "purchase_order_retrieval_enabled was not specified but it is required when building ProcurementPortalPreferenceSummary",
                 )
             })?,
+            marketplace_punch_out_enabled: self.marketplace_punch_out_enabled,
             einvoice_delivery_preference_status: self.einvoice_delivery_preference_status,
             einvoice_delivery_preference_status_reason: self.einvoice_delivery_preference_status_reason,
             purchase_order_retrieval_preference_status: self.purchase_order_retrieval_preference_status,

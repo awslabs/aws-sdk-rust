@@ -4,12 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GitLabResourceCapabilities {
+    /// <p>The filter groups that control which merge request events start an automatic code review when <code>leaveComments</code> is enabled. A review starts when any group matches. If you omit this, a review starts on <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+    pub trigger_filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>,
     /// <p>Whether to post code review comments on merge request discussions.</p>
     pub leave_comments: ::std::option::Option<bool>,
     /// <p>Whether to create merge requests with automated fixes.</p>
     pub remediate_code: ::std::option::Option<bool>,
 }
 impl GitLabResourceCapabilities {
+    /// <p>The filter groups that control which merge request events start an automatic code review when <code>leaveComments</code> is enabled. A review starts when any group matches. If you omit this, a review starts on <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_filter_groups.is_none()`.
+    pub fn trigger_filter_groups(&self) -> &[crate::types::TriggerFilterGroup] {
+        self.trigger_filter_groups.as_deref().unwrap_or_default()
+    }
     /// <p>Whether to post code review comments on merge request discussions.</p>
     pub fn leave_comments(&self) -> ::std::option::Option<bool> {
         self.leave_comments
@@ -30,10 +38,31 @@ impl GitLabResourceCapabilities {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GitLabResourceCapabilitiesBuilder {
+    pub(crate) trigger_filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>,
     pub(crate) leave_comments: ::std::option::Option<bool>,
     pub(crate) remediate_code: ::std::option::Option<bool>,
 }
 impl GitLabResourceCapabilitiesBuilder {
+    /// Appends an item to `trigger_filter_groups`.
+    ///
+    /// To override the contents of this collection use [`set_trigger_filter_groups`](Self::set_trigger_filter_groups).
+    ///
+    /// <p>The filter groups that control which merge request events start an automatic code review when <code>leaveComments</code> is enabled. A review starts when any group matches. If you omit this, a review starts on <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+    pub fn trigger_filter_groups(mut self, input: crate::types::TriggerFilterGroup) -> Self {
+        let mut v = self.trigger_filter_groups.unwrap_or_default();
+        v.push(input);
+        self.trigger_filter_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The filter groups that control which merge request events start an automatic code review when <code>leaveComments</code> is enabled. A review starts when any group matches. If you omit this, a review starts on <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+    pub fn set_trigger_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>) -> Self {
+        self.trigger_filter_groups = input;
+        self
+    }
+    /// <p>The filter groups that control which merge request events start an automatic code review when <code>leaveComments</code> is enabled. A review starts when any group matches. If you omit this, a review starts on <code>PULL_REQUEST_READY_FOR_REVIEW</code> events.</p>
+    pub fn get_trigger_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>> {
+        &self.trigger_filter_groups
+    }
     /// <p>Whether to post code review comments on merge request discussions.</p>
     pub fn leave_comments(mut self, input: bool) -> Self {
         self.leave_comments = ::std::option::Option::Some(input);
@@ -65,6 +94,7 @@ impl GitLabResourceCapabilitiesBuilder {
     /// Consumes the builder and constructs a [`GitLabResourceCapabilities`](crate::types::GitLabResourceCapabilities).
     pub fn build(self) -> crate::types::GitLabResourceCapabilities {
         crate::types::GitLabResourceCapabilities {
+            trigger_filter_groups: self.trigger_filter_groups,
             leave_comments: self.leave_comments,
             remediate_code: self.remediate_code,
         }

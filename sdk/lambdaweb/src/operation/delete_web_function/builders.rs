@@ -23,7 +23,9 @@ impl crate::operation::delete_web_function::builders::DeleteWebFunctionInputBuil
 /// Fluent builder constructing a request to `DeleteWebFunction`.
 ///
 /// <p>Deletes a web function and all of its associated revisions and endpoints.</p>
-/// <p>To use this operation, you must have the <code>DeleteWebFunction</code> permission on the web function. You don't need the <code>DeleteWebFunctionRevision</code> or <code>DeleteWebFunctionEndpoint</code> permission.</p>
+/// <p>To use this operation, you must have the <code>DeleteWebFunction</code> permission on the web function. You don't need the <code>DeleteWebFunctionRevision</code> or <code>DeleteWebFunctionEndpoint</code> permission.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWebFunctionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

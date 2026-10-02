@@ -569,4 +569,34 @@ impl CreateUserPoolFluentBuilder {
     pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
         self.inner.get_issuer_configuration()
     }
+    ///
+    /// Adds a key-value pair to `AcrConfiguration`.
+    ///
+    /// To override the contents of this collection use [`set_acr_configuration`](Self::set_acr_configuration).
+    ///
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. Amazon Cognito defines four fixed ACR levels that represent increasing authentication assurance. The combination of authentication factors that satisfies each level is fixed and you can't change it. With this configuration, you customize only the URI name that Amazon Cognito reports for each level in the <code>acr</code> token claim.</p>
+    /// <p>You can override a subset of the levels. By default, the levels are named <code>urn:cognito:loa:1</code> through <code>urn:cognito:loa:4</code>, and Amazon Cognito applies the default name to any level that you don't specify. Each name must be unique across all four levels, including any default names that apply to levels you don't override. A name can contain any character that is valid in a URL or a URN.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn acr_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AcrLevelConfigType) -> Self {
+        self.inner = self.inner.acr_configuration(k.into(), v);
+        self
+    }
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. Amazon Cognito defines four fixed ACR levels that represent increasing authentication assurance. The combination of authentication factors that satisfies each level is fixed and you can't change it. With this configuration, you customize only the URI name that Amazon Cognito reports for each level in the <code>acr</code> token claim.</p>
+    /// <p>You can override a subset of the levels. By default, the levels are named <code>urn:cognito:loa:1</code> through <code>urn:cognito:loa:4</code>, and Amazon Cognito applies the default name to any level that you don't specify. Each name must be unique across all four levels, including any default names that apply to levels you don't override. A name can contain any character that is valid in a URL or a URN.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn set_acr_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>>,
+    ) -> Self {
+        self.inner = self.inner.set_acr_configuration(input);
+        self
+    }
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. Amazon Cognito defines four fixed ACR levels that represent increasing authentication assurance. The combination of authentication factors that satisfies each level is fixed and you can't change it. With this configuration, you customize only the URI name that Amazon Cognito reports for each level in the <code>acr</code> token claim.</p>
+    /// <p>You can override a subset of the levels. By default, the levels are named <code>urn:cognito:loa:1</code> through <code>urn:cognito:loa:4</code>, and Amazon Cognito applies the default name to any level that you don't specify. Each name must be unique across all four levels, including any default names that apply to levels you don't override. A name can contain any character that is valid in a URL or a URN.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn get_acr_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>> {
+        self.inner.get_acr_configuration()
+    }
 }

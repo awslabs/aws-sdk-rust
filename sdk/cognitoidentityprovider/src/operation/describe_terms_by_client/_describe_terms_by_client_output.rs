@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTermsByClientOutput {
-    /// <p>A summary of the requested terms documents. Includes a unique identifier for later changes to the terms documents.</p>
+    /// <p>A summary of the requested terms documents, including a unique identifier for later changes to the terms documents.</p>
     pub terms: ::std::option::Option<crate::types::TermsType>,
     _request_id: Option<String>,
 }
 impl DescribeTermsByClientOutput {
-    /// <p>A summary of the requested terms documents. Includes a unique identifier for later changes to the terms documents.</p>
+    /// <p>A summary of the requested terms documents, including a unique identifier for later changes to the terms documents.</p>
     pub fn terms(&self) -> ::std::option::Option<&crate::types::TermsType> {
         self.terms.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeTermsByClientOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeTermsByClientOutputBuilder {
-    /// <p>A summary of the requested terms documents. Includes a unique identifier for later changes to the terms documents.</p>
+    /// <p>A summary of the requested terms documents, including a unique identifier for later changes to the terms documents.</p>
     pub fn terms(mut self, input: crate::types::TermsType) -> Self {
         self.terms = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A summary of the requested terms documents. Includes a unique identifier for later changes to the terms documents.</p>
+    /// <p>A summary of the requested terms documents, including a unique identifier for later changes to the terms documents.</p>
     pub fn set_terms(mut self, input: ::std::option::Option<crate::types::TermsType>) -> Self {
         self.terms = input;
         self
     }
-    /// <p>A summary of the requested terms documents. Includes a unique identifier for later changes to the terms documents.</p>
+    /// <p>A summary of the requested terms documents, including a unique identifier for later changes to the terms documents.</p>
     pub fn get_terms(&self) -> &::std::option::Option<crate::types::TermsType> {
         &self.terms
     }

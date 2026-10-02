@@ -49,6 +49,8 @@ pub use crate::types::error::_alias_exists_exception::AliasExistsException;
 
 pub use crate::types::error::_invalid_user_pool_configuration_exception::InvalidUserPoolConfigurationException;
 
+pub use crate::types::error::_feature_unavailable_in_tier_exception::FeatureUnavailableInTierException;
+
 pub use crate::types::error::_invalid_email_role_access_policy_exception::InvalidEmailRoleAccessPolicyException;
 
 pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundException;
@@ -92,8 +94,6 @@ pub use crate::types::error::_duplicate_provider_exception::DuplicateProviderExc
 pub use crate::types::error::_managed_login_branding_exists_exception::ManagedLoginBrandingExistsException;
 
 pub use crate::types::error::_terms_exists_exception::TermsExistsException;
-
-pub use crate::types::error::_feature_unavailable_in_tier_exception::FeatureUnavailableInTierException;
 
 pub use crate::types::error::_tier_change_not_allowed_exception::TierChangeNotAllowedException;
 

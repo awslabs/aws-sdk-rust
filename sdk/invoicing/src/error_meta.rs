@@ -239,6 +239,9 @@ impl From<crate::operation::delete_procurement_portal_preference::DeleteProcurem
             crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
             crate::operation::delete_procurement_portal_preference::DeleteProcurementPortalPreferenceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }

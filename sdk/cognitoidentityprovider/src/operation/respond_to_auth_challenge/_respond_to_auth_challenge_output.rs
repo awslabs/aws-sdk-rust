@@ -50,6 +50,8 @@ pub struct RespondToAuthChallengeOutput {
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The outcome of a successful authentication process. After your application has passed all challenges, Amazon Cognito returns an <code>AuthenticationResult</code> with the JSON web tokens (JWTs) that indicate successful sign-in.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl RespondToAuthChallengeOutput {
@@ -107,6 +109,12 @@ impl RespondToAuthChallengeOutput {
     pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_challenges.is_none()`.
+    pub fn available_challenges(&self) -> &[crate::types::ChallengeNameType] {
+        self.available_challenges.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RespondToAuthChallengeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -115,6 +123,7 @@ impl ::std::fmt::Debug for RespondToAuthChallengeOutput {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -139,6 +148,7 @@ pub struct RespondToAuthChallengeOutputBuilder {
     pub(crate) session: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    pub(crate) available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl RespondToAuthChallengeOutputBuilder {
@@ -325,6 +335,26 @@ impl RespondToAuthChallengeOutputBuilder {
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }
+    /// Appends an item to `available_challenges`.
+    ///
+    /// To override the contents of this collection use [`set_available_challenges`](Self::set_available_challenges).
+    ///
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn available_challenges(mut self, input: crate::types::ChallengeNameType) -> Self {
+        let mut v = self.available_challenges.unwrap_or_default();
+        v.push(input);
+        self.available_challenges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn set_available_challenges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>) -> Self {
+        self.available_challenges = input;
+        self
+    }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn get_available_challenges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>> {
+        &self.available_challenges
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -341,6 +371,7 @@ impl RespondToAuthChallengeOutputBuilder {
             session: self.session,
             challenge_parameters: self.challenge_parameters,
             authentication_result: self.authentication_result,
+            available_challenges: self.available_challenges,
             _request_id: self._request_id,
         }
     }
@@ -352,6 +383,7 @@ impl ::std::fmt::Debug for RespondToAuthChallengeOutputBuilder {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

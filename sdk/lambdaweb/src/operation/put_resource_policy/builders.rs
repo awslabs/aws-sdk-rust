@@ -22,7 +22,9 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
 }
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
-/// <p>Adds or updates a resource-based policy on a web function. A resource-based policy grants permissions to other AWS accounts or services to perform actions on the web function.</p>
+/// <p>Adds or updates a resource-based policy on a web function. A resource-based policy grants permissions to other AWS accounts or services to perform actions on the web function.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -41,5 +41,15 @@ pub fn ser_create_identity_provider_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_15) = &input.acr_mapping {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AcrMapping").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                object_16.key(key_17.as_str()).string(value_18.as_str());
+            }
+        }
+        object_16.finish();
+    }
     Ok(())
 }

@@ -221,6 +221,34 @@ impl PutProcurementPortalPreferenceFluentBuilder {
     pub fn get_purchase_order_retrieval_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_purchase_order_retrieval_enabled()
     }
+    /// Whether Marketplace PunchOut is enabled for this connection. Defaults to false if not provided.
+    pub fn marketplace_punch_out_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.marketplace_punch_out_enabled(input);
+        self
+    }
+    /// Whether Marketplace PunchOut is enabled for this connection. Defaults to false if not provided.
+    pub fn set_marketplace_punch_out_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_marketplace_punch_out_enabled(input);
+        self
+    }
+    /// Whether Marketplace PunchOut is enabled for this connection. Defaults to false if not provided.
+    pub fn get_marketplace_punch_out_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_marketplace_punch_out_enabled()
+    }
+    /// Configuration for Marketplace PunchOut. Required when MarketplacePunchOutEnabled is true.
+    pub fn marketplace_punch_out_preference(mut self, input: crate::types::MarketplacePunchOutPreference) -> Self {
+        self.inner = self.inner.marketplace_punch_out_preference(input);
+        self
+    }
+    /// Configuration for Marketplace PunchOut. Required when MarketplacePunchOutEnabled is true.
+    pub fn set_marketplace_punch_out_preference(mut self, input: ::std::option::Option<crate::types::MarketplacePunchOutPreference>) -> Self {
+        self.inner = self.inner.set_marketplace_punch_out_preference(input);
+        self
+    }
+    /// Configuration for Marketplace PunchOut. Required when MarketplacePunchOutEnabled is true.
+    pub fn get_marketplace_punch_out_preference(&self) -> &::std::option::Option<crate::types::MarketplacePunchOutPreference> {
+        self.inner.get_marketplace_punch_out_preference()
+    }
     ///
     /// Appends an item to `Contacts`.
     ///

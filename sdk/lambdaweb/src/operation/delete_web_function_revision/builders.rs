@@ -22,7 +22,9 @@ impl crate::operation::delete_web_function_revision::builders::DeleteWebFunction
 }
 /// Fluent builder constructing a request to `DeleteWebFunctionRevision`.
 ///
-/// <p>Deletes a web function revision. You cannot delete a revision that is currently serving traffic on an endpoint.</p>
+/// <p>Deletes a web function revision. You cannot delete a revision that is currently serving traffic on an endpoint.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteWebFunctionRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

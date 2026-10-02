@@ -60,6 +60,9 @@ pub struct UpdateIdentityProviderInput {
     pub attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An array of IdP identifiers, for example <code>"IdPIdentifiers": \[ "MyIdP", "MyIdP2" \]</code>. Identifiers are friendly names that you can pass in the <code>idp_identifier</code> query parameter of requests to the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize endpoint</a> to silently redirect to sign-in with the associated IdP. Identifiers in a domain format also enable the use of <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address matching with SAML providers</a>.</p>
     pub idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateIdentityProviderInput {
     /// <p>The Id of the user pool where you want to update your IdP.</p>
@@ -131,6 +134,11 @@ impl UpdateIdentityProviderInput {
     pub fn idp_identifiers(&self) -> &[::std::string::String] {
         self.idp_identifiers.as_deref().unwrap_or_default()
     }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn acr_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.acr_mapping.as_ref()
+    }
 }
 impl UpdateIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`UpdateIdentityProviderInput`](crate::operation::update_identity_provider::UpdateIdentityProviderInput).
@@ -148,6 +156,7 @@ pub struct UpdateIdentityProviderInputBuilder {
     pub(crate) provider_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) attribute_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) idp_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) acr_mapping: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateIdentityProviderInputBuilder {
     /// <p>The Id of the user pool where you want to update your IdP.</p>
@@ -395,6 +404,32 @@ impl UpdateIdentityProviderInputBuilder {
     pub fn get_idp_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.idp_identifiers
     }
+    /// Adds a key-value pair to `acr_mapping`.
+    ///
+    /// To override the contents of this collection use [`set_acr_mapping`](Self::set_acr_mapping).
+    ///
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn acr_mapping(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.acr_mapping.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.acr_mapping = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn set_acr_mapping(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.acr_mapping = input;
+        self
+    }
+    /// <p>A mapping between the authentication context class reference (ACR) levels of your user pool and the ACR values of the external OpenID Connect (OIDC) identity provider (IdP). This mapping has the same behavior as it does when you create an identity provider. Only OIDC IdPs support ACR mapping.</p>
+    /// <p>Setting <code>AcrMapping</code> is available in all feature plans. It isn't restricted to the Essentials or Plus feature plan.</p>
+    pub fn get_acr_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.acr_mapping
+    }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderInput`](crate::operation::update_identity_provider::UpdateIdentityProviderInput).
     pub fn build(
         self,
@@ -408,6 +443,7 @@ impl UpdateIdentityProviderInputBuilder {
             provider_details: self.provider_details,
             attribute_mapping: self.attribute_mapping,
             idp_identifiers: self.idp_identifiers,
+            acr_mapping: self.acr_mapping,
         })
     }
 }

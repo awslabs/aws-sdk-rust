@@ -1271,3 +1271,15 @@ pub(crate) fn user_metadata_correct_errors(mut builder: crate::types::builders::
     }
     builder
 }
+
+pub(crate) fn trigger_filter_correct_errors(
+    mut builder: crate::types::builders::TriggerFilterBuilder,
+) -> crate::types::builders::TriggerFilterBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::TriggerFilterType>().ok()
+    }
+    if builder.patterns.is_none() {
+        builder.patterns = Some(Default::default())
+    }
+    builder
+}

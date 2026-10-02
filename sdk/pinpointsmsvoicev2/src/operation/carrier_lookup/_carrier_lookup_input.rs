@@ -5,11 +5,17 @@
 pub struct CarrierLookupInput {
     /// <p>The phone number that you want to retrieve information about. You can provide the phone number in various formats including special characters such as parentheses, brackets, spaces, hyphens, periods, and commas. The service automatically converts the input to E164 format for processing.</p>
     pub phone_number: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub enable_cleansing: ::std::option::Option<bool>,
 }
 impl CarrierLookupInput {
     /// <p>The phone number that you want to retrieve information about. You can provide the phone number in various formats including special characters such as parentheses, brackets, spaces, hyphens, periods, and commas. The service automatically converts the input to E164 format for processing.</p>
     pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
+    }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn enable_cleansing(&self) -> ::std::option::Option<bool> {
+        self.enable_cleansing
     }
 }
 impl CarrierLookupInput {
@@ -24,6 +30,7 @@ impl CarrierLookupInput {
 #[non_exhaustive]
 pub struct CarrierLookupInputBuilder {
     pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_cleansing: ::std::option::Option<bool>,
 }
 impl CarrierLookupInputBuilder {
     /// <p>The phone number that you want to retrieve information about. You can provide the phone number in various formats including special characters such as parentheses, brackets, spaces, hyphens, periods, and commas. The service automatically converts the input to E164 format for processing.</p>
@@ -41,12 +48,27 @@ impl CarrierLookupInputBuilder {
     pub fn get_phone_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.phone_number
     }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn enable_cleansing(mut self, input: bool) -> Self {
+        self.enable_cleansing = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn set_enable_cleansing(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_cleansing = input;
+        self
+    }
+    /// <p>Specifies whether the service cleanses the phone number that you provide. When set to <code>true</code>, the service normalizes the phone number according to the destination country's national numbering plan and dialing rules. The service returns the cleansed number in E.164 format in the <code>E164PhoneNumber</code> field and returns the number that you provided in the <code>OriginalPhoneNumber</code> field.</p>
+    pub fn get_enable_cleansing(&self) -> &::std::option::Option<bool> {
+        &self.enable_cleansing
+    }
     /// Consumes the builder and constructs a [`CarrierLookupInput`](crate::operation::carrier_lookup::CarrierLookupInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::carrier_lookup::CarrierLookupInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::carrier_lookup::CarrierLookupInput {
             phone_number: self.phone_number,
+            enable_cleansing: self.enable_cleansing,
         })
     }
 }

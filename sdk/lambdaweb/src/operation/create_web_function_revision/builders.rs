@@ -23,7 +23,9 @@ impl crate::operation::create_web_function_revision::builders::CreateWebFunction
 /// Fluent builder constructing a request to `CreateWebFunctionRevision`.
 ///
 /// <p>Creates an immutable revision for a web function. A revision represents a specific version of the function code and configuration.</p>
-/// <p>To use this operation, you must have the <code>CreateWebFunctionRevision</code> permission on the web function, not on the revision being created.</p>
+/// <p>To use this operation, you must have the <code>CreateWebFunctionRevision</code> permission on the web function, not on the revision being created.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebFunctionRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

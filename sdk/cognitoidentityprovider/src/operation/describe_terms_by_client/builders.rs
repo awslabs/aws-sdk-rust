@@ -23,7 +23,7 @@ impl crate::operation::describe_terms_by_client::builders::DescribeTermsByClient
 /// Fluent builder constructing a request to `DescribeTermsByClient`.
 ///
 /// <p>Returns details for the terms documents that are associated with an app client, identified by the app client ID, user pool ID, and terms name. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms documents</a>.</p>
-/// <p>To call <code>DescribeTermsByClient</code>, you must have the <code>cognito-idp:DescribeTermsByClient</code> Identity and Access Management (IAM) permission. This operation additionally validates your permission for <code>cognito-idp:DescribeTerms</code>, the action for . As a result, an IAM policy that denies <code>cognito-idp:DescribeTerms</code> also denies requests to <code>DescribeTermsByClient</code>.</p><note>
+/// <p>To call <code>DescribeTermsByClient</code>, you must have the <code>cognito-idp:DescribeTermsByClient</code> Identity and Access Management (IAM) permission. An IAM policy that denies <code>cognito-idp:DescribeTerms</code> also denies requests to <code>DescribeTermsByClient</code>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>

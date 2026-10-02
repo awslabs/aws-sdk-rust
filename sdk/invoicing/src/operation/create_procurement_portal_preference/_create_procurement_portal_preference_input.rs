@@ -27,6 +27,10 @@ pub struct CreateProcurementPortalPreferenceInput {
     pub einvoice_delivery_preference: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>,
     /// <p>Indicates whether purchase order retrieval is enabled for this procurement portal preference. Set to true to enable PO retrieval, false to disable.</p>
     pub purchase_order_retrieval_enabled: ::std::option::Option<bool>,
+    /// Defaults to false if not provided.
+    pub marketplace_punch_out_enabled: ::std::option::Option<bool>,
+    /// Required for Coupa when MarketplacePunchOutEnabled is true.
+    pub marketplace_punch_out_preference: ::std::option::Option<crate::types::MarketplacePunchOutPreference>,
     /// <p>List of contact information for portal administrators and technical contacts responsible for the e-invoice integration.</p>
     pub contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     /// <p>The tags to apply to this procurement portal preference resource. Each tag consists of a key and an optional value.</p>
@@ -83,6 +87,14 @@ impl CreateProcurementPortalPreferenceInput {
     pub fn purchase_order_retrieval_enabled(&self) -> ::std::option::Option<bool> {
         self.purchase_order_retrieval_enabled
     }
+    /// Defaults to false if not provided.
+    pub fn marketplace_punch_out_enabled(&self) -> ::std::option::Option<bool> {
+        self.marketplace_punch_out_enabled
+    }
+    /// Required for Coupa when MarketplacePunchOutEnabled is true.
+    pub fn marketplace_punch_out_preference(&self) -> ::std::option::Option<&crate::types::MarketplacePunchOutPreference> {
+        self.marketplace_punch_out_preference.as_ref()
+    }
     /// <p>List of contact information for portal administrators and technical contacts responsible for the e-invoice integration.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.contacts.is_none()`.
@@ -115,6 +127,8 @@ impl ::std::fmt::Debug for CreateProcurementPortalPreferenceInput {
         formatter.field("einvoice_delivery_enabled", &self.einvoice_delivery_enabled);
         formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
         formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
+        formatter.field("marketplace_punch_out_enabled", &self.marketplace_punch_out_enabled);
+        formatter.field("marketplace_punch_out_preference", &self.marketplace_punch_out_preference);
         formatter.field("contacts", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("client_token", &self.client_token);
@@ -144,6 +158,8 @@ pub struct CreateProcurementPortalPreferenceInputBuilder {
     pub(crate) einvoice_delivery_enabled: ::std::option::Option<bool>,
     pub(crate) einvoice_delivery_preference: ::std::option::Option<crate::types::EinvoiceDeliveryPreference>,
     pub(crate) purchase_order_retrieval_enabled: ::std::option::Option<bool>,
+    pub(crate) marketplace_punch_out_enabled: ::std::option::Option<bool>,
+    pub(crate) marketplace_punch_out_preference: ::std::option::Option<crate::types::MarketplacePunchOutPreference>,
     pub(crate) contacts: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -324,6 +340,34 @@ impl CreateProcurementPortalPreferenceInputBuilder {
     pub fn get_purchase_order_retrieval_enabled(&self) -> &::std::option::Option<bool> {
         &self.purchase_order_retrieval_enabled
     }
+    /// Defaults to false if not provided.
+    pub fn marketplace_punch_out_enabled(mut self, input: bool) -> Self {
+        self.marketplace_punch_out_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// Defaults to false if not provided.
+    pub fn set_marketplace_punch_out_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.marketplace_punch_out_enabled = input;
+        self
+    }
+    /// Defaults to false if not provided.
+    pub fn get_marketplace_punch_out_enabled(&self) -> &::std::option::Option<bool> {
+        &self.marketplace_punch_out_enabled
+    }
+    /// Required for Coupa when MarketplacePunchOutEnabled is true.
+    pub fn marketplace_punch_out_preference(mut self, input: crate::types::MarketplacePunchOutPreference) -> Self {
+        self.marketplace_punch_out_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// Required for Coupa when MarketplacePunchOutEnabled is true.
+    pub fn set_marketplace_punch_out_preference(mut self, input: ::std::option::Option<crate::types::MarketplacePunchOutPreference>) -> Self {
+        self.marketplace_punch_out_preference = input;
+        self
+    }
+    /// Required for Coupa when MarketplacePunchOutEnabled is true.
+    pub fn get_marketplace_punch_out_preference(&self) -> &::std::option::Option<crate::types::MarketplacePunchOutPreference> {
+        &self.marketplace_punch_out_preference
+    }
     /// Appends an item to `contacts`.
     ///
     /// To override the contents of this collection use [`set_contacts`](Self::set_contacts).
@@ -399,6 +443,8 @@ impl CreateProcurementPortalPreferenceInputBuilder {
                 einvoice_delivery_enabled: self.einvoice_delivery_enabled,
                 einvoice_delivery_preference: self.einvoice_delivery_preference,
                 purchase_order_retrieval_enabled: self.purchase_order_retrieval_enabled,
+                marketplace_punch_out_enabled: self.marketplace_punch_out_enabled,
+                marketplace_punch_out_preference: self.marketplace_punch_out_preference,
                 contacts: self.contacts,
                 resource_tags: self.resource_tags,
                 client_token: self.client_token,
@@ -421,6 +467,8 @@ impl ::std::fmt::Debug for CreateProcurementPortalPreferenceInputBuilder {
         formatter.field("einvoice_delivery_enabled", &self.einvoice_delivery_enabled);
         formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
         formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
+        formatter.field("marketplace_punch_out_enabled", &self.marketplace_punch_out_enabled);
+        formatter.field("marketplace_punch_out_preference", &self.marketplace_punch_out_preference);
         formatter.field("contacts", &"*** Sensitive Data Redacted ***");
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("client_token", &self.client_token);

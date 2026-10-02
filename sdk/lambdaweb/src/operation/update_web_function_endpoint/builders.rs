@@ -22,7 +22,9 @@ impl crate::operation::update_web_function_endpoint::builders::UpdateWebFunction
 }
 /// Fluent builder constructing a request to `UpdateWebFunctionEndpoint`.
 ///
-/// <p>Updates the configuration of a web function endpoint. You can modify the authorization type, auto-deployment mode, revision weights, scaling, and throttling settings.</p>
+/// <p>Updates the configuration of a web function endpoint. You can modify the authorization type, auto-deployment mode, revision weights, scaling, and throttling settings.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWebFunctionEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -56,6 +56,9 @@ pub struct UpdateUserPoolInput {
     pub key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
     /// <p>The issuer configuration for the user pool. In secondary regions, this parameter must match the existing configuration and cannot be modified.</p>
     pub issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. This configuration has the same behavior as it does when you create a user pool: you customize only the URI name that Amazon Cognito reports for each of the four fixed ACR levels, and any level that you don't specify keeps its default name. Each name must be unique across all four levels, including default names.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub acr_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>>,
 }
 impl UpdateUserPoolInput {
     /// <p>The ID of the user pool you want to update.</p>
@@ -158,6 +161,11 @@ impl UpdateUserPoolInput {
     pub fn issuer_configuration(&self) -> ::std::option::Option<&crate::types::IssuerConfigurationType> {
         self.issuer_configuration.as_ref()
     }
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. This configuration has the same behavior as it does when you create a user pool: you customize only the URI name that Amazon Cognito reports for each of the four fixed ACR levels, and any level that you don't specify keeps its default name. Each name must be unique across all four levels, including default names.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn acr_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>> {
+        self.acr_configuration.as_ref()
+    }
 }
 impl UpdateUserPoolInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
@@ -193,6 +201,7 @@ pub struct UpdateUserPoolInputBuilder {
     pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
     pub(crate) key_configuration: ::std::option::Option<crate::types::KeyConfigurationType>,
     pub(crate) issuer_configuration: ::std::option::Option<crate::types::IssuerConfigurationType>,
+    pub(crate) acr_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>>,
 }
 impl UpdateUserPoolInputBuilder {
     /// <p>The ID of the user pool you want to update.</p>
@@ -555,6 +564,34 @@ impl UpdateUserPoolInputBuilder {
     pub fn get_issuer_configuration(&self) -> &::std::option::Option<crate::types::IssuerConfigurationType> {
         &self.issuer_configuration
     }
+    /// Adds a key-value pair to `acr_configuration`.
+    ///
+    /// To override the contents of this collection use [`set_acr_configuration`](Self::set_acr_configuration).
+    ///
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. This configuration has the same behavior as it does when you create a user pool: you customize only the URI name that Amazon Cognito reports for each of the four fixed ACR levels, and any level that you don't specify keeps its default name. Each name must be unique across all four levels, including default names.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn acr_configuration(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AcrLevelConfigType) -> Self {
+        let mut hash_map = self.acr_configuration.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.acr_configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. This configuration has the same behavior as it does when you create a user pool: you customize only the URI name that Amazon Cognito reports for each of the four fixed ACR levels, and any level that you don't specify keeps its default name. Each name must be unique across all four levels, including default names.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn set_acr_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>>,
+    ) -> Self {
+        self.acr_configuration = input;
+        self
+    }
+    /// <p>The custom names for the authentication context class reference (ACR) levels in your user pool. This configuration has the same behavior as it does when you create a user pool: you customize only the URI name that Amazon Cognito reports for each of the four fixed ACR levels, and any level that you don't specify keeps its default name. Each name must be unique across all four levels, including default names.</p>
+    /// <p>Configuring custom ACR level names requires the Essentials or Plus feature plan. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn get_acr_configuration(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AcrLevelConfigType>> {
+        &self.acr_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolInput`](crate::operation::update_user_pool::UpdateUserPoolInput).
     pub fn build(
         self,
@@ -583,6 +620,7 @@ impl UpdateUserPoolInputBuilder {
             user_pool_tier: self.user_pool_tier,
             key_configuration: self.key_configuration,
             issuer_configuration: self.issuer_configuration,
+            acr_configuration: self.acr_configuration,
         })
     }
 }

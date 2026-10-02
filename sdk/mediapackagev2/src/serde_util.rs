@@ -742,6 +742,18 @@ pub(crate) fn list_mss_manifest_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn multiview_filter_configuration_correct_errors(
+    mut builder: crate::types::builders::MultiviewFilterConfigurationBuilder,
+) -> crate::types::builders::MultiviewFilterConfigurationBuilder {
+    if builder.layout.is_none() {
+        builder.layout = "no value was set".parse::<crate::types::MultiviewLayoutType>().ok()
+    }
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dash_dvb_metrics_reporting_correct_errors(
     mut builder: crate::types::builders::DashDvbMetricsReportingBuilder,
 ) -> crate::types::builders::DashDvbMetricsReportingBuilder {

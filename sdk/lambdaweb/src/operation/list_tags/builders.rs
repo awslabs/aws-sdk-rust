@@ -22,7 +22,9 @@ impl crate::operation::list_tags::builders::ListTagsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListTags`.
 ///
-/// <p>Returns a list of tags applied to a web function.</p>
+/// <p>Returns a list of tags applied to a web function.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

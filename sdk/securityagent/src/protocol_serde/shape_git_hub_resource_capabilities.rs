@@ -3,11 +3,23 @@ pub fn ser_git_hub_resource_capabilities(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitHubResourceCapabilities,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.leave_comments {
-        object.key("leaveComments").boolean(*var_1);
+    if let Some(var_1) = &input.trigger_filter_groups {
+        let mut array_2 = object.key("triggerFilterGroups").start_array();
+        for item_3 in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_trigger_filter_group::ser_trigger_filter_group(&mut object_4, item_3)?;
+                object_4.finish();
+            }
+        }
+        array_2.finish();
     }
-    if let Some(var_2) = &input.remediate_code {
-        object.key("remediateCode").boolean(*var_2);
+    if let Some(var_5) = &input.leave_comments {
+        object.key("leaveComments").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.remediate_code {
+        object.key("remediateCode").boolean(*var_6);
     }
     Ok(())
 }
@@ -34,6 +46,11 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "triggerFilterGroups" => {
+                            builder = builder.set_trigger_filter_groups(
+                                crate::protocol_serde::shape_trigger_filter_groups::de_trigger_filter_groups(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "leaveComments" => {
                             builder = builder.set_leave_comments(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

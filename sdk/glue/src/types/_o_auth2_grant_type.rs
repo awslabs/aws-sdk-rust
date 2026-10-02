@@ -15,6 +15,7 @@
 ///     OAuth2GrantType::AuthorizationCode => { /* ... */ },
 ///     OAuth2GrantType::ClientCredentials => { /* ... */ },
 ///     OAuth2GrantType::JwtBearer => { /* ... */ },
+///     OAuth2GrantType::RefreshToken => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum OAuth2GrantType {
     ClientCredentials,
     #[allow(missing_docs)] // documentation missing in model
     JwtBearer,
+    #[allow(missing_docs)] // documentation missing in model
+    RefreshToken,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for OAuth2GrantType {
             "AUTHORIZATION_CODE" => OAuth2GrantType::AuthorizationCode,
             "CLIENT_CREDENTIALS" => OAuth2GrantType::ClientCredentials,
             "JWT_BEARER" => OAuth2GrantType::JwtBearer,
+            "REFRESH_TOKEN" => OAuth2GrantType::RefreshToken,
             other => OAuth2GrantType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl OAuth2GrantType {
             OAuth2GrantType::AuthorizationCode => "AUTHORIZATION_CODE",
             OAuth2GrantType::ClientCredentials => "CLIENT_CREDENTIALS",
             OAuth2GrantType::JwtBearer => "JWT_BEARER",
+            OAuth2GrantType::RefreshToken => "REFRESH_TOKEN",
             OAuth2GrantType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS", "JWT_BEARER"]
+        &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS", "JWT_BEARER", "REFRESH_TOKEN"]
     }
 }
 impl ::std::convert::AsRef<str> for OAuth2GrantType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for OAuth2GrantType {
             OAuth2GrantType::AuthorizationCode => write!(f, "AUTHORIZATION_CODE"),
             OAuth2GrantType::ClientCredentials => write!(f, "CLIENT_CREDENTIALS"),
             OAuth2GrantType::JwtBearer => write!(f, "JWT_BEARER"),
+            OAuth2GrantType::RefreshToken => write!(f, "REFRESH_TOKEN"),
             OAuth2GrantType::Unknown(value) => write!(f, "{value}"),
         }
     }

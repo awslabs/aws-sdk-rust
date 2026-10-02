@@ -147,6 +147,8 @@ pub(crate) mod shape_invoice_unit_rule;
 
 pub(crate) mod shape_invoice_units;
 
+pub(crate) mod shape_marketplace_punch_out_preference;
+
 pub(crate) mod shape_procurement_portal_preference;
 
 pub(crate) mod shape_procurement_portal_preference_selector;

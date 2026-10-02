@@ -271,6 +271,13 @@ where
                                 crate::protocol_serde::shape_issuer_configuration_type::de_issuer_configuration_type(tokens, _value, depth + 1)?,
                             );
                         }
+                        "AcrConfiguration" => {
+                            builder = builder.set_acr_configuration(crate::protocol_serde::shape_acr_configuration_type::de_acr_configuration_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

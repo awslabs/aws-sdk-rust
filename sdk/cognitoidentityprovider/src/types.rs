@@ -195,6 +195,8 @@ pub use crate::types::_encryption_key_type::EncryptionKeyType;
 
 pub use crate::types::_issuer_type::IssuerType;
 
+pub use crate::types::_acr_level_config_type::AcrLevelConfigType;
+
 pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_time_units_type::TimeUnitsType;
@@ -316,6 +318,8 @@ mod _account_takeover_actions_type;
 mod _account_takeover_event_action_type;
 
 mod _account_takeover_risk_configuration_type;
+
+mod _acr_level_config_type;
 
 mod _admin_create_user_config_type;
 

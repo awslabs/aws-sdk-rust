@@ -124,6 +124,19 @@ where
                             builder = builder
                                 .set_purchase_order_retrieval_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "MarketplacePunchOutEnabled" => {
+                            builder =
+                                builder.set_marketplace_punch_out_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "MarketplacePunchOutPreference" => {
+                            builder = builder.set_marketplace_punch_out_preference(
+                                crate::protocol_serde::shape_marketplace_punch_out_preference::de_marketplace_punch_out_preference(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "Contacts" => {
                             builder = builder.set_contacts(crate::protocol_serde::shape_contacts::de_contacts(tokens, _value, depth + 1)?);
                         }

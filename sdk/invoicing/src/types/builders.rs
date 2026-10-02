@@ -7,6 +7,8 @@ pub use crate::types::_test_env_preference_input::TestEnvPreferenceInputBuilder;
 
 pub use crate::types::_einvoice_delivery_preference::EinvoiceDeliveryPreferenceBuilder;
 
+pub use crate::types::_marketplace_punch_out_preference::MarketplacePunchOutPreferenceBuilder;
+
 pub use crate::types::_invoice_pdf::InvoicePdfBuilder;
 
 pub use crate::types::_procurement_portal_preference::ProcurementPortalPreferenceBuilder;

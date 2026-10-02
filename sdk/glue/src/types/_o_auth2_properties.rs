@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OAuth2Properties {
-    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub o_auth2_grant_type: ::std::option::Option<crate::types::OAuth2GrantType>,
     /// <p>The client application type. For example, AWS_MANAGED or USER_MANAGED.</p>
     pub o_auth2_client_application: ::std::option::Option<crate::types::OAuth2ClientApplication>,
@@ -14,7 +14,7 @@ pub struct OAuth2Properties {
     pub token_url_parameters_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2Properties {
-    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn o_auth2_grant_type(&self) -> ::std::option::Option<&crate::types::OAuth2GrantType> {
         self.o_auth2_grant_type.as_ref()
     }
@@ -48,17 +48,17 @@ pub struct OAuth2PropertiesBuilder {
     pub(crate) token_url_parameters_map: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl OAuth2PropertiesBuilder {
-    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn o_auth2_grant_type(mut self, input: crate::types::OAuth2GrantType) -> Self {
         self.o_auth2_grant_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn set_o_auth2_grant_type(mut self, input: ::std::option::Option<crate::types::OAuth2GrantType>) -> Self {
         self.o_auth2_grant_type = input;
         self
     }
-    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
+    /// <p>The OAuth2 grant type. For example, <code>AUTHORIZATION_CODE</code>, <code>JWT_BEARER</code>, <code>REFRESH_TOKEN</code>, or <code>CLIENT_CREDENTIALS</code>.</p>
     pub fn get_o_auth2_grant_type(&self) -> &::std::option::Option<crate::types::OAuth2GrantType> {
         &self.o_auth2_grant_type
     }

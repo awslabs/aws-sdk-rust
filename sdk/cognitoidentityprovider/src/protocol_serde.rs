@@ -681,6 +681,8 @@ pub(crate) mod shape_account_recovery_setting_type;
 
 pub(crate) mod shape_account_takeover_risk_configuration_type;
 
+pub(crate) mod shape_acr_level_config_type;
+
 pub(crate) mod shape_admin_create_user_config_type;
 
 pub(crate) mod shape_analytics_configuration_type;
@@ -844,6 +846,10 @@ pub(crate) mod shape_web_authn_credential_description_list_type;
 pub(crate) mod shape_web_authn_mfa_settings_type;
 
 pub(crate) mod shape_account_takeover_actions_type;
+
+pub(crate) mod shape_acr_configuration_type;
+
+pub(crate) mod shape_acr_mapping_type;
 
 pub(crate) mod shape_advanced_security_additional_flows_type;
 

@@ -469,6 +469,15 @@ pub(crate) fn web_authn_credential_description_correct_errors(
     builder
 }
 
+pub(crate) fn acr_level_config_type_correct_errors(
+    mut builder: crate::types::builders::AcrLevelConfigTypeBuilder,
+) -> crate::types::builders::AcrLevelConfigTypeBuilder {
+    if builder.acr_value.is_none() {
+        builder.acr_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn asset_type_correct_errors(mut builder: crate::types::builders::AssetTypeBuilder) -> crate::types::builders::AssetTypeBuilder {
     if builder.category.is_none() {
         builder.category = "no value was set".parse::<crate::types::AssetCategoryType>().ok()

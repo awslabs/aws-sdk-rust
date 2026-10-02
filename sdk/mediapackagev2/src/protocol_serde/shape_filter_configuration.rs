@@ -28,6 +28,12 @@ pub fn ser_filter_configuration(
             .key("ClipStartTime")
             .date_time(var_6, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
+    if let Some(var_7) = &input.multiview {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Multiview").start_object();
+        crate::protocol_serde::shape_multiview_filter_configuration::ser_multiview_filter_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -91,6 +97,15 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
+                        }
+                        "Multiview" => {
+                            builder = builder.set_multiview(
+                                crate::protocol_serde::shape_multiview_filter_configuration::de_multiview_filter_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

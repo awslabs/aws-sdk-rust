@@ -22,7 +22,9 @@ impl crate::operation::get_web_function_revision::builders::GetWebFunctionRevisi
 }
 /// Fluent builder constructing a request to `GetWebFunctionRevision`.
 ///
-/// <p>Retrieves details about a web function revision, including its state and configuration.</p>
+/// <p>Retrieves details about a web function revision, including its state and configuration.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebFunctionRevisionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

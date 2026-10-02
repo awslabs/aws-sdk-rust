@@ -22,7 +22,9 @@ impl crate::operation::get_web_account_settings::builders::GetWebAccountSettings
 }
 /// Fluent builder constructing a request to `GetWebAccountSettings`.
 ///
-/// <p>Retrieves details about your AWS Lambda Web Functions account settings for the current AWS Region, including the quotas that apply to web functions and your current usage.</p>
+/// <p>Retrieves details about your AWS Lambda Web Functions account settings for the current AWS Region, including the quotas that apply to web functions and your current usage.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebAccountSettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

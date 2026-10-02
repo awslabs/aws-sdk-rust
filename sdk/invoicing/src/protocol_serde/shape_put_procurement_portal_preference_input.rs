@@ -36,20 +36,29 @@ pub fn ser_put_procurement_portal_preference_input_input(
     if let Some(var_11) = &input.purchase_order_retrieval_enabled {
         object.key("PurchaseOrderRetrievalEnabled").boolean(*var_11);
     }
-    if let Some(var_12) = &input.contacts {
-        let mut array_13 = object.key("Contacts").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.marketplace_punch_out_enabled {
+        object.key("MarketplacePunchOutEnabled").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.marketplace_punch_out_preference {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("MarketplacePunchOutPreference").start_object();
+        crate::protocol_serde::shape_marketplace_punch_out_preference::ser_marketplace_punch_out_preference(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.contacts {
+        let mut array_16 = object.key("Contacts").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_contact::ser_contact(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_contact::ser_contact(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_13.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.client_token {
-        object.key("ClientToken").string(var_16.as_str());
+    if let Some(var_19) = &input.client_token {
+        object.key("ClientToken").string(var_19.as_str());
     }
     Ok(())
 }

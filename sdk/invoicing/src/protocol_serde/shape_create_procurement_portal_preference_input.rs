@@ -48,32 +48,41 @@ pub fn ser_create_procurement_portal_preference_input_input(
     if let Some(var_15) = &input.purchase_order_retrieval_enabled {
         object.key("PurchaseOrderRetrievalEnabled").boolean(*var_15);
     }
-    if let Some(var_16) = &input.contacts {
-        let mut array_17 = object.key("Contacts").start_array();
-        for item_18 in var_16 {
+    if let Some(var_16) = &input.marketplace_punch_out_enabled {
+        object.key("MarketplacePunchOutEnabled").boolean(*var_16);
+    }
+    if let Some(var_17) = &input.marketplace_punch_out_preference {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("MarketplacePunchOutPreference").start_object();
+        crate::protocol_serde::shape_marketplace_punch_out_preference::ser_marketplace_punch_out_preference(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.contacts {
+        let mut array_20 = object.key("Contacts").start_array();
+        for item_21 in var_19 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_contact::ser_contact(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_contact::ser_contact(&mut object_22, item_21)?;
+                object_22.finish();
             }
         }
-        array_17.finish();
+        array_20.finish();
     }
-    if let Some(var_20) = &input.resource_tags {
-        let mut array_21 = object.key("ResourceTags").start_array();
-        for item_22 in var_20 {
+    if let Some(var_23) = &input.resource_tags {
+        let mut array_24 = object.key("ResourceTags").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_23, item_22)?;
-                object_23.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_resource_tag::ser_resource_tag(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_21.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.client_token {
-        object.key("ClientToken").string(var_24.as_str());
+    if let Some(var_27) = &input.client_token {
+        object.key("ClientToken").string(var_27.as_str());
     }
     Ok(())
 }

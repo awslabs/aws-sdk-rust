@@ -14,6 +14,7 @@ pub struct BatchGetPartitionInput {
     /// <p>A structure containing the Lake Formation audit context.</p>
     pub audit_context: ::std::option::Option<crate::types::AuditContext>,
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    /// <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
     pub query_session_context: ::std::option::Option<crate::types::QuerySessionContext>,
 }
 impl BatchGetPartitionInput {
@@ -40,6 +41,7 @@ impl BatchGetPartitionInput {
         self.audit_context.as_ref()
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    /// <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
     pub fn query_session_context(&self) -> ::std::option::Option<&crate::types::QuerySessionContext> {
         self.query_session_context.as_ref()
     }
@@ -142,16 +144,19 @@ impl BatchGetPartitionInputBuilder {
         &self.audit_context
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    /// <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
     pub fn query_session_context(mut self, input: crate::types::QuerySessionContext) -> Self {
         self.query_session_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    /// <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
     pub fn set_query_session_context(mut self, input: ::std::option::Option<crate::types::QuerySessionContext>) -> Self {
         self.query_session_context = input;
         self
     }
     /// <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+    /// <p>For more information about how to utilize QuerySessionContext, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
     pub fn get_query_session_context(&self) -> &::std::option::Option<crate::types::QuerySessionContext> {
         &self.query_session_context
     }

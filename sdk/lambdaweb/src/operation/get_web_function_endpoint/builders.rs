@@ -22,7 +22,9 @@ impl crate::operation::get_web_function_endpoint::builders::GetWebFunctionEndpoi
 }
 /// Fluent builder constructing a request to `GetWebFunctionEndpoint`.
 ///
-/// <p>Retrieves details about a web function endpoint, including its current state, configuration, and domain name.</p>
+/// <p>Retrieves details about a web function endpoint, including its current state, configuration, and domain name.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebFunctionEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

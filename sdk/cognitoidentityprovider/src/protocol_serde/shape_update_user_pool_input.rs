@@ -121,5 +121,18 @@ pub fn ser_update_user_pool_input_input(
         crate::protocol_serde::shape_issuer_configuration_type::ser_issuer_configuration_type(&mut object_40, var_39)?;
         object_40.finish();
     }
+    if let Some(var_41) = &input.acr_configuration {
+        #[allow(unused_mut)]
+        let mut object_42 = object.key("AcrConfiguration").start_object();
+        for (key_43, value_44) in var_41 {
+            {
+                #[allow(unused_mut)]
+                let mut object_45 = object_42.key(key_43.as_str()).start_object();
+                crate::protocol_serde::shape_acr_level_config_type::ser_acr_level_config_type(&mut object_45, value_44)?;
+                object_45.finish();
+            }
+        }
+        object_42.finish();
+    }
     Ok(())
 }

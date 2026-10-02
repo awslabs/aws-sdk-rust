@@ -22,7 +22,9 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// <p>Adds tags to a web function. If a tag key already exists, the existing value is overwritten with the new value.</p>
+/// <p>Adds tags to a web function. If a tag key already exists, the existing value is overwritten with the new value.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

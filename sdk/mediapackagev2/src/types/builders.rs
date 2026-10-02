@@ -87,6 +87,8 @@ pub use crate::types::_encryption_contract_configuration::EncryptionContractConf
 
 pub use crate::types::_content_key_period_configuration::ContentKeyPeriodConfigurationBuilder;
 
+pub use crate::types::_multiview_filter_configuration::MultiviewFilterConfigurationBuilder;
+
 pub use crate::types::_dash_base_url::DashBaseUrlBuilder;
 
 pub use crate::types::_dash_dvb_font_download::DashDvbFontDownloadBuilder;

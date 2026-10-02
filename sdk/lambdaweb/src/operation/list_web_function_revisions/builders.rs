@@ -22,7 +22,9 @@ impl crate::operation::list_web_function_revisions::builders::ListWebFunctionRev
 }
 /// Fluent builder constructing a request to `ListWebFunctionRevisions`.
 ///
-/// <p>Lists revisions for a web function. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
+/// <p>Lists revisions for a web function. We recommend using pagination to ensure that the operation returns quickly and successfully.</p><note>
+/// <p>This API is experimental and for internal AWS use only. It is not yet available to external customers.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListWebFunctionRevisionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

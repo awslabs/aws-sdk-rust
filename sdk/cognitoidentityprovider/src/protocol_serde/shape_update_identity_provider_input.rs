@@ -38,5 +38,15 @@ pub fn ser_update_identity_provider_input_input(
         }
         array_12.finish();
     }
+    if let Some(var_14) = &input.acr_mapping {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("AcrMapping").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16.as_str()).string(value_17.as_str());
+            }
+        }
+        object_15.finish();
+    }
     Ok(())
 }

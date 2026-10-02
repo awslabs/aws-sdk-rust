@@ -266,6 +266,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InitiateAuthE
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InitiateAuthError {
+    /// <p>This exception is thrown when a feature that you attempted to use or configure isn't included in your user pool's current feature plan. This can occur when:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You configure a feature that your feature plan doesn't support.</p></li>
+    /// <li>
+    /// <p>You make a request that uses a feature that requires a higher feature plan.</p></li>
+    /// </ul>
+    /// <p>To resolve this issue, upgrade your user pool to a feature plan that includes the feature.</p>
+    FeatureUnavailableInTierException(crate::types::error::FeatureUnavailableInTierException),
     /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
@@ -335,6 +344,7 @@ impl InitiateAuthError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidEmailRoleAccessPolicyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -355,6 +365,10 @@ impl InitiateAuthError {
             Self::UserNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `InitiateAuthError::FeatureUnavailableInTierException`.
+    pub fn is_feature_unavailable_in_tier_exception(&self) -> bool {
+        matches!(self, Self::FeatureUnavailableInTierException(_))
     }
     /// Returns `true` if the error kind is `InitiateAuthError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -432,6 +446,7 @@ impl InitiateAuthError {
 impl ::std::error::Error for InitiateAuthError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::std::option::Option::Some(_inner),
@@ -457,6 +472,7 @@ impl ::std::error::Error for InitiateAuthError {
 impl ::std::fmt::Display for InitiateAuthError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => _inner.fmt(f),
@@ -496,6 +512,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InitiateAuthError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InitiateAuthError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::FeatureUnavailableInTierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidEmailRoleAccessPolicyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
