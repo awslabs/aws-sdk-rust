@@ -2813,5 +2813,9 @@ source_hash = '936bdb5ba0fa8154ca6c3526046e50a97874566212a2573acf83da6bdfcf7496'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '24f072acb98fb818444b17a88cbfea13cf8e541558872ae8daf899b2034e2037'
+
+[release]
+tag = 'release-2026-10-06'
+
 [release.crates]
 aws-sdk-lambdaweb = '1.1.0'
