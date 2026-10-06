@@ -21,8 +21,6 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! AWS Lambda Web Functions let you run web applications and APIs as HTTP servers on Lambda. A web function has one or more immutable revisions (code and configuration) and one or more endpoints that expose it over HTTPS.
-//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -35,7 +33,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lambdaweb = "1.0.1"
+//! aws-sdk-lambdaweb = "1.1.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -149,38 +147,6 @@ pub use config::Config;
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
-/// # Using the `Client`
-///
-/// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateWebFunction`](crate::operation::create_web_function) operation has
-/// a [`Client::create_web_function`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `send()` function that returns an async future that
-/// returns a result, as illustrated below:
-///
-/// ```rust,ignore
-/// let result = client.create_web_function()
-///     .function_name("example")
-///     .send()
-///     .await;
-/// ```
-///
-/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
-/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
-/// information.
-/// # Waiters
-///
-/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
-/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
-/// return a waiter fluent builder that takes various parameters, which are documented on the builder
-/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
-///
-/// For example, if there was a `wait_until_thing` method, it could look like:
-/// ```rust,ignore
-/// let result = client.wait_until_thing()
-///     .thing_id("someId")
-///     .wait(Duration::from_secs(120))
-///     .await;
-/// ```
 pub mod client;
 
 /// Configuration for Lambda Web.
@@ -213,14 +179,7 @@ mod serialization_settings;
 
 mod endpoint_lib;
 
-mod lens;
-
 mod serde_util;
-
-/// Supporting types for waiters.
-///
-/// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
-pub mod waiters;
 
 mod json_errors;
 

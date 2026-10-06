@@ -56,38 +56,6 @@ pub(crate) struct Handle {
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
-/// # Using the `Client`
-///
-/// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateWebFunction`](crate::operation::create_web_function) operation has
-/// a [`Client::create_web_function`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `send()` function that returns an async future that
-/// returns a result, as illustrated below:
-///
-/// ```rust,ignore
-/// let result = client.create_web_function()
-///     .function_name("example")
-///     .send()
-///     .await;
-/// ```
-///
-/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
-/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
-/// information.
-/// # Waiters
-///
-/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
-/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
-/// return a waiter fluent builder that takes various parameters, which are documented on the builder
-/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
-///
-/// For example, if there was a `wait_until_thing` method, it could look like:
-/// ```rust,ignore
-/// let result = client.wait_until_thing()
-///     .thing_id("someId")
-///     .wait(Duration::from_secs(120))
-///     .await;
-/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -134,46 +102,6 @@ impl Client {
     }
 }
 
-///
-/// Waiter functions for the client.
-///
-/// Import this trait to get `wait_until` methods on the client.
-///
-pub trait Waiters {
-    /// Waits for the web function's state to be Active. This should be used after new function creation.
-    fn wait_until_web_function_active(&self) -> crate::waiters::web_function_active::WebFunctionActiveFluentBuilder;
-    /// Waits for the web function to be deleted. This should be used after function deletion.
-    fn wait_until_web_function_deleted(&self) -> crate::waiters::web_function_deleted::WebFunctionDeletedFluentBuilder;
-    /// Waits for the web function endpoint's state to be Active. This should be used after new endpoint creation.
-    fn wait_until_web_function_endpoint_active(&self) -> crate::waiters::web_function_endpoint_active::WebFunctionEndpointActiveFluentBuilder;
-    /// Waits for the web function endpoint to be deleted. This should be used after endpoint deletion.
-    fn wait_until_web_function_endpoint_deleted(&self) -> crate::waiters::web_function_endpoint_deleted::WebFunctionEndpointDeletedFluentBuilder;
-    /// Waits for the web function endpoint's update status to be Successful. This should be used after endpoint updates.
-    fn wait_until_web_function_endpoint_updated(&self) -> crate::waiters::web_function_endpoint_updated::WebFunctionEndpointUpdatedFluentBuilder;
-    /// Waits for the web function revision's state to be Active. This should be used after new revision creation.
-    fn wait_until_web_function_revision_active(&self) -> crate::waiters::web_function_revision_active::WebFunctionRevisionActiveFluentBuilder;
-}
-impl Waiters for Client {
-    fn wait_until_web_function_active(&self) -> crate::waiters::web_function_active::WebFunctionActiveFluentBuilder {
-        crate::waiters::web_function_active::WebFunctionActiveFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_web_function_deleted(&self) -> crate::waiters::web_function_deleted::WebFunctionDeletedFluentBuilder {
-        crate::waiters::web_function_deleted::WebFunctionDeletedFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_web_function_endpoint_active(&self) -> crate::waiters::web_function_endpoint_active::WebFunctionEndpointActiveFluentBuilder {
-        crate::waiters::web_function_endpoint_active::WebFunctionEndpointActiveFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_web_function_endpoint_deleted(&self) -> crate::waiters::web_function_endpoint_deleted::WebFunctionEndpointDeletedFluentBuilder {
-        crate::waiters::web_function_endpoint_deleted::WebFunctionEndpointDeletedFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_web_function_endpoint_updated(&self) -> crate::waiters::web_function_endpoint_updated::WebFunctionEndpointUpdatedFluentBuilder {
-        crate::waiters::web_function_endpoint_updated::WebFunctionEndpointUpdatedFluentBuilder::new(self.handle.clone())
-    }
-    fn wait_until_web_function_revision_active(&self) -> crate::waiters::web_function_revision_active::WebFunctionRevisionActiveFluentBuilder {
-        crate::waiters::web_function_revision_active::WebFunctionRevisionActiveFluentBuilder::new(self.handle.clone())
-    }
-}
-
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
@@ -190,12 +118,6 @@ impl Client {
     }
 }
 
-mod create_web_function;
-
-mod create_web_function_endpoint;
-
-mod create_web_function_revision;
-
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -207,7 +129,7 @@ mod create_web_function_revision;
 /// # let client: aws_sdk_lambdaweb::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_web_function()
+/// let result = client.get_web_account_settings()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -223,36 +145,4 @@ mod create_web_function_revision;
 /// ```
 pub mod customize;
 
-mod delete_resource_policy;
-
-mod delete_web_function;
-
-mod delete_web_function_endpoint;
-
-mod delete_web_function_revision;
-
-mod get_resource_policy;
-
 mod get_web_account_settings;
-
-mod get_web_function;
-
-mod get_web_function_endpoint;
-
-mod get_web_function_revision;
-
-mod list_tags;
-
-mod list_web_function_endpoints;
-
-mod list_web_function_revisions;
-
-mod list_web_functions;
-
-mod put_resource_policy;
-
-mod tag_resource;
-
-mod untag_resource;
-
-mod update_web_function_endpoint;

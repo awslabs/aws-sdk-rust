@@ -23,45 +23,7 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
-pub(crate) mod shape_create_web_function;
-
-pub(crate) mod shape_create_web_function_endpoint;
-
-pub(crate) mod shape_create_web_function_revision;
-
-pub(crate) mod shape_delete_resource_policy;
-
-pub(crate) mod shape_delete_web_function;
-
-pub(crate) mod shape_delete_web_function_endpoint;
-
-pub(crate) mod shape_delete_web_function_revision;
-
-pub(crate) mod shape_get_resource_policy;
-
 pub(crate) mod shape_get_web_account_settings;
-
-pub(crate) mod shape_get_web_function;
-
-pub(crate) mod shape_get_web_function_endpoint;
-
-pub(crate) mod shape_get_web_function_revision;
-
-pub(crate) mod shape_list_tags;
-
-pub(crate) mod shape_list_web_function_endpoints;
-
-pub(crate) mod shape_list_web_function_revisions;
-
-pub(crate) mod shape_list_web_functions;
-
-pub(crate) mod shape_put_resource_policy;
-
-pub(crate) mod shape_tag_resource;
-
-pub(crate) mod shape_untag_resource;
-
-pub(crate) mod shape_update_web_function_endpoint;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -73,90 +35,10 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
-pub(crate) mod shape_conflict_exception;
-
-pub(crate) mod shape_create_web_function_endpoint_input;
-
-pub(crate) mod shape_create_web_function_input;
-
-pub(crate) mod shape_create_web_function_revision_input;
-
 pub(crate) mod shape_internal_server_exception;
 
-pub(crate) mod shape_list_web_function_endpoints_input;
-
-pub(crate) mod shape_list_web_function_revisions_input;
-
-pub(crate) mod shape_list_web_functions_input;
-
-pub(crate) mod shape_put_resource_policy_input;
-
-pub(crate) mod shape_resource_not_found_exception;
-
-pub(crate) mod shape_service_quota_exceeded_exception;
-
-pub(crate) mod shape_tag_resource_input;
-
 pub(crate) mod shape_throttling_exception;
-
-pub(crate) mod shape_update_web_function_endpoint_input;
-
-pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_quotas;
 
 pub(crate) mod shape_account_usage;
-
-pub(crate) mod shape_build_config;
-
-pub(crate) mod shape_endpoint_config;
-
-pub(crate) mod shape_filter;
-
-pub(crate) mod shape_function_endpoint_summary;
-
-pub(crate) mod shape_function_endpoint_summary_list;
-
-pub(crate) mod shape_function_revision_summary;
-
-pub(crate) mod shape_function_revision_summary_list;
-
-pub(crate) mod shape_function_summary_list;
-
-pub(crate) mod shape_region_list;
-
-pub(crate) mod shape_regional_endpoints;
-
-pub(crate) mod shape_revision_config;
-
-pub(crate) mod shape_revision_errors;
-
-pub(crate) mod shape_revision_weight;
-
-pub(crate) mod shape_revision_weight_list;
-
-pub(crate) mod shape_scaling_config;
-
-pub(crate) mod shape_service_config;
-
-pub(crate) mod shape_tags;
-
-pub(crate) mod shape_throttle_config;
-
-pub(crate) mod shape_code_config;
-
-pub(crate) mod shape_environment_variables;
-
-pub(crate) mod shape_function_summary;
-
-pub(crate) mod shape_regional_endpoint;
-
-pub(crate) mod shape_revision_error;
-
-pub(crate) mod shape_runtime_config;
-
-pub(crate) mod shape_telemetry_config;
-
-pub(crate) mod shape_logging_config;
-
-pub(crate) mod shape_s3_object;
