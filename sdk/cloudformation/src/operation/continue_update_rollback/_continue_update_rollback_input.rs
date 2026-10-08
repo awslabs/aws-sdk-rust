@@ -21,6 +21,12 @@ pub struct ContinueUpdateRollbackInput {
     pub resources_to_skip: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to continue the rollback to a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully received them.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether CloudFormation forces the rollback to continue by skipping resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of listing each resource individually in <code>ResourcesToSkip</code>. Only resources that entered the <code>UPDATE_FAILED</code> state because a rollback failed are skipped. If you don't specify a value, the default is <code>false</code> and CloudFormation doesn't skip any resources.</p>
+    /// <p><code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually exclusive. Specifying both in the same request returns a validation error.</p><important>
+    /// <p>We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a> resources before skipping them. CloudFormation sets the status of the skipped resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack, including resources in nested stacks. After the rollback completes, the skipped resources no longer match the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable.</p>
+    /// <p>Drift detection reports skipped resources as <code>NOT_CHECKED</code>. For guidance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </important>
+    pub force_rollback: ::std::option::Option<bool>,
 }
 impl ContinueUpdateRollbackInput {
     /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p><note>
@@ -50,6 +56,14 @@ impl ContinueUpdateRollbackInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
+    /// <p>Specifies whether CloudFormation forces the rollback to continue by skipping resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of listing each resource individually in <code>ResourcesToSkip</code>. Only resources that entered the <code>UPDATE_FAILED</code> state because a rollback failed are skipped. If you don't specify a value, the default is <code>false</code> and CloudFormation doesn't skip any resources.</p>
+    /// <p><code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually exclusive. Specifying both in the same request returns a validation error.</p><important>
+    /// <p>We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a> resources before skipping them. CloudFormation sets the status of the skipped resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack, including resources in nested stacks. After the rollback completes, the skipped resources no longer match the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable.</p>
+    /// <p>Drift detection reports skipped resources as <code>NOT_CHECKED</code>. For guidance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </important>
+    pub fn force_rollback(&self) -> ::std::option::Option<bool> {
+        self.force_rollback
+    }
 }
 impl ContinueUpdateRollbackInput {
     /// Creates a new builder-style object to manufacture [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
@@ -66,6 +80,7 @@ pub struct ContinueUpdateRollbackInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resources_to_skip: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) force_rollback: ::std::option::Option<bool>,
 }
 impl ContinueUpdateRollbackInputBuilder {
     /// <p>The name or the unique ID of the stack that you want to continue rolling back.</p><note>
@@ -158,6 +173,32 @@ impl ContinueUpdateRollbackInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// <p>Specifies whether CloudFormation forces the rollback to continue by skipping resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of listing each resource individually in <code>ResourcesToSkip</code>. Only resources that entered the <code>UPDATE_FAILED</code> state because a rollback failed are skipped. If you don't specify a value, the default is <code>false</code> and CloudFormation doesn't skip any resources.</p>
+    /// <p><code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually exclusive. Specifying both in the same request returns a validation error.</p><important>
+    /// <p>We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a> resources before skipping them. CloudFormation sets the status of the skipped resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack, including resources in nested stacks. After the rollback completes, the skipped resources no longer match the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable.</p>
+    /// <p>Drift detection reports skipped resources as <code>NOT_CHECKED</code>. For guidance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </important>
+    pub fn force_rollback(mut self, input: bool) -> Self {
+        self.force_rollback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether CloudFormation forces the rollback to continue by skipping resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of listing each resource individually in <code>ResourcesToSkip</code>. Only resources that entered the <code>UPDATE_FAILED</code> state because a rollback failed are skipped. If you don't specify a value, the default is <code>false</code> and CloudFormation doesn't skip any resources.</p>
+    /// <p><code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually exclusive. Specifying both in the same request returns a validation error.</p><important>
+    /// <p>We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a> resources before skipping them. CloudFormation sets the status of the skipped resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack, including resources in nested stacks. After the rollback completes, the skipped resources no longer match the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable.</p>
+    /// <p>Drift detection reports skipped resources as <code>NOT_CHECKED</code>. For guidance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </important>
+    pub fn set_force_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force_rollback = input;
+        self
+    }
+    /// <p>Specifies whether CloudFormation forces the rollback to continue by skipping resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of listing each resource individually in <code>ResourcesToSkip</code>. Only resources that entered the <code>UPDATE_FAILED</code> state because a rollback failed are skipped. If you don't specify a value, the default is <code>false</code> and CloudFormation doesn't skip any resources.</p>
+    /// <p><code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually exclusive. Specifying both in the same request returns a validation error.</p><important>
+    /// <p>We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a> resources before skipping them. CloudFormation sets the status of the skipped resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack, including resources in nested stacks. After the rollback completes, the skipped resources no longer match the resources in the stack template. Before performing another stack update, you must update the stack or resources to be consistent with each other. If you don't, subsequent stack updates might fail, and the stack will become unrecoverable.</p>
+    /// <p>Drift detection reports skipped resources as <code>NOT_CHECKED</code>. For guidance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// </important>
+    pub fn get_force_rollback(&self) -> &::std::option::Option<bool> {
+        &self.force_rollback
+    }
     /// Consumes the builder and constructs a [`ContinueUpdateRollbackInput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackInput).
     pub fn build(
         self,
@@ -170,6 +211,7 @@ impl ContinueUpdateRollbackInputBuilder {
             role_arn: self.role_arn,
             resources_to_skip: self.resources_to_skip,
             client_request_token: self.client_request_token,
+            force_rollback: self.force_rollback,
         })
     }
 }

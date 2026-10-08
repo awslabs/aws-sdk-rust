@@ -52,20 +52,6 @@ pub fn de_update_operator_app_idp_config_http_error(
                 tmp
             })
         }
-        "ThrottlingException" => crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::unhandled)?
-            };
-            tmp
-        }),
         "ValidationException" => crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -163,6 +149,20 @@ pub fn de_update_operator_app_idp_config_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::generic(generic),
     })
 }

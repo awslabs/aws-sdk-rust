@@ -11,8 +11,9 @@ pub struct CreateContainerGroupDefinitionInput {
     /// <p>The maximum amount of memory (in MiB) to allocate to the container group. All containers in the group share this memory. If you specify memory limits for an individual container, the total value must be greater than any individual container's memory limit.</p>
     /// <p>Default value: 1024</p>
     pub total_memory_limit_mebibytes: ::std::option::Option<i32>,
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    /// <p>Default value: 1</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>This property is required for a per-instance container group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If you set a total vCPU limit for a game server container group, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If you don't set a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
     pub total_vcpu_limit: ::std::option::Option<f64>,
     /// <p>The definition for the game server container in this group. Define a game server container only when the container group type is <code>GAME_SERVER</code>. Game server containers specify a container image with your game server build. You can pass in your container definitions as a JSON file.</p>
     pub game_server_container_definition: ::std::option::Option<crate::types::GameServerContainerDefinitionInput>,
@@ -25,7 +26,7 @@ pub struct CreateContainerGroupDefinitionInput {
     pub operating_system: ::std::option::Option<crate::types::ContainerOperatingSystem>,
     /// <p>A description for the initial version of this container group definition.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateContainerGroupDefinitionInput {
@@ -43,8 +44,9 @@ impl CreateContainerGroupDefinitionInput {
     pub fn total_memory_limit_mebibytes(&self) -> ::std::option::Option<i32> {
         self.total_memory_limit_mebibytes
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    /// <p>Default value: 1</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>This property is required for a per-instance container group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If you set a total vCPU limit for a game server container group, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If you don't set a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
     pub fn total_vcpu_limit(&self) -> ::std::option::Option<f64> {
         self.total_vcpu_limit
     }
@@ -69,7 +71,7 @@ impl CreateContainerGroupDefinitionInput {
     pub fn version_description(&self) -> ::std::option::Option<&str> {
         self.version_description.as_deref()
     }
-    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -148,21 +150,23 @@ impl CreateContainerGroupDefinitionInputBuilder {
     pub fn get_total_memory_limit_mebibytes(&self) -> &::std::option::Option<i32> {
         &self.total_memory_limit_mebibytes
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    /// <p>Default value: 1</p>
-    /// This field is required.
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>This property is required for a per-instance container group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If you set a total vCPU limit for a game server container group, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If you don't set a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
     pub fn total_vcpu_limit(mut self, input: f64) -> Self {
         self.total_vcpu_limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    /// <p>Default value: 1</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>This property is required for a per-instance container group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If you set a total vCPU limit for a game server container group, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If you don't set a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
     pub fn set_total_vcpu_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_vcpu_limit = input;
         self
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
-    /// <p>Default value: 1</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>This property is required for a per-instance container group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If you set a total vCPU limit for a game server container group, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If you don't set a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
     pub fn get_total_vcpu_limit(&self) -> &::std::option::Option<f64> {
         &self.total_vcpu_limit
     }
@@ -245,19 +249,19 @@ impl CreateContainerGroupDefinitionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>A list of labels to assign to the container group definition resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

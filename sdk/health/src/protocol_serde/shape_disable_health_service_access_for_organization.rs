@@ -10,7 +10,7 @@ pub fn de_disable_health_service_access_for_organization_http_error(
     crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -31,7 +31,7 @@ pub fn de_disable_health_service_access_for_organization_http_error(
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ConcurrentModificationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_json_err(_response_body, output).map_err(crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError::unhandled)?;
+                    output = crate::protocol_serde::shape_concurrent_modification_exception::de_concurrent_modification_exception_cbor_err(_response_body, output).map_err(crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }
@@ -61,10 +61,4 @@ pub fn de_disable_health_service_access_for_organization_http_response(
         output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
-}
-
-pub fn ser_disable_health_service_access_for_organization_input(
-    _input: &crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationInput,
-) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

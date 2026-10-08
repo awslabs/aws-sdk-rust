@@ -6,6 +6,8 @@
 pub enum SourceLocation {
     /// <p>The Amazon Simple Storage Service URI of the notebook source file.</p>
     S3(::std::string::String),
+    /// <p>The Amazon Simple Storage Service objects to import as the notebook's cells. One cell is created for each object, in the order in which you list them.</p>
+    S3Files(crate::types::S3FilesLocation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum SourceLocation {
     Unknown,
 }
 impl SourceLocation {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3`](crate::types::SourceLocation::S3), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -31,6 +32,19 @@ impl SourceLocation {
     pub fn is_s3(&self) -> bool {
         self.as_s3().is_ok()
     }
+    /// Tries to convert the enum instance into [`S3Files`](crate::types::SourceLocation::S3Files), extracting the inner [`S3FilesLocation`](crate::types::S3FilesLocation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_files(&self) -> ::std::result::Result<&crate::types::S3FilesLocation, &Self> {
+        if let SourceLocation::S3Files(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3Files`](crate::types::SourceLocation::S3Files).
+    pub fn is_s3_files(&self) -> bool {
+        self.as_s3_files().is_ok()
+    }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
@@ -40,6 +54,7 @@ impl ::std::fmt::Debug for SourceLocation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             SourceLocation::S3(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            SourceLocation::S3Files(val) => f.debug_tuple("S3Files").field(&val).finish(),
             SourceLocation::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }

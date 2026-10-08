@@ -51,6 +51,12 @@ pub fn ser_expression(
         crate::protocol_serde::shape_cost_category_values::ser_cost_category_values(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.product_attributes {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("ProductAttributes").start_object();
+        crate::protocol_serde::shape_product_attribute_values::ser_product_attribute_values(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -100,6 +106,11 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "ProductAttributes" => {
+                            builder = builder.set_product_attributes(
+                                crate::protocol_serde::shape_product_attribute_values::de_product_attribute_values(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

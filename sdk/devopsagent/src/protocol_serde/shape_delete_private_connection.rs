@@ -67,20 +67,6 @@ pub fn de_delete_private_connection_http_error(
             };
             tmp
         }),
-        "ThrottlingException" => crate::operation::delete_private_connection::DeletePrivateConnectionError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::delete_private_connection::DeletePrivateConnectionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::delete_private_connection::DeletePrivateConnectionError::unhandled)?
-            };
-            tmp
-        }),
         "ValidationException" => crate::operation::delete_private_connection::DeletePrivateConnectionError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -157,6 +143,20 @@ pub fn de_delete_private_connection_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::delete_private_connection::DeletePrivateConnectionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_private_connection::DeletePrivateConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_private_connection::DeletePrivateConnectionError::unhandled)?
+            };
+            tmp
+        }),
         _ => crate::operation::delete_private_connection::DeletePrivateConnectionError::generic(generic),
     })
 }

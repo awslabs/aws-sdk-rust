@@ -14,6 +14,13 @@
 /// match sourceaccesstype {
 ///     SourceAccessType::BasicAuth => { /* ... */ },
 ///     SourceAccessType::ClientCertificateTlsAuth => { /* ... */ },
+///     SourceAccessType::IamAuth => { /* ... */ },
+///     SourceAccessType::IamOauthbearerAuth => { /* ... */ },
+///     SourceAccessType::OauthbearerAudience => { /* ... */ },
+///     SourceAccessType::OauthbearerAuth => { /* ... */ },
+///     SourceAccessType::OauthbearerIdentityPool => { /* ... */ },
+///     SourceAccessType::OauthbearerLogicalCluster => { /* ... */ },
+///     SourceAccessType::OauthbearerScope => { /* ... */ },
 ///     SourceAccessType::SaslScram256Auth => { /* ... */ },
 ///     SourceAccessType::SaslScram512Auth => { /* ... */ },
 ///     SourceAccessType::ServerRootCaCertificate => { /* ... */ },
@@ -53,6 +60,20 @@ pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
     ClientCertificateTlsAuth,
     #[allow(missing_docs)] // documentation missing in model
+    IamAuth,
+    #[allow(missing_docs)] // documentation missing in model
+    IamOauthbearerAuth,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthbearerAudience,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthbearerAuth,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthbearerIdentityPool,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthbearerLogicalCluster,
+    #[allow(missing_docs)] // documentation missing in model
+    OauthbearerScope,
+    #[allow(missing_docs)] // documentation missing in model
     SaslScram256Auth,
     #[allow(missing_docs)] // documentation missing in model
     SaslScram512Auth,
@@ -73,6 +94,13 @@ impl ::std::convert::From<&str> for SourceAccessType {
         match s {
             "BASIC_AUTH" => SourceAccessType::BasicAuth,
             "CLIENT_CERTIFICATE_TLS_AUTH" => SourceAccessType::ClientCertificateTlsAuth,
+            "IAM_AUTH" => SourceAccessType::IamAuth,
+            "IAM_OAUTHBEARER_AUTH" => SourceAccessType::IamOauthbearerAuth,
+            "OAUTHBEARER_AUDIENCE" => SourceAccessType::OauthbearerAudience,
+            "OAUTHBEARER_AUTH" => SourceAccessType::OauthbearerAuth,
+            "OAUTHBEARER_IDENTITY_POOL" => SourceAccessType::OauthbearerIdentityPool,
+            "OAUTHBEARER_LOGICAL_CLUSTER" => SourceAccessType::OauthbearerLogicalCluster,
+            "OAUTHBEARER_SCOPE" => SourceAccessType::OauthbearerScope,
             "SASL_SCRAM_256_AUTH" => SourceAccessType::SaslScram256Auth,
             "SASL_SCRAM_512_AUTH" => SourceAccessType::SaslScram512Auth,
             "SERVER_ROOT_CA_CERTIFICATE" => SourceAccessType::ServerRootCaCertificate,
@@ -96,6 +124,13 @@ impl SourceAccessType {
         match self {
             SourceAccessType::BasicAuth => "BASIC_AUTH",
             SourceAccessType::ClientCertificateTlsAuth => "CLIENT_CERTIFICATE_TLS_AUTH",
+            SourceAccessType::IamAuth => "IAM_AUTH",
+            SourceAccessType::IamOauthbearerAuth => "IAM_OAUTHBEARER_AUTH",
+            SourceAccessType::OauthbearerAudience => "OAUTHBEARER_AUDIENCE",
+            SourceAccessType::OauthbearerAuth => "OAUTHBEARER_AUTH",
+            SourceAccessType::OauthbearerIdentityPool => "OAUTHBEARER_IDENTITY_POOL",
+            SourceAccessType::OauthbearerLogicalCluster => "OAUTHBEARER_LOGICAL_CLUSTER",
+            SourceAccessType::OauthbearerScope => "OAUTHBEARER_SCOPE",
             SourceAccessType::SaslScram256Auth => "SASL_SCRAM_256_AUTH",
             SourceAccessType::SaslScram512Auth => "SASL_SCRAM_512_AUTH",
             SourceAccessType::ServerRootCaCertificate => "SERVER_ROOT_CA_CERTIFICATE",
@@ -110,6 +145,13 @@ impl SourceAccessType {
         &[
             "BASIC_AUTH",
             "CLIENT_CERTIFICATE_TLS_AUTH",
+            "IAM_AUTH",
+            "IAM_OAUTHBEARER_AUTH",
+            "OAUTHBEARER_AUDIENCE",
+            "OAUTHBEARER_AUTH",
+            "OAUTHBEARER_IDENTITY_POOL",
+            "OAUTHBEARER_LOGICAL_CLUSTER",
+            "OAUTHBEARER_SCOPE",
             "SASL_SCRAM_256_AUTH",
             "SASL_SCRAM_512_AUTH",
             "SERVER_ROOT_CA_CERTIFICATE",
@@ -141,6 +183,13 @@ impl ::std::fmt::Display for SourceAccessType {
         match self {
             SourceAccessType::BasicAuth => write!(f, "BASIC_AUTH"),
             SourceAccessType::ClientCertificateTlsAuth => write!(f, "CLIENT_CERTIFICATE_TLS_AUTH"),
+            SourceAccessType::IamAuth => write!(f, "IAM_AUTH"),
+            SourceAccessType::IamOauthbearerAuth => write!(f, "IAM_OAUTHBEARER_AUTH"),
+            SourceAccessType::OauthbearerAudience => write!(f, "OAUTHBEARER_AUDIENCE"),
+            SourceAccessType::OauthbearerAuth => write!(f, "OAUTHBEARER_AUTH"),
+            SourceAccessType::OauthbearerIdentityPool => write!(f, "OAUTHBEARER_IDENTITY_POOL"),
+            SourceAccessType::OauthbearerLogicalCluster => write!(f, "OAUTHBEARER_LOGICAL_CLUSTER"),
+            SourceAccessType::OauthbearerScope => write!(f, "OAUTHBEARER_SCOPE"),
             SourceAccessType::SaslScram256Auth => write!(f, "SASL_SCRAM_256_AUTH"),
             SourceAccessType::SaslScram512Auth => write!(f, "SASL_SCRAM_512_AUTH"),
             SourceAccessType::ServerRootCaCertificate => write!(f, "SERVER_ROOT_CA_CERTIFICATE"),

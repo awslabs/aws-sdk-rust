@@ -371,6 +371,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeWithRes
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeWithResponseStreamError {
+    /// <p>The Lambda function couldn't be invoked because its code artifact user has been deleted. Wait for Lambda to provision a new code artifact user, or update the function's code package to recreate it.</p>
+    CodeArtifactUserDeletedException(crate::types::error::CodeArtifactUserDeletedException),
+    /// <p>The Lambda function couldn't be invoked because provisioning of its code artifact user failed. Update the function's code package or check the Lambda function's <code>State</code> and <code>StateReasonCode</code> for additional context.</p>
+    CodeArtifactUserFailedException(crate::types::error::CodeArtifactUserFailedException),
+    /// <p>The Lambda function couldn't be invoked because its code artifact user is still being provisioned. Wait for the function's <code>State</code> to become <code>Active</code> and try the request again.</p>
+    CodeArtifactUserPendingException(crate::types::error::CodeArtifactUserPendingException),
     /// <p>Need additional permissions to configure VPC settings.</p>
     Ec2AccessDeniedException(crate::types::error::Ec2AccessDeniedException),
     /// <p>Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for the function.</p>
@@ -478,6 +484,9 @@ impl InvokeWithResponseStreamError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeArtifactUserDeletedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CodeArtifactUserFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::CodeArtifactUserPendingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2ThrottledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Ec2UnexpectedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -517,6 +526,18 @@ impl InvokeWithResponseStreamError {
             Self::UnsupportedMediaTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::CodeArtifactUserDeletedException`.
+    pub fn is_code_artifact_user_deleted_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserDeletedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::CodeArtifactUserFailedException`.
+    pub fn is_code_artifact_user_failed_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserFailedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::CodeArtifactUserPendingException`.
+    pub fn is_code_artifact_user_pending_exception(&self) -> bool {
+        matches!(self, Self::CodeArtifactUserPendingException(_))
     }
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::Ec2AccessDeniedException`.
     pub fn is_ec2_access_denied_exception(&self) -> bool {
@@ -670,6 +691,9 @@ impl InvokeWithResponseStreamError {
 impl ::std::error::Error for InvokeWithResponseStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CodeArtifactUserFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::CodeArtifactUserPendingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2ThrottledException(_inner) => ::std::option::Option::Some(_inner),
             Self::Ec2UnexpectedException(_inner) => ::std::option::Option::Some(_inner),
@@ -714,6 +738,9 @@ impl ::std::error::Error for InvokeWithResponseStreamError {
 impl ::std::fmt::Display for InvokeWithResponseStreamError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => _inner.fmt(f),
+            Self::CodeArtifactUserFailedException(_inner) => _inner.fmt(f),
+            Self::CodeArtifactUserPendingException(_inner) => _inner.fmt(f),
             Self::Ec2AccessDeniedException(_inner) => _inner.fmt(f),
             Self::Ec2ThrottledException(_inner) => _inner.fmt(f),
             Self::Ec2UnexpectedException(_inner) => _inner.fmt(f),
@@ -772,6 +799,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for InvokeWithResponseStreamErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeWithResponseStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::CodeArtifactUserDeletedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CodeArtifactUserFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::CodeArtifactUserPendingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2ThrottledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Ec2UnexpectedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -437,6 +437,42 @@ impl From<crate::operation::get_case_attachment_upload_url::GetCaseAttachmentUpl
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_metrics::GetFindingMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_metrics::GetFindingMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_finding_metrics::GetFindingMetricsError> for Error {
+    fn from(err: crate::operation::get_finding_metrics::GetFindingMetricsError) -> Self {
+        match err {
+            crate::operation::get_finding_metrics::GetFindingMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_finding_metrics::GetFindingMetricsError::SecurityIncidentResponseNotActiveException(inner) => {
+                Error::SecurityIncidentResponseNotActiveException(inner)
+            }
+            crate::operation::get_finding_metrics::GetFindingMetricsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_finding_metrics::GetFindingMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_finding_metrics::GetFindingMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_membership::GetMembershipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

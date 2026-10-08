@@ -7,7 +7,7 @@ pub fn de_get_type_http_error(
     _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_type::GetTypeOutput, crate::operation::get_type::GetTypeError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::get_type::GetTypeError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -23,7 +23,7 @@ pub fn de_get_type_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_type::GetTypeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -38,7 +38,7 @@ pub fn de_get_type_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_type::GetTypeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -53,7 +53,7 @@ pub fn de_get_type_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_type::GetTypeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -68,7 +68,7 @@ pub fn de_get_type_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -86,7 +86,7 @@ pub fn de_get_type_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_type::GetTypeError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -122,94 +122,85 @@ pub fn de_get_type_http_response(
 pub fn ser_get_type_input(
     input: &crate::operation::get_type::GetTypeInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_type_input::ser_get_type_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_type_input::ser_get_type_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_get_type(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::get_type::builders::GetTypeOutputBuilder,
-) -> ::std::result::Result<crate::operation::get_type::builders::GetTypeOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+) -> ::std::result::Result<crate::operation::get_type::builders::GetTypeOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::get_type::builders::GetTypeOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<crate::operation::get_type::builders::GetTypeOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+        builder = match decoder.str()?.as_ref() {
+            "keyspaceName" => builder.set_keyspace_name(Some(decoder.string()?)),
+            "typeName" => builder.set_type_name(Some(decoder.string()?)),
+            "fieldDefinitions" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_field_definitions(Some(crate::protocol_serde::shape_field_list::de_field_list(decoder, depth + 1)?)))
+            })?,
+            "lastModifiedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_last_modified_timestamp(Some(decoder.timestamp()?)))
+            })?,
+            "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::TypeStatus::from(s.as_str()))?)))
+            })?,
+            "directReferringTables" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_direct_referring_tables(Some(crate::protocol_serde::shape_table_name_list::de_table_name_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
+            "directParentTypes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_direct_parent_types(Some(crate::protocol_serde::shape_type_name_list::de_type_name_list(decoder, depth + 1)?)))
+            })?,
+            "maxNestingDepth" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_max_nesting_depth(Some(decoder.integer()?)))
+            })?,
+            "keyspaceArn" => builder.set_keyspace_arn(Some(decoder.string()?)),
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "keyspaceName" => {
-                    builder = builder.set_keyspace_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "typeName" => {
-                    builder = builder.set_type_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                "fieldDefinitions" => {
-                    builder = builder.set_field_definitions(crate::protocol_serde::shape_field_list::de_field_list(tokens, _value, depth + 1)?);
-                }
-                "lastModifiedTimestamp" => {
-                    builder = builder.set_last_modified_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
-                        tokens.next(),
-                        ::aws_smithy_types::date_time::Format::EpochSeconds,
-                    )?);
-                }
-                "status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::TypeStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "directReferringTables" => {
-                    builder = builder.set_direct_referring_tables(crate::protocol_serde::shape_table_name_list::de_table_name_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "directParentTypes" => {
-                    builder =
-                        builder.set_direct_parent_types(crate::protocol_serde::shape_type_name_list::de_type_name_list(tokens, _value, depth + 1)?);
-                }
-                "maxNestingDepth" => {
-                    builder = builder.set_max_nesting_depth(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "keyspaceArn" => {
-                    builder = builder.set_keyspace_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

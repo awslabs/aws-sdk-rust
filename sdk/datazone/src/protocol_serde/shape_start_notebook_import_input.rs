@@ -21,5 +21,8 @@ pub fn ser_start_notebook_import_input_input(
         crate::protocol_serde::shape_source_location::ser_source_location(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.r#type {
+        object.key("type").string(var_7.as_str());
+    }
     Ok(())
 }

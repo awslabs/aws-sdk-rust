@@ -45,7 +45,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-health = "1.119.0"
+//! aws-sdk-health = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -207,11 +207,11 @@ mod sdk_feature_tracker;
 
 mod serialization_settings;
 
+mod cbor_errors;
+
 mod endpoint_lib;
 
 mod lens;
-
-mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;

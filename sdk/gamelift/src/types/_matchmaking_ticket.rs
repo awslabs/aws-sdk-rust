@@ -42,7 +42,7 @@ pub struct MatchmakingTicket {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a unique player ID and may include latency data for use during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the resulting match.</p>
     pub players: ::std::option::Option<::std::vec::Vec<crate::types::Player>>,
-    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub game_session_connection_info: ::std::option::Option<crate::types::GameSessionConnectionInfo>,
     /// <p>Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent data, this property may be empty.</p>
     pub estimated_wait_time: ::std::option::Option<i32>,
@@ -106,7 +106,7 @@ impl MatchmakingTicket {
     pub fn players(&self) -> &[crate::types::Player] {
         self.players.as_deref().unwrap_or_default()
     }
-    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn game_session_connection_info(&self) -> ::std::option::Option<&crate::types::GameSessionConnectionInfo> {
         self.game_session_connection_info.as_ref()
     }
@@ -331,17 +331,17 @@ impl MatchmakingTicketBuilder {
     pub fn get_players(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Player>> {
         &self.players
     }
-    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn game_session_connection_info(mut self, input: crate::types::GameSessionConnectionInfo) -> Self {
         self.game_session_connection_info = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn set_game_session_connection_info(mut self, input: ::std::option::Option<crate::types::GameSessionConnectionInfo>) -> Self {
         self.game_session_connection_info = input;
         self
     }
-    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
+    /// <p>Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game session for it. This information is added to the matchmaking ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .</p>
     pub fn get_game_session_connection_info(&self) -> &::std::option::Option<crate::types::GameSessionConnectionInfo> {
         &self.game_session_connection_info
     }

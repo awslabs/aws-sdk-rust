@@ -137,18 +137,41 @@ impl GetDimensionValuesFluentBuilder {
         self.inner.get_time_period()
     }
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p><code>PRODUCT_ATTRIBUTE</code> returns the product attribute keys that are available for your costs of supported services, or the values of the key that you specify in <code>DimensionKey</code>. <code>PRODUCT_ATTRIBUTE</code> is supported only in the <code>COST_AND_USAGE</code> context.</p>
     pub fn dimension(mut self, input: crate::types::Dimension) -> Self {
         self.inner = self.inner.dimension(input);
         self
     }
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p><code>PRODUCT_ATTRIBUTE</code> returns the product attribute keys that are available for your costs of supported services, or the values of the key that you specify in <code>DimensionKey</code>. <code>PRODUCT_ATTRIBUTE</code> is supported only in the <code>COST_AND_USAGE</code> context.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<crate::types::Dimension>) -> Self {
         self.inner = self.inner.set_dimension(input);
         self
     }
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.</p>
+    /// <p><code>PRODUCT_ATTRIBUTE</code> returns the product attribute keys that are available for your costs of supported services, or the values of the key that you specify in <code>DimensionKey</code>. <code>PRODUCT_ATTRIBUTE</code> is supported only in the <code>COST_AND_USAGE</code> context.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<crate::types::Dimension> {
         self.inner.get_dimension()
+    }
+    /// <p>The product attribute key to return values for, such as <code>model</code>. If you omit <code>DimensionKey</code> or set it to an empty string, the response lists the product attribute keys that are available for your costs of supported services instead. For the supported services, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you specify a key, the response lists the values of that key. If some of your costs have no value for the key, the response includes an empty-string value. Keys are case-sensitive, and a key that doesn't exist returns no values other than an empty string.</p>
+    /// <p>You can specify <code>DimensionKey</code> only when <code>Dimension</code> is <code>PRODUCT_ATTRIBUTE</code>. If you also specify <code>SortBy</code>, <code>DimensionKey</code> is required. As a result, you can't list product attribute keys when you use <code>SortBy</code>.</p>
+    pub fn dimension_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dimension_key(input.into());
+        self
+    }
+    /// <p>The product attribute key to return values for, such as <code>model</code>. If you omit <code>DimensionKey</code> or set it to an empty string, the response lists the product attribute keys that are available for your costs of supported services instead. For the supported services, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you specify a key, the response lists the values of that key. If some of your costs have no value for the key, the response includes an empty-string value. Keys are case-sensitive, and a key that doesn't exist returns no values other than an empty string.</p>
+    /// <p>You can specify <code>DimensionKey</code> only when <code>Dimension</code> is <code>PRODUCT_ATTRIBUTE</code>. If you also specify <code>SortBy</code>, <code>DimensionKey</code> is required. As a result, you can't list product attribute keys when you use <code>SortBy</code>.</p>
+    pub fn set_dimension_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dimension_key(input);
+        self
+    }
+    /// <p>The product attribute key to return values for, such as <code>model</code>. If you omit <code>DimensionKey</code> or set it to an empty string, the response lists the product attribute keys that are available for your costs of supported services instead. For the supported services, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you specify a key, the response lists the values of that key. If some of your costs have no value for the key, the response includes an empty-string value. Keys are case-sensitive, and a key that doesn't exist returns no values other than an empty string.</p>
+    /// <p>You can specify <code>DimensionKey</code> only when <code>Dimension</code> is <code>PRODUCT_ATTRIBUTE</code>. If you also specify <code>SortBy</code>, <code>DimensionKey</code> is required. As a result, you can't list product attribute keys when you use <code>SortBy</code>.</p>
+    pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dimension_key()
     }
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
     /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions for searching:</p>
@@ -182,6 +205,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p></li>
     /// <li>
     /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
+    /// <li>
+    /// <p>PRODUCT_ATTRIBUTE - The product attributes of supported services, such as the model provider or the model for Amazon Bedrock.</p></li>
     /// <li>
     /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
     /// <li>
@@ -280,6 +305,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <li>
     /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
     /// <li>
+    /// <p>PRODUCT_ATTRIBUTE - The product attributes of supported services, such as the model provider or the model for Amazon Bedrock.</p></li>
+    /// <li>
     /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
     /// <li>
     /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
@@ -377,6 +404,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <li>
     /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p></li>
     /// <li>
+    /// <p>PRODUCT_ATTRIBUTE - The product attributes of supported services, such as the model provider or the model for Amazon Bedrock.</p></li>
+    /// <li>
     /// <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to. Examples include On-Demand Instances and Standard Reserved Instances.</p></li>
     /// <li>
     /// <p>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</p></li>
@@ -448,7 +477,7 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -456,6 +485,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -505,7 +536,7 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -513,6 +544,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -562,7 +595,7 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -570,6 +603,8 @@ impl GetDimensionValuesFluentBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>

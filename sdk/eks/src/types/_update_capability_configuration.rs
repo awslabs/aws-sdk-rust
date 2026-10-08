@@ -6,11 +6,17 @@
 pub struct UpdateCapabilityConfiguration {
     /// <p>Configuration updates specific to Argo CD capabilities.</p>
     pub argo_cd: ::std::option::Option<crate::types::UpdateArgoCdConfig>,
+    /// <p>Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities.</p>
+    pub ack: ::std::option::Option<crate::types::UpdateAckConfig>,
 }
 impl UpdateCapabilityConfiguration {
     /// <p>Configuration updates specific to Argo CD capabilities.</p>
     pub fn argo_cd(&self) -> ::std::option::Option<&crate::types::UpdateArgoCdConfig> {
         self.argo_cd.as_ref()
+    }
+    /// <p>Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities.</p>
+    pub fn ack(&self) -> ::std::option::Option<&crate::types::UpdateAckConfig> {
+        self.ack.as_ref()
     }
 }
 impl UpdateCapabilityConfiguration {
@@ -25,6 +31,7 @@ impl UpdateCapabilityConfiguration {
 #[non_exhaustive]
 pub struct UpdateCapabilityConfigurationBuilder {
     pub(crate) argo_cd: ::std::option::Option<crate::types::UpdateArgoCdConfig>,
+    pub(crate) ack: ::std::option::Option<crate::types::UpdateAckConfig>,
 }
 impl UpdateCapabilityConfigurationBuilder {
     /// <p>Configuration updates specific to Argo CD capabilities.</p>
@@ -41,8 +48,25 @@ impl UpdateCapabilityConfigurationBuilder {
     pub fn get_argo_cd(&self) -> &::std::option::Option<crate::types::UpdateArgoCdConfig> {
         &self.argo_cd
     }
+    /// <p>Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities.</p>
+    pub fn ack(mut self, input: crate::types::UpdateAckConfig) -> Self {
+        self.ack = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities.</p>
+    pub fn set_ack(mut self, input: ::std::option::Option<crate::types::UpdateAckConfig>) -> Self {
+        self.ack = input;
+        self
+    }
+    /// <p>Configuration updates specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities.</p>
+    pub fn get_ack(&self) -> &::std::option::Option<crate::types::UpdateAckConfig> {
+        &self.ack
+    }
     /// Consumes the builder and constructs a [`UpdateCapabilityConfiguration`](crate::types::UpdateCapabilityConfiguration).
     pub fn build(self) -> crate::types::UpdateCapabilityConfiguration {
-        crate::types::UpdateCapabilityConfiguration { argo_cd: self.argo_cd }
+        crate::types::UpdateCapabilityConfiguration {
+            argo_cd: self.argo_cd,
+            ack: self.ack,
+        }
     }
 }

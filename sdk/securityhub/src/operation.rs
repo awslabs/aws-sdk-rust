@@ -43,6 +43,9 @@ pub mod batch_update_findings_v2;
 /// Types for the `BatchUpdateStandardsControlAssociations` operation.
 pub mod batch_update_standards_control_associations;
 
+/// Types for the `CancelExportJobV2` operation.
+pub mod cancel_export_job_v2;
+
 /// Types for the `CreateActionTarget` operation.
 pub mod create_action_target;
 
@@ -199,6 +202,9 @@ pub mod get_connector_v2;
 /// Types for the `GetEnabledStandards` operation.
 pub mod get_enabled_standards;
 
+/// Types for the `GetExportJobV2` operation.
+pub mod get_export_job_v2;
+
 /// Types for the `GetFindingAggregator` operation.
 pub mod get_finding_aggregator;
 
@@ -277,6 +283,9 @@ pub mod list_connectors_v2;
 /// Types for the `ListEnabledProductsForImport` operation.
 pub mod list_enabled_products_for_import;
 
+/// Types for the `ListExportJobsV2` operation.
+pub mod list_export_jobs_v2;
+
 /// Types for the `ListExposuresByRemediationV2` operation.
 pub mod list_exposures_by_remediation_v2;
 
@@ -312,6 +321,9 @@ pub mod start_configuration_policy_association;
 
 /// Types for the `StartConfigurationPolicyDisassociation` operation.
 pub mod start_configuration_policy_disassociation;
+
+/// Types for the `StartExportJobV2` operation.
+pub mod start_export_job_v2;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

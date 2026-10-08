@@ -8,6 +8,8 @@ pub struct EncryptionAtRestOptions {
     pub enabled: ::std::option::Option<bool>,
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of encryption at rest applied to the domain's data. Valid values are <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and uses volume-level encryption. <code>NATIVE</code> uses engine-native, index-level encryption and requires encryption at rest to be enabled and OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>, it can't be changed back to <code>DISK</code>.</p>
+    pub encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
 }
 impl EncryptionAtRestOptions {
     /// <p>True to enable encryption at rest.</p>
@@ -17,6 +19,10 @@ impl EncryptionAtRestOptions {
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
+    }
+    /// <p>The type of encryption at rest applied to the domain's data. Valid values are <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and uses volume-level encryption. <code>NATIVE</code> uses engine-native, index-level encryption and requires encryption at rest to be enabled and OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>, it can't be changed back to <code>DISK</code>.</p>
+    pub fn encryption_mode(&self) -> ::std::option::Option<&crate::types::EncryptionMode> {
+        self.encryption_mode.as_ref()
     }
 }
 impl EncryptionAtRestOptions {
@@ -32,6 +38,7 @@ impl EncryptionAtRestOptions {
 pub struct EncryptionAtRestOptionsBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_mode: ::std::option::Option<crate::types::EncryptionMode>,
 }
 impl EncryptionAtRestOptionsBuilder {
     /// <p>True to enable encryption at rest.</p>
@@ -62,11 +69,26 @@ impl EncryptionAtRestOptionsBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// <p>The type of encryption at rest applied to the domain's data. Valid values are <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and uses volume-level encryption. <code>NATIVE</code> uses engine-native, index-level encryption and requires encryption at rest to be enabled and OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>, it can't be changed back to <code>DISK</code>.</p>
+    pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
+        self.encryption_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption at rest applied to the domain's data. Valid values are <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and uses volume-level encryption. <code>NATIVE</code> uses engine-native, index-level encryption and requires encryption at rest to be enabled and OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>, it can't be changed back to <code>DISK</code>.</p>
+    pub fn set_encryption_mode(mut self, input: ::std::option::Option<crate::types::EncryptionMode>) -> Self {
+        self.encryption_mode = input;
+        self
+    }
+    /// <p>The type of encryption at rest applied to the domain's data. Valid values are <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and uses volume-level encryption. <code>NATIVE</code> uses engine-native, index-level encryption and requires encryption at rest to be enabled and OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>, it can't be changed back to <code>DISK</code>.</p>
+    pub fn get_encryption_mode(&self) -> &::std::option::Option<crate::types::EncryptionMode> {
+        &self.encryption_mode
+    }
     /// Consumes the builder and constructs a [`EncryptionAtRestOptions`](crate::types::EncryptionAtRestOptions).
     pub fn build(self) -> crate::types::EncryptionAtRestOptions {
         crate::types::EncryptionAtRestOptions {
             enabled: self.enabled,
             kms_key_id: self.kms_key_id,
+            encryption_mode: self.encryption_mode,
         }
     }
 }

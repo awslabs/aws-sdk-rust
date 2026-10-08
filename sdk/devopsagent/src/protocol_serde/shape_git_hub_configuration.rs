@@ -21,6 +21,9 @@ pub fn ser_git_hub_configuration(
     if let Some(var_2) = &input.runtime_role_arn {
         object.key("runtimeRoleArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.release_management_association_id {
+        object.key("releaseManagementAssociationId").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -83,6 +86,13 @@ where
                         }
                         "runtimeRoleArn" => {
                             builder = builder.set_runtime_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "releaseManagementAssociationId" => {
+                            builder = builder.set_release_management_association_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

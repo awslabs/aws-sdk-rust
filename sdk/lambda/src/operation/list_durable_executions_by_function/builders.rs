@@ -128,17 +128,17 @@ impl ListDurableExecutionsByFunctionFluentBuilder {
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_function_name()
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualifier(input.into());
         self
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualifier(input);
         self
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qualifier()
     }

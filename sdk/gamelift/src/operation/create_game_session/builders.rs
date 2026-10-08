@@ -35,7 +35,7 @@ impl crate::operation::create_game_session::builders::CreateGameSessionInputBuil
 /// <p>To create a game session on an instance in an Anywhere fleet, specify the fleet's custom location.</p></li>
 /// </ul>
 /// <p>If successful, Amazon GameLift Servers initiates a workflow to start a new game session and returns a <code>GameSession</code> object containing the game session configuration and status. When the game session status is <code>ACTIVE</code>, it is updated with connection information and you can create player sessions for the game session. By default, newly created game sessions are open to new players. You can restrict new player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a> to change the game session's player session creation policy.</p>
-/// <p>Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a> to download the log files.</p>
+/// <p>Amazon GameLift Servers retains logs for active game sessions for 14 days. To access the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a> to download the log files.</p>
 /// <p><i>Available in Amazon GameLift Servers Local.</i></p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a game session</a></p>
@@ -223,7 +223,7 @@ impl CreateGameSessionFluentBuilder {
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift Servers limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
-    /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
+    /// <p>If your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
     pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.creator_id(input.into());
@@ -231,7 +231,7 @@ impl CreateGameSessionFluentBuilder {
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift Servers limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
-    /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
+    /// <p>If your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
     pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_creator_id(input);
@@ -239,7 +239,7 @@ impl CreateGameSessionFluentBuilder {
     }
     /// <p>A unique identifier for a player or entity creating the game session.</p>
     /// <p>If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a <code>CreatorId</code>. Amazon GameLift Servers limits the number of game session creation requests with the same <code>CreatorId</code> in a specified time period.</p>
-    /// <p>If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
+    /// <p>If your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift Servers limits requests to one request per <code>CreatorId</code> per second.</p>
     /// <p>To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.</p>
     pub fn get_creator_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_creator_id()

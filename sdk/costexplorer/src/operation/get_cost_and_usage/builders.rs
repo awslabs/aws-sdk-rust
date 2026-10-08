@@ -139,21 +139,27 @@ impl GetCostAndUsageFluentBuilder {
     }
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code>, <code>Tags</code>, and <code>ProductAttributes</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>You can filter by product attributes with or without grouping by them. If you filter or group by product attributes, the results include only the costs of supported services, and a <code>SERVICE</code> filter is optional. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you include a <code>SERVICE</code> filter, it must apply to the whole request: combine it with other filters by using <code>And</code>, and include it in every branch of an <code>Or</code>. A <code>SERVICE</code> filter inside <code>Not</code> doesn't meet this requirement, and the request fails with a <code>ValidationException</code>.</p>
     pub fn filter(mut self, input: crate::types::Expression) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code>, <code>Tags</code>, and <code>ProductAttributes</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>You can filter by product attributes with or without grouping by them. If you filter or group by product attributes, the results include only the costs of supported services, and a <code>SERVICE</code> filter is optional. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you include a <code>SERVICE</code> filter, it must apply to the whole request: combine it with other filters by using <code>And</code>, and include it in every branch of an <code>Or</code>. A <code>SERVICE</code> filter inside <code>Not</code> doesn't meet this requirement, and the request fails with a <code>ValidationException</code>.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
     /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.</p>
     /// <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
-    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>Valid values for <code>MatchOptions</code> for <code>CostCategories</code>, <code>Tags</code>, and <code>ProductAttributes</code> are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+    /// <p>You can filter by product attributes with or without grouping by them. If you filter or group by product attributes, the results include only the costs of supported services, and a <code>SERVICE</code> filter is optional. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+    /// <p>If you include a <code>SERVICE</code> filter, it must apply to the whole request: combine it with other filters by using <code>And</code>, and include it in every branch of an <code>Or</code>. A <code>SERVICE</code> filter inside <code>Not</code> doesn't meet this requirement, and the request fails with a <code>ValidationException</code>.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Expression> {
         self.inner.get_filter()
     }
@@ -193,23 +199,29 @@ impl GetCostAndUsageFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
     ///
-    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
+    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, product attributes, or any two group by types.</p>
     /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
     /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
+    /// <p>To group by the <code>PRODUCT_ATTRIBUTE</code> type, set <code>Key</code> to a product attribute key, such as <code>model</code>. For the keys of each supported service, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>. The results include only the costs of supported services, and if you have no such costs, the response contains no groups.</p>
+    /// <p>In the response, each group key has the format <code>key$value</code>, for example, <code>model$Claude Sonnet 5</code>. Costs that have no value for the key are in the group <code>key$</code>, for example, <code>model$</code>. Remove the <code>key$</code> prefix before you use a value in a <code>ProductAttributes</code> filter. Keys are case-sensitive: if you group by a key that doesn't exist, such as <code>Model</code>, all of your costs of supported services are in the group <code>Model$</code>.</p>
     pub fn group_by(mut self, input: crate::types::GroupDefinition) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
+    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, product attributes, or any two group by types.</p>
     /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
     /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
+    /// <p>To group by the <code>PRODUCT_ATTRIBUTE</code> type, set <code>Key</code> to a product attribute key, such as <code>model</code>. For the keys of each supported service, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>. The results include only the costs of supported services, and if you have no such costs, the response contains no groups.</p>
+    /// <p>In the response, each group key has the format <code>key$value</code>, for example, <code>model$Claude Sonnet 5</code>. Costs that have no value for the key are in the group <code>key$</code>, for example, <code>model$</code>. Remove the <code>key$</code> prefix before you use a value in a <code>ProductAttributes</code> filter. Keys are case-sensitive: if you group by a key that doesn't exist, such as <code>Model</code>, all of your costs of supported services are in the group <code>Model$</code>.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, or any two group by types.</p>
+    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys, cost categories, product attributes, or any two group by types.</p>
     /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
     /// <p>When you group by the <code>TAG</code> type and include a valid tag key, you get all tag values, including empty strings.</p>
+    /// <p>To group by the <code>PRODUCT_ATTRIBUTE</code> type, set <code>Key</code> to a product attribute key, such as <code>model</code>. For the keys of each supported service, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>. The results include only the costs of supported services, and if you have no such costs, the response contains no groups.</p>
+    /// <p>In the response, each group key has the format <code>key$value</code>, for example, <code>model$Claude Sonnet 5</code>. Costs that have no value for the key are in the group <code>key$</code>, for example, <code>model$</code>. Remove the <code>key$</code> prefix before you use a value in a <code>ProductAttributes</code> filter. Keys are case-sensitive: if you group by a key that doesn't exist, such as <code>Model</code>, all of your costs of supported services are in the group <code>Model$</code>.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         self.inner.get_group_by()
     }

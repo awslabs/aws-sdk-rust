@@ -165,6 +165,8 @@ pub use crate::types::_remote_agent_configuration::RemoteAgentConfigurationBuild
 
 pub use crate::types::_remote_agent_sigv4_configuration::RemoteAgentSigV4ConfigurationBuilder;
 
+pub use crate::types::_release_management_configuration::ReleaseManagementConfigurationBuilder;
+
 pub use crate::types::_capability_configuration::CapabilityConfigurationBuilder;
 
 pub use crate::types::_webhook::WebhookBuilder;
@@ -196,6 +198,10 @@ pub use crate::types::_registered_mcp_server_sigv4_details::RegisteredMcpServerS
 pub use crate::types::_registered_remote_agent_details::RegisteredRemoteAgentDetailsBuilder;
 
 pub use crate::types::_registered_remote_agent_sigv4_details::RegisteredRemoteAgentSigV4DetailsBuilder;
+
+pub use crate::types::_cron_schedule::CronScheduleBuilder;
+
+pub use crate::types::_time_range_schedule::TimeRangeScheduleBuilder;
 
 pub use crate::types::_send_message_text_delta::SendMessageTextDeltaBuilder;
 
@@ -233,6 +239,14 @@ pub use crate::types::_slack_channel::SlackChannelBuilder;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetailBuilder;
 
+pub use crate::types::_private_network_access::PrivateNetworkAccessBuilder;
+
 pub use crate::types::_trigger_filter_group::TriggerFilterGroupBuilder;
+
+pub use crate::types::_daily_recurrence::DailyRecurrenceBuilder;
+
+pub use crate::types::_weekly_recurrence::WeeklyRecurrenceBuilder;
+
+pub use crate::types::_monthly_recurrence::MonthlyRecurrenceBuilder;
 
 pub use crate::types::_pattern_filter::PatternFilterBuilder;

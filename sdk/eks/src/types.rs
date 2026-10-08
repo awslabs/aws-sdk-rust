@@ -141,6 +141,8 @@ pub use crate::types::_addon_namespace_config_response::AddonNamespaceConfigResp
 
 pub use crate::types::_argo_cd_config_request::ArgoCdConfigRequest;
 
+pub use crate::types::_ack_config_request::AckConfigRequest;
+
 pub use crate::types::_capability_status::CapabilityStatus;
 
 pub use crate::types::_capability_configuration_response::CapabilityConfigurationResponse;
@@ -259,6 +261,8 @@ pub use crate::types::_connector_config_provider::ConnectorConfigProvider;
 
 pub use crate::types::_update_argo_cd_config::UpdateArgoCdConfig;
 
+pub use crate::types::_update_ack_config::UpdateAckConfig;
+
 pub use crate::types::_update_param::UpdateParam;
 
 pub use crate::types::_error_detail::ErrorDetail;
@@ -272,6 +276,8 @@ pub use crate::types::_argo_cd_aws_idc_config_request::ArgoCdAwsIdcConfigRequest
 pub use crate::types::_argo_cd_network_access_config_request::ArgoCdNetworkAccessConfigRequest;
 
 pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponse;
+
+pub use crate::types::_ack_config_response::AckConfigResponse;
 
 pub use crate::types::_log_setup::LogSetup;
 
@@ -412,6 +418,10 @@ mod _access_policy;
 mod _access_scope;
 
 mod _access_scope_type;
+
+mod _ack_config_request;
+
+mod _ack_config_response;
 
 mod _active_certificate_authority;
 
@@ -770,6 +780,8 @@ mod _taint_effect;
 mod _update;
 
 mod _update_access_config_request;
+
+mod _update_ack_config;
 
 mod _update_argo_cd_config;
 

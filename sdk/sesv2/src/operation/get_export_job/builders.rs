@@ -23,6 +23,7 @@ impl crate::operation::get_export_job::builders::GetExportJobInputBuilder {
 /// Fluent builder constructing a request to `GetExportJob`.
 ///
 /// <p>Provides information about an export job.</p>
+/// <p>When the job status is <code>COMPLETED</code>, the response includes a pre-signed URL in <code>ExportDestination.S3Url</code> that you use to download the export file.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetExportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

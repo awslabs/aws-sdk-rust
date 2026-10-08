@@ -17,6 +17,8 @@ pub use crate::types::_cspm_health_check::CspmHealthCheckBuilder;
 
 pub use crate::types::_health_check::HealthCheckBuilder;
 
+pub use crate::types::_export_scopes::ExportScopesBuilder;
+
 pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifierBuilder;
 
 pub use crate::types::_finding_scopes::FindingScopesBuilder;
@@ -123,6 +125,10 @@ pub use crate::types::_jira_cloud_detail::JiraCloudDetailBuilder;
 
 pub use crate::types::_service_now_detail::ServiceNowDetailBuilder;
 
+pub use crate::types::_findings_output::FindingsOutputBuilder;
+
+pub use crate::types::_s3_export_destination::S3ExportDestinationBuilder;
+
 pub use crate::types::_finding_history_record::FindingHistoryRecordBuilder;
 
 pub use crate::types::_sort_criterion::SortCriterionBuilder;
@@ -156,6 +162,8 @@ pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummaryB
 pub use crate::types::_cspm_connector_summary::CspmConnectorSummaryBuilder;
 
 pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
+
+pub use crate::types::_export_summary::ExportSummaryBuilder;
 
 pub use crate::types::_exposure_finding::ExposureFindingBuilder;
 
@@ -229,9 +237,9 @@ pub use crate::types::_standards_managed_by::StandardsManagedByBuilder;
 
 pub use crate::types::_health_issue::HealthIssueBuilder;
 
-pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSourceBuilder;
-
 pub use crate::types::_aws_organization_scope::AwsOrganizationScopeBuilder;
+
+pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSourceBuilder;
 
 pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilterBuilder;
 
@@ -318,6 +326,8 @@ pub use crate::types::_resource_tag::ResourceTagBuilder;
 pub use crate::types::_ai_details::AiDetailsBuilder;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2Builder;
+
+pub use crate::types::_findings_output_summary::FindingsOutputSummaryBuilder;
 
 pub use crate::types::_free_trial_status::FreeTrialStatusBuilder;
 

@@ -189,6 +189,16 @@ pub(crate) fn reflens_list_enabled_products_for_import_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_export_jobs_v2_output_output_next_token(
+    input: &crate::operation::list_export_jobs_v2::ListExportJobsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_exposures_by_remediation_v2_output_output_next_token(
     input: &crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -399,6 +409,13 @@ pub(crate) fn lens_list_enabled_products_for_import_output_output_product_subscr
     input: crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.product_subscriptions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_export_jobs_v2_output_output_items(
+    input: crate::operation::list_export_jobs_v2::ListExportJobsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

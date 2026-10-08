@@ -28,6 +28,9 @@ pub mod get_case_attachment_download_url;
 /// Types for the `GetCaseAttachmentUploadUrl` operation.
 pub mod get_case_attachment_upload_url;
 
+/// Types for the `GetFindingMetrics` operation.
+pub mod get_finding_metrics;
+
 /// Types for the `GetMembership` operation.
 pub mod get_membership;
 

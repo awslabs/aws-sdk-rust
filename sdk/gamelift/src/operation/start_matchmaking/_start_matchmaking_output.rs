@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMatchmakingOutput {
-    /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// <p>Ticket representing the matchmaking request. This object includes the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub matchmaking_ticket: ::std::option::Option<crate::types::MatchmakingTicket>,
     _request_id: Option<String>,
 }
 impl StartMatchmakingOutput {
-    /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// <p>Ticket representing the matchmaking request. This object includes the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn matchmaking_ticket(&self) -> ::std::option::Option<&crate::types::MatchmakingTicket> {
         self.matchmaking_ticket.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct StartMatchmakingOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartMatchmakingOutputBuilder {
-    /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// <p>Ticket representing the matchmaking request. This object includes the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn matchmaking_ticket(mut self, input: crate::types::MatchmakingTicket) -> Self {
         self.matchmaking_ticket = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// <p>Ticket representing the matchmaking request. This object includes the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn set_matchmaking_ticket(mut self, input: ::std::option::Option<crate::types::MatchmakingTicket>) -> Self {
         self.matchmaking_ticket = input;
         self
     }
-    /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
+    /// <p>Ticket representing the matchmaking request. This object includes the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     pub fn get_matchmaking_ticket(&self) -> &::std::option::Option<crate::types::MatchmakingTicket> {
         &self.matchmaking_ticket
     }

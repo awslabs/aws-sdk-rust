@@ -41,6 +41,8 @@ pub(crate) mod shape_get_case_attachment_download_url;
 
 pub(crate) mod shape_get_case_attachment_upload_url;
 
+pub(crate) mod shape_get_finding_metrics;
+
 pub(crate) mod shape_get_membership;
 
 pub(crate) mod shape_list_case_edits;

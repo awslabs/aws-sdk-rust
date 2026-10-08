@@ -343,6 +343,8 @@ pub use crate::types::_aggregation_output::AggregationOutputBuilder;
 
 pub use crate::types::_user_profile_summary::UserProfileSummaryBuilder;
 
+pub use crate::types::_s3_files_location::S3FilesLocationBuilder;
+
 pub use crate::types::_athena_properties_patch::AthenaPropertiesPatchBuilder;
 
 pub use crate::types::_glue_properties_patch::GluePropertiesPatchBuilder;
@@ -542,6 +544,8 @@ pub use crate::types::_asset_listing_item_additional_attributes::AssetListingIte
 pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributesBuilder;
 
 pub use crate::types::_aggregation_output_item::AggregationOutputItemBuilder;
+
+pub use crate::types::_s3_file::S3FileBuilder;
 
 pub use crate::types::_authentication_configuration_patch::AuthenticationConfigurationPatchBuilder;
 

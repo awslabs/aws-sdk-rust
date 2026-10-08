@@ -27,9 +27,9 @@ pub struct ContainerFleet {
     pub instance_inbound_permissions: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     /// <p>The number of times to replicate the game server container group on each fleet instance.</p>
     pub game_server_container_groups_per_instance: ::std::option::Option<i32>,
-    /// <p>The calculated maximum number of game server container group that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
+    /// <p>The calculated maximum number of game server container groups that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
     pub maximum_game_server_container_groups_per_instance: ::std::option::Option<i32>,
-    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
+    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the fleet uses On-Demand or Spot instances for this fleet. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. You can't update this fleet property.</p>
     /// <p>By default, this property is set to <code>ON_DEMAND</code>.</p>
@@ -63,7 +63,7 @@ pub struct ContainerFleet {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -132,11 +132,11 @@ impl ContainerFleet {
     pub fn game_server_container_groups_per_instance(&self) -> ::std::option::Option<i32> {
         self.game_server_container_groups_per_instance
     }
-    /// <p>The calculated maximum number of game server container group that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
+    /// <p>The calculated maximum number of game server container groups that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
     pub fn maximum_game_server_container_groups_per_instance(&self) -> ::std::option::Option<i32> {
         self.maximum_game_server_container_groups_per_instance
     }
-    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
+    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
@@ -186,7 +186,7 @@ impl ContainerFleet {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -412,31 +412,31 @@ impl ContainerFleetBuilder {
     pub fn get_game_server_container_groups_per_instance(&self) -> &::std::option::Option<i32> {
         &self.game_server_container_groups_per_instance
     }
-    /// <p>The calculated maximum number of game server container group that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
+    /// <p>The calculated maximum number of game server container groups that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
     pub fn maximum_game_server_container_groups_per_instance(mut self, input: i32) -> Self {
         self.maximum_game_server_container_groups_per_instance = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The calculated maximum number of game server container group that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
+    /// <p>The calculated maximum number of game server container groups that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
     pub fn set_maximum_game_server_container_groups_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_game_server_container_groups_per_instance = input;
         self
     }
-    /// <p>The calculated maximum number of game server container group that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
+    /// <p>The calculated maximum number of game server container groups that can be deployed on each fleet instance. The calculation depends on the resource needs of the container group and the CPU and memory resources of the fleet's instance type.</p>
     pub fn get_maximum_game_server_container_groups_per_instance(&self) -> &::std::option::Option<i32> {
         &self.maximum_game_server_container_groups_per_instance
     }
-    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
+    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
+    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
     pub fn set_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_type = input;
         self
     }
-    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes including CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
+    /// <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance type determines the computing resources and processing power that's available to host your game servers. This includes CPU, memory, storage, and networking capacity. You can't update this fleet property.</p>
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
@@ -564,7 +564,7 @@ impl ContainerFleetBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -585,7 +585,7 @@ impl ContainerFleetBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -606,7 +606,7 @@ impl ContainerFleetBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>

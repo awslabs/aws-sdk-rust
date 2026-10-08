@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfigurationSetsInput {
-    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by a substring of the configuration set name.</p>
     pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>>,
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListConfigurationSetsInput {
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListConfigurationSetsInput {
-    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by a substring of the configuration set name.</p>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>> {
         self.filter.as_ref()
     }
@@ -45,14 +45,14 @@ impl ListConfigurationSetsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by a substring of the configuration set name.</p>
     pub fn filter(mut self, k: crate::types::ConfigurationSetFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by a substring of the configuration set name.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>>,
@@ -60,7 +60,7 @@ impl ListConfigurationSetsInputBuilder {
         self.filter = input;
         self
     }
-    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by configuration set name.</p>
+    /// <p>An object that contains filters to apply when listing configuration sets. You can filter by a substring of the configuration set name.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConfigurationSetFilterKey, ::std::string::String>> {
         &self.filter
     }

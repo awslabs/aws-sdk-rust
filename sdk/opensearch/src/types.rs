@@ -203,6 +203,8 @@ pub use crate::types::_cold_storage_options::ColdStorageOptions;
 
 pub use crate::types::_volume_type::VolumeType;
 
+pub use crate::types::_encryption_mode::EncryptionMode;
+
 pub use crate::types::_log_type::LogType;
 
 pub use crate::types::_log_publishing_option::LogPublishingOption;
@@ -664,6 +666,8 @@ mod _ebs_options_status;
 mod _encryption_at_rest_options;
 
 mod _encryption_at_rest_options_status;
+
+mod _encryption_mode;
 
 mod _engine_mode;
 

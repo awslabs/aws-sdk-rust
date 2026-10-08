@@ -105,6 +105,8 @@ pub use crate::types::_tag_values::TagValues;
 
 pub use crate::types::_cost_category_values::CostCategoryValues;
 
+pub use crate::types::_product_attribute_values::ProductAttributeValues;
+
 pub use crate::types::_group_definition::GroupDefinition;
 
 pub use crate::types::_result_by_time::ResultByTime;
@@ -448,6 +450,8 @@ mod _offering_class;
 mod _payment_option;
 
 mod _platform_difference;
+
+mod _product_attribute_values;
 
 mod _rds_instance_details;
 

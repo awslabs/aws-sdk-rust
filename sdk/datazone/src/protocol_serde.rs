@@ -1195,6 +1195,8 @@ pub(crate) mod shape_rule_summary;
 
 pub(crate) mod shape_s3_destination;
 
+pub(crate) mod shape_s3_files_location;
+
 pub(crate) mod shape_s3_properties_input;
 
 pub(crate) mod shape_s3_properties_output;
@@ -1404,6 +1406,10 @@ pub(crate) mod shape_row_filter;
 pub(crate) mod shape_rule_asset_type_list;
 
 pub(crate) mod shape_rule_project_identifier_list;
+
+pub(crate) mod shape_s3_file;
+
+pub(crate) mod shape_s3_file_list;
 
 pub(crate) mod shape_self_grant_status_details;
 

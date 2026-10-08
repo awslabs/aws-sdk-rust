@@ -29,7 +29,7 @@ impl crate::operation::accept_match::builders::AcceptMatchInputBuilder {
 /// <p>If any player rejects the match, or if acceptances are not received before a specified timeout, the proposed match is dropped. Each matchmaking ticket in the failed match is handled as follows:</p>
 /// <ul>
 /// <li>
-/// <p>If the ticket has one or more players who rejected the match or failed to respond, the ticket status is set <code>CANCELLED</code> and processing is terminated.</p></li>
+/// <p>If the ticket has one or more players who rejected the match or failed to respond, the ticket status is set to <code>CANCELLED</code> and processing is terminated.</p></li>
 /// <li>
 /// <p>If all players in the ticket accepted the match, the ticket status is returned to <code>SEARCHING</code> to find a new match.</p></li>
 /// </ul>

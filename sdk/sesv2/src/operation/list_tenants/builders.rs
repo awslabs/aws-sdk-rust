@@ -120,12 +120,12 @@ impl ListTenantsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn filter(mut self, k: crate::types::ListTenantsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v.into());
         self
     }
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
@@ -133,7 +133,7 @@ impl ListTenantsFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
         self.inner.get_filter()
     }

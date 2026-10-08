@@ -43,7 +43,7 @@ impl crate::operation::start_game_session_placement::builders::StartGameSessionP
 /// <li>
 /// <p>Required parameters <code>GameSessionQueueName</code>, <code>MaximumPlayerSessionCount</code>, <code>PlacementID</code>.</p></li>
 /// <li>
-/// <p><code>PlayerLatencies</code>. Include a set of latency values for destinations in the queue. When a request includes latency data, Amazon GameLift Servers automatically reorder the queue's locations priority list based on lowest available latency values. If a request includes latency data for multiple players, Amazon GameLift Servers calculates each location's average latency for all players and reorders to find the lowest latency across all players.</p></li>
+/// <p><code>PlayerLatencies</code>. Include a set of latency values for destinations in the queue. When a request includes latency data, Amazon GameLift Servers automatically reorders the queue's locations priority list based on lowest available latency values. If a request includes latency data for multiple players, Amazon GameLift Servers calculates each location's average latency for all players and reorders to find the lowest latency across all players.</p></li>
 /// <li>
 /// <p>Don't include <code>PriorityConfigurationOverride</code>.</p></li>
 /// </ul>
@@ -52,7 +52,7 @@ impl crate::operation::start_game_session_placement::builders::StartGameSessionP
 /// <p>Prioritize based on a custom list of locations. If you're using a queue that's configured to prioritize location first (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_PriorityConfiguration.html">PriorityConfiguration</a> for game session queues), you can optionally use the <i>PriorityConfigurationOverride</i> parameter to substitute a different location priority list for this placement request. Amazon GameLift Servers searches each location on the priority override list to find an available hosting resource for the new game session. Specify a fallback strategy to use in the event that Amazon GameLift Servers fails to place the game session in any of the locations on the override list.</p></li>
 /// </ul></li>
 /// <li>
-/// <p>Request a placement and prioritized based on a custom list of locations.</p></li>
+/// <p>Request a placement and prioritize based on a custom list of locations.</p></li>
 /// <li>
 /// <p>You can request new player sessions for a group of players. Include the <i>DesiredPlayerSessions</i> parameter and include at minimum a unique player ID for each. You can also include player-specific data to pass to the new game session.</p></li>
 /// </ul>

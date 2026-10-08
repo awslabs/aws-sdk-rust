@@ -35,6 +35,15 @@ pub fn ser_update_container_group_definition_input_input(
     if let Some(var_9) = &input.operating_system {
         encoder.str("OperatingSystem").str(var_9.as_str());
     }
+    if let Some(var_10) = &input.remove_attributes {
+        encoder.str("RemoveAttributes");
+        encoder.array((*var_10).len());
+        for item_11 in var_10 {
+            {
+                encoder.str(item_11.as_str());
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

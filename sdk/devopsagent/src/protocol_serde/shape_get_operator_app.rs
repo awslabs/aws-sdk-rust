@@ -32,20 +32,6 @@ pub fn de_get_operator_app_http_error(
             };
             tmp
         }),
-        "ThrottlingException" => crate::operation::get_operator_app::GetOperatorAppError::ThrottlingException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::throttling_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?
-            };
-            tmp
-        }),
         "ValidationException" => crate::operation::get_operator_app::GetOperatorAppError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -143,6 +129,20 @@ pub fn de_get_operator_app_http_error(
                 .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?
+            };
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::get_operator_app::GetOperatorAppError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::get_operator_app::GetOperatorAppError::unhandled)?
             };

@@ -101,7 +101,6 @@ impl From<crate::operation::associate_service::AssociateServiceError> for Error 
             crate::operation::associate_service::AssociateServiceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::associate_service::AssociateServiceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::associate_service::AssociateServiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_service::AssociateServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_service::AssociateServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_service::AssociateServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::associate_service::AssociateServiceError::ContentSizeExceededException(inner) => {
@@ -110,6 +109,7 @@ impl From<crate::operation::associate_service::AssociateServiceError> for Error 
             crate::operation::associate_service::AssociateServiceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::associate_service::AssociateServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_service::AssociateServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -137,13 +137,13 @@ impl From<crate::operation::create_agent_space::CreateAgentSpaceError> for Error
             crate::operation::create_agent_space::CreateAgentSpaceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::operation::create_agent_space::CreateAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_agent_space::CreateAgentSpaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_agent_space::CreateAgentSpaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_agent_space::CreateAgentSpaceError::ContentSizeExceededException(inner) => {
                 Error::ContentSizeExceededException(inner)
             }
             crate::operation::create_agent_space::CreateAgentSpaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_agent_space::CreateAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_agent_space::CreateAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -309,9 +309,6 @@ impl From<crate::operation::create_private_connection::CreatePrivateConnectionEr
             crate::operation::create_private_connection::CreatePrivateConnectionError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::operation::create_private_connection::CreatePrivateConnectionError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::create_private_connection::CreatePrivateConnectionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -324,6 +321,9 @@ impl From<crate::operation::create_private_connection::CreatePrivateConnectionEr
             }
             crate::operation::create_private_connection::CreatePrivateConnectionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_private_connection::CreatePrivateConnectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::create_private_connection::CreatePrivateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -379,7 +379,6 @@ impl From<crate::operation::delete_agent_space::DeleteAgentSpaceError> for Error
             crate::operation::delete_agent_space::DeleteAgentSpaceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::delete_agent_space::DeleteAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::ContentSizeExceededException(inner) => {
@@ -389,6 +388,7 @@ impl From<crate::operation::delete_agent_space::DeleteAgentSpaceError> for Error
             crate::operation::delete_agent_space::DeleteAgentSpaceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::delete_agent_space::DeleteAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_agent_space::DeleteAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -486,9 +486,6 @@ impl From<crate::operation::delete_private_connection::DeletePrivateConnectionEr
             crate::operation::delete_private_connection::DeletePrivateConnectionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::delete_private_connection::DeletePrivateConnectionError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::delete_private_connection::DeletePrivateConnectionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -501,6 +498,9 @@ impl From<crate::operation::delete_private_connection::DeletePrivateConnectionEr
             }
             crate::operation::delete_private_connection::DeletePrivateConnectionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::delete_private_connection::DeletePrivateConnectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::delete_private_connection::DeletePrivateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -556,7 +556,6 @@ impl From<crate::operation::deregister_service::DeregisterServiceError> for Erro
             crate::operation::deregister_service::DeregisterServiceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::deregister_service::DeregisterServiceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::deregister_service::DeregisterServiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::deregister_service::DeregisterServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::deregister_service::DeregisterServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::deregister_service::DeregisterServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::deregister_service::DeregisterServiceError::ContentSizeExceededException(inner) => {
@@ -566,6 +565,7 @@ impl From<crate::operation::deregister_service::DeregisterServiceError> for Erro
             crate::operation::deregister_service::DeregisterServiceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::deregister_service::DeregisterServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::deregister_service::DeregisterServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -599,9 +599,6 @@ impl From<crate::operation::describe_private_connection::DescribePrivateConnecti
             crate::operation::describe_private_connection::DescribePrivateConnectionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::describe_private_connection::DescribePrivateConnectionError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::describe_private_connection::DescribePrivateConnectionError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -616,6 +613,9 @@ impl From<crate::operation::describe_private_connection::DescribePrivateConnecti
             }
             crate::operation::describe_private_connection::DescribePrivateConnectionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::describe_private_connection::DescribePrivateConnectionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::describe_private_connection::DescribePrivateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -642,7 +642,6 @@ impl From<crate::operation::disable_operator_app::DisableOperatorAppError> for E
                 Error::IdentityCenterServiceException(inner)
             }
             crate::operation::disable_operator_app::DisableOperatorAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::disable_operator_app::DisableOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disable_operator_app::DisableOperatorAppError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disable_operator_app::DisableOperatorAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disable_operator_app::DisableOperatorAppError::ConflictException(inner) => Error::ConflictException(inner),
@@ -658,6 +657,7 @@ impl From<crate::operation::disable_operator_app::DisableOperatorAppError> for E
             crate::operation::disable_operator_app::DisableOperatorAppError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::disable_operator_app::DisableOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disable_operator_app::DisableOperatorAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -683,7 +683,6 @@ impl From<crate::operation::disassociate_service::DisassociateServiceError> for 
             crate::operation::disassociate_service::DisassociateServiceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::disassociate_service::DisassociateServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_service::DisassociateServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disassociate_service::DisassociateServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disassociate_service::DisassociateServiceError::ConflictException(inner) => Error::ConflictException(inner),
@@ -696,6 +695,7 @@ impl From<crate::operation::disassociate_service::DisassociateServiceError> for 
             crate::operation::disassociate_service::DisassociateServiceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::disassociate_service::DisassociateServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disassociate_service::DisassociateServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -721,7 +721,6 @@ impl From<crate::operation::enable_operator_app::EnableOperatorAppError> for Err
                 Error::IdentityCenterServiceException(inner)
             }
             crate::operation::enable_operator_app::EnableOperatorAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::enable_operator_app::EnableOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::enable_operator_app::EnableOperatorAppError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::enable_operator_app::EnableOperatorAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::enable_operator_app::EnableOperatorAppError::ConflictException(inner) => Error::ConflictException(inner),
@@ -737,6 +736,7 @@ impl From<crate::operation::enable_operator_app::EnableOperatorAppError> for Err
             crate::operation::enable_operator_app::EnableOperatorAppError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::enable_operator_app::EnableOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::enable_operator_app::EnableOperatorAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -794,7 +794,6 @@ impl From<crate::operation::get_agent_space::GetAgentSpaceError> for Error {
         match err {
             crate::operation::get_agent_space::GetAgentSpaceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_agent_space::GetAgentSpaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_agent_space::GetAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_agent_space::GetAgentSpaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_agent_space::GetAgentSpaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_agent_space::GetAgentSpaceError::ConflictException(inner) => Error::ConflictException(inner),
@@ -803,6 +802,7 @@ impl From<crate::operation::get_agent_space::GetAgentSpaceError> for Error {
             crate::operation::get_agent_space::GetAgentSpaceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::get_agent_space::GetAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_agent_space::GetAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -920,7 +920,6 @@ impl From<crate::operation::get_association::GetAssociationError> for Error {
         match err {
             crate::operation::get_association::GetAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_association::GetAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_association::GetAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_association::GetAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_association::GetAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_association::GetAssociationError::ConflictException(inner) => Error::ConflictException(inner),
@@ -929,6 +928,7 @@ impl From<crate::operation::get_association::GetAssociationError> for Error {
             crate::operation::get_association::GetAssociationError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::get_association::GetAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_association::GetAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -985,7 +985,6 @@ impl From<crate::operation::get_operator_app::GetOperatorAppError> for Error {
     fn from(err: crate::operation::get_operator_app::GetOperatorAppError) -> Self {
         match err {
             crate::operation::get_operator_app::GetOperatorAppError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::get_operator_app::GetOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_operator_app::GetOperatorAppError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_operator_app::GetOperatorAppError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_operator_app::GetOperatorAppError::ConflictException(inner) => Error::ConflictException(inner),
@@ -997,6 +996,7 @@ impl From<crate::operation::get_operator_app::GetOperatorAppError> for Error {
             crate::operation::get_operator_app::GetOperatorAppError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::get_operator_app::GetOperatorAppError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_operator_app::GetOperatorAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1054,13 +1054,13 @@ impl From<crate::operation::get_service::GetServiceError> for Error {
         match err {
             crate::operation::get_service::GetServiceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_service::GetServiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::get_service::GetServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_service::GetServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_service::GetServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_service::GetServiceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::get_service::GetServiceError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
             crate::operation::get_service::GetServiceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::get_service::GetServiceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_service::GetServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_service::GetServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1113,7 +1113,6 @@ impl From<crate::operation::list_agent_spaces::ListAgentSpacesError> for Error {
     fn from(err: crate::operation::list_agent_spaces::ListAgentSpacesError) -> Self {
         match err {
             crate::operation::list_agent_spaces::ListAgentSpacesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_agent_spaces::ListAgentSpacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_agent_spaces::ListAgentSpacesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_agent_spaces::ListAgentSpacesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_agent_spaces::ListAgentSpacesError::ConflictException(inner) => Error::ConflictException(inner),
@@ -1125,6 +1124,7 @@ impl From<crate::operation::list_agent_spaces::ListAgentSpacesError> for Error {
             crate::operation::list_agent_spaces::ListAgentSpacesError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::list_agent_spaces::ListAgentSpacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_agent_spaces::ListAgentSpacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1284,7 +1284,6 @@ impl From<crate::operation::list_associations::ListAssociationsError> for Error 
         match err {
             crate::operation::list_associations::ListAssociationsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_associations::ListAssociationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_associations::ListAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_associations::ListAssociationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_associations::ListAssociationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_associations::ListAssociationsError::ConflictException(inner) => Error::ConflictException(inner),
@@ -1295,6 +1294,7 @@ impl From<crate::operation::list_associations::ListAssociationsError> for Error 
             crate::operation::list_associations::ListAssociationsError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::list_associations::ListAssociationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_associations::ListAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1528,7 +1528,6 @@ impl From<crate::operation::list_private_connections::ListPrivateConnectionsErro
             crate::operation::list_private_connections::ListPrivateConnectionsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::operation::list_private_connections::ListPrivateConnectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_private_connections::ListPrivateConnectionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_private_connections::ListPrivateConnectionsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_private_connections::ListPrivateConnectionsError::ContentSizeExceededException(inner) => {
@@ -1543,6 +1542,7 @@ impl From<crate::operation::list_private_connections::ListPrivateConnectionsErro
             crate::operation::list_private_connections::ListPrivateConnectionsError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::list_private_connections::ListPrivateConnectionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_private_connections::ListPrivateConnectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1603,7 +1603,6 @@ impl From<crate::operation::list_services::ListServicesError> for Error {
     fn from(err: crate::operation::list_services::ListServicesError) -> Self {
         match err {
             crate::operation::list_services::ListServicesError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::list_services::ListServicesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_services::ListServicesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_services::ListServicesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_services::ListServicesError::ConflictException(inner) => Error::ConflictException(inner),
@@ -1611,6 +1610,7 @@ impl From<crate::operation::list_services::ListServicesError> for Error {
             crate::operation::list_services::ListServicesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_services::ListServicesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_services::ListServicesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_services::ListServicesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_services::ListServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1704,13 +1704,13 @@ impl From<crate::operation::list_webhooks::ListWebhooksError> for Error {
         match err {
             crate::operation::list_webhooks::ListWebhooksError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_webhooks::ListWebhooksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_webhooks::ListWebhooksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
             crate::operation::list_webhooks::ListWebhooksError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_webhooks::ListWebhooksError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_webhooks::ListWebhooksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_webhooks::ListWebhooksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1859,7 +1859,6 @@ impl From<crate::operation::update_agent_space::UpdateAgentSpaceError> for Error
             crate::operation::update_agent_space::UpdateAgentSpaceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_agent_space::UpdateAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::ContentSizeExceededException(inner) => {
@@ -1869,6 +1868,7 @@ impl From<crate::operation::update_agent_space::UpdateAgentSpaceError> for Error
             crate::operation::update_agent_space::UpdateAgentSpaceError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::update_agent_space::UpdateAgentSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_agent_space::UpdateAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1996,7 +1996,6 @@ impl From<crate::operation::update_association::UpdateAssociationError> for Erro
         match err {
             crate::operation::update_association::UpdateAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_association::UpdateAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::operation::update_association::UpdateAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_association::UpdateAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_association::UpdateAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_association::UpdateAssociationError::ConflictException(inner) => Error::ConflictException(inner),
@@ -2007,6 +2006,7 @@ impl From<crate::operation::update_association::UpdateAssociationError> for Erro
             crate::operation::update_association::UpdateAssociationError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::update_association::UpdateAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_association::UpdateAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -2105,9 +2105,6 @@ impl From<crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdp
             crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -2125,6 +2122,9 @@ impl From<crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdp
             }
             crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::update_operator_app_idp_config::UpdateOperatorAppIdpConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2167,9 +2167,6 @@ impl From<crate::operation::update_private_connection_certificate::UpdatePrivate
             crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -2185,6 +2182,9 @@ impl From<crate::operation::update_private_connection_certificate::UpdatePrivate
             crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::ServiceQuotaExceededException(
                 inner,
             ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::update_private_connection_certificate::UpdatePrivateConnectionCertificateError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -2287,9 +2287,6 @@ impl From<crate::operation::validate_aws_associations::ValidateAwsAssociationsEr
             crate::operation::validate_aws_associations::ValidateAwsAssociationsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::operation::validate_aws_associations::ValidateAwsAssociationsError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
             crate::operation::validate_aws_associations::ValidateAwsAssociationsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -2305,6 +2302,9 @@ impl From<crate::operation::validate_aws_associations::ValidateAwsAssociationsEr
             }
             crate::operation::validate_aws_associations::ValidateAwsAssociationsError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::validate_aws_associations::ValidateAwsAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::validate_aws_associations::ValidateAwsAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
         }

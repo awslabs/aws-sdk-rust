@@ -190,6 +190,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDimensionV
                 captured.insert("SearchString", value);
             }
         }
+        if requested.should_capture("DimensionKey") {
+            if let ::std::option::Option::Some(value) = input.dimension_key.as_deref() {
+                captured.insert("DimensionKey", value);
+            }
+        }
         if requested.should_capture("BillingViewArn") {
             if let ::std::option::Option::Some(value) = input.billing_view_arn.as_deref() {
                 captured.insert("BillingViewArn", value);

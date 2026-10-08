@@ -3192,6 +3192,18 @@ pub(crate) fn row_filter_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn s3_files_location_correct_errors(
+    mut builder: crate::types::builders::S3FilesLocationBuilder,
+) -> crate::types::builders::S3FilesLocationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.file_list.is_none() {
+        builder.file_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_properties_output_correct_errors(
     mut builder: crate::types::builders::S3PropertiesOutputBuilder,
 ) -> crate::types::builders::S3PropertiesOutputBuilder {
@@ -3728,6 +3740,13 @@ pub(crate) fn relational_filter_configuration_correct_errors(
 ) -> crate::types::builders::RelationalFilterConfigurationBuilder {
     if builder.database_name.is_none() {
         builder.database_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_file_correct_errors(mut builder: crate::types::builders::S3FileBuilder) -> crate::types::builders::S3FileBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }

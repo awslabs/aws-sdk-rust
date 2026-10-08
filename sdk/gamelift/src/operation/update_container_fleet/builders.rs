@@ -24,7 +24,7 @@ impl crate::operation::update_container_fleet::builders::UpdateContainerFleetInp
 ///
 /// <p><b>This API works with the following fleet types:</b> Container</p>
 /// <p>Updates the properties of a managed container fleet. Depending on the properties being updated, this operation might initiate a fleet deployment. You can track deployments for a fleet using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetDeployment.html</a>.</p><note>
-/// <p>A managed fleet's runtime environment, which depends on the fleet's Amazon Machine Image {AMI} version, can't be updated. You must create a new fleet. As a best practice, we recommend replacing your managed fleets every 30 days to maintain a secure and up-to-date runtime environment for your hosted game servers. For guidance, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html"> Security best practices for Amazon GameLift Servers</a>.</p>
+/// <p>A managed fleet's runtime environment, which depends on the fleet's Amazon Machine Image (AMI) version, can't be updated. You must create a new fleet. As a best practice, we recommend replacing your managed fleets every 30 days to maintain a secure and up-to-date runtime environment for your hosted game servers. For guidance, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html"> Security best practices for Amazon GameLift Servers</a>.</p>
 /// </note>
 /// <p><b>Request options</b></p>
 /// <p>As with CreateContainerFleet, many fleet properties use common defaults or are calculated based on the fleet's container group definitions.</p>
@@ -50,7 +50,7 @@ impl crate::operation::update_container_fleet::builders::UpdateContainerFleetInp
 /// <p><code>LogConfiguration</code></p></li>
 /// </ul>
 /// <p><b>Results</b></p>
-/// <p>If successful, this operation updates the container fleet resource, and might initiate a new deployment of fleet resources using the deployment configuration provided. A deployment replaces existing fleet instances with new instances that are deployed with the updated fleet properties. The fleet is placed in <code>UPDATING</code> status until the deployment is complete, then return to <code>ACTIVE</code>.</p>
+/// <p>If successful, this operation updates the container fleet resource, and might initiate a new deployment of fleet resources using the deployment configuration provided. A deployment replaces existing fleet instances with new instances that are deployed with the updated fleet properties. The fleet is placed in <code>UPDATING</code> status until the deployment is complete, then returns to <code>ACTIVE</code>.</p>
 /// <p>You can have only one update deployment active at a time for a fleet. If a second update request initiates a deployment while another deployment is in progress, the first deployment is cancelled.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContainerFleetFluentBuilder {

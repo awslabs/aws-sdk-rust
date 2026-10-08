@@ -16,6 +16,8 @@ pub struct GitLabConfiguration {
         since = "2026-08-04"
     )]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the release management association that this project maps to for automatic verification testing.</p>
+    pub release_management_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GitLabConfiguration {
     /// <p>GitLab numeric project ID.</p>
@@ -40,6 +42,10 @@ impl GitLabConfiguration {
     pub fn runtime_role_arn(&self) -> ::std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
+    /// <p>The identifier of the release management association that this project maps to for automatic verification testing.</p>
+    pub fn release_management_association_id(&self) -> ::std::option::Option<&str> {
+        self.release_management_association_id.as_deref()
+    }
 }
 impl GitLabConfiguration {
     /// Creates a new builder-style object to manufacture [`GitLabConfiguration`](crate::types::GitLabConfiguration).
@@ -56,6 +62,7 @@ pub struct GitLabConfigurationBuilder {
     pub(crate) project_path: ::std::option::Option<::std::string::String>,
     pub(crate) instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) release_management_association_id: ::std::option::Option<::std::string::String>,
 }
 impl GitLabConfigurationBuilder {
     /// <p>GitLab numeric project ID.</p>
@@ -128,6 +135,20 @@ impl GitLabConfigurationBuilder {
     pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_role_arn
     }
+    /// <p>The identifier of the release management association that this project maps to for automatic verification testing.</p>
+    pub fn release_management_association_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.release_management_association_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the release management association that this project maps to for automatic verification testing.</p>
+    pub fn set_release_management_association_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.release_management_association_id = input;
+        self
+    }
+    /// <p>The identifier of the release management association that this project maps to for automatic verification testing.</p>
+    pub fn get_release_management_association_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.release_management_association_id
+    }
     /// Consumes the builder and constructs a [`GitLabConfiguration`](crate::types::GitLabConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`project_id`](crate::types::builders::GitLabConfigurationBuilder::project_id)
@@ -148,6 +169,7 @@ impl GitLabConfigurationBuilder {
             })?,
             instance_identifier: self.instance_identifier,
             runtime_role_arn: self.runtime_role_arn,
+            release_management_association_id: self.release_management_association_id,
         })
     }
 }

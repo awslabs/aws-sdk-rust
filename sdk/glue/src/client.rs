@@ -505,6 +505,10 @@ mod get_session_endpoint;
 
 mod get_statement;
 
+mod get_system_logs_for_job_run;
+
+mod get_system_logs_for_session;
+
 mod get_table;
 
 mod get_table_optimizer;

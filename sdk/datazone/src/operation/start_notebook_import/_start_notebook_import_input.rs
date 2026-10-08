@@ -7,12 +7,14 @@ pub struct StartNotebookImportInput {
     pub domain_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the project that will own the imported notebook.</p>
     pub owning_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub source_location: ::std::option::Option<crate::types::SourceLocation>,
     /// <p>The name of the imported notebook. The name must be between 1 and 256 characters.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the imported notebook.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -25,7 +27,7 @@ impl StartNotebookImportInput {
     pub fn owning_project_identifier(&self) -> ::std::option::Option<&str> {
         self.owning_project_identifier.as_deref()
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn source_location(&self) -> ::std::option::Option<&crate::types::SourceLocation> {
         self.source_location.as_ref()
     }
@@ -36,6 +38,10 @@ impl StartNotebookImportInput {
     /// <p>The description of the imported notebook.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -50,6 +56,7 @@ impl ::std::fmt::Debug for StartNotebookImportInput {
         formatter.field("source_location", &self.source_location);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct StartNotebookImportInputBuilder {
     pub(crate) source_location: ::std::option::Option<crate::types::SourceLocation>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl StartNotebookImportInputBuilder {
@@ -103,18 +111,18 @@ impl StartNotebookImportInputBuilder {
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.owning_project_identifier
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     /// This field is required.
     pub fn source_location(mut self, input: crate::types::SourceLocation) -> Self {
         self.source_location = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn set_source_location(mut self, input: ::std::option::Option<crate::types::SourceLocation>) -> Self {
         self.source_location = input;
         self
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn get_source_location(&self) -> &::std::option::Option<crate::types::SourceLocation> {
         &self.source_location
     }
@@ -147,6 +155,20 @@ impl StartNotebookImportInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -172,6 +194,7 @@ impl StartNotebookImportInputBuilder {
             source_location: self.source_location,
             name: self.name,
             description: self.description,
+            r#type: self.r#type,
             client_token: self.client_token,
         })
     }
@@ -184,6 +207,7 @@ impl ::std::fmt::Debug for StartNotebookImportInputBuilder {
         formatter.field("source_location", &self.source_location);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

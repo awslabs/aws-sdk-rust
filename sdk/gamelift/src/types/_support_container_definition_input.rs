@@ -9,7 +9,6 @@ pub struct SupportContainerDefinitionInput {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
     pub container_name: ::std::option::Option<::std::string::String>,
     /// <p>Establishes dependencies between this container and the status of other containers in the same container group. A container can have dependencies on multiple different containers.</p>
-    /// <p>.</p>
     /// <p>You can use dependencies to establish a startup/shutdown sequence across the container group. For example, you might specify that <i>ContainerB</i> has a <code>START</code> dependency on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until after <i>ContainerA</i> has started. This dependency is reversed on shutdown, which means that <i>ContainerB</i> must shut down before <i>ContainerA</i> can shut down.</p>
     pub depends_on: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>,
     /// <p>A mount point that binds a path inside the container to a file or directory on the host system and lets it access the file or directory.</p>
@@ -31,13 +30,13 @@ pub struct SupportContainerDefinitionInput {
     /// </ul>
     pub image_uri: ::std::option::Option<::std::string::String>,
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalMemoryLimitMebibytes</code></p>
     pub memory_hard_limit_mebibytes: ::std::option::Option<i32>,
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
-    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
+    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve vCPU units for this container, it shares the container group's total vCPU limit.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalVcpuLimit</p>
     pub vcpu: ::std::option::Option<f64>,
     /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
     pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
@@ -48,7 +47,6 @@ impl SupportContainerDefinitionInput {
         self.container_name.as_deref()
     }
     /// <p>Establishes dependencies between this container and the status of other containers in the same container group. A container can have dependencies on multiple different containers.</p>
-    /// <p>.</p>
     /// <p>You can use dependencies to establish a startup/shutdown sequence across the container group. For example, you might specify that <i>ContainerB</i> has a <code>START</code> dependency on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until after <i>ContainerA</i> has started. This dependency is reversed on shutdown, which means that <i>ContainerB</i> must shut down before <i>ContainerA</i> can shut down.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.depends_on.is_none()`.
@@ -88,17 +86,17 @@ impl SupportContainerDefinitionInput {
         self.image_uri.as_deref()
     }
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalMemoryLimitMebibytes</code></p>
     pub fn memory_hard_limit_mebibytes(&self) -> ::std::option::Option<i32> {
         self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn port_configuration(&self) -> ::std::option::Option<&crate::types::ContainerPortConfiguration> {
         self.port_configuration.as_ref()
     }
-    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
+    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve vCPU units for this container, it shares the container group's total vCPU limit.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalVcpuLimit</p>
     pub fn vcpu(&self) -> ::std::option::Option<f64> {
         self.vcpu
     }
@@ -151,7 +149,6 @@ impl SupportContainerDefinitionInputBuilder {
     /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
     ///
     /// <p>Establishes dependencies between this container and the status of other containers in the same container group. A container can have dependencies on multiple different containers.</p>
-    /// <p>.</p>
     /// <p>You can use dependencies to establish a startup/shutdown sequence across the container group. For example, you might specify that <i>ContainerB</i> has a <code>START</code> dependency on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until after <i>ContainerA</i> has started. This dependency is reversed on shutdown, which means that <i>ContainerB</i> must shut down before <i>ContainerA</i> can shut down.</p>
     pub fn depends_on(mut self, input: crate::types::ContainerDependency) -> Self {
         let mut v = self.depends_on.unwrap_or_default();
@@ -160,14 +157,12 @@ impl SupportContainerDefinitionInputBuilder {
         self
     }
     /// <p>Establishes dependencies between this container and the status of other containers in the same container group. A container can have dependencies on multiple different containers.</p>
-    /// <p>.</p>
     /// <p>You can use dependencies to establish a startup/shutdown sequence across the container group. For example, you might specify that <i>ContainerB</i> has a <code>START</code> dependency on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until after <i>ContainerA</i> has started. This dependency is reversed on shutdown, which means that <i>ContainerB</i> must shut down before <i>ContainerA</i> can shut down.</p>
     pub fn set_depends_on(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>>) -> Self {
         self.depends_on = input;
         self
     }
     /// <p>Establishes dependencies between this container and the status of other containers in the same container group. A container can have dependencies on multiple different containers.</p>
-    /// <p>.</p>
     /// <p>You can use dependencies to establish a startup/shutdown sequence across the container group. For example, you might specify that <i>ContainerB</i> has a <code>START</code> dependency on <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start until after <i>ContainerA</i> has started. This dependency is reversed on shutdown, which means that <i>ContainerB</i> must shut down before <i>ContainerA</i> can shut down.</p>
     pub fn get_depends_on(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerDependency>> {
         &self.depends_on
@@ -280,53 +275,53 @@ impl SupportContainerDefinitionInputBuilder {
         &self.image_uri
     }
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalMemoryLimitMebibytes</code></p>
     pub fn memory_hard_limit_mebibytes(mut self, input: i32) -> Self {
         self.memory_hard_limit_mebibytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalMemoryLimitMebibytes</code></p>
     pub fn set_memory_hard_limit_mebibytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_hard_limit_mebibytes = input;
         self
     }
     /// <p>A specified amount of memory (in MiB) to reserve for this container. If you don't specify a container-specific memory limit, the container shares the container group's total memory allocation.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code></code></p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalMemoryLimitMebibytes</code></p>
     pub fn get_memory_hard_limit_mebibytes(&self) -> &::std::option::Option<i32> {
         &self.memory_hard_limit_mebibytes
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn port_configuration(mut self, input: crate::types::ContainerPortConfiguration) -> Self {
         self.port_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn set_port_configuration(mut self, input: ::std::option::Option<crate::types::ContainerPortConfiguration>) -> Self {
         self.port_configuration = input;
         self
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn get_port_configuration(&self) -> &::std::option::Option<crate::types::ContainerPortConfiguration> {
         &self.port_configuration
     }
-    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
+    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve vCPU units for this container, it shares the container group's total vCPU limit.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalVcpuLimit</p>
     pub fn vcpu(mut self, input: f64) -> Self {
         self.vcpu = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
+    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve vCPU units for this container, it shares the container group's total vCPU limit.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalVcpuLimit</p>
     pub fn set_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
         self.vcpu = input;
         self
     }
-    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve CPU units for this container, it shares the container group's total vCPU limit.</p>
-    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalCpuLimit</p>
+    /// <p>The number of vCPU units to reserve for this container. The container can use more resources when needed, if available. If you don't reserve vCPU units for this container, it shares the container group's total vCPU limit.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> TotalVcpuLimit</p>
     pub fn get_vcpu(&self) -> &::std::option::Option<f64> {
         &self.vcpu
     }

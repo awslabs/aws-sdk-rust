@@ -404,6 +404,15 @@ pub(crate) fn impact_correct_errors(mut builder: crate::types::builders::ImpactB
     builder
 }
 
+pub(crate) fn product_attribute_values_correct_errors(
+    mut builder: crate::types::builders::ProductAttributeValuesBuilder,
+) -> crate::types::builders::ProductAttributeValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn cost_category_split_charge_rule_parameter_correct_errors(
     mut builder: crate::types::builders::CostCategorySplitChargeRuleParameterBuilder,
 ) -> crate::types::builders::CostCategorySplitChargeRuleParameterBuilder {

@@ -73,6 +73,8 @@ pub use crate::types::_tag_values::TagValues;
 
 pub use crate::types::_cost_category_values::CostCategoryValues;
 
+pub use crate::types::_product_attribute_values::ProductAttributeValues;
+
 pub use crate::types::_metric::Metric;
 
 pub use crate::types::_health_status_value::HealthStatusValue;
@@ -162,6 +164,8 @@ mod _notification_state;
 mod _notification_type;
 
 mod _notification_with_subscribers;
+
+mod _product_attribute_values;
 
 mod _resource_tag;
 

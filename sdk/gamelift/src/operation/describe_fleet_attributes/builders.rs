@@ -33,7 +33,7 @@ impl crate::operation::describe_fleet_attributes::builders::DescribeFleetAttribu
 /// </ul>
 /// <p>When requesting attributes for multiple fleets, use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, a <code>FleetAttributes</code> object is returned for each fleet requested, unless the fleet identifier is not found.</p><note>
-/// <p>Some API operations limit the number of fleet IDs that allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p>
+/// <p>Some API operations limit the number of fleet IDs that are allowed in one request. If a request exceeds this limit, the request fails and the error message contains the maximum allowed number.</p>
 /// </note>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift Servers fleets</a></p>

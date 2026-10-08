@@ -40,7 +40,8 @@ pub struct JobRun {
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The job run total execution duration in seconds. This field is only available for job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code> state.</p>
     pub total_execution_duration_seconds: ::std::option::Option<i32>,
-    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
+    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If you didn't specify a timeout, this value defaults to 720 minutes.</p>
+    /// <p>For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon EMR release 7.11.</p>
     pub execution_timeout_minutes: ::std::option::Option<i64>,
     /// <p>The aggregate vCPU, memory, and storage that Amazon Web Services has billed for the job run. The billed resources include a 1-minute minimum usage for workers, plus additional storage over 20 GB per worker. Note that billed resources do not include usage for idle pre-initialized workers.</p>
     pub billed_resource_utilization: ::std::option::Option<crate::types::ResourceUtilization>,
@@ -145,7 +146,8 @@ impl JobRun {
     pub fn total_execution_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.total_execution_duration_seconds
     }
-    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
+    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If you didn't specify a timeout, this value defaults to 720 minutes.</p>
+    /// <p>For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon EMR release 7.11.</p>
     pub fn execution_timeout_minutes(&self) -> ::std::option::Option<i64> {
         self.execution_timeout_minutes
     }
@@ -509,17 +511,20 @@ impl JobRunBuilder {
     pub fn get_total_execution_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.total_execution_duration_seconds
     }
-    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
+    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If you didn't specify a timeout, this value defaults to 720 minutes.</p>
+    /// <p>For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon EMR release 7.11.</p>
     pub fn execution_timeout_minutes(mut self, input: i64) -> Self {
         self.execution_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
+    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If you didn't specify a timeout, this value defaults to 720 minutes.</p>
+    /// <p>For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon EMR release 7.11.</p>
     pub fn set_execution_timeout_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_timeout_minutes = input;
         self
     }
-    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout was specified, then it returns the default timeout of 720 minutes.</p>
+    /// <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If you didn't specify a timeout, this value defaults to 720 minutes.</p>
+    /// <p>For BATCH mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon EMR release 7.11.</p>
     pub fn get_execution_timeout_minutes(&self) -> &::std::option::Option<i64> {
         &self.execution_timeout_minutes
     }

@@ -577,6 +577,8 @@ pub use crate::types::_search_types_result_item::SearchTypesResultItem;
 
 pub use crate::types::_user_profile_summary::UserProfileSummary;
 
+pub use crate::types::_s3_files_location::S3FilesLocation;
+
 pub use crate::types::_athena_properties_patch::AthenaPropertiesPatch;
 
 pub use crate::types::_glue_properties_patch::GluePropertiesPatch;
@@ -840,6 +842,8 @@ pub use crate::types::_asset_listing_item_additional_attributes::AssetListingIte
 pub use crate::types::_data_product_listing_item_additional_attributes::DataProductListingItemAdditionalAttributes;
 
 pub use crate::types::_aggregation_output_item::AggregationOutputItem;
+
+pub use crate::types::_s3_file::S3File;
 
 pub use crate::types::_authentication_configuration_patch::AuthenticationConfigurationPatch;
 
@@ -1644,6 +1648,10 @@ mod _rule_type;
 mod _run_statistics_for_assets;
 
 mod _s3_destination;
+
+mod _s3_file;
+
+mod _s3_files_location;
 
 mod _s3_permission;
 

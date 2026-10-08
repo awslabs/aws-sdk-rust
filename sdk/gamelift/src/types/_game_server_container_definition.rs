@@ -25,6 +25,10 @@ pub struct GameServerContainerDefinition {
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
     pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub vcpu: ::std::option::Option<f64>,
 }
 impl GameServerContainerDefinition {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -69,6 +73,12 @@ impl GameServerContainerDefinition {
     pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
         self.linux_capabilities.as_ref()
     }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn vcpu(&self) -> ::std::option::Option<f64> {
+        self.vcpu
+    }
 }
 impl GameServerContainerDefinition {
     /// Creates a new builder-style object to manufacture [`GameServerContainerDefinition`](crate::types::GameServerContainerDefinition).
@@ -90,6 +100,7 @@ pub struct GameServerContainerDefinitionBuilder {
     pub(crate) resolved_image_digest: ::std::option::Option<::std::string::String>,
     pub(crate) server_sdk_version: ::std::option::Option<::std::string::String>,
     pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
+    pub(crate) vcpu: ::std::option::Option<f64>,
 }
 impl GameServerContainerDefinitionBuilder {
     /// <p>The container definition identifier. Container names are unique within a container group definition.</p>
@@ -236,6 +247,26 @@ impl GameServerContainerDefinitionBuilder {
     pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
         &self.linux_capabilities
     }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn vcpu(mut self, input: f64) -> Self {
+        self.vcpu = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn set_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.vcpu = input;
+        self
+    }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn get_vcpu(&self) -> &::std::option::Option<f64> {
+        &self.vcpu
+    }
     /// Consumes the builder and constructs a [`GameServerContainerDefinition`](crate::types::GameServerContainerDefinition).
     pub fn build(self) -> crate::types::GameServerContainerDefinition {
         crate::types::GameServerContainerDefinition {
@@ -248,6 +279,7 @@ impl GameServerContainerDefinitionBuilder {
             resolved_image_digest: self.resolved_image_digest,
             server_sdk_version: self.server_sdk_version,
             linux_capabilities: self.linux_capabilities,
+            vcpu: self.vcpu,
         }
     }
 }

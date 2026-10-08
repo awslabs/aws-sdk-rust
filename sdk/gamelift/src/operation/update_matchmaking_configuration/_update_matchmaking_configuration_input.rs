@@ -10,7 +10,7 @@ pub struct UpdateMatchmakingConfigurationInput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub game_session_queue_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.</p>
     pub request_timeout_seconds: ::std::option::Option<i32>,
@@ -60,7 +60,7 @@ impl UpdateMatchmakingConfigurationInput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_session_queue_arns.is_none()`.
     pub fn game_session_queue_arns(&self) -> &[::std::string::String] {
@@ -209,7 +209,7 @@ impl UpdateMatchmakingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn game_session_queue_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.game_session_queue_arns.unwrap_or_default();
         v.push(input.into());
@@ -219,7 +219,7 @@ impl UpdateMatchmakingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn set_game_session_queue_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.game_session_queue_arns = input;
         self
@@ -227,7 +227,7 @@ impl UpdateMatchmakingConfigurationInputBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn get_game_session_queue_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.game_session_queue_arns
     }

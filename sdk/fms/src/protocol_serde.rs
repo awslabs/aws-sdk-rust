@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_associate_admin_account;
 
 pub(crate) mod shape_associate_third_party_firewall;
@@ -109,14 +101,6 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_associate_admin_account_input;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_associate_third_party_firewall_input;
 
 pub(crate) mod shape_batch_associate_resource_input;
@@ -125,19 +109,27 @@ pub(crate) mod shape_batch_disassociate_resource_input;
 
 pub(crate) mod shape_delete_apps_list_input;
 
+pub(crate) mod shape_delete_notification_channel_input;
+
 pub(crate) mod shape_delete_policy_input;
 
 pub(crate) mod shape_delete_protocols_list_input;
 
 pub(crate) mod shape_delete_resource_set_input;
 
+pub(crate) mod shape_disassociate_admin_account_input;
+
 pub(crate) mod shape_disassociate_third_party_firewall_input;
+
+pub(crate) mod shape_get_admin_account_input;
 
 pub(crate) mod shape_get_admin_scope_input;
 
 pub(crate) mod shape_get_apps_list_input;
 
 pub(crate) mod shape_get_compliance_detail_input;
+
+pub(crate) mod shape_get_notification_channel_input;
 
 pub(crate) mod shape_get_policy_input;
 

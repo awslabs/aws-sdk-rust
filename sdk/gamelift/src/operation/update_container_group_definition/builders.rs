@@ -37,10 +37,12 @@ impl crate::operation::update_container_group_definition::builders::UpdateContai
 /// <p>Add or change a support container definition. Provide a complete set of container definitions, including the updated definition.</p></li>
 /// <li>
 /// <p>Remove a support container definition. Provide a complete set of container definitions, excluding the definition to remove. If the container group has only one support container definition, provide an empty set.</p></li>
+/// <li>
+/// <p>Remove the total vCPU limit from a game server container group so that its containers can use up to the instance's available vCPU. Set <code>RemoveAttributes</code> to <code>TOTAL_VCPU_LIMIT</code>. The game server container must have a <code>Vcpu</code> value, because a game server container group needs either a total vCPU limit or a game server <code>Vcpu</code> value.</p></li>
 /// </ul>
 /// <p><b>Results:</b></p>
 /// <p>If successful, this operation returns the complete properties of the new container group definition version.</p>
-/// <p>If the container group definition version is used in an active fleets, the update automatically initiates a new fleet deployment of the new version. You can track a fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.</p>
+/// <p>If the container group definition version is used in an active fleet, the update automatically initiates a new fleet deployment of the new version. You can track a fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContainerGroupDefinitionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -190,17 +192,20 @@ impl UpdateContainerGroupDefinitionFluentBuilder {
     pub fn get_total_memory_limit_mebibytes(&self) -> &::std::option::Option<i32> {
         self.inner.get_total_memory_limit_mebibytes()
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If the container group has a total vCPU limit, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If the container group doesn't have a total vCPU limit, its containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance. To remove the total vCPU limit, omit this parameter and set <code>RemoveAttributes</code> to <code>TOTAL_VCPU_LIMIT</code>.</p>
     pub fn total_vcpu_limit(mut self, input: f64) -> Self {
         self.inner = self.inner.total_vcpu_limit(input);
         self
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If the container group has a total vCPU limit, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If the container group doesn't have a total vCPU limit, its containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance. To remove the total vCPU limit, omit this parameter and set <code>RemoveAttributes</code> to <code>TOTAL_VCPU_LIMIT</code>.</p>
     pub fn set_total_vcpu_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_total_vcpu_limit(input);
         self
     }
-    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share this memory. If you specify vCPU limits for individual containers, the total value must be equal to or greater than the sum of the CPU limits for all containers in the group.</p>
+    /// <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal to 1024 CPU units). All containers in the group share these resources. If you set vCPU reservations for individual containers, the total value must be equal to or greater than the sum of the <code>Vcpu</code> values for all containers in the group.</p>
+    /// <p>For a game server container group, Amazon GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value for the game server container. If the container group has a total vCPU limit, Amazon GameLift Servers uses this value to calculate how many game server container groups fit on an instance. If the container group doesn't have a total vCPU limit, its containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values to calculate how many game server container groups fit on an instance. To remove the total vCPU limit, omit this parameter and set <code>RemoveAttributes</code> to <code>TOTAL_VCPU_LIMIT</code>.</p>
     pub fn get_total_vcpu_limit(&self) -> &::std::option::Option<f64> {
         self.inner.get_total_vcpu_limit()
     }
@@ -251,5 +256,27 @@ impl UpdateContainerGroupDefinitionFluentBuilder {
     /// </note>
     pub fn get_operating_system(&self) -> &::std::option::Option<crate::types::ContainerOperatingSystem> {
         self.inner.get_operating_system()
+    }
+    ///
+    /// Appends an item to `RemoveAttributes`.
+    ///
+    /// To override the contents of this collection use [`set_remove_attributes`](Self::set_remove_attributes).
+    ///
+    /// <p>If set, this update removes the container group's total vCPU limit, and the group's containers can use up to the instance's available vCPU. You can't remove the total vCPU limit from a per-instance container group. A game server container group needs either a total vCPU limit or a <code>Vcpu</code> value for the game server container. You can't set <code>TotalVcpuLimit</code> in the same request.</p>
+    pub fn remove_attributes(mut self, input: crate::types::ContainerGroupDefinitionRemoveAttribute) -> Self {
+        self.inner = self.inner.remove_attributes(input);
+        self
+    }
+    /// <p>If set, this update removes the container group's total vCPU limit, and the group's containers can use up to the instance's available vCPU. You can't remove the total vCPU limit from a per-instance container group. A game server container group needs either a total vCPU limit or a <code>Vcpu</code> value for the game server container. You can't set <code>TotalVcpuLimit</code> in the same request.</p>
+    pub fn set_remove_attributes(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinitionRemoveAttribute>>,
+    ) -> Self {
+        self.inner = self.inner.set_remove_attributes(input);
+        self
+    }
+    /// <p>If set, this update removes the container group's total vCPU limit, and the group's containers can use up to the instance's available vCPU. You can't remove the total vCPU limit from a per-instance container group. A game server container group needs either a total vCPU limit or a <code>Vcpu</code> value for the game server container. You can't set <code>TotalVcpuLimit</code> in the same request.</p>
+    pub fn get_remove_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerGroupDefinitionRemoveAttribute>> {
+        self.inner.get_remove_attributes()
     }
 }

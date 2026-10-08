@@ -15,6 +15,7 @@
 ///     OrgFeatureAdditionalConfiguration::Ec2AgentManagement => { /* ... */ },
 ///     OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement => { /* ... */ },
 ///     OrgFeatureAdditionalConfiguration::EksAddonManagement => { /* ... */ },
+///     OrgFeatureAdditionalConfiguration::RdsDataRisk => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum OrgFeatureAdditionalConfiguration {
     EcsFargateAgentManagement,
     #[allow(missing_docs)] // documentation missing in model
     EksAddonManagement,
+    /// <p>RDS Data Activity Monitoring, which monitors data activity on supported Amazon RDS database engines to detect potentially unauthorized access to your data.</p>
+    RdsDataRisk,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for OrgFeatureAdditionalConfiguration {
             "EC2_AGENT_MANAGEMENT" => OrgFeatureAdditionalConfiguration::Ec2AgentManagement,
             "ECS_FARGATE_AGENT_MANAGEMENT" => OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement,
             "EKS_ADDON_MANAGEMENT" => OrgFeatureAdditionalConfiguration::EksAddonManagement,
+            "RDS_DATA_RISK" => OrgFeatureAdditionalConfiguration::RdsDataRisk,
             other => OrgFeatureAdditionalConfiguration::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,18 @@ impl OrgFeatureAdditionalConfiguration {
             OrgFeatureAdditionalConfiguration::Ec2AgentManagement => "EC2_AGENT_MANAGEMENT",
             OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement => "ECS_FARGATE_AGENT_MANAGEMENT",
             OrgFeatureAdditionalConfiguration::EksAddonManagement => "EKS_ADDON_MANAGEMENT",
+            OrgFeatureAdditionalConfiguration::RdsDataRisk => "RDS_DATA_RISK",
             OrgFeatureAdditionalConfiguration::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2_AGENT_MANAGEMENT", "ECS_FARGATE_AGENT_MANAGEMENT", "EKS_ADDON_MANAGEMENT"]
+        &[
+            "EC2_AGENT_MANAGEMENT",
+            "ECS_FARGATE_AGENT_MANAGEMENT",
+            "EKS_ADDON_MANAGEMENT",
+            "RDS_DATA_RISK",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for OrgFeatureAdditionalConfiguration {
@@ -108,6 +118,7 @@ impl ::std::fmt::Display for OrgFeatureAdditionalConfiguration {
             OrgFeatureAdditionalConfiguration::Ec2AgentManagement => write!(f, "EC2_AGENT_MANAGEMENT"),
             OrgFeatureAdditionalConfiguration::EcsFargateAgentManagement => write!(f, "ECS_FARGATE_AGENT_MANAGEMENT"),
             OrgFeatureAdditionalConfiguration::EksAddonManagement => write!(f, "EKS_ADDON_MANAGEMENT"),
+            OrgFeatureAdditionalConfiguration::RdsDataRisk => write!(f, "RDS_DATA_RISK"),
             OrgFeatureAdditionalConfiguration::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -42,7 +42,7 @@ impl crate::operation::search_game_sessions::builders::SearchGameSessionsInputBu
 /// <li>
 /// <p><b>gameSessionName</b> -- Name assigned to a game session. Game session names do not need to be unique to a game session.</p></li>
 /// <li>
-/// <p><b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. The filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a> -- a <code>Key</code> and a string <code>Value</code> to search for the game sessions.</p>
+/// <p><b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. The filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty.html">GameProperty</a> -- a <code>Key</code> and a string <code>Value</code> to search for the game sessions.</p>
 /// <p>For example, to search for the above key-value pair, specify the following search filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property values are searched as strings.</p>
 /// <p>For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search game sessions by game property</a>.</p><note>
 /// <ul>

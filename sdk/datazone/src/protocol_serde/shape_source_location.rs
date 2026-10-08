@@ -42,6 +42,11 @@ where
                                 .transpose()?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3' cannot be null"))?,
                         )),
+                        "s3Files" => Some(crate::types::SourceLocation::S3Files(
+                            crate::protocol_serde::shape_s3_files_location::de_s3_files_location(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3Files' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::SourceLocation::Unknown)
@@ -76,6 +81,12 @@ pub fn ser_source_location(
     match input {
         crate::types::SourceLocation::S3(inner) => {
             object_6.key("s3").string(inner.as_str());
+        }
+        crate::types::SourceLocation::S3Files(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_6.key("s3Files").start_object();
+            crate::protocol_serde::shape_s3_files_location::ser_s3_files_location(&mut object_1, inner)?;
+            object_1.finish();
         }
         crate::types::SourceLocation::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

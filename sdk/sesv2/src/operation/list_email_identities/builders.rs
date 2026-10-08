@@ -119,12 +119,12 @@ impl ListEmailIdentitiesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by a substring of the identity name, by identity type, or by verification status.</p>
     pub fn filter(mut self, k: crate::types::IdentityFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v.into());
         self
     }
-    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by a substring of the identity name, by identity type, or by verification status.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::IdentityFilterKey, ::std::string::String>>,
@@ -132,7 +132,7 @@ impl ListEmailIdentitiesFluentBuilder {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>An object that contains filters to apply when listing email identities. You can filter by identity name, identity type, or verification status.</p>
+    /// <p>An object that contains filters to apply when listing email identities. You can filter by a substring of the identity name, by identity type, or by verification status.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::IdentityFilterKey, ::std::string::String>> {
         self.inner.get_filter()
     }

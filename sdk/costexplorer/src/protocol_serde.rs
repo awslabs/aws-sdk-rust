@@ -411,6 +411,8 @@ pub(crate) mod shape_generation_summary;
 
 pub(crate) mod shape_metrics_over_lookback_period;
 
+pub(crate) mod shape_product_attribute_values;
+
 pub(crate) mod shape_reservation_purchase_recommendation;
 
 pub(crate) mod shape_result_by_time;
@@ -530,6 +532,8 @@ pub(crate) mod shape_instance_details;
 pub(crate) mod shape_keys;
 
 pub(crate) mod shape_match_options;
+
+pub(crate) mod shape_product_attribute_value_list;
 
 pub(crate) mod shape_reserved_capacity_details;
 

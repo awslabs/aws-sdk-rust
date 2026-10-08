@@ -181,6 +181,8 @@ mod get_case_attachment_download_url;
 
 mod get_case_attachment_upload_url;
 
+mod get_finding_metrics;
+
 mod get_membership;
 
 mod list_case_edits;

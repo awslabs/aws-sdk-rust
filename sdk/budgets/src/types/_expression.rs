@@ -16,6 +16,8 @@ pub struct Expression {
     pub tags: ::std::option::Option<crate::types::TagValues>,
     /// <p>The filter that's based on CostCategoryValues.</p>
     pub cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
+    /// <p>The filter that limits results based on the values of specific product attributes.</p>
+    pub product_attributes: ::std::option::Option<crate::types::ProductAttributeValues>,
 }
 impl Expression {
     /// <p>Return results that match either Dimension object.</p>
@@ -46,6 +48,10 @@ impl Expression {
     pub fn cost_categories(&self) -> ::std::option::Option<&crate::types::CostCategoryValues> {
         self.cost_categories.as_ref()
     }
+    /// <p>The filter that limits results based on the values of specific product attributes.</p>
+    pub fn product_attributes(&self) -> ::std::option::Option<&crate::types::ProductAttributeValues> {
+        self.product_attributes.as_ref()
+    }
 }
 impl Expression {
     /// Creates a new builder-style object to manufacture [`Expression`](crate::types::Expression).
@@ -64,6 +70,7 @@ pub struct ExpressionBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::ExpressionDimensionValues>,
     pub(crate) tags: ::std::option::Option<crate::types::TagValues>,
     pub(crate) cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
+    pub(crate) product_attributes: ::std::option::Option<crate::types::ProductAttributeValues>,
 }
 impl ExpressionBuilder {
     /// Appends an item to `or`.
@@ -162,6 +169,20 @@ impl ExpressionBuilder {
     pub fn get_cost_categories(&self) -> &::std::option::Option<crate::types::CostCategoryValues> {
         &self.cost_categories
     }
+    /// <p>The filter that limits results based on the values of specific product attributes.</p>
+    pub fn product_attributes(mut self, input: crate::types::ProductAttributeValues) -> Self {
+        self.product_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter that limits results based on the values of specific product attributes.</p>
+    pub fn set_product_attributes(mut self, input: ::std::option::Option<crate::types::ProductAttributeValues>) -> Self {
+        self.product_attributes = input;
+        self
+    }
+    /// <p>The filter that limits results based on the values of specific product attributes.</p>
+    pub fn get_product_attributes(&self) -> &::std::option::Option<crate::types::ProductAttributeValues> {
+        &self.product_attributes
+    }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {
         crate::types::Expression {
@@ -171,6 +192,7 @@ impl ExpressionBuilder {
             dimensions: self.dimensions,
             tags: self.tags,
             cost_categories: self.cost_categories,
+            product_attributes: self.product_attributes,
         }
     }
 }

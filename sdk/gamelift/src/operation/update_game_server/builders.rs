@@ -27,7 +27,7 @@ impl crate::operation::update_game_server::builders::UpdateGameServerInputBuilde
 /// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p>
 /// <ul>
 /// <li>
-/// <p>To update the game server's utilization status from <code>AVAILABLE</code> (when the game server is available to be claimed) to <code>UTILIZED</code> (when the game server is currently hosting games). Identify the game server and game server group and specify the new utilization status. You can't change the status from to <code>UTILIZED</code> to <code>AVAILABLE</code> .</p></li>
+/// <p>To update the game server's utilization status from <code>AVAILABLE</code> (when the game server is available to be claimed) to <code>UTILIZED</code> (when the game server is currently hosting games). Identify the game server and game server group and specify the new utilization status. You can't change the status from <code>UTILIZED</code> to <code>AVAILABLE</code> .</p></li>
 /// <li>
 /// <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p></li>
 /// <li>
@@ -163,17 +163,17 @@ impl UpdateGameServerFluentBuilder {
     pub fn get_game_server_data(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_game_server_data()
     }
-    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
+    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
     pub fn utilization_status(mut self, input: crate::types::GameServerUtilizationStatus) -> Self {
         self.inner = self.inner.utilization_status(input);
         self
     }
-    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
+    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
     pub fn set_utilization_status(mut self, input: ::std::option::Option<crate::types::GameServerUtilizationStatus>) -> Self {
         self.inner = self.inner.set_utilization_status(input);
         self
     }
-    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change a the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
+    /// <p>Indicates if the game server is available or is currently hosting gameplay. You can update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>, but you can't change the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.</p>
     pub fn get_utilization_status(&self) -> &::std::option::Option<crate::types::GameServerUtilizationStatus> {
         self.inner.get_utilization_status()
     }

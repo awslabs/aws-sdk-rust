@@ -23,7 +23,7 @@ pub struct GameServerGroup {
     /// <p><code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server group. No Spot Instances are used, even when available, while this balancing strategy is in force.</p></li>
     /// </ul>
     pub balancing_strategy: ::std::option::Option<crate::types::BalancingStrategy>,
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion. An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub game_server_protection_policy: ::std::option::Option<crate::types::GameServerProtectionPolicy>,
     /// <p>A generated unique ID for the Amazon EC2 Auto Scaling group that is associated with this game server group.</p>
     pub auto_scaling_group_arn: ::std::option::Option<::std::string::String>,
@@ -85,7 +85,7 @@ impl GameServerGroup {
     pub fn balancing_strategy(&self) -> ::std::option::Option<&crate::types::BalancingStrategy> {
         self.balancing_strategy.as_ref()
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion. An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn game_server_protection_policy(&self) -> ::std::option::Option<&crate::types::GameServerProtectionPolicy> {
         self.game_server_protection_policy.as_ref()
     }
@@ -257,17 +257,17 @@ impl GameServerGroupBuilder {
     pub fn get_balancing_strategy(&self) -> &::std::option::Option<crate::types::BalancingStrategy> {
         &self.balancing_strategy
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion. An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn game_server_protection_policy(mut self, input: crate::types::GameServerProtectionPolicy) -> Self {
         self.game_server_protection_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion. An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn set_game_server_protection_policy(mut self, input: ::std::option::Option<crate::types::GameServerProtectionPolicy>) -> Self {
         self.game_server_protection_policy = input;
         self
     }
-    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion (see ). An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
+    /// <p>A flag that indicates whether instances in the game server group are protected from early termination. Unprotected instances that have active game servers running might be terminated during a scale-down event, causing players to be dropped from the game. Protected instances cannot be terminated while there are active game servers running except in the event of a forced game server group deletion. An exception to this is with Spot Instances, which can be terminated by Amazon Web Services regardless of protection status.</p>
     pub fn get_game_server_protection_policy(&self) -> &::std::option::Option<crate::types::GameServerProtectionPolicy> {
         &self.game_server_protection_policy
     }

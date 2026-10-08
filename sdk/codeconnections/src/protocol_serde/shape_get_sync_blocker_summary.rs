@@ -10,7 +10,7 @@ pub fn de_get_sync_blocker_summary_http_error(
     crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_get_sync_blocker_summary_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -41,7 +41,7 @@ pub fn de_get_sync_blocker_summary_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -56,7 +56,7 @@ pub fn de_get_sync_blocker_summary_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -71,7 +71,7 @@ pub fn de_get_sync_blocker_summary_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -86,7 +86,7 @@ pub fn de_get_sync_blocker_summary_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -123,49 +123,68 @@ pub fn de_get_sync_blocker_summary_http_response(
 pub fn ser_get_sync_blocker_summary_input(
     input: &crate::operation::get_sync_blocker_summary::GetSyncBlockerSummaryInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_sync_blocker_summary_input::ser_get_sync_blocker_summary_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_sync_blocker_summary_input::ser_get_sync_blocker_summary_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_get_sync_blocker_summary(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::get_sync_blocker_summary::builders::GetSyncBlockerSummaryOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_sync_blocker_summary::builders::GetSyncBlockerSummaryOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::get_sync_blocker_summary::builders::GetSyncBlockerSummaryOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::get_sync_blocker_summary::builders::GetSyncBlockerSummaryOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "SyncBlockerSummary" => builder.set_sync_blocker_summary(Some(
+                crate::protocol_serde::shape_sync_blocker_summary::de_sync_blocker_summary(decoder, depth + 1)?,
+            )),
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "SyncBlockerSummary" => {
-                    builder = builder.set_sync_blocker_summary(crate::protocol_serde::shape_sync_blocker_summary::de_sync_blocker_summary(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

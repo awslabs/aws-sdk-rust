@@ -14,6 +14,7 @@
 /// match groupdefinitiontype {
 ///     GroupDefinitionType::CostCategory => { /* ... */ },
 ///     GroupDefinitionType::Dimension => { /* ... */ },
+///     GroupDefinitionType::ProductAttribute => { /* ... */ },
 ///     GroupDefinitionType::Tag => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum GroupDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     Dimension,
     #[allow(missing_docs)] // documentation missing in model
+    ProductAttribute,
+    #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for GroupDefinitionType {
         match s {
             "COST_CATEGORY" => GroupDefinitionType::CostCategory,
             "DIMENSION" => GroupDefinitionType::Dimension,
+            "PRODUCT_ATTRIBUTE" => GroupDefinitionType::ProductAttribute,
             "TAG" => GroupDefinitionType::Tag,
             other => GroupDefinitionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl GroupDefinitionType {
         match self {
             GroupDefinitionType::CostCategory => "COST_CATEGORY",
             GroupDefinitionType::Dimension => "DIMENSION",
+            GroupDefinitionType::ProductAttribute => "PRODUCT_ATTRIBUTE",
             GroupDefinitionType::Tag => "TAG",
             GroupDefinitionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COST_CATEGORY", "DIMENSION", "TAG"]
+        &["COST_CATEGORY", "DIMENSION", "PRODUCT_ATTRIBUTE", "TAG"]
     }
 }
 impl ::std::convert::AsRef<str> for GroupDefinitionType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for GroupDefinitionType {
         match self {
             GroupDefinitionType::CostCategory => write!(f, "COST_CATEGORY"),
             GroupDefinitionType::Dimension => write!(f, "DIMENSION"),
+            GroupDefinitionType::ProductAttribute => write!(f, "PRODUCT_ATTRIBUTE"),
             GroupDefinitionType::Tag => write!(f, "TAG"),
             GroupDefinitionType::Unknown(value) => write!(f, "{value}"),
         }

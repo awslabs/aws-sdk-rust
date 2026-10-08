@@ -7,6 +7,8 @@ pub use crate::types::_verification_state::VerificationState;
 
 pub use crate::types::_workflow_update::WorkflowUpdate;
 
+pub use crate::types::_export_status::ExportStatus;
+
 pub use crate::types::_rule_status::RuleStatus;
 
 pub use crate::types::_automation_rules_finding_filters::AutomationRulesFindingFilters;
@@ -60,6 +62,16 @@ pub use crate::types::_cspm_provider_detail::CspmProviderDetail;
 pub use crate::types::_health_check::HealthCheck;
 
 pub use crate::types::_provider_detail::ProviderDetail;
+
+pub use crate::types::_export_data_type::ExportDataType;
+
+pub use crate::types::_export_output::ExportOutput;
+
+pub use crate::types::_export_scopes::ExportScopes;
+
+pub use crate::types::_export_destination::ExportDestination;
+
+pub use crate::types::_export_failure_code::ExportFailureCode;
 
 pub use crate::types::_aws_security_finding_identifier::AwsSecurityFindingIdentifier;
 
@@ -199,6 +211,10 @@ pub use crate::types::_jira_cloud_detail::JiraCloudDetail;
 
 pub use crate::types::_service_now_detail::ServiceNowDetail;
 
+pub use crate::types::_findings_output::FindingsOutput;
+
+pub use crate::types::_s3_export_destination::S3ExportDestination;
+
 pub use crate::types::_finding_history_record::FindingHistoryRecord;
 
 pub use crate::types::_sort_criterion::SortCriterion;
@@ -242,6 +258,8 @@ pub use crate::types::_configuration_policy_summary::ConfigurationPolicySummary;
 pub use crate::types::_cspm_connector_summary::CspmConnectorSummary;
 
 pub use crate::types::_connector_summary::ConnectorSummary;
+
+pub use crate::types::_export_summary::ExportSummary;
 
 pub use crate::types::_exposure_finding::ExposureFinding;
 
@@ -341,11 +359,13 @@ pub use crate::types::_health_issue::HealthIssue;
 
 pub use crate::types::_connector_auth_status::ConnectorAuthStatus;
 
+pub use crate::types::_findings_export_format::FindingsExportFormat;
+
+pub use crate::types::_aws_organization_scope::AwsOrganizationScope;
+
 pub use crate::types::_finding_history_update_source::FindingHistoryUpdateSource;
 
 pub use crate::types::_group_by_field::GroupByField;
-
-pub use crate::types::_aws_organization_scope::AwsOrganizationScope;
 
 pub use crate::types::_findings_trends_composite_filter::FindingsTrendsCompositeFilter;
 
@@ -392,6 +412,8 @@ pub use crate::types::_parameter_definition::ParameterDefinition;
 pub use crate::types::_cspm_provider_summary::CspmProviderSummary;
 
 pub use crate::types::_provider_summary::ProviderSummary;
+
+pub use crate::types::_export_output_summary::ExportOutputSummary;
 
 pub use crate::types::_exposure_severity::ExposureSeverity;
 
@@ -451,6 +473,8 @@ pub use crate::types::_integration_v2_type::IntegrationV2Type;
 
 pub use crate::types::_health_issue_code::HealthIssueCode;
 
+pub use crate::types::_findings_selectable_field::FindingsSelectableField;
+
 pub use crate::types::_finding_history_update_source_type::FindingHistoryUpdateSourceType;
 
 pub use crate::types::_finding_history_update::FindingHistoryUpdate;
@@ -478,6 +502,8 @@ pub use crate::types::_ai_details::AiDetails;
 pub use crate::types::_configuration_options::ConfigurationOptions;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2;
+
+pub use crate::types::_findings_output_summary::FindingsOutputSummary;
 
 pub use crate::types::_free_trial_status::FreeTrialStatus;
 
@@ -2953,6 +2979,22 @@ mod _enum_configuration_options;
 
 mod _enum_list_configuration_options;
 
+mod _export_data_type;
+
+mod _export_destination;
+
+mod _export_failure_code;
+
+mod _export_output;
+
+mod _export_output_summary;
+
+mod _export_scopes;
+
+mod _export_status;
+
+mod _export_summary;
+
 mod _exposure_finding;
 
 mod _exposure_impact;
@@ -2984,6 +3026,14 @@ mod _finding_provider_fields;
 mod _finding_provider_severity;
 
 mod _finding_scopes;
+
+mod _findings_export_format;
+
+mod _findings_output;
+
+mod _findings_output_summary;
+
+mod _findings_selectable_field;
 
 mod _findings_trends_composite_filter;
 
@@ -3352,6 +3402,8 @@ mod _rule_group_variables_port_sets_details;
 mod _rule_status;
 
 mod _rule_status_v2;
+
+mod _s3_export_destination;
 
 mod _scope_type;
 

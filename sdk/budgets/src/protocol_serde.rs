@@ -237,6 +237,8 @@ pub(crate) mod shape_expressions;
 
 pub(crate) mod shape_historical_options;
 
+pub(crate) mod shape_product_attribute_values;
+
 pub(crate) mod shape_tag_values;
 
 pub(crate) mod shape_groups;

@@ -9,6 +9,8 @@ pub struct GetResourceDashboardInput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource to access the dashboard for. Currently, only <code>Session</code> is supported.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
+    /// <p>Allows access to system profile logs for Lake Formation-enabled sessions. Default is false.</p>
+    pub access_system_profile_logs: ::std::option::Option<bool>,
 }
 impl GetResourceDashboardInput {
     /// <p>The ID of the application that the resource belongs to.</p>
@@ -22,6 +24,10 @@ impl GetResourceDashboardInput {
     /// <p>The type of resource to access the dashboard for. Currently, only <code>Session</code> is supported.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled sessions. Default is false.</p>
+    pub fn access_system_profile_logs(&self) -> ::std::option::Option<bool> {
+        self.access_system_profile_logs
     }
 }
 impl GetResourceDashboardInput {
@@ -38,6 +44,7 @@ pub struct GetResourceDashboardInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) access_system_profile_logs: ::std::option::Option<bool>,
 }
 impl GetResourceDashboardInputBuilder {
     /// <p>The ID of the application that the resource belongs to.</p>
@@ -85,6 +92,20 @@ impl GetResourceDashboardInputBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled sessions. Default is false.</p>
+    pub fn access_system_profile_logs(mut self, input: bool) -> Self {
+        self.access_system_profile_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled sessions. Default is false.</p>
+    pub fn set_access_system_profile_logs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.access_system_profile_logs = input;
+        self
+    }
+    /// <p>Allows access to system profile logs for Lake Formation-enabled sessions. Default is false.</p>
+    pub fn get_access_system_profile_logs(&self) -> &::std::option::Option<bool> {
+        &self.access_system_profile_logs
+    }
     /// Consumes the builder and constructs a [`GetResourceDashboardInput`](crate::operation::get_resource_dashboard::GetResourceDashboardInput).
     pub fn build(
         self,
@@ -94,6 +115,7 @@ impl GetResourceDashboardInputBuilder {
             application_id: self.application_id,
             resource_id: self.resource_id,
             resource_type: self.resource_type,
+            access_system_profile_logs: self.access_system_profile_logs,
         })
     }
 }

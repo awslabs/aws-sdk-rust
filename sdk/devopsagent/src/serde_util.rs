@@ -35,15 +35,6 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
-pub(crate) fn throttling_exception_correct_errors(
-    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
-) -> crate::types::error::builders::ThrottlingExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
@@ -74,6 +65,15 @@ pub(crate) fn content_size_exceeded_exception_correct_errors(
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn throttling_exception_correct_errors(
+    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
+) -> crate::types::error::builders::ThrottlingExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -1451,11 +1451,14 @@ pub(crate) fn registered_slack_service_details_correct_errors(
     builder
 }
 
-pub(crate) fn schedule_condition_correct_errors(
-    mut builder: crate::types::builders::ScheduleConditionBuilder,
-) -> crate::types::builders::ScheduleConditionBuilder {
-    if builder.expression.is_none() {
-        builder.expression = Some(Default::default())
+pub(crate) fn release_management_configuration_correct_errors(
+    mut builder: crate::types::builders::ReleaseManagementConfigurationBuilder,
+) -> crate::types::builders::ReleaseManagementConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.network_access.is_none() {
+        builder.network_access = Some(crate::types::NetworkAccessConfiguration::Unknown)
     }
     builder
 }
@@ -1526,11 +1529,30 @@ pub(crate) fn slack_transmission_target_correct_errors(
     builder
 }
 
+pub(crate) fn cron_schedule_correct_errors(mut builder: crate::types::builders::CronScheduleBuilder) -> crate::types::builders::CronScheduleBuilder {
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_tool_detail_correct_errors(
     mut builder: crate::types::builders::McpToolDetailBuilder,
 ) -> crate::types::builders::McpToolDetailBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn private_network_access_correct_errors(
+    mut builder: crate::types::builders::PrivateNetworkAccessBuilder,
+) -> crate::types::builders::PrivateNetworkAccessBuilder {
+    if builder.private_connection_name.is_none() {
+        builder.private_connection_name = Some(Default::default())
+    }
+    if builder.runtime_role_arn.is_none() {
+        builder.runtime_role_arn = Some(Default::default())
     }
     builder
 }
@@ -1542,11 +1564,44 @@ pub(crate) fn slack_channel_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn time_range_schedule_correct_errors(
+    mut builder: crate::types::builders::TimeRangeScheduleBuilder,
+) -> crate::types::builders::TimeRangeScheduleBuilder {
+    if builder.start_after.is_none() {
+        builder.start_after = Some(Default::default())
+    }
+    if builder.start_before.is_none() {
+        builder.start_before = Some(Default::default())
+    }
+    if builder.recurrence.is_none() {
+        builder.recurrence = Some(crate::types::Recurrence::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn pattern_filter_correct_errors(
     mut builder: crate::types::builders::PatternFilterBuilder,
 ) -> crate::types::builders::PatternFilterBuilder {
     if builder.patterns.is_none() {
         builder.patterns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn monthly_recurrence_correct_errors(
+    mut builder: crate::types::builders::MonthlyRecurrenceBuilder,
+) -> crate::types::builders::MonthlyRecurrenceBuilder {
+    if builder.day_of_month.is_none() {
+        builder.day_of_month = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn weekly_recurrence_correct_errors(
+    mut builder: crate::types::builders::WeeklyRecurrenceBuilder,
+) -> crate::types::builders::WeeklyRecurrenceBuilder {
+    if builder.day_of_week.is_none() {
+        builder.day_of_week = "no value was set".parse::<crate::types::DayOfWeek>().ok()
     }
     builder
 }

@@ -423,6 +423,8 @@ pub(crate) mod shape_reference_output;
 
 pub(crate) mod shape_registered_azure_identity_details;
 
+pub(crate) mod shape_release_management_configuration;
+
 pub(crate) mod shape_remote_agent_configuration;
 
 pub(crate) mod shape_remote_agent_service_details;
@@ -479,6 +481,8 @@ pub(crate) mod shape_mcp_tool_detail;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_network_access_configuration;
+
 pub(crate) mod shape_new_relic_service_authorization_config;
 
 pub(crate) mod shape_pager_duty_authorization_config;
@@ -513,6 +517,8 @@ pub(crate) mod shape_remote_agent_authorization_config;
 
 pub(crate) mod shape_remote_agent_sigv4_authorization_config;
 
+pub(crate) mod shape_schedule_spec;
+
 pub(crate) mod shape_service_now_service_authorization_config;
 
 pub(crate) mod shape_slack_bidirectional_configuration;
@@ -522,6 +528,8 @@ pub(crate) mod shape_slack_transmission_target;
 pub(crate) mod shape_user_reference;
 
 pub(crate) mod shape_assistant_message;
+
+pub(crate) mod shape_cron_schedule;
 
 pub(crate) mod shape_custom_headers;
 
@@ -551,6 +559,8 @@ pub(crate) mod shape_pager_duty_scopes_list;
 
 pub(crate) mod shape_pager_duty_services_list;
 
+pub(crate) mod shape_private_network_access;
+
 pub(crate) mod shape_remote_agent_api_key_config;
 
 pub(crate) mod shape_remote_agent_bearer_token_config;
@@ -567,6 +577,8 @@ pub(crate) mod shape_service_now_o_auth_client_credentials_config;
 
 pub(crate) mod shape_slack_channel;
 
+pub(crate) mod shape_time_range_schedule;
+
 pub(crate) mod shape_trigger_filter_groups;
 
 pub(crate) mod shape_user_message;
@@ -575,12 +587,20 @@ pub(crate) mod shape_web_identity_token_audience_list;
 
 pub(crate) mod shape_assistant_message_block;
 
+pub(crate) mod shape_recurrence;
+
 pub(crate) mod shape_send_message_json_delta;
 
 pub(crate) mod shape_send_message_text_delta;
 
 pub(crate) mod shape_user_message_block;
 
+pub(crate) mod shape_daily_recurrence;
+
+pub(crate) mod shape_monthly_recurrence;
+
 pub(crate) mod shape_trigger_event_list;
+
+pub(crate) mod shape_weekly_recurrence;
 
 pub(crate) mod shape_trigger_regex_pattern_list;

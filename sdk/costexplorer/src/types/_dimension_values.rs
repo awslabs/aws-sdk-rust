@@ -8,6 +8,7 @@ pub struct DimensionValues {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+    /// <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in <code>GetDimensionValues</code>. To filter or group by product attributes, use the <code>ProductAttributes</code> field of <code>Expression</code> or the <code>PRODUCT_ATTRIBUTE</code> group type.</p>
     pub key: ::std::option::Option<crate::types::Dimension>,
     /// <p>The metadata values that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -21,6 +22,7 @@ impl DimensionValues {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+    /// <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in <code>GetDimensionValues</code>. To filter or group by product attributes, use the <code>ProductAttributes</code> field of <code>Expression</code> or the <code>PRODUCT_ATTRIBUTE</code> group type.</p>
     pub fn key(&self) -> ::std::option::Option<&crate::types::Dimension> {
         self.key.as_ref()
     }
@@ -59,6 +61,7 @@ impl DimensionValuesBuilder {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+    /// <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in <code>GetDimensionValues</code>. To filter or group by product attributes, use the <code>ProductAttributes</code> field of <code>Expression</code> or the <code>PRODUCT_ATTRIBUTE</code> group type.</p>
     pub fn key(mut self, input: crate::types::Dimension) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
@@ -67,6 +70,7 @@ impl DimensionValuesBuilder {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+    /// <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in <code>GetDimensionValues</code>. To filter or group by product attributes, use the <code>ProductAttributes</code> field of <code>Expression</code> or the <code>PRODUCT_ATTRIBUTE</code> group type.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::Dimension>) -> Self {
         self.key = input;
         self
@@ -75,6 +79,7 @@ impl DimensionValuesBuilder {
     /// <p>Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is supported.</p>
     /// <p><code>LINKED_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     /// <p><code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+    /// <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in <code>GetDimensionValues</code>. To filter or group by product attributes, use the <code>ProductAttributes</code> field of <code>Expression</code> or the <code>PRODUCT_ATTRIBUTE</code> group type.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::Dimension> {
         &self.key
     }

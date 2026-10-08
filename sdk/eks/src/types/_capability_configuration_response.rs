@@ -6,11 +6,17 @@
 pub struct CapabilityConfigurationResponse {
     /// <p>Configuration settings for an Argo CD capability, including the server URL and other Argo CD-specific settings.</p>
     pub argo_cd: ::std::option::Option<crate::types::ArgoCdConfigResponse>,
+    /// <p>Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes) capability, including the cross-namespace reference setting and the list of disabled services.</p>
+    pub ack: ::std::option::Option<crate::types::AckConfigResponse>,
 }
 impl CapabilityConfigurationResponse {
     /// <p>Configuration settings for an Argo CD capability, including the server URL and other Argo CD-specific settings.</p>
     pub fn argo_cd(&self) -> ::std::option::Option<&crate::types::ArgoCdConfigResponse> {
         self.argo_cd.as_ref()
+    }
+    /// <p>Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes) capability, including the cross-namespace reference setting and the list of disabled services.</p>
+    pub fn ack(&self) -> ::std::option::Option<&crate::types::AckConfigResponse> {
+        self.ack.as_ref()
     }
 }
 impl CapabilityConfigurationResponse {
@@ -25,6 +31,7 @@ impl CapabilityConfigurationResponse {
 #[non_exhaustive]
 pub struct CapabilityConfigurationResponseBuilder {
     pub(crate) argo_cd: ::std::option::Option<crate::types::ArgoCdConfigResponse>,
+    pub(crate) ack: ::std::option::Option<crate::types::AckConfigResponse>,
 }
 impl CapabilityConfigurationResponseBuilder {
     /// <p>Configuration settings for an Argo CD capability, including the server URL and other Argo CD-specific settings.</p>
@@ -41,8 +48,25 @@ impl CapabilityConfigurationResponseBuilder {
     pub fn get_argo_cd(&self) -> &::std::option::Option<crate::types::ArgoCdConfigResponse> {
         &self.argo_cd
     }
+    /// <p>Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes) capability, including the cross-namespace reference setting and the list of disabled services.</p>
+    pub fn ack(mut self, input: crate::types::AckConfigResponse) -> Self {
+        self.ack = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes) capability, including the cross-namespace reference setting and the list of disabled services.</p>
+    pub fn set_ack(mut self, input: ::std::option::Option<crate::types::AckConfigResponse>) -> Self {
+        self.ack = input;
+        self
+    }
+    /// <p>Configuration settings for an ACK (Amazon Web Services Controllers for Kubernetes) capability, including the cross-namespace reference setting and the list of disabled services.</p>
+    pub fn get_ack(&self) -> &::std::option::Option<crate::types::AckConfigResponse> {
+        &self.ack
+    }
     /// Consumes the builder and constructs a [`CapabilityConfigurationResponse`](crate::types::CapabilityConfigurationResponse).
     pub fn build(self) -> crate::types::CapabilityConfigurationResponse {
-        crate::types::CapabilityConfigurationResponse { argo_cd: self.argo_cd }
+        crate::types::CapabilityConfigurationResponse {
+            argo_cd: self.argo_cd,
+            ack: self.ack,
+        }
     }
 }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTenantsInput {
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
     /// <p>A token returned from a previous call to <code>ListTenants</code> to indicate the position in the list of tenants.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListTenantsInput {
     pub page_size: ::std::option::Option<i32>,
 }
 impl ListTenantsInput {
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
         self.filter.as_ref()
     }
@@ -45,14 +45,14 @@ impl ListTenantsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn filter(mut self, k: crate::types::ListTenantsFilterKey, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.filter = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>>,
@@ -60,7 +60,7 @@ impl ListTenantsInputBuilder {
         self.filter = input;
         self
     }
-    /// <p>An object that contains filters to apply when listing tenants. You can filter by tenant name or sending status.</p>
+    /// <p>An object that contains filters to apply when listing tenants. You can filter by a substring of the tenant name or by sending status.</p>
     pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ListTenantsFilterKey, ::std::string::String>> {
         &self.filter
     }

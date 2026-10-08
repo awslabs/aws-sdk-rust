@@ -63,6 +63,8 @@ pub use crate::types::_tag_values::TagValuesBuilder;
 
 pub use crate::types::_cost_category_values::CostCategoryValuesBuilder;
 
+pub use crate::types::_product_attribute_values::ProductAttributeValuesBuilder;
+
 pub use crate::types::_group_definition::GroupDefinitionBuilder;
 
 pub use crate::types::_result_by_time::ResultByTimeBuilder;

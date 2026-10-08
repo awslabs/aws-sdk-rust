@@ -6,7 +6,7 @@
 pub struct CreateExportJobInput {
     /// <p>The data source for the export job.</p>
     pub export_data_source: ::std::option::Option<crate::types::ExportDataSource>,
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub export_destination: ::std::option::Option<crate::types::ExportDestination>,
 }
 impl CreateExportJobInput {
@@ -14,7 +14,7 @@ impl CreateExportJobInput {
     pub fn export_data_source(&self) -> ::std::option::Option<&crate::types::ExportDataSource> {
         self.export_data_source.as_ref()
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn export_destination(&self) -> ::std::option::Option<&crate::types::ExportDestination> {
         self.export_destination.as_ref()
     }
@@ -49,18 +49,18 @@ impl CreateExportJobInputBuilder {
     pub fn get_export_data_source(&self) -> &::std::option::Option<crate::types::ExportDataSource> {
         &self.export_data_source
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     /// This field is required.
     pub fn export_destination(mut self, input: crate::types::ExportDestination) -> Self {
         self.export_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn set_export_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
         self.export_destination = input;
         self
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn get_export_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
         &self.export_destination
     }

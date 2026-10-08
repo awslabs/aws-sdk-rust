@@ -389,6 +389,8 @@ pub(crate) mod shape_access_config_response;
 
 pub(crate) mod shape_access_policy;
 
+pub(crate) mod shape_ack_config_request;
+
 pub(crate) mod shape_additional_info_map;
 
 pub(crate) mod shape_addon_health;
@@ -497,6 +499,8 @@ pub(crate) mod shape_storage_config_response;
 
 pub(crate) mod shape_taints_list;
 
+pub(crate) mod shape_update_ack_config;
+
 pub(crate) mod shape_update_argo_cd_config;
 
 pub(crate) mod shape_update_params;
@@ -506,6 +510,8 @@ pub(crate) mod shape_upgrade_policy_response;
 pub(crate) mod shape_vpc_config_response;
 
 pub(crate) mod shape_zonal_shift_config_response;
+
+pub(crate) mod shape_ack_config_response;
 
 pub(crate) mod shape_active_certificate_authority;
 
@@ -570,6 +576,8 @@ pub(crate) mod shape_scoring_strategy;
 pub(crate) mod shape_update_param;
 
 pub(crate) mod shape_update_role_mappings;
+
+pub(crate) mod shape_ack_disabled_services_list;
 
 pub(crate) mod shape_addon_compatibility_detail;
 

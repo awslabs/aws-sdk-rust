@@ -514,6 +514,12 @@ pub mod get_session_endpoint;
 /// Types for the `GetStatement` operation.
 pub mod get_statement;
 
+/// Types for the `GetSystemLogsForJobRun` operation.
+pub mod get_system_logs_for_job_run;
+
+/// Types for the `GetSystemLogsForSession` operation.
+pub mod get_system_logs_for_session;
+
 /// Types for the `GetTable` operation.
 pub mod get_table;
 

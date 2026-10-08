@@ -12,12 +12,12 @@ pub struct TenantInfo {
     pub tenant_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the tenant was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <p>The status of sending capability for the tenant:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
     /// <li>
-    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
     /// <li>
     /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
     /// </ul>
@@ -40,12 +40,12 @@ impl TenantInfo {
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
-    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <p>The status of sending capability for the tenant:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
     /// <li>
-    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
     /// <li>
     /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
     /// </ul>
@@ -127,12 +127,12 @@ impl TenantInfoBuilder {
     pub fn get_created_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_timestamp
     }
-    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <p>The status of sending capability for the tenant:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
     /// <li>
-    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
     /// <li>
     /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
     /// </ul>
@@ -140,12 +140,12 @@ impl TenantInfoBuilder {
         self.sending_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <p>The status of sending capability for the tenant:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
     /// <li>
-    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
     /// <li>
     /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
     /// </ul>
@@ -153,12 +153,12 @@ impl TenantInfoBuilder {
         self.sending_status = input;
         self
     }
-    /// <p>The sending status for a reputation entity. This can be one of the following:</p>
+    /// <p>The status of sending capability for the tenant:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ENABLED</code> – Sending is allowed for this entity.</p></li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
     /// <li>
-    /// <p><code>DISABLED</code> – Sending is prevented for this entity.</p></li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
     /// <li>
     /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
     /// </ul>

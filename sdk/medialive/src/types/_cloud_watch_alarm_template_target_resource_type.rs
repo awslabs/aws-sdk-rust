@@ -13,6 +13,7 @@
 /// # let cloudwatchalarmtemplatetargetresourcetype = unimplemented!();
 /// match cloudwatchalarmtemplatetargetresourcetype {
 ///     CloudWatchAlarmTemplateTargetResourceType::CloudfrontDistribution => { /* ... */ },
+///     CloudWatchAlarmTemplateTargetResourceType::ElementalInferenceFeed => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::MediaconnectFlow => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::MedialiveChannel => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::MedialiveInputDevice => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum CloudWatchAlarmTemplateTargetResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CloudfrontDistribution,
     #[allow(missing_docs)] // documentation missing in model
+    ElementalInferenceFeed,
+    #[allow(missing_docs)] // documentation missing in model
     MediaconnectFlow,
     #[allow(missing_docs)] // documentation missing in model
     MedialiveChannel,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for CloudWatchAlarmTemplateTargetResourceType {
     fn from(s: &str) -> Self {
         match s {
             "CLOUDFRONT_DISTRIBUTION" => CloudWatchAlarmTemplateTargetResourceType::CloudfrontDistribution,
+            "ELEMENTAL_INFERENCE_FEED" => CloudWatchAlarmTemplateTargetResourceType::ElementalInferenceFeed,
             "MEDIACONNECT_FLOW" => CloudWatchAlarmTemplateTargetResourceType::MediaconnectFlow,
             "MEDIALIVE_CHANNEL" => CloudWatchAlarmTemplateTargetResourceType::MedialiveChannel,
             "MEDIALIVE_INPUT_DEVICE" => CloudWatchAlarmTemplateTargetResourceType::MedialiveInputDevice,
@@ -101,6 +105,7 @@ impl CloudWatchAlarmTemplateTargetResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchAlarmTemplateTargetResourceType::CloudfrontDistribution => "CLOUDFRONT_DISTRIBUTION",
+            CloudWatchAlarmTemplateTargetResourceType::ElementalInferenceFeed => "ELEMENTAL_INFERENCE_FEED",
             CloudWatchAlarmTemplateTargetResourceType::MediaconnectFlow => "MEDIACONNECT_FLOW",
             CloudWatchAlarmTemplateTargetResourceType::MedialiveChannel => "MEDIALIVE_CHANNEL",
             CloudWatchAlarmTemplateTargetResourceType::MedialiveInputDevice => "MEDIALIVE_INPUT_DEVICE",
@@ -116,6 +121,7 @@ impl CloudWatchAlarmTemplateTargetResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CLOUDFRONT_DISTRIBUTION",
+            "ELEMENTAL_INFERENCE_FEED",
             "MEDIACONNECT_FLOW",
             "MEDIALIVE_CHANNEL",
             "MEDIALIVE_INPUT_DEVICE",
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateTargetResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CloudWatchAlarmTemplateTargetResourceType::CloudfrontDistribution => write!(f, "CLOUDFRONT_DISTRIBUTION"),
+            CloudWatchAlarmTemplateTargetResourceType::ElementalInferenceFeed => write!(f, "ELEMENTAL_INFERENCE_FEED"),
             CloudWatchAlarmTemplateTargetResourceType::MediaconnectFlow => write!(f, "MEDIACONNECT_FLOW"),
             CloudWatchAlarmTemplateTargetResourceType::MedialiveChannel => write!(f, "MEDIALIVE_CHANNEL"),
             CloudWatchAlarmTemplateTargetResourceType::MedialiveInputDevice => write!(f, "MEDIALIVE_INPUT_DEVICE"),

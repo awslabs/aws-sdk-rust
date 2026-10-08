@@ -9,6 +9,9 @@ pub fn ser_encryption_at_rest_options(
     if let Some(var_2) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.encryption_mode {
+        object.key("EncryptionMode").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -41,6 +44,13 @@ where
                             builder = builder.set_kms_key_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "EncryptionMode" => {
+                            builder = builder.set_encryption_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

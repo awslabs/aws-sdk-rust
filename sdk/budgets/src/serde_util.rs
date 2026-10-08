@@ -314,6 +314,15 @@ pub(crate) fn iam_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn product_attribute_values_correct_errors(
+    mut builder: crate::types::builders::ProductAttributeValuesBuilder,
+) -> crate::types::builders::ProductAttributeValuesBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn scp_action_definition_correct_errors(
     mut builder: crate::types::builders::ScpActionDefinitionBuilder,
 ) -> crate::types::builders::ScpActionDefinitionBuilder {

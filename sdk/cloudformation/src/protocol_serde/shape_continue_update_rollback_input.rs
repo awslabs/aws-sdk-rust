@@ -31,6 +31,11 @@ pub fn ser_continue_update_rollback_input_input_input(
     if let Some(var_11) = &input.client_request_token {
         scope_10.string(var_11);
     }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("ForceRollback");
+    if let Some(var_13) = &input.force_rollback {
+        scope_12.boolean(*var_13);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

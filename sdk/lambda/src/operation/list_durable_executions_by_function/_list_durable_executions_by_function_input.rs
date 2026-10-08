@@ -5,7 +5,7 @@
 pub struct ListDurableExecutionsByFunctionInput {
     /// <p>The name or ARN of the Lambda function. You can specify a function name, a partial ARN, or a full ARN.</p>
     pub function_name: ::std::option::Option<::std::string::String>,
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub durable_execution_name: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl ListDurableExecutionsByFunctionInput {
     pub fn function_name(&self) -> ::std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn qualifier(&self) -> ::std::option::Option<&str> {
         self.qualifier.as_deref()
     }
@@ -99,17 +99,17 @@ impl ListDurableExecutionsByFunctionInputBuilder {
     pub fn get_function_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_name
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qualifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qualifier = input;
         self
     }
-    /// <p>The function version or alias. If not specified, lists executions for the $LATEST version.</p>
+    /// <p>The function version to filter executions by. If you don't specify a qualifier, this operation returns executions across all versions of the Lambda function.</p>
     pub fn get_qualifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.qualifier
     }

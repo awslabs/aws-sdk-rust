@@ -602,6 +602,35 @@ impl From<crate::operation::batch_update_standards_control_associations::BatchUp
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_export_job_v2::CancelExportJobV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_export_job_v2::CancelExportJobV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_export_job_v2::CancelExportJobV2Error> for Error {
+    fn from(err: crate::operation::cancel_export_job_v2::CancelExportJobV2Error) -> Self {
+        match err {
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_export_job_v2::CancelExportJobV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_action_target::CreateActionTargetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2352,6 +2381,32 @@ impl From<crate::operation::get_enabled_standards::GetEnabledStandardsError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_job_v2::GetExportJobV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_export_job_v2::GetExportJobV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_export_job_v2::GetExportJobV2Error> for Error {
+    fn from(err: crate::operation::get_export_job_v2::GetExportJobV2Error) -> Self {
+        match err {
+            crate::operation::get_export_job_v2::GetExportJobV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_export_job_v2::GetExportJobV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_export_job_v2::GetExportJobV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_export_job_v2::GetExportJobV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_export_job_v2::GetExportJobV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_export_job_v2::GetExportJobV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_finding_aggregator::GetFindingAggregatorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3174,6 +3229,31 @@ impl From<crate::operation::list_enabled_products_for_import::ListEnabledProduct
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_jobs_v2::ListExportJobsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_export_jobs_v2::ListExportJobsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_export_jobs_v2::ListExportJobsV2Error> for Error {
+    fn from(err: crate::operation::list_export_jobs_v2::ListExportJobsV2Error) -> Self {
+        match err {
+            crate::operation::list_export_jobs_v2::ListExportJobsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_export_jobs_v2::ListExportJobsV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_export_jobs_v2::ListExportJobsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_export_jobs_v2::ListExportJobsV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_export_jobs_v2::ListExportJobsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_exposures_by_remediation_v2::ListExposuresByRemediationV2Error, R>>
     for Error
@@ -3629,6 +3709,41 @@ impl From<crate::operation::start_configuration_policy_disassociation::StartConf
             crate::operation::start_configuration_policy_disassociation::StartConfigurationPolicyDisassociationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_export_job_v2::StartExportJobV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_export_job_v2::StartExportJobV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_export_job_v2::StartExportJobV2Error> for Error {
+    fn from(err: crate::operation::start_export_job_v2::StartExportJobV2Error) -> Self {
+        match err {
+            crate::operation::start_export_job_v2::StartExportJobV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_export_job_v2::StartExportJobV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_export_job_v2::StartExportJobV2Error::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_export_job_v2::StartExportJobV2Error::OrganizationalUnitNotFoundException(inner) => {
+                Error::OrganizationalUnitNotFoundException(inner)
+            }
+            crate::operation::start_export_job_v2::StartExportJobV2Error::OrganizationNotFoundException(inner) => {
+                Error::OrganizationNotFoundException(inner)
+            }
+            crate::operation::start_export_job_v2::StartExportJobV2Error::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_export_job_v2::StartExportJobV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_export_job_v2::StartExportJobV2Error::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_export_job_v2::StartExportJobV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

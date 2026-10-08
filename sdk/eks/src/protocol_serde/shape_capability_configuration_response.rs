@@ -28,6 +28,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "ack" => {
+                            builder = builder.set_ack(crate::protocol_serde::shape_ack_config_response::de_ack_config_response(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

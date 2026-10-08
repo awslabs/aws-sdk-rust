@@ -8,7 +8,7 @@
 /// <p>Simple dimension values.</p>
 /// <ul>
 /// <li>
-/// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+/// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
 /// <ul>
 /// <li>
 /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -16,6 +16,8 @@
 /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
 /// <li>
 /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+/// <li>
+/// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
 /// </ul></li>
 /// <li>
 /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -68,6 +70,8 @@ pub struct Expression {
     pub tags: ::std::option::Option<crate::types::TagValues>,
     /// <p>The filter that's based on <code>CostCategory</code> values.</p>
     pub cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
+    /// <p>The filter that's based on <code>ProductAttributeValues</code>. Use it to filter the costs of supported services, such as Amazon Bedrock, by product attributes. The following operations support this filter: <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p>
+    pub product_attributes: ::std::option::Option<crate::types::ProductAttributeValues>,
 }
 impl Expression {
     /// <p>Return results that match either <code>Dimension</code> object.</p>
@@ -98,6 +102,10 @@ impl Expression {
     pub fn cost_categories(&self) -> ::std::option::Option<&crate::types::CostCategoryValues> {
         self.cost_categories.as_ref()
     }
+    /// <p>The filter that's based on <code>ProductAttributeValues</code>. Use it to filter the costs of supported services, such as Amazon Bedrock, by product attributes. The following operations support this filter: <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p>
+    pub fn product_attributes(&self) -> ::std::option::Option<&crate::types::ProductAttributeValues> {
+        self.product_attributes.as_ref()
+    }
 }
 impl Expression {
     /// Creates a new builder-style object to manufacture [`Expression`](crate::types::Expression).
@@ -116,6 +124,7 @@ pub struct ExpressionBuilder {
     pub(crate) dimensions: ::std::option::Option<crate::types::DimensionValues>,
     pub(crate) tags: ::std::option::Option<crate::types::TagValues>,
     pub(crate) cost_categories: ::std::option::Option<crate::types::CostCategoryValues>,
+    pub(crate) product_attributes: ::std::option::Option<crate::types::ProductAttributeValues>,
 }
 impl ExpressionBuilder {
     /// Appends an item to `or`.
@@ -214,6 +223,20 @@ impl ExpressionBuilder {
     pub fn get_cost_categories(&self) -> &::std::option::Option<crate::types::CostCategoryValues> {
         &self.cost_categories
     }
+    /// <p>The filter that's based on <code>ProductAttributeValues</code>. Use it to filter the costs of supported services, such as Amazon Bedrock, by product attributes. The following operations support this filter: <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p>
+    pub fn product_attributes(mut self, input: crate::types::ProductAttributeValues) -> Self {
+        self.product_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The filter that's based on <code>ProductAttributeValues</code>. Use it to filter the costs of supported services, such as Amazon Bedrock, by product attributes. The following operations support this filter: <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p>
+    pub fn set_product_attributes(mut self, input: ::std::option::Option<crate::types::ProductAttributeValues>) -> Self {
+        self.product_attributes = input;
+        self
+    }
+    /// <p>The filter that's based on <code>ProductAttributeValues</code>. Use it to filter the costs of supported services, such as Amazon Bedrock, by product attributes. The following operations support this filter: <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p>
+    pub fn get_product_attributes(&self) -> &::std::option::Option<crate::types::ProductAttributeValues> {
+        &self.product_attributes
+    }
     /// Consumes the builder and constructs a [`Expression`](crate::types::Expression).
     pub fn build(self) -> crate::types::Expression {
         crate::types::Expression {
@@ -223,6 +246,7 @@ impl ExpressionBuilder {
             dimensions: self.dimensions,
             tags: self.tags,
             cost_categories: self.cost_categories,
+            product_attributes: self.product_attributes,
         }
     }
 }

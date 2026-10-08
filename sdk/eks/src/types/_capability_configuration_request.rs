@@ -6,11 +6,17 @@
 pub struct CapabilityConfigurationRequest {
     /// <p>Configuration settings specific to Argo CD capabilities. This field is only used when creating or updating an Argo CD capability.</p>
     pub argo_cd: ::std::option::Option<crate::types::ArgoCdConfigRequest>,
+    /// <p>Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities. This field is only used when creating or updating an ACK capability.</p>
+    pub ack: ::std::option::Option<crate::types::AckConfigRequest>,
 }
 impl CapabilityConfigurationRequest {
     /// <p>Configuration settings specific to Argo CD capabilities. This field is only used when creating or updating an Argo CD capability.</p>
     pub fn argo_cd(&self) -> ::std::option::Option<&crate::types::ArgoCdConfigRequest> {
         self.argo_cd.as_ref()
+    }
+    /// <p>Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities. This field is only used when creating or updating an ACK capability.</p>
+    pub fn ack(&self) -> ::std::option::Option<&crate::types::AckConfigRequest> {
+        self.ack.as_ref()
     }
 }
 impl CapabilityConfigurationRequest {
@@ -25,6 +31,7 @@ impl CapabilityConfigurationRequest {
 #[non_exhaustive]
 pub struct CapabilityConfigurationRequestBuilder {
     pub(crate) argo_cd: ::std::option::Option<crate::types::ArgoCdConfigRequest>,
+    pub(crate) ack: ::std::option::Option<crate::types::AckConfigRequest>,
 }
 impl CapabilityConfigurationRequestBuilder {
     /// <p>Configuration settings specific to Argo CD capabilities. This field is only used when creating or updating an Argo CD capability.</p>
@@ -41,8 +48,25 @@ impl CapabilityConfigurationRequestBuilder {
     pub fn get_argo_cd(&self) -> &::std::option::Option<crate::types::ArgoCdConfigRequest> {
         &self.argo_cd
     }
+    /// <p>Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities. This field is only used when creating or updating an ACK capability.</p>
+    pub fn ack(mut self, input: crate::types::AckConfigRequest) -> Self {
+        self.ack = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities. This field is only used when creating or updating an ACK capability.</p>
+    pub fn set_ack(mut self, input: ::std::option::Option<crate::types::AckConfigRequest>) -> Self {
+        self.ack = input;
+        self
+    }
+    /// <p>Configuration settings specific to ACK (Amazon Web Services Controllers for Kubernetes) capabilities. This field is only used when creating or updating an ACK capability.</p>
+    pub fn get_ack(&self) -> &::std::option::Option<crate::types::AckConfigRequest> {
+        &self.ack
+    }
     /// Consumes the builder and constructs a [`CapabilityConfigurationRequest`](crate::types::CapabilityConfigurationRequest).
     pub fn build(self) -> crate::types::CapabilityConfigurationRequest {
-        crate::types::CapabilityConfigurationRequest { argo_cd: self.argo_cd }
+        crate::types::CapabilityConfigurationRequest {
+            argo_cd: self.argo_cd,
+            ack: self.ack,
+        }
     }
 }

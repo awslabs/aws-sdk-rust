@@ -23,6 +23,7 @@ impl crate::operation::create_export_job::builders::CreateExportJobInputBuilder 
 /// Fluent builder constructing a request to `CreateExportJob`.
 ///
 /// <p>Creates an export job for a data source and destination.</p>
+/// <p>Export jobs run asynchronously. This operation returns a <code>JobId</code>. Call <code>GetExportJob</code> with that ID until <code>JobStatus</code> is <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. When the status is <code>COMPLETED</code>, download the export file from the pre-signed URL in <code>ExportDestination.S3Url</code>. When the status is <code>FAILED</code>, see <code>FailureInfo</code>. To store a copy in your own bucket, upload the downloaded file to your bucket. Do not include <code>S3Url</code> in the request.</p>
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExportJobFluentBuilder {
@@ -123,17 +124,17 @@ impl CreateExportJobFluentBuilder {
     pub fn get_export_data_source(&self) -> &::std::option::Option<crate::types::ExportDataSource> {
         self.inner.get_export_data_source()
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn export_destination(mut self, input: crate::types::ExportDestination) -> Self {
         self.inner = self.inner.export_destination(input);
         self
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn set_export_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
         self.inner = self.inner.set_export_destination(input);
         self
     }
-    /// <p>The destination for the export job.</p>
+    /// <p>The destination for the export job. Specify only <code>DataFormat</code>. Do not include <code>S3Url</code> in this request. SES writes the export file to a location that it manages and returns the download URL in <code>GetExportJob</code>.</p>
     pub fn get_export_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
         self.inner.get_export_destination()
     }

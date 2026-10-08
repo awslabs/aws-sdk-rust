@@ -259,6 +259,8 @@ pub use crate::types::_deployment_impairment_strategy::DeploymentImpairmentStrat
 
 pub use crate::types::_container_fleet_remove_attribute::ContainerFleetRemoveAttribute;
 
+pub use crate::types::_container_group_definition_remove_attribute::ContainerGroupDefinitionRemoveAttribute;
+
 pub use crate::types::_zero_capacity_strategy::ZeroCapacityStrategy;
 
 pub use crate::types::_filter_instance_status::FilterInstanceStatus;
@@ -370,6 +372,8 @@ mod _container_fleet_remove_attribute;
 mod _container_fleet_status;
 
 mod _container_group_definition;
+
+mod _container_group_definition_remove_attribute;
 
 mod _container_group_definition_status;
 

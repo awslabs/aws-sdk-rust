@@ -118,6 +118,12 @@ pub fn ser_service_configuration(
             crate::protocol_serde::shape_remote_agent_sigv4_configuration::ser_remote_agent_sigv4_configuration(&mut object_19, inner)?;
             object_19.finish();
         }
+        crate::types::ServiceConfiguration::ReleaseManagement(inner) => {
+            #[allow(unused_mut)]
+            let mut object_20 = object_7.key("releaseManagement").start_object();
+            crate::protocol_serde::shape_release_management_configuration::ser_release_management_configuration(&mut object_20, inner)?;
+            object_20.finish();
+        }
         crate::types::ServiceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ServiceConfiguration",
@@ -291,6 +297,16 @@ where
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'remoteagentsigv4' cannot be null")
+                            })?,
+                        )),
+                        "releaseManagement" => Some(crate::types::ServiceConfiguration::ReleaseManagement(
+                            crate::protocol_serde::shape_release_management_configuration::de_release_management_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'releaseManagement' cannot be null")
                             })?,
                         )),
                         _ => {

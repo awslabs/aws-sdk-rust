@@ -56,6 +56,7 @@ pub(crate) fn de_game_server_container_definition(
                     )?)),
                 )
             })?,
+            "Vcpu" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_vcpu(Some(decoder.double()?))))?,
             _ => {
                 decoder.skip()?;
                 builder

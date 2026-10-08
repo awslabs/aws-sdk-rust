@@ -24,13 +24,17 @@ pub struct GameServerContainerDefinitionInput {
     /// <p>Image ID and tag: <code>\[AWS account\].dkr.ecr.\[AWS region\].amazonaws.com/\[repository ID\]:\[tag\]</code></p></li>
     /// </ul>
     pub image_uri: ::std::option::Option<::std::string::String>,
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     /// <p>The Amazon GameLift Servers server SDK version that the game server is integrated with. Only game servers using 5.2.0 or higher are compatible with container fleets.</p>
     pub server_sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
     pub linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub vcpu: ::std::option::Option<f64>,
 }
 impl GameServerContainerDefinitionInput {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -68,7 +72,7 @@ impl GameServerContainerDefinitionInput {
     pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn port_configuration(&self) -> ::std::option::Option<&crate::types::ContainerPortConfiguration> {
         self.port_configuration.as_ref()
@@ -80,6 +84,12 @@ impl GameServerContainerDefinitionInput {
     /// <p>Linux-specific modifications that are applied to the default Docker container configuration, such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.</p>
     pub fn linux_capabilities(&self) -> ::std::option::Option<&crate::types::LinuxCapabilities> {
         self.linux_capabilities.as_ref()
+    }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn vcpu(&self) -> ::std::option::Option<f64> {
+        self.vcpu
     }
 }
 impl GameServerContainerDefinitionInput {
@@ -101,6 +111,7 @@ pub struct GameServerContainerDefinitionInputBuilder {
     pub(crate) port_configuration: ::std::option::Option<crate::types::ContainerPortConfiguration>,
     pub(crate) server_sdk_version: ::std::option::Option<::std::string::String>,
     pub(crate) linux_capabilities: ::std::option::Option<crate::types::LinuxCapabilities>,
+    pub(crate) vcpu: ::std::option::Option<f64>,
 }
 impl GameServerContainerDefinitionInputBuilder {
     /// <p>A string that uniquely identifies the container definition within a container group.</p>
@@ -220,20 +231,20 @@ impl GameServerContainerDefinitionInputBuilder {
     pub fn get_image_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_uri
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     /// This field is required.
     pub fn port_configuration(mut self, input: crate::types::ContainerPortConfiguration) -> Self {
         self.port_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn set_port_configuration(mut self, input: ::std::option::Option<crate::types::ContainerPortConfiguration>) -> Self {
         self.port_configuration = input;
         self
     }
-    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
+    /// <p>A set of ports that Amazon GameLift Servers can assign to processes in a container. The container port configuration must have enough ports for each container process that accepts inbound traffic connections. For example, a game server process requires a container port to allow game clients to connect to it. A container port configuration can have one or more container port ranges. Each range specifies starting and ending values as well as the supported network protocol.</p>
     /// <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps each container port to an externally accessible connection port (see the container fleet property <code>ConnectionPortRange</code>).</p>
     pub fn get_port_configuration(&self) -> &::std::option::Option<crate::types::ContainerPortConfiguration> {
         &self.port_configuration
@@ -267,6 +278,26 @@ impl GameServerContainerDefinitionInputBuilder {
     pub fn get_linux_capabilities(&self) -> &::std::option::Option<crate::types::LinuxCapabilities> {
         &self.linux_capabilities
     }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn vcpu(mut self, input: f64) -> Self {
+        self.vcpu = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn set_vcpu(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.vcpu = input;
+        self
+    }
+    /// <p>The number of vCPU units reserved for the game server container. The container can use more vCPU when it's available, up to the container group's total vCPU limit if one is set. If the container group has a total vCPU limit and the request doesn't set this value, Amazon GameLift Servers calculates the game server container's vCPU as the total vCPU limit minus the sum of the vCPU units reserved for the group's support containers.</p>
+    /// <p>A game server container group needs either a total vCPU limit or this value. If the container group doesn't have a total vCPU limit, the group's containers can use up to the instance's available vCPU, and Amazon GameLift Servers uses the sum of the group's container <code>Vcpu</code> values to calculate how many game server container groups fit on an instance.</p>
+    /// <p><b>Related data type: </b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a> <code>TotalVcpuLimit</code></p>
+    pub fn get_vcpu(&self) -> &::std::option::Option<f64> {
+        &self.vcpu
+    }
     /// Consumes the builder and constructs a [`GameServerContainerDefinitionInput`](crate::types::GameServerContainerDefinitionInput).
     pub fn build(self) -> crate::types::GameServerContainerDefinitionInput {
         crate::types::GameServerContainerDefinitionInput {
@@ -278,6 +309,7 @@ impl GameServerContainerDefinitionInputBuilder {
             port_configuration: self.port_configuration,
             server_sdk_version: self.server_sdk_version,
             linux_capabilities: self.linux_capabilities,
+            vcpu: self.vcpu,
         }
     }
 }

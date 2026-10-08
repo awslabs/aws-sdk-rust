@@ -183,6 +183,8 @@ pub use crate::types::_o_auth_additional_step_details::OAuthAdditionalStepDetail
 
 pub use crate::types::_additional_service_details::AdditionalServiceDetails;
 
+pub use crate::types::_schedule_spec::ScheduleSpec;
+
 pub use crate::types::_execution_status::ExecutionStatus;
 
 pub use crate::types::_user_reference::UserReference;
@@ -230,6 +232,8 @@ pub use crate::types::_mcp_server_sigv4_configuration::McpServerSigV4Configurati
 pub use crate::types::_remote_agent_configuration::RemoteAgentConfiguration;
 
 pub use crate::types::_remote_agent_sigv4_configuration::RemoteAgentSigV4Configuration;
+
+pub use crate::types::_release_management_configuration::ReleaseManagementConfiguration;
 
 pub use crate::types::_capability_type::CapabilityType;
 
@@ -289,6 +293,10 @@ pub use crate::types::_registered_remote_agent_details::RegisteredRemoteAgentDet
 
 pub use crate::types::_registered_remote_agent_sigv4_details::RegisteredRemoteAgentSigV4Details;
 
+pub use crate::types::_cron_schedule::CronSchedule;
+
+pub use crate::types::_time_range_schedule::TimeRangeSchedule;
+
 pub use crate::types::_send_message_text_delta::SendMessageTextDelta;
 
 pub use crate::types::_send_message_json_delta::SendMessageJsonDelta;
@@ -302,6 +310,8 @@ pub use crate::types::_github_repo_owner_type::GithubRepoOwnerType;
 pub use crate::types::_slack_transmission_target::SlackTransmissionTarget;
 
 pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfiguration;
+
+pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
 
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfig;
 
@@ -333,6 +343,8 @@ pub use crate::types::_new_relic_region::NewRelicRegion;
 
 pub use crate::types::_remote_agent_authorization_method::RemoteAgentAuthorizationMethod;
 
+pub use crate::types::_recurrence::Recurrence;
+
 pub use crate::types::_user_message_block::UserMessageBlock;
 
 pub use crate::types::_assistant_message_block::AssistantMessageBlock;
@@ -341,11 +353,21 @@ pub use crate::types::_slack_channel::SlackChannel;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetail;
 
+pub use crate::types::_private_network_access::PrivateNetworkAccess;
+
 pub use crate::types::_trigger_filter_group::TriggerFilterGroup;
+
+pub use crate::types::_daily_recurrence::DailyRecurrence;
+
+pub use crate::types::_weekly_recurrence::WeeklyRecurrence;
+
+pub use crate::types::_monthly_recurrence::MonthlyRecurrence;
 
 pub use crate::types::_tool_classification::ToolClassification;
 
 pub use crate::types::_pattern_filter::PatternFilter;
+
+pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_trigger_event::TriggerEvent;
 
@@ -403,9 +425,15 @@ mod _capability_type;
 
 mod _chat_execution;
 
+mod _cron_schedule;
+
+mod _daily_recurrence;
+
 mod _datadog_authorization_config;
 
 mod _datadog_service_details;
+
+mod _day_of_week;
 
 mod _dynatrace_configuration;
 
@@ -499,6 +527,10 @@ mod _message;
 
 mod _monitor_account_type;
 
+mod _monthly_recurrence;
+
+mod _network_access_configuration;
+
 mod _new_relic_api_key_config;
 
 mod _new_relic_region;
@@ -535,6 +567,8 @@ mod _private_connection_summary;
 
 mod _private_connection_type;
 
+mod _private_network_access;
+
 mod _recommendation;
 
 mod _recommendation_content;
@@ -542,6 +576,8 @@ mod _recommendation_content;
 mod _recommendation_priority;
 
 mod _recommendation_status;
+
+mod _recurrence;
 
 mod _reference_input;
 
@@ -575,6 +611,8 @@ mod _registered_service_now_details;
 
 mod _registered_slack_service_details;
 
+mod _release_management_configuration;
+
 mod _remote_agent_api_key_config;
 
 mod _remote_agent_authorization_config;
@@ -598,6 +636,8 @@ mod _remote_agent_sigv4_service_details;
 mod _resource_config_dns_resolution;
 
 mod _schedule_condition;
+
+mod _schedule_spec;
 
 mod _scheduler_state;
 
@@ -673,6 +713,8 @@ mod _task_status;
 
 mod _task_type;
 
+mod _time_range_schedule;
+
 mod _tool_classification;
 
 mod _trigger;
@@ -698,6 +740,8 @@ mod _validation_status;
 mod _webhook;
 
 mod _webhook_type;
+
+mod _weekly_recurrence;
 
 /// Builders
 pub mod builders;

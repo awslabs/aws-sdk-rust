@@ -164,6 +164,8 @@ mod batch_update_findings_v2;
 
 mod batch_update_standards_control_associations;
 
+mod cancel_export_job_v2;
+
 mod create_action_target;
 
 mod create_aggregator_v2;
@@ -295,6 +297,8 @@ mod get_connector_v2;
 
 mod get_enabled_standards;
 
+mod get_export_job_v2;
+
 mod get_finding_aggregator;
 
 mod get_finding_history;
@@ -347,6 +351,8 @@ mod list_connectors_v2;
 
 mod list_enabled_products_for_import;
 
+mod list_export_jobs_v2;
+
 mod list_exposures_by_remediation_v2;
 
 mod list_finding_aggregators;
@@ -370,6 +376,8 @@ mod register_connector_v2;
 mod start_configuration_policy_association;
 
 mod start_configuration_policy_disassociation;
+
+mod start_export_job_v2;
 
 mod tag_resource;
 

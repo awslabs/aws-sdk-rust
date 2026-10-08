@@ -147,7 +147,7 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn game_session_queue_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.game_session_queue_arns(input.into());
         self
@@ -155,7 +155,7 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn set_game_session_queue_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_game_session_queue_arns(input);
         self
@@ -163,7 +163,7 @@ impl UpdateMatchmakingConfigurationFluentBuilder {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift Servers game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:<region>
     /// ::gamesessionqueue/
     /// <queue name></queue>
-    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
+    /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift Servers-hosted game sessions for matches that are created with this matchmaking configuration. A matchmaking configuration supports only one queue; if you specify more than one ARN, the request fails with an <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.</p>
     pub fn get_game_session_queue_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_game_session_queue_arns()
     }

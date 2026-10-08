@@ -10,7 +10,7 @@ pub struct GetExportJobOutput {
     pub export_source_type: ::std::option::Option<crate::types::ExportSourceType>,
     /// <p>The status of the export job.</p>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
-    /// <p>The destination of the export job.</p>
+    /// <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     pub export_destination: ::std::option::Option<crate::types::ExportDestination>,
     /// <p>The data source of the export job.</p>
     pub export_data_source: ::std::option::Option<crate::types::ExportDataSource>,
@@ -37,7 +37,7 @@ impl GetExportJobOutput {
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
-    /// <p>The destination of the export job.</p>
+    /// <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     pub fn export_destination(&self) -> ::std::option::Option<&crate::types::ExportDestination> {
         self.export_destination.as_ref()
     }
@@ -132,17 +132,17 @@ impl GetExportJobOutputBuilder {
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status
     }
-    /// <p>The destination of the export job.</p>
+    /// <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     pub fn export_destination(mut self, input: crate::types::ExportDestination) -> Self {
         self.export_destination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The destination of the export job.</p>
+    /// <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     pub fn set_export_destination(mut self, input: ::std::option::Option<crate::types::ExportDestination>) -> Self {
         self.export_destination = input;
         self
     }
-    /// <p>The destination of the export job.</p>
+    /// <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     pub fn get_export_destination(&self) -> &::std::option::Option<crate::types::ExportDestination> {
         &self.export_destination
     }

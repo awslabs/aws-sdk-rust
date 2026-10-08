@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateBuildOutput {
-    /// <p>The newly created build resource, including a unique build IDs and status.</p>
+    /// <p>The newly created build resource, including a unique build ID and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub build_value: ::std::option::Option<crate::types::Build>,
@@ -14,7 +14,7 @@ pub struct CreateBuildOutput {
     _request_id: Option<String>,
 }
 impl CreateBuildOutput {
-    /// <p>The newly created build resource, including a unique build IDs and status.</p>
+    /// <p>The newly created build resource, including a unique build ID and status.</p>
     ///
     /// _Note: This member has been renamed from `build`._
     pub fn build_value(&self) -> ::std::option::Option<&crate::types::Build> {
@@ -61,17 +61,17 @@ pub struct CreateBuildOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateBuildOutputBuilder {
-    /// <p>The newly created build resource, including a unique build IDs and status.</p>
+    /// <p>The newly created build resource, including a unique build ID and status.</p>
     pub fn build_value(mut self, input: crate::types::Build) -> Self {
         self.build_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The newly created build resource, including a unique build IDs and status.</p>
+    /// <p>The newly created build resource, including a unique build ID and status.</p>
     pub fn set_build(mut self, input: ::std::option::Option<crate::types::Build>) -> Self {
         self.build_value = input;
         self
     }
-    /// <p>The newly created build resource, including a unique build IDs and status.</p>
+    /// <p>The newly created build resource, including a unique build ID and status.</p>
     pub fn get_build(&self) -> &::std::option::Option<crate::types::Build> {
         &self.build_value
     }

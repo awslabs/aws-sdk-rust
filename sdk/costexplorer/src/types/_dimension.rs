@@ -32,6 +32,7 @@
 ///     Dimension::PayerAccount => { /* ... */ },
 ///     Dimension::PaymentOption => { /* ... */ },
 ///     Dimension::Platform => { /* ... */ },
+///     Dimension::ProductAttribute => { /* ... */ },
 ///     Dimension::PurchaseType => { /* ... */ },
 ///     Dimension::RecordType => { /* ... */ },
 ///     Dimension::Region => { /* ... */ },
@@ -116,6 +117,8 @@ pub enum Dimension {
     #[allow(missing_docs)] // documentation missing in model
     Platform,
     #[allow(missing_docs)] // documentation missing in model
+    ProductAttribute,
+    #[allow(missing_docs)] // documentation missing in model
     PurchaseType,
     #[allow(missing_docs)] // documentation missing in model
     RecordType,
@@ -172,6 +175,7 @@ impl ::std::convert::From<&str> for Dimension {
             "PAYER_ACCOUNT" => Dimension::PayerAccount,
             "PAYMENT_OPTION" => Dimension::PaymentOption,
             "PLATFORM" => Dimension::Platform,
+            "PRODUCT_ATTRIBUTE" => Dimension::ProductAttribute,
             "PURCHASE_TYPE" => Dimension::PurchaseType,
             "RECORD_TYPE" => Dimension::RecordType,
             "REGION" => Dimension::Region,
@@ -222,6 +226,7 @@ impl Dimension {
             Dimension::PayerAccount => "PAYER_ACCOUNT",
             Dimension::PaymentOption => "PAYMENT_OPTION",
             Dimension::Platform => "PLATFORM",
+            Dimension::ProductAttribute => "PRODUCT_ATTRIBUTE",
             Dimension::PurchaseType => "PURCHASE_TYPE",
             Dimension::RecordType => "RECORD_TYPE",
             Dimension::Region => "REGION",
@@ -263,6 +268,7 @@ impl Dimension {
             "PAYER_ACCOUNT",
             "PAYMENT_OPTION",
             "PLATFORM",
+            "PRODUCT_ATTRIBUTE",
             "PURCHASE_TYPE",
             "RECORD_TYPE",
             "REGION",
@@ -321,6 +327,7 @@ impl ::std::fmt::Display for Dimension {
             Dimension::PayerAccount => write!(f, "PAYER_ACCOUNT"),
             Dimension::PaymentOption => write!(f, "PAYMENT_OPTION"),
             Dimension::Platform => write!(f, "PLATFORM"),
+            Dimension::ProductAttribute => write!(f, "PRODUCT_ATTRIBUTE"),
             Dimension::PurchaseType => write!(f, "PURCHASE_TYPE"),
             Dimension::RecordType => write!(f, "RECORD_TYPE"),
             Dimension::Region => write!(f, "REGION"),

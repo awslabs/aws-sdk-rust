@@ -22,6 +22,8 @@
 ///     UpdateParamType::ControlPlaneEgressMode => { /* ... */ },
 ///     UpdateParamType::DeletionProtection => { /* ... */ },
 ///     UpdateParamType::DesiredSize => { /* ... */ },
+///     UpdateParamType::DisabledServices => { /* ... */ },
+///     UpdateParamType::EnableCrossNamespace => { /* ... */ },
 ///     UpdateParamType::EncryptionConfig => { /* ... */ },
 ///     UpdateParamType::EndpointPrivateAccess => { /* ... */ },
 ///     UpdateParamType::EndpointPublicAccess => { /* ... */ },
@@ -118,6 +120,10 @@ pub enum UpdateParamType {
     DeletionProtection,
     #[allow(missing_docs)] // documentation missing in model
     DesiredSize,
+    #[allow(missing_docs)] // documentation missing in model
+    DisabledServices,
+    #[allow(missing_docs)] // documentation missing in model
+    EnableCrossNamespace,
     #[allow(missing_docs)] // documentation missing in model
     EncryptionConfig,
     #[allow(missing_docs)] // documentation missing in model
@@ -231,6 +237,8 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "ControlPlaneEgressMode" => UpdateParamType::ControlPlaneEgressMode,
             "DeletionProtection" => UpdateParamType::DeletionProtection,
             "DesiredSize" => UpdateParamType::DesiredSize,
+            "DisabledServices" => UpdateParamType::DisabledServices,
+            "EnableCrossNamespace" => UpdateParamType::EnableCrossNamespace,
             "EncryptionConfig" => UpdateParamType::EncryptionConfig,
             "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
             "EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
@@ -304,6 +312,8 @@ impl UpdateParamType {
             UpdateParamType::ControlPlaneEgressMode => "ControlPlaneEgressMode",
             UpdateParamType::DeletionProtection => "DeletionProtection",
             UpdateParamType::DesiredSize => "DesiredSize",
+            UpdateParamType::DisabledServices => "DisabledServices",
+            UpdateParamType::EnableCrossNamespace => "EnableCrossNamespace",
             UpdateParamType::EncryptionConfig => "EncryptionConfig",
             UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
             UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
@@ -368,6 +378,8 @@ impl UpdateParamType {
             "ControlPlaneEgressMode",
             "DeletionProtection",
             "DesiredSize",
+            "DisabledServices",
+            "EnableCrossNamespace",
             "EncryptionConfig",
             "EndpointPrivateAccess",
             "EndpointPublicAccess",
@@ -449,6 +461,8 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::ControlPlaneEgressMode => write!(f, "ControlPlaneEgressMode"),
             UpdateParamType::DeletionProtection => write!(f, "DeletionProtection"),
             UpdateParamType::DesiredSize => write!(f, "DesiredSize"),
+            UpdateParamType::DisabledServices => write!(f, "DisabledServices"),
+            UpdateParamType::EnableCrossNamespace => write!(f, "EnableCrossNamespace"),
             UpdateParamType::EncryptionConfig => write!(f, "EncryptionConfig"),
             UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),
             UpdateParamType::EndpointPublicAccess => write!(f, "EndpointPublicAccess"),

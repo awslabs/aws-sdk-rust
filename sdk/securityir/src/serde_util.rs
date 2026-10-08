@@ -155,6 +155,45 @@ pub(crate) fn get_case_attachment_upload_url_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_finding_metrics_output_output_correct_errors(
+    mut builder: crate::operation::get_finding_metrics::builders::GetFindingMetricsOutputBuilder,
+) -> crate::operation::get_finding_metrics::builders::GetFindingMetricsOutputBuilder {
+    if builder.findings_ingested_security_hub.is_none() {
+        builder.findings_ingested_security_hub = Some(Default::default())
+    }
+    if builder.findings_ingested_guard_duty.is_none() {
+        builder.findings_ingested_guard_duty = Some(Default::default())
+    }
+    if builder.findings_triaged.is_none() {
+        builder.findings_triaged = Some(Default::default())
+    }
+    if builder.findings_triaged_false_positive.is_none() {
+        builder.findings_triaged_false_positive = Some(Default::default())
+    }
+    if builder.findings_investigated.is_none() {
+        builder.findings_investigated = Some(Default::default())
+    }
+    if builder.findings_investigated_false_positive.is_none() {
+        builder.findings_investigated_false_positive = Some(Default::default())
+    }
+    if builder.findings_escalated.is_none() {
+        builder.findings_escalated = Some(Default::default())
+    }
+    if builder.findings_escalated_false_positive.is_none() {
+        builder.findings_escalated_false_positive = Some(Default::default())
+    }
+    if builder.findings_true_positive.is_none() {
+        builder.findings_true_positive = Some(Default::default())
+    }
+    if builder.findings_investigated_in_progress.is_none() {
+        builder.findings_investigated_in_progress = Some(Default::default())
+    }
+    if builder.findings_escalated_in_progress.is_none() {
+        builder.findings_escalated_in_progress = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_membership_output_output_correct_errors(
     mut builder: crate::operation::get_membership::builders::GetMembershipOutputBuilder,
 ) -> crate::operation::get_membership::builders::GetMembershipOutputBuilder {

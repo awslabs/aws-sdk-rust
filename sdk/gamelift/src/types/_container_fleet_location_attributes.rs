@@ -19,7 +19,7 @@ pub struct ContainerFleetLocationAttributes {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -52,7 +52,7 @@ impl ContainerFleetLocationAttributes {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -114,7 +114,7 @@ impl ContainerFleetLocationAttributesBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -135,7 +135,7 @@ impl ContainerFleetLocationAttributesBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>
@@ -156,7 +156,7 @@ impl ContainerFleetLocationAttributesBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> -- The container fleet has been deployed and is ready to host game sessions.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
+    /// <p><code>UPDATING</code> -- The container fleet is being updated. A deployment is in progress.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> -- The container fleet has been expired. The fleet is scaled down to zero instances and cannot host new game sessions.</p></li>
     /// </ul>

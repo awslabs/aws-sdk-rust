@@ -48,6 +48,9 @@ pub fn ser_game_server_container_definition_input(
         encoder.str("LinuxCapabilities");
         crate::protocol_serde::shape_linux_capabilities::ser_linux_capabilities(encoder, var_11)?;
     }
+    if let Some(var_12) = &input.vcpu {
+        encoder.str("Vcpu").double(*var_12);
+    }
     encoder.end();
     Ok(())
 }

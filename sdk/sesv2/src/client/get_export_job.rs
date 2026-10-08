@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`job_id(Option<String>)`](crate::operation::get_export_job::GetExportJobOutput::job_id): <p>The export job ID.</p>
     ///   - [`export_source_type(Option<ExportSourceType>)`](crate::operation::get_export_job::GetExportJobOutput::export_source_type): <p>The type of source of the export job.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::get_export_job::GetExportJobOutput::job_status): <p>The status of the export job.</p>
-    ///   - [`export_destination(Option<ExportDestination>)`](crate::operation::get_export_job::GetExportJobOutput::export_destination): <p>The destination of the export job.</p>
+    ///   - [`export_destination(Option<ExportDestination>)`](crate::operation::get_export_job::GetExportJobOutput::export_destination): <p>The destination of the export job. When <code>JobStatus</code> is <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed URL that you use to download the export file.</p>
     ///   - [`export_data_source(Option<ExportDataSource>)`](crate::operation::get_export_job::GetExportJobOutput::export_data_source): <p>The data source of the export job.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_export_job::GetExportJobOutput::created_timestamp): <p>The timestamp of when the export job was created.</p>
     ///   - [`completed_timestamp(Option<DateTime>)`](crate::operation::get_export_job::GetExportJobOutput::completed_timestamp): <p>The timestamp of when the export job was completed.</p>

@@ -49,6 +49,8 @@ pub use crate::types::_tag_values::TagValuesBuilder;
 
 pub use crate::types::_cost_category_values::CostCategoryValuesBuilder;
 
+pub use crate::types::_product_attribute_values::ProductAttributeValuesBuilder;
+
 pub use crate::types::_action_history_details::ActionHistoryDetailsBuilder;
 
 pub use crate::types::_budgeted_and_actual_amounts::BudgetedAndActualAmountsBuilder;

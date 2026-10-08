@@ -11,7 +11,7 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -19,6 +19,8 @@ pub struct GetRightsizingRecommendationInput {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -75,7 +77,7 @@ impl GetRightsizingRecommendationInput {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -83,6 +85,8 @@ impl GetRightsizingRecommendationInput {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -166,7 +170,7 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -174,6 +178,8 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -223,7 +229,7 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -231,6 +237,8 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>
@@ -280,7 +288,7 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Simple dimension values.</p>
     /// <ul>
     /// <li>
-    /// <p>There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, and <code>Dimensions</code>.</p>
+    /// <p>There are four types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>, <code>Dimensions</code>, and <code>ProductAttributes</code>.</p>
     /// <ul>
     /// <li>
     /// <p>Specify the <code>CostCategories</code> field to define a filter that acts on Cost Categories.</p></li>
@@ -288,6 +296,8 @@ impl GetRightsizingRecommendationInputBuilder {
     /// <p>Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation Tags.</p></li>
     /// <li>
     /// <p>Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html"> <code>DimensionValues</code> </a>.</p></li>
+    /// <li>
+    /// <p>Specify the <code>ProductAttributes</code> field to define a filter that acts on the product attributes of supported services, such as Amazon Bedrock. Only <code>GetCostAndUsage</code>, <code>GetCostAndUsageWithResources</code>, <code>GetDimensionValues</code> (in the <code>COST_AND_USAGE</code> context), <code>GetTags</code>, and <code>GetCostCategories</code> support <code>ProductAttributes</code>. For the supported services, keys and <code>SERVICE</code> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html"> <code>ProductAttributeValues</code> </a>.</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For each filter type, you can set the dimension name and values for the filters that you plan to use.</p>

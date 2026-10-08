@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationGuidanceExamples {
-    /// <p>An AWS CLI snippet version of the example.</p>
+    /// <p>An CLI snippet version of the example.</p>
     pub aws_cli: ::std::option::Option<::std::string::String>,
     /// <p>A CLI snippet version of the example.</p>
     pub cli: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ pub struct RemediationGuidanceExamples {
     pub template: ::std::option::Option<::std::string::String>,
 }
 impl RemediationGuidanceExamples {
-    /// <p>An AWS CLI snippet version of the example.</p>
+    /// <p>An CLI snippet version of the example.</p>
     pub fn aws_cli(&self) -> ::std::option::Option<&str> {
         self.aws_cli.as_deref()
     }
@@ -76,17 +76,17 @@ pub struct RemediationGuidanceExamplesBuilder {
     pub(crate) template: ::std::option::Option<::std::string::String>,
 }
 impl RemediationGuidanceExamplesBuilder {
-    /// <p>An AWS CLI snippet version of the example.</p>
+    /// <p>An CLI snippet version of the example.</p>
     pub fn aws_cli(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_cli = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An AWS CLI snippet version of the example.</p>
+    /// <p>An CLI snippet version of the example.</p>
     pub fn set_aws_cli(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_cli = input;
         self
     }
-    /// <p>An AWS CLI snippet version of the example.</p>
+    /// <p>An CLI snippet version of the example.</p>
     pub fn get_aws_cli(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_cli
     }

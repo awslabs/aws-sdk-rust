@@ -10,7 +10,7 @@ pub fn de_describe_affected_accounts_for_organization_http_error(
     crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -31,7 +31,7 @@ pub fn de_describe_affected_accounts_for_organization_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidPaginationTokenBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_pagination_token::de_invalid_pagination_token_json_err(_response_body, output)
+                    output = crate::protocol_serde::shape_invalid_pagination_token::de_invalid_pagination_token_cbor_err(_response_body, output)
                         .map_err(
                             crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError::unhandled,
                         )?;
@@ -75,66 +75,81 @@ pub fn de_describe_affected_accounts_for_organization_http_response(
 pub fn ser_describe_affected_accounts_for_organization_input(
     input: &crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_affected_accounts_for_organization_input::ser_describe_affected_accounts_for_organization_input_input(
-        &mut object,
-        input,
-    )?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_describe_affected_accounts_for_organization_input::ser_describe_affected_accounts_for_organization_input_input(
+            encoder, input,
+        )?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_describe_affected_accounts_for_organization(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "affectedAccounts" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_affected_accounts(Some(crate::protocol_serde::shape_affected_accounts_list::de_affected_accounts_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
+            "eventScopeCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_event_scope_code(Some(decoder.string().map(|s| crate::types::EventScopeCode::from(s.as_str()))?)))
+            })?,
+            "nextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
+            }
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "affectedAccounts" => {
-                    builder = builder.set_affected_accounts(crate::protocol_serde::shape_affected_accounts_list::de_affected_accounts_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "eventScopeCode" => {
-                    builder = builder.set_event_scope_code(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::EventScopeCode::from(u.as_ref())))
-                            .transpose()?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                "nextToken" => {
-                    builder = builder.set_next_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

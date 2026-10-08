@@ -14,6 +14,7 @@
 /// match kafkaschemaregistryauthtype {
 ///     KafkaSchemaRegistryAuthType::BasicAuth => { /* ... */ },
 ///     KafkaSchemaRegistryAuthType::ClientCertificateTlsAuth => { /* ... */ },
+///     KafkaSchemaRegistryAuthType::OauthbearerAuth => { /* ... */ },
 ///     KafkaSchemaRegistryAuthType::ServerRootCaCertificate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum KafkaSchemaRegistryAuthType {
     #[allow(missing_docs)] // documentation missing in model
     ClientCertificateTlsAuth,
     #[allow(missing_docs)] // documentation missing in model
+    OauthbearerAuth,
+    #[allow(missing_docs)] // documentation missing in model
     ServerRootCaCertificate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for KafkaSchemaRegistryAuthType {
         match s {
             "BASIC_AUTH" => KafkaSchemaRegistryAuthType::BasicAuth,
             "CLIENT_CERTIFICATE_TLS_AUTH" => KafkaSchemaRegistryAuthType::ClientCertificateTlsAuth,
+            "OAUTHBEARER_AUTH" => KafkaSchemaRegistryAuthType::OauthbearerAuth,
             "SERVER_ROOT_CA_CERTIFICATE" => KafkaSchemaRegistryAuthType::ServerRootCaCertificate,
             other => KafkaSchemaRegistryAuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,19 @@ impl KafkaSchemaRegistryAuthType {
         match self {
             KafkaSchemaRegistryAuthType::BasicAuth => "BASIC_AUTH",
             KafkaSchemaRegistryAuthType::ClientCertificateTlsAuth => "CLIENT_CERTIFICATE_TLS_AUTH",
+            KafkaSchemaRegistryAuthType::OauthbearerAuth => "OAUTHBEARER_AUTH",
             KafkaSchemaRegistryAuthType::ServerRootCaCertificate => "SERVER_ROOT_CA_CERTIFICATE",
             KafkaSchemaRegistryAuthType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC_AUTH", "CLIENT_CERTIFICATE_TLS_AUTH", "SERVER_ROOT_CA_CERTIFICATE"]
+        &[
+            "BASIC_AUTH",
+            "CLIENT_CERTIFICATE_TLS_AUTH",
+            "OAUTHBEARER_AUTH",
+            "SERVER_ROOT_CA_CERTIFICATE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for KafkaSchemaRegistryAuthType {
@@ -107,6 +117,7 @@ impl ::std::fmt::Display for KafkaSchemaRegistryAuthType {
         match self {
             KafkaSchemaRegistryAuthType::BasicAuth => write!(f, "BASIC_AUTH"),
             KafkaSchemaRegistryAuthType::ClientCertificateTlsAuth => write!(f, "CLIENT_CERTIFICATE_TLS_AUTH"),
+            KafkaSchemaRegistryAuthType::OauthbearerAuth => write!(f, "OAUTHBEARER_AUTH"),
             KafkaSchemaRegistryAuthType::ServerRootCaCertificate => write!(f, "SERVER_ROOT_CA_CERTIFICATE"),
             KafkaSchemaRegistryAuthType::Unknown(value) => write!(f, "{value}"),
         }

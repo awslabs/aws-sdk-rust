@@ -49,7 +49,6 @@ pub struct GameSession {
     /// <li>
     /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
     /// </ul>
-    /// <p></p>
     pub status_reason: ::std::option::Option<crate::types::GameSessionStatusReason>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
     /// <ul>
@@ -163,7 +162,6 @@ impl GameSession {
     /// <li>
     /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
     /// </ul>
-    /// <p></p>
     pub fn status_reason(&self) -> ::std::option::Option<&crate::types::GameSessionStatusReason> {
         self.status_reason.as_ref()
     }
@@ -483,7 +481,6 @@ impl GameSessionBuilder {
     /// <li>
     /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
     /// </ul>
-    /// <p></p>
     pub fn status_reason(mut self, input: crate::types::GameSessionStatusReason) -> Self {
         self.status_reason = ::std::option::Option::Some(input);
         self
@@ -497,7 +494,6 @@ impl GameSessionBuilder {
     /// <li>
     /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
     /// </ul>
-    /// <p></p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::GameSessionStatusReason>) -> Self {
         self.status_reason = input;
         self
@@ -511,7 +507,6 @@ impl GameSessionBuilder {
     /// <li>
     /// <p><code>FORCE_TERMINATED</code> – The game session was stopped by calling <code>TerminateGameSession</code> with the termination mode <code>FORCE_TERMINATE</code>.</p></li>
     /// </ul>
-    /// <p></p>
     pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::GameSessionStatusReason> {
         &self.status_reason
     }

@@ -140,6 +140,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "remediationCode" => {
+                            builder = builder.set_remediation_code(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "codeRemediationTask" => {
                             builder = builder.set_code_remediation_task(
                                 crate::protocol_serde::shape_code_remediation_task::de_code_remediation_task(tokens, _value, depth + 1)?,

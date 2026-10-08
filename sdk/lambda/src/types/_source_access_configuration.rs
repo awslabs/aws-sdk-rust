@@ -24,6 +24,20 @@ pub struct SourceAccessConfiguration {
     /// <p><code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p></li>
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER authentication with your Apache Kafka brokers. For the contents of the secret, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring the OAuth secret</a>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_SCOPE</code> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda requests when it acquires an access token. The <code>URI</code> field holds the scope value, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUDIENCE</code> – (Self-managed Apache Kafka) The OAuth 2.0 audience that Lambda requests when it acquires an access token. The <code>URI</code> field holds the audience value, not a secret ARN. This type requires either <code>OAUTHBEARER_AUTH</code> or <code>IAM_OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_LOGICAL_CLUSTER</code> – (Self-managed Apache Kafka) The logical cluster identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_IDENTITY_POOL</code> – (Self-managed Apache Kafka) The identity pool identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>IAM_AUTH</code> – (Self-managed Apache Kafka) Authenticate with Identity and Access Management (IAM). Your function's execution role signs each connection, so there is no secret to provide. Omit the <code>URI</code> field for this type.</p></li>
+    /// <li>
+    /// <p><code>IAM_OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) Authenticate with an Amazon Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for your function's execution role, so there is no secret to provide. Omit the <code>URI</code> field for this type. This type requires <code>OAUTHBEARER_AUDIENCE</code> and does not support the other <code>OAUTHBEARER</code> types.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SourceAccessType>,
     /// <p>The value for your chosen configuration in <code>Type</code>. For example: <code>"URI": "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.</p>
@@ -50,6 +64,20 @@ impl SourceAccessConfiguration {
     /// <p><code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p></li>
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER authentication with your Apache Kafka brokers. For the contents of the secret, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring the OAuth secret</a>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_SCOPE</code> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda requests when it acquires an access token. The <code>URI</code> field holds the scope value, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUDIENCE</code> – (Self-managed Apache Kafka) The OAuth 2.0 audience that Lambda requests when it acquires an access token. The <code>URI</code> field holds the audience value, not a secret ARN. This type requires either <code>OAUTHBEARER_AUTH</code> or <code>IAM_OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_LOGICAL_CLUSTER</code> – (Self-managed Apache Kafka) The logical cluster identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_IDENTITY_POOL</code> – (Self-managed Apache Kafka) The identity pool identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>IAM_AUTH</code> – (Self-managed Apache Kafka) Authenticate with Identity and Access Management (IAM). Your function's execution role signs each connection, so there is no secret to provide. Omit the <code>URI</code> field for this type.</p></li>
+    /// <li>
+    /// <p><code>IAM_OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) Authenticate with an Amazon Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for your function's execution role, so there is no secret to provide. Omit the <code>URI</code> field for this type. This type requires <code>OAUTHBEARER_AUDIENCE</code> and does not support the other <code>OAUTHBEARER</code> types.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SourceAccessType> {
         self.r#type.as_ref()
@@ -94,6 +122,20 @@ impl SourceAccessConfigurationBuilder {
     /// <p><code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p></li>
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER authentication with your Apache Kafka brokers. For the contents of the secret, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring the OAuth secret</a>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_SCOPE</code> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda requests when it acquires an access token. The <code>URI</code> field holds the scope value, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUDIENCE</code> – (Self-managed Apache Kafka) The OAuth 2.0 audience that Lambda requests when it acquires an access token. The <code>URI</code> field holds the audience value, not a secret ARN. This type requires either <code>OAUTHBEARER_AUTH</code> or <code>IAM_OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_LOGICAL_CLUSTER</code> – (Self-managed Apache Kafka) The logical cluster identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_IDENTITY_POOL</code> – (Self-managed Apache Kafka) The identity pool identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>IAM_AUTH</code> – (Self-managed Apache Kafka) Authenticate with Identity and Access Management (IAM). Your function's execution role signs each connection, so there is no secret to provide. Omit the <code>URI</code> field for this type.</p></li>
+    /// <li>
+    /// <p><code>IAM_OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) Authenticate with an Amazon Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for your function's execution role, so there is no secret to provide. Omit the <code>URI</code> field for this type. This type requires <code>OAUTHBEARER_AUDIENCE</code> and does not support the other <code>OAUTHBEARER</code> types.</p></li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SourceAccessType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
@@ -119,6 +161,20 @@ impl SourceAccessConfigurationBuilder {
     /// <p><code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p></li>
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER authentication with your Apache Kafka brokers. For the contents of the secret, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring the OAuth secret</a>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_SCOPE</code> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda requests when it acquires an access token. The <code>URI</code> field holds the scope value, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUDIENCE</code> – (Self-managed Apache Kafka) The OAuth 2.0 audience that Lambda requests when it acquires an access token. The <code>URI</code> field holds the audience value, not a secret ARN. This type requires either <code>OAUTHBEARER_AUTH</code> or <code>IAM_OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_LOGICAL_CLUSTER</code> – (Self-managed Apache Kafka) The logical cluster identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_IDENTITY_POOL</code> – (Self-managed Apache Kafka) The identity pool identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>IAM_AUTH</code> – (Self-managed Apache Kafka) Authenticate with Identity and Access Management (IAM). Your function's execution role signs each connection, so there is no secret to provide. Omit the <code>URI</code> field for this type.</p></li>
+    /// <li>
+    /// <p><code>IAM_OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) Authenticate with an Amazon Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for your function's execution role, so there is no secret to provide. Omit the <code>URI</code> field for this type. This type requires <code>OAUTHBEARER_AUDIENCE</code> and does not support the other <code>OAUTHBEARER</code> types.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SourceAccessType>) -> Self {
         self.r#type = input;
@@ -144,6 +200,20 @@ impl SourceAccessConfigurationBuilder {
     /// <p><code>CLIENT_CERTIFICATE_TLS_AUTH</code> – (Amazon MSK, self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the certificate chain (X.509 PEM), private key (PKCS#8 PEM), and private key password (optional) used for mutual TLS authentication of your MSK/Apache Kafka brokers.</p></li>
     /// <li>
     /// <p><code>SERVER_ROOT_CA_CERTIFICATE</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the root CA certificate (X.509 PEM) used for TLS encryption of your Apache Kafka brokers.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) The Secrets Manager ARN of your secret key containing the OAuth 2.0 credentials that Lambda uses for SASL/OAUTHBEARER authentication with your Apache Kafka brokers. For the contents of the secret, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring the OAuth secret</a>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_SCOPE</code> – (Self-managed Apache Kafka) The OAuth 2.0 scope that Lambda requests when it acquires an access token. The <code>URI</code> field holds the scope value, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_AUDIENCE</code> – (Self-managed Apache Kafka) The OAuth 2.0 audience that Lambda requests when it acquires an access token. The <code>URI</code> field holds the audience value, not a secret ARN. This type requires either <code>OAUTHBEARER_AUTH</code> or <code>IAM_OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_LOGICAL_CLUSTER</code> – (Self-managed Apache Kafka) The logical cluster identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>OAUTHBEARER_IDENTITY_POOL</code> – (Self-managed Apache Kafka) The identity pool identifier that Lambda sends to a Confluent Cloud broker. The <code>URI</code> field holds the identifier, not a secret ARN. This type requires <code>OAUTHBEARER_AUTH</code>.</p></li>
+    /// <li>
+    /// <p><code>IAM_AUTH</code> – (Self-managed Apache Kafka) Authenticate with Identity and Access Management (IAM). Your function's execution role signs each connection, so there is no secret to provide. Omit the <code>URI</code> field for this type.</p></li>
+    /// <li>
+    /// <p><code>IAM_OAUTHBEARER_AUTH</code> – (Self-managed Apache Kafka) Authenticate with an Amazon Web Services web identity token over SASL/OAUTHBEARER. Lambda requests the token for your function's execution role, so there is no secret to provide. Omit the <code>URI</code> field for this type. This type requires <code>OAUTHBEARER_AUDIENCE</code> and does not support the other <code>OAUTHBEARER</code> types.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SourceAccessType> {
         &self.r#type

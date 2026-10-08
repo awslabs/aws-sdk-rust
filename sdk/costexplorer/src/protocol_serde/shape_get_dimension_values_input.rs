@@ -15,38 +15,41 @@ pub fn ser_get_dimension_values_input_input(
     if let Some(var_4) = &input.dimension {
         object.key("Dimension").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.context {
-        object.key("Context").string(var_5.as_str());
+    if let Some(var_5) = &input.dimension_key {
+        object.key("DimensionKey").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.filter {
+    if let Some(var_6) = &input.context {
+        object.key("Context").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.filter {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Filter").start_object();
-        crate::protocol_serde::shape_expression::ser_expression(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("Filter").start_object();
+        crate::protocol_serde::shape_expression::ser_expression(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.sort_by {
-        let mut array_9 = object.key("SortBy").start_array();
-        for item_10 in var_8 {
+    if let Some(var_9) = &input.sort_by {
+        let mut array_10 = object.key("SortBy").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_sort_definition::ser_sort_definition(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_sort_definition::ser_sort_definition(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.billing_view_arn {
-        object.key("BillingViewArn").string(var_12.as_str());
+    if let Some(var_13) = &input.billing_view_arn {
+        object.key("BillingViewArn").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.max_results {
+    if let Some(var_14) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.next_page_token {
-        object.key("NextPageToken").string(var_14.as_str());
+    if let Some(var_15) = &input.next_page_token {
+        object.key("NextPageToken").string(var_15.as_str());
     }
     Ok(())
 }

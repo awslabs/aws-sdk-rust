@@ -365,6 +365,10 @@ pub(crate) mod shape_get_session_endpoint;
 
 pub(crate) mod shape_get_statement;
 
+pub(crate) mod shape_get_system_logs_for_job_run;
+
+pub(crate) mod shape_get_system_logs_for_session;
+
 pub(crate) mod shape_get_table;
 
 pub(crate) mod shape_get_table_optimizer;
@@ -998,6 +1002,10 @@ pub(crate) mod shape_get_session_endpoint_input;
 pub(crate) mod shape_get_session_input;
 
 pub(crate) mod shape_get_statement_input;
+
+pub(crate) mod shape_get_system_logs_for_job_run_input;
+
+pub(crate) mod shape_get_system_logs_for_session_input;
 
 pub(crate) mod shape_get_table_input;
 

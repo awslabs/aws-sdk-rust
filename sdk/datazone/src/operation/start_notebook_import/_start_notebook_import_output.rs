@@ -15,6 +15,8 @@ pub struct StartNotebookImportOutput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the imported notebook.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the imported notebook.</p>
+    pub r#type: ::std::option::Option<crate::types::NotebookType>,
     /// <p>The source location from which the notebook was imported.</p>
     pub source_location: ::std::option::Option<crate::types::SourceLocation>,
     /// <p>The timestamp of when the notebook import was started.</p>
@@ -48,6 +50,10 @@ impl StartNotebookImportOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The type of the imported notebook.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NotebookType> {
+        self.r#type.as_ref()
+    }
     /// <p>The source location from which the notebook was imported.</p>
     pub fn source_location(&self) -> ::std::option::Option<&crate::types::SourceLocation> {
         self.source_location.as_ref()
@@ -70,6 +76,7 @@ impl ::std::fmt::Debug for StartNotebookImportOutput {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("source_location", &self.source_location);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
@@ -99,6 +106,7 @@ pub struct StartNotebookImportOutputBuilder {
     pub(crate) owning_project_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NotebookType>,
     pub(crate) source_location: ::std::option::Option<crate::types::SourceLocation>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
@@ -189,6 +197,20 @@ impl StartNotebookImportOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The type of the imported notebook.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the imported notebook.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the imported notebook.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        &self.r#type
+    }
     /// <p>The source location from which the notebook was imported.</p>
     pub fn source_location(mut self, input: crate::types::SourceLocation) -> Self {
         self.source_location = ::std::option::Option::Some(input);
@@ -249,6 +271,7 @@ impl StartNotebookImportOutputBuilder {
             owning_project_id: self.owning_project_id,
             name: self.name,
             description: self.description,
+            r#type: self.r#type,
             source_location: self.source_location,
             created_at: self.created_at,
             created_by: self.created_by,
@@ -265,6 +288,7 @@ impl ::std::fmt::Debug for StartNotebookImportOutputBuilder {
         formatter.field("owning_project_id", &self.owning_project_id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("r#type", &self.r#type);
         formatter.field("source_location", &self.source_location);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);

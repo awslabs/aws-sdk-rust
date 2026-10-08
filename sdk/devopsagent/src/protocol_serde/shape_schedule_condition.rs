@@ -3,8 +3,14 @@ pub fn ser_schedule_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduleCondition,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("expression").string(input.expression.as_str());
+    if let Some(var_1) = &input.expression {
+        object.key("expression").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.spec {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("spec").start_object();
+        crate::protocol_serde::shape_schedule_spec::ser_schedule_spec(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
@@ -38,6 +44,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "spec" => {
+                            builder = builder.set_spec(crate::protocol_serde::shape_schedule_spec::de_schedule_spec(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -47,9 +56,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::schedule_condition_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

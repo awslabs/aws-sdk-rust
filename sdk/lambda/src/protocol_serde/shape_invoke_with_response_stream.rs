@@ -95,6 +95,66 @@ pub fn de_invoke_with_response_stream_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "CodeArtifactUserDeletedException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserDeletedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CodeArtifactUserDeletedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_code_artifact_user_deleted_exception::de_code_artifact_user_deleted_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "CodeArtifactUserFailedException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CodeArtifactUserFailedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_code_artifact_user_failed_exception::de_code_artifact_user_failed_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "CodeArtifactUserPendingException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserPendingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::CodeArtifactUserPendingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_code_artifact_user_pending_exception::de_code_artifact_user_pending_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "EC2AccessDeniedException" => crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::Ec2AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {

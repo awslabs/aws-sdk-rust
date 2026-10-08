@@ -107,6 +107,8 @@ pub use crate::types::_addon_namespace_config_response::AddonNamespaceConfigResp
 
 pub use crate::types::_argo_cd_config_request::ArgoCdConfigRequestBuilder;
 
+pub use crate::types::_ack_config_request::AckConfigRequestBuilder;
+
 pub use crate::types::_capability_configuration_response::CapabilityConfigurationResponseBuilder;
 
 pub use crate::types::_capability_health::CapabilityHealthBuilder;
@@ -195,6 +197,8 @@ pub use crate::types::_pod_identity_association_summary::PodIdentityAssociationS
 
 pub use crate::types::_update_argo_cd_config::UpdateArgoCdConfigBuilder;
 
+pub use crate::types::_update_ack_config::UpdateAckConfigBuilder;
+
 pub use crate::types::_update_param::UpdateParamBuilder;
 
 pub use crate::types::_error_detail::ErrorDetailBuilder;
@@ -206,6 +210,8 @@ pub use crate::types::_argo_cd_aws_idc_config_request::ArgoCdAwsIdcConfigRequest
 pub use crate::types::_argo_cd_network_access_config_request::ArgoCdNetworkAccessConfigRequestBuilder;
 
 pub use crate::types::_argo_cd_config_response::ArgoCdConfigResponseBuilder;
+
+pub use crate::types::_ack_config_response::AckConfigResponseBuilder;
 
 pub use crate::types::_log_setup::LogSetupBuilder;
 

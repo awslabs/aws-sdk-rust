@@ -1965,6 +1965,15 @@ where
 impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError> for Error {
     fn from(err: crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError) -> Self {
         match err {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserDeletedException(inner) => {
+                Error::CodeArtifactUserDeletedException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserFailedException(inner) => {
+                Error::CodeArtifactUserFailedException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::CodeArtifactUserPendingException(inner) => {
+                Error::CodeArtifactUserPendingException(inner)
+            }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::Ec2AccessDeniedException(inner) => {
                 Error::Ec2AccessDeniedException(inner)
             }

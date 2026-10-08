@@ -9,5 +9,11 @@ pub fn ser_capability_configuration_request(
         crate::protocol_serde::shape_argo_cd_config_request::ser_argo_cd_config_request(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.ack {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("ack").start_object();
+        crate::protocol_serde::shape_ack_config_request::ser_ack_config_request(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

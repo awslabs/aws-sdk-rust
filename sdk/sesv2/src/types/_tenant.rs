@@ -14,7 +14,15 @@ pub struct Tenant {
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of objects that define the tags (keys and values) associated with the tenant.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The status of sending capability for the tenant.</p>
+    /// <p>The status of sending capability for the tenant:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
     pub sending_status: ::std::option::Option<crate::types::SendingStatus>,
     /// <p>An object that contains information about the suppression list preferences for the tenant.</p>
     pub suppression_attributes: ::std::option::Option<crate::types::TenantSuppressionAttributes>,
@@ -42,7 +50,15 @@ impl Tenant {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The status of sending capability for the tenant.</p>
+    /// <p>The status of sending capability for the tenant:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
     pub fn sending_status(&self) -> ::std::option::Option<&crate::types::SendingStatus> {
         self.sending_status.as_ref()
     }
@@ -147,17 +163,41 @@ impl TenantBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The status of sending capability for the tenant.</p>
+    /// <p>The status of sending capability for the tenant:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
     pub fn sending_status(mut self, input: crate::types::SendingStatus) -> Self {
         self.sending_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of sending capability for the tenant.</p>
+    /// <p>The status of sending capability for the tenant:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
     pub fn set_sending_status(mut self, input: ::std::option::Option<crate::types::SendingStatus>) -> Self {
         self.sending_status = input;
         self
     }
-    /// <p>The status of sending capability for the tenant.</p>
+    /// <p>The status of sending capability for the tenant:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> – Sending is allowed for the tenant.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> – Sending is prevented for the tenant.</p></li>
+    /// <li>
+    /// <p><code>REINSTATED</code> – Sending is allowed even if there are active reputation findings.</p></li>
+    /// </ul>
     pub fn get_sending_status(&self) -> &::std::option::Option<crate::types::SendingStatus> {
         &self.sending_status
     }

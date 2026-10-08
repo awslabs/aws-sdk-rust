@@ -136,17 +136,17 @@ impl StartNotebookImportFluentBuilder {
     pub fn get_owning_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_owning_project_identifier()
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn source_location(mut self, input: crate::types::SourceLocation) -> Self {
         self.inner = self.inner.source_location(input);
         self
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn set_source_location(mut self, input: ::std::option::Option<crate::types::SourceLocation>) -> Self {
         self.inner = self.inner.set_source_location(input);
         self
     }
-    /// <p>The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.</p>
+    /// <p>The source location of the notebook to import. Specify either a single Amazon Simple Storage Service URI, or a list of objects to import as the notebook's cells.</p>
     pub fn get_source_location(&self) -> &::std::option::Option<crate::types::SourceLocation> {
         self.inner.get_source_location()
     }
@@ -177,6 +177,20 @@ impl StartNotebookImportFluentBuilder {
     /// <p>The description of the imported notebook.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn r#type(mut self, input: crate::types::NotebookType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NotebookType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type of the notebook to import. If not specified, defaults to <code>DATA</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::NotebookType> {
+        self.inner.get_type()
     }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

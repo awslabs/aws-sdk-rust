@@ -38,6 +38,8 @@ pub struct Finding {
     pub validation_status: ::std::option::Option<crate::types::ValidationStatus>,
     /// <p>The attack script used to reproduce the finding.</p>
     pub attack_script: ::std::option::Option<::std::string::String>,
+    /// <p>The suggested fix for the finding, describing the changes recommended to remediate the vulnerability, with example code or configuration.</p>
+    pub remediation_code: ::std::option::Option<::std::string::String>,
     /// <p>The code remediation task associated with the finding, if code remediation was initiated.</p>
     pub code_remediation_task: ::std::option::Option<crate::types::CodeRemediationTask>,
     /// <p>The identifier of the entity that last updated the finding.</p>
@@ -130,6 +132,10 @@ impl Finding {
     pub fn attack_script(&self) -> ::std::option::Option<&str> {
         self.attack_script.as_deref()
     }
+    /// <p>The suggested fix for the finding, describing the changes recommended to remediate the vulnerability, with example code or configuration.</p>
+    pub fn remediation_code(&self) -> ::std::option::Option<&str> {
+        self.remediation_code.as_deref()
+    }
     /// <p>The code remediation task associated with the finding, if code remediation was initiated.</p>
     pub fn code_remediation_task(&self) -> ::std::option::Option<&crate::types::CodeRemediationTask> {
         self.code_remediation_task.as_ref()
@@ -203,6 +209,7 @@ pub struct FindingBuilder {
     pub(crate) confidence: ::std::option::Option<crate::types::ConfidenceLevel>,
     pub(crate) validation_status: ::std::option::Option<crate::types::ValidationStatus>,
     pub(crate) attack_script: ::std::option::Option<::std::string::String>,
+    pub(crate) remediation_code: ::std::option::Option<::std::string::String>,
     pub(crate) code_remediation_task: ::std::option::Option<crate::types::CodeRemediationTask>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) customer_note: ::std::option::Option<::std::string::String>,
@@ -455,6 +462,20 @@ impl FindingBuilder {
     pub fn get_attack_script(&self) -> &::std::option::Option<::std::string::String> {
         &self.attack_script
     }
+    /// <p>The suggested fix for the finding, describing the changes recommended to remediate the vulnerability, with example code or configuration.</p>
+    pub fn remediation_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.remediation_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The suggested fix for the finding, describing the changes recommended to remediate the vulnerability, with example code or configuration.</p>
+    pub fn set_remediation_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.remediation_code = input;
+        self
+    }
+    /// <p>The suggested fix for the finding, describing the changes recommended to remediate the vulnerability, with example code or configuration.</p>
+    pub fn get_remediation_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.remediation_code
+    }
     /// <p>The code remediation task associated with the finding, if code remediation was initiated.</p>
     pub fn code_remediation_task(mut self, input: crate::types::CodeRemediationTask) -> Self {
         self.code_remediation_task = ::std::option::Option::Some(input);
@@ -640,6 +661,7 @@ impl FindingBuilder {
             confidence: self.confidence,
             validation_status: self.validation_status,
             attack_script: self.attack_script,
+            remediation_code: self.remediation_code,
             code_remediation_task: self.code_remediation_task,
             last_updated_by: self.last_updated_by,
             customer_note: self.customer_note,

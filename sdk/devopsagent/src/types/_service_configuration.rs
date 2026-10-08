@@ -32,6 +32,8 @@ pub enum ServiceConfiguration {
     Mcpserversplunk(crate::types::McpServerSplunkConfiguration),
     /// <p>PagerDuty integration configuration</p>
     Pagerduty(crate::types::PagerDutyConfiguration),
+    /// <p>Release management network environment configuration</p>
+    ReleaseManagement(crate::types::ReleaseManagementConfiguration),
     /// <p>Remote A2A agent integration configuration (token-based auth).</p>
     Remoteagent(crate::types::RemoteAgentConfiguration),
     /// <p>Remote A2A agent integration configuration (SigV4 auth).</p>
@@ -234,6 +236,19 @@ impl ServiceConfiguration {
     /// Returns true if this is a [`Pagerduty`](crate::types::ServiceConfiguration::Pagerduty).
     pub fn is_pagerduty(&self) -> bool {
         self.as_pagerduty().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ReleaseManagement`](crate::types::ServiceConfiguration::ReleaseManagement), extracting the inner [`ReleaseManagementConfiguration`](crate::types::ReleaseManagementConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_release_management(&self) -> ::std::result::Result<&crate::types::ReleaseManagementConfiguration, &Self> {
+        if let ServiceConfiguration::ReleaseManagement(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ReleaseManagement`](crate::types::ServiceConfiguration::ReleaseManagement).
+    pub fn is_release_management(&self) -> bool {
+        self.as_release_management().is_ok()
     }
     /// Tries to convert the enum instance into [`Remoteagent`](crate::types::ServiceConfiguration::Remoteagent), extracting the inner [`RemoteAgentConfiguration`](crate::types::RemoteAgentConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
