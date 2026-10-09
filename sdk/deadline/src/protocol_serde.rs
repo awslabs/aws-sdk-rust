@@ -187,6 +187,8 @@ pub(crate) mod shape_list_license_endpoints;
 
 pub(crate) mod shape_list_limits;
 
+pub(crate) mod shape_list_memberships;
+
 pub(crate) mod shape_list_metered_products;
 
 pub(crate) mod shape_list_monitors;
@@ -519,6 +521,8 @@ pub(crate) mod shape_list_sessions_for_worker_summaries;
 
 pub(crate) mod shape_log_configuration;
 
+pub(crate) mod shape_membership_summaries;
+
 pub(crate) mod shape_metered_product_summary_list;
 
 pub(crate) mod shape_monitor_summaries;
@@ -686,6 +690,8 @@ pub(crate) mod shape_log_parameters;
 pub(crate) mod shape_manifest_properties;
 
 pub(crate) mod shape_manifest_properties_list;
+
+pub(crate) mod shape_membership_summary;
 
 pub(crate) mod shape_metered_product_summary;
 

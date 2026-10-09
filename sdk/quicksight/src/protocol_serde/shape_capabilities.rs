@@ -1098,83 +1098,635 @@ pub fn ser_capabilities(
     if let Some(var_365) = &input.use_bee_action {
         object.key("UseBeeAction").string(var_365.as_str());
     }
-    if let Some(var_366) = &input.topic {
-        object.key("Topic").string(var_366.as_str());
+    if let Some(var_366) = &input.gong_action {
+        object.key("GongAction").string(var_366.as_str());
     }
-    if let Some(var_367) = &input.edit_visual_with_q {
-        object.key("EditVisualWithQ").string(var_367.as_str());
+    if let Some(var_367) = &input.create_and_update_gong_action {
+        object.key("CreateAndUpdateGongAction").string(var_367.as_str());
     }
-    if let Some(var_368) = &input.build_calculated_field_with_q {
-        object.key("BuildCalculatedFieldWithQ").string(var_368.as_str());
+    if let Some(var_368) = &input.share_gong_action {
+        object.key("ShareGongAction").string(var_368.as_str());
     }
-    if let Some(var_369) = &input.create_dashboard_executive_summary_with_q {
-        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_369.as_str());
+    if let Some(var_369) = &input.use_gong_action {
+        object.key("UseGongAction").string(var_369.as_str());
     }
-    if let Some(var_370) = &input.space {
-        object.key("Space").string(var_370.as_str());
+    if let Some(var_370) = &input.topic {
+        object.key("Topic").string(var_370.as_str());
     }
-    if let Some(var_371) = &input.create_spaces {
-        object.key("CreateSpaces").string(var_371.as_str());
+    if let Some(var_371) = &input.edit_visual_with_q {
+        object.key("EditVisualWithQ").string(var_371.as_str());
     }
-    if let Some(var_372) = &input.share_spaces {
-        object.key("ShareSpaces").string(var_372.as_str());
+    if let Some(var_372) = &input.build_calculated_field_with_q {
+        object.key("BuildCalculatedFieldWithQ").string(var_372.as_str());
     }
-    if let Some(var_373) = &input.chat_agent {
-        object.key("ChatAgent").string(var_373.as_str());
+    if let Some(var_373) = &input.create_dashboard_executive_summary_with_q {
+        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_373.as_str());
     }
-    if let Some(var_374) = &input.create_chat_agents {
-        object.key("CreateChatAgents").string(var_374.as_str());
+    if let Some(var_374) = &input.space {
+        object.key("Space").string(var_374.as_str());
     }
-    if let Some(var_375) = &input.share_chat_agents {
-        object.key("ShareChatAgents").string(var_375.as_str());
+    if let Some(var_375) = &input.create_spaces {
+        object.key("CreateSpaces").string(var_375.as_str());
     }
-    if let Some(var_376) = &input.research {
-        object.key("Research").string(var_376.as_str());
+    if let Some(var_376) = &input.share_spaces {
+        object.key("ShareSpaces").string(var_376.as_str());
     }
-    if let Some(var_377) = &input.self_upgrade_user_role {
-        object.key("SelfUpgradeUserRole").string(var_377.as_str());
+    if let Some(var_377) = &input.chat_agent {
+        object.key("ChatAgent").string(var_377.as_str());
     }
-    if let Some(var_378) = &input.extension {
-        object.key("Extension").string(var_378.as_str());
+    if let Some(var_378) = &input.create_chat_agents {
+        object.key("CreateChatAgents").string(var_378.as_str());
     }
-    if let Some(var_379) = &input.use_browser_extension {
-        object.key("UseBrowserExtension").string(var_379.as_str());
+    if let Some(var_379) = &input.share_chat_agents {
+        object.key("ShareChatAgents").string(var_379.as_str());
     }
-    if let Some(var_380) = &input.use_word_add_in_extension {
-        object.key("UseWordAddInExtension").string(var_380.as_str());
+    if let Some(var_380) = &input.research {
+        object.key("Research").string(var_380.as_str());
     }
-    if let Some(var_381) = &input.use_outlook_add_in_extension {
-        object.key("UseOutlookAddInExtension").string(var_381.as_str());
+    if let Some(var_381) = &input.self_upgrade_user_role {
+        object.key("SelfUpgradeUserRole").string(var_381.as_str());
     }
-    if let Some(var_382) = &input.use_excel_add_in_extension {
-        object.key("UseExcelAddInExtension").string(var_382.as_str());
+    if let Some(var_382) = &input.extension {
+        object.key("Extension").string(var_382.as_str());
     }
-    if let Some(var_383) = &input.use_powerpoint_add_in_extension {
-        object.key("UsePowerpointAddInExtension").string(var_383.as_str());
+    if let Some(var_383) = &input.use_browser_extension {
+        object.key("UseBrowserExtension").string(var_383.as_str());
     }
-    if let Some(var_384) = &input.manage_shared_folders {
-        object.key("ManageSharedFolders").string(var_384.as_str());
+    if let Some(var_384) = &input.use_word_add_in_extension {
+        object.key("UseWordAddInExtension").string(var_384.as_str());
     }
-    if let Some(var_385) = &input.generate_analyses {
-        object.key("GenerateAnalyses").string(var_385.as_str());
+    if let Some(var_385) = &input.use_outlook_add_in_extension {
+        object.key("UseOutlookAddInExtension").string(var_385.as_str());
     }
-    if let Some(var_386) = &input.story {
-        object.key("Story").string(var_386.as_str());
+    if let Some(var_386) = &input.use_excel_add_in_extension {
+        object.key("UseExcelAddInExtension").string(var_386.as_str());
     }
-    if let Some(var_387) = &input.scenario {
-        object.key("Scenario").string(var_387.as_str());
+    if let Some(var_387) = &input.use_powerpoint_add_in_extension {
+        object.key("UsePowerpointAddInExtension").string(var_387.as_str());
     }
-    if let Some(var_388) = &input.trigger {
-        object.key("Trigger").string(var_388.as_str());
+    if let Some(var_388) = &input.manage_shared_folders {
+        object.key("ManageSharedFolders").string(var_388.as_str());
     }
-    if let Some(var_389) = &input.schedule_trigger {
-        object.key("ScheduleTrigger").string(var_389.as_str());
+    if let Some(var_389) = &input.generate_analyses {
+        object.key("GenerateAnalyses").string(var_389.as_str());
     }
-    if let Some(var_390) = &input.inbound_email_trigger {
-        object.key("InboundEmailTrigger").string(var_390.as_str());
+    if let Some(var_390) = &input.story {
+        object.key("Story").string(var_390.as_str());
     }
-    if let Some(var_391) = &input.quick_event_trigger {
-        object.key("QuickEventTrigger").string(var_391.as_str());
+    if let Some(var_391) = &input.scenario {
+        object.key("Scenario").string(var_391.as_str());
+    }
+    if let Some(var_392) = &input.trigger {
+        object.key("Trigger").string(var_392.as_str());
+    }
+    if let Some(var_393) = &input.schedule_trigger {
+        object.key("ScheduleTrigger").string(var_393.as_str());
+    }
+    if let Some(var_394) = &input.inbound_email_trigger {
+        object.key("InboundEmailTrigger").string(var_394.as_str());
+    }
+    if let Some(var_395) = &input.quick_event_trigger {
+        object.key("QuickEventTrigger").string(var_395.as_str());
+    }
+    if let Some(var_396) = &input.file_data_source {
+        object.key("FileDataSource").string(var_396.as_str());
+    }
+    if let Some(var_397) = &input.create_file_data_source {
+        object.key("CreateFileDataSource").string(var_397.as_str());
+    }
+    if let Some(var_398) = &input.update_file_data_source {
+        object.key("UpdateFileDataSource").string(var_398.as_str());
+    }
+    if let Some(var_399) = &input.share_file_data_source {
+        object.key("ShareFileDataSource").string(var_399.as_str());
+    }
+    if let Some(var_400) = &input.s3_data_source {
+        object.key("S3DataSource").string(var_400.as_str());
+    }
+    if let Some(var_401) = &input.create_s3_data_source {
+        object.key("CreateS3DataSource").string(var_401.as_str());
+    }
+    if let Some(var_402) = &input.update_s3_data_source {
+        object.key("UpdateS3DataSource").string(var_402.as_str());
+    }
+    if let Some(var_403) = &input.share_s3_data_source {
+        object.key("ShareS3DataSource").string(var_403.as_str());
+    }
+    if let Some(var_404) = &input.s3_analytics_data_source {
+        object.key("S3AnalyticsDataSource").string(var_404.as_str());
+    }
+    if let Some(var_405) = &input.create_s3_analytics_data_source {
+        object.key("CreateS3AnalyticsDataSource").string(var_405.as_str());
+    }
+    if let Some(var_406) = &input.update_s3_analytics_data_source {
+        object.key("UpdateS3AnalyticsDataSource").string(var_406.as_str());
+    }
+    if let Some(var_407) = &input.share_s3_analytics_data_source {
+        object.key("ShareS3AnalyticsDataSource").string(var_407.as_str());
+    }
+    if let Some(var_408) = &input.s3_tables_data_source {
+        object.key("S3TablesDataSource").string(var_408.as_str());
+    }
+    if let Some(var_409) = &input.create_s3_tables_data_source {
+        object.key("CreateS3TablesDataSource").string(var_409.as_str());
+    }
+    if let Some(var_410) = &input.update_s3_tables_data_source {
+        object.key("UpdateS3TablesDataSource").string(var_410.as_str());
+    }
+    if let Some(var_411) = &input.share_s3_tables_data_source {
+        object.key("ShareS3TablesDataSource").string(var_411.as_str());
+    }
+    if let Some(var_412) = &input.athena_data_source {
+        object.key("AthenaDataSource").string(var_412.as_str());
+    }
+    if let Some(var_413) = &input.create_athena_data_source {
+        object.key("CreateAthenaDataSource").string(var_413.as_str());
+    }
+    if let Some(var_414) = &input.update_athena_data_source {
+        object.key("UpdateAthenaDataSource").string(var_414.as_str());
+    }
+    if let Some(var_415) = &input.share_athena_data_source {
+        object.key("ShareAthenaDataSource").string(var_415.as_str());
+    }
+    if let Some(var_416) = &input.rds_data_source {
+        object.key("RdsDataSource").string(var_416.as_str());
+    }
+    if let Some(var_417) = &input.create_rds_data_source {
+        object.key("CreateRdsDataSource").string(var_417.as_str());
+    }
+    if let Some(var_418) = &input.update_rds_data_source {
+        object.key("UpdateRdsDataSource").string(var_418.as_str());
+    }
+    if let Some(var_419) = &input.share_rds_data_source {
+        object.key("ShareRdsDataSource").string(var_419.as_str());
+    }
+    if let Some(var_420) = &input.redshift_auto_discovered_data_source {
+        object.key("RedshiftAutoDiscoveredDataSource").string(var_420.as_str());
+    }
+    if let Some(var_421) = &input.create_redshift_auto_discovered_data_source {
+        object.key("CreateRedshiftAutoDiscoveredDataSource").string(var_421.as_str());
+    }
+    if let Some(var_422) = &input.update_redshift_auto_discovered_data_source {
+        object.key("UpdateRedshiftAutoDiscoveredDataSource").string(var_422.as_str());
+    }
+    if let Some(var_423) = &input.share_redshift_auto_discovered_data_source {
+        object.key("ShareRedshiftAutoDiscoveredDataSource").string(var_423.as_str());
+    }
+    if let Some(var_424) = &input.redshift_manual_data_source {
+        object.key("RedshiftManualDataSource").string(var_424.as_str());
+    }
+    if let Some(var_425) = &input.create_redshift_manual_data_source {
+        object.key("CreateRedshiftManualDataSource").string(var_425.as_str());
+    }
+    if let Some(var_426) = &input.update_redshift_manual_data_source {
+        object.key("UpdateRedshiftManualDataSource").string(var_426.as_str());
+    }
+    if let Some(var_427) = &input.share_redshift_manual_data_source {
+        object.key("ShareRedshiftManualDataSource").string(var_427.as_str());
+    }
+    if let Some(var_428) = &input.open_search_data_source {
+        object.key("OpenSearchDataSource").string(var_428.as_str());
+    }
+    if let Some(var_429) = &input.create_open_search_data_source {
+        object.key("CreateOpenSearchDataSource").string(var_429.as_str());
+    }
+    if let Some(var_430) = &input.update_open_search_data_source {
+        object.key("UpdateOpenSearchDataSource").string(var_430.as_str());
+    }
+    if let Some(var_431) = &input.share_open_search_data_source {
+        object.key("ShareOpenSearchDataSource").string(var_431.as_str());
+    }
+    if let Some(var_432) = &input.timestream_data_source {
+        object.key("TimestreamDataSource").string(var_432.as_str());
+    }
+    if let Some(var_433) = &input.create_timestream_data_source {
+        object.key("CreateTimestreamDataSource").string(var_433.as_str());
+    }
+    if let Some(var_434) = &input.update_timestream_data_source {
+        object.key("UpdateTimestreamDataSource").string(var_434.as_str());
+    }
+    if let Some(var_435) = &input.share_timestream_data_source {
+        object.key("ShareTimestreamDataSource").string(var_435.as_str());
+    }
+    if let Some(var_436) = &input.aurora_data_source {
+        object.key("AuroraDataSource").string(var_436.as_str());
+    }
+    if let Some(var_437) = &input.create_aurora_data_source {
+        object.key("CreateAuroraDataSource").string(var_437.as_str());
+    }
+    if let Some(var_438) = &input.update_aurora_data_source {
+        object.key("UpdateAuroraDataSource").string(var_438.as_str());
+    }
+    if let Some(var_439) = &input.share_aurora_data_source {
+        object.key("ShareAuroraDataSource").string(var_439.as_str());
+    }
+    if let Some(var_440) = &input.my_sql_data_source {
+        object.key("MySqlDataSource").string(var_440.as_str());
+    }
+    if let Some(var_441) = &input.create_my_sql_data_source {
+        object.key("CreateMySqlDataSource").string(var_441.as_str());
+    }
+    if let Some(var_442) = &input.update_my_sql_data_source {
+        object.key("UpdateMySqlDataSource").string(var_442.as_str());
+    }
+    if let Some(var_443) = &input.share_my_sql_data_source {
+        object.key("ShareMySqlDataSource").string(var_443.as_str());
+    }
+    if let Some(var_444) = &input.postgre_sql_data_source {
+        object.key("PostgreSqlDataSource").string(var_444.as_str());
+    }
+    if let Some(var_445) = &input.create_postgre_sql_data_source {
+        object.key("CreatePostgreSqlDataSource").string(var_445.as_str());
+    }
+    if let Some(var_446) = &input.update_postgre_sql_data_source {
+        object.key("UpdatePostgreSqlDataSource").string(var_446.as_str());
+    }
+    if let Some(var_447) = &input.share_postgre_sql_data_source {
+        object.key("SharePostgreSqlDataSource").string(var_447.as_str());
+    }
+    if let Some(var_448) = &input.oracle_data_source {
+        object.key("OracleDataSource").string(var_448.as_str());
+    }
+    if let Some(var_449) = &input.create_oracle_data_source {
+        object.key("CreateOracleDataSource").string(var_449.as_str());
+    }
+    if let Some(var_450) = &input.update_oracle_data_source {
+        object.key("UpdateOracleDataSource").string(var_450.as_str());
+    }
+    if let Some(var_451) = &input.share_oracle_data_source {
+        object.key("ShareOracleDataSource").string(var_451.as_str());
+    }
+    if let Some(var_452) = &input.sql_server_data_source {
+        object.key("SqlServerDataSource").string(var_452.as_str());
+    }
+    if let Some(var_453) = &input.create_sql_server_data_source {
+        object.key("CreateSqlServerDataSource").string(var_453.as_str());
+    }
+    if let Some(var_454) = &input.update_sql_server_data_source {
+        object.key("UpdateSqlServerDataSource").string(var_454.as_str());
+    }
+    if let Some(var_455) = &input.share_sql_server_data_source {
+        object.key("ShareSqlServerDataSource").string(var_455.as_str());
+    }
+    if let Some(var_456) = &input.maria_db_data_source {
+        object.key("MariaDbDataSource").string(var_456.as_str());
+    }
+    if let Some(var_457) = &input.create_maria_db_data_source {
+        object.key("CreateMariaDbDataSource").string(var_457.as_str());
+    }
+    if let Some(var_458) = &input.update_maria_db_data_source {
+        object.key("UpdateMariaDbDataSource").string(var_458.as_str());
+    }
+    if let Some(var_459) = &input.share_maria_db_data_source {
+        object.key("ShareMariaDbDataSource").string(var_459.as_str());
+    }
+    if let Some(var_460) = &input.snowflake_data_source {
+        object.key("SnowflakeDataSource").string(var_460.as_str());
+    }
+    if let Some(var_461) = &input.create_snowflake_data_source {
+        object.key("CreateSnowflakeDataSource").string(var_461.as_str());
+    }
+    if let Some(var_462) = &input.update_snowflake_data_source {
+        object.key("UpdateSnowflakeDataSource").string(var_462.as_str());
+    }
+    if let Some(var_463) = &input.share_snowflake_data_source {
+        object.key("ShareSnowflakeDataSource").string(var_463.as_str());
+    }
+    if let Some(var_464) = &input.google_big_query_data_source {
+        object.key("GoogleBigQueryDataSource").string(var_464.as_str());
+    }
+    if let Some(var_465) = &input.create_google_big_query_data_source {
+        object.key("CreateGoogleBigQueryDataSource").string(var_465.as_str());
+    }
+    if let Some(var_466) = &input.update_google_big_query_data_source {
+        object.key("UpdateGoogleBigQueryDataSource").string(var_466.as_str());
+    }
+    if let Some(var_467) = &input.share_google_big_query_data_source {
+        object.key("ShareGoogleBigQueryDataSource").string(var_467.as_str());
+    }
+    if let Some(var_468) = &input.databricks_data_source {
+        object.key("DatabricksDataSource").string(var_468.as_str());
+    }
+    if let Some(var_469) = &input.create_databricks_data_source {
+        object.key("CreateDatabricksDataSource").string(var_469.as_str());
+    }
+    if let Some(var_470) = &input.update_databricks_data_source {
+        object.key("UpdateDatabricksDataSource").string(var_470.as_str());
+    }
+    if let Some(var_471) = &input.share_databricks_data_source {
+        object.key("ShareDatabricksDataSource").string(var_471.as_str());
+    }
+    if let Some(var_472) = &input.starburst_data_source {
+        object.key("StarburstDataSource").string(var_472.as_str());
+    }
+    if let Some(var_473) = &input.create_starburst_data_source {
+        object.key("CreateStarburstDataSource").string(var_473.as_str());
+    }
+    if let Some(var_474) = &input.update_starburst_data_source {
+        object.key("UpdateStarburstDataSource").string(var_474.as_str());
+    }
+    if let Some(var_475) = &input.share_starburst_data_source {
+        object.key("ShareStarburstDataSource").string(var_475.as_str());
+    }
+    if let Some(var_476) = &input.trino_data_source {
+        object.key("TrinoDataSource").string(var_476.as_str());
+    }
+    if let Some(var_477) = &input.create_trino_data_source {
+        object.key("CreateTrinoDataSource").string(var_477.as_str());
+    }
+    if let Some(var_478) = &input.update_trino_data_source {
+        object.key("UpdateTrinoDataSource").string(var_478.as_str());
+    }
+    if let Some(var_479) = &input.share_trino_data_source {
+        object.key("ShareTrinoDataSource").string(var_479.as_str());
+    }
+    if let Some(var_480) = &input.impala_data_source {
+        object.key("ImpalaDataSource").string(var_480.as_str());
+    }
+    if let Some(var_481) = &input.create_impala_data_source {
+        object.key("CreateImpalaDataSource").string(var_481.as_str());
+    }
+    if let Some(var_482) = &input.update_impala_data_source {
+        object.key("UpdateImpalaDataSource").string(var_482.as_str());
+    }
+    if let Some(var_483) = &input.share_impala_data_source {
+        object.key("ShareImpalaDataSource").string(var_483.as_str());
+    }
+    if let Some(var_484) = &input.teradata_data_source {
+        object.key("TeradataDataSource").string(var_484.as_str());
+    }
+    if let Some(var_485) = &input.create_teradata_data_source {
+        object.key("CreateTeradataDataSource").string(var_485.as_str());
+    }
+    if let Some(var_486) = &input.update_teradata_data_source {
+        object.key("UpdateTeradataDataSource").string(var_486.as_str());
+    }
+    if let Some(var_487) = &input.share_teradata_data_source {
+        object.key("ShareTeradataDataSource").string(var_487.as_str());
+    }
+    if let Some(var_488) = &input.presto_data_source {
+        object.key("PrestoDataSource").string(var_488.as_str());
+    }
+    if let Some(var_489) = &input.create_presto_data_source {
+        object.key("CreatePrestoDataSource").string(var_489.as_str());
+    }
+    if let Some(var_490) = &input.update_presto_data_source {
+        object.key("UpdatePrestoDataSource").string(var_490.as_str());
+    }
+    if let Some(var_491) = &input.share_presto_data_source {
+        object.key("SharePrestoDataSource").string(var_491.as_str());
+    }
+    if let Some(var_492) = &input.spark_data_source {
+        object.key("SparkDataSource").string(var_492.as_str());
+    }
+    if let Some(var_493) = &input.create_spark_data_source {
+        object.key("CreateSparkDataSource").string(var_493.as_str());
+    }
+    if let Some(var_494) = &input.update_spark_data_source {
+        object.key("UpdateSparkDataSource").string(var_494.as_str());
+    }
+    if let Some(var_495) = &input.share_spark_data_source {
+        object.key("ShareSparkDataSource").string(var_495.as_str());
+    }
+    if let Some(var_496) = &input.exasol_data_source {
+        object.key("ExasolDataSource").string(var_496.as_str());
+    }
+    if let Some(var_497) = &input.create_exasol_data_source {
+        object.key("CreateExasolDataSource").string(var_497.as_str());
+    }
+    if let Some(var_498) = &input.update_exasol_data_source {
+        object.key("UpdateExasolDataSource").string(var_498.as_str());
+    }
+    if let Some(var_499) = &input.share_exasol_data_source {
+        object.key("ShareExasolDataSource").string(var_499.as_str());
+    }
+    if let Some(var_500) = &input.db2_data_source {
+        object.key("Db2DataSource").string(var_500.as_str());
+    }
+    if let Some(var_501) = &input.create_db2_data_source {
+        object.key("CreateDb2DataSource").string(var_501.as_str());
+    }
+    if let Some(var_502) = &input.update_db2_data_source {
+        object.key("UpdateDb2DataSource").string(var_502.as_str());
+    }
+    if let Some(var_503) = &input.share_db2_data_source {
+        object.key("ShareDb2DataSource").string(var_503.as_str());
+    }
+    if let Some(var_504) = &input.sap_hana_data_source {
+        object.key("SapHanaDataSource").string(var_504.as_str());
+    }
+    if let Some(var_505) = &input.create_sap_hana_data_source {
+        object.key("CreateSapHanaDataSource").string(var_505.as_str());
+    }
+    if let Some(var_506) = &input.update_sap_hana_data_source {
+        object.key("UpdateSapHanaDataSource").string(var_506.as_str());
+    }
+    if let Some(var_507) = &input.share_sap_hana_data_source {
+        object.key("ShareSapHanaDataSource").string(var_507.as_str());
+    }
+    if let Some(var_508) = &input.denodo_data_source {
+        object.key("DenodoDataSource").string(var_508.as_str());
+    }
+    if let Some(var_509) = &input.create_denodo_data_source {
+        object.key("CreateDenodoDataSource").string(var_509.as_str());
+    }
+    if let Some(var_510) = &input.update_denodo_data_source {
+        object.key("UpdateDenodoDataSource").string(var_510.as_str());
+    }
+    if let Some(var_511) = &input.share_denodo_data_source {
+        object.key("ShareDenodoDataSource").string(var_511.as_str());
+    }
+    if let Some(var_512) = &input.dremio_data_source {
+        object.key("DremioDataSource").string(var_512.as_str());
+    }
+    if let Some(var_513) = &input.create_dremio_data_source {
+        object.key("CreateDremioDataSource").string(var_513.as_str());
+    }
+    if let Some(var_514) = &input.update_dremio_data_source {
+        object.key("UpdateDremioDataSource").string(var_514.as_str());
+    }
+    if let Some(var_515) = &input.share_dremio_data_source {
+        object.key("ShareDremioDataSource").string(var_515.as_str());
+    }
+    if let Some(var_516) = &input.salesforce_data_source {
+        object.key("SalesforceDataSource").string(var_516.as_str());
+    }
+    if let Some(var_517) = &input.create_salesforce_data_source {
+        object.key("CreateSalesforceDataSource").string(var_517.as_str());
+    }
+    if let Some(var_518) = &input.update_salesforce_data_source {
+        object.key("UpdateSalesforceDataSource").string(var_518.as_str());
+    }
+    if let Some(var_519) = &input.share_salesforce_data_source {
+        object.key("ShareSalesforceDataSource").string(var_519.as_str());
+    }
+    if let Some(var_520) = &input.radiant_data_source {
+        object.key("RadiantDataSource").string(var_520.as_str());
+    }
+    if let Some(var_521) = &input.create_radiant_data_source {
+        object.key("CreateRadiantDataSource").string(var_521.as_str());
+    }
+    if let Some(var_522) = &input.update_radiant_data_source {
+        object.key("UpdateRadiantDataSource").string(var_522.as_str());
+    }
+    if let Some(var_523) = &input.share_radiant_data_source {
+        object.key("ShareRadiantDataSource").string(var_523.as_str());
+    }
+    if let Some(var_524) = &input.pay_pal_data_source {
+        object.key("PayPalDataSource").string(var_524.as_str());
+    }
+    if let Some(var_525) = &input.create_pay_pal_data_source {
+        object.key("CreatePayPalDataSource").string(var_525.as_str());
+    }
+    if let Some(var_526) = &input.update_pay_pal_data_source {
+        object.key("UpdatePayPalDataSource").string(var_526.as_str());
+    }
+    if let Some(var_527) = &input.share_pay_pal_data_source {
+        object.key("SharePayPalDataSource").string(var_527.as_str());
+    }
+    if let Some(var_528) = &input.square_data_source {
+        object.key("SquareDataSource").string(var_528.as_str());
+    }
+    if let Some(var_529) = &input.create_square_data_source {
+        object.key("CreateSquareDataSource").string(var_529.as_str());
+    }
+    if let Some(var_530) = &input.update_square_data_source {
+        object.key("UpdateSquareDataSource").string(var_530.as_str());
+    }
+    if let Some(var_531) = &input.share_square_data_source {
+        object.key("ShareSquareDataSource").string(var_531.as_str());
+    }
+    if let Some(var_532) = &input.git_hub_data_source {
+        object.key("GitHubDataSource").string(var_532.as_str());
+    }
+    if let Some(var_533) = &input.create_git_hub_data_source {
+        object.key("CreateGitHubDataSource").string(var_533.as_str());
+    }
+    if let Some(var_534) = &input.update_git_hub_data_source {
+        object.key("UpdateGitHubDataSource").string(var_534.as_str());
+    }
+    if let Some(var_535) = &input.share_git_hub_data_source {
+        object.key("ShareGitHubDataSource").string(var_535.as_str());
+    }
+    if let Some(var_536) = &input.twitter_data_source {
+        object.key("TwitterDataSource").string(var_536.as_str());
+    }
+    if let Some(var_537) = &input.create_twitter_data_source {
+        object.key("CreateTwitterDataSource").string(var_537.as_str());
+    }
+    if let Some(var_538) = &input.update_twitter_data_source {
+        object.key("UpdateTwitterDataSource").string(var_538.as_str());
+    }
+    if let Some(var_539) = &input.share_twitter_data_source {
+        object.key("ShareTwitterDataSource").string(var_539.as_str());
+    }
+    if let Some(var_540) = &input.jira_data_source {
+        object.key("JiraDataSource").string(var_540.as_str());
+    }
+    if let Some(var_541) = &input.create_jira_data_source {
+        object.key("CreateJiraDataSource").string(var_541.as_str());
+    }
+    if let Some(var_542) = &input.update_jira_data_source {
+        object.key("UpdateJiraDataSource").string(var_542.as_str());
+    }
+    if let Some(var_543) = &input.share_jira_data_source {
+        object.key("ShareJiraDataSource").string(var_543.as_str());
+    }
+    if let Some(var_544) = &input.service_now_data_source {
+        object.key("ServiceNowDataSource").string(var_544.as_str());
+    }
+    if let Some(var_545) = &input.create_service_now_data_source {
+        object.key("CreateServiceNowDataSource").string(var_545.as_str());
+    }
+    if let Some(var_546) = &input.update_service_now_data_source {
+        object.key("UpdateServiceNowDataSource").string(var_546.as_str());
+    }
+    if let Some(var_547) = &input.share_service_now_data_source {
+        object.key("ShareServiceNowDataSource").string(var_547.as_str());
+    }
+    if let Some(var_548) = &input.adobe_analytics_data_source {
+        object.key("AdobeAnalyticsDataSource").string(var_548.as_str());
+    }
+    if let Some(var_549) = &input.create_adobe_analytics_data_source {
+        object.key("CreateAdobeAnalyticsDataSource").string(var_549.as_str());
+    }
+    if let Some(var_550) = &input.update_adobe_analytics_data_source {
+        object.key("UpdateAdobeAnalyticsDataSource").string(var_550.as_str());
+    }
+    if let Some(var_551) = &input.share_adobe_analytics_data_source {
+        object.key("ShareAdobeAnalyticsDataSource").string(var_551.as_str());
+    }
+    if let Some(var_552) = &input.google_analytics_data_source {
+        object.key("GoogleAnalyticsDataSource").string(var_552.as_str());
+    }
+    if let Some(var_553) = &input.create_google_analytics_data_source {
+        object.key("CreateGoogleAnalyticsDataSource").string(var_553.as_str());
+    }
+    if let Some(var_554) = &input.update_google_analytics_data_source {
+        object.key("UpdateGoogleAnalyticsDataSource").string(var_554.as_str());
+    }
+    if let Some(var_555) = &input.share_google_analytics_data_source {
+        object.key("ShareGoogleAnalyticsDataSource").string(var_555.as_str());
+    }
+    if let Some(var_556) = &input.google_sheets_data_source {
+        object.key("GoogleSheetsDataSource").string(var_556.as_str());
+    }
+    if let Some(var_557) = &input.create_google_sheets_data_source {
+        object.key("CreateGoogleSheetsDataSource").string(var_557.as_str());
+    }
+    if let Some(var_558) = &input.update_google_sheets_data_source {
+        object.key("UpdateGoogleSheetsDataSource").string(var_558.as_str());
+    }
+    if let Some(var_559) = &input.share_google_sheets_data_source {
+        object.key("ShareGoogleSheetsDataSource").string(var_559.as_str());
+    }
+    if let Some(var_560) = &input.document_db_data_source {
+        object.key("DocumentDbDataSource").string(var_560.as_str());
+    }
+    if let Some(var_561) = &input.create_document_db_data_source {
+        object.key("CreateDocumentDbDataSource").string(var_561.as_str());
+    }
+    if let Some(var_562) = &input.update_document_db_data_source {
+        object.key("UpdateDocumentDbDataSource").string(var_562.as_str());
+    }
+    if let Some(var_563) = &input.share_document_db_data_source {
+        object.key("ShareDocumentDbDataSource").string(var_563.as_str());
+    }
+    if let Some(var_564) = &input.mongo_db_data_source {
+        object.key("MongoDbDataSource").string(var_564.as_str());
+    }
+    if let Some(var_565) = &input.create_mongo_db_data_source {
+        object.key("CreateMongoDbDataSource").string(var_565.as_str());
+    }
+    if let Some(var_566) = &input.update_mongo_db_data_source {
+        object.key("UpdateMongoDbDataSource").string(var_566.as_str());
+    }
+    if let Some(var_567) = &input.share_mongo_db_data_source {
+        object.key("ShareMongoDbDataSource").string(var_567.as_str());
+    }
+    if let Some(var_568) = &input.mongo_atlas_data_source {
+        object.key("MongoAtlasDataSource").string(var_568.as_str());
+    }
+    if let Some(var_569) = &input.create_mongo_atlas_data_source {
+        object.key("CreateMongoAtlasDataSource").string(var_569.as_str());
+    }
+    if let Some(var_570) = &input.update_mongo_atlas_data_source {
+        object.key("UpdateMongoAtlasDataSource").string(var_570.as_str());
+    }
+    if let Some(var_571) = &input.share_mongo_atlas_data_source {
+        object.key("ShareMongoAtlasDataSource").string(var_571.as_str());
+    }
+    if let Some(var_572) = &input.dynamo_db_data_source {
+        object.key("DynamoDbDataSource").string(var_572.as_str());
+    }
+    if let Some(var_573) = &input.create_dynamo_db_data_source {
+        object.key("CreateDynamoDbDataSource").string(var_573.as_str());
+    }
+    if let Some(var_574) = &input.update_dynamo_db_data_source {
+        object.key("UpdateDynamoDbDataSource").string(var_574.as_str());
+    }
+    if let Some(var_575) = &input.share_dynamo_db_data_source {
+        object.key("ShareDynamoDbDataSource").string(var_575.as_str());
     }
     Ok(())
 }
@@ -3756,6 +4308,34 @@ where
                                     .transpose()?,
                             );
                         }
+                        "GongAction" => {
+                            builder = builder.set_gong_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGongAction" => {
+                            builder = builder.set_create_and_update_gong_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGongAction" => {
+                            builder = builder.set_share_gong_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGongAction" => {
+                            builder = builder.set_use_gong_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "Topic" => {
                             builder = builder.set_topic(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -3933,6 +4513,1266 @@ where
                         }
                         "QuickEventTrigger" => {
                             builder = builder.set_quick_event_trigger(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "FileDataSource" => {
+                            builder = builder.set_file_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateFileDataSource" => {
+                            builder = builder.set_create_file_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateFileDataSource" => {
+                            builder = builder.set_update_file_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareFileDataSource" => {
+                            builder = builder.set_share_file_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3DataSource" => {
+                            builder = builder.set_s3_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateS3DataSource" => {
+                            builder = builder.set_create_s3_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateS3DataSource" => {
+                            builder = builder.set_update_s3_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareS3DataSource" => {
+                            builder = builder.set_share_s3_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3AnalyticsDataSource" => {
+                            builder = builder.set_s3_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateS3AnalyticsDataSource" => {
+                            builder = builder.set_create_s3_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateS3AnalyticsDataSource" => {
+                            builder = builder.set_update_s3_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareS3AnalyticsDataSource" => {
+                            builder = builder.set_share_s3_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3TablesDataSource" => {
+                            builder = builder.set_s3_tables_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateS3TablesDataSource" => {
+                            builder = builder.set_create_s3_tables_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateS3TablesDataSource" => {
+                            builder = builder.set_update_s3_tables_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareS3TablesDataSource" => {
+                            builder = builder.set_share_s3_tables_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AthenaDataSource" => {
+                            builder = builder.set_athena_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAthenaDataSource" => {
+                            builder = builder.set_create_athena_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateAthenaDataSource" => {
+                            builder = builder.set_update_athena_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareAthenaDataSource" => {
+                            builder = builder.set_share_athena_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RdsDataSource" => {
+                            builder = builder.set_rds_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateRdsDataSource" => {
+                            builder = builder.set_create_rds_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateRdsDataSource" => {
+                            builder = builder.set_update_rds_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareRdsDataSource" => {
+                            builder = builder.set_share_rds_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RedshiftAutoDiscoveredDataSource" => {
+                            builder = builder.set_redshift_auto_discovered_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateRedshiftAutoDiscoveredDataSource" => {
+                            builder = builder.set_create_redshift_auto_discovered_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateRedshiftAutoDiscoveredDataSource" => {
+                            builder = builder.set_update_redshift_auto_discovered_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareRedshiftAutoDiscoveredDataSource" => {
+                            builder = builder.set_share_redshift_auto_discovered_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RedshiftManualDataSource" => {
+                            builder = builder.set_redshift_manual_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateRedshiftManualDataSource" => {
+                            builder = builder.set_create_redshift_manual_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateRedshiftManualDataSource" => {
+                            builder = builder.set_update_redshift_manual_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareRedshiftManualDataSource" => {
+                            builder = builder.set_share_redshift_manual_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "OpenSearchDataSource" => {
+                            builder = builder.set_open_search_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateOpenSearchDataSource" => {
+                            builder = builder.set_create_open_search_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateOpenSearchDataSource" => {
+                            builder = builder.set_update_open_search_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareOpenSearchDataSource" => {
+                            builder = builder.set_share_open_search_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TimestreamDataSource" => {
+                            builder = builder.set_timestream_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateTimestreamDataSource" => {
+                            builder = builder.set_create_timestream_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateTimestreamDataSource" => {
+                            builder = builder.set_update_timestream_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareTimestreamDataSource" => {
+                            builder = builder.set_share_timestream_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AuroraDataSource" => {
+                            builder = builder.set_aurora_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAuroraDataSource" => {
+                            builder = builder.set_create_aurora_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateAuroraDataSource" => {
+                            builder = builder.set_update_aurora_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareAuroraDataSource" => {
+                            builder = builder.set_share_aurora_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MySqlDataSource" => {
+                            builder = builder.set_my_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateMySqlDataSource" => {
+                            builder = builder.set_create_my_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateMySqlDataSource" => {
+                            builder = builder.set_update_my_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareMySqlDataSource" => {
+                            builder = builder.set_share_my_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PostgreSqlDataSource" => {
+                            builder = builder.set_postgre_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatePostgreSqlDataSource" => {
+                            builder = builder.set_create_postgre_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdatePostgreSqlDataSource" => {
+                            builder = builder.set_update_postgre_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SharePostgreSqlDataSource" => {
+                            builder = builder.set_share_postgre_sql_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "OracleDataSource" => {
+                            builder = builder.set_oracle_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateOracleDataSource" => {
+                            builder = builder.set_create_oracle_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateOracleDataSource" => {
+                            builder = builder.set_update_oracle_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareOracleDataSource" => {
+                            builder = builder.set_share_oracle_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SqlServerDataSource" => {
+                            builder = builder.set_sql_server_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSqlServerDataSource" => {
+                            builder = builder.set_create_sql_server_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSqlServerDataSource" => {
+                            builder = builder.set_update_sql_server_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSqlServerDataSource" => {
+                            builder = builder.set_share_sql_server_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MariaDbDataSource" => {
+                            builder = builder.set_maria_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateMariaDbDataSource" => {
+                            builder = builder.set_create_maria_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateMariaDbDataSource" => {
+                            builder = builder.set_update_maria_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareMariaDbDataSource" => {
+                            builder = builder.set_share_maria_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SnowflakeDataSource" => {
+                            builder = builder.set_snowflake_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSnowflakeDataSource" => {
+                            builder = builder.set_create_snowflake_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSnowflakeDataSource" => {
+                            builder = builder.set_update_snowflake_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSnowflakeDataSource" => {
+                            builder = builder.set_share_snowflake_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleBigQueryDataSource" => {
+                            builder = builder.set_google_big_query_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateGoogleBigQueryDataSource" => {
+                            builder = builder.set_create_google_big_query_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateGoogleBigQueryDataSource" => {
+                            builder = builder.set_update_google_big_query_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleBigQueryDataSource" => {
+                            builder = builder.set_share_google_big_query_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DatabricksDataSource" => {
+                            builder = builder.set_databricks_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDatabricksDataSource" => {
+                            builder = builder.set_create_databricks_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDatabricksDataSource" => {
+                            builder = builder.set_update_databricks_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDatabricksDataSource" => {
+                            builder = builder.set_share_databricks_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "StarburstDataSource" => {
+                            builder = builder.set_starburst_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateStarburstDataSource" => {
+                            builder = builder.set_create_starburst_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateStarburstDataSource" => {
+                            builder = builder.set_update_starburst_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareStarburstDataSource" => {
+                            builder = builder.set_share_starburst_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TrinoDataSource" => {
+                            builder = builder.set_trino_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateTrinoDataSource" => {
+                            builder = builder.set_create_trino_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateTrinoDataSource" => {
+                            builder = builder.set_update_trino_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareTrinoDataSource" => {
+                            builder = builder.set_share_trino_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ImpalaDataSource" => {
+                            builder = builder.set_impala_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateImpalaDataSource" => {
+                            builder = builder.set_create_impala_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateImpalaDataSource" => {
+                            builder = builder.set_update_impala_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareImpalaDataSource" => {
+                            builder = builder.set_share_impala_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TeradataDataSource" => {
+                            builder = builder.set_teradata_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateTeradataDataSource" => {
+                            builder = builder.set_create_teradata_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateTeradataDataSource" => {
+                            builder = builder.set_update_teradata_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareTeradataDataSource" => {
+                            builder = builder.set_share_teradata_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PrestoDataSource" => {
+                            builder = builder.set_presto_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatePrestoDataSource" => {
+                            builder = builder.set_create_presto_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdatePrestoDataSource" => {
+                            builder = builder.set_update_presto_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SharePrestoDataSource" => {
+                            builder = builder.set_share_presto_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SparkDataSource" => {
+                            builder = builder.set_spark_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSparkDataSource" => {
+                            builder = builder.set_create_spark_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSparkDataSource" => {
+                            builder = builder.set_update_spark_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSparkDataSource" => {
+                            builder = builder.set_share_spark_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExasolDataSource" => {
+                            builder = builder.set_exasol_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateExasolDataSource" => {
+                            builder = builder.set_create_exasol_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateExasolDataSource" => {
+                            builder = builder.set_update_exasol_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareExasolDataSource" => {
+                            builder = builder.set_share_exasol_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Db2DataSource" => {
+                            builder = builder.set_db2_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDb2DataSource" => {
+                            builder = builder.set_create_db2_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDb2DataSource" => {
+                            builder = builder.set_update_db2_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDb2DataSource" => {
+                            builder = builder.set_share_db2_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SapHanaDataSource" => {
+                            builder = builder.set_sap_hana_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSapHanaDataSource" => {
+                            builder = builder.set_create_sap_hana_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSapHanaDataSource" => {
+                            builder = builder.set_update_sap_hana_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSapHanaDataSource" => {
+                            builder = builder.set_share_sap_hana_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DenodoDataSource" => {
+                            builder = builder.set_denodo_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDenodoDataSource" => {
+                            builder = builder.set_create_denodo_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDenodoDataSource" => {
+                            builder = builder.set_update_denodo_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDenodoDataSource" => {
+                            builder = builder.set_share_denodo_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DremioDataSource" => {
+                            builder = builder.set_dremio_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDremioDataSource" => {
+                            builder = builder.set_create_dremio_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDremioDataSource" => {
+                            builder = builder.set_update_dremio_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDremioDataSource" => {
+                            builder = builder.set_share_dremio_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SalesforceDataSource" => {
+                            builder = builder.set_salesforce_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSalesforceDataSource" => {
+                            builder = builder.set_create_salesforce_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSalesforceDataSource" => {
+                            builder = builder.set_update_salesforce_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSalesforceDataSource" => {
+                            builder = builder.set_share_salesforce_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "RadiantDataSource" => {
+                            builder = builder.set_radiant_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateRadiantDataSource" => {
+                            builder = builder.set_create_radiant_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateRadiantDataSource" => {
+                            builder = builder.set_update_radiant_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareRadiantDataSource" => {
+                            builder = builder.set_share_radiant_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PayPalDataSource" => {
+                            builder = builder.set_pay_pal_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatePayPalDataSource" => {
+                            builder = builder.set_create_pay_pal_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdatePayPalDataSource" => {
+                            builder = builder.set_update_pay_pal_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SharePayPalDataSource" => {
+                            builder = builder.set_share_pay_pal_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SquareDataSource" => {
+                            builder = builder.set_square_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateSquareDataSource" => {
+                            builder = builder.set_create_square_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateSquareDataSource" => {
+                            builder = builder.set_update_square_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSquareDataSource" => {
+                            builder = builder.set_share_square_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GitHubDataSource" => {
+                            builder = builder.set_git_hub_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateGitHubDataSource" => {
+                            builder = builder.set_create_git_hub_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateGitHubDataSource" => {
+                            builder = builder.set_update_git_hub_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGitHubDataSource" => {
+                            builder = builder.set_share_git_hub_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TwitterDataSource" => {
+                            builder = builder.set_twitter_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateTwitterDataSource" => {
+                            builder = builder.set_create_twitter_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateTwitterDataSource" => {
+                            builder = builder.set_update_twitter_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareTwitterDataSource" => {
+                            builder = builder.set_share_twitter_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "JiraDataSource" => {
+                            builder = builder.set_jira_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateJiraDataSource" => {
+                            builder = builder.set_create_jira_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateJiraDataSource" => {
+                            builder = builder.set_update_jira_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareJiraDataSource" => {
+                            builder = builder.set_share_jira_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ServiceNowDataSource" => {
+                            builder = builder.set_service_now_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateServiceNowDataSource" => {
+                            builder = builder.set_create_service_now_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateServiceNowDataSource" => {
+                            builder = builder.set_update_service_now_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareServiceNowDataSource" => {
+                            builder = builder.set_share_service_now_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "AdobeAnalyticsDataSource" => {
+                            builder = builder.set_adobe_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAdobeAnalyticsDataSource" => {
+                            builder = builder.set_create_adobe_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateAdobeAnalyticsDataSource" => {
+                            builder = builder.set_update_adobe_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareAdobeAnalyticsDataSource" => {
+                            builder = builder.set_share_adobe_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleAnalyticsDataSource" => {
+                            builder = builder.set_google_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateGoogleAnalyticsDataSource" => {
+                            builder = builder.set_create_google_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateGoogleAnalyticsDataSource" => {
+                            builder = builder.set_update_google_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleAnalyticsDataSource" => {
+                            builder = builder.set_share_google_analytics_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleSheetsDataSource" => {
+                            builder = builder.set_google_sheets_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateGoogleSheetsDataSource" => {
+                            builder = builder.set_create_google_sheets_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateGoogleSheetsDataSource" => {
+                            builder = builder.set_update_google_sheets_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleSheetsDataSource" => {
+                            builder = builder.set_share_google_sheets_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DocumentDbDataSource" => {
+                            builder = builder.set_document_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDocumentDbDataSource" => {
+                            builder = builder.set_create_document_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDocumentDbDataSource" => {
+                            builder = builder.set_update_document_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDocumentDbDataSource" => {
+                            builder = builder.set_share_document_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MongoDbDataSource" => {
+                            builder = builder.set_mongo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateMongoDbDataSource" => {
+                            builder = builder.set_create_mongo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateMongoDbDataSource" => {
+                            builder = builder.set_update_mongo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareMongoDbDataSource" => {
+                            builder = builder.set_share_mongo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MongoAtlasDataSource" => {
+                            builder = builder.set_mongo_atlas_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateMongoAtlasDataSource" => {
+                            builder = builder.set_create_mongo_atlas_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateMongoAtlasDataSource" => {
+                            builder = builder.set_update_mongo_atlas_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareMongoAtlasDataSource" => {
+                            builder = builder.set_share_mongo_atlas_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DynamoDbDataSource" => {
+                            builder = builder.set_dynamo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateDynamoDbDataSource" => {
+                            builder = builder.set_create_dynamo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UpdateDynamoDbDataSource" => {
+                            builder = builder.set_update_dynamo_db_data_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareDynamoDbDataSource" => {
+                            builder = builder.set_share_dynamo_db_data_source(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

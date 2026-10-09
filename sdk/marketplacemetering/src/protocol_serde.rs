@@ -85,6 +85,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_timestamp_out_of_bounds_exception;
 
+pub(crate) mod shape_metadata;
+
 pub(crate) mod shape_usage_allocation;
 
 pub(crate) mod shape_usage_record;

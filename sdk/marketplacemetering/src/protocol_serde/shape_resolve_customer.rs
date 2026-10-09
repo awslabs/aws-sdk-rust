@@ -171,6 +171,9 @@ pub(crate) fn de_resolve_customer(
                             .transpose()?,
                     );
                 }
+                "Metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value, depth + 1)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

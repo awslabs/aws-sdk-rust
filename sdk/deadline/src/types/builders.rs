@@ -109,6 +109,12 @@ pub use crate::types::_monitor_summary::MonitorSummaryBuilder;
 
 pub use crate::types::_stats::StatsBuilder;
 
+pub use crate::types::_queue_member::QueueMemberBuilder;
+
+pub use crate::types::_fleet_member::FleetMemberBuilder;
+
+pub use crate::types::_job_member::JobMemberBuilder;
+
 pub use crate::types::_user_jobs_first::UserJobsFirstBuilder;
 
 pub use crate::types::_field_sort_expression::FieldSortExpressionBuilder;
@@ -131,8 +137,6 @@ pub use crate::types::_customer_managed_fleet_configuration::CustomerManagedFlee
 
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfigurationBuilder;
 
-pub use crate::types::_fleet_member::FleetMemberBuilder;
-
 pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
 pub use crate::types::_posix_user::PosixUserBuilder;
@@ -146,8 +150,6 @@ pub use crate::types::_priority_balanced_scheduling_configuration::PriorityBalan
 pub use crate::types::_weighted_balanced_scheduling_configuration::WeightedBalancedSchedulingConfigurationBuilder;
 
 pub use crate::types::_queue_environment_summary::QueueEnvironmentSummaryBuilder;
-
-pub use crate::types::_queue_member::QueueMemberBuilder;
 
 pub use crate::types::_volume_summary::VolumeSummaryBuilder;
 
@@ -174,8 +176,6 @@ pub use crate::types::_environment_exit_session_action_definition::EnvironmentEx
 pub use crate::types::_task_run_session_action_definition::TaskRunSessionActionDefinitionBuilder;
 
 pub use crate::types::_sync_input_job_attachments_session_action_definition::SyncInputJobAttachmentsSessionActionDefinitionBuilder;
-
-pub use crate::types::_job_member::JobMemberBuilder;
 
 pub use crate::types::_session_action_summary::SessionActionSummaryBuilder;
 

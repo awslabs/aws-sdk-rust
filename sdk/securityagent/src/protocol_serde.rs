@@ -557,6 +557,8 @@ pub(crate) mod shape_task_list;
 
 pub(crate) mod shape_task_summary_list;
 
+pub(crate) mod shape_test_scope;
+
 pub(crate) mod shape_threat_anchor_shape;
 
 pub(crate) mod shape_threat_evidence_list;

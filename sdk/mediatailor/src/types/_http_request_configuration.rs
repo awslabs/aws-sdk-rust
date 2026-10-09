@@ -18,6 +18,8 @@ pub struct HttpRequestConfiguration {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A map of HTTP header names to expression values. MediaTailor evaluates each header value expression at runtime and includes the result in the outbound HTTP request. Maximum 50 headers.</p>
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
 }
 impl HttpRequestConfiguration {
     /// <p>The expression language used to evaluate expressions in the function configuration. Set this to <code>JSONata</code>.</p>
@@ -49,6 +51,10 @@ impl HttpRequestConfiguration {
     pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(&self) -> ::std::option::Option<&crate::types::HttpRequestCacheConfiguration> {
+        self.cache.as_ref()
+    }
 }
 impl HttpRequestConfiguration {
     /// Creates a new builder-style object to manufacture [`HttpRequestConfiguration`](crate::types::HttpRequestConfiguration).
@@ -68,6 +74,7 @@ pub struct HttpRequestConfigurationBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
 }
 impl HttpRequestConfigurationBuilder {
     /// <p>The expression language used to evaluate expressions in the function configuration. Set this to <code>JSONata</code>.</p>
@@ -184,6 +191,20 @@ impl HttpRequestConfigurationBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(mut self, input: crate::types::HttpRequestCacheConfiguration) -> Self {
+        self.cache = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn set_cache(mut self, input: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>) -> Self {
+        self.cache = input;
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn get_cache(&self) -> &::std::option::Option<crate::types::HttpRequestCacheConfiguration> {
+        &self.cache
+    }
     /// Consumes the builder and constructs a [`HttpRequestConfiguration`](crate::types::HttpRequestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`runtime`](crate::types::builders::HttpRequestConfigurationBuilder::runtime)
@@ -219,6 +240,7 @@ impl HttpRequestConfigurationBuilder {
             })?,
             body: self.body,
             headers: self.headers,
+            cache: self.cache,
         })
     }
 }

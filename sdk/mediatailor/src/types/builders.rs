@@ -81,6 +81,8 @@ pub use crate::types::_schedule_entry::ScheduleEntryBuilder;
 
 pub use crate::types::_function::FunctionBuilder;
 
+pub use crate::types::_http_request_cache_configuration::HttpRequestCacheConfigurationBuilder;
+
 pub use crate::types::_live_source::LiveSourceBuilder;
 
 pub use crate::types::_http_package_configuration::HttpPackageConfigurationBuilder;

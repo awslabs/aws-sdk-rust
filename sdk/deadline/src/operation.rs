@@ -247,6 +247,9 @@ pub mod list_license_endpoints;
 /// Types for the `ListLimits` operation.
 pub mod list_limits;
 
+/// Types for the `ListMemberships` operation.
+pub mod list_memberships;
+
 /// Types for the `ListMeteredProducts` operation.
 pub mod list_metered_products;
 

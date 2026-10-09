@@ -21,6 +21,8 @@ pub use crate::types::_network_traffic_config::NetworkTrafficConfigBuilder;
 
 pub use crate::types::_ci_cd_configuration::CiCdConfigurationBuilder;
 
+pub use crate::types::_test_scope::TestScopeBuilder;
+
 pub use crate::types::_threat_anchor_shape::ThreatAnchorShapeBuilder;
 
 pub use crate::types::_artifact::ArtifactBuilder;

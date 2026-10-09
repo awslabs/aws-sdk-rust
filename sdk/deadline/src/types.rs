@@ -79,6 +79,10 @@ pub use crate::types::_statistics::Statistics;
 
 pub use crate::types::_metered_product_summary::MeteredProductSummary;
 
+pub use crate::types::_membership_resource_type::MembershipResourceType;
+
+pub use crate::types::_membership_summary::MembershipSummary;
+
 pub use crate::types::_queue_fleet_association_summary::QueueFleetAssociationSummary;
 
 pub use crate::types::_queue_limit_association_summary::QueueLimitAssociationSummary;
@@ -221,6 +225,12 @@ pub use crate::types::_usage_type::UsageType;
 
 pub use crate::types::_stats::Stats;
 
+pub use crate::types::_queue_member::QueueMember;
+
+pub use crate::types::_fleet_member::FleetMember;
+
+pub use crate::types::_job_member::JobMember;
+
 pub use crate::types::_search_filter_expression::SearchFilterExpression;
 
 pub use crate::types::_user_jobs_first::UserJobsFirst;
@@ -245,8 +255,6 @@ pub use crate::types::_customer_managed_fleet_configuration::CustomerManagedFlee
 
 pub use crate::types::_service_managed_ec2_fleet_configuration::ServiceManagedEc2FleetConfiguration;
 
-pub use crate::types::_fleet_member::FleetMember;
-
 pub use crate::types::_queue_summary::QueueSummary;
 
 pub use crate::types::_posix_user::PosixUser;
@@ -262,8 +270,6 @@ pub use crate::types::_priority_balanced_scheduling_configuration::PriorityBalan
 pub use crate::types::_weighted_balanced_scheduling_configuration::WeightedBalancedSchedulingConfiguration;
 
 pub use crate::types::_queue_environment_summary::QueueEnvironmentSummary;
-
-pub use crate::types::_queue_member::QueueMember;
 
 pub use crate::types::_volume_summary::VolumeSummary;
 
@@ -302,8 +308,6 @@ pub use crate::types::_task_run_session_action_definition::TaskRunSessionActionD
 pub use crate::types::_sync_input_job_attachments_session_action_definition::SyncInputJobAttachmentsSessionActionDefinition;
 
 pub use crate::types::_task_parameter_value::TaskParameterValue;
-
-pub use crate::types::_job_member::JobMember;
 
 pub use crate::types::_session_action_summary::SessionActionSummary;
 
@@ -730,6 +734,10 @@ mod _logical_operator;
 mod _manifest_properties;
 
 mod _membership_level;
+
+mod _membership_resource_type;
+
+mod _membership_summary;
 
 mod _memory_mib_range;
 

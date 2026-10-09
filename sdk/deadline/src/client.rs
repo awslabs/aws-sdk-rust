@@ -409,6 +409,8 @@ mod list_license_endpoints;
 
 mod list_limits;
 
+mod list_memberships;
+
 mod list_metered_products;
 
 mod list_monitors;

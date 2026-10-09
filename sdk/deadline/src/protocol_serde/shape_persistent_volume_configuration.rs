@@ -24,7 +24,7 @@ pub fn ser_persistent_volume_configuration(
     {
         object.key("mountPath").string(input.mount_path.as_str());
     }
-    if input.last_used_ttl_hours != 168 {
+    if input.last_used_ttl_hours != 12 {
         object.key("lastUsedTtlHours").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((input.last_used_ttl_hours).into()),

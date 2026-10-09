@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_limits_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_memberships_output_output_next_token(
+    input: &crate::operation::list_memberships::ListMembershipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_metered_products_output_output_next_token(
     input: &crate::operation::list_metered_products::ListMeteredProductsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -380,6 +390,13 @@ pub(crate) fn lens_list_limits_output_output_limits(
     input: crate::operation::list_limits::ListLimitsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LimitSummary>> {
     let input = input.limits;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_memberships_output_output_memberships(
+    input: crate::operation::list_memberships::ListMembershipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MembershipSummary>> {
+    let input = input.memberships;
     ::std::option::Option::Some(input)
 }
 

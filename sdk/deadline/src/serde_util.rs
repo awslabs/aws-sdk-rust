@@ -950,6 +950,15 @@ pub(crate) fn list_limits_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_memberships_output_output_correct_errors(
+    mut builder: crate::operation::list_memberships::builders::ListMembershipsOutputBuilder,
+) -> crate::operation::list_memberships::builders::ListMembershipsOutputBuilder {
+    if builder.memberships.is_none() {
+        builder.memberships = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_metered_products_output_output_correct_errors(
     mut builder: crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder,
 ) -> crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder {

@@ -986,6 +986,14 @@ pub struct Capabilities {
     pub share_bee_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use Bee actions.</p>
     pub use_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform actions using Gong connectors.</p>
+    pub gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create and update Gong actions.</p>
+    pub create_and_update_gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Gong actions.</p>
+    pub share_gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to use Gong actions.</p>
+    pub use_gong_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform Topic-related actions.</p>
     pub topic: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to Edit Visual with AI</p>
@@ -1039,6 +1047,366 @@ pub struct Capabilities {
     pub inbound_email_trigger: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
     pub quick_event_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share file data sources.</p>
+    pub file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create file data sources.</p>
+    pub create_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update file data sources.</p>
+    pub update_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share file data sources.</p>
+    pub share_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon S3 data sources.</p>
+    pub s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon S3 data sources.</p>
+    pub create_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon S3 data sources.</p>
+    pub update_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon S3 data sources.</p>
+    pub share_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon S3 Analytics data sources.</p>
+    pub s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon S3 Analytics data sources.</p>
+    pub create_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon S3 Analytics data sources.</p>
+    pub update_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon S3 Analytics data sources.</p>
+    pub share_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+    pub s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon S3 Tables data sources.</p>
+    pub create_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon S3 Tables data sources.</p>
+    pub update_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon S3 Tables data sources.</p>
+    pub share_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon Athena data sources.</p>
+    pub athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon Athena data sources.</p>
+    pub create_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon Athena data sources.</p>
+    pub update_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon Athena data sources.</p>
+    pub share_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share auto-discovered Amazon RDS data sources.</p>
+    pub rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+    pub create_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+    pub update_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+    pub share_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share auto-discovered Amazon Redshift data sources.</p>
+    pub redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+    pub create_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+    pub update_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+    pub share_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share manually configured Amazon Redshift data sources.</p>
+    pub redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create manually configured Amazon Redshift data sources.</p>
+    pub create_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update manually configured Amazon Redshift data sources.</p>
+    pub update_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share manually configured Amazon Redshift data sources.</p>
+    pub share_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon OpenSearch Service data sources.</p>
+    pub open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon OpenSearch Service data sources.</p>
+    pub create_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon OpenSearch Service data sources.</p>
+    pub update_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon OpenSearch Service data sources.</p>
+    pub share_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+    pub timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon Timestream data sources.</p>
+    pub create_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon Timestream data sources.</p>
+    pub update_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon Timestream data sources.</p>
+    pub share_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+    pub aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon Aurora data sources.</p>
+    pub create_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon Aurora data sources.</p>
+    pub update_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon Aurora data sources.</p>
+    pub share_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share MySQL data sources.</p>
+    pub my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create MySQL data sources.</p>
+    pub create_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update MySQL data sources.</p>
+    pub update_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share MySQL data sources.</p>
+    pub share_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share PostgreSQL data sources.</p>
+    pub postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create PostgreSQL data sources.</p>
+    pub create_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update PostgreSQL data sources.</p>
+    pub update_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share PostgreSQL data sources.</p>
+    pub share_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Oracle data sources.</p>
+    pub oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Oracle data sources.</p>
+    pub create_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Oracle data sources.</p>
+    pub update_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Oracle data sources.</p>
+    pub share_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share SQL Server data sources.</p>
+    pub sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create SQL Server data sources.</p>
+    pub create_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update SQL Server data sources.</p>
+    pub update_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SQL Server data sources.</p>
+    pub share_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share MariaDB data sources.</p>
+    pub maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create MariaDB data sources.</p>
+    pub create_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update MariaDB data sources.</p>
+    pub update_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share MariaDB data sources.</p>
+    pub share_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Snowflake data sources.</p>
+    pub snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Snowflake data sources.</p>
+    pub create_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Snowflake data sources.</p>
+    pub update_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Snowflake data sources.</p>
+    pub share_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Google BigQuery data sources.</p>
+    pub google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Google BigQuery data sources.</p>
+    pub create_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Google BigQuery data sources.</p>
+    pub update_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google BigQuery data sources.</p>
+    pub share_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Databricks data sources.</p>
+    pub databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Databricks data sources.</p>
+    pub create_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Databricks data sources.</p>
+    pub update_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Databricks data sources.</p>
+    pub share_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Starburst data sources.</p>
+    pub starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Starburst data sources.</p>
+    pub create_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Starburst data sources.</p>
+    pub update_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Starburst data sources.</p>
+    pub share_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Trino data sources.</p>
+    pub trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Trino data sources.</p>
+    pub create_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Trino data sources.</p>
+    pub update_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Trino data sources.</p>
+    pub share_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Impala data sources.</p>
+    pub impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Impala data sources.</p>
+    pub create_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Impala data sources.</p>
+    pub update_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Impala data sources.</p>
+    pub share_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Teradata data sources.</p>
+    pub teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Teradata data sources.</p>
+    pub create_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Teradata data sources.</p>
+    pub update_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Teradata data sources.</p>
+    pub share_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Presto data sources.</p>
+    pub presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Presto data sources.</p>
+    pub create_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Presto data sources.</p>
+    pub update_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Presto data sources.</p>
+    pub share_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Spark data sources.</p>
+    pub spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Spark data sources.</p>
+    pub create_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Spark data sources.</p>
+    pub update_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Spark data sources.</p>
+    pub share_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Exasol data sources.</p>
+    pub exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Exasol data sources.</p>
+    pub create_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Exasol data sources.</p>
+    pub update_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Exasol data sources.</p>
+    pub share_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Db2 data sources.</p>
+    pub db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Db2 data sources.</p>
+    pub create_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Db2 data sources.</p>
+    pub update_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Db2 data sources.</p>
+    pub share_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share SAP HANA data sources.</p>
+    pub sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create SAP HANA data sources.</p>
+    pub create_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update SAP HANA data sources.</p>
+    pub update_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share SAP HANA data sources.</p>
+    pub share_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Denodo data sources.</p>
+    pub denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Denodo data sources.</p>
+    pub create_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Denodo data sources.</p>
+    pub update_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Denodo data sources.</p>
+    pub share_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Dremio data sources.</p>
+    pub dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Dremio data sources.</p>
+    pub create_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Dremio data sources.</p>
+    pub update_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Dremio data sources.</p>
+    pub share_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Salesforce data sources.</p>
+    pub salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Salesforce data sources.</p>
+    pub create_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Salesforce data sources.</p>
+    pub update_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Salesforce data sources.</p>
+    pub share_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+    pub radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon QuickSight data sources.</p>
+    pub create_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon QuickSight data sources.</p>
+    pub update_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon QuickSight data sources.</p>
+    pub share_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share PayPal data sources.</p>
+    pub pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create PayPal data sources.</p>
+    pub create_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update PayPal data sources.</p>
+    pub update_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share PayPal data sources.</p>
+    pub share_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Square data sources.</p>
+    pub square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Square data sources.</p>
+    pub create_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Square data sources.</p>
+    pub update_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Square data sources.</p>
+    pub share_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share GitHub data sources.</p>
+    pub git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create GitHub data sources.</p>
+    pub create_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update GitHub data sources.</p>
+    pub update_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share GitHub data sources.</p>
+    pub share_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Twitter data sources.</p>
+    pub twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Twitter data sources.</p>
+    pub create_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Twitter data sources.</p>
+    pub update_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Twitter data sources.</p>
+    pub share_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Jira data sources.</p>
+    pub jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Jira data sources.</p>
+    pub create_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Jira data sources.</p>
+    pub update_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Jira data sources.</p>
+    pub share_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share ServiceNow data sources.</p>
+    pub service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create ServiceNow data sources.</p>
+    pub create_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update ServiceNow data sources.</p>
+    pub update_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share ServiceNow data sources.</p>
+    pub share_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+    pub adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Adobe Analytics data sources.</p>
+    pub create_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Adobe Analytics data sources.</p>
+    pub update_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Adobe Analytics data sources.</p>
+    pub share_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Google Analytics data sources.</p>
+    pub google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Google Analytics data sources.</p>
+    pub create_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Google Analytics data sources.</p>
+    pub update_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Analytics data sources.</p>
+    pub share_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Google Sheets data sources.</p>
+    pub google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Google Sheets data sources.</p>
+    pub create_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Google Sheets data sources.</p>
+    pub update_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Google Sheets data sources.</p>
+    pub share_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+    pub document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon DocumentDB data sources.</p>
+    pub create_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon DocumentDB data sources.</p>
+    pub update_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon DocumentDB data sources.</p>
+    pub share_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share MongoDB data sources.</p>
+    pub mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create MongoDB data sources.</p>
+    pub create_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update MongoDB data sources.</p>
+    pub update_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share MongoDB data sources.</p>
+    pub share_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+    pub mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create MongoDB Atlas data sources.</p>
+    pub create_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update MongoDB Atlas data sources.</p>
+    pub update_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share MongoDB Atlas data sources.</p>
+    pub share_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+    pub dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create Amazon DynamoDB data sources.</p>
+    pub create_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to update Amazon DynamoDB data sources.</p>
+    pub update_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to share Amazon DynamoDB data sources.</p>
+    pub share_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -2753,6 +3121,22 @@ impl Capabilities {
     pub fn use_bee_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.use_bee_action.as_ref()
     }
+    /// <p>The ability to perform actions using Gong connectors.</p>
+    pub fn gong_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.gong_action.as_ref()
+    }
+    /// <p>The ability to create and update Gong actions.</p>
+    pub fn create_and_update_gong_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_gong_action.as_ref()
+    }
+    /// <p>The ability to share Gong actions.</p>
+    pub fn share_gong_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_gong_action.as_ref()
+    }
+    /// <p>The ability to use Gong actions.</p>
+    pub fn use_gong_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_gong_action.as_ref()
+    }
     /// <p>The ability to perform Topic-related actions.</p>
     pub fn topic(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.topic.as_ref()
@@ -2857,6 +3241,726 @@ impl Capabilities {
     /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
     pub fn quick_event_trigger(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.quick_event_trigger.as_ref()
+    }
+    /// <p>The ability to create, update, and share file data sources.</p>
+    pub fn file_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.file_data_source.as_ref()
+    }
+    /// <p>The ability to create file data sources.</p>
+    pub fn create_file_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_file_data_source.as_ref()
+    }
+    /// <p>The ability to update file data sources.</p>
+    pub fn update_file_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_file_data_source.as_ref()
+    }
+    /// <p>The ability to share file data sources.</p>
+    pub fn share_file_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_file_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon S3 data sources.</p>
+    pub fn s3_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.s3_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon S3 data sources.</p>
+    pub fn create_s3_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_s3_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon S3 data sources.</p>
+    pub fn update_s3_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_s3_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon S3 data sources.</p>
+    pub fn share_s3_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_s3_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Analytics data sources.</p>
+    pub fn s3_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.s3_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon S3 Analytics data sources.</p>
+    pub fn create_s3_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_s3_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon S3 Analytics data sources.</p>
+    pub fn update_s3_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_s3_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon S3 Analytics data sources.</p>
+    pub fn share_s3_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_s3_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+    pub fn s3_tables_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.s3_tables_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon S3 Tables data sources.</p>
+    pub fn create_s3_tables_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_s3_tables_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon S3 Tables data sources.</p>
+    pub fn update_s3_tables_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_s3_tables_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon S3 Tables data sources.</p>
+    pub fn share_s3_tables_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_s3_tables_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon Athena data sources.</p>
+    pub fn athena_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.athena_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon Athena data sources.</p>
+    pub fn create_athena_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_athena_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon Athena data sources.</p>
+    pub fn update_athena_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_athena_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon Athena data sources.</p>
+    pub fn share_athena_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_athena_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon RDS data sources.</p>
+    pub fn rds_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.rds_data_source.as_ref()
+    }
+    /// <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+    pub fn create_rds_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_rds_data_source.as_ref()
+    }
+    /// <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+    pub fn update_rds_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_rds_data_source.as_ref()
+    }
+    /// <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+    pub fn share_rds_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_rds_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon Redshift data sources.</p>
+    pub fn redshift_auto_discovered_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.redshift_auto_discovered_data_source.as_ref()
+    }
+    /// <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+    pub fn create_redshift_auto_discovered_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_redshift_auto_discovered_data_source.as_ref()
+    }
+    /// <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+    pub fn update_redshift_auto_discovered_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_redshift_auto_discovered_data_source.as_ref()
+    }
+    /// <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+    pub fn share_redshift_auto_discovered_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_redshift_auto_discovered_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share manually configured Amazon Redshift data sources.</p>
+    pub fn redshift_manual_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.redshift_manual_data_source.as_ref()
+    }
+    /// <p>The ability to create manually configured Amazon Redshift data sources.</p>
+    pub fn create_redshift_manual_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_redshift_manual_data_source.as_ref()
+    }
+    /// <p>The ability to update manually configured Amazon Redshift data sources.</p>
+    pub fn update_redshift_manual_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_redshift_manual_data_source.as_ref()
+    }
+    /// <p>The ability to share manually configured Amazon Redshift data sources.</p>
+    pub fn share_redshift_manual_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_redshift_manual_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon OpenSearch Service data sources.</p>
+    pub fn open_search_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.open_search_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon OpenSearch Service data sources.</p>
+    pub fn create_open_search_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_open_search_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon OpenSearch Service data sources.</p>
+    pub fn update_open_search_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_open_search_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon OpenSearch Service data sources.</p>
+    pub fn share_open_search_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_open_search_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+    pub fn timestream_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.timestream_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon Timestream data sources.</p>
+    pub fn create_timestream_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_timestream_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon Timestream data sources.</p>
+    pub fn update_timestream_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_timestream_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon Timestream data sources.</p>
+    pub fn share_timestream_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_timestream_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+    pub fn aurora_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.aurora_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon Aurora data sources.</p>
+    pub fn create_aurora_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_aurora_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon Aurora data sources.</p>
+    pub fn update_aurora_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_aurora_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon Aurora data sources.</p>
+    pub fn share_aurora_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_aurora_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share MySQL data sources.</p>
+    pub fn my_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.my_sql_data_source.as_ref()
+    }
+    /// <p>The ability to create MySQL data sources.</p>
+    pub fn create_my_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_my_sql_data_source.as_ref()
+    }
+    /// <p>The ability to update MySQL data sources.</p>
+    pub fn update_my_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_my_sql_data_source.as_ref()
+    }
+    /// <p>The ability to share MySQL data sources.</p>
+    pub fn share_my_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_my_sql_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share PostgreSQL data sources.</p>
+    pub fn postgre_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.postgre_sql_data_source.as_ref()
+    }
+    /// <p>The ability to create PostgreSQL data sources.</p>
+    pub fn create_postgre_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_postgre_sql_data_source.as_ref()
+    }
+    /// <p>The ability to update PostgreSQL data sources.</p>
+    pub fn update_postgre_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_postgre_sql_data_source.as_ref()
+    }
+    /// <p>The ability to share PostgreSQL data sources.</p>
+    pub fn share_postgre_sql_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_postgre_sql_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Oracle data sources.</p>
+    pub fn oracle_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.oracle_data_source.as_ref()
+    }
+    /// <p>The ability to create Oracle data sources.</p>
+    pub fn create_oracle_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_oracle_data_source.as_ref()
+    }
+    /// <p>The ability to update Oracle data sources.</p>
+    pub fn update_oracle_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_oracle_data_source.as_ref()
+    }
+    /// <p>The ability to share Oracle data sources.</p>
+    pub fn share_oracle_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_oracle_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share SQL Server data sources.</p>
+    pub fn sql_server_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sql_server_data_source.as_ref()
+    }
+    /// <p>The ability to create SQL Server data sources.</p>
+    pub fn create_sql_server_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_sql_server_data_source.as_ref()
+    }
+    /// <p>The ability to update SQL Server data sources.</p>
+    pub fn update_sql_server_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_sql_server_data_source.as_ref()
+    }
+    /// <p>The ability to share SQL Server data sources.</p>
+    pub fn share_sql_server_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sql_server_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share MariaDB data sources.</p>
+    pub fn maria_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.maria_db_data_source.as_ref()
+    }
+    /// <p>The ability to create MariaDB data sources.</p>
+    pub fn create_maria_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_maria_db_data_source.as_ref()
+    }
+    /// <p>The ability to update MariaDB data sources.</p>
+    pub fn update_maria_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_maria_db_data_source.as_ref()
+    }
+    /// <p>The ability to share MariaDB data sources.</p>
+    pub fn share_maria_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_maria_db_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Snowflake data sources.</p>
+    pub fn snowflake_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.snowflake_data_source.as_ref()
+    }
+    /// <p>The ability to create Snowflake data sources.</p>
+    pub fn create_snowflake_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_snowflake_data_source.as_ref()
+    }
+    /// <p>The ability to update Snowflake data sources.</p>
+    pub fn update_snowflake_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_snowflake_data_source.as_ref()
+    }
+    /// <p>The ability to share Snowflake data sources.</p>
+    pub fn share_snowflake_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_snowflake_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Google BigQuery data sources.</p>
+    pub fn google_big_query_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_big_query_data_source.as_ref()
+    }
+    /// <p>The ability to create Google BigQuery data sources.</p>
+    pub fn create_google_big_query_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_google_big_query_data_source.as_ref()
+    }
+    /// <p>The ability to update Google BigQuery data sources.</p>
+    pub fn update_google_big_query_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_google_big_query_data_source.as_ref()
+    }
+    /// <p>The ability to share Google BigQuery data sources.</p>
+    pub fn share_google_big_query_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_big_query_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Databricks data sources.</p>
+    pub fn databricks_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.databricks_data_source.as_ref()
+    }
+    /// <p>The ability to create Databricks data sources.</p>
+    pub fn create_databricks_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_databricks_data_source.as_ref()
+    }
+    /// <p>The ability to update Databricks data sources.</p>
+    pub fn update_databricks_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_databricks_data_source.as_ref()
+    }
+    /// <p>The ability to share Databricks data sources.</p>
+    pub fn share_databricks_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_databricks_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Starburst data sources.</p>
+    pub fn starburst_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.starburst_data_source.as_ref()
+    }
+    /// <p>The ability to create Starburst data sources.</p>
+    pub fn create_starburst_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_starburst_data_source.as_ref()
+    }
+    /// <p>The ability to update Starburst data sources.</p>
+    pub fn update_starburst_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_starburst_data_source.as_ref()
+    }
+    /// <p>The ability to share Starburst data sources.</p>
+    pub fn share_starburst_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_starburst_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Trino data sources.</p>
+    pub fn trino_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.trino_data_source.as_ref()
+    }
+    /// <p>The ability to create Trino data sources.</p>
+    pub fn create_trino_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_trino_data_source.as_ref()
+    }
+    /// <p>The ability to update Trino data sources.</p>
+    pub fn update_trino_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_trino_data_source.as_ref()
+    }
+    /// <p>The ability to share Trino data sources.</p>
+    pub fn share_trino_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_trino_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Impala data sources.</p>
+    pub fn impala_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.impala_data_source.as_ref()
+    }
+    /// <p>The ability to create Impala data sources.</p>
+    pub fn create_impala_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_impala_data_source.as_ref()
+    }
+    /// <p>The ability to update Impala data sources.</p>
+    pub fn update_impala_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_impala_data_source.as_ref()
+    }
+    /// <p>The ability to share Impala data sources.</p>
+    pub fn share_impala_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_impala_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Teradata data sources.</p>
+    pub fn teradata_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.teradata_data_source.as_ref()
+    }
+    /// <p>The ability to create Teradata data sources.</p>
+    pub fn create_teradata_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_teradata_data_source.as_ref()
+    }
+    /// <p>The ability to update Teradata data sources.</p>
+    pub fn update_teradata_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_teradata_data_source.as_ref()
+    }
+    /// <p>The ability to share Teradata data sources.</p>
+    pub fn share_teradata_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_teradata_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Presto data sources.</p>
+    pub fn presto_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.presto_data_source.as_ref()
+    }
+    /// <p>The ability to create Presto data sources.</p>
+    pub fn create_presto_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_presto_data_source.as_ref()
+    }
+    /// <p>The ability to update Presto data sources.</p>
+    pub fn update_presto_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_presto_data_source.as_ref()
+    }
+    /// <p>The ability to share Presto data sources.</p>
+    pub fn share_presto_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_presto_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Spark data sources.</p>
+    pub fn spark_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.spark_data_source.as_ref()
+    }
+    /// <p>The ability to create Spark data sources.</p>
+    pub fn create_spark_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_spark_data_source.as_ref()
+    }
+    /// <p>The ability to update Spark data sources.</p>
+    pub fn update_spark_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_spark_data_source.as_ref()
+    }
+    /// <p>The ability to share Spark data sources.</p>
+    pub fn share_spark_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_spark_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Exasol data sources.</p>
+    pub fn exasol_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.exasol_data_source.as_ref()
+    }
+    /// <p>The ability to create Exasol data sources.</p>
+    pub fn create_exasol_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_exasol_data_source.as_ref()
+    }
+    /// <p>The ability to update Exasol data sources.</p>
+    pub fn update_exasol_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_exasol_data_source.as_ref()
+    }
+    /// <p>The ability to share Exasol data sources.</p>
+    pub fn share_exasol_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_exasol_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Db2 data sources.</p>
+    pub fn db2_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.db2_data_source.as_ref()
+    }
+    /// <p>The ability to create Db2 data sources.</p>
+    pub fn create_db2_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_db2_data_source.as_ref()
+    }
+    /// <p>The ability to update Db2 data sources.</p>
+    pub fn update_db2_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_db2_data_source.as_ref()
+    }
+    /// <p>The ability to share Db2 data sources.</p>
+    pub fn share_db2_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_db2_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share SAP HANA data sources.</p>
+    pub fn sap_hana_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.sap_hana_data_source.as_ref()
+    }
+    /// <p>The ability to create SAP HANA data sources.</p>
+    pub fn create_sap_hana_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_sap_hana_data_source.as_ref()
+    }
+    /// <p>The ability to update SAP HANA data sources.</p>
+    pub fn update_sap_hana_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_sap_hana_data_source.as_ref()
+    }
+    /// <p>The ability to share SAP HANA data sources.</p>
+    pub fn share_sap_hana_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_sap_hana_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Denodo data sources.</p>
+    pub fn denodo_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.denodo_data_source.as_ref()
+    }
+    /// <p>The ability to create Denodo data sources.</p>
+    pub fn create_denodo_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_denodo_data_source.as_ref()
+    }
+    /// <p>The ability to update Denodo data sources.</p>
+    pub fn update_denodo_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_denodo_data_source.as_ref()
+    }
+    /// <p>The ability to share Denodo data sources.</p>
+    pub fn share_denodo_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_denodo_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Dremio data sources.</p>
+    pub fn dremio_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.dremio_data_source.as_ref()
+    }
+    /// <p>The ability to create Dremio data sources.</p>
+    pub fn create_dremio_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_dremio_data_source.as_ref()
+    }
+    /// <p>The ability to update Dremio data sources.</p>
+    pub fn update_dremio_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_dremio_data_source.as_ref()
+    }
+    /// <p>The ability to share Dremio data sources.</p>
+    pub fn share_dremio_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_dremio_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Salesforce data sources.</p>
+    pub fn salesforce_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.salesforce_data_source.as_ref()
+    }
+    /// <p>The ability to create Salesforce data sources.</p>
+    pub fn create_salesforce_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_salesforce_data_source.as_ref()
+    }
+    /// <p>The ability to update Salesforce data sources.</p>
+    pub fn update_salesforce_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_salesforce_data_source.as_ref()
+    }
+    /// <p>The ability to share Salesforce data sources.</p>
+    pub fn share_salesforce_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_salesforce_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+    pub fn radiant_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.radiant_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon QuickSight data sources.</p>
+    pub fn create_radiant_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_radiant_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon QuickSight data sources.</p>
+    pub fn update_radiant_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_radiant_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon QuickSight data sources.</p>
+    pub fn share_radiant_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_radiant_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share PayPal data sources.</p>
+    pub fn pay_pal_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.pay_pal_data_source.as_ref()
+    }
+    /// <p>The ability to create PayPal data sources.</p>
+    pub fn create_pay_pal_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_pay_pal_data_source.as_ref()
+    }
+    /// <p>The ability to update PayPal data sources.</p>
+    pub fn update_pay_pal_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_pay_pal_data_source.as_ref()
+    }
+    /// <p>The ability to share PayPal data sources.</p>
+    pub fn share_pay_pal_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_pay_pal_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Square data sources.</p>
+    pub fn square_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.square_data_source.as_ref()
+    }
+    /// <p>The ability to create Square data sources.</p>
+    pub fn create_square_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_square_data_source.as_ref()
+    }
+    /// <p>The ability to update Square data sources.</p>
+    pub fn update_square_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_square_data_source.as_ref()
+    }
+    /// <p>The ability to share Square data sources.</p>
+    pub fn share_square_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_square_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share GitHub data sources.</p>
+    pub fn git_hub_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.git_hub_data_source.as_ref()
+    }
+    /// <p>The ability to create GitHub data sources.</p>
+    pub fn create_git_hub_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_git_hub_data_source.as_ref()
+    }
+    /// <p>The ability to update GitHub data sources.</p>
+    pub fn update_git_hub_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_git_hub_data_source.as_ref()
+    }
+    /// <p>The ability to share GitHub data sources.</p>
+    pub fn share_git_hub_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_git_hub_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Twitter data sources.</p>
+    pub fn twitter_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.twitter_data_source.as_ref()
+    }
+    /// <p>The ability to create Twitter data sources.</p>
+    pub fn create_twitter_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_twitter_data_source.as_ref()
+    }
+    /// <p>The ability to update Twitter data sources.</p>
+    pub fn update_twitter_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_twitter_data_source.as_ref()
+    }
+    /// <p>The ability to share Twitter data sources.</p>
+    pub fn share_twitter_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_twitter_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Jira data sources.</p>
+    pub fn jira_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.jira_data_source.as_ref()
+    }
+    /// <p>The ability to create Jira data sources.</p>
+    pub fn create_jira_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_jira_data_source.as_ref()
+    }
+    /// <p>The ability to update Jira data sources.</p>
+    pub fn update_jira_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_jira_data_source.as_ref()
+    }
+    /// <p>The ability to share Jira data sources.</p>
+    pub fn share_jira_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_jira_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share ServiceNow data sources.</p>
+    pub fn service_now_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.service_now_data_source.as_ref()
+    }
+    /// <p>The ability to create ServiceNow data sources.</p>
+    pub fn create_service_now_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_service_now_data_source.as_ref()
+    }
+    /// <p>The ability to update ServiceNow data sources.</p>
+    pub fn update_service_now_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_service_now_data_source.as_ref()
+    }
+    /// <p>The ability to share ServiceNow data sources.</p>
+    pub fn share_service_now_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_service_now_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+    pub fn adobe_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.adobe_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create Adobe Analytics data sources.</p>
+    pub fn create_adobe_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_adobe_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to update Adobe Analytics data sources.</p>
+    pub fn update_adobe_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_adobe_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to share Adobe Analytics data sources.</p>
+    pub fn share_adobe_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_adobe_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Google Analytics data sources.</p>
+    pub fn google_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create Google Analytics data sources.</p>
+    pub fn create_google_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_google_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to update Google Analytics data sources.</p>
+    pub fn update_google_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_google_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to share Google Analytics data sources.</p>
+    pub fn share_google_analytics_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_analytics_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Google Sheets data sources.</p>
+    pub fn google_sheets_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_sheets_data_source.as_ref()
+    }
+    /// <p>The ability to create Google Sheets data sources.</p>
+    pub fn create_google_sheets_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_google_sheets_data_source.as_ref()
+    }
+    /// <p>The ability to update Google Sheets data sources.</p>
+    pub fn update_google_sheets_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_google_sheets_data_source.as_ref()
+    }
+    /// <p>The ability to share Google Sheets data sources.</p>
+    pub fn share_google_sheets_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_sheets_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+    pub fn document_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.document_db_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon DocumentDB data sources.</p>
+    pub fn create_document_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_document_db_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon DocumentDB data sources.</p>
+    pub fn update_document_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_document_db_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon DocumentDB data sources.</p>
+    pub fn share_document_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_document_db_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share MongoDB data sources.</p>
+    pub fn mongo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.mongo_db_data_source.as_ref()
+    }
+    /// <p>The ability to create MongoDB data sources.</p>
+    pub fn create_mongo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_mongo_db_data_source.as_ref()
+    }
+    /// <p>The ability to update MongoDB data sources.</p>
+    pub fn update_mongo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_mongo_db_data_source.as_ref()
+    }
+    /// <p>The ability to share MongoDB data sources.</p>
+    pub fn share_mongo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_mongo_db_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+    pub fn mongo_atlas_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.mongo_atlas_data_source.as_ref()
+    }
+    /// <p>The ability to create MongoDB Atlas data sources.</p>
+    pub fn create_mongo_atlas_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_mongo_atlas_data_source.as_ref()
+    }
+    /// <p>The ability to update MongoDB Atlas data sources.</p>
+    pub fn update_mongo_atlas_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_mongo_atlas_data_source.as_ref()
+    }
+    /// <p>The ability to share MongoDB Atlas data sources.</p>
+    pub fn share_mongo_atlas_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_mongo_atlas_data_source.as_ref()
+    }
+    /// <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+    pub fn dynamo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.dynamo_db_data_source.as_ref()
+    }
+    /// <p>The ability to create Amazon DynamoDB data sources.</p>
+    pub fn create_dynamo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_dynamo_db_data_source.as_ref()
+    }
+    /// <p>The ability to update Amazon DynamoDB data sources.</p>
+    pub fn update_dynamo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.update_dynamo_db_data_source.as_ref()
+    }
+    /// <p>The ability to share Amazon DynamoDB data sources.</p>
+    pub fn share_dynamo_db_data_source(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_dynamo_db_data_source.as_ref()
     }
 }
 impl Capabilities {
@@ -3235,6 +4339,10 @@ pub struct CapabilitiesBuilder {
     pub(crate) create_and_update_bee_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_bee_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_bee_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_gong_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_gong_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) topic: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) edit_visual_with_q: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) build_calculated_field_with_q: ::std::option::Option<crate::types::CapabilityState>,
@@ -3261,6 +4369,186 @@ pub struct CapabilitiesBuilder {
     pub(crate) schedule_trigger: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) inbound_email_trigger: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) quick_event_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_file_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_s3_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_s3_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_s3_tables_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_athena_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_rds_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_redshift_auto_discovered_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_redshift_manual_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_open_search_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_timestream_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_aurora_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_my_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_postgre_sql_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_oracle_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sql_server_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_maria_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_snowflake_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_big_query_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_databricks_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_starburst_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_trino_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_impala_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_teradata_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_presto_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_spark_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_exasol_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_db2_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_sap_hana_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_denodo_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_dremio_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_salesforce_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_radiant_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_pay_pal_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_square_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_git_hub_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_twitter_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_jira_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_service_now_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_adobe_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_analytics_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_sheets_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_document_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_mongo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_mongo_atlas_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) update_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_dynamo_db_data_source: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -9129,6 +10417,62 @@ impl CapabilitiesBuilder {
     pub fn get_use_bee_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.use_bee_action
     }
+    /// <p>The ability to perform actions using Gong connectors.</p>
+    pub fn gong_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.gong_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform actions using Gong connectors.</p>
+    pub fn set_gong_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.gong_action = input;
+        self
+    }
+    /// <p>The ability to perform actions using Gong connectors.</p>
+    pub fn get_gong_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.gong_action
+    }
+    /// <p>The ability to create and update Gong actions.</p>
+    pub fn create_and_update_gong_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_gong_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create and update Gong actions.</p>
+    pub fn set_create_and_update_gong_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_gong_action = input;
+        self
+    }
+    /// <p>The ability to create and update Gong actions.</p>
+    pub fn get_create_and_update_gong_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_gong_action
+    }
+    /// <p>The ability to share Gong actions.</p>
+    pub fn share_gong_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_gong_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Gong actions.</p>
+    pub fn set_share_gong_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_gong_action = input;
+        self
+    }
+    /// <p>The ability to share Gong actions.</p>
+    pub fn get_share_gong_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_gong_action
+    }
+    /// <p>The ability to use Gong actions.</p>
+    pub fn use_gong_action(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_gong_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to use Gong actions.</p>
+    pub fn set_use_gong_action(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_gong_action = input;
+        self
+    }
+    /// <p>The ability to use Gong actions.</p>
+    pub fn get_use_gong_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_gong_action
+    }
     /// <p>The ability to perform Topic-related actions.</p>
     pub fn topic(mut self, input: crate::types::CapabilityState) -> Self {
         self.topic = ::std::option::Option::Some(input);
@@ -9495,6 +10839,2526 @@ impl CapabilitiesBuilder {
     /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
     pub fn get_quick_event_trigger(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.quick_event_trigger
+    }
+    /// <p>The ability to create, update, and share file data sources.</p>
+    pub fn file_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.file_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share file data sources.</p>
+    pub fn set_file_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.file_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share file data sources.</p>
+    pub fn get_file_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.file_data_source
+    }
+    /// <p>The ability to create file data sources.</p>
+    pub fn create_file_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_file_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create file data sources.</p>
+    pub fn set_create_file_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_file_data_source = input;
+        self
+    }
+    /// <p>The ability to create file data sources.</p>
+    pub fn get_create_file_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_file_data_source
+    }
+    /// <p>The ability to update file data sources.</p>
+    pub fn update_file_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_file_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update file data sources.</p>
+    pub fn set_update_file_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_file_data_source = input;
+        self
+    }
+    /// <p>The ability to update file data sources.</p>
+    pub fn get_update_file_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_file_data_source
+    }
+    /// <p>The ability to share file data sources.</p>
+    pub fn share_file_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_file_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share file data sources.</p>
+    pub fn set_share_file_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_file_data_source = input;
+        self
+    }
+    /// <p>The ability to share file data sources.</p>
+    pub fn get_share_file_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_file_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon S3 data sources.</p>
+    pub fn s3_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 data sources.</p>
+    pub fn set_s3_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.s3_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 data sources.</p>
+    pub fn get_s3_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.s3_data_source
+    }
+    /// <p>The ability to create Amazon S3 data sources.</p>
+    pub fn create_s3_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon S3 data sources.</p>
+    pub fn set_create_s3_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_s3_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon S3 data sources.</p>
+    pub fn get_create_s3_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_s3_data_source
+    }
+    /// <p>The ability to update Amazon S3 data sources.</p>
+    pub fn update_s3_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon S3 data sources.</p>
+    pub fn set_update_s3_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_s3_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon S3 data sources.</p>
+    pub fn get_update_s3_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_s3_data_source
+    }
+    /// <p>The ability to share Amazon S3 data sources.</p>
+    pub fn share_s3_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_s3_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon S3 data sources.</p>
+    pub fn set_share_s3_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_s3_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon S3 data sources.</p>
+    pub fn get_share_s3_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_s3_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Analytics data sources.</p>
+    pub fn s3_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.s3_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Analytics data sources.</p>
+    pub fn set_s3_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.s3_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Analytics data sources.</p>
+    pub fn get_s3_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.s3_analytics_data_source
+    }
+    /// <p>The ability to create Amazon S3 Analytics data sources.</p>
+    pub fn create_s3_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_s3_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon S3 Analytics data sources.</p>
+    pub fn set_create_s3_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_s3_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon S3 Analytics data sources.</p>
+    pub fn get_create_s3_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_s3_analytics_data_source
+    }
+    /// <p>The ability to update Amazon S3 Analytics data sources.</p>
+    pub fn update_s3_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_s3_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon S3 Analytics data sources.</p>
+    pub fn set_update_s3_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_s3_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon S3 Analytics data sources.</p>
+    pub fn get_update_s3_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_s3_analytics_data_source
+    }
+    /// <p>The ability to share Amazon S3 Analytics data sources.</p>
+    pub fn share_s3_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_s3_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon S3 Analytics data sources.</p>
+    pub fn set_share_s3_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_s3_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon S3 Analytics data sources.</p>
+    pub fn get_share_s3_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_s3_analytics_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+    pub fn s3_tables_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.s3_tables_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+    pub fn set_s3_tables_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.s3_tables_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+    pub fn get_s3_tables_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.s3_tables_data_source
+    }
+    /// <p>The ability to create Amazon S3 Tables data sources.</p>
+    pub fn create_s3_tables_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_s3_tables_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon S3 Tables data sources.</p>
+    pub fn set_create_s3_tables_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_s3_tables_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon S3 Tables data sources.</p>
+    pub fn get_create_s3_tables_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_s3_tables_data_source
+    }
+    /// <p>The ability to update Amazon S3 Tables data sources.</p>
+    pub fn update_s3_tables_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_s3_tables_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon S3 Tables data sources.</p>
+    pub fn set_update_s3_tables_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_s3_tables_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon S3 Tables data sources.</p>
+    pub fn get_update_s3_tables_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_s3_tables_data_source
+    }
+    /// <p>The ability to share Amazon S3 Tables data sources.</p>
+    pub fn share_s3_tables_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_s3_tables_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon S3 Tables data sources.</p>
+    pub fn set_share_s3_tables_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_s3_tables_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon S3 Tables data sources.</p>
+    pub fn get_share_s3_tables_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_s3_tables_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon Athena data sources.</p>
+    pub fn athena_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.athena_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Athena data sources.</p>
+    pub fn set_athena_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.athena_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Athena data sources.</p>
+    pub fn get_athena_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.athena_data_source
+    }
+    /// <p>The ability to create Amazon Athena data sources.</p>
+    pub fn create_athena_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_athena_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon Athena data sources.</p>
+    pub fn set_create_athena_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_athena_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon Athena data sources.</p>
+    pub fn get_create_athena_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_athena_data_source
+    }
+    /// <p>The ability to update Amazon Athena data sources.</p>
+    pub fn update_athena_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_athena_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon Athena data sources.</p>
+    pub fn set_update_athena_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_athena_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon Athena data sources.</p>
+    pub fn get_update_athena_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_athena_data_source
+    }
+    /// <p>The ability to share Amazon Athena data sources.</p>
+    pub fn share_athena_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_athena_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon Athena data sources.</p>
+    pub fn set_share_athena_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_athena_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon Athena data sources.</p>
+    pub fn get_share_athena_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_athena_data_source
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon RDS data sources.</p>
+    pub fn rds_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.rds_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon RDS data sources.</p>
+    pub fn set_rds_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.rds_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon RDS data sources.</p>
+    pub fn get_rds_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.rds_data_source
+    }
+    /// <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+    pub fn create_rds_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_rds_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+    pub fn set_create_rds_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_rds_data_source = input;
+        self
+    }
+    /// <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+    pub fn get_create_rds_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_rds_data_source
+    }
+    /// <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+    pub fn update_rds_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_rds_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+    pub fn set_update_rds_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_rds_data_source = input;
+        self
+    }
+    /// <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+    pub fn get_update_rds_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_rds_data_source
+    }
+    /// <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+    pub fn share_rds_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_rds_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+    pub fn set_share_rds_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_rds_data_source = input;
+        self
+    }
+    /// <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+    pub fn get_share_rds_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_rds_data_source
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon Redshift data sources.</p>
+    pub fn redshift_auto_discovered_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.redshift_auto_discovered_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon Redshift data sources.</p>
+    pub fn set_redshift_auto_discovered_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.redshift_auto_discovered_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share auto-discovered Amazon Redshift data sources.</p>
+    pub fn get_redshift_auto_discovered_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.redshift_auto_discovered_data_source
+    }
+    /// <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+    pub fn create_redshift_auto_discovered_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_redshift_auto_discovered_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+    pub fn set_create_redshift_auto_discovered_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_redshift_auto_discovered_data_source = input;
+        self
+    }
+    /// <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+    pub fn get_create_redshift_auto_discovered_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_redshift_auto_discovered_data_source
+    }
+    /// <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+    pub fn update_redshift_auto_discovered_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_redshift_auto_discovered_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+    pub fn set_update_redshift_auto_discovered_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_redshift_auto_discovered_data_source = input;
+        self
+    }
+    /// <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+    pub fn get_update_redshift_auto_discovered_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_redshift_auto_discovered_data_source
+    }
+    /// <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+    pub fn share_redshift_auto_discovered_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_redshift_auto_discovered_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+    pub fn set_share_redshift_auto_discovered_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_redshift_auto_discovered_data_source = input;
+        self
+    }
+    /// <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+    pub fn get_share_redshift_auto_discovered_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_redshift_auto_discovered_data_source
+    }
+    /// <p>The ability to create, update, and share manually configured Amazon Redshift data sources.</p>
+    pub fn redshift_manual_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.redshift_manual_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share manually configured Amazon Redshift data sources.</p>
+    pub fn set_redshift_manual_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.redshift_manual_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share manually configured Amazon Redshift data sources.</p>
+    pub fn get_redshift_manual_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.redshift_manual_data_source
+    }
+    /// <p>The ability to create manually configured Amazon Redshift data sources.</p>
+    pub fn create_redshift_manual_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_redshift_manual_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create manually configured Amazon Redshift data sources.</p>
+    pub fn set_create_redshift_manual_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_redshift_manual_data_source = input;
+        self
+    }
+    /// <p>The ability to create manually configured Amazon Redshift data sources.</p>
+    pub fn get_create_redshift_manual_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_redshift_manual_data_source
+    }
+    /// <p>The ability to update manually configured Amazon Redshift data sources.</p>
+    pub fn update_redshift_manual_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_redshift_manual_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update manually configured Amazon Redshift data sources.</p>
+    pub fn set_update_redshift_manual_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_redshift_manual_data_source = input;
+        self
+    }
+    /// <p>The ability to update manually configured Amazon Redshift data sources.</p>
+    pub fn get_update_redshift_manual_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_redshift_manual_data_source
+    }
+    /// <p>The ability to share manually configured Amazon Redshift data sources.</p>
+    pub fn share_redshift_manual_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_redshift_manual_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share manually configured Amazon Redshift data sources.</p>
+    pub fn set_share_redshift_manual_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_redshift_manual_data_source = input;
+        self
+    }
+    /// <p>The ability to share manually configured Amazon Redshift data sources.</p>
+    pub fn get_share_redshift_manual_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_redshift_manual_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon OpenSearch Service data sources.</p>
+    pub fn open_search_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.open_search_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon OpenSearch Service data sources.</p>
+    pub fn set_open_search_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.open_search_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon OpenSearch Service data sources.</p>
+    pub fn get_open_search_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.open_search_data_source
+    }
+    /// <p>The ability to create Amazon OpenSearch Service data sources.</p>
+    pub fn create_open_search_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_open_search_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon OpenSearch Service data sources.</p>
+    pub fn set_create_open_search_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_open_search_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon OpenSearch Service data sources.</p>
+    pub fn get_create_open_search_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_open_search_data_source
+    }
+    /// <p>The ability to update Amazon OpenSearch Service data sources.</p>
+    pub fn update_open_search_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_open_search_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon OpenSearch Service data sources.</p>
+    pub fn set_update_open_search_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_open_search_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon OpenSearch Service data sources.</p>
+    pub fn get_update_open_search_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_open_search_data_source
+    }
+    /// <p>The ability to share Amazon OpenSearch Service data sources.</p>
+    pub fn share_open_search_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_open_search_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon OpenSearch Service data sources.</p>
+    pub fn set_share_open_search_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_open_search_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon OpenSearch Service data sources.</p>
+    pub fn get_share_open_search_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_open_search_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+    pub fn timestream_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.timestream_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+    pub fn set_timestream_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.timestream_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+    pub fn get_timestream_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.timestream_data_source
+    }
+    /// <p>The ability to create Amazon Timestream data sources.</p>
+    pub fn create_timestream_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_timestream_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon Timestream data sources.</p>
+    pub fn set_create_timestream_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_timestream_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon Timestream data sources.</p>
+    pub fn get_create_timestream_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_timestream_data_source
+    }
+    /// <p>The ability to update Amazon Timestream data sources.</p>
+    pub fn update_timestream_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_timestream_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon Timestream data sources.</p>
+    pub fn set_update_timestream_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_timestream_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon Timestream data sources.</p>
+    pub fn get_update_timestream_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_timestream_data_source
+    }
+    /// <p>The ability to share Amazon Timestream data sources.</p>
+    pub fn share_timestream_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_timestream_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon Timestream data sources.</p>
+    pub fn set_share_timestream_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_timestream_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon Timestream data sources.</p>
+    pub fn get_share_timestream_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_timestream_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+    pub fn aurora_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.aurora_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+    pub fn set_aurora_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.aurora_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+    pub fn get_aurora_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.aurora_data_source
+    }
+    /// <p>The ability to create Amazon Aurora data sources.</p>
+    pub fn create_aurora_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_aurora_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon Aurora data sources.</p>
+    pub fn set_create_aurora_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_aurora_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon Aurora data sources.</p>
+    pub fn get_create_aurora_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_aurora_data_source
+    }
+    /// <p>The ability to update Amazon Aurora data sources.</p>
+    pub fn update_aurora_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_aurora_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon Aurora data sources.</p>
+    pub fn set_update_aurora_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_aurora_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon Aurora data sources.</p>
+    pub fn get_update_aurora_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_aurora_data_source
+    }
+    /// <p>The ability to share Amazon Aurora data sources.</p>
+    pub fn share_aurora_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_aurora_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon Aurora data sources.</p>
+    pub fn set_share_aurora_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_aurora_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon Aurora data sources.</p>
+    pub fn get_share_aurora_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_aurora_data_source
+    }
+    /// <p>The ability to create, update, and share MySQL data sources.</p>
+    pub fn my_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.my_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share MySQL data sources.</p>
+    pub fn set_my_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.my_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share MySQL data sources.</p>
+    pub fn get_my_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.my_sql_data_source
+    }
+    /// <p>The ability to create MySQL data sources.</p>
+    pub fn create_my_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_my_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create MySQL data sources.</p>
+    pub fn set_create_my_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_my_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to create MySQL data sources.</p>
+    pub fn get_create_my_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_my_sql_data_source
+    }
+    /// <p>The ability to update MySQL data sources.</p>
+    pub fn update_my_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_my_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update MySQL data sources.</p>
+    pub fn set_update_my_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_my_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to update MySQL data sources.</p>
+    pub fn get_update_my_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_my_sql_data_source
+    }
+    /// <p>The ability to share MySQL data sources.</p>
+    pub fn share_my_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_my_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share MySQL data sources.</p>
+    pub fn set_share_my_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_my_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to share MySQL data sources.</p>
+    pub fn get_share_my_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_my_sql_data_source
+    }
+    /// <p>The ability to create, update, and share PostgreSQL data sources.</p>
+    pub fn postgre_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.postgre_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share PostgreSQL data sources.</p>
+    pub fn set_postgre_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.postgre_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share PostgreSQL data sources.</p>
+    pub fn get_postgre_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.postgre_sql_data_source
+    }
+    /// <p>The ability to create PostgreSQL data sources.</p>
+    pub fn create_postgre_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_postgre_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create PostgreSQL data sources.</p>
+    pub fn set_create_postgre_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_postgre_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to create PostgreSQL data sources.</p>
+    pub fn get_create_postgre_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_postgre_sql_data_source
+    }
+    /// <p>The ability to update PostgreSQL data sources.</p>
+    pub fn update_postgre_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_postgre_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update PostgreSQL data sources.</p>
+    pub fn set_update_postgre_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_postgre_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to update PostgreSQL data sources.</p>
+    pub fn get_update_postgre_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_postgre_sql_data_source
+    }
+    /// <p>The ability to share PostgreSQL data sources.</p>
+    pub fn share_postgre_sql_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_postgre_sql_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share PostgreSQL data sources.</p>
+    pub fn set_share_postgre_sql_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_postgre_sql_data_source = input;
+        self
+    }
+    /// <p>The ability to share PostgreSQL data sources.</p>
+    pub fn get_share_postgre_sql_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_postgre_sql_data_source
+    }
+    /// <p>The ability to create, update, and share Oracle data sources.</p>
+    pub fn oracle_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.oracle_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Oracle data sources.</p>
+    pub fn set_oracle_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.oracle_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Oracle data sources.</p>
+    pub fn get_oracle_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.oracle_data_source
+    }
+    /// <p>The ability to create Oracle data sources.</p>
+    pub fn create_oracle_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_oracle_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Oracle data sources.</p>
+    pub fn set_create_oracle_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_oracle_data_source = input;
+        self
+    }
+    /// <p>The ability to create Oracle data sources.</p>
+    pub fn get_create_oracle_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_oracle_data_source
+    }
+    /// <p>The ability to update Oracle data sources.</p>
+    pub fn update_oracle_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_oracle_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Oracle data sources.</p>
+    pub fn set_update_oracle_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_oracle_data_source = input;
+        self
+    }
+    /// <p>The ability to update Oracle data sources.</p>
+    pub fn get_update_oracle_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_oracle_data_source
+    }
+    /// <p>The ability to share Oracle data sources.</p>
+    pub fn share_oracle_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_oracle_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Oracle data sources.</p>
+    pub fn set_share_oracle_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_oracle_data_source = input;
+        self
+    }
+    /// <p>The ability to share Oracle data sources.</p>
+    pub fn get_share_oracle_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_oracle_data_source
+    }
+    /// <p>The ability to create, update, and share SQL Server data sources.</p>
+    pub fn sql_server_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sql_server_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share SQL Server data sources.</p>
+    pub fn set_sql_server_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sql_server_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share SQL Server data sources.</p>
+    pub fn get_sql_server_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sql_server_data_source
+    }
+    /// <p>The ability to create SQL Server data sources.</p>
+    pub fn create_sql_server_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_sql_server_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create SQL Server data sources.</p>
+    pub fn set_create_sql_server_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_sql_server_data_source = input;
+        self
+    }
+    /// <p>The ability to create SQL Server data sources.</p>
+    pub fn get_create_sql_server_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_sql_server_data_source
+    }
+    /// <p>The ability to update SQL Server data sources.</p>
+    pub fn update_sql_server_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_sql_server_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update SQL Server data sources.</p>
+    pub fn set_update_sql_server_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_sql_server_data_source = input;
+        self
+    }
+    /// <p>The ability to update SQL Server data sources.</p>
+    pub fn get_update_sql_server_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_sql_server_data_source
+    }
+    /// <p>The ability to share SQL Server data sources.</p>
+    pub fn share_sql_server_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sql_server_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SQL Server data sources.</p>
+    pub fn set_share_sql_server_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sql_server_data_source = input;
+        self
+    }
+    /// <p>The ability to share SQL Server data sources.</p>
+    pub fn get_share_sql_server_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sql_server_data_source
+    }
+    /// <p>The ability to create, update, and share MariaDB data sources.</p>
+    pub fn maria_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.maria_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share MariaDB data sources.</p>
+    pub fn set_maria_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.maria_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share MariaDB data sources.</p>
+    pub fn get_maria_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.maria_db_data_source
+    }
+    /// <p>The ability to create MariaDB data sources.</p>
+    pub fn create_maria_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_maria_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create MariaDB data sources.</p>
+    pub fn set_create_maria_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_maria_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create MariaDB data sources.</p>
+    pub fn get_create_maria_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_maria_db_data_source
+    }
+    /// <p>The ability to update MariaDB data sources.</p>
+    pub fn update_maria_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_maria_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update MariaDB data sources.</p>
+    pub fn set_update_maria_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_maria_db_data_source = input;
+        self
+    }
+    /// <p>The ability to update MariaDB data sources.</p>
+    pub fn get_update_maria_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_maria_db_data_source
+    }
+    /// <p>The ability to share MariaDB data sources.</p>
+    pub fn share_maria_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_maria_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share MariaDB data sources.</p>
+    pub fn set_share_maria_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_maria_db_data_source = input;
+        self
+    }
+    /// <p>The ability to share MariaDB data sources.</p>
+    pub fn get_share_maria_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_maria_db_data_source
+    }
+    /// <p>The ability to create, update, and share Snowflake data sources.</p>
+    pub fn snowflake_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.snowflake_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Snowflake data sources.</p>
+    pub fn set_snowflake_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.snowflake_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Snowflake data sources.</p>
+    pub fn get_snowflake_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.snowflake_data_source
+    }
+    /// <p>The ability to create Snowflake data sources.</p>
+    pub fn create_snowflake_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_snowflake_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Snowflake data sources.</p>
+    pub fn set_create_snowflake_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_snowflake_data_source = input;
+        self
+    }
+    /// <p>The ability to create Snowflake data sources.</p>
+    pub fn get_create_snowflake_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_snowflake_data_source
+    }
+    /// <p>The ability to update Snowflake data sources.</p>
+    pub fn update_snowflake_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_snowflake_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Snowflake data sources.</p>
+    pub fn set_update_snowflake_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_snowflake_data_source = input;
+        self
+    }
+    /// <p>The ability to update Snowflake data sources.</p>
+    pub fn get_update_snowflake_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_snowflake_data_source
+    }
+    /// <p>The ability to share Snowflake data sources.</p>
+    pub fn share_snowflake_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_snowflake_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Snowflake data sources.</p>
+    pub fn set_share_snowflake_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_snowflake_data_source = input;
+        self
+    }
+    /// <p>The ability to share Snowflake data sources.</p>
+    pub fn get_share_snowflake_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_snowflake_data_source
+    }
+    /// <p>The ability to create, update, and share Google BigQuery data sources.</p>
+    pub fn google_big_query_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_big_query_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Google BigQuery data sources.</p>
+    pub fn set_google_big_query_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_big_query_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Google BigQuery data sources.</p>
+    pub fn get_google_big_query_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_big_query_data_source
+    }
+    /// <p>The ability to create Google BigQuery data sources.</p>
+    pub fn create_google_big_query_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_google_big_query_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Google BigQuery data sources.</p>
+    pub fn set_create_google_big_query_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_google_big_query_data_source = input;
+        self
+    }
+    /// <p>The ability to create Google BigQuery data sources.</p>
+    pub fn get_create_google_big_query_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_google_big_query_data_source
+    }
+    /// <p>The ability to update Google BigQuery data sources.</p>
+    pub fn update_google_big_query_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_google_big_query_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Google BigQuery data sources.</p>
+    pub fn set_update_google_big_query_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_google_big_query_data_source = input;
+        self
+    }
+    /// <p>The ability to update Google BigQuery data sources.</p>
+    pub fn get_update_google_big_query_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_google_big_query_data_source
+    }
+    /// <p>The ability to share Google BigQuery data sources.</p>
+    pub fn share_google_big_query_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_big_query_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google BigQuery data sources.</p>
+    pub fn set_share_google_big_query_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_big_query_data_source = input;
+        self
+    }
+    /// <p>The ability to share Google BigQuery data sources.</p>
+    pub fn get_share_google_big_query_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_big_query_data_source
+    }
+    /// <p>The ability to create, update, and share Databricks data sources.</p>
+    pub fn databricks_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.databricks_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Databricks data sources.</p>
+    pub fn set_databricks_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.databricks_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Databricks data sources.</p>
+    pub fn get_databricks_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.databricks_data_source
+    }
+    /// <p>The ability to create Databricks data sources.</p>
+    pub fn create_databricks_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_databricks_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Databricks data sources.</p>
+    pub fn set_create_databricks_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_databricks_data_source = input;
+        self
+    }
+    /// <p>The ability to create Databricks data sources.</p>
+    pub fn get_create_databricks_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_databricks_data_source
+    }
+    /// <p>The ability to update Databricks data sources.</p>
+    pub fn update_databricks_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_databricks_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Databricks data sources.</p>
+    pub fn set_update_databricks_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_databricks_data_source = input;
+        self
+    }
+    /// <p>The ability to update Databricks data sources.</p>
+    pub fn get_update_databricks_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_databricks_data_source
+    }
+    /// <p>The ability to share Databricks data sources.</p>
+    pub fn share_databricks_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_databricks_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Databricks data sources.</p>
+    pub fn set_share_databricks_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_databricks_data_source = input;
+        self
+    }
+    /// <p>The ability to share Databricks data sources.</p>
+    pub fn get_share_databricks_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_databricks_data_source
+    }
+    /// <p>The ability to create, update, and share Starburst data sources.</p>
+    pub fn starburst_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.starburst_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Starburst data sources.</p>
+    pub fn set_starburst_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.starburst_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Starburst data sources.</p>
+    pub fn get_starburst_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.starburst_data_source
+    }
+    /// <p>The ability to create Starburst data sources.</p>
+    pub fn create_starburst_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_starburst_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Starburst data sources.</p>
+    pub fn set_create_starburst_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_starburst_data_source = input;
+        self
+    }
+    /// <p>The ability to create Starburst data sources.</p>
+    pub fn get_create_starburst_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_starburst_data_source
+    }
+    /// <p>The ability to update Starburst data sources.</p>
+    pub fn update_starburst_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_starburst_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Starburst data sources.</p>
+    pub fn set_update_starburst_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_starburst_data_source = input;
+        self
+    }
+    /// <p>The ability to update Starburst data sources.</p>
+    pub fn get_update_starburst_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_starburst_data_source
+    }
+    /// <p>The ability to share Starburst data sources.</p>
+    pub fn share_starburst_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_starburst_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Starburst data sources.</p>
+    pub fn set_share_starburst_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_starburst_data_source = input;
+        self
+    }
+    /// <p>The ability to share Starburst data sources.</p>
+    pub fn get_share_starburst_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_starburst_data_source
+    }
+    /// <p>The ability to create, update, and share Trino data sources.</p>
+    pub fn trino_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.trino_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Trino data sources.</p>
+    pub fn set_trino_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.trino_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Trino data sources.</p>
+    pub fn get_trino_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.trino_data_source
+    }
+    /// <p>The ability to create Trino data sources.</p>
+    pub fn create_trino_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_trino_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Trino data sources.</p>
+    pub fn set_create_trino_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_trino_data_source = input;
+        self
+    }
+    /// <p>The ability to create Trino data sources.</p>
+    pub fn get_create_trino_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_trino_data_source
+    }
+    /// <p>The ability to update Trino data sources.</p>
+    pub fn update_trino_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_trino_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Trino data sources.</p>
+    pub fn set_update_trino_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_trino_data_source = input;
+        self
+    }
+    /// <p>The ability to update Trino data sources.</p>
+    pub fn get_update_trino_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_trino_data_source
+    }
+    /// <p>The ability to share Trino data sources.</p>
+    pub fn share_trino_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_trino_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Trino data sources.</p>
+    pub fn set_share_trino_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_trino_data_source = input;
+        self
+    }
+    /// <p>The ability to share Trino data sources.</p>
+    pub fn get_share_trino_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_trino_data_source
+    }
+    /// <p>The ability to create, update, and share Impala data sources.</p>
+    pub fn impala_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.impala_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Impala data sources.</p>
+    pub fn set_impala_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.impala_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Impala data sources.</p>
+    pub fn get_impala_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.impala_data_source
+    }
+    /// <p>The ability to create Impala data sources.</p>
+    pub fn create_impala_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_impala_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Impala data sources.</p>
+    pub fn set_create_impala_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_impala_data_source = input;
+        self
+    }
+    /// <p>The ability to create Impala data sources.</p>
+    pub fn get_create_impala_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_impala_data_source
+    }
+    /// <p>The ability to update Impala data sources.</p>
+    pub fn update_impala_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_impala_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Impala data sources.</p>
+    pub fn set_update_impala_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_impala_data_source = input;
+        self
+    }
+    /// <p>The ability to update Impala data sources.</p>
+    pub fn get_update_impala_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_impala_data_source
+    }
+    /// <p>The ability to share Impala data sources.</p>
+    pub fn share_impala_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_impala_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Impala data sources.</p>
+    pub fn set_share_impala_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_impala_data_source = input;
+        self
+    }
+    /// <p>The ability to share Impala data sources.</p>
+    pub fn get_share_impala_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_impala_data_source
+    }
+    /// <p>The ability to create, update, and share Teradata data sources.</p>
+    pub fn teradata_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.teradata_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Teradata data sources.</p>
+    pub fn set_teradata_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.teradata_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Teradata data sources.</p>
+    pub fn get_teradata_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.teradata_data_source
+    }
+    /// <p>The ability to create Teradata data sources.</p>
+    pub fn create_teradata_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_teradata_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Teradata data sources.</p>
+    pub fn set_create_teradata_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_teradata_data_source = input;
+        self
+    }
+    /// <p>The ability to create Teradata data sources.</p>
+    pub fn get_create_teradata_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_teradata_data_source
+    }
+    /// <p>The ability to update Teradata data sources.</p>
+    pub fn update_teradata_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_teradata_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Teradata data sources.</p>
+    pub fn set_update_teradata_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_teradata_data_source = input;
+        self
+    }
+    /// <p>The ability to update Teradata data sources.</p>
+    pub fn get_update_teradata_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_teradata_data_source
+    }
+    /// <p>The ability to share Teradata data sources.</p>
+    pub fn share_teradata_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_teradata_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Teradata data sources.</p>
+    pub fn set_share_teradata_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_teradata_data_source = input;
+        self
+    }
+    /// <p>The ability to share Teradata data sources.</p>
+    pub fn get_share_teradata_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_teradata_data_source
+    }
+    /// <p>The ability to create, update, and share Presto data sources.</p>
+    pub fn presto_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.presto_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Presto data sources.</p>
+    pub fn set_presto_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.presto_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Presto data sources.</p>
+    pub fn get_presto_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.presto_data_source
+    }
+    /// <p>The ability to create Presto data sources.</p>
+    pub fn create_presto_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_presto_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Presto data sources.</p>
+    pub fn set_create_presto_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_presto_data_source = input;
+        self
+    }
+    /// <p>The ability to create Presto data sources.</p>
+    pub fn get_create_presto_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_presto_data_source
+    }
+    /// <p>The ability to update Presto data sources.</p>
+    pub fn update_presto_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_presto_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Presto data sources.</p>
+    pub fn set_update_presto_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_presto_data_source = input;
+        self
+    }
+    /// <p>The ability to update Presto data sources.</p>
+    pub fn get_update_presto_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_presto_data_source
+    }
+    /// <p>The ability to share Presto data sources.</p>
+    pub fn share_presto_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_presto_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Presto data sources.</p>
+    pub fn set_share_presto_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_presto_data_source = input;
+        self
+    }
+    /// <p>The ability to share Presto data sources.</p>
+    pub fn get_share_presto_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_presto_data_source
+    }
+    /// <p>The ability to create, update, and share Spark data sources.</p>
+    pub fn spark_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.spark_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Spark data sources.</p>
+    pub fn set_spark_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.spark_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Spark data sources.</p>
+    pub fn get_spark_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.spark_data_source
+    }
+    /// <p>The ability to create Spark data sources.</p>
+    pub fn create_spark_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_spark_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Spark data sources.</p>
+    pub fn set_create_spark_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_spark_data_source = input;
+        self
+    }
+    /// <p>The ability to create Spark data sources.</p>
+    pub fn get_create_spark_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_spark_data_source
+    }
+    /// <p>The ability to update Spark data sources.</p>
+    pub fn update_spark_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_spark_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Spark data sources.</p>
+    pub fn set_update_spark_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_spark_data_source = input;
+        self
+    }
+    /// <p>The ability to update Spark data sources.</p>
+    pub fn get_update_spark_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_spark_data_source
+    }
+    /// <p>The ability to share Spark data sources.</p>
+    pub fn share_spark_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_spark_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Spark data sources.</p>
+    pub fn set_share_spark_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_spark_data_source = input;
+        self
+    }
+    /// <p>The ability to share Spark data sources.</p>
+    pub fn get_share_spark_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_spark_data_source
+    }
+    /// <p>The ability to create, update, and share Exasol data sources.</p>
+    pub fn exasol_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.exasol_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Exasol data sources.</p>
+    pub fn set_exasol_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.exasol_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Exasol data sources.</p>
+    pub fn get_exasol_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.exasol_data_source
+    }
+    /// <p>The ability to create Exasol data sources.</p>
+    pub fn create_exasol_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_exasol_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Exasol data sources.</p>
+    pub fn set_create_exasol_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_exasol_data_source = input;
+        self
+    }
+    /// <p>The ability to create Exasol data sources.</p>
+    pub fn get_create_exasol_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_exasol_data_source
+    }
+    /// <p>The ability to update Exasol data sources.</p>
+    pub fn update_exasol_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_exasol_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Exasol data sources.</p>
+    pub fn set_update_exasol_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_exasol_data_source = input;
+        self
+    }
+    /// <p>The ability to update Exasol data sources.</p>
+    pub fn get_update_exasol_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_exasol_data_source
+    }
+    /// <p>The ability to share Exasol data sources.</p>
+    pub fn share_exasol_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_exasol_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Exasol data sources.</p>
+    pub fn set_share_exasol_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_exasol_data_source = input;
+        self
+    }
+    /// <p>The ability to share Exasol data sources.</p>
+    pub fn get_share_exasol_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_exasol_data_source
+    }
+    /// <p>The ability to create, update, and share Db2 data sources.</p>
+    pub fn db2_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.db2_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Db2 data sources.</p>
+    pub fn set_db2_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.db2_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Db2 data sources.</p>
+    pub fn get_db2_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.db2_data_source
+    }
+    /// <p>The ability to create Db2 data sources.</p>
+    pub fn create_db2_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_db2_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Db2 data sources.</p>
+    pub fn set_create_db2_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_db2_data_source = input;
+        self
+    }
+    /// <p>The ability to create Db2 data sources.</p>
+    pub fn get_create_db2_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_db2_data_source
+    }
+    /// <p>The ability to update Db2 data sources.</p>
+    pub fn update_db2_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_db2_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Db2 data sources.</p>
+    pub fn set_update_db2_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_db2_data_source = input;
+        self
+    }
+    /// <p>The ability to update Db2 data sources.</p>
+    pub fn get_update_db2_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_db2_data_source
+    }
+    /// <p>The ability to share Db2 data sources.</p>
+    pub fn share_db2_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_db2_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Db2 data sources.</p>
+    pub fn set_share_db2_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_db2_data_source = input;
+        self
+    }
+    /// <p>The ability to share Db2 data sources.</p>
+    pub fn get_share_db2_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_db2_data_source
+    }
+    /// <p>The ability to create, update, and share SAP HANA data sources.</p>
+    pub fn sap_hana_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.sap_hana_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share SAP HANA data sources.</p>
+    pub fn set_sap_hana_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.sap_hana_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share SAP HANA data sources.</p>
+    pub fn get_sap_hana_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.sap_hana_data_source
+    }
+    /// <p>The ability to create SAP HANA data sources.</p>
+    pub fn create_sap_hana_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_sap_hana_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create SAP HANA data sources.</p>
+    pub fn set_create_sap_hana_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_sap_hana_data_source = input;
+        self
+    }
+    /// <p>The ability to create SAP HANA data sources.</p>
+    pub fn get_create_sap_hana_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_sap_hana_data_source
+    }
+    /// <p>The ability to update SAP HANA data sources.</p>
+    pub fn update_sap_hana_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_sap_hana_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update SAP HANA data sources.</p>
+    pub fn set_update_sap_hana_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_sap_hana_data_source = input;
+        self
+    }
+    /// <p>The ability to update SAP HANA data sources.</p>
+    pub fn get_update_sap_hana_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_sap_hana_data_source
+    }
+    /// <p>The ability to share SAP HANA data sources.</p>
+    pub fn share_sap_hana_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_sap_hana_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share SAP HANA data sources.</p>
+    pub fn set_share_sap_hana_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_sap_hana_data_source = input;
+        self
+    }
+    /// <p>The ability to share SAP HANA data sources.</p>
+    pub fn get_share_sap_hana_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_sap_hana_data_source
+    }
+    /// <p>The ability to create, update, and share Denodo data sources.</p>
+    pub fn denodo_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.denodo_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Denodo data sources.</p>
+    pub fn set_denodo_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.denodo_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Denodo data sources.</p>
+    pub fn get_denodo_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.denodo_data_source
+    }
+    /// <p>The ability to create Denodo data sources.</p>
+    pub fn create_denodo_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_denodo_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Denodo data sources.</p>
+    pub fn set_create_denodo_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_denodo_data_source = input;
+        self
+    }
+    /// <p>The ability to create Denodo data sources.</p>
+    pub fn get_create_denodo_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_denodo_data_source
+    }
+    /// <p>The ability to update Denodo data sources.</p>
+    pub fn update_denodo_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_denodo_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Denodo data sources.</p>
+    pub fn set_update_denodo_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_denodo_data_source = input;
+        self
+    }
+    /// <p>The ability to update Denodo data sources.</p>
+    pub fn get_update_denodo_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_denodo_data_source
+    }
+    /// <p>The ability to share Denodo data sources.</p>
+    pub fn share_denodo_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_denodo_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Denodo data sources.</p>
+    pub fn set_share_denodo_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_denodo_data_source = input;
+        self
+    }
+    /// <p>The ability to share Denodo data sources.</p>
+    pub fn get_share_denodo_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_denodo_data_source
+    }
+    /// <p>The ability to create, update, and share Dremio data sources.</p>
+    pub fn dremio_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.dremio_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Dremio data sources.</p>
+    pub fn set_dremio_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.dremio_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Dremio data sources.</p>
+    pub fn get_dremio_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.dremio_data_source
+    }
+    /// <p>The ability to create Dremio data sources.</p>
+    pub fn create_dremio_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_dremio_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Dremio data sources.</p>
+    pub fn set_create_dremio_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_dremio_data_source = input;
+        self
+    }
+    /// <p>The ability to create Dremio data sources.</p>
+    pub fn get_create_dremio_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_dremio_data_source
+    }
+    /// <p>The ability to update Dremio data sources.</p>
+    pub fn update_dremio_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_dremio_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Dremio data sources.</p>
+    pub fn set_update_dremio_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_dremio_data_source = input;
+        self
+    }
+    /// <p>The ability to update Dremio data sources.</p>
+    pub fn get_update_dremio_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_dremio_data_source
+    }
+    /// <p>The ability to share Dremio data sources.</p>
+    pub fn share_dremio_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_dremio_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Dremio data sources.</p>
+    pub fn set_share_dremio_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_dremio_data_source = input;
+        self
+    }
+    /// <p>The ability to share Dremio data sources.</p>
+    pub fn get_share_dremio_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_dremio_data_source
+    }
+    /// <p>The ability to create, update, and share Salesforce data sources.</p>
+    pub fn salesforce_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.salesforce_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Salesforce data sources.</p>
+    pub fn set_salesforce_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.salesforce_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Salesforce data sources.</p>
+    pub fn get_salesforce_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.salesforce_data_source
+    }
+    /// <p>The ability to create Salesforce data sources.</p>
+    pub fn create_salesforce_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_salesforce_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Salesforce data sources.</p>
+    pub fn set_create_salesforce_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_salesforce_data_source = input;
+        self
+    }
+    /// <p>The ability to create Salesforce data sources.</p>
+    pub fn get_create_salesforce_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_salesforce_data_source
+    }
+    /// <p>The ability to update Salesforce data sources.</p>
+    pub fn update_salesforce_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_salesforce_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Salesforce data sources.</p>
+    pub fn set_update_salesforce_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_salesforce_data_source = input;
+        self
+    }
+    /// <p>The ability to update Salesforce data sources.</p>
+    pub fn get_update_salesforce_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_salesforce_data_source
+    }
+    /// <p>The ability to share Salesforce data sources.</p>
+    pub fn share_salesforce_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_salesforce_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Salesforce data sources.</p>
+    pub fn set_share_salesforce_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_salesforce_data_source = input;
+        self
+    }
+    /// <p>The ability to share Salesforce data sources.</p>
+    pub fn get_share_salesforce_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_salesforce_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+    pub fn radiant_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.radiant_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+    pub fn set_radiant_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.radiant_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+    pub fn get_radiant_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.radiant_data_source
+    }
+    /// <p>The ability to create Amazon QuickSight data sources.</p>
+    pub fn create_radiant_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_radiant_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon QuickSight data sources.</p>
+    pub fn set_create_radiant_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_radiant_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon QuickSight data sources.</p>
+    pub fn get_create_radiant_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_radiant_data_source
+    }
+    /// <p>The ability to update Amazon QuickSight data sources.</p>
+    pub fn update_radiant_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_radiant_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon QuickSight data sources.</p>
+    pub fn set_update_radiant_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_radiant_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon QuickSight data sources.</p>
+    pub fn get_update_radiant_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_radiant_data_source
+    }
+    /// <p>The ability to share Amazon QuickSight data sources.</p>
+    pub fn share_radiant_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_radiant_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon QuickSight data sources.</p>
+    pub fn set_share_radiant_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_radiant_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon QuickSight data sources.</p>
+    pub fn get_share_radiant_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_radiant_data_source
+    }
+    /// <p>The ability to create, update, and share PayPal data sources.</p>
+    pub fn pay_pal_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.pay_pal_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share PayPal data sources.</p>
+    pub fn set_pay_pal_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.pay_pal_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share PayPal data sources.</p>
+    pub fn get_pay_pal_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.pay_pal_data_source
+    }
+    /// <p>The ability to create PayPal data sources.</p>
+    pub fn create_pay_pal_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_pay_pal_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create PayPal data sources.</p>
+    pub fn set_create_pay_pal_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_pay_pal_data_source = input;
+        self
+    }
+    /// <p>The ability to create PayPal data sources.</p>
+    pub fn get_create_pay_pal_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_pay_pal_data_source
+    }
+    /// <p>The ability to update PayPal data sources.</p>
+    pub fn update_pay_pal_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_pay_pal_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update PayPal data sources.</p>
+    pub fn set_update_pay_pal_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_pay_pal_data_source = input;
+        self
+    }
+    /// <p>The ability to update PayPal data sources.</p>
+    pub fn get_update_pay_pal_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_pay_pal_data_source
+    }
+    /// <p>The ability to share PayPal data sources.</p>
+    pub fn share_pay_pal_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_pay_pal_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share PayPal data sources.</p>
+    pub fn set_share_pay_pal_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_pay_pal_data_source = input;
+        self
+    }
+    /// <p>The ability to share PayPal data sources.</p>
+    pub fn get_share_pay_pal_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_pay_pal_data_source
+    }
+    /// <p>The ability to create, update, and share Square data sources.</p>
+    pub fn square_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.square_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Square data sources.</p>
+    pub fn set_square_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.square_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Square data sources.</p>
+    pub fn get_square_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.square_data_source
+    }
+    /// <p>The ability to create Square data sources.</p>
+    pub fn create_square_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_square_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Square data sources.</p>
+    pub fn set_create_square_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_square_data_source = input;
+        self
+    }
+    /// <p>The ability to create Square data sources.</p>
+    pub fn get_create_square_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_square_data_source
+    }
+    /// <p>The ability to update Square data sources.</p>
+    pub fn update_square_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_square_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Square data sources.</p>
+    pub fn set_update_square_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_square_data_source = input;
+        self
+    }
+    /// <p>The ability to update Square data sources.</p>
+    pub fn get_update_square_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_square_data_source
+    }
+    /// <p>The ability to share Square data sources.</p>
+    pub fn share_square_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_square_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Square data sources.</p>
+    pub fn set_share_square_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_square_data_source = input;
+        self
+    }
+    /// <p>The ability to share Square data sources.</p>
+    pub fn get_share_square_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_square_data_source
+    }
+    /// <p>The ability to create, update, and share GitHub data sources.</p>
+    pub fn git_hub_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.git_hub_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share GitHub data sources.</p>
+    pub fn set_git_hub_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.git_hub_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share GitHub data sources.</p>
+    pub fn get_git_hub_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.git_hub_data_source
+    }
+    /// <p>The ability to create GitHub data sources.</p>
+    pub fn create_git_hub_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_git_hub_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create GitHub data sources.</p>
+    pub fn set_create_git_hub_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_git_hub_data_source = input;
+        self
+    }
+    /// <p>The ability to create GitHub data sources.</p>
+    pub fn get_create_git_hub_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_git_hub_data_source
+    }
+    /// <p>The ability to update GitHub data sources.</p>
+    pub fn update_git_hub_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_git_hub_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update GitHub data sources.</p>
+    pub fn set_update_git_hub_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_git_hub_data_source = input;
+        self
+    }
+    /// <p>The ability to update GitHub data sources.</p>
+    pub fn get_update_git_hub_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_git_hub_data_source
+    }
+    /// <p>The ability to share GitHub data sources.</p>
+    pub fn share_git_hub_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_git_hub_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share GitHub data sources.</p>
+    pub fn set_share_git_hub_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_git_hub_data_source = input;
+        self
+    }
+    /// <p>The ability to share GitHub data sources.</p>
+    pub fn get_share_git_hub_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_git_hub_data_source
+    }
+    /// <p>The ability to create, update, and share Twitter data sources.</p>
+    pub fn twitter_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.twitter_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Twitter data sources.</p>
+    pub fn set_twitter_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.twitter_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Twitter data sources.</p>
+    pub fn get_twitter_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.twitter_data_source
+    }
+    /// <p>The ability to create Twitter data sources.</p>
+    pub fn create_twitter_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_twitter_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Twitter data sources.</p>
+    pub fn set_create_twitter_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_twitter_data_source = input;
+        self
+    }
+    /// <p>The ability to create Twitter data sources.</p>
+    pub fn get_create_twitter_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_twitter_data_source
+    }
+    /// <p>The ability to update Twitter data sources.</p>
+    pub fn update_twitter_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_twitter_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Twitter data sources.</p>
+    pub fn set_update_twitter_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_twitter_data_source = input;
+        self
+    }
+    /// <p>The ability to update Twitter data sources.</p>
+    pub fn get_update_twitter_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_twitter_data_source
+    }
+    /// <p>The ability to share Twitter data sources.</p>
+    pub fn share_twitter_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_twitter_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Twitter data sources.</p>
+    pub fn set_share_twitter_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_twitter_data_source = input;
+        self
+    }
+    /// <p>The ability to share Twitter data sources.</p>
+    pub fn get_share_twitter_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_twitter_data_source
+    }
+    /// <p>The ability to create, update, and share Jira data sources.</p>
+    pub fn jira_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.jira_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Jira data sources.</p>
+    pub fn set_jira_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.jira_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Jira data sources.</p>
+    pub fn get_jira_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.jira_data_source
+    }
+    /// <p>The ability to create Jira data sources.</p>
+    pub fn create_jira_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_jira_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Jira data sources.</p>
+    pub fn set_create_jira_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_jira_data_source = input;
+        self
+    }
+    /// <p>The ability to create Jira data sources.</p>
+    pub fn get_create_jira_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_jira_data_source
+    }
+    /// <p>The ability to update Jira data sources.</p>
+    pub fn update_jira_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_jira_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Jira data sources.</p>
+    pub fn set_update_jira_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_jira_data_source = input;
+        self
+    }
+    /// <p>The ability to update Jira data sources.</p>
+    pub fn get_update_jira_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_jira_data_source
+    }
+    /// <p>The ability to share Jira data sources.</p>
+    pub fn share_jira_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_jira_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Jira data sources.</p>
+    pub fn set_share_jira_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_jira_data_source = input;
+        self
+    }
+    /// <p>The ability to share Jira data sources.</p>
+    pub fn get_share_jira_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_jira_data_source
+    }
+    /// <p>The ability to create, update, and share ServiceNow data sources.</p>
+    pub fn service_now_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.service_now_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share ServiceNow data sources.</p>
+    pub fn set_service_now_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.service_now_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share ServiceNow data sources.</p>
+    pub fn get_service_now_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.service_now_data_source
+    }
+    /// <p>The ability to create ServiceNow data sources.</p>
+    pub fn create_service_now_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_service_now_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create ServiceNow data sources.</p>
+    pub fn set_create_service_now_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_service_now_data_source = input;
+        self
+    }
+    /// <p>The ability to create ServiceNow data sources.</p>
+    pub fn get_create_service_now_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_service_now_data_source
+    }
+    /// <p>The ability to update ServiceNow data sources.</p>
+    pub fn update_service_now_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_service_now_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update ServiceNow data sources.</p>
+    pub fn set_update_service_now_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_service_now_data_source = input;
+        self
+    }
+    /// <p>The ability to update ServiceNow data sources.</p>
+    pub fn get_update_service_now_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_service_now_data_source
+    }
+    /// <p>The ability to share ServiceNow data sources.</p>
+    pub fn share_service_now_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_service_now_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share ServiceNow data sources.</p>
+    pub fn set_share_service_now_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_service_now_data_source = input;
+        self
+    }
+    /// <p>The ability to share ServiceNow data sources.</p>
+    pub fn get_share_service_now_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_service_now_data_source
+    }
+    /// <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+    pub fn adobe_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.adobe_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+    pub fn set_adobe_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.adobe_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+    pub fn get_adobe_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.adobe_analytics_data_source
+    }
+    /// <p>The ability to create Adobe Analytics data sources.</p>
+    pub fn create_adobe_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_adobe_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Adobe Analytics data sources.</p>
+    pub fn set_create_adobe_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_adobe_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create Adobe Analytics data sources.</p>
+    pub fn get_create_adobe_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_adobe_analytics_data_source
+    }
+    /// <p>The ability to update Adobe Analytics data sources.</p>
+    pub fn update_adobe_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_adobe_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Adobe Analytics data sources.</p>
+    pub fn set_update_adobe_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_adobe_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to update Adobe Analytics data sources.</p>
+    pub fn get_update_adobe_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_adobe_analytics_data_source
+    }
+    /// <p>The ability to share Adobe Analytics data sources.</p>
+    pub fn share_adobe_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_adobe_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Adobe Analytics data sources.</p>
+    pub fn set_share_adobe_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_adobe_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to share Adobe Analytics data sources.</p>
+    pub fn get_share_adobe_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_adobe_analytics_data_source
+    }
+    /// <p>The ability to create, update, and share Google Analytics data sources.</p>
+    pub fn google_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Google Analytics data sources.</p>
+    pub fn set_google_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Google Analytics data sources.</p>
+    pub fn get_google_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_analytics_data_source
+    }
+    /// <p>The ability to create Google Analytics data sources.</p>
+    pub fn create_google_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_google_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Google Analytics data sources.</p>
+    pub fn set_create_google_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_google_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to create Google Analytics data sources.</p>
+    pub fn get_create_google_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_google_analytics_data_source
+    }
+    /// <p>The ability to update Google Analytics data sources.</p>
+    pub fn update_google_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_google_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Google Analytics data sources.</p>
+    pub fn set_update_google_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_google_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to update Google Analytics data sources.</p>
+    pub fn get_update_google_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_google_analytics_data_source
+    }
+    /// <p>The ability to share Google Analytics data sources.</p>
+    pub fn share_google_analytics_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_analytics_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Analytics data sources.</p>
+    pub fn set_share_google_analytics_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_analytics_data_source = input;
+        self
+    }
+    /// <p>The ability to share Google Analytics data sources.</p>
+    pub fn get_share_google_analytics_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_analytics_data_source
+    }
+    /// <p>The ability to create, update, and share Google Sheets data sources.</p>
+    pub fn google_sheets_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_sheets_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Google Sheets data sources.</p>
+    pub fn set_google_sheets_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_sheets_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Google Sheets data sources.</p>
+    pub fn get_google_sheets_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_sheets_data_source
+    }
+    /// <p>The ability to create Google Sheets data sources.</p>
+    pub fn create_google_sheets_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_google_sheets_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Google Sheets data sources.</p>
+    pub fn set_create_google_sheets_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_google_sheets_data_source = input;
+        self
+    }
+    /// <p>The ability to create Google Sheets data sources.</p>
+    pub fn get_create_google_sheets_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_google_sheets_data_source
+    }
+    /// <p>The ability to update Google Sheets data sources.</p>
+    pub fn update_google_sheets_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_google_sheets_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Google Sheets data sources.</p>
+    pub fn set_update_google_sheets_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_google_sheets_data_source = input;
+        self
+    }
+    /// <p>The ability to update Google Sheets data sources.</p>
+    pub fn get_update_google_sheets_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_google_sheets_data_source
+    }
+    /// <p>The ability to share Google Sheets data sources.</p>
+    pub fn share_google_sheets_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_sheets_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Google Sheets data sources.</p>
+    pub fn set_share_google_sheets_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_sheets_data_source = input;
+        self
+    }
+    /// <p>The ability to share Google Sheets data sources.</p>
+    pub fn get_share_google_sheets_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_sheets_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+    pub fn document_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.document_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+    pub fn set_document_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.document_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+    pub fn get_document_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.document_db_data_source
+    }
+    /// <p>The ability to create Amazon DocumentDB data sources.</p>
+    pub fn create_document_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_document_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon DocumentDB data sources.</p>
+    pub fn set_create_document_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_document_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon DocumentDB data sources.</p>
+    pub fn get_create_document_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_document_db_data_source
+    }
+    /// <p>The ability to update Amazon DocumentDB data sources.</p>
+    pub fn update_document_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_document_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon DocumentDB data sources.</p>
+    pub fn set_update_document_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_document_db_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon DocumentDB data sources.</p>
+    pub fn get_update_document_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_document_db_data_source
+    }
+    /// <p>The ability to share Amazon DocumentDB data sources.</p>
+    pub fn share_document_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_document_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon DocumentDB data sources.</p>
+    pub fn set_share_document_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_document_db_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon DocumentDB data sources.</p>
+    pub fn get_share_document_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_document_db_data_source
+    }
+    /// <p>The ability to create, update, and share MongoDB data sources.</p>
+    pub fn mongo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.mongo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share MongoDB data sources.</p>
+    pub fn set_mongo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.mongo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share MongoDB data sources.</p>
+    pub fn get_mongo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.mongo_db_data_source
+    }
+    /// <p>The ability to create MongoDB data sources.</p>
+    pub fn create_mongo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_mongo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create MongoDB data sources.</p>
+    pub fn set_create_mongo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_mongo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create MongoDB data sources.</p>
+    pub fn get_create_mongo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_mongo_db_data_source
+    }
+    /// <p>The ability to update MongoDB data sources.</p>
+    pub fn update_mongo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_mongo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update MongoDB data sources.</p>
+    pub fn set_update_mongo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_mongo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to update MongoDB data sources.</p>
+    pub fn get_update_mongo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_mongo_db_data_source
+    }
+    /// <p>The ability to share MongoDB data sources.</p>
+    pub fn share_mongo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_mongo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share MongoDB data sources.</p>
+    pub fn set_share_mongo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_mongo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to share MongoDB data sources.</p>
+    pub fn get_share_mongo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_mongo_db_data_source
+    }
+    /// <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+    pub fn mongo_atlas_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.mongo_atlas_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+    pub fn set_mongo_atlas_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.mongo_atlas_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+    pub fn get_mongo_atlas_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.mongo_atlas_data_source
+    }
+    /// <p>The ability to create MongoDB Atlas data sources.</p>
+    pub fn create_mongo_atlas_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_mongo_atlas_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create MongoDB Atlas data sources.</p>
+    pub fn set_create_mongo_atlas_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_mongo_atlas_data_source = input;
+        self
+    }
+    /// <p>The ability to create MongoDB Atlas data sources.</p>
+    pub fn get_create_mongo_atlas_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_mongo_atlas_data_source
+    }
+    /// <p>The ability to update MongoDB Atlas data sources.</p>
+    pub fn update_mongo_atlas_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_mongo_atlas_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update MongoDB Atlas data sources.</p>
+    pub fn set_update_mongo_atlas_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_mongo_atlas_data_source = input;
+        self
+    }
+    /// <p>The ability to update MongoDB Atlas data sources.</p>
+    pub fn get_update_mongo_atlas_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_mongo_atlas_data_source
+    }
+    /// <p>The ability to share MongoDB Atlas data sources.</p>
+    pub fn share_mongo_atlas_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_mongo_atlas_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share MongoDB Atlas data sources.</p>
+    pub fn set_share_mongo_atlas_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_mongo_atlas_data_source = input;
+        self
+    }
+    /// <p>The ability to share MongoDB Atlas data sources.</p>
+    pub fn get_share_mongo_atlas_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_mongo_atlas_data_source
+    }
+    /// <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+    pub fn dynamo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.dynamo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+    pub fn set_dynamo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.dynamo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+    pub fn get_dynamo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.dynamo_db_data_source
+    }
+    /// <p>The ability to create Amazon DynamoDB data sources.</p>
+    pub fn create_dynamo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_dynamo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create Amazon DynamoDB data sources.</p>
+    pub fn set_create_dynamo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_dynamo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to create Amazon DynamoDB data sources.</p>
+    pub fn get_create_dynamo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_dynamo_db_data_source
+    }
+    /// <p>The ability to update Amazon DynamoDB data sources.</p>
+    pub fn update_dynamo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.update_dynamo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to update Amazon DynamoDB data sources.</p>
+    pub fn set_update_dynamo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.update_dynamo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to update Amazon DynamoDB data sources.</p>
+    pub fn get_update_dynamo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.update_dynamo_db_data_source
+    }
+    /// <p>The ability to share Amazon DynamoDB data sources.</p>
+    pub fn share_dynamo_db_data_source(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_dynamo_db_data_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to share Amazon DynamoDB data sources.</p>
+    pub fn set_share_dynamo_db_data_source(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_dynamo_db_data_source = input;
+        self
+    }
+    /// <p>The ability to share Amazon DynamoDB data sources.</p>
+    pub fn get_share_dynamo_db_data_source(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_dynamo_db_data_source
     }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
@@ -9864,6 +13728,10 @@ impl CapabilitiesBuilder {
             create_and_update_bee_action: self.create_and_update_bee_action,
             share_bee_action: self.share_bee_action,
             use_bee_action: self.use_bee_action,
+            gong_action: self.gong_action,
+            create_and_update_gong_action: self.create_and_update_gong_action,
+            share_gong_action: self.share_gong_action,
+            use_gong_action: self.use_gong_action,
             topic: self.topic,
             edit_visual_with_q: self.edit_visual_with_q,
             build_calculated_field_with_q: self.build_calculated_field_with_q,
@@ -9890,6 +13758,186 @@ impl CapabilitiesBuilder {
             schedule_trigger: self.schedule_trigger,
             inbound_email_trigger: self.inbound_email_trigger,
             quick_event_trigger: self.quick_event_trigger,
+            file_data_source: self.file_data_source,
+            create_file_data_source: self.create_file_data_source,
+            update_file_data_source: self.update_file_data_source,
+            share_file_data_source: self.share_file_data_source,
+            s3_data_source: self.s3_data_source,
+            create_s3_data_source: self.create_s3_data_source,
+            update_s3_data_source: self.update_s3_data_source,
+            share_s3_data_source: self.share_s3_data_source,
+            s3_analytics_data_source: self.s3_analytics_data_source,
+            create_s3_analytics_data_source: self.create_s3_analytics_data_source,
+            update_s3_analytics_data_source: self.update_s3_analytics_data_source,
+            share_s3_analytics_data_source: self.share_s3_analytics_data_source,
+            s3_tables_data_source: self.s3_tables_data_source,
+            create_s3_tables_data_source: self.create_s3_tables_data_source,
+            update_s3_tables_data_source: self.update_s3_tables_data_source,
+            share_s3_tables_data_source: self.share_s3_tables_data_source,
+            athena_data_source: self.athena_data_source,
+            create_athena_data_source: self.create_athena_data_source,
+            update_athena_data_source: self.update_athena_data_source,
+            share_athena_data_source: self.share_athena_data_source,
+            rds_data_source: self.rds_data_source,
+            create_rds_data_source: self.create_rds_data_source,
+            update_rds_data_source: self.update_rds_data_source,
+            share_rds_data_source: self.share_rds_data_source,
+            redshift_auto_discovered_data_source: self.redshift_auto_discovered_data_source,
+            create_redshift_auto_discovered_data_source: self.create_redshift_auto_discovered_data_source,
+            update_redshift_auto_discovered_data_source: self.update_redshift_auto_discovered_data_source,
+            share_redshift_auto_discovered_data_source: self.share_redshift_auto_discovered_data_source,
+            redshift_manual_data_source: self.redshift_manual_data_source,
+            create_redshift_manual_data_source: self.create_redshift_manual_data_source,
+            update_redshift_manual_data_source: self.update_redshift_manual_data_source,
+            share_redshift_manual_data_source: self.share_redshift_manual_data_source,
+            open_search_data_source: self.open_search_data_source,
+            create_open_search_data_source: self.create_open_search_data_source,
+            update_open_search_data_source: self.update_open_search_data_source,
+            share_open_search_data_source: self.share_open_search_data_source,
+            timestream_data_source: self.timestream_data_source,
+            create_timestream_data_source: self.create_timestream_data_source,
+            update_timestream_data_source: self.update_timestream_data_source,
+            share_timestream_data_source: self.share_timestream_data_source,
+            aurora_data_source: self.aurora_data_source,
+            create_aurora_data_source: self.create_aurora_data_source,
+            update_aurora_data_source: self.update_aurora_data_source,
+            share_aurora_data_source: self.share_aurora_data_source,
+            my_sql_data_source: self.my_sql_data_source,
+            create_my_sql_data_source: self.create_my_sql_data_source,
+            update_my_sql_data_source: self.update_my_sql_data_source,
+            share_my_sql_data_source: self.share_my_sql_data_source,
+            postgre_sql_data_source: self.postgre_sql_data_source,
+            create_postgre_sql_data_source: self.create_postgre_sql_data_source,
+            update_postgre_sql_data_source: self.update_postgre_sql_data_source,
+            share_postgre_sql_data_source: self.share_postgre_sql_data_source,
+            oracle_data_source: self.oracle_data_source,
+            create_oracle_data_source: self.create_oracle_data_source,
+            update_oracle_data_source: self.update_oracle_data_source,
+            share_oracle_data_source: self.share_oracle_data_source,
+            sql_server_data_source: self.sql_server_data_source,
+            create_sql_server_data_source: self.create_sql_server_data_source,
+            update_sql_server_data_source: self.update_sql_server_data_source,
+            share_sql_server_data_source: self.share_sql_server_data_source,
+            maria_db_data_source: self.maria_db_data_source,
+            create_maria_db_data_source: self.create_maria_db_data_source,
+            update_maria_db_data_source: self.update_maria_db_data_source,
+            share_maria_db_data_source: self.share_maria_db_data_source,
+            snowflake_data_source: self.snowflake_data_source,
+            create_snowflake_data_source: self.create_snowflake_data_source,
+            update_snowflake_data_source: self.update_snowflake_data_source,
+            share_snowflake_data_source: self.share_snowflake_data_source,
+            google_big_query_data_source: self.google_big_query_data_source,
+            create_google_big_query_data_source: self.create_google_big_query_data_source,
+            update_google_big_query_data_source: self.update_google_big_query_data_source,
+            share_google_big_query_data_source: self.share_google_big_query_data_source,
+            databricks_data_source: self.databricks_data_source,
+            create_databricks_data_source: self.create_databricks_data_source,
+            update_databricks_data_source: self.update_databricks_data_source,
+            share_databricks_data_source: self.share_databricks_data_source,
+            starburst_data_source: self.starburst_data_source,
+            create_starburst_data_source: self.create_starburst_data_source,
+            update_starburst_data_source: self.update_starburst_data_source,
+            share_starburst_data_source: self.share_starburst_data_source,
+            trino_data_source: self.trino_data_source,
+            create_trino_data_source: self.create_trino_data_source,
+            update_trino_data_source: self.update_trino_data_source,
+            share_trino_data_source: self.share_trino_data_source,
+            impala_data_source: self.impala_data_source,
+            create_impala_data_source: self.create_impala_data_source,
+            update_impala_data_source: self.update_impala_data_source,
+            share_impala_data_source: self.share_impala_data_source,
+            teradata_data_source: self.teradata_data_source,
+            create_teradata_data_source: self.create_teradata_data_source,
+            update_teradata_data_source: self.update_teradata_data_source,
+            share_teradata_data_source: self.share_teradata_data_source,
+            presto_data_source: self.presto_data_source,
+            create_presto_data_source: self.create_presto_data_source,
+            update_presto_data_source: self.update_presto_data_source,
+            share_presto_data_source: self.share_presto_data_source,
+            spark_data_source: self.spark_data_source,
+            create_spark_data_source: self.create_spark_data_source,
+            update_spark_data_source: self.update_spark_data_source,
+            share_spark_data_source: self.share_spark_data_source,
+            exasol_data_source: self.exasol_data_source,
+            create_exasol_data_source: self.create_exasol_data_source,
+            update_exasol_data_source: self.update_exasol_data_source,
+            share_exasol_data_source: self.share_exasol_data_source,
+            db2_data_source: self.db2_data_source,
+            create_db2_data_source: self.create_db2_data_source,
+            update_db2_data_source: self.update_db2_data_source,
+            share_db2_data_source: self.share_db2_data_source,
+            sap_hana_data_source: self.sap_hana_data_source,
+            create_sap_hana_data_source: self.create_sap_hana_data_source,
+            update_sap_hana_data_source: self.update_sap_hana_data_source,
+            share_sap_hana_data_source: self.share_sap_hana_data_source,
+            denodo_data_source: self.denodo_data_source,
+            create_denodo_data_source: self.create_denodo_data_source,
+            update_denodo_data_source: self.update_denodo_data_source,
+            share_denodo_data_source: self.share_denodo_data_source,
+            dremio_data_source: self.dremio_data_source,
+            create_dremio_data_source: self.create_dremio_data_source,
+            update_dremio_data_source: self.update_dremio_data_source,
+            share_dremio_data_source: self.share_dremio_data_source,
+            salesforce_data_source: self.salesforce_data_source,
+            create_salesforce_data_source: self.create_salesforce_data_source,
+            update_salesforce_data_source: self.update_salesforce_data_source,
+            share_salesforce_data_source: self.share_salesforce_data_source,
+            radiant_data_source: self.radiant_data_source,
+            create_radiant_data_source: self.create_radiant_data_source,
+            update_radiant_data_source: self.update_radiant_data_source,
+            share_radiant_data_source: self.share_radiant_data_source,
+            pay_pal_data_source: self.pay_pal_data_source,
+            create_pay_pal_data_source: self.create_pay_pal_data_source,
+            update_pay_pal_data_source: self.update_pay_pal_data_source,
+            share_pay_pal_data_source: self.share_pay_pal_data_source,
+            square_data_source: self.square_data_source,
+            create_square_data_source: self.create_square_data_source,
+            update_square_data_source: self.update_square_data_source,
+            share_square_data_source: self.share_square_data_source,
+            git_hub_data_source: self.git_hub_data_source,
+            create_git_hub_data_source: self.create_git_hub_data_source,
+            update_git_hub_data_source: self.update_git_hub_data_source,
+            share_git_hub_data_source: self.share_git_hub_data_source,
+            twitter_data_source: self.twitter_data_source,
+            create_twitter_data_source: self.create_twitter_data_source,
+            update_twitter_data_source: self.update_twitter_data_source,
+            share_twitter_data_source: self.share_twitter_data_source,
+            jira_data_source: self.jira_data_source,
+            create_jira_data_source: self.create_jira_data_source,
+            update_jira_data_source: self.update_jira_data_source,
+            share_jira_data_source: self.share_jira_data_source,
+            service_now_data_source: self.service_now_data_source,
+            create_service_now_data_source: self.create_service_now_data_source,
+            update_service_now_data_source: self.update_service_now_data_source,
+            share_service_now_data_source: self.share_service_now_data_source,
+            adobe_analytics_data_source: self.adobe_analytics_data_source,
+            create_adobe_analytics_data_source: self.create_adobe_analytics_data_source,
+            update_adobe_analytics_data_source: self.update_adobe_analytics_data_source,
+            share_adobe_analytics_data_source: self.share_adobe_analytics_data_source,
+            google_analytics_data_source: self.google_analytics_data_source,
+            create_google_analytics_data_source: self.create_google_analytics_data_source,
+            update_google_analytics_data_source: self.update_google_analytics_data_source,
+            share_google_analytics_data_source: self.share_google_analytics_data_source,
+            google_sheets_data_source: self.google_sheets_data_source,
+            create_google_sheets_data_source: self.create_google_sheets_data_source,
+            update_google_sheets_data_source: self.update_google_sheets_data_source,
+            share_google_sheets_data_source: self.share_google_sheets_data_source,
+            document_db_data_source: self.document_db_data_source,
+            create_document_db_data_source: self.create_document_db_data_source,
+            update_document_db_data_source: self.update_document_db_data_source,
+            share_document_db_data_source: self.share_document_db_data_source,
+            mongo_db_data_source: self.mongo_db_data_source,
+            create_mongo_db_data_source: self.create_mongo_db_data_source,
+            update_mongo_db_data_source: self.update_mongo_db_data_source,
+            share_mongo_db_data_source: self.share_mongo_db_data_source,
+            mongo_atlas_data_source: self.mongo_atlas_data_source,
+            create_mongo_atlas_data_source: self.create_mongo_atlas_data_source,
+            update_mongo_atlas_data_source: self.update_mongo_atlas_data_source,
+            share_mongo_atlas_data_source: self.share_mongo_atlas_data_source,
+            dynamo_db_data_source: self.dynamo_db_data_source,
+            create_dynamo_db_data_source: self.create_dynamo_db_data_source,
+            update_dynamo_db_data_source: self.update_dynamo_db_data_source,
+            share_dynamo_db_data_source: self.share_dynamo_db_data_source,
         }
     }
 }

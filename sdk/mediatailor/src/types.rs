@@ -103,6 +103,8 @@ pub use crate::types::_runtime_type::RuntimeType;
 
 pub use crate::types::_method_type::MethodType;
 
+pub use crate::types::_http_request_cache_configuration::HttpRequestCacheConfiguration;
+
 pub use crate::types::_live_source::LiveSource;
 
 pub use crate::types::_http_package_configuration::HttpPackageConfiguration;
@@ -314,6 +316,8 @@ mod _http_configuration;
 mod _http_package_configuration;
 
 mod _http_request;
+
+mod _http_request_cache_configuration;
 
 mod _http_request_configuration;
 

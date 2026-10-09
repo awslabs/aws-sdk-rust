@@ -588,6 +588,13 @@ pub(crate) fn report_destination_correct_errors(
     builder
 }
 
+pub(crate) fn test_scope_correct_errors(mut builder: crate::types::builders::TestScopeBuilder) -> crate::types::builders::TestScopeBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::TestScopeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn agent_space_correct_errors(mut builder: crate::types::builders::AgentSpaceBuilder) -> crate::types::builders::AgentSpaceBuilder {
     if builder.agent_space_id.is_none() {
         builder.agent_space_id = Some(Default::default())

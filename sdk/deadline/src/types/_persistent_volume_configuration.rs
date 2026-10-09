@@ -141,7 +141,7 @@ impl PersistentVolumeConfigurationBuilder {
                     "mount_path was not specified but it is required when building PersistentVolumeConfiguration",
                 )
             })?,
-            last_used_ttl_hours: self.last_used_ttl_hours.unwrap_or(168),
+            last_used_ttl_hours: self.last_used_ttl_hours.unwrap_or(12),
         })
     }
 }

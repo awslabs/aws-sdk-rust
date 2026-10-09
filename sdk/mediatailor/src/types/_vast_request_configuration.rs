@@ -18,6 +18,8 @@ pub struct VastRequestConfiguration {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A map of HTTP header names to expression values. MediaTailor evaluates each header value expression at runtime and includes the result in the outbound request. Headers beginning with <code>X-Amz-</code> are reserved by the service, and method override headers are not allowed.</p>
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
 }
 impl VastRequestConfiguration {
     /// <p>The expression language used to evaluate expressions in the function configuration. Set this to <code>JSONata</code>.</p>
@@ -49,6 +51,10 @@ impl VastRequestConfiguration {
     pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(&self) -> ::std::option::Option<&crate::types::HttpRequestCacheConfiguration> {
+        self.cache.as_ref()
+    }
 }
 impl VastRequestConfiguration {
     /// Creates a new builder-style object to manufacture [`VastRequestConfiguration`](crate::types::VastRequestConfiguration).
@@ -68,6 +74,7 @@ pub struct VastRequestConfigurationBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
 }
 impl VastRequestConfigurationBuilder {
     /// <p>The expression language used to evaluate expressions in the function configuration. Set this to <code>JSONata</code>.</p>
@@ -184,6 +191,20 @@ impl VastRequestConfigurationBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(mut self, input: crate::types::HttpRequestCacheConfiguration) -> Self {
+        self.cache = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn set_cache(mut self, input: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>) -> Self {
+        self.cache = input;
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the HTTP endpoint, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn get_cache(&self) -> &::std::option::Option<crate::types::HttpRequestCacheConfiguration> {
+        &self.cache
+    }
     /// Consumes the builder and constructs a [`VastRequestConfiguration`](crate::types::VastRequestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`runtime`](crate::types::builders::VastRequestConfigurationBuilder::runtime)
@@ -219,6 +240,7 @@ impl VastRequestConfigurationBuilder {
             })?,
             body: self.body,
             headers: self.headers,
+            cache: self.cache,
         })
     }
 }

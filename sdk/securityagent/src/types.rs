@@ -43,6 +43,8 @@ pub use crate::types::_network_traffic_config::NetworkTrafficConfig;
 
 pub use crate::types::_ci_cd_configuration::CiCdConfiguration;
 
+pub use crate::types::_test_scope::TestScope;
+
 pub use crate::types::_threat_severity::ThreatSeverity;
 
 pub use crate::types::_threat_anchor_shape::ThreatAnchorShape;
@@ -142,6 +144,8 @@ pub use crate::types::_user_config::UserConfig;
 pub use crate::types::_risk_type::RiskType;
 
 pub use crate::types::_skill_type::SkillType;
+
+pub use crate::types::_test_scope_type::TestScopeType;
 
 pub use crate::types::_stride_category::StrideCategory;
 
@@ -636,6 +640,10 @@ mod _task;
 mod _task_execution_status;
 
 mod _task_summary;
+
+mod _test_scope;
+
+mod _test_scope_type;
 
 mod _threat;
 

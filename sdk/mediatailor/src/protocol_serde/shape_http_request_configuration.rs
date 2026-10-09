@@ -62,6 +62,15 @@ where
                         "Headers" => {
                             builder = builder.set_headers(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }
+                        "Cache" => {
+                            builder = builder.set_cache(
+                                crate::protocol_serde::shape_http_request_cache_configuration::de_http_request_cache_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -124,6 +133,12 @@ pub fn ser_http_request_configuration(
             }
         }
         object_7.finish();
+    }
+    if let Some(var_10) = &input.cache {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("Cache").start_object();
+        crate::protocol_serde::shape_http_request_cache_configuration::ser_http_request_cache_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

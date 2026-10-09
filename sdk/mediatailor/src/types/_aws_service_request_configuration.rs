@@ -24,6 +24,8 @@ pub struct AwsServiceRequestConfiguration {
     pub body: ::std::option::Option<::std::string::String>,
     /// <p>A map of HTTP header names to expression values. MediaTailor evaluates each header value expression at runtime and includes the result in the outbound request to the AWS service. Use this to pass any headers required by the target service operation. You can include a maximum of 50 headers.</p>
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
     /// <p>The AWS service to call. Valid value: <code>elemental-inference</code> (AWS Elemental Inference).</p>
     pub target_service: ::std::string::String,
     /// <p>The AWS Region for the target service. Specify a static Region code (for example, <code>us-east-1</code>) or a JSONata expression that resolves to a Region code at runtime (for example, <code>{%inference.region%}</code>).</p>
@@ -65,6 +67,10 @@ impl AwsServiceRequestConfiguration {
     pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(&self) -> ::std::option::Option<&crate::types::HttpRequestCacheConfiguration> {
+        self.cache.as_ref()
+    }
     /// <p>The AWS service to call. Valid value: <code>elemental-inference</code> (AWS Elemental Inference).</p>
     pub fn target_service(&self) -> &str {
         use std::ops::Deref;
@@ -94,6 +100,7 @@ pub struct AwsServiceRequestConfigurationBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cache: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>,
     pub(crate) target_service: ::std::option::Option<::std::string::String>,
     pub(crate) target_region: ::std::option::Option<::std::string::String>,
 }
@@ -230,6 +237,20 @@ impl AwsServiceRequestConfigurationBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn cache(mut self, input: crate::types::HttpRequestCacheConfiguration) -> Self {
+        self.cache = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn set_cache(mut self, input: ::std::option::Option<crate::types::HttpRequestCacheConfiguration>) -> Self {
+        self.cache = input;
+        self
+    }
+    /// <p>The optional response-caching configuration for the function. When present, MediaTailor caches the responses that the function receives from the AWS service, within the time-to-live (TTL) bounds that you specify. Omit this configuration to disable response caching.</p>
+    pub fn get_cache(&self) -> &::std::option::Option<crate::types::HttpRequestCacheConfiguration> {
+        &self.cache
+    }
     /// <p>The AWS service to call. Valid value: <code>elemental-inference</code> (AWS Elemental Inference).</p>
     /// This field is required.
     pub fn target_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -297,6 +318,7 @@ impl AwsServiceRequestConfigurationBuilder {
             })?,
             body: self.body,
             headers: self.headers,
+            cache: self.cache,
             target_service: self.target_service.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "target_service",

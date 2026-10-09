@@ -342,6 +342,18 @@ pub(crate) fn http_package_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn http_request_cache_configuration_correct_errors(
+    mut builder: crate::types::builders::HttpRequestCacheConfigurationBuilder,
+) -> crate::types::builders::HttpRequestCacheConfigurationBuilder {
+    if builder.ttl_minimum_seconds.is_none() {
+        builder.ttl_minimum_seconds = Some(Default::default())
+    }
+    if builder.ttl_maximum_seconds.is_none() {
+        builder.ttl_maximum_seconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn live_source_correct_errors(mut builder: crate::types::builders::LiveSourceBuilder) -> crate::types::builders::LiveSourceBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
