@@ -87,7 +87,7 @@ pub struct GetRunOutput {
     pub vpc_config: ::std::option::Option<crate::types::VpcConfigResponse>,
     /// <p>The engine-specific settings for the workflow run.</p>
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
-    /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+    /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -260,7 +260,7 @@ impl GetRunOutput {
     pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.engine_settings.as_ref()
     }
-    /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+    /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub fn session_policy(&self) -> ::std::option::Option<&str> {
         self.session_policy.as_deref()
     }
@@ -934,17 +934,17 @@ impl GetRunOutputBuilder {
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.engine_settings
     }
-    /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+    /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+    /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_policy = input;
         self
     }
-    /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+    /// <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_policy
     }

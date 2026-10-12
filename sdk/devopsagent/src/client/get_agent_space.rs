@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`agent_space_id(impl Into<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::agent_space_id) / [`set_agent_space_id(Option<String>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::set_agent_space_id):<br>required: **true**<br><p>The unique identifier of the AgentSpace</p><br>
+    ///   - [`included_data(IncludedData)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::included_data) / [`set_included_data(Option<IncludedData>)`](crate::operation::get_agent_space::builders::GetAgentSpaceFluentBuilder::set_included_data):<br>required: **false**<br><p>How much data to include in the response.</p><br>
     /// - On success, responds with [`GetAgentSpaceOutput`](crate::operation::get_agent_space::GetAgentSpaceOutput) with field(s):
     ///   - [`agent_space(Option<AgentSpace>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::agent_space): <p>Represents a complete AgentSpace with all its properties, timestamps, encryption settings, and unique identifier.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_agent_space::GetAgentSpaceOutput::tags): <p>Tags associated with the AgentSpace.</p>

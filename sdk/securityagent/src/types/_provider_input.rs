@@ -16,6 +16,8 @@ pub enum ProviderInput {
     Github(crate::types::GitHubIntegrationInput),
     /// <p>The configuration for a GitLab integration.</p>
     Gitlab(crate::types::GitLabIntegrationInput),
+    /// <p>The configuration for a Jira integration.</p>
+    Jira(crate::types::JiraIntegrationInput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -104,6 +106,19 @@ impl ProviderInput {
     /// Returns true if this is a [`Gitlab`](crate::types::ProviderInput::Gitlab).
     pub fn is_gitlab(&self) -> bool {
         self.as_gitlab().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Jira`](crate::types::ProviderInput::Jira), extracting the inner [`JiraIntegrationInput`](crate::types::JiraIntegrationInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_jira(&self) -> ::std::result::Result<&crate::types::JiraIntegrationInput, &Self> {
+        if let ProviderInput::Jira(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Jira`](crate::types::ProviderInput::Jira).
+    pub fn is_jira(&self) -> bool {
+        self.as_jira().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

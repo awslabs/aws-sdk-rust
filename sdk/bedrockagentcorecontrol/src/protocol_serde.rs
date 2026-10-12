@@ -1311,6 +1311,8 @@ pub(crate) mod shape_rate_configs;
 
 pub(crate) mod shape_rating_scale;
 
+pub(crate) mod shape_record_expiry_specification;
+
 pub(crate) mod shape_registry_record_credential_provider_configuration;
 
 pub(crate) mod shape_registry_record_credential_provider_configuration_list;

@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "customHeaderNames" => {
+                            builder = builder.set_custom_header_names(crate::protocol_serde::shape_custom_header_names::de_custom_header_names(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

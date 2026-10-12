@@ -22,7 +22,7 @@ impl crate::operation::create_capacity_provider::builders::CreateCapacityProvide
 }
 /// Fluent builder constructing a request to `CreateCapacityProvider`.
 ///
-/// <p>Creates a capacity provider that manages compute resources for Lambda functions</p>
+/// <p>Creates a capacity provider that manages compute resources for Lambda Event Functions</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCapacityProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

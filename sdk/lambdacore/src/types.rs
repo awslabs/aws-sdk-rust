@@ -17,6 +17,8 @@ pub use crate::types::_network_protocol::NetworkProtocol;
 
 pub use crate::types::_network_connector_summary::NetworkConnectorSummary;
 
+pub use crate::types::_network_connector_version_summary::NetworkConnectorVersionSummary;
+
 pub use crate::types::_compute_resource_type::ComputeResourceType;
 
 pub use crate::types::_network_connector_type::NetworkConnectorType;
@@ -36,6 +38,8 @@ mod _network_connector_state_reason_code;
 mod _network_connector_summary;
 
 mod _network_connector_type;
+
+mod _network_connector_version_summary;
 
 mod _network_connector_vpc_egress_configuration;
 

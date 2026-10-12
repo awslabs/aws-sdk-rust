@@ -14,6 +14,8 @@ pub struct RegisteredMcpServerDetails {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>If the MCP server uses API key authentication, these details are provided.</p>
     pub api_key_header: ::std::option::Option<::std::string::String>,
+    /// <p>The configured custom authentication header names when the MCP server uses custom-header authentication. Secret values are not returned.</p>
+    pub custom_header_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegisteredMcpServerDetails {
     /// <p>The MCP server name.</p>
@@ -38,6 +40,12 @@ impl RegisteredMcpServerDetails {
     pub fn api_key_header(&self) -> ::std::option::Option<&str> {
         self.api_key_header.as_deref()
     }
+    /// <p>The configured custom authentication header names when the MCP server uses custom-header authentication. Secret values are not returned.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_header_names.is_none()`.
+    pub fn custom_header_names(&self) -> &[::std::string::String] {
+        self.custom_header_names.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RegisteredMcpServerDetails {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -47,6 +55,7 @@ impl ::std::fmt::Debug for RegisteredMcpServerDetails {
         formatter.field("authorization_method", &self.authorization_method);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("api_key_header", &self.api_key_header);
+        formatter.field("custom_header_names", &self.custom_header_names);
         formatter.finish()
     }
 }
@@ -66,6 +75,7 @@ pub struct RegisteredMcpServerDetailsBuilder {
     pub(crate) authorization_method: ::std::option::Option<crate::types::McpServerAuthorizationMethod>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) api_key_header: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_header_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegisteredMcpServerDetailsBuilder {
     /// <p>The MCP server name.</p>
@@ -141,6 +151,26 @@ impl RegisteredMcpServerDetailsBuilder {
     pub fn get_api_key_header(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_key_header
     }
+    /// Appends an item to `custom_header_names`.
+    ///
+    /// To override the contents of this collection use [`set_custom_header_names`](Self::set_custom_header_names).
+    ///
+    /// <p>The configured custom authentication header names when the MCP server uses custom-header authentication. Secret values are not returned.</p>
+    pub fn custom_header_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.custom_header_names.unwrap_or_default();
+        v.push(input.into());
+        self.custom_header_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The configured custom authentication header names when the MCP server uses custom-header authentication. Secret values are not returned.</p>
+    pub fn set_custom_header_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.custom_header_names = input;
+        self
+    }
+    /// <p>The configured custom authentication header names when the MCP server uses custom-header authentication. Secret values are not returned.</p>
+    pub fn get_custom_header_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.custom_header_names
+    }
     /// Consumes the builder and constructs a [`RegisteredMcpServerDetails`](crate::types::RegisteredMcpServerDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RegisteredMcpServerDetailsBuilder::name)
@@ -168,6 +198,7 @@ impl RegisteredMcpServerDetailsBuilder {
             })?,
             description: self.description,
             api_key_header: self.api_key_header,
+            custom_header_names: self.custom_header_names,
         })
     }
 }
@@ -179,6 +210,7 @@ impl ::std::fmt::Debug for RegisteredMcpServerDetailsBuilder {
         formatter.field("authorization_method", &self.authorization_method);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("api_key_header", &self.api_key_header);
+        formatter.field("custom_header_names", &self.custom_header_names);
         formatter.finish()
     }
 }

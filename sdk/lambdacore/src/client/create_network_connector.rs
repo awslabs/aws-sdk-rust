@@ -11,7 +11,9 @@ impl super::Client {
     /// - On success, responds with [`CreateNetworkConnectorOutput`](crate::operation::create_network_connector::CreateNetworkConnectorOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::arn): <p>The Amazon Resource Name (ARN) of the network connector.</p>
     ///   - [`name(String)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::name): <p>The name of the network connector.</p>
-    ///   - [`id(String)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::id): The unique identifier for a network connector, assigned by the service at creation time
+    ///   - [`id(String)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::id): <p>The unique identifier of the network connector.</p>
+    ///   - [`version_arn(Option<String>)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::version_arn): <p>The qualified ARN of the connector version created by this request, including the immutable version suffix.</p>
+    ///   - [`version(Option<i64>)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::version): <p>The version number assigned to the connector. A newly created connector starts at version 1.</p>
     ///   - [`configuration(Option<NetworkConnectorConfiguration>)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::configuration): <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     ///   - [`operator_role(Option<String>)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::operator_role): <p>The ARN of the IAM role that Lambda uses to manage the underlying ENI resources for this connector.</p>
     ///   - [`state(Option<NetworkConnectorState>)`](crate::operation::create_network_connector::CreateNetworkConnectorOutput::state): <p>The current state of the network connector.</p>

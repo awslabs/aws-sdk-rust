@@ -22,7 +22,7 @@ impl crate::operation::get_alias::builders::GetAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `GetAlias`.
 ///
-/// <p>Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
+/// <p>Returns details about a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

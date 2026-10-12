@@ -176,6 +176,13 @@ where
                         "Status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_table_status::de_table_status(tokens, _value, depth + 1)?);
                         }
+                        "RLSProperties" => {
+                            builder = builder.set_rls_properties(crate::protocol_serde::shape_rls_properties::de_rls_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

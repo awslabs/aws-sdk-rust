@@ -14,6 +14,8 @@ pub enum IntegratedResourceMetadata {
     GithubRepository(crate::types::GitHubRepositoryMetadata),
     /// <p>Metadata for an integrated GitLab repository.</p>
     GitlabRepository(crate::types::GitLabRepositoryMetadata),
+    /// <p>The Jira project metadata.</p>
+    JiraProject(crate::types::JiraProjectMetadata),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -89,6 +91,19 @@ impl IntegratedResourceMetadata {
     /// Returns true if this is a [`GitlabRepository`](crate::types::IntegratedResourceMetadata::GitlabRepository).
     pub fn is_gitlab_repository(&self) -> bool {
         self.as_gitlab_repository().is_ok()
+    }
+    /// Tries to convert the enum instance into [`JiraProject`](crate::types::IntegratedResourceMetadata::JiraProject), extracting the inner [`JiraProjectMetadata`](crate::types::JiraProjectMetadata).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_jira_project(&self) -> ::std::result::Result<&crate::types::JiraProjectMetadata, &Self> {
+        if let IntegratedResourceMetadata::JiraProject(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`JiraProject`](crate::types::IntegratedResourceMetadata::JiraProject).
+    pub fn is_jira_project(&self) -> bool {
+        self.as_jira_project().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

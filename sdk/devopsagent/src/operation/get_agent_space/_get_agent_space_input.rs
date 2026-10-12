@@ -6,11 +6,17 @@
 pub struct GetAgentSpaceInput {
     /// <p>The unique identifier of the AgentSpace</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
+    /// <p>How much data to include in the response.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetAgentSpaceInput {
     /// <p>The unique identifier of the AgentSpace</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl GetAgentSpaceInput {
@@ -25,6 +31,7 @@ impl GetAgentSpaceInput {
 #[non_exhaustive]
 pub struct GetAgentSpaceInputBuilder {
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl GetAgentSpaceInputBuilder {
     /// <p>The unique identifier of the AgentSpace</p>
@@ -42,12 +49,27 @@ impl GetAgentSpaceInputBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
+    /// <p>How much data to include in the response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`GetAgentSpaceInput`](crate::operation::get_agent_space::GetAgentSpaceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_agent_space::GetAgentSpaceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_agent_space::GetAgentSpaceInput {
             agent_space_id: self.agent_space_id,
+            included_data: self.included_data,
         })
     }
 }

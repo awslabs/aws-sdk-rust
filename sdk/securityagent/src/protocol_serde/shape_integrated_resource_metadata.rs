@@ -70,6 +70,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureDevOpsRepository' cannot be null")
                             })?,
                         )),
+                        "jiraProject" => Some(crate::types::IntegratedResourceMetadata::JiraProject(
+                            crate::protocol_serde::shape_jira_project_metadata::de_jira_project_metadata(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'jiraProject' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::IntegratedResourceMetadata::Unknown)

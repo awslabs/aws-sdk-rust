@@ -266,6 +266,90 @@ impl From<crate::operation::batch_delete_threat_models::BatchDeleteThreatModelsE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError> for Error {
+    fn from(err: crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError) -> Self {
+        match err {
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_disassociate_finding_issue::BatchDisassociateFindingIssueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_export_findings::BatchExportFindingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_export_findings::BatchExportFindingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_export_findings::BatchExportFindingsError> for Error {
+    fn from(err: crate::operation::batch_export_findings::BatchExportFindingsError) -> Self {
+        match err {
+            crate::operation::batch_export_findings::BatchExportFindingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_export_findings::BatchExportFindingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::batch_export_findings::BatchExportFindingsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_export_findings::BatchExportFindingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_export_findings::BatchExportFindingsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_export_findings::BatchExportFindingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_export_findings::BatchExportFindingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_export_findings::BatchExportFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_agent_spaces::BatchGetAgentSpacesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

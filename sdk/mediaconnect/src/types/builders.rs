@@ -289,6 +289,8 @@ pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigura
 
 pub use crate::types::_transport_stream::TransportStreamBuilder;
 
+pub use crate::types::_color_information::ColorInformationBuilder;
+
 pub use crate::types::_frame_resolution::FrameResolutionBuilder;
 
 pub use crate::types::_interface_request::InterfaceRequestBuilder;

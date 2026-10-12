@@ -10,9 +10,12 @@ pub fn ser_update_space_input_input(
     if let Some(var_2) = &input.name {
         encoder.str("name").str(var_2.as_str());
     }
-    if let Some(var_3) = &input.encryption_configuration {
+    if let Some(var_3) = &input.agent_core_evaluation_role_arn {
+        encoder.str("agentCoreEvaluationRoleArn").str(var_3.as_str());
+    }
+    if let Some(var_4) = &input.encryption_configuration {
         encoder.str("encryptionConfiguration");
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(encoder, var_3)?;
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(encoder, var_4)?;
     }
     encoder.end();
     Ok(())

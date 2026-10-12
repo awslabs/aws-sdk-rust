@@ -459,6 +459,8 @@ pub(crate) mod shape_recommendation_result;
 
 pub(crate) mod shape_recommendation_summary_list;
 
+pub(crate) mod shape_record_expiry_specification;
+
 pub(crate) mod shape_registry_record_summary_list;
 
 pub(crate) mod shape_search_criteria;

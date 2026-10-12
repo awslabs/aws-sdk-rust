@@ -14,6 +14,8 @@ pub enum ProviderResourceCapabilities {
     Github(crate::types::GitHubResourceCapabilities),
     /// <p>Capabilities for an integrated GitLab repository.</p>
     Gitlab(crate::types::GitLabResourceCapabilities),
+    /// <p>The Jira-specific resource capabilities.</p>
+    Jira(crate::types::JiraResourceCapabilities),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -89,6 +91,19 @@ impl ProviderResourceCapabilities {
     /// Returns true if this is a [`Gitlab`](crate::types::ProviderResourceCapabilities::Gitlab).
     pub fn is_gitlab(&self) -> bool {
         self.as_gitlab().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Jira`](crate::types::ProviderResourceCapabilities::Jira), extracting the inner [`JiraResourceCapabilities`](crate::types::JiraResourceCapabilities).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_jira(&self) -> ::std::result::Result<&crate::types::JiraResourceCapabilities, &Self> {
+        if let ProviderResourceCapabilities::Jira(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Jira`](crate::types::ProviderResourceCapabilities::Jira).
+    pub fn is_jira(&self) -> bool {
+        self.as_jira().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

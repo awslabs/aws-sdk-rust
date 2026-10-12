@@ -34,6 +34,7 @@
 ///     ResourceType::AwsSecurityHub => { /* ... */ },
 ///     ResourceType::AwsSecurityHubHubv2 => { /* ... */ },
 ///     ResourceType::AwsWafV2WebAcl => { /* ... */ },
+///     ResourceType::AwsXrayTransactionSearchConfig => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -106,6 +107,8 @@ pub enum ResourceType {
     AwsSecurityHubHubv2,
     #[allow(missing_docs)] // documentation missing in model
     AwsWafV2WebAcl,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsXrayTransactionSearchConfig,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -135,6 +138,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::SecurityHub::Hub" => ResourceType::AwsSecurityHub,
             "AWS::SecurityHub::HubV2" => ResourceType::AwsSecurityHubHubv2,
             "AWS::WAFv2::WebACL" => ResourceType::AwsWafV2WebAcl,
+            "AWS::XRay::TransactionSearchConfig" => ResourceType::AwsXrayTransactionSearchConfig,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -172,6 +176,7 @@ impl ResourceType {
             ResourceType::AwsSecurityHub => "AWS::SecurityHub::Hub",
             ResourceType::AwsSecurityHubHubv2 => "AWS::SecurityHub::HubV2",
             ResourceType::AwsWafV2WebAcl => "AWS::WAFv2::WebACL",
+            ResourceType::AwsXrayTransactionSearchConfig => "AWS::XRay::TransactionSearchConfig",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -200,6 +205,7 @@ impl ResourceType {
             "AWS::SecurityHub::Hub",
             "AWS::SecurityHub::HubV2",
             "AWS::WAFv2::WebACL",
+            "AWS::XRay::TransactionSearchConfig",
         ]
     }
 }
@@ -245,6 +251,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::AwsSecurityHub => write!(f, "AWS::SecurityHub::Hub"),
             ResourceType::AwsSecurityHubHubv2 => write!(f, "AWS::SecurityHub::HubV2"),
             ResourceType::AwsWafV2WebAcl => write!(f, "AWS::WAFv2::WebACL"),
+            ResourceType::AwsXrayTransactionSearchConfig => write!(f, "AWS::XRay::TransactionSearchConfig"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

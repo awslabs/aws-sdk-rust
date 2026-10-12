@@ -46,6 +46,8 @@ pub struct Transport {
     /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
     /// </ul>
     pub ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
+    pub ndi_audio_reference_level: ::std::option::Option<i32>,
 }
 impl Transport {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16</p>
@@ -126,6 +128,10 @@ impl Transport {
     pub fn ndi_output_timecode_source(&self) -> ::std::option::Option<&crate::types::NdiOutputTimecodeSource> {
         self.ndi_output_timecode_source.as_ref()
     }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
+    pub fn ndi_audio_reference_level(&self) -> ::std::option::Option<i32> {
+        self.ndi_audio_reference_level
+    }
 }
 impl Transport {
     /// Creates a new builder-style object to manufacture [`Transport`](crate::types::Transport).
@@ -155,6 +161,7 @@ pub struct TransportBuilder {
     pub(crate) ndi_program_name: ::std::option::Option<::std::string::String>,
     pub(crate) ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
     pub(crate) ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
+    pub(crate) ndi_audio_reference_level: ::std::option::Option<i32>,
 }
 impl TransportBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -426,6 +433,20 @@ impl TransportBuilder {
     pub fn get_ndi_output_timecode_source(&self) -> &::std::option::Option<crate::types::NdiOutputTimecodeSource> {
         &self.ndi_output_timecode_source
     }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
+    pub fn ndi_audio_reference_level(mut self, input: i32) -> Self {
+        self.ndi_audio_reference_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
+    pub fn set_ndi_audio_reference_level(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ndi_audio_reference_level = input;
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
+    pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
+        &self.ndi_audio_reference_level
+    }
     /// Consumes the builder and constructs a [`Transport`](crate::types::Transport).
     pub fn build(self) -> crate::types::Transport {
         crate::types::Transport {
@@ -446,6 +467,7 @@ impl TransportBuilder {
             ndi_program_name: self.ndi_program_name,
             ndi_source_settings: self.ndi_source_settings,
             ndi_output_timecode_source: self.ndi_output_timecode_source,
+            ndi_audio_reference_level: self.ndi_audio_reference_level,
         }
     }
 }

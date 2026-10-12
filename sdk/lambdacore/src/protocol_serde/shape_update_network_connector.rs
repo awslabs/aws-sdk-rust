@@ -45,6 +45,22 @@ pub fn de_update_network_connector_http_error(
                 tmp
             })
         }
+        "NetworkConnectorLimitExceededException" => {
+            crate::operation::update_network_connector::UpdateNetworkConnectorError::NetworkConnectorLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NetworkConnectorLimitExceededExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_network_connector_limit_exceeded_exception::de_network_connector_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_network_connector::UpdateNetworkConnectorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceConflictException" => crate::operation::update_network_connector::UpdateNetworkConnectorError::ResourceConflictException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -237,6 +253,20 @@ pub(crate) fn de_update_network_connector(
                     builder = builder.set_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::NetworkConnectorState::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "Version" => {
+                    builder = builder.set_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "VersionArn" => {
+                    builder = builder.set_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

@@ -10,6 +10,8 @@ pub enum McpServerAuthorizationConfig {
     AuthorizationDiscovery(crate::types::McpServerAuthorizationDiscoveryConfig),
     /// <p>MCP server configuration with Bearer token (RFC 6750).</p>
     BearerToken(crate::types::McpServerBearerTokenConfig),
+    /// <p>MCP server configuration with one or more custom authentication headers.</p>
+    CustomHeaders(crate::types::McpServerCustomHeadersConfig),
     /// <p>MCP server configuration with OAuth 3LO.</p>
     OAuth3Lo(crate::types::McpServerOAuth3LoConfig),
     /// <p>MCP server configuration with OAuth client credentials.</p>
@@ -63,6 +65,19 @@ impl McpServerAuthorizationConfig {
     /// Returns true if this is a [`BearerToken`](crate::types::McpServerAuthorizationConfig::BearerToken).
     pub fn is_bearer_token(&self) -> bool {
         self.as_bearer_token().is_ok()
+    }
+    /// Tries to convert the enum instance into [`CustomHeaders`](crate::types::McpServerAuthorizationConfig::CustomHeaders), extracting the inner [`McpServerCustomHeadersConfig`](crate::types::McpServerCustomHeadersConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_custom_headers(&self) -> ::std::result::Result<&crate::types::McpServerCustomHeadersConfig, &Self> {
+        if let McpServerAuthorizationConfig::CustomHeaders(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CustomHeaders`](crate::types::McpServerAuthorizationConfig::CustomHeaders).
+    pub fn is_custom_headers(&self) -> bool {
+        self.as_custom_headers().is_ok()
     }
     /// Tries to convert the enum instance into [`OAuth3Lo`](crate::types::McpServerAuthorizationConfig::OAuth3Lo), extracting the inner [`McpServerOAuth3LoConfig`](crate::types::McpServerOAuth3LoConfig).
     /// Returns `Err(&Self)` if it can't be converted.

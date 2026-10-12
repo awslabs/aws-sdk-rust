@@ -14,7 +14,9 @@
 /// match routeroutputtier {
 ///     RouterOutputTier::Output100 => { /* ... */ },
 ///     RouterOutputTier::Output20 => { /* ... */ },
+///     RouterOutputTier::Output250 => { /* ... */ },
 ///     RouterOutputTier::Output50 => { /* ... */ },
+///     RouterOutputTier::Output500 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,7 +50,11 @@ pub enum RouterOutputTier {
     #[allow(missing_docs)] // documentation missing in model
     Output20,
     #[allow(missing_docs)] // documentation missing in model
+    Output250,
+    #[allow(missing_docs)] // documentation missing in model
     Output50,
+    #[allow(missing_docs)] // documentation missing in model
+    Output500,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -58,7 +64,9 @@ impl ::std::convert::From<&str> for RouterOutputTier {
         match s {
             "OUTPUT_100" => RouterOutputTier::Output100,
             "OUTPUT_20" => RouterOutputTier::Output20,
+            "OUTPUT_250" => RouterOutputTier::Output250,
             "OUTPUT_50" => RouterOutputTier::Output50,
+            "OUTPUT_500" => RouterOutputTier::Output500,
             other => RouterOutputTier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -76,13 +84,15 @@ impl RouterOutputTier {
         match self {
             RouterOutputTier::Output100 => "OUTPUT_100",
             RouterOutputTier::Output20 => "OUTPUT_20",
+            RouterOutputTier::Output250 => "OUTPUT_250",
             RouterOutputTier::Output50 => "OUTPUT_50",
+            RouterOutputTier::Output500 => "OUTPUT_500",
             RouterOutputTier::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OUTPUT_100", "OUTPUT_20", "OUTPUT_50"]
+        &["OUTPUT_100", "OUTPUT_20", "OUTPUT_250", "OUTPUT_50", "OUTPUT_500"]
     }
 }
 impl ::std::convert::AsRef<str> for RouterOutputTier {
@@ -107,7 +117,9 @@ impl ::std::fmt::Display for RouterOutputTier {
         match self {
             RouterOutputTier::Output100 => write!(f, "OUTPUT_100"),
             RouterOutputTier::Output20 => write!(f, "OUTPUT_20"),
+            RouterOutputTier::Output250 => write!(f, "OUTPUT_250"),
             RouterOutputTier::Output50 => write!(f, "OUTPUT_50"),
+            RouterOutputTier::Output500 => write!(f, "OUTPUT_500"),
             RouterOutputTier::Unknown(value) => write!(f, "{value}"),
         }
     }

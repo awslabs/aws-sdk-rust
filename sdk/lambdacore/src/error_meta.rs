@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>One of the parameters in the request is not valid. Check the error message for details about which parameter failed validation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The account has reached the maximum number of network connectors allowed. Delete unused connectors or request a limit increase through Service Quotas.</p>
+    /// <p>The request would exceed a network connector limit. For <code>CreateNetworkConnector</code>, the account has reached the maximum number of network connectors allowed. For <code>UpdateNetworkConnector</code>, the connector has reached the maximum number of versions allowed.</p>
     NetworkConnectorLimitExceededException(crate::types::error::NetworkConnectorLimitExceededException),
     /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to update a connector that is not in <code>ACTIVE</code> state.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
@@ -197,6 +197,46 @@ impl From<crate::operation::list_network_connectors::ListNetworkConnectorsError>
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError> for Error {
+    fn from(err: crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError) -> Self {
+        match err {
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_network_connector::UpdateNetworkConnectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -218,6 +258,9 @@ impl From<crate::operation::update_network_connector::UpdateNetworkConnectorErro
         match err {
             crate::operation::update_network_connector::UpdateNetworkConnectorError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_network_connector::UpdateNetworkConnectorError::NetworkConnectorLimitExceededException(inner) => {
+                Error::NetworkConnectorLimitExceededException(inner)
             }
             crate::operation::update_network_connector::UpdateNetworkConnectorError::ResourceConflictException(inner) => {
                 Error::ResourceConflictException(inner)

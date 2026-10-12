@@ -8,6 +8,8 @@ pub struct TransportStream {
     pub channels: ::std::option::Option<i32>,
     /// <p>The codec used by the stream.</p>
     pub codec: ::std::option::Option<::std::string::String>,
+    /// <p>The color signaling of the video stream.</p>
+    pub color: ::std::option::Option<crate::types::ColorInformation>,
     /// <p>The frame rate used by the video stream.</p>
     pub frame_rate: ::std::option::Option<::std::string::String>,
     /// <p>The frame resolution used by the video stream.</p>
@@ -29,6 +31,10 @@ impl TransportStream {
     /// <p>The codec used by the stream.</p>
     pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
+    }
+    /// <p>The color signaling of the video stream.</p>
+    pub fn color(&self) -> ::std::option::Option<&crate::types::ColorInformation> {
+        self.color.as_ref()
     }
     /// <p>The frame rate used by the video stream.</p>
     pub fn frame_rate(&self) -> ::std::option::Option<&str> {
@@ -68,6 +74,7 @@ impl TransportStream {
 pub struct TransportStreamBuilder {
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) codec: ::std::option::Option<::std::string::String>,
+    pub(crate) color: ::std::option::Option<crate::types::ColorInformation>,
     pub(crate) frame_rate: ::std::option::Option<::std::string::String>,
     pub(crate) frame_resolution: ::std::option::Option<crate::types::FrameResolution>,
     pub(crate) pid: ::std::option::Option<i32>,
@@ -103,6 +110,20 @@ impl TransportStreamBuilder {
     /// <p>The codec used by the stream.</p>
     pub fn get_codec(&self) -> &::std::option::Option<::std::string::String> {
         &self.codec
+    }
+    /// <p>The color signaling of the video stream.</p>
+    pub fn color(mut self, input: crate::types::ColorInformation) -> Self {
+        self.color = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The color signaling of the video stream.</p>
+    pub fn set_color(mut self, input: ::std::option::Option<crate::types::ColorInformation>) -> Self {
+        self.color = input;
+        self
+    }
+    /// <p>The color signaling of the video stream.</p>
+    pub fn get_color(&self) -> &::std::option::Option<crate::types::ColorInformation> {
+        &self.color
     }
     /// <p>The frame rate used by the video stream.</p>
     pub fn frame_rate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -195,6 +216,7 @@ impl TransportStreamBuilder {
         crate::types::TransportStream {
             channels: self.channels,
             codec: self.codec,
+            color: self.color,
             frame_rate: self.frame_rate,
             frame_resolution: self.frame_resolution,
             pid: self.pid,

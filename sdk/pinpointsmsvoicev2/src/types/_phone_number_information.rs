@@ -42,6 +42,8 @@ pub struct PhoneNumberInformation {
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The messaging limits that apply to the phone number, including the per-capability send rates and any advisory per-provider daily message caps.</p>
     pub messaging_limits: ::std::option::Option<crate::types::MessagingLimits>,
+    /// <p>The pricing model.</p>
+    pub pricing_tier: ::std::option::Option<::std::string::String>,
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub created_timestamp: ::aws_smithy_types::DateTime,
 }
@@ -128,6 +130,10 @@ impl PhoneNumberInformation {
     pub fn messaging_limits(&self) -> ::std::option::Option<&crate::types::MessagingLimits> {
         self.messaging_limits.as_ref()
     }
+    /// <p>The pricing model.</p>
+    pub fn pricing_tier(&self) -> ::std::option::Option<&str> {
+        self.pricing_tier.as_deref()
+    }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.created_timestamp
@@ -163,6 +169,7 @@ pub struct PhoneNumberInformationBuilder {
     pub(crate) pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) messaging_limits: ::std::option::Option<crate::types::MessagingLimits>,
+    pub(crate) pricing_tier: ::std::option::Option<::std::string::String>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PhoneNumberInformationBuilder {
@@ -449,6 +456,20 @@ impl PhoneNumberInformationBuilder {
     pub fn get_messaging_limits(&self) -> &::std::option::Option<crate::types::MessagingLimits> {
         &self.messaging_limits
     }
+    /// <p>The pricing model.</p>
+    pub fn pricing_tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pricing_tier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The pricing model.</p>
+    pub fn set_pricing_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pricing_tier = input;
+        self
+    }
+    /// <p>The pricing model.</p>
+    pub fn get_pricing_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_tier
+    }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     /// This field is required.
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -542,6 +563,7 @@ impl PhoneNumberInformationBuilder {
             pool_id: self.pool_id,
             registration_id: self.registration_id,
             messaging_limits: self.messaging_limits,
+            pricing_tier: self.pricing_tier,
             created_timestamp: self.created_timestamp.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_timestamp",

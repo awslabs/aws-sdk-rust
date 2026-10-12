@@ -21,6 +21,8 @@ pub use crate::types::_verification_details::VerificationDetails;
 
 pub use crate::types::_artifact_type::ArtifactType;
 
+pub use crate::types::_issue_destination::IssueDestination;
+
 pub use crate::types::_assets::Assets;
 
 pub use crate::types::_cloud_watch_log::CloudWatchLog;
@@ -112,6 +114,12 @@ pub use crate::types::_pentest::Pentest;
 pub use crate::types::_delete_pentest_failure::DeletePentestFailure;
 
 pub use crate::types::_delete_threat_model_failure::DeleteThreatModelFailure;
+
+pub use crate::types::_batch_disassociate_finding_issue_error::BatchDisassociateFindingIssueError;
+
+pub use crate::types::_batch_export_finding_result::BatchExportFindingResult;
+
+pub use crate::types::_batch_export_finding_error::BatchExportFindingError;
 
 pub use crate::types::_artifact_metadata_item::ArtifactMetadataItem;
 
@@ -213,6 +221,8 @@ pub use crate::types::_azure_dev_ops_integration_input::AzureDevOpsIntegrationIn
 
 pub use crate::types::_bitbucket_data_center_integration_input::BitbucketDataCenterIntegrationInput;
 
+pub use crate::types::_jira_integration_input::JiraIntegrationInput;
+
 pub use crate::types::_private_connection_summary::PrivateConnectionSummary;
 
 pub use crate::types::_service_managed_input::ServiceManagedInput;
@@ -226,6 +236,10 @@ pub use crate::types::_target_domain_summary::TargetDomainSummary;
 pub use crate::types::_target_domain::TargetDomain;
 
 pub use crate::types::_clean_up_strategy::CleanUpStrategy;
+
+pub use crate::types::_error_code::ErrorCode;
+
+pub use crate::types::_linked_issue::LinkedIssue;
 
 pub use crate::types::_error_information::ErrorInformation;
 
@@ -277,8 +291,6 @@ pub use crate::types::_step::Step;
 
 pub use crate::types::_execution_context::ExecutionContext;
 
-pub use crate::types::_error_code::ErrorCode;
-
 pub use crate::types::_category::Category;
 
 pub use crate::types::_log_type::LogType;
@@ -309,6 +321,8 @@ pub use crate::types::_confluence_document_metadata::ConfluenceDocumentMetadata;
 
 pub use crate::types::_azure_dev_ops_repository_metadata::AzureDevOpsRepositoryMetadata;
 
+pub use crate::types::_jira_project_metadata::JiraProjectMetadata;
+
 pub use crate::types::_git_hub_resource_capabilities::GitHubResourceCapabilities;
 
 pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilities;
@@ -318,6 +332,8 @@ pub use crate::types::_bitbucket_resource_capabilities::BitbucketResourceCapabil
 pub use crate::types::_confluence_resource_capabilities::ConfluenceResourceCapabilities;
 
 pub use crate::types::_azure_dev_ops_resource_capabilities::AzureDevOpsResourceCapabilities;
+
+pub use crate::types::_jira_resource_capabilities::JiraResourceCapabilities;
 
 pub use crate::types::_user_metadata::UserMetadata;
 
@@ -330,6 +346,8 @@ pub use crate::types::_bitbucket_repository_resource::BitbucketRepositoryResourc
 pub use crate::types::_confluence_document_resource::ConfluenceDocumentResource;
 
 pub use crate::types::_azure_dev_ops_repository_resource::AzureDevOpsRepositoryResource;
+
+pub use crate::types::_jira_project_resource::JiraProjectResource;
 
 pub use crate::types::_step_status::StepStatus;
 
@@ -390,6 +408,12 @@ mod _azure_dev_ops_repository_resource;
 mod _azure_dev_ops_resource_capabilities;
 
 mod _batch_create_security_requirement_result;
+
+mod _batch_disassociate_finding_issue_error;
+
+mod _batch_export_finding_error;
+
+mod _batch_export_finding_result;
 
 mod _batch_get_security_requirement_result;
 
@@ -529,9 +553,21 @@ mod _integration_summary;
 
 mod _ip_address_type;
 
+mod _issue_destination;
+
+mod _jira_integration_input;
+
+mod _jira_project_metadata;
+
+mod _jira_project_resource;
+
+mod _jira_resource_capabilities;
+
 mod _job_status;
 
 mod _job_type;
+
+mod _linked_issue;
 
 mod _list_security_requirement_pack_filter;
 

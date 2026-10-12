@@ -95,6 +95,27 @@ pub(crate) fn batch_delete_security_requirements_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_disassociate_finding_issue_output_output_correct_errors(
+    mut builder: crate::operation::batch_disassociate_finding_issue::builders::BatchDisassociateFindingIssueOutputBuilder,
+) -> crate::operation::batch_disassociate_finding_issue::builders::BatchDisassociateFindingIssueOutputBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_export_findings_output_output_correct_errors(
+    mut builder: crate::operation::batch_export_findings::builders::BatchExportFindingsOutputBuilder,
+) -> crate::operation::batch_export_findings::builders::BatchExportFindingsOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_artifact_metadata_output_output_correct_errors(
     mut builder: crate::operation::batch_get_artifact_metadata::builders::BatchGetArtifactMetadataOutputBuilder,
 ) -> crate::operation::batch_get_artifact_metadata::builders::BatchGetArtifactMetadataOutputBuilder {
@@ -692,6 +713,51 @@ pub(crate) fn batch_create_security_requirement_result_correct_errors(
     builder
 }
 
+pub(crate) fn batch_disassociate_finding_issue_error_correct_errors(
+    mut builder: crate::types::builders::BatchDisassociateFindingIssueErrorBuilder,
+) -> crate::types::builders::BatchDisassociateFindingIssueErrorBuilder {
+    if builder.finding_id.is_none() {
+        builder.finding_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_export_finding_error_correct_errors(
+    mut builder: crate::types::builders::BatchExportFindingErrorBuilder,
+) -> crate::types::builders::BatchExportFindingErrorBuilder {
+    if builder.finding_id.is_none() {
+        builder.finding_id = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_export_finding_result_correct_errors(
+    mut builder: crate::types::builders::BatchExportFindingResultBuilder,
+) -> crate::types::builders::BatchExportFindingResultBuilder {
+    if builder.finding_id.is_none() {
+        builder.finding_id = Some(Default::default())
+    }
+    if builder.linked_issue.is_none() {
+        builder.linked_issue = {
+            let builder = crate::types::builders::LinkedIssueBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn batch_get_security_requirement_result_correct_errors(
     mut builder: crate::types::builders::BatchGetSecurityRequirementResultBuilder,
 ) -> crate::types::builders::BatchGetSecurityRequirementResultBuilder {
@@ -1252,6 +1318,24 @@ pub(crate) fn git_lab_repository_metadata_correct_errors(
     }
     if builder.namespace.is_none() {
         builder.namespace = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn jira_project_metadata_correct_errors(
+    mut builder: crate::types::builders::JiraProjectMetadataBuilder,
+) -> crate::types::builders::JiraProjectMetadataBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.provider_resource_id.is_none() {
+        builder.provider_resource_id = Some(Default::default())
+    }
+    if builder.project_key.is_none() {
+        builder.project_key = Some(Default::default())
+    }
+    if builder.project_id.is_none() {
+        builder.project_id = Some(Default::default())
     }
     builder
 }

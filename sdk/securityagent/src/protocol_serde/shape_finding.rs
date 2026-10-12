@@ -201,6 +201,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "linkedIssue" => {
+                            builder =
+                                builder.set_linked_issue(crate::protocol_serde::shape_linked_issue::de_linked_issue(tokens, _value, depth + 1)?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -229,6 +229,9 @@ pub mod create_training_job;
 /// Types for the `CreateTrainingPlan` operation.
 pub mod create_training_plan;
 
+/// Types for the `CreateTrainingSession` operation.
+pub mod create_training_session;
+
 /// Types for the `CreateTransformJob` operation.
 pub mod create_transform_job;
 
@@ -417,6 +420,9 @@ pub mod delete_tags;
 
 /// Types for the `DeleteTrainingJob` operation.
 pub mod delete_training_job;
+
+/// Types for the `DeleteTrainingSession` operation.
+pub mod delete_training_session;
 
 /// Types for the `DeleteTrial` operation.
 pub mod delete_trial;
@@ -645,6 +651,9 @@ pub mod describe_training_plan;
 
 /// Types for the `DescribeTrainingPlanExtensionHistory` operation.
 pub mod describe_training_plan_extension_history;
+
+/// Types for the `DescribeTrainingSession` operation.
+pub mod describe_training_session;
 
 /// Types for the `DescribeTransformJob` operation.
 pub mod describe_transform_job;
@@ -949,6 +958,9 @@ pub mod list_training_jobs_for_hyper_parameter_tuning_job;
 /// Types for the `ListTrainingPlans` operation.
 pub mod list_training_plans;
 
+/// Types for the `ListTrainingSessions` operation.
+pub mod list_training_sessions;
+
 /// Types for the `ListTransformJobs` operation.
 pub mod list_transform_jobs;
 
@@ -1074,6 +1086,9 @@ pub mod stop_processing_job;
 
 /// Types for the `StopTrainingJob` operation.
 pub mod stop_training_job;
+
+/// Types for the `StopTrainingSession` operation.
+pub mod stop_training_session;
 
 /// Types for the `StopTransformJob` operation.
 pub mod stop_transform_job;

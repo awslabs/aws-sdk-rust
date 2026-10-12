@@ -24,6 +24,7 @@ impl crate::operation::update_network_connector::builders::UpdateNetworkConnecto
 ///
 /// <p>Updates the VPC configuration or operator role of an existing network connector. You can modify the subnet IDs, security group IDs, network protocol, or operator role. The connector must be in <code>ACTIVE</code> state to accept updates.</p>
 /// <p>This operation is asynchronous. The connector remains in <code>ACTIVE</code> state during the update — existing workloads that reference this connector are not disrupted. Use <code>GetNetworkConnector</code> to monitor the <code>LastUpdateStatus</code> field, which transitions through <code>InProgress</code> to <code>Successful</code> or <code>Failed</code>. If the update fails, the <code>LastUpdateStatusReasonCode</code> field provides a specific error code for troubleshooting. This operation is idempotent when you provide a <code>ClientToken</code>.</p>
+/// <p>Each successful configuration change creates a new immutable version. A connector can have a limited number of versions; once that limit is reached, further updates fail with <code>NetworkConnectorLimitExceededException</code> until you delete older versions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNetworkConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,17 +110,17 @@ impl UpdateNetworkConnectorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

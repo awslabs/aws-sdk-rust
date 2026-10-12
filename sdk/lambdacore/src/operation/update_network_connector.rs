@@ -348,6 +348,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateNetwork
 pub enum UpdateNetworkConnectorError {
     /// <p>One of the parameters in the request is not valid. Check the error message for details about which parameter failed validation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
+    /// <p>The request would exceed a network connector limit. For <code>CreateNetworkConnector</code>, the account has reached the maximum number of network connectors allowed. For <code>UpdateNetworkConnector</code>, the connector has reached the maximum number of versions allowed.</p>
+    NetworkConnectorLimitExceededException(crate::types::error::NetworkConnectorLimitExceededException),
     /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to update a connector that is not in <code>ACTIVE</code> state.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The specified network connector does not exist. Verify the identifier (ID, name, or ARN) and Region.</p>
@@ -390,6 +392,7 @@ impl UpdateNetworkConnectorError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NetworkConnectorLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -400,6 +403,10 @@ impl UpdateNetworkConnectorError {
     /// Returns `true` if the error kind is `UpdateNetworkConnectorError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
         matches!(self, Self::InvalidParameterValueException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateNetworkConnectorError::NetworkConnectorLimitExceededException`.
+    pub fn is_network_connector_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::NetworkConnectorLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateNetworkConnectorError::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
@@ -422,6 +429,7 @@ impl ::std::error::Error for UpdateNetworkConnectorError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::NetworkConnectorLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
@@ -434,6 +442,7 @@ impl ::std::fmt::Display for UpdateNetworkConnectorError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::NetworkConnectorLimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
@@ -460,6 +469,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateNetwork
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NetworkConnectorLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

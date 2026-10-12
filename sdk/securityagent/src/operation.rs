@@ -19,6 +19,12 @@ pub mod batch_delete_security_requirements;
 /// Types for the `BatchDeleteThreatModels` operation.
 pub mod batch_delete_threat_models;
 
+/// Types for the `BatchDisassociateFindingIssue` operation.
+pub mod batch_disassociate_finding_issue;
+
+/// Types for the `BatchExportFindings` operation.
+pub mod batch_export_findings;
+
 /// Types for the `BatchGetAgentSpaces` operation.
 pub mod batch_get_agent_spaces;
 

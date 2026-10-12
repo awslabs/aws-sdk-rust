@@ -665,6 +665,7 @@ impl From<crate::operation::delete_omni_dashboard::DeleteOmniDashboardError> for
     fn from(err: crate::operation::delete_omni_dashboard::DeleteOmniDashboardError) -> Self {
         match err {
             crate::operation::delete_omni_dashboard::DeleteOmniDashboardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_omni_dashboard::DeleteOmniDashboardError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_omni_dashboard::DeleteOmniDashboardError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -692,6 +693,7 @@ impl From<crate::operation::delete_space::DeleteSpaceError> for Error {
     fn from(err: crate::operation::delete_space::DeleteSpaceError) -> Self {
         match err {
             crate::operation::delete_space::DeleteSpaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_space::DeleteSpaceError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_space::DeleteSpaceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_space::DeleteSpaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_space::DeleteSpaceError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1399,6 +1401,7 @@ impl From<crate::operation::list_spaces::ListSpacesError> for Error {
         match err {
             crate::operation::list_spaces::ListSpacesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_spaces::ListSpacesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_spaces::ListSpacesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_spaces::ListSpacesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_spaces::ListSpacesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_spaces::ListSpacesError::Unhandled(inner) => Error::Unhandled(inner),

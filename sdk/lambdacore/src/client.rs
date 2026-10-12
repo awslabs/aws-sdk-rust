@@ -169,6 +169,8 @@ mod delete_network_connector;
 
 mod get_network_connector;
 
+mod list_network_connector_versions;
+
 mod list_network_connectors;
 
 mod update_network_connector;

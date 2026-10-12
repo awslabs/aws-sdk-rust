@@ -196,6 +196,20 @@ pub(crate) fn de_get_network_connector(
                             .transpose()?,
                     );
                 }
+                "LatestVersion" => {
+                    builder = builder.set_latest_version(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "LatestVersionArn" => {
+                    builder = builder.set_latest_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -235,6 +249,13 @@ pub(crate) fn de_get_network_connector(
                     builder = builder.set_version(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
+                            .transpose()?,
+                    );
+                }
+                "VersionArn" => {
+                    builder = builder.set_version_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

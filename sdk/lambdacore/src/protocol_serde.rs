@@ -29,6 +29,8 @@ pub(crate) mod shape_delete_network_connector;
 
 pub(crate) mod shape_get_network_connector;
 
+pub(crate) mod shape_list_network_connector_versions;
+
 pub(crate) mod shape_list_network_connectors;
 
 pub(crate) mod shape_update_network_connector;
@@ -59,9 +61,13 @@ pub(crate) mod shape_update_network_connector_input;
 
 pub(crate) mod shape_network_connector_configuration;
 
+pub(crate) mod shape_network_connector_versions_list;
+
 pub(crate) mod shape_network_connectors_list;
 
 pub(crate) mod shape_network_connector_summary;
+
+pub(crate) mod shape_network_connector_version_summary;
 
 pub(crate) mod shape_network_connector_vpc_egress_configuration;
 

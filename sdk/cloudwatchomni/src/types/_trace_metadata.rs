@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceMetadata {
-    /// TRACES counterpart of LogMetadataAttributeMap — a dedicated per-signal map so the two evolve independently (same scalar shape and cap today).
+    /// One TRACES query-selector block: an exact span-store column mapped to the raw value it carries. Keys are store column names, not bare attribute names — the service identity and cloud dimensions arrive as "resource.attributes\['service.name'\]", "resource.attributes\['service.namespace'\]", "resource.attributes\['cloud.provider'\]", "resource.attributes\['cloud.account.id'\]", "resource.attributes\['cloud.region'\]" and "resource.attributes\['deployment.environment'\]", and span-level identity as "attributes\['aws.local.service'\]" and "attributes\['aws.local.environment'\]". Not every column is present on every block; which ones appear depends on what the span carried.
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TraceMetadata {
-    /// TRACES counterpart of LogMetadataAttributeMap — a dedicated per-signal map so the two evolve independently (same scalar shape and cap today).
+    /// One TRACES query-selector block: an exact span-store column mapped to the raw value it carries. Keys are store column names, not bare attribute names — the service identity and cloud dimensions arrive as "resource.attributes\['service.name'\]", "resource.attributes\['service.namespace'\]", "resource.attributes\['cloud.provider'\]", "resource.attributes\['cloud.account.id'\]", "resource.attributes\['cloud.region'\]" and "resource.attributes\['deployment.environment'\]", and span-level identity as "attributes\['aws.local.service'\]" and "attributes\['aws.local.environment'\]". Not every column is present on every block; which ones appear depends on what the span carried.
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -31,19 +31,19 @@ impl TraceMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// TRACES counterpart of LogMetadataAttributeMap — a dedicated per-signal map so the two evolve independently (same scalar shape and cap today).
+    /// One TRACES query-selector block: an exact span-store column mapped to the raw value it carries. Keys are store column names, not bare attribute names — the service identity and cloud dimensions arrive as "resource.attributes\['service.name'\]", "resource.attributes\['service.namespace'\]", "resource.attributes\['cloud.provider'\]", "resource.attributes\['cloud.account.id'\]", "resource.attributes\['cloud.region'\]" and "resource.attributes\['deployment.environment'\]", and span-level identity as "attributes\['aws.local.service'\]" and "attributes\['aws.local.environment'\]". Not every column is present on every block; which ones appear depends on what the span carried.
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// TRACES counterpart of LogMetadataAttributeMap — a dedicated per-signal map so the two evolve independently (same scalar shape and cap today).
+    /// One TRACES query-selector block: an exact span-store column mapped to the raw value it carries. Keys are store column names, not bare attribute names — the service identity and cloud dimensions arrive as "resource.attributes\['service.name'\]", "resource.attributes\['service.namespace'\]", "resource.attributes\['cloud.provider'\]", "resource.attributes\['cloud.account.id'\]", "resource.attributes\['cloud.region'\]" and "resource.attributes\['deployment.environment'\]", and span-level identity as "attributes\['aws.local.service'\]" and "attributes\['aws.local.environment'\]". Not every column is present on every block; which ones appear depends on what the span carried.
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// TRACES counterpart of LogMetadataAttributeMap — a dedicated per-signal map so the two evolve independently (same scalar shape and cap today).
+    /// One TRACES query-selector block: an exact span-store column mapped to the raw value it carries. Keys are store column names, not bare attribute names — the service identity and cloud dimensions arrive as "resource.attributes\['service.name'\]", "resource.attributes\['service.namespace'\]", "resource.attributes\['cloud.provider'\]", "resource.attributes\['cloud.account.id'\]", "resource.attributes\['cloud.region'\]" and "resource.attributes\['deployment.environment'\]", and span-level identity as "attributes\['aws.local.service'\]" and "attributes\['aws.local.environment'\]". Not every column is present on every block; which ones appear depends on what the span carried.
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }

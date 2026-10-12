@@ -139,6 +139,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "PricingTier" => {
+                            builder = builder.set_pricing_tier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "CreatedTimestamp" => {
                             builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

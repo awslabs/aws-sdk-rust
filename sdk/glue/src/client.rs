@@ -156,6 +156,8 @@ mod batch_get_custom_entity_types;
 
 mod batch_get_data_quality_result;
 
+mod batch_get_data_quality_result_v2;
+
 mod batch_get_data_quality_ruleset_evaluation_run;
 
 mod batch_get_dev_endpoints;
@@ -421,6 +423,8 @@ mod get_data_quality_model_result;
 
 mod get_data_quality_result;
 
+mod get_data_quality_result_v2;
+
 mod get_data_quality_rule_recommendation_run;
 
 mod get_data_quality_ruleset;
@@ -563,6 +567,8 @@ mod list_custom_entity_types;
 
 mod list_data_quality_results;
 
+mod list_data_quality_results_v2;
+
 mod list_data_quality_rule_recommendation_runs;
 
 mod list_data_quality_ruleset_evaluation_runs;
@@ -614,6 +620,8 @@ mod list_usage_profiles;
 mod list_workflows;
 
 mod modify_integration;
+
+mod publish_data_quality_result_v2;
 
 mod put_asset;
 

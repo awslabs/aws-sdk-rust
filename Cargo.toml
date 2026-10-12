@@ -2,8 +2,8 @@
 resolver = "2"
 exclude = [
     "tests/webassembly-no-os",
-    "tests/telemetry",
     "tests/no-default-features",
+    "tests/telemetry",
     "tests/webassembly-wstd"
 ]
 members = [
@@ -401,6 +401,7 @@ members = [
     "sdk/sagemakermetrics",
     "sdk/sagemakerruntime",
     "sdk/sagemakerruntimehttp2",
+    "sdk/sagemakertrainingsessionruntime",
     "sdk/savingsplans",
     "sdk/scheduler",
     "sdk/schemas",

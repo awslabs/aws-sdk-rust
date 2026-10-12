@@ -21,5 +21,8 @@ pub fn ser_vpc_config(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.vpc_owner_account_id {
+        object.key("vpcOwnerAccountId").string(var_7.as_str());
+    }
     Ok(())
 }

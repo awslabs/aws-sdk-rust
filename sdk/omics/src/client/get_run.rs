@@ -48,7 +48,7 @@ impl super::Client {
     ///   - [`configuration(Option<ConfigurationDetails>)`](crate::operation::get_run::GetRunOutput::configuration): <p>Configuration details for the workflow run.</p>
     ///   - [`vpc_config(Option<VpcConfigResponse>)`](crate::operation::get_run::GetRunOutput::vpc_config): <p>VPC configuration for the workflow run.</p>
     ///   - [`engine_settings(Option<Document>)`](crate::operation::get_run::GetRunOutput::engine_settings): <p>The engine-specific settings for the workflow run.</p>
-    ///   - [`session_policy(Option<String>)`](crate::operation::get_run::GetRunOutput::session_policy): Inline policy json for scoping down permissions via a session policy on the IAM role.
+    ///   - [`session_policy(Option<String>)`](crate::operation::get_run::GetRunOutput::session_policy): <p>Inline policy json for scoping down permissions via a session policy on the IAM role.</p>
     /// - On failure, responds with [`SdkError<GetRunError>`](crate::operation::get_run::GetRunError)
     pub fn get_run(&self) -> crate::operation::get_run::builders::GetRunFluentBuilder {
         crate::operation::get_run::builders::GetRunFluentBuilder::new(self.handle.clone())

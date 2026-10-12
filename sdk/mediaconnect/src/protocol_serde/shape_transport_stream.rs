@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "color" => {
+                            builder = builder.set_color(crate::protocol_serde::shape_color_information::de_color_information(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "frameRate" => {
                             builder = builder.set_frame_rate(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

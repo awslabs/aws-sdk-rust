@@ -469,4 +469,18 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_ndi_output_timecode_source(&self) -> &::std::option::Option<crate::types::NdiOutputTimecodeSource> {
         self.inner.get_ndi_output_timecode_source()
     }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn ndi_audio_reference_level(mut self, input: i32) -> Self {
+        self.inner = self.inner.ndi_audio_reference_level(input);
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn set_ndi_audio_reference_level(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ndi_audio_reference_level(input);
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ndi_audio_reference_level()
+    }
 }

@@ -30,7 +30,7 @@ pub struct GetDataQualityResultOutput {
     pub rule_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityRuleResult>>,
     /// <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the results for each analyzer.</p>
     pub analyzer_results: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityAnalyzerResult>>,
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the anomaly detection observations generated after evaluating the rules and analyzers.</p>
     pub observations: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>,
     /// <p>A summary of <code>DataQualityAggregatedMetrics</code> objects showing the total counts of processed rows and rules, including their pass/fail statistics based on row-level results.</p>
     pub aggregated_metrics: ::std::option::Option<crate::types::DataQualityAggregatedMetrics>,
@@ -93,7 +93,7 @@ impl GetDataQualityResultOutput {
     pub fn analyzer_results(&self) -> &[crate::types::DataQualityAnalyzerResult] {
         self.analyzer_results.as_deref().unwrap_or_default()
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the anomaly detection observations generated after evaluating the rules and analyzers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.observations.is_none()`.
     pub fn observations(&self) -> &[crate::types::DataQualityObservation] {
@@ -336,19 +336,19 @@ impl GetDataQualityResultOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_observations`](Self::set_observations).
     ///
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the anomaly detection observations generated after evaluating the rules and analyzers.</p>
     pub fn observations(mut self, input: crate::types::DataQualityObservation) -> Self {
         let mut v = self.observations.unwrap_or_default();
         v.push(input);
         self.observations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the anomaly detection observations generated after evaluating the rules and analyzers.</p>
     pub fn set_observations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>>) -> Self {
         self.observations = input;
         self
     }
-    /// <p>A list of <code>DataQualityObservation</code> objects representing the observations generated after evaluating the rules and analyzers.</p>
+    /// <p>A list of <code>DataQualityObservation</code> objects representing the anomaly detection observations generated after evaluating the rules and analyzers.</p>
     pub fn get_observations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataQualityObservation>> {
         &self.observations
     }

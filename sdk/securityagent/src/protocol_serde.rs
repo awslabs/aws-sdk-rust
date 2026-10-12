@@ -35,6 +35,10 @@ pub(crate) mod shape_batch_delete_security_requirements;
 
 pub(crate) mod shape_batch_delete_threat_models;
 
+pub(crate) mod shape_batch_disassociate_finding_issue;
+
+pub(crate) mod shape_batch_export_findings;
+
 pub(crate) mod shape_batch_get_agent_spaces;
 
 pub(crate) mod shape_batch_get_artifact_metadata;
@@ -232,6 +236,10 @@ pub(crate) mod shape_batch_delete_pentests_input;
 pub(crate) mod shape_batch_delete_security_requirements_input;
 
 pub(crate) mod shape_batch_delete_threat_models_input;
+
+pub(crate) mod shape_batch_disassociate_finding_issue_input;
+
+pub(crate) mod shape_batch_export_findings_input;
 
 pub(crate) mod shape_batch_get_agent_spaces_input;
 
@@ -439,6 +447,12 @@ pub(crate) mod shape_aws_resources;
 
 pub(crate) mod shape_batch_create_security_requirement_result_list;
 
+pub(crate) mod shape_batch_disassociate_finding_issue_errors;
+
+pub(crate) mod shape_batch_export_finding_error_list;
+
+pub(crate) mod shape_batch_export_finding_result_list;
+
 pub(crate) mod shape_batch_get_security_requirement_result_list;
 
 pub(crate) mod shape_batch_security_requirement_errors;
@@ -498,6 +512,8 @@ pub(crate) mod shape_integrated_resource_summary_list;
 pub(crate) mod shape_integration_filter;
 
 pub(crate) mod shape_integration_summary_list;
+
+pub(crate) mod shape_issue_destination;
 
 pub(crate) mod shape_list_security_requirement_pack_filter;
 
@@ -615,6 +631,12 @@ pub(crate) mod shape_azure_dev_ops_integration_input;
 
 pub(crate) mod shape_batch_create_security_requirement_result;
 
+pub(crate) mod shape_batch_disassociate_finding_issue_error;
+
+pub(crate) mod shape_batch_export_finding_error;
+
+pub(crate) mod shape_batch_export_finding_result;
+
 pub(crate) mod shape_batch_get_security_requirement_result;
 
 pub(crate) mod shape_batch_security_requirement_error;
@@ -680,6 +702,8 @@ pub(crate) mod shape_integrated_resource;
 pub(crate) mod shape_integrated_resource_summary;
 
 pub(crate) mod shape_integration_summary;
+
+pub(crate) mod shape_jira_integration_input;
 
 pub(crate) mod shape_lambda_function_arns;
 
@@ -797,6 +821,12 @@ pub(crate) mod shape_git_lab_resource_capabilities;
 
 pub(crate) mod shape_integrated_resource_metadata;
 
+pub(crate) mod shape_jira_project_resource;
+
+pub(crate) mod shape_jira_resource_capabilities;
+
+pub(crate) mod shape_linked_issue;
+
 pub(crate) mod shape_log_location;
 
 pub(crate) mod shape_member_metadata;
@@ -830,6 +860,8 @@ pub(crate) mod shape_execution_context;
 pub(crate) mod shape_git_hub_repository_metadata;
 
 pub(crate) mod shape_git_lab_repository_metadata;
+
+pub(crate) mod shape_jira_project_metadata;
 
 pub(crate) mod shape_network_traffic_rule_list;
 

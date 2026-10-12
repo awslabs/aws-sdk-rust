@@ -164,17 +164,56 @@ impl CreateRouterOutputFluentBuilder {
     pub fn get_routing_scope(&self) -> &::std::option::Option<crate::types::RoutingScope> {
         self.inner.get_routing_scope()
     }
-    /// <p>The tier level for the router output.</p>
+    /// <p>The tier level for the router output. The tier sets the maximum bitrate, in Mbps, for the router output. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OUTPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn tier(mut self, input: crate::types::RouterOutputTier) -> Self {
         self.inner = self.inner.tier(input);
         self
     }
-    /// <p>The tier level for the router output.</p>
+    /// <p>The tier level for the router output. The tier sets the maximum bitrate, in Mbps, for the router output. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OUTPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::RouterOutputTier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
     }
-    /// <p>The tier level for the router output.</p>
+    /// <p>The tier level for the router output. The tier sets the maximum bitrate, in Mbps, for the router output. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>OUTPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>OUTPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::RouterOutputTier> {
         self.inner.get_tier()
     }

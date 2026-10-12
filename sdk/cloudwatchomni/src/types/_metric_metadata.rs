@@ -6,14 +6,11 @@
 pub struct MetricMetadata {
     /// The metric name as emitted, such as "Duration".
     pub name: ::std::option::Option<::std::string::String>,
-    /// DEPRECATED: read attributes\["service.namespace"\] instead. Retained (deprecated) for backward compatibility with existing consumers; will be removed once they migrate. The logical service grouping the metric belongs to.
-    #[deprecated(note = "Use attributes['service.namespace']; retained for backward compatibility.", since = "2026-08-19")]
-    pub namespace: ::std::option::Option<::std::string::String>,
     /// The statistic to chart or alarm on, such as "p99" or "Sum". Free-form and frequently absent.
     pub preferred_stat: ::std::option::Option<::std::string::String>,
     /// OTel metric kind: "gauge", "sum", "histogram", "exponential_histogram", or "summary" (CloudWatch-vended metrics carry the same kinds). Absent when the producer did not report one.
     pub metric_type: ::std::option::Option<::std::string::String>,
-    /// Per-metric qualifying attributes the console uses to query this metric's telemetry. These are the RAW, store-matching values keyed by their OTel names ("service.name", "service.namespace", "cloud.provider", "cloud.account.id", "cloud.region", "instrumentation_scope") — deliberately NOT the node's normalized/merged identity, so the query selectors match the emitted series. A merged node can carry different values per metric, which is why they live here rather than on the node.
+    /// Per-metric qualifying attributes used to query this metric's telemetry. Keys are the metric store's own label names, not bare OTel attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace", and the instrumentation scope as "@instrumentation.@name", while span-derived metrics label the service as a bare "service.name". Cloud provider, account and region are not repeated per metric — read those from the node. Values are RAW, deliberately NOT the node's normalized or merged identity, so a selector built from them matches the emitted series. A merged node can carry different values per metric, which is why these live here rather than on the node.
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// What the metric means and the unit it is reported in.
     pub semantics: ::std::option::Option<crate::types::MetricSemantics>,
@@ -23,11 +20,6 @@ impl MetricMetadata {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// DEPRECATED: read attributes\["service.namespace"\] instead. Retained (deprecated) for backward compatibility with existing consumers; will be removed once they migrate. The logical service grouping the metric belongs to.
-    #[deprecated(note = "Use attributes['service.namespace']; retained for backward compatibility.", since = "2026-08-19")]
-    pub fn namespace(&self) -> ::std::option::Option<&str> {
-        self.namespace.as_deref()
-    }
     /// The statistic to chart or alarm on, such as "p99" or "Sum". Free-form and frequently absent.
     pub fn preferred_stat(&self) -> ::std::option::Option<&str> {
         self.preferred_stat.as_deref()
@@ -36,7 +28,7 @@ impl MetricMetadata {
     pub fn metric_type(&self) -> ::std::option::Option<&str> {
         self.metric_type.as_deref()
     }
-    /// Per-metric qualifying attributes the console uses to query this metric's telemetry. These are the RAW, store-matching values keyed by their OTel names ("service.name", "service.namespace", "cloud.provider", "cloud.account.id", "cloud.region", "instrumentation_scope") — deliberately NOT the node's normalized/merged identity, so the query selectors match the emitted series. A merged node can carry different values per metric, which is why they live here rather than on the node.
+    /// Per-metric qualifying attributes used to query this metric's telemetry. Keys are the metric store's own label names, not bare OTel attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace", and the instrumentation scope as "@instrumentation.@name", while span-derived metrics label the service as a bare "service.name". Cloud provider, account and region are not repeated per metric — read those from the node. Values are RAW, deliberately NOT the node's normalized or merged identity, so a selector built from them matches the emitted series. A merged node can carry different values per metric, which is why these live here rather than on the node.
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.attributes.as_ref()
     }
@@ -57,7 +49,6 @@ impl MetricMetadata {
 #[non_exhaustive]
 pub struct MetricMetadataBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) preferred_stat: ::std::option::Option<::std::string::String>,
     pub(crate) metric_type: ::std::option::Option<::std::string::String>,
     pub(crate) attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -77,23 +68,6 @@ impl MetricMetadataBuilder {
     /// The metric name as emitted, such as "Duration".
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
-    }
-    /// DEPRECATED: read attributes\["service.namespace"\] instead. Retained (deprecated) for backward compatibility with existing consumers; will be removed once they migrate. The logical service grouping the metric belongs to.
-    #[deprecated(note = "Use attributes['service.namespace']; retained for backward compatibility.", since = "2026-08-19")]
-    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.namespace = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// DEPRECATED: read attributes\["service.namespace"\] instead. Retained (deprecated) for backward compatibility with existing consumers; will be removed once they migrate. The logical service grouping the metric belongs to.
-    #[deprecated(note = "Use attributes['service.namespace']; retained for backward compatibility.", since = "2026-08-19")]
-    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.namespace = input;
-        self
-    }
-    /// DEPRECATED: read attributes\["service.namespace"\] instead. Retained (deprecated) for backward compatibility with existing consumers; will be removed once they migrate. The logical service grouping the metric belongs to.
-    #[deprecated(note = "Use attributes['service.namespace']; retained for backward compatibility.", since = "2026-08-19")]
-    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
-        &self.namespace
     }
     /// The statistic to chart or alarm on, such as "p99" or "Sum". Free-form and frequently absent.
     pub fn preferred_stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -127,19 +101,19 @@ impl MetricMetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// Per-metric qualifying attributes the console uses to query this metric's telemetry. These are the RAW, store-matching values keyed by their OTel names ("service.name", "service.namespace", "cloud.provider", "cloud.account.id", "cloud.region", "instrumentation_scope") — deliberately NOT the node's normalized/merged identity, so the query selectors match the emitted series. A merged node can carry different values per metric, which is why they live here rather than on the node.
+    /// Per-metric qualifying attributes used to query this metric's telemetry. Keys are the metric store's own label names, not bare OTel attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace", and the instrumentation scope as "@instrumentation.@name", while span-derived metrics label the service as a bare "service.name". Cloud provider, account and region are not repeated per metric — read those from the node. Values are RAW, deliberately NOT the node's normalized or merged identity, so a selector built from them matches the emitted series. A merged node can carry different values per metric, which is why these live here rather than on the node.
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Per-metric qualifying attributes the console uses to query this metric's telemetry. These are the RAW, store-matching values keyed by their OTel names ("service.name", "service.namespace", "cloud.provider", "cloud.account.id", "cloud.region", "instrumentation_scope") — deliberately NOT the node's normalized/merged identity, so the query selectors match the emitted series. A merged node can carry different values per metric, which is why they live here rather than on the node.
+    /// Per-metric qualifying attributes used to query this metric's telemetry. Keys are the metric store's own label names, not bare OTel attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace", and the instrumentation scope as "@instrumentation.@name", while span-derived metrics label the service as a bare "service.name". Cloud provider, account and region are not repeated per metric — read those from the node. Values are RAW, deliberately NOT the node's normalized or merged identity, so a selector built from them matches the emitted series. A merged node can carry different values per metric, which is why these live here rather than on the node.
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.attributes = input;
         self
     }
-    /// Per-metric qualifying attributes the console uses to query this metric's telemetry. These are the RAW, store-matching values keyed by their OTel names ("service.name", "service.namespace", "cloud.provider", "cloud.account.id", "cloud.region", "instrumentation_scope") — deliberately NOT the node's normalized/merged identity, so the query selectors match the emitted series. A merged node can carry different values per metric, which is why they live here rather than on the node.
+    /// Per-metric qualifying attributes used to query this metric's telemetry. Keys are the metric store's own label names, not bare OTel attribute names: service identity arrives as "@resource.service.name" and "@resource.service.namespace", and the instrumentation scope as "@instrumentation.@name", while span-derived metrics label the service as a bare "service.name". Cloud provider, account and region are not repeated per metric — read those from the node. Values are RAW, deliberately NOT the node's normalized or merged identity, so a selector built from them matches the emitted series. A merged node can carry different values per metric, which is why these live here rather than on the node.
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.attributes
     }
@@ -161,7 +135,6 @@ impl MetricMetadataBuilder {
     pub fn build(self) -> crate::types::MetricMetadata {
         crate::types::MetricMetadata {
             name: self.name,
-            namespace: self.namespace,
             preferred_stat: self.preferred_stat,
             metric_type: self.metric_type,
             attributes: self.attributes,

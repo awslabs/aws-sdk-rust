@@ -259,6 +259,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAgentSpa
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
+                if let ::std::option::Option::Some(inner_3) = &_input.included_data {
+                    {
+                        query.push_kv("includedData", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

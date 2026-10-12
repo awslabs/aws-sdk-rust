@@ -22,7 +22,7 @@ impl crate::operation::delete_alias::builders::DeleteAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
-/// <p>Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
+/// <p>Deletes a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

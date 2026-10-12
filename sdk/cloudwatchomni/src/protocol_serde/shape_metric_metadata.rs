@@ -17,9 +17,6 @@ pub(crate) fn de_metric_metadata(
     ) -> ::std::result::Result<crate::types::builders::MetricMetadataBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
-            "namespace" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_namespace(Some(decoder.string()?))))?
-            }
             "preferredStat" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_preferred_stat(Some(decoder.string()?)))
             })?,

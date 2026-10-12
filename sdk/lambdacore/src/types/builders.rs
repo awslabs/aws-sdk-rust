@@ -2,3 +2,5 @@
 pub use crate::types::_network_connector_vpc_egress_configuration::NetworkConnectorVpcEgressConfigurationBuilder;
 
 pub use crate::types::_network_connector_summary::NetworkConnectorSummaryBuilder;
+
+pub use crate::types::_network_connector_version_summary::NetworkConnectorVersionSummaryBuilder;

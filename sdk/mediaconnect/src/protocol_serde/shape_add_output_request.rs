@@ -121,5 +121,11 @@ pub fn ser_add_output_request(
     if let Some(var_33) = &input.ndi_output_timecode_source {
         object.key("ndiOutputTimecodeSource").string(var_33.as_str());
     }
+    if let Some(var_34) = &input.ndi_audio_reference_level {
+        object.key("ndiAudioReferenceLevel").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_34).into()),
+        );
+    }
     Ok(())
 }

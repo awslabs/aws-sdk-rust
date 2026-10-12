@@ -22,7 +22,7 @@ impl crate::operation::create_event_source_mapping::builders::CreateEventSourceM
 }
 /// Fluent builder constructing a request to `CreateEventSourceMapping`.
 ///
-/// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and invokes the function.</p>
+/// <p>Creates a mapping between an event source and an Lambda Event Function. Lambda reads items from the event source and invokes the function.</p>
 /// <p>For details about how to configure different event sources, see the following topics.</p>
 /// <ul>
 /// <li>

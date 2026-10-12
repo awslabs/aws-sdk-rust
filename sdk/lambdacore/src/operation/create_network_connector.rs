@@ -337,7 +337,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateNetwork
 pub enum CreateNetworkConnectorError {
     /// <p>One of the parameters in the request is not valid. Check the error message for details about which parameter failed validation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The account has reached the maximum number of network connectors allowed. Delete unused connectors or request a limit increase through Service Quotas.</p>
+    /// <p>The request would exceed a network connector limit. For <code>CreateNetworkConnector</code>, the account has reached the maximum number of network connectors allowed. For <code>UpdateNetworkConnector</code>, the connector has reached the maximum number of versions allowed.</p>
     NetworkConnectorLimitExceededException(crate::types::error::NetworkConnectorLimitExceededException),
     /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to update a connector that is not in <code>ACTIVE</code> state.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),

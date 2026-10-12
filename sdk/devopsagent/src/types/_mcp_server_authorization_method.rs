@@ -14,6 +14,7 @@
 /// match mcpserverauthorizationmethod {
 ///     McpServerAuthorizationMethod::ApiKey => { /* ... */ },
 ///     McpServerAuthorizationMethod::BearerToken => { /* ... */ },
+///     McpServerAuthorizationMethod::CustomHeaders => { /* ... */ },
 ///     McpServerAuthorizationMethod::Oauth3Lo => { /* ... */ },
 ///     McpServerAuthorizationMethod::OauthClientCredentials => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,6 +49,8 @@ pub enum McpServerAuthorizationMethod {
     ApiKey,
     /// <p>Bearer token authentication (RFC 6750).</p>
     BearerToken,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomHeaders,
     /// <p>OAuth 2.0 three-legged authorization flow.</p>
     Oauth3Lo,
     /// <p>OAuth 2.0 client credentials flow.</p>
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for McpServerAuthorizationMethod {
         match s {
             "api-key" => McpServerAuthorizationMethod::ApiKey,
             "bearer-token" => McpServerAuthorizationMethod::BearerToken,
+            "custom-headers" => McpServerAuthorizationMethod::CustomHeaders,
             "oauth-3lo" => McpServerAuthorizationMethod::Oauth3Lo,
             "oauth-client-credentials" => McpServerAuthorizationMethod::OauthClientCredentials,
             other => McpServerAuthorizationMethod::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl McpServerAuthorizationMethod {
         match self {
             McpServerAuthorizationMethod::ApiKey => "api-key",
             McpServerAuthorizationMethod::BearerToken => "bearer-token",
+            McpServerAuthorizationMethod::CustomHeaders => "custom-headers",
             McpServerAuthorizationMethod::Oauth3Lo => "oauth-3lo",
             McpServerAuthorizationMethod::OauthClientCredentials => "oauth-client-credentials",
             McpServerAuthorizationMethod::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl McpServerAuthorizationMethod {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["api-key", "bearer-token", "oauth-3lo", "oauth-client-credentials"]
+        &["api-key", "bearer-token", "custom-headers", "oauth-3lo", "oauth-client-credentials"]
     }
 }
 impl ::std::convert::AsRef<str> for McpServerAuthorizationMethod {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for McpServerAuthorizationMethod {
         match self {
             McpServerAuthorizationMethod::ApiKey => write!(f, "api-key"),
             McpServerAuthorizationMethod::BearerToken => write!(f, "bearer-token"),
+            McpServerAuthorizationMethod::CustomHeaders => write!(f, "custom-headers"),
             McpServerAuthorizationMethod::Oauth3Lo => write!(f, "oauth-3lo"),
             McpServerAuthorizationMethod::OauthClientCredentials => write!(f, "oauth-client-credentials"),
             McpServerAuthorizationMethod::Unknown(value) => write!(f, "{value}"),

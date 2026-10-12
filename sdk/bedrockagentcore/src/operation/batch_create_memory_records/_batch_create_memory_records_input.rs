@@ -9,6 +9,8 @@ pub struct BatchCreateMemoryRecordsInput {
     pub records: ::std::option::Option<::std::vec::Vec<crate::types::MemoryRecordCreateInput>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotent processing of the batch request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub record_expiry_specification: ::std::option::Option<crate::types::RecordExpirySpecification>,
 }
 impl BatchCreateMemoryRecordsInput {
     /// <p>The unique ID of the memory resource where records will be created.</p>
@@ -25,6 +27,10 @@ impl BatchCreateMemoryRecordsInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn record_expiry_specification(&self) -> ::std::option::Option<&crate::types::RecordExpirySpecification> {
+        self.record_expiry_specification.as_ref()
+    }
 }
 impl BatchCreateMemoryRecordsInput {
     /// Creates a new builder-style object to manufacture [`BatchCreateMemoryRecordsInput`](crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsInput).
@@ -40,6 +46,7 @@ pub struct BatchCreateMemoryRecordsInputBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::MemoryRecordCreateInput>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) record_expiry_specification: ::std::option::Option<crate::types::RecordExpirySpecification>,
 }
 impl BatchCreateMemoryRecordsInputBuilder {
     /// <p>The unique ID of the memory resource where records will be created.</p>
@@ -91,6 +98,20 @@ impl BatchCreateMemoryRecordsInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn record_expiry_specification(mut self, input: crate::types::RecordExpirySpecification) -> Self {
+        self.record_expiry_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn set_record_expiry_specification(mut self, input: ::std::option::Option<crate::types::RecordExpirySpecification>) -> Self {
+        self.record_expiry_specification = input;
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn get_record_expiry_specification(&self) -> &::std::option::Option<crate::types::RecordExpirySpecification> {
+        &self.record_expiry_specification
+    }
     /// Consumes the builder and constructs a [`BatchCreateMemoryRecordsInput`](crate::operation::batch_create_memory_records::BatchCreateMemoryRecordsInput).
     pub fn build(
         self,
@@ -102,6 +123,7 @@ impl BatchCreateMemoryRecordsInputBuilder {
             memory_id: self.memory_id,
             records: self.records,
             client_token: self.client_token,
+            record_expiry_specification: self.record_expiry_specification,
         })
     }
 }

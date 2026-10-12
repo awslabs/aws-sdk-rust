@@ -22,7 +22,7 @@ impl crate::operation::list_aliases::builders::ListAliasesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListAliases`.
 ///
-/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a> for a Lambda function.</p>
+/// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a> for a Lambda Event Function.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAliasesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

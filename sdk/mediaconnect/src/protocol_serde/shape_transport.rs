@@ -140,6 +140,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ndiAudioReferenceLevel" => {
+                            builder = builder.set_ndi_audio_reference_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

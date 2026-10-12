@@ -2071,6 +2071,34 @@ impl From<crate::operation::create_training_plan::CreateTrainingPlanError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_session::CreateTrainingSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_training_session::CreateTrainingSessionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_training_session::CreateTrainingSessionError> for Error {
+    fn from(err: crate::operation::create_training_session::CreateTrainingSessionError) -> Self {
+        match err {
+            crate::operation::create_training_session::CreateTrainingSessionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_training_session::CreateTrainingSessionError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_training_session::CreateTrainingSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::create_training_session::CreateTrainingSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_transform_job::CreateTransformJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3611,6 +3639,30 @@ impl From<crate::operation::delete_training_job::DeleteTrainingJobError> for Err
             crate::operation::delete_training_job::DeleteTrainingJobError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::delete_training_job::DeleteTrainingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_training_job::DeleteTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_session::DeleteTrainingSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_training_session::DeleteTrainingSessionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_training_session::DeleteTrainingSessionError> for Error {
+    fn from(err: crate::operation::delete_training_session::DeleteTrainingSessionError) -> Self {
+        match err {
+            crate::operation::delete_training_session::DeleteTrainingSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_training_session::DeleteTrainingSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5509,6 +5561,31 @@ impl From<crate::operation::describe_training_plan_extension_history::DescribeTr
             crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_training_session::DescribeTrainingSessionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_training_session::DescribeTrainingSessionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_training_session::DescribeTrainingSessionError> for Error {
+    fn from(err: crate::operation::describe_training_session::DescribeTrainingSessionError) -> Self {
+        match err {
+            crate::operation::describe_training_session::DescribeTrainingSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_training_session::DescribeTrainingSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7937,6 +8014,27 @@ impl From<crate::operation::list_training_plans::ListTrainingPlansError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_training_sessions::ListTrainingSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_training_sessions::ListTrainingSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_training_sessions::ListTrainingSessionsError> for Error {
+    fn from(err: crate::operation::list_training_sessions::ListTrainingSessionsError) -> Self {
+        match err {
+            crate::operation::list_training_sessions::ListTrainingSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_transform_jobs::ListTransformJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8999,6 +9097,28 @@ impl From<crate::operation::stop_training_job::StopTrainingJobError> for Error {
         match err {
             crate::operation::stop_training_job::StopTrainingJobError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::stop_training_job::StopTrainingJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_training_session::StopTrainingSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_training_session::StopTrainingSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_training_session::StopTrainingSessionError> for Error {
+    fn from(err: crate::operation::stop_training_session::StopTrainingSessionError) -> Self {
+        match err {
+            crate::operation::stop_training_session::StopTrainingSessionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::stop_training_session::StopTrainingSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

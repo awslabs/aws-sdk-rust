@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkConnectorInput {
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The updated network configuration for the connector. Provide the full <code>VpcEgressConfiguration</code> including all subnet IDs and security group IDs — this replaces the existing configuration.</p>
     pub configuration: ::std::option::Option<crate::types::NetworkConnectorConfiguration>,
@@ -13,7 +13,7 @@ pub struct UpdateNetworkConnectorInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNetworkConnectorInput {
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct UpdateNetworkConnectorInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateNetworkConnectorInputBuilder {
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// A flexible identifier that accepts a network connector ID, name, or ARN
+    /// <p>The identifier of the network connector to update. You can specify the connector ID, name, or full ARN.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

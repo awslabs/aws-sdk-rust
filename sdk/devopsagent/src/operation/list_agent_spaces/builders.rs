@@ -142,4 +142,18 @@ impl ListAgentSpacesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>How much data to include in the response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.inner = self.inner.included_data(input);
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.inner = self.inner.set_included_data(input);
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        self.inner.get_included_data()
+    }
 }

@@ -18,6 +18,7 @@
 ///     NetworkConnectorStateReasonCode::InternalError => { /* ... */ },
 ///     NetworkConnectorStateReasonCode::InvalidSecurityGroup => { /* ... */ },
 ///     NetworkConnectorStateReasonCode::InvalidSubnet => { /* ... */ },
+///     NetworkConnectorStateReasonCode::SecurityGroupsPerInterfaceLimitExceeded => { /* ... */ },
 ///     NetworkConnectorStateReasonCode::SubnetOutOfIpAddresses => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,7 +42,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>A machine-readable code indicating why the connector reached its current state. Use this for programmatic error handling.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -60,6 +61,8 @@ pub enum NetworkConnectorStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidSubnet,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityGroupsPerInterfaceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for NetworkConnectorStateReasonCode {
             "InternalError" => NetworkConnectorStateReasonCode::InternalError,
             "InvalidSecurityGroup" => NetworkConnectorStateReasonCode::InvalidSecurityGroup,
             "InvalidSubnet" => NetworkConnectorStateReasonCode::InvalidSubnet,
+            "SecurityGroupsPerInterfaceLimitExceeded" => NetworkConnectorStateReasonCode::SecurityGroupsPerInterfaceLimitExceeded,
             "SubnetOutOfIPAddresses" => NetworkConnectorStateReasonCode::SubnetOutOfIpAddresses,
             other => NetworkConnectorStateReasonCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,6 +100,7 @@ impl NetworkConnectorStateReasonCode {
             NetworkConnectorStateReasonCode::InternalError => "InternalError",
             NetworkConnectorStateReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
             NetworkConnectorStateReasonCode::InvalidSubnet => "InvalidSubnet",
+            NetworkConnectorStateReasonCode::SecurityGroupsPerInterfaceLimitExceeded => "SecurityGroupsPerInterfaceLimitExceeded",
             NetworkConnectorStateReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
             NetworkConnectorStateReasonCode::Unknown(value) => value.as_str(),
         }
@@ -109,6 +114,7 @@ impl NetworkConnectorStateReasonCode {
             "InternalError",
             "InvalidSecurityGroup",
             "InvalidSubnet",
+            "SecurityGroupsPerInterfaceLimitExceeded",
             "SubnetOutOfIPAddresses",
         ]
     }
@@ -139,6 +145,7 @@ impl ::std::fmt::Display for NetworkConnectorStateReasonCode {
             NetworkConnectorStateReasonCode::InternalError => write!(f, "InternalError"),
             NetworkConnectorStateReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
             NetworkConnectorStateReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
+            NetworkConnectorStateReasonCode::SecurityGroupsPerInterfaceLimitExceeded => write!(f, "SecurityGroupsPerInterfaceLimitExceeded"),
             NetworkConnectorStateReasonCode::SubnetOutOfIpAddresses => write!(f, "SubnetOutOfIPAddresses"),
             NetworkConnectorStateReasonCode::Unknown(value) => write!(f, "{value}"),
         }

@@ -8,6 +8,8 @@ pub struct VpcConfig {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>List of subnet IDs. Maximum of 16 subnets allowed.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.</p>
+    pub vpc_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcConfig {
     /// <p>List of security group IDs. Maximum of 5 security groups allowed.</p>
@@ -21,6 +23,10 @@ impl VpcConfig {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
         self.subnet_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.</p>
+    pub fn vpc_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_owner_account_id.as_deref()
     }
 }
 impl VpcConfig {
@@ -36,6 +42,7 @@ impl VpcConfig {
 pub struct VpcConfigBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_owner_account_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcConfigBuilder {
     /// Appends an item to `security_group_ids`.
@@ -78,11 +85,26 @@ impl VpcConfigBuilder {
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }
+    /// <p>The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.</p>
+    pub fn vpc_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.</p>
+    pub fn set_vpc_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.vpc_owner_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID of the cross-account VPC owner for RAM-shared VPC configurations.</p>
+    pub fn get_vpc_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.vpc_owner_account_id
+    }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {
         crate::types::VpcConfig {
             security_group_ids: self.security_group_ids,
             subnet_ids: self.subnet_ids,
+            vpc_owner_account_id: self.vpc_owner_account_id,
         }
     }
 }

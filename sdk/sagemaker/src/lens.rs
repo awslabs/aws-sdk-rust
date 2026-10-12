@@ -819,6 +819,16 @@ pub(crate) fn reflens_list_training_plans_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_training_sessions_output_output_next_token(
+    input: &crate::operation::list_training_sessions::ListTrainingSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_transform_jobs_output_output_next_token(
     input: &crate::operation::list_transform_jobs::ListTransformJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1473,6 +1483,13 @@ pub(crate) fn lens_list_training_plans_output_output_training_plan_summaries(
     input: crate::operation::list_training_plans::ListTrainingPlansOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanSummary>> {
     let input = input.training_plan_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_training_sessions_output_output_training_session_summaries(
+    input: crate::operation::list_training_sessions::ListTrainingSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrainingSessionSummary>> {
+    let input = input.training_session_summaries?;
     ::std::option::Option::Some(input)
 }
 

@@ -34,6 +34,12 @@ pub fn ser_provider_resource_capabilities(
             crate::protocol_serde::shape_azure_dev_ops_resource_capabilities::ser_azure_dev_ops_resource_capabilities(&mut object_5, inner)?;
             object_5.finish();
         }
+        crate::types::ProviderResourceCapabilities::Jira(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_4.key("jira").start_object();
+            crate::protocol_serde::shape_jira_resource_capabilities::ser_jira_resource_capabilities(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::ProviderResourceCapabilities::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ProviderResourceCapabilities",
@@ -119,6 +125,10 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azureDevOps' cannot be null")
                             })?,
+                        )),
+                        "jira" => Some(crate::types::ProviderResourceCapabilities::Jira(
+                            crate::protocol_serde::shape_jira_resource_capabilities::de_jira_resource_capabilities(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'jira' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -260,11 +260,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetWebAccount
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetWebAccountSettingsError {
-    /// <p>You do not have sufficient permissions to perform this operation.</p>
+    /// <p>You don't have permission to perform this operation. Check the IAM policies for your identity and any resource-based policy on the web function.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>An internal server error occurred. Try again later.</p>
+    /// <p>The request failed because of an internal error in the service. Retry the request. If the error persists, open a support case.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was throttled. Reduce the frequency of requests and try again.</p>
+    /// <p>The request was denied because it exceeded the request rate that Lambda allows for your account. Reduce the frequency of requests and retry with exponential backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

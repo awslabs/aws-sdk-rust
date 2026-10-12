@@ -25,6 +25,8 @@
 //!
 //! Lambda is a compute service that lets you run code without provisioning or managing servers. Lambda runs your code on a high-availability compute infrastructure and performs all of the administration of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring and logging. With Lambda, you can run code for virtually any type of application or backend service. For more information about the Lambda service, see [What is Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) in the __Lambda Developer Guide__.
 //!
+//! Lambda Event Functions, previously known as Lambda functions, run your code in response to events and API calls. Event Functions is a documentation name only. In this API, the Amazon Web Services SDKs, and the CLI, Event Functions are still called _functions_, for example in CreateFunction and Invoke. You don't need to change any code.
+//!
 //! The _Lambda API Reference_ provides information about each of the API methods, including details about the parameters in each API request and response.
 //!
 //! You can use Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools to access the API. For installation instructions, see [Tools for Amazon Web Services](http://aws.amazon.com/tools/).
@@ -60,7 +62,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-lambda = "1.150.0"
+//! aws-sdk-lambda = "1.150.1"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

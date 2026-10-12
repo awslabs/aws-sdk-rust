@@ -779,6 +779,8 @@ pub use crate::types::_harness_hook_target::HarnessHookTarget;
 
 pub use crate::types::_memory_record_schema::MemoryRecordSchema;
 
+pub use crate::types::_record_expiry_specification::RecordExpirySpecification;
+
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInput;
@@ -852,6 +854,8 @@ pub use crate::types::_harness_hook_lambda_target::HarnessHookLambdaTarget;
 pub use crate::types::_harness_hook_sns_target::HarnessHookSnsTarget;
 
 pub use crate::types::_harness_hook_event_bridge_target::HarnessHookEventBridgeTarget;
+
+pub use crate::types::_record_expiry_action::RecordExpiryAction;
 
 pub use crate::types::_semantic_override_configuration_input::SemanticOverrideConfigurationInput;
 
@@ -1800,6 +1804,10 @@ mod _rate_config;
 mod _rating_scale;
 
 mod _reasoning_configuration;
+
+mod _record_expiry_action;
+
+mod _record_expiry_specification;
 
 mod _recording_config;
 

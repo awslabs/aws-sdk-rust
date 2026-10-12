@@ -231,6 +231,8 @@ pub use crate::types::_workflow_run::WorkflowRun;
 
 pub use crate::types::_data_quality_result_filter_criteria::DataQualityResultFilterCriteria;
 
+pub use crate::types::_data_quality_results_v2_filter_criteria::DataQualityResultsV2FilterCriteria;
+
 pub use crate::types::_data_quality_rule_recommendation_run_filter::DataQualityRuleRecommendationRunFilter;
 
 pub use crate::types::_data_quality_ruleset_evaluation_run_filter::DataQualityRulesetEvaluationRunFilter;
@@ -238,6 +240,10 @@ pub use crate::types::_data_quality_ruleset_evaluation_run_filter::DataQualityRu
 pub use crate::types::_data_quality_ruleset_filter_criteria::DataQualityRulesetFilterCriteria;
 
 pub use crate::types::_timestamp_filter::TimestampFilter;
+
+pub use crate::types::_data_quality_configuration_v2::DataQualityConfigurationV2;
+
+pub use crate::types::_data_quality_telemetry::DataQualityTelemetry;
 
 pub use crate::types::_inclusion_annotation_value::InclusionAnnotationValue;
 
@@ -294,6 +300,8 @@ pub use crate::types::_table_version_error::TableVersionError;
 pub use crate::types::_custom_entity_type::CustomEntityType;
 
 pub use crate::types::_data_quality_result::DataQualityResult;
+
+pub use crate::types::_data_quality_result_v2_item::DataQualityResultV2Item;
 
 pub use crate::types::_data_quality_ruleset_evaluation_run::DataQualityRulesetEvaluationRun;
 
@@ -543,6 +551,8 @@ pub use crate::types::_iceberg_table_metadata::IcebergTableMetadata;
 
 pub use crate::types::_table_status::TableStatus;
 
+pub use crate::types::_rls_properties::RlsProperties;
+
 pub use crate::types::_table_optimizer_run::TableOptimizerRun;
 
 pub use crate::types::_configuration_source::ConfigurationSource;
@@ -579,6 +589,8 @@ pub use crate::types::_crawler_history::CrawlerHistory;
 
 pub use crate::types::_data_quality_result_description::DataQualityResultDescription;
 
+pub use crate::types::_data_quality_results_v2_description::DataQualityResultsV2Description;
+
 pub use crate::types::_data_quality_rule_recommendation_run_description::DataQualityRuleRecommendationRunDescription;
 
 pub use crate::types::_data_quality_ruleset_evaluation_run_description::DataQualityRulesetEvaluationRunDescription;
@@ -614,6 +626,8 @@ pub use crate::types::_schema_list_item::SchemaListItem;
 pub use crate::types::_schema_version_list_item::SchemaVersionListItem;
 
 pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
+
+pub use crate::types::_data_quality_engine::DataQualityEngine;
 
 pub use crate::types::_metadata_info::MetadataInfo;
 
@@ -1515,9 +1529,13 @@ mod _data_quality_aggregated_metrics;
 
 mod _data_quality_analyzer_result;
 
+mod _data_quality_configuration_v2;
+
 mod _data_quality_encryption;
 
 mod _data_quality_encryption_mode;
+
+mod _data_quality_engine;
 
 mod _data_quality_evaluation_run_additional_run_options;
 
@@ -1534,6 +1552,12 @@ mod _data_quality_result;
 mod _data_quality_result_description;
 
 mod _data_quality_result_filter_criteria;
+
+mod _data_quality_result_v2_item;
+
+mod _data_quality_results_v2_description;
+
+mod _data_quality_results_v2_filter_criteria;
 
 mod _data_quality_rule_recommendation_run_additional_run_options;
 
@@ -1558,6 +1582,8 @@ mod _data_quality_ruleset_filter_criteria;
 mod _data_quality_ruleset_list_details;
 
 mod _data_quality_target_table;
+
+mod _data_quality_telemetry;
 
 mod _data_source;
 
@@ -2110,6 +2136,8 @@ mod _result_type_enum;
 mod _retention_configuration;
 
 mod _retention_metrics;
+
+mod _rls_properties;
 
 mod _route;
 

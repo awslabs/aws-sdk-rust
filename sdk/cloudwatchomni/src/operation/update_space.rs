@@ -195,6 +195,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateSpaceTe
                 captured.insert("name", value);
             }
         }
+        if requested.should_capture("agentCoreEvaluationRoleArn") {
+            if let ::std::option::Option::Some(value) = input.agent_core_evaluation_role_arn.as_deref() {
+                captured.insert("agentCoreEvaluationRoleArn", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

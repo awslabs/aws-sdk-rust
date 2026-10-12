@@ -40,7 +40,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The lifecycle state of a network connector. A connector is <code>PENDING</code> while resources provision, <code>ACTIVE</code> when ready for use, <code>INACTIVE</code> when temporarily unavailable, <code>FAILED</code> when creation or update fails, <code>DELETING</code> while resources are cleaned up, and <code>DELETE_FAILED</code> when deletion fails.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

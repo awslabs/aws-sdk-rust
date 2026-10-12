@@ -389,6 +389,8 @@ mod create_training_job;
 
 mod create_training_plan;
 
+mod create_training_session;
+
 mod create_transform_job;
 
 mod create_trial;
@@ -542,6 +544,8 @@ mod delete_tags;
 
 mod delete_training_job;
 
+mod delete_training_session;
+
 mod delete_trial;
 
 mod delete_trial_component;
@@ -693,6 +697,8 @@ mod describe_training_job;
 mod describe_training_plan;
 
 mod describe_training_plan_extension_history;
+
+mod describe_training_session;
 
 mod describe_transform_job;
 
@@ -896,6 +902,8 @@ mod list_training_jobs_for_hyper_parameter_tuning_job;
 
 mod list_training_plans;
 
+mod list_training_sessions;
+
 mod list_transform_jobs;
 
 mod list_trial_components;
@@ -979,6 +987,8 @@ mod stop_pipeline_execution;
 mod stop_processing_job;
 
 mod stop_training_job;
+
+mod stop_training_session;
 
 mod stop_transform_job;
 

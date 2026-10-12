@@ -22,7 +22,7 @@ impl crate::operation::get_function_configuration::builders::GetFunctionConfigur
 }
 /// Fluent builder constructing a request to `GetFunctionConfiguration`.
 ///
-/// <p>Returns the version-specific settings of a Lambda function or version. The output includes only options that can vary between versions of a function. To modify these settings, use <code>UpdateFunctionConfiguration</code>.</p>
+/// <p>Returns the version-specific settings of a Lambda Event Function or version. The output includes only options that can vary between versions of a function. To modify these settings, use <code>UpdateFunctionConfiguration</code>.</p>
 /// <p>To get all of a function's details, including function-level settings, use <code>GetFunction</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFunctionConfigurationFluentBuilder {

@@ -7,6 +7,8 @@ pub use crate::types::_id_c_configuration::IdCConfigurationBuilder;
 
 pub use crate::types::_verification_details::VerificationDetailsBuilder;
 
+pub use crate::types::_issue_destination::IssueDestinationBuilder;
+
 pub use crate::types::_assets::AssetsBuilder;
 
 pub use crate::types::_cloud_watch_log::CloudWatchLogBuilder;
@@ -48,6 +50,12 @@ pub use crate::types::_pentest::PentestBuilder;
 pub use crate::types::_delete_pentest_failure::DeletePentestFailureBuilder;
 
 pub use crate::types::_delete_threat_model_failure::DeleteThreatModelFailureBuilder;
+
+pub use crate::types::_batch_disassociate_finding_issue_error::BatchDisassociateFindingIssueErrorBuilder;
+
+pub use crate::types::_batch_export_finding_result::BatchExportFindingResultBuilder;
+
+pub use crate::types::_batch_export_finding_error::BatchExportFindingErrorBuilder;
 
 pub use crate::types::_artifact_metadata_item::ArtifactMetadataItemBuilder;
 
@@ -139,6 +147,8 @@ pub use crate::types::_azure_dev_ops_integration_input::AzureDevOpsIntegrationIn
 
 pub use crate::types::_bitbucket_data_center_integration_input::BitbucketDataCenterIntegrationInputBuilder;
 
+pub use crate::types::_jira_integration_input::JiraIntegrationInputBuilder;
+
 pub use crate::types::_private_connection_summary::PrivateConnectionSummaryBuilder;
 
 pub use crate::types::_service_managed_input::ServiceManagedInputBuilder;
@@ -150,6 +160,8 @@ pub use crate::types::_security_requirement_pack_summary::SecurityRequirementPac
 pub use crate::types::_target_domain_summary::TargetDomainSummaryBuilder;
 
 pub use crate::types::_target_domain::TargetDomainBuilder;
+
+pub use crate::types::_linked_issue::LinkedIssueBuilder;
 
 pub use crate::types::_error_information::ErrorInformationBuilder;
 
@@ -199,6 +211,8 @@ pub use crate::types::_confluence_document_metadata::ConfluenceDocumentMetadataB
 
 pub use crate::types::_azure_dev_ops_repository_metadata::AzureDevOpsRepositoryMetadataBuilder;
 
+pub use crate::types::_jira_project_metadata::JiraProjectMetadataBuilder;
+
 pub use crate::types::_git_hub_resource_capabilities::GitHubResourceCapabilitiesBuilder;
 
 pub use crate::types::_git_lab_resource_capabilities::GitLabResourceCapabilitiesBuilder;
@@ -208,6 +222,8 @@ pub use crate::types::_bitbucket_resource_capabilities::BitbucketResourceCapabil
 pub use crate::types::_confluence_resource_capabilities::ConfluenceResourceCapabilitiesBuilder;
 
 pub use crate::types::_azure_dev_ops_resource_capabilities::AzureDevOpsResourceCapabilitiesBuilder;
+
+pub use crate::types::_jira_resource_capabilities::JiraResourceCapabilitiesBuilder;
 
 pub use crate::types::_user_metadata::UserMetadataBuilder;
 
@@ -220,6 +236,8 @@ pub use crate::types::_bitbucket_repository_resource::BitbucketRepositoryResourc
 pub use crate::types::_confluence_document_resource::ConfluenceDocumentResourceBuilder;
 
 pub use crate::types::_azure_dev_ops_repository_resource::AzureDevOpsRepositoryResourceBuilder;
+
+pub use crate::types::_jira_project_resource::JiraProjectResourceBuilder;
 
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetailsBuilder;
 

@@ -225,6 +225,8 @@ pub use crate::types::_mcp_server_api_key_config::McpServerApiKeyConfigBuilder;
 
 pub use crate::types::_mcp_server_bearer_token_config::McpServerBearerTokenConfigBuilder;
 
+pub use crate::types::_mcp_server_custom_headers_config::McpServerCustomHeadersConfigBuilder;
+
 pub use crate::types::_new_relic_api_key_config::NewRelicApiKeyConfigBuilder;
 
 pub use crate::types::_pager_duty_o_auth_client_credentials_config::PagerDutyOAuthClientCredentialsConfigBuilder;

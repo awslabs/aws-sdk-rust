@@ -7,8 +7,12 @@ pub struct DeleteNetworkConnectorOutput {
     pub arn: ::std::string::String,
     /// <p>The name of the network connector.</p>
     pub name: ::std::string::String,
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub id: ::std::string::String,
+    /// <p>The qualified ARN of the connector version affected by this request, including the immutable version suffix.</p>
+    pub version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the connector version affected by this request.</p>
+    pub version: ::std::option::Option<i64>,
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub configuration: ::std::option::Option<crate::types::NetworkConnectorConfiguration>,
     /// <p>The ARN of the IAM role that Lambda uses to manage the underlying ENI resources for this connector.</p>
@@ -28,10 +32,18 @@ impl DeleteNetworkConnectorOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
+    }
+    /// <p>The qualified ARN of the connector version affected by this request, including the immutable version suffix.</p>
+    pub fn version_arn(&self) -> ::std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The version number of the connector version affected by this request.</p>
+    pub fn version(&self) -> ::std::option::Option<i64> {
+        self.version
     }
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::NetworkConnectorConfiguration> {
@@ -65,6 +77,8 @@ pub struct DeleteNetworkConnectorOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
     pub(crate) configuration: ::std::option::Option<crate::types::NetworkConnectorConfiguration>,
     pub(crate) operator_role: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::NetworkConnectorState>,
@@ -101,20 +115,48 @@ impl DeleteNetworkConnectorOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
+    }
+    /// <p>The qualified ARN of the connector version affected by this request, including the immutable version suffix.</p>
+    pub fn version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The qualified ARN of the connector version affected by this request, including the immutable version suffix.</p>
+    pub fn set_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_arn = input;
+        self
+    }
+    /// <p>The qualified ARN of the connector version affected by this request, including the immutable version suffix.</p>
+    pub fn get_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_arn
+    }
+    /// <p>The version number of the connector version affected by this request.</p>
+    pub fn version(mut self, input: i64) -> Self {
+        self.version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version number of the connector version affected by this request.</p>
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.version = input;
+        self
+    }
+    /// <p>The version number of the connector version affected by this request.</p>
+    pub fn get_version(&self) -> &::std::option::Option<i64> {
+        &self.version
     }
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub fn configuration(mut self, input: crate::types::NetworkConnectorConfiguration) -> Self {
@@ -197,6 +239,8 @@ impl DeleteNetworkConnectorOutputBuilder {
                     "id was not specified but it is required when building DeleteNetworkConnectorOutput",
                 )
             })?,
+            version_arn: self.version_arn,
+            version: self.version,
             configuration: self.configuration,
             operator_role: self.operator_role,
             state: self.state,

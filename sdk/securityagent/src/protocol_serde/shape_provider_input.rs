@@ -40,6 +40,12 @@ pub fn ser_provider_input(
             crate::protocol_serde::shape_bitbucket_data_center_integration_input::ser_bitbucket_data_center_integration_input(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::ProviderInput::Jira(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_2.key("jira").start_object();
+            crate::protocol_serde::shape_jira_integration_input::ser_jira_integration_input(&mut object_7, inner)?;
+            object_7.finish();
+        }
         crate::types::ProviderInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ProviderInput"))
         }

@@ -565,6 +565,43 @@ impl From<crate::operation::batch_get_data_quality_result::BatchGetDataQualityRe
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error> for Error {
+    fn from(err: crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error) -> Self {
+        match err {
+            crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::batch_get_data_quality_result_v2::BatchGetDataQualityResultV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError,
@@ -4584,6 +4621,42 @@ impl From<crate::operation::get_data_quality_result::GetDataQualityResultError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error> for Error {
+    fn from(err: crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error) -> Self {
+        match err {
+            crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::get_data_quality_result_v2::GetDataQualityResultV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -6706,6 +6779,39 @@ impl From<crate::operation::list_data_quality_results::ListDataQualityResultsErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error> for Error {
+    fn from(err: crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error) -> Self {
+        match err {
+            crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -7533,6 +7639,45 @@ impl From<crate::operation::modify_integration::ModifyIntegrationError> for Erro
             crate::operation::modify_integration::ModifyIntegrationError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::modify_integration::ModifyIntegrationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::modify_integration::ModifyIntegrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error> for Error {
+    fn from(err: crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error) -> Self {
+        match err {
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::publish_data_quality_result_v2::PublishDataQualityResultV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

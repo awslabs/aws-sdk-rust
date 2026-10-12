@@ -155,4 +155,18 @@ impl BatchCreateMemoryRecordsFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn record_expiry_specification(mut self, input: crate::types::RecordExpirySpecification) -> Self {
+        self.inner = self.inner.record_expiry_specification(input);
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn set_record_expiry_specification(mut self, input: ::std::option::Option<crate::types::RecordExpirySpecification>) -> Self {
+        self.inner = self.inner.set_record_expiry_specification(input);
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record created by this request. Set <code>recordExpiryDurationDays</code> to the number of days after which the records expire. Only the expiry provided here is applied; the records' strategy association has no effect on their expiry. If you do not provide this value, the records do not expire. The <code>REMOVE</code> action does not apply when creating records.</p>
+    pub fn get_record_expiry_specification(&self) -> &::std::option::Option<crate::types::RecordExpirySpecification> {
+        self.inner.get_record_expiry_specification()
+    }
 }

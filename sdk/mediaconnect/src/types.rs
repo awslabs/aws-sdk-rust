@@ -441,6 +441,8 @@ pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigura
 
 pub use crate::types::_transport_stream::TransportStream;
 
+pub use crate::types::_color_information::ColorInformation;
+
 pub use crate::types::_frame_resolution::FrameResolution;
 
 pub use crate::types::_interface_request::InterfaceRequest;
@@ -456,6 +458,12 @@ pub use crate::types::_forward_error_correction_state::ForwardErrorCorrectionSta
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfiguration;
 
 pub use crate::types::_tls_encryption::TlsEncryption;
+
+pub use crate::types::_video_colorimetry::VideoColorimetry;
+
+pub use crate::types::_video_transfer_characteristics::VideoTransferCharacteristics;
+
+pub use crate::types::_video_matrix_coefficients::VideoMatrixCoefficients;
 
 pub use crate::types::_interface::Interface;
 
@@ -518,6 +526,8 @@ mod _bridge_placement;
 mod _bridge_source;
 
 mod _bridge_state;
+
+mod _color_information;
 
 mod _colorimetry;
 
@@ -919,7 +929,13 @@ mod _update_ingress_gateway_bridge_request;
 
 mod _update_maintenance;
 
+mod _video_colorimetry;
+
+mod _video_matrix_coefficients;
+
 mod _video_monitoring_setting;
+
+mod _video_transfer_characteristics;
 
 mod _vpc_interface;
 

@@ -8,9 +8,9 @@ pub struct Metadata {
     pub metrics: ::std::option::Option<::std::vec::Vec<crate::types::MetricMetadata>>,
     /// Semantic description of the node. Absent on an edge, because semantics describe a service rather than a relationship.
     pub semantics: ::std::option::Option<crate::types::NodeSemantics>,
-    /// Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an AND of exact store column -&gt; raw values. Node-level (edges carry only traces). Populated when the request sets includeMetadata; derived labels (logSourceType) are added by the service projection, not stored here.
+    /// LOGS query selectors: a list of blocks to OR together, each block an AND of exact store column to raw value. Present on node metadata only — edges carry trace selectors. Returned when the request sets includeMetadata.
     pub logs: ::std::option::Option<::std::vec::Vec<crate::types::LogMetadata>>,
-    /// Per-signal TRACES query selectors (same block shape as logs). Present on both node and edge metadata. serviceName is derived at the service projection, not stored here.
+    /// TRACES query selectors, same block shape as the logs selectors. Present on both node and edge metadata. Returned when the request sets includeMetadata.
     pub traces: ::std::option::Option<::std::vec::Vec<crate::types::TraceMetadata>>,
 }
 impl Metadata {
@@ -24,13 +24,13 @@ impl Metadata {
     pub fn semantics(&self) -> ::std::option::Option<&crate::types::NodeSemantics> {
         self.semantics.as_ref()
     }
-    /// Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an AND of exact store column -&gt; raw values. Node-level (edges carry only traces). Populated when the request sets includeMetadata; derived labels (logSourceType) are added by the service projection, not stored here.
+    /// LOGS query selectors: a list of blocks to OR together, each block an AND of exact store column to raw value. Present on node metadata only — edges carry trace selectors. Returned when the request sets includeMetadata.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.logs.is_none()`.
     pub fn logs(&self) -> &[crate::types::LogMetadata] {
         self.logs.as_deref().unwrap_or_default()
     }
-    /// Per-signal TRACES query selectors (same block shape as logs). Present on both node and edge metadata. serviceName is derived at the service projection, not stored here.
+    /// TRACES query selectors, same block shape as the logs selectors. Present on both node and edge metadata. Returned when the request sets includeMetadata.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.traces.is_none()`.
     pub fn traces(&self) -> &[crate::types::TraceMetadata] {
@@ -92,19 +92,19 @@ impl MetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_logs`](Self::set_logs).
     ///
-    /// Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an AND of exact store column -&gt; raw values. Node-level (edges carry only traces). Populated when the request sets includeMetadata; derived labels (logSourceType) are added by the service projection, not stored here.
+    /// LOGS query selectors: a list of blocks to OR together, each block an AND of exact store column to raw value. Present on node metadata only — edges carry trace selectors. Returned when the request sets includeMetadata.
     pub fn logs(mut self, input: crate::types::LogMetadata) -> Self {
         let mut v = self.logs.unwrap_or_default();
         v.push(input);
         self.logs = ::std::option::Option::Some(v);
         self
     }
-    /// Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an AND of exact store column -&gt; raw values. Node-level (edges carry only traces). Populated when the request sets includeMetadata; derived labels (logSourceType) are added by the service projection, not stored here.
+    /// LOGS query selectors: a list of blocks to OR together, each block an AND of exact store column to raw value. Present on node metadata only — edges carry trace selectors. Returned when the request sets includeMetadata.
     pub fn set_logs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LogMetadata>>) -> Self {
         self.logs = input;
         self
     }
-    /// Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an AND of exact store column -&gt; raw values. Node-level (edges carry only traces). Populated when the request sets includeMetadata; derived labels (logSourceType) are added by the service projection, not stored here.
+    /// LOGS query selectors: a list of blocks to OR together, each block an AND of exact store column to raw value. Present on node metadata only — edges carry trace selectors. Returned when the request sets includeMetadata.
     pub fn get_logs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LogMetadata>> {
         &self.logs
     }
@@ -112,19 +112,19 @@ impl MetadataBuilder {
     ///
     /// To override the contents of this collection use [`set_traces`](Self::set_traces).
     ///
-    /// Per-signal TRACES query selectors (same block shape as logs). Present on both node and edge metadata. serviceName is derived at the service projection, not stored here.
+    /// TRACES query selectors, same block shape as the logs selectors. Present on both node and edge metadata. Returned when the request sets includeMetadata.
     pub fn traces(mut self, input: crate::types::TraceMetadata) -> Self {
         let mut v = self.traces.unwrap_or_default();
         v.push(input);
         self.traces = ::std::option::Option::Some(v);
         self
     }
-    /// Per-signal TRACES query selectors (same block shape as logs). Present on both node and edge metadata. serviceName is derived at the service projection, not stored here.
+    /// TRACES query selectors, same block shape as the logs selectors. Present on both node and edge metadata. Returned when the request sets includeMetadata.
     pub fn set_traces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TraceMetadata>>) -> Self {
         self.traces = input;
         self
     }
-    /// Per-signal TRACES query selectors (same block shape as logs). Present on both node and edge metadata. serviceName is derived at the service projection, not stored here.
+    /// TRACES query selectors, same block shape as the logs selectors. Present on both node and edge metadata. Returned when the request sets includeMetadata.
     pub fn get_traces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TraceMetadata>> {
         &self.traces
     }

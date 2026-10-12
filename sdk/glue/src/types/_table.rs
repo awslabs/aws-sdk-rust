@@ -73,6 +73,8 @@ pub struct Table {
     pub iceberg_table_metadata: ::std::option::Option<crate::types::IcebergTableMetadata>,
     /// <p>Indicates the the state of an asynchronous change to a table.</p>
     pub status: ::std::option::Option<crate::types::TableStatus>,
+    /// <p>A <code>RLSProperties</code> structure that describes the default row-level security policy of the table.</p>
+    pub rls_properties: ::std::option::Option<crate::types::RlsProperties>,
 }
 impl Table {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -199,6 +201,10 @@ impl Table {
     pub fn status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
         self.status.as_ref()
     }
+    /// <p>A <code>RLSProperties</code> structure that describes the default row-level security policy of the table.</p>
+    pub fn rls_properties(&self) -> ::std::option::Option<&crate::types::RlsProperties> {
+        self.rls_properties.as_ref()
+    }
 }
 impl Table {
     /// Creates a new builder-style object to manufacture [`Table`](crate::types::Table).
@@ -237,6 +243,7 @@ pub struct TableBuilder {
     pub(crate) is_materialized_view: ::std::option::Option<bool>,
     pub(crate) iceberg_table_metadata: ::std::option::Option<crate::types::IcebergTableMetadata>,
     pub(crate) status: ::std::option::Option<crate::types::TableStatus>,
+    pub(crate) rls_properties: ::std::option::Option<crate::types::RlsProperties>,
 }
 impl TableBuilder {
     /// <p>The table name. For Hive compatibility, this must be entirely lowercase.</p>
@@ -667,6 +674,20 @@ impl TableBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TableStatus> {
         &self.status
     }
+    /// <p>A <code>RLSProperties</code> structure that describes the default row-level security policy of the table.</p>
+    pub fn rls_properties(mut self, input: crate::types::RlsProperties) -> Self {
+        self.rls_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A <code>RLSProperties</code> structure that describes the default row-level security policy of the table.</p>
+    pub fn set_rls_properties(mut self, input: ::std::option::Option<crate::types::RlsProperties>) -> Self {
+        self.rls_properties = input;
+        self
+    }
+    /// <p>A <code>RLSProperties</code> structure that describes the default row-level security policy of the table.</p>
+    pub fn get_rls_properties(&self) -> &::std::option::Option<crate::types::RlsProperties> {
+        &self.rls_properties
+    }
     /// Consumes the builder and constructs a [`Table`](crate::types::Table).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::TableBuilder::name)
@@ -703,6 +724,7 @@ impl TableBuilder {
             is_materialized_view: self.is_materialized_view,
             iceberg_table_metadata: self.iceberg_table_metadata,
             status: self.status,
+            rls_properties: self.rls_properties,
         })
     }
 }

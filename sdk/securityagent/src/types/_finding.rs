@@ -56,6 +56,8 @@ pub struct Finding {
     pub revalidation_job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
     pub original_finding_id: ::std::option::Option<::std::string::String>,
+    /// <p>The issue in a third-party issue tracker that this finding has been exported to.</p>
+    pub linked_issue: ::std::option::Option<crate::types::LinkedIssue>,
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated, in UTC format.</p>
@@ -172,6 +174,10 @@ impl Finding {
     pub fn original_finding_id(&self) -> ::std::option::Option<&str> {
         self.original_finding_id.as_deref()
     }
+    /// <p>The issue in a third-party issue tracker that this finding has been exported to.</p>
+    pub fn linked_issue(&self) -> ::std::option::Option<&crate::types::LinkedIssue> {
+        self.linked_issue.as_ref()
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -218,6 +224,7 @@ pub struct FindingBuilder {
     pub(crate) alignment_rationale: ::std::option::Option<::std::string::String>,
     pub(crate) revalidation_job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) original_finding_id: ::std::option::Option<::std::string::String>,
+    pub(crate) linked_issue: ::std::option::Option<crate::types::LinkedIssue>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -600,6 +607,20 @@ impl FindingBuilder {
     pub fn get_original_finding_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.original_finding_id
     }
+    /// <p>The issue in a third-party issue tracker that this finding has been exported to.</p>
+    pub fn linked_issue(mut self, input: crate::types::LinkedIssue) -> Self {
+        self.linked_issue = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The issue in a third-party issue tracker that this finding has been exported to.</p>
+    pub fn set_linked_issue(mut self, input: ::std::option::Option<crate::types::LinkedIssue>) -> Self {
+        self.linked_issue = input;
+        self
+    }
+    /// <p>The issue in a third-party issue tracker that this finding has been exported to.</p>
+    pub fn get_linked_issue(&self) -> &::std::option::Option<crate::types::LinkedIssue> {
+        &self.linked_issue
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -670,6 +691,7 @@ impl FindingBuilder {
             alignment_rationale: self.alignment_rationale,
             revalidation_job_ids: self.revalidation_job_ids,
             original_finding_id: self.original_finding_id,
+            linked_issue: self.linked_issue,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

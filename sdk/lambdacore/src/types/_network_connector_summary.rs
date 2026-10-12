@@ -8,7 +8,7 @@ pub struct NetworkConnectorSummary {
     pub arn: ::std::string::String,
     /// <p>The name of the network connector.</p>
     pub name: ::std::string::String,
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub id: ::std::string::String,
     /// <p>The type of the network connector (<code>VPC_EGRESS</code>).</p>
     pub r#type: crate::types::NetworkConnectorType,
@@ -16,6 +16,10 @@ pub struct NetworkConnectorSummary {
     pub state: ::std::option::Option<crate::types::NetworkConnectorState>,
     /// <p>The date and time when the connector was last modified.</p>
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The qualified ARN of the connector's latest version, including the immutable version suffix.</p>
+    pub latest_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the connector's latest version. Each configuration update creates a new immutable version; this attribute exposes the most recent one.</p>
+    pub latest_version: ::std::option::Option<i64>,
 }
 impl NetworkConnectorSummary {
     /// <p>The ARN of the network connector.</p>
@@ -28,7 +32,7 @@ impl NetworkConnectorSummary {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
@@ -44,6 +48,14 @@ impl NetworkConnectorSummary {
     /// <p>The date and time when the connector was last modified.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
+    }
+    /// <p>The qualified ARN of the connector's latest version, including the immutable version suffix.</p>
+    pub fn latest_version_arn(&self) -> ::std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// <p>The version number of the connector's latest version. Each configuration update creates a new immutable version; this attribute exposes the most recent one.</p>
+    pub fn latest_version(&self) -> ::std::option::Option<i64> {
+        self.latest_version
     }
 }
 impl NetworkConnectorSummary {
@@ -63,6 +75,8 @@ pub struct NetworkConnectorSummaryBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::NetworkConnectorType>,
     pub(crate) state: ::std::option::Option<crate::types::NetworkConnectorState>,
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version: ::std::option::Option<i64>,
 }
 impl NetworkConnectorSummaryBuilder {
     /// <p>The ARN of the network connector.</p>
@@ -95,18 +109,18 @@ impl NetworkConnectorSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -153,6 +167,34 @@ impl NetworkConnectorSummaryBuilder {
     pub fn get_last_modified(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified
     }
+    /// <p>The qualified ARN of the connector's latest version, including the immutable version suffix.</p>
+    pub fn latest_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latest_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The qualified ARN of the connector's latest version, including the immutable version suffix.</p>
+    pub fn set_latest_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_version_arn = input;
+        self
+    }
+    /// <p>The qualified ARN of the connector's latest version, including the immutable version suffix.</p>
+    pub fn get_latest_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version_arn
+    }
+    /// <p>The version number of the connector's latest version. Each configuration update creates a new immutable version; this attribute exposes the most recent one.</p>
+    pub fn latest_version(mut self, input: i64) -> Self {
+        self.latest_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version number of the connector's latest version. Each configuration update creates a new immutable version; this attribute exposes the most recent one.</p>
+    pub fn set_latest_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.latest_version = input;
+        self
+    }
+    /// <p>The version number of the connector's latest version. Each configuration update creates a new immutable version; this attribute exposes the most recent one.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<i64> {
+        &self.latest_version
+    }
     /// Consumes the builder and constructs a [`NetworkConnectorSummary`](crate::types::NetworkConnectorSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::NetworkConnectorSummaryBuilder::arn)
@@ -187,6 +229,8 @@ impl NetworkConnectorSummaryBuilder {
             })?,
             state: self.state,
             last_modified: self.last_modified,
+            latest_version_arn: self.latest_version_arn,
+            latest_version: self.latest_version,
         })
     }
 }

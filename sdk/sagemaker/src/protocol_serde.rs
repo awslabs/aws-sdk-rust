@@ -175,6 +175,8 @@ pub(crate) mod shape_create_training_job;
 
 pub(crate) mod shape_create_training_plan;
 
+pub(crate) mod shape_create_training_session;
+
 pub(crate) mod shape_create_transform_job;
 
 pub(crate) mod shape_create_trial;
@@ -300,6 +302,8 @@ pub(crate) mod shape_delete_studio_lifecycle_config;
 pub(crate) mod shape_delete_tags;
 
 pub(crate) mod shape_delete_training_job;
+
+pub(crate) mod shape_delete_training_session;
 
 pub(crate) mod shape_delete_trial;
 
@@ -452,6 +456,8 @@ pub(crate) mod shape_describe_training_job;
 pub(crate) mod shape_describe_training_plan;
 
 pub(crate) mod shape_describe_training_plan_extension_history;
+
+pub(crate) mod shape_describe_training_session;
 
 pub(crate) mod shape_describe_transform_job;
 
@@ -655,6 +661,8 @@ pub(crate) mod shape_list_training_jobs_for_hyper_parameter_tuning_job;
 
 pub(crate) mod shape_list_training_plans;
 
+pub(crate) mod shape_list_training_sessions;
+
 pub(crate) mod shape_list_transform_jobs;
 
 pub(crate) mod shape_list_trial_components;
@@ -738,6 +746,8 @@ pub(crate) mod shape_stop_pipeline_execution;
 pub(crate) mod shape_stop_processing_job;
 
 pub(crate) mod shape_stop_training_job;
+
+pub(crate) mod shape_stop_training_session;
 
 pub(crate) mod shape_stop_transform_job;
 
@@ -993,6 +1003,8 @@ pub(crate) mod shape_create_training_job_input;
 
 pub(crate) mod shape_create_training_plan_input;
 
+pub(crate) mod shape_create_training_session_input;
+
 pub(crate) mod shape_create_transform_job_input;
 
 pub(crate) mod shape_create_trial_component_input;
@@ -1118,6 +1130,8 @@ pub(crate) mod shape_delete_studio_lifecycle_config_input;
 pub(crate) mod shape_delete_tags_input;
 
 pub(crate) mod shape_delete_training_job_input;
+
+pub(crate) mod shape_delete_training_session_input;
 
 pub(crate) mod shape_delete_trial_component_input;
 
@@ -1270,6 +1284,8 @@ pub(crate) mod shape_describe_training_job_input;
 pub(crate) mod shape_describe_training_plan_extension_history_input;
 
 pub(crate) mod shape_describe_training_plan_input;
+
+pub(crate) mod shape_describe_training_session_input;
 
 pub(crate) mod shape_describe_transform_job_input;
 
@@ -1467,6 +1483,8 @@ pub(crate) mod shape_list_training_jobs_input;
 
 pub(crate) mod shape_list_training_plans_input;
 
+pub(crate) mod shape_list_training_sessions_input;
+
 pub(crate) mod shape_list_transform_jobs_input;
 
 pub(crate) mod shape_list_trial_components_input;
@@ -1556,6 +1574,8 @@ pub(crate) mod shape_stop_pipeline_execution_input;
 pub(crate) mod shape_stop_processing_job_input;
 
 pub(crate) mod shape_stop_training_job_input;
+
+pub(crate) mod shape_stop_training_session_input;
 
 pub(crate) mod shape_stop_transform_job_input;
 
@@ -2079,6 +2099,8 @@ pub(crate) mod shape_lineage_entity_parameters;
 
 pub(crate) mod shape_lineage_group_summaries;
 
+pub(crate) mod shape_lora_config;
+
 pub(crate) mod shape_m_lflow_configuration;
 
 pub(crate) mod shape_managed_configuration;
@@ -2429,6 +2451,14 @@ pub(crate) mod shape_training_plan_summaries;
 
 pub(crate) mod shape_training_progress_info;
 
+pub(crate) mod shape_training_session_detail;
+
+pub(crate) mod shape_training_session_model_config;
+
+pub(crate) mod shape_training_session_output_config;
+
+pub(crate) mod shape_training_session_summaries;
+
 pub(crate) mod shape_training_specification;
 
 pub(crate) mod shape_transform_environment_map;
@@ -2622,6 +2652,8 @@ pub(crate) mod shape_batch_replace_cluster_nodes_error;
 pub(crate) mod shape_batch_transform_input;
 
 pub(crate) mod shape_bias;
+
+pub(crate) mod shape_billable_token_usage;
 
 pub(crate) mod shape_blue_green_update_policy;
 
@@ -3234,6 +3266,10 @@ pub(crate) mod shape_training_plan_extension_offering;
 pub(crate) mod shape_training_plan_offering;
 
 pub(crate) mod shape_training_plan_summary;
+
+pub(crate) mod shape_training_session_s3_location;
+
+pub(crate) mod shape_training_session_summary;
 
 pub(crate) mod shape_transform_data_source;
 

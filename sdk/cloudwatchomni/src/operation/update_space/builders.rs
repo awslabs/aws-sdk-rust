@@ -136,6 +136,20 @@ impl UpdateSpaceFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn agent_core_evaluation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.agent_core_evaluation_role_arn(input.into());
+        self
+    }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn set_agent_core_evaluation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_agent_core_evaluation_role_arn(input);
+        self
+    }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn get_agent_core_evaluation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_core_evaluation_role_arn()
+    }
     /// How to encrypt the space's data at rest. Omit to leave encryption unchanged. Pass `encryptionStrategy` AWS_OWNED to stop using a customer managed key and revert to service owned encryption.
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);

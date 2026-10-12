@@ -148,6 +148,10 @@ mod batch_delete_security_requirements;
 
 mod batch_delete_threat_models;
 
+mod batch_disassociate_finding_issue;
+
+mod batch_export_findings;
+
 mod batch_get_agent_spaces;
 
 mod batch_get_artifact_metadata;

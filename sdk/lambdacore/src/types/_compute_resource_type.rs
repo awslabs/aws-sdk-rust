@@ -13,6 +13,7 @@
 /// # let computeresourcetype = unimplemented!();
 /// match computeresourcetype {
 ///     ComputeResourceType::MicroVm => { /* ... */ },
+///     ComputeResourceType::WebFunction => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -35,7 +36,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of Lambda compute resource that can use a network connector.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -43,6 +44,8 @@
 pub enum ComputeResourceType {
     /// MicroVm compute resource type
     MicroVm,
+    /// WebFunction compute resource type
+    WebFunction,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ComputeResourceType {
     fn from(s: &str) -> Self {
         match s {
             "MicroVm" => ComputeResourceType::MicroVm,
+            "WebFunction" => ComputeResourceType::WebFunction,
             other => ComputeResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ComputeResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ComputeResourceType::MicroVm => "MicroVm",
+            ComputeResourceType::WebFunction => "WebFunction",
             ComputeResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MicroVm"]
+        &["MicroVm", "WebFunction"]
     }
 }
 impl ::std::convert::AsRef<str> for ComputeResourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ComputeResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ComputeResourceType::MicroVm => write!(f, "MicroVm"),
+            ComputeResourceType::WebFunction => write!(f, "WebFunction"),
             ComputeResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -1994,11 +1994,11 @@ where
 impl From<crate::operation::update_association::UpdateAssociationError> for Error {
     fn from(err: crate::operation::update_association::UpdateAssociationError) -> Self {
         match err {
+            crate::operation::update_association::UpdateAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_association::UpdateAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_association::UpdateAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_association::UpdateAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_association::UpdateAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::update_association::UpdateAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_association::UpdateAssociationError::ContentSizeExceededException(inner) => {
                 Error::ContentSizeExceededException(inner)
             }

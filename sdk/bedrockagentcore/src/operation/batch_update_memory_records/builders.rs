@@ -141,4 +141,42 @@ impl BatchUpdateMemoryRecordsFluentBuilder {
     pub fn get_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryRecordUpdateInput>> {
         self.inner.get_records()
     }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record updated by this request. Set <code>recordExpiryDurationDays</code> to configure or overwrite the number of days after which the records expire, or set <code>action</code> to <code>REMOVE</code> to clear a previously configured expiry so that the records no longer expire.</p>
+    /// <p>When you do not provide this value, the service determines each record's expiry from its current state:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the record already has an expiry configured, the service resets and reapplies the expiry based on the last applied <code>recordExpiryDurationDays</code>.</p></li>
+    /// <li>
+    /// <p>If the record does not have an expiry configured, no expiry is applied and the record remains non-expiring. This is the outcome regardless of whether the record's strategy configures an expiry.</p></li>
+    /// </ul>
+    /// <p>Providing an explicit <code>recordExpiryDurationDays</code> always takes precedence: it overwrites an existing expiry, or sets one on a record that previously had none.</p>
+    pub fn record_expiry_specification(mut self, input: crate::types::RecordExpirySpecification) -> Self {
+        self.inner = self.inner.record_expiry_specification(input);
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record updated by this request. Set <code>recordExpiryDurationDays</code> to configure or overwrite the number of days after which the records expire, or set <code>action</code> to <code>REMOVE</code> to clear a previously configured expiry so that the records no longer expire.</p>
+    /// <p>When you do not provide this value, the service determines each record's expiry from its current state:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the record already has an expiry configured, the service resets and reapplies the expiry based on the last applied <code>recordExpiryDurationDays</code>.</p></li>
+    /// <li>
+    /// <p>If the record does not have an expiry configured, no expiry is applied and the record remains non-expiring. This is the outcome regardless of whether the record's strategy configures an expiry.</p></li>
+    /// </ul>
+    /// <p>Providing an explicit <code>recordExpiryDurationDays</code> always takes precedence: it overwrites an existing expiry, or sets one on a record that previously had none.</p>
+    pub fn set_record_expiry_specification(mut self, input: ::std::option::Option<crate::types::RecordExpirySpecification>) -> Self {
+        self.inner = self.inner.set_record_expiry_specification(input);
+        self
+    }
+    /// <p>The record expiry (long-term memory time-to-live) applied to every record updated by this request. Set <code>recordExpiryDurationDays</code> to configure or overwrite the number of days after which the records expire, or set <code>action</code> to <code>REMOVE</code> to clear a previously configured expiry so that the records no longer expire.</p>
+    /// <p>When you do not provide this value, the service determines each record's expiry from its current state:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the record already has an expiry configured, the service resets and reapplies the expiry based on the last applied <code>recordExpiryDurationDays</code>.</p></li>
+    /// <li>
+    /// <p>If the record does not have an expiry configured, no expiry is applied and the record remains non-expiring. This is the outcome regardless of whether the record's strategy configures an expiry.</p></li>
+    /// </ul>
+    /// <p>Providing an explicit <code>recordExpiryDurationDays</code> always takes precedence: it overwrites an existing expiry, or sets one on a record that previously had none.</p>
+    pub fn get_record_expiry_specification(&self) -> &::std::option::Option<crate::types::RecordExpirySpecification> {
+        self.inner.get_record_expiry_specification()
+    }
 }

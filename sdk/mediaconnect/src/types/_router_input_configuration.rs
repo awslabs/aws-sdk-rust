@@ -7,8 +7,14 @@ pub enum RouterInputConfiguration {
     /// <p>Configuration settings for a failover router input that allows switching between two input sources.</p>
     Failover(crate::types::FailoverRouterInputConfiguration),
     /// <p>Configuration settings for connecting a router input to a flow output.</p>
+    /// <p>To connect the router input to the flow output, provide both <code>flowArn</code> and <code>flowOutputArn</code>. To disconnect it, call the update operation and omit both fields while keeping this configuration object.</p><note>
+    /// <p>You can't change <code>sourceTransitDecryption</code> while the router input is connected to a flow output. To change it, first disconnect the router input, then update the decryption.</p>
+    /// </note>
     MediaConnectFlow(crate::types::MediaConnectFlowRouterInputConfiguration),
     /// <p>Configuration settings for connecting a router input to a MediaLive channel output.</p>
+    /// <p>To connect the router input to the MediaLive channel output, provide all three of <code>mediaLiveChannelArn</code>, <code>mediaLivePipelineId</code>, and <code>mediaLiveChannelOutputName</code>. To disconnect it, call the update operation and omit all three fields while keeping this configuration object.</p><note>
+    /// <p>You can't change <code>sourceTransitDecryption</code> while the router input is connected to a MediaLive channel output. To change it, first disconnect the router input, then update the decryption.</p>
+    /// </note>
     MediaLiveChannel(crate::types::MediaLiveChannelRouterInputConfiguration),
     /// <p>Configuration settings for a merge router input that combines two input sources.</p>
     Merge(crate::types::MergeRouterInputConfiguration),

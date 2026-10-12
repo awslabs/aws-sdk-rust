@@ -67,3 +67,46 @@ where
         )),
     }
 }
+
+pub fn ser_data_quality_aggregated_metrics(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::DataQualityAggregatedMetrics,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.total_rows_processed {
+        object.key("TotalRowsProcessed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_1).into()),
+        );
+    }
+    if let Some(var_2) = &input.total_rows_passed {
+        object.key("TotalRowsPassed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.total_rows_failed {
+        object.key("TotalRowsFailed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.total_rules_processed {
+        object.key("TotalRulesProcessed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.total_rules_passed {
+        object.key("TotalRulesPassed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.total_rules_failed {
+        object.key("TotalRulesFailed").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_6).into()),
+        );
+    }
+    Ok(())
+}

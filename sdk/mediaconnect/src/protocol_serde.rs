@@ -709,6 +709,8 @@ pub(crate) mod shape_srt_listener_router_input_configuration;
 
 pub(crate) mod shape_srt_listener_router_output_configuration;
 
+pub(crate) mod shape_color_information;
+
 pub(crate) mod shape_destination_configuration;
 
 pub(crate) mod shape_frame_resolution;

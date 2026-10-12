@@ -19,6 +19,20 @@ pub fn de_update_association_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::update_association::UpdateAssociationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::update_association::UpdateAssociationError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -70,20 +84,6 @@ pub fn de_update_association_http_error(
                     .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?
-            };
-            tmp
-        }),
-        "ConflictException" => crate::operation::update_association::UpdateAssociationError::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::conflict_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::update_association::UpdateAssociationError::unhandled)?
             };

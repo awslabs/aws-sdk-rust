@@ -10,6 +10,9 @@ pub mod delete_network_connector;
 /// Types for the `GetNetworkConnector` operation.
 pub mod get_network_connector;
 
+/// Types for the `ListNetworkConnectorVersions` operation.
+pub mod list_network_connector_versions;
+
 /// Types for the `ListNetworkConnectors` operation.
 pub mod list_network_connectors;
 

@@ -83,6 +83,8 @@ pub use crate::types::_recommendation_result::RecommendationResult;
 
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
+pub use crate::types::_record_expiry_specification::RecordExpirySpecification;
+
 pub use crate::types::_branch::Branch;
 
 pub use crate::types::_extraction_mode::ExtractionMode;
@@ -264,6 +266,8 @@ pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummary;
 pub use crate::types::_recommendation_summary::RecommendationSummary;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
+
+pub use crate::types::_record_expiry_action::RecordExpiryAction;
 
 pub use crate::types::_memory_record_output::MemoryRecordOutput;
 
@@ -1132,6 +1136,10 @@ mod _recommendation_status;
 mod _recommendation_summary;
 
 mod _recommendation_type;
+
+mod _record_expiry_action;
+
+mod _record_expiry_specification;
 
 mod _registry_record_status;
 

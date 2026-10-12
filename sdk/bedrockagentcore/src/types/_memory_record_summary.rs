@@ -16,6 +16,8 @@ pub struct MemoryRecordSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The relevance score of the memory record when returned as part of a search result. Higher values indicate greater relevance to the search query.</p>
     pub score: ::std::option::Option<f64>,
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
@@ -47,6 +49,10 @@ impl MemoryRecordSummary {
     pub fn score(&self) -> ::std::option::Option<f64> {
         self.score
     }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
         self.metadata.as_ref()
@@ -69,6 +75,7 @@ pub struct MemoryRecordSummaryBuilder {
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) score: ::std::option::Option<f64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
 impl MemoryRecordSummaryBuilder {
@@ -166,6 +173,20 @@ impl MemoryRecordSummaryBuilder {
     pub fn get_score(&self) -> &::std::option::Option<f64> {
         &self.score
     }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input;
+        self
+    }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -225,6 +246,7 @@ impl MemoryRecordSummaryBuilder {
                 )
             })?,
             score: self.score,
+            timestamp: self.timestamp,
             metadata: self.metadata,
         })
     }

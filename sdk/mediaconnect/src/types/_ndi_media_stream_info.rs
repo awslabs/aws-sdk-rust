@@ -12,6 +12,8 @@ pub struct NdiMediaStreamInfo {
     pub stream_id: ::std::option::Option<i32>,
     /// <p>The method used to display video frames. Used when the <code>streamType</code> is <code>Video</code>.</p>
     pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
+    /// <p>The color signaling of the video stream. Used when the <code>streamType</code> is <code>Video</code>.</p>
+    pub color: ::std::option::Option<crate::types::ColorInformation>,
     /// <p>The width and height dimensions of the video frame in pixels. Used when the <code>streamType</code> is <code>Video</code>.</p>
     pub frame_resolution: ::std::option::Option<crate::types::FrameResolution>,
     /// <p>The number of video frames displayed per second. Used when the <code>streamType</code> is <code>Video</code>.</p>
@@ -37,6 +39,10 @@ impl NdiMediaStreamInfo {
     /// <p>The method used to display video frames. Used when the <code>streamType</code> is <code>Video</code>.</p>
     pub fn scan_mode(&self) -> ::std::option::Option<&crate::types::ScanMode> {
         self.scan_mode.as_ref()
+    }
+    /// <p>The color signaling of the video stream. Used when the <code>streamType</code> is <code>Video</code>.</p>
+    pub fn color(&self) -> ::std::option::Option<&crate::types::ColorInformation> {
+        self.color.as_ref()
     }
     /// <p>The width and height dimensions of the video frame in pixels. Used when the <code>streamType</code> is <code>Video</code>.</p>
     pub fn frame_resolution(&self) -> ::std::option::Option<&crate::types::FrameResolution> {
@@ -70,6 +76,7 @@ pub struct NdiMediaStreamInfoBuilder {
     pub(crate) codec: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<i32>,
     pub(crate) scan_mode: ::std::option::Option<crate::types::ScanMode>,
+    pub(crate) color: ::std::option::Option<crate::types::ColorInformation>,
     pub(crate) frame_resolution: ::std::option::Option<crate::types::FrameResolution>,
     pub(crate) frame_rate: ::std::option::Option<::std::string::String>,
     pub(crate) channels: ::std::option::Option<i32>,
@@ -135,6 +142,20 @@ impl NdiMediaStreamInfoBuilder {
     pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
         &self.scan_mode
     }
+    /// <p>The color signaling of the video stream. Used when the <code>streamType</code> is <code>Video</code>.</p>
+    pub fn color(mut self, input: crate::types::ColorInformation) -> Self {
+        self.color = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The color signaling of the video stream. Used when the <code>streamType</code> is <code>Video</code>.</p>
+    pub fn set_color(mut self, input: ::std::option::Option<crate::types::ColorInformation>) -> Self {
+        self.color = input;
+        self
+    }
+    /// <p>The color signaling of the video stream. Used when the <code>streamType</code> is <code>Video</code>.</p>
+    pub fn get_color(&self) -> &::std::option::Option<crate::types::ColorInformation> {
+        &self.color
+    }
     /// <p>The width and height dimensions of the video frame in pixels. Used when the <code>streamType</code> is <code>Video</code>.</p>
     pub fn frame_resolution(mut self, input: crate::types::FrameResolution) -> Self {
         self.frame_resolution = ::std::option::Option::Some(input);
@@ -198,6 +219,7 @@ impl NdiMediaStreamInfoBuilder {
             codec: self.codec,
             stream_id: self.stream_id,
             scan_mode: self.scan_mode,
+            color: self.color,
             frame_resolution: self.frame_resolution,
             frame_rate: self.frame_rate,
             channels: self.channels,

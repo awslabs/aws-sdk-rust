@@ -5,8 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RouterOutputConfiguration {
     /// <p>Configuration settings for connecting a router output to a MediaConnect flow source.</p>
+    /// <p>To connect the router output to the flow source, provide both <code>flowArn</code> and <code>flowSourceArn</code>. To disconnect it, call the update operation and omit both fields while keeping this configuration object.</p><note>
+    /// <p>You can't change <code>destinationTransitEncryption</code> while the router output is connected to a flow source. To change it, first disconnect the router output, then update the encryption.</p>
+    /// </note>
     MediaConnectFlow(crate::types::MediaConnectFlowRouterOutputConfiguration),
     /// <p>Configuration settings for connecting a router output to a MediaLive input.</p>
+    /// <p>To connect the router output to the MediaLive input, provide both <code>mediaLiveInputArn</code> and <code>mediaLivePipelineId</code>. To disconnect it, call the update operation and omit both fields while keeping this configuration object.</p><note>
+    /// <p>You can't change <code>destinationTransitEncryption</code> while the router output is connected to a MediaLive input. To change it, first disconnect the router output, then update the encryption.</p>
+    /// </note>
     MediaLiveInput(crate::types::MediaLiveInputRouterOutputConfiguration),
     /// <p>The configuration settings for a standard router output, including the protocol, protocol-specific configuration, network interface, and availability zone.</p>
     Standard(crate::types::StandardRouterOutputConfiguration),

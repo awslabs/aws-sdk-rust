@@ -14,8 +14,12 @@ pub struct MemoryRecord {
     pub namespaces: ::std::vec::Vec<::std::string::String>,
     /// <p>The timestamp when the memory record was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
+    /// <p>The timestamp at which the memory record expires and becomes eligible for deletion. This value is set when a record expiry (long-term memory time-to-live) applies to the record, either from the strategy the record belongs to or from a record expiry provided on the batch request that created or updated it. If the record has no expiry configured, this value is not present and the record does not expire.</p>
+    pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemoryRecord {
     /// <p>The unique identifier of the memory record.</p>
@@ -41,9 +45,17 @@ impl MemoryRecord {
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
+    }
     /// <p>A map of metadata key-value pairs associated with a memory record.</p>
     pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
         self.metadata.as_ref()
+    }
+    /// <p>The timestamp at which the memory record expires and becomes eligible for deletion. This value is set when a record expiry (long-term memory time-to-live) applies to the record, either from the strategy the record belongs to or from a record expiry provided on the batch request that created or updated it. If the record has no expiry configured, this value is not present and the record does not expire.</p>
+    pub fn expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expires_at.as_ref()
     }
 }
 impl MemoryRecord {
@@ -62,7 +74,9 @@ pub struct MemoryRecordBuilder {
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
+    pub(crate) expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemoryRecordBuilder {
     /// <p>The unique identifier of the memory record.</p>
@@ -145,6 +159,20 @@ impl MemoryRecordBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input;
+        self
+    }
+    /// <p>The timestamp based on which the memory record was ingested. This reflects the time of the source content that the record was derived from, which can differ from <code>createdAt</code>, the time the record itself was written.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
@@ -169,6 +197,20 @@ impl MemoryRecordBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>> {
         &self.metadata
+    }
+    /// <p>The timestamp at which the memory record expires and becomes eligible for deletion. This value is set when a record expiry (long-term memory time-to-live) applies to the record, either from the strategy the record belongs to or from a record expiry provided on the batch request that created or updated it. If the record has no expiry configured, this value is not present and the record does not expire.</p>
+    pub fn expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expires_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp at which the memory record expires and becomes eligible for deletion. This value is set when a record expiry (long-term memory time-to-live) applies to the record, either from the strategy the record belongs to or from a record expiry provided on the batch request that created or updated it. If the record has no expiry configured, this value is not present and the record does not expire.</p>
+    pub fn set_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expires_at = input;
+        self
+    }
+    /// <p>The timestamp at which the memory record expires and becomes eligible for deletion. This value is set when a record expiry (long-term memory time-to-live) applies to the record, either from the strategy the record belongs to or from a record expiry provided on the batch request that created or updated it. If the record has no expiry configured, this value is not present and the record does not expire.</p>
+    pub fn get_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expires_at
     }
     /// Consumes the builder and constructs a [`MemoryRecord`](crate::types::MemoryRecord).
     /// This method will fail if any of the following fields are not set:
@@ -203,7 +245,9 @@ impl MemoryRecordBuilder {
                     "created_at was not specified but it is required when building MemoryRecord",
                 )
             })?,
+            timestamp: self.timestamp,
             metadata: self.metadata,
+            expires_at: self.expires_at,
         })
     }
 }

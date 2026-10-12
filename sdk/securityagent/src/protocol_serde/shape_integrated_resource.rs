@@ -34,6 +34,12 @@ pub fn ser_integrated_resource(
             crate::protocol_serde::shape_azure_dev_ops_repository_resource::ser_azure_dev_ops_repository_resource(&mut object_5, inner)?;
             object_5.finish();
         }
+        crate::types::IntegratedResource::JiraProject(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_2.key("jiraProject").start_object();
+            crate::protocol_serde::shape_jira_project_resource::ser_jira_project_resource(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::IntegratedResource::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IntegratedResource",

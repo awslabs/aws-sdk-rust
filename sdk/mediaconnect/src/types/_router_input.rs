@@ -26,7 +26,20 @@ pub struct RouterInput {
     pub availability_zone: ::std::string::String,
     /// <p>The maximum bitrate for the router input.</p>
     pub maximum_bitrate: i64,
-    /// <p>The tier level of the router input.</p>
+    /// <p>The tier level for the router input. The tier sets the maximum bitrate, in Mbps, for the router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub tier: crate::types::RouterInputTier,
     /// <p>Indicates whether the router input is configured for Regional or global routing.</p>
     pub routing_scope: crate::types::RoutingScope,
@@ -107,7 +120,20 @@ impl RouterInput {
     pub fn maximum_bitrate(&self) -> i64 {
         self.maximum_bitrate
     }
-    /// <p>The tier level of the router input.</p>
+    /// <p>The tier level for the router input. The tier sets the maximum bitrate, in Mbps, for the router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn tier(&self) -> &crate::types::RouterInputTier {
         &self.tier
     }
@@ -372,18 +398,57 @@ impl RouterInputBuilder {
     pub fn get_maximum_bitrate(&self) -> &::std::option::Option<i64> {
         &self.maximum_bitrate
     }
-    /// <p>The tier level of the router input.</p>
+    /// <p>The tier level for the router input. The tier sets the maximum bitrate, in Mbps, for the router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     /// This field is required.
     pub fn tier(mut self, input: crate::types::RouterInputTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The tier level of the router input.</p>
+    /// <p>The tier level for the router input. The tier sets the maximum bitrate, in Mbps, for the router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::RouterInputTier>) -> Self {
         self.tier = input;
         self
     }
-    /// <p>The tier level of the router input.</p>
+    /// <p>The tier level for the router input. The tier sets the maximum bitrate, in Mbps, for the router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>INPUT_20</code> – 20 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_50</code> – 50 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_100</code> – 100 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_250</code> – 250 Mbps</p></li>
+    /// <li>
+    /// <p><code>INPUT_500</code> – 500 Mbps</p></li>
+    /// </ul>
+    /// <p>The 250 Mbps and 500 Mbps tiers are high-bitrate tiers that support TR-07 (JPEG XS) workflows.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::RouterInputTier> {
         &self.tier
     }

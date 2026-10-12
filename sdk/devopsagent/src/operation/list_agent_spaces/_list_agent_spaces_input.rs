@@ -8,6 +8,8 @@ pub struct ListAgentSpacesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>How much data to include in the response.</p>
+    pub included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl ListAgentSpacesInput {
     /// <p>Maximum number of results to return in a single call.</p>
@@ -17,6 +19,10 @@ impl ListAgentSpacesInput {
     /// <p>Token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn included_data(&self) -> ::std::option::Option<&crate::types::IncludedData> {
+        self.included_data.as_ref()
     }
 }
 impl ListAgentSpacesInput {
@@ -32,6 +38,7 @@ impl ListAgentSpacesInput {
 pub struct ListAgentSpacesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) included_data: ::std::option::Option<crate::types::IncludedData>,
 }
 impl ListAgentSpacesInputBuilder {
     /// <p>Maximum number of results to return in a single call.</p>
@@ -62,6 +69,20 @@ impl ListAgentSpacesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>How much data to include in the response.</p>
+    pub fn included_data(mut self, input: crate::types::IncludedData) -> Self {
+        self.included_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn set_included_data(mut self, input: ::std::option::Option<crate::types::IncludedData>) -> Self {
+        self.included_data = input;
+        self
+    }
+    /// <p>How much data to include in the response.</p>
+    pub fn get_included_data(&self) -> &::std::option::Option<crate::types::IncludedData> {
+        &self.included_data
+    }
     /// Consumes the builder and constructs a [`ListAgentSpacesInput`](crate::operation::list_agent_spaces::ListAgentSpacesInput).
     pub fn build(
         self,
@@ -69,6 +90,7 @@ impl ListAgentSpacesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_agent_spaces::ListAgentSpacesInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            included_data: self.included_data,
         })
     }
 }

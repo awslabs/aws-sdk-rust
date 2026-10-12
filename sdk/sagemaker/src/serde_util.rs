@@ -434,6 +434,15 @@ pub(crate) fn create_training_plan_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_training_session_output_output_correct_errors(
+    mut builder: crate::operation::create_training_session::builders::CreateTrainingSessionOutputBuilder,
+) -> crate::operation::create_training_session::builders::CreateTrainingSessionOutputBuilder {
+    if builder.training_session_arn.is_none() {
+        builder.training_session_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_transform_job_output_output_correct_errors(
     mut builder: crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder,
 ) -> crate::operation::create_transform_job::builders::CreateTransformJobOutputBuilder {
@@ -1808,6 +1817,18 @@ pub(crate) fn describe_training_plan_extension_history_output_output_correct_err
     builder
 }
 
+pub(crate) fn describe_training_session_output_output_correct_errors(
+    mut builder: crate::operation::describe_training_session::builders::DescribeTrainingSessionOutputBuilder,
+) -> crate::operation::describe_training_session::builders::DescribeTrainingSessionOutputBuilder {
+    if builder.training_session_detail.is_none() {
+        builder.training_session_detail = {
+            let builder = crate::types::builders::TrainingSessionDetailBuilder::default();
+            Some(crate::serde_util::training_session_detail_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_transform_job_output_output_correct_errors(
     mut builder: crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder,
 ) -> crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder {
@@ -3006,6 +3027,24 @@ pub(crate) fn subscribed_workteam_correct_errors(
 ) -> crate::types::builders::SubscribedWorkteamBuilder {
     if builder.workteam_arn.is_none() {
         builder.workteam_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn training_session_detail_correct_errors(
+    mut builder: crate::types::builders::TrainingSessionDetailBuilder,
+) -> crate::types::builders::TrainingSessionDetailBuilder {
+    if builder.training_session_arn.is_none() {
+        builder.training_session_arn = Some(Default::default())
+    }
+    if builder.training_session_name.is_none() {
+        builder.training_session_name = Some(Default::default())
+    }
+    if builder.training_session_status.is_none() {
+        builder.training_session_status = "no value was set".parse::<crate::types::TrainingSessionStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -5197,6 +5236,16 @@ pub(crate) fn labeling_job_summary_correct_errors(
     builder
 }
 
+pub(crate) fn lora_config_correct_errors(mut builder: crate::types::builders::LoraConfigBuilder) -> crate::types::builders::LoraConfigBuilder {
+    if builder.rank.is_none() {
+        builder.rank = Some(Default::default())
+    }
+    if builder.alpha.is_none() {
+        builder.alpha = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn model_card_export_job_summary_correct_errors(
     mut builder: crate::types::builders::ModelCardExportJobSummaryBuilder,
 ) -> crate::types::builders::ModelCardExportJobSummaryBuilder {
@@ -5880,6 +5929,42 @@ pub(crate) fn training_plan_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::TrainingPlanStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn training_session_model_config_correct_errors(
+    mut builder: crate::types::builders::TrainingSessionModelConfigBuilder,
+) -> crate::types::builders::TrainingSessionModelConfigBuilder {
+    if builder.base_model_arn.is_none() {
+        builder.base_model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn training_session_output_config_correct_errors(
+    mut builder: crate::types::builders::TrainingSessionOutputConfigBuilder,
+) -> crate::types::builders::TrainingSessionOutputConfigBuilder {
+    if builder.s3_location.is_none() {
+        builder.s3_location = {
+            let builder = crate::types::builders::TrainingSessionS3LocationBuilder::default();
+            Some(crate::serde_util::training_session_s3_location_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn training_session_summary_correct_errors(
+    mut builder: crate::types::builders::TrainingSessionSummaryBuilder,
+) -> crate::types::builders::TrainingSessionSummaryBuilder {
+    if builder.training_session_arn.is_none() {
+        builder.training_session_arn = Some(Default::default())
+    }
+    if builder.training_session_status.is_none() {
+        builder.training_session_status = "no value was set".parse::<crate::types::TrainingSessionStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -6787,6 +6872,15 @@ pub(crate) fn training_repository_auth_config_correct_errors(
 ) -> crate::types::builders::TrainingRepositoryAuthConfigBuilder {
     if builder.training_repository_credentials_provider_arn.is_none() {
         builder.training_repository_credentials_provider_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn training_session_s3_location_correct_errors(
+    mut builder: crate::types::builders::TrainingSessionS3LocationBuilder,
+) -> crate::types::builders::TrainingSessionS3LocationBuilder {
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
     }
     builder
 }

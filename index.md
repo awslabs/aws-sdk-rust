@@ -431,6 +431,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Route 53 Profiles | [aws-sdk-route53profiles](https://crates.io/crates/aws-sdk-route53profiles) ([docs](https://docs.rs/aws-sdk-route53profiles)) |
 | Route53 Recovery Cluster | [aws-sdk-route53recoverycluster](https://crates.io/crates/aws-sdk-route53recoverycluster) ([docs](https://docs.rs/aws-sdk-route53recoverycluster)) |
 | Runtime for Amazon Bedrock Data Automation | [aws-sdk-bedrockdataautomationruntime](https://crates.io/crates/aws-sdk-bedrockdataautomationruntime) ([docs](https://docs.rs/aws-sdk-bedrockdataautomationruntime)) |
+| SageMaker Training Session Runtime | [aws-sdk-sagemakertrainingsessionruntime](https://crates.io/crates/aws-sdk-sagemakertrainingsessionruntime) ([docs](https://docs.rs/aws-sdk-sagemakertrainingsessionruntime)) |
 | Sagemaker Job Runtime Service | [aws-sdk-sagemakerjobruntime](https://crates.io/crates/aws-sdk-sagemakerjobruntime) ([docs](https://docs.rs/aws-sdk-sagemakerjobruntime)) |
 | Schemas | [aws-sdk-schemas](https://crates.io/crates/aws-sdk-schemas) ([docs](https://docs.rs/aws-sdk-schemas)) |
 | Security Incident Response | [aws-sdk-securityir](https://crates.io/crates/aws-sdk-securityir) ([docs](https://docs.rs/aws-sdk-securityir)) |

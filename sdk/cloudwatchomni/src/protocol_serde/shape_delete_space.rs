@@ -32,6 +32,20 @@ pub fn de_delete_space_http_error(
             };
             tmp
         }),
+        "ConflictException" => crate::operation::delete_space::DeleteSpaceError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
+                    .map_err(crate::operation::delete_space::DeleteSpaceError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_space::DeleteSpaceError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::delete_space::DeleteSpaceError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

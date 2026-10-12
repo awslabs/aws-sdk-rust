@@ -6,7 +6,7 @@
 pub enum HarnessHookTarget {
     /// <p>An Amazon EventBridge hook target that sends the hook event without waiting for a response.</p>
     EventBridge(crate::types::HarnessHookEventBridgeTarget),
-    /// <p>A Lambda hook target that invokes an AWS Lambda function synchronously and waits for its response.</p>
+    /// <p>A Lambda hook target that invokes an Amazon Web Services Lambda function synchronously and waits for its response.</p>
     Lambda(crate::types::HarnessHookLambdaTarget),
     /// <p>An Amazon SNS hook target that publishes the hook event without waiting for a response.</p>
     Sns(crate::types::HarnessHookSnsTarget),

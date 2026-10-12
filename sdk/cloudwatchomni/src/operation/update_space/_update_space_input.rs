@@ -7,6 +7,8 @@ pub struct UpdateSpaceInput {
     pub space_id: ::std::option::Option<::std::string::String>,
     /// A new name for the space. Omit to leave unchanged. Must be 3-64 characters: lowercase letters, numbers, and hyphens. It must begin and end with a letter or number and cannot contain consecutive hyphens.
     pub name: ::std::option::Option<::std::string::String>,
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub agent_core_evaluation_role_arn: ::std::option::Option<::std::string::String>,
     /// How to encrypt the space's data at rest. Omit to leave encryption unchanged. Pass `encryptionStrategy` AWS_OWNED to stop using a customer managed key and revert to service owned encryption.
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
@@ -18,6 +20,10 @@ impl UpdateSpaceInput {
     /// A new name for the space. Omit to leave unchanged. Must be 3-64 characters: lowercase letters, numbers, and hyphens. It must begin and end with a letter or number and cannot contain consecutive hyphens.
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn agent_core_evaluation_role_arn(&self) -> ::std::option::Option<&str> {
+        self.agent_core_evaluation_role_arn.as_deref()
     }
     /// How to encrypt the space's data at rest. Omit to leave encryption unchanged. Pass `encryptionStrategy` AWS_OWNED to stop using a customer managed key and revert to service owned encryption.
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
@@ -37,6 +43,7 @@ impl UpdateSpaceInput {
 pub struct UpdateSpaceInputBuilder {
     pub(crate) space_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_core_evaluation_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateSpaceInputBuilder {
@@ -69,6 +76,20 @@ impl UpdateSpaceInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn agent_core_evaluation_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_core_evaluation_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn set_agent_core_evaluation_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_core_evaluation_role_arn = input;
+        self
+    }
+    /// The ARN of the IAM role used by AgentCore online evaluation. Must be in the caller's account. Omit if the space does not use AgentCore online evaluation.
+    pub fn get_agent_core_evaluation_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_core_evaluation_role_arn
+    }
     /// How to encrypt the space's data at rest. Omit to leave encryption unchanged. Pass `encryptionStrategy` AWS_OWNED to stop using a customer managed key and revert to service owned encryption.
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl UpdateSpaceInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_space::UpdateSpaceInput {
             space_id: self.space_id,
             name: self.name,
+            agent_core_evaluation_role_arn: self.agent_core_evaluation_role_arn,
             encryption_configuration: self.encryption_configuration,
         })
     }

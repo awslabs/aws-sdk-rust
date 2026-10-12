@@ -61,6 +61,8 @@ pub use crate::types::_goal::Goal;
 
 pub use crate::types::_agent_space::AgentSpace;
 
+pub use crate::types::_included_data::IncludedData;
+
 pub use crate::types::_auth_flow::AuthFlow;
 
 pub use crate::types::_iam_auth_configuration::IamAuthConfiguration;
@@ -327,6 +329,8 @@ pub use crate::types::_mcp_server_api_key_config::McpServerApiKeyConfig;
 
 pub use crate::types::_mcp_server_bearer_token_config::McpServerBearerTokenConfig;
 
+pub use crate::types::_mcp_server_custom_headers_config::McpServerCustomHeadersConfig;
+
 pub use crate::types::_new_relic_api_key_config::NewRelicApiKeyConfig;
 
 pub use crate::types::_pager_duty_o_auth_client_credentials_config::PagerDutyOAuthClientCredentialsConfig;
@@ -485,6 +489,8 @@ mod _idc_auth_configuration;
 
 mod _idp_auth_configuration;
 
+mod _included_data;
+
 mod _ip_address_type;
 
 mod _journal_record;
@@ -500,6 +506,8 @@ mod _mcp_server_authorization_method;
 mod _mcp_server_bearer_token_config;
 
 mod _mcp_server_configuration;
+
+mod _mcp_server_custom_headers_config;
 
 mod _mcp_server_datadog_configuration;
 

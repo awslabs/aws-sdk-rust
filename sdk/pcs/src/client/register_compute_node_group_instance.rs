@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`compute_node_group_id(Option<String>)`](crate::operation::register_compute_node_group_instance::RegisterComputeNodeGroupInstanceOutput::compute_node_group_id): <p>The ID of the compute node group that the compute node registered into.</p>
     ///   - [`compute_node_group_name(Option<String>)`](crate::operation::register_compute_node_group_instance::RegisterComputeNodeGroupInstanceOutput::compute_node_group_name): <p>The name of the compute node group that the compute node registered into.</p>
     ///   - [`node_lifecycle_actions(Option<NodeLifecycleActions>)`](crate::operation::register_compute_node_group_instance::RegisterComputeNodeGroupInstanceOutput::node_lifecycle_actions): <p>The node lifecycle actions configured for the node group, including scripts to run when a compute node finishes bootstrapping or becomes ready to accept jobs.</p>
+    ///   - [`scheduler_version(Option<String>)`](crate::operation::register_compute_node_group_instance::RegisterComputeNodeGroupInstanceOutput::scheduler_version): <p>The scheduler version that the cluster is running. A compute node uses this value to run the matching scheduler version.</p>
     /// - On failure, responds with [`SdkError<RegisterComputeNodeGroupInstanceError>`](crate::operation::register_compute_node_group_instance::RegisterComputeNodeGroupInstanceError)
     pub fn register_compute_node_group_instance(
         &self,

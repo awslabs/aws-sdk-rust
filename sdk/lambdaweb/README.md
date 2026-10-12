@@ -1,5 +1,9 @@
 # aws-sdk-lambdaweb
 
+With AWS Lambda Web Functions, you can run web applications and APIs as HTTP servers on AWS Lambda (Lambda) without provisioning or managing servers. Use web functions to run REST APIs, server-rendered web applications, and other HTTP workloads while Lambda handles scaling and availability.
+
+A web function has one or more immutable revisions (code and configuration) and one or more endpoints that expose it over HTTPS.
+
 ## Getting Started
 
 > Examples are available for many services and operations, check out the
@@ -12,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-lambdaweb = "1.1.0"
+aws-sdk-lambdaweb = "1.2.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

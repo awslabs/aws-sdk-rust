@@ -177,6 +177,8 @@ pub use crate::types::_workflow_run::WorkflowRunBuilder;
 
 pub use crate::types::_data_quality_result_filter_criteria::DataQualityResultFilterCriteriaBuilder;
 
+pub use crate::types::_data_quality_results_v2_filter_criteria::DataQualityResultsV2FilterCriteriaBuilder;
+
 pub use crate::types::_data_quality_rule_recommendation_run_filter::DataQualityRuleRecommendationRunFilterBuilder;
 
 pub use crate::types::_data_quality_ruleset_evaluation_run_filter::DataQualityRulesetEvaluationRunFilterBuilder;
@@ -184,6 +186,10 @@ pub use crate::types::_data_quality_ruleset_evaluation_run_filter::DataQualityRu
 pub use crate::types::_data_quality_ruleset_filter_criteria::DataQualityRulesetFilterCriteriaBuilder;
 
 pub use crate::types::_timestamp_filter::TimestampFilterBuilder;
+
+pub use crate::types::_data_quality_configuration_v2::DataQualityConfigurationV2Builder;
+
+pub use crate::types::_data_quality_telemetry::DataQualityTelemetryBuilder;
 
 pub use crate::types::_metadata_key_value_pair::MetadataKeyValuePairBuilder;
 
@@ -224,6 +230,8 @@ pub use crate::types::_table_version_error::TableVersionErrorBuilder;
 pub use crate::types::_custom_entity_type::CustomEntityTypeBuilder;
 
 pub use crate::types::_data_quality_result::DataQualityResultBuilder;
+
+pub use crate::types::_data_quality_result_v2_item::DataQualityResultV2ItemBuilder;
 
 pub use crate::types::_data_quality_ruleset_evaluation_run::DataQualityRulesetEvaluationRunBuilder;
 
@@ -403,6 +411,8 @@ pub use crate::types::_iceberg_table_metadata::IcebergTableMetadataBuilder;
 
 pub use crate::types::_table_status::TableStatusBuilder;
 
+pub use crate::types::_rls_properties::RlsPropertiesBuilder;
+
 pub use crate::types::_table_optimizer_run::TableOptimizerRunBuilder;
 
 pub use crate::types::_unfiltered_partition::UnfilteredPartitionBuilder;
@@ -426,6 +436,8 @@ pub use crate::types::_crawls_filter::CrawlsFilterBuilder;
 pub use crate::types::_crawler_history::CrawlerHistoryBuilder;
 
 pub use crate::types::_data_quality_result_description::DataQualityResultDescriptionBuilder;
+
+pub use crate::types::_data_quality_results_v2_description::DataQualityResultsV2DescriptionBuilder;
 
 pub use crate::types::_data_quality_rule_recommendation_run_description::DataQualityRuleRecommendationRunDescriptionBuilder;
 

@@ -31,14 +31,20 @@ pub fn ser_mcp_server_authorization_config(
             crate::protocol_serde::shape_mcp_server_bearer_token_config::ser_mcp_server_bearer_token_config(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::McpServerAuthorizationConfig::CustomHeaders(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_3.key("customHeaders").start_object();
+            crate::protocol_serde::shape_mcp_server_custom_headers_config::ser_mcp_server_custom_headers_config(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::McpServerAuthorizationConfig::AuthorizationDiscovery(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_3.key("authorizationDiscovery").start_object();
+            let mut object_6 = object_3.key("authorizationDiscovery").start_object();
             crate::protocol_serde::shape_mcp_server_authorization_discovery_config::ser_mcp_server_authorization_discovery_config(
-                &mut object_5,
+                &mut object_6,
                 inner,
             )?;
-            object_5.finish();
+            object_6.finish();
         }
         crate::types::McpServerAuthorizationConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

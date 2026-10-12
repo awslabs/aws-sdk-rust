@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum HarnessSkill {
-    /// <p>AWS Skills baked into the Harness's underlying Runtime.</p>
+    /// <p>Amazon Web Services Skills baked into the Harness's underlying Runtime.</p>
     AwsSkills(crate::types::HarnessSkillAwsSkillsSource),
     /// <p>A git repository containing the skill.</p>
     Git(crate::types::HarnessSkillGitSource),

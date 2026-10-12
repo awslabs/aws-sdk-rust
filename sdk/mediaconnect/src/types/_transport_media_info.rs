@@ -6,6 +6,8 @@
 pub struct TransportMediaInfo {
     /// <p>The list of transport stream programs in the current flow's source.</p>
     pub programs: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>,
+    /// <p>The transport stream ID (TSID) of the source, from the Program Association Table (PAT).</p>
+    pub ts_id: ::std::option::Option<i32>,
 }
 impl TransportMediaInfo {
     /// <p>The list of transport stream programs in the current flow's source.</p>
@@ -13,6 +15,10 @@ impl TransportMediaInfo {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.programs.is_none()`.
     pub fn programs(&self) -> &[crate::types::TransportStreamProgram] {
         self.programs.as_deref().unwrap_or_default()
+    }
+    /// <p>The transport stream ID (TSID) of the source, from the Program Association Table (PAT).</p>
+    pub fn ts_id(&self) -> ::std::option::Option<i32> {
+        self.ts_id
     }
 }
 impl TransportMediaInfo {
@@ -27,6 +33,7 @@ impl TransportMediaInfo {
 #[non_exhaustive]
 pub struct TransportMediaInfoBuilder {
     pub(crate) programs: ::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>>,
+    pub(crate) ts_id: ::std::option::Option<i32>,
 }
 impl TransportMediaInfoBuilder {
     /// Appends an item to `programs`.
@@ -49,8 +56,25 @@ impl TransportMediaInfoBuilder {
     pub fn get_programs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransportStreamProgram>> {
         &self.programs
     }
+    /// <p>The transport stream ID (TSID) of the source, from the Program Association Table (PAT).</p>
+    pub fn ts_id(mut self, input: i32) -> Self {
+        self.ts_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The transport stream ID (TSID) of the source, from the Program Association Table (PAT).</p>
+    pub fn set_ts_id(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ts_id = input;
+        self
+    }
+    /// <p>The transport stream ID (TSID) of the source, from the Program Association Table (PAT).</p>
+    pub fn get_ts_id(&self) -> &::std::option::Option<i32> {
+        &self.ts_id
+    }
     /// Consumes the builder and constructs a [`TransportMediaInfo`](crate::types::TransportMediaInfo).
     pub fn build(self) -> crate::types::TransportMediaInfo {
-        crate::types::TransportMediaInfo { programs: self.programs }
+        crate::types::TransportMediaInfo {
+            programs: self.programs,
+            ts_id: self.ts_id,
+        }
     }
 }

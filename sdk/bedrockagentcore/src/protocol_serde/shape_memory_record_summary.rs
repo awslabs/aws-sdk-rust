@@ -55,6 +55,12 @@ where
                             builder = builder
                                 .set_score(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
                         }
+                        "timestamp" => {
+                            builder = builder.set_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_memory_record_metadata_map::de_memory_record_metadata_map(
                                 tokens,

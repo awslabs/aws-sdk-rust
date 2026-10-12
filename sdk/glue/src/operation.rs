@@ -31,6 +31,9 @@ pub mod batch_get_custom_entity_types;
 /// Types for the `BatchGetDataQualityResult` operation.
 pub mod batch_get_data_quality_result;
 
+/// Types for the `BatchGetDataQualityResultV2` operation.
+pub mod batch_get_data_quality_result_v2;
+
 /// Types for the `BatchGetDataQualityRulesetEvaluationRun` operation.
 pub mod batch_get_data_quality_ruleset_evaluation_run;
 
@@ -388,6 +391,9 @@ pub mod get_data_quality_model_result;
 /// Types for the `GetDataQualityResult` operation.
 pub mod get_data_quality_result;
 
+/// Types for the `GetDataQualityResultV2` operation.
+pub mod get_data_quality_result_v2;
+
 /// Types for the `GetDataQualityRuleRecommendationRun` operation.
 pub mod get_data_quality_rule_recommendation_run;
 
@@ -601,6 +607,9 @@ pub mod list_custom_entity_types;
 /// Types for the `ListDataQualityResults` operation.
 pub mod list_data_quality_results;
 
+/// Types for the `ListDataQualityResultsV2` operation.
+pub mod list_data_quality_results_v2;
+
 /// Types for the `ListDataQualityRuleRecommendationRuns` operation.
 pub mod list_data_quality_rule_recommendation_runs;
 
@@ -678,6 +687,9 @@ pub mod list_workflows;
 
 /// Types for the `ModifyIntegration` operation.
 pub mod modify_integration;
+
+/// Types for the `PublishDataQualityResultV2` operation.
+pub mod publish_data_quality_result_v2;
 
 /// Types for the `PutAsset` operation.
 pub mod put_asset;

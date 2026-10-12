@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "color" => {
+                            builder = builder.set_color(crate::protocol_serde::shape_color_information::de_color_information(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "frameResolution" => {
                             builder = builder.set_frame_resolution(crate::protocol_serde::shape_frame_resolution::de_frame_resolution(
                                 tokens,

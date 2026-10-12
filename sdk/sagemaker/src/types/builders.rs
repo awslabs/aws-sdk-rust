@@ -271,6 +271,12 @@ pub use crate::types::_mlflow_config::MlflowConfigBuilder;
 
 pub use crate::types::_model_package_config::ModelPackageConfigBuilder;
 
+pub use crate::types::_lora_config::LoraConfigBuilder;
+
+pub use crate::types::_training_session_model_config::TrainingSessionModelConfigBuilder;
+
+pub use crate::types::_training_session_output_config::TrainingSessionOutputConfigBuilder;
+
 pub use crate::types::_model_client_config::ModelClientConfigBuilder;
 
 pub use crate::types::_transform_input::TransformInputBuilder;
@@ -402,6 +408,8 @@ pub use crate::types::_warm_pool_status::WarmPoolStatusBuilder;
 pub use crate::types::_mlflow_details::MlflowDetailsBuilder;
 
 pub use crate::types::_training_progress_info::TrainingProgressInfoBuilder;
+
+pub use crate::types::_training_session_detail::TrainingSessionDetailBuilder;
 
 pub use crate::types::_trial_source::TrialSourceBuilder;
 
@@ -707,6 +715,8 @@ pub use crate::types::_debug_rule_configuration::DebugRuleConfigurationBuilder;
 
 pub use crate::types::_profiler_rule_configuration::ProfilerRuleConfigurationBuilder;
 
+pub use crate::types::_training_session_s3_location::TrainingSessionS3LocationBuilder;
+
 pub use crate::types::_transform_data_source::TransformDataSourceBuilder;
 
 pub use crate::types::_trial_component_artifact::TrialComponentArtifactBuilder;
@@ -784,6 +794,8 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummaryBuilder;
 
 pub use crate::types::_training_plan_extension::TrainingPlanExtensionBuilder;
+
+pub use crate::types::_billable_token_usage::BillableTokenUsageBuilder;
 
 pub use crate::types::_trial_component_metric_summary::TrialComponentMetricSummaryBuilder;
 
@@ -946,6 +958,8 @@ pub use crate::types::_training_job_summary::TrainingJobSummaryBuilder;
 pub use crate::types::_training_plan_filter::TrainingPlanFilterBuilder;
 
 pub use crate::types::_training_plan_summary::TrainingPlanSummaryBuilder;
+
+pub use crate::types::_training_session_summary::TrainingSessionSummaryBuilder;
 
 pub use crate::types::_transform_job_summary::TransformJobSummaryBuilder;
 

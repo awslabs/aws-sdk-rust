@@ -14,6 +14,7 @@
 /// match resourcetype {
 ///     ResourceType::CodeRepository => { /* ... */ },
 ///     ResourceType::Document => { /* ... */ },
+///     ResourceType::Project => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ResourceType {
     CodeRepository,
     #[allow(missing_docs)] // documentation missing in model
     Document,
+    #[allow(missing_docs)] // documentation missing in model
+    Project,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ResourceType {
         match s {
             "CODE_REPOSITORY" => ResourceType::CodeRepository,
             "DOCUMENT" => ResourceType::Document,
+            "PROJECT" => ResourceType::Project,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ResourceType {
         match self {
             ResourceType::CodeRepository => "CODE_REPOSITORY",
             ResourceType::Document => "DOCUMENT",
+            ResourceType::Project => "PROJECT",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CODE_REPOSITORY", "DOCUMENT"]
+        &["CODE_REPOSITORY", "DOCUMENT", "PROJECT"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ResourceType {
         match self {
             ResourceType::CodeRepository => write!(f, "CODE_REPOSITORY"),
             ResourceType::Document => write!(f, "DOCUMENT"),
+            ResourceType::Project => write!(f, "PROJECT"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

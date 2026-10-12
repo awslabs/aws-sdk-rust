@@ -44,6 +44,15 @@ pub(crate) fn get_network_connector_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_network_connector_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_network_connector_versions::builders::ListNetworkConnectorVersionsOutputBuilder,
+) -> crate::operation::list_network_connector_versions::builders::ListNetworkConnectorVersionsOutputBuilder {
+    if builder.network_connector_versions.is_none() {
+        builder.network_connector_versions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_network_connectors_output_output_correct_errors(
     mut builder: crate::operation::list_network_connectors::builders::ListNetworkConnectorsOutputBuilder,
 ) -> crate::operation::list_network_connectors::builders::ListNetworkConnectorsOutputBuilder {
@@ -82,6 +91,30 @@ pub(crate) fn network_connector_summary_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::NetworkConnectorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn network_connector_version_summary_correct_errors(
+    mut builder: crate::types::builders::NetworkConnectorVersionSummaryBuilder,
+) -> crate::types::builders::NetworkConnectorVersionSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.version_arn.is_none() {
+        builder.version_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::NetworkConnectorState>().ok()
     }
     builder
 }

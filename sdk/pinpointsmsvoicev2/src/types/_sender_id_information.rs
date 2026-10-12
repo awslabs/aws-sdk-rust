@@ -22,6 +22,8 @@ pub struct SenderIdInformation {
     pub registration_id: ::std::option::Option<::std::string::String>,
     /// <p>The messaging limits that apply to the sender ID, including the per-capability send rates.</p>
     pub messaging_limits: ::std::option::Option<crate::types::MessagingLimits>,
+    /// <p>The pricing model.</p>
+    pub pricing_tier: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformation {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
@@ -65,6 +67,10 @@ impl SenderIdInformation {
     pub fn messaging_limits(&self) -> ::std::option::Option<&crate::types::MessagingLimits> {
         self.messaging_limits.as_ref()
     }
+    /// <p>The pricing model.</p>
+    pub fn pricing_tier(&self) -> ::std::option::Option<&str> {
+        self.pricing_tier.as_deref()
+    }
 }
 impl SenderIdInformation {
     /// Creates a new builder-style object to manufacture [`SenderIdInformation`](crate::types::SenderIdInformation).
@@ -86,6 +92,7 @@ pub struct SenderIdInformationBuilder {
     pub(crate) registered: ::std::option::Option<bool>,
     pub(crate) registration_id: ::std::option::Option<::std::string::String>,
     pub(crate) messaging_limits: ::std::option::Option<crate::types::MessagingLimits>,
+    pub(crate) pricing_tier: ::std::option::Option<::std::string::String>,
 }
 impl SenderIdInformationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the SenderId.</p>
@@ -226,6 +233,20 @@ impl SenderIdInformationBuilder {
     pub fn get_messaging_limits(&self) -> &::std::option::Option<crate::types::MessagingLimits> {
         &self.messaging_limits
     }
+    /// <p>The pricing model.</p>
+    pub fn pricing_tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pricing_tier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The pricing model.</p>
+    pub fn set_pricing_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pricing_tier = input;
+        self
+    }
+    /// <p>The pricing model.</p>
+    pub fn get_pricing_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pricing_tier
+    }
     /// Consumes the builder and constructs a [`SenderIdInformation`](crate::types::SenderIdInformation).
     /// This method will fail if any of the following fields are not set:
     /// - [`sender_id_arn`](crate::types::builders::SenderIdInformationBuilder::sender_id_arn)
@@ -269,6 +290,7 @@ impl SenderIdInformationBuilder {
             registered: self.registered.unwrap_or_default(),
             registration_id: self.registration_id,
             messaging_limits: self.messaging_limits,
+            pricing_tier: self.pricing_tier,
         })
     }
 }

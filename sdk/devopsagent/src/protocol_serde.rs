@@ -531,6 +531,8 @@ pub(crate) mod shape_assistant_message;
 
 pub(crate) mod shape_cron_schedule;
 
+pub(crate) mod shape_custom_header_names;
+
 pub(crate) mod shape_custom_headers;
 
 pub(crate) mod shape_dynatrace_o_auth_client_credentials_config;
@@ -542,6 +544,8 @@ pub(crate) mod shape_mcp_server_api_key_config;
 pub(crate) mod shape_mcp_server_authorization_discovery_config;
 
 pub(crate) mod shape_mcp_server_bearer_token_config;
+
+pub(crate) mod shape_mcp_server_custom_headers_config;
 
 pub(crate) mod shape_mcp_server_o_auth3_lo_config;
 

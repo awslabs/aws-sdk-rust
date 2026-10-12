@@ -7,10 +7,16 @@ pub struct GetNetworkConnectorOutput {
     pub arn: ::std::string::String,
     /// <p>The name of the network connector.</p>
     pub name: ::std::string::String,
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub id: ::std::string::String,
-    /// <p>The version number of the connector configuration, incremented on each update.</p>
+    /// <p>The qualified ARN of the specific connector version returned by this request, including the immutable version suffix. This is populated only when you supply a version-qualified identifier. On a standard (unqualified) request, this field is not populated; the connector's latest active version is returned instead through the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields described below.</p>
+    pub version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the network connector. On a standard (unqualified) request, this is the connector's current version; each configuration update increments it. When you supply a version-qualified identifier, this is the specific version you requested.</p>
     pub version: ::std::option::Option<i64>,
+    /// <p>The qualified ARN of the connector's latest active version, including the immutable version suffix. This field is returned only on a standard (unqualified) request; when you supply a version-qualified identifier it is not returned, and <code>VersionArn</code> is returned instead.</p>
+    pub latest_version_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The version number of the connector's latest active version. Each configuration update creates a new immutable version; this attribute exposes the most recent one. This field is returned only on a standard (unqualified) request.</p>
+    pub latest_version: ::std::option::Option<i64>,
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub configuration: ::std::option::Option<crate::types::NetworkConnectorConfiguration>,
     /// <p>The ARN of the IAM role that Lambda uses to manage the underlying ENI resources for this connector.</p>
@@ -42,14 +48,26 @@ impl GetNetworkConnectorOutput {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn id(&self) -> &str {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The version number of the connector configuration, incremented on each update.</p>
+    /// <p>The qualified ARN of the specific connector version returned by this request, including the immutable version suffix. This is populated only when you supply a version-qualified identifier. On a standard (unqualified) request, this field is not populated; the connector's latest active version is returned instead through the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields described below.</p>
+    pub fn version_arn(&self) -> ::std::option::Option<&str> {
+        self.version_arn.as_deref()
+    }
+    /// <p>The version number of the network connector. On a standard (unqualified) request, this is the connector's current version; each configuration update increments it. When you supply a version-qualified identifier, this is the specific version you requested.</p>
     pub fn version(&self) -> ::std::option::Option<i64> {
         self.version
+    }
+    /// <p>The qualified ARN of the connector's latest active version, including the immutable version suffix. This field is returned only on a standard (unqualified) request; when you supply a version-qualified identifier it is not returned, and <code>VersionArn</code> is returned instead.</p>
+    pub fn latest_version_arn(&self) -> ::std::option::Option<&str> {
+        self.latest_version_arn.as_deref()
+    }
+    /// <p>The version number of the connector's latest active version. Each configuration update creates a new immutable version; this attribute exposes the most recent one. This field is returned only on a standard (unqualified) request.</p>
+    pub fn latest_version(&self) -> ::std::option::Option<i64> {
+        self.latest_version
     }
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::NetworkConnectorConfiguration> {
@@ -107,7 +125,10 @@ pub struct GetNetworkConnectorOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) version_arn: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) latest_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version: ::std::option::Option<i64>,
     pub(crate) configuration: ::std::option::Option<crate::types::NetworkConnectorConfiguration>,
     pub(crate) operator_role: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::NetworkConnectorState>,
@@ -150,34 +171,76 @@ impl GetNetworkConnectorOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// The unique identifier for a network connector, assigned by the service at creation time
+    /// <p>The unique identifier of the network connector.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The version number of the connector configuration, incremented on each update.</p>
+    /// <p>The qualified ARN of the specific connector version returned by this request, including the immutable version suffix. This is populated only when you supply a version-qualified identifier. On a standard (unqualified) request, this field is not populated; the connector's latest active version is returned instead through the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields described below.</p>
+    pub fn version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The qualified ARN of the specific connector version returned by this request, including the immutable version suffix. This is populated only when you supply a version-qualified identifier. On a standard (unqualified) request, this field is not populated; the connector's latest active version is returned instead through the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields described below.</p>
+    pub fn set_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_arn = input;
+        self
+    }
+    /// <p>The qualified ARN of the specific connector version returned by this request, including the immutable version suffix. This is populated only when you supply a version-qualified identifier. On a standard (unqualified) request, this field is not populated; the connector's latest active version is returned instead through the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields described below.</p>
+    pub fn get_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_arn
+    }
+    /// <p>The version number of the network connector. On a standard (unqualified) request, this is the connector's current version; each configuration update increments it. When you supply a version-qualified identifier, this is the specific version you requested.</p>
     pub fn version(mut self, input: i64) -> Self {
         self.version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The version number of the connector configuration, incremented on each update.</p>
+    /// <p>The version number of the network connector. On a standard (unqualified) request, this is the connector's current version; each configuration update increments it. When you supply a version-qualified identifier, this is the specific version you requested.</p>
     pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version number of the connector configuration, incremented on each update.</p>
+    /// <p>The version number of the network connector. On a standard (unqualified) request, this is the connector's current version; each configuration update increments it. When you supply a version-qualified identifier, this is the specific version you requested.</p>
     pub fn get_version(&self) -> &::std::option::Option<i64> {
         &self.version
+    }
+    /// <p>The qualified ARN of the connector's latest active version, including the immutable version suffix. This field is returned only on a standard (unqualified) request; when you supply a version-qualified identifier it is not returned, and <code>VersionArn</code> is returned instead.</p>
+    pub fn latest_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latest_version_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The qualified ARN of the connector's latest active version, including the immutable version suffix. This field is returned only on a standard (unqualified) request; when you supply a version-qualified identifier it is not returned, and <code>VersionArn</code> is returned instead.</p>
+    pub fn set_latest_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.latest_version_arn = input;
+        self
+    }
+    /// <p>The qualified ARN of the connector's latest active version, including the immutable version suffix. This field is returned only on a standard (unqualified) request; when you supply a version-qualified identifier it is not returned, and <code>VersionArn</code> is returned instead.</p>
+    pub fn get_latest_version_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.latest_version_arn
+    }
+    /// <p>The version number of the connector's latest active version. Each configuration update creates a new immutable version; this attribute exposes the most recent one. This field is returned only on a standard (unqualified) request.</p>
+    pub fn latest_version(mut self, input: i64) -> Self {
+        self.latest_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The version number of the connector's latest active version. Each configuration update creates a new immutable version; this attribute exposes the most recent one. This field is returned only on a standard (unqualified) request.</p>
+    pub fn set_latest_version(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.latest_version = input;
+        self
+    }
+    /// <p>The version number of the connector's latest active version. Each configuration update creates a new immutable version; this attribute exposes the most recent one. This field is returned only on a standard (unqualified) request.</p>
+    pub fn get_latest_version(&self) -> &::std::option::Option<i64> {
+        &self.latest_version
     }
     /// <p>The network configuration of the connector, including VPC subnets and security groups.</p>
     pub fn configuration(mut self, input: crate::types::NetworkConnectorConfiguration) -> Self {
@@ -345,7 +408,10 @@ impl GetNetworkConnectorOutputBuilder {
                     "id was not specified but it is required when building GetNetworkConnectorOutput",
                 )
             })?,
+            version_arn: self.version_arn,
             version: self.version,
+            latest_version_arn: self.latest_version_arn,
+            latest_version: self.latest_version,
             configuration: self.configuration,
             operator_role: self.operator_role,
             state: self.state,

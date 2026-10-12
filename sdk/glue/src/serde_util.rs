@@ -8,6 +8,15 @@ pub(crate) fn batch_get_data_quality_result_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_data_quality_result_v2_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_data_quality_result_v2::builders::BatchGetDataQualityResultV2OutputBuilder,
+) -> crate::operation::batch_get_data_quality_result_v2::builders::BatchGetDataQualityResultV2OutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_integration_output_output_correct_errors(
     mut builder: crate::operation::create_integration::builders::CreateIntegrationOutputBuilder,
 ) -> crate::operation::create_integration::builders::CreateIntegrationOutputBuilder {
@@ -143,6 +152,15 @@ pub(crate) fn list_data_quality_results_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_data_quality_results_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_data_quality_results_v2::builders::ListDataQualityResultsV2OutputBuilder,
+) -> crate::operation::list_data_quality_results_v2::builders::ListDataQualityResultsV2OutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_form_types_output_output_correct_errors(
     mut builder: crate::operation::list_form_types::builders::ListFormTypesOutputBuilder,
 ) -> crate::operation::list_form_types::builders::ListFormTypesOutputBuilder {
@@ -181,6 +199,15 @@ pub(crate) fn modify_integration_output_output_correct_errors(
     }
     if builder.create_time.is_none() {
         builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn publish_data_quality_result_v2_output_output_correct_errors(
+    mut builder: crate::operation::publish_data_quality_result_v2::builders::PublishDataQualityResultV2OutputBuilder,
+) -> crate::operation::publish_data_quality_result_v2::builders::PublishDataQualityResultV2OutputBuilder {
+    if builder.result_id.is_none() {
+        builder.result_id = Some(Default::default())
     }
     builder
 }
@@ -418,6 +445,15 @@ pub(crate) fn data_quality_glue_table_correct_errors(
     }
     if builder.table_name.is_none() {
         builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn data_quality_result_v2_item_correct_errors(
+    mut builder: crate::types::builders::DataQualityResultV2ItemBuilder,
+) -> crate::types::builders::DataQualityResultV2ItemBuilder {
+    if builder.result_id.is_none() {
+        builder.result_id = Some(Default::default())
     }
     builder
 }

@@ -22,7 +22,7 @@ impl crate::operation::update_alias::builders::UpdateAliasInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateAlias`.
 ///
-/// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
+/// <p>Updates the configuration of a Lambda Event Function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAliasFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

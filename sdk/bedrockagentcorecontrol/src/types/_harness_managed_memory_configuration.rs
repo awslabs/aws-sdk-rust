@@ -10,7 +10,7 @@ pub struct HarnessManagedMemoryConfiguration {
     pub strategies: ::std::option::Option<::std::vec::Vec<crate::types::HarnessManagedMemoryStrategyType>>,
     /// <p>Event retention in days. Defaults to 30.</p>
     pub event_expiry_duration: ::std::option::Option<i32>,
-    /// <p>Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.</p>
+    /// <p>Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable after creation.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl HarnessManagedMemoryConfiguration {
@@ -28,7 +28,7 @@ impl HarnessManagedMemoryConfiguration {
     pub fn event_expiry_duration(&self) -> ::std::option::Option<i32> {
         self.event_expiry_duration
     }
-    /// <p>Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.</p>
+    /// <p>Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable after creation.</p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
@@ -98,17 +98,17 @@ impl HarnessManagedMemoryConfigurationBuilder {
     pub fn get_event_expiry_duration(&self) -> &::std::option::Option<i32> {
         &self.event_expiry_duration
     }
-    /// <p>Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.</p>
+    /// <p>Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable after creation.</p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.</p>
+    /// <p>Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable after creation.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
-    /// <p>Customer-managed KMS key. Defaults to AWS-owned key. Not updatable after creation.</p>
+    /// <p>Customer-managed KMS key. Defaults to Amazon Web Services-owned key. Not updatable after creation.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }

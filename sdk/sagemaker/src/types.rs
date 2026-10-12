@@ -353,6 +353,12 @@ pub use crate::types::_mlflow_config::MlflowConfig;
 
 pub use crate::types::_model_package_config::ModelPackageConfig;
 
+pub use crate::types::_lora_config::LoraConfig;
+
+pub use crate::types::_training_session_model_config::TrainingSessionModelConfig;
+
+pub use crate::types::_training_session_output_config::TrainingSessionOutputConfig;
+
 pub use crate::types::_model_client_config::ModelClientConfig;
 
 pub use crate::types::_batch_strategy::BatchStrategy;
@@ -603,6 +609,8 @@ pub use crate::types::_training_progress_info::TrainingProgressInfo;
 
 pub use crate::types::_training_plan_status::TrainingPlanStatus;
 
+pub use crate::types::_training_session_detail::TrainingSessionDetail;
+
 pub use crate::types::_transform_job_status::TransformJobStatus;
 
 pub use crate::types::_trial_source::TrialSource;
@@ -794,6 +802,8 @@ pub use crate::types::_training_job_sort_by_options::TrainingJobSortByOptions;
 pub use crate::types::_training_plan_sort_by::TrainingPlanSortBy;
 
 pub use crate::types::_training_plan_sort_order::TrainingPlanSortOrder;
+
+pub use crate::types::_training_session_status::TrainingSessionStatus;
 
 pub use crate::types::_sort_trial_components_by::SortTrialComponentsBy;
 
@@ -1175,6 +1185,8 @@ pub use crate::types::_peft::Peft;
 
 pub use crate::types::_evaluation_type::EvaluationType;
 
+pub use crate::types::_training_session_s3_location::TrainingSessionS3Location;
+
 pub use crate::types::_transform_data_source::TransformDataSource;
 
 pub use crate::types::_compression_type::CompressionType;
@@ -1294,6 +1306,8 @@ pub use crate::types::_sage_maker_resource_name::SageMakerResourceName;
 pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummary;
 
 pub use crate::types::_training_plan_extension::TrainingPlanExtension;
+
+pub use crate::types::_billable_token_usage::BillableTokenUsage;
 
 pub use crate::types::_trial_component_metric_summary::TrialComponentMetricSummary;
 
@@ -1458,6 +1472,8 @@ pub use crate::types::_training_job_summary::TrainingJobSummary;
 pub use crate::types::_training_plan_filter::TrainingPlanFilter;
 
 pub use crate::types::_training_plan_summary::TrainingPlanSummary;
+
+pub use crate::types::_training_session_summary::TrainingSessionSummary;
 
 pub use crate::types::_transform_job_summary::TransformJobSummary;
 
@@ -2683,6 +2699,8 @@ mod _best_objective_not_improving;
 
 mod _bias;
 
+mod _billable_token_usage;
+
 mod _blue_green_update_policy;
 
 mod _boolean_operator;
@@ -3600,6 +3618,8 @@ mod _list_optimization_jobs_sort_by;
 mod _list_workforces_sort_by_options;
 
 mod _list_workteams_sort_by_options;
+
+mod _lora_config;
 
 mod _m_lflow_configuration;
 
@@ -4570,6 +4590,18 @@ mod _training_progress_info;
 mod _training_repository_access_mode;
 
 mod _training_repository_auth_config;
+
+mod _training_session_detail;
+
+mod _training_session_model_config;
+
+mod _training_session_output_config;
+
+mod _training_session_s3_location;
+
+mod _training_session_status;
+
+mod _training_session_summary;
 
 mod _training_specification;
 

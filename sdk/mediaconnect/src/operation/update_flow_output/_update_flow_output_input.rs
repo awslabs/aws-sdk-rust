@@ -57,6 +57,8 @@ pub struct UpdateFlowOutputInput {
     /// <p><code>UTC_SYSTEM_TIME</code> - Generates timecodes based on the system clock time when each frame is sent.</p></li>
     /// </ul>
     pub ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub ndi_audio_reference_level: ::std::option::Option<i32>,
 }
 impl UpdateFlowOutputInput {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -163,6 +165,10 @@ impl UpdateFlowOutputInput {
     pub fn ndi_output_timecode_source(&self) -> ::std::option::Option<&crate::types::NdiOutputTimecodeSource> {
         self.ndi_output_timecode_source.as_ref()
     }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn ndi_audio_reference_level(&self) -> ::std::option::Option<i32> {
+        self.ndi_audio_reference_level
+    }
 }
 impl UpdateFlowOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
@@ -198,6 +204,7 @@ pub struct UpdateFlowOutputInputBuilder {
     pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
     pub(crate) router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
     pub(crate) ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
+    pub(crate) ndi_audio_reference_level: ::std::option::Option<i32>,
 }
 impl UpdateFlowOutputInputBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -565,6 +572,20 @@ impl UpdateFlowOutputInputBuilder {
     pub fn get_ndi_output_timecode_source(&self) -> &::std::option::Option<crate::types::NdiOutputTimecodeSource> {
         &self.ndi_output_timecode_source
     }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn ndi_audio_reference_level(mut self, input: i32) -> Self {
+        self.ndi_audio_reference_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn set_ndi_audio_reference_level(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ndi_audio_reference_level = input;
+        self
+    }
+    /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
+    pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
+        &self.ndi_audio_reference_level
+    }
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(
         self,
@@ -593,6 +614,7 @@ impl UpdateFlowOutputInputBuilder {
             router_integration_state: self.router_integration_state,
             router_integration_transit_encryption: self.router_integration_transit_encryption,
             ndi_output_timecode_source: self.ndi_output_timecode_source,
+            ndi_audio_reference_level: self.ndi_audio_reference_level,
         })
     }
 }

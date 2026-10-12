@@ -450,17 +450,17 @@ impl StartRunFluentBuilder {
     pub fn get_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_configuration_name()
     }
-    /// Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.
+    /// <p>Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.</p>
     pub fn session_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_policy(input.into());
         self
     }
-    /// Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.
+    /// <p>Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.</p>
     pub fn set_session_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_policy(input);
         self
     }
-    /// Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.
+    /// <p>Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.</p>
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session_policy()
     }

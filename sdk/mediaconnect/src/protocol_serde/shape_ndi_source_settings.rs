@@ -6,6 +6,12 @@ pub fn ser_ndi_source_settings(
     if let Some(var_1) = &input.source_name {
         object.key("sourceName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.audio_reference_level {
+        object.key("audioReferenceLevel").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
     Ok(())
 }
 
@@ -35,6 +41,13 @@ where
                             builder = builder.set_source_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "audioReferenceLevel" => {
+                            builder = builder.set_audio_reference_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

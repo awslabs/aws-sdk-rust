@@ -299,6 +299,16 @@ pub(crate) fn reflens_list_data_quality_results_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_data_quality_results_v2_output_output_next_token(
+    input: &crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_quality_rule_recommendation_runs_output_output_next_token(
     input: &crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -593,6 +603,13 @@ pub(crate) fn lens_list_connection_types_output_output_connection_types(
     input: crate::operation::list_connection_types::ListConnectionTypesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectionTypeBrief>> {
     let input = input.connection_types?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_data_quality_results_v2_output_output_results(
+    input: crate::operation::list_data_quality_results_v2::ListDataQualityResultsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataQualityResultsV2Description>> {
+    let input = input.results;
     ::std::option::Option::Some(input)
 }
 
