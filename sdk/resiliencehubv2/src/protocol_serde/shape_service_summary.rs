@@ -59,6 +59,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "devOpsAgentStatus" => {
+                            builder = builder.set_dev_ops_agent_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DevOpsAgentConnectionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "devOpsAgentSpaceArn" => {
+                            builder = builder.set_dev_ops_agent_space_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "openFindingsCount" => {
                             builder = builder.set_open_findings_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

@@ -112,6 +112,9 @@ pub mod create_contact;
 /// Types for the `CreateContactFlow` operation.
 pub mod create_contact_flow;
 
+/// Types for the `CreateContactFlowAlias` operation.
+pub mod create_contact_flow_alias;
+
 /// Types for the `CreateContactFlowModule` operation.
 pub mod create_contact_flow_module;
 
@@ -234,6 +237,9 @@ pub mod delete_contact_evaluation;
 
 /// Types for the `DeleteContactFlow` operation.
 pub mod delete_contact_flow;
+
+/// Types for the `DeleteContactFlowAlias` operation.
+pub mod delete_contact_flow_alias;
 
 /// Types for the `DeleteContactFlowModule` operation.
 pub mod delete_contact_flow_module;
@@ -360,6 +366,9 @@ pub mod describe_contact_evaluation;
 
 /// Types for the `DescribeContactFlow` operation.
 pub mod describe_contact_flow;
+
+/// Types for the `DescribeContactFlowAlias` operation.
+pub mod describe_contact_flow_alias;
 
 /// Types for the `DescribeContactFlowModule` operation.
 pub mod describe_contact_flow_module;
@@ -594,6 +603,9 @@ pub mod list_child_hours_of_operations;
 
 /// Types for the `ListContactEvaluations` operation.
 pub mod list_contact_evaluations;
+
+/// Types for the `ListContactFlowAliases` operation.
+pub mod list_contact_flow_aliases;
 
 /// Types for the `ListContactFlowModuleAliases` operation.
 pub mod list_contact_flow_module_aliases;
@@ -1002,6 +1014,9 @@ pub mod update_contact_attributes;
 
 /// Types for the `UpdateContactEvaluation` operation.
 pub mod update_contact_evaluation;
+
+/// Types for the `UpdateContactFlowAlias` operation.
+pub mod update_contact_flow_alias;
 
 /// Types for the `UpdateContactFlowContent` operation.
 pub mod update_contact_flow_content;

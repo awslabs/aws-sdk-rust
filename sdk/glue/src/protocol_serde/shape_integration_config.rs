@@ -40,6 +40,13 @@ where
                         "ContinuousSync" => {
                             builder = builder.set_continuous_sync(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "TargetNamespace" => {
+                            builder = builder.set_target_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -76,6 +83,9 @@ pub fn ser_integration_config(
     }
     if let Some(var_6) = &input.continuous_sync {
         object.key("ContinuousSync").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.target_namespace {
+        object.key("TargetNamespace").string(var_7.as_str());
     }
     Ok(())
 }

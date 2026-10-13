@@ -281,6 +281,8 @@ pub(crate) mod shape_dependency_insights_list;
 
 pub(crate) mod shape_dependency_summary_list;
 
+pub(crate) mod shape_dev_ops_agent_configuration;
+
 pub(crate) mod shape_experiment_arn_list;
 
 pub(crate) mod shape_finding;
@@ -384,6 +386,10 @@ pub(crate) mod shape_dependency_discovery_config;
 pub(crate) mod shape_dependency_insight;
 
 pub(crate) mod shape_dependency_summary;
+
+pub(crate) mod shape_dev_ops_agent_configuration_view;
+
+pub(crate) mod shape_dev_ops_agent_investigation;
 
 pub(crate) mod shape_effective_policy_values;
 

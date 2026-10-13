@@ -18,5 +18,11 @@ pub fn ser_renew_domain_input_input(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.consent {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Consent").start_object();
+        crate::protocol_serde::shape_consent::ser_consent(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

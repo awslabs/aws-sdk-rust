@@ -51,6 +51,9 @@ pub fn ser_options(
     if let Some(var_15) = &input.object_tags {
         object.key("ObjectTags").string(var_15.as_str());
     }
+    if let Some(var_16) = &input.object_metadata {
+        object.key("ObjectMetadata").string(var_16.as_str());
+    }
     Ok(())
 }
 
@@ -178,6 +181,13 @@ where
                             builder = builder.set_object_tags(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ObjectTags::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ObjectMetadata" => {
+                            builder = builder.set_object_metadata(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ObjectMetadata::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

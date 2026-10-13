@@ -19,6 +19,8 @@ pub struct UpdateServiceInput {
     pub dependency_discovery: ::std::option::Option<crate::types::DependencyDiscoveryInput>,
     /// <p>Configuration for automatic report generation on a Service.</p>
     pub report_configuration: ::std::option::Option<crate::types::ServiceReportConfiguration>,
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfiguration>,
 }
 impl UpdateServiceInput {
     /// <p>ARN identifier.</p>
@@ -57,6 +59,10 @@ impl UpdateServiceInput {
     pub fn report_configuration(&self) -> ::std::option::Option<&crate::types::ServiceReportConfiguration> {
         self.report_configuration.as_ref()
     }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn dev_ops_agent_configuration(&self) -> ::std::option::Option<&crate::types::DevOpsAgentConfiguration> {
+        self.dev_ops_agent_configuration.as_ref()
+    }
 }
 impl UpdateServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
@@ -77,6 +83,7 @@ pub struct UpdateServiceInputBuilder {
     pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModel>,
     pub(crate) dependency_discovery: ::std::option::Option<crate::types::DependencyDiscoveryInput>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::ServiceReportConfiguration>,
+    pub(crate) dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfiguration>,
 }
 impl UpdateServiceInputBuilder {
     /// <p>ARN identifier.</p>
@@ -204,6 +211,20 @@ impl UpdateServiceInputBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ServiceReportConfiguration> {
         &self.report_configuration
     }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn dev_ops_agent_configuration(mut self, input: crate::types::DevOpsAgentConfiguration) -> Self {
+        self.dev_ops_agent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn set_dev_ops_agent_configuration(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConfiguration>) -> Self {
+        self.dev_ops_agent_configuration = input;
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn get_dev_ops_agent_configuration(&self) -> &::std::option::Option<crate::types::DevOpsAgentConfiguration> {
+        &self.dev_ops_agent_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
     pub fn build(
         self,
@@ -217,6 +238,7 @@ impl UpdateServiceInputBuilder {
             permission_model: self.permission_model,
             dependency_discovery: self.dependency_discovery,
             report_configuration: self.report_configuration,
+            dev_ops_agent_configuration: self.dev_ops_agent_configuration,
         })
     }
 }

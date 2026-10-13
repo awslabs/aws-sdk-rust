@@ -18,6 +18,15 @@ pub fn ser_automation_rules_action_v2(
         crate::protocol_serde::shape_external_integration_configuration::ser_external_integration_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.resource_fields_update {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ResourceFieldsUpdate").start_object();
+        crate::protocol_serde::shape_automation_rules_resource_fields_update_v2::ser_automation_rules_resource_fields_update_v2(
+            &mut object_7,
+            var_6,
+        )?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +72,11 @@ where
                                         _value,
                                         depth + 1,
                                     )?,
+                                );
+                            }
+                            "ResourceFieldsUpdate" => {
+                                builder = builder.set_resource_fields_update(
+                                    crate::protocol_serde::shape_automation_rules_resource_fields_update_v2::de_automation_rules_resource_fields_update_v2(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

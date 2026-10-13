@@ -24,6 +24,8 @@ pub struct PipelineExecutionStepMetadata {
     pub lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
     pub emr: ::std::option::Option<crate::types::EmrStepMetadata>,
+    /// <p>The configurations and outcomes of an Amazon EMR Serverless step execution.</p>
+    pub emr_serverless: ::std::option::Option<crate::types::EmrServerlessStepMetadata>,
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
     /// <li>
@@ -86,6 +88,12 @@ pub struct PipelineExecutionStepMetadata {
     pub lineage: ::std::option::Option<crate::types::LineageMetadata>,
     /// <p>The metadata for a SageMaker job used in a pipeline execution step.</p>
     pub job: ::std::option::Option<crate::types::JobStepMetadata>,
+    /// <p>The metadata for the Athena step execution.</p>
+    pub athena: ::std::option::Option<crate::types::AthenaStepMetadata>,
+    /// <p>The metadata for the cleanup step execution.</p>
+    pub cleanup: ::std::option::Option<crate::types::CleanupStepMetadata>,
+    /// <p>The metadata for the ForEach step execution.</p>
+    pub for_each: ::std::option::Option<crate::types::ForEachStepMetadata>,
 }
 impl PipelineExecutionStepMetadata {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -127,6 +135,10 @@ impl PipelineExecutionStepMetadata {
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
     pub fn emr(&self) -> ::std::option::Option<&crate::types::EmrStepMetadata> {
         self.emr.as_ref()
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR Serverless step execution.</p>
+    pub fn emr_serverless(&self) -> ::std::option::Option<&crate::types::EmrServerlessStepMetadata> {
+        self.emr_serverless.as_ref()
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -216,6 +228,18 @@ impl PipelineExecutionStepMetadata {
     pub fn job(&self) -> ::std::option::Option<&crate::types::JobStepMetadata> {
         self.job.as_ref()
     }
+    /// <p>The metadata for the Athena step execution.</p>
+    pub fn athena(&self) -> ::std::option::Option<&crate::types::AthenaStepMetadata> {
+        self.athena.as_ref()
+    }
+    /// <p>The metadata for the cleanup step execution.</p>
+    pub fn cleanup(&self) -> ::std::option::Option<&crate::types::CleanupStepMetadata> {
+        self.cleanup.as_ref()
+    }
+    /// <p>The metadata for the ForEach step execution.</p>
+    pub fn for_each(&self) -> ::std::option::Option<&crate::types::ForEachStepMetadata> {
+        self.for_each.as_ref()
+    }
 }
 impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
@@ -238,6 +262,7 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) callback: ::std::option::Option<crate::types::CallbackStepMetadata>,
     pub(crate) lambda: ::std::option::Option<crate::types::LambdaStepMetadata>,
     pub(crate) emr: ::std::option::Option<crate::types::EmrStepMetadata>,
+    pub(crate) emr_serverless: ::std::option::Option<crate::types::EmrServerlessStepMetadata>,
     pub(crate) quality_check: ::std::option::Option<crate::types::QualityCheckStepMetadata>,
     pub(crate) clarify_check: ::std::option::Option<crate::types::ClarifyCheckStepMetadata>,
     pub(crate) fail: ::std::option::Option<crate::types::FailStepMetadata>,
@@ -251,6 +276,9 @@ pub struct PipelineExecutionStepMetadataBuilder {
     pub(crate) inference_component: ::std::option::Option<crate::types::InferenceComponentMetadata>,
     pub(crate) lineage: ::std::option::Option<crate::types::LineageMetadata>,
     pub(crate) job: ::std::option::Option<crate::types::JobStepMetadata>,
+    pub(crate) athena: ::std::option::Option<crate::types::AthenaStepMetadata>,
+    pub(crate) cleanup: ::std::option::Option<crate::types::CleanupStepMetadata>,
+    pub(crate) for_each: ::std::option::Option<crate::types::ForEachStepMetadata>,
 }
 impl PipelineExecutionStepMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the training job that was run by this step execution.</p>
@@ -392,6 +420,20 @@ impl PipelineExecutionStepMetadataBuilder {
     /// <p>The configurations and outcomes of an Amazon EMR step execution.</p>
     pub fn get_emr(&self) -> &::std::option::Option<crate::types::EmrStepMetadata> {
         &self.emr
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR Serverless step execution.</p>
+    pub fn emr_serverless(mut self, input: crate::types::EmrServerlessStepMetadata) -> Self {
+        self.emr_serverless = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR Serverless step execution.</p>
+    pub fn set_emr_serverless(mut self, input: ::std::option::Option<crate::types::EmrServerlessStepMetadata>) -> Self {
+        self.emr_serverless = input;
+        self
+    }
+    /// <p>The configurations and outcomes of an Amazon EMR Serverless step execution.</p>
+    pub fn get_emr_serverless(&self) -> &::std::option::Option<crate::types::EmrServerlessStepMetadata> {
+        &self.emr_serverless
     }
     /// <p>The configurations and outcomes of the check step execution. This includes:</p>
     /// <ul>
@@ -686,6 +728,48 @@ impl PipelineExecutionStepMetadataBuilder {
     pub fn get_job(&self) -> &::std::option::Option<crate::types::JobStepMetadata> {
         &self.job
     }
+    /// <p>The metadata for the Athena step execution.</p>
+    pub fn athena(mut self, input: crate::types::AthenaStepMetadata) -> Self {
+        self.athena = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for the Athena step execution.</p>
+    pub fn set_athena(mut self, input: ::std::option::Option<crate::types::AthenaStepMetadata>) -> Self {
+        self.athena = input;
+        self
+    }
+    /// <p>The metadata for the Athena step execution.</p>
+    pub fn get_athena(&self) -> &::std::option::Option<crate::types::AthenaStepMetadata> {
+        &self.athena
+    }
+    /// <p>The metadata for the cleanup step execution.</p>
+    pub fn cleanup(mut self, input: crate::types::CleanupStepMetadata) -> Self {
+        self.cleanup = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for the cleanup step execution.</p>
+    pub fn set_cleanup(mut self, input: ::std::option::Option<crate::types::CleanupStepMetadata>) -> Self {
+        self.cleanup = input;
+        self
+    }
+    /// <p>The metadata for the cleanup step execution.</p>
+    pub fn get_cleanup(&self) -> &::std::option::Option<crate::types::CleanupStepMetadata> {
+        &self.cleanup
+    }
+    /// <p>The metadata for the ForEach step execution.</p>
+    pub fn for_each(mut self, input: crate::types::ForEachStepMetadata) -> Self {
+        self.for_each = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for the ForEach step execution.</p>
+    pub fn set_for_each(mut self, input: ::std::option::Option<crate::types::ForEachStepMetadata>) -> Self {
+        self.for_each = input;
+        self
+    }
+    /// <p>The metadata for the ForEach step execution.</p>
+    pub fn get_for_each(&self) -> &::std::option::Option<crate::types::ForEachStepMetadata> {
+        &self.for_each
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn build(self) -> crate::types::PipelineExecutionStepMetadata {
         crate::types::PipelineExecutionStepMetadata {
@@ -699,6 +783,7 @@ impl PipelineExecutionStepMetadataBuilder {
             callback: self.callback,
             lambda: self.lambda,
             emr: self.emr,
+            emr_serverless: self.emr_serverless,
             quality_check: self.quality_check,
             clarify_check: self.clarify_check,
             fail: self.fail,
@@ -712,6 +797,9 @@ impl PipelineExecutionStepMetadataBuilder {
             inference_component: self.inference_component,
             lineage: self.lineage,
             job: self.job,
+            athena: self.athena,
+            cleanup: self.cleanup,
+            for_each: self.for_each,
         }
     }
 }

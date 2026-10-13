@@ -163,6 +163,18 @@ where
                             builder =
                                 builder.set_resource_info(crate::protocol_serde::shape_resource_info::de_resource_info(tokens, _value, depth + 1)?);
                         }
+                        "ResourceCriticality" => {
+                            builder = builder.set_resource_criticality(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResourceCriticality::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CriticalitySources" => {
+                            builder = builder.set_criticality_sources(
+                                crate::protocol_serde::shape_criticality_source_list::de_criticality_source_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

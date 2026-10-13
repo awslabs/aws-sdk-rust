@@ -48,6 +48,8 @@ pub struct Service {
     pub ou_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS account ID that owns the service.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The current DevOps Agent integration state for the service.</p>
+    pub dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfigurationView>,
     /// <p>The timestamp when the service was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the service was last updated.</p>
@@ -148,6 +150,10 @@ impl Service {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
+    /// <p>The current DevOps Agent integration state for the service.</p>
+    pub fn dev_ops_agent_configuration(&self) -> ::std::option::Option<&crate::types::DevOpsAgentConfigurationView> {
+        self.dev_ops_agent_configuration.as_ref()
+    }
     /// <p>The timestamp when the service was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -182,6 +188,7 @@ impl ::std::fmt::Debug for Service {
         formatter.field("organization_id", &self.organization_id);
         formatter.field("ou_id", &self.ou_id);
         formatter.field("account_id", &self.account_id);
+        formatter.field("dev_ops_agent_configuration", &self.dev_ops_agent_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()
@@ -220,6 +227,7 @@ pub struct ServiceBuilder {
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) ou_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfigurationView>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -552,6 +560,20 @@ impl ServiceBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
+    /// <p>The current DevOps Agent integration state for the service.</p>
+    pub fn dev_ops_agent_configuration(mut self, input: crate::types::DevOpsAgentConfigurationView) -> Self {
+        self.dev_ops_agent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current DevOps Agent integration state for the service.</p>
+    pub fn set_dev_ops_agent_configuration(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConfigurationView>) -> Self {
+        self.dev_ops_agent_configuration = input;
+        self
+    }
+    /// <p>The current DevOps Agent integration state for the service.</p>
+    pub fn get_dev_ops_agent_configuration(&self) -> &::std::option::Option<crate::types::DevOpsAgentConfigurationView> {
+        &self.dev_ops_agent_configuration
+    }
     /// <p>The timestamp when the service was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -618,6 +640,7 @@ impl ServiceBuilder {
             organization_id: self.organization_id,
             ou_id: self.ou_id,
             account_id: self.account_id,
+            dev_ops_agent_configuration: self.dev_ops_agent_configuration,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })
@@ -648,6 +671,7 @@ impl ::std::fmt::Debug for ServiceBuilder {
         formatter.field("organization_id", &self.organization_id);
         formatter.field("ou_id", &self.ou_id);
         formatter.field("account_id", &self.account_id);
+        formatter.field("dev_ops_agent_configuration", &self.dev_ops_agent_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()

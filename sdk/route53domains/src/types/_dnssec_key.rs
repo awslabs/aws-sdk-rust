@@ -9,10 +9,11 @@ pub struct DnssecKey {
     /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub algorithm: ::std::option::Option<i32>,
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
-    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    /// <p>The DNSKEY flags that indicate the key type. This field is deprecated; the <code>DnssecKey</code> response no longer returns the flags.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the flags.", since = "2026-10-01")]
     pub flags: ::std::option::Option<i32>,
-    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    /// <p>The base64-encoded public key of the key pair. This field is deprecated; the <code>DnssecKey</code> response no longer returns the public key.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the public key.", since = "2026-10-01")]
     pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>The number of the DS digest algorithm according to an IANA assignment.</p>
     /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.</p>
@@ -32,12 +33,13 @@ impl DnssecKey {
     pub fn algorithm(&self) -> ::std::option::Option<i32> {
         self.algorithm
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
-    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    /// <p>The DNSKEY flags that indicate the key type. This field is deprecated; the <code>DnssecKey</code> response no longer returns the flags.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the flags.", since = "2026-10-01")]
     pub fn flags(&self) -> ::std::option::Option<i32> {
         self.flags
     }
-    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    /// <p>The base64-encoded public key of the key pair. This field is deprecated; the <code>DnssecKey</code> response no longer returns the public key.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the public key.", since = "2026-10-01")]
     pub fn public_key(&self) -> ::std::option::Option<&str> {
         self.public_key.as_deref()
     }
@@ -100,34 +102,37 @@ impl DnssecKeyBuilder {
     pub fn get_algorithm(&self) -> &::std::option::Option<i32> {
         &self.algorithm
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
-    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    /// <p>The DNSKEY flags that indicate the key type. This field is deprecated; the <code>DnssecKey</code> response no longer returns the flags.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the flags.", since = "2026-10-01")]
     pub fn flags(mut self, input: i32) -> Self {
         self.flags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
-    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    /// <p>The DNSKEY flags that indicate the key type. This field is deprecated; the <code>DnssecKey</code> response no longer returns the flags.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the flags.", since = "2026-10-01")]
     pub fn set_flags(mut self, input: ::std::option::Option<i32>) -> Self {
         self.flags = input;
         self
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
-    /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
+    /// <p>The DNSKEY flags that indicate the key type. This field is deprecated; the <code>DnssecKey</code> response no longer returns the flags.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the flags.", since = "2026-10-01")]
     pub fn get_flags(&self) -> &::std::option::Option<i32> {
         &self.flags
     }
-    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    /// <p>The base64-encoded public key of the key pair. This field is deprecated; the <code>DnssecKey</code> response no longer returns the public key.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the public key.", since = "2026-10-01")]
     pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.public_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    /// <p>The base64-encoded public key of the key pair. This field is deprecated; the <code>DnssecKey</code> response no longer returns the public key.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the public key.", since = "2026-10-01")]
     pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key = input;
         self
     }
-    /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
+    /// <p>The base64-encoded public key of the key pair. This field is deprecated; the <code>DnssecKey</code> response no longer returns the public key.</p>
+    #[deprecated(note = "The DnssecKey response no longer returns the public key.", since = "2026-10-01")]
     pub fn get_public_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.public_key
     }

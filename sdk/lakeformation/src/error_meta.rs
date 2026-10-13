@@ -194,6 +194,39 @@ impl From<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRole
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_rls_policy::AttachRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::attach_rls_policy::AttachRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::attach_rls_policy::AttachRLSPolicyError> for Error {
+    fn from(err: crate::operation::attach_rls_policy::AttachRLSPolicyError) -> Self {
+        match err {
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::attach_rls_policy::AttachRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_grant_permissions::BatchGrantPermissionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -514,6 +547,38 @@ impl From<crate::operation::create_lf_tag_expression::CreateLFTagExpressionError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rls_policy::CreateRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_rls_policy::CreateRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_rls_policy::CreateRLSPolicyError> for Error {
+    fn from(err: crate::operation::create_rls_policy::CreateRLSPolicyError) -> Self {
+        match err {
+            crate::operation::create_rls_policy::CreateRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_rls_policy::CreateRLSPolicyError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::create_rls_policy::CreateRLSPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_rls_policy::CreateRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_rls_policy::CreateRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_rls_policy::CreateRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::create_rls_policy::CreateRLSPolicyError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::create_rls_policy::CreateRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -743,6 +808,35 @@ impl From<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rls_policy::DeleteRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_rls_policy::DeleteRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_rls_policy::DeleteRLSPolicyError> for Error {
+    fn from(err: crate::operation::delete_rls_policy::DeleteRLSPolicyError) -> Self {
+        match err {
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::delete_rls_policy::DeleteRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::deregister_resource::DeregisterResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -860,6 +954,35 @@ impl From<crate::operation::describe_transaction::DescribeTransactionError> for 
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::describe_transaction::DescribeTransactionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_rls_policy::DetachRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::detach_rls_policy::DetachRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::detach_rls_policy::DetachRLSPolicyError> for Error {
+    fn from(err: crate::operation::detach_rls_policy::DetachRLSPolicyError) -> Self {
+        match err {
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::detach_rls_policy::DetachRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1166,6 +1289,32 @@ impl From<crate::operation::get_resource_lf_tags::GetResourceLFTagsError> for Er
                 Error::OperationTimeoutException(inner)
             }
             crate::operation::get_resource_lf_tags::GetResourceLFTagsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rls_policy::GetRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_rls_policy::GetRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_rls_policy::GetRLSPolicyError> for Error {
+    fn from(err: crate::operation::get_rls_policy::GetRLSPolicyError) -> Self {
+        match err {
+            crate::operation::get_rls_policy::GetRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_rls_policy::GetRLSPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::get_rls_policy::GetRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::get_rls_policy::GetRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_rls_policy::GetRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::get_rls_policy::GetRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1596,6 +1745,71 @@ impl From<crate::operation::list_resources::ListResourcesError> for Error {
             crate::operation::list_resources::ListResourcesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::list_resources::ListResourcesError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::list_resources::ListResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rls_policies::ListRLSPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rls_policies::ListRLSPoliciesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_rls_policies::ListRLSPoliciesError> for Error {
+    fn from(err: crate::operation::list_rls_policies::ListRLSPoliciesError) -> Self {
+        match err {
+            crate::operation::list_rls_policies::ListRLSPoliciesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_rls_policies::ListRLSPoliciesError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::list_rls_policies::ListRLSPoliciesError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_rls_policies::ListRLSPoliciesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_rls_policies::ListRLSPoliciesError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::list_rls_policies::ListRLSPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError> for Error {
+    fn from(err: crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError) -> Self {
+        match err {
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::OperationTimeoutException(inner) => {
+                Error::OperationTimeoutException(inner)
+            }
+            crate::operation::list_rls_policy_attachments::ListRLSPolicyAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2089,6 +2303,38 @@ impl From<crate::operation::update_resource::UpdateResourceError> for Error {
             crate::operation::update_resource::UpdateResourceError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_resource::UpdateResourceError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
             crate::operation::update_resource::UpdateResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rls_policy::UpdateRLSPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rls_policy::UpdateRLSPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_rls_policy::UpdateRLSPolicyError> for Error {
+    fn from(err: crate::operation::update_rls_policy::UpdateRLSPolicyError) -> Self {
+        match err {
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
+            crate::operation::update_rls_policy::UpdateRLSPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

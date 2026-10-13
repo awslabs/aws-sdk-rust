@@ -26,6 +26,8 @@ pub struct PipelineExecutionStep {
     pub attempt_count: ::std::option::Option<i32>,
     /// <p>The ARN from an execution of the current pipeline from which results are reused for this step.</p>
     pub selective_execution_result: ::std::option::Option<crate::types::SelectiveExecutionResult>,
+    /// <p>The context for the iteration of a ForEach step that generated this step execution.</p>
+    pub iteration_context: ::std::option::Option<crate::types::IterationContext>,
 }
 impl PipelineExecutionStep {
     /// <p>The name of the step that is executed.</p>
@@ -72,6 +74,10 @@ impl PipelineExecutionStep {
     pub fn selective_execution_result(&self) -> ::std::option::Option<&crate::types::SelectiveExecutionResult> {
         self.selective_execution_result.as_ref()
     }
+    /// <p>The context for the iteration of a ForEach step that generated this step execution.</p>
+    pub fn iteration_context(&self) -> ::std::option::Option<&crate::types::IterationContext> {
+        self.iteration_context.as_ref()
+    }
 }
 impl PipelineExecutionStep {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
@@ -95,6 +101,7 @@ pub struct PipelineExecutionStepBuilder {
     pub(crate) metadata: ::std::option::Option<crate::types::PipelineExecutionStepMetadata>,
     pub(crate) attempt_count: ::std::option::Option<i32>,
     pub(crate) selective_execution_result: ::std::option::Option<crate::types::SelectiveExecutionResult>,
+    pub(crate) iteration_context: ::std::option::Option<crate::types::IterationContext>,
 }
 impl PipelineExecutionStepBuilder {
     /// <p>The name of the step that is executed.</p>
@@ -251,6 +258,20 @@ impl PipelineExecutionStepBuilder {
     pub fn get_selective_execution_result(&self) -> &::std::option::Option<crate::types::SelectiveExecutionResult> {
         &self.selective_execution_result
     }
+    /// <p>The context for the iteration of a ForEach step that generated this step execution.</p>
+    pub fn iteration_context(mut self, input: crate::types::IterationContext) -> Self {
+        self.iteration_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The context for the iteration of a ForEach step that generated this step execution.</p>
+    pub fn set_iteration_context(mut self, input: ::std::option::Option<crate::types::IterationContext>) -> Self {
+        self.iteration_context = input;
+        self
+    }
+    /// <p>The context for the iteration of a ForEach step that generated this step execution.</p>
+    pub fn get_iteration_context(&self) -> &::std::option::Option<crate::types::IterationContext> {
+        &self.iteration_context
+    }
     /// Consumes the builder and constructs a [`PipelineExecutionStep`](crate::types::PipelineExecutionStep).
     pub fn build(self) -> crate::types::PipelineExecutionStep {
         crate::types::PipelineExecutionStep {
@@ -265,6 +286,7 @@ impl PipelineExecutionStepBuilder {
             metadata: self.metadata,
             attempt_count: self.attempt_count,
             selective_execution_result: self.selective_execution_result,
+            iteration_context: self.iteration_context,
         }
     }
 }

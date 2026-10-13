@@ -22,7 +22,7 @@ impl crate::operation::create_contact_flow_version::builders::CreateContactFlowV
 }
 /// Fluent builder constructing a request to `CreateContactFlowVersion`.
 ///
-/// <p>Publishes a new version of the flow provided. Versions are immutable and monotonically increasing. If the <code>FlowContentSha256</code> provided is different from the <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow content, then an error is returned. This API only supports creating versions for flows of type <code>Campaign</code>.</p>
+/// <p>Publishes a new version of the flow provided. Versions are immutable and monotonically increasing. If the <code>FlowContentSha256</code> provided is different from the <code>FlowContentSha256</code> of the <code>$LATEST</code> published flow content, then an error is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFlowVersionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -48,6 +48,8 @@ pub struct TestRun {
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the test run targets resources in a single AWS account or across multiple accounts.</p>
     pub account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
+    /// <p>The DevOps Agent investigation result for the test run, present when the integration is enabled for the service.</p>
+    pub dev_ops_agent_investigation: ::std::option::Option<crate::types::DevOpsAgentInvestigation>,
 }
 impl TestRun {
     /// <p>The unique identifier of the test run.</p>
@@ -147,6 +149,10 @@ impl TestRun {
     pub fn account_targeting(&self) -> ::std::option::Option<&crate::types::AccountTargeting> {
         self.account_targeting.as_ref()
     }
+    /// <p>The DevOps Agent investigation result for the test run, present when the integration is enabled for the service.</p>
+    pub fn dev_ops_agent_investigation(&self) -> ::std::option::Option<&crate::types::DevOpsAgentInvestigation> {
+        self.dev_ops_agent_investigation.as_ref()
+    }
 }
 impl TestRun {
     /// Creates a new builder-style object to manufacture [`TestRun`](crate::types::TestRun).
@@ -181,6 +187,7 @@ pub struct TestRunBuilder {
     pub(crate) permission_model: ::std::option::Option<crate::types::PermissionModel>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_targeting: ::std::option::Option<crate::types::AccountTargeting>,
+    pub(crate) dev_ops_agent_investigation: ::std::option::Option<crate::types::DevOpsAgentInvestigation>,
 }
 impl TestRunBuilder {
     /// <p>The unique identifier of the test run.</p>
@@ -525,6 +532,20 @@ impl TestRunBuilder {
     pub fn get_account_targeting(&self) -> &::std::option::Option<crate::types::AccountTargeting> {
         &self.account_targeting
     }
+    /// <p>The DevOps Agent investigation result for the test run, present when the integration is enabled for the service.</p>
+    pub fn dev_ops_agent_investigation(mut self, input: crate::types::DevOpsAgentInvestigation) -> Self {
+        self.dev_ops_agent_investigation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DevOps Agent investigation result for the test run, present when the integration is enabled for the service.</p>
+    pub fn set_dev_ops_agent_investigation(mut self, input: ::std::option::Option<crate::types::DevOpsAgentInvestigation>) -> Self {
+        self.dev_ops_agent_investigation = input;
+        self
+    }
+    /// <p>The DevOps Agent investigation result for the test run, present when the integration is enabled for the service.</p>
+    pub fn get_dev_ops_agent_investigation(&self) -> &::std::option::Option<crate::types::DevOpsAgentInvestigation> {
+        &self.dev_ops_agent_investigation
+    }
     /// Consumes the builder and constructs a [`TestRun`](crate::types::TestRun).
     /// This method will fail if any of the following fields are not set:
     /// - [`test_run_id`](crate::types::builders::TestRunBuilder::test_run_id)
@@ -581,6 +602,7 @@ impl TestRunBuilder {
             permission_model: self.permission_model,
             regions: self.regions,
             account_targeting: self.account_targeting,
+            dev_ops_agent_investigation: self.dev_ops_agent_investigation,
         })
     }
 }

@@ -15,5 +15,8 @@ pub fn ser_get_domain_suggestions_input_input(
     if let Some(var_3) = &input.only_available {
         object.key("OnlyAvailable").boolean(*var_3);
     }
+    if let Some(var_4) = &input.only_standard_prices {
+        object.key("OnlyStandardPrices").boolean(*var_4);
+    }
     Ok(())
 }

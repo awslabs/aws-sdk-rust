@@ -61,6 +61,8 @@ pub use crate::types::_content_redirection::ContentRedirection;
 
 pub use crate::types::_agent_access_config::AgentAccessConfig;
 
+pub use crate::types::_storage_connector_authentication::StorageConnectorAuthentication;
+
 pub use crate::types::_stack::Stack;
 
 pub use crate::types::_theme_styling::ThemeStyling;
@@ -384,6 +386,8 @@ mod _stack_error;
 mod _stack_error_code;
 
 mod _storage_connector;
+
+mod _storage_connector_authentication;
 
 mod _storage_connector_type;
 

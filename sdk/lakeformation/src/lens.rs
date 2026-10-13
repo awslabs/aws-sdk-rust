@@ -89,6 +89,26 @@ pub(crate) fn reflens_list_resources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_rls_policies_output_output_next_token(
+    input: &crate::operation::list_rls_policies::ListRlsPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_rls_policy_attachments_output_output_next_token(
+    input: &crate::operation::list_rls_policy_attachments::ListRlsPolicyAttachmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_table_storage_optimizers_output_output_next_token(
     input: &crate::operation::list_table_storage_optimizers::ListTableStorageOptimizersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -154,6 +174,20 @@ pub(crate) fn lens_list_lf_tags_output_output_lf_tags(
     input: crate::operation::list_lf_tags::ListLfTagsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>> {
     let input = input.lf_tags?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_rls_policies_output_output_rls_policies(
+    input: crate::operation::list_rls_policies::ListRlsPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RlsPolicy>> {
+    let input = input.rls_policies?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_rls_policy_attachments_output_output_rls_policy_attachments(
+    input: crate::operation::list_rls_policy_attachments::ListRlsPolicyAttachmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RlsPolicyAttachment>> {
+    let input = input.rls_policy_attachments?;
     ::std::option::Option::Some(input)
 }
 

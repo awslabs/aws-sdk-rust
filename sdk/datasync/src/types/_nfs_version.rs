@@ -16,6 +16,7 @@
 ///     NfsVersion::Nfs3 => { /* ... */ },
 ///     NfsVersion::Nfs40 => { /* ... */ },
 ///     NfsVersion::Nfs41 => { /* ... */ },
+///     NfsVersion::Nfs42 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum NfsVersion {
     Nfs40,
     #[allow(missing_docs)] // documentation missing in model
     Nfs41,
+    #[allow(missing_docs)] // documentation missing in model
+    Nfs42,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for NfsVersion {
             "NFS3" => NfsVersion::Nfs3,
             "NFS4_0" => NfsVersion::Nfs40,
             "NFS4_1" => NfsVersion::Nfs41,
+            "NFS4_2" => NfsVersion::Nfs42,
             other => NfsVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl NfsVersion {
             NfsVersion::Nfs3 => "NFS3",
             NfsVersion::Nfs40 => "NFS4_0",
             NfsVersion::Nfs41 => "NFS4_1",
+            NfsVersion::Nfs42 => "NFS4_2",
             NfsVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATIC", "NFS3", "NFS4_0", "NFS4_1"]
+        &["AUTOMATIC", "NFS3", "NFS4_0", "NFS4_1", "NFS4_2"]
     }
 }
 impl ::std::convert::AsRef<str> for NfsVersion {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for NfsVersion {
             NfsVersion::Nfs3 => write!(f, "NFS3"),
             NfsVersion::Nfs40 => write!(f, "NFS4_0"),
             NfsVersion::Nfs41 => write!(f, "NFS4_1"),
+            NfsVersion::Nfs42 => write!(f, "NFS4_2"),
             NfsVersion::Unknown(value) => write!(f, "{value}"),
         }
     }

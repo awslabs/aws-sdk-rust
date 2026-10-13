@@ -239,17 +239,17 @@ impl CreateRegistryRecordFluentBuilder {
     pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
         self.inner.get_provenance()
     }
-    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    /// <p>The custom metadata for the record. Values are strings or JSON booleans.</p>
     pub fn custom_metadata(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.custom_metadata(input);
         self
     }
-    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    /// <p>The custom metadata for the record. Values are strings or JSON booleans.</p>
     pub fn set_custom_metadata(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_custom_metadata(input);
         self
     }
-    /// <p>The custom metadata to attach to the registry record. Each key must match a property defined in the registry's custom metadata schema. Values can be strings (maximum 128 characters) or native JSON booleans (<code>true</code> or <code>false</code>). Values are validated against the schema at creation time.</p>
+    /// <p>The custom metadata for the record. Values are strings or JSON booleans.</p>
     pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_custom_metadata()
     }

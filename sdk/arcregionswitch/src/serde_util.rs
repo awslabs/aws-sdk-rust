@@ -495,6 +495,18 @@ pub(crate) fn route53_health_check_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ssm_send_command_configuration_correct_errors(
+    mut builder: crate::types::builders::SsmSendCommandConfigurationBuilder,
+) -> crate::types::builders::SsmSendCommandConfigurationBuilder {
+    if builder.region_documents.is_none() {
+        builder.region_documents = Some(Default::default())
+    }
+    if builder.retry_interval_minutes.is_none() {
+        builder.retry_interval_minutes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ec2_ungraceful_correct_errors(
     mut builder: crate::types::builders::Ec2UngracefulBuilder,
 ) -> crate::types::builders::Ec2UngracefulBuilder {
@@ -550,6 +562,18 @@ pub(crate) fn event_source_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn ssm_document_config_correct_errors(
+    mut builder: crate::types::builders::SsmDocumentConfigBuilder,
+) -> crate::types::builders::SsmDocumentConfigBuilder {
+    if builder.document_arn.is_none() {
+        builder.document_arn = Some(Default::default())
+    }
+    if builder.targets.is_none() {
+        builder.targets = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn arc_routing_control_state_correct_errors(
     mut builder: crate::types::builders::ArcRoutingControlStateBuilder,
 ) -> crate::types::builders::ArcRoutingControlStateBuilder {
@@ -570,6 +594,16 @@ pub(crate) fn kubernetes_scaling_resource_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ssm_target_correct_errors(mut builder: crate::types::builders::SsmTargetBuilder) -> crate::types::builders::SsmTargetBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

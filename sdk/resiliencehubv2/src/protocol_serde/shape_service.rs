@@ -156,6 +156,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "devOpsAgentConfiguration" => {
+                            builder = builder.set_dev_ops_agent_configuration(
+                                crate::protocol_serde::shape_dev_ops_agent_configuration_view::de_dev_ops_agent_configuration_view(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

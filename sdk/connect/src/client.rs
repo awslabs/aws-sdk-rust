@@ -210,6 +210,8 @@ mod create_contact;
 
 mod create_contact_flow;
 
+mod create_contact_flow_alias;
+
 mod create_contact_flow_module;
 
 mod create_contact_flow_module_alias;
@@ -319,6 +321,8 @@ mod delete_contact_evaluation;
 
 mod delete_contact_flow;
 
+mod delete_contact_flow_alias;
+
 mod delete_contact_flow_module;
 
 mod delete_contact_flow_module_alias;
@@ -402,6 +406,8 @@ mod describe_contact;
 mod describe_contact_evaluation;
 
 mod describe_contact_flow;
+
+mod describe_contact_flow_alias;
 
 mod describe_contact_flow_module;
 
@@ -558,6 +564,8 @@ mod list_bots;
 mod list_child_hours_of_operations;
 
 mod list_contact_evaluations;
+
+mod list_contact_flow_aliases;
 
 mod list_contact_flow_module_aliases;
 
@@ -830,6 +838,8 @@ mod update_contact;
 mod update_contact_attributes;
 
 mod update_contact_evaluation;
+
+mod update_contact_flow_alias;
 
 mod update_contact_flow_content;
 

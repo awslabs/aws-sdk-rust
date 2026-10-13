@@ -19,8 +19,11 @@ pub struct GetDomainSuggestionsInput {
     pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50. Note that fewer than the requested number might be returned.</p>
     pub suggestion_count: ::std::option::Option<i32>,
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub only_available: ::std::option::Option<bool>,
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub only_standard_prices: ::std::option::Option<bool>,
 }
 impl GetDomainSuggestionsInput {
     /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -43,9 +46,14 @@ impl GetDomainSuggestionsInput {
     pub fn suggestion_count(&self) -> ::std::option::Option<i32> {
         self.suggestion_count
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn only_available(&self) -> ::std::option::Option<bool> {
         self.only_available
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn only_standard_prices(&self) -> ::std::option::Option<bool> {
+        self.only_standard_prices
     }
 }
 impl GetDomainSuggestionsInput {
@@ -62,6 +70,7 @@ pub struct GetDomainSuggestionsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) suggestion_count: ::std::option::Option<i32>,
     pub(crate) only_available: ::std::option::Option<bool>,
+    pub(crate) only_standard_prices: ::std::option::Option<bool>,
 }
 impl GetDomainSuggestionsInputBuilder {
     /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -130,20 +139,37 @@ impl GetDomainSuggestionsInputBuilder {
     pub fn get_suggestion_count(&self) -> &::std::option::Option<i32> {
         &self.suggestion_count
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     /// This field is required.
     pub fn only_available(mut self, input: bool) -> Self {
         self.only_available = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn set_only_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.only_available = input;
         self
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn get_only_available(&self) -> &::std::option::Option<bool> {
         &self.only_available
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn only_standard_prices(mut self, input: bool) -> Self {
+        self.only_standard_prices = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn set_only_standard_prices(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.only_standard_prices = input;
+        self
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn get_only_standard_prices(&self) -> &::std::option::Option<bool> {
+        &self.only_standard_prices
     }
     /// Consumes the builder and constructs a [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
     pub fn build(
@@ -154,6 +180,7 @@ impl GetDomainSuggestionsInputBuilder {
             domain_name: self.domain_name,
             suggestion_count: self.suggestion_count,
             only_available: self.only_available,
+            only_standard_prices: self.only_standard_prices,
         })
     }
 }

@@ -80,6 +80,9 @@ pub fn ser_create_stack_input_input(
         encoder.str("AgentAccessConfig");
         crate::protocol_serde::shape_agent_access_config::ser_agent_access_config(encoder, var_20)?;
     }
+    if let Some(var_21) = &input.storage_connector_authentication {
+        encoder.str("StorageConnectorAuthentication").str(var_21.as_str());
+    }
     encoder.end();
     Ok(())
 }

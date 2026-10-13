@@ -25,7 +25,13 @@ pub struct DomainTransferability {
     /// DONT_KNOW
     /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name can be transferred. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
@@ -70,7 +76,13 @@ impl DomainTransferability {
     /// DONT_KNOW
     /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name can be transferred. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
@@ -130,7 +142,13 @@ impl DomainTransferabilityBuilder {
     /// DONT_KNOW
     /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name can be transferred. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
@@ -176,7 +194,13 @@ impl DomainTransferabilityBuilder {
     /// DONT_KNOW
     /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name can be transferred. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
@@ -222,7 +246,13 @@ impl DomainTransferabilityBuilder {
     /// DONT_KNOW
     /// </dt>
     /// <dd>
-    /// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name can be transferred. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
+    /// </dd>
+    /// <dt>
+    /// PENDING
+    /// </dt>
+    /// <dd>
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
     /// </dd>
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT

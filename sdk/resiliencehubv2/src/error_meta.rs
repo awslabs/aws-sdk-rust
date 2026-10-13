@@ -933,6 +933,7 @@ impl From<crate::operation::import_app::ImportAppError> for Error {
             crate::operation::import_app::ImportAppError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::import_app::ImportAppError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::import_app::ImportAppError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::import_app::ImportAppError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::import_app::ImportAppError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_app::ImportAppError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -959,6 +960,7 @@ impl From<crate::operation::import_policy::ImportPolicyError> for Error {
             crate::operation::import_policy::ImportPolicyError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::import_policy::ImportPolicyError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::import_policy::ImportPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::import_policy::ImportPolicyError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::import_policy::ImportPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::import_policy::ImportPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }

@@ -172,18 +172,35 @@ impl GetDomainSuggestionsFluentBuilder {
     pub fn get_suggestion_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_suggestion_count()
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn only_available(mut self, input: bool) -> Self {
         self.inner = self.inner.only_available(input);
         self
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn set_only_available(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_only_available(input);
         self
     }
-    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're available to be registered. To determine whether the domain is available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+    /// <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return pricing information for the suggested domain names.</p>
     pub fn get_only_available(&self) -> &::std::option::Option<bool> {
         self.inner.get_only_available()
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn only_standard_prices(mut self, input: bool) -> Self {
+        self.inner = self.inner.only_standard_prices(input);
+        self
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn set_only_standard_prices(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_only_standard_prices(input);
+        self
+    }
+    /// <p>If <code>true</code>, Route 53 returns only domain names that are priced at the standard registration rate for their TLD. If <code>false</code>, Route 53 includes domain names with premium pricing in the suggestions list. The default is <code>true</code>.</p>
+    pub fn get_only_standard_prices(&self) -> &::std::option::Option<bool> {
+        self.inner.get_only_standard_prices()
     }
 }

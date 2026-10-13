@@ -25,6 +25,8 @@ pub use crate::types::_dependency_discovery_input::DependencyDiscoveryInput;
 
 pub use crate::types::_service_report_configuration::ServiceReportConfiguration;
 
+pub use crate::types::_dev_ops_agent_configuration::DevOpsAgentConfiguration;
+
 pub use crate::types::_service::Service;
 
 pub use crate::types::_service_function_criticality::ServiceFunctionCriticality;
@@ -99,6 +101,8 @@ pub use crate::types::_assessment_cost::AssessmentCost;
 
 pub use crate::types::_resource_discovery_status::ResourceDiscoveryStatus;
 
+pub use crate::types::_dev_ops_agent_configuration_view::DevOpsAgentConfigurationView;
+
 pub use crate::types::_service_function_source::ServiceFunctionSource;
 
 pub use crate::types::_stop_condition::StopCondition;
@@ -114,6 +118,8 @@ pub use crate::types::_test_run_report_configuration::TestRunReportConfiguration
 pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshot;
 
 pub use crate::types::_account_targeting::AccountTargeting;
+
+pub use crate::types::_dev_ops_agent_investigation::DevOpsAgentInvestigation;
 
 pub use crate::types::_dependency_summary::DependencySummary;
 
@@ -193,6 +199,8 @@ pub use crate::types::_resource_discovery_run_status::ResourceDiscoveryRunStatus
 
 pub use crate::types::_resource_discovery_error_code::ResourceDiscoveryErrorCode;
 
+pub use crate::types::_dev_ops_agent_connection_status::DevOpsAgentConnectionStatus;
+
 pub use crate::types::_stop_condition_source::StopConditionSource;
 
 pub use crate::types::_test_action::TestAction;
@@ -210,6 +218,12 @@ pub use crate::types::_observability_recommendation::ObservabilityRecommendation
 pub use crate::types::_testing_recommendation::TestingRecommendation;
 
 pub use crate::types::_experiment_details::ExperimentDetails;
+
+pub use crate::types::_dev_ops_agent_verdict::DevOpsAgentVerdict;
+
+pub use crate::types::_dev_ops_agent_confidence::DevOpsAgentConfidence;
+
+pub use crate::types::_dev_ops_agent_investigation_status::DevOpsAgentInvestigationStatus;
 
 pub use crate::types::_test_template_parameter::TestTemplateParameter;
 
@@ -414,6 +428,20 @@ mod _dependency_insights_error_code;
 mod _dependency_insights_status;
 
 mod _dependency_summary;
+
+mod _dev_ops_agent_confidence;
+
+mod _dev_ops_agent_configuration;
+
+mod _dev_ops_agent_configuration_view;
+
+mod _dev_ops_agent_connection_status;
+
+mod _dev_ops_agent_investigation;
+
+mod _dev_ops_agent_investigation_status;
+
+mod _dev_ops_agent_verdict;
 
 mod _disaster_recovery_source;
 

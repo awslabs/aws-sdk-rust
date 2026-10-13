@@ -4,15 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactFlowVersionSummary {
-    /// <p>The Amazon Resource Name (ARN) of the view version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow version.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the flow version.</p>
     pub version_description: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the flow version.</p>
     pub version: ::std::option::Option<i64>,
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl ContactFlowVersionSummary {
-    /// <p>The Amazon Resource Name (ARN) of the view version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow version.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -23,6 +27,14 @@ impl ContactFlowVersionSummary {
     /// <p>The identifier of the flow version.</p>
     pub fn version(&self) -> ::std::option::Option<i64> {
         self.version
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
     }
 }
 impl ContactFlowVersionSummary {
@@ -39,19 +51,21 @@ pub struct ContactFlowVersionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) version_description: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl ContactFlowVersionSummaryBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the view version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow version.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the view version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow version.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the view version.</p>
+    /// <p>The Amazon Resource Name (ARN) of the flow version.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
@@ -83,12 +97,42 @@ impl ContactFlowVersionSummaryBuilder {
     pub fn get_version(&self) -> &::std::option::Option<i64> {
         &self.version
     }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when this resource was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where this resource was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`ContactFlowVersionSummary`](crate::types::ContactFlowVersionSummary).
     pub fn build(self) -> crate::types::ContactFlowVersionSummary {
         crate::types::ContactFlowVersionSummary {
             arn: self.arn,
             version_description: self.version_description,
             version: self.version,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

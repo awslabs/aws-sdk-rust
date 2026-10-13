@@ -12,6 +12,8 @@ pub struct RegistryMapping {
     pub upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Account ID of the account that owns the upstream container image.</p>
     pub ecr_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that holds the credentials for the upstream registry. You must specify this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache for the upstream registry. HealthOmics supports only some of these registries. The workflow role must have permission to call the <code>secretsmanager:GetSecretValue</code> operation on the secret. For more information about the supported registries, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub credential_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegistryMapping {
     /// <p>The URI of the upstream registry.</p>
@@ -30,6 +32,10 @@ impl RegistryMapping {
     pub fn ecr_account_id(&self) -> ::std::option::Option<&str> {
         self.ecr_account_id.as_deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that holds the credentials for the upstream registry. You must specify this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache for the upstream registry. HealthOmics supports only some of these registries. The workflow role must have permission to call the <code>secretsmanager:GetSecretValue</code> operation on the secret. For more information about the supported registries, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn credential_arn(&self) -> ::std::option::Option<&str> {
+        self.credential_arn.as_deref()
+    }
 }
 impl RegistryMapping {
     /// Creates a new builder-style object to manufacture [`RegistryMapping`](crate::types::RegistryMapping).
@@ -46,9 +52,11 @@ pub struct RegistryMappingBuilder {
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) ecr_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
 }
 impl RegistryMappingBuilder {
     /// <p>The URI of the upstream registry.</p>
+    /// This field is required.
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.upstream_registry_url = ::std::option::Option::Some(input.into());
         self
@@ -63,6 +71,7 @@ impl RegistryMappingBuilder {
         &self.upstream_registry_url
     }
     /// <p>The repository prefix to use in the ECR private repository.</p>
+    /// This field is required.
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ecr_repository_prefix = ::std::option::Option::Some(input.into());
         self
@@ -104,6 +113,20 @@ impl RegistryMappingBuilder {
     pub fn get_ecr_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ecr_account_id
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that holds the credentials for the upstream registry. You must specify this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache for the upstream registry. HealthOmics supports only some of these registries. The workflow role must have permission to call the <code>secretsmanager:GetSecretValue</code> operation on the secret. For more information about the supported registries, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.credential_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that holds the credentials for the upstream registry. You must specify this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache for the upstream registry. HealthOmics supports only some of these registries. The workflow role must have permission to call the <code>secretsmanager:GetSecretValue</code> operation on the secret. For more information about the supported registries, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_credential_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.credential_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that holds the credentials for the upstream registry. You must specify this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support pull through cache for the upstream registry. HealthOmics supports only some of these registries. The workflow role must have permission to call the <code>secretsmanager:GetSecretValue</code> operation on the secret. For more information about the supported registries, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.credential_arn
+    }
     /// Consumes the builder and constructs a [`RegistryMapping`](crate::types::RegistryMapping).
     pub fn build(self) -> crate::types::RegistryMapping {
         crate::types::RegistryMapping {
@@ -111,6 +134,7 @@ impl RegistryMappingBuilder {
             ecr_repository_prefix: self.ecr_repository_prefix,
             upstream_repository_prefix: self.upstream_repository_prefix,
             ecr_account_id: self.ecr_account_id,
+            credential_arn: self.credential_arn,
         }
     }
 }

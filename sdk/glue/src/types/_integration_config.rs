@@ -10,6 +10,9 @@ pub struct IntegrationConfig {
     pub source_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Enables continuous synchronization for on-demand data extractions from SaaS applications to Amazon Web Services data services like Amazon Redshift and Amazon S3.</p>
     pub continuous_sync: ::std::option::Option<bool>,
+    /// <p>An optional custom namespace for the integration's target. Supply this parameter only when the target is an Amazon S3 Tables table bucket; it is not accepted for other target types. The integration replicates data into the namespace you specify, reusing it if it already exists. If you omit this parameter, the target namespace defaults to <code>zetl_</code> followed by the integration ID, with hyphens converted to underscores.</p>
+    /// <p>The value is immutable after the integration is created; <code>ModifyIntegration</code> rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255 characters using lowercase letters, numbers, and underscores, with no leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+    pub target_namespace: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationConfig {
     /// <p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days).</p>
@@ -23,6 +26,11 @@ impl IntegrationConfig {
     /// <p>Enables continuous synchronization for on-demand data extractions from SaaS applications to Amazon Web Services data services like Amazon Redshift and Amazon S3.</p>
     pub fn continuous_sync(&self) -> ::std::option::Option<bool> {
         self.continuous_sync
+    }
+    /// <p>An optional custom namespace for the integration's target. Supply this parameter only when the target is an Amazon S3 Tables table bucket; it is not accepted for other target types. The integration replicates data into the namespace you specify, reusing it if it already exists. If you omit this parameter, the target namespace defaults to <code>zetl_</code> followed by the integration ID, with hyphens converted to underscores.</p>
+    /// <p>The value is immutable after the integration is created; <code>ModifyIntegration</code> rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255 characters using lowercase letters, numbers, and underscores, with no leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+    pub fn target_namespace(&self) -> ::std::option::Option<&str> {
+        self.target_namespace.as_deref()
     }
 }
 impl IntegrationConfig {
@@ -39,6 +47,7 @@ pub struct IntegrationConfigBuilder {
     pub(crate) refresh_interval: ::std::option::Option<::std::string::String>,
     pub(crate) source_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) continuous_sync: ::std::option::Option<bool>,
+    pub(crate) target_namespace: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationConfigBuilder {
     /// <p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days).</p>
@@ -96,12 +105,30 @@ impl IntegrationConfigBuilder {
     pub fn get_continuous_sync(&self) -> &::std::option::Option<bool> {
         &self.continuous_sync
     }
+    /// <p>An optional custom namespace for the integration's target. Supply this parameter only when the target is an Amazon S3 Tables table bucket; it is not accepted for other target types. The integration replicates data into the namespace you specify, reusing it if it already exists. If you omit this parameter, the target namespace defaults to <code>zetl_</code> followed by the integration ID, with hyphens converted to underscores.</p>
+    /// <p>The value is immutable after the integration is created; <code>ModifyIntegration</code> rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255 characters using lowercase letters, numbers, and underscores, with no leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+    pub fn target_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional custom namespace for the integration's target. Supply this parameter only when the target is an Amazon S3 Tables table bucket; it is not accepted for other target types. The integration replicates data into the namespace you specify, reusing it if it already exists. If you omit this parameter, the target namespace defaults to <code>zetl_</code> followed by the integration ID, with hyphens converted to underscores.</p>
+    /// <p>The value is immutable after the integration is created; <code>ModifyIntegration</code> rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255 characters using lowercase letters, numbers, and underscores, with no leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+    pub fn set_target_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_namespace = input;
+        self
+    }
+    /// <p>An optional custom namespace for the integration's target. Supply this parameter only when the target is an Amazon S3 Tables table bucket; it is not accepted for other target types. The integration replicates data into the namespace you specify, reusing it if it already exists. If you omit this parameter, the target namespace defaults to <code>zetl_</code> followed by the integration ID, with hyphens converted to underscores.</p>
+    /// <p>The value is immutable after the integration is created; <code>ModifyIntegration</code> rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to 255 characters using lowercase letters, numbers, and underscores, with no leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+    pub fn get_target_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_namespace
+    }
     /// Consumes the builder and constructs a [`IntegrationConfig`](crate::types::IntegrationConfig).
     pub fn build(self) -> crate::types::IntegrationConfig {
         crate::types::IntegrationConfig {
             refresh_interval: self.refresh_interval,
             source_properties: self.source_properties,
             continuous_sync: self.continuous_sync,
+            target_namespace: self.target_namespace,
         }
     }
 }

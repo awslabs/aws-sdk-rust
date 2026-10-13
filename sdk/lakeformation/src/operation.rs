@@ -7,6 +7,9 @@ pub mod add_lf_tags_to_resource;
 /// Types for the `AssumeDecoratedRoleWithSAML` operation.
 pub mod assume_decorated_role_with_saml;
 
+/// Types for the `AttachRLSPolicy` operation.
+pub mod attach_rls_policy;
+
 /// Types for the `BatchGrantPermissions` operation.
 pub mod batch_grant_permissions;
 
@@ -34,6 +37,9 @@ pub mod create_lf_tag;
 /// Types for the `CreateLFTagExpression` operation.
 pub mod create_lf_tag_expression;
 
+/// Types for the `CreateRLSPolicy` operation.
+pub mod create_rls_policy;
+
 /// Types for the `DeleteDataCellsFilter` operation.
 pub mod delete_data_cells_filter;
 
@@ -52,6 +58,9 @@ pub mod delete_lf_tag_expression;
 /// Types for the `DeleteObjectsOnCancel` operation.
 pub mod delete_objects_on_cancel;
 
+/// Types for the `DeleteRLSPolicy` operation.
+pub mod delete_rls_policy;
+
 /// Types for the `DeregisterResource` operation.
 pub mod deregister_resource;
 
@@ -63,6 +72,9 @@ pub mod describe_resource;
 
 /// Types for the `DescribeTransaction` operation.
 pub mod describe_transaction;
+
+/// Types for the `DetachRLSPolicy` operation.
+pub mod detach_rls_policy;
 
 /// Types for the `ExtendTransaction` operation.
 pub mod extend_transaction;
@@ -93,6 +105,9 @@ pub mod get_query_statistics;
 
 /// Types for the `GetResourceLFTags` operation.
 pub mod get_resource_lf_tags;
+
+/// Types for the `GetRLSPolicy` operation.
+pub mod get_rls_policy;
 
 /// Types for the `GetTableObjects` operation.
 pub mod get_table_objects;
@@ -132,6 +147,12 @@ pub mod list_permissions;
 
 /// Types for the `ListResources` operation.
 pub mod list_resources;
+
+/// Types for the `ListRLSPolicies` operation.
+pub mod list_rls_policies;
+
+/// Types for the `ListRLSPolicyAttachments` operation.
+pub mod list_rls_policy_attachments;
 
 /// Types for the `ListTableStorageOptimizers` operation.
 pub mod list_table_storage_optimizers;
@@ -177,6 +198,9 @@ pub mod update_lf_tag_expression;
 
 /// Types for the `UpdateResource` operation.
 pub mod update_resource;
+
+/// Types for the `UpdateRLSPolicy` operation.
+pub mod update_rls_policy;
 
 /// Types for the `UpdateTableObjects` operation.
 pub mod update_table_objects;

@@ -230,4 +230,18 @@ impl UpdateServiceFluentBuilder {
     pub fn get_report_configuration(&self) -> &::std::option::Option<crate::types::ServiceReportConfiguration> {
         self.inner.get_report_configuration()
     }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn dev_ops_agent_configuration(mut self, input: crate::types::DevOpsAgentConfiguration) -> Self {
+        self.inner = self.inner.dev_ops_agent_configuration(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn set_dev_ops_agent_configuration(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConfiguration>) -> Self {
+        self.inner = self.inner.set_dev_ops_agent_configuration(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to set, replace, or disconnect for the service. If you omit this field, the existing DevOps Agent linkage stays unchanged.</p>
+    pub fn get_dev_ops_agent_configuration(&self) -> &::std::option::Option<crate::types::DevOpsAgentConfiguration> {
+        self.inner.get_dev_ops_agent_configuration()
+    }
 }

@@ -3549,6 +3549,8 @@ pub(crate) mod shape_integer_parameter_range;
 
 pub(crate) mod shape_integer_parameter_ranges;
 
+pub(crate) mod shape_iteration_context;
+
 pub(crate) mod shape_job;
 
 pub(crate) mod shape_json_content_types;
@@ -3755,6 +3757,8 @@ pub(crate) mod shape_assumable_role_arns;
 
 pub(crate) mod shape_async_notification_topic_type_list;
 
+pub(crate) mod shape_athena_step_metadata;
+
 pub(crate) mod shape_auto_ml_job_step_metadata;
 
 pub(crate) mod shape_auto_rollback_alarms;
@@ -3789,6 +3793,8 @@ pub(crate) mod shape_clarify_shap_baseline_config;
 
 pub(crate) mod shape_clarify_text_config;
 
+pub(crate) mod shape_cleanup_step_metadata;
+
 pub(crate) mod shape_cluster_instance_type_detail;
 
 pub(crate) mod shape_cluster_metadata;
@@ -3813,6 +3819,8 @@ pub(crate) mod shape_ec2_capacity_reservations_list;
 
 pub(crate) mod shape_edge_model_summary;
 
+pub(crate) mod shape_emr_serverless_step_metadata;
+
 pub(crate) mod shape_emr_step_metadata;
 
 pub(crate) mod shape_endpoint_config_step_metadata;
@@ -3826,6 +3834,8 @@ pub(crate) mod shape_execution_role_arns;
 pub(crate) mod shape_fail_step_metadata;
 
 pub(crate) mod shape_filling_transformations;
+
+pub(crate) mod shape_for_each_step_metadata;
 
 pub(crate) mod shape_group_patterns_list;
 
@@ -3933,6 +3943,10 @@ pub(crate) mod shape_categorical_parameters;
 
 pub(crate) mod shape_cfn_stack_parameter;
 
+pub(crate) mod shape_cleanup_failure_list;
+
+pub(crate) mod shape_cleanup_step_name_list;
+
 pub(crate) mod shape_ec2_capacity_reservation;
 
 pub(crate) mod shape_eks_role_access_entries;
@@ -3940,6 +3954,8 @@ pub(crate) mod shape_eks_role_access_entries;
 pub(crate) mod shape_environment_parameter;
 
 pub(crate) mod shape_filling_transformation_map;
+
+pub(crate) mod shape_for_each_selector_result;
 
 pub(crate) mod shape_groups;
 
@@ -3970,6 +3986,8 @@ pub(crate) mod shape_trial_component_simple_summary;
 pub(crate) mod shape_version_aliases_list;
 
 pub(crate) mod shape_association_info;
+
+pub(crate) mod shape_cleanup_failure;
 
 pub(crate) mod shape_customized_metric_specification;
 

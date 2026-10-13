@@ -4,17 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateLinkConfig {
-    /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+    /// <p>Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint ID is informational and isn't verified by DataSync. Your agent communicates through the private IP address in <code>PrivateLinkEndpoint</code>, which is set when you activate the agent.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon Web Services PrivateLink</a> that your agent connects to.</p>
     pub private_link_endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the network interfaces that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC endpoint.</p>
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC endpoint. You can only specify one ARN.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PrivateLinkConfig {
-    /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+    /// <p>Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint ID is informational and isn't verified by DataSync. Your agent communicates through the private IP address in <code>PrivateLinkEndpoint</code>, which is set when you activate the agent.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
@@ -22,7 +23,8 @@ impl PrivateLinkConfig {
     pub fn private_link_endpoint(&self) -> ::std::option::Option<&str> {
         self.private_link_endpoint.as_deref()
     }
-    /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the network interfaces that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC endpoint.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
     pub fn subnet_arns(&self) -> &[::std::string::String] {
@@ -52,17 +54,17 @@ pub struct PrivateLinkConfigBuilder {
     pub(crate) security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PrivateLinkConfigBuilder {
-    /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+    /// <p>Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint ID is informational and isn't verified by DataSync. Your agent communicates through the private IP address in <code>PrivateLinkEndpoint</code>, which is set when you activate the agent.</p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+    /// <p>Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint ID is informational and isn't verified by DataSync. Your agent communicates through the private IP address in <code>PrivateLinkEndpoint</code>, which is set when you activate the agent.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
-    /// <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+    /// <p>Specifies the ID of the VPC service endpoint that's recorded for your agent. The endpoint ID is informational and isn't verified by DataSync. Your agent communicates through the private IP address in <code>PrivateLinkEndpoint</code>, which is set when you activate the agent.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
@@ -84,19 +86,22 @@ impl PrivateLinkConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
     ///
-    /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the network interfaces that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC endpoint.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
         v.push(input.into());
         self.subnet_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the network interfaces that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC endpoint.</p>
     pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_arns = input;
         self
     }
-    /// <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the network interfaces that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC endpoint.</p>
     pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_arns
     }

@@ -1893,6 +1893,8 @@ pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMe
 
 pub use crate::types::_selective_execution_result::SelectiveExecutionResult;
 
+pub use crate::types::_iteration_context::IterationContext;
+
 pub use crate::types::_space_settings_summary::SpaceSettingsSummary;
 
 pub use crate::types::_space_sharing_settings_summary::SpaceSharingSettingsSummary;
@@ -2205,6 +2207,8 @@ pub use crate::types::_lambda_step_metadata::LambdaStepMetadata;
 
 pub use crate::types::_emr_step_metadata::EmrStepMetadata;
 
+pub use crate::types::_emr_serverless_step_metadata::EmrServerlessStepMetadata;
+
 pub use crate::types::_quality_check_step_metadata::QualityCheckStepMetadata;
 
 pub use crate::types::_clarify_check_step_metadata::ClarifyCheckStepMetadata;
@@ -2230,6 +2234,12 @@ pub use crate::types::_inference_component_metadata::InferenceComponentMetadata;
 pub use crate::types::_lineage_metadata::LineageMetadata;
 
 pub use crate::types::_job_step_metadata::JobStepMetadata;
+
+pub use crate::types::_athena_step_metadata::AthenaStepMetadata;
+
+pub use crate::types::_cleanup_step_metadata::CleanupStepMetadata;
+
+pub use crate::types::_for_each_step_metadata::ForEachStepMetadata;
 
 pub use crate::types::_operator::Operator;
 
@@ -2335,6 +2345,10 @@ pub use crate::types::_metric_specification::MetricSpecification;
 
 pub use crate::types::_condition_outcome::ConditionOutcome;
 
+pub use crate::types::_for_each_status::ForEachStatus;
+
+pub use crate::types::_for_each_selector_result::ForEachSelectorResult;
+
 pub use crate::types::_trial_component_simple_summary::TrialComponentSimpleSummary;
 
 pub use crate::types::_processing_job::ProcessingJob;
@@ -2365,7 +2379,11 @@ pub use crate::types::_customized_metric_specification::CustomizedMetricSpecific
 
 pub use crate::types::_association_info::AssociationInfo;
 
+pub use crate::types::_cleanup_failure::CleanupFailure;
+
 pub use crate::types::_statistic::Statistic;
+
+pub use crate::types::_cleanup_failure_error_code::CleanupFailureErrorCode;
 
 mod _accelerator_partition_config;
 
@@ -2560,6 +2578,8 @@ mod _athena_dataset_definition;
 mod _athena_result_compression_type;
 
 mod _athena_result_format;
+
+mod _athena_step_metadata;
 
 mod _auth_mode;
 
@@ -2786,6 +2806,12 @@ mod _clarify_text_config;
 mod _clarify_text_granularity;
 
 mod _clarify_text_language;
+
+mod _cleanup_failure;
+
+mod _cleanup_failure_error_code;
+
+mod _cleanup_step_metadata;
 
 mod _cluster_accounting_database;
 
@@ -3145,6 +3171,8 @@ mod _emr_serverless_compute_config;
 
 mod _emr_serverless_settings;
 
+mod _emr_serverless_step_metadata;
+
 mod _emr_settings;
 
 mod _emr_step_metadata;
@@ -3272,6 +3300,12 @@ mod _flow_definition_output_config;
 mod _flow_definition_status;
 
 mod _flow_definition_summary;
+
+mod _for_each_selector_result;
+
+mod _for_each_status;
+
+mod _for_each_step_metadata;
 
 mod _framework;
 
@@ -3516,6 +3550,8 @@ mod _integer_parameter_range_specification;
 mod _ip_address_type;
 
 mod _is_tracking_server_active;
+
+mod _iteration_context;
 
 mod _job;
 

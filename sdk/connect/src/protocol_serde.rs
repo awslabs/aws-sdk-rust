@@ -97,6 +97,8 @@ pub(crate) mod shape_create_contact;
 
 pub(crate) mod shape_create_contact_flow;
 
+pub(crate) mod shape_create_contact_flow_alias;
+
 pub(crate) mod shape_create_contact_flow_module;
 
 pub(crate) mod shape_create_contact_flow_module_alias;
@@ -178,6 +180,8 @@ pub(crate) mod shape_delete_contact_data;
 pub(crate) mod shape_delete_contact_evaluation;
 
 pub(crate) mod shape_delete_contact_flow;
+
+pub(crate) mod shape_delete_contact_flow_alias;
 
 pub(crate) mod shape_delete_contact_flow_module;
 
@@ -262,6 +266,8 @@ pub(crate) mod shape_describe_contact;
 pub(crate) mod shape_describe_contact_evaluation;
 
 pub(crate) mod shape_describe_contact_flow;
+
+pub(crate) mod shape_describe_contact_flow_alias;
 
 pub(crate) mod shape_describe_contact_flow_module;
 
@@ -418,6 +424,8 @@ pub(crate) mod shape_list_bots;
 pub(crate) mod shape_list_child_hours_of_operations;
 
 pub(crate) mod shape_list_contact_evaluations;
+
+pub(crate) mod shape_list_contact_flow_aliases;
 
 pub(crate) mod shape_list_contact_flow_module_aliases;
 
@@ -691,6 +699,8 @@ pub(crate) mod shape_update_contact_attributes;
 
 pub(crate) mod shape_update_contact_evaluation;
 
+pub(crate) mod shape_update_contact_flow_alias;
+
 pub(crate) mod shape_update_contact_flow_content;
 
 pub(crate) mod shape_update_contact_flow_metadata;
@@ -904,6 +914,8 @@ pub(crate) mod shape_create_agent_status_input;
 pub(crate) mod shape_create_attached_file_input;
 
 pub(crate) mod shape_create_auth_code_input;
+
+pub(crate) mod shape_create_contact_flow_alias_input;
 
 pub(crate) mod shape_create_contact_flow_input;
 
@@ -1219,6 +1231,8 @@ pub(crate) mod shape_update_contact_attributes_input;
 
 pub(crate) mod shape_update_contact_evaluation_input;
 
+pub(crate) mod shape_update_contact_flow_alias_input;
+
 pub(crate) mod shape_update_contact_flow_content_input;
 
 pub(crate) mod shape_update_contact_flow_metadata_input;
@@ -1456,6 +1470,10 @@ pub(crate) mod shape_contact_configuration;
 pub(crate) mod shape_contact_data_request;
 
 pub(crate) mod shape_contact_flow;
+
+pub(crate) mod shape_contact_flow_alias_info;
+
+pub(crate) mod shape_contact_flow_alias_summary_list;
 
 pub(crate) mod shape_contact_flow_module;
 
@@ -2116,6 +2134,8 @@ pub(crate) mod shape_contact_evaluation_attribute_filter;
 pub(crate) mod shape_contact_evaluations;
 
 pub(crate) mod shape_contact_filter;
+
+pub(crate) mod shape_contact_flow_alias_summary;
 
 pub(crate) mod shape_contact_flow_attribute_filter;
 

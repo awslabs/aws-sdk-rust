@@ -14,6 +14,7 @@
 /// match automationrulesactiontypev2 {
 ///     AutomationRulesActionTypeV2::ExternalIntegration => { /* ... */ },
 ///     AutomationRulesActionTypeV2::FindingFieldsUpdate => { /* ... */ },
+///     AutomationRulesActionTypeV2::ResourceFieldsUpdate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum AutomationRulesActionTypeV2 {
     ExternalIntegration,
     #[allow(missing_docs)] // documentation missing in model
     FindingFieldsUpdate,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourceFieldsUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for AutomationRulesActionTypeV2 {
         match s {
             "EXTERNAL_INTEGRATION" => AutomationRulesActionTypeV2::ExternalIntegration,
             "FINDING_FIELDS_UPDATE" => AutomationRulesActionTypeV2::FindingFieldsUpdate,
+            "RESOURCE_FIELDS_UPDATE" => AutomationRulesActionTypeV2::ResourceFieldsUpdate,
             other => AutomationRulesActionTypeV2::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl AutomationRulesActionTypeV2 {
         match self {
             AutomationRulesActionTypeV2::ExternalIntegration => "EXTERNAL_INTEGRATION",
             AutomationRulesActionTypeV2::FindingFieldsUpdate => "FINDING_FIELDS_UPDATE",
+            AutomationRulesActionTypeV2::ResourceFieldsUpdate => "RESOURCE_FIELDS_UPDATE",
             AutomationRulesActionTypeV2::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXTERNAL_INTEGRATION", "FINDING_FIELDS_UPDATE"]
+        &["EXTERNAL_INTEGRATION", "FINDING_FIELDS_UPDATE", "RESOURCE_FIELDS_UPDATE"]
     }
 }
 impl ::std::convert::AsRef<str> for AutomationRulesActionTypeV2 {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for AutomationRulesActionTypeV2 {
         match self {
             AutomationRulesActionTypeV2::ExternalIntegration => write!(f, "EXTERNAL_INTEGRATION"),
             AutomationRulesActionTypeV2::FindingFieldsUpdate => write!(f, "FINDING_FIELDS_UPDATE"),
+            AutomationRulesActionTypeV2::ResourceFieldsUpdate => write!(f, "RESOURCE_FIELDS_UPDATE"),
             AutomationRulesActionTypeV2::Unknown(value) => write!(f, "{value}"),
         }
     }

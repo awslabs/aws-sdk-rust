@@ -673,6 +673,8 @@ pub(crate) mod shape_automation_rules_metadata;
 
 pub(crate) mod shape_automation_rules_metadata_v2;
 
+pub(crate) mod shape_automation_rules_resource_fields_update_v2;
+
 pub(crate) mod shape_aws_organization_scope;
 
 pub(crate) mod shape_aws_organization_scope_list;
@@ -857,6 +859,8 @@ pub(crate) mod shape_category_list;
 
 pub(crate) mod shape_composite_filter_list;
 
+pub(crate) mod shape_criticality_source_list;
+
 pub(crate) mod shape_cspm_provider_summary;
 
 pub(crate) mod shape_cvss;
@@ -952,6 +956,8 @@ pub(crate) mod shape_resource_list;
 pub(crate) mod shape_resource_owner;
 
 pub(crate) mod shape_resource_tag_list;
+
+pub(crate) mod shape_resources_composite_filter_list;
 
 pub(crate) mod shape_resources_date_filter;
 
@@ -1222,6 +1228,8 @@ pub(crate) mod shape_code_vulnerabilities_file_path;
 pub(crate) mod shape_configuration_options;
 
 pub(crate) mod shape_container_details;
+
+pub(crate) mod shape_criticality_source;
 
 pub(crate) mod shape_date_filter_list;
 
@@ -1798,6 +1806,14 @@ pub(crate) mod shape_remediation_parameter_list;
 pub(crate) mod shape_remediation_step_list;
 
 pub(crate) mod shape_resource_severity_breakdown;
+
+pub(crate) mod shape_resources_date_filter_list;
+
+pub(crate) mod shape_resources_map_filter_list;
+
+pub(crate) mod shape_resources_number_filter_list;
+
+pub(crate) mod shape_resources_string_filter_list;
 
 pub(crate) mod shape_route_set_details;
 

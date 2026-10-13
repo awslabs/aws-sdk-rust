@@ -103,6 +103,13 @@ pub(crate) fn batch_permissions_request_entry_correct_errors(
     builder
 }
 
+pub(crate) fn column_correct_errors(mut builder: crate::types::builders::ColumnBuilder) -> crate::types::builders::ColumnBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn database_resource_correct_errors(
     mut builder: crate::types::builders::DatabaseResourceBuilder,
 ) -> crate::types::builders::DatabaseResourceBuilder {
@@ -156,6 +163,15 @@ pub(crate) fn lf_tag_policy_resource_correct_errors(
 ) -> crate::types::builders::LfTagPolicyResourceBuilder {
     if builder.resource_type.is_none() {
         builder.resource_type = "no value was set".parse::<crate::types::ResourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rls_policy_resource_correct_errors(
+    mut builder: crate::types::builders::RlsPolicyResourceBuilder,
+) -> crate::types::builders::RlsPolicyResourceBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

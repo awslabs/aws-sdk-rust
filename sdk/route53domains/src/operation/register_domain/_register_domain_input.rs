@@ -53,6 +53,8 @@ pub struct RegisterDomainInput {
     /// <p>You must specify the same privacy setting for the administrative, billing, registrant, and technical contacts.</p>
     /// </note>
     pub privacy_protect_billing_contact: ::std::option::Option<bool>,
+    /// <p>Specifies the maximum price that you agree to pay to register the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the registration price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub consent: ::std::option::Option<crate::types::Consent>,
 }
 impl RegisterDomainInput {
     /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -128,6 +130,10 @@ impl RegisterDomainInput {
     pub fn privacy_protect_billing_contact(&self) -> ::std::option::Option<bool> {
         self.privacy_protect_billing_contact
     }
+    /// <p>Specifies the maximum price that you agree to pay to register the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the registration price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn consent(&self) -> ::std::option::Option<&crate::types::Consent> {
+        self.consent.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RegisterDomainInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -144,6 +150,7 @@ impl ::std::fmt::Debug for RegisterDomainInput {
         formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
         formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("privacy_protect_billing_contact", &self.privacy_protect_billing_contact);
+        formatter.field("consent", &self.consent);
         formatter.finish()
     }
 }
@@ -170,6 +177,7 @@ pub struct RegisterDomainInputBuilder {
     pub(crate) privacy_protect_tech_contact: ::std::option::Option<bool>,
     pub(crate) billing_contact: ::std::option::Option<crate::types::ContactDetail>,
     pub(crate) privacy_protect_billing_contact: ::std::option::Option<bool>,
+    pub(crate) consent: ::std::option::Option<crate::types::Consent>,
 }
 impl RegisterDomainInputBuilder {
     /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports. For a list of supported TLDs, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -420,6 +428,20 @@ impl RegisterDomainInputBuilder {
     pub fn get_privacy_protect_billing_contact(&self) -> &::std::option::Option<bool> {
         &self.privacy_protect_billing_contact
     }
+    /// <p>Specifies the maximum price that you agree to pay to register the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the registration price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn consent(mut self, input: crate::types::Consent) -> Self {
+        self.consent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to register the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the registration price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
+        self.consent = input;
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to register the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the registration price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
+        &self.consent
+    }
     /// Consumes the builder and constructs a [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn build(
         self,
@@ -437,6 +459,7 @@ impl RegisterDomainInputBuilder {
             privacy_protect_tech_contact: self.privacy_protect_tech_contact,
             billing_contact: self.billing_contact,
             privacy_protect_billing_contact: self.privacy_protect_billing_contact,
+            consent: self.consent,
         })
     }
 }
@@ -455,6 +478,7 @@ impl ::std::fmt::Debug for RegisterDomainInputBuilder {
         formatter.field("privacy_protect_tech_contact", &self.privacy_protect_tech_contact);
         formatter.field("billing_contact", &"*** Sensitive Data Redacted ***");
         formatter.field("privacy_protect_billing_contact", &self.privacy_protect_billing_contact);
+        formatter.field("consent", &self.consent);
         formatter.finish()
     }
 }

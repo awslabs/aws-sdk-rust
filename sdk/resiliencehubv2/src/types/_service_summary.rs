@@ -16,6 +16,20 @@ pub struct ServiceSummary {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current assessment status of the service.</p>
     pub assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
+    /// <p>The DevOps Agent connection status for the service. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONNECTING - The service is being connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>CONNECTED - The service is connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>DISCONNECTED - The service is not connected to an Agent Space.</p></li>
+    /// <li>
+    /// <p>FAILED - The connection attempt failed.</p></li>
+    /// </ul>
+    pub dev_ops_agent_status: ::std::option::Option<crate::types::DevOpsAgentConnectionStatus>,
+    /// <p>The ARN of the DevOps Agent Agent Space linked to the service, when the service is linked to one.</p>
+    pub dev_ops_agent_space_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of open findings.</p>
     pub open_findings_count: ::std::option::Option<i32>,
     /// <p>The number of resolved findings.</p>
@@ -65,6 +79,24 @@ impl ServiceSummary {
     /// <p>The current assessment status of the service.</p>
     pub fn assessment_status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
         self.assessment_status.as_ref()
+    }
+    /// <p>The DevOps Agent connection status for the service. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONNECTING - The service is being connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>CONNECTED - The service is connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>DISCONNECTED - The service is not connected to an Agent Space.</p></li>
+    /// <li>
+    /// <p>FAILED - The connection attempt failed.</p></li>
+    /// </ul>
+    pub fn dev_ops_agent_status(&self) -> ::std::option::Option<&crate::types::DevOpsAgentConnectionStatus> {
+        self.dev_ops_agent_status.as_ref()
+    }
+    /// <p>The ARN of the DevOps Agent Agent Space linked to the service, when the service is linked to one.</p>
+    pub fn dev_ops_agent_space_arn(&self) -> ::std::option::Option<&str> {
+        self.dev_ops_agent_space_arn.as_deref()
     }
     /// <p>The number of open findings.</p>
     pub fn open_findings_count(&self) -> ::std::option::Option<i32> {
@@ -120,6 +152,8 @@ pub struct ServiceSummaryBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_status: ::std::option::Option<crate::types::AssessmentStatus>,
+    pub(crate) dev_ops_agent_status: ::std::option::Option<crate::types::DevOpsAgentConnectionStatus>,
+    pub(crate) dev_ops_agent_space_arn: ::std::option::Option<::std::string::String>,
     pub(crate) open_findings_count: ::std::option::Option<i32>,
     pub(crate) resolved_findings_count: ::std::option::Option<i32>,
     pub(crate) dependency_discovery: ::std::option::Option<crate::types::DependencyDiscoveryConfig>,
@@ -228,6 +262,64 @@ impl ServiceSummaryBuilder {
     /// <p>The current assessment status of the service.</p>
     pub fn get_assessment_status(&self) -> &::std::option::Option<crate::types::AssessmentStatus> {
         &self.assessment_status
+    }
+    /// <p>The DevOps Agent connection status for the service. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONNECTING - The service is being connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>CONNECTED - The service is connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>DISCONNECTED - The service is not connected to an Agent Space.</p></li>
+    /// <li>
+    /// <p>FAILED - The connection attempt failed.</p></li>
+    /// </ul>
+    pub fn dev_ops_agent_status(mut self, input: crate::types::DevOpsAgentConnectionStatus) -> Self {
+        self.dev_ops_agent_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DevOps Agent connection status for the service. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONNECTING - The service is being connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>CONNECTED - The service is connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>DISCONNECTED - The service is not connected to an Agent Space.</p></li>
+    /// <li>
+    /// <p>FAILED - The connection attempt failed.</p></li>
+    /// </ul>
+    pub fn set_dev_ops_agent_status(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConnectionStatus>) -> Self {
+        self.dev_ops_agent_status = input;
+        self
+    }
+    /// <p>The DevOps Agent connection status for the service. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>CONNECTING - The service is being connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>CONNECTED - The service is connected to the Agent Space.</p></li>
+    /// <li>
+    /// <p>DISCONNECTED - The service is not connected to an Agent Space.</p></li>
+    /// <li>
+    /// <p>FAILED - The connection attempt failed.</p></li>
+    /// </ul>
+    pub fn get_dev_ops_agent_status(&self) -> &::std::option::Option<crate::types::DevOpsAgentConnectionStatus> {
+        &self.dev_ops_agent_status
+    }
+    /// <p>The ARN of the DevOps Agent Agent Space linked to the service, when the service is linked to one.</p>
+    pub fn dev_ops_agent_space_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dev_ops_agent_space_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the DevOps Agent Agent Space linked to the service, when the service is linked to one.</p>
+    pub fn set_dev_ops_agent_space_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dev_ops_agent_space_arn = input;
+        self
+    }
+    /// <p>The ARN of the DevOps Agent Agent Space linked to the service, when the service is linked to one.</p>
+    pub fn get_dev_ops_agent_space_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dev_ops_agent_space_arn
     }
     /// <p>The number of open findings.</p>
     pub fn open_findings_count(mut self, input: i32) -> Self {
@@ -377,6 +469,8 @@ impl ServiceSummaryBuilder {
             regions: self.regions,
             policy_arn: self.policy_arn,
             assessment_status: self.assessment_status,
+            dev_ops_agent_status: self.dev_ops_agent_status,
+            dev_ops_agent_space_arn: self.dev_ops_agent_space_arn,
             open_findings_count: self.open_findings_count,
             resolved_findings_count: self.resolved_findings_count,
             dependency_discovery: self.dependency_discovery,

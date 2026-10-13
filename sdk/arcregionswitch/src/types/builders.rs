@@ -73,6 +73,8 @@ pub use crate::types::_neptune_global_database_configuration::NeptuneGlobalDatab
 
 pub use crate::types::_rds_switchover_read_replica_configuration::RdsSwitchoverReadReplicaConfigurationBuilder;
 
+pub use crate::types::_ssm_send_command_configuration::SsmSendCommandConfigurationBuilder;
+
 pub use crate::types::_lambda_ungraceful::LambdaUngracefulBuilder;
 
 pub use crate::types::_ec2_ungraceful::Ec2UngracefulBuilder;
@@ -93,6 +95,8 @@ pub use crate::types::_neptune_ungraceful::NeptuneUngracefulBuilder;
 
 pub use crate::types::_rds_ungraceful::RdsUngracefulBuilder;
 
+pub use crate::types::_ssm_send_command_ungraceful::SsmSendCommandUngracefulBuilder;
+
 pub use crate::types::_lambdas::LambdasBuilder;
 
 pub use crate::types::_asg::AsgBuilder;
@@ -105,6 +109,10 @@ pub use crate::types::_route53_resource_record_set::Route53ResourceRecordSetBuil
 
 pub use crate::types::_event_source_mapping::EventSourceMappingBuilder;
 
+pub use crate::types::_ssm_document_config::SsmDocumentConfigBuilder;
+
 pub use crate::types::_arc_routing_control_state::ArcRoutingControlStateBuilder;
 
 pub use crate::types::_kubernetes_scaling_resource::KubernetesScalingResourceBuilder;
+
+pub use crate::types::_ssm_target::SsmTargetBuilder;

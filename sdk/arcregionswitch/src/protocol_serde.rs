@@ -225,6 +225,8 @@ pub(crate) mod shape_route53_health_check_configuration;
 
 pub(crate) mod shape_s3_report_output;
 
+pub(crate) mod shape_ssm_send_command_configuration;
+
 pub(crate) mod shape_steps;
 
 pub(crate) mod shape_trigger_condition_list;
@@ -265,6 +267,12 @@ pub(crate) mod shape_route53_resource_record_set;
 
 pub(crate) mod shape_service;
 
+pub(crate) mod shape_ssm_document_config;
+
+pub(crate) mod shape_ssm_send_command_ungraceful;
+
+pub(crate) mod shape_ssm_target;
+
 pub(crate) mod shape_asg_list;
 
 pub(crate) mod shape_aurora_cluster_arns;
@@ -289,6 +297,8 @@ pub(crate) mod shape_region_event_source_mapping_map;
 
 pub(crate) mod shape_region_neptune_cluster_arn_map;
 
+pub(crate) mod shape_region_ssm_document_map;
+
 pub(crate) mod shape_route53_resource_record_set_list;
 
 pub(crate) mod shape_service_list;
@@ -298,3 +308,11 @@ pub(crate) mod shape_arc_routing_control_states;
 pub(crate) mod shape_kubernetes_scaling_application;
 
 pub(crate) mod shape_regional_scaling_resource;
+
+pub(crate) mod shape_ssm_document_parameters;
+
+pub(crate) mod shape_ssm_target_list;
+
+pub(crate) mod shape_ssm_parameter_values;
+
+pub(crate) mod shape_ssm_target_value_list;

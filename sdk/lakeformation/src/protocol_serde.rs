@@ -27,6 +27,8 @@ pub(crate) mod shape_add_lf_tags_to_resource;
 
 pub(crate) mod shape_assume_decorated_role_with_saml;
 
+pub(crate) mod shape_attach_rls_policy;
+
 pub(crate) mod shape_batch_grant_permissions;
 
 pub(crate) mod shape_batch_revoke_permissions;
@@ -45,6 +47,8 @@ pub(crate) mod shape_create_lf_tag;
 
 pub(crate) mod shape_create_lf_tag_expression;
 
+pub(crate) mod shape_create_rls_policy;
+
 pub(crate) mod shape_delete_data_cells_filter;
 
 pub(crate) mod shape_delete_lake_formation_identity_center_configuration;
@@ -57,6 +61,8 @@ pub(crate) mod shape_delete_lf_tag_expression;
 
 pub(crate) mod shape_delete_objects_on_cancel;
 
+pub(crate) mod shape_delete_rls_policy;
+
 pub(crate) mod shape_deregister_resource;
 
 pub(crate) mod shape_describe_lake_formation_identity_center_configuration;
@@ -64,6 +70,8 @@ pub(crate) mod shape_describe_lake_formation_identity_center_configuration;
 pub(crate) mod shape_describe_resource;
 
 pub(crate) mod shape_describe_transaction;
+
+pub(crate) mod shape_detach_rls_policy;
 
 pub(crate) mod shape_extend_transaction;
 
@@ -84,6 +92,8 @@ pub(crate) mod shape_get_query_state;
 pub(crate) mod shape_get_query_statistics;
 
 pub(crate) mod shape_get_resource_lf_tags;
+
+pub(crate) mod shape_get_rls_policy;
 
 pub(crate) mod shape_get_table_objects;
 
@@ -110,6 +120,10 @@ pub(crate) mod shape_list_lf_tags;
 pub(crate) mod shape_list_permissions;
 
 pub(crate) mod shape_list_resources;
+
+pub(crate) mod shape_list_rls_policies;
+
+pub(crate) mod shape_list_rls_policy_attachments;
 
 pub(crate) mod shape_list_table_storage_optimizers;
 
@@ -141,6 +155,8 @@ pub(crate) mod shape_update_lf_tag_expression;
 
 pub(crate) mod shape_update_resource;
 
+pub(crate) mod shape_update_rls_policy;
+
 pub(crate) mod shape_update_table_objects;
 
 pub(crate) mod shape_update_table_storage_optimizer;
@@ -160,6 +176,8 @@ pub(crate) mod shape_add_lf_tags_to_resource_input;
 pub(crate) mod shape_already_exists_exception;
 
 pub(crate) mod shape_assume_decorated_role_with_saml_input;
+
+pub(crate) mod shape_attach_rls_policy_input;
 
 pub(crate) mod shape_batch_grant_permissions_input;
 
@@ -183,6 +201,8 @@ pub(crate) mod shape_create_lf_tag_expression_input;
 
 pub(crate) mod shape_create_lf_tag_input;
 
+pub(crate) mod shape_create_rls_policy_input;
+
 pub(crate) mod shape_delete_data_cells_filter_input;
 
 pub(crate) mod shape_delete_lake_formation_identity_center_configuration_input;
@@ -195,6 +215,8 @@ pub(crate) mod shape_delete_lf_tag_input;
 
 pub(crate) mod shape_delete_objects_on_cancel_input;
 
+pub(crate) mod shape_delete_rls_policy_input;
+
 pub(crate) mod shape_deregister_resource_input;
 
 pub(crate) mod shape_describe_lake_formation_identity_center_configuration_input;
@@ -202,6 +224,8 @@ pub(crate) mod shape_describe_lake_formation_identity_center_configuration_input
 pub(crate) mod shape_describe_resource_input;
 
 pub(crate) mod shape_describe_transaction_input;
+
+pub(crate) mod shape_detach_rls_policy_input;
 
 pub(crate) mod shape_entity_not_found_exception;
 
@@ -224,6 +248,8 @@ pub(crate) mod shape_get_query_state_input;
 pub(crate) mod shape_get_query_statistics_input;
 
 pub(crate) mod shape_get_resource_lf_tags_input;
+
+pub(crate) mod shape_get_rls_policy_input;
 
 pub(crate) mod shape_get_table_objects_input;
 
@@ -258,6 +284,10 @@ pub(crate) mod shape_list_lf_tags_input;
 pub(crate) mod shape_list_permissions_input;
 
 pub(crate) mod shape_list_resources_input;
+
+pub(crate) mod shape_list_rls_policies_input;
+
+pub(crate) mod shape_list_rls_policy_attachments_input;
 
 pub(crate) mod shape_list_table_storage_optimizers_input;
 
@@ -307,6 +337,8 @@ pub(crate) mod shape_update_lf_tag_input;
 
 pub(crate) mod shape_update_resource_input;
 
+pub(crate) mod shape_update_rls_policy_input;
+
 pub(crate) mod shape_update_table_objects_input;
 
 pub(crate) mod shape_update_table_storage_optimizer_input;
@@ -318,6 +350,8 @@ pub(crate) mod shape_audit_context;
 pub(crate) mod shape_batch_permissions_failure_list;
 
 pub(crate) mod shape_batch_permissions_request_entry;
+
+pub(crate) mod shape_column;
 
 pub(crate) mod shape_column_lf_tags_list;
 
@@ -375,6 +409,12 @@ pub(crate) mod shape_resource_info;
 
 pub(crate) mod shape_resource_info_list;
 
+pub(crate) mod shape_rls_policy;
+
+pub(crate) mod shape_rls_policy_attachment_list;
+
+pub(crate) mod shape_rls_policy_list;
+
 pub(crate) mod shape_service_integration_list;
 
 pub(crate) mod shape_service_integration_union;
@@ -408,6 +448,8 @@ pub(crate) mod shape_batch_permissions_failure_entry;
 pub(crate) mod shape_catalog_resource;
 
 pub(crate) mod shape_column_lf_tag;
+
+pub(crate) mod shape_column_list;
 
 pub(crate) mod shape_column_names;
 
@@ -444,6 +486,10 @@ pub(crate) mod shape_principal_permissions_list;
 pub(crate) mod shape_principal_resource_permissions;
 
 pub(crate) mod shape_redshift_scope_union;
+
+pub(crate) mod shape_rls_policy_attachment;
+
+pub(crate) mod shape_rls_policy_resource;
 
 pub(crate) mod shape_row_filter;
 

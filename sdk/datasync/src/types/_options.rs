@@ -160,6 +160,10 @@ pub struct Options {
     pub security_descriptor_copy_flags: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
     /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object tags (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object tags, specify the <code>NONE</code> value.</p>
     pub object_tags: ::std::option::Option<crate::types::ObjectTags>,
+    /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object metadata, specify the <code>NONE</code> value.</p><note>
+    /// <p>Even if you specify <code>NONE</code>, metadata for the last modified time is still preserved.</p>
+    /// </note>
+    pub object_metadata: ::std::option::Option<crate::types::ObjectMetadata>,
 }
 impl Options {
     /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
@@ -346,6 +350,12 @@ impl Options {
     pub fn object_tags(&self) -> ::std::option::Option<&crate::types::ObjectTags> {
         self.object_tags.as_ref()
     }
+    /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object metadata, specify the <code>NONE</code> value.</p><note>
+    /// <p>Even if you specify <code>NONE</code>, metadata for the last modified time is still preserved.</p>
+    /// </note>
+    pub fn object_metadata(&self) -> ::std::option::Option<&crate::types::ObjectMetadata> {
+        self.object_metadata.as_ref()
+    }
 }
 impl Options {
     /// Creates a new builder-style object to manufacture [`Options`](crate::types::Options).
@@ -373,6 +383,7 @@ pub struct OptionsBuilder {
     pub(crate) transfer_mode: ::std::option::Option<crate::types::TransferMode>,
     pub(crate) security_descriptor_copy_flags: ::std::option::Option<crate::types::SmbSecurityDescriptorCopyFlags>,
     pub(crate) object_tags: ::std::option::Option<crate::types::ObjectTags>,
+    pub(crate) object_metadata: ::std::option::Option<crate::types::ObjectMetadata>,
 }
 impl OptionsBuilder {
     /// <p>Specifies if and how DataSync checks the integrity of your data at the end of your transfer.</p>
@@ -957,6 +968,26 @@ impl OptionsBuilder {
     pub fn get_object_tags(&self) -> &::std::option::Option<crate::types::ObjectTags> {
         &self.object_tags
     }
+    /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object metadata, specify the <code>NONE</code> value.</p><note>
+    /// <p>Even if you specify <code>NONE</code>, metadata for the last modified time is still preserved.</p>
+    /// </note>
+    pub fn object_metadata(mut self, input: crate::types::ObjectMetadata) -> Self {
+        self.object_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object metadata, specify the <code>NONE</code> value.</p><note>
+    /// <p>Even if you specify <code>NONE</code>, metadata for the last modified time is still preserved.</p>
+    /// </note>
+    pub fn set_object_metadata(mut self, input: ::std::option::Option<crate::types::ObjectMetadata>) -> Self {
+        self.object_metadata = input;
+        self
+    }
+    /// <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata (default behavior) when transferring between object storage systems. If you want your DataSync task to ignore object metadata, specify the <code>NONE</code> value.</p><note>
+    /// <p>Even if you specify <code>NONE</code>, metadata for the last modified time is still preserved.</p>
+    /// </note>
+    pub fn get_object_metadata(&self) -> &::std::option::Option<crate::types::ObjectMetadata> {
+        &self.object_metadata
+    }
     /// Consumes the builder and constructs a [`Options`](crate::types::Options).
     pub fn build(self) -> crate::types::Options {
         crate::types::Options {
@@ -975,6 +1006,7 @@ impl OptionsBuilder {
             transfer_mode: self.transfer_mode,
             security_descriptor_copy_flags: self.security_descriptor_copy_flags,
             object_tags: self.object_tags,
+            object_metadata: self.object_metadata,
         }
     }
 }

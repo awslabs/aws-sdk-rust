@@ -17,6 +17,8 @@ pub use crate::types::_permission_model::PermissionModelBuilder;
 
 pub use crate::types::_service_report_configuration::ServiceReportConfigurationBuilder;
 
+pub use crate::types::_dev_ops_agent_configuration::DevOpsAgentConfigurationBuilder;
+
 pub use crate::types::_service::ServiceBuilder;
 
 pub use crate::types::_service_function::ServiceFunctionBuilder;
@@ -51,6 +53,8 @@ pub use crate::types::_assessment_cost::AssessmentCostBuilder;
 
 pub use crate::types::_resource_discovery_status::ResourceDiscoveryStatusBuilder;
 
+pub use crate::types::_dev_ops_agent_configuration_view::DevOpsAgentConfigurationViewBuilder;
+
 pub use crate::types::_stop_condition::StopConditionBuilder;
 
 pub use crate::types::_dependency_insight::DependencyInsightBuilder;
@@ -58,6 +62,8 @@ pub use crate::types::_dependency_insight::DependencyInsightBuilder;
 pub use crate::types::_test_run_report_configuration::TestRunReportConfigurationBuilder;
 
 pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshotBuilder;
+
+pub use crate::types::_dev_ops_agent_investigation::DevOpsAgentInvestigationBuilder;
 
 pub use crate::types::_dependency_summary::DependencySummaryBuilder;
 

@@ -22,6 +22,8 @@ pub struct Resource {
     pub lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
     /// <p>LF-Tag expression resource. A logical expression composed of one or more LF-Tag key:value pairs.</p>
     pub lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
+    /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
+    pub rls_policy: ::std::option::Option<crate::types::RlsPolicyResource>,
 }
 impl Resource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -60,6 +62,10 @@ impl Resource {
     pub fn lf_tag_expression(&self) -> ::std::option::Option<&crate::types::LfTagExpressionResource> {
         self.lf_tag_expression.as_ref()
     }
+    /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
+    pub fn rls_policy(&self) -> ::std::option::Option<&crate::types::RlsPolicyResource> {
+        self.rls_policy.as_ref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -81,6 +87,7 @@ pub struct ResourceBuilder {
     pub(crate) lf_tag: ::std::option::Option<crate::types::LfTagKeyResource>,
     pub(crate) lf_tag_policy: ::std::option::Option<crate::types::LfTagPolicyResource>,
     pub(crate) lf_tag_expression: ::std::option::Option<crate::types::LfTagExpressionResource>,
+    pub(crate) rls_policy: ::std::option::Option<crate::types::RlsPolicyResource>,
 }
 impl ResourceBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.</p>
@@ -209,6 +216,20 @@ impl ResourceBuilder {
     pub fn get_lf_tag_expression(&self) -> &::std::option::Option<crate::types::LfTagExpressionResource> {
         &self.lf_tag_expression
     }
+    /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
+    pub fn rls_policy(mut self, input: crate::types::RlsPolicyResource) -> Self {
+        self.rls_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
+    pub fn set_rls_policy(mut self, input: ::std::option::Option<crate::types::RlsPolicyResource>) -> Self {
+        self.rls_policy = input;
+        self
+    }
+    /// <p>A row-level security policy resource. Specify this when granting or revoking permissions on a row-level security policy.</p>
+    pub fn get_rls_policy(&self) -> &::std::option::Option<crate::types::RlsPolicyResource> {
+        &self.rls_policy
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
@@ -221,6 +242,7 @@ impl ResourceBuilder {
             lf_tag: self.lf_tag,
             lf_tag_policy: self.lf_tag_policy,
             lf_tag_expression: self.lf_tag_expression,
+            rls_policy: self.rls_policy,
         }
     }
 }

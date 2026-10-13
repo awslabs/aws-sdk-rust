@@ -223,6 +223,8 @@ pub use crate::types::_automation_rules_finding_fields_update_v2::AutomationRule
 
 pub use crate::types::_external_integration_configuration::ExternalIntegrationConfigurationBuilder;
 
+pub use crate::types::_automation_rules_resource_fields_update_v2::AutomationRulesResourceFieldsUpdateV2Builder;
+
 pub use crate::types::_security_controls_configuration::SecurityControlsConfigurationBuilder;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfigurationBuilder;
@@ -324,6 +326,8 @@ pub use crate::types::_resource_findings_summary::ResourceFindingsSummaryBuilder
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_ai_details::AiDetailsBuilder;
+
+pub use crate::types::_criticality_source::CriticalitySourceBuilder;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2Builder;
 

@@ -8,6 +8,8 @@ pub struct PriceWithCurrency {
     pub price: f64,
     /// <p>The currency specifier.</p>
     pub currency: ::std::string::String,
+    /// <p>Indicates whether the domain has standard or premium pricing. A value of <code>STANDARD</code> means the domain is priced at the regular rate for its TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry premium pricing, which may be different than the standard rate.</p>
+    pub price_type: ::std::option::Option<crate::types::PriceType>,
 }
 impl PriceWithCurrency {
     /// <p>The price of a domain, in a specific currency.</p>
@@ -18,6 +20,10 @@ impl PriceWithCurrency {
     pub fn currency(&self) -> &str {
         use std::ops::Deref;
         self.currency.deref()
+    }
+    /// <p>Indicates whether the domain has standard or premium pricing. A value of <code>STANDARD</code> means the domain is priced at the regular rate for its TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry premium pricing, which may be different than the standard rate.</p>
+    pub fn price_type(&self) -> ::std::option::Option<&crate::types::PriceType> {
+        self.price_type.as_ref()
     }
 }
 impl PriceWithCurrency {
@@ -33,6 +39,7 @@ impl PriceWithCurrency {
 pub struct PriceWithCurrencyBuilder {
     pub(crate) price: ::std::option::Option<f64>,
     pub(crate) currency: ::std::option::Option<::std::string::String>,
+    pub(crate) price_type: ::std::option::Option<crate::types::PriceType>,
 }
 impl PriceWithCurrencyBuilder {
     /// <p>The price of a domain, in a specific currency.</p>
@@ -65,6 +72,20 @@ impl PriceWithCurrencyBuilder {
     pub fn get_currency(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency
     }
+    /// <p>Indicates whether the domain has standard or premium pricing. A value of <code>STANDARD</code> means the domain is priced at the regular rate for its TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry premium pricing, which may be different than the standard rate.</p>
+    pub fn price_type(mut self, input: crate::types::PriceType) -> Self {
+        self.price_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the domain has standard or premium pricing. A value of <code>STANDARD</code> means the domain is priced at the regular rate for its TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry premium pricing, which may be different than the standard rate.</p>
+    pub fn set_price_type(mut self, input: ::std::option::Option<crate::types::PriceType>) -> Self {
+        self.price_type = input;
+        self
+    }
+    /// <p>Indicates whether the domain has standard or premium pricing. A value of <code>STANDARD</code> means the domain is priced at the regular rate for its TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry premium pricing, which may be different than the standard rate.</p>
+    pub fn get_price_type(&self) -> &::std::option::Option<crate::types::PriceType> {
+        &self.price_type
+    }
     /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::types::PriceWithCurrency).
     /// This method will fail if any of the following fields are not set:
     /// - [`currency`](crate::types::builders::PriceWithCurrencyBuilder::currency)
@@ -77,6 +98,7 @@ impl PriceWithCurrencyBuilder {
                     "currency was not specified but it is required when building PriceWithCurrency",
                 )
             })?,
+            price_type: self.price_type,
         })
     }
 }

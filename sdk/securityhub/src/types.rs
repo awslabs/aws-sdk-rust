@@ -341,6 +341,8 @@ pub use crate::types::_automation_rules_finding_fields_update_v2::AutomationRule
 
 pub use crate::types::_external_integration_configuration::ExternalIntegrationConfiguration;
 
+pub use crate::types::_automation_rules_resource_fields_update_v2::AutomationRulesResourceFieldsUpdateV2;
+
 pub use crate::types::_security_controls_configuration::SecurityControlsConfiguration;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfiguration;
@@ -404,6 +406,8 @@ pub use crate::types::_resource_sub_category::ResourceSubCategory;
 pub use crate::types::_discovery_type::DiscoveryType;
 
 pub use crate::types::_resource_info::ResourceInfo;
+
+pub use crate::types::_resource_criticality::ResourceCriticality;
 
 pub use crate::types::_security_control_property::SecurityControlProperty;
 
@@ -499,6 +503,8 @@ pub use crate::types::_resource_tag::ResourceTag;
 
 pub use crate::types::_ai_details::AiDetails;
 
+pub use crate::types::_criticality_source::CriticalitySource;
+
 pub use crate::types::_configuration_options::ConfigurationOptions;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2;
@@ -580,6 +586,8 @@ pub use crate::types::_resources_number_filter::ResourcesNumberFilter;
 pub use crate::types::_resources_map_filter::ResourcesMapFilter;
 
 pub use crate::types::_resource_severity_breakdown::ResourceSeverityBreakdown;
+
+pub use crate::types::_criticality_source_type::CriticalitySourceType;
 
 pub use crate::types::_integer_configuration_options::IntegerConfigurationOptions;
 
@@ -1857,6 +1865,8 @@ mod _automation_rules_metadata;
 
 mod _automation_rules_metadata_v2;
 
+mod _automation_rules_resource_fields_update_v2;
+
 mod _availability_zone;
 
 mod _aws_amazon_mq_broker_details;
@@ -2931,6 +2941,10 @@ mod _country;
 
 mod _criteria;
 
+mod _criticality_source;
+
+mod _criticality_source_type;
+
 mod _cspm_connector_provider_name;
 
 mod _cspm_connector_status;
@@ -3296,6 +3310,8 @@ mod _remediation_v2_item;
 mod _resource;
 
 mod _resource_category;
+
+mod _resource_criticality;
 
 mod _resource_details;
 

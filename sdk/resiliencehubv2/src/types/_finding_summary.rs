@@ -22,6 +22,8 @@ pub struct FindingSummary {
     pub policy_component: ::std::option::Option<crate::types::PolicyComponent>,
     /// <p>The timestamp when the finding was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub investigation_deep_link: ::std::option::Option<::std::string::String>,
 }
 impl FindingSummary {
     /// <p>ARN identifier.</p>
@@ -60,6 +62,10 @@ impl FindingSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn investigation_deep_link(&self) -> ::std::option::Option<&str> {
+        self.investigation_deep_link.as_deref()
+    }
 }
 impl FindingSummary {
     /// Creates a new builder-style object to manufacture [`FindingSummary`](crate::types::FindingSummary).
@@ -81,6 +87,7 @@ pub struct FindingSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FindingStatus>,
     pub(crate) policy_component: ::std::option::Option<crate::types::PolicyComponent>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) investigation_deep_link: ::std::option::Option<::std::string::String>,
 }
 impl FindingSummaryBuilder {
     /// <p>ARN identifier.</p>
@@ -209,6 +216,20 @@ impl FindingSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn investigation_deep_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.investigation_deep_link = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn set_investigation_deep_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.investigation_deep_link = input;
+        self
+    }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn get_investigation_deep_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.investigation_deep_link
+    }
     /// Consumes the builder and constructs a [`FindingSummary`](crate::types::FindingSummary).
     pub fn build(self) -> crate::types::FindingSummary {
         crate::types::FindingSummary {
@@ -221,6 +242,7 @@ impl FindingSummaryBuilder {
             status: self.status,
             policy_component: self.policy_component,
             updated_at: self.updated_at,
+            investigation_deep_link: self.investigation_deep_link,
         }
     }
 }

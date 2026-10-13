@@ -46,6 +46,10 @@ pub struct ResourceResult {
     pub discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
     /// <p>Additional resource-type-specific details. For self-hosted AI resources and their host resources, contains an <code>AIDetails</code> structure.</p>
     pub resource_info: ::std::option::Option<crate::types::ResourceInfo>,
+    /// <p>The criticality assigned to a resource.</p>
+    pub resource_criticality: ::std::option::Option<crate::types::ResourceCriticality>,
+    /// <p>The sources of criticalities determined from a resource.</p>
+    pub criticality_sources: ::std::option::Option<::std::vec::Vec<crate::types::CriticalitySource>>,
 }
 impl ResourceResult {
     /// <p>The global identifier used to identify a resource.</p>
@@ -136,6 +140,16 @@ impl ResourceResult {
     pub fn resource_info(&self) -> ::std::option::Option<&crate::types::ResourceInfo> {
         self.resource_info.as_ref()
     }
+    /// <p>The criticality assigned to a resource.</p>
+    pub fn resource_criticality(&self) -> ::std::option::Option<&crate::types::ResourceCriticality> {
+        self.resource_criticality.as_ref()
+    }
+    /// <p>The sources of criticalities determined from a resource.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.criticality_sources.is_none()`.
+    pub fn criticality_sources(&self) -> &[crate::types::CriticalitySource] {
+        self.criticality_sources.as_deref().unwrap_or_default()
+    }
 }
 impl ResourceResult {
     /// Creates a new builder-style object to manufacture [`ResourceResult`](crate::types::ResourceResult).
@@ -169,6 +183,8 @@ pub struct ResourceResultBuilder {
     pub(crate) resource_sub_category: ::std::option::Option<crate::types::ResourceSubCategory>,
     pub(crate) discovery_type: ::std::option::Option<crate::types::DiscoveryType>,
     pub(crate) resource_info: ::std::option::Option<crate::types::ResourceInfo>,
+    pub(crate) resource_criticality: ::std::option::Option<crate::types::ResourceCriticality>,
+    pub(crate) criticality_sources: ::std::option::Option<::std::vec::Vec<crate::types::CriticalitySource>>,
 }
 impl ResourceResultBuilder {
     /// <p>The global identifier used to identify a resource.</p>
@@ -483,6 +499,40 @@ impl ResourceResultBuilder {
     pub fn get_resource_info(&self) -> &::std::option::Option<crate::types::ResourceInfo> {
         &self.resource_info
     }
+    /// <p>The criticality assigned to a resource.</p>
+    pub fn resource_criticality(mut self, input: crate::types::ResourceCriticality) -> Self {
+        self.resource_criticality = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The criticality assigned to a resource.</p>
+    pub fn set_resource_criticality(mut self, input: ::std::option::Option<crate::types::ResourceCriticality>) -> Self {
+        self.resource_criticality = input;
+        self
+    }
+    /// <p>The criticality assigned to a resource.</p>
+    pub fn get_resource_criticality(&self) -> &::std::option::Option<crate::types::ResourceCriticality> {
+        &self.resource_criticality
+    }
+    /// Appends an item to `criticality_sources`.
+    ///
+    /// To override the contents of this collection use [`set_criticality_sources`](Self::set_criticality_sources).
+    ///
+    /// <p>The sources of criticalities determined from a resource.</p>
+    pub fn criticality_sources(mut self, input: crate::types::CriticalitySource) -> Self {
+        let mut v = self.criticality_sources.unwrap_or_default();
+        v.push(input);
+        self.criticality_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The sources of criticalities determined from a resource.</p>
+    pub fn set_criticality_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CriticalitySource>>) -> Self {
+        self.criticality_sources = input;
+        self
+    }
+    /// <p>The sources of criticalities determined from a resource.</p>
+    pub fn get_criticality_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CriticalitySource>> {
+        &self.criticality_sources
+    }
     /// Consumes the builder and constructs a [`ResourceResult`](crate::types::ResourceResult).
     pub fn build(self) -> crate::types::ResourceResult {
         crate::types::ResourceResult {
@@ -507,6 +557,8 @@ impl ResourceResultBuilder {
             resource_sub_category: self.resource_sub_category,
             discovery_type: self.discovery_type,
             resource_info: self.resource_info,
+            resource_criticality: self.resource_criticality,
+            criticality_sources: self.criticality_sources,
         }
     }
 }

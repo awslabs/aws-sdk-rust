@@ -531,6 +531,30 @@ impl From<crate::operation::get_domain_detail::GetDomainDetailError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_prices::GetDomainPricesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_prices::GetDomainPricesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_domain_prices::GetDomainPricesError> for Error {
+    fn from(err: crate::operation::get_domain_prices::GetDomainPricesError) -> Self {
+        match err {
+            crate::operation::get_domain_prices::GetDomainPricesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::get_domain_prices::GetDomainPricesError::TldInMaintenance(inner) => Error::TldInMaintenance(inner),
+            crate::operation::get_domain_prices::GetDomainPricesError::UnsupportedTld(inner) => Error::UnsupportedTld(inner),
+            crate::operation::get_domain_prices::GetDomainPricesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_domain_suggestions::GetDomainSuggestionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

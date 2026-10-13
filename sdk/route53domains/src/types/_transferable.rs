@@ -15,6 +15,7 @@
 ///     Transferable::DomainInAnotherAccount => { /* ... */ },
 ///     Transferable::DomainInOwnAccount => { /* ... */ },
 ///     Transferable::DontKnow => { /* ... */ },
+///     Transferable::Pending => { /* ... */ },
 ///     Transferable::PremiumDomain => { /* ... */ },
 ///     Transferable::Transferable => { /* ... */ },
 ///     Transferable::Untransferable => { /* ... */ },
@@ -57,7 +58,16 @@
 /// </dd>
 /// <dt>DONT_KNOW</dt>
 /// <dd>
-/// <p>The TLD registry didn't respond in time or didn't provide a definitive answer about domain transferability, which can occur due to registry maintenance or temporary delays.</p>
+/// <p>The TLD registry didn't reply with a definitive answer about whether the
+/// domain name can be transferred. Route 53 can return this response for a
+/// variety of reasons, for example, the registry is performing maintenance. Try
+/// again later.</p>
+/// </dd>
+/// <dt>PENDING</dt>
+/// <dd>
+/// <p>The TLD registry didn't return a response in the expected amount of time.
+/// When the response is delayed, it usually takes just a few extra seconds. You
+/// can resubmit the request immediately.</p>
 /// </dd>
 /// <dt>DOMAIN_IN_OWN_ACCOUNT</dt>
 /// <dd>
@@ -84,6 +94,8 @@ pub enum Transferable {
     #[allow(missing_docs)] // documentation missing in model
     DontKnow,
     #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
     PremiumDomain,
     #[allow(missing_docs)] // documentation missing in model
     Transferable,
@@ -99,6 +111,7 @@ impl ::std::convert::From<&str> for Transferable {
             "DOMAIN_IN_ANOTHER_ACCOUNT" => Transferable::DomainInAnotherAccount,
             "DOMAIN_IN_OWN_ACCOUNT" => Transferable::DomainInOwnAccount,
             "DONT_KNOW" => Transferable::DontKnow,
+            "PENDING" => Transferable::Pending,
             "PREMIUM_DOMAIN" => Transferable::PremiumDomain,
             "TRANSFERABLE" => Transferable::Transferable,
             "UNTRANSFERABLE" => Transferable::Untransferable,
@@ -120,6 +133,7 @@ impl Transferable {
             Transferable::DomainInAnotherAccount => "DOMAIN_IN_ANOTHER_ACCOUNT",
             Transferable::DomainInOwnAccount => "DOMAIN_IN_OWN_ACCOUNT",
             Transferable::DontKnow => "DONT_KNOW",
+            Transferable::Pending => "PENDING",
             Transferable::PremiumDomain => "PREMIUM_DOMAIN",
             Transferable::Transferable => "TRANSFERABLE",
             Transferable::Untransferable => "UNTRANSFERABLE",
@@ -132,6 +146,7 @@ impl Transferable {
             "DOMAIN_IN_ANOTHER_ACCOUNT",
             "DOMAIN_IN_OWN_ACCOUNT",
             "DONT_KNOW",
+            "PENDING",
             "PREMIUM_DOMAIN",
             "TRANSFERABLE",
             "UNTRANSFERABLE",
@@ -161,6 +176,7 @@ impl ::std::fmt::Display for Transferable {
             Transferable::DomainInAnotherAccount => write!(f, "DOMAIN_IN_ANOTHER_ACCOUNT"),
             Transferable::DomainInOwnAccount => write!(f, "DOMAIN_IN_OWN_ACCOUNT"),
             Transferable::DontKnow => write!(f, "DONT_KNOW"),
+            Transferable::Pending => write!(f, "PENDING"),
             Transferable::PremiumDomain => write!(f, "PREMIUM_DOMAIN"),
             Transferable::Transferable => write!(f, "TRANSFERABLE"),
             Transferable::Untransferable => write!(f, "UNTRANSFERABLE"),

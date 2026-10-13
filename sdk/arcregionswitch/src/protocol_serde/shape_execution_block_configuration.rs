@@ -79,6 +79,10 @@ pub fn ser_execution_block_configuration(
             encoder.str("rdsSwitchoverReadReplicaConfig");
             crate::protocol_serde::shape_rds_switchover_read_replica_configuration::ser_rds_switchover_read_replica_configuration(encoder, inner)?;
         }
+        crate::types::ExecutionBlockConfiguration::SsmSendCommandConfig(inner) => {
+            encoder.str("ssmSendCommandConfig");
+            crate::protocol_serde::shape_ssm_send_command_configuration::ser_ssm_send_command_configuration(encoder, inner)?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -170,6 +174,9 @@ pub(crate) fn de_execution_block_configuration(
                     decoder,
                     depth + 1,
                 )?,
+            ),
+            "ssmSendCommandConfig" => crate::types::ExecutionBlockConfiguration::SsmSendCommandConfig(
+                crate::protocol_serde::shape_ssm_send_command_configuration::de_ssm_send_command_configuration(decoder, depth + 1)?,
             ),
             _ => {
                 decoder.skip()?;

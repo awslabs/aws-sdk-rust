@@ -244,6 +244,20 @@ impl CreateServiceFluentBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn dev_ops_agent_configuration(mut self, input: crate::types::DevOpsAgentConfiguration) -> Self {
+        self.inner = self.inner.dev_ops_agent_configuration(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn set_dev_ops_agent_configuration(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConfiguration>) -> Self {
+        self.inner = self.inner.set_dev_ops_agent_configuration(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn get_dev_ops_agent_configuration(&self) -> &::std::option::Option<crate::types::DevOpsAgentConfiguration> {
+        self.inner.get_dev_ops_agent_configuration()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

@@ -31,10 +31,12 @@ impl crate::operation::list_prices::builders::ListPricesInputBuilder {
 /// <li>
 /// <p>Owner change</p></li>
 /// <li>
-/// <p>Domain renewal</p></li>
+/// <p>Renewal</p></li>
 /// <li>
-/// <p>Domain restoration</p></li>
-/// </ul>
+/// <p>Restoration</p></li>
+/// </ul><note>
+/// <p>The prices that <code>ListPrices</code> returns are the standard rates for a TLD. <code>ListPrices</code> doesn't return registry premium prices, which apply to individual domain names rather than to a TLD. To get accurate pricing for a specific domain name, including premium prices, call <code>GetDomainPrices</code>.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPricesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

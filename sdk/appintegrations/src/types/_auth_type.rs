@@ -13,6 +13,7 @@
 /// # let authtype = unimplemented!();
 /// match authtype {
 ///     AuthType::ApiKey => { /* ... */ },
+///     AuthType::ConnectJwt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum AuthType {
     #[allow(missing_docs)] // documentation missing in model
     ApiKey,
+    #[allow(missing_docs)] // documentation missing in model
+    ConnectJwt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for AuthType {
     fn from(s: &str) -> Self {
         match s {
             "API_KEY" => AuthType::ApiKey,
+            "CONNECT_JWT" => AuthType::ConnectJwt,
             other => AuthType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl AuthType {
     pub fn as_str(&self) -> &str {
         match self {
             AuthType::ApiKey => "API_KEY",
+            AuthType::ConnectJwt => "CONNECT_JWT",
             AuthType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API_KEY"]
+        &["API_KEY", "CONNECT_JWT"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for AuthType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuthType::ApiKey => write!(f, "API_KEY"),
+            AuthType::ConnectJwt => write!(f, "CONNECT_JWT"),
             AuthType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -57,6 +57,12 @@ pub fn ser_resource(
         crate::protocol_serde::shape_lf_tag_expression_resource::ser_lf_tag_expression_resource(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.rls_policy {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("RLSPolicy").start_object();
+        crate::protocol_serde::shape_rls_policy_resource::ser_rls_policy_resource(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -134,6 +140,13 @@ where
                             builder = builder.set_lf_tag_expression(
                                 crate::protocol_serde::shape_lf_tag_expression_resource::de_lf_tag_expression_resource(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "RLSPolicy" => {
+                            builder = builder.set_rls_policy(crate::protocol_serde::shape_rls_policy_resource::de_rls_policy_resource(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

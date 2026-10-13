@@ -1404,6 +1404,18 @@ pub(crate) fn version_delete_error_correct_errors(
     builder
 }
 
+pub(crate) fn registry_mapping_correct_errors(
+    mut builder: crate::types::builders::RegistryMappingBuilder,
+) -> crate::types::builders::RegistryMappingBuilder {
+    if builder.upstream_registry_url.is_none() {
+        builder.upstream_registry_url = Some(Default::default())
+    }
+    if builder.ecr_repository_prefix.is_none() {
+        builder.ecr_repository_prefix = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn source_files_correct_errors(mut builder: crate::types::builders::SourceFilesBuilder) -> crate::types::builders::SourceFilesBuilder {
     if builder.source1.is_none() {
         builder.source1 = Some(Default::default())

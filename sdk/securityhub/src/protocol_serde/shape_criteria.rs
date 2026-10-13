@@ -10,6 +10,12 @@ pub fn ser_criteria(
             crate::protocol_serde::shape_ocsf_finding_filters::ser_ocsf_finding_filters(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::Criteria::ResourceCriteria(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_7.key("ResourceCriteria").start_object();
+            crate::protocol_serde::shape_resources_filters::ser_resources_filters(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::Criteria::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Criteria")),
     }
     Ok(())
@@ -56,6 +62,11 @@ where
                             crate::protocol_serde::shape_ocsf_finding_filters::de_ocsf_finding_filters(tokens, _value, depth + 1)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'OcsfFindingCriteria' cannot be null"),
                             )?,
+                        )),
+                        "ResourceCriteria" => Some(crate::types::Criteria::ResourceCriteria(
+                            crate::protocol_serde::shape_resources_filters::de_resources_filters(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ResourceCriteria' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

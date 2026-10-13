@@ -8,13 +8,15 @@ pub struct NfsMountOptions {
     /// <p>You can specify the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p></li>
+    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1. For Amazon FSx for OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back to version 4.1, and then to earlier versions if needed.</p></li>
     /// <li>
     /// <p><code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p></li>
     /// <li>
     /// <p><code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p></li>
     /// <li>
     /// <p><code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p></li>
+    /// <li>
+    /// <p><code>NFSv4_2</code>: Stateful protocol version that supports sparse file operations, space reservation, and server-side copy operations, in addition to all features available in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.</p></li>
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
@@ -25,13 +27,15 @@ impl NfsMountOptions {
     /// <p>You can specify the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p></li>
+    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1. For Amazon FSx for OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back to version 4.1, and then to earlier versions if needed.</p></li>
     /// <li>
     /// <p><code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p></li>
     /// <li>
     /// <p><code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p></li>
     /// <li>
     /// <p><code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p></li>
+    /// <li>
+    /// <p><code>NFSv4_2</code>: Stateful protocol version that supports sparse file operations, space reservation, and server-side copy operations, in addition to all features available in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.</p></li>
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
@@ -57,13 +61,15 @@ impl NfsMountOptionsBuilder {
     /// <p>You can specify the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p></li>
+    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1. For Amazon FSx for OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back to version 4.1, and then to earlier versions if needed.</p></li>
     /// <li>
     /// <p><code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p></li>
     /// <li>
     /// <p><code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p></li>
     /// <li>
     /// <p><code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p></li>
+    /// <li>
+    /// <p><code>NFSv4_2</code>: Stateful protocol version that supports sparse file operations, space reservation, and server-side copy operations, in addition to all features available in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.</p></li>
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
@@ -75,13 +81,15 @@ impl NfsMountOptionsBuilder {
     /// <p>You can specify the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p></li>
+    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1. For Amazon FSx for OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back to version 4.1, and then to earlier versions if needed.</p></li>
     /// <li>
     /// <p><code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p></li>
     /// <li>
     /// <p><code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p></li>
     /// <li>
     /// <p><code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p></li>
+    /// <li>
+    /// <p><code>NFSv4_2</code>: Stateful protocol version that supports sparse file operations, space reservation, and server-side copy operations, in addition to all features available in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.</p></li>
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
@@ -93,13 +101,15 @@ impl NfsMountOptionsBuilder {
     /// <p>You can specify the following options:</p>
     /// <ul>
     /// <li>
-    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.</p></li>
+    /// <p><code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1. For Amazon FSx for OpenZFS locations, DataSync first attempts to use NFS version 4.2, then falls back to version 4.1, and then to earlier versions if needed.</p></li>
     /// <li>
     /// <p><code>NFS3</code>: Stateless protocol version that allows for asynchronous writes on the server.</p></li>
     /// <li>
     /// <p><code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports delegations and pseudo file systems.</p></li>
     /// <li>
     /// <p><code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory delegations, and parallel data processing. NFS version 4.1 also includes all features available in version 4.0.</p></li>
+    /// <li>
+    /// <p><code>NFSv4_2</code>: Stateful protocol version that supports sparse file operations, space reservation, and server-side copy operations, in addition to all features available in version 4.1. Selecting NFS version 4.2 requires an Enhanced mode task.</p></li>
     /// </ul><note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountUsage {
-    /// <p>The number of web functions in your account in the current AWS Region.</p>
+    /// <p>The number of web functions in your account in the current AWS Region. This count includes web functions in all states, not only functions in the <code>Active</code> state.</p>
     pub function_count: i32,
 }
 impl AccountUsage {
-    /// <p>The number of web functions in your account in the current AWS Region.</p>
+    /// <p>The number of web functions in your account in the current AWS Region. This count includes web functions in all states, not only functions in the <code>Active</code> state.</p>
     pub fn function_count(&self) -> i32 {
         self.function_count
     }
@@ -27,18 +27,18 @@ pub struct AccountUsageBuilder {
     pub(crate) function_count: ::std::option::Option<i32>,
 }
 impl AccountUsageBuilder {
-    /// <p>The number of web functions in your account in the current AWS Region.</p>
+    /// <p>The number of web functions in your account in the current AWS Region. This count includes web functions in all states, not only functions in the <code>Active</code> state.</p>
     /// This field is required.
     pub fn function_count(mut self, input: i32) -> Self {
         self.function_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of web functions in your account in the current AWS Region.</p>
+    /// <p>The number of web functions in your account in the current AWS Region. This count includes web functions in all states, not only functions in the <code>Active</code> state.</p>
     pub fn set_function_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.function_count = input;
         self
     }
-    /// <p>The number of web functions in your account in the current AWS Region.</p>
+    /// <p>The number of web functions in your account in the current AWS Region. This count includes web functions in all states, not only functions in the <code>Active</code> state.</p>
     pub fn get_function_count(&self) -> &::std::option::Option<i32> {
         &self.function_count
     }

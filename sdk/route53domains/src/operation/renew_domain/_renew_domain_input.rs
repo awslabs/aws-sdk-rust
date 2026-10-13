@@ -11,6 +11,8 @@ pub struct RenewDomainInput {
     pub duration_in_years: ::std::option::Option<i32>,
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub current_expiry_year: ::std::option::Option<i32>,
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub consent: ::std::option::Option<crate::types::Consent>,
 }
 impl RenewDomainInput {
     /// <p>The name of the domain that you want to renew.</p>
@@ -25,6 +27,10 @@ impl RenewDomainInput {
     /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
     pub fn current_expiry_year(&self) -> ::std::option::Option<i32> {
         self.current_expiry_year
+    }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn consent(&self) -> ::std::option::Option<&crate::types::Consent> {
+        self.consent.as_ref()
     }
 }
 impl RenewDomainInput {
@@ -41,6 +47,7 @@ pub struct RenewDomainInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) duration_in_years: ::std::option::Option<i32>,
     pub(crate) current_expiry_year: ::std::option::Option<i32>,
+    pub(crate) consent: ::std::option::Option<crate::types::Consent>,
 }
 impl RenewDomainInputBuilder {
     /// <p>The name of the domain that you want to renew.</p>
@@ -90,12 +97,27 @@ impl RenewDomainInputBuilder {
     pub fn get_current_expiry_year(&self) -> &::std::option::Option<i32> {
         &self.current_expiry_year
     }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn consent(mut self, input: crate::types::Consent) -> Self {
+        self.consent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
+        self.consent = input;
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
+        &self.consent
+    }
     /// Consumes the builder and constructs a [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::renew_domain::RenewDomainInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::renew_domain::RenewDomainInput {
             domain_name: self.domain_name,
             duration_in_years: self.duration_in_years,
             current_expiry_year: self.current_expiry_year,
+            consent: self.consent,
         })
     }
 }

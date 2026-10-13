@@ -140,6 +140,8 @@ mod add_lf_tags_to_resource;
 
 mod assume_decorated_role_with_saml;
 
+mod attach_rls_policy;
+
 mod batch_grant_permissions;
 
 mod batch_revoke_permissions;
@@ -157,6 +159,8 @@ mod create_lake_formation_opt_in;
 mod create_lf_tag;
 
 mod create_lf_tag_expression;
+
+mod create_rls_policy;
 
 /// Operation customization and supporting types.
 ///
@@ -197,6 +201,8 @@ mod delete_lf_tag_expression;
 
 mod delete_objects_on_cancel;
 
+mod delete_rls_policy;
+
 mod deregister_resource;
 
 mod describe_lake_formation_identity_center_configuration;
@@ -204,6 +210,8 @@ mod describe_lake_formation_identity_center_configuration;
 mod describe_resource;
 
 mod describe_transaction;
+
+mod detach_rls_policy;
 
 mod extend_transaction;
 
@@ -224,6 +232,8 @@ mod get_query_state;
 mod get_query_statistics;
 
 mod get_resource_lf_tags;
+
+mod get_rls_policy;
 
 mod get_table_objects;
 
@@ -250,6 +260,10 @@ mod list_lf_tags;
 mod list_permissions;
 
 mod list_resources;
+
+mod list_rls_policies;
+
+mod list_rls_policy_attachments;
 
 mod list_table_storage_optimizers;
 
@@ -280,6 +294,8 @@ mod update_lf_tag;
 mod update_lf_tag_expression;
 
 mod update_resource;
+
+mod update_rls_policy;
 
 mod update_table_objects;
 

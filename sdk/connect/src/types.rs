@@ -165,6 +165,8 @@ pub use crate::types::_evaluation_form_content::EvaluationFormContent;
 
 pub use crate::types::_contact_flow::ContactFlow;
 
+pub use crate::types::_contact_flow_alias_info::ContactFlowAliasInfo;
+
 pub use crate::types::_contact_flow_module::ContactFlowModule;
 
 pub use crate::types::_contact_flow_module_alias_info::ContactFlowModuleAliasInfo;
@@ -722,6 +724,8 @@ pub use crate::types::_lex_bot_config::LexBotConfig;
 pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifier;
 
 pub use crate::types::_evaluation_summary::EvaluationSummary;
+
+pub use crate::types::_contact_flow_alias_summary::ContactFlowAliasSummary;
 
 pub use crate::types::_contact_flow_module_alias_summary::ContactFlowModuleAliasSummary;
 
@@ -1836,6 +1840,10 @@ mod _contact_field;
 mod _contact_filter;
 
 mod _contact_flow;
+
+mod _contact_flow_alias_info;
+
+mod _contact_flow_alias_summary;
 
 mod _contact_flow_attribute_and_condition;
 

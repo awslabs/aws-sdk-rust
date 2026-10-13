@@ -91,6 +91,15 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "EMRServerless" => {
+                            builder = builder.set_emr_serverless(
+                                crate::protocol_serde::shape_emr_serverless_step_metadata::de_emr_serverless_step_metadata(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "QualityCheck" => {
                             builder = builder.set_quality_check(
                                 crate::protocol_serde::shape_quality_check_step_metadata::de_quality_check_step_metadata(tokens, _value, depth + 1)?,
@@ -181,6 +190,27 @@ where
                         }
                         "Job" => {
                             builder = builder.set_job(crate::protocol_serde::shape_job_step_metadata::de_job_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Athena" => {
+                            builder = builder.set_athena(crate::protocol_serde::shape_athena_step_metadata::de_athena_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Cleanup" => {
+                            builder = builder.set_cleanup(crate::protocol_serde::shape_cleanup_step_metadata::de_cleanup_step_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ForEach" => {
+                            builder = builder.set_for_each(crate::protocol_serde::shape_for_each_step_metadata::de_for_each_step_metadata(
                                 tokens,
                                 _value,
                                 depth + 1,

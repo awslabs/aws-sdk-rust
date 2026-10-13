@@ -15,6 +15,9 @@ pub fn ser_registry_mapping(
     if let Some(var_4) = &input.ecr_account_id {
         object.key("ecrAccountId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.credential_arn {
+        object.key("credentialArn").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -68,6 +71,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "credentialArn" => {
+                            builder = builder.set_credential_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -77,7 +87,7 @@ where
                     }
                 }
             }
-            Ok(Some(builder.build()))
+            Ok(Some(crate::serde_util::registry_mapping_correct_errors(builder).build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

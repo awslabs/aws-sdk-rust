@@ -20,6 +20,7 @@
 ///     StackAttribute::IamRoleArn => { /* ... */ },
 ///     StackAttribute::RedirectUrl => { /* ... */ },
 ///     StackAttribute::StorageConnectors => { /* ... */ },
+///     StackAttribute::StorageConnectorAuthentication => { /* ... */ },
 ///     StackAttribute::StorageConnectorGoogleDrive => { /* ... */ },
 ///     StackAttribute::StorageConnectorHomefolders => { /* ... */ },
 ///     StackAttribute::StorageConnectorOneDrive => { /* ... */ },
@@ -89,6 +90,9 @@
 /// <li>
 /// <p>AGENT_ACCESS_CONFIG</p>
 /// </li>
+/// <li>
+/// <p>STORAGE_CONNECTOR_AUTHENTICATION</p>
+/// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(
@@ -111,6 +115,8 @@ pub enum StackAttribute {
     RedirectUrl,
     #[allow(missing_docs)] // documentation missing in model
     StorageConnectors,
+    #[allow(missing_docs)] // documentation missing in model
+    StorageConnectorAuthentication,
     #[allow(missing_docs)] // documentation missing in model
     StorageConnectorGoogleDrive,
     #[allow(missing_docs)] // documentation missing in model
@@ -138,6 +144,7 @@ impl ::std::convert::From<&str> for StackAttribute {
             "IAM_ROLE_ARN" => StackAttribute::IamRoleArn,
             "REDIRECT_URL" => StackAttribute::RedirectUrl,
             "STORAGE_CONNECTORS" => StackAttribute::StorageConnectors,
+            "STORAGE_CONNECTOR_AUTHENTICATION" => StackAttribute::StorageConnectorAuthentication,
             "STORAGE_CONNECTOR_GOOGLE_DRIVE" => StackAttribute::StorageConnectorGoogleDrive,
             "STORAGE_CONNECTOR_HOMEFOLDERS" => StackAttribute::StorageConnectorHomefolders,
             "STORAGE_CONNECTOR_ONE_DRIVE" => StackAttribute::StorageConnectorOneDrive,
@@ -167,6 +174,7 @@ impl StackAttribute {
             StackAttribute::IamRoleArn => "IAM_ROLE_ARN",
             StackAttribute::RedirectUrl => "REDIRECT_URL",
             StackAttribute::StorageConnectors => "STORAGE_CONNECTORS",
+            StackAttribute::StorageConnectorAuthentication => "STORAGE_CONNECTOR_AUTHENTICATION",
             StackAttribute::StorageConnectorGoogleDrive => "STORAGE_CONNECTOR_GOOGLE_DRIVE",
             StackAttribute::StorageConnectorHomefolders => "STORAGE_CONNECTOR_HOMEFOLDERS",
             StackAttribute::StorageConnectorOneDrive => "STORAGE_CONNECTOR_ONE_DRIVE",
@@ -187,6 +195,7 @@ impl StackAttribute {
             "IAM_ROLE_ARN",
             "REDIRECT_URL",
             "STORAGE_CONNECTORS",
+            "STORAGE_CONNECTOR_AUTHENTICATION",
             "STORAGE_CONNECTOR_GOOGLE_DRIVE",
             "STORAGE_CONNECTOR_HOMEFOLDERS",
             "STORAGE_CONNECTOR_ONE_DRIVE",
@@ -224,6 +233,7 @@ impl ::std::fmt::Display for StackAttribute {
             StackAttribute::IamRoleArn => write!(f, "IAM_ROLE_ARN"),
             StackAttribute::RedirectUrl => write!(f, "REDIRECT_URL"),
             StackAttribute::StorageConnectors => write!(f, "STORAGE_CONNECTORS"),
+            StackAttribute::StorageConnectorAuthentication => write!(f, "STORAGE_CONNECTOR_AUTHENTICATION"),
             StackAttribute::StorageConnectorGoogleDrive => write!(f, "STORAGE_CONNECTOR_GOOGLE_DRIVE"),
             StackAttribute::StorageConnectorHomefolders => write!(f, "STORAGE_CONNECTOR_HOMEFOLDERS"),
             StackAttribute::StorageConnectorOneDrive => write!(f, "STORAGE_CONNECTOR_ONE_DRIVE"),

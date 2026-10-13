@@ -346,4 +346,18 @@ impl UpdateStackFluentBuilder {
     pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfigForUpdate> {
         self.inner.get_agent_access_config()
     }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn storage_connector_authentication(mut self, input: crate::types::StorageConnectorAuthentication) -> Self {
+        self.inner = self.inner.storage_connector_authentication(input);
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn set_storage_connector_authentication(mut self, input: ::std::option::Option<crate::types::StorageConnectorAuthentication>) -> Self {
+        self.inner = self.inner.set_storage_connector_authentication(input);
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn get_storage_connector_authentication(&self) -> &::std::option::Option<crate::types::StorageConnectorAuthentication> {
+        self.inner.get_storage_connector_authentication()
+    }
 }

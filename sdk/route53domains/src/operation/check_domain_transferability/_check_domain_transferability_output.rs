@@ -8,6 +8,9 @@ pub struct CheckDomainTransferabilityOutput {
     pub transferability: ::std::option::Option<crate::types::DomainTransferability>,
     /// <p>Provides an explanation for when a domain can't be transferred.</p>
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The price to transfer the domain name to Route 53, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when Route 53 can determine whether the domain is transferable.</p>
+    pub price: ::std::option::Option<crate::types::PriceWithCurrency>,
     _request_id: Option<String>,
 }
 impl CheckDomainTransferabilityOutput {
@@ -18,6 +21,11 @@ impl CheckDomainTransferabilityOutput {
     /// <p>Provides an explanation for when a domain can't be transferred.</p>
     pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
+    }
+    /// <p>The price to transfer the domain name to Route 53, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when Route 53 can determine whether the domain is transferable.</p>
+    pub fn price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
+        self.price.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CheckDomainTransferabilityOutput {
@@ -38,6 +46,7 @@ impl CheckDomainTransferabilityOutput {
 pub struct CheckDomainTransferabilityOutputBuilder {
     pub(crate) transferability: ::std::option::Option<crate::types::DomainTransferability>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) price: ::std::option::Option<crate::types::PriceWithCurrency>,
     _request_id: Option<String>,
 }
 impl CheckDomainTransferabilityOutputBuilder {
@@ -69,6 +78,23 @@ impl CheckDomainTransferabilityOutputBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The price to transfer the domain name to Route 53, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when Route 53 can determine whether the domain is transferable.</p>
+    pub fn price(mut self, input: crate::types::PriceWithCurrency) -> Self {
+        self.price = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The price to transfer the domain name to Route 53, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when Route 53 can determine whether the domain is transferable.</p>
+    pub fn set_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
+        self.price = input;
+        self
+    }
+    /// <p>The price to transfer the domain name to Route 53, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when Route 53 can determine whether the domain is transferable.</p>
+    pub fn get_price(&self) -> &::std::option::Option<crate::types::PriceWithCurrency> {
+        &self.price
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,6 +109,7 @@ impl CheckDomainTransferabilityOutputBuilder {
         crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput {
             transferability: self.transferability,
             message: self.message,
+            price: self.price,
             _request_id: self._request_id,
         }
     }

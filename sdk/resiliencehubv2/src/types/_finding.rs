@@ -32,6 +32,8 @@ pub struct Finding {
     pub testing_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestingRecommendation>>,
     /// <p>The timestamp when the finding was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub investigation_deep_link: ::std::option::Option<::std::string::String>,
 }
 impl Finding {
     /// <p>The unique identifier of the finding.</p>
@@ -98,6 +100,10 @@ impl Finding {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn investigation_deep_link(&self) -> ::std::option::Option<&str> {
+        self.investigation_deep_link.as_deref()
+    }
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::types::Finding).
@@ -124,6 +130,7 @@ pub struct FindingBuilder {
     pub(crate) observability_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ObservabilityRecommendation>>,
     pub(crate) testing_recommendations: ::std::option::Option<::std::vec::Vec<crate::types::TestingRecommendation>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) investigation_deep_link: ::std::option::Option<::std::string::String>,
 }
 impl FindingBuilder {
     /// <p>The unique identifier of the finding.</p>
@@ -354,6 +361,20 @@ impl FindingBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn investigation_deep_link(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.investigation_deep_link = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn set_investigation_deep_link(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.investigation_deep_link = input;
+        self
+    }
+    /// <p>A deep link to an interactive DevOps Agent investigation seeded with this finding. This value is null until DevOps Agent creates an investigation.</p>
+    pub fn get_investigation_deep_link(&self) -> &::std::option::Option<::std::string::String> {
+        &self.investigation_deep_link
+    }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
@@ -371,6 +392,7 @@ impl FindingBuilder {
             observability_recommendations: self.observability_recommendations,
             testing_recommendations: self.testing_recommendations,
             updated_at: self.updated_at,
+            investigation_deep_link: self.investigation_deep_link,
         }
     }
 }

@@ -71,6 +71,9 @@ pub struct CheckDomainAvailabilityOutput {
     /// </dd>
     /// </dl>
     pub availability: ::std::option::Option<crate::types::DomainAvailability>,
+    /// <p>The price to register the domain name, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when <code>Availability</code> is <code>AVAILABLE</code>.</p>
+    pub price: ::std::option::Option<crate::types::PriceWithCurrency>,
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutput {
@@ -143,6 +146,11 @@ impl CheckDomainAvailabilityOutput {
     pub fn availability(&self) -> ::std::option::Option<&crate::types::DomainAvailability> {
         self.availability.as_ref()
     }
+    /// <p>The price to register the domain name, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when <code>Availability</code> is <code>AVAILABLE</code>.</p>
+    pub fn price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
+        self.price.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CheckDomainAvailabilityOutput {
     fn request_id(&self) -> Option<&str> {
@@ -161,6 +169,7 @@ impl CheckDomainAvailabilityOutput {
 #[non_exhaustive]
 pub struct CheckDomainAvailabilityOutputBuilder {
     pub(crate) availability: ::std::option::Option<crate::types::DomainAvailability>,
+    pub(crate) price: ::std::option::Option<crate::types::PriceWithCurrency>,
     _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutputBuilder {
@@ -373,6 +382,23 @@ impl CheckDomainAvailabilityOutputBuilder {
     pub fn get_availability(&self) -> &::std::option::Option<crate::types::DomainAvailability> {
         &self.availability
     }
+    /// <p>The price to register the domain name, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when <code>Availability</code> is <code>AVAILABLE</code>.</p>
+    pub fn price(mut self, input: crate::types::PriceWithCurrency) -> Self {
+        self.price = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The price to register the domain name, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when <code>Availability</code> is <code>AVAILABLE</code>.</p>
+    pub fn set_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
+        self.price = input;
+        self
+    }
+    /// <p>The price to register the domain name, in the currency that <code>Currency</code> specifies. If the domain has registry premium pricing, this price is different from the standard rate for the TLD that <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which rate applies.</p>
+    /// <p>This element is returned only when <code>Availability</code> is <code>AVAILABLE</code>.</p>
+    pub fn get_price(&self) -> &::std::option::Option<crate::types::PriceWithCurrency> {
+        &self.price
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -386,6 +412,7 @@ impl CheckDomainAvailabilityOutputBuilder {
     pub fn build(self) -> crate::operation::check_domain_availability::CheckDomainAvailabilityOutput {
         crate::operation::check_domain_availability::CheckDomainAvailabilityOutput {
             availability: self.availability,
+            price: self.price,
             _request_id: self._request_id,
         }
     }

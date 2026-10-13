@@ -11,9 +11,9 @@ pub struct UpdateLocationHdfsInput {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
     /// <p>The size of the data blocks to write into the HDFS cluster.</p>
@@ -54,9 +54,9 @@ impl UpdateLocationHdfsInput {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
@@ -179,9 +179,9 @@ impl UpdateLocationHdfsInputBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn name_nodes(mut self, input: crate::types::HdfsNameNode) -> Self {
         let mut v = self.name_nodes.unwrap_or_default();
@@ -193,9 +193,9 @@ impl UpdateLocationHdfsInputBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
         self.name_nodes = input;
@@ -205,9 +205,9 @@ impl UpdateLocationHdfsInputBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         &self.name_nodes

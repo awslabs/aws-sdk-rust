@@ -43,6 +43,9 @@ pub mod get_contact_reachability_status;
 /// Types for the `GetDomainDetail` operation.
 pub mod get_domain_detail;
 
+/// Types for the `GetDomainPrices` operation.
+pub mod get_domain_prices;
+
 /// Types for the `GetDomainSuggestions` operation.
 pub mod get_domain_suggestions;
 

@@ -21,6 +21,8 @@ pub struct CreateServiceInput {
     pub report_configuration: ::std::option::Option<crate::types::ServiceReportConfiguration>,
     /// <p>KMS key identifier — accepts key ID, key ARN, alias name, or alias ARN.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfiguration>,
     /// <p>Resource tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Idempotency token.</p>
@@ -67,6 +69,10 @@ impl CreateServiceInput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn dev_ops_agent_configuration(&self) -> ::std::option::Option<&crate::types::DevOpsAgentConfiguration> {
+        self.dev_ops_agent_configuration.as_ref()
+    }
     /// <p>Resource tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -88,6 +94,7 @@ impl ::std::fmt::Debug for CreateServiceInput {
         formatter.field("dependency_discovery", &self.dependency_discovery);
         formatter.field("report_configuration", &self.report_configuration);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("dev_ops_agent_configuration", &self.dev_ops_agent_configuration);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -113,6 +120,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) dependency_discovery: ::std::option::Option<crate::types::DependencyDiscoveryInput>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::ServiceReportConfiguration>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dev_ops_agent_configuration: ::std::option::Option<crate::types::DevOpsAgentConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -257,6 +265,20 @@ impl CreateServiceInputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn dev_ops_agent_configuration(mut self, input: crate::types::DevOpsAgentConfiguration) -> Self {
+        self.dev_ops_agent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn set_dev_ops_agent_configuration(mut self, input: ::std::option::Option<crate::types::DevOpsAgentConfiguration>) -> Self {
+        self.dev_ops_agent_configuration = input;
+        self
+    }
+    /// <p>The optional DevOps Agent integration configuration to apply to the new service. If you omit this field, the new service has no DevOps Agent integration.</p>
+    pub fn get_dev_ops_agent_configuration(&self) -> &::std::option::Option<crate::types::DevOpsAgentConfiguration> {
+        &self.dev_ops_agent_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -305,6 +327,7 @@ impl CreateServiceInputBuilder {
             dependency_discovery: self.dependency_discovery,
             report_configuration: self.report_configuration,
             kms_key_id: self.kms_key_id,
+            dev_ops_agent_configuration: self.dev_ops_agent_configuration,
             tags: self.tags,
             client_token: self.client_token,
         })
@@ -322,6 +345,7 @@ impl ::std::fmt::Debug for CreateServiceInputBuilder {
         formatter.field("dependency_discovery", &self.dependency_discovery);
         formatter.field("report_configuration", &self.report_configuration);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("dev_ops_agent_configuration", &self.dev_ops_agent_configuration);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()

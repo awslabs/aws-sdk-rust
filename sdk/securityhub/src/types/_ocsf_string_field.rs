@@ -50,6 +50,8 @@
 ///     OcsfStringField::FindingInfoTitle => { /* ... */ },
 ///     OcsfStringField::FindingInfoTypes => { /* ... */ },
 ///     OcsfStringField::FindingInfoUid => { /* ... */ },
+///     OcsfStringField::Impact => { /* ... */ },
+///     OcsfStringField::Likelihood => { /* ... */ },
 ///     OcsfStringField::MalwareName => { /* ... */ },
 ///     OcsfStringField::MalwareSeverity => { /* ... */ },
 ///     OcsfStringField::MalwareScanInfoUid => { /* ... */ },
@@ -63,6 +65,7 @@
 ///     OcsfStringField::ResourcesCloudFunctionRuntime => { /* ... */ },
 ///     OcsfStringField::ResourcesCloudFunctionUserUid => { /* ... */ },
 ///     OcsfStringField::ResourcesCloudPartition => { /* ... */ },
+///     OcsfStringField::ResourcesCriticality => { /* ... */ },
 ///     OcsfStringField::ResourcesDeviceEncryptionDetailsKeyUid => { /* ... */ },
 ///     OcsfStringField::ResourcesDeviceImageUid => { /* ... */ },
 ///     OcsfStringField::ResourcesImageArchitecture => { /* ... */ },
@@ -193,6 +196,10 @@ pub enum OcsfStringField {
     #[allow(missing_docs)] // documentation missing in model
     FindingInfoUid,
     #[allow(missing_docs)] // documentation missing in model
+    Impact,
+    #[allow(missing_docs)] // documentation missing in model
+    Likelihood,
+    #[allow(missing_docs)] // documentation missing in model
     MalwareName,
     #[allow(missing_docs)] // documentation missing in model
     MalwareSeverity,
@@ -218,6 +225,8 @@ pub enum OcsfStringField {
     ResourcesCloudFunctionUserUid,
     #[allow(missing_docs)] // documentation missing in model
     ResourcesCloudPartition,
+    #[allow(missing_docs)] // documentation missing in model
+    ResourcesCriticality,
     #[allow(missing_docs)] // documentation missing in model
     ResourcesDeviceEncryptionDetailsKeyUid,
     #[allow(missing_docs)] // documentation missing in model
@@ -313,6 +322,8 @@ impl ::std::convert::From<&str> for OcsfStringField {
             "finding_info.title" => OcsfStringField::FindingInfoTitle,
             "finding_info.types" => OcsfStringField::FindingInfoTypes,
             "finding_info.uid" => OcsfStringField::FindingInfoUid,
+            "impact" => OcsfStringField::Impact,
+            "likelihood" => OcsfStringField::Likelihood,
             "malware.name" => OcsfStringField::MalwareName,
             "malware.severity" => OcsfStringField::MalwareSeverity,
             "malware_scan_info.uid" => OcsfStringField::MalwareScanInfoUid,
@@ -326,6 +337,7 @@ impl ::std::convert::From<&str> for OcsfStringField {
             "resources.cloud_function.runtime" => OcsfStringField::ResourcesCloudFunctionRuntime,
             "resources.cloud_function.user.uid" => OcsfStringField::ResourcesCloudFunctionUserUid,
             "resources.cloud_partition" => OcsfStringField::ResourcesCloudPartition,
+            "resources.criticality" => OcsfStringField::ResourcesCriticality,
             "resources.device.encryption_details.key_uid" => OcsfStringField::ResourcesDeviceEncryptionDetailsKeyUid,
             "resources.device.image.uid" => OcsfStringField::ResourcesDeviceImageUid,
             "resources.image.architecture" => OcsfStringField::ResourcesImageArchitecture,
@@ -404,6 +416,8 @@ impl OcsfStringField {
             OcsfStringField::FindingInfoTitle => "finding_info.title",
             OcsfStringField::FindingInfoTypes => "finding_info.types",
             OcsfStringField::FindingInfoUid => "finding_info.uid",
+            OcsfStringField::Impact => "impact",
+            OcsfStringField::Likelihood => "likelihood",
             OcsfStringField::MalwareName => "malware.name",
             OcsfStringField::MalwareSeverity => "malware.severity",
             OcsfStringField::MalwareScanInfoUid => "malware_scan_info.uid",
@@ -417,6 +431,7 @@ impl OcsfStringField {
             OcsfStringField::ResourcesCloudFunctionRuntime => "resources.cloud_function.runtime",
             OcsfStringField::ResourcesCloudFunctionUserUid => "resources.cloud_function.user.uid",
             OcsfStringField::ResourcesCloudPartition => "resources.cloud_partition",
+            OcsfStringField::ResourcesCriticality => "resources.criticality",
             OcsfStringField::ResourcesDeviceEncryptionDetailsKeyUid => "resources.device.encryption_details.key_uid",
             OcsfStringField::ResourcesDeviceImageUid => "resources.device.image.uid",
             OcsfStringField::ResourcesImageArchitecture => "resources.image.architecture",
@@ -486,6 +501,8 @@ impl OcsfStringField {
             "finding_info.title",
             "finding_info.types",
             "finding_info.uid",
+            "impact",
+            "likelihood",
             "malware.name",
             "malware.severity",
             "malware_scan_info.uid",
@@ -499,6 +516,7 @@ impl OcsfStringField {
             "resources.cloud_function.runtime",
             "resources.cloud_function.user.uid",
             "resources.cloud_partition",
+            "resources.criticality",
             "resources.device.encryption_details.key_uid",
             "resources.device.image.uid",
             "resources.image.architecture",
@@ -587,6 +605,8 @@ impl ::std::fmt::Display for OcsfStringField {
             OcsfStringField::FindingInfoTitle => write!(f, "finding_info.title"),
             OcsfStringField::FindingInfoTypes => write!(f, "finding_info.types"),
             OcsfStringField::FindingInfoUid => write!(f, "finding_info.uid"),
+            OcsfStringField::Impact => write!(f, "impact"),
+            OcsfStringField::Likelihood => write!(f, "likelihood"),
             OcsfStringField::MalwareName => write!(f, "malware.name"),
             OcsfStringField::MalwareSeverity => write!(f, "malware.severity"),
             OcsfStringField::MalwareScanInfoUid => write!(f, "malware_scan_info.uid"),
@@ -600,6 +620,7 @@ impl ::std::fmt::Display for OcsfStringField {
             OcsfStringField::ResourcesCloudFunctionRuntime => write!(f, "resources.cloud_function.runtime"),
             OcsfStringField::ResourcesCloudFunctionUserUid => write!(f, "resources.cloud_function.user.uid"),
             OcsfStringField::ResourcesCloudPartition => write!(f, "resources.cloud_partition"),
+            OcsfStringField::ResourcesCriticality => write!(f, "resources.criticality"),
             OcsfStringField::ResourcesDeviceEncryptionDetailsKeyUid => write!(f, "resources.device.encryption_details.key_uid"),
             OcsfStringField::ResourcesDeviceImageUid => write!(f, "resources.device.image.uid"),
             OcsfStringField::ResourcesImageArchitecture => write!(f, "resources.image.architecture"),

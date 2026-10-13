@@ -3,11 +3,15 @@ pub use crate::types::_dnssec_signing_attributes::DnssecSigningAttributes;
 
 pub use crate::types::_domain_availability::DomainAvailability;
 
+pub use crate::types::_price_with_currency::PriceWithCurrency;
+
 pub use crate::types::_domain_transferability::DomainTransferability;
 
 pub use crate::types::_reachability_status::ReachabilityStatus;
 
 pub use crate::types::_contact_detail::ContactDetail;
+
+pub use crate::types::_domain_price::DomainPrice;
 
 pub use crate::types::_operation_status::OperationStatus;
 
@@ -22,6 +26,8 @@ pub use crate::types::_list_operations_sort_attribute_name::ListOperationsSortAt
 pub use crate::types::_sort_order::SortOrder;
 
 pub use crate::types::_consent::Consent;
+
+pub use crate::types::_price_type::PriceType;
 
 pub use crate::types::_transferable::Transferable;
 
@@ -43,8 +49,6 @@ pub use crate::types::_domain_summary::DomainSummary;
 
 pub use crate::types::_operation_summary::OperationSummary;
 
-pub use crate::types::_domain_price::DomainPrice;
-
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_billing_record::BillingRecord;
@@ -52,8 +56,6 @@ pub use crate::types::_billing_record::BillingRecord;
 pub use crate::types::_extra_param::ExtraParam;
 
 pub use crate::types::_operator::Operator;
-
-pub use crate::types::_price_with_currency::PriceWithCurrency;
 
 pub use crate::types::_extra_param_name::ExtraParamName;
 
@@ -100,6 +102,8 @@ mod _operation_summary;
 mod _operation_type;
 
 mod _operator;
+
+mod _price_type;
 
 mod _price_with_currency;
 

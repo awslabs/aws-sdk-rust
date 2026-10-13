@@ -96,6 +96,13 @@ where
                                 crate::protocol_serde::shape_selective_execution_result::de_selective_execution_result(tokens, _value, depth + 1)?,
                             );
                         }
+                        "IterationContext" => {
+                            builder = builder.set_iteration_context(crate::protocol_serde::shape_iteration_context::de_iteration_context(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -54,5 +54,11 @@ pub fn ser_register_domain_input_input(
     if let Some(var_16) = &input.privacy_protect_billing_contact {
         object.key("PrivacyProtectBillingContact").boolean(*var_16);
     }
+    if let Some(var_17) = &input.consent {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("Consent").start_object();
+        crate::protocol_serde::shape_consent::ser_consent(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }

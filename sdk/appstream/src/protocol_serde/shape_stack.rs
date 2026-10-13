@@ -94,6 +94,11 @@ pub(crate) fn de_stack(
                     )?)),
                 )
             })?,
+            "StorageConnectorAuthentication" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_storage_connector_authentication(Some(
+                    decoder.string().map(|s| crate::types::StorageConnectorAuthentication::from(s.as_str()))?,
+                )))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

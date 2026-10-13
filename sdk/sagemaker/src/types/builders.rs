@@ -1275,6 +1275,8 @@ pub use crate::types::_pipeline_execution_step_metadata::PipelineExecutionStepMe
 
 pub use crate::types::_selective_execution_result::SelectiveExecutionResultBuilder;
 
+pub use crate::types::_iteration_context::IterationContextBuilder;
+
 pub use crate::types::_space_settings_summary::SpaceSettingsSummaryBuilder;
 
 pub use crate::types::_space_sharing_settings_summary::SpaceSharingSettingsSummaryBuilder;
@@ -1507,6 +1509,8 @@ pub use crate::types::_lambda_step_metadata::LambdaStepMetadataBuilder;
 
 pub use crate::types::_emr_step_metadata::EmrStepMetadataBuilder;
 
+pub use crate::types::_emr_serverless_step_metadata::EmrServerlessStepMetadataBuilder;
+
 pub use crate::types::_quality_check_step_metadata::QualityCheckStepMetadataBuilder;
 
 pub use crate::types::_clarify_check_step_metadata::ClarifyCheckStepMetadataBuilder;
@@ -1532,6 +1536,12 @@ pub use crate::types::_inference_component_metadata::InferenceComponentMetadataB
 pub use crate::types::_lineage_metadata::LineageMetadataBuilder;
 
 pub use crate::types::_job_step_metadata::JobStepMetadataBuilder;
+
+pub use crate::types::_athena_step_metadata::AthenaStepMetadataBuilder;
+
+pub use crate::types::_cleanup_step_metadata::CleanupStepMetadataBuilder;
+
+pub use crate::types::_for_each_step_metadata::ForEachStepMetadataBuilder;
 
 pub use crate::types::_trial_component_source_detail::TrialComponentSourceDetailBuilder;
 
@@ -1569,6 +1579,8 @@ pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
 pub use crate::types::_cfn_stack_parameter::CfnStackParameterBuilder;
 
+pub use crate::types::_for_each_selector_result::ForEachSelectorResultBuilder;
+
 pub use crate::types::_trial_component_simple_summary::TrialComponentSimpleSummaryBuilder;
 
 pub use crate::types::_processing_job::ProcessingJobBuilder;
@@ -1592,3 +1604,5 @@ pub use crate::types::_predefined_metric_specification::PredefinedMetricSpecific
 pub use crate::types::_customized_metric_specification::CustomizedMetricSpecificationBuilder;
 
 pub use crate::types::_association_info::AssociationInfoBuilder;
+
+pub use crate::types::_cleanup_failure::CleanupFailureBuilder;

@@ -146,9 +146,9 @@ impl UpdateLocationHdfsFluentBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn name_nodes(mut self, input: crate::types::HdfsNameNode) -> Self {
         self.inner = self.inner.name_nodes(input);
@@ -158,9 +158,9 @@ impl UpdateLocationHdfsFluentBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
         self.inner = self.inner.set_name_nodes(input);
@@ -170,9 +170,9 @@ impl UpdateLocationHdfsFluentBuilder {
     /// <p>The number of NameNodes you can specify depends on the task mode:</p>
     /// <ul>
     /// <li>
-    /// <p>Enhanced mode – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
     /// <li>
-    /// <p>Basic mode – You can specify only one NameNode.</p></li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
     /// </ul>
     pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         self.inner.get_name_nodes()

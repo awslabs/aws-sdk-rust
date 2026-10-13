@@ -20,6 +20,7 @@
 ///     ResourcesStringField::Region => { /* ... */ },
 ///     ResourcesStringField::ResourceCategory => { /* ... */ },
 ///     ResourcesStringField::ResourceCloudPartition => { /* ... */ },
+///     ResourcesStringField::ResourceCriticality => { /* ... */ },
 ///     ResourcesStringField::ResourceGuid => { /* ... */ },
 ///     ResourcesStringField::ResourceId => { /* ... */ },
 ///     ResourcesStringField::CanonicalId => { /* ... */ },
@@ -77,6 +78,8 @@ pub enum ResourcesStringField {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCloudPartition,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceCriticality,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceGuid,
     #[allow(missing_docs)] // documentation missing in model
     ResourceId,
@@ -115,6 +118,7 @@ impl ::std::convert::From<&str> for ResourcesStringField {
             "Region" => ResourcesStringField::Region,
             "ResourceCategory" => ResourcesStringField::ResourceCategory,
             "ResourceCloudPartition" => ResourcesStringField::ResourceCloudPartition,
+            "ResourceCriticality" => ResourcesStringField::ResourceCriticality,
             "ResourceGuid" => ResourcesStringField::ResourceGuid,
             "ResourceId" => ResourcesStringField::ResourceId,
             "ResourceInfo.AIDetails.CanonicalId" => ResourcesStringField::CanonicalId,
@@ -150,6 +154,7 @@ impl ResourcesStringField {
             ResourcesStringField::Region => "Region",
             ResourcesStringField::ResourceCategory => "ResourceCategory",
             ResourcesStringField::ResourceCloudPartition => "ResourceCloudPartition",
+            ResourcesStringField::ResourceCriticality => "ResourceCriticality",
             ResourcesStringField::ResourceGuid => "ResourceGuid",
             ResourcesStringField::ResourceId => "ResourceId",
             ResourcesStringField::CanonicalId => "ResourceInfo.AIDetails.CanonicalId",
@@ -176,6 +181,7 @@ impl ResourcesStringField {
             "Region",
             "ResourceCategory",
             "ResourceCloudPartition",
+            "ResourceCriticality",
             "ResourceGuid",
             "ResourceId",
             "ResourceInfo.AIDetails.CanonicalId",
@@ -219,6 +225,7 @@ impl ::std::fmt::Display for ResourcesStringField {
             ResourcesStringField::Region => write!(f, "Region"),
             ResourcesStringField::ResourceCategory => write!(f, "ResourceCategory"),
             ResourcesStringField::ResourceCloudPartition => write!(f, "ResourceCloudPartition"),
+            ResourcesStringField::ResourceCriticality => write!(f, "ResourceCriticality"),
             ResourcesStringField::ResourceGuid => write!(f, "ResourceGuid"),
             ResourcesStringField::ResourceId => write!(f, "ResourceId"),
             ResourcesStringField::CanonicalId => write!(f, "ResourceInfo.AIDetails.CanonicalId"),

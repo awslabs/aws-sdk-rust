@@ -997,6 +997,15 @@ pub(crate) fn unprocessed_standards_control_association_update_correct_errors(
     builder
 }
 
+pub(crate) fn automation_rules_resource_fields_update_v2_correct_errors(
+    mut builder: crate::types::builders::AutomationRulesResourceFieldsUpdateV2Builder,
+) -> crate::types::builders::AutomationRulesResourceFieldsUpdateV2Builder {
+    if builder.criticality.is_none() {
+        builder.criticality = "no value was set".parse::<crate::types::ResourceCriticality>().ok()
+    }
+    builder
+}
+
 pub(crate) fn azure_scope_configuration_correct_errors(
     mut builder: crate::types::builders::AzureScopeConfigurationBuilder,
 ) -> crate::types::builders::AzureScopeConfigurationBuilder {
@@ -1195,6 +1204,18 @@ pub(crate) fn trends_values_correct_errors(mut builder: crate::types::builders::
             let builder = crate::types::builders::SeverityTrendsCountBuilder::default();
             Some(crate::serde_util::severity_trends_count_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn criticality_source_correct_errors(
+    mut builder: crate::types::builders::CriticalitySourceBuilder,
+) -> crate::types::builders::CriticalitySourceBuilder {
+    if builder.source.is_none() {
+        builder.source = "no value was set".parse::<crate::types::CriticalitySourceType>().ok()
+    }
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
     }
     builder
 }

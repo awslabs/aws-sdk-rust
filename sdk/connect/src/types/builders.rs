@@ -85,6 +85,8 @@ pub use crate::types::_evaluation_form_content::EvaluationFormContentBuilder;
 
 pub use crate::types::_contact_flow::ContactFlowBuilder;
 
+pub use crate::types::_contact_flow_alias_info::ContactFlowAliasInfoBuilder;
+
 pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
 
 pub use crate::types::_contact_flow_module_alias_info::ContactFlowModuleAliasInfoBuilder;
@@ -544,6 +546,8 @@ pub use crate::types::_lex_bot_config::LexBotConfigBuilder;
 pub use crate::types::_hours_of_operations_identifier::HoursOfOperationsIdentifierBuilder;
 
 pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
+
+pub use crate::types::_contact_flow_alias_summary::ContactFlowAliasSummaryBuilder;
 
 pub use crate::types::_contact_flow_module_alias_summary::ContactFlowModuleAliasSummaryBuilder;
 

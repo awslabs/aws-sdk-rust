@@ -154,4 +154,18 @@ impl RenewDomainFluentBuilder {
     pub fn get_current_expiry_year(&self) -> &::std::option::Option<i32> {
         self.inner.get_current_expiry_year()
     }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn consent(mut self, input: crate::types::Consent) -> Self {
+        self.inner = self.inner.consent(input);
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
+        self.inner = self.inner.set_consent(input);
+        self
+    }
+    /// <p>Specifies the maximum price that you agree to pay to renew the domain name. This element is required if the domain has registry premium pricing, and optional if the domain is priced at the standard rate for its TLD. If you include it and the renewal price is more than <code>MaxPrice</code>, the request fails.</p>
+    pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
+        self.inner.get_consent()
+    }
 }

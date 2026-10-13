@@ -23,7 +23,7 @@ impl crate::operation::list_service_quota_warnings::builders::ListServiceQuotaWa
 /// Fluent builder constructing a request to `ListServiceQuotaWarnings`.
 ///
 /// <p>Lists the service quota warnings for the plans that you can access. Region switch creates a warning when the applied quota value in one Region of a plan is lower than the value required for the matching resource in another Region or account in the plan.</p>
-/// <p>Returns the warnings for the plans that you own and for plans that are shared with your account through AWS Resource Access Manager (AWS RAM). To return warnings for specific plans, provide a list of plan Amazon Resource Names (ARNs). Region switch ignores any plan ARN that you can't access. If you don't provide any plan ARNs, Region switch returns the warnings for all of your accessible plans.</p>
+/// <p>Returns the warnings for the plans that you own and for plans that are shared with your account through Resource Access Manager (RAM). To return warnings for specific plans, provide a list of plan Amazon Resource Names (ARNs). Region switch ignores any plan ARN that you can't access. If you don't provide any plan ARNs, Region switch returns the warnings for all of your accessible plans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListServiceQuotaWarningsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -40,6 +40,8 @@ pub enum ExecutionBlockConfiguration {
     RegionSwitchPlanConfig(crate::types::RegionSwitchPlanConfiguration),
     /// <p>The Amazon Route 53 health check configuration.</p>
     Route53HealthCheckConfig(crate::types::Route53HealthCheckConfiguration),
+    /// <p>Specifies an AWS Systems Manager <code>SendCommand</code> execution block.</p>
+    SsmSendCommandConfig(crate::types::SsmSendCommandConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -286,6 +288,19 @@ impl ExecutionBlockConfiguration {
     /// Returns true if this is a [`Route53HealthCheckConfig`](crate::types::ExecutionBlockConfiguration::Route53HealthCheckConfig).
     pub fn is_route53_health_check_config(&self) -> bool {
         self.as_route53_health_check_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SsmSendCommandConfig`](crate::types::ExecutionBlockConfiguration::SsmSendCommandConfig), extracting the inner [`SsmSendCommandConfiguration`](crate::types::SsmSendCommandConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ssm_send_command_config(&self) -> ::std::result::Result<&crate::types::SsmSendCommandConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::SsmSendCommandConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SsmSendCommandConfig`](crate::types::ExecutionBlockConfiguration::SsmSendCommandConfig).
+    pub fn is_ssm_send_command_config(&self) -> bool {
+        self.as_ssm_send_command_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

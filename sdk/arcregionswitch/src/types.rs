@@ -115,6 +115,8 @@ pub use crate::types::_neptune_global_database_configuration::NeptuneGlobalDatab
 
 pub use crate::types::_rds_switchover_read_replica_configuration::RdsSwitchoverReadReplicaConfiguration;
 
+pub use crate::types::_ssm_send_command_configuration::SsmSendCommandConfiguration;
+
 pub use crate::types::_region_to_run_in::RegionToRunIn;
 
 pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
@@ -153,6 +155,8 @@ pub use crate::types::_neptune_ungraceful::NeptuneUngraceful;
 
 pub use crate::types::_rds_ungraceful::RdsUngraceful;
 
+pub use crate::types::_ssm_send_command_ungraceful::SsmSendCommandUngraceful;
+
 pub use crate::types::_lambdas::Lambdas;
 
 pub use crate::types::_lambda_ungraceful_behavior::LambdaUngracefulBehavior;
@@ -177,11 +181,17 @@ pub use crate::types::_neptune_ungraceful_behavior::NeptuneUngracefulBehavior;
 
 pub use crate::types::_rds_ungraceful_behavior::RdsUngracefulBehavior;
 
+pub use crate::types::_ssm_document_config::SsmDocumentConfig;
+
+pub use crate::types::_ssm_send_command_ungraceful_behavior::SsmSendCommandUngracefulBehavior;
+
 pub use crate::types::_arc_routing_control_state::ArcRoutingControlState;
 
 pub use crate::types::_routing_control_state_change::RoutingControlStateChange;
 
 pub use crate::types::_kubernetes_scaling_resource::KubernetesScalingResource;
+
+pub use crate::types::_ssm_target::SsmTarget;
 
 mod _abbreviated_execution;
 
@@ -346,6 +356,16 @@ mod _service;
 mod _service_quota_warning_status;
 
 mod _service_quota_warning_summary;
+
+mod _ssm_document_config;
+
+mod _ssm_send_command_configuration;
+
+mod _ssm_send_command_ungraceful;
+
+mod _ssm_send_command_ungraceful_behavior;
+
+mod _ssm_target;
 
 mod _step;
 

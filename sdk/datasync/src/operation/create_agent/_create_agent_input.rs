@@ -13,10 +13,13 @@ pub struct CreateAgentInput {
     /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
     /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
+    /// <p>The endpoint ID is informational. DataSync doesn't verify it or use it to connect to your agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network interfaces</a> that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC service endpoint. The subnet can be one that another Amazon Web Services account shared with you through <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in which case the ARN must specify the account that owns the subnet. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub subnet_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
+    /// <p>The ARN must specify your own account, even when the security group was shared with you from the account that owns the VPC. The security group must belong to the same VPC as the subnet that you specify in <code>SubnetArns</code>.</p>
     pub security_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateAgentInput {
@@ -37,16 +40,19 @@ impl CreateAgentInput {
     /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
     /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
+    /// <p>The endpoint ID is informational. DataSync doesn't verify it or use it to connect to your agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
-    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network interfaces</a> that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC service endpoint. The subnet can be one that another Amazon Web Services account shared with you through <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in which case the ARN must specify the account that owns the subnet. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_arns.is_none()`.
     pub fn subnet_arns(&self) -> &[::std::string::String] {
         self.subnet_arns.as_deref().unwrap_or_default()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
+    /// <p>The ARN must specify your own account, even when the security group was shared with you from the account that owns the VPC. The security group must belong to the same VPC as the subnet that you specify in <code>SubnetArns</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_arns.is_none()`.
     pub fn security_group_arns(&self) -> &[::std::string::String] {
@@ -124,6 +130,7 @@ impl CreateAgentInputBuilder {
     /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
     /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
+    /// <p>The endpoint ID is informational. DataSync doesn't verify it or use it to connect to your agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn vpc_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
@@ -131,6 +138,7 @@ impl CreateAgentInputBuilder {
     /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
     /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
+    /// <p>The endpoint ID is informational. DataSync doesn't verify it or use it to connect to your agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn set_vpc_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_endpoint_id = input;
         self
@@ -138,6 +146,7 @@ impl CreateAgentInputBuilder {
     /// <p>Specifies the ID of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#datasync-in-vpc">VPC service endpoint</a> that you're using. For example, a VPC endpoint ID looks like <code>vpce-01234d5aff67890e1</code>.</p><important>
     /// <p>The VPC service endpoint you use must include the DataSync service name (for example, <code>com.amazonaws.us-east-2.datasync</code>).</p>
     /// </important>
+    /// <p>The endpoint ID is informational. DataSync doesn't verify it or use it to connect to your agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn get_vpc_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint_id
     }
@@ -145,19 +154,22 @@ impl CreateAgentInputBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
     ///
-    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network interfaces</a> that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC service endpoint. The subnet can be one that another Amazon Web Services account shared with you through <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in which case the ARN must specify the account that owns the subnet. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn subnet_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_arns.unwrap_or_default();
         v.push(input.into());
         self.subnet_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network interfaces</a> that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC service endpoint. The subnet can be one that another Amazon Web Services account shared with you through <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in which case the ARN must specify the account that owns the subnet. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn set_subnet_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_arns = input;
         self
     }
-    /// <p>Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN.</p>
+    /// <p>Specifies the ARN of the subnet where DataSync creates the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network interfaces</a> that handle data transfer traffic for your tasks. You can only specify one ARN.</p>
+    /// <p>The subnet doesn't have to be the subnet that contains your VPC service endpoint. The subnet can be one that another Amazon Web Services account shared with you through <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in which case the ARN must specify the account that owns the subnet. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using a single VPC service endpoint across multiple subnets</a>.</p>
     pub fn get_subnet_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_arns
     }
@@ -166,6 +178,7 @@ impl CreateAgentInputBuilder {
     /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
     ///
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
+    /// <p>The ARN must specify your own account, even when the security group was shared with you from the account that owns the VPC. The security group must belong to the same VPC as the subnet that you specify in <code>SubnetArns</code>.</p>
     pub fn security_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
         v.push(input.into());
@@ -173,11 +186,13 @@ impl CreateAgentInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
+    /// <p>The ARN must specify your own account, even when the security group was shared with you from the account that owns the VPC. The security group must belong to the same VPC as the subnet that you specify in <code>SubnetArns</code>.</p>
     pub fn set_security_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_group_arns = input;
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN.</p>
+    /// <p>The ARN must specify your own account, even when the security group was shared with you from the account that owns the VPC. The security group must belong to the same VPC as the subnet that you specify in <code>SubnetArns</code>.</p>
     pub fn get_security_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_arns
     }

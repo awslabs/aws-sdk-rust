@@ -51,6 +51,8 @@ pub(crate) mod shape_get_contact_reachability_status;
 
 pub(crate) mod shape_get_domain_detail;
 
+pub(crate) mod shape_get_domain_prices;
+
 pub(crate) mod shape_get_domain_suggestions;
 
 pub(crate) mod shape_get_operation_detail;
@@ -133,6 +135,8 @@ pub(crate) mod shape_get_contact_reachability_status_input;
 
 pub(crate) mod shape_get_domain_detail_input;
 
+pub(crate) mod shape_get_domain_prices_input;
+
 pub(crate) mod shape_get_domain_suggestions_input;
 
 pub(crate) mod shape_get_operation_detail_input;
@@ -193,6 +197,8 @@ pub(crate) mod shape_dnssec_key_list;
 
 pub(crate) mod shape_dnssec_signing_attributes;
 
+pub(crate) mod shape_domain_price;
+
 pub(crate) mod shape_domain_price_list;
 
 pub(crate) mod shape_domain_status_list;
@@ -211,6 +217,8 @@ pub(crate) mod shape_nameserver_list;
 
 pub(crate) mod shape_operation_summary_list;
 
+pub(crate) mod shape_price_with_currency;
+
 pub(crate) mod shape_sort_condition;
 
 pub(crate) mod shape_tag;
@@ -220,8 +228,6 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_billing_record;
 
 pub(crate) mod shape_dnssec_key;
-
-pub(crate) mod shape_domain_price;
 
 pub(crate) mod shape_domain_suggestion;
 
@@ -234,5 +240,3 @@ pub(crate) mod shape_extra_param_list;
 pub(crate) mod shape_operation_summary;
 
 pub(crate) mod shape_glue_ip_list;
-
-pub(crate) mod shape_price_with_currency;

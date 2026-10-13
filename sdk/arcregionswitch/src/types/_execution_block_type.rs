@@ -30,6 +30,7 @@
 ///     ExecutionBlockType::RdsPromoteReadReplica => { /* ... */ },
 ///     ExecutionBlockType::RdsSwitchoverReadReplica => { /* ... */ },
 ///     ExecutionBlockType::Route53HealthCheck => { /* ... */ },
+///     ExecutionBlockType::SsmSendCommand => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -94,6 +95,8 @@ pub enum ExecutionBlockType {
     RdsSwitchoverReadReplica,
     #[allow(missing_docs)] // documentation missing in model
     Route53HealthCheck,
+    #[allow(missing_docs)] // documentation missing in model
+    SsmSendCommand,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -119,6 +122,7 @@ impl ::std::convert::From<&str> for ExecutionBlockType {
             "RdsPromoteReadReplica" => ExecutionBlockType::RdsPromoteReadReplica,
             "RdsSwitchoverReadReplica" => ExecutionBlockType::RdsSwitchoverReadReplica,
             "Route53HealthCheck" => ExecutionBlockType::Route53HealthCheck,
+            "SSMSendCommand" => ExecutionBlockType::SsmSendCommand,
             other => ExecutionBlockType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -152,6 +156,7 @@ impl ExecutionBlockType {
             ExecutionBlockType::RdsPromoteReadReplica => "RdsPromoteReadReplica",
             ExecutionBlockType::RdsSwitchoverReadReplica => "RdsSwitchoverReadReplica",
             ExecutionBlockType::Route53HealthCheck => "Route53HealthCheck",
+            ExecutionBlockType::SsmSendCommand => "SSMSendCommand",
             ExecutionBlockType::Unknown(value) => value.as_str(),
         }
     }
@@ -176,6 +181,7 @@ impl ExecutionBlockType {
             "RdsPromoteReadReplica",
             "RdsSwitchoverReadReplica",
             "Route53HealthCheck",
+            "SSMSendCommand",
         ]
     }
 }
@@ -217,6 +223,7 @@ impl ::std::fmt::Display for ExecutionBlockType {
             ExecutionBlockType::RdsPromoteReadReplica => write!(f, "RdsPromoteReadReplica"),
             ExecutionBlockType::RdsSwitchoverReadReplica => write!(f, "RdsSwitchoverReadReplica"),
             ExecutionBlockType::Route53HealthCheck => write!(f, "Route53HealthCheck"),
+            ExecutionBlockType::SsmSendCommand => write!(f, "SSMSendCommand"),
             ExecutionBlockType::Unknown(value) => write!(f, "{value}"),
         }
     }

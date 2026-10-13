@@ -19,6 +19,7 @@
 ///     ResourceGroupByField::Region => { /* ... */ },
 ///     ResourceGroupByField::ResourceCategory => { /* ... */ },
 ///     ResourceGroupByField::ResourceCloudPartition => { /* ... */ },
+///     ResourceGroupByField::ResourceCriticality => { /* ... */ },
 ///     ResourceGroupByField::CanonicalId => { /* ... */ },
 ///     ResourceGroupByField::HostResourceType => { /* ... */ },
 ///     ResourceGroupByField::ResourceName => { /* ... */ },
@@ -71,6 +72,8 @@ pub enum ResourceGroupByField {
     #[allow(missing_docs)] // documentation missing in model
     ResourceCloudPartition,
     #[allow(missing_docs)] // documentation missing in model
+    ResourceCriticality,
+    #[allow(missing_docs)] // documentation missing in model
     CanonicalId,
     #[allow(missing_docs)] // documentation missing in model
     HostResourceType,
@@ -102,6 +105,7 @@ impl ::std::convert::From<&str> for ResourceGroupByField {
             "Region" => ResourceGroupByField::Region,
             "ResourceCategory" => ResourceGroupByField::ResourceCategory,
             "ResourceCloudPartition" => ResourceGroupByField::ResourceCloudPartition,
+            "ResourceCriticality" => ResourceGroupByField::ResourceCriticality,
             "ResourceInfo.AIDetails.CanonicalId" => ResourceGroupByField::CanonicalId,
             "ResourceInfo.AIDetails.HostResourceType" => ResourceGroupByField::HostResourceType,
             "ResourceName" => ResourceGroupByField::ResourceName,
@@ -133,6 +137,7 @@ impl ResourceGroupByField {
             ResourceGroupByField::Region => "Region",
             ResourceGroupByField::ResourceCategory => "ResourceCategory",
             ResourceGroupByField::ResourceCloudPartition => "ResourceCloudPartition",
+            ResourceGroupByField::ResourceCriticality => "ResourceCriticality",
             ResourceGroupByField::CanonicalId => "ResourceInfo.AIDetails.CanonicalId",
             ResourceGroupByField::HostResourceType => "ResourceInfo.AIDetails.HostResourceType",
             ResourceGroupByField::ResourceName => "ResourceName",
@@ -155,6 +160,7 @@ impl ResourceGroupByField {
             "Region",
             "ResourceCategory",
             "ResourceCloudPartition",
+            "ResourceCriticality",
             "ResourceInfo.AIDetails.CanonicalId",
             "ResourceInfo.AIDetails.HostResourceType",
             "ResourceName",
@@ -194,6 +200,7 @@ impl ::std::fmt::Display for ResourceGroupByField {
             ResourceGroupByField::Region => write!(f, "Region"),
             ResourceGroupByField::ResourceCategory => write!(f, "ResourceCategory"),
             ResourceGroupByField::ResourceCloudPartition => write!(f, "ResourceCloudPartition"),
+            ResourceGroupByField::ResourceCriticality => write!(f, "ResourceCriticality"),
             ResourceGroupByField::CanonicalId => write!(f, "ResourceInfo.AIDetails.CanonicalId"),
             ResourceGroupByField::HostResourceType => write!(f, "ResourceInfo.AIDetails.HostResourceType"),
             ResourceGroupByField::ResourceName => write!(f, "ResourceName"),

@@ -12,6 +12,7 @@
 /// ```text
 /// # let pipelineexecutionstatus = unimplemented!();
 /// match pipelineexecutionstatus {
+///     PipelineExecutionStatus::CompletedWithFailures => { /* ... */ },
 ///     PipelineExecutionStatus::Executing => { /* ... */ },
 ///     PipelineExecutionStatus::Failed => { /* ... */ },
 ///     PipelineExecutionStatus::Stopped => { /* ... */ },
@@ -45,6 +46,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PipelineExecutionStatus {
+    /// <p>The pipeline completed all reachable work after one or more steps failed. Every failed step was handled by a scheduled downstream step whose trigger is <code>Failed</code> or <code>Any</code>.</p>
+    CompletedWithFailures,
     #[allow(missing_docs)] // documentation missing in model
     Executing,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,6 +65,7 @@ pub enum PipelineExecutionStatus {
 impl ::std::convert::From<&str> for PipelineExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "CompletedWithFailures" => PipelineExecutionStatus::CompletedWithFailures,
             "Executing" => PipelineExecutionStatus::Executing,
             "Failed" => PipelineExecutionStatus::Failed,
             "Stopped" => PipelineExecutionStatus::Stopped,
@@ -82,6 +86,7 @@ impl PipelineExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PipelineExecutionStatus::CompletedWithFailures => "CompletedWithFailures",
             PipelineExecutionStatus::Executing => "Executing",
             PipelineExecutionStatus::Failed => "Failed",
             PipelineExecutionStatus::Stopped => "Stopped",
@@ -92,7 +97,7 @@ impl PipelineExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Executing", "Failed", "Stopped", "Stopping", "Succeeded"]
+        &["CompletedWithFailures", "Executing", "Failed", "Stopped", "Stopping", "Succeeded"]
     }
 }
 impl ::std::convert::AsRef<str> for PipelineExecutionStatus {
@@ -115,6 +120,7 @@ impl PipelineExecutionStatus {
 impl ::std::fmt::Display for PipelineExecutionStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PipelineExecutionStatus::CompletedWithFailures => write!(f, "CompletedWithFailures"),
             PipelineExecutionStatus::Executing => write!(f, "Executing"),
             PipelineExecutionStatus::Failed => write!(f, "Failed"),
             PipelineExecutionStatus::Stopped => write!(f, "Stopped"),

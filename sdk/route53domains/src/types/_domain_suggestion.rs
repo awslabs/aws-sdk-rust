@@ -6,7 +6,7 @@
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Specifies whether the domain name is available for registering. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -67,13 +67,15 @@ pub struct DomainSuggestion {
     /// </dd>
     /// </dl>
     pub availability: ::std::option::Option<::std::string::String>,
+    /// <p>The price to register the suggested domain name, in the currency that <code>Currency</code> specifies. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p>
+    pub price: ::std::option::Option<crate::types::PriceWithCurrency>,
 }
 impl DomainSuggestion {
     /// <p>A suggested domain name.</p>
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Specifies whether the domain name is available for registering. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -136,6 +138,10 @@ impl DomainSuggestion {
     pub fn availability(&self) -> ::std::option::Option<&str> {
         self.availability.as_deref()
     }
+    /// <p>The price to register the suggested domain name, in the currency that <code>Currency</code> specifies. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p>
+    pub fn price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
+        self.price.as_ref()
+    }
 }
 impl DomainSuggestion {
     /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::types::DomainSuggestion).
@@ -150,6 +156,7 @@ impl DomainSuggestion {
 pub struct DomainSuggestionBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) availability: ::std::option::Option<::std::string::String>,
+    pub(crate) price: ::std::option::Option<crate::types::PriceWithCurrency>,
 }
 impl DomainSuggestionBuilder {
     /// <p>A suggested domain name.</p>
@@ -166,7 +173,7 @@ impl DomainSuggestionBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Specifies whether the domain name is available for registering. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -230,7 +237,7 @@ impl DomainSuggestionBuilder {
         self.availability = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Specifies whether the domain name is available for registering. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -294,7 +301,7 @@ impl DomainSuggestionBuilder {
         self.availability = input;
         self
     }
-    /// <p>Whether the domain name is available for registering.</p><note>
+    /// <p>Specifies whether the domain name is available for registering. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p><note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
     /// <p>Valid values:</p>
@@ -357,11 +364,26 @@ impl DomainSuggestionBuilder {
     pub fn get_availability(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability
     }
+    /// <p>The price to register the suggested domain name, in the currency that <code>Currency</code> specifies. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p>
+    pub fn price(mut self, input: crate::types::PriceWithCurrency) -> Self {
+        self.price = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The price to register the suggested domain name, in the currency that <code>Currency</code> specifies. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p>
+    pub fn set_price(mut self, input: ::std::option::Option<crate::types::PriceWithCurrency>) -> Self {
+        self.price = input;
+        self
+    }
+    /// <p>The price to register the suggested domain name, in the currency that <code>Currency</code> specifies. This element is populated only if you specified <code>true</code> for <code>OnlyAvailable</code> in the request.</p>
+    pub fn get_price(&self) -> &::std::option::Option<crate::types::PriceWithCurrency> {
+        &self.price
+    }
     /// Consumes the builder and constructs a [`DomainSuggestion`](crate::types::DomainSuggestion).
     pub fn build(self) -> crate::types::DomainSuggestion {
         crate::types::DomainSuggestion {
             domain_name: self.domain_name,
             availability: self.availability,
+            price: self.price,
         }
     }
 }

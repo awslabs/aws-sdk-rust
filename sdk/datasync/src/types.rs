@@ -119,6 +119,8 @@ pub use crate::types::_smb_security_descriptor_copy_flags::SmbSecurityDescriptor
 
 pub use crate::types::_object_tags::ObjectTags;
 
+pub use crate::types::_object_metadata::ObjectMetadata;
+
 pub use crate::types::_filter_rule::FilterRule;
 
 pub use crate::types::_schedule_status::ScheduleStatus;
@@ -240,6 +242,8 @@ mod _mtime;
 mod _nfs_mount_options;
 
 mod _nfs_version;
+
+mod _object_metadata;
 
 mod _object_storage_server_protocol;
 

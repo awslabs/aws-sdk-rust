@@ -21,32 +21,38 @@ pub fn ser_update_service_input_input(
     if let Some(var_6) = &input.description {
         object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.permission_model {
+    if let Some(var_7) = &input.dev_ops_agent_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("permissionModel").start_object();
-        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_8, var_7)?;
+        let mut object_8 = object.key("devOpsAgentConfiguration").start_object();
+        crate::protocol_serde::shape_dev_ops_agent_configuration::ser_dev_ops_agent_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.policy_arn {
-        object.key("policyArn").string(var_9.as_str());
+    if let Some(var_9) = &input.permission_model {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("permissionModel").start_object();
+        crate::protocol_serde::shape_permission_model::ser_permission_model(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.regions {
-        let mut array_11 = object.key("regions").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.policy_arn {
+        object.key("policyArn").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.regions {
+        let mut array_13 = object.key("regions").start_array();
+        for item_14 in var_12 {
             {
-                array_11.value().string(item_12.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_13) = &input.report_configuration {
+    if let Some(var_15) = &input.report_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("reportConfiguration").start_object();
-        crate::protocol_serde::shape_service_report_configuration::ser_service_report_configuration(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_16 = object.key("reportConfiguration").start_object();
+        crate::protocol_serde::shape_service_report_configuration::ser_service_report_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_15) = &input.service_arn {
-        object.key("serviceArn").string(var_15.as_str());
+    if let Some(var_17) = &input.service_arn {
+        object.key("serviceArn").string(var_17.as_str());
     }
     Ok(())
 }

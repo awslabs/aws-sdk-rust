@@ -127,6 +127,13 @@ pub(crate) fn de_check_domain_availability(
                             .transpose()?,
                     );
                 }
+                "Price" => {
+                    builder = builder.set_price(crate::protocol_serde::shape_price_with_currency::de_price_with_currency(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

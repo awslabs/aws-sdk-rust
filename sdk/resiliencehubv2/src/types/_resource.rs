@@ -12,6 +12,14 @@ pub struct Resource {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
     pub resource_type: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID of the Availability Zone that hosts the resource, such as use1-az1. The Availability Zone ID is consistent across Amazon Web Services (AWS) accounts, unlike the Availability Zone name.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the Availability Zone that hosts the resource, such as us-west-2a.</p>
+    pub availability_zone_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the single parent resource that contains this resource, used to represent containment relationships in the resource topology. A resource has at most one containment parent.</p>
+    pub containment_parent_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the logical resource group that this resource belongs to. Resources that share this identifier are managed as a single unit.</p>
+    pub logical_resource_group_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
     /// <p>The identifier of the resource.</p>
@@ -31,6 +39,22 @@ impl Resource {
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
+    /// <p>The Availability Zone ID of the Availability Zone that hosts the resource, such as use1-az1. The Availability Zone ID is consistent across Amazon Web Services (AWS) accounts, unlike the Availability Zone name.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
+    }
+    /// <p>The name of the Availability Zone that hosts the resource, such as us-west-2a.</p>
+    pub fn availability_zone_name(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_name.as_deref()
+    }
+    /// <p>The identifier of the single parent resource that contains this resource, used to represent containment relationships in the resource topology. A resource has at most one containment parent.</p>
+    pub fn containment_parent_id(&self) -> ::std::option::Option<&str> {
+        self.containment_parent_id.as_deref()
+    }
+    /// <p>The identifier of the logical resource group that this resource belongs to. Resources that share this identifier are managed as a single unit.</p>
+    pub fn logical_resource_group_id(&self) -> ::std::option::Option<&str> {
+        self.logical_resource_group_id.as_deref()
+    }
 }
 impl Resource {
     /// Creates a new builder-style object to manufacture [`Resource`](crate::types::Resource).
@@ -47,6 +71,10 @@ pub struct ResourceBuilder {
     pub(crate) aws_region: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_name: ::std::option::Option<::std::string::String>,
+    pub(crate) containment_parent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_resource_group_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
     /// <p>The identifier of the resource.</p>
@@ -106,6 +134,62 @@ impl ResourceBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }
+    /// <p>The Availability Zone ID of the Availability Zone that hosts the resource, such as use1-az1. The Availability Zone ID is consistent across Amazon Web Services (AWS) accounts, unlike the Availability Zone name.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID of the Availability Zone that hosts the resource, such as use1-az1. The Availability Zone ID is consistent across Amazon Web Services (AWS) accounts, unlike the Availability Zone name.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The Availability Zone ID of the Availability Zone that hosts the resource, such as use1-az1. The Availability Zone ID is consistent across Amazon Web Services (AWS) accounts, unlike the Availability Zone name.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
+    }
+    /// <p>The name of the Availability Zone that hosts the resource, such as us-west-2a.</p>
+    pub fn availability_zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Availability Zone that hosts the resource, such as us-west-2a.</p>
+    pub fn set_availability_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_name = input;
+        self
+    }
+    /// <p>The name of the Availability Zone that hosts the resource, such as us-west-2a.</p>
+    pub fn get_availability_zone_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_name
+    }
+    /// <p>The identifier of the single parent resource that contains this resource, used to represent containment relationships in the resource topology. A resource has at most one containment parent.</p>
+    pub fn containment_parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.containment_parent_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the single parent resource that contains this resource, used to represent containment relationships in the resource topology. A resource has at most one containment parent.</p>
+    pub fn set_containment_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.containment_parent_id = input;
+        self
+    }
+    /// <p>The identifier of the single parent resource that contains this resource, used to represent containment relationships in the resource topology. A resource has at most one containment parent.</p>
+    pub fn get_containment_parent_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.containment_parent_id
+    }
+    /// <p>The identifier of the logical resource group that this resource belongs to. Resources that share this identifier are managed as a single unit.</p>
+    pub fn logical_resource_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logical_resource_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the logical resource group that this resource belongs to. Resources that share this identifier are managed as a single unit.</p>
+    pub fn set_logical_resource_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.logical_resource_group_id = input;
+        self
+    }
+    /// <p>The identifier of the logical resource group that this resource belongs to. Resources that share this identifier are managed as a single unit.</p>
+    pub fn get_logical_resource_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.logical_resource_group_id
+    }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::ResourceBuilder::identifier)
@@ -120,6 +204,10 @@ impl ResourceBuilder {
             aws_region: self.aws_region,
             aws_account_id: self.aws_account_id,
             resource_type: self.resource_type,
+            availability_zone_id: self.availability_zone_id,
+            availability_zone_name: self.availability_zone_name,
+            containment_parent_id: self.containment_parent_id,
+            logical_resource_group_id: self.logical_resource_group_id,
         })
     }
 }

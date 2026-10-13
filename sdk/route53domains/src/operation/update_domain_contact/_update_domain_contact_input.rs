@@ -12,7 +12,7 @@ pub struct UpdateDomainContactInput {
     pub registrant_contact: ::std::option::Option<crate::types::ContactDetail>,
     /// <p>Provides detailed contact information.</p>
     pub tech_contact: ::std::option::Option<crate::types::ContactDetail>,
-    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>The maximum amount that you agree to pay for the owner change. Required if the domain is not free (consent price is more than USD $0.00).</p>
     pub consent: ::std::option::Option<crate::types::Consent>,
     /// <p>Provides detailed contact information.</p>
     pub billing_contact: ::std::option::Option<crate::types::ContactDetail>,
@@ -34,7 +34,7 @@ impl UpdateDomainContactInput {
     pub fn tech_contact(&self) -> ::std::option::Option<&crate::types::ContactDetail> {
         self.tech_contact.as_ref()
     }
-    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>The maximum amount that you agree to pay for the owner change. Required if the domain is not free (consent price is more than USD $0.00).</p>
     pub fn consent(&self) -> ::std::option::Option<&crate::types::Consent> {
         self.consent.as_ref()
     }
@@ -131,17 +131,17 @@ impl UpdateDomainContactInputBuilder {
     pub fn get_tech_contact(&self) -> &::std::option::Option<crate::types::ContactDetail> {
         &self.tech_contact
     }
-    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>The maximum amount that you agree to pay for the owner change. Required if the domain is not free (consent price is more than USD $0.00).</p>
     pub fn consent(mut self, input: crate::types::Consent) -> Self {
         self.consent = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>The maximum amount that you agree to pay for the owner change. Required if the domain is not free (consent price is more than USD $0.00).</p>
     pub fn set_consent(mut self, input: ::std::option::Option<crate::types::Consent>) -> Self {
         self.consent = input;
         self
     }
-    /// <p>Customer's consent for the owner change request. Required if the domain is not free (consent price is more than $0.00).</p>
+    /// <p>The maximum amount that you agree to pay for the owner change. Required if the domain is not free (consent price is more than USD $0.00).</p>
     pub fn get_consent(&self) -> &::std::option::Option<crate::types::Consent> {
         &self.consent
     }

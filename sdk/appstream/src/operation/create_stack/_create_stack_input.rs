@@ -35,6 +35,8 @@ pub struct CreateStackInput {
     pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
     /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
     pub agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
+    pub storage_connector_authentication: ::std::option::Option<crate::types::StorageConnectorAuthentication>,
 }
 impl CreateStackInput {
     /// <p>The name of the stack.</p>
@@ -105,6 +107,10 @@ impl CreateStackInput {
     pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::AgentAccessConfig> {
         self.agent_access_config.as_ref()
     }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
+    pub fn storage_connector_authentication(&self) -> ::std::option::Option<&crate::types::StorageConnectorAuthentication> {
+        self.storage_connector_authentication.as_ref()
+    }
 }
 impl CreateStackInput {
     /// Creates a new builder-style object to manufacture [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
@@ -131,6 +137,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
     pub(crate) agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
+    pub(crate) storage_connector_authentication: ::std::option::Option<crate::types::StorageConnectorAuthentication>,
 }
 impl CreateStackInputBuilder {
     /// <p>The name of the stack.</p>
@@ -372,6 +379,20 @@ impl CreateStackInputBuilder {
     pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfig> {
         &self.agent_access_config
     }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
+    pub fn storage_connector_authentication(mut self, input: crate::types::StorageConnectorAuthentication) -> Self {
+        self.storage_connector_authentication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
+    pub fn set_storage_connector_authentication(mut self, input: ::std::option::Option<crate::types::StorageConnectorAuthentication>) -> Self {
+        self.storage_connector_authentication = input;
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
+    pub fn get_storage_connector_authentication(&self) -> &::std::option::Option<crate::types::StorageConnectorAuthentication> {
+        &self.storage_connector_authentication
+    }
     /// Consumes the builder and constructs a [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_stack::CreateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stack::CreateStackInput {
@@ -389,6 +410,7 @@ impl CreateStackInputBuilder {
             streaming_experience_settings: self.streaming_experience_settings,
             content_redirection: self.content_redirection,
             agent_access_config: self.agent_access_config,
+            storage_connector_authentication: self.storage_connector_authentication,
         })
     }
 }

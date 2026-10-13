@@ -10,6 +10,8 @@ pub struct AutomationRulesActionV2 {
     pub finding_fields_update: ::std::option::Option<crate::types::AutomationRulesFindingFieldsUpdateV2>,
     /// <p>The settings for integrating automation rule actions with external systems or service.</p>
     pub external_integration_configuration: ::std::option::Option<crate::types::ExternalIntegrationConfiguration>,
+    /// <p>The changes to be applied to resource fields when an automation rule is triggered.</p>
+    pub resource_fields_update: ::std::option::Option<crate::types::AutomationRulesResourceFieldsUpdateV2>,
 }
 impl AutomationRulesActionV2 {
     /// <p>The category of action to be executed by the automation rule.</p>
@@ -23,6 +25,10 @@ impl AutomationRulesActionV2 {
     /// <p>The settings for integrating automation rule actions with external systems or service.</p>
     pub fn external_integration_configuration(&self) -> ::std::option::Option<&crate::types::ExternalIntegrationConfiguration> {
         self.external_integration_configuration.as_ref()
+    }
+    /// <p>The changes to be applied to resource fields when an automation rule is triggered.</p>
+    pub fn resource_fields_update(&self) -> ::std::option::Option<&crate::types::AutomationRulesResourceFieldsUpdateV2> {
+        self.resource_fields_update.as_ref()
     }
 }
 impl AutomationRulesActionV2 {
@@ -39,6 +45,7 @@ pub struct AutomationRulesActionV2Builder {
     pub(crate) r#type: ::std::option::Option<crate::types::AutomationRulesActionTypeV2>,
     pub(crate) finding_fields_update: ::std::option::Option<crate::types::AutomationRulesFindingFieldsUpdateV2>,
     pub(crate) external_integration_configuration: ::std::option::Option<crate::types::ExternalIntegrationConfiguration>,
+    pub(crate) resource_fields_update: ::std::option::Option<crate::types::AutomationRulesResourceFieldsUpdateV2>,
 }
 impl AutomationRulesActionV2Builder {
     /// <p>The category of action to be executed by the automation rule.</p>
@@ -84,12 +91,27 @@ impl AutomationRulesActionV2Builder {
     pub fn get_external_integration_configuration(&self) -> &::std::option::Option<crate::types::ExternalIntegrationConfiguration> {
         &self.external_integration_configuration
     }
+    /// <p>The changes to be applied to resource fields when an automation rule is triggered.</p>
+    pub fn resource_fields_update(mut self, input: crate::types::AutomationRulesResourceFieldsUpdateV2) -> Self {
+        self.resource_fields_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The changes to be applied to resource fields when an automation rule is triggered.</p>
+    pub fn set_resource_fields_update(mut self, input: ::std::option::Option<crate::types::AutomationRulesResourceFieldsUpdateV2>) -> Self {
+        self.resource_fields_update = input;
+        self
+    }
+    /// <p>The changes to be applied to resource fields when an automation rule is triggered.</p>
+    pub fn get_resource_fields_update(&self) -> &::std::option::Option<crate::types::AutomationRulesResourceFieldsUpdateV2> {
+        &self.resource_fields_update
+    }
     /// Consumes the builder and constructs a [`AutomationRulesActionV2`](crate::types::AutomationRulesActionV2).
     pub fn build(self) -> crate::types::AutomationRulesActionV2 {
         crate::types::AutomationRulesActionV2 {
             r#type: self.r#type,
             finding_fields_update: self.finding_fields_update,
             external_integration_configuration: self.external_integration_configuration,
+            resource_fields_update: self.resource_fields_update,
         }
     }
 }

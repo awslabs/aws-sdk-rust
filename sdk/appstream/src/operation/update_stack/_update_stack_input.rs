@@ -34,6 +34,8 @@ pub struct UpdateStackInput {
     pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
     /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
     pub agent_access_config: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>,
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub storage_connector_authentication: ::std::option::Option<crate::types::StorageConnectorAuthentication>,
 }
 impl UpdateStackInput {
     /// <p>The stack name to display.</p>
@@ -107,6 +109,10 @@ impl UpdateStackInput {
     pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::AgentAccessConfigForUpdate> {
         self.agent_access_config.as_ref()
     }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn storage_connector_authentication(&self) -> ::std::option::Option<&crate::types::StorageConnectorAuthentication> {
+        self.storage_connector_authentication.as_ref()
+    }
 }
 impl UpdateStackInput {
     /// Creates a new builder-style object to manufacture [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
@@ -134,6 +140,7 @@ pub struct UpdateStackInputBuilder {
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
     pub(crate) agent_access_config: ::std::option::Option<crate::types::AgentAccessConfigForUpdate>,
+    pub(crate) storage_connector_authentication: ::std::option::Option<crate::types::StorageConnectorAuthentication>,
 }
 impl UpdateStackInputBuilder {
     /// <p>The stack name to display.</p>
@@ -380,6 +387,20 @@ impl UpdateStackInputBuilder {
     pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::AgentAccessConfigForUpdate> {
         &self.agent_access_config
     }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn storage_connector_authentication(mut self, input: crate::types::StorageConnectorAuthentication) -> Self {
+        self.storage_connector_authentication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn set_storage_connector_authentication(mut self, input: ::std::option::Option<crate::types::StorageConnectorAuthentication>) -> Self {
+        self.storage_connector_authentication = input;
+        self
+    }
+    /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. To clear this attribute, add STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+    pub fn get_storage_connector_authentication(&self) -> &::std::option::Option<crate::types::StorageConnectorAuthentication> {
+        &self.storage_connector_authentication
+    }
     /// Consumes the builder and constructs a [`UpdateStackInput`](crate::operation::update_stack::UpdateStackInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_stack::UpdateStackInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_stack::UpdateStackInput {
@@ -398,6 +419,7 @@ impl UpdateStackInputBuilder {
             streaming_experience_settings: self.streaming_experience_settings,
             content_redirection: self.content_redirection,
             agent_access_config: self.agent_access_config,
+            storage_connector_authentication: self.storage_connector_authentication,
         })
     }
 }

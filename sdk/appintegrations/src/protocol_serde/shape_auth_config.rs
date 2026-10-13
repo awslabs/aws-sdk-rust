@@ -9,6 +9,9 @@ pub fn ser_auth_config(
     if let Some(var_2) = &input.credential_provider_identifier {
         object.key("CredentialProviderIdentifier").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.audience_override {
+        object.key("AudienceOverride").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         }
                         "CredentialProviderIdentifier" => {
                             builder = builder.set_credential_provider_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "AudienceOverride" => {
+                            builder = builder.set_audience_override(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

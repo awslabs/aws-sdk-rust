@@ -191,6 +191,8 @@ mod get_contact_reachability_status;
 
 mod get_domain_detail;
 
+mod get_domain_prices;
+
 mod get_domain_suggestions;
 
 mod get_operation_detail;
