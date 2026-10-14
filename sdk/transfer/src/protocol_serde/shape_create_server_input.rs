@@ -93,5 +93,8 @@ pub fn ser_create_server_input_input(
     if let Some(var_30) = &input.ip_address_type {
         object.key("IpAddressType").string(var_30.as_str());
     }
+    if let Some(var_31) = &input.host_key_storage_type {
+        object.key("HostKeyStorageType").string(var_31.as_str());
+    }
     Ok(())
 }

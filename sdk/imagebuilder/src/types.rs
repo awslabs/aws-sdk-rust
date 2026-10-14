@@ -29,6 +29,8 @@ pub use crate::types::_instance_metadata_options::InstanceMetadataOptions;
 
 pub use crate::types::_placement::Placement;
 
+pub use crate::types::_parent_instance_configuration::ParentInstanceConfiguration;
+
 pub use crate::types::_lifecycle_policy_status::LifecyclePolicyStatus;
 
 pub use crate::types::_lifecycle_policy_resource_type::LifecyclePolicyResourceType;
@@ -108,6 +110,8 @@ pub use crate::types::_systems_manager_agent::SystemsManagerAgent;
 pub use crate::types::_s3_logs::S3Logs;
 
 pub use crate::types::_tenancy_type::TenancyType;
+
+pub use crate::types::_auto_scaling_group_configuration::AutoScalingGroupConfiguration;
 
 pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetail;
 
@@ -300,6 +304,8 @@ mod _ami;
 mod _ami_distribution_configuration;
 
 mod _auto_disable_policy;
+
+mod _auto_scaling_group_configuration;
 
 mod _build_type;
 
@@ -494,6 +500,8 @@ mod _output_resources;
 mod _ownership;
 
 mod _package_vulnerability_details;
+
+mod _parent_instance_configuration;
 
 mod _pipeline_execution_start_condition;
 

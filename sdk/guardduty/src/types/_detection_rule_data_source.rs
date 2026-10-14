@@ -13,6 +13,7 @@
 /// # let detectionruledatasource = unimplemented!();
 /// match detectionruledatasource {
 ///     DetectionRuleDataSource::CloudtrailManagementEvent => { /* ... */ },
+///     DetectionRuleDataSource::RuntimeMonitoring => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum DetectionRuleDataSource {
     #[allow(missing_docs)] // documentation missing in model
     CloudtrailManagementEvent,
+    #[allow(missing_docs)] // documentation missing in model
+    RuntimeMonitoring,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for DetectionRuleDataSource {
     fn from(s: &str) -> Self {
         match s {
             "CloudTrailManagementEvent" => DetectionRuleDataSource::CloudtrailManagementEvent,
+            "RuntimeMonitoring" => DetectionRuleDataSource::RuntimeMonitoring,
             other => DetectionRuleDataSource::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl DetectionRuleDataSource {
     pub fn as_str(&self) -> &str {
         match self {
             DetectionRuleDataSource::CloudtrailManagementEvent => "CloudTrailManagementEvent",
+            DetectionRuleDataSource::RuntimeMonitoring => "RuntimeMonitoring",
             DetectionRuleDataSource::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CloudTrailManagementEvent"]
+        &["CloudTrailManagementEvent", "RuntimeMonitoring"]
     }
 }
 impl ::std::convert::AsRef<str> for DetectionRuleDataSource {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for DetectionRuleDataSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DetectionRuleDataSource::CloudtrailManagementEvent => write!(f, "CloudTrailManagementEvent"),
+            DetectionRuleDataSource::RuntimeMonitoring => write!(f, "RuntimeMonitoring"),
             DetectionRuleDataSource::Unknown(value) => write!(f, "{value}"),
         }
     }

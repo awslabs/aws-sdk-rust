@@ -271,6 +271,8 @@ pub use crate::types::_origin_protocol_policy::OriginProtocolPolicy;
 
 pub use crate::types::_origin_ssl_protocols::OriginSslProtocols;
 
+pub use crate::types::_vpc_ip_address_type::VpcIpAddressType;
+
 pub use crate::types::_managed_certificate_status::ManagedCertificateStatus;
 
 pub use crate::types::_connection_group_summary::ConnectionGroupSummary;
@@ -1006,6 +1008,8 @@ mod _viewer_mtls_config;
 mod _viewer_mtls_mode;
 
 mod _viewer_protocol_policy;
+
+mod _vpc_ip_address_type;
 
 mod _vpc_origin;
 

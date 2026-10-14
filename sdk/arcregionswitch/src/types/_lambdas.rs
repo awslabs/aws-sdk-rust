@@ -2,7 +2,7 @@
 
 /// <p>Configuration for Amazon Web Services Lambda functions used in a Region switch plan.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Lambdas {
     /// <p>The cross account role for the configuration.</p>
     pub cross_account_role: ::std::option::Option<::std::string::String>,
@@ -10,6 +10,10 @@ pub struct Lambdas {
     pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>The JSON payload to send to the Lambda function invocation. If you don't specify a payload, Region switch invokes the function with only the execution metadata.</p>
+    /// <p>If you provide a JSON object, Region switch merges execution metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>, <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of your keys has the same name as a metadata key, your key takes precedence.</p>
+    /// <p>If you provide any other JSON type (string, number, boolean, or array), Region switch forwards it to the Lambda function unchanged, without adding metadata.</p>
+    pub payload: ::std::option::Option<::std::string::String>,
 }
 impl Lambdas {
     /// <p>The cross account role for the configuration.</p>
@@ -24,6 +28,22 @@ impl Lambdas {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
+    /// <p>The JSON payload to send to the Lambda function invocation. If you don't specify a payload, Region switch invokes the function with only the execution metadata.</p>
+    /// <p>If you provide a JSON object, Region switch merges execution metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>, <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of your keys has the same name as a metadata key, your key takes precedence.</p>
+    /// <p>If you provide any other JSON type (string, number, boolean, or array), Region switch forwards it to the Lambda function unchanged, without adding metadata.</p>
+    pub fn payload(&self) -> ::std::option::Option<&str> {
+        self.payload.as_deref()
+    }
+}
+impl ::std::fmt::Debug for Lambdas {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Lambdas");
+        formatter.field("cross_account_role", &self.cross_account_role);
+        formatter.field("external_id", &self.external_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl Lambdas {
     /// Creates a new builder-style object to manufacture [`Lambdas`](crate::types::Lambdas).
@@ -33,12 +53,13 @@ impl Lambdas {
 }
 
 /// A builder for [`Lambdas`](crate::types::Lambdas).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LambdasBuilder {
     pub(crate) cross_account_role: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<::std::string::String>,
 }
 impl LambdasBuilder {
     /// <p>The cross account role for the configuration.</p>
@@ -83,12 +104,43 @@ impl LambdasBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>The JSON payload to send to the Lambda function invocation. If you don't specify a payload, Region switch invokes the function with only the execution metadata.</p>
+    /// <p>If you provide a JSON object, Region switch merges execution metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>, <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of your keys has the same name as a metadata key, your key takes precedence.</p>
+    /// <p>If you provide any other JSON type (string, number, boolean, or array), Region switch forwards it to the Lambda function unchanged, without adding metadata.</p>
+    pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.payload = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The JSON payload to send to the Lambda function invocation. If you don't specify a payload, Region switch invokes the function with only the execution metadata.</p>
+    /// <p>If you provide a JSON object, Region switch merges execution metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>, <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of your keys has the same name as a metadata key, your key takes precedence.</p>
+    /// <p>If you provide any other JSON type (string, number, boolean, or array), Region switch forwards it to the Lambda function unchanged, without adding metadata.</p>
+    pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.payload = input;
+        self
+    }
+    /// <p>The JSON payload to send to the Lambda function invocation. If you don't specify a payload, Region switch invokes the function with only the execution metadata.</p>
+    /// <p>If you provide a JSON object, Region switch merges execution metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>, <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of your keys has the same name as a metadata key, your key takes precedence.</p>
+    /// <p>If you provide any other JSON type (string, number, boolean, or array), Region switch forwards it to the Lambda function unchanged, without adding metadata.</p>
+    pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
+        &self.payload
+    }
     /// Consumes the builder and constructs a [`Lambdas`](crate::types::Lambdas).
     pub fn build(self) -> crate::types::Lambdas {
         crate::types::Lambdas {
             cross_account_role: self.cross_account_role,
             external_id: self.external_id,
             arn: self.arn,
+            payload: self.payload,
         }
+    }
+}
+impl ::std::fmt::Debug for LambdasBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LambdasBuilder");
+        formatter.field("cross_account_role", &self.cross_account_role);
+        formatter.field("external_id", &self.external_id);
+        formatter.field("arn", &self.arn);
+        formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

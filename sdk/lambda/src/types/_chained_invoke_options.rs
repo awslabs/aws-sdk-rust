@@ -8,6 +8,9 @@ pub struct ChainedInvokeOptions {
     pub function_name: ::std::string::String,
     /// <p>The tenant identifier for the chained invocation.</p>
     pub tenant_id: ::std::option::Option<::std::string::String>,
+    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
+    pub x_amzn_trace_id: ::std::option::Option<::std::string::String>,
 }
 impl ChainedInvokeOptions {
     /// <p>The name or ARN of the Lambda function to invoke.</p>
@@ -18,6 +21,11 @@ impl ChainedInvokeOptions {
     /// <p>The tenant identifier for the chained invocation.</p>
     pub fn tenant_id(&self) -> ::std::option::Option<&str> {
         self.tenant_id.as_deref()
+    }
+    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
+    pub fn x_amzn_trace_id(&self) -> ::std::option::Option<&str> {
+        self.x_amzn_trace_id.as_deref()
     }
 }
 impl ChainedInvokeOptions {
@@ -33,6 +41,7 @@ impl ChainedInvokeOptions {
 pub struct ChainedInvokeOptionsBuilder {
     pub(crate) function_name: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) x_amzn_trace_id: ::std::option::Option<::std::string::String>,
 }
 impl ChainedInvokeOptionsBuilder {
     /// <p>The name or ARN of the Lambda function to invoke.</p>
@@ -64,6 +73,23 @@ impl ChainedInvokeOptionsBuilder {
     pub fn get_tenant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_id
     }
+    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
+    pub fn x_amzn_trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.x_amzn_trace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
+    pub fn set_x_amzn_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.x_amzn_trace_id = input;
+        self
+    }
+    /// <p>The optional X-Ray trace header to use when starting the chained invocation. If you omit this value, the child invocation inherits the parent durable execution's trace header.</p>
+    /// <p>Specify this value on the <code>START</code> update for the chained invocation operation. For more information about the header format, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the <i>X-Ray Developer Guide</i>.</p>
+    pub fn get_x_amzn_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.x_amzn_trace_id
+    }
     /// Consumes the builder and constructs a [`ChainedInvokeOptions`](crate::types::ChainedInvokeOptions).
     /// This method will fail if any of the following fields are not set:
     /// - [`function_name`](crate::types::builders::ChainedInvokeOptionsBuilder::function_name)
@@ -76,6 +102,7 @@ impl ChainedInvokeOptionsBuilder {
                 )
             })?,
             tenant_id: self.tenant_id,
+            x_amzn_trace_id: self.x_amzn_trace_id,
         })
     }
 }

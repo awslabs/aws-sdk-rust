@@ -15,5 +15,10 @@ pub fn ser_get_shard_iterator_input_input(
     if let Some(var_4) = &input.sequence_number {
         object.key("SequenceNumber").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.timestamp {
+        object
+            .key("Timestamp")
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+    }
     Ok(())
 }

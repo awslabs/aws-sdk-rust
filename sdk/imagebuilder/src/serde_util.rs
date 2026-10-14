@@ -8,6 +8,18 @@ pub(crate) fn distribution_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn parent_instance_configuration_correct_errors(
+    mut builder: crate::types::builders::ParentInstanceConfigurationBuilder,
+) -> crate::types::builders::ParentInstanceConfigurationBuilder {
+    if builder.auto_scaling_group.is_none() {
+        builder.auto_scaling_group = {
+            let builder = crate::types::builders::AutoScalingGroupConfigurationBuilder::default();
+            crate::serde_util::auto_scaling_group_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn target_container_repository_correct_errors(
     mut builder: crate::types::builders::TargetContainerRepositoryBuilder,
 ) -> crate::types::builders::TargetContainerRepositoryBuilder {
@@ -25,6 +37,15 @@ pub(crate) fn auto_disable_policy_correct_errors(
 ) -> crate::types::builders::AutoDisablePolicyBuilder {
     if builder.failure_count.is_none() {
         builder.failure_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn auto_scaling_group_configuration_correct_errors(
+    mut builder: crate::types::builders::AutoScalingGroupConfigurationBuilder,
+) -> crate::types::builders::AutoScalingGroupConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

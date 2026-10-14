@@ -36,6 +36,8 @@ pub struct Finding {
     pub updated_at: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) associated with the attack sequence finding.</p>
     pub associated_attack_sequence_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the custom detection rule that generated this finding.</p>
+    pub custom_detection_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl Finding {
     /// <p>The ID of the account in which the finding was generated.</p>
@@ -102,6 +104,10 @@ impl Finding {
     pub fn associated_attack_sequence_arn(&self) -> ::std::option::Option<&str> {
         self.associated_attack_sequence_arn.as_deref()
     }
+    /// <p>The name of the custom detection rule that generated this finding.</p>
+    pub fn custom_detection_rule_name(&self) -> ::std::option::Option<&str> {
+        self.custom_detection_rule_name.as_deref()
+    }
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::types::Finding).
@@ -130,6 +136,7 @@ pub struct FindingBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::std::string::String>,
     pub(crate) associated_attack_sequence_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_detection_rule_name: ::std::option::Option<::std::string::String>,
 }
 impl FindingBuilder {
     /// <p>The ID of the account in which the finding was generated.</p>
@@ -366,6 +373,20 @@ impl FindingBuilder {
     pub fn get_associated_attack_sequence_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_attack_sequence_arn
     }
+    /// <p>The name of the custom detection rule that generated this finding.</p>
+    pub fn custom_detection_rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_detection_rule_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the custom detection rule that generated this finding.</p>
+    pub fn set_custom_detection_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_detection_rule_name = input;
+        self
+    }
+    /// <p>The name of the custom detection rule that generated this finding.</p>
+    pub fn get_custom_detection_rule_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_detection_rule_name
+    }
     /// Consumes the builder and constructs a [`Finding`](crate::types::Finding).
     pub fn build(self) -> crate::types::Finding {
         crate::types::Finding {
@@ -385,6 +406,7 @@ impl FindingBuilder {
             r#type: self.r#type,
             updated_at: self.updated_at,
             associated_attack_sequence_arn: self.associated_attack_sequence_arn,
+            custom_detection_rule_name: self.custom_detection_rule_name,
         }
     }
 }

@@ -10,9 +10,15 @@ pub struct GlobalAuroraConfiguration {
     pub cross_account_role: ::std::option::Option<::std::string::String>,
     /// <p>The external ID (secret key) for the configuration.</p>
     pub external_id: ::std::option::Option<::std::string::String>,
-    /// <p>The behavior for a global database, that is, only allow switchover or also allow failover.</p>
+    /// <p>The default behavior for the Aurora global database execution block. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>switchoverOnly</code> - Calls <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during graceful execution.</p></li>
+    /// <li>
+    /// <p><code>failover</code> - Calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to <code>true</code>. This operation might cause data loss, including during graceful execution.</p></li>
+    /// </ul>
     pub behavior: crate::types::GlobalAuroraDefaultBehavior,
-    /// <p>The settings for ungraceful execution.</p>
+    /// <p>The behavior to use when the plan runs in ungraceful mode. If you omit this value, Region switch uses the value of <code>behavior</code>.</p>
     pub ungraceful: ::std::option::Option<crate::types::GlobalAuroraUngraceful>,
     /// <p>The global cluster identifier for a global database.</p>
     pub global_cluster_identifier: ::std::string::String,
@@ -32,11 +38,17 @@ impl GlobalAuroraConfiguration {
     pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
-    /// <p>The behavior for a global database, that is, only allow switchover or also allow failover.</p>
+    /// <p>The default behavior for the Aurora global database execution block. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>switchoverOnly</code> - Calls <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during graceful execution.</p></li>
+    /// <li>
+    /// <p><code>failover</code> - Calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to <code>true</code>. This operation might cause data loss, including during graceful execution.</p></li>
+    /// </ul>
     pub fn behavior(&self) -> &crate::types::GlobalAuroraDefaultBehavior {
         &self.behavior
     }
-    /// <p>The settings for ungraceful execution.</p>
+    /// <p>The behavior to use when the plan runs in ungraceful mode. If you omit this value, Region switch uses the value of <code>behavior</code>.</p>
     pub fn ungraceful(&self) -> ::std::option::Option<&crate::types::GlobalAuroraUngraceful> {
         self.ungraceful.as_ref()
     }
@@ -113,32 +125,50 @@ impl GlobalAuroraConfigurationBuilder {
     pub fn get_external_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.external_id
     }
-    /// <p>The behavior for a global database, that is, only allow switchover or also allow failover.</p>
+    /// <p>The default behavior for the Aurora global database execution block. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>switchoverOnly</code> - Calls <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during graceful execution.</p></li>
+    /// <li>
+    /// <p><code>failover</code> - Calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to <code>true</code>. This operation might cause data loss, including during graceful execution.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn behavior(mut self, input: crate::types::GlobalAuroraDefaultBehavior) -> Self {
         self.behavior = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The behavior for a global database, that is, only allow switchover or also allow failover.</p>
+    /// <p>The default behavior for the Aurora global database execution block. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>switchoverOnly</code> - Calls <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during graceful execution.</p></li>
+    /// <li>
+    /// <p><code>failover</code> - Calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to <code>true</code>. This operation might cause data loss, including during graceful execution.</p></li>
+    /// </ul>
     pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::GlobalAuroraDefaultBehavior>) -> Self {
         self.behavior = input;
         self
     }
-    /// <p>The behavior for a global database, that is, only allow switchover or also allow failover.</p>
+    /// <p>The default behavior for the Aurora global database execution block. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>switchoverOnly</code> - Calls <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during graceful execution.</p></li>
+    /// <li>
+    /// <p><code>failover</code> - Calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to <code>true</code>. This operation might cause data loss, including during graceful execution.</p></li>
+    /// </ul>
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::GlobalAuroraDefaultBehavior> {
         &self.behavior
     }
-    /// <p>The settings for ungraceful execution.</p>
+    /// <p>The behavior to use when the plan runs in ungraceful mode. If you omit this value, Region switch uses the value of <code>behavior</code>.</p>
     pub fn ungraceful(mut self, input: crate::types::GlobalAuroraUngraceful) -> Self {
         self.ungraceful = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The settings for ungraceful execution.</p>
+    /// <p>The behavior to use when the plan runs in ungraceful mode. If you omit this value, Region switch uses the value of <code>behavior</code>.</p>
     pub fn set_ungraceful(mut self, input: ::std::option::Option<crate::types::GlobalAuroraUngraceful>) -> Self {
         self.ungraceful = input;
         self
     }
-    /// <p>The settings for ungraceful execution.</p>
+    /// <p>The behavior to use when the plan runs in ungraceful mode. If you omit this value, Region switch uses the value of <code>behavior</code>.</p>
     pub fn get_ungraceful(&self) -> &::std::option::Option<crate::types::GlobalAuroraUngraceful> {
         &self.ungraceful
     }

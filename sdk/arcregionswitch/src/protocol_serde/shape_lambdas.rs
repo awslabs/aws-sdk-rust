@@ -13,6 +13,9 @@ pub fn ser_lambdas(
     if let Some(var_3) = &input.arn {
         encoder.str("arn").str(var_3.as_str());
     }
+    if let Some(var_4) = &input.payload {
+        encoder.str("payload").str(var_4.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -41,6 +44,9 @@ pub(crate) fn de_lambdas(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_external_id(Some(decoder.string()?))))?
             }
             "arn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_arn(Some(decoder.string()?))))?,
+            "payload" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_payload(Some(decoder.string()?))))?
+            }
             _ => {
                 decoder.skip()?;
                 builder

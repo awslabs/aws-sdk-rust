@@ -21,6 +21,8 @@ pub struct CreateInfrastructureConfigurationInput {
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to terminate the instance on failure. Set to false if you want Image Builder to retain the instance used to configure your AMI if the build or test phase of your workflow fails. Defaults to <code>true</code>.</p>
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure (success, cancellation, or expiration). Defaults to <code>true</code>.</p>
+    pub terminate_instance_on_completion: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
     /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
@@ -39,6 +41,9 @@ pub struct CreateInfrastructureConfigurationInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    /// <p>To use this feature, the execution role for the build must have permissions to describe the Auto Scaling group, tag the instance while it's still in the group, and detach it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.</p>
+    pub parent_instance: ::std::option::Option<crate::types::ParentInstanceConfiguration>,
     /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Validates the required permissions and request parameters without performing the operation. If validation succeeds, the operation returns a <code>DryRunOperationException</code> error response.</p>
@@ -85,6 +90,10 @@ impl CreateInfrastructureConfigurationInput {
     pub fn terminate_instance_on_failure(&self) -> ::std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure (success, cancellation, or expiration). Defaults to <code>true</code>.</p>
+    pub fn terminate_instance_on_completion(&self) -> ::std::option::Option<bool> {
+        self.terminate_instance_on_completion
+    }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
     /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
@@ -112,6 +121,11 @@ impl CreateInfrastructureConfigurationInput {
     /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    /// <p>To use this feature, the execution role for the build must have permissions to describe the Auto Scaling group, tag the instance while it's still in the group, and detach it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.</p>
+    pub fn parent_instance(&self) -> ::std::option::Option<&crate::types::ParentInstanceConfiguration> {
+        self.parent_instance.as_ref()
     }
     /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -142,11 +156,13 @@ pub struct CreateInfrastructureConfigurationInputBuilder {
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
     pub(crate) key_pair: ::std::option::Option<::std::string::String>,
     pub(crate) terminate_instance_on_failure: ::std::option::Option<bool>,
+    pub(crate) terminate_instance_on_completion: ::std::option::Option<bool>,
     pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) placement: ::std::option::Option<crate::types::Placement>,
+    pub(crate) parent_instance: ::std::option::Option<crate::types::ParentInstanceConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
@@ -291,6 +307,20 @@ impl CreateInfrastructureConfigurationInputBuilder {
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
         &self.terminate_instance_on_failure
     }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure (success, cancellation, or expiration). Defaults to <code>true</code>.</p>
+    pub fn terminate_instance_on_completion(mut self, input: bool) -> Self {
+        self.terminate_instance_on_completion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure (success, cancellation, or expiration). Defaults to <code>true</code>.</p>
+    pub fn set_terminate_instance_on_completion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.terminate_instance_on_completion = input;
+        self
+    }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure (success, cancellation, or expiration). Defaults to <code>true</code>.</p>
+    pub fn get_terminate_instance_on_completion(&self) -> &::std::option::Option<bool> {
+        &self.terminate_instance_on_completion
+    }
     /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications. Specify a standard topic. Image Builder doesn't support FIFO topics. Image Builder validates the topic when you create or update the configuration. You must have permission to publish to the topic.</p><note>
     /// <p>EC2 Image Builder can't send notifications to SNS topics that are encrypted using keys from other accounts. If your SNS topic is encrypted, the key must be owned by the same account that owns your Image Builder resources.</p>
     /// </note>
@@ -400,6 +430,23 @@ impl CreateInfrastructureConfigurationInputBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    /// <p>To use this feature, the execution role for the build must have permissions to describe the Auto Scaling group, tag the instance while it's still in the group, and detach it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.</p>
+    pub fn parent_instance(mut self, input: crate::types::ParentInstanceConfiguration) -> Self {
+        self.parent_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    /// <p>To use this feature, the execution role for the build must have permissions to describe the Auto Scaling group, tag the instance while it's still in the group, and detach it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.</p>
+    pub fn set_parent_instance(mut self, input: ::std::option::Option<crate::types::ParentInstanceConfiguration>) -> Self {
+        self.parent_instance = input;
+        self
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    /// <p>To use this feature, the execution role for the build must have permissions to describe the Auto Scaling group, tag the instance while it's still in the group, and detach it from the group. For more information, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User Guide</i>.</p>
+    pub fn get_parent_instance(&self) -> &::std::option::Option<crate::types::ParentInstanceConfiguration> {
+        &self.parent_instance
+    }
     /// <p>A unique, case-sensitive identifier you provide to ensure that the operation runs no more than one time. If you retry a request with the same client token, Image Builder returns the original response without running the operation again. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -447,11 +494,13 @@ impl CreateInfrastructureConfigurationInputBuilder {
                 logging: self.logging,
                 key_pair: self.key_pair,
                 terminate_instance_on_failure: self.terminate_instance_on_failure,
+                terminate_instance_on_completion: self.terminate_instance_on_completion,
                 sns_topic_arn: self.sns_topic_arn,
                 resource_tags: self.resource_tags,
                 instance_metadata_options: self.instance_metadata_options,
                 tags: self.tags,
                 placement: self.placement,
+                parent_instance: self.parent_instance,
                 client_token: self.client_token,
                 dry_run: self.dry_run,
             },

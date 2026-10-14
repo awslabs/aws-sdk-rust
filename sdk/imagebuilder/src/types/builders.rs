@@ -23,6 +23,8 @@ pub use crate::types::_instance_metadata_options::InstanceMetadataOptionsBuilder
 
 pub use crate::types::_placement::PlacementBuilder;
 
+pub use crate::types::_parent_instance_configuration::ParentInstanceConfigurationBuilder;
+
 pub use crate::types::_lifecycle_policy_resource_selection::LifecyclePolicyResourceSelectionBuilder;
 
 pub use crate::types::_component::ComponentBuilder;
@@ -74,6 +76,8 @@ pub use crate::types::_instance_block_device_mapping::InstanceBlockDeviceMapping
 pub use crate::types::_systems_manager_agent::SystemsManagerAgentBuilder;
 
 pub use crate::types::_s3_logs::S3LogsBuilder;
+
+pub use crate::types::_auto_scaling_group_configuration::AutoScalingGroupConfigurationBuilder;
 
 pub use crate::types::_lifecycle_policy_detail::LifecyclePolicyDetailBuilder;
 

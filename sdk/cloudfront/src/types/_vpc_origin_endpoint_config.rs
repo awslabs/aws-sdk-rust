@@ -16,6 +16,8 @@ pub struct VpcOriginEndpointConfig {
     pub origin_protocol_policy: crate::types::OriginProtocolPolicy,
     /// <p>A complex type that contains information about the SSL/TLS protocols that CloudFront can use when establishing an HTTPS connection with your origin.</p>
     pub origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
+    /// <p>The IP address type of the CloudFront VPC origin endpoint configuration. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::VpcIpAddressType>,
 }
 impl VpcOriginEndpointConfig {
     /// <p>The name of the CloudFront VPC origin endpoint configuration.</p>
@@ -44,6 +46,10 @@ impl VpcOriginEndpointConfig {
     pub fn origin_ssl_protocols(&self) -> ::std::option::Option<&crate::types::OriginSslProtocols> {
         self.origin_ssl_protocols.as_ref()
     }
+    /// <p>The IP address type of the CloudFront VPC origin endpoint configuration. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::VpcIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl VpcOriginEndpointConfig {
     /// Creates a new builder-style object to manufacture [`VpcOriginEndpointConfig`](crate::types::VpcOriginEndpointConfig).
@@ -62,6 +68,7 @@ pub struct VpcOriginEndpointConfigBuilder {
     pub(crate) https_port: ::std::option::Option<i32>,
     pub(crate) origin_protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicy>,
     pub(crate) origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::VpcIpAddressType>,
 }
 impl VpcOriginEndpointConfigBuilder {
     /// <p>The name of the CloudFront VPC origin endpoint configuration.</p>
@@ -153,6 +160,20 @@ impl VpcOriginEndpointConfigBuilder {
     pub fn get_origin_ssl_protocols(&self) -> &::std::option::Option<crate::types::OriginSslProtocols> {
         &self.origin_ssl_protocols
     }
+    /// <p>The IP address type of the CloudFront VPC origin endpoint configuration. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn ip_address_type(mut self, input: crate::types::VpcIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the CloudFront VPC origin endpoint configuration. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::VpcIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type of the CloudFront VPC origin endpoint configuration. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::VpcIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`VpcOriginEndpointConfig`](crate::types::VpcOriginEndpointConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::VpcOriginEndpointConfigBuilder::name)
@@ -193,6 +214,7 @@ impl VpcOriginEndpointConfigBuilder {
                 )
             })?,
             origin_ssl_protocols: self.origin_ssl_protocols,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

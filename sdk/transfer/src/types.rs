@@ -11,6 +11,8 @@ pub use crate::types::_described_host_key::DescribedHostKey;
 
 pub use crate::types::_described_security_policy::DescribedSecurityPolicy;
 
+pub use crate::types::_host_key_storage_type::HostKeyStorageType;
+
 pub use crate::types::_custom_step_status::CustomStepStatus;
 
 pub use crate::types::_sftp_connector_connection_details::SftpConnectorConnectionDetails;
@@ -358,6 +360,8 @@ mod _file_location;
 mod _home_directory_map_entry;
 
 mod _home_directory_type;
+
+mod _host_key_storage_type;
 
 mod _identity_center_config;
 

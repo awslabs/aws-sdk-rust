@@ -12,6 +12,10 @@ pub struct ImportHostKeyInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager secret that stores the host key. If you specify a customer managed key, its key policy must allow the <code>AWSServiceRoleForTransfer</code> service-linked role to decrypt the secret. If you don't specify a value, Transfer Family uses the Amazon Web Services managed key for Secrets Manager.</p>
+    pub kms_key: ::std::option::Option<::std::string::String>,
 }
 impl ImportHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
@@ -33,6 +37,14 @@ impl ImportHostKeyInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::HostKeyStorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager secret that stores the host key. If you specify a customer managed key, its key policy must allow the <code>AWSServiceRoleForTransfer</code> service-linked role to decrypt the secret. If you don't specify a value, Transfer Family uses the Amazon Web Services managed key for Secrets Manager.</p>
+    pub fn kms_key(&self) -> ::std::option::Option<&str> {
+        self.kms_key.as_deref()
+    }
 }
 impl ::std::fmt::Debug for ImportHostKeyInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -41,6 +53,8 @@ impl ::std::fmt::Debug for ImportHostKeyInput {
         formatter.field("host_key_body", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("kms_key", &self.kms_key);
         formatter.finish()
     }
 }
@@ -59,6 +73,8 @@ pub struct ImportHostKeyInputBuilder {
     pub(crate) host_key_body: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
+    pub(crate) kms_key: ::std::option::Option<::std::string::String>,
 }
 impl ImportHostKeyInputBuilder {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
@@ -128,6 +144,34 @@ impl ImportHostKeyInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn storage_type(mut self, input: crate::types::HostKeyStorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::HostKeyStorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::HostKeyStorageType> {
+        &self.storage_type
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager secret that stores the host key. If you specify a customer managed key, its key policy must allow the <code>AWSServiceRoleForTransfer</code> service-linked role to decrypt the secret. If you don't specify a value, Transfer Family uses the Amazon Web Services managed key for Secrets Manager.</p>
+    pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager secret that stores the host key. If you specify a customer managed key, its key policy must allow the <code>AWSServiceRoleForTransfer</code> service-linked role to decrypt the secret. If you don't specify a value, Transfer Family uses the Amazon Web Services managed key for Secrets Manager.</p>
+    pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets Manager secret that stores the host key. If you specify a customer managed key, its key policy must allow the <code>AWSServiceRoleForTransfer</code> service-linked role to decrypt the secret. If you don't specify a value, Transfer Family uses the Amazon Web Services managed key for Secrets Manager.</p>
+    pub fn get_kms_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key
+    }
     /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::operation::import_host_key::ImportHostKeyInput).
     pub fn build(
         self,
@@ -137,6 +181,8 @@ impl ImportHostKeyInputBuilder {
             host_key_body: self.host_key_body,
             description: self.description,
             tags: self.tags,
+            storage_type: self.storage_type,
+            kms_key: self.kms_key,
         })
     }
 }
@@ -147,6 +193,8 @@ impl ::std::fmt::Debug for ImportHostKeyInputBuilder {
         formatter.field("host_key_body", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("tags", &self.tags);
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("kms_key", &self.kms_key);
         formatter.finish()
     }
 }

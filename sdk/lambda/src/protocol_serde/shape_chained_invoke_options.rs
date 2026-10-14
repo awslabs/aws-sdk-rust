@@ -9,5 +9,8 @@ pub fn ser_chained_invoke_options(
     if let Some(var_1) = &input.tenant_id {
         object.key("TenantId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.x_amzn_trace_id {
+        object.key("XAmznTraceId").string(var_2.as_str());
+    }
     Ok(())
 }

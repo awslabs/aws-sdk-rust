@@ -29,6 +29,10 @@ pub fn ser_vpc_origin_endpoint_config(
         let inner_writer = scope.start_el("OriginSslProtocols");
         crate::protocol_serde::shape_origin_ssl_protocols::ser_origin_ssl_protocols(var_1, inner_writer)?
     }
+    if let Some(var_2) = &input.ip_address_type {
+        let mut inner_writer = scope.start_el("IpAddressType").finish();
+        inner_writer.data(var_2.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -46,19 +50,6 @@ pub fn de_vpc_origin_endpoint_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Name") /* Name com.amazonaws.cloudfront#VpcOriginEndpointConfig$Name */ =>  {
-                let var_2 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_name(var_2);
-            }
-            ,
-            s if s.matches("Arn") /* Arn com.amazonaws.cloudfront#VpcOriginEndpointConfig$Arn */ =>  {
                 let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -68,25 +59,23 @@ pub fn de_vpc_origin_endpoint_config(
                         ?
                     )
                 ;
-                builder = builder.set_arn(var_3);
+                builder = builder.set_name(var_3);
             }
             ,
-            s if s.matches("HTTPPort") /* HTTPPort com.amazonaws.cloudfront#VpcOriginEndpointConfig$HTTPPort */ =>  {
+            s if s.matches("Arn") /* Arn com.amazonaws.cloudfront#VpcOriginEndpointConfig$Arn */ =>  {
                 let var_4 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_http_port(var_4);
+                builder = builder.set_arn(var_4);
             }
             ,
-            s if s.matches("HTTPSPort") /* HTTPSPort com.amazonaws.cloudfront#VpcOriginEndpointConfig$HTTPSPort */ =>  {
+            s if s.matches("HTTPPort") /* HTTPPort com.amazonaws.cloudfront#VpcOriginEndpointConfig$HTTPPort */ =>  {
                 let var_5 =
                     Some(
                          {
@@ -98,11 +87,26 @@ pub fn de_vpc_origin_endpoint_config(
                         ?
                     )
                 ;
-                builder = builder.set_https_port(var_5);
+                builder = builder.set_http_port(var_5);
+            }
+            ,
+            s if s.matches("HTTPSPort") /* HTTPSPort com.amazonaws.cloudfront#VpcOriginEndpointConfig$HTTPSPort */ =>  {
+                let var_6 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudfront#integer`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_https_port(var_6);
             }
             ,
             s if s.matches("OriginProtocolPolicy") /* OriginProtocolPolicy com.amazonaws.cloudfront#VpcOriginEndpointConfig$OriginProtocolPolicy */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         Result::<crate::types::OriginProtocolPolicy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::OriginProtocolPolicy::from(
@@ -112,17 +116,31 @@ pub fn de_vpc_origin_endpoint_config(
                         ?
                     )
                 ;
-                builder = builder.set_origin_protocol_policy(var_6);
+                builder = builder.set_origin_protocol_policy(var_7);
             }
             ,
             s if s.matches("OriginSslProtocols") /* OriginSslProtocols com.amazonaws.cloudfront#VpcOriginEndpointConfig$OriginSslProtocols */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_origin_ssl_protocols::de_origin_ssl_protocols(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_origin_ssl_protocols(var_7);
+                builder = builder.set_origin_ssl_protocols(var_8);
+            }
+            ,
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.cloudfront#VpcOriginEndpointConfig$IpAddressType */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<crate::types::VpcIpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpcIpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address_type(var_9);
             }
             ,
             _ => {}

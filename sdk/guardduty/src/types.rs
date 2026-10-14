@@ -157,6 +157,8 @@ pub use crate::types::_rule_language::RuleLanguage;
 
 pub use crate::types::_rule_schema::RuleSchema;
 
+pub use crate::types::_detection_rule_runtime_monitoring_details::DetectionRuleRuntimeMonitoringDetails;
+
 pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfigurationResult;
 
 pub use crate::types::_dns_logs_configuration_result::DnsLogsConfigurationResult;
@@ -281,6 +283,8 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_coverage_status::CoverageStatus;
 
+pub use crate::types::_detection_rule_runtime_platforms::DetectionRuleRuntimePlatforms;
+
 pub use crate::types::_data_source_status::DataSourceStatus;
 
 pub use crate::types::_kubernetes_audit_logs_configuration_result::KubernetesAuditLogsConfigurationResult;
@@ -370,6 +374,12 @@ pub use crate::types::_organization_additional_configuration_result::Organizatio
 pub use crate::types::_coverage_filter_criterion_key::CoverageFilterCriterionKey;
 
 pub use crate::types::_coverage_filter_condition::CoverageFilterCondition;
+
+pub use crate::types::_detection_rule_eks_requirements::DetectionRuleEksRequirements;
+
+pub use crate::types::_detection_rule_ec2_requirements::DetectionRuleEc2Requirements;
+
+pub use crate::types::_detection_rule_ecs_fargate_requirements::DetectionRuleEcsFargateRequirements;
 
 pub use crate::types::_detector_additional_configuration_result::DetectorAdditionalConfigurationResult;
 
@@ -889,6 +899,12 @@ mod _detection_rule_configuration_status;
 
 mod _detection_rule_data_source;
 
+mod _detection_rule_ec2_requirements;
+
+mod _detection_rule_ecs_fargate_requirements;
+
+mod _detection_rule_eks_requirements;
+
 mod _detection_rule_filter;
 
 mod _detection_rule_filter_condition;
@@ -896,6 +912,10 @@ mod _detection_rule_filter_condition;
 mod _detection_rule_org_configuration;
 
 mod _detection_rule_org_configuration_summary;
+
+mod _detection_rule_runtime_monitoring_details;
+
+mod _detection_rule_runtime_platforms;
 
 mod _detection_rule_severity;
 

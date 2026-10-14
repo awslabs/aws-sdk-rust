@@ -28,6 +28,8 @@ pub struct RuleDetail {
     pub language: ::std::option::Option<crate::types::RuleLanguage>,
     /// <p>The schema version used by the rule definition.</p>
     pub schema: ::std::option::Option<crate::types::RuleSchema>,
+    /// <p>Runtime Monitoring-specific details for the rule, including the platforms on which the rule can run and the minimum GuardDuty agent version required on each.</p>
+    pub runtime_monitoring_details: ::std::option::Option<crate::types::DetectionRuleRuntimeMonitoringDetails>,
     /// <p>The timestamp when the rule was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the rule was last updated.</p>
@@ -82,6 +84,10 @@ impl RuleDetail {
     pub fn schema(&self) -> ::std::option::Option<&crate::types::RuleSchema> {
         self.schema.as_ref()
     }
+    /// <p>Runtime Monitoring-specific details for the rule, including the platforms on which the rule can run and the minimum GuardDuty agent version required on each.</p>
+    pub fn runtime_monitoring_details(&self) -> ::std::option::Option<&crate::types::DetectionRuleRuntimeMonitoringDetails> {
+        self.runtime_monitoring_details.as_ref()
+    }
     /// <p>The timestamp when the rule was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -114,6 +120,7 @@ pub struct RuleDetailBuilder {
     pub(crate) definition: ::std::option::Option<crate::types::RuleDefinition>,
     pub(crate) language: ::std::option::Option<crate::types::RuleLanguage>,
     pub(crate) schema: ::std::option::Option<crate::types::RuleSchema>,
+    pub(crate) runtime_monitoring_details: ::std::option::Option<crate::types::DetectionRuleRuntimeMonitoringDetails>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -296,6 +303,20 @@ impl RuleDetailBuilder {
     pub fn get_schema(&self) -> &::std::option::Option<crate::types::RuleSchema> {
         &self.schema
     }
+    /// <p>Runtime Monitoring-specific details for the rule, including the platforms on which the rule can run and the minimum GuardDuty agent version required on each.</p>
+    pub fn runtime_monitoring_details(mut self, input: crate::types::DetectionRuleRuntimeMonitoringDetails) -> Self {
+        self.runtime_monitoring_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Runtime Monitoring-specific details for the rule, including the platforms on which the rule can run and the minimum GuardDuty agent version required on each.</p>
+    pub fn set_runtime_monitoring_details(mut self, input: ::std::option::Option<crate::types::DetectionRuleRuntimeMonitoringDetails>) -> Self {
+        self.runtime_monitoring_details = input;
+        self
+    }
+    /// <p>Runtime Monitoring-specific details for the rule, including the platforms on which the rule can run and the minimum GuardDuty agent version required on each.</p>
+    pub fn get_runtime_monitoring_details(&self) -> &::std::option::Option<crate::types::DetectionRuleRuntimeMonitoringDetails> {
+        &self.runtime_monitoring_details
+    }
     /// <p>The timestamp when the rule was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -340,6 +361,7 @@ impl RuleDetailBuilder {
             definition: self.definition,
             language: self.language,
             schema: self.schema,
+            runtime_monitoring_details: self.runtime_monitoring_details,
             created_at: self.created_at,
             updated_at: self.updated_at,
         }

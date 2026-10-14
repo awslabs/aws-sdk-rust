@@ -12,5 +12,11 @@ pub fn ser_update_host_key_input_input(
     if let Some(var_3) = &input.description {
         object.key("Description").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.storage_type {
+        object.key("StorageType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.kms_key {
+        object.key("KmsKey").string(var_5.as_str());
+    }
     Ok(())
 }

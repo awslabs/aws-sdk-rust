@@ -405,6 +405,8 @@ pub(crate) mod shape_lifecycle_policy_summary_list;
 
 pub(crate) mod shape_logging;
 
+pub(crate) mod shape_parent_instance_configuration;
+
 pub(crate) mod shape_pipeline_logging_configuration;
 
 pub(crate) mod shape_placement;
@@ -444,6 +446,8 @@ pub(crate) mod shape_ami_distribution_configuration;
 pub(crate) mod shape_ami_watermarks_list;
 
 pub(crate) mod shape_auto_disable_policy;
+
+pub(crate) mod shape_auto_scaling_group_configuration;
 
 pub(crate) mod shape_component_configuration_list;
 

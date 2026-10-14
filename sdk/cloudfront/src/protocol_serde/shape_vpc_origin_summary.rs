@@ -117,6 +117,20 @@ pub fn de_vpc_origin_summary(
                 builder = builder.set_origin_endpoint_arn(var_8);
             }
             ,
+            s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.cloudfront#VpcOriginSummary$IpAddressType */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<crate::types::VpcIpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpcIpAddressType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ip_address_type(var_9);
+            }
+            ,
             _ => {}
         }
     }

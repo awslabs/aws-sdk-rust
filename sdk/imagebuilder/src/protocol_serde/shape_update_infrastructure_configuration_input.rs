@@ -39,39 +39,48 @@ pub fn ser_update_infrastructure_configuration_input_input(
         crate::protocol_serde::shape_logging::ser_logging(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.placement {
+    if let Some(var_13) = &input.parent_instance {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("placement").start_object();
-        crate::protocol_serde::shape_placement::ser_placement(&mut object_14, var_13)?;
+        let mut object_14 = object.key("parentInstance").start_object();
+        crate::protocol_serde::shape_parent_instance_configuration::ser_parent_instance_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.resource_tags {
+    if let Some(var_15) = &input.placement {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("resourceTags").start_object();
-        for (key_17, value_18) in var_15 {
-            {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
-            }
-        }
+        let mut object_16 = object.key("placement").start_object();
+        crate::protocol_serde::shape_placement::ser_placement(&mut object_16, var_15)?;
         object_16.finish();
     }
-    if let Some(var_19) = &input.security_group_ids {
-        let mut array_20 = object.key("securityGroupIds").start_array();
-        for item_21 in var_19 {
+    if let Some(var_17) = &input.resource_tags {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("resourceTags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                array_20.value().string(item_21.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        array_20.finish();
+        object_18.finish();
     }
-    if let Some(var_22) = &input.sns_topic_arn {
-        object.key("snsTopicArn").string(var_22.as_str());
+    if let Some(var_21) = &input.security_group_ids {
+        let mut array_22 = object.key("securityGroupIds").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
     }
-    if let Some(var_23) = &input.subnet_id {
-        object.key("subnetId").string(var_23.as_str());
+    if let Some(var_24) = &input.sns_topic_arn {
+        object.key("snsTopicArn").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.terminate_instance_on_failure {
-        object.key("terminateInstanceOnFailure").boolean(*var_24);
+    if let Some(var_25) = &input.subnet_id {
+        object.key("subnetId").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.terminate_instance_on_completion {
+        object.key("terminateInstanceOnCompletion").boolean(*var_26);
+    }
+    if let Some(var_27) = &input.terminate_instance_on_failure {
+        object.key("terminateInstanceOnFailure").boolean(*var_27);
     }
     Ok(())
 }

@@ -141,6 +141,8 @@ pub struct CreateServerInput {
     /// <p>When using <code>DUALSTACK</code> as the <code>IpAddressType</code>, you cannot set the <code>AddressAllocationIds</code> parameter for the <a href="https://docs.aws.amazon.com/transfer/latest/APIReference/API_EndpointDetails.html">EndpointDetails</a> for the server.</p>
     /// </note>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub host_key_storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
 }
 impl CreateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -323,6 +325,10 @@ impl CreateServerInput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn host_key_storage_type(&self) -> ::std::option::Option<&crate::types::HostKeyStorageType> {
+        self.host_key_storage_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateServerInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -345,6 +351,7 @@ impl ::std::fmt::Debug for CreateServerInput {
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.field("s3_storage_options", &self.s3_storage_options);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("host_key_storage_type", &self.host_key_storage_type);
         formatter.finish()
     }
 }
@@ -377,6 +384,7 @@ pub struct CreateServerInputBuilder {
     pub(crate) structured_log_destinations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) s3_storage_options: ::std::option::Option<crate::types::S3StorageOptions>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) host_key_storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
 }
 impl CreateServerInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set to <code>FTPS</code>.</p>
@@ -955,6 +963,20 @@ impl CreateServerInputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn host_key_storage_type(mut self, input: crate::types::HostKeyStorageType) -> Self {
+        self.host_key_storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn set_host_key_storage_type(mut self, input: ::std::option::Option<crate::types::HostKeyStorageType>) -> Self {
+        self.host_key_storage_type = input;
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn get_host_key_storage_type(&self) -> &::std::option::Option<crate::types::HostKeyStorageType> {
+        &self.host_key_storage_type
+    }
     /// Consumes the builder and constructs a [`CreateServerInput`](crate::operation::create_server::CreateServerInput).
     pub fn build(
         self,
@@ -978,6 +1000,7 @@ impl CreateServerInputBuilder {
             structured_log_destinations: self.structured_log_destinations,
             s3_storage_options: self.s3_storage_options,
             ip_address_type: self.ip_address_type,
+            host_key_storage_type: self.host_key_storage_type,
         })
     }
 }
@@ -1002,6 +1025,7 @@ impl ::std::fmt::Debug for CreateServerInputBuilder {
         formatter.field("structured_log_destinations", &self.structured_log_destinations);
         formatter.field("s3_storage_options", &self.s3_storage_options);
         formatter.field("ip_address_type", &self.ip_address_type);
+        formatter.field("host_key_storage_type", &self.host_key_storage_type);
         formatter.finish()
     }
 }

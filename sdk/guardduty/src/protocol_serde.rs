@@ -519,6 +519,8 @@ pub(crate) mod shape_detection_rule_account_ids;
 
 pub(crate) mod shape_detection_rule_org_configuration_summary;
 
+pub(crate) mod shape_detection_rule_runtime_monitoring_details;
+
 pub(crate) mod shape_detector_additional_configuration;
 
 pub(crate) mod shape_detector_feature_configuration_result;
@@ -641,6 +643,8 @@ pub(crate) mod shape_data_sources_free_trial;
 
 pub(crate) mod shape_date_statistics;
 
+pub(crate) mod shape_detection_rule_runtime_platforms;
+
 pub(crate) mod shape_detector_additional_configuration_results;
 
 pub(crate) mod shape_filter_condition;
@@ -724,6 +728,12 @@ pub(crate) mod shape_coverage_eks_cluster_details;
 pub(crate) mod shape_data_source_free_trial;
 
 pub(crate) mod shape_detection;
+
+pub(crate) mod shape_detection_rule_ec2_requirements;
+
+pub(crate) mod shape_detection_rule_ecs_fargate_requirements;
+
+pub(crate) mod shape_detection_rule_eks_requirements;
 
 pub(crate) mod shape_detector_additional_configuration_result;
 

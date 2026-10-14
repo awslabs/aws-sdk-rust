@@ -20,6 +20,8 @@ pub struct VpcOriginSummary {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC origin summary origin endpoint ARN.</p>
     pub origin_endpoint_arn: ::std::string::String,
+    /// <p>The IP address type of the CloudFront VPC origin. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::VpcIpAddressType>,
 }
 impl VpcOriginSummary {
     /// <p>The VPC origin summary ID.</p>
@@ -59,6 +61,10 @@ impl VpcOriginSummary {
         use std::ops::Deref;
         self.origin_endpoint_arn.deref()
     }
+    /// <p>The IP address type of the CloudFront VPC origin. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::VpcIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
 }
 impl VpcOriginSummary {
     /// Creates a new builder-style object to manufacture [`VpcOriginSummary`](crate::types::VpcOriginSummary).
@@ -79,6 +85,7 @@ pub struct VpcOriginSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::VpcIpAddressType>,
 }
 impl VpcOriginSummaryBuilder {
     /// <p>The VPC origin summary ID.</p>
@@ -200,6 +207,20 @@ impl VpcOriginSummaryBuilder {
     pub fn get_origin_endpoint_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin_endpoint_arn
     }
+    /// <p>The IP address type of the CloudFront VPC origin. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn ip_address_type(mut self, input: crate::types::VpcIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type of the CloudFront VPC origin. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::VpcIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type of the CloudFront VPC origin. Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not supported for VPC origins.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::VpcIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`VpcOriginSummary`](crate::types::VpcOriginSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::VpcOriginSummaryBuilder::id)
@@ -254,6 +275,7 @@ impl VpcOriginSummaryBuilder {
                     "origin_endpoint_arn was not specified but it is required when building VpcOriginSummary",
                 )
             })?,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

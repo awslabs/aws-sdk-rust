@@ -93,6 +93,8 @@ pub use crate::types::_organization_feature_configuration_result::OrganizationFe
 
 pub use crate::types::_rule_definition::RuleDefinitionBuilder;
 
+pub use crate::types::_detection_rule_runtime_monitoring_details::DetectionRuleRuntimeMonitoringDetailsBuilder;
+
 pub use crate::types::_cloud_trail_configuration_result::CloudTrailConfigurationResultBuilder;
 
 pub use crate::types::_dns_logs_configuration_result::DnsLogsConfigurationResultBuilder;
@@ -185,6 +187,8 @@ pub use crate::types::_organization_scan_ec2_instance_with_findings_result::Orga
 
 pub use crate::types::_coverage_filter_criterion::CoverageFilterCriterionBuilder;
 
+pub use crate::types::_detection_rule_runtime_platforms::DetectionRuleRuntimePlatformsBuilder;
+
 pub use crate::types::_kubernetes_audit_logs_configuration_result::KubernetesAuditLogsConfigurationResultBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
@@ -246,6 +250,12 @@ pub use crate::types::_organization_ebs_volumes_result::OrganizationEbsVolumesRe
 pub use crate::types::_organization_additional_configuration_result::OrganizationAdditionalConfigurationResultBuilder;
 
 pub use crate::types::_coverage_filter_condition::CoverageFilterConditionBuilder;
+
+pub use crate::types::_detection_rule_eks_requirements::DetectionRuleEksRequirementsBuilder;
+
+pub use crate::types::_detection_rule_ec2_requirements::DetectionRuleEc2RequirementsBuilder;
+
+pub use crate::types::_detection_rule_ecs_fargate_requirements::DetectionRuleEcsFargateRequirementsBuilder;
 
 pub use crate::types::_detector_additional_configuration_result::DetectorAdditionalConfigurationResultBuilder;
 

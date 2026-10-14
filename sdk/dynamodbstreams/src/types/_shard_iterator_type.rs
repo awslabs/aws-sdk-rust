@@ -14,6 +14,7 @@
 /// match sharditeratortype {
 ///     ShardIteratorType::AfterSequenceNumber => { /* ... */ },
 ///     ShardIteratorType::AtSequenceNumber => { /* ... */ },
+///     ShardIteratorType::AtTimestamp => { /* ... */ },
 ///     ShardIteratorType::Latest => { /* ... */ },
 ///     ShardIteratorType::TrimHorizon => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum ShardIteratorType {
     #[allow(missing_docs)] // documentation missing in model
     AtSequenceNumber,
     #[allow(missing_docs)] // documentation missing in model
+    AtTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for ShardIteratorType {
         match s {
             "AFTER_SEQUENCE_NUMBER" => ShardIteratorType::AfterSequenceNumber,
             "AT_SEQUENCE_NUMBER" => ShardIteratorType::AtSequenceNumber,
+            "AT_TIMESTAMP" => ShardIteratorType::AtTimestamp,
             "LATEST" => ShardIteratorType::Latest,
             "TRIM_HORIZON" => ShardIteratorType::TrimHorizon,
             other => ShardIteratorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl ShardIteratorType {
         match self {
             ShardIteratorType::AfterSequenceNumber => "AFTER_SEQUENCE_NUMBER",
             ShardIteratorType::AtSequenceNumber => "AT_SEQUENCE_NUMBER",
+            ShardIteratorType::AtTimestamp => "AT_TIMESTAMP",
             ShardIteratorType::Latest => "LATEST",
             ShardIteratorType::TrimHorizon => "TRIM_HORIZON",
             ShardIteratorType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl ShardIteratorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AFTER_SEQUENCE_NUMBER", "AT_SEQUENCE_NUMBER", "LATEST", "TRIM_HORIZON"]
+        &["AFTER_SEQUENCE_NUMBER", "AT_SEQUENCE_NUMBER", "AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
     }
 }
 impl ::std::convert::AsRef<str> for ShardIteratorType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for ShardIteratorType {
         match self {
             ShardIteratorType::AfterSequenceNumber => write!(f, "AFTER_SEQUENCE_NUMBER"),
             ShardIteratorType::AtSequenceNumber => write!(f, "AT_SEQUENCE_NUMBER"),
+            ShardIteratorType::AtTimestamp => write!(f, "AT_TIMESTAMP"),
             ShardIteratorType::Latest => write!(f, "LATEST"),
             ShardIteratorType::TrimHorizon => write!(f, "TRIM_HORIZON"),
             ShardIteratorType::Unknown(value) => write!(f, "{value}"),

@@ -24,5 +24,11 @@ pub fn ser_import_host_key_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.storage_type {
+        object.key("StorageType").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.kms_key {
+        object.key("KmsKey").string(var_9.as_str());
+    }
     Ok(())
 }

@@ -40,6 +40,10 @@ pub struct InfrastructureConfiguration {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The instance placement settings that define where the build and test instances that Image Builder launches during image creation run. These settings don't affect instances that you launch from the output image.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure.</p>
+    pub terminate_instance_on_completion: ::std::option::Option<bool>,
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    pub parent_instance: ::std::option::Option<crate::types::ParentInstanceConfiguration>,
 }
 impl InfrastructureConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -116,6 +120,14 @@ impl InfrastructureConfiguration {
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure.</p>
+    pub fn terminate_instance_on_completion(&self) -> ::std::option::Option<bool> {
+        self.terminate_instance_on_completion
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    pub fn parent_instance(&self) -> ::std::option::Option<&crate::types::ParentInstanceConfiguration> {
+        self.parent_instance.as_ref()
+    }
 }
 impl InfrastructureConfiguration {
     /// Creates a new builder-style object to manufacture [`InfrastructureConfiguration`](crate::types::InfrastructureConfiguration).
@@ -145,6 +157,8 @@ pub struct InfrastructureConfigurationBuilder {
     pub(crate) instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) placement: ::std::option::Option<crate::types::Placement>,
+    pub(crate) terminate_instance_on_completion: ::std::option::Option<bool>,
+    pub(crate) parent_instance: ::std::option::Option<crate::types::ParentInstanceConfiguration>,
 }
 impl InfrastructureConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
@@ -418,6 +432,34 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure.</p>
+    pub fn terminate_instance_on_completion(mut self, input: bool) -> Self {
+        self.terminate_instance_on_completion = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure.</p>
+    pub fn set_terminate_instance_on_completion(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.terminate_instance_on_completion = input;
+        self
+    }
+    /// <p>Specifies whether Image Builder terminates build and test instances when image creation ends without a failure.</p>
+    pub fn get_terminate_instance_on_completion(&self) -> &::std::option::Option<bool> {
+        &self.terminate_instance_on_completion
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    pub fn parent_instance(mut self, input: crate::types::ParentInstanceConfiguration) -> Self {
+        self.parent_instance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    pub fn set_parent_instance(mut self, input: ::std::option::Option<crate::types::ParentInstanceConfiguration>) -> Self {
+        self.parent_instance = input;
+        self
+    }
+    /// <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance from, instead of launching a new instance. This applies only to the build phase.</p>
+    pub fn get_parent_instance(&self) -> &::std::option::Option<crate::types::ParentInstanceConfiguration> {
+        &self.parent_instance
+    }
     /// Consumes the builder and constructs a [`InfrastructureConfiguration`](crate::types::InfrastructureConfiguration).
     pub fn build(self) -> crate::types::InfrastructureConfiguration {
         crate::types::InfrastructureConfiguration {
@@ -438,6 +480,8 @@ impl InfrastructureConfigurationBuilder {
             instance_metadata_options: self.instance_metadata_options,
             tags: self.tags,
             placement: self.placement,
+            terminate_instance_on_completion: self.terminate_instance_on_completion,
+            parent_instance: self.parent_instance,
         }
     }
 }

@@ -123,6 +123,19 @@ where
                         "placement" => {
                             builder = builder.set_placement(crate::protocol_serde::shape_placement::de_placement(tokens, _value, depth + 1)?);
                         }
+                        "terminateInstanceOnCompletion" => {
+                            builder = builder
+                                .set_terminate_instance_on_completion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "parentInstance" => {
+                            builder = builder.set_parent_instance(
+                                crate::protocol_serde::shape_parent_instance_configuration::de_parent_instance_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

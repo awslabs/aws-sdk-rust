@@ -18,10 +18,14 @@ pub struct GetShardIteratorInput {
     /// <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - Start reading from the position denoted by a specific timestamp, provided in the parameter <code>Timestamp</code>.</p></li>
     /// </ul>
     pub shard_iterator_type: ::std::option::Option<crate::types::ShardIteratorType>,
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub sequence_number: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp of the stream record from which to start reading. Used with shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>1791316726.480</code>. The iterator points to the first stream record whose <code>ApproximateCreationDateTime</code> is at or after the specified timestamp. If no record with that exact timestamp exists, the iterator points to the next (later) record. If the timestamp is older than the current trim horizon, the iterator points to the oldest untrimmed stream record (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request returns a <code>ValidationException</code>.</p>
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -42,6 +46,8 @@ impl GetShardIteratorInput {
     /// <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - Start reading from the position denoted by a specific timestamp, provided in the parameter <code>Timestamp</code>.</p></li>
     /// </ul>
     pub fn shard_iterator_type(&self) -> ::std::option::Option<&crate::types::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
@@ -49,6 +55,10 @@ impl GetShardIteratorInput {
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn sequence_number(&self) -> ::std::option::Option<&str> {
         self.sequence_number.as_deref()
+    }
+    /// <p>The timestamp of the stream record from which to start reading. Used with shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>1791316726.480</code>. The iterator points to the first stream record whose <code>ApproximateCreationDateTime</code> is at or after the specified timestamp. If no record with that exact timestamp exists, the iterator points to the next (later) record. If the timestamp is older than the current trim horizon, the iterator points to the oldest untrimmed stream record (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request returns a <code>ValidationException</code>.</p>
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.timestamp.as_ref()
     }
 }
 impl GetShardIteratorInput {
@@ -66,6 +76,7 @@ pub struct GetShardIteratorInputBuilder {
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) shard_iterator_type: ::std::option::Option<crate::types::ShardIteratorType>,
     pub(crate) sequence_number: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GetShardIteratorInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
@@ -108,6 +119,8 @@ impl GetShardIteratorInputBuilder {
     /// <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - Start reading from the position denoted by a specific timestamp, provided in the parameter <code>Timestamp</code>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn shard_iterator_type(mut self, input: crate::types::ShardIteratorType) -> Self {
@@ -124,6 +137,8 @@ impl GetShardIteratorInputBuilder {
     /// <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - Start reading from the position denoted by a specific timestamp, provided in the parameter <code>Timestamp</code>.</p></li>
     /// </ul>
     pub fn set_shard_iterator_type(mut self, input: ::std::option::Option<crate::types::ShardIteratorType>) -> Self {
         self.shard_iterator_type = input;
@@ -139,6 +154,8 @@ impl GetShardIteratorInputBuilder {
     /// <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p></li>
     /// <li>
     /// <p><code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p></li>
+    /// <li>
+    /// <p><code>AT_TIMESTAMP</code> - Start reading from the position denoted by a specific timestamp, provided in the parameter <code>Timestamp</code>.</p></li>
     /// </ul>
     pub fn get_shard_iterator_type(&self) -> &::std::option::Option<crate::types::ShardIteratorType> {
         &self.shard_iterator_type
@@ -157,6 +174,20 @@ impl GetShardIteratorInputBuilder {
     pub fn get_sequence_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.sequence_number
     }
+    /// <p>The timestamp of the stream record from which to start reading. Used with shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>1791316726.480</code>. The iterator points to the first stream record whose <code>ApproximateCreationDateTime</code> is at or after the specified timestamp. If no record with that exact timestamp exists, the iterator points to the next (later) record. If the timestamp is older than the current trim horizon, the iterator points to the oldest untrimmed stream record (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request returns a <code>ValidationException</code>.</p>
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the stream record from which to start reading. Used with shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>1791316726.480</code>. The iterator points to the first stream record whose <code>ApproximateCreationDateTime</code> is at or after the specified timestamp. If no record with that exact timestamp exists, the iterator points to the next (later) record. If the timestamp is older than the current trim horizon, the iterator points to the oldest untrimmed stream record (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request returns a <code>ValidationException</code>.</p>
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.timestamp = input;
+        self
+    }
+    /// <p>The timestamp of the stream record from which to start reading. Used with shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>1791316726.480</code>. The iterator points to the first stream record whose <code>ApproximateCreationDateTime</code> is at or after the specified timestamp. If no record with that exact timestamp exists, the iterator points to the next (later) record. If the timestamp is older than the current trim horizon, the iterator points to the oldest untrimmed stream record (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request returns a <code>ValidationException</code>.</p>
+    pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.timestamp
+    }
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
     pub fn build(
         self,
@@ -166,6 +197,7 @@ impl GetShardIteratorInputBuilder {
             shard_id: self.shard_id,
             shard_iterator_type: self.shard_iterator_type,
             sequence_number: self.sequence_number,
+            timestamp: self.timestamp,
         })
     }
 }

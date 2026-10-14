@@ -681,4 +681,18 @@ impl CreateServerFluentBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         self.inner.get_ip_address_type()
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn host_key_storage_type(mut self, input: crate::types::HostKeyStorageType) -> Self {
+        self.inner = self.inner.host_key_storage_type(input);
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn set_host_key_storage_type(mut self, input: ::std::option::Option<crate::types::HostKeyStorageType>) -> Self {
+        self.inner = self.inner.set_host_key_storage_type(input);
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>, Transfer Family stores the private host key material in an Secrets Manager secret.</p>
+    pub fn get_host_key_storage_type(&self) -> &::std::option::Option<crate::types::HostKeyStorageType> {
+        self.inner.get_host_key_storage_type()
+    }
 }

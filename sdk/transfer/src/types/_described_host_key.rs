@@ -30,6 +30,10 @@ pub struct DescribedHostKey {
     pub date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>).</p>
+    pub storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
+    /// <p>The ARN of the Secrets Manager secret that stores the host key material, when <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+    pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
@@ -75,6 +79,14 @@ impl DescribedHostKey {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>).</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::HostKeyStorageType> {
+        self.storage_type.as_ref()
+    }
+    /// <p>The ARN of the Secrets Manager secret that stores the host key material, when <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+    pub fn secret_id(&self) -> ::std::option::Option<&str> {
+        self.secret_id.as_deref()
+    }
 }
 impl DescribedHostKey {
     /// Creates a new builder-style object to manufacture [`DescribedHostKey`](crate::types::DescribedHostKey).
@@ -94,6 +106,8 @@ pub struct DescribedHostKeyBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) date_imported: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::HostKeyStorageType>,
+    pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribedHostKeyBuilder {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
@@ -237,6 +251,34 @@ impl DescribedHostKeyBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>).</p>
+    pub fn storage_type(mut self, input: crate::types::HostKeyStorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>).</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::HostKeyStorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>Specifies whether the host key is stored by Transfer Family (<code>SERVICE_MANAGED</code>) or in Secrets Manager (<code>SECRETS_MANAGER</code>).</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::HostKeyStorageType> {
+        &self.storage_type
+    }
+    /// <p>The ARN of the Secrets Manager secret that stores the host key material, when <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+    pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Secrets Manager secret that stores the host key material, when <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+    pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.secret_id = input;
+        self
+    }
+    /// <p>The ARN of the Secrets Manager secret that stores the host key material, when <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+    pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.secret_id
+    }
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedHostKeyBuilder::arn)
@@ -254,6 +296,8 @@ impl DescribedHostKeyBuilder {
             r#type: self.r#type,
             date_imported: self.date_imported,
             tags: self.tags,
+            storage_type: self.storage_type,
+            secret_id: self.secret_id,
         })
     }
 }
