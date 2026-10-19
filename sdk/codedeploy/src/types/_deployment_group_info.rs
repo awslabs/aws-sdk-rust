@@ -53,6 +53,8 @@ pub struct DeploymentGroupInfo {
     /// <servicename></servicename>
     /// </clustername></code>.</p>
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
     /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
     /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub termination_hook_enabled: bool,
@@ -161,6 +163,10 @@ impl DeploymentGroupInfo {
     pub fn ecs_services(&self) -> &[crate::types::EcsService] {
         self.ecs_services.as_deref().unwrap_or_default()
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(&self) -> ::std::option::Option<&crate::types::Ec2DeploymentOptions> {
+        self.ec2_deployment_options.as_ref()
+    }
     /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
     /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn termination_hook_enabled(&self) -> bool {
@@ -200,6 +206,7 @@ pub struct DeploymentGroupInfoBuilder {
     pub(crate) on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     pub(crate) ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
+    pub(crate) ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
     pub(crate) termination_hook_enabled: ::std::option::Option<bool>,
 }
 impl DeploymentGroupInfoBuilder {
@@ -556,6 +563,20 @@ impl DeploymentGroupInfoBuilder {
     pub fn get_ecs_services(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EcsService>> {
         &self.ecs_services
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(mut self, input: crate::types::Ec2DeploymentOptions) -> Self {
+        self.ec2_deployment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn set_ec2_deployment_options(mut self, input: ::std::option::Option<crate::types::Ec2DeploymentOptions>) -> Self {
+        self.ec2_deployment_options = input;
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn get_ec2_deployment_options(&self) -> &::std::option::Option<crate::types::Ec2DeploymentOptions> {
+        &self.ec2_deployment_options
+    }
     /// <p>Indicates whether the deployment group was configured to have CodeDeploy install a termination hook into an Auto Scaling group.</p>
     /// <p>For more information about the termination hook, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn termination_hook_enabled(mut self, input: bool) -> Self {
@@ -598,6 +619,7 @@ impl DeploymentGroupInfoBuilder {
             on_premises_tag_set: self.on_premises_tag_set,
             compute_platform: self.compute_platform,
             ecs_services: self.ecs_services,
+            ec2_deployment_options: self.ec2_deployment_options,
             termination_hook_enabled: self.termination_hook_enabled.unwrap_or_default(),
         }
     }

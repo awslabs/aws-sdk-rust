@@ -14,6 +14,7 @@
 /// match tlssecuritypolicy {
 ///     TlsSecurityPolicy::PolicyMinTls10201907 => { /* ... */ },
 ///     TlsSecurityPolicy::PolicyMinTls12201907 => { /* ... */ },
+///     TlsSecurityPolicy::PolicyMinTls12FipsPq202610 => { /* ... */ },
 ///     TlsSecurityPolicy::PolicyMinTls12Pfs202310 => { /* ... */ },
 ///     TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum TlsSecurityPolicy {
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12201907,
     #[allow(missing_docs)] // documentation missing in model
+    PolicyMinTls12FipsPq202610,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12Pfs202310,
     #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12Rfc9151Fips202408,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for TlsSecurityPolicy {
         match s {
             "Policy-Min-TLS-1-0-2019-07" => TlsSecurityPolicy::PolicyMinTls10201907,
             "Policy-Min-TLS-1-2-2019-07" => TlsSecurityPolicy::PolicyMinTls12201907,
+            "Policy-Min-TLS-1-2-FIPS-PQ-2026-10" => TlsSecurityPolicy::PolicyMinTls12FipsPq202610,
             "Policy-Min-TLS-1-2-PFS-2023-10" => TlsSecurityPolicy::PolicyMinTls12Pfs202310,
             "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08" => TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408,
             other => TlsSecurityPolicy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl TlsSecurityPolicy {
         match self {
             TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
             TlsSecurityPolicy::PolicyMinTls12201907 => "Policy-Min-TLS-1-2-2019-07",
+            TlsSecurityPolicy::PolicyMinTls12FipsPq202610 => "Policy-Min-TLS-1-2-FIPS-PQ-2026-10",
             TlsSecurityPolicy::PolicyMinTls12Pfs202310 => "Policy-Min-TLS-1-2-PFS-2023-10",
             TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08",
             TlsSecurityPolicy::Unknown(value) => value.as_str(),
@@ -90,6 +95,7 @@ impl TlsSecurityPolicy {
         &[
             "Policy-Min-TLS-1-0-2019-07",
             "Policy-Min-TLS-1-2-2019-07",
+            "Policy-Min-TLS-1-2-FIPS-PQ-2026-10",
             "Policy-Min-TLS-1-2-PFS-2023-10",
             "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08",
         ]
@@ -117,6 +123,7 @@ impl ::std::fmt::Display for TlsSecurityPolicy {
         match self {
             TlsSecurityPolicy::PolicyMinTls10201907 => write!(f, "Policy-Min-TLS-1-0-2019-07"),
             TlsSecurityPolicy::PolicyMinTls12201907 => write!(f, "Policy-Min-TLS-1-2-2019-07"),
+            TlsSecurityPolicy::PolicyMinTls12FipsPq202610 => write!(f, "Policy-Min-TLS-1-2-FIPS-PQ-2026-10"),
             TlsSecurityPolicy::PolicyMinTls12Pfs202310 => write!(f, "Policy-Min-TLS-1-2-PFS-2023-10"),
             TlsSecurityPolicy::PolicyMinTls12Rfc9151Fips202408 => write!(f, "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08"),
             TlsSecurityPolicy::Unknown(value) => write!(f, "{value}"),

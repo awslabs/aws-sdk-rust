@@ -269,6 +269,8 @@ pub(crate) mod shape_invalid_auto_rollback_config_exception;
 
 pub(crate) mod shape_invalid_auto_scaling_group_exception;
 
+pub(crate) mod shape_invalid_auto_scaling_group_process_to_suspend_exception;
+
 pub(crate) mod shape_invalid_blue_green_deployment_configuration_exception;
 
 pub(crate) mod shape_invalid_bucket_name_filter_exception;
@@ -475,6 +477,8 @@ pub(crate) mod shape_deployments_info_list;
 
 pub(crate) mod shape_deployments_list;
 
+pub(crate) mod shape_ec2_deployment_options;
+
 pub(crate) mod shape_ec2_tag_filter;
 
 pub(crate) mod shape_ec2_tag_set;
@@ -594,6 +598,8 @@ pub(crate) mod shape_alarm_list;
 pub(crate) mod shape_auto_rollback_events_list;
 
 pub(crate) mod shape_auto_scaling_group_name_list;
+
+pub(crate) mod shape_auto_scaling_group_processes_to_suspend_list;
 
 pub(crate) mod shape_ec2_tag_set_list;
 

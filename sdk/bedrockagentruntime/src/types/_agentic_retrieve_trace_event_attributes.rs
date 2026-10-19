@@ -20,6 +20,8 @@ pub struct AgenticRetrieveTraceEventAttributes {
     pub retrieval_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveSourceMetadata>>,
     /// <p>The retrieval results from this step.</p>
     pub retrieval_response: ::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveTraceResultItem>>,
+    /// <p>The agent reports the retrieval instruction applied to this request on the first planning step.</p>
+    pub applied_instruction: ::std::option::Option<crate::types::AgenticRetrieveAppliedInstruction>,
 }
 impl AgenticRetrieveTraceEventAttributes {
     /// <p>The current step in the retrieval process.</p>
@@ -65,6 +67,10 @@ impl AgenticRetrieveTraceEventAttributes {
     pub fn retrieval_response(&self) -> &[crate::types::AgenticRetrieveTraceResultItem] {
         self.retrieval_response.as_deref().unwrap_or_default()
     }
+    /// <p>The agent reports the retrieval instruction applied to this request on the first planning step.</p>
+    pub fn applied_instruction(&self) -> ::std::option::Option<&crate::types::AgenticRetrieveAppliedInstruction> {
+        self.applied_instruction.as_ref()
+    }
 }
 impl AgenticRetrieveTraceEventAttributes {
     /// Creates a new builder-style object to manufacture [`AgenticRetrieveTraceEventAttributes`](crate::types::AgenticRetrieveTraceEventAttributes).
@@ -85,6 +91,7 @@ pub struct AgenticRetrieveTraceEventAttributesBuilder {
     pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveFailure>>,
     pub(crate) retrieval_metadata: ::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveSourceMetadata>>,
     pub(crate) retrieval_response: ::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveTraceResultItem>>,
+    pub(crate) applied_instruction: ::std::option::Option<crate::types::AgenticRetrieveAppliedInstruction>,
 }
 impl AgenticRetrieveTraceEventAttributesBuilder {
     /// <p>The current step in the retrieval process.</p>
@@ -232,6 +239,20 @@ impl AgenticRetrieveTraceEventAttributesBuilder {
     pub fn get_retrieval_response(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgenticRetrieveTraceResultItem>> {
         &self.retrieval_response
     }
+    /// <p>The agent reports the retrieval instruction applied to this request on the first planning step.</p>
+    pub fn applied_instruction(mut self, input: crate::types::AgenticRetrieveAppliedInstruction) -> Self {
+        self.applied_instruction = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The agent reports the retrieval instruction applied to this request on the first planning step.</p>
+    pub fn set_applied_instruction(mut self, input: ::std::option::Option<crate::types::AgenticRetrieveAppliedInstruction>) -> Self {
+        self.applied_instruction = input;
+        self
+    }
+    /// <p>The agent reports the retrieval instruction applied to this request on the first planning step.</p>
+    pub fn get_applied_instruction(&self) -> &::std::option::Option<crate::types::AgenticRetrieveAppliedInstruction> {
+        &self.applied_instruction
+    }
     /// Consumes the builder and constructs a [`AgenticRetrieveTraceEventAttributes`](crate::types::AgenticRetrieveTraceEventAttributes).
     /// This method will fail if any of the following fields are not set:
     /// - [`step`](crate::types::builders::AgenticRetrieveTraceEventAttributesBuilder::step)
@@ -262,6 +283,7 @@ impl AgenticRetrieveTraceEventAttributesBuilder {
             failures: self.failures,
             retrieval_metadata: self.retrieval_metadata,
             retrieval_response: self.retrieval_response,
+            applied_instruction: self.applied_instruction,
         })
     }
 }

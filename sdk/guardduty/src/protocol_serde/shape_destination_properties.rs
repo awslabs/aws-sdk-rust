@@ -9,6 +9,9 @@ pub fn ser_destination_properties(
     if let Some(var_2) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.expected_bucket_owner {
+        object.key("expectedBucketOwner").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         }
                         "kmsKeyArn" => {
                             builder = builder.set_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "expectedBucketOwner" => {
+                            builder = builder.set_expected_bucket_owner(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

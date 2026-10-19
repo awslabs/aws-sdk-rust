@@ -7,6 +7,8 @@ pub struct DescribeDeliveryDestinationsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Optionally specify the maximum number of delivery destinations to return in the response.</p>
     pub limit: ::std::option::Option<i32>,
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryDestinationsInput {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -16,6 +18,12 @@ impl DescribeDeliveryDestinationsInput {
     /// <p>Optionally specify the maximum number of delivery destinations to return in the response.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
+    }
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
+    pub fn names(&self) -> &[::std::string::String] {
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDeliveryDestinationsInput {
@@ -31,6 +39,7 @@ impl DescribeDeliveryDestinationsInput {
 pub struct DescribeDeliveryDestinationsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryDestinationsInputBuilder {
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
@@ -61,6 +70,26 @@ impl DescribeDeliveryDestinationsInputBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }
+    /// Appends an item to `names`.
+    ///
+    /// To override the contents of this collection use [`set_names`](Self::set_names).
+    ///
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.names.unwrap_or_default();
+        v.push(input.into());
+        self.names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.names = input;
+        self
+    }
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.names
+    }
     /// Consumes the builder and constructs a [`DescribeDeliveryDestinationsInput`](crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsInput).
     pub fn build(
         self,
@@ -71,6 +100,7 @@ impl DescribeDeliveryDestinationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_delivery_destinations::DescribeDeliveryDestinationsInput {
             next_token: self.next_token,
             limit: self.limit,
+            names: self.names,
         })
     }
 }

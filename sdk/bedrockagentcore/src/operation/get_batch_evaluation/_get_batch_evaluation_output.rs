@@ -23,6 +23,8 @@ pub struct GetBatchEvaluationOutput {
     pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The aggregated evaluation results, including session completion counts and evaluator score summaries.</p>
     pub evaluation_results: ::std::option::Option<crate::types::EvaluationJobResults>,
+    /// <p>The insights generated when the batch evaluation includes the <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related failures found across the evaluated sessions. An empty list means that no failures were found. If the analysis fails, this field is omitted and <code>errorDetails</code> describes the error.</p>
+    pub insight_results: ::std::option::Option<::std::vec::Vec<crate::types::InsightResult>>,
     /// <p>The failure analysis results from insights, containing categorized failure clusters with root causes and recommendations.</p>
     pub failure_analysis_result: ::std::option::Option<crate::types::FailureAnalysisResultContent>,
     /// <p>The user intent clustering results from insights, containing grouped user intents across evaluated sessions.</p>
@@ -87,6 +89,12 @@ impl GetBatchEvaluationOutput {
     pub fn evaluation_results(&self) -> ::std::option::Option<&crate::types::EvaluationJobResults> {
         self.evaluation_results.as_ref()
     }
+    /// <p>The insights generated when the batch evaluation includes the <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related failures found across the evaluated sessions. An empty list means that no failures were found. If the analysis fails, this field is omitted and <code>errorDetails</code> describes the error.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insight_results.is_none()`.
+    pub fn insight_results(&self) -> &[crate::types::InsightResult] {
+        self.insight_results.as_deref().unwrap_or_default()
+    }
     /// <p>The failure analysis results from insights, containing categorized failure clusters with root causes and recommendations.</p>
     pub fn failure_analysis_result(&self) -> ::std::option::Option<&crate::types::FailureAnalysisResultContent> {
         self.failure_analysis_result.as_ref()
@@ -144,6 +152,7 @@ pub struct GetBatchEvaluationOutputBuilder {
     pub(crate) data_source_config: ::std::option::Option<crate::types::DataSourceConfig>,
     pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) evaluation_results: ::std::option::Option<crate::types::EvaluationJobResults>,
+    pub(crate) insight_results: ::std::option::Option<::std::vec::Vec<crate::types::InsightResult>>,
     pub(crate) failure_analysis_result: ::std::option::Option<crate::types::FailureAnalysisResultContent>,
     pub(crate) user_intent_result: ::std::option::Option<crate::types::UserIntentClusteringResultContent>,
     pub(crate) execution_summary_result: ::std::option::Option<crate::types::ExecutionSummaryClusteringResultContent>,
@@ -311,6 +320,26 @@ impl GetBatchEvaluationOutputBuilder {
     pub fn get_evaluation_results(&self) -> &::std::option::Option<crate::types::EvaluationJobResults> {
         &self.evaluation_results
     }
+    /// Appends an item to `insight_results`.
+    ///
+    /// To override the contents of this collection use [`set_insight_results`](Self::set_insight_results).
+    ///
+    /// <p>The insights generated when the batch evaluation includes the <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related failures found across the evaluated sessions. An empty list means that no failures were found. If the analysis fails, this field is omitted and <code>errorDetails</code> describes the error.</p>
+    pub fn insight_results(mut self, input: crate::types::InsightResult) -> Self {
+        let mut v = self.insight_results.unwrap_or_default();
+        v.push(input);
+        self.insight_results = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The insights generated when the batch evaluation includes the <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related failures found across the evaluated sessions. An empty list means that no failures were found. If the analysis fails, this field is omitted and <code>errorDetails</code> describes the error.</p>
+    pub fn set_insight_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightResult>>) -> Self {
+        self.insight_results = input;
+        self
+    }
+    /// <p>The insights generated when the batch evaluation includes the <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related failures found across the evaluated sessions. An empty list means that no failures were found. If the analysis fails, this field is omitted and <code>errorDetails</code> describes the error.</p>
+    pub fn get_insight_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightResult>> {
+        &self.insight_results
+    }
     /// <p>The failure analysis results from insights, containing categorized failure clusters with root causes and recommendations.</p>
     pub fn failure_analysis_result(mut self, input: crate::types::FailureAnalysisResultContent) -> Self {
         self.failure_analysis_result = ::std::option::Option::Some(input);
@@ -471,6 +500,7 @@ impl GetBatchEvaluationOutputBuilder {
             data_source_config: self.data_source_config,
             output_config: self.output_config,
             evaluation_results: self.evaluation_results,
+            insight_results: self.insight_results,
             failure_analysis_result: self.failure_analysis_result,
             user_intent_result: self.user_intent_result,
             execution_summary_result: self.execution_summary_result,

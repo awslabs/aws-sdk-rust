@@ -107,6 +107,8 @@ pub enum Error {
     InvalidAutoRollbackConfigException(crate::types::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::types::error::InvalidAutoScalingGroupException),
+    /// <p>The <code>autoScalingGroupProcessesToSuspend</code> list in <code>ec2DeploymentOptions</code> contains a process that is not valid. Valid values are <code>Terminate</code>, <code>AZRebalance</code>, <code>InstanceRefresh</code>, and <code>ScheduledActions</code>. Process names are case sensitive.</p>
+    InvalidAutoScalingGroupProcessToSuspendException(crate::types::error::InvalidAutoScalingGroupProcessToSuspendException),
     /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
     InvalidBlueGreenDeploymentConfigurationException(crate::types::error::InvalidBlueGreenDeploymentConfigurationException),
     /// <p>The bucket name either doesn't exist or was specified in an invalid format.</p>
@@ -304,6 +306,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidArnException(inner) => inner.fmt(f),
             Error::InvalidAutoRollbackConfigException(inner) => inner.fmt(f),
             Error::InvalidAutoScalingGroupException(inner) => inner.fmt(f),
+            Error::InvalidAutoScalingGroupProcessToSuspendException(inner) => inner.fmt(f),
             Error::InvalidBlueGreenDeploymentConfigurationException(inner) => inner.fmt(f),
             Error::InvalidBucketNameFilterException(inner) => inner.fmt(f),
             Error::InvalidComputePlatformException(inner) => inner.fmt(f),
@@ -435,6 +438,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidArnException(inner) => inner.meta(),
             Self::InvalidAutoRollbackConfigException(inner) => inner.meta(),
             Self::InvalidAutoScalingGroupException(inner) => inner.meta(),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(inner) => inner.meta(),
             Self::InvalidBlueGreenDeploymentConfigurationException(inner) => inner.meta(),
             Self::InvalidBucketNameFilterException(inner) => inner.meta(),
             Self::InvalidComputePlatformException(inner) => inner.meta(),
@@ -981,6 +985,9 @@ impl From<crate::operation::create_deployment::CreateDeploymentError> for Error 
             crate::operation::create_deployment::CreateDeploymentError::InvalidAutoScalingGroupException(inner) => {
                 Error::InvalidAutoScalingGroupException(inner)
             }
+            crate::operation::create_deployment::CreateDeploymentError::InvalidAutoScalingGroupProcessToSuspendException(inner) => {
+                Error::InvalidAutoScalingGroupProcessToSuspendException(inner)
+            }
             crate::operation::create_deployment::CreateDeploymentError::InvalidComputePlatformException(inner) => {
                 Error::InvalidComputePlatformException(inner)
             }
@@ -1125,6 +1132,9 @@ impl From<crate::operation::create_deployment_group::CreateDeploymentGroupError>
             }
             crate::operation::create_deployment_group::CreateDeploymentGroupError::InvalidAutoScalingGroupException(inner) => {
                 Error::InvalidAutoScalingGroupException(inner)
+            }
+            crate::operation::create_deployment_group::CreateDeploymentGroupError::InvalidAutoScalingGroupProcessToSuspendException(inner) => {
+                Error::InvalidAutoScalingGroupProcessToSuspendException(inner)
             }
             crate::operation::create_deployment_group::CreateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException(inner) => {
                 Error::InvalidBlueGreenDeploymentConfigurationException(inner)
@@ -2498,6 +2508,9 @@ impl From<crate::operation::update_deployment_group::UpdateDeploymentGroupError>
             crate::operation::update_deployment_group::UpdateDeploymentGroupError::InvalidAutoScalingGroupException(inner) => {
                 Error::InvalidAutoScalingGroupException(inner)
             }
+            crate::operation::update_deployment_group::UpdateDeploymentGroupError::InvalidAutoScalingGroupProcessToSuspendException(inner) => {
+                Error::InvalidAutoScalingGroupProcessToSuspendException(inner)
+            }
             crate::operation::update_deployment_group::UpdateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException(inner) => {
                 Error::InvalidBlueGreenDeploymentConfigurationException(inner)
             }
@@ -2613,6 +2626,7 @@ impl ::std::error::Error for Error {
             Error::InvalidArnException(inner) => inner.source(),
             Error::InvalidAutoRollbackConfigException(inner) => inner.source(),
             Error::InvalidAutoScalingGroupException(inner) => inner.source(),
+            Error::InvalidAutoScalingGroupProcessToSuspendException(inner) => inner.source(),
             Error::InvalidBlueGreenDeploymentConfigurationException(inner) => inner.source(),
             Error::InvalidBucketNameFilterException(inner) => inner.source(),
             Error::InvalidComputePlatformException(inner) => inner.source(),
@@ -2730,6 +2744,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidArnException(e) => e.request_id(),
             Self::InvalidAutoRollbackConfigException(e) => e.request_id(),
             Self::InvalidAutoScalingGroupException(e) => e.request_id(),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(e) => e.request_id(),
             Self::InvalidBlueGreenDeploymentConfigurationException(e) => e.request_id(),
             Self::InvalidBucketNameFilterException(e) => e.request_id(),
             Self::InvalidComputePlatformException(e) => e.request_id(),

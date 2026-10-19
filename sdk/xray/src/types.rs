@@ -33,6 +33,8 @@ pub use crate::types::_indexing_rule::IndexingRule;
 
 pub use crate::types::_sampling_rule_update::SamplingRuleUpdate;
 
+pub use crate::types::_cloud_watch_logs_configuration::CloudWatchLogsConfiguration;
+
 pub use crate::types::_trace::Trace;
 
 pub use crate::types::_tag::Tag;
@@ -162,6 +164,8 @@ mod _anomalous_service;
 mod _availability_zone_detail;
 
 mod _backend_connection_errors;
+
+mod _cloud_watch_logs_configuration;
 
 mod _edge;
 

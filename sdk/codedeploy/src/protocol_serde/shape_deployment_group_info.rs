@@ -165,6 +165,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "ec2DeploymentOptions" => {
+                            builder = builder.set_ec2_deployment_options(
+                                crate::protocol_serde::shape_ec2_deployment_options::de_ec2_deployment_options(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "terminationHookEnabled" => {
                             builder =
                                 builder.set_termination_hook_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

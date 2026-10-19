@@ -224,6 +224,11 @@ where
                                 crate::protocol_serde::shape_alarm_configuration::de_alarm_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "ec2DeploymentOptions" => {
+                            builder = builder.set_ec2_deployment_options(
+                                crate::protocol_serde::shape_ec2_deployment_options::de_ec2_deployment_options(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

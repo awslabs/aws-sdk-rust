@@ -6,7 +6,7 @@ pub struct CreateWorkspaceServiceAccountInput {
     /// <p>A name for the service account. The name must be unique within the workspace, as it determines the ID associated with the service account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub grafana_role: ::std::option::Option<crate::types::Role>,
     /// <p>The ID of the workspace within which to create the service account.</p>
@@ -18,7 +18,7 @@ impl CreateWorkspaceServiceAccountInput {
         self.name.as_deref()
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn grafana_role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.grafana_role.as_ref()
@@ -60,7 +60,7 @@ impl CreateWorkspaceServiceAccountInputBuilder {
         &self.name
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     /// This field is required.
     pub fn grafana_role(mut self, input: crate::types::Role) -> Self {
@@ -68,14 +68,14 @@ impl CreateWorkspaceServiceAccountInputBuilder {
         self
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn set_grafana_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.grafana_role = input;
         self
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn get_grafana_role(&self) -> &::std::option::Option<crate::types::Role> {
         &self.grafana_role

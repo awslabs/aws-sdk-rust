@@ -17,6 +17,8 @@ pub enum Error {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Indicates invalid input parameters in the request.</p>
     ValidationException(crate::types::error::ValidationException),
+    /// <p>The volume has a previous modification that is still in progress, or has reached the limit of four modifications in a rolling 24-hour period. Wait for the current modification to finish, or wait until the time indicated in the error message, and then retry the request.</p>
+    VolumeModificationRateExceededException(crate::types::error::VolumeModificationRateExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -36,6 +38,7 @@ impl ::std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
+            Error::VolumeModificationRateExceededException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -64,6 +67,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
+            Self::VolumeModificationRateExceededException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -399,6 +403,37 @@ impl From<crate::operation::list_workspace_instances::ListWorkspaceInstancesErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_volume::ModifyVolumeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_volume::ModifyVolumeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_volume::ModifyVolumeError> for Error {
+    fn from(err: crate::operation::modify_volume::ModifyVolumeError) -> Self {
+        match err {
+            crate::operation::modify_volume::ModifyVolumeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::modify_volume::ModifyVolumeError::VolumeModificationRateExceededException(inner) => {
+                Error::VolumeModificationRateExceededException(inner)
+            }
+            crate::operation::modify_volume::ModifyVolumeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -461,6 +496,7 @@ impl ::std::error::Error for Error {
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
+            Error::VolumeModificationRateExceededException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -475,6 +511,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
+            Self::VolumeModificationRateExceededException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

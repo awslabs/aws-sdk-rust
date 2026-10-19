@@ -39,23 +39,32 @@ pub fn ser_agentic_retrieve_stream_input_input(
         crate::protocol_serde::shape_agentic_retrieve_policy_configuration::ser_agentic_retrieve_policy_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.retrievers {
-        let mut array_14 = object.key("retrievers").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.retrieval_instruction_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("retrievalInstructionConfiguration").start_object();
+        crate::protocol_serde::shape_agentic_retrieve_instruction_configuration::ser_agentic_retrieve_instruction_configuration(
+            &mut object_14,
+            var_13,
+        )?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.retrievers {
+        let mut array_16 = object.key("retrievers").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_agentic_retriever::ser_agentic_retriever(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_agentic_retriever::ser_agentic_retriever(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.user_context {
+    if let Some(var_19) = &input.user_context {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("userContext").start_object();
-        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_20 = object.key("userContext").start_object();
+        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

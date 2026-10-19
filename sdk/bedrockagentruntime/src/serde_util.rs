@@ -733,6 +733,15 @@ pub(crate) fn video_segment_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn agentic_retrieve_applied_instruction_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveAppliedInstructionBuilder,
+) -> crate::types::builders::AgenticRetrieveAppliedInstructionBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn agentic_retrieve_result_item_correct_errors(
     mut builder: crate::types::builders::AgenticRetrieveResultItemBuilder,
 ) -> crate::types::builders::AgenticRetrieveResultItemBuilder {

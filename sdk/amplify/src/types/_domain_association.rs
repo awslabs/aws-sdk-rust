@@ -46,7 +46,7 @@ pub struct DomainAssociation {
     /// AWAITING_APP_CNAME
     /// </dt>
     /// <dd>
-    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i>Amplify Hosting User Guide</i>.</p>
+    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i> Amplify Hosting User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// UPDATE_COMPLETE
@@ -131,7 +131,7 @@ impl DomainAssociation {
     /// AWAITING_APP_CNAME
     /// </dt>
     /// <dd>
-    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i>Amplify Hosting User Guide</i>.</p>
+    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i> Amplify Hosting User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// UPDATE_COMPLETE
@@ -317,7 +317,7 @@ impl DomainAssociationBuilder {
     /// AWAITING_APP_CNAME
     /// </dt>
     /// <dd>
-    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i>Amplify Hosting User Guide</i>.</p>
+    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i> Amplify Hosting User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// UPDATE_COMPLETE
@@ -366,7 +366,7 @@ impl DomainAssociationBuilder {
     /// AWAITING_APP_CNAME
     /// </dt>
     /// <dd>
-    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i>Amplify Hosting User Guide</i>.</p>
+    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i> Amplify Hosting User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// UPDATE_COMPLETE
@@ -415,7 +415,7 @@ impl DomainAssociationBuilder {
     /// AWAITING_APP_CNAME
     /// </dt>
     /// <dd>
-    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i>Amplify Hosting User Guide</i>.</p>
+    /// <p>Amplify is waiting for CNAME records corresponding to subdomains to be propagated. If your custom domain is on Route&nbsp;53, Amplify handles this for you automatically. For more information about custom domains, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting up custom domains</a> in the <i> Amplify Hosting User Guide</i>.</p>
     /// </dd>
     /// <dt>
     /// UPDATE_COMPLETE

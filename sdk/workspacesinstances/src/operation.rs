@@ -34,6 +34,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListWorkspaceInstances` operation.
 pub mod list_workspace_instances;
 
+/// Types for the `ModifyVolume` operation.
+pub mod modify_volume;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

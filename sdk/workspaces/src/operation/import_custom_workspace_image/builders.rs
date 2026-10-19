@@ -239,4 +239,18 @@ impl ImportCustomWorkspaceImageFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn image_validation_mode(mut self, input: crate::types::ImageValidationMode) -> Self {
+        self.inner = self.inner.image_validation_mode(input);
+        self
+    }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn set_image_validation_mode(mut self, input: ::std::option::Option<crate::types::ImageValidationMode>) -> Self {
+        self.inner = self.inner.set_image_validation_mode(input);
+        self
+    }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn get_image_validation_mode(&self) -> &::std::option::Option<crate::types::ImageValidationMode> {
+        self.inner.get_image_validation_mode()
+    }
 }

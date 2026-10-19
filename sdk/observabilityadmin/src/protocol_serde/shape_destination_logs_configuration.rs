@@ -27,6 +27,9 @@ pub fn ser_destination_logs_configuration(
         crate::protocol_serde::shape_tag_propagation_configuration::ser_tag_propagation_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.log_group_deletion_protection {
+        object.key("LogGroupDeletionProtection").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -82,6 +85,13 @@ where
                                     _value,
                                     depth + 1,
                                 )?,
+                            );
+                        }
+                        "LogGroupDeletionProtection" => {
+                            builder = builder.set_log_group_deletion_protection(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DeletionProtection::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

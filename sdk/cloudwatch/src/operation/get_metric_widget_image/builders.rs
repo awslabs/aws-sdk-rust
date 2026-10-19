@@ -22,7 +22,9 @@ impl crate::operation::get_metric_widget_image::builders::GetMetricWidgetImageIn
 }
 /// Fluent builder constructing a request to `GetMetricWidgetImage`.
 ///
-/// <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your own custom live dashboard.</p>
+/// <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your own custom live dashboard.</p><note>
+/// <p><code>GetMetricWidgetImage</code> is not available in the Amazon Web Services GovCloud (US) Regions. In those Regions, calls to this operation fail. For the list of Amazon CloudWatch features that are not available in Amazon Web Services GovCloud (US), see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-cw.html">Amazon CloudWatch in Amazon Web Services GovCloud (US)</a>.</p>
+/// </note>
 /// <p>The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and vertical annotations.</p>
 /// <p>There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code> action has the following limits:</p>
 /// <ul>

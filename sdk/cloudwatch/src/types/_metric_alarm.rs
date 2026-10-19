@@ -76,6 +76,8 @@ pub struct MetricAlarm {
     pub evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     /// <p>The frequency, in seconds, at which the alarm is evaluated.</p>
     pub evaluation_interval: ::std::option::Option<i32>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl MetricAlarm {
     /// <p>The name of the alarm.</p>
@@ -226,6 +228,10 @@ impl MetricAlarm {
     pub fn evaluation_interval(&self) -> ::std::option::Option<i32> {
         self.evaluation_interval
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl MetricAlarm {
     /// Creates a new builder-style object to manufacture [`MetricAlarm`](crate::types::MetricAlarm).
@@ -271,6 +277,7 @@ pub struct MetricAlarmBuilder {
     pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
     pub(crate) evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     pub(crate) evaluation_interval: ::std::option::Option<i32>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl MetricAlarmBuilder {
     /// <p>The name of the alarm.</p>
@@ -783,6 +790,20 @@ impl MetricAlarmBuilder {
     pub fn get_evaluation_interval(&self) -> &::std::option::Option<i32> {
         &self.evaluation_interval
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`MetricAlarm`](crate::types::MetricAlarm).
     pub fn build(self) -> crate::types::MetricAlarm {
         crate::types::MetricAlarm {
@@ -819,6 +840,7 @@ impl MetricAlarmBuilder {
             warm_up_configuration: self.warm_up_configuration,
             evaluation_criteria: self.evaluation_criteria,
             evaluation_interval: self.evaluation_interval,
+            action_configuration: self.action_configuration,
         }
     }
 }

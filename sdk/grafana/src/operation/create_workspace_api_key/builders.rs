@@ -22,7 +22,7 @@ impl crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKey
 }
 /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
 ///
-/// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p><note>
+/// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"></a> for available APIs and example requests.</p><note>
 /// <p>In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -197,7 +197,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon ECS, the valid value is <code>ACTION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon EventBridge Event Bus (Custom), the valid values are <code>INFO_LOGS</code> and <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
@@ -205,7 +209,7 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
+    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, <code>PCS_SCHEDULER_AUDIT_LOGS</code>, and <code>PCS_SCALING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -276,7 +280,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon ECS, the valid value is <code>ACTION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon EventBridge Event Bus (Custom), the valid values are <code>INFO_LOGS</code> and <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
@@ -284,7 +292,7 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
+    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, <code>PCS_SCHEDULER_AUDIT_LOGS</code>, and <code>PCS_SCALING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>
@@ -355,7 +363,11 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Elemental MediaTailor, the valid values are <code>AD_DECISION_SERVER_LOGS</code>, <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p></li>
     /// <li>
+    /// <p>For Amazon ECS, the valid value is <code>ACTION_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Entity Resolution, the valid value is <code>WORKFLOW_LOGS</code>.</p></li>
+    /// <li>
+    /// <p>For Amazon EventBridge Event Bus (Custom), the valid values are <code>INFO_LOGS</code> and <code>ERROR_LOGS</code>.</p></li>
     /// <li>
     /// <p>For IAM Identity Center, the valid value is <code>ERROR_LOGS</code>.</p></li>
     /// <li>
@@ -363,7 +375,7 @@ impl PutDeliverySourceFluentBuilder {
     /// <li>
     /// <p>For Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p></li>
     /// <li>
-    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p></li>
+    /// <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>, <code>PCS_JOBCOMP_LOGS</code>, <code>PCS_SCHEDULER_AUDIT_LOGS</code>, and <code>PCS_SCALING_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Q, the valid values are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p></li>
     /// <li>

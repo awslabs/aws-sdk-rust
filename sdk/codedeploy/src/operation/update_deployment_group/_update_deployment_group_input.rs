@@ -51,6 +51,8 @@ pub struct UpdateDeploymentGroupInput {
     pub ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
     /// <p>Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.</p>
     pub on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
     /// <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into your Auto Scaling group when you update a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.</p>
     /// <p>For information about termination deployments, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -151,6 +153,10 @@ impl UpdateDeploymentGroupInput {
     pub fn on_premises_tag_set(&self) -> ::std::option::Option<&crate::types::OnPremisesTagSet> {
         self.on_premises_tag_set.as_ref()
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(&self) -> ::std::option::Option<&crate::types::Ec2DeploymentOptions> {
+        self.ec2_deployment_options.as_ref()
+    }
     /// <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into your Auto Scaling group when you update a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.</p>
     /// <p>For information about termination deployments, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -188,6 +194,7 @@ pub struct UpdateDeploymentGroupInputBuilder {
     pub(crate) ec2_tag_set: ::std::option::Option<crate::types::Ec2TagSet>,
     pub(crate) ecs_services: ::std::option::Option<::std::vec::Vec<crate::types::EcsService>>,
     pub(crate) on_premises_tag_set: ::std::option::Option<crate::types::OnPremisesTagSet>,
+    pub(crate) ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
     pub(crate) termination_hook_enabled: ::std::option::Option<bool>,
 }
 impl UpdateDeploymentGroupInputBuilder {
@@ -508,6 +515,20 @@ impl UpdateDeploymentGroupInputBuilder {
     pub fn get_on_premises_tag_set(&self) -> &::std::option::Option<crate::types::OnPremisesTagSet> {
         &self.on_premises_tag_set
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(mut self, input: crate::types::Ec2DeploymentOptions) -> Self {
+        self.ec2_deployment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn set_ec2_deployment_options(mut self, input: ::std::option::Option<crate::types::Ec2DeploymentOptions>) -> Self {
+        self.ec2_deployment_options = input;
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn get_ec2_deployment_options(&self) -> &::std::option::Option<crate::types::Ec2DeploymentOptions> {
+        &self.ec2_deployment_options
+    }
     /// <p>This parameter only applies if you are using CodeDeploy with Amazon EC2 Auto Scaling. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html">Integrating CodeDeploy with Amazon EC2 Auto Scaling</a> in the <i>CodeDeploy User Guide</i>.</p>
     /// <p>Set <code>terminationHookEnabled</code> to <code>true</code> to have CodeDeploy install a termination hook into your Auto Scaling group when you update a deployment group. When this hook is installed, CodeDeploy will perform termination deployments.</p>
     /// <p>For information about termination deployments, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors-hook-enable">Enabling termination deployments during Auto Scaling scale-in events</a> in the <i>CodeDeploy User Guide</i>.</p>
@@ -555,6 +576,7 @@ impl UpdateDeploymentGroupInputBuilder {
             ec2_tag_set: self.ec2_tag_set,
             ecs_services: self.ecs_services,
             on_premises_tag_set: self.on_premises_tag_set,
+            ec2_deployment_options: self.ec2_deployment_options,
             termination_hook_enabled: self.termination_hook_enabled,
         })
     }

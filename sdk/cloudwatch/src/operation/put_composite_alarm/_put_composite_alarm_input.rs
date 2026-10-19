@@ -97,6 +97,8 @@ pub struct PutCompositeAlarmInput {
     /// <p><code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
     /// </important>
     pub actions_suppressor_extension_period: ::std::option::Option<i32>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutCompositeAlarmInput {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
@@ -223,6 +225,10 @@ impl PutCompositeAlarmInput {
     pub fn actions_suppressor_extension_period(&self) -> ::std::option::Option<i32> {
         self.actions_suppressor_extension_period
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl PutCompositeAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutCompositeAlarmInput`](crate::operation::put_composite_alarm::PutCompositeAlarmInput).
@@ -246,6 +252,7 @@ pub struct PutCompositeAlarmInputBuilder {
     pub(crate) actions_suppressor: ::std::option::Option<::std::string::String>,
     pub(crate) actions_suppressor_wait_period: ::std::option::Option<i32>,
     pub(crate) actions_suppressor_extension_period: ::std::option::Option<i32>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutCompositeAlarmInputBuilder {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
@@ -644,6 +651,20 @@ impl PutCompositeAlarmInputBuilder {
     pub fn get_actions_suppressor_extension_period(&self) -> &::std::option::Option<i32> {
         &self.actions_suppressor_extension_period
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`PutCompositeAlarmInput`](crate::operation::put_composite_alarm::PutCompositeAlarmInput).
     pub fn build(
         self,
@@ -660,6 +681,7 @@ impl PutCompositeAlarmInputBuilder {
             actions_suppressor: self.actions_suppressor,
             actions_suppressor_wait_period: self.actions_suppressor_wait_period,
             actions_suppressor_extension_period: self.actions_suppressor_extension_period,
+            action_configuration: self.action_configuration,
         })
     }
 }

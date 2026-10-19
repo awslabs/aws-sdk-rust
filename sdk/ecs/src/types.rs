@@ -389,6 +389,8 @@ pub use crate::types::_service_connect_access_logging_format::ServiceConnectAcce
 
 pub use crate::types::_service_connect_include_query_parameters::ServiceConnectIncludeQueryParameters;
 
+pub use crate::types::_service_connect_container_configuration::ServiceConnectContainerConfiguration;
+
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfiguration;
 
 pub use crate::types::_vpc_lattice_advanced_configuration::VpcLatticeAdvancedConfiguration;
@@ -488,6 +490,8 @@ pub use crate::types::_deployment_lifecycle_hook_timeout_configuration::Deployme
 pub use crate::types::_timeout_configuration::TimeoutConfiguration;
 
 pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfiguration;
+
+pub use crate::types::_service_connect_container_log_level::ServiceConnectContainerLogLevel;
 
 pub use crate::types::_task_filesystem_type::TaskFilesystemType;
 
@@ -1076,6 +1080,10 @@ mod _service_connect_access_logging_format;
 mod _service_connect_client_alias;
 
 mod _service_connect_configuration;
+
+mod _service_connect_container_configuration;
+
+mod _service_connect_container_log_level;
 
 mod _service_connect_include_query_parameters;
 

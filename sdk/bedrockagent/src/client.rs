@@ -160,6 +160,10 @@ mod create_prompt;
 
 mod create_prompt_version;
 
+mod create_retrieval_instruction;
+
+mod create_retrieval_instruction_version;
+
 mod create_vpc_configuration;
 
 /// Operation customization and supporting types.
@@ -213,6 +217,8 @@ mod delete_prompt;
 
 mod delete_resource_policy;
 
+mod delete_retrieval_instruction;
+
 mod delete_vpc_configuration;
 
 mod disassociate_agent_collaborator;
@@ -249,6 +255,8 @@ mod get_prompt;
 
 mod get_resource_policy;
 
+mod get_retrieval_instruction;
+
 mod get_vpc_configuration;
 
 mod ingest_knowledge_base_documents;
@@ -280,6 +288,10 @@ mod list_knowledge_base_documents;
 mod list_knowledge_bases;
 
 mod list_prompts;
+
+mod list_retrieval_instruction_versions;
+
+mod list_retrieval_instructions;
 
 mod list_tags_for_resource;
 
@@ -318,5 +330,7 @@ mod update_flow_alias;
 mod update_knowledge_base;
 
 mod update_prompt;
+
+mod update_retrieval_instruction;
 
 mod validate_flow_definition;

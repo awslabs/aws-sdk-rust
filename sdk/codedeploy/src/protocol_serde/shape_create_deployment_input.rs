@@ -51,5 +51,11 @@ pub fn ser_create_deployment_input_input(
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.ec2_deployment_options {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("ec2DeploymentOptions").start_object();
+        crate::protocol_serde::shape_ec2_deployment_options::ser_ec2_deployment_options(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }

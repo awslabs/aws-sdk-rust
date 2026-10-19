@@ -9,6 +9,7 @@ pub enum HarnessGatewayOutboundAuth {
     /// <p>No authentication.</p>
     None,
     /// <p>OAuth 2.0 authentication via AgentCore Identity.</p>
+    /// <p>The <code>AUTHORIZATION_CODE</code> grant type is not supported for outbound authentication from a harness to an AgentCore Gateway, even when <code>defaultReturnUrl</code> is specified.</p>
     Oauth(crate::types::OAuthCredentialProvider),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

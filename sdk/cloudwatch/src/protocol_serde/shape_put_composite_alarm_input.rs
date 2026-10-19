@@ -61,6 +61,10 @@ pub fn ser_put_composite_alarm_input_input(
     if let Some(var_15) = &input.actions_suppressor_extension_period {
         encoder.str("ActionsSuppressorExtensionPeriod").integer(*var_15);
     }
+    if let Some(var_16) = &input.action_configuration {
+        encoder.str("ActionConfiguration");
+        crate::protocol_serde::shape_action_configuration::ser_action_configuration(encoder, var_16)?;
+    }
     encoder.end();
     Ok(())
 }

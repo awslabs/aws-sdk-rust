@@ -280,6 +280,15 @@ pub(crate) fn alarm_prom_ql_criteria_correct_errors(
     builder
 }
 
+pub(crate) fn alarm_tags_propagation_correct_errors(
+    mut builder: crate::types::builders::AlarmTagsPropagationBuilder,
+) -> crate::types::builders::AlarmTagsPropagationBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dimension_correct_errors(mut builder: crate::types::builders::DimensionBuilder) -> crate::types::builders::DimensionBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())

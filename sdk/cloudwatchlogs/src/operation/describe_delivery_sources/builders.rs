@@ -142,4 +142,23 @@ impl DescribeDeliverySourcesFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
+    ///
+    /// Appends an item to `resourceArns`.
+    ///
+    /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
+    ///
+    /// <p>An array of Amazon Resource Names (ARNs) that filters the results to delivery sources associated with any specified ARN.</p>
+    pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.resource_arns(input.into());
+        self
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) that filters the results to delivery sources associated with any specified ARN.</p>
+    pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_resource_arns(input);
+        self
+    }
+    /// <p>An array of Amazon Resource Names (ARNs) that filters the results to delivery sources associated with any specified ARN.</p>
+    pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_resource_arns()
+    }
 }

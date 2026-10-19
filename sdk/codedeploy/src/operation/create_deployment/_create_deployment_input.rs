@@ -58,6 +58,8 @@ pub struct CreateDeploymentInput {
     /// <p>If you specify an <code>overrideAlarmConfiguration</code>, you need the <code>UpdateDeploymentGroup</code> IAM permission when calling <code>CreateDeployment</code>.</p>
     /// </note>
     pub override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
 }
 impl CreateDeploymentInput {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
@@ -138,6 +140,10 @@ impl CreateDeploymentInput {
     pub fn override_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.override_alarm_configuration.as_ref()
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(&self) -> ::std::option::Option<&crate::types::Ec2DeploymentOptions> {
+        self.ec2_deployment_options.as_ref()
+    }
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
@@ -162,6 +168,7 @@ pub struct CreateDeploymentInputBuilder {
     pub(crate) file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
     pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     pub(crate) override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
 }
 impl CreateDeploymentInputBuilder {
     /// <p>The name of an CodeDeploy application associated with the user or Amazon Web Services account.</p>
@@ -423,6 +430,20 @@ impl CreateDeploymentInputBuilder {
     pub fn get_override_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.override_alarm_configuration
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(mut self, input: crate::types::Ec2DeploymentOptions) -> Self {
+        self.ec2_deployment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn set_ec2_deployment_options(mut self, input: ::std::option::Option<crate::types::Ec2DeploymentOptions>) -> Self {
+        self.ec2_deployment_options = input;
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn get_ec2_deployment_options(&self) -> &::std::option::Option<crate::types::Ec2DeploymentOptions> {
+        &self.ec2_deployment_options
+    }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
@@ -440,6 +461,7 @@ impl CreateDeploymentInputBuilder {
             file_exists_behavior: self.file_exists_behavior,
             deployment_mode: self.deployment_mode,
             override_alarm_configuration: self.override_alarm_configuration,
+            ec2_deployment_options: self.ec2_deployment_options,
         })
     }
 }

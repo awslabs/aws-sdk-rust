@@ -129,8 +129,14 @@ pub fn ser_create_deployment_group_input_input(
         }
         array_40.finish();
     }
-    if let Some(var_43) = &input.termination_hook_enabled {
-        object.key("terminationHookEnabled").boolean(*var_43);
+    if let Some(var_43) = &input.ec2_deployment_options {
+        #[allow(unused_mut)]
+        let mut object_44 = object.key("ec2DeploymentOptions").start_object();
+        crate::protocol_serde::shape_ec2_deployment_options::ser_ec2_deployment_options(&mut object_44, var_43)?;
+        object_44.finish();
+    }
+    if let Some(var_45) = &input.termination_hook_enabled {
+        object.key("terminationHookEnabled").boolean(*var_45);
     }
     Ok(())
 }

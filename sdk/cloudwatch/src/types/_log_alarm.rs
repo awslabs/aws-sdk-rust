@@ -53,6 +53,8 @@ pub struct LogAlarm {
     /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl LogAlarm {
     /// <p>The name of the alarm.</p>
@@ -156,6 +158,10 @@ impl LogAlarm {
     pub fn warm_up_configuration(&self) -> ::std::option::Option<&crate::types::WarmUpConfiguration> {
         self.warm_up_configuration.as_ref()
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl LogAlarm {
     /// Creates a new builder-style object to manufacture [`LogAlarm`](crate::types::LogAlarm).
@@ -191,6 +197,7 @@ pub struct LogAlarmBuilder {
     pub(crate) action_log_line_count: ::std::option::Option<i32>,
     pub(crate) action_log_line_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl LogAlarmBuilder {
     /// <p>The name of the alarm.</p>
@@ -542,6 +549,20 @@ impl LogAlarmBuilder {
     pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
         &self.warm_up_configuration
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`LogAlarm`](crate::types::LogAlarm).
     pub fn build(self) -> crate::types::LogAlarm {
         crate::types::LogAlarm {
@@ -568,6 +589,7 @@ impl LogAlarmBuilder {
             action_log_line_count: self.action_log_line_count,
             action_log_line_role_arn: self.action_log_line_role_arn,
             warm_up_configuration: self.warm_up_configuration,
+            action_configuration: self.action_configuration,
         }
     }
 }

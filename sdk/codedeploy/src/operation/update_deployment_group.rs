@@ -373,6 +373,8 @@ pub enum UpdateDeploymentGroupError {
     InvalidAutoRollbackConfigException(crate::types::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::types::error::InvalidAutoScalingGroupException),
+    /// <p>The <code>autoScalingGroupProcessesToSuspend</code> list in <code>ec2DeploymentOptions</code> contains a process that is not valid. Valid values are <code>Terminate</code>, <code>AZRebalance</code>, <code>InstanceRefresh</code>, and <code>ScheduledActions</code>. Process names are case sensitive.</p>
+    InvalidAutoScalingGroupProcessToSuspendException(crate::types::error::InvalidAutoScalingGroupProcessToSuspendException),
     /// <p>The configuration for the blue/green deployment group was provided in an invalid format. For information about deployment configuration format, see <code>CreateDeploymentConfig</code>.</p>
     InvalidBlueGreenDeploymentConfigurationException(crate::types::error::InvalidBlueGreenDeploymentConfigurationException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
@@ -456,6 +458,7 @@ impl UpdateDeploymentGroupError {
             Self::InvalidApplicationNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoRollbackConfigException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoScalingGroupException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidBlueGreenDeploymentConfigurationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentConfigNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentGroupNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -525,6 +528,10 @@ impl UpdateDeploymentGroupError {
     /// Returns `true` if the error kind is `UpdateDeploymentGroupError::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(self, Self::InvalidAutoScalingGroupException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDeploymentGroupError::InvalidAutoScalingGroupProcessToSuspendException`.
+    pub fn is_invalid_auto_scaling_group_process_to_suspend_exception(&self) -> bool {
+        matches!(self, Self::InvalidAutoScalingGroupProcessToSuspendException(_))
     }
     /// Returns `true` if the error kind is `UpdateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException`.
     pub fn is_invalid_blue_green_deployment_configuration_exception(&self) -> bool {
@@ -618,6 +625,7 @@ impl ::std::error::Error for UpdateDeploymentGroupError {
             Self::InvalidApplicationNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::std::option::Option::Some(_inner),
@@ -656,6 +664,7 @@ impl ::std::fmt::Display for UpdateDeploymentGroupError {
             Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
             Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
             Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => _inner.fmt(f),
             Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
@@ -708,6 +717,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDeploym
             Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidBlueGreenDeploymentConfigurationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

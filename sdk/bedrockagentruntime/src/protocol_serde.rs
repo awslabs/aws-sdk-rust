@@ -185,6 +185,8 @@ pub(crate) mod shape_agent_action_group;
 
 pub(crate) mod shape_agentic_retrieve_configuration;
 
+pub(crate) mod shape_agentic_retrieve_instruction_configuration;
+
 pub(crate) mod shape_agentic_retrieve_memory_configuration;
 
 pub(crate) mod shape_agentic_retrieve_message;
@@ -594,6 +596,8 @@ pub(crate) mod shape_video_segment;
 pub(crate) mod shape_agent_traces;
 
 pub(crate) mod shape_agentic_retrieve_actions;
+
+pub(crate) mod shape_agentic_retrieve_applied_instruction;
 
 pub(crate) mod shape_agentic_retrieve_citation_list;
 

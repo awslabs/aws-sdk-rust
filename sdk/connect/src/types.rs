@@ -225,6 +225,8 @@ pub use crate::types::_vocabulary::Vocabulary;
 
 pub use crate::types::_workspace::Workspace;
 
+pub use crate::types::_content_disposition::ContentDisposition;
+
 pub use crate::types::_created_by_info::CreatedByInfo;
 
 pub use crate::types::_download_url_metadata::DownloadUrlMetadata;
@@ -1914,6 +1916,8 @@ mod _contact_search_summary_segment_attribute_value;
 mod _contact_state;
 
 mod _content_attributes;
+
+mod _content_disposition;
 
 mod _control_plane_attribute_filter;
 

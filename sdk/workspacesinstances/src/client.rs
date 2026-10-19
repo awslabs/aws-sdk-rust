@@ -185,6 +185,8 @@ mod list_tags_for_resource;
 
 mod list_workspace_instances;
 
+mod modify_volume;
+
 mod tag_resource;
 
 mod untag_resource;

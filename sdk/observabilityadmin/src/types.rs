@@ -107,6 +107,8 @@ pub use crate::types::_log_group_name_configuration::LogGroupNameConfiguration;
 
 pub use crate::types::_tag_propagation_configuration::TagPropagationConfiguration;
 
+pub use crate::types::_deletion_protection::DeletionProtection;
+
 pub use crate::types::_metrics_backup_configuration::MetricsBackupConfiguration;
 
 pub use crate::types::_output_format::OutputFormat;
@@ -182,6 +184,8 @@ mod _context_graph_status;
 mod _data_source;
 
 mod _dataset_integration_summary;
+
+mod _deletion_protection;
 
 mod _destination_logs_configuration;
 

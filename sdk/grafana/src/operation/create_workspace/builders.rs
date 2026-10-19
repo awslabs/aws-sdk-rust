@@ -156,7 +156,7 @@ impl CreateWorkspaceFluentBuilder {
     /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html"> Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.inner = self.inner.permission_type(input);
         self
@@ -166,7 +166,7 @@ impl CreateWorkspaceFluentBuilder {
     /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html"> Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
@@ -176,7 +176,7 @@ impl CreateWorkspaceFluentBuilder {
     /// <p>The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.</p><note>
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation.</p>
     /// </note>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html"> Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
     pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
         self.inner.get_permission_type()
     }
@@ -304,17 +304,17 @@ impl CreateWorkspaceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_authentication_providers`](Self::set_authentication_providers).
     ///
-    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana </a>.</p>
     pub fn authentication_providers(mut self, input: crate::types::AuthenticationProviderTypes) -> Self {
         self.inner = self.inner.authentication_providers(input);
         self
     }
-    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana </a>.</p>
     pub fn set_authentication_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>) -> Self {
         self.inner = self.inner.set_authentication_providers(input);
         self
     }
-    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana </a>.</p>
     pub fn get_authentication_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>> {
         self.inner.get_authentication_providers()
     }

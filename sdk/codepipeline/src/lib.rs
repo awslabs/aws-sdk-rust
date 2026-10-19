@@ -59,7 +59,7 @@
 //!   - DisableStageTransition, which prevents artifacts from transitioning to the next stage in a pipeline.
 //!   - EnableStageTransition, which enables transition of artifacts between stages in a pipeline.
 //!
-//! __Using the API to integrate with CodePipeline__
+//! __Using the API to integrate with CodePipeline __
 //!
 //! For third-party integrators or developers who want to create their own integrations with CodePipeline, the expected sequence varies from the standard API user. To integrate with CodePipeline, developers need to work with the following items:
 //!
@@ -93,7 +93,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codepipeline = "1.125.0"
+//! aws-sdk-codepipeline = "1.126.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

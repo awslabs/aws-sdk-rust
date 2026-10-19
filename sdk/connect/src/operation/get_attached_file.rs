@@ -302,6 +302,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAttachedF
                     ));
                 }
                 query.push_kv("associatedResourceArn", &::aws_smithy_http::query::fmt_string(inner_4));
+                if let ::std::option::Option::Some(inner_5) = &_input.url_content_disposition {
+                    {
+                        query.push_kv("urlContentDisposition", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -168,7 +168,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Systems Manager Incident Manager Contacts | [aws-sdk-ssmcontacts](https://crates.io/crates/aws-sdk-ssmcontacts) ([docs](https://docs.rs/aws-sdk-ssmcontacts)) |
 | AWS Systems Manager QuickSetup | [aws-sdk-ssmquicksetup](https://crates.io/crates/aws-sdk-ssmquicksetup) ([docs](https://docs.rs/aws-sdk-ssmquicksetup)) |
 | AWS Systems Manager for SAP | [aws-sdk-ssmsap](https://crates.io/crates/aws-sdk-ssmsap) ([docs](https://docs.rs/aws-sdk-ssmsap)) |
-| AWS Telco Network Builder | [aws-sdk-tnb](https://crates.io/crates/aws-sdk-tnb) ([docs](https://docs.rs/aws-sdk-tnb)) |
 | AWS Transfer Family | [aws-sdk-transfer](https://crates.io/crates/aws-sdk-transfer) ([docs](https://docs.rs/aws-sdk-transfer)) |
 | AWS User Experience Customization | [aws-sdk-uxc](https://crates.io/crates/aws-sdk-uxc) ([docs](https://docs.rs/aws-sdk-uxc)) |
 | AWS User Notifications | [aws-sdk-notifications](https://crates.io/crates/aws-sdk-notifications) ([docs](https://docs.rs/aws-sdk-notifications)) |
@@ -395,8 +394,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Elastic Disaster Recovery Service | [aws-sdk-drs](https://crates.io/crates/aws-sdk-drs) ([docs](https://docs.rs/aws-sdk-drs)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancing](https://crates.io/crates/aws-sdk-elasticloadbalancing) ([docs](https://docs.rs/aws-sdk-elasticloadbalancing)) |
 | Elastic Load Balancing | [aws-sdk-elasticloadbalancingv2](https://crates.io/crates/aws-sdk-elasticloadbalancingv2) ([docs](https://docs.rs/aws-sdk-elasticloadbalancingv2)) |
-| FinSpace Public API | [aws-sdk-finspacedata](https://crates.io/crates/aws-sdk-finspacedata) ([docs](https://docs.rs/aws-sdk-finspacedata)) |
-| FinSpace User Environment Management service | [aws-sdk-finspace](https://crates.io/crates/aws-sdk-finspace) ([docs](https://docs.rs/aws-sdk-finspace)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
 | IAM Roles Anywhere | [aws-sdk-rolesanywhere](https://crates.io/crates/aws-sdk-rolesanywhere) ([docs](https://docs.rs/aws-sdk-rolesanywhere)) |
 | IAM Toolbox (Preview) | [aws-sdk-iamtoolbox](https://crates.io/crates/aws-sdk-iamtoolbox) ([docs](https://docs.rs/aws-sdk-iamtoolbox)) |

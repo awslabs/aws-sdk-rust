@@ -341,6 +341,26 @@ where
                             builder =
                                 builder.set_catalog_sync_interval(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
                         }
+                        "upgradePachaTree" => {
+                            builder = builder.set_upgrade_pacha_tree(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "walBufferSize" => {
+                            builder = builder.set_wal_buffer_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "snapshotSize" => {
+                            builder = builder.set_snapshot_size(crate::protocol_serde::shape_percent_or_absolute_long::de_percent_or_absolute_long(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "snapshotDuration" => {
+                            builder = builder.set_snapshot_duration(crate::protocol_serde::shape_duration::de_duration(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -647,6 +667,27 @@ pub fn ser_influx_dbv3_enterprise_parameters(
         let mut object_70 = object.key("catalogSyncInterval").start_object();
         crate::protocol_serde::shape_duration::ser_duration(&mut object_70, var_69)?;
         object_70.finish();
+    }
+    if let Some(var_71) = &input.upgrade_pacha_tree {
+        object.key("upgradePachaTree").boolean(*var_71);
+    }
+    if let Some(var_72) = &input.wal_buffer_size {
+        object.key("walBufferSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_72).into()),
+        );
+    }
+    if let Some(var_73) = &input.snapshot_size {
+        #[allow(unused_mut)]
+        let mut object_74 = object.key("snapshotSize").start_object();
+        crate::protocol_serde::shape_percent_or_absolute_long::ser_percent_or_absolute_long(&mut object_74, var_73)?;
+        object_74.finish();
+    }
+    if let Some(var_75) = &input.snapshot_duration {
+        #[allow(unused_mut)]
+        let mut object_76 = object.key("snapshotDuration").start_object();
+        crate::protocol_serde::shape_duration::ser_duration(&mut object_76, var_75)?;
+        object_76.finish();
     }
     Ok(())
 }

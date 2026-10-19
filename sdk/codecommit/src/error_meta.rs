@@ -111,7 +111,7 @@ pub enum Error {
     FileNameConflictsWithDirectoryNameException(crate::types::error::FileNameConflictsWithDirectoryNameException),
     /// <p>The commit cannot be created because a specified file path points to a submodule. Verify that the destination files have valid file paths that do not point to a submodule.</p>
     FilePathConflictsWithSubmodulePathException(crate::types::error::FilePathConflictsWithSubmodulePathException),
-    /// <p>The specified file exceeds the file size limit for CodeCommit. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
+    /// <p>The specified file exceeds the file size limit for CodeCommit. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i> CodeCommit User Guide</i>.</p>
     FileTooLargeException(crate::types::error::FileTooLargeException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
     FolderContentSizeLimitExceededException(crate::types::error::FolderContentSizeLimitExceededException),
@@ -127,9 +127,9 @@ pub enum Error {
     InvalidApprovalRuleNameException(crate::types::error::InvalidApprovalRuleNameException),
     /// <p>The content of the approval rule template is not valid.</p>
     InvalidApprovalRuleTemplateContentException(crate::types::error::InvalidApprovalRuleTemplateContentException),
-    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i> CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i> CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
     /// <p>The state for the approval is not valid. Valid values include APPROVE and REVOKE.</p>
     InvalidApprovalStateException(crate::types::error::InvalidApprovalStateException),
@@ -195,7 +195,7 @@ pub enum Error {
     InvalidPullRequestStatusUpdateException(crate::types::error::InvalidPullRequestStatusUpdateException),
     /// <p>The Amazon Resource Name (ARN) of the user or identity is not valid.</p>
     InvalidReactionUserArnException(crate::types::error::InvalidReactionUserArnException),
-    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit User Guide</a>.</p>
+    /// <p>The value of the reaction is not valid. For more information, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html"> CodeCommit User Guide</a>.</p>
     InvalidReactionValueException(crate::types::error::InvalidReactionValueException),
     /// <p>The specified reference name format is not valid. Reference names must conform to the Git references format (for example, refs/heads/main). For more information, see <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">Git Internals - Git References</a> or consult your Git documentation.</p>
     InvalidReferenceNameException(crate::types::error::InvalidReferenceNameException),
@@ -223,7 +223,7 @@ pub enum Error {
     InvalidRepositoryTriggerNameException(crate::types::error::InvalidRepositoryTriggerNameException),
     /// <p>The Amazon Web Services Region for the trigger target does not match the Amazon Web Services Region for the repository. Triggers must be created in the same Amazon Web Services Region as the target for the trigger.</p>
     InvalidRepositoryTriggerRegionException(crate::types::error::InvalidRepositoryTriggerRegionException),
-    /// <p>The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
+    /// <p>The value for the resource ARN is not valid. For more information about resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"> CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     InvalidResourceArnException(crate::types::error::InvalidResourceArnException),
     /// <p>The revision ID is not valid. Use GetPullRequest to determine the value.</p>
     InvalidRevisionIdException(crate::types::error::InvalidRevisionIdException),
@@ -349,7 +349,7 @@ pub enum Error {
     RepositoryTriggerNameRequiredException(crate::types::error::RepositoryTriggerNameRequiredException),
     /// <p>The list of triggers for the repository is required, but was not specified.</p>
     RepositoryTriggersListRequiredException(crate::types::error::RepositoryTriggersListRequiredException),
-    /// <p>A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
+    /// <p>A valid Amazon Resource Name (ARN) for an CodeCommit resource is required. For a list of valid resources in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats"> CodeCommit Resources and Operations</a> in the CodeCommit User Guide.</p>
     ResourceArnRequiredException(crate::types::error::ResourceArnRequiredException),
     /// <p>The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.</p>
     RestrictedSourceFileException(crate::types::error::RestrictedSourceFileException),

@@ -224,6 +224,13 @@ pub(crate) fn de_get_batch_evaluation(
                         crate::protocol_serde::shape_failure_analysis_result_content::de_failure_analysis_result_content(tokens, _value, depth + 1)?,
                     );
                 }
+                "insightResults" => {
+                    builder = builder.set_insight_results(crate::protocol_serde::shape_insight_result_list::de_insight_result_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "insights" => {
                     builder = builder.set_insights(crate::protocol_serde::shape_insight_list::de_insight_list(tokens, _value, depth + 1)?);
                 }

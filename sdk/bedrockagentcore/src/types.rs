@@ -251,6 +251,8 @@ pub use crate::types::_online_evaluation_config_source::OnlineEvaluationConfigSo
 
 pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
 
+pub use crate::types::_insight_result::InsightResult;
+
 pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfig;
 
 pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfig;
@@ -405,6 +407,8 @@ pub use crate::types::_result_destination::ResultDestination;
 
 pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
+pub use crate::types::_insight_type::InsightType;
+
 pub use crate::types::_failure_category_cluster::FailureCategoryCluster;
 
 pub use crate::types::_user_intent_cluster::UserIntentCluster;
@@ -494,6 +498,10 @@ pub use crate::types::_span_context::SpanContext;
 pub use crate::types::_control_stats::ControlStats;
 
 pub use crate::types::_evaluator_statistics::EvaluatorStatistics;
+
+pub use crate::types::_sample_session::SampleSession;
+
+pub use crate::types::_insight_root_cause::InsightRootCause;
 
 pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundle;
 
@@ -601,6 +609,8 @@ pub use crate::types::_basic_auth::BasicAuth;
 
 pub use crate::types::_confidence_interval::ConfidenceInterval;
 
+pub use crate::types::_session_finding::SessionFinding;
+
 pub use crate::types::_tool_description_input::ToolDescriptionInput;
 
 pub use crate::types::_configuration_bundle_tool_entry::ConfigurationBundleToolEntry;
@@ -610,6 +620,8 @@ pub use crate::types::_o_auth2_authentication::OAuth2Authentication;
 pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
 
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
+
+pub use crate::types::_finding_target_type::FindingTargetType;
 
 pub use crate::types::_root_cause_cluster::RootCauseCluster;
 
@@ -843,6 +855,8 @@ mod _filter_input;
 
 mod _filter_value;
 
+mod _finding_target_type;
+
 mod _gateway_filter;
 
 mod _ground_truth_source;
@@ -964,6 +978,12 @@ mod _inline_memory_content;
 mod _input_content_block;
 
 mod _insight;
+
+mod _insight_result;
+
+mod _insight_root_cause;
+
+mod _insight_type;
 
 mod _insights_failure_category;
 
@@ -1165,6 +1185,8 @@ mod _s3_files_configuration;
 
 mod _s3_location;
 
+mod _sample_session;
+
 mod _screenshot_arguments;
 
 mod _screenshot_format;
@@ -1180,6 +1202,8 @@ mod _server_definition;
 mod _session_filter;
 
 mod _session_filter_config;
+
+mod _session_finding;
 
 mod _session_limits;
 

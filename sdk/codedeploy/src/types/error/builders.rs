@@ -85,6 +85,8 @@ pub use crate::types::error::_invalid_auto_rollback_config_exception::InvalidAut
 
 pub use crate::types::error::_invalid_auto_scaling_group_exception::InvalidAutoScalingGroupExceptionBuilder;
 
+pub use crate::types::error::_invalid_auto_scaling_group_process_to_suspend_exception::InvalidAutoScalingGroupProcessToSuspendExceptionBuilder;
+
 pub use crate::types::error::_invalid_deployment_config_name_exception::InvalidDeploymentConfigNameExceptionBuilder;
 
 pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceExceptionBuilder;

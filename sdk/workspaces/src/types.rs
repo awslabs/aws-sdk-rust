@@ -57,6 +57,8 @@ pub use crate::types::_platform::Platform;
 
 pub use crate::types::_os_version::OsVersion;
 
+pub use crate::types::_image_validation_mode::ImageValidationMode;
+
 pub use crate::types::_workspace_image_ingestion_process::WorkspaceImageIngestionProcess;
 
 pub use crate::types::_dedicated_tenancy_support_enum::DedicatedTenancySupportEnum;
@@ -454,6 +456,8 @@ mod _image_resource_association;
 mod _image_source_identifier;
 
 mod _image_type;
+
+mod _image_validation_mode;
 
 mod _internet_fallback_protocol;
 

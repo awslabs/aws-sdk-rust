@@ -74,6 +74,21 @@ where
                                     .transpose()?,
                             );
                         }
+                        "directSendEnforcementStatus" => {
+                            builder = builder.set_direct_send_enforcement_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "directSendEnforcementStatusExpiresAt" => {
+                            builder = builder.set_direct_send_enforcement_status_expires_at(
+                                ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                    tokens.next(),
+                                    ::aws_smithy_types::date_time::Format::EpochSeconds,
+                                )?,
+                            );
+                        }
                         "datasetId" => {
                             builder = builder.set_dataset_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

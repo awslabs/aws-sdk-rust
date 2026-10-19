@@ -5,7 +5,7 @@
 pub struct CreateScheduleInput {
     /// <p>The name or names of one or more jobs to be run.</p>
     pub job_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub cron_expression: ::std::option::Option<::std::string::String>,
     /// <p>Metadata tags to apply to this schedule.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -19,7 +19,7 @@ impl CreateScheduleInput {
     pub fn job_names(&self) -> &[::std::string::String] {
         self.job_names.as_deref().unwrap_or_default()
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn cron_expression(&self) -> ::std::option::Option<&str> {
         self.cron_expression.as_deref()
     }
@@ -69,18 +69,18 @@ impl CreateScheduleInputBuilder {
     pub fn get_job_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.job_names
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     /// This field is required.
     pub fn cron_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cron_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn set_cron_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cron_expression = input;
         self
     }
-    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>The date or dates and time or times when the jobs are to be run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn get_cron_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.cron_expression
     }

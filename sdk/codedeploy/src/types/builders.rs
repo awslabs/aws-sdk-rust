@@ -7,6 +7,8 @@ pub use crate::types::_auto_rollback_configuration::AutoRollbackConfigurationBui
 
 pub use crate::types::_alarm_configuration::AlarmConfigurationBuilder;
 
+pub use crate::types::_ec2_deployment_options::Ec2DeploymentOptionsBuilder;
+
 pub use crate::types::_minimum_healthy_hosts::MinimumHealthyHostsBuilder;
 
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfigBuilder;

@@ -41,6 +41,8 @@ pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
 pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
+pub use crate::types::_retrieval_instruction_content::RetrievalInstructionContentBuilder;
+
 pub use crate::types::_agent_version::AgentVersionBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
@@ -132,6 +134,12 @@ pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummaryBuilder;
 pub use crate::types::_prompt_summary::PromptSummaryBuilder;
 
 pub use crate::types::_prompt_variant::PromptVariantBuilder;
+
+pub use crate::types::_retrieval_instruction_summary::RetrievalInstructionSummaryBuilder;
+
+pub use crate::types::_retrieval_instruction_failure_reason::RetrievalInstructionFailureReasonBuilder;
+
+pub use crate::types::_retrieval_instruction_version_summary::RetrievalInstructionVersionSummaryBuilder;
 
 pub use crate::types::_agent_version_summary::AgentVersionSummaryBuilder;
 

@@ -155,6 +155,8 @@ pub use crate::types::_online_evaluation_config_source::OnlineEvaluationConfigSo
 
 pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
 
+pub use crate::types::_insight_result::InsightResultBuilder;
+
 pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfigBuilder;
 
 pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfigBuilder;
@@ -309,6 +311,10 @@ pub use crate::types::_control_stats::ControlStatsBuilder;
 
 pub use crate::types::_evaluator_statistics::EvaluatorStatisticsBuilder;
 
+pub use crate::types::_sample_session::SampleSessionBuilder;
+
+pub use crate::types::_insight_root_cause::InsightRootCauseBuilder;
+
 pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundleBuilder;
 
 pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfigBuilder;
@@ -380,6 +386,8 @@ pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilde
 pub use crate::types::_basic_auth::BasicAuthBuilder;
 
 pub use crate::types::_confidence_interval::ConfidenceIntervalBuilder;
+
+pub use crate::types::_session_finding::SessionFindingBuilder;
 
 pub use crate::types::_tool_description_input::ToolDescriptionInputBuilder;
 

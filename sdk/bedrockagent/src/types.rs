@@ -81,6 +81,12 @@ pub use crate::types::_knowledge_base::KnowledgeBase;
 
 pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
+pub use crate::types::_retrieval_instruction_status::RetrievalInstructionStatus;
+
+pub use crate::types::_retrieval_instruction_content::RetrievalInstructionContent;
+
+pub use crate::types::_retrieval_instruction_last_transition_status::RetrievalInstructionLastTransitionStatus;
+
 pub use crate::types::_agent_version::AgentVersion;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
@@ -188,6 +194,12 @@ pub use crate::types::_knowledge_base_summary::KnowledgeBaseSummary;
 pub use crate::types::_prompt_summary::PromptSummary;
 
 pub use crate::types::_prompt_variant::PromptVariant;
+
+pub use crate::types::_retrieval_instruction_summary::RetrievalInstructionSummary;
+
+pub use crate::types::_retrieval_instruction_failure_reason::RetrievalInstructionFailureReason;
+
+pub use crate::types::_retrieval_instruction_version_summary::RetrievalInstructionVersionSummary;
 
 pub use crate::types::_agent_version_summary::AgentVersionSummary;
 
@@ -306,6 +318,10 @@ pub use crate::types::_prompt_template_configuration::PromptTemplateConfiguratio
 pub use crate::types::_prompt_inference_configuration::PromptInferenceConfiguration;
 
 pub use crate::types::_prompt_gen_ai_resource::PromptGenAiResource;
+
+pub use crate::types::_retrieval_instruction_field_name::RetrievalInstructionFieldName;
+
+pub use crate::types::_retrieval_instruction_failure_reason_code::RetrievalInstructionFailureReasonCode;
 
 pub use crate::types::_flow_node_type::FlowNodeType;
 
@@ -1186,6 +1202,22 @@ mod _retrieval_flow_node_configuration;
 mod _retrieval_flow_node_s3_configuration;
 
 mod _retrieval_flow_node_service_configuration;
+
+mod _retrieval_instruction_content;
+
+mod _retrieval_instruction_failure_reason;
+
+mod _retrieval_instruction_failure_reason_code;
+
+mod _retrieval_instruction_field_name;
+
+mod _retrieval_instruction_last_transition_status;
+
+mod _retrieval_instruction_status;
+
+mod _retrieval_instruction_summary;
+
+mod _retrieval_instruction_version_summary;
 
 mod _s3_content;
 

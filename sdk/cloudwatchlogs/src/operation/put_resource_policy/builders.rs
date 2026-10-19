@@ -27,7 +27,7 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
 /// <li>
 /// <p><b>Supported actions</b> - Policy only supports <code>logs:PutLogEvents</code> and <code>logs:CreateLogStream </code> actions</p></li>
 /// <li>
-/// <p><b>Supported principals</b> - Policy only applies when operations are invoked by Amazon Web Services service principals (not IAM users, roles, or cross-account principals</p></li>
+/// <p><b>Supported principals</b> - Policy only applies when operations are invoked by Amazon Web Services service principals (not IAM users, roles, or cross-account principals)</p></li>
 /// <li>
 /// <p><b>Policy limits</b> - An account can have a maximum of 10 policies without resourceARN and one per LogGroup resourceARN</p></li>
 /// </ul><important>

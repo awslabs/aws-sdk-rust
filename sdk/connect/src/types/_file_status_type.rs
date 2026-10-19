@@ -13,6 +13,7 @@
 /// # let filestatustype = unimplemented!();
 /// match filestatustype {
 ///     FileStatusType::Approved => { /* ... */ },
+///     FileStatusType::Drafting => { /* ... */ },
 ///     FileStatusType::Failed => { /* ... */ },
 ///     FileStatusType::Processing => { /* ... */ },
 ///     FileStatusType::Rejected => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum FileStatusType {
     #[allow(missing_docs)] // documentation missing in model
     Approved,
     #[allow(missing_docs)] // documentation missing in model
+    Drafting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Processing,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for FileStatusType {
     fn from(s: &str) -> Self {
         match s {
             "APPROVED" => FileStatusType::Approved,
+            "DRAFTING" => FileStatusType::Drafting,
             "FAILED" => FileStatusType::Failed,
             "PROCESSING" => FileStatusType::Processing,
             "REJECTED" => FileStatusType::Rejected,
@@ -79,6 +83,7 @@ impl FileStatusType {
     pub fn as_str(&self) -> &str {
         match self {
             FileStatusType::Approved => "APPROVED",
+            FileStatusType::Drafting => "DRAFTING",
             FileStatusType::Failed => "FAILED",
             FileStatusType::Processing => "PROCESSING",
             FileStatusType::Rejected => "REJECTED",
@@ -87,7 +92,7 @@ impl FileStatusType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APPROVED", "FAILED", "PROCESSING", "REJECTED"]
+        &["APPROVED", "DRAFTING", "FAILED", "PROCESSING", "REJECTED"]
     }
 }
 impl ::std::convert::AsRef<str> for FileStatusType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for FileStatusType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FileStatusType::Approved => write!(f, "APPROVED"),
+            FileStatusType::Drafting => write!(f, "DRAFTING"),
             FileStatusType::Failed => write!(f, "FAILED"),
             FileStatusType::Processing => write!(f, "PROCESSING"),
             FileStatusType::Rejected => write!(f, "REJECTED"),

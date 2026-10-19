@@ -46,6 +46,8 @@ pub struct CompositeAlarm {
     /// <p><code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.</p>
     /// </important>
     pub actions_suppressor_extension_period: ::std::option::Option<i32>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl CompositeAlarm {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -134,6 +136,10 @@ impl CompositeAlarm {
     pub fn actions_suppressor_extension_period(&self) -> ::std::option::Option<i32> {
         self.actions_suppressor_extension_period
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl CompositeAlarm {
     /// Creates a new builder-style object to manufacture [`CompositeAlarm`](crate::types::CompositeAlarm).
@@ -165,6 +171,7 @@ pub struct CompositeAlarmBuilder {
     pub(crate) actions_suppressor: ::std::option::Option<::std::string::String>,
     pub(crate) actions_suppressor_wait_period: ::std::option::Option<i32>,
     pub(crate) actions_suppressor_extension_period: ::std::option::Option<i32>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl CompositeAlarmBuilder {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
@@ -463,6 +470,20 @@ impl CompositeAlarmBuilder {
     pub fn get_actions_suppressor_extension_period(&self) -> &::std::option::Option<i32> {
         &self.actions_suppressor_extension_period
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`CompositeAlarm`](crate::types::CompositeAlarm).
     pub fn build(self) -> crate::types::CompositeAlarm {
         crate::types::CompositeAlarm {
@@ -485,6 +506,7 @@ impl CompositeAlarmBuilder {
             actions_suppressor: self.actions_suppressor,
             actions_suppressor_wait_period: self.actions_suppressor_wait_period,
             actions_suppressor_extension_period: self.actions_suppressor_extension_period,
+            action_configuration: self.action_configuration,
         }
     }
 }

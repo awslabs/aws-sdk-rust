@@ -18,6 +18,8 @@ pub struct AgenticRetrieveStreamInput {
     pub user_context: ::std::option::Option<crate::types::UserContext>,
     /// <p>The configuration for using an Amazon Bedrock AgentCore Memory resource with this retrieval.</p>
     pub memory_configuration: ::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration>,
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub retrieval_instruction_configuration: ::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration>,
     /// <p>Whether to generate a response based on the retrieved results.</p>
     pub generate_response: ::std::option::Option<bool>,
 }
@@ -54,6 +56,10 @@ impl AgenticRetrieveStreamInput {
     pub fn memory_configuration(&self) -> ::std::option::Option<&crate::types::AgenticRetrieveMemoryConfiguration> {
         self.memory_configuration.as_ref()
     }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn retrieval_instruction_configuration(&self) -> ::std::option::Option<&crate::types::AgenticRetrieveInstructionConfiguration> {
+        self.retrieval_instruction_configuration.as_ref()
+    }
     /// <p>Whether to generate a response based on the retrieved results.</p>
     pub fn generate_response(&self) -> ::std::option::Option<bool> {
         self.generate_response
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for AgenticRetrieveStreamInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("retrieval_instruction_configuration", &self.retrieval_instruction_configuration);
         formatter.field("generate_response", &self.generate_response);
         formatter.finish()
     }
@@ -91,6 +98,7 @@ pub struct AgenticRetrieveStreamInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) user_context: ::std::option::Option<crate::types::UserContext>,
     pub(crate) memory_configuration: ::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration>,
+    pub(crate) retrieval_instruction_configuration: ::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration>,
     pub(crate) generate_response: ::std::option::Option<bool>,
 }
 impl AgenticRetrieveStreamInputBuilder {
@@ -205,6 +213,23 @@ impl AgenticRetrieveStreamInputBuilder {
     pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration> {
         &self.memory_configuration
     }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn retrieval_instruction_configuration(mut self, input: crate::types::AgenticRetrieveInstructionConfiguration) -> Self {
+        self.retrieval_instruction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn set_retrieval_instruction_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration>,
+    ) -> Self {
+        self.retrieval_instruction_configuration = input;
+        self
+    }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn get_retrieval_instruction_configuration(&self) -> &::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration> {
+        &self.retrieval_instruction_configuration
+    }
     /// <p>Whether to generate a response based on the retrieved results.</p>
     pub fn generate_response(mut self, input: bool) -> Self {
         self.generate_response = ::std::option::Option::Some(input);
@@ -232,6 +257,7 @@ impl AgenticRetrieveStreamInputBuilder {
             next_token: self.next_token,
             user_context: self.user_context,
             memory_configuration: self.memory_configuration,
+            retrieval_instruction_configuration: self.retrieval_instruction_configuration,
             generate_response: self.generate_response,
         })
     }
@@ -246,6 +272,7 @@ impl ::std::fmt::Debug for AgenticRetrieveStreamInputBuilder {
         formatter.field("next_token", &self.next_token);
         formatter.field("user_context", &"*** Sensitive Data Redacted ***");
         formatter.field("memory_configuration", &self.memory_configuration);
+        formatter.field("retrieval_instruction_configuration", &self.retrieval_instruction_configuration);
         formatter.field("generate_response", &self.generate_response);
         formatter.finish()
     }

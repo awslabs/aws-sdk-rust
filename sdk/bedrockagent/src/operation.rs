@@ -37,6 +37,12 @@ pub mod create_prompt;
 /// Types for the `CreatePromptVersion` operation.
 pub mod create_prompt_version;
 
+/// Types for the `CreateRetrievalInstruction` operation.
+pub mod create_retrieval_instruction;
+
+/// Types for the `CreateRetrievalInstructionVersion` operation.
+pub mod create_retrieval_instruction_version;
+
 /// Types for the `CreateVpcConfiguration` operation.
 pub mod create_vpc_configuration;
 
@@ -75,6 +81,9 @@ pub mod delete_prompt;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
+
+/// Types for the `DeleteRetrievalInstruction` operation.
+pub mod delete_retrieval_instruction;
 
 /// Types for the `DeleteVpcConfiguration` operation.
 pub mod delete_vpc_configuration;
@@ -130,6 +139,9 @@ pub mod get_prompt;
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
+/// Types for the `GetRetrievalInstruction` operation.
+pub mod get_retrieval_instruction;
+
 /// Types for the `GetVpcConfiguration` operation.
 pub mod get_vpc_configuration;
 
@@ -177,6 +189,12 @@ pub mod list_knowledge_bases;
 
 /// Types for the `ListPrompts` operation.
 pub mod list_prompts;
+
+/// Types for the `ListRetrievalInstructionVersions` operation.
+pub mod list_retrieval_instruction_versions;
+
+/// Types for the `ListRetrievalInstructions` operation.
+pub mod list_retrieval_instructions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
@@ -234,6 +252,9 @@ pub mod update_knowledge_base;
 
 /// Types for the `UpdatePrompt` operation.
 pub mod update_prompt;
+
+/// Types for the `UpdateRetrievalInstruction` operation.
+pub mod update_retrieval_instruction;
 
 /// Types for the `ValidateFlowDefinition` operation.
 pub mod validate_flow_definition;

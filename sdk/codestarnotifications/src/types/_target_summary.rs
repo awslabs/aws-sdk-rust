@@ -11,7 +11,9 @@ pub struct TargetSummary {
     /// <li>
     /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients for Slack are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Amazon Q Developer in chat applications clients for Microsoft Teams are specified as <code>AWSChatbotMicrosoftTeams</code>.</p></li>
     /// </ul>
     pub target_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of the target.</p>
@@ -27,7 +29,9 @@ impl TargetSummary {
     /// <li>
     /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients for Slack are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Amazon Q Developer in chat applications clients for Microsoft Teams are specified as <code>AWSChatbotMicrosoftTeams</code>.</p></li>
     /// </ul>
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
@@ -81,7 +85,9 @@ impl TargetSummaryBuilder {
     /// <li>
     /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients for Slack are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Amazon Q Developer in chat applications clients for Microsoft Teams are specified as <code>AWSChatbotMicrosoftTeams</code>.</p></li>
     /// </ul>
     pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_type = ::std::option::Option::Some(input.into());
@@ -92,7 +98,9 @@ impl TargetSummaryBuilder {
     /// <li>
     /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients for Slack are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Amazon Q Developer in chat applications clients for Microsoft Teams are specified as <code>AWSChatbotMicrosoftTeams</code>.</p></li>
     /// </ul>
     pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
@@ -103,7 +111,9 @@ impl TargetSummaryBuilder {
     /// <li>
     /// <p>Amazon Q Developer in chat applications topics are specified as <code>SNS</code>.</p></li>
     /// <li>
-    /// <p>Amazon Q Developer in chat applications clients are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <p>Amazon Q Developer in chat applications clients for Slack are specified as <code>AWSChatbotSlack</code>.</p></li>
+    /// <li>
+    /// <p>Amazon Q Developer in chat applications clients for Microsoft Teams are specified as <code>AWSChatbotMicrosoftTeams</code>.</p></li>
     /// </ul>
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type

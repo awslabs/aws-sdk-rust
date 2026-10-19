@@ -12,6 +12,10 @@ pub struct DestinationLogsConfiguration {
     pub log_group_name_configuration: ::std::option::Option<crate::types::LogGroupNameConfiguration>,
     /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
     pub tag_propagation_configuration: ::std::option::Option<crate::types::TagPropagationConfiguration>,
+    /// <p>Specifies whether this centralization rule enables deletion protection on the destination log groups that it creates. If you don't specify this setting, the rule doesn't enable deletion protection on the log groups that it creates. If you specify a backup Region in <code>BackupConfiguration</code>, the setting also applies to the log groups that the rule creates in the backup Region.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule enables deletion protection only on log groups that it creates after you enable the setting. It does not add deletion protection to log groups the rule created before you enabled the setting.</p>
+    /// <p>If you remove this setting from the rule or delete the rule, deletion protection stays enabled on log groups that already have it. To delete one of these log groups, first disable deletion protection on the log group in the destination account.</p>
+    pub log_group_deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl DestinationLogsConfiguration {
     /// <p>The encryption configuration for centralization destination log groups.</p>
@@ -30,6 +34,12 @@ impl DestinationLogsConfiguration {
     pub fn tag_propagation_configuration(&self) -> ::std::option::Option<&crate::types::TagPropagationConfiguration> {
         self.tag_propagation_configuration.as_ref()
     }
+    /// <p>Specifies whether this centralization rule enables deletion protection on the destination log groups that it creates. If you don't specify this setting, the rule doesn't enable deletion protection on the log groups that it creates. If you specify a backup Region in <code>BackupConfiguration</code>, the setting also applies to the log groups that the rule creates in the backup Region.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule enables deletion protection only on log groups that it creates after you enable the setting. It does not add deletion protection to log groups the rule created before you enabled the setting.</p>
+    /// <p>If you remove this setting from the rule or delete the rule, deletion protection stays enabled on log groups that already have it. To delete one of these log groups, first disable deletion protection on the log group in the destination account.</p>
+    pub fn log_group_deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.log_group_deletion_protection.as_ref()
+    }
 }
 impl DestinationLogsConfiguration {
     /// Creates a new builder-style object to manufacture [`DestinationLogsConfiguration`](crate::types::DestinationLogsConfiguration).
@@ -46,6 +56,7 @@ pub struct DestinationLogsConfigurationBuilder {
     pub(crate) backup_configuration: ::std::option::Option<crate::types::LogsBackupConfiguration>,
     pub(crate) log_group_name_configuration: ::std::option::Option<crate::types::LogGroupNameConfiguration>,
     pub(crate) tag_propagation_configuration: ::std::option::Option<crate::types::TagPropagationConfiguration>,
+    pub(crate) log_group_deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl DestinationLogsConfigurationBuilder {
     /// <p>The encryption configuration for centralization destination log groups.</p>
@@ -104,6 +115,26 @@ impl DestinationLogsConfigurationBuilder {
     pub fn get_tag_propagation_configuration(&self) -> &::std::option::Option<crate::types::TagPropagationConfiguration> {
         &self.tag_propagation_configuration
     }
+    /// <p>Specifies whether this centralization rule enables deletion protection on the destination log groups that it creates. If you don't specify this setting, the rule doesn't enable deletion protection on the log groups that it creates. If you specify a backup Region in <code>BackupConfiguration</code>, the setting also applies to the log groups that the rule creates in the backup Region.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule enables deletion protection only on log groups that it creates after you enable the setting. It does not add deletion protection to log groups the rule created before you enabled the setting.</p>
+    /// <p>If you remove this setting from the rule or delete the rule, deletion protection stays enabled on log groups that already have it. To delete one of these log groups, first disable deletion protection on the log group in the destination account.</p>
+    pub fn log_group_deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.log_group_deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this centralization rule enables deletion protection on the destination log groups that it creates. If you don't specify this setting, the rule doesn't enable deletion protection on the log groups that it creates. If you specify a backup Region in <code>BackupConfiguration</code>, the setting also applies to the log groups that the rule creates in the backup Region.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule enables deletion protection only on log groups that it creates after you enable the setting. It does not add deletion protection to log groups the rule created before you enabled the setting.</p>
+    /// <p>If you remove this setting from the rule or delete the rule, deletion protection stays enabled on log groups that already have it. To delete one of these log groups, first disable deletion protection on the log group in the destination account.</p>
+    pub fn set_log_group_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.log_group_deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether this centralization rule enables deletion protection on the destination log groups that it creates. If you don't specify this setting, the rule doesn't enable deletion protection on the log groups that it creates. If you specify a backup Region in <code>BackupConfiguration</code>, the setting also applies to the log groups that the rule creates in the backup Region.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule enables deletion protection only on log groups that it creates after you enable the setting. It does not add deletion protection to log groups the rule created before you enabled the setting.</p>
+    /// <p>If you remove this setting from the rule or delete the rule, deletion protection stays enabled on log groups that already have it. To delete one of these log groups, first disable deletion protection on the log group in the destination account.</p>
+    pub fn get_log_group_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.log_group_deletion_protection
+    }
     /// Consumes the builder and constructs a [`DestinationLogsConfiguration`](crate::types::DestinationLogsConfiguration).
     pub fn build(self) -> crate::types::DestinationLogsConfiguration {
         crate::types::DestinationLogsConfiguration {
@@ -111,6 +142,7 @@ impl DestinationLogsConfigurationBuilder {
             backup_configuration: self.backup_configuration,
             log_group_name_configuration: self.log_group_name_configuration,
             tag_propagation_configuration: self.tag_propagation_configuration,
+            log_group_deletion_protection: self.log_group_deletion_protection,
         }
     }
 }

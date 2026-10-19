@@ -21,6 +21,8 @@ pub struct ImportCustomWorkspaceImageInput {
     pub os_version: ::std::option::Option<crate::types::OsVersion>,
     /// <p>The resource tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub image_validation_mode: ::std::option::Option<crate::types::ImageValidationMode>,
 }
 impl ImportCustomWorkspaceImageInput {
     /// <p>The name of the WorkSpace image.</p>
@@ -61,6 +63,10 @@ impl ImportCustomWorkspaceImageInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn image_validation_mode(&self) -> ::std::option::Option<&crate::types::ImageValidationMode> {
+        self.image_validation_mode.as_ref()
+    }
 }
 impl ImportCustomWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`ImportCustomWorkspaceImageInput`](crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageInput).
@@ -82,6 +88,7 @@ pub struct ImportCustomWorkspaceImageInputBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) image_validation_mode: ::std::option::Option<crate::types::ImageValidationMode>,
 }
 impl ImportCustomWorkspaceImageInputBuilder {
     /// <p>The name of the WorkSpace image.</p>
@@ -224,6 +231,20 @@ impl ImportCustomWorkspaceImageInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn image_validation_mode(mut self, input: crate::types::ImageValidationMode) -> Self {
+        self.image_validation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn set_image_validation_mode(mut self, input: ::std::option::Option<crate::types::ImageValidationMode>) -> Self {
+        self.image_validation_mode = input;
+        self
+    }
+    /// <p>The image validation mode for the WorkSpace image import.</p>
+    pub fn get_image_validation_mode(&self) -> &::std::option::Option<crate::types::ImageValidationMode> {
+        &self.image_validation_mode
+    }
     /// Consumes the builder and constructs a [`ImportCustomWorkspaceImageInput`](crate::operation::import_custom_workspace_image::ImportCustomWorkspaceImageInput).
     pub fn build(
         self,
@@ -241,6 +262,7 @@ impl ImportCustomWorkspaceImageInputBuilder {
             platform: self.platform,
             os_version: self.os_version,
             tags: self.tags,
+            image_validation_mode: self.image_validation_mode,
         })
     }
 }

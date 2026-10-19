@@ -42,5 +42,8 @@ pub fn ser_import_custom_workspace_image_input_input(
         }
         array_11.finish();
     }
+    if let Some(var_14) = &input.image_validation_mode {
+        object.key("ImageValidationMode").string(var_14.as_str());
+    }
     Ok(())
 }

@@ -33,6 +33,21 @@ pub fn ser_service_connect_configuration(
         crate::protocol_serde::shape_service_connect_access_log_configuration::ser_service_connect_access_log_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.container_configurations {
+        let mut array_11 = object.key("containerConfigurations").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_service_connect_container_configuration::ser_service_connect_container_configuration(
+                    &mut object_13,
+                    item_12,
+                )?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +103,11 @@ where
                             "accessLogConfiguration" => {
                                 builder = builder.set_access_log_configuration(
                                     crate::protocol_serde::shape_service_connect_access_log_configuration::de_service_connect_access_log_configuration(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "containerConfigurations" => {
+                                builder = builder.set_container_configurations(
+                                    crate::protocol_serde::shape_service_connect_container_configurations::de_service_connect_container_configurations(tokens, _value, depth + 1)?
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

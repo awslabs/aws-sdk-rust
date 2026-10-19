@@ -122,4 +122,18 @@ impl UpdateTraceSegmentDestinationFluentBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::TraceSegmentDestination> {
         self.inner.get_destination()
     }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
+        self.inner = self.inner.cloud_watch_logs_configuration(input);
+        self
+    }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
+        self.inner = self.inner.set_cloud_watch_logs_configuration(input);
+        self
+    }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+        self.inner.get_cloud_watch_logs_configuration()
+    }
 }

@@ -33,6 +33,9 @@ pub struct ServiceConnectConfiguration {
     /// <p>To enable access logs, you must also specify a <code>logConfiguration</code> in the <code>serviceConnectConfiguration</code>.</p>
     /// </note>
     pub access_log_configuration: ::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration>,
+    /// <p>The settings for the Service Connect proxy container that Amazon ECS adds to each task in this service. Each object in the list sets exactly one setting, and each setting can appear only once in the list.</p>
+    /// <p>Your changes to these settings apply only to tasks that Amazon ECS launches after you update the service. Your running tasks keep their existing settings until Amazon ECS replaces them. If you update the <code>serviceConnectConfiguration</code> of your service and don't include <code>containerConfigurations</code>, the proxy container settings return to their defaults.</p>
+    pub container_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectContainerConfiguration>>,
 }
 impl ServiceConnectConfiguration {
     /// <p>Specifies whether to use Service Connect with this service.</p>
@@ -75,6 +78,13 @@ impl ServiceConnectConfiguration {
     pub fn access_log_configuration(&self) -> ::std::option::Option<&crate::types::ServiceConnectAccessLogConfiguration> {
         self.access_log_configuration.as_ref()
     }
+    /// <p>The settings for the Service Connect proxy container that Amazon ECS adds to each task in this service. Each object in the list sets exactly one setting, and each setting can appear only once in the list.</p>
+    /// <p>Your changes to these settings apply only to tasks that Amazon ECS launches after you update the service. Your running tasks keep their existing settings until Amazon ECS replaces them. If you update the <code>serviceConnectConfiguration</code> of your service and don't include <code>containerConfigurations</code>, the proxy container settings return to their defaults.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_configurations.is_none()`.
+    pub fn container_configurations(&self) -> &[crate::types::ServiceConnectContainerConfiguration] {
+        self.container_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ServiceConnectConfiguration {
     /// Creates a new builder-style object to manufacture [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
@@ -92,6 +102,7 @@ pub struct ServiceConnectConfigurationBuilder {
     pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectService>>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) access_log_configuration: ::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration>,
+    pub(crate) container_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectContainerConfiguration>>,
 }
 impl ServiceConnectConfigurationBuilder {
     /// <p>Specifies whether to use Service Connect with this service.</p>
@@ -225,6 +236,32 @@ impl ServiceConnectConfigurationBuilder {
     pub fn get_access_log_configuration(&self) -> &::std::option::Option<crate::types::ServiceConnectAccessLogConfiguration> {
         &self.access_log_configuration
     }
+    /// Appends an item to `container_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_container_configurations`](Self::set_container_configurations).
+    ///
+    /// <p>The settings for the Service Connect proxy container that Amazon ECS adds to each task in this service. Each object in the list sets exactly one setting, and each setting can appear only once in the list.</p>
+    /// <p>Your changes to these settings apply only to tasks that Amazon ECS launches after you update the service. Your running tasks keep their existing settings until Amazon ECS replaces them. If you update the <code>serviceConnectConfiguration</code> of your service and don't include <code>containerConfigurations</code>, the proxy container settings return to their defaults.</p>
+    pub fn container_configurations(mut self, input: crate::types::ServiceConnectContainerConfiguration) -> Self {
+        let mut v = self.container_configurations.unwrap_or_default();
+        v.push(input);
+        self.container_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The settings for the Service Connect proxy container that Amazon ECS adds to each task in this service. Each object in the list sets exactly one setting, and each setting can appear only once in the list.</p>
+    /// <p>Your changes to these settings apply only to tasks that Amazon ECS launches after you update the service. Your running tasks keep their existing settings until Amazon ECS replaces them. If you update the <code>serviceConnectConfiguration</code> of your service and don't include <code>containerConfigurations</code>, the proxy container settings return to their defaults.</p>
+    pub fn set_container_configurations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectContainerConfiguration>>,
+    ) -> Self {
+        self.container_configurations = input;
+        self
+    }
+    /// <p>The settings for the Service Connect proxy container that Amazon ECS adds to each task in this service. Each object in the list sets exactly one setting, and each setting can appear only once in the list.</p>
+    /// <p>Your changes to these settings apply only to tasks that Amazon ECS launches after you update the service. Your running tasks keep their existing settings until Amazon ECS replaces them. If you update the <code>serviceConnectConfiguration</code> of your service and don't include <code>containerConfigurations</code>, the proxy container settings return to their defaults.</p>
+    pub fn get_container_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceConnectContainerConfiguration>> {
+        &self.container_configurations
+    }
     /// Consumes the builder and constructs a [`ServiceConnectConfiguration`](crate::types::ServiceConnectConfiguration).
     pub fn build(self) -> crate::types::ServiceConnectConfiguration {
         crate::types::ServiceConnectConfiguration {
@@ -233,6 +270,7 @@ impl ServiceConnectConfigurationBuilder {
             services: self.services,
             log_configuration: self.log_configuration,
             access_log_configuration: self.access_log_configuration,
+            container_configurations: self.container_configurations,
         }
     }
 }

@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionExpression {
-    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub condition: ::std::string::String,
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
     pub value: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct ConditionExpression {
     pub target_column: ::std::string::String,
 }
 impl ConditionExpression {
-    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn condition(&self) -> &str {
         use std::ops::Deref;
         self.condition.deref()
@@ -45,18 +45,18 @@ pub struct ConditionExpressionBuilder {
     pub(crate) target_column: ::std::option::Option<::std::string::String>,
 }
 impl ConditionExpressionBuilder {
-    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     /// This field is required.
     pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.condition = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
-    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+    /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
     pub fn get_condition(&self) -> &::std::option::Option<::std::string::String> {
         &self.condition
     }

@@ -135,6 +135,14 @@ pub(crate) fn de_metric_alarm(
             "EvaluationInterval" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_evaluation_interval(Some(decoder.integer()?)))
             })?,
+            "ActionConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_action_configuration(Some(crate::protocol_serde::shape_action_configuration::de_action_configuration(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

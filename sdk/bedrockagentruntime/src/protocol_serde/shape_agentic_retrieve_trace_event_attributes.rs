@@ -81,6 +81,15 @@ where
                                 )?,
                             );
                         }
+                        "appliedInstruction" => {
+                            builder = builder.set_applied_instruction(
+                                crate::protocol_serde::shape_agentic_retrieve_applied_instruction::de_agentic_retrieve_applied_instruction(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

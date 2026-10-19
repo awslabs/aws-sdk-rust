@@ -47,6 +47,10 @@ pub(crate) mod shape_create_prompt;
 
 pub(crate) mod shape_create_prompt_version;
 
+pub(crate) mod shape_create_retrieval_instruction;
+
+pub(crate) mod shape_create_retrieval_instruction_version;
+
 pub(crate) mod shape_create_vpc_configuration;
 
 pub(crate) mod shape_delete_agent;
@@ -72,6 +76,8 @@ pub(crate) mod shape_delete_knowledge_base_documents;
 pub(crate) mod shape_delete_prompt;
 
 pub(crate) mod shape_delete_resource_policy;
+
+pub(crate) mod shape_delete_retrieval_instruction;
 
 pub(crate) mod shape_delete_vpc_configuration;
 
@@ -109,6 +115,8 @@ pub(crate) mod shape_get_prompt;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_get_retrieval_instruction;
+
 pub(crate) mod shape_get_vpc_configuration;
 
 pub(crate) mod shape_ingest_knowledge_base_documents;
@@ -140,6 +148,10 @@ pub(crate) mod shape_list_knowledge_base_documents;
 pub(crate) mod shape_list_knowledge_bases;
 
 pub(crate) mod shape_list_prompts;
+
+pub(crate) mod shape_list_retrieval_instruction_versions;
+
+pub(crate) mod shape_list_retrieval_instructions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -179,6 +191,8 @@ pub(crate) mod shape_update_knowledge_base;
 
 pub(crate) mod shape_update_prompt;
 
+pub(crate) mod shape_update_retrieval_instruction;
+
 pub(crate) mod shape_validate_flow_definition;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
@@ -216,6 +230,10 @@ pub(crate) mod shape_create_knowledge_base_input;
 pub(crate) mod shape_create_prompt_input;
 
 pub(crate) mod shape_create_prompt_version_input;
+
+pub(crate) mod shape_create_retrieval_instruction_input;
+
+pub(crate) mod shape_create_retrieval_instruction_version_input;
 
 pub(crate) mod shape_create_vpc_configuration_input;
 
@@ -278,6 +296,8 @@ pub(crate) mod shape_update_flow_input;
 pub(crate) mod shape_update_knowledge_base_input;
 
 pub(crate) mod shape_update_prompt_input;
+
+pub(crate) mod shape_update_retrieval_instruction_input;
 
 pub(crate) mod shape_validate_flow_definition_input;
 
@@ -372,6 +392,14 @@ pub(crate) mod shape_prompt_summaries;
 pub(crate) mod shape_prompt_variant;
 
 pub(crate) mod shape_prompt_variant_list;
+
+pub(crate) mod shape_retrieval_instruction_content;
+
+pub(crate) mod shape_retrieval_instruction_failure_reasons;
+
+pub(crate) mod shape_retrieval_instruction_summaries;
+
+pub(crate) mod shape_retrieval_instruction_version_summaries;
 
 pub(crate) mod shape_server_side_encryption_configuration;
 
@@ -486,6 +514,12 @@ pub(crate) mod shape_rds_configuration;
 pub(crate) mod shape_recommended_actions;
 
 pub(crate) mod shape_redis_enterprise_cloud_configuration;
+
+pub(crate) mod shape_retrieval_instruction_failure_reason;
+
+pub(crate) mod shape_retrieval_instruction_summary;
+
+pub(crate) mod shape_retrieval_instruction_version_summary;
 
 pub(crate) mod shape_s3_data_source_configuration;
 

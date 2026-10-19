@@ -286,6 +286,8 @@ pub(crate) mod shape_update_resource_metrics_configuration_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_action_configuration;
+
 pub(crate) mod shape_alarm_contributors;
 
 pub(crate) mod shape_alarm_history_items;
@@ -390,6 +392,8 @@ pub(crate) mod shape_alarm_mute_rule_summary;
 
 pub(crate) mod shape_alarm_prom_ql_criteria;
 
+pub(crate) mod shape_alarm_tags_propagation;
+
 pub(crate) mod shape_anomaly_detector;
 
 pub(crate) mod shape_composite_alarm;
@@ -479,3 +483,5 @@ pub(crate) mod shape_insight_rule_contributor_datapoint;
 pub(crate) mod shape_log_group_identifiers;
 
 pub(crate) mod shape_metric_name_list;
+
+pub(crate) mod shape_alarm_tags_propagation_tag_keys;

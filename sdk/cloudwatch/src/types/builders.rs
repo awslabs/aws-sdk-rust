@@ -15,6 +15,8 @@ pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurat
 
 pub use crate::types::_metric_characteristics::MetricCharacteristicsBuilder;
 
+pub use crate::types::_action_configuration::ActionConfigurationBuilder;
+
 pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfigurationBuilder;
 
 pub use crate::types::_warm_up_configuration::WarmUpConfigurationBuilder;
@@ -72,6 +74,8 @@ pub use crate::types::_metric::MetricBuilder;
 pub use crate::types::_metric_stream_entry::MetricStreamEntryBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_alarm_tags_propagation::AlarmTagsPropagationBuilder;
 
 pub use crate::types::_dashboard_validation_message::DashboardValidationMessageBuilder;
 

@@ -14,6 +14,22 @@ pub struct GetAttachedFileInput {
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default.</p>
+    /// </dd>
+    /// </dl>
+    pub url_content_disposition: ::std::option::Option<crate::types::ContentDisposition>,
 }
 impl GetAttachedFileInput {
     /// <p>The unique identifier of the Connect Customer instance.</p>
@@ -34,6 +50,24 @@ impl GetAttachedFileInput {
     pub fn associated_resource_arn(&self) -> ::std::option::Option<&str> {
         self.associated_resource_arn.as_deref()
     }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default.</p>
+    /// </dd>
+    /// </dl>
+    pub fn url_content_disposition(&self) -> ::std::option::Option<&crate::types::ContentDisposition> {
+        self.url_content_disposition.as_ref()
+    }
 }
 impl GetAttachedFileInput {
     /// Creates a new builder-style object to manufacture [`GetAttachedFileInput`](crate::operation::get_attached_file::GetAttachedFileInput).
@@ -50,6 +84,7 @@ pub struct GetAttachedFileInputBuilder {
     pub(crate) file_id: ::std::option::Option<::std::string::String>,
     pub(crate) url_expiry_in_seconds: ::std::option::Option<i32>,
     pub(crate) associated_resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) url_content_disposition: ::std::option::Option<crate::types::ContentDisposition>,
 }
 impl GetAttachedFileInputBuilder {
     /// <p>The unique identifier of the Connect Customer instance.</p>
@@ -117,6 +152,62 @@ impl GetAttachedFileInputBuilder {
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_resource_arn
     }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default.</p>
+    /// </dd>
+    /// </dl>
+    pub fn url_content_disposition(mut self, input: crate::types::ContentDisposition) -> Self {
+        self.url_content_disposition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_url_content_disposition(mut self, input: ::std::option::Option<crate::types::ContentDisposition>) -> Self {
+        self.url_content_disposition = input;
+        self
+    }
+    /// <p>Specifies how a browser handles the file at the pre-signed URL. The valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// INLINE
+    /// </dt>
+    /// <dd>
+    /// <p>Displays the file in the browser.</p>
+    /// </dd>
+    /// <dt>
+    /// ATTACHMENT
+    /// </dt>
+    /// <dd>
+    /// <p>Downloads the file. This is the default.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_url_content_disposition(&self) -> &::std::option::Option<crate::types::ContentDisposition> {
+        &self.url_content_disposition
+    }
     /// Consumes the builder and constructs a [`GetAttachedFileInput`](crate::operation::get_attached_file::GetAttachedFileInput).
     pub fn build(
         self,
@@ -126,6 +217,7 @@ impl GetAttachedFileInputBuilder {
             file_id: self.file_id,
             url_expiry_in_seconds: self.url_expiry_in_seconds,
             associated_resource_arn: self.associated_resource_arn,
+            url_content_disposition: self.url_content_disposition,
         })
     }
 }

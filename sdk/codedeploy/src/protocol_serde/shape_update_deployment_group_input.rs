@@ -120,8 +120,14 @@ pub fn ser_update_deployment_group_input_input(
         crate::protocol_serde::shape_on_premises_tag_set::ser_on_premises_tag_set(&mut object_39, var_38)?;
         object_39.finish();
     }
-    if let Some(var_40) = &input.termination_hook_enabled {
-        object.key("terminationHookEnabled").boolean(*var_40);
+    if let Some(var_40) = &input.ec2_deployment_options {
+        #[allow(unused_mut)]
+        let mut object_41 = object.key("ec2DeploymentOptions").start_object();
+        crate::protocol_serde::shape_ec2_deployment_options::ser_ec2_deployment_options(&mut object_41, var_40)?;
+        object_41.finish();
+    }
+    if let Some(var_42) = &input.termination_hook_enabled {
+        object.key("terminationHookEnabled").boolean(*var_42);
     }
     Ok(())
 }

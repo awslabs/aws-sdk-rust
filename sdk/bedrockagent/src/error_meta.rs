@@ -469,6 +469,103 @@ impl From<crate::operation::create_prompt_version::CreatePromptVersionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError> for Error {
+    fn from(err: crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError) -> Self {
+        match err {
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_retrieval_instruction::CreateRetrievalInstructionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError> for Error {
+    fn from(err: crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError) -> Self {
+        match err {
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_retrieval_instruction_version::CreateRetrievalInstructionVersionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_configuration::CreateVpcConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -867,6 +964,48 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_resource_policy::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError> for Error {
+    fn from(err: crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError) -> Self {
+        match err {
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_retrieval_instruction::DeleteRetrievalInstructionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1425,6 +1564,45 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_retrieval_instruction::GetRetrievalInstructionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_retrieval_instruction::GetRetrievalInstructionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_retrieval_instruction::GetRetrievalInstructionError> for Error {
+    fn from(err: crate::operation::get_retrieval_instruction::GetRetrievalInstructionError) -> Self {
+        match err {
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_retrieval_instruction::GetRetrievalInstructionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_vpc_configuration::GetVpcConfigurationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1908,6 +2086,89 @@ impl From<crate::operation::list_prompts::ListPromptsError> for Error {
             crate::operation::list_prompts::ListPromptsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_prompts::ListPromptsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_prompts::ListPromptsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError> for Error {
+    fn from(err: crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError) -> Self {
+        match err {
+            crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_retrieval_instructions::ListRetrievalInstructionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError> for Error {
+    fn from(err: crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError) -> Self {
+        match err {
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_retrieval_instruction_versions::ListRetrievalInstructionVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2493,6 +2754,48 @@ impl From<crate::operation::update_prompt::UpdatePromptError> for Error {
             crate::operation::update_prompt::UpdatePromptError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_prompt::UpdatePromptError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_prompt::UpdatePromptError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError> for Error {
+    fn from(err: crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError) -> Self {
+        match err {
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_retrieval_instruction::UpdateRetrievalInstructionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -121,6 +121,10 @@ pub fn ser_put_metric_alarm_input_input(
     if let Some(var_32) = &input.evaluation_interval {
         encoder.str("EvaluationInterval").integer(*var_32);
     }
+    if let Some(var_33) = &input.action_configuration {
+        encoder.str("ActionConfiguration");
+        crate::protocol_serde::shape_action_configuration::ser_action_configuration(encoder, var_33)?;
+    }
     encoder.end();
     Ok(())
 }

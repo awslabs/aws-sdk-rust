@@ -148,6 +148,14 @@ pub struct InfluxDBv3EnterpriseParameters {
     /// <p>Defines how often the catalog synchronizes across cluster nodes.</p>
     /// <p>Default: 10s</p>
     pub catalog_sync_interval: ::std::option::Option<crate::types::Duration>,
+    /// <p>Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree. This action cannot be reversed. To create a new cluster on Parquet, set this to false.</p>
+    pub upgrade_pacha_tree: ::std::option::Option<bool>,
+    /// <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered regardless of the flush interval. Increase this value if WAL files are flushed before the interval elapses.</p>
+    pub wal_buffer_size: ::std::option::Option<i64>,
+    /// <p>The maximum size of the active snapshot bucket before it is rotated for snapshotting.</p>
+    pub snapshot_size: ::std::option::Option<crate::types::PercentOrAbsoluteLong>,
+    /// <p>The time-based trigger that controls how often the ingester creates snapshots. This value is also used on query nodes as the bucket rotation interval for the replica buffer.</p>
+    pub snapshot_duration: ::std::option::Option<crate::types::Duration>,
 }
 impl InfluxDBv3EnterpriseParameters {
     /// <p>Limits the number of Parquet files a query can access. If a query attempts to read more than this limit, InfluxDB 3 returns an error.</p>
@@ -402,6 +410,22 @@ impl InfluxDBv3EnterpriseParameters {
     pub fn catalog_sync_interval(&self) -> ::std::option::Option<&crate::types::Duration> {
         self.catalog_sync_interval.as_ref()
     }
+    /// <p>Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree. This action cannot be reversed. To create a new cluster on Parquet, set this to false.</p>
+    pub fn upgrade_pacha_tree(&self) -> ::std::option::Option<bool> {
+        self.upgrade_pacha_tree
+    }
+    /// <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered regardless of the flush interval. Increase this value if WAL files are flushed before the interval elapses.</p>
+    pub fn wal_buffer_size(&self) -> ::std::option::Option<i64> {
+        self.wal_buffer_size
+    }
+    /// <p>The maximum size of the active snapshot bucket before it is rotated for snapshotting.</p>
+    pub fn snapshot_size(&self) -> ::std::option::Option<&crate::types::PercentOrAbsoluteLong> {
+        self.snapshot_size.as_ref()
+    }
+    /// <p>The time-based trigger that controls how often the ingester creates snapshots. This value is also used on query nodes as the bucket rotation interval for the replica buffer.</p>
+    pub fn snapshot_duration(&self) -> ::std::option::Option<&crate::types::Duration> {
+        self.snapshot_duration.as_ref()
+    }
 }
 impl InfluxDBv3EnterpriseParameters {
     /// Creates a new builder-style object to manufacture [`InfluxDBv3EnterpriseParameters`](crate::types::InfluxDBv3EnterpriseParameters).
@@ -468,6 +492,10 @@ pub struct InfluxDBv3EnterpriseParametersBuilder {
     pub(crate) distinct_value_cache_disable_from_history: ::std::option::Option<bool>,
     pub(crate) replication_interval: ::std::option::Option<crate::types::Duration>,
     pub(crate) catalog_sync_interval: ::std::option::Option<crate::types::Duration>,
+    pub(crate) upgrade_pacha_tree: ::std::option::Option<bool>,
+    pub(crate) wal_buffer_size: ::std::option::Option<i64>,
+    pub(crate) snapshot_size: ::std::option::Option<crate::types::PercentOrAbsoluteLong>,
+    pub(crate) snapshot_duration: ::std::option::Option<crate::types::Duration>,
 }
 impl InfluxDBv3EnterpriseParametersBuilder {
     /// <p>Limits the number of Parquet files a query can access. If a query attempts to read more than this limit, InfluxDB 3 returns an error.</p>
@@ -1337,6 +1365,62 @@ impl InfluxDBv3EnterpriseParametersBuilder {
     pub fn get_catalog_sync_interval(&self) -> &::std::option::Option<crate::types::Duration> {
         &self.catalog_sync_interval
     }
+    /// <p>Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree. This action cannot be reversed. To create a new cluster on Parquet, set this to false.</p>
+    pub fn upgrade_pacha_tree(mut self, input: bool) -> Self {
+        self.upgrade_pacha_tree = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree. This action cannot be reversed. To create a new cluster on Parquet, set this to false.</p>
+    pub fn set_upgrade_pacha_tree(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.upgrade_pacha_tree = input;
+        self
+    }
+    /// <p>Specifies whether to migrate the cluster from the Parquet storage engine to PachaTree. This action cannot be reversed. To create a new cluster on Parquet, set this to false.</p>
+    pub fn get_upgrade_pacha_tree(&self) -> &::std::option::Option<bool> {
+        &self.upgrade_pacha_tree
+    }
+    /// <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered regardless of the flush interval. Increase this value if WAL files are flushed before the interval elapses.</p>
+    pub fn wal_buffer_size(mut self, input: i64) -> Self {
+        self.wal_buffer_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered regardless of the flush interval. Increase this value if WAL files are flushed before the interval elapses.</p>
+    pub fn set_wal_buffer_size(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.wal_buffer_size = input;
+        self
+    }
+    /// <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is triggered regardless of the flush interval. Increase this value if WAL files are flushed before the interval elapses.</p>
+    pub fn get_wal_buffer_size(&self) -> &::std::option::Option<i64> {
+        &self.wal_buffer_size
+    }
+    /// <p>The maximum size of the active snapshot bucket before it is rotated for snapshotting.</p>
+    pub fn snapshot_size(mut self, input: crate::types::PercentOrAbsoluteLong) -> Self {
+        self.snapshot_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum size of the active snapshot bucket before it is rotated for snapshotting.</p>
+    pub fn set_snapshot_size(mut self, input: ::std::option::Option<crate::types::PercentOrAbsoluteLong>) -> Self {
+        self.snapshot_size = input;
+        self
+    }
+    /// <p>The maximum size of the active snapshot bucket before it is rotated for snapshotting.</p>
+    pub fn get_snapshot_size(&self) -> &::std::option::Option<crate::types::PercentOrAbsoluteLong> {
+        &self.snapshot_size
+    }
+    /// <p>The time-based trigger that controls how often the ingester creates snapshots. This value is also used on query nodes as the bucket rotation interval for the replica buffer.</p>
+    pub fn snapshot_duration(mut self, input: crate::types::Duration) -> Self {
+        self.snapshot_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time-based trigger that controls how often the ingester creates snapshots. This value is also used on query nodes as the bucket rotation interval for the replica buffer.</p>
+    pub fn set_snapshot_duration(mut self, input: ::std::option::Option<crate::types::Duration>) -> Self {
+        self.snapshot_duration = input;
+        self
+    }
+    /// <p>The time-based trigger that controls how often the ingester creates snapshots. This value is also used on query nodes as the bucket rotation interval for the replica buffer.</p>
+    pub fn get_snapshot_duration(&self) -> &::std::option::Option<crate::types::Duration> {
+        &self.snapshot_duration
+    }
     /// Consumes the builder and constructs a [`InfluxDBv3EnterpriseParameters`](crate::types::InfluxDBv3EnterpriseParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`ingest_query_instances`](crate::types::builders::InfluxDBv3EnterpriseParametersBuilder::ingest_query_instances)
@@ -1413,6 +1497,10 @@ impl InfluxDBv3EnterpriseParametersBuilder {
             distinct_value_cache_disable_from_history: self.distinct_value_cache_disable_from_history,
             replication_interval: self.replication_interval,
             catalog_sync_interval: self.catalog_sync_interval,
+            upgrade_pacha_tree: self.upgrade_pacha_tree,
+            wal_buffer_size: self.wal_buffer_size,
+            snapshot_size: self.snapshot_size,
+            snapshot_duration: self.snapshot_duration,
         })
     }
 }

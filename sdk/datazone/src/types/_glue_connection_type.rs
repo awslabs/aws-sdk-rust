@@ -13,8 +13,10 @@
 /// # let glueconnectiontype = unimplemented!();
 /// match glueconnectiontype {
 ///     GlueConnectionType::Bigquery => { /* ... */ },
+///     GlueConnectionType::Databricksicebergrestcatalog => { /* ... */ },
 ///     GlueConnectionType::Documentdb => { /* ... */ },
 ///     GlueConnectionType::Dynamodb => { /* ... */ },
+///     GlueConnectionType::Icebergrestcatalog => { /* ... */ },
 ///     GlueConnectionType::Mysql => { /* ... */ },
 ///     GlueConnectionType::Opensearch => { /* ... */ },
 ///     GlueConnectionType::Oracle => { /* ... */ },
@@ -22,6 +24,7 @@
 ///     GlueConnectionType::Redshift => { /* ... */ },
 ///     GlueConnectionType::Saphana => { /* ... */ },
 ///     GlueConnectionType::Snowflake => { /* ... */ },
+///     GlueConnectionType::Snowflakeicebergrestcatalog => { /* ... */ },
 ///     GlueConnectionType::Sqlserver => { /* ... */ },
 ///     GlueConnectionType::Teradata => { /* ... */ },
 ///     GlueConnectionType::Vertica => { /* ... */ },
@@ -55,10 +58,14 @@
 pub enum GlueConnectionType {
     #[allow(missing_docs)] // documentation missing in model
     Bigquery,
+    /// <p>A Databricks Unity Catalog (Iceberg REST) connection type.</p>
+    Databricksicebergrestcatalog,
     #[allow(missing_docs)] // documentation missing in model
     Documentdb,
     #[allow(missing_docs)] // documentation missing in model
     Dynamodb,
+    /// <p>A generic Iceberg REST catalog connection type.</p>
+    Icebergrestcatalog,
     #[allow(missing_docs)] // documentation missing in model
     Mysql,
     #[allow(missing_docs)] // documentation missing in model
@@ -73,6 +80,8 @@ pub enum GlueConnectionType {
     Saphana,
     #[allow(missing_docs)] // documentation missing in model
     Snowflake,
+    /// <p>A Snowflake Horizon (Iceberg REST) catalog connection type.</p>
+    Snowflakeicebergrestcatalog,
     #[allow(missing_docs)] // documentation missing in model
     Sqlserver,
     #[allow(missing_docs)] // documentation missing in model
@@ -87,8 +96,10 @@ impl ::std::convert::From<&str> for GlueConnectionType {
     fn from(s: &str) -> Self {
         match s {
             "BIGQUERY" => GlueConnectionType::Bigquery,
+            "DATABRICKSICEBERGRESTCATALOG" => GlueConnectionType::Databricksicebergrestcatalog,
             "DOCUMENTDB" => GlueConnectionType::Documentdb,
             "DYNAMODB" => GlueConnectionType::Dynamodb,
+            "ICEBERGRESTCATALOG" => GlueConnectionType::Icebergrestcatalog,
             "MYSQL" => GlueConnectionType::Mysql,
             "OPENSEARCH" => GlueConnectionType::Opensearch,
             "ORACLE" => GlueConnectionType::Oracle,
@@ -96,6 +107,7 @@ impl ::std::convert::From<&str> for GlueConnectionType {
             "REDSHIFT" => GlueConnectionType::Redshift,
             "SAPHANA" => GlueConnectionType::Saphana,
             "SNOWFLAKE" => GlueConnectionType::Snowflake,
+            "SNOWFLAKEICEBERGRESTCATALOG" => GlueConnectionType::Snowflakeicebergrestcatalog,
             "SQLSERVER" => GlueConnectionType::Sqlserver,
             "TERADATA" => GlueConnectionType::Teradata,
             "VERTICA" => GlueConnectionType::Vertica,
@@ -115,8 +127,10 @@ impl GlueConnectionType {
     pub fn as_str(&self) -> &str {
         match self {
             GlueConnectionType::Bigquery => "BIGQUERY",
+            GlueConnectionType::Databricksicebergrestcatalog => "DATABRICKSICEBERGRESTCATALOG",
             GlueConnectionType::Documentdb => "DOCUMENTDB",
             GlueConnectionType::Dynamodb => "DYNAMODB",
+            GlueConnectionType::Icebergrestcatalog => "ICEBERGRESTCATALOG",
             GlueConnectionType::Mysql => "MYSQL",
             GlueConnectionType::Opensearch => "OPENSEARCH",
             GlueConnectionType::Oracle => "ORACLE",
@@ -124,6 +138,7 @@ impl GlueConnectionType {
             GlueConnectionType::Redshift => "REDSHIFT",
             GlueConnectionType::Saphana => "SAPHANA",
             GlueConnectionType::Snowflake => "SNOWFLAKE",
+            GlueConnectionType::Snowflakeicebergrestcatalog => "SNOWFLAKEICEBERGRESTCATALOG",
             GlueConnectionType::Sqlserver => "SQLSERVER",
             GlueConnectionType::Teradata => "TERADATA",
             GlueConnectionType::Vertica => "VERTICA",
@@ -134,8 +149,10 @@ impl GlueConnectionType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "BIGQUERY",
+            "DATABRICKSICEBERGRESTCATALOG",
             "DOCUMENTDB",
             "DYNAMODB",
+            "ICEBERGRESTCATALOG",
             "MYSQL",
             "OPENSEARCH",
             "ORACLE",
@@ -143,6 +160,7 @@ impl GlueConnectionType {
             "REDSHIFT",
             "SAPHANA",
             "SNOWFLAKE",
+            "SNOWFLAKEICEBERGRESTCATALOG",
             "SQLSERVER",
             "TERADATA",
             "VERTICA",
@@ -170,8 +188,10 @@ impl ::std::fmt::Display for GlueConnectionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             GlueConnectionType::Bigquery => write!(f, "BIGQUERY"),
+            GlueConnectionType::Databricksicebergrestcatalog => write!(f, "DATABRICKSICEBERGRESTCATALOG"),
             GlueConnectionType::Documentdb => write!(f, "DOCUMENTDB"),
             GlueConnectionType::Dynamodb => write!(f, "DYNAMODB"),
+            GlueConnectionType::Icebergrestcatalog => write!(f, "ICEBERGRESTCATALOG"),
             GlueConnectionType::Mysql => write!(f, "MYSQL"),
             GlueConnectionType::Opensearch => write!(f, "OPENSEARCH"),
             GlueConnectionType::Oracle => write!(f, "ORACLE"),
@@ -179,6 +199,7 @@ impl ::std::fmt::Display for GlueConnectionType {
             GlueConnectionType::Redshift => write!(f, "REDSHIFT"),
             GlueConnectionType::Saphana => write!(f, "SAPHANA"),
             GlueConnectionType::Snowflake => write!(f, "SNOWFLAKE"),
+            GlueConnectionType::Snowflakeicebergrestcatalog => write!(f, "SNOWFLAKEICEBERGRESTCATALOG"),
             GlueConnectionType::Sqlserver => write!(f, "SQLSERVER"),
             GlueConnectionType::Teradata => write!(f, "TERADATA"),
             GlueConnectionType::Vertica => write!(f, "VERTICA"),

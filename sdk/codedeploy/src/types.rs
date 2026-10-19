@@ -15,6 +15,8 @@ pub use crate::types::_deployment_mode::DeploymentMode;
 
 pub use crate::types::_alarm_configuration::AlarmConfiguration;
 
+pub use crate::types::_ec2_deployment_options::Ec2DeploymentOptions;
+
 pub use crate::types::_minimum_healthy_hosts::MinimumHealthyHosts;
 
 pub use crate::types::_traffic_routing_config::TrafficRoutingConfig;
@@ -143,6 +145,8 @@ pub use crate::types::_auto_rollback_event::AutoRollbackEvent;
 
 pub use crate::types::_alarm::Alarm;
 
+pub use crate::types::_auto_scaling_group_process::AutoScalingGroupProcess;
+
 pub use crate::types::_minimum_healthy_hosts_per_zone_type::MinimumHealthyHostsPerZoneType;
 
 pub use crate::types::_ec2_tag_filter_type::Ec2TagFilterType;
@@ -197,6 +201,8 @@ mod _auto_rollback_event;
 
 mod _auto_scaling_group;
 
+mod _auto_scaling_group_process;
+
 mod _blue_green_deployment_configuration;
 
 mod _blue_instance_termination_option;
@@ -238,6 +244,8 @@ mod _deployment_type;
 mod _deployment_wait_type;
 
 mod _diagnostics;
+
+mod _ec2_deployment_options;
 
 mod _ec2_tag_filter;
 

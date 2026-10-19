@@ -703,6 +703,8 @@ pub(crate) mod shape_secret;
 
 pub(crate) mod shape_service_connect_access_log_configuration;
 
+pub(crate) mod shape_service_connect_container_configuration;
+
 pub(crate) mod shape_service_connect_service;
 
 pub(crate) mod shape_service_current_revision_summary_list;
@@ -904,6 +906,8 @@ pub(crate) mod shape_resource_requirements;
 pub(crate) mod shape_runtime_platform_override;
 
 pub(crate) mod shape_secret_list;
+
+pub(crate) mod shape_service_connect_container_configurations;
 
 pub(crate) mod shape_service_connect_service_list;
 

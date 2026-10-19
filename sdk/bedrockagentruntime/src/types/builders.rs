@@ -7,6 +7,8 @@ pub use crate::types::_user_context::UserContextBuilder;
 
 pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfigurationBuilder;
 
+pub use crate::types::_agentic_retrieve_instruction_configuration::AgenticRetrieveInstructionConfigurationBuilder;
+
 pub use crate::types::_model_performance_configuration::ModelPerformanceConfigurationBuilder;
 
 pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
@@ -234,6 +236,8 @@ pub use crate::types::_mantle_foundation_model_model_configuration::MantleFounda
 pub use crate::types::_agentic_retrieve_bedrock_reranking_model_configuration::AgenticRetrieveBedrockRerankingModelConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_result_item::AgenticRetrieveResultItemBuilder;
+
+pub use crate::types::_agentic_retrieve_applied_instruction::AgenticRetrieveAppliedInstructionBuilder;
 
 pub use crate::types::_flow_trace_node_input_event::FlowTraceNodeInputEventBuilder;
 

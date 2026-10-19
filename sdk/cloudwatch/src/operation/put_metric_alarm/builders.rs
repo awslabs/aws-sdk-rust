@@ -1104,4 +1104,18 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_evaluation_interval(&self) -> &::std::option::Option<i32> {
         self.inner.get_evaluation_interval()
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.inner = self.inner.action_configuration(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.inner = self.inner.set_action_configuration(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        self.inner.get_action_configuration()
+    }
 }

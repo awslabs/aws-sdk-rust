@@ -13,6 +13,8 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_volume_modification_rate_exceeded_exception::VolumeModificationRateExceededException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
@@ -26,6 +28,8 @@ mod _service_quota_exceeded_exception;
 mod _throttling_exception;
 
 mod _validation_exception;
+
+mod _volume_modification_rate_exceeded_exception;
 
 /// Builders
 pub mod builders;

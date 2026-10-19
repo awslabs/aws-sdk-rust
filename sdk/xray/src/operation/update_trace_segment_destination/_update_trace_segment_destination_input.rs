@@ -5,11 +5,17 @@
 pub struct UpdateTraceSegmentDestinationInput {
     /// <p>The configured destination of trace segments.</p>
     pub destination: ::std::option::Option<crate::types::TraceSegmentDestination>,
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
 }
 impl UpdateTraceSegmentDestinationInput {
     /// <p>The configured destination of trace segments.</p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::TraceSegmentDestination> {
         self.destination.as_ref()
+    }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn cloud_watch_logs_configuration(&self) -> ::std::option::Option<&crate::types::CloudWatchLogsConfiguration> {
+        self.cloud_watch_logs_configuration.as_ref()
     }
 }
 impl UpdateTraceSegmentDestinationInput {
@@ -24,6 +30,7 @@ impl UpdateTraceSegmentDestinationInput {
 #[non_exhaustive]
 pub struct UpdateTraceSegmentDestinationInputBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::TraceSegmentDestination>,
+    pub(crate) cloud_watch_logs_configuration: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
 }
 impl UpdateTraceSegmentDestinationInputBuilder {
     /// <p>The configured destination of trace segments.</p>
@@ -40,6 +47,20 @@ impl UpdateTraceSegmentDestinationInputBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::TraceSegmentDestination> {
         &self.destination
     }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn cloud_watch_logs_configuration(mut self, input: crate::types::CloudWatchLogsConfiguration) -> Self {
+        self.cloud_watch_logs_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn set_cloud_watch_logs_configuration(mut self, input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>) -> Self {
+        self.cloud_watch_logs_configuration = input;
+        self
+    }
+    /// <p>Specifies settings for the CloudWatch Logs log groups that X-Ray creates for Transaction Search. Specify this only when <code>Destination</code> is <code>CloudWatchLogs</code>.</p>
+    pub fn get_cloud_watch_logs_configuration(&self) -> &::std::option::Option<crate::types::CloudWatchLogsConfiguration> {
+        &self.cloud_watch_logs_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateTraceSegmentDestinationInput`](crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationInput).
     pub fn build(
         self,
@@ -49,6 +70,7 @@ impl UpdateTraceSegmentDestinationInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::update_trace_segment_destination::UpdateTraceSegmentDestinationInput {
             destination: self.destination,
+            cloud_watch_logs_configuration: self.cloud_watch_logs_configuration,
         })
     }
 }

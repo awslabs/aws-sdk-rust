@@ -144,4 +144,23 @@ impl DescribeDeliveriesFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
+    ///
+    /// Appends an item to `deliverySourceNames`.
+    ///
+    /// To override the contents of this collection use [`set_delivery_source_names`](Self::set_delivery_source_names).
+    ///
+    /// <p>An array of delivery source names that filters the results to deliveries associated with any specified delivery source.</p>
+    pub fn delivery_source_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.delivery_source_names(input.into());
+        self
+    }
+    /// <p>An array of delivery source names that filters the results to deliveries associated with any specified delivery source.</p>
+    pub fn set_delivery_source_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_delivery_source_names(input);
+        self
+    }
+    /// <p>An array of delivery source names that filters the results to deliveries associated with any specified delivery source.</p>
+    pub fn get_delivery_source_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_delivery_source_names()
+    }
 }

@@ -1280,6 +1280,24 @@ pub(crate) fn insight_correct_errors(mut builder: crate::types::builders::Insigh
     builder
 }
 
+pub(crate) fn insight_result_correct_errors(
+    mut builder: crate::types::builders::InsightResultBuilder,
+) -> crate::types::builders::InsightResultBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InsightType>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn key_press_result_correct_errors(
     mut builder: crate::types::builders::KeyPressResultBuilder,
 ) -> crate::types::builders::KeyPressResultBuilder {
@@ -2015,6 +2033,18 @@ pub(crate) fn harness_token_usage_correct_errors(
     builder
 }
 
+pub(crate) fn insight_root_cause_correct_errors(
+    mut builder: crate::types::builders::InsightRootCauseBuilder,
+) -> crate::types::builders::InsightRootCauseBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.explanation.is_none() {
+        builder.explanation = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn mcp_descriptor_correct_errors(
     mut builder: crate::types::builders::McpDescriptorBuilder,
 ) -> crate::types::builders::McpDescriptorBuilder {
@@ -2063,6 +2093,15 @@ pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3
     }
     if builder.prefix.is_none() {
         builder.prefix = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sample_session_correct_errors(
+    mut builder: crate::types::builders::SampleSessionBuilder,
+) -> crate::types::builders::SampleSessionBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
     }
     builder
 }
@@ -2337,6 +2376,15 @@ pub(crate) fn resource_content_correct_errors(
 ) -> crate::types::builders::ResourceContentBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn session_finding_correct_errors(
+    mut builder: crate::types::builders::SessionFindingBuilder,
+) -> crate::types::builders::SessionFindingBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
     }
     builder
 }

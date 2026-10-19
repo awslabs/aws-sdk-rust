@@ -366,4 +366,18 @@ impl CreateDeploymentFluentBuilder {
     pub fn get_override_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         self.inner.get_override_alarm_configuration()
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(mut self, input: crate::types::Ec2DeploymentOptions) -> Self {
+        self.inner = self.inner.ec2_deployment_options(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn set_ec2_deployment_options(mut self, input: ::std::option::Option<crate::types::Ec2DeploymentOptions>) -> Self {
+        self.inner = self.inner.set_ec2_deployment_options(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn get_ec2_deployment_options(&self) -> &::std::option::Option<crate::types::Ec2DeploymentOptions> {
+        self.inner.get_ec2_deployment_options()
+    }
 }

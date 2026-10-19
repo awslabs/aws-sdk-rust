@@ -12,5 +12,14 @@ pub fn ser_describe_delivery_destinations_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.names {
+        let mut array_4 = object.key("names").start_array();
+        for item_5 in var_3 {
+            {
+                array_4.value().string(item_5.as_str());
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

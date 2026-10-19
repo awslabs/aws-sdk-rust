@@ -217,6 +217,23 @@ impl AgenticRetrieveStreamFluentBuilder {
     pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration> {
         self.inner.get_memory_configuration()
     }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn retrieval_instruction_configuration(mut self, input: crate::types::AgenticRetrieveInstructionConfiguration) -> Self {
+        self.inner = self.inner.retrieval_instruction_configuration(input);
+        self
+    }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn set_retrieval_instruction_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_retrieval_instruction_configuration(input);
+        self
+    }
+    /// <p>A retrieval instruction to apply to this request.</p>
+    pub fn get_retrieval_instruction_configuration(&self) -> &::std::option::Option<crate::types::AgenticRetrieveInstructionConfiguration> {
+        self.inner.get_retrieval_instruction_configuration()
+    }
     /// <p>Whether to generate a response based on the retrieved results.</p>
     pub fn generate_response(mut self, input: bool) -> Self {
         self.inner = self.inner.generate_response(input);

@@ -341,9 +341,9 @@ pub enum CreateApprovalRuleTemplateError {
     ApprovalRuleTemplateNameRequiredException(crate::types::error::ApprovalRuleTemplateNameRequiredException),
     /// <p>The content of the approval rule template is not valid.</p>
     InvalidApprovalRuleTemplateContentException(crate::types::error::InvalidApprovalRuleTemplateContentException),
-    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
+    /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i> CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateDescriptionException(crate::types::error::InvalidApprovalRuleTemplateDescriptionException),
-    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i>CodeCommit User Guide</i>.</p>
+    /// <p>The name of the approval rule template is not valid. Template names must be between 1 and 100 valid characters in length. For more information about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a> in the <i> CodeCommit User Guide</i>.</p>
     InvalidApprovalRuleTemplateNameException(crate::types::error::InvalidApprovalRuleTemplateNameException),
     /// <p>The maximum number of approval rule templates has been exceeded for this Amazon Web Services Region.</p>
     NumberOfRuleTemplatesExceededException(crate::types::error::NumberOfRuleTemplatesExceededException),

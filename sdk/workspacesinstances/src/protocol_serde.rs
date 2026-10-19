@@ -37,6 +37,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_workspace_instances;
 
+pub(crate) mod shape_modify_volume;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -69,6 +71,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_workspace_instances_input;
 
+pub(crate) mod shape_modify_volume_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -80,6 +84,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_volume_modification_rate_exceeded_exception;
 
 pub(crate) mod shape_billing_configuration;
 

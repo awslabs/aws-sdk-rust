@@ -19,6 +19,8 @@ pub use crate::types::_indexing_rule::IndexingRuleBuilder;
 
 pub use crate::types::_sampling_rule_update::SamplingRuleUpdateBuilder;
 
+pub use crate::types::_cloud_watch_logs_configuration::CloudWatchLogsConfigurationBuilder;
+
 pub use crate::types::_trace::TraceBuilder;
 
 pub use crate::types::_tag::TagBuilder;

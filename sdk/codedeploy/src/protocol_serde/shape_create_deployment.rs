@@ -224,6 +224,22 @@ pub fn de_create_deployment_http_error(
             }
             tmp
         }),
+        "InvalidAutoScalingGroupProcessToSuspendException" => {
+            crate::operation::create_deployment::CreateDeploymentError::InvalidAutoScalingGroupProcessToSuspendException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidAutoScalingGroupProcessToSuspendExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_auto_scaling_group_process_to_suspend_exception::de_invalid_auto_scaling_group_process_to_suspend_exception_json_err(_response_body, output).map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidComputePlatformException" => crate::operation::create_deployment::CreateDeploymentError::InvalidComputePlatformException({
             #[allow(unused_mut)]
             let mut tmp = {

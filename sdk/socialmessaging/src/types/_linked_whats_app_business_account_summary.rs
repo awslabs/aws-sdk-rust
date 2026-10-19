@@ -20,6 +20,10 @@ pub struct LinkedWhatsAppBusinessAccountSummary {
     pub event_destinations: ::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>,
     /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
     pub marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Direct Send enforcement status for the WhatsApp Business Account. Enforcement applies when an account repeatedly sends messages in a category that does not match the content. This field is not present when no enforcement is active.</p>
+    pub direct_send_enforcement_status: ::std::option::Option<::std::string::String>,
+    /// <p>The time when the current Direct Send enforcement is expected to lift. This field is not present for permanent enforcement or when no enforcement is active.</p>
+    pub direct_send_enforcement_status_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
 }
@@ -61,6 +65,14 @@ impl LinkedWhatsAppBusinessAccountSummary {
     pub fn marketing_messages_onboarding_status(&self) -> ::std::option::Option<&str> {
         self.marketing_messages_onboarding_status.as_deref()
     }
+    /// <p>The Direct Send enforcement status for the WhatsApp Business Account. Enforcement applies when an account repeatedly sends messages in a category that does not match the content. This field is not present when no enforcement is active.</p>
+    pub fn direct_send_enforcement_status(&self) -> ::std::option::Option<&str> {
+        self.direct_send_enforcement_status.as_deref()
+    }
+    /// <p>The time when the current Direct Send enforcement is expected to lift. This field is not present for permanent enforcement or when no enforcement is active.</p>
+    pub fn direct_send_enforcement_status_expires_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.direct_send_enforcement_status_expires_at.as_ref()
+    }
     /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
     pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
@@ -85,6 +97,8 @@ pub struct LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub(crate) waba_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>>,
     pub(crate) marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    pub(crate) direct_send_enforcement_status: ::std::option::Option<::std::string::String>,
+    pub(crate) direct_send_enforcement_status_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountSummaryBuilder {
@@ -215,6 +229,34 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub fn get_marketing_messages_onboarding_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketing_messages_onboarding_status
     }
+    /// <p>The Direct Send enforcement status for the WhatsApp Business Account. Enforcement applies when an account repeatedly sends messages in a category that does not match the content. This field is not present when no enforcement is active.</p>
+    pub fn direct_send_enforcement_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.direct_send_enforcement_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Direct Send enforcement status for the WhatsApp Business Account. Enforcement applies when an account repeatedly sends messages in a category that does not match the content. This field is not present when no enforcement is active.</p>
+    pub fn set_direct_send_enforcement_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.direct_send_enforcement_status = input;
+        self
+    }
+    /// <p>The Direct Send enforcement status for the WhatsApp Business Account. Enforcement applies when an account repeatedly sends messages in a category that does not match the content. This field is not present when no enforcement is active.</p>
+    pub fn get_direct_send_enforcement_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.direct_send_enforcement_status
+    }
+    /// <p>The time when the current Direct Send enforcement is expected to lift. This field is not present for permanent enforcement or when no enforcement is active.</p>
+    pub fn direct_send_enforcement_status_expires_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.direct_send_enforcement_status_expires_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time when the current Direct Send enforcement is expected to lift. This field is not present for permanent enforcement or when no enforcement is active.</p>
+    pub fn set_direct_send_enforcement_status_expires_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.direct_send_enforcement_status_expires_at = input;
+        self
+    }
+    /// <p>The time when the current Direct Send enforcement is expected to lift. This field is not present for permanent enforcement or when no enforcement is active.</p>
+    pub fn get_direct_send_enforcement_status_expires_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.direct_send_enforcement_status_expires_at
+    }
     /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
     pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dataset_id = ::std::option::Option::Some(input.into());
@@ -285,6 +327,8 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
                 )
             })?,
             marketing_messages_onboarding_status: self.marketing_messages_onboarding_status,
+            direct_send_enforcement_status: self.direct_send_enforcement_status,
+            direct_send_enforcement_status_expires_at: self.direct_send_enforcement_status_expires_at,
             dataset_id: self.dataset_id,
         })
     }

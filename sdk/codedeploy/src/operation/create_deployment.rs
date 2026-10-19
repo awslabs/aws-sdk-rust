@@ -366,6 +366,8 @@ pub enum CreateDeploymentError {
     InvalidAutoRollbackConfigException(crate::types::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::types::error::InvalidAutoScalingGroupException),
+    /// <p>The <code>autoScalingGroupProcessesToSuspend</code> list in <code>ec2DeploymentOptions</code> contains a process that is not valid. Valid values are <code>Terminate</code>, <code>AZRebalance</code>, <code>InstanceRefresh</code>, and <code>ScheduledActions</code>. Process names are case sensitive.</p>
+    InvalidAutoScalingGroupProcessToSuspendException(crate::types::error::InvalidAutoScalingGroupProcessToSuspendException),
     /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
     InvalidComputePlatformException(crate::types::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
@@ -455,6 +457,7 @@ impl CreateDeploymentError {
             Self::InvalidApplicationNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoRollbackConfigException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoScalingGroupException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidComputePlatformException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentConfigNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentGroupNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -522,6 +525,10 @@ impl CreateDeploymentError {
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidAutoScalingGroupException`.
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(self, Self::InvalidAutoScalingGroupException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDeploymentError::InvalidAutoScalingGroupProcessToSuspendException`.
+    pub fn is_invalid_auto_scaling_group_process_to_suspend_exception(&self) -> bool {
+        matches!(self, Self::InvalidAutoScalingGroupProcessToSuspendException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidComputePlatformException`.
     pub fn is_invalid_compute_platform_exception(&self) -> bool {
@@ -607,6 +614,7 @@ impl ::std::error::Error for CreateDeploymentError {
             Self::InvalidApplicationNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidComputePlatformException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::std::option::Option::Some(_inner),
@@ -643,6 +651,7 @@ impl ::std::fmt::Display for CreateDeploymentError {
             Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
             Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
             Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => _inner.fmt(f),
             Self::InvalidComputePlatformException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
@@ -693,6 +702,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploym
             Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAutoScalingGroupProcessToSuspendException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidComputePlatformException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

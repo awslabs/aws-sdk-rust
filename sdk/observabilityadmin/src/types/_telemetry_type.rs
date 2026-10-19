@@ -12,6 +12,7 @@
 /// ```text
 /// # let telemetrytype = unimplemented!();
 /// match telemetrytype {
+///     TelemetryType::Insights => { /* ... */ },
 ///     TelemetryType::Logs => { /* ... */ },
 ///     TelemetryType::Metrics => { /* ... */ },
 ///     TelemetryType::Traces => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum TelemetryType {
     #[allow(missing_docs)] // documentation missing in model
+    Insights,
+    #[allow(missing_docs)] // documentation missing in model
     Logs,
     #[allow(missing_docs)] // documentation missing in model
     Metrics,
@@ -56,6 +59,7 @@ pub enum TelemetryType {
 impl ::std::convert::From<&str> for TelemetryType {
     fn from(s: &str) -> Self {
         match s {
+            "Insights" => TelemetryType::Insights,
             "Logs" => TelemetryType::Logs,
             "Metrics" => TelemetryType::Metrics,
             "Traces" => TelemetryType::Traces,
@@ -74,6 +78,7 @@ impl TelemetryType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TelemetryType::Insights => "Insights",
             TelemetryType::Logs => "Logs",
             TelemetryType::Metrics => "Metrics",
             TelemetryType::Traces => "Traces",
@@ -82,7 +87,7 @@ impl TelemetryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Logs", "Metrics", "Traces"]
+        &["Insights", "Logs", "Metrics", "Traces"]
     }
 }
 impl ::std::convert::AsRef<str> for TelemetryType {
@@ -105,6 +110,7 @@ impl TelemetryType {
 impl ::std::fmt::Display for TelemetryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TelemetryType::Insights => write!(f, "Insights"),
             TelemetryType::Logs => write!(f, "Logs"),
             TelemetryType::Metrics => write!(f, "Metrics"),
             TelemetryType::Traces => write!(f, "Traces"),

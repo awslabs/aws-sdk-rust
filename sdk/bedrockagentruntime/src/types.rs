@@ -7,6 +7,8 @@ pub use crate::types::_user_context::UserContext;
 
 pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfiguration;
 
+pub use crate::types::_agentic_retrieve_instruction_configuration::AgenticRetrieveInstructionConfiguration;
+
 pub use crate::types::_agentic_retrieve_stream_response_output::AgenticRetrieveStreamResponseOutput;
 
 pub use crate::types::_flow_execution_status::FlowExecutionStatus;
@@ -352,6 +354,8 @@ pub use crate::types::_agentic_retrieve_result_item::AgenticRetrieveResultItem;
 pub use crate::types::_agentic_retrieve_step::AgenticRetrieveStep;
 
 pub use crate::types::_agentic_retrieve_status::AgenticRetrieveStatus;
+
+pub use crate::types::_agentic_retrieve_applied_instruction::AgenticRetrieveAppliedInstruction;
 
 pub use crate::types::_node_error_code::NodeErrorCode;
 
@@ -779,6 +783,8 @@ mod _agentic_retrieve_action;
 
 mod _agentic_retrieve_action_details;
 
+mod _agentic_retrieve_applied_instruction;
+
 mod _agentic_retrieve_bedrock_guardrail_configuration;
 
 mod _agentic_retrieve_bedrock_reranking_configuration;
@@ -798,6 +804,8 @@ mod _agentic_retrieve_full_doc_expansion_details;
 mod _agentic_retrieve_generated_response;
 
 mod _agentic_retrieve_guardrail_warning;
+
+mod _agentic_retrieve_instruction_configuration;
 
 mod _agentic_retrieve_memory_configuration;
 

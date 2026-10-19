@@ -33,6 +33,8 @@ pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurat
 
 pub use crate::types::_metric_characteristics::MetricCharacteristics;
 
+pub use crate::types::_action_configuration::ActionConfiguration;
+
 pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfiguration;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
@@ -101,6 +103,8 @@ pub use crate::types::_metric_stream_entry::MetricStreamEntry;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_alarm_tags_propagation::AlarmTagsPropagation;
+
 pub use crate::types::_dashboard_validation_message::DashboardValidationMessage;
 
 pub use crate::types::_schedule_configuration::ScheduleConfiguration;
@@ -139,6 +143,8 @@ pub use crate::types::_insight_rule_contributor_datapoint::InsightRuleContributo
 
 pub use crate::types::_metric_stream_statistics_metric::MetricStreamStatisticsMetric;
 
+mod _action_configuration;
+
 mod _actions_suppressed_by;
 
 mod _alarm_contributor;
@@ -150,6 +156,8 @@ mod _alarm_mute_rule_status;
 mod _alarm_mute_rule_summary;
 
 mod _alarm_prom_ql_criteria;
+
+mod _alarm_tags_propagation;
 
 mod _alarm_type;
 

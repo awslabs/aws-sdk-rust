@@ -95,6 +95,8 @@ pub struct DeploymentInfo {
     pub related_deployments: ::std::option::Option<crate::types::RelatedDeployments>,
     /// <p>Information about alarms associated with a deployment or deployment group.</p>
     pub override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
 }
 impl DeploymentInfo {
     /// <p>The application name.</p>
@@ -252,6 +254,10 @@ impl DeploymentInfo {
     pub fn override_alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.override_alarm_configuration.as_ref()
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(&self) -> ::std::option::Option<&crate::types::Ec2DeploymentOptions> {
+        self.ec2_deployment_options.as_ref()
+    }
 }
 impl DeploymentInfo {
     /// Creates a new builder-style object to manufacture [`DeploymentInfo`](crate::types::DeploymentInfo).
@@ -295,6 +301,7 @@ pub struct DeploymentInfoBuilder {
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) related_deployments: ::std::option::Option<crate::types::RelatedDeployments>,
     pub(crate) override_alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) ec2_deployment_options: ::std::option::Option<crate::types::Ec2DeploymentOptions>,
 }
 impl DeploymentInfoBuilder {
     /// <p>The application name.</p>
@@ -824,6 +831,20 @@ impl DeploymentInfoBuilder {
     pub fn get_override_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.override_alarm_configuration
     }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn ec2_deployment_options(mut self, input: crate::types::Ec2DeploymentOptions) -> Self {
+        self.ec2_deployment_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn set_ec2_deployment_options(mut self, input: ::std::option::Option<crate::types::Ec2DeploymentOptions>) -> Self {
+        self.ec2_deployment_options = input;
+        self
+    }
+    /// <p>Options that control how CodeDeploy manages Amazon EC2 Auto Scaling groups during a deployment.</p>
+    pub fn get_ec2_deployment_options(&self) -> &::std::option::Option<crate::types::Ec2DeploymentOptions> {
+        &self.ec2_deployment_options
+    }
     /// Consumes the builder and constructs a [`DeploymentInfo`](crate::types::DeploymentInfo).
     pub fn build(self) -> crate::types::DeploymentInfo {
         crate::types::DeploymentInfo {
@@ -858,6 +879,7 @@ impl DeploymentInfoBuilder {
             external_id: self.external_id,
             related_deployments: self.related_deployments,
             override_alarm_configuration: self.override_alarm_configuration,
+            ec2_deployment_options: self.ec2_deployment_options,
         }
     }
 }

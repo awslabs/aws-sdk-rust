@@ -215,6 +215,51 @@ pub(crate) fn create_prompt_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_retrieval_instruction_output_output_correct_errors(
+    mut builder: crate::operation::create_retrieval_instruction::builders::CreateRetrievalInstructionOutputBuilder,
+) -> crate::operation::create_retrieval_instruction::builders::CreateRetrievalInstructionOutputBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RetrievalInstructionStatus>().ok()
+    }
+    if builder.last_transition_status.is_none() {
+        builder.last_transition_status = "no value was set".parse::<crate::types::RetrievalInstructionLastTransitionStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn create_retrieval_instruction_version_output_output_correct_errors(
+    mut builder: crate::operation::create_retrieval_instruction_version::builders::CreateRetrievalInstructionVersionOutputBuilder,
+) -> crate::operation::create_retrieval_instruction_version::builders::CreateRetrievalInstructionVersionOutputBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_vpc_configuration_output_output_correct_errors(
     mut builder: crate::operation::create_vpc_configuration::builders::CreateVpcConfigurationOutputBuilder,
 ) -> crate::operation::create_vpc_configuration::builders::CreateVpcConfigurationOutputBuilder {
@@ -343,6 +388,18 @@ pub(crate) fn delete_resource_policy_output_output_correct_errors(
 ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder {
     if builder.resource_arn.is_none() {
         builder.resource_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_retrieval_instruction_output_output_correct_errors(
+    mut builder: crate::operation::delete_retrieval_instruction::builders::DeleteRetrievalInstructionOutputBuilder,
+) -> crate::operation::delete_retrieval_instruction::builders::DeleteRetrievalInstructionOutputBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
     }
     builder
 }
@@ -590,6 +647,33 @@ pub(crate) fn get_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_retrieval_instruction_output_output_correct_errors(
+    mut builder: crate::operation::get_retrieval_instruction::builders::GetRetrievalInstructionOutputBuilder,
+) -> crate::operation::get_retrieval_instruction::builders::GetRetrievalInstructionOutputBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RetrievalInstructionStatus>().ok()
+    }
+    if builder.last_transition_status.is_none() {
+        builder.last_transition_status = "no value was set".parse::<crate::types::RetrievalInstructionLastTransitionStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_vpc_configuration_output_output_correct_errors(
     mut builder: crate::operation::get_vpc_configuration::builders::GetVpcConfigurationOutputBuilder,
 ) -> crate::operation::get_vpc_configuration::builders::GetVpcConfigurationOutputBuilder {
@@ -724,6 +808,24 @@ pub(crate) fn list_prompts_output_output_correct_errors(
 ) -> crate::operation::list_prompts::builders::ListPromptsOutputBuilder {
     if builder.prompt_summaries.is_none() {
         builder.prompt_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_retrieval_instruction_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_retrieval_instruction_versions::builders::ListRetrievalInstructionVersionsOutputBuilder,
+) -> crate::operation::list_retrieval_instruction_versions::builders::ListRetrievalInstructionVersionsOutputBuilder {
+    if builder.retrieval_instruction_version_summaries.is_none() {
+        builder.retrieval_instruction_version_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_retrieval_instructions_output_output_correct_errors(
+    mut builder: crate::operation::list_retrieval_instructions::builders::ListRetrievalInstructionsOutputBuilder,
+) -> crate::operation::list_retrieval_instructions::builders::ListRetrievalInstructionsOutputBuilder {
+    if builder.retrieval_instruction_summaries.is_none() {
+        builder.retrieval_instruction_summaries = Some(Default::default())
     }
     builder
 }
@@ -958,6 +1060,33 @@ pub(crate) fn update_prompt_output_output_correct_errors(
     }
     if builder.version.is_none() {
         builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_retrieval_instruction_output_output_correct_errors(
+    mut builder: crate::operation::update_retrieval_instruction::builders::UpdateRetrievalInstructionOutputBuilder,
+) -> crate::operation::update_retrieval_instruction::builders::UpdateRetrievalInstructionOutputBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RetrievalInstructionStatus>().ok()
+    }
+    if builder.last_transition_status.is_none() {
+        builder.last_transition_status = "no value was set".parse::<crate::types::RetrievalInstructionLastTransitionStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -1649,6 +1778,57 @@ pub(crate) fn prompt_variant_correct_errors(
     }
     if builder.template_configuration.is_none() {
         builder.template_configuration = Some(crate::types::PromptTemplateConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn retrieval_instruction_failure_reason_correct_errors(
+    mut builder: crate::types::builders::RetrievalInstructionFailureReasonBuilder,
+) -> crate::types::builders::RetrievalInstructionFailureReasonBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::RetrievalInstructionFailureReasonCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn retrieval_instruction_summary_correct_errors(
+    mut builder: crate::types::builders::RetrievalInstructionSummaryBuilder,
+) -> crate::types::builders::RetrievalInstructionSummaryBuilder {
+    if builder.retrieval_instruction_id.is_none() {
+        builder.retrieval_instruction_id = Some(Default::default())
+    }
+    if builder.retrieval_instruction_arn.is_none() {
+        builder.retrieval_instruction_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RetrievalInstructionStatus>().ok()
+    }
+    if builder.last_transition_status.is_none() {
+        builder.last_transition_status = "no value was set".parse::<crate::types::RetrievalInstructionLastTransitionStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn retrieval_instruction_version_summary_correct_errors(
+    mut builder: crate::types::builders::RetrievalInstructionVersionSummaryBuilder,
+) -> crate::types::builders::RetrievalInstructionVersionSummaryBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

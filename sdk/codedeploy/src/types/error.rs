@@ -85,6 +85,8 @@ pub use crate::types::error::_invalid_auto_rollback_config_exception::InvalidAut
 
 pub use crate::types::error::_invalid_auto_scaling_group_exception::InvalidAutoScalingGroupException;
 
+pub use crate::types::error::_invalid_auto_scaling_group_process_to_suspend_exception::InvalidAutoScalingGroupProcessToSuspendException;
+
 pub use crate::types::error::_invalid_deployment_config_name_exception::InvalidDeploymentConfigNameException;
 
 pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceException;
@@ -308,6 +310,8 @@ mod _invalid_arn_exception;
 mod _invalid_auto_rollback_config_exception;
 
 mod _invalid_auto_scaling_group_exception;
+
+mod _invalid_auto_scaling_group_process_to_suspend_exception;
 
 mod _invalid_blue_green_deployment_configuration_exception;
 

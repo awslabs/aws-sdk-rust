@@ -199,6 +199,8 @@ pub(crate) mod shape_update_sampling_rule_input;
 
 pub(crate) mod shape_update_trace_segment_destination_input;
 
+pub(crate) mod shape_cloud_watch_logs_configuration;
+
 pub(crate) mod shape_encryption_config;
 
 pub(crate) mod shape_group;

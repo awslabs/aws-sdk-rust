@@ -142,4 +142,23 @@ impl DescribeDeliveryDestinationsFluentBuilder {
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }
+    ///
+    /// Appends an item to `names`.
+    ///
+    /// To override the contents of this collection use [`set_names`](Self::set_names).
+    ///
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.names(input.into());
+        self
+    }
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn set_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_names(input);
+        self
+    }
+    /// <p>An array of delivery destination names that filters the results to delivery destinations with any specified name.</p>
+    pub fn get_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_names()
+    }
 }

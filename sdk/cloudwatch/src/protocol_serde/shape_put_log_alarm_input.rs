@@ -78,6 +78,10 @@ pub fn ser_put_log_alarm_input_input(
         encoder.str("WarmUpConfiguration");
         crate::protocol_serde::shape_warm_up_configuration::ser_warm_up_configuration(encoder, var_20)?;
     }
+    if let Some(var_21) = &input.action_configuration {
+        encoder.str("ActionConfiguration");
+        crate::protocol_serde::shape_action_configuration::ser_action_configuration(encoder, var_21)?;
+    }
     encoder.end();
     Ok(())
 }

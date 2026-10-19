@@ -24,8 +24,8 @@ impl crate::operation::create_workspace_service_account::builders::CreateWorkspa
 ///
 /// <p>Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run automated workloads. After creating the service account with the correct <code>GrafanaRole</code> for your use case, use <code>CreateWorkspaceServiceAccountToken</code> to create a token that can be used to authenticate and authorize Grafana HTTP API calls.</p>
 /// <p>You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.</p><note>
-/// <p>For more information about service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
-/// <p>For more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+/// <p>For more information about service accounts, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
+/// <p>For more information about the Grafana HTTP APIs, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkspaceServiceAccountFluentBuilder {
@@ -127,21 +127,21 @@ impl CreateWorkspaceServiceAccountFluentBuilder {
         self.inner.get_name()
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn grafana_role(mut self, input: crate::types::Role) -> Self {
         self.inner = self.inner.grafana_role(input);
         self
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn set_grafana_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.inner = self.inner.set_grafana_role(input);
         self
     }
     /// <p>The permission level to use for this service account.</p><note>
-    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+    /// <p>For more information about the roles and the permissions each has, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
     /// </note>
     pub fn get_grafana_role(&self) -> &::std::option::Option<crate::types::Role> {
         self.inner.get_grafana_role()

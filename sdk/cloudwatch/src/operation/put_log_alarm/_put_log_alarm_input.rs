@@ -74,6 +74,8 @@ pub struct PutLogAlarmInput {
     /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutLogAlarmInput {
     /// <p>The name for the alarm. This name must be unique within the Amazon Web Services account and Region.</p>
@@ -187,6 +189,10 @@ impl PutLogAlarmInput {
     pub fn warm_up_configuration(&self) -> ::std::option::Option<&crate::types::WarmUpConfiguration> {
         self.warm_up_configuration.as_ref()
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl PutLogAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutLogAlarmInput`](crate::operation::put_log_alarm::PutLogAlarmInput).
@@ -215,6 +221,7 @@ pub struct PutLogAlarmInputBuilder {
     pub(crate) treat_missing_data: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutLogAlarmInputBuilder {
     /// <p>The name for the alarm. This name must be unique within the Amazon Web Services account and Region.</p>
@@ -588,6 +595,20 @@ impl PutLogAlarmInputBuilder {
     pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
         &self.warm_up_configuration
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`PutLogAlarmInput`](crate::operation::put_log_alarm::PutLogAlarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_log_alarm::PutLogAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_log_alarm::PutLogAlarmInput {
@@ -607,6 +628,7 @@ impl PutLogAlarmInputBuilder {
             treat_missing_data: self.treat_missing_data,
             tags: self.tags,
             warm_up_configuration: self.warm_up_configuration,
+            action_configuration: self.action_configuration,
         })
     }
 }

@@ -16,6 +16,10 @@ pub struct TemplateSummary {
     pub template_language: ::std::option::Option<::std::string::String>,
     /// <p>The category of the template (for example, UTILITY or MARKETING).</p>
     pub template_category: ::std::option::Option<::std::string::String>,
+    /// <p>The source of the template. A value of AUTO_GENERATED indicates that the template was created automatically from a message that you sent. This field is not present for templates that you created manually.</p>
+    pub template_source: ::std::option::Option<::std::string::String>,
+    /// <p>The category that the template content actually belongs to, when it differs from the template's current category. This field is present only when the template has been flagged as miscategorized.</p>
+    pub correct_category: ::std::option::Option<::std::string::String>,
 }
 impl TemplateSummary {
     /// <p>The name of the template.</p>
@@ -42,6 +46,14 @@ impl TemplateSummary {
     pub fn template_category(&self) -> ::std::option::Option<&str> {
         self.template_category.as_deref()
     }
+    /// <p>The source of the template. A value of AUTO_GENERATED indicates that the template was created automatically from a message that you sent. This field is not present for templates that you created manually.</p>
+    pub fn template_source(&self) -> ::std::option::Option<&str> {
+        self.template_source.as_deref()
+    }
+    /// <p>The category that the template content actually belongs to, when it differs from the template's current category. This field is present only when the template has been flagged as miscategorized.</p>
+    pub fn correct_category(&self) -> ::std::option::Option<&str> {
+        self.correct_category.as_deref()
+    }
 }
 impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::types::TemplateSummary).
@@ -60,6 +72,8 @@ pub struct TemplateSummaryBuilder {
     pub(crate) template_quality_score: ::std::option::Option<::std::string::String>,
     pub(crate) template_language: ::std::option::Option<::std::string::String>,
     pub(crate) template_category: ::std::option::Option<::std::string::String>,
+    pub(crate) template_source: ::std::option::Option<::std::string::String>,
+    pub(crate) correct_category: ::std::option::Option<::std::string::String>,
 }
 impl TemplateSummaryBuilder {
     /// <p>The name of the template.</p>
@@ -146,6 +160,34 @@ impl TemplateSummaryBuilder {
     pub fn get_template_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_category
     }
+    /// <p>The source of the template. A value of AUTO_GENERATED indicates that the template was created automatically from a message that you sent. This field is not present for templates that you created manually.</p>
+    pub fn template_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_source = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source of the template. A value of AUTO_GENERATED indicates that the template was created automatically from a message that you sent. This field is not present for templates that you created manually.</p>
+    pub fn set_template_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.template_source = input;
+        self
+    }
+    /// <p>The source of the template. A value of AUTO_GENERATED indicates that the template was created automatically from a message that you sent. This field is not present for templates that you created manually.</p>
+    pub fn get_template_source(&self) -> &::std::option::Option<::std::string::String> {
+        &self.template_source
+    }
+    /// <p>The category that the template content actually belongs to, when it differs from the template's current category. This field is present only when the template has been flagged as miscategorized.</p>
+    pub fn correct_category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.correct_category = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The category that the template content actually belongs to, when it differs from the template's current category. This field is present only when the template has been flagged as miscategorized.</p>
+    pub fn set_correct_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.correct_category = input;
+        self
+    }
+    /// <p>The category that the template content actually belongs to, when it differs from the template's current category. This field is present only when the template has been flagged as miscategorized.</p>
+    pub fn get_correct_category(&self) -> &::std::option::Option<::std::string::String> {
+        &self.correct_category
+    }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {
         crate::types::TemplateSummary {
@@ -155,6 +197,8 @@ impl TemplateSummaryBuilder {
             template_quality_score: self.template_quality_score,
             template_language: self.template_language,
             template_category: self.template_category,
+            template_source: self.template_source,
+            correct_category: self.correct_category,
         }
     }
 }

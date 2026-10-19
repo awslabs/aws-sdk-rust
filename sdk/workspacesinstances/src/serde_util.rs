@@ -116,6 +116,21 @@ pub(crate) fn list_workspace_instances_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn volume_modification_rate_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::VolumeModificationRateExceededExceptionBuilder,
+) -> crate::types::error::builders::VolumeModificationRateExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn billing_configuration_correct_errors(
     mut builder: crate::types::builders::BillingConfigurationBuilder,
 ) -> crate::types::builders::BillingConfigurationBuilder {

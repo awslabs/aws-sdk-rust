@@ -249,6 +249,8 @@ pub struct PutMetricAlarmInput {
     /// <p>The frequency, in seconds, at which the alarm is evaluated. Valid values are 10, 20, 30, and any multiple of 60.</p>
     /// <p>This parameter is required for alarms that use <code>EvaluationCriteria</code>, and cannot be specified for alarms configured with <code>MetricName</code> or <code>Metrics</code>.</p>
     pub evaluation_interval: ::std::option::Option<i32>,
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutMetricAlarmInput {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -561,6 +563,10 @@ impl PutMetricAlarmInput {
     pub fn evaluation_interval(&self) -> ::std::option::Option<i32> {
         self.evaluation_interval
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(&self) -> ::std::option::Option<&crate::types::ActionConfiguration> {
+        self.action_configuration.as_ref()
+    }
 }
 impl PutMetricAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutMetricAlarmInput`](crate::operation::put_metric_alarm::PutMetricAlarmInput).
@@ -599,6 +605,7 @@ pub struct PutMetricAlarmInputBuilder {
     pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
     pub(crate) evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     pub(crate) evaluation_interval: ::std::option::Option<i32>,
+    pub(crate) action_configuration: ::std::option::Option<crate::types::ActionConfiguration>,
 }
 impl PutMetricAlarmInputBuilder {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -1584,6 +1591,20 @@ impl PutMetricAlarmInputBuilder {
     pub fn get_evaluation_interval(&self) -> &::std::option::Option<i32> {
         &self.evaluation_interval
     }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn action_configuration(mut self, input: crate::types::ActionConfiguration) -> Self {
+        self.action_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn set_action_configuration(mut self, input: ::std::option::Option<crate::types::ActionConfiguration>) -> Self {
+        self.action_configuration = input;
+        self
+    }
+    /// <p>Settings that change the content of the notifications and events that the alarm sends when its state changes. These settings apply to the alarm's actions, whichever state triggers them.</p>
+    pub fn get_action_configuration(&self) -> &::std::option::Option<crate::types::ActionConfiguration> {
+        &self.action_configuration
+    }
     /// Consumes the builder and constructs a [`PutMetricAlarmInput`](crate::operation::put_metric_alarm::PutMetricAlarmInput).
     pub fn build(
         self,
@@ -1615,6 +1636,7 @@ impl PutMetricAlarmInputBuilder {
             warm_up_configuration: self.warm_up_configuration,
             evaluation_criteria: self.evaluation_criteria,
             evaluation_interval: self.evaluation_interval,
+            action_configuration: self.action_configuration,
         })
     }
 }

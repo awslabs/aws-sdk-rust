@@ -58,7 +58,7 @@
 //!     - [TagResource](https://docs.aws.amazon.com/controltower/latest/APIReference/API_TagResource.html)
 //!     - [UntagResource](https://docs.aws.amazon.com/controltower/latest/APIReference/API_UntagResource.html)
 //!
-//! For more information about these types of resources, see the [_Amazon Web Services Control Tower User Guide_](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html).
+//! For more information about these types of resources, see the [_ Amazon Web Services Control Tower User Guide_](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html).
 //!
 //! __About control APIs__
 //!
@@ -75,9 +75,9 @@
 //!
 //! __About identifiers for Amazon Web Services Control Tower__
 //!
-//! The Amazon Web Services Control Tower controlIdentifier is unique in each Amazon Web Services Region for each control. You can find the controlIdentifier for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html) or the [Control availability by Region tables](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html) in the _Amazon Web Services Control Tower Controls Reference Guide_.
+//! The Amazon Web Services Control Tower controlIdentifier is unique in each Amazon Web Services Region for each control. You can find the controlIdentifier for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html) or the [Control availability by Region tables](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html) in the _ Amazon Web Services Control Tower Controls Reference Guide_.
 //!
-//! A quick-reference list of control identifers for the Amazon Web Services Control Tower legacy _Strongly recommended_ and _Elective_ controls is given in [Resource identifiers for APIs and controls](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html.html) in the [_Amazon Web Services Control Tower Controls Reference Guide_](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html). Remember that _Mandatory_ controls cannot be added or removed.
+//! A quick-reference list of control identifers for the Amazon Web Services Control Tower legacy _Strongly recommended_ and _Elective_ controls is given in [Resource identifiers for APIs and controls](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html.html) in the [_ Amazon Web Services Control Tower Controls Reference Guide_](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html). Remember that _Mandatory_ controls cannot be added or removed.
 //!
 //! __To get the targetIdentifier:__
 //!
@@ -134,7 +134,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-controltower = "1.122.0"
+//! aws-sdk-controltower = "1.123.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
