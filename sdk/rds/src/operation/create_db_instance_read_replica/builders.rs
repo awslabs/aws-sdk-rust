@@ -639,7 +639,8 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
+    /// <p>For a read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, specifying this parameter is optional. If you specify a KMS key identifier, the read replica is encrypted with that KMS key, which can be different from the KMS key of the source.</p>
+    /// <p>If you don't specify a value for this parameter, the read replica is encrypted with the same KMS key as the source DB instance or Multi-AZ DB cluster.</p>
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
@@ -649,7 +650,8 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
+    /// <p>For a read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, specifying this parameter is optional. If you specify a KMS key identifier, the read replica is encrypted with that KMS key, which can be different from the KMS key of the source.</p>
+    /// <p>If you don't specify a value for this parameter, the read replica is encrypted with the same KMS key as the source DB instance or Multi-AZ DB cluster.</p>
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
@@ -659,7 +661,8 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <p>If you create an encrypted read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, don't specify a value for this parameter. A read replica in the same Amazon Web Services Region is always encrypted with the same KMS key as the source DB instance or cluster.</p>
+    /// <p>For a read replica in the same Amazon Web Services Region as the source DB instance or Multi-AZ DB cluster, specifying this parameter is optional. If you specify a KMS key identifier, the read replica is encrypted with that KMS key, which can be different from the KMS key of the source.</p>
+    /// <p>If you don't specify a value for this parameter, the read replica is encrypted with the same KMS key as the source DB instance or Multi-AZ DB cluster.</p>
     /// <p>If you create an encrypted read replica in a different Amazon Web Services Region, then you must specify a KMS key identifier for the destination Amazon Web Services Region. KMS keys are specific to the Amazon Web Services Region that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another Amazon Web Services Region.</p>
     /// <p>You can't create an encrypted read replica from an unencrypted DB instance or Multi-AZ DB cluster.</p>
     /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary replica.</p>
@@ -1501,5 +1504,79 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this read replica. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the read replica uses reserved capacity from the specified reservation. A read replica uses one unit of reserved capacity, in the same way as any other DB instance.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the source DB instance must match it. A read replica inherits its license model from the source DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.db_capacity_reservation_identifier(input.into());
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this read replica. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the read replica uses reserved capacity from the specified reservation. A read replica uses one unit of reserved capacity, in the same way as any other DB instance.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the source DB instance must match it. A read replica inherits its license model from the source DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_db_capacity_reservation_identifier(input);
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this read replica. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the read replica uses reserved capacity from the specified reservation. A read replica uses one unit of reserved capacity, in the same way as any other DB instance.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the source DB instance must match it. A read replica inherits its license model from the source DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_db_capacity_reservation_identifier()
     }
 }

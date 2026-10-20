@@ -5,6 +5,8 @@ pub use crate::types::_resource_pending_maintenance_actions::ResourcePendingMain
 
 pub use crate::types::_db_security_group::DbSecurityGroupBuilder;
 
+pub use crate::types::_db_capacity_reservation::DbCapacityReservationBuilder;
+
 pub use crate::types::_db_cluster_parameter_group::DbClusterParameterGroupBuilder;
 
 pub use crate::types::_db_cluster_snapshot::DbClusterSnapshotBuilder;
@@ -68,6 +70,8 @@ pub use crate::types::_db_recommendation::DbRecommendationBuilder;
 pub use crate::types::_reserved_db_instance::ReservedDbInstanceBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_db_capacity_reservation_commitment_info::DbCapacityReservationCommitmentInfoBuilder;
 
 pub use crate::types::_target_resource_configuration::TargetResourceConfigurationBuilder;
 
@@ -166,6 +170,8 @@ pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuild
 pub use crate::types::_ec2_security_group::Ec2SecurityGroupBuilder;
 
 pub use crate::types::_ip_range::IpRangeBuilder;
+
+pub use crate::types::_available_capacity_per_availability_zone::AvailableCapacityPerAvailabilityZoneBuilder;
 
 pub use crate::types::_option::OptionBuilder;
 

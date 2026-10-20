@@ -24,6 +24,130 @@ impl ValidateCloudConnectorInput {
         self.next_token.as_deref()
     }
 }
+static VALIDATECLOUDCONNECTORINPUT_MEMBER_CLOUD_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ValidateCloudConnectorInput$CloudConnectorId",
+        "com.amazonaws.ssm.synthetic",
+        "ValidateCloudConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudConnectorId",
+    0,
+);
+static VALIDATECLOUDCONNECTORINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ValidateCloudConnectorInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "ValidateCloudConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static VALIDATECLOUDCONNECTORINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ValidateCloudConnectorInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ValidateCloudConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static VALIDATECLOUDCONNECTORINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ValidateCloudConnectorInput",
+        "com.amazonaws.ssm.synthetic",
+        "ValidateCloudConnectorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VALIDATECLOUDCONNECTORINPUT_MEMBER_CLOUD_CONNECTOR_ID,
+        &VALIDATECLOUDCONNECTORINPUT_MEMBER_MAX_RESULTS,
+        &VALIDATECLOUDCONNECTORINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ValidateCloudConnectorRequest");
+impl ValidateCloudConnectorInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VALIDATECLOUDCONNECTORINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ValidateCloudConnectorInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cloud_connector_id {
+            ser.write_string(&VALIDATECLOUDCONNECTORINPUT_MEMBER_CLOUD_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&VALIDATECLOUDCONNECTORINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&VALIDATECLOUDCONNECTORINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::validate_cloud_connector::builders::ValidateCloudConnectorInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VALIDATECLOUDCONNECTORINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ValidateCloudConnectorInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cloud_connector_id = builder.cloud_connector_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ValidateCloudConnectorInput {
     /// Creates a new builder-style object to manufacture [`ValidateCloudConnectorInput`](crate::operation::validate_cloud_connector::ValidateCloudConnectorInput).
     pub fn builder() -> crate::operation::validate_cloud_connector::builders::ValidateCloudConnectorInputBuilder {

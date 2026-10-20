@@ -20,8 +20,15 @@ use aws_smithy_http_client::tls::{ServerName, TlsContext};
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+#[cfg(feature = "rt-tokio")]
+use aws_smithy_runtime_api::client::result::ConnectorError;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 use aws_smithy_types::byte_stream::ByteStream;
+#[cfg(all(
+    feature = "rt-tokio",
+    any(feature = "rustls-aws-lc", feature = "s2n-tls")
+))]
+use common::client as test_client;
 #[cfg(feature = "rt-tokio")]
 use common::client::PartitionedConnectionPool;
 use common::client::{BackendConfig, HttpsClientBackend, HyperUtilLegacyPool};
@@ -135,11 +142,12 @@ async fn echo(req: Request<Incoming>) -> Result<Response<Full<Bytes>>, hyper::Er
     Ok(response)
 }
 
+/// Returns the request error after asserting its Debug text contains `expected_error`.
 async fn native_ca_rejects_test_certificate(
     backend: &dyn HttpsClientBackend,
     provider: tls::Provider,
     expected_error: &str,
-) {
+) -> BoxError {
     let client = backend.build_https(
         BackendConfig::default(),
         provider,
@@ -148,11 +156,25 @@ async fn native_ca_rejects_test_certificate(
     let error = run_tls_test(&client)
         .await
         .expect_err("the native trust store must reject the test certificate");
-    let error = format!("{error:?}");
+    let debug = format!("{error:?}");
     assert!(
-        error.contains(expected_error),
-        "expected TLS error containing {expected_error:?}, got {error}"
+        debug.contains(expected_error),
+        "expected TLS error containing {expected_error:?}, got {debug}"
     );
+    error
+}
+
+/// Asserts that a pool's TLS rejection is terminal rather than retryable I/O.
+#[cfg(feature = "rt-tokio")]
+fn assert_pool_tls_rejection_is_terminal(error: BoxError) {
+    let error = error
+        .downcast::<ConnectorError>()
+        .expect("the request fails with a ConnectorError");
+    assert!(
+        error.is_other(),
+        "expected ConnectorError::other, got {error:?}"
+    );
+    assert!(!error.is_io(), "a TLS rejection must not be retryable I/O");
 }
 
 async fn custom_ca_accepts_test_certificate(
@@ -187,12 +209,13 @@ async fn test_rustls_aws_lc_native_ca_with_hyper_util_legacy_pool() {
 #[cfg(feature = "rt-tokio")]
 #[tokio::test]
 async fn test_rustls_aws_lc_native_ca_with_partitioned_connection_pool() {
-    native_ca_rejects_test_certificate(
+    let error = native_ca_rejects_test_certificate(
         &PartitionedConnectionPool,
         rustls_aws_lc(),
         "InvalidCertificate(UnknownIssuer)",
     )
     .await;
+    assert_pool_tls_rejection_is_terminal(error);
 }
 
 #[cfg(feature = "rustls-aws-lc")]
@@ -334,12 +357,13 @@ async fn test_rustls_aws_lc_fips_native_ca_with_hyper_util_legacy_pool() {
 #[cfg(feature = "rt-tokio")]
 #[tokio::test]
 async fn test_rustls_aws_lc_fips_native_ca_with_partitioned_connection_pool() {
-    native_ca_rejects_test_certificate(
+    let error = native_ca_rejects_test_certificate(
         &PartitionedConnectionPool,
         rustls_aws_lc_fips(),
         "InvalidCertificate(UnknownIssuer)",
     )
     .await;
+    assert_pool_tls_rejection_is_terminal(error);
 }
 
 #[cfg(feature = "rustls-aws-lc-fips")]
@@ -375,12 +399,13 @@ async fn test_rustls_ring_native_ca_with_hyper_util_legacy_pool() {
 #[cfg(feature = "rt-tokio")]
 #[tokio::test]
 async fn test_rustls_ring_native_ca_with_partitioned_connection_pool() {
-    native_ca_rejects_test_certificate(
+    let error = native_ca_rejects_test_certificate(
         &PartitionedConnectionPool,
         rustls_ring(),
         "InvalidCertificate(UnknownIssuer)",
     )
     .await;
+    assert_pool_tls_rejection_is_terminal(error);
 }
 
 #[cfg(feature = "rustls-ring")]
@@ -418,12 +443,13 @@ async fn test_rustls_custom_provider_native_ca_with_hyper_util_legacy_pool() {
 #[cfg(feature = "rt-tokio")]
 #[tokio::test]
 async fn test_rustls_custom_provider_native_ca_with_partitioned_connection_pool() {
-    native_ca_rejects_test_certificate(
+    let error = native_ca_rejects_test_certificate(
         &PartitionedConnectionPool,
         rustls_custom_provider(),
         "InvalidCertificate(UnknownIssuer)",
     )
     .await;
+    assert_pool_tls_rejection_is_terminal(error);
 }
 
 #[cfg(all(aws_sdk_unstable, feature = "rustls-ring"))]
@@ -454,12 +480,13 @@ async fn test_s2n_native_ca_with_hyper_util_legacy_pool() {
 #[cfg(feature = "rt-tokio")]
 #[tokio::test]
 async fn test_s2n_native_ca_with_partitioned_connection_pool() {
-    native_ca_rejects_test_certificate(
+    let error = native_ca_rejects_test_certificate(
         &PartitionedConnectionPool,
         tls::Provider::S2nTls,
         "Certificate is untrusted",
     )
     .await;
+    assert_pool_tls_rejection_is_terminal(error);
 }
 
 #[cfg(feature = "s2n-tls")]
@@ -473,6 +500,57 @@ async fn test_s2n_tls_custom_ca_with_hyper_util_legacy_pool() {
 #[tokio::test]
 async fn test_s2n_tls_custom_ca_with_partitioned_connection_pool() {
     custom_ca_accepts_test_certificate(&PartitionedConnectionPool, tls::Provider::S2nTls).await;
+}
+
+/// A peer that closes the connection during the TLS handshake fails the request with
+/// retryable I/O.
+#[cfg(all(
+    feature = "rt-tokio",
+    any(feature = "rustls-aws-lc", feature = "s2n-tls")
+))]
+async fn handshake_eof_is_io_error(backend: &dyn HttpsClientBackend, provider: tls::Provider) {
+    let listener = TcpListener::bind("127.0.0.1:0")
+        .await
+        .expect("listener should bind");
+    let port = listener
+        .local_addr()
+        .expect("listener has an address")
+        .port();
+    let closing_peer = tokio::spawn(async move {
+        loop {
+            let (stream, _) = listener.accept().await.expect("listener accepts");
+            drop(stream);
+        }
+    });
+    let client = backend.build_https(
+        BackendConfig::default(),
+        provider,
+        test_tls::SERVER_IDENTITY.client_context(),
+    );
+    let connector = test_client::connector(&client);
+
+    let error = test_client::send_request(
+        &connector,
+        HttpRequest::get(format!("https://localhost:{port}/")).expect("valid request"),
+    )
+    .await
+    .expect_err("a peer that closes during the handshake fails the request");
+    closing_peer.abort();
+    assert!(error.is_io(), "expected ConnectorError::io, got {error:?}");
+}
+
+#[cfg(feature = "rustls-aws-lc")]
+#[cfg(feature = "rt-tokio")]
+#[tokio::test]
+async fn test_rustls_aws_lc_handshake_eof_with_partitioned_connection_pool() {
+    handshake_eof_is_io_error(&PartitionedConnectionPool, rustls_aws_lc()).await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[cfg(feature = "rt-tokio")]
+#[tokio::test]
+async fn test_s2n_tls_handshake_eof_with_partitioned_connection_pool() {
+    handshake_eof_is_io_error(&PartitionedConnectionPool, tls::Provider::S2nTls).await;
 }
 
 async fn run_tls_test(client: &dyn HttpClient) -> Result<(), BoxError> {
@@ -555,21 +633,23 @@ mod additional_server_names {
             .expect("additional server names produce a valid client context")
     }
 
+    /// Returns the request error after asserting its Debug text contains `expected_error`.
     async fn assert_ip_rejected(
         backend: &dyn HttpsClientBackend,
         provider: tls::Provider,
         tls_context: TlsContext,
         expected_error: &str,
-    ) {
+    ) -> BoxError {
         let client = backend.build_https(BackendConfig::default(), provider, tls_context);
         let error = run_tls_test_to_ip(&client)
             .await
             .expect_err("the certificate must not validate for the request IP");
-        let error = format!("{error:?}");
+        let debug = format!("{error:?}");
         assert!(
-            error.contains(expected_error),
-            "expected TLS error containing {expected_error:?}, got {error}"
+            debug.contains(expected_error),
+            "expected TLS error containing {expected_error:?}, got {debug}"
         );
+        error
     }
 
     async fn assert_ip_accepted(backend: &dyn HttpsClientBackend, provider: tls::Provider) {
@@ -600,24 +680,24 @@ mod additional_server_names {
 
         const CERTIFICATE_ERROR: &str = "InvalidCertificate";
 
-        async fn missing_name_is_rejected(backend: &dyn HttpsClientBackend) {
+        async fn missing_name_is_rejected(backend: &dyn HttpsClientBackend) -> BoxError {
             assert_ip_rejected(
                 backend,
                 provider(),
                 test_tls::SERVER_IDENTITY.client_context(),
                 CERTIFICATE_ERROR,
             )
-            .await;
+            .await
         }
 
-        async fn wrong_name_is_rejected(backend: &dyn HttpsClientBackend) {
+        async fn wrong_name_is_rejected(backend: &dyn HttpsClientBackend) -> BoxError {
             assert_ip_rejected(
                 backend,
                 provider(),
                 client_context(&["wrong.example.com"]),
                 CERTIFICATE_ERROR,
             )
-            .await;
+            .await
         }
 
         async fn matching_name_is_accepted(backend: &dyn HttpsClientBackend) {
@@ -658,12 +738,14 @@ mod additional_server_names {
 
             #[tokio::test]
             async fn test_missing_name_is_rejected() {
-                missing_name_is_rejected(&PartitionedConnectionPool).await;
+                let error = missing_name_is_rejected(&PartitionedConnectionPool).await;
+                assert_pool_tls_rejection_is_terminal(error);
             }
 
             #[tokio::test]
             async fn test_wrong_name_is_rejected() {
-                wrong_name_is_rejected(&PartitionedConnectionPool).await;
+                let error = wrong_name_is_rejected(&PartitionedConnectionPool).await;
+                assert_pool_tls_rejection_is_terminal(error);
             }
 
             #[tokio::test]
@@ -684,24 +766,24 @@ mod additional_server_names {
 
         const CERTIFICATE_ERROR: &str = "Certificate is not valid for the supplied hostname";
 
-        async fn missing_name_is_rejected(backend: &dyn HttpsClientBackend) {
+        async fn missing_name_is_rejected(backend: &dyn HttpsClientBackend) -> BoxError {
             assert_ip_rejected(
                 backend,
                 tls::Provider::S2nTls,
                 test_tls::SERVER_IDENTITY.client_context(),
                 CERTIFICATE_ERROR,
             )
-            .await;
+            .await
         }
 
-        async fn wrong_name_is_rejected(backend: &dyn HttpsClientBackend) {
+        async fn wrong_name_is_rejected(backend: &dyn HttpsClientBackend) -> BoxError {
             assert_ip_rejected(
                 backend,
                 tls::Provider::S2nTls,
                 client_context(&["wrong.example.com"]),
                 CERTIFICATE_ERROR,
             )
-            .await;
+            .await
         }
 
         async fn matching_name_is_accepted(backend: &dyn HttpsClientBackend) {
@@ -742,12 +824,14 @@ mod additional_server_names {
 
             #[tokio::test]
             async fn test_missing_name_is_rejected() {
-                missing_name_is_rejected(&PartitionedConnectionPool).await;
+                let error = missing_name_is_rejected(&PartitionedConnectionPool).await;
+                assert_pool_tls_rejection_is_terminal(error);
             }
 
             #[tokio::test]
             async fn test_wrong_name_is_rejected() {
-                wrong_name_is_rejected(&PartitionedConnectionPool).await;
+                let error = wrong_name_is_rejected(&PartitionedConnectionPool).await;
+                assert_pool_tls_rejection_is_terminal(error);
             }
 
             #[tokio::test]

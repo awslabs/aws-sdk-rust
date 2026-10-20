@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>Specifies whether a resource is publicly accessible from the internet or private to a VPC.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AccessType {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The resource is private and reachable only from within the VPC.</p>
     Private,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The resource is publicly accessible from the internet.</p>
     Public,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

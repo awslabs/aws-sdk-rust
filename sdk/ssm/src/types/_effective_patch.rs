@@ -19,6 +19,91 @@ impl EffectivePatch {
         self.patch_status.as_ref()
     }
 }
+static EFFECTIVEPATCH_MEMBER_PATCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#EffectivePatch$Patch", "com.amazonaws.ssm", "EffectivePatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Patch",
+    0,
+);
+static EFFECTIVEPATCH_MEMBER_PATCH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#EffectivePatch$PatchStatus", "com.amazonaws.ssm", "EffectivePatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PatchStatus",
+    1,
+);
+static EFFECTIVEPATCH_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#EffectivePatch", "com.amazonaws.ssm", "EffectivePatch"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EFFECTIVEPATCH_MEMBER_PATCH, &EFFECTIVEPATCH_MEMBER_PATCH_STATUS],
+);
+impl EffectivePatch {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EFFECTIVEPATCH_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EffectivePatch {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.patch {
+            ser.write_struct(&EFFECTIVEPATCH_MEMBER_PATCH, val)?;
+        }
+        if let Some(ref val) = self.patch_status {
+            ser.write_struct(&EFFECTIVEPATCH_MEMBER_PATCH_STATUS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EffectivePatchBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EFFECTIVEPATCH_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.patch = Some(crate::types::Patch::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.patch_status = Some(crate::types::PatchStatus::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EffectivePatch {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EffectivePatch {
     /// Creates a new builder-style object to manufacture [`EffectivePatch`](crate::types::EffectivePatch).
     pub fn builder() -> crate::types::builders::EffectivePatchBuilder {

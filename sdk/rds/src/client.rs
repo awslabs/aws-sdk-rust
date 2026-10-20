@@ -224,6 +224,8 @@ mod authorize_db_security_group_ingress;
 
 mod backtrack_db_cluster;
 
+mod cancel_db_capacity_reservation;
+
 mod cancel_export_task;
 
 mod copy_db_cluster_parameter_group;
@@ -239,6 +241,8 @@ mod copy_option_group;
 mod create_blue_green_deployment;
 
 mod create_custom_db_engine_version;
+
+mod create_db_capacity_reservation;
 
 mod create_db_cluster;
 
@@ -353,6 +357,8 @@ mod describe_blue_green_deployments;
 
 mod describe_certificates;
 
+mod describe_db_capacity_reservations;
+
 mod describe_db_cluster_automated_backups;
 
 mod describe_db_cluster_backtracks;
@@ -460,6 +466,8 @@ mod modify_certificates;
 mod modify_current_db_cluster_capacity;
 
 mod modify_custom_db_engine_version;
+
+mod modify_db_capacity_reservation;
 
 mod modify_db_cluster;
 

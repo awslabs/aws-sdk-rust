@@ -26,6 +26,20 @@ pub enum AwsSdkFeature {
     SsoLoginAuth,
     /// Indicates that a custom endpoint URL was configured
     EndpointOverride,
+    /// Indicates that an upload directory operation was called by the S3 Transfer Manager
+    S3TransferUploadDirectory,
+    /// Indicates that a download directory operation was called by the S3 Transfer Manager
+    S3TransferDownloadDirectory,
+    /// Indicates that the S3 client was configured with a non-default part size
+    S3CustomPartSize,
+    /// Indicates that the S3 client was configured with a non-default throughput target
+    S3CustomThroughput,
+    /// Indicates that the S3 client was configured with a non-default memory pool size
+    S3CustomMemoryLimit,
+    /// Indicates that the S3 client detected it is running on an EC2 instance
+    S3OnEc2,
+    /// Indicates that an operation used a file path rather than a streaming body
+    S3FilePath,
 }
 
 impl Storable for AwsSdkFeature {

@@ -22,6 +22,9 @@ pub mod authorize_db_security_group_ingress;
 /// Types for the `BacktrackDBCluster` operation.
 pub mod backtrack_db_cluster;
 
+/// Types for the `CancelDBCapacityReservation` operation.
+pub mod cancel_db_capacity_reservation;
+
 /// Types for the `CancelExportTask` operation.
 pub mod cancel_export_task;
 
@@ -45,6 +48,9 @@ pub mod create_blue_green_deployment;
 
 /// Types for the `CreateCustomDBEngineVersion` operation.
 pub mod create_custom_db_engine_version;
+
+/// Types for the `CreateDBCapacityReservation` operation.
+pub mod create_db_capacity_reservation;
 
 /// Types for the `CreateDBCluster` operation.
 pub mod create_db_cluster;
@@ -174,6 +180,9 @@ pub mod describe_blue_green_deployments;
 
 /// Types for the `DescribeCertificates` operation.
 pub mod describe_certificates;
+
+/// Types for the `DescribeDBCapacityReservations` operation.
+pub mod describe_db_capacity_reservations;
 
 /// Types for the `DescribeDBClusterAutomatedBackups` operation.
 pub mod describe_db_cluster_automated_backups;
@@ -336,6 +345,9 @@ pub mod modify_current_db_cluster_capacity;
 
 /// Types for the `ModifyCustomDBEngineVersion` operation.
 pub mod modify_custom_db_engine_version;
+
+/// Types for the `ModifyDBCapacityReservation` operation.
+pub mod modify_db_capacity_reservation;
 
 /// Types for the `ModifyDBCluster` operation.
 pub mod modify_db_cluster;

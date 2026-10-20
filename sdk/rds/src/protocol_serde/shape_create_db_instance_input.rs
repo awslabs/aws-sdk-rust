@@ -411,9 +411,14 @@ pub fn ser_create_db_instance_input_input_input(
         list_155.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_157 = writer.prefix("MasterUserAuthenticationType");
-    if let Some(var_158) = &input.master_user_authentication_type {
-        scope_157.string(var_158.as_str());
+    let mut scope_157 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_158) = &input.db_capacity_reservation_identifier {
+        scope_157.string(var_158);
+    }
+    #[allow(unused_mut)]
+    let mut scope_159 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_160) = &input.master_user_authentication_type {
+        scope_159.string(var_160.as_str());
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

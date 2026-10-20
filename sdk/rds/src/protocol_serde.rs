@@ -51,6 +51,10 @@ pub(crate) mod shape_backtrack_db_cluster;
 
 pub(crate) mod shape_backtrack_db_cluster_input;
 
+pub(crate) mod shape_cancel_db_capacity_reservation;
+
+pub(crate) mod shape_cancel_db_capacity_reservation_input;
+
 pub(crate) mod shape_cancel_export_task;
 
 pub(crate) mod shape_cancel_export_task_input;
@@ -82,6 +86,10 @@ pub(crate) mod shape_create_blue_green_deployment_input;
 pub(crate) mod shape_create_custom_db_engine_version;
 
 pub(crate) mod shape_create_custom_db_engine_version_input;
+
+pub(crate) mod shape_create_db_capacity_reservation;
+
+pub(crate) mod shape_create_db_capacity_reservation_input;
 
 pub(crate) mod shape_create_db_cluster;
 
@@ -254,6 +262,10 @@ pub(crate) mod shape_describe_blue_green_deployments_input;
 pub(crate) mod shape_describe_certificates;
 
 pub(crate) mod shape_describe_certificates_input;
+
+pub(crate) mod shape_describe_db_capacity_reservations;
+
+pub(crate) mod shape_describe_db_capacity_reservations_input;
 
 pub(crate) mod shape_describe_db_cluster_automated_backups;
 
@@ -470,6 +482,10 @@ pub(crate) mod shape_modify_current_db_cluster_capacity_input;
 pub(crate) mod shape_modify_custom_db_engine_version;
 
 pub(crate) mod shape_modify_custom_db_engine_version_input;
+
+pub(crate) mod shape_modify_db_capacity_reservation;
+
+pub(crate) mod shape_modify_db_capacity_reservation_input;
 
 pub(crate) mod shape_modify_db_cluster;
 
@@ -709,6 +725,12 @@ pub(crate) mod shape_custom_db_engine_version_not_found_fault;
 
 pub(crate) mod shape_custom_db_engine_version_quota_exceeded_fault;
 
+pub(crate) mod shape_db_capacity_reservation_already_exists_fault;
+
+pub(crate) mod shape_db_capacity_reservation_not_found_fault;
+
+pub(crate) mod shape_db_capacity_reservation_unsupported_fault;
+
 pub(crate) mod shape_db_cluster_already_exists_fault;
 
 pub(crate) mod shape_db_cluster_associated_role;
@@ -858,6 +880,8 @@ pub(crate) mod shape_integration_quota_exceeded_fault;
 pub(crate) mod shape_invalid_blue_green_deployment_state_fault;
 
 pub(crate) mod shape_invalid_custom_db_engine_version_state_fault;
+
+pub(crate) mod shape_invalid_db_capacity_reservation_state_fault;
 
 pub(crate) mod shape_invalid_db_cluster_automated_backup_state_fault;
 
@@ -1021,6 +1045,10 @@ pub(crate) mod shape_character_set;
 
 pub(crate) mod shape_custom_db_engine_version_ami;
 
+pub(crate) mod shape_db_capacity_reservation;
+
+pub(crate) mod shape_db_capacity_reservation_list;
+
 pub(crate) mod shape_db_cluster;
 
 pub(crate) mod shape_db_cluster_automated_backup;
@@ -1177,6 +1205,8 @@ pub(crate) mod shape_additional_storage_volumes_output_list;
 
 pub(crate) mod shape_availability_zones;
 
+pub(crate) mod shape_available_capacity_per_availability_zone_list;
+
 pub(crate) mod shape_available_processor_feature_list;
 
 pub(crate) mod shape_blue_green_deployment_task_list;
@@ -1186,6 +1216,8 @@ pub(crate) mod shape_certificate_details;
 pub(crate) mod shape_cluster_pending_modified_values;
 
 pub(crate) mod shape_connection_pool_configuration_info;
+
+pub(crate) mod shape_db_capacity_reservation_commitment_info;
 
 pub(crate) mod shape_db_cluster_backtrack;
 
@@ -1320,6 +1352,8 @@ pub(crate) mod shape_additional_storage_volume_output;
 pub(crate) mod shape_availability_zone_list;
 
 pub(crate) mod shape_available_additional_storage_volumes_option_list;
+
+pub(crate) mod shape_available_capacity_per_availability_zone;
 
 pub(crate) mod shape_available_processor_feature;
 

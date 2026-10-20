@@ -19,6 +19,99 @@ impl AccountSharingInfo {
         self.shared_document_version.as_deref()
     }
 }
+static ACCOUNTSHARINGINFO_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AccountSharingInfo$AccountId",
+        "com.amazonaws.ssm",
+        "AccountSharingInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    0,
+);
+static ACCOUNTSHARINGINFO_MEMBER_SHARED_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AccountSharingInfo$SharedDocumentVersion",
+        "com.amazonaws.ssm",
+        "AccountSharingInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SharedDocumentVersion",
+    1,
+);
+static ACCOUNTSHARINGINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AccountSharingInfo", "com.amazonaws.ssm", "AccountSharingInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCOUNTSHARINGINFO_MEMBER_ACCOUNT_ID, &ACCOUNTSHARINGINFO_MEMBER_SHARED_DOCUMENT_VERSION],
+);
+impl AccountSharingInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNTSHARINGINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccountSharingInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&ACCOUNTSHARINGINFO_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.shared_document_version {
+            ser.write_string(&ACCOUNTSHARINGINFO_MEMBER_SHARED_DOCUMENT_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountSharingInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNTSHARINGINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shared_document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccountSharingInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccountSharingInfo {
     /// Creates a new builder-style object to manufacture [`AccountSharingInfo`](crate::types::AccountSharingInfo).
     pub fn builder() -> crate::types::builders::AccountSharingInfoBuilder {

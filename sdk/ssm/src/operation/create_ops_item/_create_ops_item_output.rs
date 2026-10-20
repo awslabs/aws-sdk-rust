@@ -19,6 +19,104 @@ impl CreateOpsItemOutput {
         self.ops_item_arn.as_deref()
     }
 }
+static CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateOpsItemOutput$OpsItemId",
+        "com.amazonaws.ssm.synthetic",
+        "CreateOpsItemOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    0,
+);
+static CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateOpsItemOutput$OpsItemArn",
+        "com.amazonaws.ssm.synthetic",
+        "CreateOpsItemOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemArn",
+    1,
+);
+static CREATEOPSITEMOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateOpsItemOutput",
+        "com.amazonaws.ssm.synthetic",
+        "CreateOpsItemOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ID, &CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ARN],
+)
+.with_original_name("CreateOpsItemResponse");
+impl CreateOpsItemOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEOPSITEMOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateOpsItemOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.ops_item_arn {
+            ser.write_string(&CREATEOPSITEMOUTPUT_MEMBER_OPS_ITEM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_ops_item::builders::CreateOpsItemOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEOPSITEMOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ops_item_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateOpsItemOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateOpsItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

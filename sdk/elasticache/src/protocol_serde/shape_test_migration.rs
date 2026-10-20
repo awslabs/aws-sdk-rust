@@ -18,6 +18,42 @@ pub fn de_test_migration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidCacheClusterState" => crate::operation::test_migration::TestMigrationError::InvalidCacheClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::test_migration::TestMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::test_migration::TestMigrationError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::test_migration::TestMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidParameterValue" => crate::operation::test_migration::TestMigrationError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp = {

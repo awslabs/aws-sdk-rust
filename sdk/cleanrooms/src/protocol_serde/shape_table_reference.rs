@@ -22,6 +22,12 @@ pub fn ser_table_reference(
             crate::protocol_serde::shape_athena_table_reference::ser_athena_table_reference(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::TableReference::Databricks(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_11.key("databricks").start_object();
+            crate::protocol_serde::shape_databricks_table_reference::ser_databricks_table_reference(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::TableReference::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "TableReference",
@@ -82,6 +88,12 @@ where
                             crate::protocol_serde::shape_athena_table_reference::de_athena_table_reference(tokens, _value, depth + 1)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'athena' cannot be null"),
                             )?,
+                        )),
+                        "databricks" => Some(crate::types::TableReference::Databricks(
+                            crate::protocol_serde::shape_databricks_table_reference::de_databricks_table_reference(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'databricks' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

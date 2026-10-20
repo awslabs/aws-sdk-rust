@@ -6,20 +6,35 @@ pub fn ser_start_migration_input_input_input(
     #[allow(unused_mut)]
     let mut writer = ::aws_smithy_query::QueryWriter::new(&mut out, "StartMigration", "2015-02-02");
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ReplicationGroupId");
-    if let Some(var_2) = &input.replication_group_id {
+    let mut scope_1 = writer.prefix("ServerlessCacheName");
+    if let Some(var_2) = &input.serverless_cache_name {
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("CustomerNodeEndpointList");
-    if let Some(var_4) = &input.customer_node_endpoint_list {
-        let mut list_6 = scope_3.start_list(false, None);
-        for item_5 in var_4 {
+    let mut scope_3 = writer.prefix("ReplicationGroupId");
+    if let Some(var_4) = &input.replication_group_id {
+        scope_3.string(var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("CustomerNodeEndpointList");
+    if let Some(var_6) = &input.customer_node_endpoint_list {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
             #[allow(unused_mut)]
-            let mut entry_7 = list_6.entry();
-            crate::protocol_serde::shape_customer_node_endpoint::ser_customer_node_endpoint(entry_7, item_5)?;
+            let mut entry_9 = list_8.entry();
+            crate::protocol_serde::shape_customer_node_endpoint::ser_customer_node_endpoint(entry_9, item_7)?;
         }
-        list_6.finish();
+        list_8.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("AutoCutover");
+    if let Some(var_11) = &input.auto_cutover {
+        scope_10.boolean(*var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("ClearTargetCacheData");
+    if let Some(var_13) = &input.clear_target_cache_data {
+        scope_12.boolean(*var_13);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

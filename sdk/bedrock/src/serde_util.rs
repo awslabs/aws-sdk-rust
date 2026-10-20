@@ -1484,6 +1484,15 @@ pub(crate) fn guardrail_content_filters_tier_correct_errors(
     builder
 }
 
+pub(crate) fn guardrail_contextual_grounding_tier_correct_errors(
+    mut builder: crate::types::builders::GuardrailContextualGroundingTierBuilder,
+) -> crate::types::builders::GuardrailContextualGroundingTierBuilder {
+    if builder.tier_name.is_none() {
+        builder.tier_name = "no value was set".parse::<crate::types::GuardrailContextualGroundingTierName>().ok()
+    }
+    builder
+}
+
 pub(crate) fn guardrail_summary_correct_errors(
     mut builder: crate::types::builders::GuardrailSummaryBuilder,
 ) -> crate::types::builders::GuardrailSummaryBuilder {

@@ -73,7 +73,7 @@ impl Builder {
         self
     }
 
-    /// Override the [instance profile](instance-profile) used for this provider.
+    /// Override the [instance profile][instance-profile] used for this provider.
     ///
     /// When retrieving IMDS credentials, a call must first be made to
     /// `<IMDS_BASE_URL>/latest/meta-data/iam/security-credentials/`. This returns the instance

@@ -44,6 +44,218 @@ impl ListNodesSummaryInput {
         self.max_results
     }
 }
+static LISTNODESSUMMARYINPUT_MEMBER_SYNC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput$SyncName",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncName",
+    0,
+);
+static LISTNODESSUMMARYINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#NodeFilterList$member", "com.amazonaws.ssm", "NodeFilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("NodeFilter");
+static LISTNODESSUMMARYINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput$Filters",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    1,
+)
+.with_list_member(&LISTNODESSUMMARYINPUT_MEMBER_FILTERS_MEMBER);
+static LISTNODESSUMMARYINPUT_MEMBER_AGGREGATORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#NodeAggregatorList$member", "com.amazonaws.ssm", "NodeAggregatorList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("NodeAggregator");
+static LISTNODESSUMMARYINPUT_MEMBER_AGGREGATORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput$Aggregators",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Aggregators",
+    2,
+)
+.with_list_member(&LISTNODESSUMMARYINPUT_MEMBER_AGGREGATORS_MEMBER);
+static LISTNODESSUMMARYINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTNODESSUMMARYINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    4,
+);
+static LISTNODESSUMMARYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListNodesSummaryInput",
+        "com.amazonaws.ssm.synthetic",
+        "ListNodesSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTNODESSUMMARYINPUT_MEMBER_SYNC_NAME,
+        &LISTNODESSUMMARYINPUT_MEMBER_FILTERS,
+        &LISTNODESSUMMARYINPUT_MEMBER_AGGREGATORS,
+        &LISTNODESSUMMARYINPUT_MEMBER_NEXT_TOKEN,
+        &LISTNODESSUMMARYINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListNodesSummaryRequest");
+impl ListNodesSummaryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTNODESSUMMARYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListNodesSummaryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sync_name {
+            ser.write_string(&LISTNODESSUMMARYINPUT_MEMBER_SYNC_NAME, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &LISTNODESSUMMARYINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NodeFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.aggregators {
+            ser.write_list(
+                &LISTNODESSUMMARYINPUT_MEMBER_AGGREGATORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NodeAggregator::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTNODESSUMMARYINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTNODESSUMMARYINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_nodes_summary::builders::ListNodesSummaryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTNODESSUMMARYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sync_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NodeFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aggregators = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NodeAggregator::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListNodesSummaryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.aggregators = builder.aggregators.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListNodesSummaryInput {
     /// Creates a new builder-style object to manufacture [`ListNodesSummaryInput`](crate::operation::list_nodes_summary::ListNodesSummaryInput).
     pub fn builder() -> crate::operation::list_nodes_summary::builders::ListNodesSummaryInputBuilder {

@@ -287,6 +287,8 @@ pub use crate::types::_update_replication_group_member_action::UpdateReplication
 
 pub use crate::types::_delete_replication_group_member_action::DeleteReplicationGroupMemberAction;
 
+pub use crate::types::_disassociate_replication_group_member_action::DisassociateReplicationGroupMemberAction;
+
 pub use crate::types::_create_global_table_witness_group_member_action::CreateGlobalTableWitnessGroupMemberAction;
 
 pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberAction;
@@ -324,6 +326,8 @@ pub use crate::types::_vector_index_info::VectorIndexInfo;
 pub use crate::types::_replica_global_secondary_index_settings_description::ReplicaGlobalSecondaryIndexSettingsDescription;
 
 pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGlobalSecondaryIndexSettingsUpdate;
+
+pub use crate::types::_disassociation_mode::DisassociationMode;
 
 pub use crate::types::_replica_global_secondary_index_auto_scaling_update::ReplicaGlobalSecondaryIndexAutoScalingUpdate;
 
@@ -440,6 +444,10 @@ mod _delete_request;
 mod _delete_vector_index_action;
 
 mod _destination_status;
+
+mod _disassociate_replication_group_member_action;
+
+mod _disassociation_mode;
 
 mod _enable_kinesis_streaming_configuration;
 

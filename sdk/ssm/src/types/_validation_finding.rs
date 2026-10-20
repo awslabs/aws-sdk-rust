@@ -37,6 +37,149 @@ impl ValidationFinding {
         self.scope.as_ref()
     }
 }
+static VALIDATIONFINDING_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidationFinding$Type", "com.amazonaws.ssm", "ValidationFinding"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static VALIDATIONFINDING_MEMBER_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidationFinding$Code", "com.amazonaws.ssm", "ValidationFinding"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Code",
+    1,
+);
+static VALIDATIONFINDING_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidationFinding$Message", "com.amazonaws.ssm", "ValidationFinding"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static VALIDATIONFINDING_MEMBER_PROVIDER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ValidationFinding$ProviderMessage",
+        "com.amazonaws.ssm",
+        "ValidationFinding",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProviderMessage",
+    3,
+);
+static VALIDATIONFINDING_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidationFinding$Scope", "com.amazonaws.ssm", "ValidationFinding"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Scope",
+    4,
+);
+static VALIDATIONFINDING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidationFinding", "com.amazonaws.ssm", "ValidationFinding"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VALIDATIONFINDING_MEMBER_TYPE,
+        &VALIDATIONFINDING_MEMBER_CODE,
+        &VALIDATIONFINDING_MEMBER_MESSAGE,
+        &VALIDATIONFINDING_MEMBER_PROVIDER_MESSAGE,
+        &VALIDATIONFINDING_MEMBER_SCOPE,
+    ],
+);
+impl ValidationFinding {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VALIDATIONFINDING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ValidationFinding {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&VALIDATIONFINDING_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.code {
+            ser.write_string(&VALIDATIONFINDING_MEMBER_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&VALIDATIONFINDING_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.provider_message {
+            ser.write_string(&VALIDATIONFINDING_MEMBER_PROVIDER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.scope {
+            ser.write_struct(&VALIDATIONFINDING_MEMBER_SCOPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ValidationFindingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VALIDATIONFINDING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ValidationFindingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code = Some(crate::types::ValidationFindingCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope = Some(crate::types::ValidationFindingScope::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ValidationFinding {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ValidationFinding {
     /// Creates a new builder-style object to manufacture [`ValidationFinding`](crate::types::ValidationFinding).
     pub fn builder() -> crate::types::builders::ValidationFindingBuilder {

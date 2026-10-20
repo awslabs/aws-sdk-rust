@@ -10,7 +10,7 @@ required-features = ["sigv4a"]
 
 [package]
 name = "aws-sigv4"
-version = "1.6.0"
+version = "1.6.2"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
@@ -33,7 +33,7 @@ http0-compat = ["dep:http0"]
 http1 = ["dep:http"]
 sign-http = ["dep:percent-encoding", "dep:form_urlencoded"]
 sign-eventstream = ["dep:aws-smithy-eventstream"]
-sigv4a = ["dep:p256", "dep:crypto-bigint", "dep:subtle", "dep:zeroize"]
+sigv4a = ["dep:p256", "dep:ecdsa", "dep:crypto-bigint", "dep:subtle", "dep:zeroize"]
 
 [dependencies]
 bytes = "1.11.1"
@@ -45,25 +45,25 @@ tracing = "0.1.44"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.3.0"
+version = "1.3.1"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
 optional = true
-version = "0.61.4"
+version = "0.61.5"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.64.1"
+version = "0.64.2"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.19.0"
+version = "1.19.1"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.8.1"
+version = "1.9.0"
 
 [dependencies.form_urlencoded]
 version = "1.2.1"
@@ -79,8 +79,12 @@ version = "1.3.1"
 optional = true
 
 [dependencies.p256]
-version = "0.13.2"
+version = "0.14.0"
 features = ["ecdsa"]
+optional = true
+
+[dependencies.ecdsa]
+version = "0.17.0"
 optional = true
 
 [dependencies.percent-encoding]
@@ -92,11 +96,11 @@ version = "0.5.4"
 optional = true
 
 [dependencies.subtle]
-version = "2.5.0"
+version = "2.6.0"
 optional = true
 
 [dependencies.zeroize]
-version = "^1.7.0"
+version = "1.8.0"
 optional = true
 
 [dev-dependencies]
@@ -105,21 +109,21 @@ hex-literal = "0.4.1"
 httparse = "1.10.1"
 pretty_assertions = "1.3"
 proptest = "1.2"
-serde = "1.0.180"
-serde_derive = "1.0.180"
-serde_json = "1.0.104"
-criterion = "0.5"
+serde = "1.0.228"
+serde_derive = "1.0.228"
+serde_json = "1.0.146"
+criterion = "0.8.2"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util", "hardcoded-credentials"]
-version = "1.3.0"
+version = "1.3.1"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "test-util"]
-version = "1.19.0"
+version = "1.19.1"
 
 [dev-dependencies.time]
-version = "0.3.5"
+version = "0.3.35"
 features = ["parsing"]

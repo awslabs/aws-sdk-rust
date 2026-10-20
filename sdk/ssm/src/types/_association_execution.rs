@@ -69,6 +69,296 @@ impl AssociationExecution {
         self.triggered_alarms.as_deref().unwrap_or_default()
     }
 }
+static ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$AssociationId",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$AssociationVersion",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationVersion",
+    1,
+);
+static ASSOCIATIONEXECUTION_MEMBER_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$ExecutionId",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionId",
+    2,
+);
+static ASSOCIATIONEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$Status",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static ASSOCIATIONEXECUTION_MEMBER_DETAILED_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$DetailedStatus",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DetailedStatus",
+    4,
+);
+static ASSOCIATIONEXECUTION_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$CreatedTime",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    5,
+);
+static ASSOCIATIONEXECUTION_MEMBER_LAST_EXECUTION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$LastExecutionDate",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastExecutionDate",
+    6,
+);
+static ASSOCIATIONEXECUTION_MEMBER_RESOURCE_COUNT_BY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$ResourceCountByStatus",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceCountByStatus",
+    7,
+);
+static ASSOCIATIONEXECUTION_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$AlarmConfiguration",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    8,
+);
+static ASSOCIATIONEXECUTION_MEMBER_TRIGGERED_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AlarmStateInformationList$member",
+        "com.amazonaws.ssm",
+        "AlarmStateInformationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ASSOCIATIONEXECUTION_MEMBER_TRIGGERED_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecution$TriggeredAlarms",
+        "com.amazonaws.ssm",
+        "AssociationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TriggeredAlarms",
+    9,
+)
+.with_list_member(&ASSOCIATIONEXECUTION_MEMBER_TRIGGERED_ALARMS_MEMBER);
+static ASSOCIATIONEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationExecution", "com.amazonaws.ssm", "AssociationExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_ID,
+        &ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_VERSION,
+        &ASSOCIATIONEXECUTION_MEMBER_EXECUTION_ID,
+        &ASSOCIATIONEXECUTION_MEMBER_STATUS,
+        &ASSOCIATIONEXECUTION_MEMBER_DETAILED_STATUS,
+        &ASSOCIATIONEXECUTION_MEMBER_CREATED_TIME,
+        &ASSOCIATIONEXECUTION_MEMBER_LAST_EXECUTION_DATE,
+        &ASSOCIATIONEXECUTION_MEMBER_RESOURCE_COUNT_BY_STATUS,
+        &ASSOCIATIONEXECUTION_MEMBER_ALARM_CONFIGURATION,
+        &ASSOCIATIONEXECUTION_MEMBER_TRIGGERED_ALARMS,
+    ],
+);
+impl AssociationExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATIONEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociationExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.association_version {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_ASSOCIATION_VERSION, val)?;
+        }
+        if let Some(ref val) = self.execution_id {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.detailed_status {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_DETAILED_STATUS, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&ASSOCIATIONEXECUTION_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_execution_date {
+            ser.write_timestamp(&ASSOCIATIONEXECUTION_MEMBER_LAST_EXECUTION_DATE, val)?;
+        }
+        if let Some(ref val) = self.resource_count_by_status {
+            ser.write_string(&ASSOCIATIONEXECUTION_MEMBER_RESOURCE_COUNT_BY_STATUS, val)?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&ASSOCIATIONEXECUTION_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.triggered_alarms {
+            ser.write_list(
+                &ASSOCIATIONEXECUTION_MEMBER_TRIGGERED_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AlarmStateInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AssociationExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATIONEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.detailed_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_execution_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_count_by_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.triggered_alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmStateInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociationExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AssociationExecution {
     /// Creates a new builder-style object to manufacture [`AssociationExecution`](crate::types::AssociationExecution).
     pub fn builder() -> crate::types::builders::AssociationExecutionBuilder {

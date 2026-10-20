@@ -30,6 +30,15 @@ where
                                 )?,
                             );
                         }
+                        "tier" => {
+                            builder = builder.set_tier(
+                                crate::protocol_serde::shape_guardrail_contextual_grounding_tier::de_guardrail_contextual_grounding_tier(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

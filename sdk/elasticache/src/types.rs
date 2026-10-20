@@ -3,6 +3,8 @@ pub use crate::types::_cache_security_group::CacheSecurityGroup;
 
 pub use crate::types::_replication_group::ReplicationGroup;
 
+pub use crate::types::_serverless_cache::ServerlessCache;
+
 pub use crate::types::_serverless_cache_snapshot::ServerlessCacheSnapshot;
 
 pub use crate::types::_snapshot::Snapshot;
@@ -33,8 +35,6 @@ pub use crate::types::_cache_usage_limits::CacheUsageLimits;
 
 pub use crate::types::_connection_type::ConnectionType;
 
-pub use crate::types::_serverless_cache::ServerlessCache;
-
 pub use crate::types::_authentication_mode::AuthenticationMode;
 
 pub use crate::types::_authentication::Authentication;
@@ -50,6 +50,10 @@ pub use crate::types::_time_range_filter::TimeRangeFilter;
 pub use crate::types::_auth_token_update_strategy_type::AuthTokenUpdateStrategyType;
 
 pub use crate::types::_scale_config::ScaleConfig;
+
+pub use crate::types::_source_authentication_configuration::SourceAuthenticationConfiguration;
+
+pub use crate::types::_source_tls_configuration::SourceTlsConfiguration;
 
 pub use crate::types::_reserved_cache_node::ReservedCacheNode;
 
@@ -74,6 +78,8 @@ pub use crate::types::_storage_encryption_type::StorageEncryptionType;
 pub use crate::types::_data_tiering_status::DataTieringStatus;
 
 pub use crate::types::_effective_durability::EffectiveDurability;
+
+pub use crate::types::_migration_summary::MigrationSummary;
 
 pub use crate::types::_serverless_cache_configuration::ServerlessCacheConfiguration;
 
@@ -128,6 +134,10 @@ pub use crate::types::_parameter_name_value::ParameterNameValue;
 pub use crate::types::_resharding_configuration::ReshardingConfiguration;
 
 pub use crate::types::_customer_node_endpoint::CustomerNodeEndpoint;
+
+pub use crate::types::_secret_manager_auth_config::SecretManagerAuthConfig;
+
+pub use crate::types::_tls_mode::TlsMode;
 
 pub use crate::types::_ec2_security_group::Ec2SecurityGroup;
 
@@ -307,6 +317,8 @@ mod _log_format;
 
 mod _log_type;
 
+mod _migration_summary;
+
 mod _multi_az_status;
 
 mod _network_type;
@@ -361,6 +373,8 @@ mod _resharding_status;
 
 mod _scale_config;
 
+mod _secret_manager_auth_config;
+
 mod _security_group_membership;
 
 mod _serverless_cache;
@@ -383,6 +397,10 @@ mod _slot_migration;
 
 mod _snapshot;
 
+mod _source_authentication_configuration;
+
+mod _source_tls_configuration;
+
 mod _source_type;
 
 mod _storage_encryption_type;
@@ -394,6 +412,8 @@ mod _subnet_outpost;
 mod _tag;
 
 mod _time_range_filter;
+
+mod _tls_mode;
 
 mod _transit_encryption_mode;
 

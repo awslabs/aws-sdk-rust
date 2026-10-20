@@ -142,6 +142,352 @@ impl CreateDocumentInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEDOCUMENTINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$Content",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    0,
+);
+static CREATEDOCUMENTINPUT_MEMBER_REQUIRES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentRequiresList$member",
+        "com.amazonaws.ssm",
+        "DocumentRequiresList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDOCUMENTINPUT_MEMBER_REQUIRES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$Requires",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Requires",
+    1,
+)
+.with_list_member(&CREATEDOCUMENTINPUT_MEMBER_REQUIRES_MEMBER);
+static CREATEDOCUMENTINPUT_MEMBER_ATTACHMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AttachmentsSourceList$member",
+        "com.amazonaws.ssm",
+        "AttachmentsSourceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDOCUMENTINPUT_MEMBER_ATTACHMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$Attachments",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Attachments",
+    2,
+)
+.with_list_member(&CREATEDOCUMENTINPUT_MEMBER_ATTACHMENTS_MEMBER);
+static CREATEDOCUMENTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static CREATEDOCUMENTINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$DisplayName",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    4,
+);
+static CREATEDOCUMENTINPUT_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$VersionName",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    5,
+);
+static CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$DocumentType",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentType",
+    6,
+);
+static CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$DocumentFormat",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentFormat",
+    7,
+);
+static CREATEDOCUMENTINPUT_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$TargetType",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetType",
+    8,
+);
+static CREATEDOCUMENTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDOCUMENTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$Tags",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEDOCUMENTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDOCUMENTINPUT_MEMBER_CONTENT,
+        &CREATEDOCUMENTINPUT_MEMBER_REQUIRES,
+        &CREATEDOCUMENTINPUT_MEMBER_ATTACHMENTS,
+        &CREATEDOCUMENTINPUT_MEMBER_NAME,
+        &CREATEDOCUMENTINPUT_MEMBER_DISPLAY_NAME,
+        &CREATEDOCUMENTINPUT_MEMBER_VERSION_NAME,
+        &CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_TYPE,
+        &CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_FORMAT,
+        &CREATEDOCUMENTINPUT_MEMBER_TARGET_TYPE,
+        &CREATEDOCUMENTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDocumentRequest");
+impl CreateDocumentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDOCUMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDocumentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.content {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.requires {
+            ser.write_list(
+                &CREATEDOCUMENTINPUT_MEMBER_REQUIRES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentRequires::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.attachments {
+            ser.write_list(
+                &CREATEDOCUMENTINPUT_MEMBER_ATTACHMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttachmentsSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_format {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_type {
+            ser.write_string(&CREATEDOCUMENTINPUT_MEMBER_TARGET_TYPE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDOCUMENTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_document::builders::CreateDocumentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDOCUMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requires = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentRequires::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attachments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttachmentsSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_type = Some(crate::types::DocumentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_format = Some(crate::types::DocumentFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDocumentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.content = builder.content.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDocumentInput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentInput`](crate::operation::create_document::CreateDocumentInput).
     pub fn builder() -> crate::operation::create_document::builders::CreateDocumentInputBuilder {

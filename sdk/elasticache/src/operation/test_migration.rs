@@ -313,6 +313,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TestMigration
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TestMigrationError {
+    /// <p>The requested cluster is not in the <code>available</code> state.</p>
+    InvalidCacheClusterStateFault(crate::types::error::InvalidCacheClusterStateFault),
+    /// <p>Two or more incompatible parameters were specified.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
@@ -354,12 +358,22 @@ impl TestMigrationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidCacheClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidReplicationGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupAlreadyUnderMigrationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `TestMigrationError::InvalidCacheClusterStateFault`.
+    pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidCacheClusterStateFault(_))
+    }
+    /// Returns `true` if the error kind is `TestMigrationError::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `TestMigrationError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -381,6 +395,8 @@ impl TestMigrationError {
 impl ::std::error::Error for TestMigrationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => ::std::option::Option::Some(_inner),
@@ -392,6 +408,8 @@ impl ::std::error::Error for TestMigrationError {
 impl ::std::fmt::Display for TestMigrationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => _inner.fmt(f),
@@ -417,6 +435,8 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for TestMigrationError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TestMigrationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

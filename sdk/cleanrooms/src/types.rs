@@ -253,7 +253,11 @@ pub use crate::types::_snowflake_table_reference::SnowflakeTableReference;
 
 pub use crate::types::_athena_table_reference::AthenaTableReference;
 
+pub use crate::types::_databricks_table_reference::DatabricksTableReference;
+
 pub use crate::types::_selected_analysis_method::SelectedAnalysisMethod;
+
+pub use crate::types::_table_reference_type::TableReferenceType;
 
 pub use crate::types::_configured_table_analysis_rule_policy_v1::ConfiguredTableAnalysisRulePolicyV1;
 
@@ -403,6 +407,8 @@ pub use crate::types::_commercial_region::CommercialRegion;
 
 pub use crate::types::_snowflake_table_schema::SnowflakeTableSchema;
 
+pub use crate::types::_databricks_connection_type::DatabricksConnectionType;
+
 pub use crate::types::_analysis_rule_list::AnalysisRuleList;
 
 pub use crate::types::_analysis_rule_aggregation::AnalysisRuleAggregation;
@@ -486,6 +492,8 @@ pub use crate::types::_access_budget::AccessBudget;
 pub use crate::types::_child_resource_type::ChildResourceType;
 
 pub use crate::types::_resource_status::ResourceStatus;
+
+pub use crate::types::_databricks_delta_sharing_connection::DatabricksDeltaSharingConnection;
 
 pub use crate::types::_additional_analyses::AdditionalAnalyses;
 
@@ -843,6 +851,12 @@ mod _custom_ml_member_ability;
 
 mod _data_encryption_metadata;
 
+mod _databricks_connection_type;
+
+mod _databricks_delta_sharing_connection;
+
+mod _databricks_table_reference;
+
 mod _differential_privacy_aggregation_type;
 
 mod _differential_privacy_column;
@@ -1198,6 +1212,8 @@ mod _synthetic_data_generation_payment_config;
 mod _synthetic_data_parameters;
 
 mod _table_reference;
+
+mod _table_reference_type;
 
 mod _target_protected_job_status;
 

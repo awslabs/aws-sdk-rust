@@ -22,6 +22,110 @@ impl UpdateManagedInstanceRoleInput {
         self.iam_role.as_deref()
     }
 }
+static UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateManagedInstanceRoleInput$InstanceId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateManagedInstanceRoleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    0,
+);
+static UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_IAM_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateManagedInstanceRoleInput$IamRole",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateManagedInstanceRoleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRole",
+    1,
+);
+static UPDATEMANAGEDINSTANCEROLEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateManagedInstanceRoleInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateManagedInstanceRoleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_INSTANCE_ID,
+        &UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_IAM_ROLE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateManagedInstanceRoleRequest");
+impl UpdateManagedInstanceRoleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMANAGEDINSTANCEROLEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateManagedInstanceRoleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.iam_role {
+            ser.write_string(&UPDATEMANAGEDINSTANCEROLEINPUT_MEMBER_IAM_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMANAGEDINSTANCEROLEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateManagedInstanceRoleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_id = builder.instance_id.or(Some(String::new()));
+        builder.iam_role = builder.iam_role.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateManagedInstanceRoleInput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedInstanceRoleInput`](crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleInput).
     pub fn builder() -> crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder {

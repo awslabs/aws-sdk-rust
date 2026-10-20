@@ -116,6 +116,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "ExpressPrivateOfferConfigurationSummary" => {
+                            builder = builder.set_express_private_offer_configuration_summary(
+                                    crate::protocol_serde::shape_express_private_offer_configuration_summary::de_express_private_offer_configuration_summary(tokens, _value, depth + 1)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

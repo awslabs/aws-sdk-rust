@@ -22,6 +22,147 @@ impl OpsItemRelatedItemAlreadyExistsException {
         self.ops_item_id.as_deref()
     }
 }
+static OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemAlreadyExistsException$Message",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemAlreadyExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    0,
+);
+static OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_RESOURCE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemAlreadyExistsException$ResourceUri",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemAlreadyExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceUri",
+    1,
+);
+static OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemAlreadyExistsException$OpsItemId",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemAlreadyExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    2,
+);
+static OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_TRAITS: std::sync::LazyLock<::aws_smithy_schema::TraitMap> = std::sync::LazyLock::new(|| {
+    let mut map = ::aws_smithy_schema::TraitMap::new();
+    map.insert(Box::new(::aws_smithy_schema::DocumentTrait::new(
+        ::aws_smithy_schema::ShapeId::from_parts("aws.protocols#awsQueryError", "aws.protocols", "awsQueryError"),
+        {
+            let mut obj = ::std::collections::HashMap::new();
+            obj.insert(
+                "code".to_string(),
+                ::aws_smithy_types::Document::String("OpsItemRelatedItemAlreadyExistsException".to_string()),
+            );
+            obj.insert(
+                "httpResponseCode".to_string(),
+                ::aws_smithy_types::Document::Number(::aws_smithy_types::Number::PosInt(400u64)),
+            );
+            ::aws_smithy_types::Document::Object(obj)
+        },
+    )));
+    map
+});
+static OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemAlreadyExistsException",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemAlreadyExistsException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_MESSAGE,
+        &OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_RESOURCE_URI,
+        &OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_OPS_ITEM_ID,
+    ],
+)
+.with_traits(&OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_TRAITS);
+impl OpsItemRelatedItemAlreadyExistsException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsItemRelatedItemAlreadyExistsException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.message {
+            ser.write_string(&OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.resource_uri {
+            ser.write_string(&OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_RESOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::OpsItemRelatedItemAlreadyExistsExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPSITEMRELATEDITEMALREADYEXISTSEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpsItemRelatedItemAlreadyExistsException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpsItemRelatedItemAlreadyExistsException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

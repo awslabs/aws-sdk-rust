@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ContinueServiceDeployment`](crate::operation::continue_service_deployment) operation has
-/// a [`Client::continue_service_deployment`], function which returns a builder for that operation.
+/// For example, the [`AssociateGatewayWithCluster`](crate::operation::associate_gateway_with_cluster) operation has
+/// a [`Client::associate_gateway_with_cluster`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.continue_service_deployment()
-///     .service_deployment_arn("example")
+/// let result = client.associate_gateway_with_cluster()
+///     .gateway("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -205,6 +205,8 @@ impl Client {
     }
 }
 
+mod associate_gateway_with_cluster;
+
 mod continue_service_deployment;
 
 mod create_capacity_provider;
@@ -214,6 +216,8 @@ mod create_cluster;
 mod create_daemon;
 
 mod create_express_gateway_service;
+
+mod create_gateway;
 
 mod create_service;
 
@@ -230,7 +234,7 @@ mod create_task_set;
 /// # let client: aws_sdk_ecs::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.continue_service_deployment()
+/// let result = client.associate_gateway_with_cluster()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -260,6 +264,8 @@ mod delete_daemon_task_definition;
 
 mod delete_express_gateway_service;
 
+mod delete_gateway;
+
 mod delete_service;
 
 mod delete_task_definitions;
@@ -286,6 +292,12 @@ mod describe_daemon_task_definition;
 
 mod describe_express_gateway_service;
 
+mod describe_gateway;
+
+mod describe_gateway_resources;
+
+mod describe_gateway_route;
+
 mod describe_service_deployments;
 
 mod describe_service_revisions;
@@ -297,6 +309,8 @@ mod describe_task_definition;
 mod describe_task_sets;
 
 mod describe_tasks;
+
+mod disassociate_gateway_from_cluster;
 
 mod discover_poll_endpoint;
 
@@ -317,6 +331,12 @@ mod list_daemon_deployments;
 mod list_daemon_task_definitions;
 
 mod list_daemons;
+
+mod list_gateway_cluster_associations;
+
+mod list_gateway_routes;
+
+mod list_gateways;
 
 mod list_service_deployments;
 
@@ -377,6 +397,8 @@ mod update_container_instances_state;
 mod update_daemon;
 
 mod update_express_gateway_service;
+
+mod update_gateway;
 
 mod update_service;
 

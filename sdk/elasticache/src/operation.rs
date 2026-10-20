@@ -199,6 +199,9 @@ pub mod modify_user;
 /// Types for the `ModifyUserGroup` operation.
 pub mod modify_user_group;
 
+/// Types for the `PrepareMigration` operation.
+pub mod prepare_migration;
+
 /// Types for the `PurchaseReservedCacheNodesOffering` operation.
 pub mod purchase_reserved_cache_nodes_offering;
 
@@ -219,6 +222,9 @@ pub mod revoke_cache_security_group_ingress;
 
 /// Types for the `StartMigration` operation.
 pub mod start_migration;
+
+/// Types for the `StopMigration` operation.
+pub mod stop_migration;
 
 /// Types for the `TestFailover` operation.
 pub mod test_failover;

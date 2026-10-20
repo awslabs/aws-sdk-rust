@@ -5,6 +5,8 @@
 pub struct CompleteMigrationInput {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub force: ::std::option::Option<bool>,
 }
@@ -12,6 +14,10 @@ impl CompleteMigrationInput {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+        self.serverless_cache_name.as_deref()
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn force(&self) -> ::std::option::Option<bool> {
@@ -30,11 +36,11 @@ impl CompleteMigrationInput {
 #[non_exhaustive]
 pub struct CompleteMigrationInputBuilder {
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) force: ::std::option::Option<bool>,
 }
 impl CompleteMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
-    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -47,6 +53,20 @@ impl CompleteMigrationInputBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_group_id
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_cache_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_cache_name = input;
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_cache_name
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -68,6 +88,7 @@ impl CompleteMigrationInputBuilder {
     ) -> ::std::result::Result<crate::operation::complete_migration::CompleteMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::complete_migration::CompleteMigrationInput {
             replication_group_id: self.replication_group_id,
+            serverless_cache_name: self.serverless_cache_name,
             force: self.force,
         })
     }

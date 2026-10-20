@@ -63,6 +63,24 @@ pub fn de_modify_db_instance_http_error(
             }
             tmp
         }),
+        "DBCapacityReservationNotFound" => crate::operation::modify_db_instance::ModifyDBInstanceError::DbCapacityReservationNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbCapacityReservationNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_capacity_reservation_not_found_fault::de_db_capacity_reservation_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::modify_db_instance::ModifyDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBInstanceAlreadyExists" => crate::operation::modify_db_instance::ModifyDBInstanceError::DbInstanceAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -183,6 +201,22 @@ pub fn de_modify_db_instance_http_error(
             }
             tmp
         }),
+        "InvalidDBCapacityReservationState" => {
+            crate::operation::modify_db_instance::ModifyDBInstanceError::InvalidDbCapacityReservationStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbCapacityReservationStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_db_capacity_reservation_state_fault::de_invalid_db_capacity_reservation_state_fault_xml_err(_response_body, output).map_err(crate::operation::modify_db_instance::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidDBClusterStateFault" => crate::operation::modify_db_instance::ModifyDBInstanceError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp = {

@@ -57,6 +57,86 @@ impl GetServiceSettingInput {
         self.setting_id.as_deref()
     }
 }
+static GETSERVICESETTINGINPUT_MEMBER_SETTING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetServiceSettingInput$SettingId",
+        "com.amazonaws.ssm.synthetic",
+        "GetServiceSettingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SettingId",
+    0,
+);
+static GETSERVICESETTINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetServiceSettingInput",
+        "com.amazonaws.ssm.synthetic",
+        "GetServiceSettingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETSERVICESETTINGINPUT_MEMBER_SETTING_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetServiceSettingRequest");
+impl GetServiceSettingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETSERVICESETTINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetServiceSettingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.setting_id {
+            ser.write_string(&GETSERVICESETTINGINPUT_MEMBER_SETTING_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETSERVICESETTINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.setting_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetServiceSettingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.setting_id = builder.setting_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
     pub fn builder() -> crate::operation::get_service_setting::builders::GetServiceSettingInputBuilder {

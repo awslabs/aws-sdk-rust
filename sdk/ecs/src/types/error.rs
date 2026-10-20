@@ -49,6 +49,8 @@ pub use crate::types::error::_daemon_not_active_exception::DaemonNotActiveExcept
 
 pub use crate::types::error::_daemon_not_found_exception::DaemonNotFoundException;
 
+pub use crate::types::error::_gateway_not_found_exception::GatewayNotFoundException;
+
 pub use crate::types::error::_service_not_active_exception::ServiceNotActiveException;
 
 pub use crate::types::error::_task_set_not_found_exception::TaskSetNotFoundException;
@@ -82,6 +84,8 @@ mod _conflict_exception;
 mod _daemon_not_active_exception;
 
 mod _daemon_not_found_exception;
+
+mod _gateway_not_found_exception;
 
 mod _invalid_parameter_exception;
 

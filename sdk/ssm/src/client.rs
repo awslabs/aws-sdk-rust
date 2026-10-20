@@ -165,6 +165,47 @@ impl Client {
     }
 }
 
+impl Client {
+    /// Returns the type registry for this service.
+    ///
+    /// The registry contains an entry for every structure shape in the service
+    /// closure (excluding only synthetic operation input/output shapes),
+    /// keyed by [`ShapeId`](::aws_smithy_schema::ShapeId). It is primarily useful for deserializing
+    /// a [`Document`](::aws_smithy_types::Document) into a typed shape:
+    ///
+    /// ```ignore
+    /// let registry = MyClient::registry();
+    /// let typed = registry.deserialize_document(&doc)?;
+    /// // Downcast to the concrete type you expected.
+    /// ```
+    pub fn registry() -> &'static ::aws_smithy_schema::registry::TypeRegistry {
+        &crate::type_registry::REGISTRY
+    }
+}
+
+impl Client {
+    /// Returns the service-wide error registry.
+    ///
+    /// The registry contains an entry for every `@error`-trait structure shape
+    /// in the service closure, keyed by [`ShapeId`](::aws_smithy_schema::ShapeId). Use it to reify a
+    /// discriminated [`Document`](::aws_smithy_types::Document) into a typed error variant via
+    /// [`TypeRegistry::deserialize_document`](::aws_smithy_schema::registry::TypeRegistry::deserialize_document).
+    ///
+    /// This registry is provided for third-party `Document`-based error handling.
+    /// Internally it also serves as the widening fallback when the schema-serde
+    /// error path reifies an error code that an operation does not model directly
+    /// (the operation's own error registry is consulted first).
+    ///
+    /// ```ignore
+    /// let registry = MyClient::error_registry();
+    /// let typed = registry.deserialize_document(&doc)?;
+    /// // Downcast to the concrete error variant you expected.
+    /// ```
+    pub fn error_registry() -> &'static ::aws_smithy_schema::registry::TypeRegistry {
+        &crate::error_type_registry::REGISTRY
+    }
+}
+
 mod add_tags_to_resource;
 
 mod associate_ops_item_related_item;

@@ -306,6 +306,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreDBInst
                 captured.insert("MasterUserSecretKmsKeyId", value);
             }
         }
+        if requested.should_capture("DBCapacityReservationIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_capacity_reservation_identifier.as_deref() {
+                captured.insert("DBCapacityReservationIdentifier", value);
+            }
+        }
         if requested.should_capture("CACertificateIdentifier") {
             if let ::std::option::Option::Some(value) = input.ca_certificate_identifier.as_deref() {
                 captured.insert("CACertificateIdentifier", value);
@@ -447,6 +452,8 @@ pub enum RestoreDBInstanceFromS3Error {
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
     /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
+    /// <p><code>DBCapacityReservationIdentifier</code> doesn't refer to an existing DB capacity reservation.</p>
+    DbCapacityReservationNotFoundFault(crate::types::error::DbCapacityReservationNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
     /// <p><code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.</p>
@@ -461,6 +468,8 @@ pub enum RestoreDBInstanceFromS3Error {
     InstanceQuotaExceededFault(crate::types::error::InstanceQuotaExceededFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
+    /// <p>The DB capacity reservation isn't in a valid state.</p>
+    InvalidDbCapacityReservationStateFault(crate::types::error::InvalidDbCapacityReservationStateFault),
     /// <p>The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.</p>
     InvalidS3BucketFault(crate::types::error::InvalidS3BucketFault),
     /// <p>The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.</p>
@@ -517,6 +526,7 @@ impl RestoreDBInstanceFromS3Error {
             Self::AuthorizationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BackupPolicyNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbCapacityReservationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSecurityGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -524,6 +534,7 @@ impl RestoreDBInstanceFromS3Error {
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InstanceQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDbInstanceCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbCapacityReservationStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidS3BucketFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidVpcNetworkStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -548,6 +559,10 @@ impl RestoreDBInstanceFromS3Error {
     /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::CertificateNotFoundFault`.
     pub fn is_certificate_not_found_fault(&self) -> bool {
         matches!(self, Self::CertificateNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::DbCapacityReservationNotFoundFault`.
+    pub fn is_db_capacity_reservation_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbCapacityReservationNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
@@ -576,6 +591,10 @@ impl RestoreDBInstanceFromS3Error {
     /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::InvalidDbCapacityReservationStateFault`.
+    pub fn is_invalid_db_capacity_reservation_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbCapacityReservationStateFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBInstanceFromS3Error::InvalidS3BucketFault`.
     pub fn is_invalid_s3_bucket_fault(&self) -> bool {
@@ -624,6 +643,7 @@ impl ::std::error::Error for RestoreDBInstanceFromS3Error {
             Self::AuthorizationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSecurityGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -631,6 +651,7 @@ impl ::std::error::Error for RestoreDBInstanceFromS3Error {
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InstanceQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3BucketFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -651,6 +672,7 @@ impl ::std::fmt::Display for RestoreDBInstanceFromS3Error {
             Self::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             Self::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
             Self::CertificateNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbCapacityReservationNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -658,6 +680,7 @@ impl ::std::fmt::Display for RestoreDBInstanceFromS3Error {
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::InstanceQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => _inner.fmt(f),
             Self::InvalidS3BucketFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
             Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
@@ -692,6 +715,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBInst
             Self::AuthorizationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSecurityGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -699,6 +723,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBInst
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InstanceQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3BucketFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidVpcNetworkStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

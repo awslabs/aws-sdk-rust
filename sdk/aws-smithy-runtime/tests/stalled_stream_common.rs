@@ -46,7 +46,6 @@ pub use aws_smithy_types::{
     timeout::TimeoutConfig,
 };
 pub use bytes::Bytes;
-pub use pin_utils::pin_mut;
 pub use std::{
     collections::VecDeque,
     convert::Infallible,

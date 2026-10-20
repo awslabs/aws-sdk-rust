@@ -57,6 +57,121 @@ impl ::std::fmt::Debug for PatchSource {
         formatter.finish()
     }
 }
+static PATCHSOURCE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchSource$Name", "com.amazonaws.ssm", "PatchSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static PATCHSOURCE_MEMBER_PRODUCTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#PatchSourceProductList$member",
+        "com.amazonaws.ssm",
+        "PatchSourceProductList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PATCHSOURCE_MEMBER_PRODUCTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchSource$Products", "com.amazonaws.ssm", "PatchSource"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Products",
+    1,
+)
+.with_list_member(&PATCHSOURCE_MEMBER_PRODUCTS_MEMBER);
+static PATCHSOURCE_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchSource$Configuration", "com.amazonaws.ssm", "PatchSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Configuration",
+    2,
+);
+static PATCHSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchSource", "com.amazonaws.ssm", "PatchSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PATCHSOURCE_MEMBER_NAME, &PATCHSOURCE_MEMBER_PRODUCTS, &PATCHSOURCE_MEMBER_CONFIGURATION],
+);
+impl PatchSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PATCHSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PatchSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&PATCHSOURCE_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.products;
+
+            ser.write_list(
+                &PATCHSOURCE_MEMBER_PRODUCTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.configuration;
+            ser.write_string(&PATCHSOURCE_MEMBER_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PatchSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PATCHSOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.products = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    self.configuration = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PatchSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.products = builder.products.or(Some(Vec::new()));
+        builder.configuration = builder.configuration.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PatchSource {
     /// Creates a new builder-style object to manufacture [`PatchSource`](crate::types::PatchSource).
     pub fn builder() -> crate::types::builders::PatchSourceBuilder {

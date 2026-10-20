@@ -5,6 +5,8 @@ pub use crate::types::_resource_pending_maintenance_actions::ResourcePendingMain
 
 pub use crate::types::_db_security_group::DbSecurityGroup;
 
+pub use crate::types::_db_capacity_reservation::DbCapacityReservation;
+
 pub use crate::types::_export_source_type::ExportSourceType;
 
 pub use crate::types::_db_cluster_parameter_group::DbClusterParameterGroup;
@@ -91,6 +93,8 @@ pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_custom_engine_version_status::CustomEngineVersionStatus;
 
+pub use crate::types::_end_date_type::EndDateType;
+
 pub use crate::types::_cloudwatch_logs_export_configuration::CloudwatchLogsExportConfiguration;
 
 pub use crate::types::_automation_mode::AutomationMode;
@@ -104,6 +108,10 @@ pub use crate::types::_db_recommendation::DbRecommendation;
 pub use crate::types::_reserved_db_instance::ReservedDbInstance;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_db_capacity_reservation_commitment_info::DbCapacityReservationCommitmentInfo;
+
+pub use crate::types::_db_capacity_reservation_state::DbCapacityReservationState;
 
 pub use crate::types::_storage_encryption_type::StorageEncryptionType;
 
@@ -214,6 +222,8 @@ pub use crate::types::_pending_maintenance_action::PendingMaintenanceAction;
 pub use crate::types::_ec2_security_group::Ec2SecurityGroup;
 
 pub use crate::types::_ip_range::IpRange;
+
+pub use crate::types::_available_capacity_per_availability_zone::AvailableCapacityPerAvailabilityZone;
 
 pub use crate::types::_option::Option;
 
@@ -361,6 +371,8 @@ mod _availability_zone;
 
 mod _available_additional_storage_volumes_option;
 
+mod _available_capacity_per_availability_zone;
+
 mod _available_processor_feature;
 
 mod _blue_green_deployment;
@@ -392,6 +404,12 @@ mod _custom_db_engine_version_ami;
 mod _custom_engine_version_status;
 
 mod _database_insights_mode;
+
+mod _db_capacity_reservation;
+
+mod _db_capacity_reservation_commitment_info;
+
+mod _db_capacity_reservation_state;
 
 mod _db_cluster;
 
@@ -480,6 +498,8 @@ mod _domain_membership;
 mod _double_range;
 
 mod _ec2_security_group;
+
+mod _end_date_type;
 
 mod _endpoint;
 

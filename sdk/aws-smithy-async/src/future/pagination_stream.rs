@@ -46,6 +46,15 @@ use fn_stream::FnStream;
 /// # }
 /// ```
 ///
+/// ## Why isn't `PaginationStream` a `futures::stream::Stream`?
+///
+/// `PaginationStream` does not implement the `futures::stream::Stream` trait because
+/// the `futures` crate is 0.x, and we cannot expose 0.x dependencies in a 1.0 library.
+/// If you need `Stream` trait compatibility, use the [`PaginationStreamExt`] trait from
+/// the `aws-smithy-types-convert` crate, which provides conversion to `Stream`.
+///
+/// [`PaginationStreamExt`]: https://docs.rs/aws-smithy-types-convert/latest/aws_smithy_types_convert/stream/trait.PaginationStreamExt.html
+///
 /// [`PaginationStream`] is implemented in terms of [`FnStream`], but the latter is meant to be
 /// used internally and not by external users.
 #[derive(Debug)]

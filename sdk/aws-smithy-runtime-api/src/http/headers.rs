@@ -185,6 +185,19 @@ impl Headers {
             .map(|v| v.as_bytes())
     }
 
+    /// Returns all values for a given header name as raw bytes
+    ///
+    /// Equivalent to [`get_all_bytes`](Self::get_all_bytes), but takes an already parsed
+    /// [`HeaderName`](http_1x::HeaderName), so the name is not parsed and validated again
+    /// on every lookup. Callers that look the same name up repeatedly can parse it once.
+    #[cfg(feature = "http-1x")]
+    pub fn get_all_bytes_by_name<'a>(
+        &'a self,
+        key: &http_1x::HeaderName,
+    ) -> impl Iterator<Item = &'a [u8]> + 'a {
+        self.headers.get_all(key).iter().map(|v| v.as_bytes())
+    }
+
     /// Returns an iterator over the headers
     pub fn iter(&self) -> HeadersIter<'_> {
         HeadersIter {
@@ -722,6 +735,16 @@ mod tests {
 
         let all_bytes: Vec<_> = headers.get_all_bytes("multi").collect();
         assert_eq!(vec![b"m1".as_slice(), b"m2".as_slice()], all_bytes);
+        let by_name: Vec<_> = headers
+            .get_all_bytes_by_name(&http_1x::HeaderName::from_static("multi"))
+            .collect();
+        assert_eq!(all_bytes, by_name);
+        assert_eq!(
+            0,
+            headers
+                .get_all_bytes_by_name(&http_1x::HeaderName::from_static("absent"))
+                .count()
+        );
         let all_str: Vec<_> = headers.get_all("multi").map(str::as_bytes).collect();
         assert_eq!(all_str, all_bytes);
 

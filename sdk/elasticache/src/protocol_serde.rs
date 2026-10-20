@@ -287,6 +287,10 @@ pub(crate) mod shape_modify_user_group_input;
 
 pub(crate) mod shape_modify_user_input;
 
+pub(crate) mod shape_prepare_migration;
+
+pub(crate) mod shape_prepare_migration_input;
+
 pub(crate) mod shape_purchase_reserved_cache_nodes_offering;
 
 pub(crate) mod shape_purchase_reserved_cache_nodes_offering_input;
@@ -314,6 +318,10 @@ pub(crate) mod shape_revoke_cache_security_group_ingress_input;
 pub(crate) mod shape_start_migration;
 
 pub(crate) mod shape_start_migration_input;
+
+pub(crate) mod shape_stop_migration;
+
+pub(crate) mod shape_stop_migration_input;
 
 pub(crate) mod shape_test_failover;
 
@@ -415,6 +423,8 @@ pub(crate) mod shape_invalid_vpc_network_state_fault;
 
 pub(crate) mod shape_log_delivery_configuration_request;
 
+pub(crate) mod shape_migration_health_fault;
+
 pub(crate) mod shape_no_operation_fault;
 
 pub(crate) mod shape_node_group_configuration;
@@ -453,7 +463,11 @@ pub(crate) mod shape_scale_config;
 
 pub(crate) mod shape_serverless_cache_already_exists_fault;
 
+pub(crate) mod shape_serverless_cache_already_under_migration_fault;
+
 pub(crate) mod shape_serverless_cache_not_found_fault;
+
+pub(crate) mod shape_serverless_cache_not_under_migration_fault;
 
 pub(crate) mod shape_serverless_cache_quota_for_customer_exceeded_fault;
 
@@ -474,6 +488,10 @@ pub(crate) mod shape_snapshot_feature_not_supported_fault;
 pub(crate) mod shape_snapshot_not_found_fault;
 
 pub(crate) mod shape_snapshot_quota_exceeded_fault;
+
+pub(crate) mod shape_source_authentication_configuration;
+
+pub(crate) mod shape_source_tls_configuration;
 
 pub(crate) mod shape_subnet_in_use;
 
@@ -553,6 +571,8 @@ pub(crate) mod shape_reserved_cache_node_list;
 
 pub(crate) mod shape_reserved_cache_nodes_offering_list;
 
+pub(crate) mod shape_secret_manager_auth_config;
+
 pub(crate) mod shape_serverless_cache;
 
 pub(crate) mod shape_serverless_cache_list;
@@ -616,6 +636,8 @@ pub(crate) mod shape_global_replication_group_member_list;
 pub(crate) mod shape_kinesis_firehose_destination_details;
 
 pub(crate) mod shape_log_delivery_configuration_list;
+
+pub(crate) mod shape_migration_summary;
 
 pub(crate) mod shape_network_type_list;
 

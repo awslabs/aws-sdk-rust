@@ -8,7 +8,8 @@ use aws_smithy_eventstream::message_size_hint::MessageSizeHint;
 use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
 use bytes::{BufMut, Bytes};
 use crc32fast::Hasher;
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use criterion::{criterion_group, criterion_main, Criterion};
+use std::hint::black_box;
 use std::mem::size_of;
 
 /// Configuration for buffer allocation strategies in benchmarks

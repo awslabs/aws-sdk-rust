@@ -27,6 +27,8 @@ pub enum Error {
     DaemonNotActiveException(crate::types::error::DaemonNotActiveException),
     /// <p>The specified daemon wasn't found. You can view your available daemons with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListDaemons.html">ListDaemons</a>. Amazon ECS daemons are cluster specific and Region specific.</p>
     DaemonNotFoundException(crate::types::error::DaemonNotFoundException),
+    /// <p>The specified gateway wasn't found. Check that the gateway name or ARN is correct and that the gateway exists in your account and Region.</p>
+    GatewayNotFoundException(crate::types::error::GatewayNotFoundException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
     /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
@@ -97,6 +99,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::DaemonNotActiveException(inner) => inner.fmt(f),
             Error::DaemonNotFoundException(inner) => inner.fmt(f),
+            Error::GatewayNotFoundException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MissingVersionException(inner) => inner.fmt(f),
@@ -148,6 +151,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::DaemonNotActiveException(inner) => inner.meta(),
             Self::DaemonNotFoundException(inner) => inner.meta(),
+            Self::GatewayNotFoundException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MissingVersionException(inner) => inner.meta(),
@@ -167,6 +171,55 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::UnsupportedFeatureException(inner) => inner.meta(),
             Self::UpdateInProgressException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError> for Error {
+    fn from(err: crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError) -> Self {
+        match err {
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::GatewayNotFoundException(inner) => {
+                Error::GatewayNotFoundException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::associate_gateway_with_cluster::AssociateGatewayWithClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -354,6 +407,32 @@ impl From<crate::operation::create_express_gateway_service::CreateExpressGateway
                 Error::UnsupportedFeatureException(inner)
             }
             crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_gateway::CreateGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_gateway::CreateGatewayError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_gateway::CreateGatewayError> for Error {
+    fn from(err: crate::operation::create_gateway::CreateGatewayError) -> Self {
+        match err {
+            crate::operation::create_gateway::CreateGatewayError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_gateway::CreateGatewayError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_gateway::CreateGatewayError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_gateway::CreateGatewayError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_gateway::CreateGatewayError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::create_gateway::CreateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -665,6 +744,33 @@ impl From<crate::operation::delete_express_gateway_service::DeleteExpressGateway
                 Error::UnsupportedFeatureException(inner)
             }
             crate::operation::delete_express_gateway_service::DeleteExpressGatewayServiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_gateway::DeleteGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_gateway::DeleteGatewayError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_gateway::DeleteGatewayError> for Error {
+    fn from(err: crate::operation::delete_gateway::DeleteGatewayError) -> Self {
+        match err {
+            crate::operation::delete_gateway::DeleteGatewayError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::GatewayNotFoundException(inner) => Error::GatewayNotFoundException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::delete_gateway::DeleteGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1120,6 +1226,104 @@ impl From<crate::operation::describe_express_gateway_service::DescribeExpressGat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway::DescribeGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway::DescribeGatewayError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_gateway::DescribeGatewayError> for Error {
+    fn from(err: crate::operation::describe_gateway::DescribeGatewayError) -> Self {
+        match err {
+            crate::operation::describe_gateway::DescribeGatewayError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::GatewayNotFoundException(inner) => Error::GatewayNotFoundException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::describe_gateway::DescribeGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway_resources::DescribeGatewayResourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway_resources::DescribeGatewayResourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_gateway_resources::DescribeGatewayResourcesError> for Error {
+    fn from(err: crate::operation::describe_gateway_resources::DescribeGatewayResourcesError) -> Self {
+        match err {
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::GatewayNotFoundException(inner) => {
+                Error::GatewayNotFoundException(inner)
+            }
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_gateway_resources::DescribeGatewayResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_gateway_route::DescribeGatewayRouteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_gateway_route::DescribeGatewayRouteError> for Error {
+    fn from(err: crate::operation::describe_gateway_route::DescribeGatewayRouteError) -> Self {
+        match err {
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::describe_gateway_route::DescribeGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_service_deployments::DescribeServiceDeploymentsError, R>>
     for Error
 where
@@ -1313,6 +1517,62 @@ impl From<crate::operation::describe_task_sets::DescribeTaskSetsError> for Error
                 Error::UnsupportedFeatureException(inner)
             }
             crate::operation::describe_task_sets::DescribeTaskSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError> for Error {
+    fn from(err: crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError) -> Self {
+        match err {
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::ClusterNotFoundException(inner) => {
+                Error::ClusterNotFoundException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::GatewayNotFoundException(inner) => {
+                Error::GatewayNotFoundException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::disassociate_gateway_from_cluster::DisassociateGatewayFromClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1609,6 +1869,110 @@ impl From<crate::operation::list_daemon_task_definitions::ListDaemonTaskDefiniti
             }
             crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_daemon_task_definitions::ListDaemonTaskDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError> for Error {
+    fn from(err: crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError) -> Self {
+        match err {
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateway_routes::ListGatewayRoutesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateway_routes::ListGatewayRoutesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_gateway_routes::ListGatewayRoutesError> for Error {
+    fn from(err: crate::operation::list_gateway_routes::ListGatewayRoutesError) -> Self {
+        match err {
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::GatewayNotFoundException(inner) => Error::GatewayNotFoundException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::UnsupportedFeatureException(inner) => {
+                Error::UnsupportedFeatureException(inner)
+            }
+            crate::operation::list_gateway_routes::ListGatewayRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateways::ListGatewaysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateways::ListGatewaysError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_gateways::ListGatewaysError> for Error {
+    fn from(err: crate::operation::list_gateways::ListGatewaysError) -> Self {
+        match err {
+            crate::operation::list_gateways::ListGatewaysError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_gateways::ListGatewaysError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_gateways::ListGatewaysError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_gateways::ListGatewaysError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_gateways::ListGatewaysError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::list_gateways::ListGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2637,6 +3001,33 @@ impl From<crate::operation::update_express_gateway_service::UpdateExpressGateway
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_gateway::UpdateGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_gateway::UpdateGatewayError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_gateway::UpdateGatewayError> for Error {
+    fn from(err: crate::operation::update_gateway::UpdateGatewayError) -> Self {
+        match err {
+            crate::operation::update_gateway::UpdateGatewayError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::GatewayNotFoundException(inner) => Error::GatewayNotFoundException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::UnsupportedFeatureException(inner) => Error::UnsupportedFeatureException(inner),
+            crate::operation::update_gateway::UpdateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_service::UpdateServiceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2820,6 +3211,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::DaemonNotActiveException(inner) => inner.source(),
             Error::DaemonNotFoundException(inner) => inner.source(),
+            Error::GatewayNotFoundException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
             Error::MissingVersionException(inner) => inner.source(),
@@ -2857,6 +3249,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::DaemonNotActiveException(e) => e.request_id(),
             Self::DaemonNotFoundException(e) => e.request_id(),
+            Self::GatewayNotFoundException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
             Self::MissingVersionException(e) => e.request_id(),

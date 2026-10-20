@@ -29,13 +29,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-content-identification-type")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-content-identification-type")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -52,13 +55,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-content-redaction-type")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-content-redaction-type")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -75,13 +81,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                                 ::std::result::Result::Ok(value) => value,
                                 ::std::result::Result::Err(err) => {
                                     let _ = &err;
-                                    let has_unreadable_value = _response_headers
+                                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                                    let skip = {
+                            let has_unreadable_value = _response_headers
                                                 .get_all_bytes("x-amzn-transcribe-enable-partial-results-stabilization")
                                                 .any(|value| std::str::from_utf8(value).is_err());
-                                    if has_unreadable_value
-                                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                                    {
+                            has_unreadable_value
+                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                        };
+                                    if skip {
                                         ::std::option::Option::None
                                     } else {
                                         return ::std::result::Result::Err(crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::unhandled("Failed to parse EnablePartialResultsStabilization from header `x-amzn-transcribe-enable-partial-results-stabilization`"));
@@ -94,13 +103,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-identify-language")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-identify-language")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -117,13 +129,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-language-code")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-language-code")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -140,13 +155,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-language-model-name")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-language-model-name")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -163,13 +181,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-language-options")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-language-options")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -186,13 +207,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-media-encoding")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-media-encoding")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -210,13 +234,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-sample-rate")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-sample-rate")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -235,13 +262,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-partial-results-stability")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-partial-results-stability")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -258,13 +288,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-pii-entity-types")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-pii-entity-types")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -281,13 +314,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-preferred-language")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-preferred-language")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -304,13 +340,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-request-id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-request-id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -327,13 +366,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-session-id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-session-id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -351,13 +393,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-method")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-vocabulary-filter-method")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -374,13 +419,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-name")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-vocabulary-filter-name")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -398,13 +446,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-vocabulary-filter-names")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-vocabulary-filter-names")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -421,13 +472,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-vocabulary-name")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-vocabulary-name")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -444,13 +498,16 @@ pub fn de_start_call_analytics_stream_transcription_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amzn-transcribe-vocabulary-names")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amzn-transcribe-vocabulary-names")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(

@@ -188,6 +188,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartDBInstan
                 captured.insert("DBInstanceIdentifier", value);
             }
         }
+        if requested.should_capture("DBCapacityReservationIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_capacity_reservation_identifier.as_deref() {
+                captured.insert("DBCapacityReservationIdentifier", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())
@@ -314,6 +319,8 @@ pub enum StartDBInstanceError {
     /// <p>The specified CIDR IP range or Amazon EC2 security group might not be authorized for the specified DB security group.</p>
     /// <p>Or, RDS might not be authorized to perform necessary actions using IAM on your behalf.</p>
     AuthorizationNotFoundFault(crate::types::error::AuthorizationNotFoundFault),
+    /// <p><code>DBCapacityReservationIdentifier</code> doesn't refer to an existing DB capacity reservation.</p>
+    DbCapacityReservationNotFoundFault(crate::types::error::DbCapacityReservationNotFoundFault),
     /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -324,6 +331,8 @@ pub enum StartDBInstanceError {
     DbSubnetGroupNotFoundFault(crate::types::error::DbSubnetGroupNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
+    /// <p>The DB capacity reservation isn't in a valid state.</p>
+    InvalidDbCapacityReservationStateFault(crate::types::error::InvalidDbCapacityReservationStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
@@ -370,11 +379,13 @@ impl StartDBInstanceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AuthorizationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbCapacityReservationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDbInstanceCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbCapacityReservationStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSubnet(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -387,6 +398,10 @@ impl StartDBInstanceError {
     /// Returns `true` if the error kind is `StartDBInstanceError::AuthorizationNotFoundFault`.
     pub fn is_authorization_not_found_fault(&self) -> bool {
         matches!(self, Self::AuthorizationNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `StartDBInstanceError::DbCapacityReservationNotFoundFault`.
+    pub fn is_db_capacity_reservation_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbCapacityReservationNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `StartDBInstanceError::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
@@ -407,6 +422,10 @@ impl StartDBInstanceError {
     /// Returns `true` if the error kind is `StartDBInstanceError::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
+    }
+    /// Returns `true` if the error kind is `StartDBInstanceError::InvalidDbCapacityReservationStateFault`.
+    pub fn is_invalid_db_capacity_reservation_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbCapacityReservationStateFault(_))
     }
     /// Returns `true` if the error kind is `StartDBInstanceError::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
@@ -437,11 +456,13 @@ impl ::std::error::Error for StartDBInstanceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AuthorizationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSubnet(_inner) => ::std::option::Option::Some(_inner),
@@ -456,11 +477,13 @@ impl ::std::fmt::Display for StartDBInstanceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbCapacityReservationNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::InvalidSubnet(_inner) => _inner.fmt(f),
@@ -489,11 +512,13 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartDBInstan
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AuthorizationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSubnet(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

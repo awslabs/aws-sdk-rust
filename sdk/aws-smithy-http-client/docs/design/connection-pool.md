@@ -11,6 +11,8 @@ timeouts, connection poisoning, and connection metadata capture.
 This includes request-target form, proxy authentication, TLS negotiation, timeout scope, response-body
 ownership, and error classification. Any difference requires an explicit compatibility
 decision rather than an implicit change in the pool.
+[Establishment failure classification](#establishment-failure-classification) records one such
+decision: how failures before a connection's transport is established are classified.
 
 ### Connections to one origin are bounded
 
@@ -738,6 +740,54 @@ not a Tower `Service`: Hyper has no Tower dependency, and the HTTP/2 form ignore
 readiness is thus a per-protocol dispatch question the pool answers against the connection's state, and does
 not share machinery with the connector's Tower readiness. The two are related only by name.
 
+#### Establishment failure classification
+
+A failure while establishing a connection's transport — in DNS, the TCP connect, the TLS handshake, or a
+proxy tunnel — happens before any part of a request is sent, so its classification answers one question:
+could a new connection succeed? The pool reports a failure in the network as an I/O error, which is
+retryable, and any other failure as an unclassified error with no error kind (`Other(None)`), which is
+terminal.
+
+| Failure                                                                                  | Result         |
+| ---------------------------------------------------------------------------------------- | -------------- |
+| Connect timeout                                                                          | timeout        |
+| DNS, with any resolver                                                                   | I/O            |
+| TCP or socket error of a network kind, with or without an operating-system errno         | I/O            |
+| Other operating-system error, except permission, invalid argument, or unsupported        | I/O            |
+| Handshake EOF or reset (rustls); s2n `IOError` or `ConnectionClosed`                     | I/O            |
+| Proxy: the TCP connect to the proxy fails, or an I/O error on the tunnel                 | I/O            |
+| rustls rejection; s2n alert, protocol, or other error                                    | `Other(None)`  |
+| Proxy 407, other non-200 answer, response headers too long, or missing host              | `Other(None)`  |
+| Bad scheme, URL, or server name                                                          | `Other(None)`  |
+
+A `ConnectorError` returned by the transport keeps its own classification. An I/O error of a network kind —
+`ConnectionRefused`, `ConnectionReset`, `ConnectionAborted`, `NotConnected`, `AddrNotAvailable`,
+`NetworkUnreachable`, `HostUnreachable`, `NetworkDown`, `BrokenPipe`, `TimedOut`, `UnexpectedEof`, or
+`WriteZero` — is a network failure even without an operating-system errno, because connectors and resolvers
+also synthesize these errors from a kind alone. Any other operating-system error is a network failure unless
+its kind is `PermissionDenied`, `InvalidInput`, or `Unsupported`, which a new connection cannot change; that
+includes errors without a stable `ErrorKind`, such as `ENOBUFS`. An I/O error of any other kind without an
+errno, such as `InvalidData`, is not a network failure. The pool's default resolver reports getaddrinfo
+failures as `ResolveDnsError`, as a custom resolver does, because getaddrinfo's error does not say which
+failures are permanent.
+
+This differs from the existing client. The hyper-util legacy pool reports every connector failure as a
+connect error, and the existing client classifies every connect error as I/O, so it retries permanent
+failures such as a rejected certificate, a proxy's 407, or an unsupported scheme until the retry budget is
+spent. The pool fails those at once and retries only failures a new connection can fix.
+
+The TLS provider shims classify their own failures, because only they see the provider's error types. A
+shim reports a failed handshake as a `TlsConnectError` whose kind is `Io` when the connection failed or
+closed during the handshake and `Protocol` when the TLS layer refused or could not complete it. The rustls
+shim tags only rejections, because a rustls I/O failure already arrives as an `io::Error`; the s2n shim tags
+both kinds, because s2n reports an I/O failure without one. The pool's classifier reads `TlsConnectError`
+and `io::Error` and contains no provider-specific code.
+
+One network failure is terminal. A proxy that closes the connection while answering `CONNECT` produces
+hyper-util's `TunnelUnexpectedEof`. That variant belongs to an unexported error type and has no source, so
+the pool can recognize it only by its message text, which it does not match. It is reported as
+`Other(None)`.
+
 #### HTTP/1 attempts and HTTP/2 flights
 
 One HTTP/2 connection carries many concurrent request streams. The pool calls
@@ -888,6 +938,9 @@ covers.
 * **Flight cancellation** [safety] — participant cancellation removes only that participant; terminal flight
   drop closes its transport, returns its lease, and leaves no live waiter attached to the retired flight
   identity.
+* **Transport failure classification** [safety] — a failure before the transport is established is an I/O
+  error only when the network failed; a TLS refusal, a proxy's refusal, and a configuration error are
+  terminal, as [Establishment failure classification](#establishment-failure-classification) records.
 
 ### Bounded-capacity coordination
 
@@ -1813,7 +1866,9 @@ transferred claim early.
 * **Stage-local cancellation** [safety] — cancellation returns or retires H1 according to whether Hyper
   accepted it, and releases or resets only the selected H2 request claim.
 * **Compatibility surface** [safety] — request validation, target form, proxy authentication, metadata,
-  timeout scope, source chain, and error classification preserve the current client behavior.
+  timeout scope, source chain, and error classification preserve the current client behavior, except
+  transport-stage error classification, which follows
+  [Establishment failure classification](#establishment-failure-classification).
 * **Upgrade transfer** [safety] — an H1 upgrade transfers root I/O and cannot return to the HTTP pool; an H2
   extended `CONNECT` transfers its response guard to an upgrade bridge until both stream directions terminate.
 * **Two-sided request claim** [safety] — an accepted H2 request releases its claim only after both its

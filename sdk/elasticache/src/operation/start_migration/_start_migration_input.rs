@@ -3,21 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMigrationInput {
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub serverless_cache_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the replication group to which data should be migrated.</p>
     pub replication_group_id: ::std::option::Option<::std::string::String>,
-    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
+    /// <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element. For serverless cache migrations, ElastiCache uses the endpoint that you provided in <code>PrepareMigration</code>.</p>
     pub customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    /// <p>Specifies whether ElastiCache automatically attempts to complete the migration after data sync is established.</p>
+    pub auto_cutover: ::std::option::Option<bool>,
+    /// <p>Specifies whether ElastiCache deletes existing data in the serverless cache before migration begins. After <code>StopMigration</code>, <code>StartMigration</code> requires this option to restart the data sync.</p>
+    pub clear_target_cache_data: ::std::option::Option<bool>,
 }
 impl StartMigrationInput {
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn serverless_cache_name(&self) -> ::std::option::Option<&str> {
+        self.serverless_cache_name.as_deref()
+    }
     /// <p>The ID of the replication group to which data should be migrated.</p>
     pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
-    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
+    /// <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element. For serverless cache migrations, ElastiCache uses the endpoint that you provided in <code>PrepareMigration</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.customer_node_endpoint_list.is_none()`.
     pub fn customer_node_endpoint_list(&self) -> &[crate::types::CustomerNodeEndpoint] {
         self.customer_node_endpoint_list.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether ElastiCache automatically attempts to complete the migration after data sync is established.</p>
+    pub fn auto_cutover(&self) -> ::std::option::Option<bool> {
+        self.auto_cutover
+    }
+    /// <p>Specifies whether ElastiCache deletes existing data in the serverless cache before migration begins. After <code>StopMigration</code>, <code>StartMigration</code> requires this option to restart the data sync.</p>
+    pub fn clear_target_cache_data(&self) -> ::std::option::Option<bool> {
+        self.clear_target_cache_data
     }
 }
 impl StartMigrationInput {
@@ -31,12 +49,28 @@ impl StartMigrationInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct StartMigrationInputBuilder {
+    pub(crate) serverless_cache_name: ::std::option::Option<::std::string::String>,
     pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_node_endpoint_list: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    pub(crate) auto_cutover: ::std::option::Option<bool>,
+    pub(crate) clear_target_cache_data: ::std::option::Option<bool>,
 }
 impl StartMigrationInputBuilder {
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_cache_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_cache_name = input;
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_cache_name
+    }
     /// <p>The ID of the replication group to which data should be migrated.</p>
-    /// This field is required.
     pub fn replication_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replication_group_id = ::std::option::Option::Some(input.into());
         self
@@ -54,29 +88,60 @@ impl StartMigrationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
     ///
-    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
+    /// <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element. For serverless cache migrations, ElastiCache uses the endpoint that you provided in <code>PrepareMigration</code>.</p>
     pub fn customer_node_endpoint_list(mut self, input: crate::types::CustomerNodeEndpoint) -> Self {
         let mut v = self.customer_node_endpoint_list.unwrap_or_default();
         v.push(input);
         self.customer_node_endpoint_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
+    /// <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element. For serverless cache migrations, ElastiCache uses the endpoint that you provided in <code>PrepareMigration</code>.</p>
     pub fn set_customer_node_endpoint_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>>) -> Self {
         self.customer_node_endpoint_list = input;
         self
     }
-    /// <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.</p>
+    /// <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element. For serverless cache migrations, ElastiCache uses the endpoint that you provided in <code>PrepareMigration</code>.</p>
     pub fn get_customer_node_endpoint_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomerNodeEndpoint>> {
         &self.customer_node_endpoint_list
+    }
+    /// <p>Specifies whether ElastiCache automatically attempts to complete the migration after data sync is established.</p>
+    pub fn auto_cutover(mut self, input: bool) -> Self {
+        self.auto_cutover = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether ElastiCache automatically attempts to complete the migration after data sync is established.</p>
+    pub fn set_auto_cutover(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.auto_cutover = input;
+        self
+    }
+    /// <p>Specifies whether ElastiCache automatically attempts to complete the migration after data sync is established.</p>
+    pub fn get_auto_cutover(&self) -> &::std::option::Option<bool> {
+        &self.auto_cutover
+    }
+    /// <p>Specifies whether ElastiCache deletes existing data in the serverless cache before migration begins. After <code>StopMigration</code>, <code>StartMigration</code> requires this option to restart the data sync.</p>
+    pub fn clear_target_cache_data(mut self, input: bool) -> Self {
+        self.clear_target_cache_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether ElastiCache deletes existing data in the serverless cache before migration begins. After <code>StopMigration</code>, <code>StartMigration</code> requires this option to restart the data sync.</p>
+    pub fn set_clear_target_cache_data(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.clear_target_cache_data = input;
+        self
+    }
+    /// <p>Specifies whether ElastiCache deletes existing data in the serverless cache before migration begins. After <code>StopMigration</code>, <code>StartMigration</code> requires this option to restart the data sync.</p>
+    pub fn get_clear_target_cache_data(&self) -> &::std::option::Option<bool> {
+        &self.clear_target_cache_data
     }
     /// Consumes the builder and constructs a [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_migration::StartMigrationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_migration::StartMigrationInput {
+            serverless_cache_name: self.serverless_cache_name,
             replication_group_id: self.replication_group_id,
             customer_node_endpoint_list: self.customer_node_endpoint_list,
+            auto_cutover: self.auto_cutover,
+            clear_target_cache_data: self.clear_target_cache_data,
         })
     }
 }

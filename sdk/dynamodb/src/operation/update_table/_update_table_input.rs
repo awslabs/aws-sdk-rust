@@ -36,7 +36,7 @@ pub struct UpdateTableInput {
     pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>The new server-side encryption settings for the specified table.</p>
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub replica_updates: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>,
     /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub table_class: ::std::option::Option<crate::types::TableClass>,
@@ -74,6 +74,10 @@ pub struct UpdateTableInput {
     /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
     /// </ul>
     pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub disassociation_protection_enabled: ::std::option::Option<bool>,
     /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
     /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
     pub vector_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>,
@@ -129,7 +133,7 @@ impl UpdateTableInput {
     pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification.as_ref()
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_updates.is_none()`.
     pub fn replica_updates(&self) -> &[crate::types::ReplicationGroupUpdate] {
@@ -187,6 +191,12 @@ impl UpdateTableInput {
     pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
         self.global_table_settings_replication_mode.as_ref()
     }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn disassociation_protection_enabled(&self) -> ::std::option::Option<bool> {
+        self.disassociation_protection_enabled
+    }
     /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
     /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
     ///
@@ -221,6 +231,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
     pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    pub(crate) disassociation_protection_enabled: ::std::option::Option<bool>,
     pub(crate) vector_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>,
 }
 impl UpdateTableInputBuilder {
@@ -396,19 +407,19 @@ impl UpdateTableInputBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         let mut v = self.replica_updates.unwrap_or_default();
         v.push(input);
         self.replica_updates = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>) -> Self {
         self.replica_updates = input;
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
         &self.replica_updates
     }
@@ -588,6 +599,26 @@ impl UpdateTableInputBuilder {
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         &self.global_table_settings_replication_mode
     }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn disassociation_protection_enabled(mut self, input: bool) -> Self {
+        self.disassociation_protection_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn set_disassociation_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disassociation_protection_enabled = input;
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn get_disassociation_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.disassociation_protection_enabled
+    }
     /// Appends an item to `vector_index_updates`.
     ///
     /// To override the contents of this collection use [`set_vector_index_updates`](Self::set_vector_index_updates).
@@ -629,6 +660,7 @@ impl UpdateTableInputBuilder {
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
             global_table_settings_replication_mode: self.global_table_settings_replication_mode,
+            disassociation_protection_enabled: self.disassociation_protection_enabled,
             vector_index_updates: self.vector_index_updates,
         })
     }

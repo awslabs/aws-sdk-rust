@@ -6,6 +6,8 @@
 pub enum TableReference {
     /// <p>If present, a reference to the Athena table referred to by this table reference.</p>
     Athena(crate::types::AthenaTableReference),
+    /// <p>If present, a reference to the Databricks table referred to by this table reference.</p>
+    Databricks(crate::types::DatabricksTableReference),
     /// <p>If present, a reference to the Glue table referred to by this table reference.</p>
     Glue(crate::types::GlueTableReference),
     /// <p>If present, a reference to the Snowflake table referred to by this table reference.</p>
@@ -33,6 +35,19 @@ impl TableReference {
     /// Returns true if this is a [`Athena`](crate::types::TableReference::Athena).
     pub fn is_athena(&self) -> bool {
         self.as_athena().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Databricks`](crate::types::TableReference::Databricks), extracting the inner [`DatabricksTableReference`](crate::types::DatabricksTableReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_databricks(&self) -> ::std::result::Result<&crate::types::DatabricksTableReference, &Self> {
+        if let TableReference::Databricks(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Databricks`](crate::types::TableReference::Databricks).
+    pub fn is_databricks(&self) -> bool {
+        self.as_databricks().is_ok()
     }
     /// Tries to convert the enum instance into [`Glue`](crate::types::TableReference::Glue), extracting the inner [`GlueTableReference`](crate::types::GlueTableReference).
     /// Returns `Err(&Self)` if it can't be converted.

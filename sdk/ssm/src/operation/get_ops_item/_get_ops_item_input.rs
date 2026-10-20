@@ -18,6 +18,106 @@ impl GetOpsItemInput {
         self.ops_item_arn.as_deref()
     }
 }
+static GETOPSITEMINPUT_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsItemInput$OpsItemId",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    0,
+);
+static GETOPSITEMINPUT_MEMBER_OPS_ITEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsItemInput$OpsItemArn",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemArn",
+    1,
+);
+static GETOPSITEMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsItemInput",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETOPSITEMINPUT_MEMBER_OPS_ITEM_ID, &GETOPSITEMINPUT_MEMBER_OPS_ITEM_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetOpsItemRequest");
+impl GetOpsItemInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETOPSITEMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOpsItemInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&GETOPSITEMINPUT_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.ops_item_arn {
+            ser.write_string(&GETOPSITEMINPUT_MEMBER_OPS_ITEM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_ops_item::builders::GetOpsItemInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETOPSITEMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ops_item_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetOpsItemInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.ops_item_id = builder.ops_item_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetOpsItemInput {
     /// Creates a new builder-style object to manufacture [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
     pub fn builder() -> crate::operation::get_ops_item::builders::GetOpsItemInputBuilder {

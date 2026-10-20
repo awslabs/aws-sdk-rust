@@ -59,6 +59,145 @@ impl PatchRule {
         self.enable_non_security
     }
 }
+static PATCHRULE_MEMBER_PATCH_FILTER_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule$PatchFilterGroup", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PatchFilterGroup",
+    0,
+);
+static PATCHRULE_MEMBER_COMPLIANCE_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule$ComplianceLevel", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceLevel",
+    1,
+);
+static PATCHRULE_MEMBER_APPROVE_AFTER_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule$ApproveAfterDays", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ApproveAfterDays",
+    2,
+);
+static PATCHRULE_MEMBER_APPROVE_UNTIL_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule$ApproveUntilDate", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApproveUntilDate",
+    3,
+);
+static PATCHRULE_MEMBER_ENABLE_NON_SECURITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule$EnableNonSecurity", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNonSecurity",
+    4,
+);
+static PATCHRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchRule", "com.amazonaws.ssm", "PatchRule"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PATCHRULE_MEMBER_PATCH_FILTER_GROUP,
+        &PATCHRULE_MEMBER_COMPLIANCE_LEVEL,
+        &PATCHRULE_MEMBER_APPROVE_AFTER_DAYS,
+        &PATCHRULE_MEMBER_APPROVE_UNTIL_DATE,
+        &PATCHRULE_MEMBER_ENABLE_NON_SECURITY,
+    ],
+);
+impl PatchRule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PATCHRULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PatchRule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.patch_filter_group {
+            ser.write_struct(&PATCHRULE_MEMBER_PATCH_FILTER_GROUP, val)?;
+        }
+        if let Some(ref val) = self.compliance_level {
+            ser.write_string(&PATCHRULE_MEMBER_COMPLIANCE_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.approve_after_days {
+            ser.write_integer(&PATCHRULE_MEMBER_APPROVE_AFTER_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.approve_until_date {
+            ser.write_string(&PATCHRULE_MEMBER_APPROVE_UNTIL_DATE, val)?;
+        }
+        if let Some(ref val) = self.enable_non_security {
+            ser.write_boolean(&PATCHRULE_MEMBER_ENABLE_NON_SECURITY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PatchRuleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PATCHRULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.patch_filter_group = Some(crate::types::PatchFilterGroup::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_level = Some(crate::types::PatchComplianceLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approve_after_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approve_until_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_non_security = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PatchRule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PatchRule {
     /// Creates a new builder-style object to manufacture [`PatchRule`](crate::types::PatchRule).
     pub fn builder() -> crate::types::builders::PatchRuleBuilder {

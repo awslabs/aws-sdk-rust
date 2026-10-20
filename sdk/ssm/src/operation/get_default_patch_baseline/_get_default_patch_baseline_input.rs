@@ -12,6 +12,85 @@ impl GetDefaultPatchBaselineInput {
         self.operating_system.as_ref()
     }
 }
+static GETDEFAULTPATCHBASELINEINPUT_MEMBER_OPERATING_SYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetDefaultPatchBaselineInput$OperatingSystem",
+        "com.amazonaws.ssm.synthetic",
+        "GetDefaultPatchBaselineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperatingSystem",
+    0,
+);
+static GETDEFAULTPATCHBASELINEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetDefaultPatchBaselineInput",
+        "com.amazonaws.ssm.synthetic",
+        "GetDefaultPatchBaselineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETDEFAULTPATCHBASELINEINPUT_MEMBER_OPERATING_SYSTEM],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDefaultPatchBaselineRequest");
+impl GetDefaultPatchBaselineInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDEFAULTPATCHBASELINEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDefaultPatchBaselineInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.operating_system {
+            ser.write_string(&GETDEFAULTPATCHBASELINEINPUT_MEMBER_OPERATING_SYSTEM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDEFAULTPATCHBASELINEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_system = Some(crate::types::OperatingSystem::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDefaultPatchBaselineInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDefaultPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineInput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineInput).
     pub fn builder() -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineInputBuilder {

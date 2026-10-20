@@ -320,6 +320,8 @@ pub enum StopDBInstanceError {
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p><code>DBSnapshotIdentifier</code> is already used by an existing snapshot.</p>
     DbSnapshotAlreadyExistsFault(crate::types::error::DbSnapshotAlreadyExistsFault),
+    /// <p>The DB capacity reservation isn't in a valid state.</p>
+    InvalidDbCapacityReservationStateFault(crate::types::error::InvalidDbCapacityReservationStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
@@ -361,6 +363,7 @@ impl StopDBInstanceError {
         match self {
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbCapacityReservationStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SnapshotQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -374,6 +377,10 @@ impl StopDBInstanceError {
     /// Returns `true` if the error kind is `StopDBInstanceError::DbSnapshotAlreadyExistsFault`.
     pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
         matches!(self, Self::DbSnapshotAlreadyExistsFault(_))
+    }
+    /// Returns `true` if the error kind is `StopDBInstanceError::InvalidDbCapacityReservationStateFault`.
+    pub fn is_invalid_db_capacity_reservation_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbCapacityReservationStateFault(_))
     }
     /// Returns `true` if the error kind is `StopDBInstanceError::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
@@ -393,6 +400,7 @@ impl ::std::error::Error for StopDBInstanceError {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
@@ -405,6 +413,7 @@ impl ::std::fmt::Display for StopDBInstanceError {
         match self {
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::SnapshotQuotaExceededFault(_inner) => _inner.fmt(f),
@@ -431,6 +440,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StopDBInstanc
         match self {
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SnapshotQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

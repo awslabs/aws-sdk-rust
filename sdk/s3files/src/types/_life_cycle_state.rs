@@ -17,6 +17,7 @@
 ///     LifeCycleState::Deleted => { /* ... */ },
 ///     LifeCycleState::Deleting => { /* ... */ },
 ///     LifeCycleState::Error => { /* ... */ },
+///     LifeCycleState::Misconfigured => { /* ... */ },
 ///     LifeCycleState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
+    Misconfigured,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for LifeCycleState {
             "deleted" => LifeCycleState::Deleted,
             "deleting" => LifeCycleState::Deleting,
             "error" => LifeCycleState::Error,
+            "misconfigured" => LifeCycleState::Misconfigured,
             "updating" => LifeCycleState::Updating,
             other => LifeCycleState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,13 +95,14 @@ impl LifeCycleState {
             LifeCycleState::Deleted => "deleted",
             LifeCycleState::Deleting => "deleting",
             LifeCycleState::Error => "error",
+            LifeCycleState::Misconfigured => "misconfigured",
             LifeCycleState::Updating => "updating",
             LifeCycleState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["available", "creating", "deleted", "deleting", "error", "updating"]
+        &["available", "creating", "deleted", "deleting", "error", "misconfigured", "updating"]
     }
 }
 impl ::std::convert::AsRef<str> for LifeCycleState {
@@ -125,6 +130,7 @@ impl ::std::fmt::Display for LifeCycleState {
             LifeCycleState::Deleted => write!(f, "deleted"),
             LifeCycleState::Deleting => write!(f, "deleting"),
             LifeCycleState::Error => write!(f, "error"),
+            LifeCycleState::Misconfigured => write!(f, "misconfigured"),
             LifeCycleState::Updating => write!(f, "updating"),
             LifeCycleState::Unknown(value) => write!(f, "{value}"),
         }

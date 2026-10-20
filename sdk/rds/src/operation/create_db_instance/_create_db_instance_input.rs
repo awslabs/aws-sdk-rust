@@ -845,6 +845,28 @@ pub struct CreateDbInstanceInput {
     /// <p><code>auto-backup</code> - The DB instance's automated backup.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1846,6 +1868,30 @@ impl CreateDbInstanceInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -1928,6 +1974,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.finish()
     }
@@ -2009,6 +2056,7 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
 }
 impl CreateDbInstanceInputBuilder {
@@ -5114,6 +5162,80 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// <p>Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB instance.</p>
     /// <p>You can specify one of the following values:</p>
     /// <ul>
@@ -5223,6 +5345,7 @@ impl CreateDbInstanceInputBuilder {
             engine_lifecycle_support: self.engine_lifecycle_support,
             additional_storage_volumes: self.additional_storage_volumes,
             tag_specifications: self.tag_specifications,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
             master_user_authentication_type: self.master_user_authentication_type,
         })
     }
@@ -5296,6 +5419,7 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.finish()
     }

@@ -303,6 +303,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBInsta
                 captured.insert("Engine", value);
             }
         }
+        if requested.should_capture("DBCapacityReservationIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_capacity_reservation_identifier.as_deref() {
+                captured.insert("DBCapacityReservationIdentifier", value);
+            }
+        }
         if requested.should_capture("EngineLifecycleSupport") {
             if let ::std::option::Option::Some(value) = input.engine_lifecycle_support.as_deref() {
                 captured.insert("EngineLifecycleSupport", value);
@@ -439,6 +444,8 @@ pub enum ModifyDBInstanceError {
     BackupPolicyNotFoundFault(crate::types::error::BackupPolicyNotFoundFault),
     /// <p><code>CertificateIdentifier</code> doesn't refer to an existing certificate.</p>
     CertificateNotFoundFault(crate::types::error::CertificateNotFoundFault),
+    /// <p><code>DBCapacityReservationIdentifier</code> doesn't refer to an existing DB capacity reservation.</p>
+    DbCapacityReservationNotFoundFault(crate::types::error::DbCapacityReservationNotFoundFault),
     /// <p>The user already has a DB instance with the given identifier.</p>
     DbInstanceAlreadyExistsFault(crate::types::error::DbInstanceAlreadyExistsFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -453,6 +460,8 @@ pub enum ModifyDBInstanceError {
     DomainNotFoundFault(crate::types::error::DomainNotFoundFault),
     /// <p>The specified DB instance class isn't available in the specified Availability Zone.</p>
     InsufficientDbInstanceCapacityFault(crate::types::error::InsufficientDbInstanceCapacityFault),
+    /// <p>The DB capacity reservation isn't in a valid state.</p>
+    InvalidDbCapacityReservationStateFault(crate::types::error::InvalidDbCapacityReservationStateFault),
     /// <p>The requested operation can't be performed while the cluster is in this state.</p>
     InvalidDbClusterStateFault(crate::types::error::InvalidDbClusterStateFault),
     /// <p>The DB instance isn't in a valid state.</p>
@@ -513,6 +522,7 @@ impl ModifyDBInstanceError {
             Self::AuthorizationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::BackupPolicyNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CertificateNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbCapacityReservationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -520,6 +530,7 @@ impl ModifyDBInstanceError {
             Self::DbUpgradeDependencyFailureFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DomainNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InsufficientDbInstanceCapacityFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidDbCapacityReservationStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbInstanceStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDbSecurityGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -546,6 +557,10 @@ impl ModifyDBInstanceError {
     /// Returns `true` if the error kind is `ModifyDBInstanceError::CertificateNotFoundFault`.
     pub fn is_certificate_not_found_fault(&self) -> bool {
         matches!(self, Self::CertificateNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyDBInstanceError::DbCapacityReservationNotFoundFault`.
+    pub fn is_db_capacity_reservation_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbCapacityReservationNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `ModifyDBInstanceError::DbInstanceAlreadyExistsFault`.
     pub fn is_db_instance_already_exists_fault(&self) -> bool {
@@ -574,6 +589,10 @@ impl ModifyDBInstanceError {
     /// Returns `true` if the error kind is `ModifyDBInstanceError::InsufficientDbInstanceCapacityFault`.
     pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
         matches!(self, Self::InsufficientDbInstanceCapacityFault(_))
+    }
+    /// Returns `true` if the error kind is `ModifyDBInstanceError::InvalidDbCapacityReservationStateFault`.
+    pub fn is_invalid_db_capacity_reservation_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidDbCapacityReservationStateFault(_))
     }
     /// Returns `true` if the error kind is `ModifyDBInstanceError::InvalidDbClusterStateFault`.
     pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
@@ -630,6 +649,7 @@ impl ::std::error::Error for ModifyDBInstanceError {
             Self::AuthorizationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::CertificateNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -637,6 +657,7 @@ impl ::std::error::Error for ModifyDBInstanceError {
             Self::DbUpgradeDependencyFailureFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDbSecurityGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
@@ -659,6 +680,7 @@ impl ::std::fmt::Display for ModifyDBInstanceError {
             Self::AuthorizationNotFoundFault(_inner) => _inner.fmt(f),
             Self::BackupPolicyNotFoundFault(_inner) => _inner.fmt(f),
             Self::CertificateNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbCapacityReservationNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -666,6 +688,7 @@ impl ::std::fmt::Display for ModifyDBInstanceError {
             Self::DbUpgradeDependencyFailureFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
             Self::InsufficientDbInstanceCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbClusterStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbInstanceStateFault(_inner) => _inner.fmt(f),
             Self::InvalidDbSecurityGroupStateFault(_inner) => _inner.fmt(f),
@@ -702,6 +725,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBInsta
             Self::AuthorizationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::BackupPolicyNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CertificateNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -709,6 +733,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyDBInsta
             Self::DbUpgradeDependencyFailureFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InsufficientDbInstanceCapacityFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidDbCapacityReservationStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbInstanceStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDbSecurityGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

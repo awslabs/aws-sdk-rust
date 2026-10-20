@@ -185,6 +185,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartMigratio
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ServerlessCacheName") {
+            if let ::std::option::Option::Some(value) = input.serverless_cache_name.as_deref() {
+                captured.insert("ServerlessCacheName", value);
+            }
+        }
         if requested.should_capture("ReplicationGroupId") {
             if let ::std::option::Option::Some(value) = input.replication_group_id.as_deref() {
                 captured.insert("ReplicationGroupId", value);
@@ -313,14 +318,26 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartMigratio
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartMigrationError {
+    /// <p>The requested cluster is not in the <code>available</code> state.</p>
+    InvalidCacheClusterStateFault(crate::types::error::InvalidCacheClusterStateFault),
+    /// <p>Two or more incompatible parameters were specified.</p>
+    InvalidParameterCombinationException(crate::types::error::InvalidParameterCombinationException),
     /// <p>The value for a parameter is invalid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The requested replication group is not in the <code>available</code> state.</p>
     InvalidReplicationGroupStateFault(crate::types::error::InvalidReplicationGroupStateFault),
+    /// <p>The account for these credentials is not currently active.</p>
+    InvalidServerlessCacheStateFault(crate::types::error::InvalidServerlessCacheStateFault),
+    /// <p>The migration is not healthy. Check the events for this serverless cache for more details. For <code>CompleteMigration</code>, set <code>Force</code> to true to bypass this check.</p>
+    MigrationHealthFault(crate::types::error::MigrationHealthFault),
     /// <p>The targeted replication group is not available.</p>
     ReplicationGroupAlreadyUnderMigrationFault(crate::types::error::ReplicationGroupAlreadyUnderMigrationFault),
     /// <p>The specified replication group does not exist.</p>
     ReplicationGroupNotFoundFault(crate::types::error::ReplicationGroupNotFoundFault),
+    /// <p>The serverless cache was not found or does not exist.</p>
+    ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
+    /// <p>The serverless cache is not currently under migration.</p>
+    ServerlessCacheNotUnderMigrationFault(crate::types::error::ServerlessCacheNotUnderMigrationFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -354,12 +371,26 @@ impl StartMigrationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidCacheClusterStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidReplicationGroupStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidServerlessCacheStateFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::MigrationHealthFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupAlreadyUnderMigrationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ReplicationGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServerlessCacheNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServerlessCacheNotUnderMigrationFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartMigrationError::InvalidCacheClusterStateFault`.
+    pub fn is_invalid_cache_cluster_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidCacheClusterStateFault(_))
+    }
+    /// Returns `true` if the error kind is `StartMigrationError::InvalidParameterCombinationException`.
+    pub fn is_invalid_parameter_combination_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterCombinationException(_))
     }
     /// Returns `true` if the error kind is `StartMigrationError::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
@@ -369,6 +400,14 @@ impl StartMigrationError {
     pub fn is_invalid_replication_group_state_fault(&self) -> bool {
         matches!(self, Self::InvalidReplicationGroupStateFault(_))
     }
+    /// Returns `true` if the error kind is `StartMigrationError::InvalidServerlessCacheStateFault`.
+    pub fn is_invalid_serverless_cache_state_fault(&self) -> bool {
+        matches!(self, Self::InvalidServerlessCacheStateFault(_))
+    }
+    /// Returns `true` if the error kind is `StartMigrationError::MigrationHealthFault`.
+    pub fn is_migration_health_fault(&self) -> bool {
+        matches!(self, Self::MigrationHealthFault(_))
+    }
     /// Returns `true` if the error kind is `StartMigrationError::ReplicationGroupAlreadyUnderMigrationFault`.
     pub fn is_replication_group_already_under_migration_fault(&self) -> bool {
         matches!(self, Self::ReplicationGroupAlreadyUnderMigrationFault(_))
@@ -377,14 +416,28 @@ impl StartMigrationError {
     pub fn is_replication_group_not_found_fault(&self) -> bool {
         matches!(self, Self::ReplicationGroupNotFoundFault(_))
     }
+    /// Returns `true` if the error kind is `StartMigrationError::ServerlessCacheNotFoundFault`.
+    pub fn is_serverless_cache_not_found_fault(&self) -> bool {
+        matches!(self, Self::ServerlessCacheNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `StartMigrationError::ServerlessCacheNotUnderMigrationFault`.
+    pub fn is_serverless_cache_not_under_migration_fault(&self) -> bool {
+        matches!(self, Self::ServerlessCacheNotUnderMigrationFault(_))
+    }
 }
 impl ::std::error::Error for StartMigrationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidServerlessCacheStateFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::MigrationHealthFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServerlessCacheNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServerlessCacheNotUnderMigrationFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -392,10 +445,16 @@ impl ::std::error::Error for StartMigrationError {
 impl ::std::fmt::Display for StartMigrationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidServerlessCacheStateFault(_inner) => _inner.fmt(f),
+            Self::MigrationHealthFault(_inner) => _inner.fmt(f),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => _inner.fmt(f),
             Self::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ServerlessCacheNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ServerlessCacheNotUnderMigrationFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -417,10 +476,16 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartMigrationError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartMigrationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidCacheClusterStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidReplicationGroupStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidServerlessCacheStateFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::MigrationHealthFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReplicationGroupAlreadyUnderMigrationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ReplicationGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServerlessCacheNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServerlessCacheNotUnderMigrationFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

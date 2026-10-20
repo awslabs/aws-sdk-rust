@@ -18,13 +18,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("accept-ranges")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("accept-ranges")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -40,13 +43,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-server-side-encryption-bucket-key-enabled")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -61,13 +67,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Cache-Control")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Cache-Control")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -82,13 +91,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-crc32")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-crc32")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -103,13 +115,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-crc32c")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-crc32c")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -124,13 +139,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-crc64nvme")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-crc64nvme")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -145,13 +163,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-md5")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-md5")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -166,13 +187,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-sha1")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-sha1")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -187,13 +211,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-sha256")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-sha256")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -208,13 +235,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-sha512")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-sha512")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -229,13 +259,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-type")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-type")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -250,13 +283,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-xxhash128")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-xxhash128")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -271,13 +307,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-xxhash3")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-xxhash3")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -292,13 +331,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-checksum-xxhash64")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-checksum-xxhash64")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -313,13 +355,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Disposition")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Disposition")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -334,13 +379,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Encoding")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Encoding")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -355,13 +403,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Language")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Language")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -376,13 +427,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Length")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Length")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -397,13 +451,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Range")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Range")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -418,13 +475,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Type")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Type")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -439,13 +499,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-delete-marker")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-delete-marker")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -459,11 +522,14 @@ pub fn de_get_object_http_response(
             ::std::result::Result::Ok(value) => value,
             ::std::result::Result::Err(err) => {
                 let _ = &err;
-                let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
-                if has_unreadable_value
-                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                {
+                // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                let skip = {
+                    let has_unreadable_value = _response_headers.get_all_bytes("ETag").any(|value| std::str::from_utf8(value).is_err());
+                    has_unreadable_value
+                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                };
+                if skip {
                     ::std::option::Option::None
                 } else {
                     return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -477,13 +543,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-expiration")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-expiration")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -498,13 +567,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Expires")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Expires")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -519,13 +591,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("ExpiresString")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("ExpiresString")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -540,13 +615,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Last-Modified")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Last-Modified")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -561,14 +639,17 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .iter_bytes()
-                        .filter(|(name, _)| name.starts_with("x-amz-meta-"))
-                        .any(|(_, value)| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .iter_bytes()
+                            .filter(|(name, _)| name.starts_with("x-amz-meta-"))
+                            .any(|(_, value)| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -583,13 +664,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-missing-meta")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-missing-meta")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -604,13 +688,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-event-hold")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-event-hold")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -625,13 +712,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-event-hold-duration-days")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-event-hold-duration-days")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -646,13 +736,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-event-hold-duration-years")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-event-hold-duration-years")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -667,13 +760,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-legal-hold")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-legal-hold")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -688,13 +784,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-mode")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-mode")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -709,13 +808,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-object-lock-retain-until-date")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-object-lock-retain-until-date")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -730,13 +832,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-mp-parts-count")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-mp-parts-count")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -751,13 +856,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-replication-status")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-replication-status")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -772,13 +880,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-request-charged")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-request-charged")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -793,13 +904,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-restore")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-restore")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -814,13 +928,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-server-side-encryption-customer-algorithm")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-server-side-encryption-customer-algorithm")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -835,13 +952,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-server-side-encryption-customer-key-MD5")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-server-side-encryption-customer-key-MD5")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -856,13 +976,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-server-side-encryption-aws-kms-key-id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -877,13 +1000,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-server-side-encryption")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-server-side-encryption")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -898,13 +1024,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-storage-class")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-storage-class")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -919,13 +1048,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-tagging-count")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-tagging-count")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -940,13 +1072,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-version-id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-version-id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(
@@ -961,13 +1096,16 @@ pub fn de_get_object_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("x-amz-website-redirect-location")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("x-amz-website-redirect-location")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(crate::operation::get_object::GetObjectError::unhandled(

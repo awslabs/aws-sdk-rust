@@ -7,14 +7,13 @@ use aws_smithy_runtime_api::client::orchestrator::{HttpResponse, SensitiveOutput
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::ConfigBag;
 use bytes::Bytes;
-use pin_utils::pin_mut;
 use tracing::trace;
 
 const LOG_SENSITIVE_BODIES: &str = "LOG_SENSITIVE_BODIES";
 
 async fn body_to_bytes(body: SdkBody) -> Result<Bytes, <SdkBody as http_body_1x::Body>::Error> {
     use http_body_util::BodyExt;
-    pin_mut!(body);
+    let body = std::pin::pin!(body);
     let collected = body.collect().await?;
 
     Ok(collected.to_bytes())

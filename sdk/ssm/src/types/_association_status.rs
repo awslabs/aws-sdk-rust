@@ -32,6 +32,125 @@ impl AssociationStatus {
         self.additional_info.as_deref()
     }
 }
+static ASSOCIATIONSTATUS_MEMBER_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationStatus$Date", "com.amazonaws.ssm", "AssociationStatus"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Date",
+    0,
+);
+static ASSOCIATIONSTATUS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationStatus$Name", "com.amazonaws.ssm", "AssociationStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static ASSOCIATIONSTATUS_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationStatus$Message", "com.amazonaws.ssm", "AssociationStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static ASSOCIATIONSTATUS_MEMBER_ADDITIONAL_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationStatus$AdditionalInfo",
+        "com.amazonaws.ssm",
+        "AssociationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AdditionalInfo",
+    3,
+);
+static ASSOCIATIONSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationStatus", "com.amazonaws.ssm", "AssociationStatus"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATIONSTATUS_MEMBER_DATE,
+        &ASSOCIATIONSTATUS_MEMBER_NAME,
+        &ASSOCIATIONSTATUS_MEMBER_MESSAGE,
+        &ASSOCIATIONSTATUS_MEMBER_ADDITIONAL_INFO,
+    ],
+);
+impl AssociationStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATIONSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociationStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.date;
+            ser.write_timestamp(&ASSOCIATIONSTATUS_MEMBER_DATE, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&ASSOCIATIONSTATUS_MEMBER_NAME, val.as_str())?;
+        }
+        {
+            let val = &self.message;
+            ser.write_string(&ASSOCIATIONSTATUS_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.additional_info {
+            ser.write_string(&ASSOCIATIONSTATUS_MEMBER_ADDITIONAL_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AssociationStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATIONSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.date = Some(deser.read_timestamp(member)?);
+                }
+                Some(1) => {
+                    self.name = Some(crate::types::AssociationStatusName::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.message = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_info = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociationStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.date = builder.date.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.message = builder.message.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociationStatus {
     /// Creates a new builder-style object to manufacture [`AssociationStatus`](crate::types::AssociationStatus).
     pub fn builder() -> crate::types::builders::AssociationStatusBuilder {

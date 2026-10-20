@@ -52,6 +52,8 @@ pub struct PendingModifiedValues {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The additional storage volume modifications that are pending for the DB instance.</p>
     pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
+    /// <p>The identifier of the DB capacity reservation that the DB instance uses after a pending modification completes. Amazon RDS returns this value when a <code>ModifyDBInstance</code> request changes the DB capacity reservation, and the change hasn't been applied yet.</p>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -152,6 +154,10 @@ impl PendingModifiedValues {
     pub fn additional_storage_volumes(&self) -> &[crate::types::AdditionalStorageVolume] {
         self.additional_storage_volumes.as_deref().unwrap_or_default()
     }
+    /// <p>The identifier of the DB capacity reservation that the DB instance uses after a pending modification completes. Amazon RDS returns this value when a <code>ModifyDBInstance</code> request changes the DB capacity reservation, and the change hasn't been applied yet.</p>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
+    }
 }
 impl ::std::fmt::Debug for PendingModifiedValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -179,6 +185,7 @@ impl ::std::fmt::Debug for PendingModifiedValues {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.finish()
     }
 }
@@ -216,6 +223,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
@@ -558,6 +566,20 @@ impl PendingModifiedValuesBuilder {
     pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>> {
         &self.additional_storage_volumes
     }
+    /// <p>The identifier of the DB capacity reservation that the DB instance uses after a pending modification completes. Amazon RDS returns this value when a <code>ModifyDBInstance</code> request changes the DB capacity reservation, and the change hasn't been applied yet.</p>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the DB capacity reservation that the DB instance uses after a pending modification completes. Amazon RDS returns this value when a <code>ModifyDBInstance</code> request changes the DB capacity reservation, and the change hasn't been applied yet.</p>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier of the DB capacity reservation that the DB instance uses after a pending modification completes. Amazon RDS returns this value when a <code>ModifyDBInstance</code> request changes the DB capacity reservation, and the change hasn't been applied yet.</p>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -584,6 +606,7 @@ impl PendingModifiedValuesBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             engine: self.engine,
             additional_storage_volumes: self.additional_storage_volumes,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
         }
     }
 }
@@ -613,6 +636,7 @@ impl ::std::fmt::Debug for PendingModifiedValuesBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.finish()
     }
 }

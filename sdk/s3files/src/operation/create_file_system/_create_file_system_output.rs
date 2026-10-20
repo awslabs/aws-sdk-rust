@@ -17,7 +17,7 @@ pub struct CreateFileSystemOutput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN or alias of the KMS key used for encryption.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), or <code>UPDATING</code> (the file system is being updated).</p>
+    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), <code>MISCONFIGURED</code> (the file system has a misconfiguration), or <code>UPDATING</code> (the file system is being updated).</p>
     pub status: ::std::option::Option<crate::types::LifeCycleState>,
     /// <p>Additional information about the file system status. This field provides more details when the status is <code>ERROR</code>, or during state transitions.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -61,7 +61,7 @@ impl CreateFileSystemOutput {
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
-    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), or <code>UPDATING</code> (the file system is being updated).</p>
+    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), <code>MISCONFIGURED</code> (the file system has a misconfiguration), or <code>UPDATING</code> (the file system is being updated).</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::LifeCycleState> {
         self.status.as_ref()
     }
@@ -218,17 +218,17 @@ impl CreateFileSystemOutputBuilder {
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
-    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), or <code>UPDATING</code> (the file system is being updated).</p>
+    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), <code>MISCONFIGURED</code> (the file system has a misconfiguration), or <code>UPDATING</code> (the file system is being updated).</p>
     pub fn status(mut self, input: crate::types::LifeCycleState) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), or <code>UPDATING</code> (the file system is being updated).</p>
+    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), <code>MISCONFIGURED</code> (the file system has a misconfiguration), or <code>UPDATING</code> (the file system is being updated).</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::LifeCycleState>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), or <code>UPDATING</code> (the file system is being updated).</p>
+    /// <p>The lifecycle state of the file system. Valid values are: <code>AVAILABLE</code> (the file system is available for use), <code>CREATING</code> (the file system is being created), <code>DELETING</code> (the file system is being deleted), <code>DELETED</code> (the file system has been deleted), <code>ERROR</code> (the file system is in an error state), <code>MISCONFIGURED</code> (the file system has a misconfiguration), or <code>UPDATING</code> (the file system is being updated).</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LifeCycleState> {
         &self.status
     }

@@ -10,6 +10,11 @@ pub fn ser_start_db_instance_input_input_input(
     if let Some(var_2) = &input.db_instance_identifier {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_4) = &input.db_capacity_reservation_identifier {
+        scope_3.string(var_4);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

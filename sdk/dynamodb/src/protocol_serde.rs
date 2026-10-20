@@ -531,6 +531,8 @@ pub(crate) mod shape_delete_request;
 
 pub(crate) mod shape_delete_vector_index_action;
 
+pub(crate) mod shape_disassociate_replication_group_member_action;
+
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_export_summary;

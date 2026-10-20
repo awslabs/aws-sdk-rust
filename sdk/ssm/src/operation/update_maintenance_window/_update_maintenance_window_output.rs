@@ -98,6 +98,309 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowOutput {
         formatter.finish()
     }
 }
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_WINDOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$WindowId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowId",
+    0,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Description",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_START_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$StartDate",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StartDate",
+    3,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_END_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$EndDate",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndDate",
+    4,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Schedule",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Schedule",
+    5,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_TIMEZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$ScheduleTimezone",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScheduleTimezone",
+    6,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$ScheduleOffset",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ScheduleOffset",
+    7,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Duration",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Duration",
+    8,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_CUTOFF: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Cutoff",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Cutoff",
+    9,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ALLOW_UNASSOCIATED_TARGETS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$AllowUnassociatedTargets",
+            "com.amazonaws.ssm.synthetic",
+            "UpdateMaintenanceWindowOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "AllowUnassociatedTargets",
+        10,
+    );
+static UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput$Enabled",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    11,
+);
+static UPDATEMAINTENANCEWINDOWOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowOutput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_WINDOW_ID,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_NAME,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DESCRIPTION,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_START_DATE,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_END_DATE,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_TIMEZONE,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_OFFSET,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DURATION,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_CUTOFF,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ALLOW_UNASSOCIATED_TARGETS,
+        &UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ENABLED,
+    ],
+)
+.with_original_name("UpdateMaintenanceWindowResult");
+impl UpdateMaintenanceWindowOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMAINTENANCEWINDOWOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateMaintenanceWindowOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_id {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_WINDOW_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.start_date {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_START_DATE, val)?;
+        }
+        if let Some(ref val) = self.end_date {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_END_DATE, val)?;
+        }
+        if let Some(ref val) = self.schedule {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE, val)?;
+        }
+        if let Some(ref val) = self.schedule_timezone {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_TIMEZONE, val)?;
+        }
+        if let Some(ref val) = self.schedule_offset {
+            ser.write_integer(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_SCHEDULE_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.duration {
+            ser.write_integer(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_DURATION, *val)?;
+        }
+        {
+            let val = &self.cutoff;
+            ser.write_integer(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_CUTOFF, *val)?;
+        }
+        {
+            let val = &self.allow_unassociated_targets;
+            ser.write_boolean(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ALLOW_UNASSOCIATED_TARGETS, *val)?;
+        }
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&UPDATEMAINTENANCEWINDOWOUTPUT_MEMBER_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMAINTENANCEWINDOWOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.window_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_timezone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    self.cutoff = Some(deser.read_integer(member)?);
+                }
+                Some(10) => {
+                    self.allow_unassociated_targets = Some(deser.read_boolean(member)?);
+                }
+                Some(11) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateMaintenanceWindowOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateMaintenanceWindowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

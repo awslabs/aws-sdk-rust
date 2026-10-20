@@ -920,6 +920,153 @@ async fn test_https_connect_without_auth_with_s2n_tls_and_partitioned_connection
     .await;
 }
 
+/// The partitioned pool reports a proxy's 407 answer to CONNECT as a terminal error, not
+/// retryable I/O. The legacy client retries every connect failure, so this contract has no
+/// legacy runner.
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn pool_https_connect_407_is_terminal(provider: tls::Provider) {
+    let proxy = MockHttpServer::new(|request| {
+        assert_eq!("CONNECT", request.method);
+        Response::builder()
+            .status(StatusCode::PROXY_AUTHENTICATION_REQUIRED)
+            .body("authentication required".to_string())
+            .expect("valid response")
+    })
+    .await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = https_client(
+        &PartitionedConnectionPool,
+        proxy_backend_config(config),
+        provider,
+        tls::TlsContext::default(),
+    );
+
+    let error = test_client::send_request(
+        &client.connector,
+        HttpRequest::get("https://secure.example.com/private").expect("valid request"),
+    )
+    .await
+    .expect_err("a 407 CONNECT response must fail");
+    assert!(
+        error.is_other(),
+        "expected ConnectorError::other, got {error:?}"
+    );
+    assert!(!error.is_io(), "a proxy's 407 must not be retryable I/O");
+    assert_eq!(1, proxy.requests().len());
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_connect_407_is_terminal_with_rustls_and_partitioned_connection_pool() {
+    pool_https_connect_407_is_terminal(tls::Provider::rustls(
+        tls::rustls_provider::CryptoMode::Ring,
+    ))
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_connect_407_is_terminal_with_s2n_tls_and_partitioned_connection_pool() {
+    pool_https_connect_407_is_terminal(tls::Provider::S2nTls).await;
+}
+
+/// An origin that closes the tunneled connection during the TLS handshake fails the pool
+/// request with retryable I/O.
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn pool_tunneled_handshake_eof_is_io(provider: tls::Provider) {
+    let origin = tokio::net::TcpListener::bind("127.0.0.1:0")
+        .await
+        .expect("origin should bind");
+    let origin_addr = origin.local_addr().expect("origin has an address");
+    let closing_origin = tokio::spawn(async move {
+        loop {
+            let (stream, _) = origin.accept().await.expect("origin accepts");
+            drop(stream);
+        }
+    });
+    let proxy = MockConnectProxy::relay_to(origin_addr, None).await;
+    let config = ProxyConfig::all(format!("http://{}", proxy.addr())).expect("valid proxy");
+    let client = https_client(
+        &PartitionedConnectionPool,
+        proxy_backend_config(config),
+        provider,
+        test_tls::SERVER_IDENTITY.client_context(),
+    );
+
+    let error = test_client::send_request(
+        &client.connector,
+        HttpRequest::get(format!("https://localhost:{}/", origin_addr.port()))
+            .expect("valid request"),
+    )
+    .await
+    .expect_err("an origin that closes during the handshake fails the request");
+    closing_origin.abort();
+    assert!(error.is_io(), "expected ConnectorError::io, got {error:?}");
+    assert_eq!(1, proxy.requests().len());
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_tunneled_handshake_eof_is_io_with_rustls_and_partitioned_connection_pool() {
+    pool_tunneled_handshake_eof_is_io(tls::Provider::rustls(
+        tls::rustls_provider::CryptoMode::Ring,
+    ))
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_tunneled_handshake_eof_is_io_with_s2n_tls_and_partitioned_connection_pool() {
+    pool_tunneled_handshake_eof_is_io(tls::Provider::S2nTls).await;
+}
+
+/// An `https://` proxy that closes the connection during the TLS handshake to the proxy fails the
+/// pool request with retryable I/O, as a handshake failure to the origin does.
+#[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
+async fn pool_https_proxy_handshake_eof_is_io(provider: tls::Provider) {
+    let proxy = tokio::net::TcpListener::bind("127.0.0.1:0")
+        .await
+        .expect("proxy should bind");
+    let proxy_addr = proxy.local_addr().expect("proxy has an address");
+    let closing_proxy = tokio::spawn(async move {
+        loop {
+            let (stream, _) = proxy.accept().await.expect("proxy accepts");
+            drop(stream);
+        }
+    });
+    let config = ProxyConfig::all(format!("https://{proxy_addr}")).expect("valid proxy");
+    let client = https_client(
+        &PartitionedConnectionPool,
+        proxy_backend_config(config),
+        provider,
+        tls::TlsContext::default(),
+    );
+
+    let error = test_client::send_request(
+        &client.connector,
+        HttpRequest::get("https://secure.example.com/private").expect("valid request"),
+    )
+    .await
+    .expect_err("a proxy that closes during the handshake fails the request");
+    closing_proxy.abort();
+    assert!(error.is_io(), "expected ConnectorError::io, got {error:?}");
+}
+
+#[cfg(feature = "rustls-ring")]
+#[tokio::test]
+async fn test_https_proxy_handshake_eof_is_io_with_rustls_and_partitioned_connection_pool() {
+    pool_https_proxy_handshake_eof_is_io(tls::Provider::rustls(
+        tls::rustls_provider::CryptoMode::Ring,
+    ))
+    .await;
+}
+
+#[cfg(feature = "s2n-tls")]
+#[tokio::test]
+async fn test_https_proxy_handshake_eof_is_io_with_s2n_tls_and_partitioned_connection_pool() {
+    pool_https_proxy_handshake_eof_is_io(tls::Provider::S2nTls).await;
+}
+
 #[cfg(any(feature = "rustls-ring", feature = "s2n-tls"))]
 async fn tunneled_https_request_uses_origin_form(
     backend: &dyn HttpsClientBackend,

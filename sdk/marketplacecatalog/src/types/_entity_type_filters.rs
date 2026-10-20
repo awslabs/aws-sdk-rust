@@ -10,6 +10,8 @@ pub enum EntityTypeFilters {
     ContainerProductFilters(crate::types::ContainerProductFilters),
     /// <p>A filter for data products.</p>
     DataProductFilters(crate::types::DataProductFilters),
+    /// <p>A filter for express private offer configurations.</p>
+    ExpressPrivateOfferConfigurationFilters(crate::types::ExpressPrivateOfferConfigurationFilters),
     /// <p>The filters that you can use with the ListEntities operation to filter machine learning products. You can filter by <code>EntityId</code>, <code>astModifiedDate</code>, <code>ProductTitle</code>, and <code>Visibility</code>.</p>
     MachineLearningProductFilters(crate::types::MachineLearningProductFilters),
     /// <p>A filter for offers.</p>
@@ -69,6 +71,21 @@ impl EntityTypeFilters {
     /// Returns true if this is a [`DataProductFilters`](crate::types::EntityTypeFilters::DataProductFilters).
     pub fn is_data_product_filters(&self) -> bool {
         self.as_data_product_filters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ExpressPrivateOfferConfigurationFilters`](crate::types::EntityTypeFilters::ExpressPrivateOfferConfigurationFilters), extracting the inner [`ExpressPrivateOfferConfigurationFilters`](crate::types::ExpressPrivateOfferConfigurationFilters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_express_private_offer_configuration_filters(
+        &self,
+    ) -> ::std::result::Result<&crate::types::ExpressPrivateOfferConfigurationFilters, &Self> {
+        if let EntityTypeFilters::ExpressPrivateOfferConfigurationFilters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExpressPrivateOfferConfigurationFilters`](crate::types::EntityTypeFilters::ExpressPrivateOfferConfigurationFilters).
+    pub fn is_express_private_offer_configuration_filters(&self) -> bool {
+        self.as_express_private_offer_configuration_filters().is_ok()
     }
     /// Tries to convert the enum instance into [`MachineLearningProductFilters`](crate::types::EntityTypeFilters::MachineLearningProductFilters), extracting the inner [`MachineLearningProductFilters`](crate::types::MachineLearningProductFilters).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -15,6 +15,11 @@ pub fn ser_stop_db_instance_input_input_input(
     if let Some(var_4) = &input.db_snapshot_identifier {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("DetachFromDBCapacityReservation");
+    if let Some(var_6) = &input.detach_from_db_capacity_reservation {
+        scope_5.boolean(*var_6);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

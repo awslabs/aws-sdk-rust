@@ -103,6 +103,10 @@ pub use crate::types::_metric_stream_entry::MetricStreamEntry;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_anomaly_detector_adaptation_speed::AnomalyDetectorAdaptationSpeed;
+
+pub use crate::types::_anomaly_detector_outlier_filtering_strength::AnomalyDetectorOutlierFilteringStrength;
+
 pub use crate::types::_alarm_tags_propagation::AlarmTagsPropagation;
 
 pub use crate::types::_dashboard_validation_message::DashboardValidationMessage;
@@ -163,7 +167,11 @@ mod _alarm_type;
 
 mod _anomaly_detector;
 
+mod _anomaly_detector_adaptation_speed;
+
 mod _anomaly_detector_configuration;
+
+mod _anomaly_detector_outlier_filtering_strength;
 
 mod _anomaly_detector_state_value;
 

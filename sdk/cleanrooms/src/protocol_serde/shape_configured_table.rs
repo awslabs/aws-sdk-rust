@@ -57,6 +57,13 @@ where
                                     depth + 1,
                                 )?);
                             }
+                            "tableType" => {
+                                builder = builder.set_table_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::TableReferenceType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
                             "createTime" => {
                                 builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                     tokens.next(),

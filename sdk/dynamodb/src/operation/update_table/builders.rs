@@ -22,7 +22,7 @@ impl crate::operation::update_table::builders::UpdateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
-/// <p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p>
+/// <p>Modifies the provisioned throughput settings, global secondary indexes, DynamoDB Streams settings, or global table replica settings for a given table.</p>
 /// <p>You can only perform one of the following operations at once:</p>
 /// <ul>
 /// <li>
@@ -31,8 +31,14 @@ impl crate::operation::update_table::builders::UpdateTableInputBuilder {
 /// <p>Remove a global secondary index from the table.</p></li>
 /// <li>
 /// <p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p></li>
+/// <li>
+/// <p>Enable or disable disassociation protection for the local global table replica.</p></li>
+/// <li>
+/// <p>Disassociate the local global table replica and keep it as a standalone regional table. The <code>Disassociate</code> action must be the only replica update in the request. If the request includes any other update, <code>UpdateTable</code> fails with a <code>ValidationException</code> and the disassociation does not start.</p></li>
 /// </ul>
-/// <p><code>UpdateTable</code> is an asynchronous operation; while it's executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code> request. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>
+/// <p><code>UpdateTable</code> is an asynchronous operation; while it's executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code> request. Use <code>DescribeTable</code> to monitor the table's status.</p>
+/// <p>To use this operation to disassociate a local replica, you must have the <code>dynamodb:UpdateTable</code> and <code>dynamodb:DisassociateTableReplica</code> IAM permissions on the local replica. Send disassociation and disassociation protection requests to the replica's Region using credentials for the account that owns the replica. For prerequisites and the procedure, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables-disassociate.html">Disassociating a global table replica</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+/// <p>To confirm successful disassociation, call <code>DescribeTable</code> in the replica's Region and verify that <code>TableStatus</code> is <code>ACTIVE</code> and <code>Replicas</code> is absent or empty. If <code>TableStatus</code> returns to <code>ACTIVE</code> but the response still includes a <code>Replicas</code> list, the disassociation did not complete. Check <code>ReplicaStatus</code> for a replication-permission or encryption-access problem, resolve it, and retry.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -288,17 +294,17 @@ impl UpdateTableFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_updates`](Self::set_replica_updates).
     ///
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn replica_updates(mut self, input: crate::types::ReplicationGroupUpdate) -> Self {
         self.inner = self.inner.replica_updates(input);
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn set_replica_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
-    /// <p>A list of replica update actions (create, delete, or update) for the table.</p>
+    /// <p>A list of replica update actions (create, delete, update, or disassociate) for the table.</p>
     pub fn get_replica_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationGroupUpdate>> {
         self.inner.get_replica_updates()
     }
@@ -476,6 +482,26 @@ impl UpdateTableFluentBuilder {
     /// </ul>
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         self.inner.get_global_table_settings_replication_mode()
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn disassociation_protection_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.disassociation_protection_enabled(input);
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn set_disassociation_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disassociation_protection_enabled(input);
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local replica of a multi-Region eventual consistency (MREC) global table using Version 2019.11.21.</p>
+    /// <p>Disassociation protection is enabled by default. If you omit this parameter, the existing setting is unchanged. This setting is independent of <code>DeletionProtectionEnabled</code>.</p>
+    /// <p>You can't combine this change with any other change in the same <code>UpdateTable</code> request.</p>
+    pub fn get_disassociation_protection_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disassociation_protection_enabled()
     }
     ///
     /// Appends an item to `VectorIndexUpdates`.

@@ -21,6 +21,114 @@ impl DocumentReviews {
         self.comment.as_deref().unwrap_or_default()
     }
 }
+static DOCUMENTREVIEWS_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentReviews$Action", "com.amazonaws.ssm", "DocumentReviews"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    0,
+);
+static DOCUMENTREVIEWS_MEMBER_COMMENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentReviewCommentList$member",
+        "com.amazonaws.ssm",
+        "DocumentReviewCommentList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTREVIEWS_MEMBER_COMMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentReviews$Comment", "com.amazonaws.ssm", "DocumentReviews"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Comment",
+    1,
+)
+.with_list_member(&DOCUMENTREVIEWS_MEMBER_COMMENT_MEMBER);
+static DOCUMENTREVIEWS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentReviews", "com.amazonaws.ssm", "DocumentReviews"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENTREVIEWS_MEMBER_ACTION, &DOCUMENTREVIEWS_MEMBER_COMMENT],
+);
+impl DocumentReviews {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTREVIEWS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentReviews {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.action;
+            ser.write_string(&DOCUMENTREVIEWS_MEMBER_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.comment {
+            ser.write_list(
+                &DOCUMENTREVIEWS_MEMBER_COMMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentReviewCommentSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentReviewsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTREVIEWS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.action = Some(crate::types::DocumentReviewAction::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comment = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentReviewCommentSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentReviews {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DocumentReviews {
     /// Creates a new builder-style object to manufacture [`DocumentReviews`](crate::types::DocumentReviews).
     pub fn builder() -> crate::types::builders::DocumentReviewsBuilder {

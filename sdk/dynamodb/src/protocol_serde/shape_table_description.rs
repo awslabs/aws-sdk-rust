@@ -194,6 +194,11 @@ where
                                 builder = builder
                                     .set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
+                            "DisassociationProtectionEnabled" => {
+                                builder = builder.set_disassociation_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(
+                                    tokens.next(),
+                                )?);
+                            }
                             "OnDemandThroughput" => {
                                 builder = builder.set_on_demand_throughput(
                                     crate::protocol_serde::shape_on_demand_throughput::de_on_demand_throughput(tokens, _value, depth + 1)?,

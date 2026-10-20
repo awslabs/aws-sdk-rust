@@ -91,6 +91,338 @@ impl DescribePatchGroupStateOutput {
         self.instances_with_available_security_updates
     }
 }
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$Instances",
+        "com.amazonaws.ssm.synthetic",
+        "DescribePatchGroupStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Instances",
+    0,
+);
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithInstalledPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithInstalledPatches",
+        1,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_OTHER_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithInstalledOtherPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithInstalledOtherPatches",
+        2,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PENDING_REBOOT_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithInstalledPendingRebootPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithInstalledPendingRebootPatches",
+        3,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_REJECTED_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithInstalledRejectedPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithInstalledRejectedPatches",
+        4,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_MISSING_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithMissingPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithMissingPatches",
+        5,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_FAILED_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithFailedPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithFailedPatches",
+        6,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_NOT_APPLICABLE_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithNotApplicablePatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithNotApplicablePatches",
+        7,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_UNREPORTED_NOT_APPLICABLE_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithUnreportedNotApplicablePatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithUnreportedNotApplicablePatches",
+        8,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_CRITICAL_NON_COMPLIANT_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithCriticalNonCompliantPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithCriticalNonCompliantPatches",
+        9,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_SECURITY_NON_COMPLIANT_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithSecurityNonCompliantPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithSecurityNonCompliantPatches",
+        10,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_OTHER_NON_COMPLIANT_PATCHES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithOtherNonCompliantPatches",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithOtherNonCompliantPatches",
+        11,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_AVAILABLE_SECURITY_UPDATES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput$InstancesWithAvailableSecurityUpdates",
+            "com.amazonaws.ssm.synthetic",
+            "DescribePatchGroupStateOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstancesWithAvailableSecurityUpdates",
+        12,
+    );
+static DESCRIBEPATCHGROUPSTATEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DescribePatchGroupStateOutput",
+        "com.amazonaws.ssm.synthetic",
+        "DescribePatchGroupStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_OTHER_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PENDING_REBOOT_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_REJECTED_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_MISSING_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_FAILED_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_NOT_APPLICABLE_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_UNREPORTED_NOT_APPLICABLE_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_CRITICAL_NON_COMPLIANT_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_SECURITY_NON_COMPLIANT_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_OTHER_NON_COMPLIANT_PATCHES,
+        &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_AVAILABLE_SECURITY_UPDATES,
+    ],
+)
+.with_original_name("DescribePatchGroupStateResult");
+impl DescribePatchGroupStateOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEPATCHGROUPSTATEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribePatchGroupStateOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.instances;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES, *val)?;
+        }
+        {
+            let val = &self.instances_with_installed_patches;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PATCHES, *val)?;
+        }
+        {
+            let val = &self.instances_with_installed_other_patches;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_OTHER_PATCHES, *val)?;
+        }
+        if let Some(ref val) = self.instances_with_installed_pending_reboot_patches {
+            ser.write_integer(
+                &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_PENDING_REBOOT_PATCHES,
+                *val,
+            )?;
+        }
+        if let Some(ref val) = self.instances_with_installed_rejected_patches {
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_INSTALLED_REJECTED_PATCHES, *val)?;
+        }
+        {
+            let val = &self.instances_with_missing_patches;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_MISSING_PATCHES, *val)?;
+        }
+        {
+            let val = &self.instances_with_failed_patches;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_FAILED_PATCHES, *val)?;
+        }
+        {
+            let val = &self.instances_with_not_applicable_patches;
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_NOT_APPLICABLE_PATCHES, *val)?;
+        }
+        if let Some(ref val) = self.instances_with_unreported_not_applicable_patches {
+            ser.write_integer(
+                &DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_UNREPORTED_NOT_APPLICABLE_PATCHES,
+                *val,
+            )?;
+        }
+        if let Some(ref val) = self.instances_with_critical_non_compliant_patches {
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_CRITICAL_NON_COMPLIANT_PATCHES, *val)?;
+        }
+        if let Some(ref val) = self.instances_with_security_non_compliant_patches {
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_SECURITY_NON_COMPLIANT_PATCHES, *val)?;
+        }
+        if let Some(ref val) = self.instances_with_other_non_compliant_patches {
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_OTHER_NON_COMPLIANT_PATCHES, *val)?;
+        }
+        if let Some(ref val) = self.instances_with_available_security_updates {
+            ser.write_integer(&DESCRIBEPATCHGROUPSTATEOUTPUT_MEMBER_INSTANCES_WITH_AVAILABLE_SECURITY_UPDATES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_patch_group_state::builders::DescribePatchGroupStateOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEPATCHGROUPSTATEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.instances = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.instances_with_installed_patches = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.instances_with_installed_other_patches = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_installed_pending_reboot_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_installed_rejected_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.instances_with_missing_patches = Some(deser.read_integer(member)?);
+                }
+                Some(6) => {
+                    self.instances_with_failed_patches = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    self.instances_with_not_applicable_patches = Some(deser.read_integer(member)?);
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_unreported_not_applicable_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_critical_non_compliant_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_security_non_compliant_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_other_non_compliant_patches = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_with_available_security_updates = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribePatchGroupStateOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribePatchGroupStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

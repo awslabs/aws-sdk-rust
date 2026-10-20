@@ -43,7 +43,13 @@ pub use crate::types::error::_invalid_parameter_combination_exception::InvalidPa
 
 pub use crate::types::error::_service_update_not_found_fault::ServiceUpdateNotFoundFault;
 
+pub use crate::types::error::_invalid_cache_cluster_state_fault::InvalidCacheClusterStateFault;
+
+pub use crate::types::error::_migration_health_fault::MigrationHealthFault;
+
 pub use crate::types::error::_replication_group_not_under_migration_fault::ReplicationGroupNotUnderMigrationFault;
+
+pub use crate::types::error::_serverless_cache_not_under_migration_fault::ServerlessCacheNotUnderMigrationFault;
 
 pub use crate::types::error::_serverless_cache_snapshot_already_exists_fault::ServerlessCacheSnapshotAlreadyExistsFault;
 
@@ -91,8 +97,6 @@ pub use crate::types::error::_subnet_not_allowed_fault::SubnetNotAllowedFault;
 
 pub use crate::types::error::_global_replication_group_already_exists_fault::GlobalReplicationGroupAlreadyExistsFault;
 
-pub use crate::types::error::_invalid_cache_cluster_state_fault::InvalidCacheClusterStateFault;
-
 pub use crate::types::error::_invalid_global_replication_group_state_fault::InvalidGlobalReplicationGroupStateFault;
 
 pub use crate::types::error::_invalid_user_group_state_fault::InvalidUserGroupStateFault;
@@ -134,6 +138,8 @@ pub use crate::types::error::_reserved_cache_nodes_offering_not_found_fault::Res
 pub use crate::types::error::_invalid_kms_key_fault::InvalidKmsKeyFault;
 
 pub use crate::types::error::_subnet_in_use::SubnetInUse;
+
+pub use crate::types::error::_serverless_cache_already_under_migration_fault::ServerlessCacheAlreadyUnderMigrationFault;
 
 pub use crate::types::error::_reserved_cache_node_already_exists_fault::ReservedCacheNodeAlreadyExistsFault;
 
@@ -231,6 +237,8 @@ mod _invalid_user_state_fault;
 
 mod _invalid_vpc_network_state_fault;
 
+mod _migration_health_fault;
+
 mod _no_operation_fault;
 
 mod _node_group_not_found_fault;
@@ -259,7 +267,11 @@ mod _reserved_cache_nodes_offering_not_found_fault;
 
 mod _serverless_cache_already_exists_fault;
 
+mod _serverless_cache_already_under_migration_fault;
+
 mod _serverless_cache_not_found_fault;
+
+mod _serverless_cache_not_under_migration_fault;
 
 mod _serverless_cache_quota_for_customer_exceeded_fault;
 

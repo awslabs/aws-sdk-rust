@@ -5,12 +5,18 @@
 pub struct StartMigrationOutput {
     /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
+    /// <p>Provides the details of the serverless cache to which ElastiCache is migrating data.</p>
+    pub serverless_cache: ::std::option::Option<crate::types::ServerlessCache>,
     _request_id: Option<String>,
 }
 impl StartMigrationOutput {
     /// <p>Contains all of the attributes of a specific Valkey or Redis OSS replication group.</p>
     pub fn replication_group(&self) -> ::std::option::Option<&crate::types::ReplicationGroup> {
         self.replication_group.as_ref()
+    }
+    /// <p>Provides the details of the serverless cache to which ElastiCache is migrating data.</p>
+    pub fn serverless_cache(&self) -> ::std::option::Option<&crate::types::ServerlessCache> {
+        self.serverless_cache.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for StartMigrationOutput {
@@ -30,6 +36,7 @@ impl StartMigrationOutput {
 #[non_exhaustive]
 pub struct StartMigrationOutputBuilder {
     pub(crate) replication_group: ::std::option::Option<crate::types::ReplicationGroup>,
+    pub(crate) serverless_cache: ::std::option::Option<crate::types::ServerlessCache>,
     _request_id: Option<String>,
 }
 impl StartMigrationOutputBuilder {
@@ -47,6 +54,20 @@ impl StartMigrationOutputBuilder {
     pub fn get_replication_group(&self) -> &::std::option::Option<crate::types::ReplicationGroup> {
         &self.replication_group
     }
+    /// <p>Provides the details of the serverless cache to which ElastiCache is migrating data.</p>
+    pub fn serverless_cache(mut self, input: crate::types::ServerlessCache) -> Self {
+        self.serverless_cache = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides the details of the serverless cache to which ElastiCache is migrating data.</p>
+    pub fn set_serverless_cache(mut self, input: ::std::option::Option<crate::types::ServerlessCache>) -> Self {
+        self.serverless_cache = input;
+        self
+    }
+    /// <p>Provides the details of the serverless cache to which ElastiCache is migrating data.</p>
+    pub fn get_serverless_cache(&self) -> &::std::option::Option<crate::types::ServerlessCache> {
+        &self.serverless_cache
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +81,7 @@ impl StartMigrationOutputBuilder {
     pub fn build(self) -> crate::operation::start_migration::StartMigrationOutput {
         crate::operation::start_migration::StartMigrationOutput {
             replication_group: self.replication_group,
+            serverless_cache: self.serverless_cache,
             _request_id: self._request_id,
         }
     }

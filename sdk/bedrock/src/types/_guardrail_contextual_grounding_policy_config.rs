@@ -6,12 +6,18 @@
 pub struct GuardrailContextualGroundingPolicyConfig {
     /// <p>The filter configuration details for the guardrails contextual grounding policy.</p>
     pub filters_config: ::std::vec::Vec<crate::types::GuardrailContextualGroundingFilterConfig>,
+    /// <p>The tier that your guardrail uses for contextual grounding.</p>
+    pub tier_config: ::std::option::Option<crate::types::GuardrailContextualGroundingTierConfig>,
 }
 impl GuardrailContextualGroundingPolicyConfig {
     /// <p>The filter configuration details for the guardrails contextual grounding policy.</p>
     pub fn filters_config(&self) -> &[crate::types::GuardrailContextualGroundingFilterConfig] {
         use std::ops::Deref;
         self.filters_config.deref()
+    }
+    /// <p>The tier that your guardrail uses for contextual grounding.</p>
+    pub fn tier_config(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingTierConfig> {
+        self.tier_config.as_ref()
     }
 }
 impl GuardrailContextualGroundingPolicyConfig {
@@ -26,6 +32,7 @@ impl GuardrailContextualGroundingPolicyConfig {
 #[non_exhaustive]
 pub struct GuardrailContextualGroundingPolicyConfigBuilder {
     pub(crate) filters_config: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailContextualGroundingFilterConfig>>,
+    pub(crate) tier_config: ::std::option::Option<crate::types::GuardrailContextualGroundingTierConfig>,
 }
 impl GuardrailContextualGroundingPolicyConfigBuilder {
     /// Appends an item to `filters_config`.
@@ -51,6 +58,20 @@ impl GuardrailContextualGroundingPolicyConfigBuilder {
     pub fn get_filters_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailContextualGroundingFilterConfig>> {
         &self.filters_config
     }
+    /// <p>The tier that your guardrail uses for contextual grounding.</p>
+    pub fn tier_config(mut self, input: crate::types::GuardrailContextualGroundingTierConfig) -> Self {
+        self.tier_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier that your guardrail uses for contextual grounding.</p>
+    pub fn set_tier_config(mut self, input: ::std::option::Option<crate::types::GuardrailContextualGroundingTierConfig>) -> Self {
+        self.tier_config = input;
+        self
+    }
+    /// <p>The tier that your guardrail uses for contextual grounding.</p>
+    pub fn get_tier_config(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingTierConfig> {
+        &self.tier_config
+    }
     /// Consumes the builder and constructs a [`GuardrailContextualGroundingPolicyConfig`](crate::types::GuardrailContextualGroundingPolicyConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`filters_config`](crate::types::builders::GuardrailContextualGroundingPolicyConfigBuilder::filters_config)
@@ -64,6 +85,7 @@ impl GuardrailContextualGroundingPolicyConfigBuilder {
                     "filters_config was not specified but it is required when building GuardrailContextualGroundingPolicyConfig",
                 )
             })?,
+            tier_config: self.tier_config,
         })
     }
 }

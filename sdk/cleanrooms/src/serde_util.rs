@@ -3053,6 +3053,24 @@ pub(crate) fn configured_table_association_schema_type_properties_correct_errors
     builder
 }
 
+pub(crate) fn databricks_table_reference_correct_errors(
+    mut builder: crate::types::builders::DatabricksTableReferenceBuilder,
+) -> crate::types::builders::DatabricksTableReferenceBuilder {
+    if builder.schema_name.is_none() {
+        builder.schema_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    if builder.workspace_url.is_none() {
+        builder.workspace_url = Some(Default::default())
+    }
+    if builder.connection_type.is_none() {
+        builder.connection_type = Some(crate::types::DatabricksConnectionType::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn differential_privacy_template_parameters_output_correct_errors(
     mut builder: crate::types::builders::DifferentialPrivacyTemplateParametersOutputBuilder,
 ) -> crate::types::builders::DifferentialPrivacyTemplateParametersOutputBuilder {
@@ -3632,6 +3650,18 @@ pub(crate) fn comparison_controls_correct_errors(
     }
     if builder.allowed_column_comparison_columns.is_none() {
         builder.allowed_column_comparison_columns = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn databricks_delta_sharing_connection_correct_errors(
+    mut builder: crate::types::builders::DatabricksDeltaSharingConnectionBuilder,
+) -> crate::types::builders::DatabricksDeltaSharingConnectionBuilder {
+    if builder.delta_share_endpoint.is_none() {
+        builder.delta_share_endpoint = Some(Default::default())
+    }
+    if builder.share_name.is_none() {
+        builder.share_name = Some(Default::default())
     }
     builder
 }

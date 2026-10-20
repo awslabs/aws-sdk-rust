@@ -70,6 +70,27 @@ pub fn de_restore_db_instance_from_s3_http_error(
             }
             tmp
         }),
+        "DBCapacityReservationNotFound" => {
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbCapacityReservationNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DbCapacityReservationNotFoundFaultBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_db_capacity_reservation_not_found_fault::de_db_capacity_reservation_not_found_fault_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "DBInstanceAlreadyExists" => crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -188,6 +209,22 @@ pub fn de_restore_db_instance_from_s3_http_error(
                             output,
                         )
                         .map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBCapacityReservationState" => {
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidDbCapacityReservationStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbCapacityReservationStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_db_capacity_reservation_state_fault::de_invalid_db_capacity_reservation_state_fault_xml_err(_response_body, output).map_err(crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

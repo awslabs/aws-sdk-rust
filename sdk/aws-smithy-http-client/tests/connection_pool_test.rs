@@ -253,6 +253,28 @@ async fn connection_listener_observes_each_establishment_terminal_event() {
     drop(pool);
 }
 
+/// A refused transport connect is reported as retryable I/O.
+#[tokio::test]
+async fn refused_transport_is_io_error() {
+    let refused_listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))
+        .await
+        .expect("ephemeral listener should bind");
+    let refused_addr = refused_listener.local_addr().unwrap();
+    drop(refused_listener);
+
+    let pool = ConnectionPool::builder().build_http().expect("valid pool");
+    let client = SharedHttpClient::new(Client::new(&pool).expect("anonymous partition"));
+    let connector = connector(&client);
+
+    let error = test_client::send_request(
+        &connector,
+        HttpRequest::get(format!("http://{refused_addr}/")).expect("valid refused request"),
+    )
+    .await
+    .expect_err("closed listener should refuse the transport");
+    assert!(error.is_io(), "expected ConnectorError::io, got {error:?}");
+}
+
 #[tokio::test]
 async fn address_fallback_emits_one_successful_establishment() {
     const HOST: &str = "address-fallback.test";

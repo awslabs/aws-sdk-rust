@@ -10,6 +10,8 @@ pub struct ConfiguredTableSummary {
     pub arn: ::std::string::String,
     /// <p>The name of the configured table.</p>
     pub name: ::std::string::String,
+    /// <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks</p>
+    pub table_type: ::std::option::Option<crate::types::TableReferenceType>,
     /// <p>The time the configured table was created.</p>
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>The time the configured table was last updated.</p>
@@ -39,6 +41,10 @@ impl ConfiguredTableSummary {
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
+    }
+    /// <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks</p>
+    pub fn table_type(&self) -> ::std::option::Option<&crate::types::TableReferenceType> {
+        self.table_type.as_ref()
     }
     /// <p>The time the configured table was created.</p>
     pub fn create_time(&self) -> &::aws_smithy_types::DateTime {
@@ -81,6 +87,7 @@ pub struct ConfiguredTableSummaryBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_type: ::std::option::Option<crate::types::TableReferenceType>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
@@ -132,6 +139,20 @@ impl ConfiguredTableSummaryBuilder {
     /// <p>The name of the configured table.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks</p>
+    pub fn table_type(mut self, input: crate::types::TableReferenceType) -> Self {
+        self.table_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks</p>
+    pub fn set_table_type(mut self, input: ::std::option::Option<crate::types::TableReferenceType>) -> Self {
+        self.table_type = input;
+        self
+    }
+    /// <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena, Databricks</p>
+    pub fn get_table_type(&self) -> &::std::option::Option<crate::types::TableReferenceType> {
+        &self.table_type
     }
     /// <p>The time the configured table was created.</p>
     /// This field is required.
@@ -256,6 +277,7 @@ impl ConfiguredTableSummaryBuilder {
                     "name was not specified but it is required when building ConfiguredTableSummary",
                 )
             })?,
+            table_type: self.table_type,
             create_time: self.create_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "create_time",

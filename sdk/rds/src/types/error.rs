@@ -21,6 +21,8 @@ pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFound
 
 pub use crate::types::error::_blue_green_deployment_not_found_fault::BlueGreenDeploymentNotFoundFault;
 
+pub use crate::types::error::_db_capacity_reservation_not_found_fault::DbCapacityReservationNotFoundFault;
+
 pub use crate::types::error::_db_proxy_endpoint_not_found_fault::DbProxyEndpointNotFoundFault;
 
 pub use crate::types::error::_db_proxy_not_found_fault::DbProxyNotFoundFault;
@@ -48,6 +50,8 @@ pub use crate::types::error::_authorization_quota_exceeded_fault::AuthorizationQ
 pub use crate::types::error::_db_security_group_not_found_fault::DbSecurityGroupNotFoundFault;
 
 pub use crate::types::error::_invalid_db_security_group_state_fault::InvalidDbSecurityGroupStateFault;
+
+pub use crate::types::error::_invalid_db_capacity_reservation_state_fault::InvalidDbCapacityReservationStateFault;
 
 pub use crate::types::error::_export_task_not_found_fault::ExportTaskNotFoundFault;
 
@@ -107,6 +111,12 @@ pub use crate::types::error::_ec2_image_properties_not_supported_fault::Ec2Image
 
 pub use crate::types::error::_invalid_custom_db_engine_version_state_fault::InvalidCustomDbEngineVersionStateFault;
 
+pub use crate::types::error::_db_capacity_reservation_already_exists_fault::DbCapacityReservationAlreadyExistsFault;
+
+pub use crate::types::error::_db_capacity_reservation_unsupported_fault::DbCapacityReservationUnsupportedFault;
+
+pub use crate::types::error::_insufficient_db_instance_capacity_fault::InsufficientDbInstanceCapacityFault;
+
 pub use crate::types::error::_db_cluster_already_exists_fault::DbClusterAlreadyExistsFault;
 
 pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZs;
@@ -116,8 +126,6 @@ pub use crate::types::error::_db_subnet_group_not_found_fault::DbSubnetGroupNotF
 pub use crate::types::error::_domain_not_found_fault::DomainNotFoundFault;
 
 pub use crate::types::error::_global_cluster_not_found_fault::GlobalClusterNotFoundFault;
-
-pub use crate::types::error::_insufficient_db_instance_capacity_fault::InsufficientDbInstanceCapacityFault;
 
 pub use crate::types::error::_insufficient_storage_cluster_capacity_fault::InsufficientStorageClusterCapacityFault;
 
@@ -315,6 +323,12 @@ mod _custom_db_engine_version_not_found_fault;
 
 mod _custom_db_engine_version_quota_exceeded_fault;
 
+mod _db_capacity_reservation_already_exists_fault;
+
+mod _db_capacity_reservation_not_found_fault;
+
+mod _db_capacity_reservation_unsupported_fault;
+
 mod _db_cluster_already_exists_fault;
 
 mod _db_cluster_automated_backup_not_found_fault;
@@ -460,6 +474,8 @@ mod _integration_quota_exceeded_fault;
 mod _invalid_blue_green_deployment_state_fault;
 
 mod _invalid_custom_db_engine_version_state_fault;
+
+mod _invalid_db_capacity_reservation_state_fault;
 
 mod _invalid_db_cluster_automated_backup_state_fault;
 

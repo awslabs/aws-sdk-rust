@@ -29,6 +29,107 @@ impl LoggingInfo {
         self.s3_region.deref()
     }
 }
+static LOGGINGINFO_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#LoggingInfo$S3BucketName", "com.amazonaws.ssm", "LoggingInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketName",
+    0,
+);
+static LOGGINGINFO_MEMBER_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#LoggingInfo$S3KeyPrefix", "com.amazonaws.ssm", "LoggingInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3KeyPrefix",
+    1,
+);
+static LOGGINGINFO_MEMBER_S3_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#LoggingInfo$S3Region", "com.amazonaws.ssm", "LoggingInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Region",
+    2,
+);
+static LOGGINGINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#LoggingInfo", "com.amazonaws.ssm", "LoggingInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOGGINGINFO_MEMBER_S3_BUCKET_NAME,
+        &LOGGINGINFO_MEMBER_S3_KEY_PREFIX,
+        &LOGGINGINFO_MEMBER_S3_REGION,
+    ],
+);
+impl LoggingInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOGGINGINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoggingInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.s3_bucket_name;
+            ser.write_string(&LOGGINGINFO_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_key_prefix {
+            ser.write_string(&LOGGINGINFO_MEMBER_S3_KEY_PREFIX, val)?;
+        }
+        {
+            let val = &self.s3_region;
+            ser.write_string(&LOGGINGINFO_MEMBER_S3_REGION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoggingInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOGGINGINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.s3_bucket_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.s3_region = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoggingInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.s3_bucket_name = builder.s3_bucket_name.or(Some(String::new()));
+        builder.s3_region = builder.s3_region.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LoggingInfo {
     /// Creates a new builder-style object to manufacture [`LoggingInfo`](crate::types::LoggingInfo).
     pub fn builder() -> crate::types::builders::LoggingInfoBuilder {

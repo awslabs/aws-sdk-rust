@@ -801,6 +801,25 @@ impl CreateServiceFluentBuilder {
     pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
         self.inner.get_vpc_lattice_configurations()
     }
+    ///
+    /// Appends an item to `gatewayConnectors`.
+    ///
+    /// To override the contents of this collection use [`set_gateway_connectors`](Self::set_gateway_connectors).
+    ///
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn gateway_connectors(mut self, input: crate::types::GatewayConnector) -> Self {
+        self.inner = self.inner.gateway_connectors(input);
+        self
+    }
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn set_gateway_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>) -> Self {
+        self.inner = self.inner.set_gateway_connectors(input);
+        self
+    }
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn get_gateway_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>> {
+        self.inner.get_gateway_connectors()
+    }
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
         self.inner = self.inner.monitoring(input);

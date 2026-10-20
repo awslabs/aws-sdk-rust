@@ -49,6 +49,8 @@ pub use crate::types::error::_daemon_not_active_exception::DaemonNotActiveExcept
 
 pub use crate::types::error::_daemon_not_found_exception::DaemonNotFoundExceptionBuilder;
 
+pub use crate::types::error::_gateway_not_found_exception::GatewayNotFoundExceptionBuilder;
+
 pub use crate::types::error::_service_not_active_exception::ServiceNotActiveExceptionBuilder;
 
 pub use crate::types::error::_task_set_not_found_exception::TaskSetNotFoundExceptionBuilder;

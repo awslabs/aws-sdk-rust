@@ -238,6 +238,7 @@ pub(crate) mod build_connector {
 pub(crate) mod connect {
     use crate::client::connect::{Conn, ConnectPathInner, Connecting};
     use crate::client::proxy::ProxyConfig;
+    use crate::client::tls::{TlsConnectError, TlsConnectErrorKind};
     use aws_smithy_runtime_api::box_error::BoxError;
     use http_1x::uri::Scheme;
     use http_1x::Uri;
@@ -274,11 +275,38 @@ pub(crate) mod connect {
         }
     }
 
+    /// Boxes an `s2n-tls-hyper` connector error.
+    ///
+    /// A TLS failure becomes a [`TlsConnectError`] classified by [`classify_s2n`]. A failure of
+    /// the underlying HTTP connector, or an invalid scheme, keeps its source chain through
+    /// [`S2nConnectorError`].
     fn box_s2n_connector_error(error: s2n_tls_hyper::error::Error) -> BoxError {
-        Box::new(S2nConnectorError(error))
+        match error {
+            s2n_tls_hyper::error::Error::TlsError(error) => Box::new(classify_s2n(error)),
+            error => Box::new(S2nConnectorError(error)),
+        }
+    }
+
+    /// Classifies an s2n-tls handshake failure.
+    ///
+    /// An I/O failure or a closed connection is [`TlsConnectErrorKind::Io`]. Every other kind,
+    /// including an alert or a protocol, usage or internal error, is
+    /// [`TlsConnectErrorKind::Protocol`]. s2n reports an I/O failure without an `io::Error`, so
+    /// this kind is the only record that the connection failed.
+    fn classify_s2n(error: s2n_tls::error::Error) -> TlsConnectError {
+        use s2n_tls::error::ErrorType::*;
+        let kind = match error.kind() {
+            IOError | ConnectionClosed => TlsConnectErrorKind::Io,
+            _ => TlsConnectErrorKind::Protocol,
+        };
+        TlsConnectError::new(kind, error)
     }
 
     /// Adapts s2n connector errors before another connector wraps them.
+    ///
+    /// The CONNECT tunnel wraps this connector, which performs TLS to an `https://` proxy. Its
+    /// errors go through [`box_s2n_connector_error`], so a failed handshake to the proxy is
+    /// classified like one to the origin.
     #[derive(Clone)]
     struct S2nErrorSourceConnector<C>(C);
 
@@ -289,17 +317,17 @@ pub(crate) mod connect {
         C::Response: 'static,
     {
         type Response = C::Response;
-        type Error = S2nConnectorError;
+        type Error = BoxError;
         type Future =
             Pin<Box<dyn Future<Output = Result<Self::Response, Self::Error>> + Send + 'static>>;
 
         fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
-            self.0.poll_ready(cx).map_err(S2nConnectorError)
+            self.0.poll_ready(cx).map_err(box_s2n_connector_error)
         }
 
         fn call(&mut self, request: Uri) -> Self::Future {
             let future = self.0.call(request);
-            Box::pin(async move { future.await.map_err(S2nConnectorError) })
+            Box::pin(async move { future.await.map_err(box_s2n_connector_error) })
         }
     }
 
@@ -447,7 +475,7 @@ pub(crate) mod connect {
                 let tls_stream = tls_connector
                     .connect(host, TokioIo::new(tunneled))
                     .await
-                    .map_err(|e| BoxError::from(format!("s2n-tls handshake failed: {e}")))?;
+                    .map_err(classify_s2n)?;
 
                 Ok(Conn {
                     inner: Box::new(S2nTlsConn {

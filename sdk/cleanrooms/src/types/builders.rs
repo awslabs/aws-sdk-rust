@@ -139,6 +139,8 @@ pub use crate::types::_snowflake_table_reference::SnowflakeTableReferenceBuilder
 
 pub use crate::types::_athena_table_reference::AthenaTableReferenceBuilder;
 
+pub use crate::types::_databricks_table_reference::DatabricksTableReferenceBuilder;
+
 pub use crate::types::_id_mapping_table_summary::IdMappingTableSummaryBuilder;
 
 pub use crate::types::_id_mapping_table_input_reference_properties::IdMappingTableInputReferencePropertiesBuilder;
@@ -308,6 +310,8 @@ pub use crate::types::_consolidated_policy_custom::ConsolidatedPolicyCustomBuild
 pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyPrivacyBudgetBuilder;
 
 pub use crate::types::_access_budget::AccessBudgetBuilder;
+
+pub use crate::types::_databricks_delta_sharing_connection::DatabricksDeltaSharingConnectionBuilder;
 
 pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfigurationBuilder;
 

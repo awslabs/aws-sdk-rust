@@ -14,6 +14,8 @@ pub struct EcsManagedResources {
     pub service_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedSecurityGroup>>,
     /// <p>The log groups managed by the Express service.</p>
     pub log_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedLogGroup>>,
+    /// <p>The gateway-managed connections for the service revision, including the gateway routes and infrastructure that a gateway created for the service's connector.</p>
+    pub gateway_connections: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnection>>,
 }
 impl EcsManagedResources {
     /// <p>The ingress paths and endpoints for the Express service.</p>
@@ -44,6 +46,12 @@ impl EcsManagedResources {
     pub fn log_groups(&self) -> &[crate::types::ManagedLogGroup] {
         self.log_groups.as_deref().unwrap_or_default()
     }
+    /// <p>The gateway-managed connections for the service revision, including the gateway routes and infrastructure that a gateway created for the service's connector.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_connections.is_none()`.
+    pub fn gateway_connections(&self) -> &[crate::types::GatewayConnection] {
+        self.gateway_connections.as_deref().unwrap_or_default()
+    }
 }
 impl EcsManagedResources {
     /// Creates a new builder-style object to manufacture [`EcsManagedResources`](crate::types::EcsManagedResources).
@@ -61,6 +69,7 @@ pub struct EcsManagedResourcesBuilder {
     pub(crate) metric_alarms: ::std::option::Option<::std::vec::Vec<crate::types::ManagedMetricAlarm>>,
     pub(crate) service_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedSecurityGroup>>,
     pub(crate) log_groups: ::std::option::Option<::std::vec::Vec<crate::types::ManagedLogGroup>>,
+    pub(crate) gateway_connections: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnection>>,
 }
 impl EcsManagedResourcesBuilder {
     /// Appends an item to `ingress_paths`.
@@ -157,6 +166,26 @@ impl EcsManagedResourcesBuilder {
     pub fn get_log_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ManagedLogGroup>> {
         &self.log_groups
     }
+    /// Appends an item to `gateway_connections`.
+    ///
+    /// To override the contents of this collection use [`set_gateway_connections`](Self::set_gateway_connections).
+    ///
+    /// <p>The gateway-managed connections for the service revision, including the gateway routes and infrastructure that a gateway created for the service's connector.</p>
+    pub fn gateway_connections(mut self, input: crate::types::GatewayConnection) -> Self {
+        let mut v = self.gateway_connections.unwrap_or_default();
+        v.push(input);
+        self.gateway_connections = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The gateway-managed connections for the service revision, including the gateway routes and infrastructure that a gateway created for the service's connector.</p>
+    pub fn set_gateway_connections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnection>>) -> Self {
+        self.gateway_connections = input;
+        self
+    }
+    /// <p>The gateway-managed connections for the service revision, including the gateway routes and infrastructure that a gateway created for the service's connector.</p>
+    pub fn get_gateway_connections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayConnection>> {
+        &self.gateway_connections
+    }
     /// Consumes the builder and constructs a [`EcsManagedResources`](crate::types::EcsManagedResources).
     pub fn build(self) -> crate::types::EcsManagedResources {
         crate::types::EcsManagedResources {
@@ -165,6 +194,7 @@ impl EcsManagedResourcesBuilder {
             metric_alarms: self.metric_alarms,
             service_security_groups: self.service_security_groups,
             log_groups: self.log_groups,
+            gateway_connections: self.gateway_connections,
         }
     }
 }

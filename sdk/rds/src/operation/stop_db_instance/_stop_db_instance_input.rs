@@ -7,6 +7,13 @@ pub struct StopDbInstanceInput {
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
     pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the DB instance stops using its DB capacity reservation when the DB instance stops. When you specify <code>true</code>, the DB instance belongs to no reservation after it stops, and a later start launches it outside the reservation.</p>
+    /// <p>By default, a stopped DB instance keeps its DB capacity reservation, and a later start returns the DB instance to the same reservation.</p>
+    /// <p>Every stop releases the unit of reserved capacity that the DB instance holds, for either value of this parameter. Another DB instance can then use that capacity. This parameter controls the reservation that the DB instance belongs to, and it does not control the release of the capacity.</p>
+    /// <p>If the DB instance uses no DB capacity reservation, this parameter has no effect.</p><important>
+    /// <p>Amazon RDS holds no capacity for a stopped DB instance. When the reservation has no available capacity in the Availability Zone of the DB instance, a later start waits for capacity in that Availability Zone. When the DB instance belongs to no reservation, a later start can fail because the Amazon Web Services Region has insufficient capacity for the DB instance class.</p>
+    /// </important>
+    pub detach_from_db_capacity_reservation: ::std::option::Option<bool>,
 }
 impl StopDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
@@ -16,6 +23,15 @@ impl StopDbInstanceInput {
     /// <p>The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.</p>
     pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
+    }
+    /// <p>Specifies whether the DB instance stops using its DB capacity reservation when the DB instance stops. When you specify <code>true</code>, the DB instance belongs to no reservation after it stops, and a later start launches it outside the reservation.</p>
+    /// <p>By default, a stopped DB instance keeps its DB capacity reservation, and a later start returns the DB instance to the same reservation.</p>
+    /// <p>Every stop releases the unit of reserved capacity that the DB instance holds, for either value of this parameter. Another DB instance can then use that capacity. This parameter controls the reservation that the DB instance belongs to, and it does not control the release of the capacity.</p>
+    /// <p>If the DB instance uses no DB capacity reservation, this parameter has no effect.</p><important>
+    /// <p>Amazon RDS holds no capacity for a stopped DB instance. When the reservation has no available capacity in the Availability Zone of the DB instance, a later start waits for capacity in that Availability Zone. When the DB instance belongs to no reservation, a later start can fail because the Amazon Web Services Region has insufficient capacity for the DB instance class.</p>
+    /// </important>
+    pub fn detach_from_db_capacity_reservation(&self) -> ::std::option::Option<bool> {
+        self.detach_from_db_capacity_reservation
     }
 }
 impl StopDbInstanceInput {
@@ -31,6 +47,7 @@ impl StopDbInstanceInput {
 pub struct StopDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) detach_from_db_capacity_reservation: ::std::option::Option<bool>,
 }
 impl StopDbInstanceInputBuilder {
     /// <p>The user-supplied instance identifier.</p>
@@ -62,6 +79,35 @@ impl StopDbInstanceInputBuilder {
     pub fn get_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_snapshot_identifier
     }
+    /// <p>Specifies whether the DB instance stops using its DB capacity reservation when the DB instance stops. When you specify <code>true</code>, the DB instance belongs to no reservation after it stops, and a later start launches it outside the reservation.</p>
+    /// <p>By default, a stopped DB instance keeps its DB capacity reservation, and a later start returns the DB instance to the same reservation.</p>
+    /// <p>Every stop releases the unit of reserved capacity that the DB instance holds, for either value of this parameter. Another DB instance can then use that capacity. This parameter controls the reservation that the DB instance belongs to, and it does not control the release of the capacity.</p>
+    /// <p>If the DB instance uses no DB capacity reservation, this parameter has no effect.</p><important>
+    /// <p>Amazon RDS holds no capacity for a stopped DB instance. When the reservation has no available capacity in the Availability Zone of the DB instance, a later start waits for capacity in that Availability Zone. When the DB instance belongs to no reservation, a later start can fail because the Amazon Web Services Region has insufficient capacity for the DB instance class.</p>
+    /// </important>
+    pub fn detach_from_db_capacity_reservation(mut self, input: bool) -> Self {
+        self.detach_from_db_capacity_reservation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the DB instance stops using its DB capacity reservation when the DB instance stops. When you specify <code>true</code>, the DB instance belongs to no reservation after it stops, and a later start launches it outside the reservation.</p>
+    /// <p>By default, a stopped DB instance keeps its DB capacity reservation, and a later start returns the DB instance to the same reservation.</p>
+    /// <p>Every stop releases the unit of reserved capacity that the DB instance holds, for either value of this parameter. Another DB instance can then use that capacity. This parameter controls the reservation that the DB instance belongs to, and it does not control the release of the capacity.</p>
+    /// <p>If the DB instance uses no DB capacity reservation, this parameter has no effect.</p><important>
+    /// <p>Amazon RDS holds no capacity for a stopped DB instance. When the reservation has no available capacity in the Availability Zone of the DB instance, a later start waits for capacity in that Availability Zone. When the DB instance belongs to no reservation, a later start can fail because the Amazon Web Services Region has insufficient capacity for the DB instance class.</p>
+    /// </important>
+    pub fn set_detach_from_db_capacity_reservation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detach_from_db_capacity_reservation = input;
+        self
+    }
+    /// <p>Specifies whether the DB instance stops using its DB capacity reservation when the DB instance stops. When you specify <code>true</code>, the DB instance belongs to no reservation after it stops, and a later start launches it outside the reservation.</p>
+    /// <p>By default, a stopped DB instance keeps its DB capacity reservation, and a later start returns the DB instance to the same reservation.</p>
+    /// <p>Every stop releases the unit of reserved capacity that the DB instance holds, for either value of this parameter. Another DB instance can then use that capacity. This parameter controls the reservation that the DB instance belongs to, and it does not control the release of the capacity.</p>
+    /// <p>If the DB instance uses no DB capacity reservation, this parameter has no effect.</p><important>
+    /// <p>Amazon RDS holds no capacity for a stopped DB instance. When the reservation has no available capacity in the Availability Zone of the DB instance, a later start waits for capacity in that Availability Zone. When the DB instance belongs to no reservation, a later start can fail because the Amazon Web Services Region has insufficient capacity for the DB instance class.</p>
+    /// </important>
+    pub fn get_detach_from_db_capacity_reservation(&self) -> &::std::option::Option<bool> {
+        &self.detach_from_db_capacity_reservation
+    }
     /// Consumes the builder and constructs a [`StopDbInstanceInput`](crate::operation::stop_db_instance::StopDbInstanceInput).
     pub fn build(
         self,
@@ -69,6 +115,7 @@ impl StopDbInstanceInputBuilder {
         ::std::result::Result::Ok(crate::operation::stop_db_instance::StopDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
             db_snapshot_identifier: self.db_snapshot_identifier,
+            detach_from_db_capacity_reservation: self.detach_from_db_capacity_reservation,
         })
     }
 }

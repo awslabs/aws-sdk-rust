@@ -171,11 +171,23 @@ pub fn ser_create_service_input_input(
         }
         array_52.finish();
     }
-    if let Some(var_55) = &input.monitoring {
+    if let Some(var_55) = &input.gateway_connectors {
+        let mut array_56 = object.key("gatewayConnectors").start_array();
+        for item_57 in var_55 {
+            {
+                #[allow(unused_mut)]
+                let mut object_58 = array_56.value().start_object();
+                crate::protocol_serde::shape_gateway_connector::ser_gateway_connector(&mut object_58, item_57)?;
+                object_58.finish();
+            }
+        }
+        array_56.finish();
+    }
+    if let Some(var_59) = &input.monitoring {
         #[allow(unused_mut)]
-        let mut object_56 = object.key("monitoring").start_object();
-        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_56, var_55)?;
-        object_56.finish();
+        let mut object_60 = object.key("monitoring").start_object();
+        crate::protocol_serde::shape_monitoring_configuration::ser_monitoring_configuration(&mut object_60, var_59)?;
+        object_60.finish();
     }
     Ok(())
 }

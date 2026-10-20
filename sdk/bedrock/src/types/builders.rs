@@ -143,9 +143,13 @@ pub use crate::types::_guardrail_topics_tier_config::GuardrailTopicsTierConfigBu
 
 pub use crate::types::_guardrail_content_filters_tier_config::GuardrailContentFiltersTierConfigBuilder;
 
+pub use crate::types::_guardrail_contextual_grounding_tier_config::GuardrailContextualGroundingTierConfigBuilder;
+
 pub use crate::types::_guardrail_topics_tier::GuardrailTopicsTierBuilder;
 
 pub use crate::types::_guardrail_content_filters_tier::GuardrailContentFiltersTierBuilder;
+
+pub use crate::types::_guardrail_contextual_grounding_tier::GuardrailContextualGroundingTierBuilder;
 
 pub use crate::types::_inference_profile_summary::InferenceProfileSummaryBuilder;
 

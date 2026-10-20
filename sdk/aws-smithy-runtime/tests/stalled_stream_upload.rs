@@ -310,7 +310,7 @@ mod upload_test_tools {
                         async move {
                             let mut body = SdkBody::taken();
                             mem::swap(request.body_mut(), &mut body);
-                            pin_mut!(body);
+                            let body = std::pin::pin!(body);
 
                             Ok($body_fn(body, time, sleep, params).await)
                         }

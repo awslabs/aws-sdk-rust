@@ -244,6 +244,28 @@ pub struct RestoreDbInstanceFromS3Input {
     /// <p>If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to encrypt the secret, and you must use a customer managed KMS key.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     pub master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub dedicated_log_volume: ::std::option::Option<bool>,
     /// <p>The CA certificate identifier to use for the DB instance's server certificate.</p>
@@ -618,6 +640,30 @@ impl RestoreDbInstanceFromS3Input {
     pub fn master_user_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.master_user_secret_kms_key_id.as_deref()
     }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
+    }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(&self) -> ::std::option::Option<bool> {
         self.dedicated_log_volume
@@ -708,6 +754,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromS3Input {
         formatter.field("network_type", &self.network_type);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
@@ -776,6 +823,7 @@ pub struct RestoreDbInstanceFromS3InputBuilder {
     pub(crate) network_type: ::std::option::Option<::std::string::String>,
     pub(crate) manage_master_user_password: ::std::option::Option<bool>,
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) ca_certificate_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -1935,6 +1983,80 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_master_user_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_user_secret_kms_key_id
     }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation to associate with this DB instance. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. When you specify this parameter, the DB instance uses reserved capacity from the specified reservation.</p>
+    /// <p>If you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in that Availability Zone, and the reservation must cover it.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the database engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>If you specify <code>AvailabilityZone</code>, it must be one of the Availability Zones of the reservation.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones. If the reservation covers more than two Availability Zones, Amazon RDS chooses the two that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// </ul>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// <p>Specifies whether to enable a dedicated log volume (DLV) for the DB instance.</p>
     pub fn dedicated_log_volume(mut self, input: bool) -> Self {
         self.dedicated_log_volume = ::std::option::Option::Some(input);
@@ -2113,6 +2235,7 @@ impl RestoreDbInstanceFromS3InputBuilder {
             network_type: self.network_type,
             manage_master_user_password: self.manage_master_user_password,
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
             dedicated_log_volume: self.dedicated_log_volume,
             ca_certificate_identifier: self.ca_certificate_identifier,
             engine_lifecycle_support: self.engine_lifecycle_support,
@@ -2173,6 +2296,7 @@ impl ::std::fmt::Debug for RestoreDbInstanceFromS3InputBuilder {
         formatter.field("network_type", &self.network_type);
         formatter.field("manage_master_user_password", &self.manage_master_user_password);
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("ca_certificate_identifier", &self.ca_certificate_identifier);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);

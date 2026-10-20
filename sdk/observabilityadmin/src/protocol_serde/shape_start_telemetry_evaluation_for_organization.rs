@@ -40,13 +40,16 @@ pub fn de_start_telemetry_evaluation_for_organization_http_error(
                                             ::std::result::Result::Ok(value) => value,
                                             ::std::result::Result::Err(err) => {
                                                 let _ = &err;
-                                                let has_unreadable_value = _response_headers
+                                                // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                                                let skip = {
+                                        let has_unreadable_value = _response_headers
                                                             .get_all_bytes("x-amzn-ErrorType")
                                                             .any(|value| std::str::from_utf8(value).is_err());
-                                                if has_unreadable_value
-                                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                                                {
+                                        has_unreadable_value
+                                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                                    };
+                                                if skip {
                                                     ::std::option::Option::None
                                                 } else {
                                                     return ::std::result::Result::Err(crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType`"));
@@ -78,13 +81,16 @@ pub fn de_start_telemetry_evaluation_for_organization_http_error(
                                             ::std::result::Result::Ok(value) => value,
                                             ::std::result::Result::Err(err) => {
                                                 let _ = &err;
-                                                let has_unreadable_value = _response_headers
+                                                // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                                                let skip = {
+                                        let has_unreadable_value = _response_headers
                                                             .get_all_bytes("x-amzn-ErrorType")
                                                             .any(|value| std::str::from_utf8(value).is_err());
-                                                if has_unreadable_value
-                                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                                                {
+                                        has_unreadable_value
+                                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                                    };
+                                                if skip {
                                                     ::std::option::Option::None
                                                 } else {
                                                     return ::std::result::Result::Err(crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType`"));
@@ -97,13 +103,16 @@ pub fn de_start_telemetry_evaluation_for_organization_http_error(
                                             ::std::result::Result::Ok(value) => value,
                                             ::std::result::Result::Err(err) => {
                                                 let _ = &err;
-                                                let has_unreadable_value = _response_headers
+                                                // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                                                let skip = {
+                                        let has_unreadable_value = _response_headers
                                                             .get_all_bytes("Retry-After")
                                                             .any(|value| std::str::from_utf8(value).is_err());
-                                                if has_unreadable_value
-                                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                                                {
+                                        has_unreadable_value
+                                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                                    };
+                                                if skip {
                                                     ::std::option::Option::None
                                                 } else {
                                                     return ::std::result::Result::Err(crate::operation::start_telemetry_evaluation_for_organization::StartTelemetryEvaluationForOrganizationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After`"));

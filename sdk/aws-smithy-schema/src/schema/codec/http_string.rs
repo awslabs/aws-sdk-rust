@@ -4,14 +4,30 @@
  */
 
 //! String codec for HTTP bindings (headers, query params, URI labels).
+//!
+//! A value written outside a list is emitted verbatim, and a value read outside a list is the
+//! whole input, as for a scalar HTTP header. List elements follow the header-list rules the
+//! generated (non-schema) code has always used: they are joined with `", "`, quoted and escaped
+//! with [`quote_header_value`] when needed, and read back with the RFC 7230 tokenizer from
+//! [`header_parse`], which trims surrounding whitespace and unescapes quoted strings. An empty
+//! element is written as `""` so that it survives the round trip.
 
 use crate::serde::{SerdeError, SerializableStruct, ShapeDeserializer, ShapeSerializer};
 use crate::Schema;
-use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime, Document};
+use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime};
+
+use aws_smithy_runtime_api::http::header_parse::{self, quote_header_value};
+use aws_smithy_types::Document;
+use std::borrow::Cow;
 
 /// Serializer for converting Smithy types to strings (for HTTP headers, query params, labels).
+#[derive(Debug)]
 pub struct HttpStringSerializer {
     output: String,
+    /// True while `write_list` is running its element writer.
+    in_list: bool,
+    /// True once a value has been written at the current level.
+    wrote_value: bool,
 }
 
 impl HttpStringSerializer {
@@ -19,7 +35,31 @@ impl HttpStringSerializer {
     pub fn new() -> Self {
         Self {
             output: String::new(),
+            in_list: false,
+            wrote_value: false,
         }
+    }
+
+    /// Writes one textual value, as a list element when inside a list.
+    fn push_value(&mut self, value: &str) -> Result<(), SerdeError> {
+        if self.in_list {
+            if self.wrote_value {
+                self.output.push_str(", ");
+            }
+            if value.is_empty() {
+                self.output.push_str("\"\"");
+            } else {
+                self.output.push_str(&quote_header_value(value));
+            }
+        } else if self.wrote_value {
+            return Err(SerdeError::write_failed(
+                "only one value can be written outside a list",
+            ));
+        } else {
+            self.output.push_str(value);
+        }
+        self.wrote_value = true;
+        Ok(())
     }
 
     /// Finalizes the serialization and returns the output string.
@@ -43,388 +83,382 @@ impl Default for HttpStringSerializer {
 impl ShapeSerializer for HttpStringSerializer {
     fn write_struct(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         _value: &dyn SerializableStruct,
     ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "structures cannot be serialized to strings".into(),
-        })
+        Err(SerdeError::unsupported(
+            "structures cannot be serialized to strings",
+        ))
     }
 
     fn write_list(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        // Lists are serialized as comma-separated values
-        write_elements(self)
+        if self.in_list {
+            return Err(SerdeError::unsupported(
+                "nested lists cannot be serialized to strings",
+            ));
+        }
+        if self.wrote_value {
+            return Err(SerdeError::write_failed(
+                "only one value can be written outside a list",
+            ));
+        }
+        self.in_list = true;
+        let result = write_elements(self);
+        self.in_list = false;
+        // The list is the single top-level value, even when it has no elements.
+        self.wrote_value = true;
+        result
     }
 
     fn write_map(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         _write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "maps cannot be serialized to strings".into(),
-        })
+        Err(SerdeError::unsupported(
+            "maps cannot be serialized to strings",
+        ))
     }
 
-    fn write_boolean(&mut self, _schema: &Schema, value: bool) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(if value { "true" } else { "false" });
-        Ok(())
+    fn write_boolean(&mut self, _schema: &Schema<'_>, value: bool) -> Result<(), SerdeError> {
+        self.push_value(if value { "true" } else { "false" })
     }
 
-    fn write_byte(&mut self, _schema: &Schema, value: i8) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(&value.to_string());
-        Ok(())
+    fn write_byte(&mut self, _schema: &Schema<'_>, value: i8) -> Result<(), SerdeError> {
+        self.push_value(&value.to_string())
     }
 
-    fn write_short(&mut self, _schema: &Schema, value: i16) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(&value.to_string());
-        Ok(())
+    fn write_short(&mut self, _schema: &Schema<'_>, value: i16) -> Result<(), SerdeError> {
+        self.push_value(&value.to_string())
     }
 
-    fn write_integer(&mut self, _schema: &Schema, value: i32) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(&value.to_string());
-        Ok(())
+    fn write_integer(&mut self, _schema: &Schema<'_>, value: i32) -> Result<(), SerdeError> {
+        self.push_value(&value.to_string())
     }
 
-    fn write_long(&mut self, _schema: &Schema, value: i64) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(&value.to_string());
-        Ok(())
+    fn write_long(&mut self, _schema: &Schema<'_>, value: i64) -> Result<(), SerdeError> {
+        self.push_value(&value.to_string())
     }
 
-    fn write_float(&mut self, _schema: &Schema, value: f32) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
+    fn write_float(&mut self, _schema: &Schema<'_>, value: f32) -> Result<(), SerdeError> {
         if value.is_nan() {
-            self.output.push_str("NaN");
+            self.push_value("NaN")
         } else if value.is_infinite() {
-            self.output.push_str(if value.is_sign_positive() {
+            self.push_value(if value.is_sign_positive() {
                 "Infinity"
             } else {
                 "-Infinity"
-            });
+            })
         } else {
-            self.output.push_str(&value.to_string());
+            self.push_value(&value.to_string())
         }
-        Ok(())
     }
 
-    fn write_double(&mut self, _schema: &Schema, value: f64) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
+    fn write_double(&mut self, _schema: &Schema<'_>, value: f64) -> Result<(), SerdeError> {
         if value.is_nan() {
-            self.output.push_str("NaN");
+            self.push_value("NaN")
         } else if value.is_infinite() {
-            self.output.push_str(if value.is_sign_positive() {
+            self.push_value(if value.is_sign_positive() {
                 "Infinity"
             } else {
                 "-Infinity"
-            });
+            })
         } else {
-            self.output.push_str(&value.to_string());
+            self.push_value(&value.to_string())
         }
-        Ok(())
     }
 
     fn write_big_integer(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         value: &BigInteger,
     ) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(value.as_ref());
-        Ok(())
+        self.push_value(value.as_ref())
     }
 
     fn write_big_decimal(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         value: &BigDecimal,
     ) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(value.as_ref());
-        Ok(())
+        self.push_value(value.as_ref())
     }
 
-    fn write_string(&mut self, _schema: &Schema, value: &str) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
-        self.output.push_str(value);
-        Ok(())
+    fn write_string(&mut self, _schema: &Schema<'_>, value: &str) -> Result<(), SerdeError> {
+        self.push_value(value)
     }
 
-    fn write_blob(&mut self, _schema: &Schema, value: &[u8]) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
+    fn write_blob(&mut self, _schema: &Schema<'_>, value: Blob) -> Result<(), SerdeError> {
         // Blobs are base64-encoded for string serialization
-        self.output
-            .push_str(&aws_smithy_types::base64::encode(value));
-        Ok(())
+        self.push_value(&aws_smithy_types::base64::encode(value.as_ref()))
     }
 
-    fn write_timestamp(&mut self, _schema: &Schema, value: &DateTime) -> Result<(), SerdeError> {
-        if !self.output.is_empty() {
-            self.output.push(',');
-        }
+    fn write_timestamp(
+        &mut self,
+        _schema: &Schema<'_>,
+        value: &DateTime,
+    ) -> Result<(), SerdeError> {
         // Default to HTTP date format for string serialization
         // TODO(schema): Check schema for timestampFormat trait
         let formatted = value
             .fmt(aws_smithy_types::date_time::Format::HttpDate)
-            .map_err(|e| SerdeError::WriteFailed {
-                message: format!("failed to format timestamp: {e}"),
-            })?;
-        self.output.push_str(&formatted);
-        Ok(())
+            .map_err(|e| SerdeError::write_failed(format!("failed to format timestamp: {e}")))?;
+        // An HTTP date contains a comma, so inside a list it is quoted.
+        self.push_value(&formatted)
     }
 
-    fn write_document(&mut self, _schema: &Schema, _value: &Document) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "documents cannot be serialized to strings".into(),
-        })
+    fn write_document(
+        &mut self,
+        _schema: &Schema<'_>,
+        _value: &Document,
+    ) -> Result<(), SerdeError> {
+        Err(SerdeError::unsupported(
+            "documents cannot be serialized to strings",
+        ))
     }
 
-    fn write_null(&mut self, _schema: &Schema) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "null cannot be serialized to strings".into(),
-        })
+    fn write_null(&mut self, _schema: &Schema<'_>) -> Result<(), SerdeError> {
+        Err(SerdeError::unsupported(
+            "null cannot be serialized to strings",
+        ))
     }
 }
 
 /// Deserializer for parsing Smithy types from strings.
+#[derive(Debug)]
 pub struct HttpStringDeserializer<'a> {
-    input: std::borrow::Cow<'a, str>,
-    position: usize,
+    input: Cow<'a, str>,
+    /// Whether the single top-level value has been read.
+    consumed: bool,
+    /// The remaining elements while `read_list` is running its consumer.
+    list: Option<std::vec::IntoIter<String>>,
 }
 
 impl<'a> HttpStringDeserializer<'a> {
     /// Creates a new HTTP string deserializer from the given input.
     pub fn new(input: &'a str) -> Self {
         Self {
-            input: std::borrow::Cow::Borrowed(input),
-            position: 0,
+            input: Cow::Borrowed(input),
+            consumed: false,
+            list: None,
         }
     }
 
-    fn next_value(&mut self) -> Option<&str> {
-        if self.position >= self.input.len() {
-            return None;
+    /// Splits the input into list elements with the RFC 7230 header-list rules.
+    fn list_elements(&self) -> Result<Vec<String>, SerdeError> {
+        if self.input.is_empty() {
+            return Ok(Vec::new());
         }
-
-        let start = self.position;
-        if let Some(comma_pos) = self.input[start..].find(',') {
-            let end = start + comma_pos;
-            self.position = end + 1;
-            Some(&self.input[start..end])
-        } else {
-            self.position = self.input.len();
-            Some(&self.input[start..])
-        }
+        header_parse::read_many_from_str_bytes::<String>(std::iter::once(self.input.as_bytes()))
+            .map_err(|e| SerdeError::invalid_input(format!("invalid list: {e}")))
     }
 
-    fn current_value(&self) -> &str {
-        &self.input[self.position..]
+    /// The next value to read: the next element inside a list, else the whole input.
+    fn next_value(&mut self, what: &str) -> Result<Cow<'_, str>, SerdeError> {
+        let value = match &mut self.list {
+            Some(elements) => elements.next().map(Cow::Owned),
+            None if self.consumed => None,
+            None => {
+                self.consumed = true;
+                Some(Cow::Borrowed(self.input.as_ref()))
+            }
+        };
+        value.ok_or_else(|| SerdeError::invalid_input(format!("expected {what} value")))
     }
 }
 
 impl<'a> ShapeDeserializer for HttpStringDeserializer<'a> {
     fn read_struct(
         &mut self,
-        _schema: &Schema,
-        _consumer: &mut dyn FnMut(&Schema, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        _schema: &Schema<'_>,
+        _consumer: &mut dyn FnMut(
+            &Schema<'_>,
+            &mut dyn ShapeDeserializer,
+        ) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "structures cannot be deserialized from strings".into(),
-        })
+        Err(SerdeError::unsupported(
+            "structures cannot be deserialized from strings",
+        ))
     }
 
     fn read_list(
         &mut self,
-        _schema: &Schema,
-        _consumer: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        _schema: &Schema<'_>,
+        consumer: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        // Lists are comma-separated values
-        // The consumer will call read methods for each element
-        Ok(())
+        // Invoke the consumer once per element. Each call drives a single element read
+        // (e.g. `read_string`), which takes the next element via `next_value`. An empty
+        // input is an empty list.
+        if self.list.is_some() {
+            return Err(SerdeError::unsupported(
+                "nested lists cannot be deserialized from strings",
+            ));
+        }
+        let elements = self.list_elements()?;
+        self.consumed = true;
+        let count = elements.len();
+        self.list = Some(elements.into_iter());
+        let mut result = Ok(());
+        for _ in 0..count {
+            result = consumer(self);
+            if result.is_err() {
+                break;
+            }
+        }
+        self.list = None;
+        result
     }
 
     fn read_map(
         &mut self,
-        _schema: &Schema,
+        _schema: &Schema<'_>,
         _consumer: &mut dyn FnMut(String, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "maps cannot be deserialized from strings".into(),
-        })
+        Err(SerdeError::unsupported(
+            "maps cannot be deserialized from strings",
+        ))
     }
 
-    fn read_boolean(&mut self, _schema: &Schema) -> Result<bool, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected boolean value".into(),
-        })?;
-        value.parse().map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid boolean: {value}"),
-        })
+    fn read_boolean(&mut self, _schema: &Schema<'_>) -> Result<bool, SerdeError> {
+        let value = self.next_value("boolean")?;
+        let value = value.as_ref();
+        value
+            .parse()
+            .map_err(|_| SerdeError::invalid_input(format!("invalid boolean: {value}")))
     }
 
-    fn read_byte(&mut self, _schema: &Schema) -> Result<i8, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected byte value".into(),
-        })?;
-        value.parse().map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid byte: {value}"),
-        })
+    fn read_byte(&mut self, _schema: &Schema<'_>) -> Result<i8, SerdeError> {
+        let value = self.next_value("byte")?;
+        let value = value.as_ref();
+        value
+            .parse()
+            .map_err(|_| SerdeError::invalid_input(format!("invalid byte: {value}")))
     }
 
-    fn read_short(&mut self, _schema: &Schema) -> Result<i16, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected short value".into(),
-        })?;
-        value.parse().map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid short: {value}"),
-        })
+    fn read_short(&mut self, _schema: &Schema<'_>) -> Result<i16, SerdeError> {
+        let value = self.next_value("short")?;
+        let value = value.as_ref();
+        value
+            .parse()
+            .map_err(|_| SerdeError::invalid_input(format!("invalid short: {value}")))
     }
 
-    fn read_integer(&mut self, _schema: &Schema) -> Result<i32, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected integer value".into(),
-        })?;
-        value.parse().map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid integer: {value}"),
-        })
+    fn read_integer(&mut self, _schema: &Schema<'_>) -> Result<i32, SerdeError> {
+        let value = self.next_value("integer")?;
+        let value = value.as_ref();
+        value
+            .parse()
+            .map_err(|_| SerdeError::invalid_input(format!("invalid integer: {value}")))
     }
 
-    fn read_long(&mut self, _schema: &Schema) -> Result<i64, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected long value".into(),
-        })?;
-        value.parse().map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid long: {value}"),
-        })
+    fn read_long(&mut self, _schema: &Schema<'_>) -> Result<i64, SerdeError> {
+        let value = self.next_value("long")?;
+        let value = value.as_ref();
+        value
+            .parse()
+            .map_err(|_| SerdeError::invalid_input(format!("invalid long: {value}")))
     }
 
-    fn read_float(&mut self, _schema: &Schema) -> Result<f32, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected float value".into(),
-        })?;
+    fn read_float(&mut self, _schema: &Schema<'_>) -> Result<f32, SerdeError> {
+        let value = self.next_value("float")?;
+        let value = value.as_ref();
         match value {
             "NaN" => Ok(f32::NAN),
             "Infinity" => Ok(f32::INFINITY),
             "-Infinity" => Ok(f32::NEG_INFINITY),
-            _ => value.parse().map_err(|_| SerdeError::InvalidInput {
-                message: format!("invalid float: {value}"),
-            }),
+            _ => value
+                .parse()
+                .map_err(|_| SerdeError::invalid_input(format!("invalid float: {value}"))),
         }
     }
 
-    fn read_double(&mut self, _schema: &Schema) -> Result<f64, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected double value".into(),
-        })?;
+    fn read_double(&mut self, _schema: &Schema<'_>) -> Result<f64, SerdeError> {
+        let value = self.next_value("double")?;
+        let value = value.as_ref();
         match value {
             "NaN" => Ok(f64::NAN),
             "Infinity" => Ok(f64::INFINITY),
             "-Infinity" => Ok(f64::NEG_INFINITY),
-            _ => value.parse().map_err(|_| SerdeError::InvalidInput {
-                message: format!("invalid double: {value}"),
-            }),
+            _ => value
+                .parse()
+                .map_err(|_| SerdeError::invalid_input(format!("invalid double: {value}"))),
         }
     }
 
-    fn read_big_integer(&mut self, _schema: &Schema) -> Result<BigInteger, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected big integer value".into(),
-        })?;
+    fn read_big_integer(&mut self, _schema: &Schema<'_>) -> Result<BigInteger, SerdeError> {
+        let value = self.next_value("big integer")?;
+        let value = value.as_ref();
         use std::str::FromStr;
-        BigInteger::from_str(value).map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid big integer: {value}"),
-        })
+        BigInteger::from_str(value)
+            .map_err(|_| SerdeError::invalid_input(format!("invalid big integer: {value}")))
     }
 
-    fn read_big_decimal(&mut self, _schema: &Schema) -> Result<BigDecimal, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected big decimal value".into(),
-        })?;
+    fn read_big_decimal(&mut self, _schema: &Schema<'_>) -> Result<BigDecimal, SerdeError> {
+        let value = self.next_value("big decimal")?;
+        let value = value.as_ref();
         use std::str::FromStr;
-        BigDecimal::from_str(value).map_err(|_| SerdeError::InvalidInput {
-            message: format!("invalid big decimal: {value}"),
-        })
+        BigDecimal::from_str(value)
+            .map_err(|_| SerdeError::invalid_input(format!("invalid big decimal: {value}")))
     }
 
-    fn read_string(&mut self, _schema: &Schema) -> Result<String, SerdeError> {
-        self.next_value()
-            .ok_or_else(|| SerdeError::InvalidInput {
-                message: "expected string value".into(),
-            })
-            .map(|s| s.to_string())
+    fn read_string(&mut self, _schema: &Schema<'_>) -> Result<String, SerdeError> {
+        self.next_value("string").map(Cow::into_owned)
     }
 
-    fn read_blob(&mut self, _schema: &Schema) -> Result<Blob, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected blob value".into(),
-        })?;
-        let decoded =
-            aws_smithy_types::base64::decode(value).map_err(|e| SerdeError::InvalidInput {
-                message: format!("invalid base64: {e}"),
-            })?;
+    fn read_blob(&mut self, _schema: &Schema<'_>) -> Result<Blob, SerdeError> {
+        let value = self.next_value("blob")?;
+        let value = value.as_ref();
+        let decoded = aws_smithy_types::base64::decode(value)
+            .map_err(|e| SerdeError::invalid_input(format!("invalid base64: {e}")))?;
         Ok(Blob::new(decoded))
     }
 
-    fn read_timestamp(&mut self, _schema: &Schema) -> Result<DateTime, SerdeError> {
-        let value = self.next_value().ok_or_else(|| SerdeError::InvalidInput {
-            message: "expected timestamp value".into(),
-        })?;
+    fn read_timestamp(&mut self, _schema: &Schema<'_>) -> Result<DateTime, SerdeError> {
+        let value = self.next_value("timestamp")?;
+        let value = value.as_ref();
         // Try HTTP date format first, then fall back to other formats
         // TODO(schema): Check schema for timestampFormat trait
         DateTime::from_str(value, aws_smithy_types::date_time::Format::HttpDate)
             .or_else(|_| DateTime::from_str(value, aws_smithy_types::date_time::Format::DateTime))
-            .map_err(|e| SerdeError::InvalidInput {
-                message: format!("invalid timestamp: {e}"),
-            })
+            .map_err(|e| SerdeError::invalid_input(format!("invalid timestamp: {e}")))
     }
 
-    fn read_document(&mut self, _schema: &Schema) -> Result<Document, SerdeError> {
-        Err(SerdeError::UnsupportedOperation {
-            message: "documents cannot be deserialized from strings".into(),
-        })
+    fn read_document(&mut self, _schema: &Schema<'_>) -> Result<Document, SerdeError> {
+        Err(SerdeError::unsupported(
+            "documents cannot be deserialized from strings",
+        ))
     }
 
     fn is_null(&self) -> bool {
-        self.current_value().is_empty()
+        // List elements cannot be null; a top-level value is null when the input is empty.
+        self.list.is_none() && self.input.is_empty()
+    }
+
+    /// Nothing to advance outside a list. This deserializer holds a single already-extracted
+    /// value and cannot read structures at all, so it is never the parent of a member
+    /// consumer; declining the value simply means not reading it. Inside a list, skipping
+    /// consumes one element so the next read sees the following one.
+    fn skip_value(&mut self) -> Result<(), SerdeError> {
+        if let Some(elements) = &mut self.list {
+            elements.next();
+        }
+        Ok(())
     }
 
     fn container_size(&self) -> Option<usize> {
-        // Count commas + 1 for list size estimation
-        Some(self.input.matches(',').count() + 1)
+        match &self.list {
+            Some(elements) => Some(elements.len()),
+            None => self.list_elements().ok().map(|elements| elements.len()),
+        }
     }
 }
 
 /// HTTP string codec for serializing/deserializing to/from strings.
+#[derive(Debug)]
 pub struct HttpStringCodec;
 
 impl crate::codec::Codec for HttpStringCodec {
@@ -504,14 +538,14 @@ mod tests {
             Ok(())
         })
         .unwrap();
-        assert_eq!(ser.finish(), "a,b,c");
+        assert_eq!(ser.finish(), "a, b, c");
     }
 
     #[test]
     fn test_serialize_blob() {
         let mut ser = HttpStringSerializer::new();
         let blob = Blob::new(vec![1, 2, 3, 4]);
-        ser.write_blob(&BLOB, blob.as_ref()).unwrap();
+        ser.write_blob(&BLOB, blob).unwrap();
         // Base64 encoding of [1, 2, 3, 4]
         assert_eq!(ser.finish(), "AQIDBA==");
     }
@@ -556,14 +590,176 @@ mod tests {
     }
 
     #[test]
-    fn test_deserialize_list() {
-        let mut deser = HttpStringDeserializer::new("a,b,c");
-        let values = vec![
-            deser.read_string(&STRING).unwrap(),
-            deser.read_string(&STRING).unwrap(),
-            deser.read_string(&STRING).unwrap(),
+    fn scalar_read_is_the_whole_value() {
+        // Outside a list there is no comma splitting, as for a scalar HTTP header.
+        let mut deser = HttpStringDeserializer::new("a, b,c");
+        assert_eq!(deser.read_string(&STRING).unwrap(), "a, b,c");
+        assert!(
+            deser.read_string(&STRING).is_err(),
+            "the single value was already read"
+        );
+    }
+
+    #[test]
+    fn only_one_value_can_be_written_outside_a_list() {
+        let mut ser = HttpStringSerializer::new();
+        ser.write_string(&STRING, "a").unwrap();
+        assert!(ser.write_string(&STRING, "b").is_err());
+    }
+
+    fn string_list() -> Schema<'static> {
+        Schema::new_list(crate::shape_id!("ns", "StringList"), &STRING)
+    }
+
+    fn write_strings(items: &[&str]) -> String {
+        let mut ser = HttpStringSerializer::new();
+        ser.write_list(&string_list(), &|e| {
+            for it in items {
+                e.write_string(&STRING, it)?;
+            }
+            Ok(())
+        })
+        .unwrap();
+        ser.finish()
+    }
+
+    fn read_strings(wire: &str) -> Result<Vec<String>, SerdeError> {
+        let mut de = HttpStringDeserializer::new(wire);
+        let mut out = Vec::new();
+        de.read_list(&string_list(), &mut |x| {
+            out.push(x.read_string(&STRING)?);
+            Ok(())
+        })?;
+        Ok(out)
+    }
+
+    #[test]
+    fn string_list_round_trips() {
+        // From review of PR #4871, extended with whitespace, quotes, parentheses and a
+        // single empty element.
+        let cases: [&[&str]; 11] = [
+            &["a", "b", "c"],
+            &["", "b"],
+            &["a", ""],
+            &["a,b"],
+            &["a, b"],
+            &[" a"],
+            &["a "],
+            &["\"q\""],
+            &["(x)"],
+            &[""],
+            &[],
         ];
-        assert_eq!(values, vec!["a", "b", "c"]);
+        for case in cases {
+            let wire = write_strings(case);
+            let res = read_strings(&wire);
+            assert!(res.is_ok(), "read_list failed on wire {wire:?}: {res:?}");
+            assert_eq!(
+                res.unwrap(),
+                case,
+                "round trip changed the list; wire was {wire:?}"
+            );
+        }
+    }
+
+    #[test]
+    fn list_wire_format_matches_header_lists() {
+        assert_eq!(write_strings(&["a", "b", "c"]), "a, b, c");
+        assert_eq!(write_strings(&["a,b", ""]), "\"a,b\", \"\"");
+        // Lists written by other header writers read back with the same rules.
+        assert_eq!(
+            read_strings("a,b , \"c,d\"").unwrap(),
+            vec!["a", "b", "c,d"]
+        );
+        assert!(read_strings("\"unterminated").is_err());
+    }
+
+    #[test]
+    fn timestamp_list_round_trips() {
+        // An HTTP date contains a comma, so it must be quoted inside a list.
+        let list = Schema::new_list(crate::shape_id!("ns", "TsList"), &TIMESTAMP);
+        let times = [DateTime::from_secs(0), DateTime::from_secs(1515531081)];
+        let mut ser = HttpStringSerializer::new();
+        ser.write_list(&list, &|e| {
+            for t in &times {
+                e.write_timestamp(&TIMESTAMP, t)?;
+            }
+            Ok(())
+        })
+        .unwrap();
+        let wire = ser.finish();
+        let mut de = HttpStringDeserializer::new(&wire);
+        let mut out = Vec::new();
+        de.read_list(&list, &mut |x| {
+            out.push(x.read_timestamp(&TIMESTAMP)?);
+            Ok(())
+        })
+        .unwrap();
+        assert_eq!(out, times, "wire was {wire:?}");
+    }
+
+    #[test]
+    fn integer_list_round_trips() {
+        let list = Schema::new_list(crate::shape_id!("ns", "IntList"), &INTEGER);
+        let mut ser = HttpStringSerializer::new();
+        ser.write_list(&list, &|e| {
+            e.write_integer(&INTEGER, 1)?;
+            e.write_integer(&INTEGER, -2)
+        })
+        .unwrap();
+        let wire = ser.finish();
+        assert_eq!(wire, "1, -2");
+        let mut de = HttpStringDeserializer::new(&wire);
+        let mut out = Vec::new();
+        de.read_list(&list, &mut |x| {
+            out.push(x.read_integer(&INTEGER)?);
+            Ok(())
+        })
+        .unwrap();
+        assert_eq!(out, [1, -2]);
+    }
+
+    #[test]
+    fn skip_value_inside_a_list_consumes_one_element() {
+        let mut de = HttpStringDeserializer::new("a, b, c");
+        let mut out = Vec::new();
+        let mut first = true;
+        de.read_list(&string_list(), &mut |x| {
+            if std::mem::take(&mut first) {
+                x.skip_value()
+            } else {
+                out.push(x.read_string(&STRING)?);
+                Ok(())
+            }
+        })
+        .unwrap();
+        assert_eq!(out, ["b", "c"]);
+    }
+
+    #[test]
+    fn test_read_list_drives_consumer_per_element() {
+        let mut deser = HttpStringDeserializer::new("a,b,c");
+        let mut collected = Vec::new();
+        deser
+            .read_list(&STRING, &mut |d: &mut dyn ShapeDeserializer| {
+                collected.push(d.read_string(&STRING)?);
+                Ok(())
+            })
+            .unwrap();
+        assert_eq!(collected, vec!["a", "b", "c"]);
+    }
+
+    #[test]
+    fn test_read_list_empty_input_is_empty_list() {
+        let mut deser = HttpStringDeserializer::new("");
+        let mut count = 0;
+        deser
+            .read_list(&STRING, &mut |_d: &mut dyn ShapeDeserializer| {
+                count += 1;
+                Ok(())
+            })
+            .unwrap();
+        assert_eq!(count, 0);
     }
 
     #[test]
@@ -608,5 +804,40 @@ mod tests {
         let mut deser = codec.create_deserializer(input);
         let result = deser.read_string(&STRING).unwrap();
         assert_eq!(result, "hello");
+    }
+}
+
+/// Tests for the [`ShapeDeserializer::skip_value`] contract.
+#[cfg(test)]
+mod skip_value_contract {
+    use super::*;
+    use crate::prelude::*;
+    use crate::serde::ShapeDeserializer;
+
+    #[test]
+    fn skip_value_is_a_no_op_and_leaves_the_value_readable() {
+        // This deserializer holds a single already-extracted value and cannot read
+        // structures, so it is never the parent of a member consumer. Skipping means
+        // "don't read it", with nothing to advance — and notably must not fall through to
+        // the allocating trait default, whose `read_document` this type rejects.
+        let mut deser = HttpStringDeserializer::new("hello");
+        let dynamic: &mut dyn ShapeDeserializer = &mut deser;
+        dynamic.skip_value().expect("skip must succeed");
+        assert_eq!(deser.read_string(&STRING).unwrap(), "hello");
+    }
+
+    #[test]
+    fn skip_value_succeeds_where_the_default_would_fail() {
+        // Guards the override: `read_document` is unsupported here, so if the override
+        // were removed this would start returning an error.
+        let mut deser = HttpStringDeserializer::new("value");
+        assert!(
+            deser.read_document(&DOCUMENT).is_err(),
+            "precondition: this deserializer cannot produce documents"
+        );
+        let mut deser = HttpStringDeserializer::new("value");
+        deser
+            .skip_value()
+            .expect("override must not use read_document");
     }
 }

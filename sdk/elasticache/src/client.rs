@@ -339,6 +339,8 @@ mod modify_user;
 
 mod modify_user_group;
 
+mod prepare_migration;
+
 mod purchase_reserved_cache_nodes_offering;
 
 mod rebalance_slots_in_global_replication_group;
@@ -352,6 +354,8 @@ mod reset_cache_parameter_group;
 mod revoke_cache_security_group_ingress;
 
 mod start_migration;
+
+mod stop_migration;
 
 mod test_failover;
 

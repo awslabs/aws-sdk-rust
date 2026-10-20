@@ -17,8 +17,76 @@ use aws_smithy_schema::codec::FinishSerializer;
 use aws_smithy_schema::serde::{SerdeError, SerializableStruct, ShapeSerializer};
 use aws_smithy_schema::Schema;
 use aws_smithy_types::date_time::Format as TimestampFormat;
-use aws_smithy_types::{BigDecimal, BigInteger, DateTime, Document};
+use aws_smithy_types::{BigDecimal, BigInteger, DateTime};
+
+use aws_smithy_schema::extension::SchemaExtensionKey;
+use aws_smithy_types::Document;
 use std::sync::Arc;
+
+/// An `@xmlNamespace` as `(uri, prefix)`.
+type Namespace = (String, Option<String>);
+
+fn namespace_of(schema: Option<&Schema<'_>>) -> Option<Arc<Namespace>> {
+    schema
+        .and_then(|s| s.xml_namespace())
+        .map(|ns| Arc::new((ns.uri().to_owned(), ns.prefix().map(|p| p.to_owned()))))
+}
+
+/// `@xmlName`, then the member name, then `default`.
+fn member_element_name<'s>(member: Option<&'s Schema<'s>>, default: &'static str) -> &'s str {
+    member
+        .and_then(|m| m.xml_name().map(|n| n.value()).or(m.member_name()))
+        .unwrap_or(default)
+}
+
+/// Element names a `write_list` call hands to its items, cached on the list schema.
+///
+/// Each item is written by a separate `write_*` call, so the serializer has to hold the
+/// names between calls. Sharing them makes that a reference count increment per list
+/// instead of a `String` copy per item.
+#[derive(Debug)]
+struct XmlListNames {
+    /// The item element. A wrapped list's items use the list member's `@xmlName`, then its
+    /// member name, then `member`. A flattened list has no wrapper, so its items use the
+    /// list's own element name (unless an enclosing list hands down a different one).
+    item: Arc<str>,
+    /// The list member's `@xmlNamespace`, inherited by items whose schema has none.
+    item_namespace: Option<Arc<Namespace>>,
+}
+
+static XML_LIST_NAMES: SchemaExtensionKey<XmlListNames> =
+    SchemaExtensionKey::new(|list| XmlListNames {
+        item: Arc::from(if list.xml_flattened() {
+            XmlSerializer::element_name(list)
+        } else {
+            member_element_name(list.member(), "member")
+        }),
+        item_namespace: namespace_of(list.member()),
+    });
+
+/// Element names for the entries of a `write_map` call, cached on the map schema. See
+/// [`XmlListNames`] for why they are shared.
+#[derive(Debug)]
+struct XmlMapNames {
+    entry: Arc<str>,
+    key: Arc<str>,
+    value: Arc<str>,
+    key_namespace: Option<Arc<Namespace>>,
+    value_namespace: Option<Arc<Namespace>>,
+}
+
+static XML_MAP_NAMES: SchemaExtensionKey<XmlMapNames> =
+    SchemaExtensionKey::new(|map| XmlMapNames {
+        entry: Arc::from(if map.xml_flattened() {
+            XmlSerializer::element_name(map)
+        } else {
+            "entry"
+        }),
+        key: Arc::from(member_element_name(map.key(), "key")),
+        value: Arc::from(member_element_name(map.member(), "value")),
+        key_namespace: namespace_of(map.key()),
+        value_namespace: namespace_of(map.member()),
+    });
 
 /// XML serializer that implements the [`ShapeSerializer`] trait.
 pub struct XmlSerializer {
@@ -31,11 +99,11 @@ pub struct XmlSerializer {
     /// When inside a `write_map` callback, tracks the entry/key/value state.
     map_state: Option<MapState>,
     /// When inside a `write_list` callback, overrides the element name for items.
-    list_item_name: Option<String>,
+    list_item_name: Option<Arc<str>>,
     /// When inside a `write_list` callback, propagates the inner-list-member
     /// `@xmlNamespace` (uri, prefix) to scalar item writes whose schema is a
     /// generic prelude type and therefore doesn't carry the trait itself.
-    list_item_namespace: Option<(String, Option<String>)>,
+    list_item_namespace: Option<Arc<Namespace>>,
     /// Two-pass `serialize_members` filter for the immediately containing
     /// `write_struct` call. XML attributes must appear inside the start tag,
     /// before any child element closes it; the codegen-generated
@@ -102,33 +170,32 @@ enum MemberFilter {
 #[derive(Debug)]
 struct MapState {
     /// Element name for each entry (e.g., "entry" or the member name for flattened).
-    entry_name: String,
+    entry_name: Arc<str>,
     /// Element name for the key (default "key", overridable via @xmlName).
-    key_name: String,
+    key_name: Arc<str>,
     /// Element name for the value (default "value", overridable via @xmlName).
-    value_name: String,
+    value_name: Arc<str>,
     /// `@xmlNamespace` (uri, prefix) on the key member, if any.
-    key_namespace: Option<(String, Option<String>)>,
+    key_namespace: Option<Arc<Namespace>>,
     /// `@xmlNamespace` (uri, prefix) on the value member, if any.
-    value_namespace: Option<(String, Option<String>)>,
-    /// Schema of this map's value member. Used by a nested inner `write_map`
-    /// (when codegen passes `prelude::DOCUMENT` for the inner aggregate)
-    /// to recover the inner map's own `_KEY` / `_VALUE` schemas through
-    /// `value_schema.key()` / `.value()`. `None` when the value is a scalar.
-    value_schema: Option<&'static Schema>,
+    value_namespace: Option<Arc<Namespace>>,
     /// True when the next write is a key (odd writes), false for value (even writes).
     expecting_key: bool,
 }
 
+/// An open element.
+///
+/// A frame does not hold the element's name: every element is opened and closed within one
+/// `write_*` call, which passes the name to [`XmlSerializer::close_element`].
 #[derive(Debug)]
 enum Frame {
     /// `<name` has been written; the closing `>` is deferred so that
     /// attributes and namespaces can still be added inline with the start tag.
     /// Attributes are buffered so they can arrive in any order relative to
     /// child elements (protocol-neutral serialize_members ordering).
-    StartTagPending { name: String, attrs: String },
+    StartTagPending { attrs: String },
     /// `<name attrs>` has been fully written; we are now inside the element body.
-    Open { name: String },
+    Open,
 }
 
 /// Append the `xmlns="..."` (or `xmlns:prefix="..."`) attribute fragment
@@ -143,7 +210,7 @@ enum Frame {
 /// allocated a fresh `String` per call. Per-entry map serialization can
 /// call this twice per entry (key + value), so on map-heavy payloads the
 /// allocations added up.
-fn write_xmlns_attr(out: &mut String, ns: Option<&(String, Option<String>)>) {
+fn write_xmlns_attr(out: &mut String, ns: Option<&Namespace>) {
     use std::fmt::Write;
     match ns {
         Some((uri, Some(prefix))) => {
@@ -194,7 +261,7 @@ impl XmlSerializer {
 
     /// Returns true if a write of `schema` should produce output under the
     /// current `member_filter`. Top-level calls (no filter set) always pass.
-    fn filter_allows(&self, schema: &Schema) -> bool {
+    fn filter_allows(&self, schema: &Schema<'_>) -> bool {
         match self.member_filter {
             MemberFilter::None => true,
             MemberFilter::AttributesOnly => schema.xml_attribute(),
@@ -211,7 +278,7 @@ impl XmlSerializer {
     ///    operation input/output synthetic shapes.
     /// 3. `member_name` — the smithy member name, set on member schemas.
     /// 4. `shape_id().shape_name()` — fallback for non-synthetic, non-member shapes.
-    fn element_name(schema: &Schema) -> &str {
+    fn element_name<'a>(schema: &'a Schema<'a>) -> &'a str {
         schema
             .xml_name()
             .map(|t| t.value())
@@ -226,11 +293,10 @@ impl XmlSerializer {
     /// is written.
     fn flush_start_tag(&mut self) {
         if let Some(frame) = self.frames.last_mut() {
-            if let Frame::StartTagPending { name, attrs } = frame {
+            if let Frame::StartTagPending { attrs } = frame {
                 self.output.push_str(attrs);
                 self.output.push('>');
-                let name = std::mem::take(name);
-                *frame = Frame::Open { name };
+                *frame = Frame::Open;
             }
         }
     }
@@ -243,7 +309,6 @@ impl XmlSerializer {
         self.output.push('<');
         self.output.push_str(name);
         self.frames.push(Frame::StartTagPending {
-            name: name.to_owned(),
             attrs: String::new(),
         });
     }
@@ -261,7 +326,7 @@ impl XmlSerializer {
     /// This is how the REST XML protocol applies a service-level
     /// `@xmlNamespace` to the request/response root element without
     /// codec-time knowledge of the service.
-    fn write_xmlns(&mut self, schema: &Schema, inherited: Option<&(String, Option<String>)>) {
+    fn write_xmlns(&mut self, schema: &Schema<'_>, inherited: Option<&Namespace>) {
         use std::fmt::Write;
         let is_document_root = self.frames.len() == 1;
         // Consume the document-root override only at the root, only when
@@ -295,7 +360,8 @@ impl XmlSerializer {
         }
     }
 
-    /// Pop the top frame and emit the closing tag.
+    /// Pop the top frame and emit the closing tag for `name`, the name the element was
+    /// opened with.
     ///
     /// Always emits `<name attrs>...</name>` form, never `<name attrs/>`.
     /// Both forms are equivalent XML, but legacy smithy-rs (and S3's recorded
@@ -303,24 +369,36 @@ impl XmlSerializer {
     /// false-positive content-length mismatches in DVR-replay tests like
     /// `s3::select_object_content::test_success`, where `<CSV></CSV>` differs
     /// from `<CSV/>` by 5 bytes.
-    fn close_element(&mut self) {
+    fn close_element(&mut self, name: &str) {
         let frame = self
             .frames
             .pop()
             .expect("close_element called with empty frame stack");
-        match frame {
-            Frame::StartTagPending { name, attrs } => {
-                self.output.push_str(&attrs);
-                self.output.push('>');
-                self.output.push_str("</");
-                self.output.push_str(&name);
-                self.output.push('>');
-            }
-            Frame::Open { name } => {
-                self.output.push_str("</");
-                self.output.push_str(&name);
-                self.output.push('>');
-            }
+        if let Frame::StartTagPending { attrs } = frame {
+            self.output.push_str(&attrs);
+            self.output.push('>');
+        }
+        self.output.push_str("</");
+        self.output.push_str(name);
+        self.output.push('>');
+    }
+
+    /// The name of the element for `schema`: its `@xmlName` if it has one, otherwise the
+    /// name an enclosing list handed to its items, otherwise [`Self::element_name`].
+    ///
+    /// A handed-down name is moved into `inherited`, which the caller owns, so the result
+    /// borrows neither `self` nor a fresh allocation.
+    fn resolve_name<'s>(
+        &self,
+        schema: &'s Schema<'s>,
+        inherited: &'s mut Option<Arc<str>>,
+    ) -> &'s str {
+        if schema.xml_name().is_none() {
+            inherited.clone_from(&self.list_item_name);
+        }
+        match inherited {
+            Some(name) => name,
+            None => Self::element_name(schema),
         }
     }
 
@@ -328,7 +406,7 @@ impl XmlSerializer {
     /// XML-special chars). Used for numbers, booleans, base64 — values that
     /// are known not to need escaping. If the schema has `@xmlAttribute`,
     /// writes an attribute on the parent's pending start tag instead.
-    fn write_safe_element(&mut self, schema: &Schema, content: &str) {
+    fn write_safe_element(&mut self, schema: &Schema<'_>, content: &str) {
         if !self.filter_allows(schema) {
             return;
         }
@@ -340,37 +418,30 @@ impl XmlSerializer {
         if let Some(map_state) = &mut self.map_state {
             if map_state.expecting_key {
                 // Open entry element, write key (with optional key @xmlNamespace)
-                let entry = &map_state.entry_name.clone();
-                let key = &map_state.key_name.clone();
+                let (entry, key) = (&map_state.entry_name, &map_state.key_name);
                 write!(self.output, "<{entry}><{key}").unwrap();
-                write_xmlns_attr(&mut self.output, map_state.key_namespace.as_ref());
+                write_xmlns_attr(&mut self.output, map_state.key_namespace.as_deref());
                 write!(self.output, ">{content}</{key}>").unwrap();
                 map_state.expecting_key = false;
             } else {
                 // Write value (with optional value @xmlNamespace), close entry element
-                let entry = &map_state.entry_name.clone();
-                let value = &map_state.value_name.clone();
+                let (entry, value) = (&map_state.entry_name, &map_state.value_name);
                 write!(self.output, "<{value}").unwrap();
-                write_xmlns_attr(&mut self.output, map_state.value_namespace.as_ref());
+                write_xmlns_attr(&mut self.output, map_state.value_namespace.as_deref());
                 write!(self.output, ">{content}</{value}></{entry}>").unwrap();
                 map_state.expecting_key = true;
             }
         } else {
-            let name = if schema.xml_name().is_none() {
-                self.list_item_name
-                    .clone()
-                    .unwrap_or_else(|| Self::element_name(schema).to_string())
-            } else {
-                Self::element_name(schema).to_string()
-            };
+            let mut inherited_name = None;
+            let name = self.resolve_name(schema, &mut inherited_name);
             // Use open_element/close_element so namespace attributes can be
             // emitted via write_xmlns into the still-pending start tag.
-            self.open_element(&name);
+            self.open_element(name);
             let inherited = self.list_item_namespace.clone();
-            self.write_xmlns(schema, inherited.as_ref());
+            self.write_xmlns(schema, inherited.as_deref());
             self.flush_start_tag();
             self.output.push_str(content);
-            self.close_element();
+            self.close_element(name);
         }
     }
 
@@ -378,7 +449,7 @@ impl XmlSerializer {
     /// still pending, write ` name="escaped_value"` into the attrs buffer and
     /// return `true`. Otherwise return `false` (caller should emit a child
     /// element instead).
-    fn try_write_attribute(&mut self, schema: &Schema, value: &str) -> bool {
+    fn try_write_attribute(&mut self, schema: &Schema<'_>, value: &str) -> bool {
         use std::fmt::Write;
         if !schema.xml_attribute() {
             return false;
@@ -400,17 +471,22 @@ impl XmlSerializer {
     /// Resolve the timestamp format for a member. Member-level
     /// `@timestampFormat` wins; otherwise the codec's default (`date-time`
     /// for REST XML body bindings).
-    fn resolve_timestamp_format(&self, schema: &Schema) -> TimestampFormat {
-        schema
-            .timestamp_format()
-            .map(|t| match t.format() {
-                aws_smithy_schema::traits::TimestampFormat::EpochSeconds => {
-                    TimestampFormat::EpochSeconds
-                }
-                aws_smithy_schema::traits::TimestampFormat::DateTime => TimestampFormat::DateTime,
-                aws_smithy_schema::traits::TimestampFormat::HttpDate => TimestampFormat::HttpDate,
-            })
-            .unwrap_or(self.settings.default_timestamp_format())
+    fn resolve_timestamp_format(&self, schema: &Schema<'_>) -> Result<TimestampFormat, SerdeError> {
+        let Some(t) = schema.timestamp_format() else {
+            return Ok(self.settings.default_timestamp_format());
+        };
+        Ok(match t.format() {
+            aws_smithy_schema::traits::TimestampFormat::EpochSeconds => {
+                TimestampFormat::EpochSeconds
+            }
+            aws_smithy_schema::traits::TimestampFormat::DateTime => TimestampFormat::DateTime,
+            aws_smithy_schema::traits::TimestampFormat::HttpDate => TimestampFormat::HttpDate,
+            other => {
+                return Err(SerdeError::unsupported(format!(
+                    "unsupported timestamp format {other:?}"
+                )))
+            }
+        })
     }
 }
 
@@ -428,7 +504,7 @@ impl FinishSerializer for XmlSerializer {
 impl ShapeSerializer for XmlSerializer {
     fn write_struct(
         &mut self,
-        schema: &Schema,
+        schema: &Schema<'_>,
         value: &dyn SerializableStruct,
     ) -> Result<(), SerdeError> {
         if schema.xml_attribute() {
@@ -451,8 +527,7 @@ impl ShapeSerializer for XmlSerializer {
                 // without the struct's own element wrapper (per Smithy XML spec).
                 // Note: <entry> was already opened by the preceding key write.
                 use std::fmt::Write;
-                let val_name = &map_state.value_name.clone();
-                write!(self.output, "<{val_name}>").unwrap();
+                write!(self.output, "<{}>", map_state.value_name).unwrap();
                 map_state.expecting_key = true;
                 true
             }
@@ -511,17 +586,13 @@ impl ShapeSerializer for XmlSerializer {
             } else {
                 None
             };
-            let name = if let Some(override_name) = root_override {
-                override_name
-            } else if schema.xml_name().is_none() {
-                self.list_item_name
-                    .clone()
-                    .unwrap_or_else(|| Self::element_name(schema).to_string())
-            } else {
-                Self::element_name(schema).to_string()
+            let mut inherited_name = None;
+            let name = match &root_override {
+                Some(override_name) => override_name.as_str(),
+                None => self.resolve_name(schema, &mut inherited_name),
             };
             let saved_list_item = self.list_item_name.take();
-            self.open_element(&name);
+            self.open_element(name);
             self.write_xmlns(schema, None);
             // Two-pass: attributes first (so they land in the still-pending
             // start tag), non-attributes second (which flushes the start tag
@@ -550,7 +621,7 @@ impl ShapeSerializer for XmlSerializer {
             self.member_filter = MemberFilter::NonAttributesOnly;
             value.serialize_members(self)?;
             self.member_filter = saved_filter;
-            self.close_element();
+            self.close_element(name);
             self.list_item_name = saved_list_item;
         }
         Ok(())
@@ -558,7 +629,7 @@ impl ShapeSerializer for XmlSerializer {
 
     fn write_list(
         &mut self,
-        schema: &Schema,
+        schema: &Schema<'_>,
         write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
         if schema.xml_attribute() {
@@ -576,8 +647,7 @@ impl ShapeSerializer for XmlSerializer {
         let in_map_value = if let Some(map_state) = &mut self.map_state {
             if !map_state.expecting_key {
                 use std::fmt::Write;
-                let val_name = &map_state.value_name.clone();
-                write!(self.output, "<{val_name}>").unwrap();
+                write!(self.output, "<{}>", map_state.value_name).unwrap();
                 map_state.expecting_key = true;
                 true
             } else {
@@ -592,21 +662,6 @@ impl ShapeSerializer for XmlSerializer {
             None
         };
 
-        // Resolve the wrapper element name. If the schema has @xmlName, use it.
-        // Otherwise, when this list is itself a list element of an outer call
-        // (parent set `self.list_item_name`), use the parent's child-name. This
-        // lets nested write_list calls produce the correct wrapper name even
-        // when codegen passes a generic placeholder schema (e.g. prelude::DOCUMENT)
-        // for the inner aggregate. Only matters for non-flattened, non-map-value
-        // wrappers.
-        let wrapper_name = if schema.xml_name().is_none() {
-            self.list_item_name
-                .clone()
-                .unwrap_or_else(|| Self::element_name(schema).to_string())
-        } else {
-            Self::element_name(schema).to_string()
-        };
-
         // Resolve the item element name.
         // Per the Smithy XML spec:
         //  - For wrapped lists, items are emitted using the inner list member's
@@ -616,26 +671,24 @@ impl ShapeSerializer for XmlSerializer {
         //    emitted using the OUTER member's name (the list member's xml_name
         //    or its smithy member_name) — the inner list member's name is
         //    ignored because there is no wrapper to host it.
-        let item_name = if schema.xml_flattened() {
+        let names = schema.extension(&XML_LIST_NAMES);
+        let item_name = if schema.xml_flattened() && schema.xml_name().is_none() {
             // Flattened: outer member's resolved element name (xml_name → list_item_name → member_name).
-            if schema.xml_name().is_none() {
-                self.list_item_name
-                    .clone()
-                    .unwrap_or_else(|| Self::element_name(schema).to_string())
-            } else {
-                Self::element_name(schema).to_string()
-            }
+            self.list_item_name
+                .clone()
+                .unwrap_or_else(|| names.item.clone())
         } else {
-            schema
-                .member()
-                .and_then(|m| m.xml_name().map(|n| n.value().to_string()))
-                .or_else(|| {
-                    schema
-                        .member()
-                        .and_then(|m| m.member_name().map(|s| s.to_string()))
-                })
-                .unwrap_or_else(|| "member".to_string())
+            names.item.clone()
         };
+        // Resolve the wrapper element name. If the schema has @xmlName, use it.
+        // Otherwise, when this list is itself a list element of an outer call
+        // (parent set `self.list_item_name`), use the parent's child-name. This
+        // lets nested write_list calls produce the correct wrapper name even
+        // when codegen passes a generic placeholder schema (e.g. prelude::DOCUMENT)
+        // for the inner aggregate. Only matters for non-flattened, non-map-value
+        // wrappers.
+        let mut inherited_name = None;
+        let wrapper_name = self.resolve_name(schema, &mut inherited_name);
 
         let saved_list_item = self.list_item_name.take();
         self.list_item_name = Some(item_name);
@@ -645,21 +698,18 @@ impl ShapeSerializer for XmlSerializer {
         // inherit the namespace declaration. Only wrap-level lists set this;
         // for flattened lists the items are at the parent level and use the
         // parent member's own namespace if any.
-        let saved_list_item_ns = self.list_item_namespace.take();
-        self.list_item_namespace = schema.member().and_then(|m| {
-            m.xml_namespace()
-                .map(|ns| (ns.uri().to_owned(), ns.prefix().map(|p| p.to_owned())))
-        });
+        let saved_list_item_ns =
+            std::mem::replace(&mut self.list_item_namespace, names.item_namespace.clone());
 
         if schema.xml_flattened() || in_map_value {
             write_elements(self)?;
         } else {
-            self.open_element(&wrapper_name);
+            self.open_element(wrapper_name);
             // The wrapper element gets the OUTER list member's @xmlNamespace
             // (which is on `schema` itself), not the inner-member namespace.
             self.write_xmlns(schema, None);
             write_elements(self)?;
-            self.close_element();
+            self.close_element(wrapper_name);
         }
 
         self.list_item_name = saved_list_item;
@@ -678,7 +728,7 @@ impl ShapeSerializer for XmlSerializer {
 
     fn write_map(
         &mut self,
-        schema: &Schema,
+        schema: &Schema<'_>,
         write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
         if schema.xml_attribute() {
@@ -692,30 +742,11 @@ impl ShapeSerializer for XmlSerializer {
 
         self.flush_start_tag();
 
-        // If we're being called as a value of an outer map and the schema we
-        // were given has no map members chained (e.g. codegen passed
-        // `prelude::DOCUMENT` for the inner aggregate), substitute in the
-        // outer map's saved `value_schema`, which carries the inner map's
-        // own `_KEY` / `_VALUE` chain (set up by the outer `write_map`).
-        // This is what lets nested-map element-name overrides (`@xmlName`
-        // on inner key / value) reach the runtime without making codegen
-        // recurse into the body emission path.
-        let effective_schema: &Schema = if schema.key().is_none() && schema.member().is_none() {
-            self.map_state
-                .as_ref()
-                .and_then(|s| s.value_schema)
-                .unwrap_or(schema)
-        } else {
-            schema
-        };
-        let schema = effective_schema;
-
         // Handle being called as a map value (nested maps)
         let in_map_value = if let Some(map_state) = &mut self.map_state {
             if !map_state.expecting_key {
                 use std::fmt::Write;
-                let val_name = &map_state.value_name.clone();
-                write!(self.output, "<{val_name}>").unwrap();
+                write!(self.output, "<{}>", map_state.value_name).unwrap();
                 map_state.expecting_key = true;
                 true
             } else {
@@ -728,46 +759,13 @@ impl ShapeSerializer for XmlSerializer {
         let outer_map_state = self.map_state.take();
 
         // Resolve entry/key/value element names from the schema's map members.
-        let entry_name = if schema.xml_flattened() {
-            Self::element_name(schema).to_string()
-        } else {
-            "entry".to_string()
-        };
-        let key_name = schema
-            .key()
-            .and_then(|k| k.xml_name().map(|n| n.value().to_string()))
-            .unwrap_or_else(|| {
-                schema
-                    .key()
-                    .and_then(|k| k.member_name().map(|s| s.to_string()))
-                    .unwrap_or_else(|| "key".to_string())
-            });
-        let value_name = schema
-            .member()
-            .and_then(|v| v.xml_name().map(|n| n.value().to_string()))
-            .unwrap_or_else(|| {
-                schema
-                    .member()
-                    .and_then(|v| v.member_name().map(|s| s.to_string()))
-                    .unwrap_or_else(|| "value".to_string())
-            });
-
+        let names = schema.extension(&XML_MAP_NAMES);
         self.map_state = Some(MapState {
-            entry_name,
-            key_name,
-            value_name,
-            key_namespace: schema.key().and_then(|k| {
-                k.xml_namespace()
-                    .map(|ns| (ns.uri().to_owned(), ns.prefix().map(|p| p.to_owned())))
-            }),
-            value_namespace: schema.member().and_then(|v| {
-                v.xml_namespace()
-                    .map(|ns| (ns.uri().to_owned(), ns.prefix().map(|p| p.to_owned())))
-            }),
-            // Save the value member's full schema so a nested inner write_map
-            // (which codegen may invoke with `prelude::DOCUMENT`) can recover
-            // the inner aggregate's own `_KEY`/`_VALUE` (or `_MEMBER`) chain.
-            value_schema: schema.member_static(),
+            entry_name: names.entry.clone(),
+            key_name: names.key.clone(),
+            value_name: names.value.clone(),
+            key_namespace: names.key_namespace.clone(),
+            value_namespace: names.value_namespace.clone(),
             expecting_key: true,
         });
 
@@ -777,13 +775,8 @@ impl ShapeSerializer for XmlSerializer {
         // write_map calls produce the correct wrapper name even when codegen
         // passes a generic placeholder schema (e.g. prelude::DOCUMENT) for the
         // inner aggregate. Only matters for non-flattened, non-map-value wrappers.
-        let wrapper_name = if schema.xml_name().is_none() {
-            self.list_item_name
-                .clone()
-                .unwrap_or_else(|| Self::element_name(schema).to_string())
-        } else {
-            Self::element_name(schema).to_string()
-        };
+        let mut inherited_name = None;
+        let wrapper_name = self.resolve_name(schema, &mut inherited_name);
 
         // Don't propagate parent list_item_name into map entries — entries are
         // framed by map_state instead.
@@ -792,10 +785,10 @@ impl ShapeSerializer for XmlSerializer {
         if schema.xml_flattened() || in_map_value {
             write_entries(self)?;
         } else {
-            self.open_element(&wrapper_name);
+            self.open_element(wrapper_name);
             self.write_xmlns(schema, None);
             write_entries(self)?;
-            self.close_element();
+            self.close_element(wrapper_name);
         }
 
         self.list_item_name = saved_list_item;
@@ -812,32 +805,32 @@ impl ShapeSerializer for XmlSerializer {
         Ok(())
     }
 
-    fn write_boolean(&mut self, schema: &Schema, value: bool) -> Result<(), SerdeError> {
+    fn write_boolean(&mut self, schema: &Schema<'_>, value: bool) -> Result<(), SerdeError> {
         self.write_safe_element(schema, if value { "true" } else { "false" });
         Ok(())
     }
 
-    fn write_byte(&mut self, schema: &Schema, value: i8) -> Result<(), SerdeError> {
+    fn write_byte(&mut self, schema: &Schema<'_>, value: i8) -> Result<(), SerdeError> {
         self.write_safe_element(schema, &value.to_string());
         Ok(())
     }
 
-    fn write_short(&mut self, schema: &Schema, value: i16) -> Result<(), SerdeError> {
+    fn write_short(&mut self, schema: &Schema<'_>, value: i16) -> Result<(), SerdeError> {
         self.write_safe_element(schema, &value.to_string());
         Ok(())
     }
 
-    fn write_integer(&mut self, schema: &Schema, value: i32) -> Result<(), SerdeError> {
+    fn write_integer(&mut self, schema: &Schema<'_>, value: i32) -> Result<(), SerdeError> {
         self.write_safe_element(schema, &value.to_string());
         Ok(())
     }
 
-    fn write_long(&mut self, schema: &Schema, value: i64) -> Result<(), SerdeError> {
+    fn write_long(&mut self, schema: &Schema<'_>, value: i64) -> Result<(), SerdeError> {
         self.write_safe_element(schema, &value.to_string());
         Ok(())
     }
 
-    fn write_float(&mut self, schema: &Schema, value: f32) -> Result<(), SerdeError> {
+    fn write_float(&mut self, schema: &Schema<'_>, value: f32) -> Result<(), SerdeError> {
         let text = if value.is_nan() {
             "NaN".to_owned()
         } else if value.is_infinite() {
@@ -853,7 +846,7 @@ impl ShapeSerializer for XmlSerializer {
         Ok(())
     }
 
-    fn write_double(&mut self, schema: &Schema, value: f64) -> Result<(), SerdeError> {
+    fn write_double(&mut self, schema: &Schema<'_>, value: f64) -> Result<(), SerdeError> {
         let text = if value.is_nan() {
             "NaN".to_owned()
         } else if value.is_infinite() {
@@ -869,17 +862,25 @@ impl ShapeSerializer for XmlSerializer {
         Ok(())
     }
 
-    fn write_big_integer(&mut self, schema: &Schema, value: &BigInteger) -> Result<(), SerdeError> {
+    fn write_big_integer(
+        &mut self,
+        schema: &Schema<'_>,
+        value: &BigInteger,
+    ) -> Result<(), SerdeError> {
         self.write_safe_element(schema, value.as_ref());
         Ok(())
     }
 
-    fn write_big_decimal(&mut self, schema: &Schema, value: &BigDecimal) -> Result<(), SerdeError> {
+    fn write_big_decimal(
+        &mut self,
+        schema: &Schema<'_>,
+        value: &BigDecimal,
+    ) -> Result<(), SerdeError> {
         self.write_safe_element(schema, value.as_ref());
         Ok(())
     }
 
-    fn write_string(&mut self, schema: &Schema, value: &str) -> Result<(), SerdeError> {
+    fn write_string(&mut self, schema: &Schema<'_>, value: &str) -> Result<(), SerdeError> {
         if !self.filter_allows(schema) {
             return Ok(());
         }
@@ -891,48 +892,45 @@ impl ShapeSerializer for XmlSerializer {
         let escaped = crate::escape::escape(value);
         if let Some(map_state) = &mut self.map_state {
             if map_state.expecting_key {
-                let entry = &map_state.entry_name.clone();
-                let key = &map_state.key_name.clone();
+                let (entry, key) = (&map_state.entry_name, &map_state.key_name);
                 write!(self.output, "<{entry}><{key}").unwrap();
-                write_xmlns_attr(&mut self.output, map_state.key_namespace.as_ref());
+                write_xmlns_attr(&mut self.output, map_state.key_namespace.as_deref());
                 write!(self.output, ">{escaped}</{key}>").unwrap();
                 map_state.expecting_key = false;
             } else {
-                let entry = &map_state.entry_name.clone();
-                let val_name = &map_state.value_name.clone();
+                let (entry, val_name) = (&map_state.entry_name, &map_state.value_name);
                 write!(self.output, "<{val_name}").unwrap();
-                write_xmlns_attr(&mut self.output, map_state.value_namespace.as_ref());
+                write_xmlns_attr(&mut self.output, map_state.value_namespace.as_deref());
                 write!(self.output, ">{escaped}</{val_name}></{entry}>").unwrap();
                 map_state.expecting_key = true;
             }
         } else {
-            let name = if schema.xml_name().is_none() {
-                self.list_item_name
-                    .clone()
-                    .unwrap_or_else(|| Self::element_name(schema).to_string())
-            } else {
-                Self::element_name(schema).to_string()
-            };
+            let mut inherited_name = None;
+            let name = self.resolve_name(schema, &mut inherited_name);
             // Use open_element/close_element so namespace attributes can be
             // emitted via write_xmlns into the still-pending start tag.
-            self.open_element(&name);
+            self.open_element(name);
             let inherited = self.list_item_namespace.clone();
-            self.write_xmlns(schema, inherited.as_ref());
+            self.write_xmlns(schema, inherited.as_deref());
             self.flush_start_tag();
             self.output.push_str(&escaped);
-            self.close_element();
+            self.close_element(name);
         }
         Ok(())
     }
 
-    fn write_blob(&mut self, schema: &Schema, value: &[u8]) -> Result<(), SerdeError> {
-        let encoded = aws_smithy_types::base64::encode(value);
+    fn write_blob(
+        &mut self,
+        schema: &Schema<'_>,
+        value: aws_smithy_types::Blob,
+    ) -> Result<(), SerdeError> {
+        let encoded = aws_smithy_types::base64::encode(value.as_ref());
         self.write_safe_element(schema, &encoded);
         Ok(())
     }
 
-    fn write_timestamp(&mut self, schema: &Schema, value: &DateTime) -> Result<(), SerdeError> {
-        let format = self.resolve_timestamp_format(schema);
+    fn write_timestamp(&mut self, schema: &Schema<'_>, value: &DateTime) -> Result<(), SerdeError> {
+        let format = self.resolve_timestamp_format(schema)?;
         let formatted = value
             .fmt(format)
             .map_err(|e| SerdeError::custom(e.to_string()))?;
@@ -941,13 +939,17 @@ impl ShapeSerializer for XmlSerializer {
         Ok(())
     }
 
-    fn write_document(&mut self, _schema: &Schema, _value: &Document) -> Result<(), SerdeError> {
+    fn write_document(
+        &mut self,
+        _schema: &Schema<'_>,
+        _value: &Document,
+    ) -> Result<(), SerdeError> {
         Err(SerdeError::custom(
             "document types are not supported by REST XML",
         ))
     }
 
-    fn write_null(&mut self, _schema: &Schema) -> Result<(), SerdeError> {
+    fn write_null(&mut self, _schema: &Schema<'_>) -> Result<(), SerdeError> {
         // XML represents null/absent members by omitting the element entirely.
         // Generated code skips None fields, so this should rarely be called.
         // If it is (e.g. sparse collections), we simply emit nothing.
@@ -962,13 +964,13 @@ mod tests {
     use aws_smithy_types::Blob;
 
     /// Renders a struct with one string member named `name`.
-    static NAME_MEMBER: Schema = Schema::new_member(
+    static NAME_MEMBER: Schema<'static> = Schema::new_member(
         shape_id!("test", "Person$name"),
         ShapeType::String,
         "name",
         0,
     );
-    static PERSON_SCHEMA: Schema = Schema::new_struct(
+    static PERSON_SCHEMA: Schema<'static> = Schema::new_struct(
         shape_id!("test", "Person"),
         ShapeType::Structure,
         &[&NAME_MEMBER],
@@ -979,6 +981,10 @@ mod tests {
     }
 
     impl SerializableStruct for Person<'_> {
+        fn schema(&self) -> &Schema<'_> {
+            &PERSON_SCHEMA
+        }
+
         fn serialize_members(
             &self,
             serializer: &mut dyn ShapeSerializer,
@@ -1007,11 +1013,15 @@ mod tests {
     fn struct_with_no_members_self_closes() {
         struct Empty;
         impl SerializableStruct for Empty {
+            fn schema(&self) -> &Schema<'_> {
+                &EMPTY_SCHEMA
+            }
+
             fn serialize_members(&self, _: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 Ok(())
             }
         }
-        static EMPTY_SCHEMA: Schema =
+        static EMPTY_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "Empty"), ShapeType::Structure, &[]);
 
         let out = serialize(|ser| ser.write_struct(&EMPTY_SCHEMA, &Empty));
@@ -1041,19 +1051,19 @@ mod tests {
         // member dispatch in this codec uses the *member* schema, not the
         // target shape's schema. The Inner type's `SerializableStruct` impl
         // is what drives inner serialization.
-        static INNER_NAME: Schema = Schema::new_member(
+        static INNER_NAME: Schema<'static> = Schema::new_member(
             shape_id!("test", "Inner$name"),
             ShapeType::String,
             "name",
             0,
         );
-        static OUTER_INNER: Schema = Schema::new_member(
+        static OUTER_INNER: Schema<'static> = Schema::new_member(
             shape_id!("test", "Outer$inner"),
             ShapeType::Structure,
             "inner",
             0,
         );
-        static OUTER_SCHEMA: Schema = Schema::new_struct(
+        static OUTER_SCHEMA: Schema<'static> = Schema::new_struct(
             shape_id!("test", "Outer"),
             ShapeType::Structure,
             &[&OUTER_INNER],
@@ -1063,6 +1073,15 @@ mod tests {
             name: &'a str,
         }
         impl SerializableStruct for Inner<'_> {
+            fn schema(&self) -> &Schema<'_> {
+                static SCHEMA: Schema<'static> = Schema::new_struct(
+                    aws_smithy_schema::shape_id!("test", "Inner"),
+                    aws_smithy_schema::ShapeType::Structure,
+                    &[&INNER_NAME],
+                );
+                &SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&INNER_NAME, self.name)
             }
@@ -1071,6 +1090,10 @@ mod tests {
             inner: Inner<'a>,
         }
         impl SerializableStruct for Outer<'_> {
+            fn schema(&self) -> &Schema<'_> {
+                &OUTER_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 // For nested structs, dispatch on the *member* schema so that
                 // the resolved element name is the field's name (or its
@@ -1088,14 +1111,14 @@ mod tests {
 
     #[test]
     fn xml_name_overrides_member_name() {
-        static RENAMED_MEMBER: Schema = Schema::new_member(
+        static RENAMED_MEMBER: Schema<'static> = Schema::new_member(
             shape_id!("test", "Person$name"),
             ShapeType::String,
             "name",
             0,
         )
         .with_xml_name("FullName");
-        static PERSON_SCHEMA: Schema = Schema::new_struct(
+        static PERSON_SCHEMA: Schema<'static> = Schema::new_struct(
             shape_id!("test", "Person"),
             ShapeType::Structure,
             &[&RENAMED_MEMBER],
@@ -1103,6 +1126,10 @@ mod tests {
 
         struct P;
         impl SerializableStruct for P {
+            fn schema(&self) -> &Schema<'_> {
+                &PERSON_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&RENAMED_MEMBER, "v")
             }
@@ -1112,12 +1139,64 @@ mod tests {
         assert_eq!(out, "<Person><FullName>v</FullName></Person>");
     }
 
+    /// The same override, driven by a schema materialized at runtime. XML is
+    /// the largest consumer of trait-value accessors, so this covers the bulk
+    /// of the read surface for runtime-built schemas in one test. Also asserts
+    /// `@xmlNamespace`, whose wrapper carries two runtime strings.
+    #[test]
+    fn xml_name_and_namespace_from_a_runtime_schema() {
+        // Arena the caller owns; nothing here is 'static.
+        let arena: Vec<String> = vec![
+            String::from("name"),                // member name
+            String::from("RuntimeFullName"),     // @xmlName
+            String::from("https://ns.example/"), // @xmlNamespace uri
+        ];
+
+        let member: Schema<'_> = Schema::new_member(
+            shape_id!("test", "Person$name"),
+            ShapeType::String,
+            &arena[0],
+            0,
+        )
+        .with_xml_name(&arena[1]);
+
+        let members = [&member];
+        let person: Schema<'_> =
+            Schema::new_struct(shape_id!("test", "Person"), ShapeType::Structure, &members)
+                .with_xml_namespace(&arena[2], None);
+
+        struct P<'a> {
+            schema: &'a Schema<'a>,
+            member: &'a Schema<'a>,
+        }
+        impl SerializableStruct for P<'_> {
+            fn schema(&self) -> &Schema<'_> {
+                self.schema
+            }
+
+            fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
+                ser.write_string(self.member, "v")
+            }
+        }
+        let value = P {
+            schema: &person,
+            member: &member,
+        };
+        let erased: &dyn SerializableStruct = &value;
+        assert!(std::ptr::eq(erased.schema(), &person));
+        let out = serialize(|ser| ser.write_struct(&person, erased));
+        assert_eq!(
+            out,
+            "<Person xmlns=\"https://ns.example/\"><RuntimeFullName>v</RuntimeFullName></Person>"
+        );
+    }
+
     #[test]
     fn original_name_overrides_id_for_synthetic_root() {
         // Synthetic shapes have id name "OperationInput" but original_name is
         // "OperationRequest" (the user-authored name). The codec should use
         // the original name for the root element when there's no @xmlName.
-        static SYNTHETIC: Schema = Schema::new_struct(
+        static SYNTHETIC: Schema<'static> = Schema::new_struct(
             shape_id!("test.synthetic", "FooInput"),
             ShapeType::Structure,
             &[],
@@ -1126,6 +1205,10 @@ mod tests {
 
         struct Empty;
         impl SerializableStruct for Empty {
+            fn schema(&self) -> &Schema<'_> {
+                &SYNTHETIC
+            }
+
             fn serialize_members(&self, _: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 Ok(())
             }
@@ -1137,7 +1220,7 @@ mod tests {
 
     // Scalar member writes (boolean, ints, floats, blob, timestamp).
 
-    static SCALAR_MEMBER: Schema =
+    static SCALAR_MEMBER: Schema<'static> =
         Schema::new_member(shape_id!("test", "S$v"), ShapeType::Integer, "v", 0);
 
     #[test]
@@ -1183,7 +1266,7 @@ mod tests {
     #[test]
     fn write_blob_base64() {
         let blob = Blob::new(b"hello");
-        let out = serialize(|ser| ser.write_blob(&SCALAR_MEMBER, blob.as_ref()));
+        let out = serialize(|ser| ser.write_blob(&SCALAR_MEMBER, blob.clone()));
         assert_eq!(out, "<v>aGVsbG8=</v>");
     }
 
@@ -1198,7 +1281,7 @@ mod tests {
     #[test]
     fn write_timestamp_epoch_seconds_override() {
         use aws_smithy_schema::traits::TimestampFormat as SchemaTimestampFormat;
-        static TS_MEMBER: Schema =
+        static TS_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$t"), ShapeType::Timestamp, "t", 0)
                 .with_timestamp_format(SchemaTimestampFormat::EpochSeconds);
         let ts = DateTime::from_secs(1515531081);
@@ -1216,12 +1299,12 @@ mod tests {
 
     #[test]
     fn attribute_string_on_struct() {
-        static ATTR_MEMBER: Schema =
+        static ATTR_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$id"), ShapeType::String, "id", 0)
                 .with_xml_attribute();
-        static CHILD_MEMBER: Schema =
+        static CHILD_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 1);
-        static X_SCHEMA: Schema = Schema::new_struct(
+        static X_SCHEMA: Schema<'static> = Schema::new_struct(
             shape_id!("test", "X"),
             ShapeType::Structure,
             &[&ATTR_MEMBER, &CHILD_MEMBER],
@@ -1229,6 +1312,10 @@ mod tests {
 
         struct X;
         impl SerializableStruct for X {
+            fn schema(&self) -> &Schema<'_> {
+                &X_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&ATTR_MEMBER, "42")?;
                 ser.write_string(&CHILD_MEMBER, "hello")
@@ -1241,14 +1328,18 @@ mod tests {
 
     #[test]
     fn attribute_integer_on_struct() {
-        static ATTR: Schema =
+        static ATTR: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$count"), ShapeType::Integer, "count", 0)
                 .with_xml_attribute();
-        static X_SCHEMA: Schema =
+        static X_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&ATTR]);
 
         struct X;
         impl SerializableStruct for X {
+            fn schema(&self) -> &Schema<'_> {
+                &X_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_integer(&ATTR, 7)
             }
@@ -1260,14 +1351,18 @@ mod tests {
 
     #[test]
     fn attribute_value_is_escaped() {
-        static ATTR: Schema =
+        static ATTR: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$v"), ShapeType::String, "v", 0)
                 .with_xml_attribute();
-        static X_SCHEMA: Schema =
+        static X_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&ATTR]);
 
         struct X;
         impl SerializableStruct for X {
+            fn schema(&self) -> &Schema<'_> {
+                &X_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&ATTR, "a\"b&c")
             }
@@ -1279,7 +1374,7 @@ mod tests {
 
     #[test]
     fn attribute_on_struct_returns_error() {
-        static ATTR_STRUCT: Schema = Schema::new_member(
+        static ATTR_STRUCT: Schema<'static> = Schema::new_member(
             shape_id!("test", "X$inner"),
             ShapeType::Structure,
             "inner",
@@ -1289,6 +1384,10 @@ mod tests {
 
         struct Empty;
         impl SerializableStruct for Empty {
+            fn schema(&self) -> &Schema<'_> {
+                &aws_smithy_schema::prelude::UNIT
+            }
+
             fn serialize_members(&self, _: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 Ok(())
             }
@@ -1303,12 +1402,16 @@ mod tests {
 
     #[test]
     fn namespace_on_struct() {
-        static NS_SCHEMA: Schema =
+        static NS_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[])
                 .with_xml_namespace("https://example.com", None);
 
         struct Empty;
         impl SerializableStruct for Empty {
+            fn schema(&self) -> &Schema<'_> {
+                &NS_SCHEMA
+            }
+
             fn serialize_members(&self, _: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 Ok(())
             }
@@ -1320,12 +1423,16 @@ mod tests {
 
     #[test]
     fn namespace_with_prefix() {
-        static NS_SCHEMA: Schema =
+        static NS_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[])
                 .with_xml_namespace("https://example.com", Some("ex"));
 
         struct Empty;
         impl SerializableStruct for Empty {
+            fn schema(&self) -> &Schema<'_> {
+                &NS_SCHEMA
+            }
+
             fn serialize_members(&self, _: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 Ok(())
             }
@@ -1337,14 +1444,18 @@ mod tests {
 
     #[test]
     fn namespace_with_children() {
-        static CHILD: Schema =
+        static CHILD: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$v"), ShapeType::String, "v", 0);
-        static NS_SCHEMA: Schema =
+        static NS_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&CHILD])
                 .with_xml_namespace("urn:foo", None);
 
         struct X;
         impl SerializableStruct for X {
+            fn schema(&self) -> &Schema<'_> {
+                &NS_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&CHILD, "hi")
             }
@@ -1360,13 +1471,13 @@ mod tests {
     fn list_wrapped() {
         // Schema: struct S { items: List<String> }
         // List member schema defaults to name "member".
-        static LIST_ITEM: Schema = Schema::new_member(
+        static LIST_ITEM: Schema<'static> = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         );
-        static LIST_MEMBER: Schema =
+        static LIST_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 0);
 
         let out = serialize(|ser| {
@@ -1381,14 +1492,14 @@ mod tests {
     #[test]
     fn list_wrapped_with_xml_name_on_item() {
         // @xmlName("Item") on the list's member schema.
-        static LIST_ITEM: Schema = Schema::new_member(
+        static LIST_ITEM: Schema<'static> = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         )
         .with_xml_name("Item");
-        static LIST_MEMBER: Schema =
+        static LIST_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 0);
 
         let out = serialize(|ser| {
@@ -1404,14 +1515,14 @@ mod tests {
     fn list_flattened() {
         // @xmlFlattened on the struct member. Items use the member schema
         // passed to write_string (which carries the item element name).
-        static LIST_ITEM: Schema = Schema::new_member(
+        static LIST_ITEM: Schema<'static> = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         )
         .with_xml_name("item");
-        static LIST_MEMBER: Schema =
+        static LIST_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 0)
                 .with_xml_flattened();
 
@@ -1429,11 +1540,11 @@ mod tests {
 
     #[test]
     fn map_wrapped() {
-        static KEY_SCHEMA: Schema =
+        static KEY_SCHEMA: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static VALUE_SCHEMA: Schema =
+        static VALUE_SCHEMA: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1);
-        static MAP_MEMBER: Schema =
+        static MAP_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$myMap"), ShapeType::Map, "myMap", 0)
                 .with_map_members(&KEY_SCHEMA, &VALUE_SCHEMA);
 
@@ -1454,14 +1565,14 @@ mod tests {
     #[test]
     fn map_wrapped_with_renamed_key_value() {
         // @xmlName on key/value schemas.
-        static REN_KEY: Schema =
+        static REN_KEY: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0)
                 .with_xml_name("Attribute");
-        static REN_VALUE: Schema =
+        static REN_VALUE: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1)
                 .with_xml_name("Setting");
 
-        static MAP_MEMBER: Schema =
+        static MAP_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$m"), ShapeType::Map, "m", 0)
                 .with_map_members(&REN_KEY, &REN_VALUE);
 
@@ -1479,11 +1590,11 @@ mod tests {
 
     #[test]
     fn map_flattened() {
-        static KEY_SCHEMA: Schema =
+        static KEY_SCHEMA: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static VALUE_SCHEMA: Schema =
+        static VALUE_SCHEMA: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1);
-        static MAP_MEMBER: Schema =
+        static MAP_MEMBER: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$m"), ShapeType::Map, "m", 0)
                 .with_xml_flattened()
                 .with_map_members(&KEY_SCHEMA, &VALUE_SCHEMA);
@@ -1515,23 +1626,27 @@ mod tests {
 
     #[test]
     fn map_with_struct_value() {
-        static HI: Schema =
+        static HI: Schema<'static> =
             Schema::new_member(shape_id!("test", "G$hi"), ShapeType::String, "hi", 0);
-        static GREETING: Schema = Schema::new_struct(
+        static GREETING: Schema<'static> = Schema::new_struct(
             shape_id!("test", "GreetingStruct"),
             ShapeType::Structure,
             &[&HI],
         );
-        static KEY: Schema =
+        static KEY: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static VALUE: Schema =
+        static VALUE: Schema<'static> =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1);
-        static MAP: Schema =
+        static MAP: Schema<'static> =
             Schema::new_member(shape_id!("test", "S$myMap"), ShapeType::Map, "myMap", 0)
                 .with_map_members(&KEY, &VALUE);
 
         struct G;
         impl SerializableStruct for G {
+            fn schema(&self) -> &Schema<'_> {
+                &GREETING
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&HI, "bye")
             }
@@ -1571,7 +1686,7 @@ mod tests {
     #[test]
     fn member_schema_struct_emits_attribute_member() {
         // Inner struct with an attribute member.
-        static ATTR_FIELD_MEMBER: Schema = Schema::new_member(
+        static ATTR_FIELD_MEMBER: Schema<'static> = Schema::new_member(
             shape_id!("test", "Inner$attrField"),
             ShapeType::String,
             "attrField",
@@ -1579,7 +1694,7 @@ mod tests {
         )
         .with_xml_name("xsi:someName")
         .with_xml_attribute();
-        static INNER_TARGET: Schema = Schema::new_struct(
+        static INNER_TARGET: Schema<'static> = Schema::new_struct(
             shape_id!("test", "Inner"),
             ShapeType::Structure,
             &[&ATTR_FIELD_MEMBER],
@@ -1587,13 +1702,13 @@ mod tests {
         // Outer struct with a member pointing at `Inner`. Crucially this
         // is a member schema (Schema::new_member), not the target
         // struct's schema.
-        static INNER_MEMBER: Schema = Schema::new_member(
+        static INNER_MEMBER: Schema<'static> = Schema::new_member(
             shape_id!("test", "Outer$nested"),
             ShapeType::Structure,
             "nested",
             0,
         );
-        static OUTER_SCHEMA: Schema = Schema::new_struct(
+        static OUTER_SCHEMA: Schema<'static> = Schema::new_struct(
             shape_id!("test", "Outer"),
             ShapeType::Structure,
             &[&INNER_MEMBER],
@@ -1603,6 +1718,10 @@ mod tests {
             attr: &'a str,
         }
         impl SerializableStruct for Inner<'_> {
+            fn schema(&self) -> &Schema<'_> {
+                &INNER_TARGET
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 ser.write_string(&ATTR_FIELD_MEMBER, self.attr)
             }
@@ -1611,6 +1730,10 @@ mod tests {
             inner: Inner<'a>,
         }
         impl SerializableStruct for Outer<'_> {
+            fn schema(&self) -> &Schema<'_> {
+                &OUTER_SCHEMA
+            }
+
             fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
                 // Pass the *member* schema (matches codegen output), not
                 // the target struct's `INNER_TARGET`. This is the
@@ -1625,5 +1748,322 @@ mod tests {
         };
         let out = serialize(|ser| ser.write_struct(&OUTER_SCHEMA, &outer));
         assert_eq!(out, r#"<Outer><nested xsi:someName="v"></nested></Outer>"#);
+    }
+
+    /// Outer map whose value member targets a map shape with `@xmlName`
+    /// on the inner map's key and value. Verifies that element-name
+    /// overrides on inner key/value flow through the nested
+    /// `write_map` call when the inner-map schema is passed directly
+    /// (i.e., when the outer's value-member schema chains the inner
+    /// map's `_KEY`/`_VALUE`).
+    #[test]
+    fn map_value_is_inner_map_with_renamed_inner_key_value() {
+        // Inner map's renamed key and value member schemas.
+        static INNER_KEY: Schema<'static> = Schema::new_member(
+            shape_id!("test", "InnerMap$key"),
+            ShapeType::String,
+            "key",
+            0,
+        )
+        .with_xml_name("InnerKey");
+        static INNER_VAL: Schema<'static> = Schema::new_member(
+            shape_id!("test", "InnerMap$value"),
+            ShapeType::String,
+            "value",
+            1,
+        )
+        .with_xml_name("InnerVal");
+
+        // Outer map's value member: target shape is the inner Map.
+        // Codegen chains the inner map's key/value schemas onto this
+        // member schema, so `schema.key()` / `.member()` resolve to the
+        // renamed inner schemas inside the nested `write_map`.
+        static OUTER_VALUE: Schema<'static> = Schema::new_member(
+            shape_id!("test", "OuterMap$value"),
+            ShapeType::Map,
+            "value",
+            1,
+        )
+        .with_map_members(&INNER_KEY, &INNER_VAL);
+
+        // Outer map's key (no rename) and the outer map member itself.
+        static OUTER_KEY: Schema<'static> = Schema::new_member(
+            shape_id!("test", "OuterMap$key"),
+            ShapeType::String,
+            "key",
+            0,
+        );
+        static OUTER_MAP: Schema<'static> = Schema::new_member(
+            shape_id!("test", "S$outerMap"),
+            ShapeType::Map,
+            "outerMap",
+            0,
+        )
+        .with_map_members(&OUTER_KEY, &OUTER_VALUE);
+
+        let out = serialize(|ser| {
+            ser.write_map(&OUTER_MAP, &|ser| {
+                ser.write_string(&prelude::STRING, "ok")?;
+                // Nested write_map is called with the inner map's chained
+                // schema directly — no runtime substitution needed.
+                ser.write_map(&OUTER_VALUE, &|ser| {
+                    ser.write_string(&prelude::STRING, "ik")?;
+                    ser.write_string(&prelude::STRING, "iv")
+                })
+            })
+        });
+
+        assert_eq!(
+            out,
+            "<outerMap><entry><key>ok</key><value><entry><InnerKey>ik</InnerKey><InnerVal>iv</InnerVal></entry></value></entry></outerMap>"
+        );
+    }
+
+    /// List whose member targets a map shape with `@xmlName` on the
+    /// inner map's key and value. Mirrors the map-of-map case for
+    /// list-of-map nesting.
+    #[test]
+    fn list_member_is_inner_map_with_renamed_inner_key_value() {
+        static INNER_KEY: Schema<'static> = Schema::new_member(
+            shape_id!("test", "InnerMap$key"),
+            ShapeType::String,
+            "key",
+            0,
+        )
+        .with_xml_name("Attr");
+        static INNER_VAL: Schema<'static> = Schema::new_member(
+            shape_id!("test", "InnerMap$value"),
+            ShapeType::String,
+            "value",
+            1,
+        )
+        .with_xml_name("Set");
+
+        // The list's member target is the inner Map.
+        static LIST_ITEM: Schema<'static> = Schema::new_member(
+            shape_id!("test", "OuterList$member"),
+            ShapeType::Map,
+            "member",
+            0,
+        )
+        .with_map_members(&INNER_KEY, &INNER_VAL);
+
+        static OUTER_LIST: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 0)
+                .with_list_member(&LIST_ITEM);
+
+        let out = serialize(|ser| {
+            ser.write_list(&OUTER_LIST, &|ser| {
+                // Each list element is a (single-entry) inner map.
+                ser.write_map(&LIST_ITEM, &|ser| {
+                    ser.write_string(&prelude::STRING, "k1")?;
+                    ser.write_string(&prelude::STRING, "v1")
+                })
+            })
+        });
+
+        // Wrapped list, single element. The element wrapper is `<member>`
+        // (the list's member element name); inside it is the inner map
+        // with renamed key/value.
+        assert_eq!(
+            out,
+            "<items><member><entry><Attr>k1</Attr><Set>v1</Set></entry></member></items>"
+        );
+    }
+
+    // --- Required value-type members are serialized even when equal to the
+    // zero/default (bool false). Mirrors the generated non-optional branch
+    // (unconditional write, never a skip-if-default). Shapes the ELB
+    // `LoadBalancerAttributes { ConnectionDraining { Enabled = false } }` case.
+    static CD_ENABLED_X: Schema<'static> = Schema::new_member(
+        shape_id!("test", "ConnectionDraining$enabled"),
+        ShapeType::Boolean,
+        "enabled",
+        0,
+    );
+    static LBA_CD_X: Schema<'static> = Schema::new_member(
+        shape_id!("test", "LoadBalancerAttributes$connectionDraining"),
+        ShapeType::Structure,
+        "connectionDraining",
+        0,
+    );
+    static LBA_SCHEMA_X: Schema<'static> = Schema::new_struct(
+        shape_id!("test", "LoadBalancerAttributes"),
+        ShapeType::Structure,
+        &[&LBA_CD_X],
+    );
+
+    struct ConnectionDrainingX {
+        enabled: bool,
+    }
+    impl SerializableStruct for ConnectionDrainingX {
+        fn schema(&self) -> &Schema<'_> {
+            static SCHEMA: Schema<'static> = Schema::new_struct(
+                aws_smithy_schema::shape_id!("test", "ConnectionDraining"),
+                aws_smithy_schema::ShapeType::Structure,
+                &[&CD_ENABLED_X],
+            );
+            &SCHEMA
+        }
+
+        fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
+            let val = &self.enabled;
+            ser.write_boolean(&CD_ENABLED_X, *val)
+        }
+    }
+    struct LoadBalancerAttributesX {
+        connection_draining: ConnectionDrainingX,
+    }
+    impl SerializableStruct for LoadBalancerAttributesX {
+        fn schema(&self) -> &Schema<'_> {
+            &LBA_SCHEMA_X
+        }
+
+        fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
+            ser.write_struct(&LBA_CD_X, &self.connection_draining)
+        }
+    }
+
+    #[test]
+    fn required_value_type_false_bool_is_serialized() {
+        let out = serialize(|ser| {
+            ser.write_struct(
+                &LBA_SCHEMA_X,
+                &LoadBalancerAttributesX {
+                    connection_draining: ConnectionDrainingX { enabled: false },
+                },
+            )
+        });
+        assert_eq!(
+            out,
+            "<LoadBalancerAttributes><connectionDraining><enabled>false</enabled></connectionDraining></LoadBalancerAttributes>",
+            "the required-default value-type member must be present with false, not dropped"
+        );
+    }
+
+    /// Element names cached on a list or map schema must not capture serializer state. A
+    /// nested aggregate arrives with the `prelude::DOCUMENT` placeholder, so its element name
+    /// comes from the enclosing list; the same placeholder schema must take whatever name
+    /// each enclosing list hands down, every time.
+    #[test]
+    fn cached_names_do_not_capture_names_from_an_enclosing_list() {
+        static ROW: Schema<'static> = Schema::new_member(
+            shape_id!("test", "Rows$member"),
+            ShapeType::List,
+            "member",
+            0,
+        )
+        .with_xml_name("Row");
+        static ROWS: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$rows"), ShapeType::List, "rows", 0)
+                .with_list_member(&ROW);
+        static COL: Schema<'static> = Schema::new_member(
+            shape_id!("test", "Cols$member"),
+            ShapeType::List,
+            "member",
+            0,
+        )
+        .with_xml_name("Col");
+        static COLS: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$cols"), ShapeType::List, "cols", 1)
+                .with_list_member(&COL);
+
+        let nested = |outer: &'static Schema<'static>| {
+            serialize(move |ser| {
+                ser.write_list(outer, &|ser| {
+                    ser.write_list(&prelude::DOCUMENT, &|ser| {
+                        ser.write_string(&prelude::STRING, "a")
+                    })
+                })
+            })
+        };
+        for _ in 0..2 {
+            assert_eq!(nested(&ROWS), "<rows><Row><member>a</member></Row></rows>");
+            assert_eq!(nested(&COLS), "<cols><Col><member>a</member></Col></cols>");
+        }
+    }
+
+    /// A flattened list's items take the list's own element name. When the list is itself an
+    /// item of an enclosing list, that name comes from the enclosing list instead, and must
+    /// not be cached on the flattened list's schema.
+    #[test]
+    fn flattened_list_item_name_follows_the_enclosing_list() {
+        static FLAT: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$flat"), ShapeType::List, "flat", 0)
+                .with_xml_flattened();
+        static OUTER_ITEM: Schema<'static> = Schema::new_member(
+            shape_id!("test", "Outer$member"),
+            ShapeType::List,
+            "member",
+            0,
+        )
+        .with_xml_name("Inherited");
+        static OUTER: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$outer"), ShapeType::List, "outer", 0)
+                .with_list_member(&OUTER_ITEM);
+
+        let flat = || {
+            serialize(|ser| ser.write_list(&FLAT, &|ser| ser.write_string(&prelude::STRING, "x")))
+        };
+        let inherited = || {
+            serialize(|ser| {
+                ser.write_list(&OUTER, &|ser| {
+                    ser.write_list(&FLAT, &|ser| ser.write_string(&prelude::STRING, "x"))
+                })
+            })
+        };
+        for _ in 0..2 {
+            assert_eq!(flat(), "<flat>x</flat>");
+            assert_eq!(inherited(), "<outer><Inherited>x</Inherited></outer>");
+        }
+    }
+
+    /// Namespaces cached for list items and map keys and values are written on every
+    /// request, not only the one that computed the cache entry.
+    #[test]
+    fn cached_namespaces_are_written_on_every_request() {
+        static ITEM: Schema<'static> = Schema::new_member(
+            shape_id!("test", "L$member"),
+            ShapeType::String,
+            "member",
+            0,
+        )
+        .with_xml_namespace("urn:item", Some("i"));
+        static LIST: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 0)
+                .with_list_member(&ITEM);
+        static KEY: Schema<'static> =
+            Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0)
+                .with_xml_name("K")
+                .with_xml_namespace("urn:key", None);
+        static VALUE: Schema<'static> =
+            Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1)
+                .with_xml_namespace("urn:value", Some("v"));
+        static MAP: Schema<'static> =
+            Schema::new_member(shape_id!("test", "S$m"), ShapeType::Map, "m", 1)
+                .with_map_members(&KEY, &VALUE);
+
+        for _ in 0..2 {
+            let list = serialize(|ser| {
+                ser.write_list(&LIST, &|ser| {
+                    ser.write_string(&prelude::STRING, "a")?;
+                    ser.write_integer(&prelude::INTEGER, 1)
+                })
+            });
+            assert_eq!(
+                list,
+                "<items><member xmlns:i=\"urn:item\">a</member><member xmlns:i=\"urn:item\">1</member></items>"
+            );
+            let map = serialize(|ser| {
+                ser.write_map(&MAP, &|ser| {
+                    ser.write_string(&prelude::STRING, "k")?;
+                    ser.write_string(&prelude::STRING, "v")
+                })
+            });
+            assert_eq!(
+                map,
+                "<m><entry><K xmlns=\"urn:key\">k</K><value xmlns:v=\"urn:value\">v</value></entry></m>"
+            );
+        }
     }
 }

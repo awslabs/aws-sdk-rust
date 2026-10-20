@@ -29,6 +29,12 @@ pub enum Error {
     CustomDbEngineVersionNotFoundFault(crate::types::error::CustomDbEngineVersionNotFoundFault),
     /// <p>You have exceeded your CEV quota.</p>
     CustomDbEngineVersionQuotaExceededFault(crate::types::error::CustomDbEngineVersionQuotaExceededFault),
+    /// <p>You already have a DB capacity reservation with the given name. Choose a different name for the new reservation, or use the existing reservation.</p>
+    DbCapacityReservationAlreadyExistsFault(crate::types::error::DbCapacityReservationAlreadyExistsFault),
+    /// <p><code>DBCapacityReservationIdentifier</code> doesn't refer to an existing DB capacity reservation.</p>
+    DbCapacityReservationNotFoundFault(crate::types::error::DbCapacityReservationNotFoundFault),
+    /// <p>The specified configuration isn't supported for DB capacity reservations.</p>
+    DbCapacityReservationUnsupportedFault(crate::types::error::DbCapacityReservationUnsupportedFault),
     /// <p>The user already has a DB cluster with the given identifier.</p>
     DbClusterAlreadyExistsFault(crate::types::error::DbClusterAlreadyExistsFault),
     /// <p>No automated backup for this DB cluster was found.</p>
@@ -175,6 +181,8 @@ pub enum Error {
     InvalidBlueGreenDeploymentStateFault(crate::types::error::InvalidBlueGreenDeploymentStateFault),
     /// <p>You can't delete the CEV.</p>
     InvalidCustomDbEngineVersionStateFault(crate::types::error::InvalidCustomDbEngineVersionStateFault),
+    /// <p>The DB capacity reservation isn't in a valid state.</p>
+    InvalidDbCapacityReservationStateFault(crate::types::error::InvalidDbCapacityReservationStateFault),
     /// <p>The automated backup is in an invalid state. For example, this automated backup is associated with an active cluster.</p>
     InvalidDbClusterAutomatedBackupStateFault(crate::types::error::InvalidDbClusterAutomatedBackupStateFault),
     /// <p><code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
@@ -321,6 +329,9 @@ impl ::std::fmt::Display for Error {
             Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.fmt(f),
             Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.fmt(f),
+            Error::DbCapacityReservationAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::DbCapacityReservationNotFoundFault(inner) => inner.fmt(f),
+            Error::DbCapacityReservationUnsupportedFault(inner) => inner.fmt(f),
             Error::DbClusterAlreadyExistsFault(inner) => inner.fmt(f),
             Error::DbClusterAutomatedBackupNotFoundFault(inner) => inner.fmt(f),
             Error::DbClusterAutomatedBackupQuotaExceededFault(inner) => inner.fmt(f),
@@ -394,6 +405,7 @@ impl ::std::fmt::Display for Error {
             Error::IntegrationQuotaExceededFault(inner) => inner.fmt(f),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.fmt(f),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.fmt(f),
+            Error::InvalidDbCapacityReservationStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterCapacityFault(inner) => inner.fmt(f),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.fmt(f),
@@ -488,6 +500,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.meta(),
             Self::CustomDbEngineVersionNotFoundFault(inner) => inner.meta(),
             Self::CustomDbEngineVersionQuotaExceededFault(inner) => inner.meta(),
+            Self::DbCapacityReservationAlreadyExistsFault(inner) => inner.meta(),
+            Self::DbCapacityReservationNotFoundFault(inner) => inner.meta(),
+            Self::DbCapacityReservationUnsupportedFault(inner) => inner.meta(),
             Self::DbClusterAlreadyExistsFault(inner) => inner.meta(),
             Self::DbClusterAutomatedBackupNotFoundFault(inner) => inner.meta(),
             Self::DbClusterAutomatedBackupQuotaExceededFault(inner) => inner.meta(),
@@ -561,6 +576,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::IntegrationQuotaExceededFault(inner) => inner.meta(),
             Self::InvalidBlueGreenDeploymentStateFault(inner) => inner.meta(),
             Self::InvalidCustomDbEngineVersionStateFault(inner) => inner.meta(),
+            Self::InvalidDbCapacityReservationStateFault(inner) => inner.meta(),
             Self::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.meta(),
             Self::InvalidDbClusterCapacityFault(inner) => inner.meta(),
             Self::InvalidDbClusterEndpointStateFault(inner) => inner.meta(),
@@ -750,6 +766,9 @@ impl From<crate::operation::add_tags_to_resource::AddTagsToResourceError> for Er
             crate::operation::add_tags_to_resource::AddTagsToResourceError::BlueGreenDeploymentNotFoundFault(inner) => {
                 Error::BlueGreenDeploymentNotFoundFault(inner)
             }
+            crate::operation::add_tags_to_resource::AddTagsToResourceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
             crate::operation::add_tags_to_resource::AddTagsToResourceError::DbProxyEndpointNotFoundFault(inner) => {
@@ -887,6 +906,40 @@ impl From<crate::operation::backtrack_db_cluster::BacktrackDBClusterError> for E
                 Error::InvalidDbClusterStateFault(inner)
             }
             crate::operation::backtrack_db_cluster::BacktrackDBClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError> for Error {
+    fn from(err: crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError) -> Self {
+        match err {
+            crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
+            crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
+            }
+            crate::operation::cancel_db_capacity_reservation::CancelDBCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1193,6 +1246,46 @@ impl From<crate::operation::create_custom_db_engine_version::CreateCustomDBEngin
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError> for Error {
+    fn from(err: crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError) -> Self {
+        match err {
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError::DbCapacityReservationAlreadyExistsFault(inner) => {
+                Error::DbCapacityReservationAlreadyExistsFault(inner)
+            }
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError::DbCapacityReservationUnsupportedFault(inner) => {
+                Error::DbCapacityReservationUnsupportedFault(inner)
+            }
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError::InstanceQuotaExceededFault(inner) => {
+                Error::InstanceQuotaExceededFault(inner)
+            }
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError::InsufficientDbInstanceCapacityFault(inner) => {
+                Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::create_db_capacity_reservation::CreateDBCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_cluster::CreateDBClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1406,6 +1499,9 @@ impl From<crate::operation::create_db_instance::CreateDBInstanceError> for Error
             }
             crate::operation::create_db_instance::CreateDBInstanceError::BackupPolicyNotFoundFault(inner) => Error::BackupPolicyNotFoundFault(inner),
             crate::operation::create_db_instance::CreateDBInstanceError::CertificateNotFoundFault(inner) => Error::CertificateNotFoundFault(inner),
+            crate::operation::create_db_instance::CreateDBInstanceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::create_db_instance::CreateDBInstanceError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::create_db_instance::CreateDBInstanceError::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
@@ -1428,6 +1524,9 @@ impl From<crate::operation::create_db_instance::CreateDBInstanceError> for Error
             }
             crate::operation::create_db_instance::CreateDBInstanceError::InsufficientDbInstanceCapacityFault(inner) => {
                 Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::create_db_instance::CreateDBInstanceError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
             }
             crate::operation::create_db_instance::CreateDBInstanceError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
@@ -1483,6 +1582,9 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::CertificateNotFoundFault(inner) => {
                 Error::CertificateNotFoundFault(inner)
             }
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -1515,6 +1617,9 @@ impl From<crate::operation::create_db_instance_read_replica::CreateDBInstanceRea
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InsufficientDbInstanceCapacityFault(inner) => {
                 Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
             }
             crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
@@ -2719,6 +2824,41 @@ impl From<crate::operation::describe_certificates::DescribeCertificatesError> fo
                 Error::CertificateNotFoundFault(inner)
             }
             crate::operation::describe_certificates::DescribeCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError> for Error {
+    fn from(err: crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError) -> Self {
+        match err {
+            crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
+            crate::operation::describe_db_capacity_reservations::DescribeDBCapacityReservationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4166,6 +4306,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::BlueGreenDeploymentNotFoundFault(inner) => {
                 Error::BlueGreenDeploymentNotFoundFault(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::DbInstanceNotFoundFault(inner) => {
                 Error::DbInstanceNotFoundFault(inner)
@@ -4318,6 +4461,46 @@ impl From<crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngin
                 Error::InvalidCustomDbEngineVersionStateFault(inner)
             }
             crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError> for Error {
+    fn from(err: crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError) -> Self {
+        match err {
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError::InstanceQuotaExceededFault(inner) => {
+                Error::InstanceQuotaExceededFault(inner)
+            }
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError::InsufficientDbInstanceCapacityFault(inner) => {
+                Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
+            }
+            crate::operation::modify_db_capacity_reservation::ModifyDBCapacityReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4529,6 +4712,9 @@ impl From<crate::operation::modify_db_instance::ModifyDBInstanceError> for Error
             }
             crate::operation::modify_db_instance::ModifyDBInstanceError::BackupPolicyNotFoundFault(inner) => Error::BackupPolicyNotFoundFault(inner),
             crate::operation::modify_db_instance::ModifyDBInstanceError::CertificateNotFoundFault(inner) => Error::CertificateNotFoundFault(inner),
+            crate::operation::modify_db_instance::ModifyDBInstanceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::modify_db_instance::ModifyDBInstanceError::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
             }
@@ -4545,6 +4731,9 @@ impl From<crate::operation::modify_db_instance::ModifyDBInstanceError> for Error
             crate::operation::modify_db_instance::ModifyDBInstanceError::DomainNotFoundFault(inner) => Error::DomainNotFoundFault(inner),
             crate::operation::modify_db_instance::ModifyDBInstanceError::InsufficientDbInstanceCapacityFault(inner) => {
                 Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::modify_db_instance::ModifyDBInstanceError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
             }
             crate::operation::modify_db_instance::ModifyDBInstanceError::InvalidDbClusterStateFault(inner) => {
                 Error::InvalidDbClusterStateFault(inner)
@@ -5403,6 +5592,9 @@ impl From<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceErr
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::BlueGreenDeploymentNotFoundFault(inner) => {
                 Error::BlueGreenDeploymentNotFoundFault(inner)
             }
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError::DbClusterNotFoundFault(inner) => {
                 Error::DbClusterNotFoundFault(inner)
             }
@@ -5823,6 +6015,9 @@ impl From<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInsta
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::CertificateNotFoundFault(inner) => {
                 Error::CertificateNotFoundFault(inner)
             }
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbCapacityReservationNotFoundFault(
+                inner,
+            ) => Error::DbCapacityReservationNotFoundFault(inner),
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::DbClusterSnapshotNotFoundFault(inner) => {
                 Error::DbClusterSnapshotNotFoundFault(inner)
             }
@@ -5853,6 +6048,9 @@ impl From<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInsta
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InsufficientDbInstanceCapacityFault(
                 inner,
             ) => Error::InsufficientDbInstanceCapacityFault(inner),
+            crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidDbCapacityReservationStateFault(
+                inner,
+            ) => Error::InvalidDbCapacityReservationStateFault(inner),
             crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError::InvalidDbSnapshotStateFault(inner) => {
                 Error::InvalidDbSnapshotStateFault(inner)
             }
@@ -5922,6 +6120,9 @@ impl From<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::CertificateNotFoundFault(inner) => {
                 Error::CertificateNotFoundFault(inner)
             }
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
             }
@@ -5942,6 +6143,9 @@ impl From<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3
             }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InsufficientDbInstanceCapacityFault(inner) => {
                 Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
             }
             crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error::InvalidS3BucketFault(inner) => {
                 Error::InvalidS3BucketFault(inner)
@@ -6012,6 +6216,9 @@ impl From<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInsta
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::CertificateNotFoundFault(inner) => {
                 Error::CertificateNotFoundFault(inner)
             }
+            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::DbCapacityReservationNotFoundFault(
+                inner,
+            ) => Error::DbCapacityReservationNotFoundFault(inner),
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::DbInstanceAlreadyExistsFault(inner) => {
                 Error::DbInstanceAlreadyExistsFault(inner)
             }
@@ -6042,6 +6249,9 @@ impl From<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInsta
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::InsufficientDbInstanceCapacityFault(
                 inner,
             ) => Error::InsufficientDbInstanceCapacityFault(inner),
+            crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::InvalidDbCapacityReservationStateFault(
+                inner,
+            ) => Error::InvalidDbCapacityReservationStateFault(inner),
             crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTimeError::InvalidDbInstanceStateFault(inner) => {
                 Error::InvalidDbInstanceStateFault(inner)
             }
@@ -6206,6 +6416,9 @@ impl From<crate::operation::start_db_instance::StartDBInstanceError> for Error {
     fn from(err: crate::operation::start_db_instance::StartDBInstanceError) -> Self {
         match err {
             crate::operation::start_db_instance::StartDBInstanceError::AuthorizationNotFoundFault(inner) => Error::AuthorizationNotFoundFault(inner),
+            crate::operation::start_db_instance::StartDBInstanceError::DbCapacityReservationNotFoundFault(inner) => {
+                Error::DbCapacityReservationNotFoundFault(inner)
+            }
             crate::operation::start_db_instance::StartDBInstanceError::DbClusterNotFoundFault(inner) => Error::DbClusterNotFoundFault(inner),
             crate::operation::start_db_instance::StartDBInstanceError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
             crate::operation::start_db_instance::StartDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs(inner) => {
@@ -6214,6 +6427,9 @@ impl From<crate::operation::start_db_instance::StartDBInstanceError> for Error {
             crate::operation::start_db_instance::StartDBInstanceError::DbSubnetGroupNotFoundFault(inner) => Error::DbSubnetGroupNotFoundFault(inner),
             crate::operation::start_db_instance::StartDBInstanceError::InsufficientDbInstanceCapacityFault(inner) => {
                 Error::InsufficientDbInstanceCapacityFault(inner)
+            }
+            crate::operation::start_db_instance::StartDBInstanceError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
             }
             crate::operation::start_db_instance::StartDBInstanceError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::start_db_instance::StartDBInstanceError::InvalidDbInstanceStateFault(inner) => {
@@ -6386,6 +6602,9 @@ impl From<crate::operation::stop_db_instance::StopDBInstanceError> for Error {
             crate::operation::stop_db_instance::StopDBInstanceError::DbSnapshotAlreadyExistsFault(inner) => {
                 Error::DbSnapshotAlreadyExistsFault(inner)
             }
+            crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbCapacityReservationStateFault(inner) => {
+                Error::InvalidDbCapacityReservationStateFault(inner)
+            }
             crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbClusterStateFault(inner) => Error::InvalidDbClusterStateFault(inner),
             crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbInstanceStateFault(inner) => Error::InvalidDbInstanceStateFault(inner),
             crate::operation::stop_db_instance::StopDBInstanceError::SnapshotQuotaExceededFault(inner) => Error::SnapshotQuotaExceededFault(inner),
@@ -6554,6 +6773,9 @@ impl ::std::error::Error for Error {
             Error::CustomDbEngineVersionAlreadyExistsFault(inner) => inner.source(),
             Error::CustomDbEngineVersionNotFoundFault(inner) => inner.source(),
             Error::CustomDbEngineVersionQuotaExceededFault(inner) => inner.source(),
+            Error::DbCapacityReservationAlreadyExistsFault(inner) => inner.source(),
+            Error::DbCapacityReservationNotFoundFault(inner) => inner.source(),
+            Error::DbCapacityReservationUnsupportedFault(inner) => inner.source(),
             Error::DbClusterAlreadyExistsFault(inner) => inner.source(),
             Error::DbClusterAutomatedBackupNotFoundFault(inner) => inner.source(),
             Error::DbClusterAutomatedBackupQuotaExceededFault(inner) => inner.source(),
@@ -6627,6 +6849,7 @@ impl ::std::error::Error for Error {
             Error::IntegrationQuotaExceededFault(inner) => inner.source(),
             Error::InvalidBlueGreenDeploymentStateFault(inner) => inner.source(),
             Error::InvalidCustomDbEngineVersionStateFault(inner) => inner.source(),
+            Error::InvalidDbCapacityReservationStateFault(inner) => inner.source(),
             Error::InvalidDbClusterAutomatedBackupStateFault(inner) => inner.source(),
             Error::InvalidDbClusterCapacityFault(inner) => inner.source(),
             Error::InvalidDbClusterEndpointStateFault(inner) => inner.source(),
@@ -6707,6 +6930,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CustomDbEngineVersionAlreadyExistsFault(e) => e.request_id(),
             Self::CustomDbEngineVersionNotFoundFault(e) => e.request_id(),
             Self::CustomDbEngineVersionQuotaExceededFault(e) => e.request_id(),
+            Self::DbCapacityReservationAlreadyExistsFault(e) => e.request_id(),
+            Self::DbCapacityReservationNotFoundFault(e) => e.request_id(),
+            Self::DbCapacityReservationUnsupportedFault(e) => e.request_id(),
             Self::DbClusterAlreadyExistsFault(e) => e.request_id(),
             Self::DbClusterAutomatedBackupNotFoundFault(e) => e.request_id(),
             Self::DbClusterAutomatedBackupQuotaExceededFault(e) => e.request_id(),
@@ -6780,6 +7006,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::IntegrationQuotaExceededFault(e) => e.request_id(),
             Self::InvalidBlueGreenDeploymentStateFault(e) => e.request_id(),
             Self::InvalidCustomDbEngineVersionStateFault(e) => e.request_id(),
+            Self::InvalidDbCapacityReservationStateFault(e) => e.request_id(),
             Self::InvalidDbClusterAutomatedBackupStateFault(e) => e.request_id(),
             Self::InvalidDbClusterCapacityFault(e) => e.request_id(),
             Self::InvalidDbClusterEndpointStateFault(e) => e.request_id(),

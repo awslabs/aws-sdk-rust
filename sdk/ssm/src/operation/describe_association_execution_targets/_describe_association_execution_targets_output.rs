@@ -21,6 +21,136 @@ impl DescribeAssociationExecutionTargetsOutput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_ASSOCIATION_EXECUTION_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#AssociationExecutionTargetsList$member",
+            "com.amazonaws.ssm",
+            "AssociationExecutionTargetsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    )
+    .with_xml_name("AssociationExecutionTarget");
+static DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_ASSOCIATION_EXECUTION_TARGETS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeAssociationExecutionTargetsOutput$AssociationExecutionTargets",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeAssociationExecutionTargetsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AssociationExecutionTargets",
+        0,
+    )
+    .with_list_member(&DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_ASSOCIATION_EXECUTION_TARGETS_MEMBER);
+static DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DescribeAssociationExecutionTargetsOutput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "DescribeAssociationExecutionTargetsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DescribeAssociationExecutionTargetsOutput",
+        "com.amazonaws.ssm.synthetic",
+        "DescribeAssociationExecutionTargetsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_ASSOCIATION_EXECUTION_TARGETS,
+        &DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("DescribeAssociationExecutionTargetsResult");
+impl DescribeAssociationExecutionTargetsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAssociationExecutionTargetsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_execution_targets {
+            ser.write_list(
+                &DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_ASSOCIATION_EXECUTION_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AssociationExecutionTarget::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_association_execution_targets::builders::DescribeAssociationExecutionTargetsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEASSOCIATIONEXECUTIONTARGETSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_execution_targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AssociationExecutionTarget::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAssociationExecutionTargetsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAssociationExecutionTargetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

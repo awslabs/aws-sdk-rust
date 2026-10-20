@@ -315,6 +315,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveTagsFro
 pub enum RemoveTagsFromResourceError {
     /// <p><code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.</p>
     BlueGreenDeploymentNotFoundFault(crate::types::error::BlueGreenDeploymentNotFoundFault),
+    /// <p><code>DBCapacityReservationIdentifier</code> doesn't refer to an existing DB capacity reservation.</p>
+    DbCapacityReservationNotFoundFault(crate::types::error::DbCapacityReservationNotFoundFault),
     /// <p><code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.</p>
     DbClusterNotFoundFault(crate::types::error::DbClusterNotFoundFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
@@ -375,6 +377,7 @@ impl RemoveTagsFromResourceError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BlueGreenDeploymentNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbCapacityReservationNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbProxyEndpointNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -394,6 +397,10 @@ impl RemoveTagsFromResourceError {
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::BlueGreenDeploymentNotFoundFault`.
     pub fn is_blue_green_deployment_not_found_fault(&self) -> bool {
         matches!(self, Self::BlueGreenDeploymentNotFoundFault(_))
+    }
+    /// Returns `true` if the error kind is `RemoveTagsFromResourceError::DbCapacityReservationNotFoundFault`.
+    pub fn is_db_capacity_reservation_not_found_fault(&self) -> bool {
+        matches!(self, Self::DbCapacityReservationNotFoundFault(_))
     }
     /// Returns `true` if the error kind is `RemoveTagsFromResourceError::DbClusterNotFoundFault`.
     pub fn is_db_cluster_not_found_fault(&self) -> bool {
@@ -452,6 +459,7 @@ impl ::std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbProxyEndpointNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -473,6 +481,7 @@ impl ::std::fmt::Display for RemoveTagsFromResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DbCapacityReservationNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbProxyEndpointNotFoundFault(_inner) => _inner.fmt(f),
@@ -508,6 +517,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveTagsFro
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::BlueGreenDeploymentNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbCapacityReservationNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbProxyEndpointNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

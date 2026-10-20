@@ -591,6 +591,8 @@ pub(crate) mod shape_configured_table_summary;
 
 pub(crate) mod shape_consolidated_policy;
 
+pub(crate) mod shape_databricks_table_reference;
+
 pub(crate) mod shape_dependency_list;
 
 pub(crate) mod shape_differential_privacy_parameters;
@@ -743,6 +745,8 @@ pub(crate) mod shape_consolidated_policy_v1;
 
 pub(crate) mod shape_custom_ml_member_abilities;
 
+pub(crate) mod shape_databricks_connection_type;
+
 pub(crate) mod shape_differential_privacy_preview_aggregation_list;
 
 pub(crate) mod shape_differential_privacy_sensitivity_parameters_list;
@@ -840,6 +844,8 @@ pub(crate) mod shape_consolidated_policy_aggregation;
 pub(crate) mod shape_consolidated_policy_custom;
 
 pub(crate) mod shape_consolidated_policy_list;
+
+pub(crate) mod shape_databricks_delta_sharing_connection;
 
 pub(crate) mod shape_differential_privacy_configuration;
 

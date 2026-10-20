@@ -43,6 +43,152 @@ impl SeveritySummary {
         self.unspecified_count
     }
 }
+static SEVERITYSUMMARY_MEMBER_CRITICAL_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SeveritySummary$CriticalCount", "com.amazonaws.ssm", "SeveritySummary"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CriticalCount",
+    0,
+);
+static SEVERITYSUMMARY_MEMBER_HIGH_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SeveritySummary$HighCount", "com.amazonaws.ssm", "SeveritySummary"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HighCount",
+    1,
+);
+static SEVERITYSUMMARY_MEMBER_MEDIUM_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SeveritySummary$MediumCount", "com.amazonaws.ssm", "SeveritySummary"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MediumCount",
+    2,
+);
+static SEVERITYSUMMARY_MEMBER_LOW_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SeveritySummary$LowCount", "com.amazonaws.ssm", "SeveritySummary"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "LowCount",
+    3,
+);
+static SEVERITYSUMMARY_MEMBER_INFORMATIONAL_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SeveritySummary$InformationalCount",
+        "com.amazonaws.ssm",
+        "SeveritySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InformationalCount",
+    4,
+);
+static SEVERITYSUMMARY_MEMBER_UNSPECIFIED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SeveritySummary$UnspecifiedCount",
+        "com.amazonaws.ssm",
+        "SeveritySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UnspecifiedCount",
+    5,
+);
+static SEVERITYSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SeveritySummary", "com.amazonaws.ssm", "SeveritySummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEVERITYSUMMARY_MEMBER_CRITICAL_COUNT,
+        &SEVERITYSUMMARY_MEMBER_HIGH_COUNT,
+        &SEVERITYSUMMARY_MEMBER_MEDIUM_COUNT,
+        &SEVERITYSUMMARY_MEMBER_LOW_COUNT,
+        &SEVERITYSUMMARY_MEMBER_INFORMATIONAL_COUNT,
+        &SEVERITYSUMMARY_MEMBER_UNSPECIFIED_COUNT,
+    ],
+);
+impl SeveritySummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEVERITYSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SeveritySummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.critical_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_CRITICAL_COUNT, *val)?;
+        }
+        {
+            let val = &self.high_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_HIGH_COUNT, *val)?;
+        }
+        {
+            let val = &self.medium_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_MEDIUM_COUNT, *val)?;
+        }
+        {
+            let val = &self.low_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_LOW_COUNT, *val)?;
+        }
+        {
+            let val = &self.informational_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_INFORMATIONAL_COUNT, *val)?;
+        }
+        {
+            let val = &self.unspecified_count;
+            ser.write_integer(&SEVERITYSUMMARY_MEMBER_UNSPECIFIED_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SeveritySummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEVERITYSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.critical_count = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.high_count = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.medium_count = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.low_count = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.informational_count = Some(deser.read_integer(member)?);
+                }
+                Some(5) => {
+                    self.unspecified_count = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SeveritySummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SeveritySummary {
     /// Creates a new builder-style object to manufacture [`SeveritySummary`](crate::types::SeveritySummary).
     pub fn builder() -> crate::types::builders::SeveritySummaryBuilder {

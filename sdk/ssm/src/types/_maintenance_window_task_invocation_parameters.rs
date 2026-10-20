@@ -31,6 +31,149 @@ impl MaintenanceWindowTaskInvocationParameters {
         self.lambda.as_ref()
     }
 }
+static MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_RUN_COMMAND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowTaskInvocationParameters$RunCommand",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowTaskInvocationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RunCommand",
+    0,
+);
+static MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_AUTOMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowTaskInvocationParameters$Automation",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowTaskInvocationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Automation",
+    1,
+);
+static MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_STEP_FUNCTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#MaintenanceWindowTaskInvocationParameters$StepFunctions",
+            "com.amazonaws.ssm",
+            "MaintenanceWindowTaskInvocationParameters",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "StepFunctions",
+        2,
+    );
+static MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_LAMBDA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowTaskInvocationParameters$Lambda",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowTaskInvocationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Lambda",
+    3,
+);
+static MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowTaskInvocationParameters",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowTaskInvocationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_RUN_COMMAND,
+        &MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_AUTOMATION,
+        &MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_STEP_FUNCTIONS,
+        &MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_LAMBDA,
+    ],
+);
+impl MaintenanceWindowTaskInvocationParameters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MaintenanceWindowTaskInvocationParameters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.run_command {
+            ser.write_struct(&MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_RUN_COMMAND, val)?;
+        }
+        if let Some(ref val) = self.automation {
+            ser.write_struct(&MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_AUTOMATION, val)?;
+        }
+        if let Some(ref val) = self.step_functions {
+            ser.write_struct(&MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_STEP_FUNCTIONS, val)?;
+        }
+        if let Some(ref val) = self.lambda {
+            ser.write_struct(&MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_MEMBER_LAMBDA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MaintenanceWindowTaskInvocationParametersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MAINTENANCEWINDOWTASKINVOCATIONPARAMETERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.run_command = Some(crate::types::MaintenanceWindowRunCommandParameters::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automation = Some(crate::types::MaintenanceWindowAutomationParameters::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.step_functions = Some(crate::types::MaintenanceWindowStepFunctionsParameters::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda = Some(crate::types::MaintenanceWindowLambdaParameters::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MaintenanceWindowTaskInvocationParameters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MaintenanceWindowTaskInvocationParameters {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowTaskInvocationParameters`](crate::types::MaintenanceWindowTaskInvocationParameters).
     pub fn builder() -> crate::types::builders::MaintenanceWindowTaskInvocationParametersBuilder {

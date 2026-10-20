@@ -30,6 +30,184 @@ impl OpsItemLimitExceededException {
         self.limit_type.as_deref()
     }
 }
+static OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemParameterNamesList$member",
+        "com.amazonaws.ssm",
+        "OpsItemParameterNamesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemLimitExceededException$ResourceTypes",
+        "com.amazonaws.ssm",
+        "OpsItemLimitExceededException",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceTypes",
+    0,
+)
+.with_list_member(&OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_RESOURCE_TYPES_MEMBER);
+static OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemLimitExceededException$Limit",
+        "com.amazonaws.ssm",
+        "OpsItemLimitExceededException",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    1,
+);
+static OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemLimitExceededException$LimitType",
+        "com.amazonaws.ssm",
+        "OpsItemLimitExceededException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LimitType",
+    2,
+);
+static OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemLimitExceededException$Message",
+        "com.amazonaws.ssm",
+        "OpsItemLimitExceededException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    3,
+);
+static OPSITEMLIMITEXCEEDEDEXCEPTION_TRAITS: std::sync::LazyLock<::aws_smithy_schema::TraitMap> = std::sync::LazyLock::new(|| {
+    let mut map = ::aws_smithy_schema::TraitMap::new();
+    map.insert(Box::new(::aws_smithy_schema::DocumentTrait::new(
+        ::aws_smithy_schema::ShapeId::from_parts("aws.protocols#awsQueryError", "aws.protocols", "awsQueryError"),
+        {
+            let mut obj = ::std::collections::HashMap::new();
+            obj.insert(
+                "code".to_string(),
+                ::aws_smithy_types::Document::String("OpsItemLimitExceededException".to_string()),
+            );
+            obj.insert(
+                "httpResponseCode".to_string(),
+                ::aws_smithy_types::Document::Number(::aws_smithy_types::Number::PosInt(400u64)),
+            );
+            ::aws_smithy_types::Document::Object(obj)
+        },
+    )));
+    map
+});
+static OPSITEMLIMITEXCEEDEDEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemLimitExceededException",
+        "com.amazonaws.ssm",
+        "OpsItemLimitExceededException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_RESOURCE_TYPES,
+        &OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT,
+        &OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT_TYPE,
+        &OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_MESSAGE,
+    ],
+)
+.with_traits(&OPSITEMLIMITEXCEEDEDEXCEPTION_TRAITS);
+impl OpsItemLimitExceededException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSITEMLIMITEXCEEDEDEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsItemLimitExceededException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_types {
+            ser.write_list(
+                &OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.limit;
+            ser.write_integer(&OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.limit_type {
+            ser.write_string(&OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_LIMIT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&OPSITEMLIMITEXCEEDEDEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::OpsItemLimitExceededExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPSITEMLIMITEXCEEDEDEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.limit = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpsItemLimitExceededException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OpsItemLimitExceededException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

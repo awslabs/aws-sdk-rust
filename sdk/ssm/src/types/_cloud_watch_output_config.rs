@@ -21,6 +21,99 @@ impl CloudWatchOutputConfig {
         self.cloud_watch_output_enabled
     }
 }
+static CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudWatchOutputConfig$CloudWatchLogGroupName",
+        "com.amazonaws.ssm",
+        "CloudWatchOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudWatchLogGroupName",
+    0,
+);
+static CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_OUTPUT_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudWatchOutputConfig$CloudWatchOutputEnabled",
+        "com.amazonaws.ssm",
+        "CloudWatchOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CloudWatchOutputEnabled",
+    1,
+);
+static CLOUDWATCHOUTPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudWatchOutputConfig", "com.amazonaws.ssm", "CloudWatchOutputConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME,
+        &CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_OUTPUT_ENABLED,
+    ],
+);
+impl CloudWatchOutputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLOUDWATCHOUTPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CloudWatchOutputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cloud_watch_log_group_name {
+            ser.write_string(&CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_LOG_GROUP_NAME, val)?;
+        }
+        {
+            let val = &self.cloud_watch_output_enabled;
+            ser.write_boolean(&CLOUDWATCHOUTPUTCONFIG_MEMBER_CLOUD_WATCH_OUTPUT_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CloudWatchOutputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLOUDWATCHOUTPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_log_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.cloud_watch_output_enabled = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CloudWatchOutputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CloudWatchOutputConfig {
     /// Creates a new builder-style object to manufacture [`CloudWatchOutputConfig`](crate::types::CloudWatchOutputConfig).
     pub fn builder() -> crate::types::builders::CloudWatchOutputConfigBuilder {

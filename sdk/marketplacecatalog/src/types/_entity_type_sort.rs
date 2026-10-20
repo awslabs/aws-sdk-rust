@@ -10,6 +10,8 @@ pub enum EntityTypeSort {
     ContainerProductSort(crate::types::ContainerProductSort),
     /// <p>A sort for data products.</p>
     DataProductSort(crate::types::DataProductSort),
+    /// <p>A sort for express private offer configurations.</p>
+    ExpressPrivateOfferConfigurationSort(crate::types::ExpressPrivateOfferConfigurationSort),
     /// <p>The sort options for machine learning products.</p>
     MachineLearningProductSort(crate::types::MachineLearningProductSort),
     /// <p>A sort for offer sets.</p>
@@ -69,6 +71,19 @@ impl EntityTypeSort {
     /// Returns true if this is a [`DataProductSort`](crate::types::EntityTypeSort::DataProductSort).
     pub fn is_data_product_sort(&self) -> bool {
         self.as_data_product_sort().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ExpressPrivateOfferConfigurationSort`](crate::types::EntityTypeSort::ExpressPrivateOfferConfigurationSort), extracting the inner [`ExpressPrivateOfferConfigurationSort`](crate::types::ExpressPrivateOfferConfigurationSort).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_express_private_offer_configuration_sort(&self) -> ::std::result::Result<&crate::types::ExpressPrivateOfferConfigurationSort, &Self> {
+        if let EntityTypeSort::ExpressPrivateOfferConfigurationSort(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExpressPrivateOfferConfigurationSort`](crate::types::EntityTypeSort::ExpressPrivateOfferConfigurationSort).
+    pub fn is_express_private_offer_configuration_sort(&self) -> bool {
+        self.as_express_private_offer_configuration_sort().is_ok()
     }
     /// Tries to convert the enum instance into [`MachineLearningProductSort`](crate::types::EntityTypeSort::MachineLearningProductSort), extracting the inner [`MachineLearningProductSort`](crate::types::MachineLearningProductSort).
     /// Returns `Err(&Self)` if it can't be converted.

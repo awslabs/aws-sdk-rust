@@ -61,6 +61,253 @@ impl AssociationExecutionTarget {
         self.output_source.as_ref()
     }
 }
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$AssociationId",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$AssociationVersion",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationVersion",
+    1,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$ExecutionId",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionId",
+    2,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$ResourceId",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    3,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$ResourceType",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    4,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$Status",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_DETAILED_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$DetailedStatus",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DetailedStatus",
+    6,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_LAST_EXECUTION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$LastExecutionDate",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastExecutionDate",
+    7,
+);
+static ASSOCIATIONEXECUTIONTARGET_MEMBER_OUTPUT_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget$OutputSource",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputSource",
+    8,
+);
+static ASSOCIATIONEXECUTIONTARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AssociationExecutionTarget",
+        "com.amazonaws.ssm",
+        "AssociationExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_ID,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_VERSION,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_EXECUTION_ID,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_ID,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_TYPE,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_STATUS,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_DETAILED_STATUS,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_LAST_EXECUTION_DATE,
+        &ASSOCIATIONEXECUTIONTARGET_MEMBER_OUTPUT_SOURCE,
+    ],
+);
+impl AssociationExecutionTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATIONEXECUTIONTARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociationExecutionTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.association_version {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_ASSOCIATION_VERSION, val)?;
+        }
+        if let Some(ref val) = self.execution_id {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.detailed_status {
+            ser.write_string(&ASSOCIATIONEXECUTIONTARGET_MEMBER_DETAILED_STATUS, val)?;
+        }
+        if let Some(ref val) = self.last_execution_date {
+            ser.write_timestamp(&ASSOCIATIONEXECUTIONTARGET_MEMBER_LAST_EXECUTION_DATE, val)?;
+        }
+        if let Some(ref val) = self.output_source {
+            ser.write_struct(&ASSOCIATIONEXECUTIONTARGET_MEMBER_OUTPUT_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AssociationExecutionTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATIONEXECUTIONTARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.detailed_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_execution_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_source = Some(crate::types::OutputSource::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociationExecutionTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AssociationExecutionTarget {
     /// Creates a new builder-style object to manufacture [`AssociationExecutionTarget`](crate::types::AssociationExecutionTarget).
     pub fn builder() -> crate::types::builders::AssociationExecutionTargetBuilder {

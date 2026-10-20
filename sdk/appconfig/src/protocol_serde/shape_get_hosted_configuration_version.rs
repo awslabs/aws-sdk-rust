@@ -93,13 +93,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Application-Id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Application-Id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -116,13 +119,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Configuration-Profile-Id")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Configuration-Profile-Id")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -142,13 +148,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Content-Type")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Content-Type")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -165,13 +174,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Description")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Description")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -188,13 +200,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("KmsKeyArn")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("KmsKeyArn")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -211,13 +226,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("VersionLabel")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("VersionLabel")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(
@@ -234,13 +252,16 @@ pub fn de_get_hosted_configuration_version_http_response(
                 ::std::result::Result::Ok(value) => value,
                 ::std::result::Result::Err(err) => {
                     let _ = &err;
-                    let has_unreadable_value = _response_headers
-                        .get_all_bytes("Version-Number")
-                        .any(|value| std::str::from_utf8(value).is_err());
-                    if has_unreadable_value
-                        && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                            == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                    {
+                    // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                    let skip = {
+                        let has_unreadable_value = _response_headers
+                            .get_all_bytes("Version-Number")
+                            .any(|value| std::str::from_utf8(value).is_err());
+                        has_unreadable_value
+                            && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                    };
+                    if skip {
                         ::std::option::Option::None
                     } else {
                         return ::std::result::Result::Err(

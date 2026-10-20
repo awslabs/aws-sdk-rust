@@ -48,6 +48,8 @@ pub struct ServiceRevision {
     pub ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
     /// <p>The effective runtime overrides that Amazon ECS applies to this service revision. This value is present only when Amazon ECS detects a difference between the task definition and the actual runtime configuration.</p>
     pub overrides: ::std::option::Option<crate::types::ServiceRevisionOverrides>,
+    /// <p>The gateway connectors that are associated with the service revision.</p>
+    pub gateway_connectors: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>,
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
@@ -149,6 +151,12 @@ impl ServiceRevision {
     pub fn overrides(&self) -> ::std::option::Option<&crate::types::ServiceRevisionOverrides> {
         self.overrides.as_ref()
     }
+    /// <p>The gateway connectors that are associated with the service revision.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_connectors.is_none()`.
+    pub fn gateway_connectors(&self) -> &[crate::types::GatewayConnector] {
+        self.gateway_connectors.as_deref().unwrap_or_default()
+    }
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring.as_ref()
@@ -186,6 +194,7 @@ pub struct ServiceRevisionBuilder {
     pub(crate) resolved_configuration: ::std::option::Option<crate::types::ResolvedConfiguration>,
     pub(crate) ecs_managed_resources: ::std::option::Option<crate::types::EcsManagedResources>,
     pub(crate) overrides: ::std::option::Option<crate::types::ServiceRevisionOverrides>,
+    pub(crate) gateway_connectors: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>,
     pub(crate) monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ServiceRevisionBuilder {
@@ -525,6 +534,26 @@ impl ServiceRevisionBuilder {
     pub fn get_overrides(&self) -> &::std::option::Option<crate::types::ServiceRevisionOverrides> {
         &self.overrides
     }
+    /// Appends an item to `gateway_connectors`.
+    ///
+    /// To override the contents of this collection use [`set_gateway_connectors`](Self::set_gateway_connectors).
+    ///
+    /// <p>The gateway connectors that are associated with the service revision.</p>
+    pub fn gateway_connectors(mut self, input: crate::types::GatewayConnector) -> Self {
+        let mut v = self.gateway_connectors.unwrap_or_default();
+        v.push(input);
+        self.gateway_connectors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The gateway connectors that are associated with the service revision.</p>
+    pub fn set_gateway_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>) -> Self {
+        self.gateway_connectors = input;
+        self
+    }
+    /// <p>The gateway connectors that are associated with the service revision.</p>
+    pub fn get_gateway_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>> {
+        &self.gateway_connectors
+    }
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -563,6 +592,7 @@ impl ServiceRevisionBuilder {
             resolved_configuration: self.resolved_configuration,
             ecs_managed_resources: self.ecs_managed_resources,
             overrides: self.overrides,
+            gateway_connectors: self.gateway_connectors,
             monitoring: self.monitoring,
         }
     }

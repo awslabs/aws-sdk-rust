@@ -158,6 +158,7 @@ pub struct TableDescription {
     /// <p>Represents the version of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global tables</a> in use, if the table is replicated across Amazon Web Services Regions.</p>
     pub global_table_version: ::std::option::Option<::std::string::String>,
     /// <p>Represents replicas of the table.</p>
+    /// <p>After a successful disassociation, this list is absent or empty. To confirm disassociation, also verify that <code>TableStatus</code> is <code>ACTIVE</code>.</p>
     pub replicas: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>,
     /// <p>The witness Region and its current status in the MRSC global table. Only one witness Region can be configured per MRSC global table.</p>
     pub global_table_witnesses: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessDescription>>,
@@ -181,6 +182,8 @@ pub struct TableDescription {
     pub table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local global table replica. Protection is enabled by default.</p>
+    pub disassociation_protection_enabled: ::std::option::Option<bool>,
     /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Describes the warm throughput value of the base table.</p>
@@ -418,6 +421,7 @@ impl TableDescription {
         self.global_table_version.as_deref()
     }
     /// <p>Represents replicas of the table.</p>
+    /// <p>After a successful disassociation, this list is absent or empty. To confirm disassociation, also verify that <code>TableStatus</code> is <code>ACTIVE</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replicas.is_none()`.
     pub fn replicas(&self) -> &[crate::types::ReplicaDescription] {
@@ -460,6 +464,10 @@ impl TableDescription {
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local global table replica. Protection is enabled by default.</p>
+    pub fn disassociation_protection_enabled(&self) -> ::std::option::Option<bool> {
+        self.disassociation_protection_enabled
     }
     /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn on_demand_throughput(&self) -> ::std::option::Option<&crate::types::OnDemandThroughput> {
@@ -547,6 +555,7 @@ pub struct TableDescriptionBuilder {
     pub(crate) archival_summary: ::std::option::Option<crate::types::ArchivalSummary>,
     pub(crate) table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) disassociation_protection_enabled: ::std::option::Option<bool>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::TableWarmThroughputDescription>,
     pub(crate) multi_region_consistency: ::std::option::Option<crate::types::MultiRegionConsistency>,
@@ -1183,6 +1192,7 @@ impl TableDescriptionBuilder {
     /// To override the contents of this collection use [`set_replicas`](Self::set_replicas).
     ///
     /// <p>Represents replicas of the table.</p>
+    /// <p>After a successful disassociation, this list is absent or empty. To confirm disassociation, also verify that <code>TableStatus</code> is <code>ACTIVE</code>.</p>
     pub fn replicas(mut self, input: crate::types::ReplicaDescription) -> Self {
         let mut v = self.replicas.unwrap_or_default();
         v.push(input);
@@ -1190,11 +1200,13 @@ impl TableDescriptionBuilder {
         self
     }
     /// <p>Represents replicas of the table.</p>
+    /// <p>After a successful disassociation, this list is absent or empty. To confirm disassociation, also verify that <code>TableStatus</code> is <code>ACTIVE</code>.</p>
     pub fn set_replicas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>>) -> Self {
         self.replicas = input;
         self
     }
     /// <p>Represents replicas of the table.</p>
+    /// <p>After a successful disassociation, this list is absent or empty. To confirm disassociation, also verify that <code>TableStatus</code> is <code>ACTIVE</code>.</p>
     pub fn get_replicas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicaDescription>> {
         &self.replicas
     }
@@ -1328,6 +1340,20 @@ impl TableDescriptionBuilder {
     /// <p>Indicates whether deletion protection is enabled (true) or disabled (false) on the table.</p>
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local global table replica. Protection is enabled by default.</p>
+    pub fn disassociation_protection_enabled(mut self, input: bool) -> Self {
+        self.disassociation_protection_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local global table replica. Protection is enabled by default.</p>
+    pub fn set_disassociation_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disassociation_protection_enabled = input;
+        self
+    }
+    /// <p>Specifies whether disassociation protection is enabled (<code>true</code>) or disabled (<code>false</code>) for the local global table replica. Protection is enabled by default.</p>
+    pub fn get_disassociation_protection_enabled(&self) -> &::std::option::Option<bool> {
+        &self.disassociation_protection_enabled
     }
     /// <p>The maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
     pub fn on_demand_throughput(mut self, input: crate::types::OnDemandThroughput) -> Self {
@@ -1512,6 +1538,7 @@ impl TableDescriptionBuilder {
             archival_summary: self.archival_summary,
             table_class_summary: self.table_class_summary,
             deletion_protection_enabled: self.deletion_protection_enabled,
+            disassociation_protection_enabled: self.disassociation_protection_enabled,
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
             multi_region_consistency: self.multi_region_consistency,

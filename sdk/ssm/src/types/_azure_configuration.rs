@@ -39,6 +39,153 @@ impl AzureConfiguration {
         self.targets.as_ref()
     }
 }
+static AZURECONFIGURATION_MEMBER_TENANT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AzureConfiguration$TenantId", "com.amazonaws.ssm", "AzureConfiguration"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TenantId",
+    0,
+);
+static AZURECONFIGURATION_MEMBER_TENANT_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AzureConfiguration$TenantDisplayName",
+        "com.amazonaws.ssm",
+        "AzureConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TenantDisplayName",
+    1,
+);
+static AZURECONFIGURATION_MEMBER_APPLICATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AzureConfiguration$ApplicationId",
+        "com.amazonaws.ssm",
+        "AzureConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApplicationId",
+    2,
+);
+static AZURECONFIGURATION_MEMBER_APPLICATION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AzureConfiguration$ApplicationDisplayName",
+        "com.amazonaws.ssm",
+        "AzureConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApplicationDisplayName",
+    3,
+);
+static AZURECONFIGURATION_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AzureConfiguration$Targets", "com.amazonaws.ssm", "AzureConfiguration"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "Targets",
+    4,
+);
+static AZURECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AzureConfiguration", "com.amazonaws.ssm", "AzureConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AZURECONFIGURATION_MEMBER_TENANT_ID,
+        &AZURECONFIGURATION_MEMBER_TENANT_DISPLAY_NAME,
+        &AZURECONFIGURATION_MEMBER_APPLICATION_ID,
+        &AZURECONFIGURATION_MEMBER_APPLICATION_DISPLAY_NAME,
+        &AZURECONFIGURATION_MEMBER_TARGETS,
+    ],
+);
+impl AzureConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AZURECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AzureConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.tenant_id;
+            ser.write_string(&AZURECONFIGURATION_MEMBER_TENANT_ID, val)?;
+        }
+        if let Some(ref val) = self.tenant_display_name {
+            ser.write_string(&AZURECONFIGURATION_MEMBER_TENANT_DISPLAY_NAME, val)?;
+        }
+        {
+            let val = &self.application_id;
+            ser.write_string(&AZURECONFIGURATION_MEMBER_APPLICATION_ID, val)?;
+        }
+        if let Some(ref val) = self.application_display_name {
+            ser.write_string(&AZURECONFIGURATION_MEMBER_APPLICATION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_struct(&AZURECONFIGURATION_MEMBER_TARGETS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AzureConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AZURECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.tenant_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tenant_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.application_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.targets = Some(crate::types::ConfigurationTargets::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AzureConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tenant_id = builder.tenant_id.or(Some(String::new()));
+        builder.application_id = builder.application_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AzureConfiguration {
     /// Creates a new builder-style object to manufacture [`AzureConfiguration`](crate::types::AzureConfiguration).
     pub fn builder() -> crate::types::builders::AzureConfigurationBuilder {

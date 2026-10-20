@@ -573,8 +573,7 @@ impl Inner {
 
     async fn collect(self) -> Result<AggregatedBytes, crate::body::Error> {
         let mut output = SegmentedBuf::new();
-        let body = self.body;
-        pin_utils::pin_mut!(body);
+        let mut body = std::pin::pin!(self.body);
         while let Some(buf) = body.next().await {
             output.push(buf?);
         }

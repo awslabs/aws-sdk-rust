@@ -45,7 +45,8 @@ pub struct DbClusterSnapshot {
     pub snapshot_type: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
     pub percent_progress: ::std::option::Option<i32>,
-    /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+    /// <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web Services managed key or a customer managed key.</p>
+    /// <p>If the DB cluster snapshot is encrypted with an Amazon Web Services owned key, this value is <code>false</code> and <code>StorageEncryptionType</code> is <code>sse-rds</code>. In that case, the data at rest is still encrypted. To determine how the data at rest is protected, use <code>StorageEncryptionType</code>.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
     /// <ul>
@@ -159,7 +160,8 @@ impl DbClusterSnapshot {
     pub fn percent_progress(&self) -> ::std::option::Option<i32> {
         self.percent_progress
     }
-    /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+    /// <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web Services managed key or a customer managed key.</p>
+    /// <p>If the DB cluster snapshot is encrypted with an Amazon Web Services owned key, this value is <code>false</code> and <code>StorageEncryptionType</code> is <code>sse-rds</code>. In that case, the data at rest is still encrypted. To determine how the data at rest is protected, use <code>StorageEncryptionType</code>.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
@@ -522,17 +524,20 @@ impl DbClusterSnapshotBuilder {
     pub fn get_percent_progress(&self) -> &::std::option::Option<i32> {
         &self.percent_progress
     }
-    /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+    /// <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web Services managed key or a customer managed key.</p>
+    /// <p>If the DB cluster snapshot is encrypted with an Amazon Web Services owned key, this value is <code>false</code> and <code>StorageEncryptionType</code> is <code>sse-rds</code>. In that case, the data at rest is still encrypted. To determine how the data at rest is protected, use <code>StorageEncryptionType</code>.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+    /// <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web Services managed key or a customer managed key.</p>
+    /// <p>If the DB cluster snapshot is encrypted with an Amazon Web Services owned key, this value is <code>false</code> and <code>StorageEncryptionType</code> is <code>sse-rds</code>. In that case, the data at rest is still encrypted. To determine how the data at rest is protected, use <code>StorageEncryptionType</code>.</p>
     pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
-    /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+    /// <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web Services managed key or a customer managed key.</p>
+    /// <p>If the DB cluster snapshot is encrypted with an Amazon Web Services owned key, this value is <code>false</code> and <code>StorageEncryptionType</code> is <code>sse-rds</code>. In that case, the data at rest is still encrypted. To determine how the data at rest is protected, use <code>StorageEncryptionType</code>.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }

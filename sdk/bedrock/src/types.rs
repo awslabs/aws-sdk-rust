@@ -249,9 +249,13 @@ pub use crate::types::_guardrail_topics_tier_config::GuardrailTopicsTierConfig;
 
 pub use crate::types::_guardrail_content_filters_tier_config::GuardrailContentFiltersTierConfig;
 
+pub use crate::types::_guardrail_contextual_grounding_tier_config::GuardrailContextualGroundingTierConfig;
+
 pub use crate::types::_guardrail_topics_tier::GuardrailTopicsTier;
 
 pub use crate::types::_guardrail_content_filters_tier::GuardrailContentFiltersTier;
+
+pub use crate::types::_guardrail_contextual_grounding_tier::GuardrailContextualGroundingTier;
 
 pub use crate::types::_inference_profile_summary::InferenceProfileSummary;
 
@@ -382,6 +386,8 @@ pub use crate::types::_guardrail_pii_entity_config::GuardrailPiiEntityConfig;
 pub use crate::types::_guardrail_regex_config::GuardrailRegexConfig;
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
+
+pub use crate::types::_guardrail_contextual_grounding_tier_name::GuardrailContextualGroundingTierName;
 
 pub use crate::types::_guardrail_topic::GuardrailTopic;
 
@@ -1036,6 +1042,12 @@ mod _guardrail_contextual_grounding_filter_type;
 mod _guardrail_contextual_grounding_policy;
 
 mod _guardrail_contextual_grounding_policy_config;
+
+mod _guardrail_contextual_grounding_tier;
+
+mod _guardrail_contextual_grounding_tier_config;
+
+mod _guardrail_contextual_grounding_tier_name;
 
 mod _guardrail_cross_region_config;
 

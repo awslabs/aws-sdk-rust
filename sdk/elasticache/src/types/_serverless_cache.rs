@@ -44,6 +44,8 @@ pub struct ServerlessCache {
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
     /// <p>The connection type for the serverless cache. Must be either <code>vpc</code> | <code>public</code>. If not specified, defaults to <code>vpc</code>.</p>
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    /// <p>Provides a summary of the migration status for the serverless cache.</p>
+    pub migration: ::std::option::Option<crate::types::MigrationSummary>,
 }
 impl ServerlessCache {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -130,6 +132,10 @@ impl ServerlessCache {
     pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
+    /// <p>Provides a summary of the migration status for the serverless cache.</p>
+    pub fn migration(&self) -> ::std::option::Option<&crate::types::MigrationSummary> {
+        self.migration.as_ref()
+    }
 }
 impl ServerlessCache {
     /// Creates a new builder-style object to manufacture [`ServerlessCache`](crate::types::ServerlessCache).
@@ -162,6 +168,7 @@ pub struct ServerlessCacheBuilder {
     pub(crate) daily_snapshot_time: ::std::option::Option<::std::string::String>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) migration: ::std::option::Option<crate::types::MigrationSummary>,
 }
 impl ServerlessCacheBuilder {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -456,6 +463,20 @@ impl ServerlessCacheBuilder {
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         &self.connection_type
     }
+    /// <p>Provides a summary of the migration status for the serverless cache.</p>
+    pub fn migration(mut self, input: crate::types::MigrationSummary) -> Self {
+        self.migration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides a summary of the migration status for the serverless cache.</p>
+    pub fn set_migration(mut self, input: ::std::option::Option<crate::types::MigrationSummary>) -> Self {
+        self.migration = input;
+        self
+    }
+    /// <p>Provides a summary of the migration status for the serverless cache.</p>
+    pub fn get_migration(&self) -> &::std::option::Option<crate::types::MigrationSummary> {
+        &self.migration
+    }
     /// Consumes the builder and constructs a [`ServerlessCache`](crate::types::ServerlessCache).
     pub fn build(self) -> crate::types::ServerlessCache {
         crate::types::ServerlessCache {
@@ -479,6 +500,7 @@ impl ServerlessCacheBuilder {
             daily_snapshot_time: self.daily_snapshot_time,
             network_type: self.network_type,
             connection_type: self.connection_type,
+            migration: self.migration,
         }
     }
 }

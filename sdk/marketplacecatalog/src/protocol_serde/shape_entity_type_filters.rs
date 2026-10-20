@@ -52,6 +52,15 @@ pub fn ser_entity_type_filters(
             crate::protocol_serde::shape_offer_set_filters::ser_offer_set_filters(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::EntityTypeFilters::ExpressPrivateOfferConfigurationFilters(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_4.key("ExpressPrivateOfferConfigurationFilters").start_object();
+            crate::protocol_serde::shape_express_private_offer_configuration_filters::ser_express_private_offer_configuration_filters(
+                &mut object_9,
+                inner,
+            )?;
+            object_9.finish();
+        }
         crate::types::EntityTypeFilters::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeFilters",

@@ -37,6 +37,138 @@ impl ProgressCounters {
         self.timed_out_steps
     }
 }
+static PROGRESSCOUNTERS_MEMBER_TOTAL_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ProgressCounters$TotalSteps", "com.amazonaws.ssm", "ProgressCounters"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalSteps",
+    0,
+);
+static PROGRESSCOUNTERS_MEMBER_SUCCESS_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ProgressCounters$SuccessSteps", "com.amazonaws.ssm", "ProgressCounters"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SuccessSteps",
+    1,
+);
+static PROGRESSCOUNTERS_MEMBER_FAILED_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ProgressCounters$FailedSteps", "com.amazonaws.ssm", "ProgressCounters"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "FailedSteps",
+    2,
+);
+static PROGRESSCOUNTERS_MEMBER_CANCELLED_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ProgressCounters$CancelledSteps",
+        "com.amazonaws.ssm",
+        "ProgressCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CancelledSteps",
+    3,
+);
+static PROGRESSCOUNTERS_MEMBER_TIMED_OUT_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ProgressCounters$TimedOutSteps",
+        "com.amazonaws.ssm",
+        "ProgressCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TimedOutSteps",
+    4,
+);
+static PROGRESSCOUNTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ProgressCounters", "com.amazonaws.ssm", "ProgressCounters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROGRESSCOUNTERS_MEMBER_TOTAL_STEPS,
+        &PROGRESSCOUNTERS_MEMBER_SUCCESS_STEPS,
+        &PROGRESSCOUNTERS_MEMBER_FAILED_STEPS,
+        &PROGRESSCOUNTERS_MEMBER_CANCELLED_STEPS,
+        &PROGRESSCOUNTERS_MEMBER_TIMED_OUT_STEPS,
+    ],
+);
+impl ProgressCounters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROGRESSCOUNTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProgressCounters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.total_steps;
+            ser.write_integer(&PROGRESSCOUNTERS_MEMBER_TOTAL_STEPS, *val)?;
+        }
+        {
+            let val = &self.success_steps;
+            ser.write_integer(&PROGRESSCOUNTERS_MEMBER_SUCCESS_STEPS, *val)?;
+        }
+        {
+            let val = &self.failed_steps;
+            ser.write_integer(&PROGRESSCOUNTERS_MEMBER_FAILED_STEPS, *val)?;
+        }
+        {
+            let val = &self.cancelled_steps;
+            ser.write_integer(&PROGRESSCOUNTERS_MEMBER_CANCELLED_STEPS, *val)?;
+        }
+        {
+            let val = &self.timed_out_steps;
+            ser.write_integer(&PROGRESSCOUNTERS_MEMBER_TIMED_OUT_STEPS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProgressCountersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROGRESSCOUNTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.total_steps = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.success_steps = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.failed_steps = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.cancelled_steps = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.timed_out_steps = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProgressCounters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProgressCounters {
     /// Creates a new builder-style object to manufacture [`ProgressCounters`](crate::types::ProgressCounters).
     pub fn builder() -> crate::types::builders::ProgressCountersBuilder {

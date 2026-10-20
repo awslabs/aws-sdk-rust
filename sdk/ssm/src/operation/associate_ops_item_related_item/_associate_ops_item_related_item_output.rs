@@ -13,6 +13,84 @@ impl AssociateOpsItemRelatedItemOutput {
         self.association_id.as_deref()
     }
 }
+static ASSOCIATEOPSITEMRELATEDITEMOUTPUT_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#AssociateOpsItemRelatedItemOutput$AssociationId",
+        "com.amazonaws.ssm.synthetic",
+        "AssociateOpsItemRelatedItemOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static ASSOCIATEOPSITEMRELATEDITEMOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#AssociateOpsItemRelatedItemOutput",
+        "com.amazonaws.ssm.synthetic",
+        "AssociateOpsItemRelatedItemOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ASSOCIATEOPSITEMRELATEDITEMOUTPUT_MEMBER_ASSOCIATION_ID],
+)
+.with_original_name("AssociateOpsItemRelatedItemResponse");
+impl AssociateOpsItemRelatedItemOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEOPSITEMRELATEDITEMOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateOpsItemRelatedItemOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&ASSOCIATEOPSITEMRELATEDITEMOUTPUT_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEOPSITEMRELATEDITEMOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateOpsItemRelatedItemOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for AssociateOpsItemRelatedItemOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

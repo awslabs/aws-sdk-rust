@@ -120,6 +120,8 @@ pub struct CreateServiceInput {
     pub volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
     /// <p>The VPC Lattice configuration for the service being created.</p>
     pub vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub gateway_connectors: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>,
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
@@ -309,6 +311,12 @@ impl CreateServiceInput {
     pub fn vpc_lattice_configurations(&self) -> &[crate::types::VpcLatticeConfiguration] {
         self.vpc_lattice_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gateway_connectors.is_none()`.
+    pub fn gateway_connectors(&self) -> &[crate::types::GatewayConnector] {
+        self.gateway_connectors.as_deref().unwrap_or_default()
+    }
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring.as_ref()
@@ -351,6 +359,7 @@ pub struct CreateServiceInputBuilder {
     pub(crate) service_connect_configuration: ::std::option::Option<crate::types::ServiceConnectConfiguration>,
     pub(crate) volume_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ServiceVolumeConfiguration>>,
     pub(crate) vpc_lattice_configurations: ::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>>,
+    pub(crate) gateway_connectors: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>,
     pub(crate) monitoring: ::std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl CreateServiceInputBuilder {
@@ -965,6 +974,26 @@ impl CreateServiceInputBuilder {
     pub fn get_vpc_lattice_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcLatticeConfiguration>> {
         &self.vpc_lattice_configurations
     }
+    /// Appends an item to `gateway_connectors`.
+    ///
+    /// To override the contents of this collection use [`set_gateway_connectors`](Self::set_gateway_connectors).
+    ///
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn gateway_connectors(mut self, input: crate::types::GatewayConnector) -> Self {
+        let mut v = self.gateway_connectors.unwrap_or_default();
+        v.push(input);
+        self.gateway_connectors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn set_gateway_connectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>>) -> Self {
+        self.gateway_connectors = input;
+        self
+    }
+    /// <p>The gateway connectors that attach the service to a gateway ingress path. You can specify at most one gateway connector.</p>
+    pub fn get_gateway_connectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayConnector>> {
+        &self.gateway_connectors
+    }
     /// <p>The optional monitoring configuration for the service, which defines the resolution for the service-level <code>CPUUtilization</code> and <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of <code>60</code> seconds.</p>
     pub fn monitoring(mut self, input: crate::types::MonitoringConfiguration) -> Self {
         self.monitoring = ::std::option::Option::Some(input);
@@ -1010,6 +1039,7 @@ impl CreateServiceInputBuilder {
             service_connect_configuration: self.service_connect_configuration,
             volume_configurations: self.volume_configurations,
             vpc_lattice_configurations: self.vpc_lattice_configurations,
+            gateway_connectors: self.gateway_connectors,
             monitoring: self.monitoring,
         })
     }

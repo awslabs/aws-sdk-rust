@@ -7,9 +7,9 @@ pub struct SearchPrincipalsInput {
     pub domain_id: ::std::option::Option<::std::string::String>,
     /// A search term to match against user names, display names, and IDs. Pass * to list all principals. Maximum 128 characters.
     pub search_query: ::std::option::Option<::std::string::String>,
-    /// The maximum number of results to return. Defaults to 10. Valid only when searchQuery is *; other searches reject this parameter and return at most 10 results.
+    /// The maximum number of results to return. Defaults to 100.
     pub max_results: ::std::option::Option<i32>,
-    /// A token to retrieve the next page of results. Valid only when searchQuery is *; other searches do not paginate and reject this parameter. Tokens expire after 24 hours.
+    /// A token to retrieve the next page of results. Supply the same searchQuery used on the request that returned it. Tokens expire after 24 hours.
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchPrincipalsInput {
@@ -21,11 +21,11 @@ impl SearchPrincipalsInput {
     pub fn search_query(&self) -> ::std::option::Option<&str> {
         self.search_query.as_deref()
     }
-    /// The maximum number of results to return. Defaults to 10. Valid only when searchQuery is *; other searches reject this parameter and return at most 10 results.
+    /// The maximum number of results to return. Defaults to 100.
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// A token to retrieve the next page of results. Valid only when searchQuery is *; other searches do not paginate and reject this parameter. Tokens expire after 24 hours.
+    /// A token to retrieve the next page of results. Supply the same searchQuery used on the request that returned it. Tokens expire after 24 hours.
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -77,31 +77,31 @@ impl SearchPrincipalsInputBuilder {
     pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
         &self.search_query
     }
-    /// The maximum number of results to return. Defaults to 10. Valid only when searchQuery is *; other searches reject this parameter and return at most 10 results.
+    /// The maximum number of results to return. Defaults to 100.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// The maximum number of results to return. Defaults to 10. Valid only when searchQuery is *; other searches reject this parameter and return at most 10 results.
+    /// The maximum number of results to return. Defaults to 100.
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// The maximum number of results to return. Defaults to 10. Valid only when searchQuery is *; other searches reject this parameter and return at most 10 results.
+    /// The maximum number of results to return. Defaults to 100.
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// A token to retrieve the next page of results. Valid only when searchQuery is *; other searches do not paginate and reject this parameter. Tokens expire after 24 hours.
+    /// A token to retrieve the next page of results. Supply the same searchQuery used on the request that returned it. Tokens expire after 24 hours.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// A token to retrieve the next page of results. Valid only when searchQuery is *; other searches do not paginate and reject this parameter. Tokens expire after 24 hours.
+    /// A token to retrieve the next page of results. Supply the same searchQuery used on the request that returned it. Tokens expire after 24 hours.
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// A token to retrieve the next page of results. Valid only when searchQuery is *; other searches do not paginate and reject this parameter. Tokens expire after 24 hours.
+    /// A token to retrieve the next page of results. Supply the same searchQuery used on the request that returned it. Tokens expire after 24 hours.
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

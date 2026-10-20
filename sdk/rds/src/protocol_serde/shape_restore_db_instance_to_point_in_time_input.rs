@@ -279,51 +279,56 @@ pub fn ser_restore_db_instance_to_point_in_time_input_input_input(
         scope_104.string(var_105);
     }
     #[allow(unused_mut)]
-    let mut scope_106 = writer.prefix("DedicatedLogVolume");
-    if let Some(var_107) = &input.dedicated_log_volume {
-        scope_106.boolean(*var_107);
+    let mut scope_106 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_107) = &input.db_capacity_reservation_identifier {
+        scope_106.string(var_107);
     }
     #[allow(unused_mut)]
-    let mut scope_108 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_109) = &input.ca_certificate_identifier {
-        scope_108.string(var_109);
+    let mut scope_108 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_109) = &input.dedicated_log_volume {
+        scope_108.boolean(*var_109);
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_111) = &input.engine_lifecycle_support {
+    let mut scope_110 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_111) = &input.ca_certificate_identifier {
         scope_110.string(var_111);
     }
     #[allow(unused_mut)]
-    let mut scope_112 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_113) = &input.additional_storage_volumes {
-        let mut list_115 = scope_112.start_list(false, None);
-        for item_114 in var_113 {
+    let mut scope_112 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_113) = &input.engine_lifecycle_support {
+        scope_112.string(var_113);
+    }
+    #[allow(unused_mut)]
+    let mut scope_114 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_115) = &input.additional_storage_volumes {
+        let mut list_117 = scope_114.start_list(false, None);
+        for item_116 in var_115 {
             #[allow(unused_mut)]
-            let mut entry_116 = list_115.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_116, item_114)?;
+            let mut entry_118 = list_117.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_118, item_116)?;
         }
-        list_115.finish();
+        list_117.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_117 = writer.prefix("TagSpecifications");
-    if let Some(var_118) = &input.tag_specifications {
-        let mut list_120 = scope_117.start_list(false, Some("item"));
-        for item_119 in var_118 {
+    let mut scope_119 = writer.prefix("TagSpecifications");
+    if let Some(var_120) = &input.tag_specifications {
+        let mut list_122 = scope_119.start_list(false, Some("item"));
+        for item_121 in var_120 {
             #[allow(unused_mut)]
-            let mut entry_121 = list_120.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_121, item_119)?;
+            let mut entry_123 = list_122.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_123, item_121)?;
         }
-        list_120.finish();
+        list_122.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_122 = writer.prefix("ManageMasterUserPassword");
-    if let Some(var_123) = &input.manage_master_user_password {
-        scope_122.boolean(*var_123);
+    let mut scope_124 = writer.prefix("ManageMasterUserPassword");
+    if let Some(var_125) = &input.manage_master_user_password {
+        scope_124.boolean(*var_125);
     }
     #[allow(unused_mut)]
-    let mut scope_124 = writer.prefix("MasterUserSecretKmsKeyId");
-    if let Some(var_125) = &input.master_user_secret_kms_key_id {
-        scope_124.string(var_125);
+    let mut scope_126 = writer.prefix("MasterUserSecretKmsKeyId");
+    if let Some(var_127) = &input.master_user_secret_kms_key_id {
+        scope_126.string(var_127);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

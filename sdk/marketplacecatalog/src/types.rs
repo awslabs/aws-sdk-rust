@@ -67,6 +67,8 @@ pub use crate::types::_machine_learning_product_filters::MachineLearningProductF
 
 pub use crate::types::_offer_set_filters::OfferSetFilters;
 
+pub use crate::types::_express_private_offer_configuration_filters::ExpressPrivateOfferConfigurationFilters;
+
 pub use crate::types::_data_product_sort::DataProductSort;
 
 pub use crate::types::_saa_s_product_sort::SaaSProductSort;
@@ -82,6 +84,8 @@ pub use crate::types::_resale_authorization_sort::ResaleAuthorizationSort;
 pub use crate::types::_machine_learning_product_sort::MachineLearningProductSort;
 
 pub use crate::types::_offer_set_sort::OfferSetSort;
+
+pub use crate::types::_express_private_offer_configuration_sort::ExpressPrivateOfferConfigurationSort;
 
 pub use crate::types::_entity_summary::EntitySummary;
 
@@ -209,6 +213,12 @@ pub use crate::types::_offer_set_solution_id_filter::OfferSetSolutionIdFilter;
 
 pub use crate::types::_offer_set_last_modified_date_filter::OfferSetLastModifiedDateFilter;
 
+pub use crate::types::_express_private_offer_configuration_entity_id_filter::ExpressPrivateOfferConfigurationEntityIdFilter;
+
+pub use crate::types::_express_private_offer_configuration_product_id_filter::ExpressPrivateOfferConfigurationProductIdFilter;
+
+pub use crate::types::_express_private_offer_configuration_state_filter::ExpressPrivateOfferConfigurationStateFilter;
+
 pub use crate::types::_data_product_sort_by::DataProductSortBy;
 
 pub use crate::types::_saa_s_product_sort_by::SaaSProductSortBy;
@@ -225,6 +235,8 @@ pub use crate::types::_machine_learning_product_sort_by::MachineLearningProductS
 
 pub use crate::types::_offer_set_sort_by::OfferSetSortBy;
 
+pub use crate::types::_express_private_offer_configuration_sort_by::ExpressPrivateOfferConfigurationSortBy;
+
 pub use crate::types::_ami_product_summary::AmiProductSummary;
 
 pub use crate::types::_container_product_summary::ContainerProductSummary;
@@ -240,6 +252,8 @@ pub use crate::types::_resale_authorization_summary::ResaleAuthorizationSummary;
 pub use crate::types::_machine_learning_product_summary::MachineLearningProductSummary;
 
 pub use crate::types::_offer_set_summary::OfferSetSummary;
+
+pub use crate::types::_express_private_offer_configuration_summary::ExpressPrivateOfferConfigurationSummary;
 
 pub use crate::types::_control_error::ControlError;
 
@@ -292,6 +306,8 @@ pub use crate::types::_resale_authorization_reseller_role_string::ResaleAuthoriz
 pub use crate::types::_machine_learning_product_visibility_string::MachineLearningProductVisibilityString;
 
 pub use crate::types::_offer_set_state_string::OfferSetStateString;
+
+pub use crate::types::_express_private_offer_configuration_state_string::ExpressPrivateOfferConfigurationStateString;
 
 pub use crate::types::_offer_targeting_string::OfferTargetingString;
 
@@ -404,6 +420,22 @@ mod _entity_type_sort;
 mod _error_detail;
 
 mod _error_scope;
+
+mod _express_private_offer_configuration_entity_id_filter;
+
+mod _express_private_offer_configuration_filters;
+
+mod _express_private_offer_configuration_product_id_filter;
+
+mod _express_private_offer_configuration_sort;
+
+mod _express_private_offer_configuration_sort_by;
+
+mod _express_private_offer_configuration_state_filter;
+
+mod _express_private_offer_configuration_state_string;
+
+mod _express_private_offer_configuration_summary;
 
 mod _failure_code;
 

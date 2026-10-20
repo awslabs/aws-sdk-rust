@@ -358,6 +358,43 @@ mod tests {
     }
 
     #[test]
+    fn test_s3_transfer_manager_features_reach_the_header() {
+        let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let mut context = context();
+
+        let mut layer = Layer::new("test");
+        layer.store_put(ApiMetadata::new("test-service", "1.0"));
+        for feature in [
+            AwsSdkFeature::S3TransferUploadDirectory,
+            AwsSdkFeature::S3TransferDownloadDirectory,
+            AwsSdkFeature::S3CustomPartSize,
+            AwsSdkFeature::S3CustomThroughput,
+            AwsSdkFeature::S3CustomMemoryLimit,
+            AwsSdkFeature::S3OnEc2,
+            AwsSdkFeature::S3FilePath,
+        ] {
+            layer.store_append(feature);
+        }
+        let mut config = ConfigBag::of_layers(vec![layer]);
+
+        let interceptor = UserAgentInterceptor::new();
+        let ctx = Into::into(&context);
+        interceptor
+            .read_after_serialization(&ctx, &rc, &mut config)
+            .unwrap();
+        let mut ctx = Into::into(&mut context);
+        interceptor
+            .modify_before_signing(&mut ctx, &rc, &mut config)
+            .unwrap();
+
+        let header = expect_header(&context, "x-amz-user-agent");
+        let metrics = header.split(" m/").nth(1).unwrap();
+        let mut ids: Vec<_> = metrics.split(',').collect();
+        ids.sort_unstable();
+        assert_eq!(vec!["+", "9", "AX", "AY", "AZ", "Aa", "Ab"], ids);
+    }
+
+    #[test]
     fn test_metrics_order_preserved() {
         use aws_credential_types::credential_feature::AwsCredentialFeature;
 

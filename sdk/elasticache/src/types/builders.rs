@@ -3,6 +3,8 @@ pub use crate::types::_cache_security_group::CacheSecurityGroupBuilder;
 
 pub use crate::types::_replication_group::ReplicationGroupBuilder;
 
+pub use crate::types::_serverless_cache::ServerlessCacheBuilder;
+
 pub use crate::types::_serverless_cache_snapshot::ServerlessCacheSnapshotBuilder;
 
 pub use crate::types::_snapshot::SnapshotBuilder;
@@ -17,8 +19,6 @@ pub use crate::types::_global_replication_group::GlobalReplicationGroupBuilder;
 
 pub use crate::types::_cache_usage_limits::CacheUsageLimitsBuilder;
 
-pub use crate::types::_serverless_cache::ServerlessCacheBuilder;
-
 pub use crate::types::_authentication_mode::AuthenticationModeBuilder;
 
 pub use crate::types::_authentication::AuthenticationBuilder;
@@ -30,6 +30,10 @@ pub use crate::types::_engine_defaults::EngineDefaultsBuilder;
 pub use crate::types::_time_range_filter::TimeRangeFilterBuilder;
 
 pub use crate::types::_scale_config::ScaleConfigBuilder;
+
+pub use crate::types::_source_authentication_configuration::SourceAuthenticationConfigurationBuilder;
+
+pub use crate::types::_source_tls_configuration::SourceTlsConfigurationBuilder;
 
 pub use crate::types::_reserved_cache_node::ReservedCacheNodeBuilder;
 
@@ -44,6 +48,8 @@ pub use crate::types::_global_replication_group_info::GlobalReplicationGroupInfo
 pub use crate::types::_replication_group_pending_modified_values::ReplicationGroupPendingModifiedValuesBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
+
+pub use crate::types::_migration_summary::MigrationSummaryBuilder;
 
 pub use crate::types::_serverless_cache_configuration::ServerlessCacheConfigurationBuilder;
 
@@ -90,6 +96,8 @@ pub use crate::types::_parameter_name_value::ParameterNameValueBuilder;
 pub use crate::types::_resharding_configuration::ReshardingConfigurationBuilder;
 
 pub use crate::types::_customer_node_endpoint::CustomerNodeEndpointBuilder;
+
+pub use crate::types::_secret_manager_auth_config::SecretManagerAuthConfigBuilder;
 
 pub use crate::types::_ec2_security_group::Ec2SecurityGroupBuilder;
 

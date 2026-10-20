@@ -5,23 +5,29 @@
 
 #[cfg(all(aws_sdk_unstable, feature = "serde-deserialize"))]
 mod de;
+mod discriminated;
 #[cfg(any(
     all(aws_sdk_unstable, feature = "serde-deserialize"),
     all(aws_sdk_unstable, feature = "serde-serialize")
 ))]
 mod doc_error;
+mod error;
 #[cfg(all(aws_sdk_unstable, feature = "serde-serialize"))]
 mod ser;
+mod settings;
 
 #[cfg(all(aws_sdk_unstable, feature = "serde-deserialize"))]
 pub use de::from_document;
+pub use discriminated::DiscriminatedDocument;
 #[cfg(any(
     all(aws_sdk_unstable, feature = "serde-deserialize"),
     all(aws_sdk_unstable, feature = "serde-serialize")
 ))]
 pub use doc_error::DocError;
+pub use error::DocumentError;
 #[cfg(all(aws_sdk_unstable, feature = "serde-serialize"))]
 pub use ser::to_document;
+pub use settings::DocumentSettings;
 
 use crate::Number;
 use std::borrow::Cow;
@@ -260,6 +266,25 @@ where
 }
 
 /* ANCHOR END: document */
+
+/// Returns the human-readable name of a [`Document`] variant for use
+/// in error messages.
+///
+/// Deliberately placed **outside** the released `Document` contract
+/// above (the enum, its inherent `impl`, `Default`, and the `From`
+/// conversions): this is a private helper used by
+/// [`DiscriminatedDocument`]'s coercion error messages, not part of
+/// the `Document` API.
+pub(crate) fn document_variant_name(d: &Document) -> &'static str {
+    match d {
+        Document::Null => "null",
+        Document::Bool(_) => "boolean",
+        Document::Number(_) => "number",
+        Document::String(_) => "string",
+        Document::Array(_) => "array",
+        Document::Object(_) => "object",
+    }
+}
 
 #[cfg(test)]
 #[cfg(all(

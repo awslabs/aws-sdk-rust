@@ -21,5 +21,14 @@ pub fn ser_replication_group_update(
         crate::protocol_serde::shape_delete_replication_group_member_action::ser_delete_replication_group_member_action(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.disassociate {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Disassociate").start_object();
+        crate::protocol_serde::shape_disassociate_replication_group_member_action::ser_disassociate_replication_group_member_action(
+            &mut object_8,
+            var_7,
+        )?;
+        object_8.finish();
+    }
     Ok(())
 }

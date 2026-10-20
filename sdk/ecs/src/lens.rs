@@ -39,6 +39,36 @@ pub(crate) fn reflens_list_container_instances_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_gateway_cluster_associations_output_output_next_token(
+    input: &crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gateway_routes_output_output_next_token(
+    input: &crate::operation::list_gateway_routes::ListGatewayRoutesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gateways_output_output_next_token(
+    input: &crate::operation::list_gateways::ListGatewaysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_services_output_output_next_token(
     input: &crate::operation::list_services::ListServicesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -114,6 +144,27 @@ pub(crate) fn lens_list_container_instances_output_output_container_instance_arn
     input: crate::operation::list_container_instances::ListContainerInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.container_instance_arns?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateway_cluster_associations_output_output_gateway_cluster_associations(
+    input: crate::operation::list_gateway_cluster_associations::ListGatewayClusterAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayClusterAssociationSummary>> {
+    let input = input.gateway_cluster_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateway_routes_output_output_gateway_routes(
+    input: crate::operation::list_gateway_routes::ListGatewayRoutesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayRouteSummary>> {
+    let input = input.gateway_routes?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateways_output_output_gateways(
+    input: crate::operation::list_gateways::ListGatewaysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewaySummary>> {
+    let input = input.gateways?;
     ::std::option::Option::Some(input)
 }
 

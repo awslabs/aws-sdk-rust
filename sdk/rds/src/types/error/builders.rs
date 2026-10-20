@@ -21,6 +21,8 @@ pub use crate::types::error::_subscription_not_found_fault::SubscriptionNotFound
 
 pub use crate::types::error::_blue_green_deployment_not_found_fault::BlueGreenDeploymentNotFoundFaultBuilder;
 
+pub use crate::types::error::_db_capacity_reservation_not_found_fault::DbCapacityReservationNotFoundFaultBuilder;
+
 pub use crate::types::error::_db_proxy_endpoint_not_found_fault::DbProxyEndpointNotFoundFaultBuilder;
 
 pub use crate::types::error::_db_proxy_not_found_fault::DbProxyNotFoundFaultBuilder;
@@ -48,6 +50,8 @@ pub use crate::types::error::_authorization_quota_exceeded_fault::AuthorizationQ
 pub use crate::types::error::_db_security_group_not_found_fault::DbSecurityGroupNotFoundFaultBuilder;
 
 pub use crate::types::error::_invalid_db_security_group_state_fault::InvalidDbSecurityGroupStateFaultBuilder;
+
+pub use crate::types::error::_invalid_db_capacity_reservation_state_fault::InvalidDbCapacityReservationStateFaultBuilder;
 
 pub use crate::types::error::_export_task_not_found_fault::ExportTaskNotFoundFaultBuilder;
 
@@ -107,6 +111,12 @@ pub use crate::types::error::_ec2_image_properties_not_supported_fault::Ec2Image
 
 pub use crate::types::error::_invalid_custom_db_engine_version_state_fault::InvalidCustomDbEngineVersionStateFaultBuilder;
 
+pub use crate::types::error::_db_capacity_reservation_already_exists_fault::DbCapacityReservationAlreadyExistsFaultBuilder;
+
+pub use crate::types::error::_db_capacity_reservation_unsupported_fault::DbCapacityReservationUnsupportedFaultBuilder;
+
+pub use crate::types::error::_insufficient_db_instance_capacity_fault::InsufficientDbInstanceCapacityFaultBuilder;
+
 pub use crate::types::error::_db_cluster_already_exists_fault::DbClusterAlreadyExistsFaultBuilder;
 
 pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZsBuilder;
@@ -116,8 +126,6 @@ pub use crate::types::error::_db_subnet_group_not_found_fault::DbSubnetGroupNotF
 pub use crate::types::error::_domain_not_found_fault::DomainNotFoundFaultBuilder;
 
 pub use crate::types::error::_global_cluster_not_found_fault::GlobalClusterNotFoundFaultBuilder;
-
-pub use crate::types::error::_insufficient_db_instance_capacity_fault::InsufficientDbInstanceCapacityFaultBuilder;
 
 pub use crate::types::error::_insufficient_storage_cluster_capacity_fault::InsufficientStorageClusterCapacityFaultBuilder;
 

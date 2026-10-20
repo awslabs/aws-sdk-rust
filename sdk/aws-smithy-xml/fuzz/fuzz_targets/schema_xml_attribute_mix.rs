@@ -65,6 +65,10 @@ struct AttrProbe {
 }
 
 impl SerializableStruct for AttrProbe {
+    fn schema(&self) -> &aws_smithy_schema::Schema<'_> {
+        &ATTR_SCHEMA
+    }
+
     fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
         // ATTR_SCHEMA member layout (matches schema_common):
         //   [0] id:   String  @xmlAttribute

@@ -21,6 +21,121 @@ impl DescribeActivationsFilter {
         self.filter_values.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DescribeActivationsFilter$FilterKey",
+        "com.amazonaws.ssm",
+        "DescribeActivationsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FilterKey",
+    0,
+);
+static DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StringList$member", "com.amazonaws.ssm", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DescribeActivationsFilter$FilterValues",
+        "com.amazonaws.ssm",
+        "DescribeActivationsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FilterValues",
+    1,
+)
+.with_list_member(&DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_VALUES_MEMBER);
+static DESCRIBEACTIVATIONSFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DescribeActivationsFilter",
+        "com.amazonaws.ssm",
+        "DescribeActivationsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_KEY,
+        &DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_VALUES,
+    ],
+);
+impl DescribeActivationsFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEACTIVATIONSFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeActivationsFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filter_key {
+            ser.write_string(&DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_KEY, val.as_str())?;
+        }
+        if let Some(ref val) = self.filter_values {
+            ser.write_list(
+                &DESCRIBEACTIVATIONSFILTER_MEMBER_FILTER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribeActivationsFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEACTIVATIONSFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter_key = Some(crate::types::DescribeActivationsFilterKeys::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter_values = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeActivationsFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DescribeActivationsFilter {
     /// Creates a new builder-style object to manufacture [`DescribeActivationsFilter`](crate::types::DescribeActivationsFilter).
     pub fn builder() -> crate::types::builders::DescribeActivationsFilterBuilder {

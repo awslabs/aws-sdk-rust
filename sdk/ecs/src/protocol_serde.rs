@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_gateway_with_cluster;
+
 pub(crate) mod shape_continue_service_deployment;
 
 pub(crate) mod shape_create_capacity_provider;
@@ -32,6 +34,8 @@ pub(crate) mod shape_create_cluster;
 pub(crate) mod shape_create_daemon;
 
 pub(crate) mod shape_create_express_gateway_service;
+
+pub(crate) mod shape_create_gateway;
 
 pub(crate) mod shape_create_service;
 
@@ -50,6 +54,8 @@ pub(crate) mod shape_delete_daemon;
 pub(crate) mod shape_delete_daemon_task_definition;
 
 pub(crate) mod shape_delete_express_gateway_service;
+
+pub(crate) mod shape_delete_gateway;
 
 pub(crate) mod shape_delete_service;
 
@@ -77,6 +83,12 @@ pub(crate) mod shape_describe_daemon_task_definition;
 
 pub(crate) mod shape_describe_express_gateway_service;
 
+pub(crate) mod shape_describe_gateway;
+
+pub(crate) mod shape_describe_gateway_resources;
+
+pub(crate) mod shape_describe_gateway_route;
+
 pub(crate) mod shape_describe_service_deployments;
 
 pub(crate) mod shape_describe_service_revisions;
@@ -88,6 +100,8 @@ pub(crate) mod shape_describe_task_definition;
 pub(crate) mod shape_describe_task_sets;
 
 pub(crate) mod shape_describe_tasks;
+
+pub(crate) mod shape_disassociate_gateway_from_cluster;
 
 pub(crate) mod shape_discover_poll_endpoint;
 
@@ -108,6 +122,12 @@ pub(crate) mod shape_list_daemon_deployments;
 pub(crate) mod shape_list_daemon_task_definitions;
 
 pub(crate) mod shape_list_daemons;
+
+pub(crate) mod shape_list_gateway_cluster_associations;
+
+pub(crate) mod shape_list_gateway_routes;
+
+pub(crate) mod shape_list_gateways;
 
 pub(crate) mod shape_list_service_deployments;
 
@@ -169,6 +189,8 @@ pub(crate) mod shape_update_daemon;
 
 pub(crate) mod shape_update_express_gateway_service;
 
+pub(crate) mod shape_update_gateway;
+
 pub(crate) mod shape_update_service;
 
 pub(crate) mod shape_update_service_primary_task_set;
@@ -186,6 +208,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 }
 
 pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_associate_gateway_with_cluster_input;
 
 pub(crate) mod shape_attribute_limit_exceeded_exception;
 
@@ -215,6 +239,8 @@ pub(crate) mod shape_create_daemon_input;
 
 pub(crate) mod shape_create_express_gateway_service_input;
 
+pub(crate) mod shape_create_gateway_input;
+
 pub(crate) mod shape_create_service_input;
 
 pub(crate) mod shape_create_task_set_input;
@@ -236,6 +262,8 @@ pub(crate) mod shape_delete_daemon_input;
 pub(crate) mod shape_delete_daemon_task_definition_input;
 
 pub(crate) mod shape_delete_express_gateway_service_input;
+
+pub(crate) mod shape_delete_gateway_input;
 
 pub(crate) mod shape_delete_service_input;
 
@@ -263,6 +291,12 @@ pub(crate) mod shape_describe_daemon_task_definition_input;
 
 pub(crate) mod shape_describe_express_gateway_service_input;
 
+pub(crate) mod shape_describe_gateway_input;
+
+pub(crate) mod shape_describe_gateway_resources_input;
+
+pub(crate) mod shape_describe_gateway_route_input;
+
 pub(crate) mod shape_describe_service_deployments_input;
 
 pub(crate) mod shape_describe_service_revisions_input;
@@ -275,9 +309,13 @@ pub(crate) mod shape_describe_task_sets_input;
 
 pub(crate) mod shape_describe_tasks_input;
 
+pub(crate) mod shape_disassociate_gateway_from_cluster_input;
+
 pub(crate) mod shape_discover_poll_endpoint_input;
 
 pub(crate) mod shape_execute_command_input;
+
+pub(crate) mod shape_gateway_not_found_exception;
 
 pub(crate) mod shape_get_task_protection_input;
 
@@ -298,6 +336,12 @@ pub(crate) mod shape_list_daemon_deployments_input;
 pub(crate) mod shape_list_daemon_task_definitions_input;
 
 pub(crate) mod shape_list_daemons_input;
+
+pub(crate) mod shape_list_gateway_cluster_associations_input;
+
+pub(crate) mod shape_list_gateway_routes_input;
+
+pub(crate) mod shape_list_gateways_input;
 
 pub(crate) mod shape_list_service_deployments_input;
 
@@ -389,6 +433,8 @@ pub(crate) mod shape_update_daemon_input;
 
 pub(crate) mod shape_update_express_gateway_service_input;
 
+pub(crate) mod shape_update_gateway_input;
+
 pub(crate) mod shape_update_in_progress_exception;
 
 pub(crate) mod shape_update_service_input;
@@ -473,6 +519,22 @@ pub(crate) mod shape_express_gateway_service_network_configuration;
 
 pub(crate) mod shape_failures;
 
+pub(crate) mod shape_gateway;
+
+pub(crate) mod shape_gateway_cluster_association_summary_list;
+
+pub(crate) mod shape_gateway_configuration;
+
+pub(crate) mod shape_gateway_connector;
+
+pub(crate) mod shape_gateway_resources;
+
+pub(crate) mod shape_gateway_route;
+
+pub(crate) mod shape_gateway_route_summary_list;
+
+pub(crate) mod shape_gateway_summary_list;
+
 pub(crate) mod shape_inference_accelerator;
 
 pub(crate) mod shape_load_balancer;
@@ -549,6 +611,8 @@ pub(crate) mod shape_task_volume_configuration;
 
 pub(crate) mod shape_tasks;
 
+pub(crate) mod shape_update_gateway_configuration;
+
 pub(crate) mod shape_update_managed_instances_provider_configuration;
 
 pub(crate) mod shape_updated_express_gateway_service;
@@ -621,6 +685,8 @@ pub(crate) mod shape_deployment_lifecycle_hook;
 
 pub(crate) mod shape_deployments;
 
+pub(crate) mod shape_describe_gateway_configuration;
+
 pub(crate) mod shape_docker_volume_configuration;
 
 pub(crate) mod shape_efs_volume_configuration;
@@ -645,9 +711,27 @@ pub(crate) mod shape_failure;
 
 pub(crate) mod shape_firelens_configuration;
 
+pub(crate) mod shape_gateway_cluster_association_summary;
+
+pub(crate) mod shape_gateway_connector_filters;
+
+pub(crate) mod shape_gateway_connector_health_check;
+
+pub(crate) mod shape_gateway_infrastructure_resources;
+
+pub(crate) mod shape_gateway_resource_failure_list;
+
+pub(crate) mod shape_gateway_route_resources;
+
+pub(crate) mod shape_gateway_route_summary;
+
+pub(crate) mod shape_gateway_summary;
+
 pub(crate) mod shape_health_check;
 
 pub(crate) mod shape_host_entry;
+
+pub(crate) mod shape_host_shared_alb_configuration;
 
 pub(crate) mod shape_host_volume_properties;
 
@@ -733,6 +817,8 @@ pub(crate) mod shape_task_managed_ebs_volume_configuration;
 
 pub(crate) mod shape_ulimit;
 
+pub(crate) mod shape_update_gateway_alb_configuration;
+
 pub(crate) mod shape_volume_from;
 
 pub(crate) mod shape_volume_list;
@@ -771,6 +857,8 @@ pub(crate) mod shape_deployment_lifecycle_hook_list;
 
 pub(crate) mod shape_deployment_lifecycle_hook_timeout_configuration;
 
+pub(crate) mod shape_describe_gateway_alb_configuration;
+
 pub(crate) mod shape_device;
 
 pub(crate) mod shape_ebs_tag_specification;
@@ -779,9 +867,25 @@ pub(crate) mod shape_ecs_managed_resources;
 
 pub(crate) mod shape_efs_authorization_config;
 
+pub(crate) mod shape_elb_gateway_resources_list;
+
 pub(crate) mod shape_execute_command_log_configuration;
 
 pub(crate) mod shape_f_sx_windows_file_server_authorization_config;
+
+pub(crate) mod shape_gateway_alb_test_traffic_rules;
+
+pub(crate) mod shape_gateway_connector_health_check_matcher;
+
+pub(crate) mod shape_gateway_connector_list;
+
+pub(crate) mod shape_gateway_elb_access_log_configuration;
+
+pub(crate) mod shape_gateway_elb_network_configuration;
+
+pub(crate) mod shape_gateway_resource_failure;
+
+pub(crate) mod shape_gateway_route_alb_resources_list;
 
 pub(crate) mod shape_inference_accelerator_overrides;
 
@@ -833,6 +937,8 @@ pub(crate) mod shape_timeout_configuration;
 
 pub(crate) mod shape_tmpfs;
 
+pub(crate) mod shape_update_gateway_network_configuration;
+
 pub(crate) mod shape_vpc_lattice_configurations;
 
 pub(crate) mod shape_accelerator_count_request;
@@ -857,9 +963,21 @@ pub(crate) mod shape_deployment_lifecycle_hook_detail;
 
 pub(crate) mod shape_docker_labels_map;
 
+pub(crate) mod shape_elb_gateway_resources;
+
 pub(crate) mod shape_environment_files;
 
 pub(crate) mod shape_environment_variables;
+
+pub(crate) mod shape_gateway_connection_list;
+
+pub(crate) mod shape_gateway_elb_access_log_destination;
+
+pub(crate) mod shape_gateway_operation_error_list;
+
+pub(crate) mod shape_gateway_route_alb_resources;
+
+pub(crate) mod shape_gateway_test_traffic_header;
 
 pub(crate) mod shape_gpu_ids;
 
@@ -953,6 +1071,14 @@ pub(crate) mod shape_excluded_instance_type_set;
 
 pub(crate) mod shape_firelens_configuration_options_map;
 
+pub(crate) mod shape_gateway_connection;
+
+pub(crate) mod shape_gateway_elb_access_log_s3_destination;
+
+pub(crate) mod shape_gateway_operation_error;
+
+pub(crate) mod shape_gateway_route_load_balancer_security_group_list;
+
 pub(crate) mod shape_instance_generation_set;
 
 pub(crate) mod shape_integer_list;
@@ -989,7 +1115,13 @@ pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_tmpfs_list;
 
+pub(crate) mod shape_access_type_list;
+
 pub(crate) mod shape_ebs_tag_specifications;
+
+pub(crate) mod shape_gateway_connection_resources;
+
+pub(crate) mod shape_gateway_route_load_balancer_security_group;
 
 pub(crate) mod shape_managed_application_auto_scaling_policy;
 
@@ -1011,4 +1143,8 @@ pub(crate) mod shape_service_connect_test_traffic_header_match_rules;
 
 pub(crate) mod shape_device_cgroup_permissions;
 
+pub(crate) mod shape_gateway_connection_alb_resources_list;
+
 pub(crate) mod shape_managed_target_group;
+
+pub(crate) mod shape_gateway_connection_alb_resources;

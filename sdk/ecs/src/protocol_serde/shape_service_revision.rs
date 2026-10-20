@@ -159,6 +159,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "gatewayConnectors" => {
+                            builder = builder.set_gateway_connectors(crate::protocol_serde::shape_gateway_connector_list::de_gateway_connector_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "monitoring" => {
                             builder = builder.set_monitoring(crate::protocol_serde::shape_monitoring_configuration::de_monitoring_configuration(
                                 tokens,

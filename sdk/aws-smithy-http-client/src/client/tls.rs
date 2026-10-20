@@ -4,7 +4,7 @@
  */
 use std::fmt;
 
-use crate::cfg::{cfg_rustls, cfg_s2n_tls};
+use crate::cfg::{cfg_rustls, cfg_s2n_tls, cfg_tls};
 use crate::HttpClientError;
 
 /// Choice of underlying cryptography library
@@ -203,6 +203,58 @@ impl TryFrom<&str> for ServerName {
             Err(_) => Err(InvalidServerName {
                 name: name.to_owned(),
             }),
+        }
+    }
+}
+
+cfg_tls! {
+    /// A failed TLS handshake, classified by the provider shim that saw the provider's own
+    /// error types.
+    ///
+    /// [`kind`](Self::kind) says whether a new connection could succeed.
+    #[derive(Debug)]
+    pub(crate) struct TlsConnectError {
+        kind: TlsConnectErrorKind,
+        source: aws_smithy_runtime_api::box_error::BoxError,
+    }
+
+    /// Where a TLS handshake failed.
+    #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+    pub(crate) enum TlsConnectErrorKind {
+        /// The connection failed or closed during the handshake.
+        Io,
+        /// The TLS layer refused or could not complete the handshake: an untrusted certificate
+        /// or name, an alert, or a protocol or configuration error.
+        Protocol,
+    }
+
+    impl TlsConnectError {
+        /// Creates a handshake failure of `kind` caused by `source`.
+        pub(crate) fn new(
+            kind: TlsConnectErrorKind,
+            source: impl Into<aws_smithy_runtime_api::box_error::BoxError>,
+        ) -> Self {
+            Self {
+                kind,
+                source: source.into(),
+            }
+        }
+
+        /// Returns where the handshake failed.
+        pub(crate) fn kind(&self) -> TlsConnectErrorKind {
+            self.kind
+        }
+    }
+
+    impl fmt::Display for TlsConnectError {
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+            f.write_str("TLS handshake failed")
+        }
+    }
+
+    impl std::error::Error for TlsConnectError {
+        fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+            Some(&*self.source)
         }
     }
 }

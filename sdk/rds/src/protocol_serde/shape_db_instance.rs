@@ -1218,6 +1218,19 @@ pub fn de_db_instance(
                 builder = builder.set_storage_operation_percent_progress(var_93);
             }
             ,
+            s if s.matches("DBCapacityReservationIdentifier") /* DBCapacityReservationIdentifier com.amazonaws.rds#DBInstance$DBCapacityReservationIdentifier */ =>  {
+                let var_94 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_capacity_reservation_identifier(var_94);
+            }
+            ,
             _ => {}
         }
     }

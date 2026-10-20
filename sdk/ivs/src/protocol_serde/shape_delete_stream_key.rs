@@ -30,13 +30,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Allow-Origin")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Allow-Origin")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -51,13 +54,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Expose-Headers")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Expose-Headers")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -72,13 +78,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Cache-Control")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Cache-Control")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -93,13 +102,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Content-Security-Policy")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Content-Security-Policy")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -114,13 +126,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Strict-Transport-Security")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Strict-Transport-Security")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -135,13 +150,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("x-amzn-ErrorType")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("x-amzn-ErrorType")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -156,13 +174,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Content-Type-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Content-Type-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -177,13 +198,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Frame-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Frame-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -213,13 +237,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Allow-Origin")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Allow-Origin")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -234,13 +261,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Expose-Headers")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Expose-Headers")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -255,13 +285,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Cache-Control")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Cache-Control")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -276,13 +309,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Content-Security-Policy")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Content-Security-Policy")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -297,13 +333,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Strict-Transport-Security")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Strict-Transport-Security")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -318,13 +357,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("x-amzn-ErrorType")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("x-amzn-ErrorType")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -339,13 +381,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Content-Type-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Content-Type-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -360,13 +405,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Frame-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Frame-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -396,13 +444,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Allow-Origin")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Allow-Origin")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -417,13 +468,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Expose-Headers")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Expose-Headers")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -438,13 +492,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Cache-Control")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Cache-Control")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -459,13 +516,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Content-Security-Policy")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Content-Security-Policy")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -480,13 +540,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Strict-Transport-Security")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Strict-Transport-Security")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -501,13 +564,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("x-amzn-ErrorType")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("x-amzn-ErrorType")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -522,13 +588,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Content-Type-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Content-Type-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -543,13 +612,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Frame-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Frame-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -579,13 +651,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Allow-Origin")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Allow-Origin")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -600,13 +675,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Access-Control-Expose-Headers")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Access-Control-Expose-Headers")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -621,13 +699,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Cache-Control")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Cache-Control")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -642,13 +723,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Content-Security-Policy")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Content-Security-Policy")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -663,13 +747,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("Strict-Transport-Security")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("Strict-Transport-Security")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -684,13 +771,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("x-amzn-ErrorType")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("x-amzn-ErrorType")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -705,13 +795,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Content-Type-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Content-Type-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(
@@ -726,13 +819,16 @@ pub fn de_delete_stream_key_http_error(
                         ::std::result::Result::Ok(value) => value,
                         ::std::result::Result::Err(err) => {
                             let _ = &err;
-                            let has_unreadable_value = _response_headers
-                                .get_all_bytes("X-Frame-Options")
-                                .any(|value| std::str::from_utf8(value).is_err());
-                            if has_unreadable_value
-                                && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
-                                    == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
-                            {
+                            // Bound first: a block in an `if` condition trips `clippy::blocks_in_conditions`.
+                            let skip = {
+                                let has_unreadable_value = _response_headers
+                                    .get_all_bytes("X-Frame-Options")
+                                    .any(|value| std::str::from_utf8(value).is_err());
+                                has_unreadable_value
+                                    && _cfg.load::<::aws_smithy_runtime_api::http::NonUtf8HeaderHandling>()
+                                        == ::std::option::Option::Some(&::aws_smithy_runtime_api::http::NonUtf8HeaderHandling::Skip)
+                            };
+                            if skip {
                                 ::std::option::Option::None
                             } else {
                                 return ::std::result::Result::Err(crate::operation::delete_stream_key::DeleteStreamKeyError::unhandled(

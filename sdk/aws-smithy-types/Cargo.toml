@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "1.8.1"
+version = "1.9.0"
 authors = [
     "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
     "Russell Cohen <rcoh@amazon.com>",
@@ -43,7 +43,6 @@ hyper-0-14 = { package = "hyper", version = "0.14.26", optional = true }
 itoa = "1.0.17"
 num-integer = "0.1.46"
 pin-project-lite = "0.2.14"
-pin-utils = "0.1.0"
 ryu = "1.0.22"
 time = { version = "0.3.4", features = ["parsing"] }
 
@@ -71,7 +70,7 @@ tokio = { version = "1.49.0", features = [
 tokio-stream = "0.1.5"
 tempfile = "3.16.0"
 
-criterion = "0.5"
+criterion = "0.8.2"
 
 [package.metadata.docs.rs]
 all-features = true

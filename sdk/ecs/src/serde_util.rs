@@ -209,6 +209,15 @@ pub(crate) fn firelens_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn gateway_connector_correct_errors(
+    mut builder: crate::types::builders::GatewayConnectorBuilder,
+) -> crate::types::builders::GatewayConnectorBuilder {
+    if builder.port_name.is_none() {
+        builder.port_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn health_check_correct_errors(mut builder: crate::types::builders::HealthCheckBuilder) -> crate::types::builders::HealthCheckBuilder {
     if builder.command.is_none() {
         builder.command = Some(Default::default())
@@ -350,6 +359,18 @@ pub(crate) fn f_sx_windows_file_server_authorization_config_correct_errors(
     }
     if builder.domain.is_none() {
         builder.domain = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn gateway_test_traffic_header_correct_errors(
+    mut builder: crate::types::builders::GatewayTestTrafficHeaderBuilder,
+) -> crate::types::builders::GatewayTestTrafficHeaderBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }
@@ -519,6 +540,15 @@ pub(crate) fn v_cpu_count_range_request_correct_errors(
 pub(crate) fn device_correct_errors(mut builder: crate::types::builders::DeviceBuilder) -> crate::types::builders::DeviceBuilder {
     if builder.host_path.is_none() {
         builder.host_path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn gateway_elb_access_log_s3_destination_correct_errors(
+    mut builder: crate::types::builders::GatewayElbAccessLogS3DestinationBuilder,
+) -> crate::types::builders::GatewayElbAccessLogS3DestinationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
     }
     builder
 }

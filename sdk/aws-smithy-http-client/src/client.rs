@@ -748,6 +748,22 @@ fn find_source<'a, E: Error + 'static>(err: &'a (dyn Error + 'static)) -> Option
     None
 }
 
+/// Iterates over `error` and then each error after it in its chain.
+///
+/// After an `io::Error` the next error is its payload, `io::Error::get_ref`; after any other
+/// error it is `source()`. `io::Error::source` returns the payload's source, which skips the
+/// payload itself, and nested `io::Error`s each skip theirs.
+pub(crate) fn error_chain<'a>(
+    error: &'a (dyn Error + 'static),
+) -> impl Iterator<Item = &'a (dyn Error + 'static)> {
+    std::iter::successors(Some(error), |&error| {
+        match error.downcast_ref::<std::io::Error>() {
+            Some(io) => io.get_ref().map(|inner| inner as &(dyn Error + 'static)),
+            None => error.source(),
+        }
+    })
+}
+
 // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1090): CacheKey must also include ptr equality to any
 // runtime components that are used—sleep_impl as a base (unless we prohibit overriding sleep impl)
 // If we decide to put a DnsResolver in RuntimeComponents, then we'll need to handle that as well.

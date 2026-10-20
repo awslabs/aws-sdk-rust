@@ -625,6 +625,10 @@ pub(crate) mod shape_guardrail_contextual_grounding_filter_config;
 
 pub(crate) mod shape_guardrail_contextual_grounding_filters;
 
+pub(crate) mod shape_guardrail_contextual_grounding_tier;
+
+pub(crate) mod shape_guardrail_contextual_grounding_tier_config;
+
 pub(crate) mod shape_guardrail_managed_word_lists;
 
 pub(crate) mod shape_guardrail_managed_words_config;

@@ -259,6 +259,8 @@ pub struct DbInstance {
     pub storage_operation_status: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
     pub storage_operation_percent_progress: ::std::option::Option<i32>,
+    /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -729,6 +731,10 @@ impl DbInstance {
     pub fn storage_operation_percent_progress(&self) -> ::std::option::Option<i32> {
         self.storage_operation_percent_progress
     }
+    /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -835,6 +841,7 @@ pub struct DbInstanceBuilder {
     pub(crate) storage_volume_status: ::std::option::Option<::std::string::String>,
     pub(crate) storage_operation_status: ::std::option::Option<::std::string::String>,
     pub(crate) storage_operation_percent_progress: ::std::option::Option<i32>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2435,6 +2442,20 @@ impl DbInstanceBuilder {
     pub fn get_storage_operation_percent_progress(&self) -> &::std::option::Option<i32> {
         &self.storage_operation_percent_progress
     }
+    /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2531,6 +2552,7 @@ impl DbInstanceBuilder {
             storage_volume_status: self.storage_volume_status,
             storage_operation_status: self.storage_operation_status,
             storage_operation_percent_progress: self.storage_operation_percent_progress,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
         }
     }
 }

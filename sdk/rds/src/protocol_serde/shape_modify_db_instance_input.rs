@@ -376,25 +376,30 @@ pub fn ser_modify_db_instance_input_input_input(
         list_138.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_140 = writer.prefix("TagSpecifications");
-    if let Some(var_141) = &input.tag_specifications {
-        let mut list_143 = scope_140.start_list(false, Some("item"));
-        for item_142 in var_141 {
+    let mut scope_140 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_141) = &input.db_capacity_reservation_identifier {
+        scope_140.string(var_141);
+    }
+    #[allow(unused_mut)]
+    let mut scope_142 = writer.prefix("TagSpecifications");
+    if let Some(var_143) = &input.tag_specifications {
+        let mut list_145 = scope_142.start_list(false, Some("item"));
+        for item_144 in var_143 {
             #[allow(unused_mut)]
-            let mut entry_144 = list_143.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_144, item_142)?;
+            let mut entry_146 = list_145.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_146, item_144)?;
         }
-        list_143.finish();
+        list_145.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_145 = writer.prefix("MasterUserAuthenticationType");
-    if let Some(var_146) = &input.master_user_authentication_type {
-        scope_145.string(var_146.as_str());
+    let mut scope_147 = writer.prefix("MasterUserAuthenticationType");
+    if let Some(var_148) = &input.master_user_authentication_type {
+        scope_147.string(var_148.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_147 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_148) = &input.engine_lifecycle_support {
-        scope_147.string(var_148);
+    let mut scope_149 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_150) = &input.engine_lifecycle_support {
+        scope_149.string(var_150);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

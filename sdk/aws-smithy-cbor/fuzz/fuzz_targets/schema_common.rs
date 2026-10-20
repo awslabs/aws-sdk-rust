@@ -87,7 +87,7 @@ pub fn serialize_fuzz_value(value: &FuzzValue, ser: &mut dyn ShapeSerializer) {
             let _ = ser.write_string(&STRING, v);
         }
         FuzzValue::Blob(v) => {
-            let _ = ser.write_blob(&BLOB, v);
+            let _ = ser.write_blob(&BLOB, aws_smithy_types::Blob::new(v.clone()));
         }
         FuzzValue::StringList(items) => {
             let _ = ser.write_list(&STRING_LIST_SCHEMA, &|ser| {

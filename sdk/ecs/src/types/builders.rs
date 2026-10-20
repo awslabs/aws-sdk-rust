@@ -33,6 +33,12 @@ pub use crate::types::_created_at::CreatedAtBuilder;
 
 pub use crate::types::_daemon_task_definition::DaemonTaskDefinitionBuilder;
 
+pub use crate::types::_gateway::GatewayBuilder;
+
+pub use crate::types::_gateway_resources::GatewayResourcesBuilder;
+
+pub use crate::types::_gateway_route::GatewayRouteBuilder;
+
 pub use crate::types::_task_set::TaskSetBuilder;
 
 pub use crate::types::_express_gateway_container::ExpressGatewayContainerBuilder;
@@ -127,6 +133,16 @@ pub use crate::types::_daemon_container_definition::DaemonContainerDefinitionBui
 
 pub use crate::types::_daemon_volume::DaemonVolumeBuilder;
 
+pub use crate::types::_host_shared_alb_configuration::HostSharedAlbConfigurationBuilder;
+
+pub use crate::types::_gateway_cluster_association_summary::GatewayClusterAssociationSummaryBuilder;
+
+pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
+
+pub use crate::types::_update_gateway_alb_configuration::UpdateGatewayAlbConfigurationBuilder;
+
+pub use crate::types::_gateway_route_summary::GatewayRouteSummaryBuilder;
+
 pub use crate::types::_service_deployment::ServiceDeploymentBuilder;
 
 pub use crate::types::_deployment_ephemeral_storage::DeploymentEphemeralStorageBuilder;
@@ -164,6 +180,8 @@ pub use crate::types::_service_connect_access_log_configuration::ServiceConnectA
 pub use crate::types::_service_volume_configuration::ServiceVolumeConfigurationBuilder;
 
 pub use crate::types::_vpc_lattice_configuration::VpcLatticeConfigurationBuilder;
+
+pub use crate::types::_gateway_connector::GatewayConnectorBuilder;
 
 pub use crate::types::_service_deployment_brief::ServiceDeploymentBriefBuilder;
 
@@ -223,6 +241,18 @@ pub use crate::types::_container_restart_policy::ContainerRestartPolicyBuilder;
 
 pub use crate::types::_host_volume_properties::HostVolumePropertiesBuilder;
 
+pub use crate::types::_gateway_elb_network_configuration::GatewayElbNetworkConfigurationBuilder;
+
+pub use crate::types::_gateway_elb_access_log_configuration::GatewayElbAccessLogConfigurationBuilder;
+
+pub use crate::types::_gateway_alb_test_traffic_rules::GatewayAlbTestTrafficRulesBuilder;
+
+pub use crate::types::_gateway_resource_failure::GatewayResourceFailureBuilder;
+
+pub use crate::types::_describe_gateway_alb_configuration::DescribeGatewayAlbConfigurationBuilder;
+
+pub use crate::types::_update_gateway_network_configuration::UpdateGatewayNetworkConfigurationBuilder;
+
 pub use crate::types::_service_revision_summary::ServiceRevisionSummaryBuilder;
 
 pub use crate::types::_rollback::RollbackBuilder;
@@ -244,6 +274,10 @@ pub use crate::types::_service_connect_service::ServiceConnectServiceBuilder;
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfigurationBuilder;
 
 pub use crate::types::_vpc_lattice_advanced_configuration::VpcLatticeAdvancedConfigurationBuilder;
+
+pub use crate::types::_gateway_connector_health_check::GatewayConnectorHealthCheckBuilder;
+
+pub use crate::types::_gateway_connector_filters::GatewayConnectorFiltersBuilder;
 
 pub use crate::types::_metric_configuration::MetricConfigurationBuilder;
 
@@ -311,6 +345,12 @@ pub use crate::types::_container_dependency::ContainerDependencyBuilder;
 
 pub use crate::types::_system_control::SystemControlBuilder;
 
+pub use crate::types::_gateway_test_traffic_header::GatewayTestTrafficHeaderBuilder;
+
+pub use crate::types::_elb_gateway_resources::ElbGatewayResourcesBuilder;
+
+pub use crate::types::_gateway_route_alb_resources::GatewayRouteAlbResourcesBuilder;
+
 pub use crate::types::_deployment_lifecycle_hook_detail::DeploymentLifecycleHookDetailBuilder;
 
 pub use crate::types::_deployment_lifecycle_hook_timeout_configuration::DeploymentLifecycleHookTimeoutConfigurationBuilder;
@@ -318,6 +358,8 @@ pub use crate::types::_deployment_lifecycle_hook_timeout_configuration::Deployme
 pub use crate::types::_timeout_configuration::TimeoutConfigurationBuilder;
 
 pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfigurationBuilder;
+
+pub use crate::types::_gateway_connector_health_check_matcher::GatewayConnectorHealthCheckMatcherBuilder;
 
 pub use crate::types::_ingress_path_summary::IngressPathSummaryBuilder;
 
@@ -349,6 +391,10 @@ pub use crate::types::_device::DeviceBuilder;
 
 pub use crate::types::_tmpfs::TmpfsBuilder;
 
+pub use crate::types::_gateway_elb_access_log_s3_destination::GatewayElbAccessLogS3DestinationBuilder;
+
+pub use crate::types::_gateway_operation_error::GatewayOperationErrorBuilder;
+
 pub use crate::types::_service_connect_client_alias::ServiceConnectClientAliasBuilder;
 
 pub use crate::types::_service_connect_tls_certificate_authority::ServiceConnectTlsCertificateAuthorityBuilder;
@@ -371,9 +417,13 @@ pub use crate::types::_managed_security_group::ManagedSecurityGroupBuilder;
 
 pub use crate::types::_managed_log_group::ManagedLogGroupBuilder;
 
+pub use crate::types::_gateway_connection::GatewayConnectionBuilder;
+
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
 
 pub use crate::types::_managed_agent::ManagedAgentBuilder;
+
+pub use crate::types::_gateway_route_load_balancer_security_group::GatewayRouteLoadBalancerSecurityGroupBuilder;
 
 pub use crate::types::_service_connect_test_traffic_rules::ServiceConnectTestTrafficRulesBuilder;
 
@@ -392,3 +442,5 @@ pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnect
 pub use crate::types::_managed_target_group::ManagedTargetGroupBuilder;
 
 pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceConnectTestTrafficHeaderMatchRulesBuilder;
+
+pub use crate::types::_gateway_connection_alb_resources::GatewayConnectionAlbResourcesBuilder;

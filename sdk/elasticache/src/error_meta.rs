@@ -83,6 +83,8 @@ pub enum Error {
     InvalidUserStateFault(crate::types::error::InvalidUserStateFault),
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
+    /// <p>The migration is not healthy. Check the events for this serverless cache for more details. For <code>CompleteMigration</code>, set <code>Force</code> to true to bypass this check.</p>
+    MigrationHealthFault(crate::types::error::MigrationHealthFault),
     /// <p>The operation was not performed because no changes were required.</p>
     NoOperationFault(crate::types::error::NoOperationFault),
     /// <p>The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.</p>
@@ -111,8 +113,12 @@ pub enum Error {
     ReservedCacheNodesOfferingNotFoundFault(crate::types::error::ReservedCacheNodesOfferingNotFoundFault),
     /// <p>A serverless cache with this name already exists.</p>
     ServerlessCacheAlreadyExistsFault(crate::types::error::ServerlessCacheAlreadyExistsFault),
+    /// <p>A migration is already in progress for this serverless cache. You cannot start another migration until the current one completes.</p>
+    ServerlessCacheAlreadyUnderMigrationFault(crate::types::error::ServerlessCacheAlreadyUnderMigrationFault),
     /// <p>The serverless cache was not found or does not exist.</p>
     ServerlessCacheNotFoundFault(crate::types::error::ServerlessCacheNotFoundFault),
+    /// <p>The serverless cache is not currently under migration.</p>
+    ServerlessCacheNotUnderMigrationFault(crate::types::error::ServerlessCacheNotUnderMigrationFault),
     /// <p>The number of serverless caches exceeds the customer quota.</p>
     ServerlessCacheQuotaForCustomerExceededFault(crate::types::error::ServerlessCacheQuotaForCustomerExceededFault),
     /// <p>A serverless cache snapshot with this name already exists. Available for Valkey, Redis OSS and Serverless Memcached only.</p>
@@ -214,6 +220,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidUserGroupStateFault(inner) => inner.fmt(f),
             Error::InvalidUserStateFault(inner) => inner.fmt(f),
             Error::InvalidVpcNetworkStateFault(inner) => inner.fmt(f),
+            Error::MigrationHealthFault(inner) => inner.fmt(f),
             Error::NoOperationFault(inner) => inner.fmt(f),
             Error::NodeGroupNotFoundFault(inner) => inner.fmt(f),
             Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => inner.fmt(f),
@@ -228,7 +235,9 @@ impl ::std::fmt::Display for Error {
             Error::ReservedCacheNodeQuotaExceededFault(inner) => inner.fmt(f),
             Error::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.fmt(f),
             Error::ServerlessCacheAlreadyExistsFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheAlreadyUnderMigrationFault(inner) => inner.fmt(f),
             Error::ServerlessCacheNotFoundFault(inner) => inner.fmt(f),
+            Error::ServerlessCacheNotUnderMigrationFault(inner) => inner.fmt(f),
             Error::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.fmt(f),
             Error::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.fmt(f),
             Error::ServerlessCacheSnapshotNotFoundFault(inner) => inner.fmt(f),
@@ -311,6 +320,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidUserGroupStateFault(inner) => inner.meta(),
             Self::InvalidUserStateFault(inner) => inner.meta(),
             Self::InvalidVpcNetworkStateFault(inner) => inner.meta(),
+            Self::MigrationHealthFault(inner) => inner.meta(),
             Self::NoOperationFault(inner) => inner.meta(),
             Self::NodeGroupNotFoundFault(inner) => inner.meta(),
             Self::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => inner.meta(),
@@ -325,7 +335,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ReservedCacheNodeQuotaExceededFault(inner) => inner.meta(),
             Self::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.meta(),
             Self::ServerlessCacheAlreadyExistsFault(inner) => inner.meta(),
+            Self::ServerlessCacheAlreadyUnderMigrationFault(inner) => inner.meta(),
             Self::ServerlessCacheNotFoundFault(inner) => inner.meta(),
+            Self::ServerlessCacheNotUnderMigrationFault(inner) => inner.meta(),
             Self::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.meta(),
             Self::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.meta(),
             Self::ServerlessCacheSnapshotNotFoundFault(inner) => inner.meta(),
@@ -531,14 +543,33 @@ where
 impl From<crate::operation::complete_migration::CompleteMigrationError> for Error {
     fn from(err: crate::operation::complete_migration::CompleteMigrationError) -> Self {
         match err {
+            crate::operation::complete_migration::CompleteMigrationError::InvalidCacheClusterStateFault(inner) => {
+                Error::InvalidCacheClusterStateFault(inner)
+            }
+            crate::operation::complete_migration::CompleteMigrationError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::complete_migration::CompleteMigrationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
             crate::operation::complete_migration::CompleteMigrationError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
+            crate::operation::complete_migration::CompleteMigrationError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::complete_migration::CompleteMigrationError::MigrationHealthFault(inner) => Error::MigrationHealthFault(inner),
             crate::operation::complete_migration::CompleteMigrationError::ReplicationGroupNotFoundFault(inner) => {
                 Error::ReplicationGroupNotFoundFault(inner)
             }
             crate::operation::complete_migration::CompleteMigrationError::ReplicationGroupNotUnderMigrationFault(inner) => {
                 Error::ReplicationGroupNotUnderMigrationFault(inner)
+            }
+            crate::operation::complete_migration::CompleteMigrationError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::complete_migration::CompleteMigrationError::ServerlessCacheNotUnderMigrationFault(inner) => {
+                Error::ServerlessCacheNotUnderMigrationFault(inner)
             }
             crate::operation::complete_migration::CompleteMigrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2973,6 +3004,39 @@ impl From<crate::operation::modify_user_group::ModifyUserGroupError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::prepare_migration::PrepareMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::prepare_migration::PrepareMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::prepare_migration::PrepareMigrationError> for Error {
+    fn from(err: crate::operation::prepare_migration::PrepareMigrationError) -> Self {
+        match err {
+            crate::operation::prepare_migration::PrepareMigrationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::prepare_migration::PrepareMigrationError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::prepare_migration::PrepareMigrationError::ServerlessCacheAlreadyUnderMigrationFault(inner) => {
+                Error::ServerlessCacheAlreadyUnderMigrationFault(inner)
+            }
+            crate::operation::prepare_migration::PrepareMigrationError::ServerlessCacheNotFoundFault(inner) => {
+                Error::ServerlessCacheNotFoundFault(inner)
+            }
+            crate::operation::prepare_migration::PrepareMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3248,19 +3312,64 @@ where
 impl From<crate::operation::start_migration::StartMigrationError> for Error {
     fn from(err: crate::operation::start_migration::StartMigrationError) -> Self {
         match err {
+            crate::operation::start_migration::StartMigrationError::InvalidCacheClusterStateFault(inner) => {
+                Error::InvalidCacheClusterStateFault(inner)
+            }
+            crate::operation::start_migration::StartMigrationError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
             crate::operation::start_migration::StartMigrationError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
             crate::operation::start_migration::StartMigrationError::InvalidReplicationGroupStateFault(inner) => {
                 Error::InvalidReplicationGroupStateFault(inner)
             }
+            crate::operation::start_migration::StartMigrationError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::start_migration::StartMigrationError::MigrationHealthFault(inner) => Error::MigrationHealthFault(inner),
             crate::operation::start_migration::StartMigrationError::ReplicationGroupAlreadyUnderMigrationFault(inner) => {
                 Error::ReplicationGroupAlreadyUnderMigrationFault(inner)
             }
             crate::operation::start_migration::StartMigrationError::ReplicationGroupNotFoundFault(inner) => {
                 Error::ReplicationGroupNotFoundFault(inner)
             }
+            crate::operation::start_migration::StartMigrationError::ServerlessCacheNotFoundFault(inner) => Error::ServerlessCacheNotFoundFault(inner),
+            crate::operation::start_migration::StartMigrationError::ServerlessCacheNotUnderMigrationFault(inner) => {
+                Error::ServerlessCacheNotUnderMigrationFault(inner)
+            }
             crate::operation::start_migration::StartMigrationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_migration::StopMigrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_migration::StopMigrationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_migration::StopMigrationError> for Error {
+    fn from(err: crate::operation::stop_migration::StopMigrationError) -> Self {
+        match err {
+            crate::operation::stop_migration::StopMigrationError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::stop_migration::StopMigrationError::InvalidServerlessCacheStateFault(inner) => {
+                Error::InvalidServerlessCacheStateFault(inner)
+            }
+            crate::operation::stop_migration::StopMigrationError::ServerlessCacheNotFoundFault(inner) => Error::ServerlessCacheNotFoundFault(inner),
+            crate::operation::stop_migration::StopMigrationError::ServerlessCacheNotUnderMigrationFault(inner) => {
+                Error::ServerlessCacheNotUnderMigrationFault(inner)
+            }
+            crate::operation::stop_migration::StopMigrationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3317,6 +3426,10 @@ where
 impl From<crate::operation::test_migration::TestMigrationError> for Error {
     fn from(err: crate::operation::test_migration::TestMigrationError) -> Self {
         match err {
+            crate::operation::test_migration::TestMigrationError::InvalidCacheClusterStateFault(inner) => Error::InvalidCacheClusterStateFault(inner),
+            crate::operation::test_migration::TestMigrationError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
             crate::operation::test_migration::TestMigrationError::InvalidParameterValueException(inner) => {
                 Error::InvalidParameterValueException(inner)
             }
@@ -3386,6 +3499,7 @@ impl ::std::error::Error for Error {
             Error::InvalidUserGroupStateFault(inner) => inner.source(),
             Error::InvalidUserStateFault(inner) => inner.source(),
             Error::InvalidVpcNetworkStateFault(inner) => inner.source(),
+            Error::MigrationHealthFault(inner) => inner.source(),
             Error::NoOperationFault(inner) => inner.source(),
             Error::NodeGroupNotFoundFault(inner) => inner.source(),
             Error::NodeGroupsPerReplicationGroupQuotaExceededFault(inner) => inner.source(),
@@ -3400,7 +3514,9 @@ impl ::std::error::Error for Error {
             Error::ReservedCacheNodeQuotaExceededFault(inner) => inner.source(),
             Error::ReservedCacheNodesOfferingNotFoundFault(inner) => inner.source(),
             Error::ServerlessCacheAlreadyExistsFault(inner) => inner.source(),
+            Error::ServerlessCacheAlreadyUnderMigrationFault(inner) => inner.source(),
             Error::ServerlessCacheNotFoundFault(inner) => inner.source(),
+            Error::ServerlessCacheNotUnderMigrationFault(inner) => inner.source(),
             Error::ServerlessCacheQuotaForCustomerExceededFault(inner) => inner.source(),
             Error::ServerlessCacheSnapshotAlreadyExistsFault(inner) => inner.source(),
             Error::ServerlessCacheSnapshotNotFoundFault(inner) => inner.source(),
@@ -3469,6 +3585,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidUserGroupStateFault(e) => e.request_id(),
             Self::InvalidUserStateFault(e) => e.request_id(),
             Self::InvalidVpcNetworkStateFault(e) => e.request_id(),
+            Self::MigrationHealthFault(e) => e.request_id(),
             Self::NoOperationFault(e) => e.request_id(),
             Self::NodeGroupNotFoundFault(e) => e.request_id(),
             Self::NodeGroupsPerReplicationGroupQuotaExceededFault(e) => e.request_id(),
@@ -3483,7 +3600,9 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ReservedCacheNodeQuotaExceededFault(e) => e.request_id(),
             Self::ReservedCacheNodesOfferingNotFoundFault(e) => e.request_id(),
             Self::ServerlessCacheAlreadyExistsFault(e) => e.request_id(),
+            Self::ServerlessCacheAlreadyUnderMigrationFault(e) => e.request_id(),
             Self::ServerlessCacheNotFoundFault(e) => e.request_id(),
+            Self::ServerlessCacheNotUnderMigrationFault(e) => e.request_id(),
             Self::ServerlessCacheQuotaForCustomerExceededFault(e) => e.request_id(),
             Self::ServerlessCacheSnapshotAlreadyExistsFault(e) => e.request_id(),
             Self::ServerlessCacheSnapshotNotFoundFault(e) => e.request_id(),

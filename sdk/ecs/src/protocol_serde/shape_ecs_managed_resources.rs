@@ -54,6 +54,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "gatewayConnections" => {
+                            builder = builder.set_gateway_connections(
+                                crate::protocol_serde::shape_gateway_connection_list::de_gateway_connection_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

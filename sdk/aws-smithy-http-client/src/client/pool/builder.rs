@@ -23,7 +23,7 @@ use aws_smithy_async::time::{SharedTimeSource, TimeSource};
     all(feature = "test-util", aws_sdk_unstable)
 ))]
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::dns::{ResolveDns, SharedDnsResolver};
+use aws_smithy_runtime_api::client::dns::{ResolveDns, ResolveDnsError, SharedDnsResolver};
 use aws_smithy_runtime_api::shared::IntoShared;
 #[cfg(any(
     all(test, feature = "rt-tokio"),
@@ -35,14 +35,13 @@ use hyper_util::client::legacy::connect::dns::Name;
 use hyper_util::client::legacy::connect::HttpConnector;
 use std::error::Error;
 use std::fmt;
+use std::future::Future;
 use std::net::SocketAddr;
 use std::num::NonZeroUsize;
+use std::pin::Pin;
 use std::sync::atomic::AtomicU64;
+use std::task::{Context, Poll};
 use std::time::Duration;
-#[cfg(any(
-    all(test, feature = "rt-tokio"),
-    all(feature = "test-util", aws_sdk_unstable)
-))]
 use tower::Service;
 
 /// Default duration for retaining an idle reusable connection.
@@ -389,7 +388,7 @@ crate::cfg::cfg_tls! {
                 Some(resolver) => {
                     self.build_https_with_resolver(HyperUtilResolver { resolver })
                 }
-                None => self.build_https_with_resolver(GaiResolver::new()),
+                None => self.build_https_with_resolver(DefaultResolver(GaiResolver::new())),
             }
         }
 
@@ -455,6 +454,34 @@ crate::cfg::cfg_tls! {
     }
 }
 
+/// Reports a hyper-util resolver's failures as `ResolveDnsError`, so they are classified like
+/// a custom resolver's, as I/O.
+///
+/// The pool wraps its default resolver, `GaiResolver`, in this. getaddrinfo's error does not say
+/// which failures are permanent, so every DNS failure is retried.
+#[derive(Clone)]
+struct DefaultResolver<R>(R);
+
+impl<R> Service<Name> for DefaultResolver<R>
+where
+    R: Service<Name>,
+    R::Error: Into<Box<dyn Error + Send + Sync>>,
+    R::Future: Send + 'static,
+{
+    type Response = R::Response;
+    type Error = ResolveDnsError;
+    type Future = Pin<Box<dyn Future<Output = Result<R::Response, ResolveDnsError>> + Send>>;
+
+    fn poll_ready(&mut self, cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+        self.0.poll_ready(cx).map_err(ResolveDnsError::new)
+    }
+
+    fn call(&mut self, name: Name) -> Self::Future {
+        let resolving = self.0.call(name);
+        Box::pin(async move { resolving.await.map_err(ResolveDnsError::new) })
+    }
+}
+
 impl Builder<TlsUnset> {
     /// Builds a pool for cleartext HTTP connections.
     ///
@@ -466,7 +493,7 @@ impl Builder<TlsUnset> {
         let resolver = self.dns_resolver.clone();
         match resolver {
             Some(resolver) => self.build_http_with_resolver(HyperUtilResolver { resolver }),
-            None => self.build_http_with_resolver(GaiResolver::new()),
+            None => self.build_http_with_resolver(DefaultResolver(GaiResolver::new())),
         }
     }
 
@@ -973,5 +1000,38 @@ mod tests {
             "the anonymous partition identifier is reserved",
             error.to_string()
         );
+    }
+
+    /// A resolver that fails every lookup with an `io::Error`.
+    #[derive(Clone)]
+    struct FailingResolver;
+
+    impl Service<Name> for FailingResolver {
+        type Response = std::vec::IntoIter<SocketAddr>;
+        type Error = std::io::Error;
+        type Future = std::future::Ready<Result<Self::Response, Self::Error>>;
+
+        fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+            Poll::Ready(Ok(()))
+        }
+
+        fn call(&mut self, name: Name) -> Self::Future {
+            std::future::ready(Err(std::io::Error::other(format!(
+                "no addresses for {name}"
+            ))))
+        }
+    }
+
+    #[tokio::test]
+    async fn default_resolver_failure_through_http_connector_is_io() {
+        let mut connector = HttpConnector::new_with_resolver(DefaultResolver(FailingResolver));
+
+        let error = connector
+            .call(http_1x::Uri::from_static("http://example.com/"))
+            .await
+            .expect_err("DNS resolution fails");
+
+        let error = crate::client::downcast_error(error.into());
+        assert!(error.is_io(), "expected an I/O error, got {error:?}");
     }
 }

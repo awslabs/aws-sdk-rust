@@ -51,13 +51,18 @@ use schema_common::default_codec;
 // scalar types so any swap is detectable. Members deliberately have short
 // names to keep the serialized output small and the fuzz throughput high.
 
-static M_A: Schema = Schema::new_member(shape_id!("test", "Probe$a"), ShapeType::Boolean, "a", 0);
-static M_B: Schema = Schema::new_member(shape_id!("test", "Probe$b"), ShapeType::Integer, "b", 1);
-static M_C: Schema = Schema::new_member(shape_id!("test", "Probe$c"), ShapeType::String, "c", 2);
-static M_D: Schema = Schema::new_member(shape_id!("test", "Probe$d"), ShapeType::Long, "d", 3);
-static M_E: Schema = Schema::new_member(shape_id!("test", "Probe$e"), ShapeType::Short, "e", 4);
+static M_A: Schema<'static> =
+    Schema::new_member(shape_id!("test", "Probe$a"), ShapeType::Boolean, "a", 0);
+static M_B: Schema<'static> =
+    Schema::new_member(shape_id!("test", "Probe$b"), ShapeType::Integer, "b", 1);
+static M_C: Schema<'static> =
+    Schema::new_member(shape_id!("test", "Probe$c"), ShapeType::String, "c", 2);
+static M_D: Schema<'static> =
+    Schema::new_member(shape_id!("test", "Probe$d"), ShapeType::Long, "d", 3);
+static M_E: Schema<'static> =
+    Schema::new_member(shape_id!("test", "Probe$e"), ShapeType::Short, "e", 4);
 
-static PROBE_SCHEMA: Schema = Schema::new_struct(
+static PROBE_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "Probe"),
     ShapeType::Structure,
     &[&M_A, &M_B, &M_C, &M_D, &M_E],
@@ -75,6 +80,10 @@ struct OrderingProbe {
 }
 
 impl SerializableStruct for OrderingProbe {
+    fn schema(&self) -> &Schema<'_> {
+        &PROBE_SCHEMA
+    }
+
     fn serialize_members(&self, ser: &mut dyn ShapeSerializer) -> Result<(), SerdeError> {
         ser.write_boolean(&M_A, self.a)?;
         ser.write_integer(&M_B, self.b)?;

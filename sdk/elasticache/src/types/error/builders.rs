@@ -43,7 +43,13 @@ pub use crate::types::error::_invalid_parameter_combination_exception::InvalidPa
 
 pub use crate::types::error::_service_update_not_found_fault::ServiceUpdateNotFoundFaultBuilder;
 
+pub use crate::types::error::_invalid_cache_cluster_state_fault::InvalidCacheClusterStateFaultBuilder;
+
+pub use crate::types::error::_migration_health_fault::MigrationHealthFaultBuilder;
+
 pub use crate::types::error::_replication_group_not_under_migration_fault::ReplicationGroupNotUnderMigrationFaultBuilder;
+
+pub use crate::types::error::_serverless_cache_not_under_migration_fault::ServerlessCacheNotUnderMigrationFaultBuilder;
 
 pub use crate::types::error::_serverless_cache_snapshot_already_exists_fault::ServerlessCacheSnapshotAlreadyExistsFaultBuilder;
 
@@ -91,8 +97,6 @@ pub use crate::types::error::_subnet_not_allowed_fault::SubnetNotAllowedFaultBui
 
 pub use crate::types::error::_global_replication_group_already_exists_fault::GlobalReplicationGroupAlreadyExistsFaultBuilder;
 
-pub use crate::types::error::_invalid_cache_cluster_state_fault::InvalidCacheClusterStateFaultBuilder;
-
 pub use crate::types::error::_invalid_global_replication_group_state_fault::InvalidGlobalReplicationGroupStateFaultBuilder;
 
 pub use crate::types::error::_invalid_user_group_state_fault::InvalidUserGroupStateFaultBuilder;
@@ -134,6 +138,8 @@ pub use crate::types::error::_reserved_cache_nodes_offering_not_found_fault::Res
 pub use crate::types::error::_invalid_kms_key_fault::InvalidKmsKeyFaultBuilder;
 
 pub use crate::types::error::_subnet_in_use::SubnetInUseBuilder;
+
+pub use crate::types::error::_serverless_cache_already_under_migration_fault::ServerlessCacheAlreadyUnderMigrationFaultBuilder;
 
 pub use crate::types::error::_reserved_cache_node_already_exists_fault::ReservedCacheNodeAlreadyExistsFaultBuilder;
 

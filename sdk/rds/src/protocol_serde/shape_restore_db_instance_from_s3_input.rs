@@ -305,41 +305,46 @@ pub fn ser_restore_db_instance_from_s3_input_input_input(
         scope_112.string(var_113);
     }
     #[allow(unused_mut)]
-    let mut scope_114 = writer.prefix("DedicatedLogVolume");
-    if let Some(var_115) = &input.dedicated_log_volume {
-        scope_114.boolean(*var_115);
+    let mut scope_114 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_115) = &input.db_capacity_reservation_identifier {
+        scope_114.string(var_115);
     }
     #[allow(unused_mut)]
-    let mut scope_116 = writer.prefix("CACertificateIdentifier");
-    if let Some(var_117) = &input.ca_certificate_identifier {
-        scope_116.string(var_117);
+    let mut scope_116 = writer.prefix("DedicatedLogVolume");
+    if let Some(var_117) = &input.dedicated_log_volume {
+        scope_116.boolean(*var_117);
     }
     #[allow(unused_mut)]
-    let mut scope_118 = writer.prefix("EngineLifecycleSupport");
-    if let Some(var_119) = &input.engine_lifecycle_support {
+    let mut scope_118 = writer.prefix("CACertificateIdentifier");
+    if let Some(var_119) = &input.ca_certificate_identifier {
         scope_118.string(var_119);
     }
     #[allow(unused_mut)]
-    let mut scope_120 = writer.prefix("AdditionalStorageVolumes");
-    if let Some(var_121) = &input.additional_storage_volumes {
-        let mut list_123 = scope_120.start_list(false, None);
-        for item_122 in var_121 {
-            #[allow(unused_mut)]
-            let mut entry_124 = list_123.entry();
-            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_124, item_122)?;
-        }
-        list_123.finish();
+    let mut scope_120 = writer.prefix("EngineLifecycleSupport");
+    if let Some(var_121) = &input.engine_lifecycle_support {
+        scope_120.string(var_121);
     }
     #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("TagSpecifications");
-    if let Some(var_126) = &input.tag_specifications {
-        let mut list_128 = scope_125.start_list(false, Some("item"));
-        for item_127 in var_126 {
+    let mut scope_122 = writer.prefix("AdditionalStorageVolumes");
+    if let Some(var_123) = &input.additional_storage_volumes {
+        let mut list_125 = scope_122.start_list(false, None);
+        for item_124 in var_123 {
             #[allow(unused_mut)]
-            let mut entry_129 = list_128.entry();
-            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_129, item_127)?;
+            let mut entry_126 = list_125.entry();
+            crate::protocol_serde::shape_additional_storage_volume::ser_additional_storage_volume(entry_126, item_124)?;
         }
-        list_128.finish();
+        list_125.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_127 = writer.prefix("TagSpecifications");
+    if let Some(var_128) = &input.tag_specifications {
+        let mut list_130 = scope_127.start_list(false, Some("item"));
+        for item_129 in var_128 {
+            #[allow(unused_mut)]
+            let mut entry_131 = list_130.entry();
+            crate::protocol_serde::shape_tag_specification::ser_tag_specification(entry_131, item_129)?;
+        }
+        list_130.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

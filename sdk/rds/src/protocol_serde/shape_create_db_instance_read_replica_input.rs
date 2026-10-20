@@ -313,6 +313,11 @@ pub fn ser_create_db_instance_read_replica_input_input_input(
         }
         list_118.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_120 = writer.prefix("DBCapacityReservationIdentifier");
+    if let Some(var_121) = &input.db_capacity_reservation_identifier {
+        scope_120.string(var_121);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

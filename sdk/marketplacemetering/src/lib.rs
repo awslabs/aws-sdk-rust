@@ -77,7 +77,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacemetering = "1.119.1"
+//! aws-sdk-marketplacemetering = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

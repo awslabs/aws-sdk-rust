@@ -24,6 +24,86 @@ impl AssociationFilter {
         self.value.deref()
     }
 }
+static ASSOCIATIONFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationFilter$key", "com.amazonaws.ssm", "AssociationFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ASSOCIATIONFILTER_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationFilter$value", "com.amazonaws.ssm", "AssociationFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ASSOCIATIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationFilter", "com.amazonaws.ssm", "AssociationFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ASSOCIATIONFILTER_MEMBER_KEY, &ASSOCIATIONFILTER_MEMBER_VALUE],
+);
+impl AssociationFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociationFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&ASSOCIATIONFILTER_MEMBER_KEY, val.as_str())?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&ASSOCIATIONFILTER_MEMBER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AssociationFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.key = Some(crate::types::AssociationFilterKey::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.value = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociationFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.value = builder.value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociationFilter {
     /// Creates a new builder-style object to manufacture [`AssociationFilter`](crate::types::AssociationFilter).
     pub fn builder() -> crate::types::builders::AssociationFilterBuilder {

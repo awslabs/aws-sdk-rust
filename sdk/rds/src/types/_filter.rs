@@ -6,6 +6,8 @@
 /// <p>The following actions can be filtered:</p>
 /// <ul>
 /// <li>
+/// <p><code>DescribeDBCapacityReservations</code></p></li>
+/// <li>
 /// <p><code>DescribeDBClusterBacktracks</code></p></li>
 /// <li>
 /// <p><code>DescribeDBClusterEndpoints</code></p></li>

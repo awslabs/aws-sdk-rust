@@ -19,6 +19,60 @@ pub fn de_complete_migration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidCacheClusterState" => crate::operation::complete_migration::CompleteMigrationError::InvalidCacheClusterStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidCacheClusterStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_cache_cluster_state_fault::de_invalid_cache_cluster_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterCombination" => crate::operation::complete_migration::CompleteMigrationError::InvalidParameterCombinationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterCombinationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_combination_exception::de_invalid_parameter_combination_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterValue" => crate::operation::complete_migration::CompleteMigrationError::InvalidParameterValueException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterValueExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_value_exception::de_invalid_parameter_value_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidReplicationGroupState" => crate::operation::complete_migration::CompleteMigrationError::InvalidReplicationGroupStateFault({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -29,6 +83,39 @@ pub fn de_complete_migration_http_error(
                     output,
                 )
                 .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidServerlessCacheStateFault" => crate::operation::complete_migration::CompleteMigrationError::InvalidServerlessCacheStateFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidServerlessCacheStateFaultBuilder::default();
+                output = crate::protocol_serde::shape_invalid_serverless_cache_state_fault::de_invalid_serverless_cache_state_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MigrationHealthFault" => crate::operation::complete_migration::CompleteMigrationError::MigrationHealthFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::MigrationHealthFaultBuilder::default();
+                output = crate::protocol_serde::shape_migration_health_fault::de_migration_health_fault_xml_err(_response_body, output)
+                    .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -62,6 +149,40 @@ pub fn de_complete_migration_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationGroupNotUnderMigrationFaultBuilder::default();
                     output = crate::protocol_serde::shape_replication_group_not_under_migration_fault::de_replication_group_not_under_migration_fault_xml_err(_response_body, output).map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServerlessCacheNotFoundFault" => crate::operation::complete_migration::CompleteMigrationError::ServerlessCacheNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServerlessCacheNotFoundFaultBuilder::default();
+                output = crate::protocol_serde::shape_serverless_cache_not_found_fault::de_serverless_cache_not_found_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServerlessCacheNotUnderMigrationFault" => {
+            crate::operation::complete_migration::CompleteMigrationError::ServerlessCacheNotUnderMigrationFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ServerlessCacheNotUnderMigrationFaultBuilder::default();
+                    output = crate::protocol_serde::shape_serverless_cache_not_under_migration_fault::de_serverless_cache_not_under_migration_fault_xml_err(_response_body, output).map_err(crate::operation::complete_migration::CompleteMigrationError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -128,6 +249,16 @@ pub fn de_complete_migration(
                     )
                 ;
                 builder = builder.set_replication_group(var_1);
+            }
+            ,
+            s if s.matches("ServerlessCache") /* ServerlessCache com.amazonaws.elasticache.synthetic#CompleteMigrationOutput$ServerlessCache */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_serverless_cache::de_serverless_cache(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_serverless_cache(var_2);
             }
             ,
             _ => {}

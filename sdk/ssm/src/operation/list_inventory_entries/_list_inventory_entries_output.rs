@@ -45,6 +45,250 @@ impl ListInventoryEntriesOutput {
         self.next_token.as_deref()
     }
 }
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$TypeName",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    0,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$InstanceId",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    1,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$SchemaVersion",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SchemaVersion",
+    2,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_CAPTURE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$CaptureTime",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CaptureTime",
+    3,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InventoryItemEntry$key", "com.amazonaws.ssm", "InventoryItemEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InventoryItemEntry$value", "com.amazonaws.ssm", "InventoryItemEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryItemEntryList$member",
+        "com.amazonaws.ssm",
+        "InventoryItemEntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER_KEY,
+    &LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER_VALUE,
+);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$Entries",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entries",
+    4,
+)
+.with_list_member(&LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER);
+static LISTINVENTORYENTRIESOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    5,
+);
+static LISTINVENTORYENTRIESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesOutput",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_TYPE_NAME,
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_INSTANCE_ID,
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_SCHEMA_VERSION,
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_CAPTURE_TIME,
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES,
+        &LISTINVENTORYENTRIESOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListInventoryEntriesResult");
+impl ListInventoryEntriesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTINVENTORYENTRIESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListInventoryEntriesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&LISTINVENTORYENTRIESOUTPUT_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&LISTINVENTORYENTRIESOUTPUT_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.schema_version {
+            ser.write_string(&LISTINVENTORYENTRIESOUTPUT_MEMBER_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.capture_time {
+            ser.write_string(&LISTINVENTORYENTRIESOUTPUT_MEMBER_CAPTURE_TIME, val)?;
+        }
+        if let Some(ref val) = self.entries {
+            ser.write_list(
+                &LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTINVENTORYENTRIESOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_inventory_entries::builders::ListInventoryEntriesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTINVENTORYENTRIESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capture_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&LISTINVENTORYENTRIESOUTPUT_MEMBER_ENTRIES_MEMBER, &mut |key, deser| {
+                                        let value = deser.read_string(&::aws_smithy_schema::prelude::STRING)?;
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListInventoryEntriesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListInventoryEntriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -51,6 +51,22 @@ pub fn de_stop_db_instance_http_error(
             }
             tmp
         }),
+        "InvalidDBCapacityReservationState" => {
+            crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbCapacityReservationStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidDbCapacityReservationStateFaultBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_db_capacity_reservation_state_fault::de_invalid_db_capacity_reservation_state_fault_xml_err(_response_body, output).map_err(crate::operation::stop_db_instance::StopDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "InvalidDBClusterStateFault" => crate::operation::stop_db_instance::StopDBInstanceError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp = {

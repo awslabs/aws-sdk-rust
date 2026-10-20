@@ -539,6 +539,58 @@ pub struct ModifyDbInstanceInput {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional storage volumes to modify or delete for the DB instance. You can create up to 3 additional storage volumes. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.</p>
     pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. After the modification completes, the DB instance uses reserved capacity from this reservation.</p>
+    /// <p>You can't change the DB capacity reservation of a DB instance on its own. A request that changes the reservation must also change the DB instance class, the Multi-AZ setting, the license model, or the engine. Therefore, this request always changes the configuration of the DB instance.</p>
+    /// <p>If the DB instance already uses the reservation that you specify, this requirement doesn't apply. You can then change another setting, such as the Multi-AZ setting, and keep the reservation.</p>
+    /// <p>For a DB instance that uses no reservation, change <code>DBInstanceClass</code> to the DB instance class that the reservation reserves. A reservation reserves capacity for one DB instance class, so that change moves the DB instance onto the reserved capacity. That change also resizes the DB instance, which interrupts it.</p>
+    /// <p>If the DB instance already runs the DB instance class that the reservation reserves, change <code>MultiAZ</code> or <code>LicenseModel</code> instead. Only RDS for Oracle and RDS for Microsoft SQL Server accept a change of license model, so <code>MultiAZ</code> is the remaining choice for every other engine.</p><important>
+    /// <p>If you don't specify this parameter, Amazon RDS moves the DB instance to unreserved capacity, and it releases the reserved capacity that the DB instance holds. A request that changes the DB instance class, the Multi-AZ setting, the license model, or the engine moves the DB instance to different hardware, and Amazon RDS places the DB instance on unreserved capacity. Therefore, to keep the DB instance on reserved capacity, specify this parameter in every request that changes any of those settings.</p>
+    /// <p>The DB instance keeps its current reservation until Amazon RDS applies the modification. Until then, the <code>DBCapacityReservationIdentifier</code> field of the DB instance still reports that reservation, and <code>PendingModifiedValues</code> reports no reservation. Amazon RDS releases the reserved capacity when it moves the DB instance.</p>
+    /// </important>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request changes which DB capacity reservation the DB instance uses, it must also set a new value for <code>DBInstanceClass</code>, <code>MultiAZ</code>, <code>LicenseModel</code>, or <code>Engine</code>. The new value must differ from the current value. The only engine change that <code>ModifyDBInstance</code> supports is a conversion to the CDB architecture. Repeating the current value doesn't satisfy this requirement. This requirement applies both when the DB instance uses no reservation, and when it moves to a different reservation.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class that the DB instance uses after the modification, and for the database engine of the DB instance. Therefore, when the request changes <code>DBInstanceClass</code>, the reservation reserves capacity for a DB instance class that the DB instance doesn't use today.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses after the modification.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, except when the request changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones.</p></li>
+    /// <li>
+    /// <p>If the DB instance is already Multi-AZ, the reservation must cover both of its Availability Zones. If the request converts the DB instance to Multi-AZ, the reservation must cover the current Availability Zone of the DB instance, and Amazon RDS chooses the second Availability Zone from the reservation.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it. Amazon RDS checks the license model only when the request specifies <code>LicenseModel</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to <code>DBSubnetGroupName</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to both <code>DBInstanceClass</code> and <code>LicenseModel</code>. Submit those changes as two separate requests.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with a change to <code>DBInstanceClass</code> when the request also changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>When the request changes the DB instance from Multi-AZ to Single-AZ, the reservation must cover either the primary or the secondary Availability Zone of the DB instance. Amazon RDS keeps the DB instance in its primary Availability Zone, and it removes the standby replica. Therefore, the primary Availability Zone keeps its unit of reserved capacity, and the secondary Availability Zone releases its unit.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>LicenseModel</code> while a modification of the DB instance class or the Multi-AZ setting is pending.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>DBInstanceClass</code> or <code>MultiAZ</code> while a modification of the license model is pending.</p></li>
+    /// <li>
+    /// <p>When a modification is already pending, the reservation must reserve capacity for the DB instance as it will be after both the pending modification and the requested modification complete.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>Isn't supported for an RDS on Outposts DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation expires within one week, you must also enable <code>ApplyImmediately</code>. Otherwise, choose a reservation with a later end date.</p></li>
+    /// <li>
+    /// <p>Amazon RDS holds a unit of reserved capacity for the DB instance when it accepts the request, even when the modification waits for the maintenance window.</p></li>
+    /// </ul>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -1233,6 +1285,60 @@ impl ModifyDbInstanceInput {
     pub fn additional_storage_volumes(&self) -> &[crate::types::ModifyAdditionalStorageVolume] {
         self.additional_storage_volumes.as_deref().unwrap_or_default()
     }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. After the modification completes, the DB instance uses reserved capacity from this reservation.</p>
+    /// <p>You can't change the DB capacity reservation of a DB instance on its own. A request that changes the reservation must also change the DB instance class, the Multi-AZ setting, the license model, or the engine. Therefore, this request always changes the configuration of the DB instance.</p>
+    /// <p>If the DB instance already uses the reservation that you specify, this requirement doesn't apply. You can then change another setting, such as the Multi-AZ setting, and keep the reservation.</p>
+    /// <p>For a DB instance that uses no reservation, change <code>DBInstanceClass</code> to the DB instance class that the reservation reserves. A reservation reserves capacity for one DB instance class, so that change moves the DB instance onto the reserved capacity. That change also resizes the DB instance, which interrupts it.</p>
+    /// <p>If the DB instance already runs the DB instance class that the reservation reserves, change <code>MultiAZ</code> or <code>LicenseModel</code> instead. Only RDS for Oracle and RDS for Microsoft SQL Server accept a change of license model, so <code>MultiAZ</code> is the remaining choice for every other engine.</p><important>
+    /// <p>If you don't specify this parameter, Amazon RDS moves the DB instance to unreserved capacity, and it releases the reserved capacity that the DB instance holds. A request that changes the DB instance class, the Multi-AZ setting, the license model, or the engine moves the DB instance to different hardware, and Amazon RDS places the DB instance on unreserved capacity. Therefore, to keep the DB instance on reserved capacity, specify this parameter in every request that changes any of those settings.</p>
+    /// <p>The DB instance keeps its current reservation until Amazon RDS applies the modification. Until then, the <code>DBCapacityReservationIdentifier</code> field of the DB instance still reports that reservation, and <code>PendingModifiedValues</code> reports no reservation. Amazon RDS releases the reserved capacity when it moves the DB instance.</p>
+    /// </important>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request changes which DB capacity reservation the DB instance uses, it must also set a new value for <code>DBInstanceClass</code>, <code>MultiAZ</code>, <code>LicenseModel</code>, or <code>Engine</code>. The new value must differ from the current value. The only engine change that <code>ModifyDBInstance</code> supports is a conversion to the CDB architecture. Repeating the current value doesn't satisfy this requirement. This requirement applies both when the DB instance uses no reservation, and when it moves to a different reservation.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class that the DB instance uses after the modification, and for the database engine of the DB instance. Therefore, when the request changes <code>DBInstanceClass</code>, the reservation reserves capacity for a DB instance class that the DB instance doesn't use today.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses after the modification.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, except when the request changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones.</p></li>
+    /// <li>
+    /// <p>If the DB instance is already Multi-AZ, the reservation must cover both of its Availability Zones. If the request converts the DB instance to Multi-AZ, the reservation must cover the current Availability Zone of the DB instance, and Amazon RDS chooses the second Availability Zone from the reservation.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it. Amazon RDS checks the license model only when the request specifies <code>LicenseModel</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to <code>DBSubnetGroupName</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to both <code>DBInstanceClass</code> and <code>LicenseModel</code>. Submit those changes as two separate requests.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with a change to <code>DBInstanceClass</code> when the request also changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>When the request changes the DB instance from Multi-AZ to Single-AZ, the reservation must cover either the primary or the secondary Availability Zone of the DB instance. Amazon RDS keeps the DB instance in its primary Availability Zone, and it removes the standby replica. Therefore, the primary Availability Zone keeps its unit of reserved capacity, and the secondary Availability Zone releases its unit.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>LicenseModel</code> while a modification of the DB instance class or the Multi-AZ setting is pending.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>DBInstanceClass</code> or <code>MultiAZ</code> while a modification of the license model is pending.</p></li>
+    /// <li>
+    /// <p>When a modification is already pending, the reservation must reserve capacity for the DB instance as it will be after both the pending modification and the requested modification complete.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>Isn't supported for an RDS on Outposts DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation expires within one week, you must also enable <code>ApplyImmediately</code>. Otherwise, choose a reservation with a later end date.</p></li>
+    /// <li>
+    /// <p>Amazon RDS holds a unit of reserved capacity for the DB instance when it accepts the request, even when the modification waits for the maintenance window.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
+    }
     /// <p>Tags to assign to resources associated with the DB instance.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -1330,6 +1436,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInput {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
@@ -1409,6 +1516,7 @@ pub struct ModifyDbInstanceInputBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
@@ -3549,6 +3657,170 @@ impl ModifyDbInstanceInputBuilder {
     pub fn get_additional_storage_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyAdditionalStorageVolume>> {
         &self.additional_storage_volumes
     }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. After the modification completes, the DB instance uses reserved capacity from this reservation.</p>
+    /// <p>You can't change the DB capacity reservation of a DB instance on its own. A request that changes the reservation must also change the DB instance class, the Multi-AZ setting, the license model, or the engine. Therefore, this request always changes the configuration of the DB instance.</p>
+    /// <p>If the DB instance already uses the reservation that you specify, this requirement doesn't apply. You can then change another setting, such as the Multi-AZ setting, and keep the reservation.</p>
+    /// <p>For a DB instance that uses no reservation, change <code>DBInstanceClass</code> to the DB instance class that the reservation reserves. A reservation reserves capacity for one DB instance class, so that change moves the DB instance onto the reserved capacity. That change also resizes the DB instance, which interrupts it.</p>
+    /// <p>If the DB instance already runs the DB instance class that the reservation reserves, change <code>MultiAZ</code> or <code>LicenseModel</code> instead. Only RDS for Oracle and RDS for Microsoft SQL Server accept a change of license model, so <code>MultiAZ</code> is the remaining choice for every other engine.</p><important>
+    /// <p>If you don't specify this parameter, Amazon RDS moves the DB instance to unreserved capacity, and it releases the reserved capacity that the DB instance holds. A request that changes the DB instance class, the Multi-AZ setting, the license model, or the engine moves the DB instance to different hardware, and Amazon RDS places the DB instance on unreserved capacity. Therefore, to keep the DB instance on reserved capacity, specify this parameter in every request that changes any of those settings.</p>
+    /// <p>The DB instance keeps its current reservation until Amazon RDS applies the modification. Until then, the <code>DBCapacityReservationIdentifier</code> field of the DB instance still reports that reservation, and <code>PendingModifiedValues</code> reports no reservation. Amazon RDS releases the reserved capacity when it moves the DB instance.</p>
+    /// </important>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request changes which DB capacity reservation the DB instance uses, it must also set a new value for <code>DBInstanceClass</code>, <code>MultiAZ</code>, <code>LicenseModel</code>, or <code>Engine</code>. The new value must differ from the current value. The only engine change that <code>ModifyDBInstance</code> supports is a conversion to the CDB architecture. Repeating the current value doesn't satisfy this requirement. This requirement applies both when the DB instance uses no reservation, and when it moves to a different reservation.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class that the DB instance uses after the modification, and for the database engine of the DB instance. Therefore, when the request changes <code>DBInstanceClass</code>, the reservation reserves capacity for a DB instance class that the DB instance doesn't use today.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses after the modification.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, except when the request changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones.</p></li>
+    /// <li>
+    /// <p>If the DB instance is already Multi-AZ, the reservation must cover both of its Availability Zones. If the request converts the DB instance to Multi-AZ, the reservation must cover the current Availability Zone of the DB instance, and Amazon RDS chooses the second Availability Zone from the reservation.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it. Amazon RDS checks the license model only when the request specifies <code>LicenseModel</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to <code>DBSubnetGroupName</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to both <code>DBInstanceClass</code> and <code>LicenseModel</code>. Submit those changes as two separate requests.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with a change to <code>DBInstanceClass</code> when the request also changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>When the request changes the DB instance from Multi-AZ to Single-AZ, the reservation must cover either the primary or the secondary Availability Zone of the DB instance. Amazon RDS keeps the DB instance in its primary Availability Zone, and it removes the standby replica. Therefore, the primary Availability Zone keeps its unit of reserved capacity, and the secondary Availability Zone releases its unit.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>LicenseModel</code> while a modification of the DB instance class or the Multi-AZ setting is pending.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>DBInstanceClass</code> or <code>MultiAZ</code> while a modification of the license model is pending.</p></li>
+    /// <li>
+    /// <p>When a modification is already pending, the reservation must reserve capacity for the DB instance as it will be after both the pending modification and the requested modification complete.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>Isn't supported for an RDS on Outposts DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation expires within one week, you must also enable <code>ApplyImmediately</code>. Otherwise, choose a reservation with a later end date.</p></li>
+    /// <li>
+    /// <p>Amazon RDS holds a unit of reserved capacity for the DB instance when it accepts the request, even when the modification waits for the maintenance window.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. After the modification completes, the DB instance uses reserved capacity from this reservation.</p>
+    /// <p>You can't change the DB capacity reservation of a DB instance on its own. A request that changes the reservation must also change the DB instance class, the Multi-AZ setting, the license model, or the engine. Therefore, this request always changes the configuration of the DB instance.</p>
+    /// <p>If the DB instance already uses the reservation that you specify, this requirement doesn't apply. You can then change another setting, such as the Multi-AZ setting, and keep the reservation.</p>
+    /// <p>For a DB instance that uses no reservation, change <code>DBInstanceClass</code> to the DB instance class that the reservation reserves. A reservation reserves capacity for one DB instance class, so that change moves the DB instance onto the reserved capacity. That change also resizes the DB instance, which interrupts it.</p>
+    /// <p>If the DB instance already runs the DB instance class that the reservation reserves, change <code>MultiAZ</code> or <code>LicenseModel</code> instead. Only RDS for Oracle and RDS for Microsoft SQL Server accept a change of license model, so <code>MultiAZ</code> is the remaining choice for every other engine.</p><important>
+    /// <p>If you don't specify this parameter, Amazon RDS moves the DB instance to unreserved capacity, and it releases the reserved capacity that the DB instance holds. A request that changes the DB instance class, the Multi-AZ setting, the license model, or the engine moves the DB instance to different hardware, and Amazon RDS places the DB instance on unreserved capacity. Therefore, to keep the DB instance on reserved capacity, specify this parameter in every request that changes any of those settings.</p>
+    /// <p>The DB instance keeps its current reservation until Amazon RDS applies the modification. Until then, the <code>DBCapacityReservationIdentifier</code> field of the DB instance still reports that reservation, and <code>PendingModifiedValues</code> reports no reservation. Amazon RDS releases the reserved capacity when it moves the DB instance.</p>
+    /// </important>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request changes which DB capacity reservation the DB instance uses, it must also set a new value for <code>DBInstanceClass</code>, <code>MultiAZ</code>, <code>LicenseModel</code>, or <code>Engine</code>. The new value must differ from the current value. The only engine change that <code>ModifyDBInstance</code> supports is a conversion to the CDB architecture. Repeating the current value doesn't satisfy this requirement. This requirement applies both when the DB instance uses no reservation, and when it moves to a different reservation.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class that the DB instance uses after the modification, and for the database engine of the DB instance. Therefore, when the request changes <code>DBInstanceClass</code>, the reservation reserves capacity for a DB instance class that the DB instance doesn't use today.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses after the modification.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, except when the request changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones.</p></li>
+    /// <li>
+    /// <p>If the DB instance is already Multi-AZ, the reservation must cover both of its Availability Zones. If the request converts the DB instance to Multi-AZ, the reservation must cover the current Availability Zone of the DB instance, and Amazon RDS chooses the second Availability Zone from the reservation.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it. Amazon RDS checks the license model only when the request specifies <code>LicenseModel</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to <code>DBSubnetGroupName</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to both <code>DBInstanceClass</code> and <code>LicenseModel</code>. Submit those changes as two separate requests.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with a change to <code>DBInstanceClass</code> when the request also changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>When the request changes the DB instance from Multi-AZ to Single-AZ, the reservation must cover either the primary or the secondary Availability Zone of the DB instance. Amazon RDS keeps the DB instance in its primary Availability Zone, and it removes the standby replica. Therefore, the primary Availability Zone keeps its unit of reserved capacity, and the secondary Availability Zone releases its unit.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>LicenseModel</code> while a modification of the DB instance class or the Multi-AZ setting is pending.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>DBInstanceClass</code> or <code>MultiAZ</code> while a modification of the license model is pending.</p></li>
+    /// <li>
+    /// <p>When a modification is already pending, the reservation must reserve capacity for the DB instance as it will be after both the pending modification and the requested modification complete.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>Isn't supported for an RDS on Outposts DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation expires within one week, you must also enable <code>ApplyImmediately</code>. Otherwise, choose a reservation with a later end date.</p></li>
+    /// <li>
+    /// <p>Amazon RDS holds a unit of reserved capacity for the DB instance when it accepts the request, even when the modification waits for the maintenance window.</p></li>
+    /// </ul>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name. After the modification completes, the DB instance uses reserved capacity from this reservation.</p>
+    /// <p>You can't change the DB capacity reservation of a DB instance on its own. A request that changes the reservation must also change the DB instance class, the Multi-AZ setting, the license model, or the engine. Therefore, this request always changes the configuration of the DB instance.</p>
+    /// <p>If the DB instance already uses the reservation that you specify, this requirement doesn't apply. You can then change another setting, such as the Multi-AZ setting, and keep the reservation.</p>
+    /// <p>For a DB instance that uses no reservation, change <code>DBInstanceClass</code> to the DB instance class that the reservation reserves. A reservation reserves capacity for one DB instance class, so that change moves the DB instance onto the reserved capacity. That change also resizes the DB instance, which interrupts it.</p>
+    /// <p>If the DB instance already runs the DB instance class that the reservation reserves, change <code>MultiAZ</code> or <code>LicenseModel</code> instead. Only RDS for Oracle and RDS for Microsoft SQL Server accept a change of license model, so <code>MultiAZ</code> is the remaining choice for every other engine.</p><important>
+    /// <p>If you don't specify this parameter, Amazon RDS moves the DB instance to unreserved capacity, and it releases the reserved capacity that the DB instance holds. A request that changes the DB instance class, the Multi-AZ setting, the license model, or the engine moves the DB instance to different hardware, and Amazon RDS places the DB instance on unreserved capacity. Therefore, to keep the DB instance on reserved capacity, specify this parameter in every request that changes any of those settings.</p>
+    /// <p>The DB instance keeps its current reservation until Amazon RDS applies the modification. Until then, the <code>DBCapacityReservationIdentifier</code> field of the DB instance still reports that reservation, and <code>PendingModifiedValues</code> reports no reservation. Amazon RDS releases the reserved capacity when it moves the DB instance.</p>
+    /// </important>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If the request changes which DB capacity reservation the DB instance uses, it must also set a new value for <code>DBInstanceClass</code>, <code>MultiAZ</code>, <code>LicenseModel</code>, or <code>Engine</code>. The new value must differ from the current value. The only engine change that <code>ModifyDBInstance</code> supports is a conversion to the CDB architecture. Repeating the current value doesn't satisfy this requirement. This requirement applies both when the DB instance uses no reservation, and when it moves to a different reservation.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class that the DB instance uses after the modification, and for the database engine of the DB instance. Therefore, when the request changes <code>DBInstanceClass</code>, the reservation reserves capacity for a DB instance class that the DB instance doesn't use today.</p></li>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state, and it must not be past its end date.</p></li>
+    /// <li>
+    /// <p>The reservation must have available capacity in each Availability Zone that the DB instance uses after the modification.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, except when the request changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>For a Multi-AZ DB instance, the reservation must cover two or more Availability Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two Availability Zones.</p></li>
+    /// <li>
+    /// <p>If the DB instance is already Multi-AZ, the reservation must cover both of its Availability Zones. If the request converts the DB instance to Multi-AZ, the reservation must cover the current Availability Zone of the DB instance, and Amazon RDS chooses the second Availability Zone from the reservation.</p></li>
+    /// <li>
+    /// <p>If the reservation reserves capacity for a specific license model, the license model of the DB instance must match it. Amazon RDS checks the license model only when the request specifies <code>LicenseModel</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to <code>DBSubnetGroupName</code>.</p></li>
+    /// <li>
+    /// <p>You can't specify this parameter together with a change to both <code>DBInstanceClass</code> and <code>LicenseModel</code>. Submit those changes as two separate requests.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with a change to <code>DBInstanceClass</code> when the request also changes the DB instance from Multi-AZ to Single-AZ.</p></li>
+    /// <li>
+    /// <p>When the request changes the DB instance from Multi-AZ to Single-AZ, the reservation must cover either the primary or the secondary Availability Zone of the DB instance. Amazon RDS keeps the DB instance in its primary Availability Zone, and it removes the standby replica. Therefore, the primary Availability Zone keeps its unit of reserved capacity, and the secondary Availability Zone releases its unit.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>LicenseModel</code> while a modification of the DB instance class or the Multi-AZ setting is pending.</p></li>
+    /// <li>
+    /// <p>Can't be specified together with <code>DBInstanceClass</code> or <code>MultiAZ</code> while a modification of the license model is pending.</p></li>
+    /// <li>
+    /// <p>When a modification is already pending, the reservation must reserve capacity for the DB instance as it will be after both the pending modification and the requested modification complete.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must be in a VPC with default tenancy.</p></li>
+    /// <li>
+    /// <p>The DB subnet group must cover each Availability Zone that the DB instance uses.</p></li>
+    /// <li>
+    /// <p>Isn't supported for an RDS on Outposts DB instance.</p></li>
+    /// <li>
+    /// <p>If the reservation expires within one week, you must also enable <code>ApplyImmediately</code>. Otherwise, choose a reservation with a later end date.</p></li>
+    /// <li>
+    /// <p>Amazon RDS holds a unit of reserved capacity for the DB instance when it accepts the request, even when the modification waits for the maintenance window.</p></li>
+    /// </ul>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// Appends an item to `tag_specifications`.
     ///
     /// To override the contents of this collection use [`set_tag_specifications`](Self::set_tag_specifications).
@@ -3715,6 +3987,7 @@ impl ModifyDbInstanceInputBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             engine: self.engine,
             additional_storage_volumes: self.additional_storage_volumes,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
             tag_specifications: self.tag_specifications,
             master_user_authentication_type: self.master_user_authentication_type,
             engine_lifecycle_support: self.engine_lifecycle_support,
@@ -3786,6 +4059,7 @@ impl ::std::fmt::Debug for ModifyDbInstanceInputBuilder {
         formatter.field("dedicated_log_volume", &self.dedicated_log_volume);
         formatter.field("engine", &self.engine);
         formatter.field("additional_storage_volumes", &self.additional_storage_volumes);
+        formatter.field("db_capacity_reservation_identifier", &self.db_capacity_reservation_identifier);
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);

@@ -205,6 +205,8 @@ pub use crate::types::_update_replication_group_member_action::UpdateReplication
 
 pub use crate::types::_delete_replication_group_member_action::DeleteReplicationGroupMemberActionBuilder;
 
+pub use crate::types::_disassociate_replication_group_member_action::DisassociateReplicationGroupMemberActionBuilder;
+
 pub use crate::types::_create_global_table_witness_group_member_action::CreateGlobalTableWitnessGroupMemberActionBuilder;
 
 pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberActionBuilder;

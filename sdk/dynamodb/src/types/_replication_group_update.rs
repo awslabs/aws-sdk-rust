@@ -8,7 +8,10 @@
 /// <p>New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.</p></li>
 /// <li>
 /// <p>An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.</p></li>
-/// </ul><note>
+/// <li>
+/// <p>The local replica to be disassociated from a global table and retained as a standalone regional table.</p></li>
+/// </ul>
+/// <p>Each <code>ReplicationGroupUpdate</code> contains exactly one action. A <code>Disassociate</code> action must be the only replica update in the request; including other updates causes the request to fail.</p><note>
 /// <p>When you manually remove a table or global table replica, you do not automatically remove any associated scalable targets, scaling policies, or CloudWatch alarms.</p>
 /// </note>
 #[non_exhaustive]
@@ -20,6 +23,8 @@ pub struct ReplicationGroupUpdate {
     pub update: ::std::option::Option<crate::types::UpdateReplicationGroupMemberAction>,
     /// <p>The parameters required for deleting a replica for the table.</p>
     pub delete: ::std::option::Option<crate::types::DeleteReplicationGroupMemberAction>,
+    /// <p>The parameters for disassociating the local replica from the global table and retaining it as a standalone regional table.</p>
+    pub disassociate: ::std::option::Option<crate::types::DisassociateReplicationGroupMemberAction>,
 }
 impl ReplicationGroupUpdate {
     /// <p>The parameters required for creating a replica for the table.</p>
@@ -33,6 +38,10 @@ impl ReplicationGroupUpdate {
     /// <p>The parameters required for deleting a replica for the table.</p>
     pub fn delete(&self) -> ::std::option::Option<&crate::types::DeleteReplicationGroupMemberAction> {
         self.delete.as_ref()
+    }
+    /// <p>The parameters for disassociating the local replica from the global table and retaining it as a standalone regional table.</p>
+    pub fn disassociate(&self) -> ::std::option::Option<&crate::types::DisassociateReplicationGroupMemberAction> {
+        self.disassociate.as_ref()
     }
 }
 impl ReplicationGroupUpdate {
@@ -49,6 +58,7 @@ pub struct ReplicationGroupUpdateBuilder {
     pub(crate) create: ::std::option::Option<crate::types::CreateReplicationGroupMemberAction>,
     pub(crate) update: ::std::option::Option<crate::types::UpdateReplicationGroupMemberAction>,
     pub(crate) delete: ::std::option::Option<crate::types::DeleteReplicationGroupMemberAction>,
+    pub(crate) disassociate: ::std::option::Option<crate::types::DisassociateReplicationGroupMemberAction>,
 }
 impl ReplicationGroupUpdateBuilder {
     /// <p>The parameters required for creating a replica for the table.</p>
@@ -93,12 +103,27 @@ impl ReplicationGroupUpdateBuilder {
     pub fn get_delete(&self) -> &::std::option::Option<crate::types::DeleteReplicationGroupMemberAction> {
         &self.delete
     }
+    /// <p>The parameters for disassociating the local replica from the global table and retaining it as a standalone regional table.</p>
+    pub fn disassociate(mut self, input: crate::types::DisassociateReplicationGroupMemberAction) -> Self {
+        self.disassociate = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The parameters for disassociating the local replica from the global table and retaining it as a standalone regional table.</p>
+    pub fn set_disassociate(mut self, input: ::std::option::Option<crate::types::DisassociateReplicationGroupMemberAction>) -> Self {
+        self.disassociate = input;
+        self
+    }
+    /// <p>The parameters for disassociating the local replica from the global table and retaining it as a standalone regional table.</p>
+    pub fn get_disassociate(&self) -> &::std::option::Option<crate::types::DisassociateReplicationGroupMemberAction> {
+        &self.disassociate
+    }
     /// Consumes the builder and constructs a [`ReplicationGroupUpdate`](crate::types::ReplicationGroupUpdate).
     pub fn build(self) -> crate::types::ReplicationGroupUpdate {
         crate::types::ReplicationGroupUpdate {
             create: self.create,
             update: self.update,
             delete: self.delete,
+            disassociate: self.disassociate,
         }
     }
 }

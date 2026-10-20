@@ -61,6 +61,22 @@ pub use crate::types::_daemon_pid_mode::DaemonPidMode;
 
 pub use crate::types::_daemon_ipc_mode::DaemonIpcMode;
 
+pub use crate::types::_gateway_cluster_association_status::GatewayClusterAssociationStatus;
+
+pub use crate::types::_gateway_configuration::GatewayConfiguration;
+
+pub use crate::types::_propagate_gateway_tags::PropagateGatewayTags;
+
+pub use crate::types::_gateway_status::GatewayStatus;
+
+pub use crate::types::_gateway::Gateway;
+
+pub use crate::types::_gateway_resources::GatewayResources;
+
+pub use crate::types::_update_gateway_configuration::UpdateGatewayConfiguration;
+
+pub use crate::types::_gateway_route::GatewayRoute;
+
 pub use crate::types::_task_set::TaskSet;
 
 pub use crate::types::_express_gateway_container::ExpressGatewayContainer;
@@ -203,6 +219,26 @@ pub use crate::types::_daemon_container_definition::DaemonContainerDefinition;
 
 pub use crate::types::_daemon_volume::DaemonVolume;
 
+pub use crate::types::_host_shared_alb_configuration::HostSharedAlbConfiguration;
+
+pub use crate::types::_describe_gateway_configuration::DescribeGatewayConfiguration;
+
+pub use crate::types::_access_type::AccessType;
+
+pub use crate::types::_gateway_infrastructure_resources::GatewayInfrastructureResources;
+
+pub use crate::types::_gateway_cluster_association_summary::GatewayClusterAssociationSummary;
+
+pub use crate::types::_gateway_summary::GatewaySummary;
+
+pub use crate::types::_update_gateway_alb_configuration::UpdateGatewayAlbConfiguration;
+
+pub use crate::types::_gateway_route_status::GatewayRouteStatus;
+
+pub use crate::types::_gateway_route_resources::GatewayRouteResources;
+
+pub use crate::types::_gateway_route_summary::GatewayRouteSummary;
+
 pub use crate::types::_service_deployment::ServiceDeployment;
 
 pub use crate::types::_stability_status::StabilityStatus;
@@ -248,6 +284,8 @@ pub use crate::types::_service_connect_access_log_configuration::ServiceConnectA
 pub use crate::types::_service_volume_configuration::ServiceVolumeConfiguration;
 
 pub use crate::types::_vpc_lattice_configuration::VpcLatticeConfiguration;
+
+pub use crate::types::_gateway_connector::GatewayConnector;
 
 pub use crate::types::_express_gateway_service_include::ExpressGatewayServiceInclude;
 
@@ -353,6 +391,24 @@ pub use crate::types::_container_restart_policy::ContainerRestartPolicy;
 
 pub use crate::types::_host_volume_properties::HostVolumeProperties;
 
+pub use crate::types::_gateway_elb_network_configuration::GatewayElbNetworkConfiguration;
+
+pub use crate::types::_gateway_elb_scheme::GatewayElbScheme;
+
+pub use crate::types::_gateway_elb_access_log_configuration::GatewayElbAccessLogConfiguration;
+
+pub use crate::types::_gateway_alb_protocol::GatewayAlbProtocol;
+
+pub use crate::types::_gateway_alb_desync_mitigation_mode::GatewayAlbDesyncMitigationMode;
+
+pub use crate::types::_gateway_alb_test_traffic_rules::GatewayAlbTestTrafficRules;
+
+pub use crate::types::_gateway_resource_failure::GatewayResourceFailure;
+
+pub use crate::types::_describe_gateway_alb_configuration::DescribeGatewayAlbConfiguration;
+
+pub use crate::types::_update_gateway_network_configuration::UpdateGatewayNetworkConfiguration;
+
 pub use crate::types::_service_revision_summary::ServiceRevisionSummary;
 
 pub use crate::types::_service_deployment_lifecycle_stage::ServiceDeploymentLifecycleStage;
@@ -394,6 +450,10 @@ pub use crate::types::_service_connect_container_configuration::ServiceConnectCo
 pub use crate::types::_service_managed_ebs_volume_configuration::ServiceManagedEbsVolumeConfiguration;
 
 pub use crate::types::_vpc_lattice_advanced_configuration::VpcLatticeAdvancedConfiguration;
+
+pub use crate::types::_gateway_connector_health_check::GatewayConnectorHealthCheck;
+
+pub use crate::types::_gateway_connector_filters::GatewayConnectorFilters;
 
 pub use crate::types::_metric_configuration::MetricConfiguration;
 
@@ -477,6 +537,16 @@ pub use crate::types::_container_dependency::ContainerDependency;
 
 pub use crate::types::_system_control::SystemControl;
 
+pub use crate::types::_gateway_elb_ip_address_type::GatewayElbIpAddressType;
+
+pub use crate::types::_gateway_elb_access_log_destination::GatewayElbAccessLogDestination;
+
+pub use crate::types::_gateway_test_traffic_header::GatewayTestTrafficHeader;
+
+pub use crate::types::_elb_gateway_resources::ElbGatewayResources;
+
+pub use crate::types::_gateway_route_alb_resources::GatewayRouteAlbResources;
+
 pub use crate::types::_deployment_lifecycle_hook_detail::DeploymentLifecycleHookDetail;
 
 pub use crate::types::_service_deployment_rollback_monitors_status::ServiceDeploymentRollbackMonitorsStatus;
@@ -494,6 +564,10 @@ pub use crate::types::_service_connect_tls_configuration::ServiceConnectTlsConfi
 pub use crate::types::_service_connect_container_log_level::ServiceConnectContainerLogLevel;
 
 pub use crate::types::_task_filesystem_type::TaskFilesystemType;
+
+pub use crate::types::_gateway_connector_health_check_protocol::GatewayConnectorHealthCheckProtocol;
+
+pub use crate::types::_gateway_connector_health_check_matcher::GatewayConnectorHealthCheckMatcher;
 
 pub use crate::types::_deployment_rollout_state::DeploymentRolloutState;
 
@@ -551,6 +625,10 @@ pub use crate::types::_tmpfs::Tmpfs;
 
 pub use crate::types::_container_condition::ContainerCondition;
 
+pub use crate::types::_gateway_elb_access_log_s3_destination::GatewayElbAccessLogS3Destination;
+
+pub use crate::types::_gateway_operation_error::GatewayOperationError;
+
 pub use crate::types::_deployment_lifecycle_hook_status::DeploymentLifecycleHookStatus;
 
 pub use crate::types::_deployment_lifecycle_hook_stage::DeploymentLifecycleHookStage;
@@ -562,8 +640,6 @@ pub use crate::types::_service_connect_tls_certificate_authority::ServiceConnect
 pub use crate::types::_ebs_tag_specification::EbsTagSpecification;
 
 pub use crate::types::_service_connect_service_resource::ServiceConnectServiceResource;
-
-pub use crate::types::_access_type::AccessType;
 
 pub use crate::types::_service_revision_load_balancer::ServiceRevisionLoadBalancer;
 
@@ -579,6 +655,8 @@ pub use crate::types::_managed_security_group::ManagedSecurityGroup;
 
 pub use crate::types::_managed_log_group::ManagedLogGroup;
 
+pub use crate::types::_gateway_connection::GatewayConnection;
+
 pub use crate::types::_application_protocol::ApplicationProtocol;
 
 pub use crate::types::_resource_type::ResourceType;
@@ -588,6 +666,8 @@ pub use crate::types::_efs_authorization_config_iam::EfsAuthorizationConfigIam;
 pub use crate::types::_network_interface::NetworkInterface;
 
 pub use crate::types::_managed_agent::ManagedAgent;
+
+pub use crate::types::_gateway_route_load_balancer_security_group::GatewayRouteLoadBalancerSecurityGroup;
 
 pub use crate::types::_service_connect_test_traffic_rules::ServiceConnectTestTrafficRules;
 
@@ -605,6 +685,8 @@ pub use crate::types::_managed_resource_status::ManagedResourceStatus;
 
 pub use crate::types::_managed_application_auto_scaling_policy::ManagedApplicationAutoScalingPolicy;
 
+pub use crate::types::_gateway_connection_resources::GatewayConnectionResources;
+
 pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
 
 pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnectTestTrafficHeaderRules;
@@ -612,6 +694,8 @@ pub use crate::types::_service_connect_test_traffic_header_rules::ServiceConnect
 pub use crate::types::_managed_target_group::ManagedTargetGroup;
 
 pub use crate::types::_service_connect_test_traffic_header_match_rules::ServiceConnectTestTrafficHeaderMatchRules;
+
+pub use crate::types::_gateway_connection_alb_resources::GatewayConnectionAlbResources;
 
 mod _accelerator_count_request;
 
@@ -819,6 +903,10 @@ mod _deployment_rollout_state;
 
 mod _deployment_strategy;
 
+mod _describe_gateway_alb_configuration;
+
+mod _describe_gateway_configuration;
+
 mod _desired_status;
 
 mod _device;
@@ -842,6 +930,8 @@ mod _efs_authorization_config_iam;
 mod _efs_transit_encryption;
 
 mod _efs_volume_configuration;
+
+mod _elb_gateway_resources;
 
 mod _environment_file;
 
@@ -887,11 +977,81 @@ mod _firelens_configuration;
 
 mod _firelens_configuration_type;
 
+mod _gateway;
+
+mod _gateway_alb_desync_mitigation_mode;
+
+mod _gateway_alb_protocol;
+
+mod _gateway_alb_test_traffic_rules;
+
+mod _gateway_cluster_association_status;
+
+mod _gateway_cluster_association_summary;
+
+mod _gateway_configuration;
+
+mod _gateway_connection;
+
+mod _gateway_connection_alb_resources;
+
+mod _gateway_connection_resources;
+
+mod _gateway_connector;
+
+mod _gateway_connector_filters;
+
+mod _gateway_connector_health_check;
+
+mod _gateway_connector_health_check_matcher;
+
+mod _gateway_connector_health_check_protocol;
+
+mod _gateway_elb_access_log_configuration;
+
+mod _gateway_elb_access_log_destination;
+
+mod _gateway_elb_access_log_s3_destination;
+
+mod _gateway_elb_ip_address_type;
+
+mod _gateway_elb_network_configuration;
+
+mod _gateway_elb_scheme;
+
+mod _gateway_infrastructure_resources;
+
+mod _gateway_operation_error;
+
+mod _gateway_resource_failure;
+
+mod _gateway_resources;
+
+mod _gateway_route;
+
+mod _gateway_route_alb_resources;
+
+mod _gateway_route_load_balancer_security_group;
+
+mod _gateway_route_resources;
+
+mod _gateway_route_status;
+
+mod _gateway_route_summary;
+
+mod _gateway_status;
+
+mod _gateway_summary;
+
+mod _gateway_test_traffic_header;
+
 mod _health_check;
 
 mod _health_status;
 
 mod _host_entry;
+
+mod _host_shared_alb_configuration;
 
 mod _host_volume_properties;
 
@@ -1030,6 +1190,8 @@ mod _platform_device;
 mod _platform_device_type;
 
 mod _port_mapping;
+
+mod _propagate_gateway_tags;
 
 mod _propagate_mi_tags;
 
@@ -1208,6 +1370,12 @@ mod _transport_protocol;
 mod _ulimit;
 
 mod _ulimit_name;
+
+mod _update_gateway_alb_configuration;
+
+mod _update_gateway_configuration;
+
+mod _update_gateway_network_configuration;
 
 mod _update_managed_instances_provider_configuration;
 

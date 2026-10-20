@@ -25,6 +25,128 @@ impl DeleteInventoryOutput {
         self.deletion_summary.as_ref()
     }
 }
+static DELETEINVENTORYOUTPUT_MEMBER_DELETION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteInventoryOutput$DeletionId",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteInventoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeletionId",
+    0,
+);
+static DELETEINVENTORYOUTPUT_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteInventoryOutput$TypeName",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteInventoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    1,
+);
+static DELETEINVENTORYOUTPUT_MEMBER_DELETION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteInventoryOutput$DeletionSummary",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteInventoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeletionSummary",
+    2,
+);
+static DELETEINVENTORYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteInventoryOutput",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteInventoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEINVENTORYOUTPUT_MEMBER_DELETION_ID,
+        &DELETEINVENTORYOUTPUT_MEMBER_TYPE_NAME,
+        &DELETEINVENTORYOUTPUT_MEMBER_DELETION_SUMMARY,
+    ],
+)
+.with_original_name("DeleteInventoryResult");
+impl DeleteInventoryOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEINVENTORYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteInventoryOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deletion_id {
+            ser.write_string(&DELETEINVENTORYOUTPUT_MEMBER_DELETION_ID, val)?;
+        }
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&DELETEINVENTORYOUTPUT_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.deletion_summary {
+            ser.write_struct(&DELETEINVENTORYOUTPUT_MEMBER_DELETION_SUMMARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_inventory::builders::DeleteInventoryOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEINVENTORYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deletion_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deletion_summary = Some(crate::types::InventoryDeletionSummary::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteInventoryOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DeleteInventoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

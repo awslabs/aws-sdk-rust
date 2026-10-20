@@ -321,6 +321,19 @@ pub fn de_pending_modified_values(
                 builder = builder.set_additional_storage_volumes(var_23);
             }
             ,
+            s if s.matches("DBCapacityReservationIdentifier") /* DBCapacityReservationIdentifier com.amazonaws.rds#PendingModifiedValues$DBCapacityReservationIdentifier */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_capacity_reservation_identifier(var_24);
+            }
+            ,
             _ => {}
         }
     }

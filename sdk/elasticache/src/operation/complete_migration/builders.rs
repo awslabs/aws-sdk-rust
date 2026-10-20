@@ -22,7 +22,7 @@ impl crate::operation::complete_migration::builders::CompleteMigrationInputBuild
 }
 /// Fluent builder constructing a request to `CompleteMigration`.
 ///
-/// <p>Complete the migration of data.</p>
+/// <p>Completes the migration of data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteMigrationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,6 +121,20 @@ impl CompleteMigrationFluentBuilder {
     /// <p>The ID of the replication group to which data is being migrated.</p>
     pub fn get_replication_group_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_group_id()
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn serverless_cache_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.serverless_cache_name(input.into());
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn set_serverless_cache_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_serverless_cache_name(input);
+        self
+    }
+    /// <p>The name of the serverless cache to which data is being migrated.</p>
+    pub fn get_serverless_cache_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_serverless_cache_name()
     }
     /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
     pub fn force(mut self, input: bool) -> Self {

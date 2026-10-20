@@ -43,6 +43,186 @@ impl CloudConnectorSummary {
         self.updated_at.as_ref()
     }
 }
+static CLOUDCONNECTORSUMMARY_MEMBER_CLOUD_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$CloudConnectorId",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudConnectorId",
+    0,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$DisplayName",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$Description",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$RoleArn",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    3,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$CreatedAt",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    4,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$UpdatedAt",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "UpdatedAt",
+    5,
+);
+static CLOUDCONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudConnectorSummary", "com.amazonaws.ssm", "CloudConnectorSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLOUDCONNECTORSUMMARY_MEMBER_CLOUD_CONNECTOR_ID,
+        &CLOUDCONNECTORSUMMARY_MEMBER_DISPLAY_NAME,
+        &CLOUDCONNECTORSUMMARY_MEMBER_DESCRIPTION,
+        &CLOUDCONNECTORSUMMARY_MEMBER_ROLE_ARN,
+        &CLOUDCONNECTORSUMMARY_MEMBER_CREATED_AT,
+        &CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT,
+    ],
+);
+impl CloudConnectorSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLOUDCONNECTORSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CloudConnectorSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cloud_connector_id {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_CLOUD_CONNECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CLOUDCONNECTORSUMMARY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CloudConnectorSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLOUDCONNECTORSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CloudConnectorSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CloudConnectorSummary {
     /// Creates a new builder-style object to manufacture [`CloudConnectorSummary`](crate::types::CloudConnectorSummary).
     pub fn builder() -> crate::types::builders::CloudConnectorSummaryBuilder {

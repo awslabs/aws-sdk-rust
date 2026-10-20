@@ -173,6 +173,10 @@ pub(crate) mod shape_entity_detail;
 
 pub(crate) mod shape_entity_summary;
 
+pub(crate) mod shape_express_private_offer_configuration_filters;
+
+pub(crate) mod shape_express_private_offer_configuration_sort;
+
 pub(crate) mod shape_machine_learning_product_filters;
 
 pub(crate) mod shape_machine_learning_product_sort;
@@ -228,6 +232,14 @@ pub(crate) mod shape_data_product_title_filter;
 pub(crate) mod shape_data_product_visibility_filter;
 
 pub(crate) mod shape_error_detail_list;
+
+pub(crate) mod shape_express_private_offer_configuration_entity_id_filter;
+
+pub(crate) mod shape_express_private_offer_configuration_product_id_filter;
+
+pub(crate) mod shape_express_private_offer_configuration_state_filter;
+
+pub(crate) mod shape_express_private_offer_configuration_summary;
 
 pub(crate) mod shape_machine_learning_product_entity_id_filter;
 

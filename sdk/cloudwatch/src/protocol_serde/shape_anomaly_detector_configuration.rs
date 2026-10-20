@@ -16,6 +16,12 @@ pub fn ser_anomaly_detector_configuration(
     if let Some(var_3) = &input.metric_timezone {
         encoder.str("MetricTimezone").str(var_3.as_str());
     }
+    if let Some(var_4) = &input.adaptation_speed {
+        encoder.str("AdaptationSpeed").str(var_4.as_str());
+    }
+    if let Some(var_5) = &input.outlier_filtering_strength {
+        encoder.str("OutlierFilteringStrength").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -44,6 +50,18 @@ pub(crate) fn de_anomaly_detector_configuration(
             })?,
             "MetricTimezone" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_metric_timezone(Some(decoder.string()?)))
+            })?,
+            "AdaptationSpeed" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_adaptation_speed(Some(
+                    decoder.string().map(|s| crate::types::AnomalyDetectorAdaptationSpeed::from(s.as_str()))?,
+                )))
+            })?,
+            "OutlierFilteringStrength" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_outlier_filtering_strength(Some(
+                    decoder
+                        .string()
+                        .map(|s| crate::types::AnomalyDetectorOutlierFilteringStrength::from(s.as_str()))?,
+                )))
             })?,
             _ => {
                 decoder.skip()?;

@@ -5,11 +5,43 @@
 pub struct StartDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
     pub db_instance_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use after it starts. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name.</p>
+    /// <p>Specify this parameter when the DB instance stopped using a reservation, or when you want the DB instance to use a different reservation.</p>
+    /// <p>If you omit this parameter, and the DB instance kept a DB capacity reservation when it stopped, Amazon RDS starts the DB instance in that reservation.</p>
+    /// <p>If that reservation is deleted, ended, or cancelled, the DB instance still starts. Amazon RDS starts the DB instance outside the reservation, on unreserved capacity, and it charges on-demand prices for the DB instance.</p>
+    /// <p>If that reservation has no available capacity in the Availability Zone of the DB instance, the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for capacity in that Availability Zone. Specify a reservation that has available capacity in that Availability Zone, or retry the request after the reservation has available capacity.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, and it must have available capacity in that Availability Zone.</p></li>
+    /// </ul>
+    pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDbInstanceInput {
     /// <p>The user-supplied instance identifier.</p>
     pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
+    }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use after it starts. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name.</p>
+    /// <p>Specify this parameter when the DB instance stopped using a reservation, or when you want the DB instance to use a different reservation.</p>
+    /// <p>If you omit this parameter, and the DB instance kept a DB capacity reservation when it stopped, Amazon RDS starts the DB instance in that reservation.</p>
+    /// <p>If that reservation is deleted, ended, or cancelled, the DB instance still starts. Amazon RDS starts the DB instance outside the reservation, on unreserved capacity, and it charges on-demand prices for the DB instance.</p>
+    /// <p>If that reservation has no available capacity in the Availability Zone of the DB instance, the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for capacity in that Availability Zone. Specify a reservation that has available capacity in that Availability Zone, or retry the request after the reservation has available capacity.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, and it must have available capacity in that Availability Zone.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
+        self.db_capacity_reservation_identifier.as_deref()
     }
 }
 impl StartDbInstanceInput {
@@ -24,6 +56,7 @@ impl StartDbInstanceInput {
 #[non_exhaustive]
 pub struct StartDbInstanceInputBuilder {
     pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl StartDbInstanceInputBuilder {
     /// <p>The user-supplied instance identifier.</p>
@@ -41,12 +74,66 @@ impl StartDbInstanceInputBuilder {
     pub fn get_db_instance_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_instance_identifier
     }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use after it starts. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name.</p>
+    /// <p>Specify this parameter when the DB instance stopped using a reservation, or when you want the DB instance to use a different reservation.</p>
+    /// <p>If you omit this parameter, and the DB instance kept a DB capacity reservation when it stopped, Amazon RDS starts the DB instance in that reservation.</p>
+    /// <p>If that reservation is deleted, ended, or cancelled, the DB instance still starts. Amazon RDS starts the DB instance outside the reservation, on unreserved capacity, and it charges on-demand prices for the DB instance.</p>
+    /// <p>If that reservation has no available capacity in the Availability Zone of the DB instance, the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for capacity in that Availability Zone. Specify a reservation that has available capacity in that Availability Zone, or retry the request after the reservation has available capacity.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, and it must have available capacity in that Availability Zone.</p></li>
+    /// </ul>
+    pub fn db_capacity_reservation_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use after it starts. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name.</p>
+    /// <p>Specify this parameter when the DB instance stopped using a reservation, or when you want the DB instance to use a different reservation.</p>
+    /// <p>If you omit this parameter, and the DB instance kept a DB capacity reservation when it stopped, Amazon RDS starts the DB instance in that reservation.</p>
+    /// <p>If that reservation is deleted, ended, or cancelled, the DB instance still starts. Amazon RDS starts the DB instance outside the reservation, on unreserved capacity, and it charges on-demand prices for the DB instance.</p>
+    /// <p>If that reservation has no available capacity in the Availability Zone of the DB instance, the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for capacity in that Availability Zone. Specify a reservation that has available capacity in that Availability Zone, or retry the request after the reservation has available capacity.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, and it must have available capacity in that Availability Zone.</p></li>
+    /// </ul>
+    pub fn set_db_capacity_reservation_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_capacity_reservation_identifier = input;
+        self
+    }
+    /// <p>The identifier or the name of the DB capacity reservation for the DB instance to use after it starts. You can specify the identifier, which has the prefix <code>dbcr-</code>, or the reservation name.</p>
+    /// <p>Specify this parameter when the DB instance stopped using a reservation, or when you want the DB instance to use a different reservation.</p>
+    /// <p>If you omit this parameter, and the DB instance kept a DB capacity reservation when it stopped, Amazon RDS starts the DB instance in that reservation.</p>
+    /// <p>If that reservation is deleted, ended, or cancelled, the DB instance still starts. Amazon RDS starts the DB instance outside the reservation, on unreserved capacity, and it charges on-demand prices for the DB instance.</p>
+    /// <p>If that reservation has no available capacity in the Availability Zone of the DB instance, the request fails. Amazon RDS doesn't start the DB instance, and it doesn't wait for capacity in that Availability Zone. Specify a reservation that has available capacity in that Availability Zone, or retry the request after the reservation has available capacity.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The reservation must be in the <code>active</code> state.</p></li>
+    /// <li>
+    /// <p>The reservation must reserve capacity for the DB instance class and the engine of the DB instance.</p></li>
+    /// <li>
+    /// <p>The reservation must cover the Availability Zone of the DB instance, and it must have available capacity in that Availability Zone.</p></li>
+    /// </ul>
+    pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_capacity_reservation_identifier
+    }
     /// Consumes the builder and constructs a [`StartDbInstanceInput`](crate::operation::start_db_instance::StartDbInstanceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_db_instance::StartDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_db_instance::StartDbInstanceInput {
             db_instance_identifier: self.db_instance_identifier,
+            db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
         })
     }
 }

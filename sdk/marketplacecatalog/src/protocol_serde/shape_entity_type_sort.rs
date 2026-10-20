@@ -52,6 +52,15 @@ pub fn ser_entity_type_sort(
             crate::protocol_serde::shape_offer_set_sort::ser_offer_set_sort(&mut object_8, inner)?;
             object_8.finish();
         }
+        crate::types::EntityTypeSort::ExpressPrivateOfferConfigurationSort(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_6.key("ExpressPrivateOfferConfigurationSort").start_object();
+            crate::protocol_serde::shape_express_private_offer_configuration_sort::ser_express_private_offer_configuration_sort(
+                &mut object_9,
+                inner,
+            )?;
+            object_9.finish();
+        }
         crate::types::EntityTypeSort::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntityTypeSort",
