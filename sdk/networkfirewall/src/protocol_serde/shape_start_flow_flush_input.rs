@@ -9,29 +9,32 @@ pub fn ser_start_flow_flush_input_input(
     if let Some(var_2) = &input.availability_zone {
         object.key("AvailabilityZone").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.vpc_endpoint_association_arn {
-        object.key("VpcEndpointAssociationArn").string(var_3.as_str());
+    if let Some(var_3) = &input.availability_zone_id {
+        object.key("AvailabilityZoneId").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.vpc_endpoint_id {
-        object.key("VpcEndpointId").string(var_4.as_str());
+    if let Some(var_4) = &input.vpc_endpoint_association_arn {
+        object.key("VpcEndpointAssociationArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.minimum_flow_age_in_seconds {
+    if let Some(var_5) = &input.vpc_endpoint_id {
+        object.key("VpcEndpointId").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.minimum_flow_age_in_seconds {
         object.key("MinimumFlowAgeInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_6) = &input.flow_filters {
-        let mut array_7 = object.key("FlowFilters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.flow_filters {
+        let mut array_8 = object.key("FlowFilters").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_flow_filter::ser_flow_filter(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_flow_filter::ser_flow_filter(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

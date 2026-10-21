@@ -149,6 +149,13 @@ pub(crate) fn de_list_flow_operation_results(
                             .transpose()?,
                     );
                 }
+                "AvailabilityZoneId" => {
+                    builder = builder.set_availability_zone_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "VpcEndpointAssociationArn" => {
                     builder = builder.set_vpc_endpoint_association_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

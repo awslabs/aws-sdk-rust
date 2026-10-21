@@ -235,6 +235,8 @@ pub use crate::types::_remote_agent_configuration::RemoteAgentConfiguration;
 
 pub use crate::types::_remote_agent_sigv4_configuration::RemoteAgentSigV4Configuration;
 
+pub use crate::types::_ms_teams_configuration::MsTeamsConfiguration;
+
 pub use crate::types::_release_management_configuration::ReleaseManagementConfiguration;
 
 pub use crate::types::_capability_type::CapabilityType;
@@ -313,6 +315,8 @@ pub use crate::types::_slack_transmission_target::SlackTransmissionTarget;
 
 pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfiguration;
 
+pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTarget;
+
 pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
 
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfig;
@@ -356,6 +360,8 @@ pub use crate::types::_assistant_message_block::AssistantMessageBlock;
 pub use crate::types::_slack_channel::SlackChannel;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetail;
+
+pub use crate::types::_ms_teams_channel::MsTeamsChannel;
 
 pub use crate::types::_private_network_access::PrivateNetworkAccess;
 
@@ -536,6 +542,12 @@ mod _message;
 mod _monitor_account_type;
 
 mod _monthly_recurrence;
+
+mod _ms_teams_channel;
+
+mod _ms_teams_configuration;
+
+mod _ms_teams_transmission_target;
 
 mod _network_access_configuration;
 

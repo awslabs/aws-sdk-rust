@@ -12,5 +12,8 @@ pub fn ser_create_project_membership_input_input(
         crate::protocol_serde::shape_member::ser_member(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.user_created_designation_id {
+        object.key("userCreatedDesignationId").string(var_4.as_str());
+    }
     Ok(())
 }

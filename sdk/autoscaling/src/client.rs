@@ -242,6 +242,8 @@ mod delete_warm_pool;
 
 mod describe_account_limits;
 
+mod describe_account_settings;
+
 mod describe_adjustment_types;
 
 mod describe_auto_scaling_groups;
@@ -303,6 +305,8 @@ mod exit_standby;
 mod get_predictive_scaling_forecast;
 
 mod launch_instances;
+
+mod put_account_setting;
 
 mod put_lifecycle_hook;
 

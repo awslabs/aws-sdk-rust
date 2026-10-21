@@ -6,6 +6,7 @@
 pub struct IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
+    /// <p>Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon Lex generates the confirmation prompt.</p>
     pub prompt_specification: ::std::option::Option<crate::types::PromptSpecification>,
     /// <p>When the user answers "no" to the question defined in <code>promptSpecification</code>, Amazon Lex responds with this response to acknowledge that the intent was canceled.</p>
     pub declination_response: ::std::option::Option<crate::types::ResponseSpecification>,
@@ -35,6 +36,7 @@ pub struct IntentConfirmationSetting {
 impl IntentConfirmationSetting {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
+    /// <p>Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon Lex generates the confirmation prompt.</p>
     pub fn prompt_specification(&self) -> ::std::option::Option<&crate::types::PromptSpecification> {
         self.prompt_specification.as_ref()
     }
@@ -115,19 +117,21 @@ pub struct IntentConfirmationSettingBuilder {
 impl IntentConfirmationSettingBuilder {
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
-    /// This field is required.
+    /// <p>Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon Lex generates the confirmation prompt.</p>
     pub fn prompt_specification(mut self, input: crate::types::PromptSpecification) -> Self {
         self.prompt_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
+    /// <p>Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon Lex generates the confirmation prompt.</p>
     pub fn set_prompt_specification(mut self, input: ::std::option::Option<crate::types::PromptSpecification>) -> Self {
         self.prompt_specification = input;
         self
     }
     /// <p>Prompts the user to confirm the intent. This question should have a yes or no answer.</p>
     /// <p>Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might want to confirm that the order is correct before placing it. For other intents, such as intents that simply respond to user questions, you might not need to ask the user for confirmation before providing the information.</p>
+    /// <p>Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon Lex generates the confirmation prompt.</p>
     pub fn get_prompt_specification(&self) -> &::std::option::Option<crate::types::PromptSpecification> {
         &self.prompt_specification
     }

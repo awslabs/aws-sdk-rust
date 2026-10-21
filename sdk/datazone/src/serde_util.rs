@@ -362,6 +362,33 @@ pub(crate) fn create_data_source_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_designation_output_output_correct_errors(
+    mut builder: crate::operation::create_designation::builders::CreateDesignationOutputBuilder,
+) -> crate::operation::create_designation::builders::CreateDesignationOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.designation_type.is_none() {
+        builder.designation_type = "no value was set".parse::<crate::types::DesignationType>().ok()
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    if builder.deletion_protection.is_none() {
+        builder.deletion_protection = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_domain_output_output_correct_errors(
     mut builder: crate::operation::create_domain::builders::CreateDomainOutputBuilder,
 ) -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
@@ -976,6 +1003,33 @@ pub(crate) fn get_data_source_run_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_designation_output_output_correct_errors(
+    mut builder: crate::operation::get_designation::builders::GetDesignationOutputBuilder,
+) -> crate::operation::get_designation::builders::GetDesignationOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.designation_type.is_none() {
+        builder.designation_type = "no value was set".parse::<crate::types::DesignationType>().ok()
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    if builder.deletion_protection.is_none() {
+        builder.deletion_protection = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
     }
     builder
 }
@@ -1952,6 +2006,33 @@ pub(crate) fn update_data_source_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_designation_output_output_correct_errors(
+    mut builder: crate::operation::update_designation::builders::UpdateDesignationOutputBuilder,
+) -> crate::operation::update_designation::builders::UpdateDesignationOutputBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.designation_type.is_none() {
+        builder.designation_type = "no value was set".parse::<crate::types::DesignationType>().ok()
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    if builder.deletion_protection.is_none() {
+        builder.deletion_protection = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_domain_output_output_correct_errors(
     mut builder: crate::operation::update_domain::builders::UpdateDomainOutputBuilder,
 ) -> crate::operation::update_domain::builders::UpdateDomainOutputBuilder {
@@ -2674,6 +2755,27 @@ pub(crate) fn data_source_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::DataSourceStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn designation_summary_correct_errors(
+    mut builder: crate::types::builders::DesignationSummaryBuilder,
+) -> crate::types::builders::DesignationSummaryBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.deletion_protection.is_none() {
+        builder.deletion_protection = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
     }
     builder
 }

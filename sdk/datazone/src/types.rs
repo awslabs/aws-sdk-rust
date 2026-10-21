@@ -139,6 +139,8 @@ pub use crate::types::_connection_properties_output::ConnectionPropertiesOutput;
 
 pub use crate::types::_connection_type::ConnectionType;
 
+pub use crate::types::_designation_type::DesignationType;
+
 pub use crate::types::_environment_status::EnvironmentStatus;
 
 pub use crate::types::_deployment::Deployment;
@@ -512,6 +514,8 @@ pub use crate::types::_connection_summary::ConnectionSummary;
 pub use crate::types::_data_product_revision::DataProductRevision;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivity;
+
+pub use crate::types::_designation_summary::DesignationSummary;
 
 pub use crate::types::_owner_properties_output::OwnerPropertiesOutput;
 
@@ -1142,6 +1146,10 @@ mod _deployment_properties;
 mod _deployment_status;
 
 mod _deployment_type;
+
+mod _designation_summary;
+
+mod _designation_type;
 
 mod _detailed_glossary_term;
 

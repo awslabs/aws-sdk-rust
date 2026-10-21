@@ -11,6 +11,8 @@ pub struct CreateProjectMembershipInput {
     pub member: ::std::option::Option<crate::types::Member>,
     /// <p>The designation of the project membership.</p>
     pub designation: ::std::option::Option<crate::types::UserDesignation>,
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub user_created_designation_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectMembershipInput {
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
@@ -29,6 +31,10 @@ impl CreateProjectMembershipInput {
     pub fn designation(&self) -> ::std::option::Option<&crate::types::UserDesignation> {
         self.designation.as_ref()
     }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn user_created_designation_id(&self) -> ::std::option::Option<&str> {
+        self.user_created_designation_id.as_deref()
+    }
 }
 impl CreateProjectMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateProjectMembershipInput`](crate::operation::create_project_membership::CreateProjectMembershipInput).
@@ -45,6 +51,7 @@ pub struct CreateProjectMembershipInputBuilder {
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) member: ::std::option::Option<crate::types::Member>,
     pub(crate) designation: ::std::option::Option<crate::types::UserDesignation>,
+    pub(crate) user_created_designation_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectMembershipInputBuilder {
     /// <p>The ID of the Amazon DataZone domain in which project membership is created.</p>
@@ -107,6 +114,20 @@ impl CreateProjectMembershipInputBuilder {
     pub fn get_designation(&self) -> &::std::option::Option<crate::types::UserDesignation> {
         &self.designation
     }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn user_created_designation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_created_designation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn set_user_created_designation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_created_designation_id = input;
+        self
+    }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn get_user_created_designation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_created_designation_id
+    }
     /// Consumes the builder and constructs a [`CreateProjectMembershipInput`](crate::operation::create_project_membership::CreateProjectMembershipInput).
     pub fn build(
         self,
@@ -119,6 +140,7 @@ impl CreateProjectMembershipInputBuilder {
             project_identifier: self.project_identifier,
             member: self.member,
             designation: self.designation,
+            user_created_designation_id: self.user_created_designation_id,
         })
     }
 }

@@ -332,6 +332,8 @@ pub enum CreateFirewallPolicyError {
     InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
+    InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include:</p>
     /// <ul>
     /// <li>
@@ -381,6 +383,7 @@ impl CreateFirewallPolicyError {
         match self {
             Self::InsufficientCapacityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -394,6 +397,10 @@ impl CreateFirewallPolicyError {
     /// Returns `true` if the error kind is `CreateFirewallPolicyError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `CreateFirewallPolicyError::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(self, Self::InvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateFirewallPolicyError::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
@@ -413,6 +420,7 @@ impl ::std::error::Error for CreateFirewallPolicyError {
         match self {
             Self::InsufficientCapacityException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -425,6 +433,7 @@ impl ::std::fmt::Display for CreateFirewallPolicyError {
         match self {
             Self::InsufficientCapacityException(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::InvalidOperationException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -451,6 +460,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFirewal
         match self {
             Self::InsufficientCapacityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

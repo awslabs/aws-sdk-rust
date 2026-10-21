@@ -14,6 +14,8 @@ pub struct SecurityProfileSummary {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region where this resource was last modified.</p>
     pub last_modified_region: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfileSummary {
     /// <p>The identifier of the security profile.</p>
@@ -36,6 +38,10 @@ impl SecurityProfileSummary {
     pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
         self.last_modified_region.as_deref()
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityProfileType> {
+        self.r#type.as_ref()
+    }
 }
 impl SecurityProfileSummary {
     /// Creates a new builder-style object to manufacture [`SecurityProfileSummary`](crate::types::SecurityProfileSummary).
@@ -53,6 +59,7 @@ pub struct SecurityProfileSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfileSummaryBuilder {
     /// <p>The identifier of the security profile.</p>
@@ -125,6 +132,20 @@ impl SecurityProfileSummaryBuilder {
     pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_region
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(mut self, input: crate::types::SecurityProfileType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityProfileType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityProfileType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`SecurityProfileSummary`](crate::types::SecurityProfileSummary).
     pub fn build(self) -> crate::types::SecurityProfileSummary {
         crate::types::SecurityProfileSummary {
@@ -133,6 +154,7 @@ impl SecurityProfileSummaryBuilder {
             name: self.name,
             last_modified_time: self.last_modified_time,
             last_modified_region: self.last_modified_region,
+            r#type: self.r#type,
         }
     }
 }

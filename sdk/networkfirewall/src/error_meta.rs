@@ -384,6 +384,9 @@ impl From<crate::operation::create_firewall_policy::CreateFirewallPolicyError> f
                 Error::InsufficientCapacityException(inner)
             }
             crate::operation::create_firewall_policy::CreateFirewallPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_firewall_policy::CreateFirewallPolicyError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
             crate::operation::create_firewall_policy::CreateFirewallPolicyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -2407,6 +2410,9 @@ impl From<crate::operation::update_container_association::UpdateContainerAssocia
             crate::operation::update_container_association::UpdateContainerAssociationError::InvalidTokenException(inner) => {
                 Error::InvalidTokenException(inner)
             }
+            crate::operation::update_container_association::UpdateContainerAssociationError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::update_container_association::UpdateContainerAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -2623,6 +2629,9 @@ impl From<crate::operation::update_firewall_policy::UpdateFirewallPolicyError> f
     fn from(err: crate::operation::update_firewall_policy::UpdateFirewallPolicyError) -> Self {
         match err {
             crate::operation::update_firewall_policy::UpdateFirewallPolicyError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_firewall_policy::UpdateFirewallPolicyError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
             crate::operation::update_firewall_policy::UpdateFirewallPolicyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
@@ -3049,6 +3058,18 @@ impl From<crate::operation::update_tls_inspection_configuration::UpdateTLSInspec
             }
             crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
+    }
+}
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
     }
 }
 impl ::std::error::Error for Error {

@@ -84,6 +84,12 @@ pub fn ser_firewall_policy(
     if let Some(var_25) = &input.enable_tls_session_holding {
         object.key("EnableTLSSessionHolding").boolean(*var_25);
     }
+    if let Some(var_26) = &input.route53_resolved_ip_validation {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("Route53ResolvedIPValidation").start_object();
+        crate::protocol_serde::shape_route53_resolved_ip_validation::ser_route53_resolved_ip_validation(&mut object_27, var_26)?;
+        object_27.finish();
+    }
     Ok(())
 }
 
@@ -174,6 +180,15 @@ where
                             "EnableTLSSessionHolding" => {
                                 builder = builder
                                     .set_enable_tls_session_holding(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
+                            "Route53ResolvedIPValidation" => {
+                                builder = builder.set_route53_resolved_ip_validation(
+                                    crate::protocol_serde::shape_route53_resolved_ip_validation::de_route53_resolved_ip_validation(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

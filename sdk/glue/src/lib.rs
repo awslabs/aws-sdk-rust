@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-glue = "1.178.0"
+//! aws-sdk-glue = "1.179.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

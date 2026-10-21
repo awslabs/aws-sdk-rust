@@ -5657,6 +5657,8 @@ pub(crate) mod shape_pci_id;
 
 pub(crate) mod shape_performance_factor_reference_request;
 
+pub(crate) mod shape_performance_status_summary;
+
 pub(crate) mod shape_placement_group_info;
 
 pub(crate) mod shape_pool_cidr_blocks_set;
@@ -5822,6 +5824,8 @@ pub(crate) mod shape_analysis_packet_header;
 pub(crate) mod shape_analysis_route_table_route;
 
 pub(crate) mod shape_analysis_security_group_rule;
+
+pub(crate) mod shape_analysis_transit_gateway_policy_table_entry;
 
 pub(crate) mod shape_application_status;
 

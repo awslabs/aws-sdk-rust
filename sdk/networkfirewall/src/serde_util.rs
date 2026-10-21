@@ -414,6 +414,21 @@ pub(crate) fn container_monitoring_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn route53_resolved_ip_validation_correct_errors(
+    mut builder: crate::types::builders::Route53ResolvedIpValidationBuilder,
+) -> crate::types::builders::Route53ResolvedIpValidationBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::Route53ResolvedIpValidationAction>().ok()
+    }
+    if builder.dns_firewall_rule_group_id.is_none() {
+        builder.dns_firewall_rule_group_id = Some(Default::default())
+    }
+    if builder.dns_expiry_exception_policy.is_none() {
+        builder.dns_expiry_exception_policy = "no value was set".parse::<crate::types::DnsExpiryExceptionPolicy>().ok()
+    }
+    builder
+}
+
 pub(crate) fn subnet_mapping_correct_errors(
     mut builder: crate::types::builders::SubnetMappingBuilder,
 ) -> crate::types::builders::SubnetMappingBuilder {
@@ -459,6 +474,18 @@ pub(crate) fn custom_action_correct_errors(mut builder: crate::types::builders::
             let builder = crate::types::builders::ActionDefinitionBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn firewall_policy_error_correct_errors(
+    mut builder: crate::types::builders::FirewallPolicyErrorBuilder,
+) -> crate::types::builders::FirewallPolicyErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::FirewallPolicyErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

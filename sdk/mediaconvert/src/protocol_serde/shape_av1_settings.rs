@@ -9,71 +9,92 @@ pub fn ser_av1_settings(
     if let Some(var_2) = &input.bit_depth {
         object.key("bitDepth").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.film_grain_synthesis {
-        object.key("filmGrainSynthesis").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.framerate_control {
-        object.key("framerateControl").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.framerate_conversion_algorithm {
-        object.key("framerateConversionAlgorithm").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.framerate_denominator {
-        object.key("framerateDenominator").number(
+    if let Some(var_3) = &input.bitrate {
+        object.key("bitrate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_7) = &input.framerate_numerator {
-        object.key("framerateNumerator").number(
+    if let Some(var_4) = &input.film_grain_synthesis {
+        object.key("filmGrainSynthesis").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.framerate_control {
+        object.key("framerateControl").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.framerate_conversion_algorithm {
+        object.key("framerateConversionAlgorithm").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.framerate_denominator {
+        object.key("framerateDenominator").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.gop_size {
+    if let Some(var_8) = &input.framerate_numerator {
+        object.key("framerateNumerator").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.gop_size {
         object.key("gopSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_8).into()),
+            ::aws_smithy_types::Number::Float((*var_9).into()),
         );
     }
-    if let Some(var_9) = &input.max_bitrate {
+    if let Some(var_10) = &input.max_bitrate {
         object.key("maxBitrate").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
-        );
-    }
-    if let Some(var_10) = &input.number_b_frames_between_reference_frames {
-        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.per_frame_metrics {
-        let mut array_12 = object.key("perFrameMetrics").start_array();
-        for item_13 in var_11 {
-            {
-                array_12.value().string(item_13.as_str());
-            }
-        }
-        array_12.finish();
-    }
-    if let Some(var_14) = &input.qvbr_settings {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("qvbrSettings").start_object();
-        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.slices {
-        object.key("slices").number(
+    if let Some(var_11) = &input.number_b_frames_between_reference_frames {
+        object.key("numberBFramesBetweenReferenceFrames").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_18) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_18.as_str());
+    if let Some(var_12) = &input.per_frame_metrics {
+        let mut array_13 = object.key("perFrameMetrics").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.qvbr_settings {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("qvbrSettings").start_object();
+        crate::protocol_serde::shape_av1_qvbr_settings::ser_av1_qvbr_settings(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.scene_change_detect {
+        object.key("sceneChangeDetect").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.slices {
+        object.key("slices").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
+    if let Some(var_20) = &input.sliding_window_ms {
+        object.key("slidingWindowMs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+        );
+    }
+    if let Some(var_21) = &input.sliding_window_peak_bitrate {
+        object.key("slidingWindowPeakBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+        );
+    }
+    if let Some(var_22) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_22.as_str());
     }
     Ok(())
 }
@@ -111,6 +132,13 @@ where
                             builder = builder.set_bit_depth(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Av1BitDepth::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "bitrate" => {
+                            builder = builder.set_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }
@@ -186,8 +214,29 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sceneChangeDetect" => {
+                            builder = builder.set_scene_change_detect(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Av1SceneChangeDetect::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "slices" => {
                             builder = builder.set_slices(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowMs" => {
+                            builder = builder.set_sliding_window_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowPeakBitrate" => {
+                            builder = builder.set_sliding_window_peak_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

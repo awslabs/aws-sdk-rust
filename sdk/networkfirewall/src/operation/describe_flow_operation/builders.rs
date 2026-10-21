@@ -122,22 +122,36 @@ impl DescribeFlowOperationFluentBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_arn()
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.availability_zone_id(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_availability_zone_id(input);
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_availability_zone_id()
     }
     /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
     pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

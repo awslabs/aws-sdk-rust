@@ -46,7 +46,7 @@ pub enum Error {
     TextLengthExceededException(crate::types::error::TextLengthExceededException),
     /// <p>The request was denied because of request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
+    /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>. Replace the unsupported alphabet with one of the valid values and resubmit your request.</p>
     UnsupportedPlsAlphabetException(crate::types::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::types::error::UnsupportedPlsLanguageException),

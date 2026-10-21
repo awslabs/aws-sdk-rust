@@ -61,6 +61,8 @@ pub(crate) mod shape_create_data_product_revision;
 
 pub(crate) mod shape_create_data_source;
 
+pub(crate) mod shape_create_designation;
+
 pub(crate) mod shape_create_domain;
 
 pub(crate) mod shape_create_domain_unit;
@@ -116,6 +118,8 @@ pub(crate) mod shape_delete_data_export_configuration;
 pub(crate) mod shape_delete_data_product;
 
 pub(crate) mod shape_delete_data_source;
+
+pub(crate) mod shape_delete_designation;
 
 pub(crate) mod shape_delete_domain;
 
@@ -180,6 +184,8 @@ pub(crate) mod shape_get_data_product;
 pub(crate) mod shape_get_data_source;
 
 pub(crate) mod shape_get_data_source_run;
+
+pub(crate) mod shape_get_designation;
 
 pub(crate) mod shape_get_domain;
 
@@ -258,6 +264,8 @@ pub(crate) mod shape_list_data_source_run_activities;
 pub(crate) mod shape_list_data_source_runs;
 
 pub(crate) mod shape_list_data_sources;
+
+pub(crate) mod shape_list_designations;
 
 pub(crate) mod shape_list_domain_units_for_parent;
 
@@ -369,6 +377,8 @@ pub(crate) mod shape_update_connection;
 
 pub(crate) mod shape_update_data_source;
 
+pub(crate) mod shape_update_designation;
+
 pub(crate) mod shape_update_domain;
 
 pub(crate) mod shape_update_domain_unit;
@@ -446,6 +456,8 @@ pub(crate) mod shape_create_data_product_input;
 pub(crate) mod shape_create_data_product_revision_input;
 
 pub(crate) mod shape_create_data_source_input;
+
+pub(crate) mod shape_create_designation_input;
 
 pub(crate) mod shape_create_domain_input;
 
@@ -554,6 +566,8 @@ pub(crate) mod shape_update_asset_filter_input;
 pub(crate) mod shape_update_connection_input;
 
 pub(crate) mod shape_update_data_source_input;
+
+pub(crate) mod shape_update_designation_input;
 
 pub(crate) mod shape_update_domain_input;
 
@@ -690,6 +704,8 @@ pub(crate) mod shape_delete_progress;
 pub(crate) mod shape_deployment;
 
 pub(crate) mod shape_deployment_properties;
+
+pub(crate) mod shape_designation_summaries;
 
 pub(crate) mod shape_domain_summaries;
 
@@ -1014,6 +1030,8 @@ pub(crate) mod shape_data_source_run_summary;
 pub(crate) mod shape_data_source_summary;
 
 pub(crate) mod shape_deployment_messages_list;
+
+pub(crate) mod shape_designation_summary;
 
 pub(crate) mod shape_domain_summary;
 

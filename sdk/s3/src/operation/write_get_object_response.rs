@@ -434,11 +434,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for WriteGetObjec
 
         let endpoint_prefix = {
             let request_route = _input.request_route.as_deref().unwrap_or_default();
-            if request_route.is_empty() {
+            if !crate::endpoint_lib::host::is_valid_host_label(request_route, false, &mut crate::endpoint_lib::diagnostic::DiagnosticCollector::new())
+            {
                 return Err(
-                    ::aws_smithy_runtime_api::client::endpoint::error::InvalidEndpointError::failed_to_construct_uri(
-                        "request_route was unset or empty but must be set as part of the endpoint prefix",
-                    )
+                    ::aws_smithy_runtime_api::client::endpoint::error::InvalidEndpointError::failed_to_construct_uri(format!(
+                        "`request_route` forms part of the endpoint host and so must match `[a-zA-Z0-9-]{{1,63}}`, but was `{request_route}`"
+                    ))
                     .into(),
                 );
             }

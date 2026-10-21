@@ -164,4 +164,18 @@ impl CreateProjectMembershipFluentBuilder {
     pub fn get_designation(&self) -> &::std::option::Option<crate::types::UserDesignation> {
         self.inner.get_designation()
     }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn user_created_designation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.user_created_designation_id(input.into());
+        self
+    }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn set_user_created_designation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_user_created_designation_id(input);
+        self
+    }
+    /// <p>The ID of the user-created designation to assign to the project member. Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn get_user_created_designation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_user_created_designation_id()
+    }
 }

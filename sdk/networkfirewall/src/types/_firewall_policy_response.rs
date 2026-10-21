@@ -16,6 +16,8 @@ pub struct FirewallPolicyResponse {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
     pub firewall_policy_status: ::std::option::Option<crate::types::ResourceStatus>,
+    /// <p>Additional detail about the firewall policy's current status, when applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress, the status is <code>UPDATING</code> and this message is "A DNS Firewall rule group change is in progress."</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
@@ -28,6 +30,8 @@ pub struct FirewallPolicyResponse {
     pub number_of_associations: ::std::option::Option<i32>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall policy.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>Any configuration errors that apply to the firewall policy. Network Firewall detects these errors asynchronously, after you create or update the policy, so an error can appear after the request that caused it has already succeeded. Each entry describes the problem and how to resolve it, and Network Firewall clears it automatically after you resolve the problem.</p>
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyError>>,
     /// <p>The last time that the firewall policy was changed.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -57,6 +61,10 @@ impl FirewallPolicyResponse {
     pub fn firewall_policy_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.firewall_policy_status.as_ref()
     }
+    /// <p>Additional detail about the firewall policy's current status, when applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress, the status is <code>UPDATING</code> and this message is "A DNS Firewall rule group change is in progress."</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
     /// <p>The key:value pairs to associate with the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -83,6 +91,12 @@ impl FirewallPolicyResponse {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>Any configuration errors that apply to the firewall policy. Network Firewall detects these errors asynchronously, after you create or update the policy, so an error can appear after the request that caused it has already succeeded. Each entry describes the problem and how to resolve it, and Network Firewall clears it automatically after you resolve the problem.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
+    pub fn errors(&self) -> &[crate::types::FirewallPolicyError] {
+        self.errors.as_deref().unwrap_or_default()
+    }
     /// <p>The last time that the firewall policy was changed.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
@@ -104,12 +118,14 @@ pub struct FirewallPolicyResponseBuilder {
     pub(crate) firewall_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_status: ::std::option::Option<crate::types::ResourceStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) consumed_stateless_rule_capacity: ::std::option::Option<i32>,
     pub(crate) consumed_stateful_rule_capacity: ::std::option::Option<i32>,
     pub(crate) consumed_stateful_domain_capacity: ::std::option::Option<i32>,
     pub(crate) number_of_associations: ::std::option::Option<i32>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyError>>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FirewallPolicyResponseBuilder {
@@ -191,6 +207,20 @@ impl FirewallPolicyResponseBuilder {
     /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy by calling <code>DescribeFirewallPolicy</code> and providing the firewall policy's name or ARN.</p>
     pub fn get_firewall_policy_status(&self) -> &::std::option::Option<crate::types::ResourceStatus> {
         &self.firewall_policy_status
+    }
+    /// <p>Additional detail about the firewall policy's current status, when applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress, the status is <code>UPDATING</code> and this message is "A DNS Firewall rule group change is in progress."</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Additional detail about the firewall policy's current status, when applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress, the status is <code>UPDATING</code> and this message is "A DNS Firewall rule group change is in progress."</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>Additional detail about the firewall policy's current status, when applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule group change is in progress, the status is <code>UPDATING</code> and this message is "A DNS Firewall rule group change is in progress."</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
     }
     /// Appends an item to `tags`.
     ///
@@ -282,6 +312,26 @@ impl FirewallPolicyResponseBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Appends an item to `errors`.
+    ///
+    /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+    ///
+    /// <p>Any configuration errors that apply to the firewall policy. Network Firewall detects these errors asynchronously, after you create or update the policy, so an error can appear after the request that caused it has already succeeded. Each entry describes the problem and how to resolve it, and Network Firewall clears it automatically after you resolve the problem.</p>
+    pub fn errors(mut self, input: crate::types::FirewallPolicyError) -> Self {
+        let mut v = self.errors.unwrap_or_default();
+        v.push(input);
+        self.errors = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Any configuration errors that apply to the firewall policy. Network Firewall detects these errors asynchronously, after you create or update the policy, so an error can appear after the request that caused it has already succeeded. Each entry describes the problem and how to resolve it, and Network Firewall clears it automatically after you resolve the problem.</p>
+    pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyError>>) -> Self {
+        self.errors = input;
+        self
+    }
+    /// <p>Any configuration errors that apply to the firewall policy. Network Firewall detects these errors asynchronously, after you create or update the policy, so an error can appear after the request that caused it has already succeeded. Each entry describes the problem and how to resolve it, and Network Firewall clears it automatically after you resolve the problem.</p>
+    pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyError>> {
+        &self.errors
+    }
     /// <p>The last time that the firewall policy was changed.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
@@ -323,12 +373,14 @@ impl FirewallPolicyResponseBuilder {
             })?,
             description: self.description,
             firewall_policy_status: self.firewall_policy_status,
+            status_message: self.status_message,
             tags: self.tags,
             consumed_stateless_rule_capacity: self.consumed_stateless_rule_capacity,
             consumed_stateful_rule_capacity: self.consumed_stateful_rule_capacity,
             consumed_stateful_domain_capacity: self.consumed_stateful_domain_capacity,
             number_of_associations: self.number_of_associations,
             encryption_configuration: self.encryption_configuration,
+            errors: self.errors,
             last_modified_time: self.last_modified_time,
         })
     }

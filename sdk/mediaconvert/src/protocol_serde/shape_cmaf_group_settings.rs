@@ -24,110 +24,119 @@ pub fn ser_cmaf_group_settings(
     if let Some(var_7) = &input.codec_specification {
         object.key("codecSpecification").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.dash_i_frame_trick_play_name_modifier {
-        object.key("dashIFrameTrickPlayNameModifier").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.dash_manifest_style {
-        object.key("dashManifestStyle").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.destination {
-        object.key("destination").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.destination_settings {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("destinationSettings").start_object();
-        crate::protocol_serde::shape_destination_settings::ser_destination_settings(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.encryption {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("encryption").start_object();
-        crate::protocol_serde::shape_cmaf_encryption_settings::ser_cmaf_encryption_settings(&mut object_14, var_13)?;
-        object_14.finish();
-    }
-    if let Some(var_15) = &input.fragment_length {
-        object.key("fragmentLength").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
-        );
-    }
-    if let Some(var_16) = &input.image_based_trick_play {
-        object.key("imageBasedTrickPlay").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.image_based_trick_play_settings {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("imageBasedTrickPlaySettings").start_object();
-        crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::ser_cmaf_image_based_trick_play_settings(&mut object_18, var_17)?;
-        object_18.finish();
-    }
-    if let Some(var_19) = &input.image_based_trick_play_variants {
-        let mut array_20 = object.key("imageBasedTrickPlayVariants").start_array();
-        for item_21 in var_19 {
+    if let Some(var_8) = &input.dash_adaptation_set_grouping {
+        let mut array_9 = object.key("dashAdaptationSetGrouping").start_array();
+        for item_10 in var_8 {
             {
-                #[allow(unused_mut)]
-                let mut object_22 = array_20.value().start_object();
-                crate::protocol_serde::shape_cmaf_image_based_trick_play_variant::ser_cmaf_image_based_trick_play_variant(&mut object_22, item_21)?;
-                object_22.finish();
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_20.finish();
+        array_9.finish();
     }
-    if let Some(var_23) = &input.manifest_compression {
-        object.key("manifestCompression").string(var_23.as_str());
+    if let Some(var_11) = &input.dash_i_frame_trick_play_name_modifier {
+        object.key("dashIFrameTrickPlayNameModifier").string(var_11.as_str());
     }
-    if let Some(var_24) = &input.manifest_duration_format {
-        object.key("manifestDurationFormat").string(var_24.as_str());
+    if let Some(var_12) = &input.dash_manifest_style {
+        object.key("dashManifestStyle").string(var_12.as_str());
     }
-    if let Some(var_25) = &input.min_buffer_time {
+    if let Some(var_13) = &input.destination {
+        object.key("destination").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.destination_settings {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("destinationSettings").start_object();
+        crate::protocol_serde::shape_destination_settings::ser_destination_settings(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.encryption {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("encryption").start_object();
+        crate::protocol_serde::shape_cmaf_encryption_settings::ser_cmaf_encryption_settings(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.fragment_length {
+        object.key("fragmentLength").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
+    if let Some(var_19) = &input.image_based_trick_play {
+        object.key("imageBasedTrickPlay").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.image_based_trick_play_settings {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("imageBasedTrickPlaySettings").start_object();
+        crate::protocol_serde::shape_cmaf_image_based_trick_play_settings::ser_cmaf_image_based_trick_play_settings(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.image_based_trick_play_variants {
+        let mut array_23 = object.key("imageBasedTrickPlayVariants").start_array();
+        for item_24 in var_22 {
+            {
+                #[allow(unused_mut)]
+                let mut object_25 = array_23.value().start_object();
+                crate::protocol_serde::shape_cmaf_image_based_trick_play_variant::ser_cmaf_image_based_trick_play_variant(&mut object_25, item_24)?;
+                object_25.finish();
+            }
+        }
+        array_23.finish();
+    }
+    if let Some(var_26) = &input.manifest_compression {
+        object.key("manifestCompression").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.manifest_duration_format {
+        object.key("manifestDurationFormat").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.min_buffer_time {
         object.key("minBufferTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
         );
     }
-    if let Some(var_26) = &input.min_final_segment_length {
+    if let Some(var_29) = &input.min_final_segment_length {
         object.key("minFinalSegmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_26).into()),
+            ::aws_smithy_types::Number::Float((*var_29).into()),
         );
     }
-    if let Some(var_27) = &input.mpd_manifest_bandwidth_type {
-        object.key("mpdManifestBandwidthType").string(var_27.as_str());
+    if let Some(var_30) = &input.mpd_manifest_bandwidth_type {
+        object.key("mpdManifestBandwidthType").string(var_30.as_str());
     }
-    if let Some(var_28) = &input.mpd_profile {
-        object.key("mpdProfile").string(var_28.as_str());
+    if let Some(var_31) = &input.mpd_profile {
+        object.key("mpdProfile").string(var_31.as_str());
     }
-    if let Some(var_29) = &input.pts_offset_handling_for_b_frames {
-        object.key("ptsOffsetHandlingForBFrames").string(var_29.as_str());
+    if let Some(var_32) = &input.pts_offset_handling_for_b_frames {
+        object.key("ptsOffsetHandlingForBFrames").string(var_32.as_str());
     }
-    if let Some(var_30) = &input.segment_control {
-        object.key("segmentControl").string(var_30.as_str());
+    if let Some(var_33) = &input.segment_control {
+        object.key("segmentControl").string(var_33.as_str());
     }
-    if let Some(var_31) = &input.segment_length {
+    if let Some(var_34) = &input.segment_length {
         object.key("segmentLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+            ::aws_smithy_types::Number::NegInt((*var_34).into()),
         );
     }
-    if let Some(var_32) = &input.segment_length_control {
-        object.key("segmentLengthControl").string(var_32.as_str());
+    if let Some(var_35) = &input.segment_length_control {
+        object.key("segmentLengthControl").string(var_35.as_str());
     }
-    if let Some(var_33) = &input.stream_inf_resolution {
-        object.key("streamInfResolution").string(var_33.as_str());
+    if let Some(var_36) = &input.stream_inf_resolution {
+        object.key("streamInfResolution").string(var_36.as_str());
     }
-    if let Some(var_34) = &input.target_duration_compatibility_mode {
-        object.key("targetDurationCompatibilityMode").string(var_34.as_str());
+    if let Some(var_37) = &input.target_duration_compatibility_mode {
+        object.key("targetDurationCompatibilityMode").string(var_37.as_str());
     }
-    if let Some(var_35) = &input.video_composition_offsets {
-        object.key("videoCompositionOffsets").string(var_35.as_str());
+    if let Some(var_38) = &input.video_composition_offsets {
+        object.key("videoCompositionOffsets").string(var_38.as_str());
     }
-    if let Some(var_36) = &input.write_dash_manifest {
-        object.key("writeDashManifest").string(var_36.as_str());
+    if let Some(var_39) = &input.write_dash_manifest {
+        object.key("writeDashManifest").string(var_39.as_str());
     }
-    if let Some(var_37) = &input.write_hls_manifest {
-        object.key("writeHlsManifest").string(var_37.as_str());
+    if let Some(var_40) = &input.write_hls_manifest {
+        object.key("writeHlsManifest").string(var_40.as_str());
     }
-    if let Some(var_38) = &input.write_segment_timeline_in_representation {
-        object.key("writeSegmentTimelineInRepresentation").string(var_38.as_str());
+    if let Some(var_41) = &input.write_segment_timeline_in_representation {
+        object.key("writeSegmentTimelineInRepresentation").string(var_41.as_str());
     }
     Ok(())
 }
@@ -183,6 +192,15 @@ where
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| crate::types::CmafCodecSpecification::from(u.as_ref())))
                                         .transpose()?,
+                                );
+                            }
+                            "dashAdaptationSetGrouping" => {
+                                builder = builder.set_dash_adaptation_set_grouping(
+                                    crate::protocol_serde::shape_list_of_dash_adaptation_set_grouping::de_list_of_dash_adaptation_set_grouping(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "dashIFrameTrickPlayNameModifier" => {

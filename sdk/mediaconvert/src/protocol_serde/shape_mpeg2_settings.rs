@@ -132,26 +132,38 @@ pub fn ser_mpeg2_settings(
     if let Some(var_30) = &input.scene_change_detect {
         object.key("sceneChangeDetect").string(var_30.as_str());
     }
-    if let Some(var_31) = &input.slow_pal {
-        object.key("slowPal").string(var_31.as_str());
+    if let Some(var_31) = &input.sliding_window_ms {
+        object.key("slidingWindowMs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+        );
     }
-    if let Some(var_32) = &input.softness {
-        object.key("softness").number(
+    if let Some(var_32) = &input.sliding_window_peak_bitrate {
+        object.key("slidingWindowPeakBitrate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_32).into()),
         );
     }
-    if let Some(var_33) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_33.as_str());
+    if let Some(var_33) = &input.slow_pal {
+        object.key("slowPal").string(var_33.as_str());
     }
-    if let Some(var_34) = &input.syntax {
-        object.key("syntax").string(var_34.as_str());
+    if let Some(var_34) = &input.softness {
+        object.key("softness").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_34).into()),
+        );
     }
-    if let Some(var_35) = &input.telecine {
-        object.key("telecine").string(var_35.as_str());
+    if let Some(var_35) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_35.as_str());
     }
-    if let Some(var_36) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_36.as_str());
+    if let Some(var_36) = &input.syntax {
+        object.key("syntax").string(var_36.as_str());
+    }
+    if let Some(var_37) = &input.telecine {
+        object.key("telecine").string(var_37.as_str());
+    }
+    if let Some(var_38) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_38.as_str());
     }
     Ok(())
 }
@@ -369,6 +381,20 @@ where
                             builder = builder.set_scene_change_detect(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::Mpeg2SceneChangeDetect::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowMs" => {
+                            builder = builder.set_sliding_window_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowPeakBitrate" => {
+                            builder = builder.set_sliding_window_peak_bitrate(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

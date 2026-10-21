@@ -674,6 +674,31 @@ impl From<crate::operation::describe_account_limits::DescribeAccountLimitsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_account_settings::DescribeAccountSettingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_account_settings::DescribeAccountSettingsError> for Error {
+    fn from(err: crate::operation::describe_account_settings::DescribeAccountSettingsError) -> Self {
+        match err {
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+            crate::operation::describe_account_settings::DescribeAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_adjustment_types::DescribeAdjustmentTypesError, R>>
     for Error
 where
@@ -1558,6 +1583,27 @@ impl From<crate::operation::launch_instances::LaunchInstancesError> for Error {
             }
             crate::operation::launch_instances::LaunchInstancesError::ResourceContentionFault(inner) => Error::ResourceContentionFault(inner),
             crate::operation::launch_instances::LaunchInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_setting::PutAccountSettingError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_setting::PutAccountSettingError> for Error {
+    fn from(err: crate::operation::put_account_setting::PutAccountSettingError) -> Self {
+        match err {
+            crate::operation::put_account_setting::PutAccountSettingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

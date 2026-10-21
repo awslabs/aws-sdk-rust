@@ -49,6 +49,8 @@ pub struct FirewallPolicy {
     pub policy_variables: ::std::option::Option<crate::types::PolicyVariables>,
     /// <p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>
     pub enable_tls_session_holding: ::std::option::Option<bool>,
+    /// <p>The settings that enable resolved IP validation for the policy. Resolved IP validation verifies that a connection's destination IP address is one that the Amazon Route 53 Resolver returned in a DNS response for a domain. The response must come from a VPC that's associated with the Route 53 Resolver DNS Firewall rule group that you specify. This checks how the destination IP address was obtained, instead of relying only on the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more information, see <code>Route53ResolvedIPValidation</code>.</p>
+    pub route53_resolved_ip_validation: ::std::option::Option<crate::types::Route53ResolvedIpValidation>,
 }
 impl FirewallPolicy {
     /// <p>References to the stateless rule groups that are used in the policy. These define the matching criteria in stateless rules.</p>
@@ -125,6 +127,10 @@ impl FirewallPolicy {
     pub fn enable_tls_session_holding(&self) -> ::std::option::Option<bool> {
         self.enable_tls_session_holding
     }
+    /// <p>The settings that enable resolved IP validation for the policy. Resolved IP validation verifies that a connection's destination IP address is one that the Amazon Route 53 Resolver returned in a DNS response for a domain. The response must come from a VPC that's associated with the Route 53 Resolver DNS Firewall rule group that you specify. This checks how the destination IP address was obtained, instead of relying only on the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more information, see <code>Route53ResolvedIPValidation</code>.</p>
+    pub fn route53_resolved_ip_validation(&self) -> ::std::option::Option<&crate::types::Route53ResolvedIpValidation> {
+        self.route53_resolved_ip_validation.as_ref()
+    }
 }
 impl FirewallPolicy {
     /// Creates a new builder-style object to manufacture [`FirewallPolicy`](crate::types::FirewallPolicy).
@@ -147,6 +153,7 @@ pub struct FirewallPolicyBuilder {
     pub(crate) tls_inspection_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) policy_variables: ::std::option::Option<crate::types::PolicyVariables>,
     pub(crate) enable_tls_session_holding: ::std::option::Option<bool>,
+    pub(crate) route53_resolved_ip_validation: ::std::option::Option<crate::types::Route53ResolvedIpValidation>,
 }
 impl FirewallPolicyBuilder {
     /// Appends an item to `stateless_rule_group_references`.
@@ -403,6 +410,20 @@ impl FirewallPolicyBuilder {
     pub fn get_enable_tls_session_holding(&self) -> &::std::option::Option<bool> {
         &self.enable_tls_session_holding
     }
+    /// <p>The settings that enable resolved IP validation for the policy. Resolved IP validation verifies that a connection's destination IP address is one that the Amazon Route 53 Resolver returned in a DNS response for a domain. The response must come from a VPC that's associated with the Route 53 Resolver DNS Firewall rule group that you specify. This checks how the destination IP address was obtained, instead of relying only on the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more information, see <code>Route53ResolvedIPValidation</code>.</p>
+    pub fn route53_resolved_ip_validation(mut self, input: crate::types::Route53ResolvedIpValidation) -> Self {
+        self.route53_resolved_ip_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings that enable resolved IP validation for the policy. Resolved IP validation verifies that a connection's destination IP address is one that the Amazon Route 53 Resolver returned in a DNS response for a domain. The response must come from a VPC that's associated with the Route 53 Resolver DNS Firewall rule group that you specify. This checks how the destination IP address was obtained, instead of relying only on the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more information, see <code>Route53ResolvedIPValidation</code>.</p>
+    pub fn set_route53_resolved_ip_validation(mut self, input: ::std::option::Option<crate::types::Route53ResolvedIpValidation>) -> Self {
+        self.route53_resolved_ip_validation = input;
+        self
+    }
+    /// <p>The settings that enable resolved IP validation for the policy. Resolved IP validation verifies that a connection's destination IP address is one that the Amazon Route 53 Resolver returned in a DNS response for a domain. The response must come from a VPC that's associated with the Route 53 Resolver DNS Firewall rule group that you specify. This checks how the destination IP address was obtained, instead of relying only on the domain that the client asserts in its TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more information, see <code>Route53ResolvedIPValidation</code>.</p>
+    pub fn get_route53_resolved_ip_validation(&self) -> &::std::option::Option<crate::types::Route53ResolvedIpValidation> {
+        &self.route53_resolved_ip_validation
+    }
     /// Consumes the builder and constructs a [`FirewallPolicy`](crate::types::FirewallPolicy).
     /// This method will fail if any of the following fields are not set:
     /// - [`stateless_default_actions`](crate::types::builders::FirewallPolicyBuilder::stateless_default_actions)
@@ -429,6 +450,7 @@ impl FirewallPolicyBuilder {
             tls_inspection_configuration_arn: self.tls_inspection_configuration_arn,
             policy_variables: self.policy_variables,
             enable_tls_session_holding: self.enable_tls_session_holding,
+            route53_resolved_ip_validation: self.route53_resolved_ip_validation,
         })
     }
 }

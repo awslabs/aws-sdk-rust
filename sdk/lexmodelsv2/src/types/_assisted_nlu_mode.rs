@@ -12,6 +12,7 @@
 /// ```text
 /// # let assistednlumode = unimplemented!();
 /// match assistednlumode {
+///     AssistedNluMode::DialogManager => { /* ... */ },
 ///     AssistedNluMode::Fallback => { /* ... */ },
 ///     AssistedNluMode::Primary => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum AssistedNluMode {
     #[allow(missing_docs)] // documentation missing in model
+    DialogManager,
+    #[allow(missing_docs)] // documentation missing in model
     Fallback,
     #[allow(missing_docs)] // documentation missing in model
     Primary,
@@ -53,6 +56,7 @@ pub enum AssistedNluMode {
 impl ::std::convert::From<&str> for AssistedNluMode {
     fn from(s: &str) -> Self {
         match s {
+            "DialogManager" => AssistedNluMode::DialogManager,
             "Fallback" => AssistedNluMode::Fallback,
             "Primary" => AssistedNluMode::Primary,
             other => AssistedNluMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl AssistedNluMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AssistedNluMode::DialogManager => "DialogManager",
             AssistedNluMode::Fallback => "Fallback",
             AssistedNluMode::Primary => "Primary",
             AssistedNluMode::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl AssistedNluMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Fallback", "Primary"]
+        &["DialogManager", "Fallback", "Primary"]
     }
 }
 impl ::std::convert::AsRef<str> for AssistedNluMode {
@@ -100,6 +105,7 @@ impl AssistedNluMode {
 impl ::std::fmt::Display for AssistedNluMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AssistedNluMode::DialogManager => write!(f, "DialogManager"),
             AssistedNluMode::Fallback => write!(f, "Fallback"),
             AssistedNluMode::Primary => write!(f, "Primary"),
             AssistedNluMode::Unknown(value) => write!(f, "{value}"),

@@ -30,6 +30,8 @@ pub enum ServiceConfiguration {
     Mcpserversigv4(crate::types::McpServerSigV4Configuration),
     /// <p>Splunk MCP server integration configuration.</p>
     Mcpserversplunk(crate::types::McpServerSplunkConfiguration),
+    /// <p>The configuration for connecting a Microsoft Teams team to the DevOps Agent service.</p>
+    Msteams(crate::types::MsTeamsConfiguration),
     /// <p>PagerDuty integration configuration</p>
     Pagerduty(crate::types::PagerDutyConfiguration),
     /// <p>Release management network environment configuration</p>
@@ -223,6 +225,19 @@ impl ServiceConfiguration {
     /// Returns true if this is a [`Mcpserversplunk`](crate::types::ServiceConfiguration::Mcpserversplunk).
     pub fn is_mcpserversplunk(&self) -> bool {
         self.as_mcpserversplunk().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Msteams`](crate::types::ServiceConfiguration::Msteams), extracting the inner [`MsTeamsConfiguration`](crate::types::MsTeamsConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_msteams(&self) -> ::std::result::Result<&crate::types::MsTeamsConfiguration, &Self> {
+        if let ServiceConfiguration::Msteams(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Msteams`](crate::types::ServiceConfiguration::Msteams).
+    pub fn is_msteams(&self) -> bool {
+        self.as_msteams().is_ok()
     }
     /// Tries to convert the enum instance into [`Pagerduty`](crate::types::ServiceConfiguration::Pagerduty), extracting the inner [`PagerDutyConfiguration`](crate::types::PagerDutyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

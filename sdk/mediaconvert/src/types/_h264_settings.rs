@@ -82,6 +82,10 @@ pub struct H264Settings {
     pub scene_change_detect: ::std::option::Option<crate::types::H264SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub slices: ::std::option::Option<i32>,
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub sliding_window_ms: ::std::option::Option<i32>,
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub sliding_window_peak_bitrate: ::std::option::Option<i32>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub slow_pal: ::std::option::Option<crate::types::H264SlowPal>,
     /// Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't have a specification requirement, we recommend that you adjust the softness of your output by using a lower value for the setting Sharpness or by enabling a noise reducer filter. The Softness setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The value 128 results in the softest video.
@@ -258,6 +262,14 @@ impl H264Settings {
     pub fn slices(&self) -> ::std::option::Option<i32> {
         self.slices
     }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_peak_bitrate
+    }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(&self) -> ::std::option::Option<&crate::types::H264SlowPal> {
         self.slow_pal.as_ref()
@@ -341,6 +353,8 @@ pub struct H264SettingsBuilder {
     pub(crate) scan_type_conversion_mode: ::std::option::Option<crate::types::H264ScanTypeConversionMode>,
     pub(crate) scene_change_detect: ::std::option::Option<crate::types::H264SceneChangeDetect>,
     pub(crate) slices: ::std::option::Option<i32>,
+    pub(crate) sliding_window_ms: ::std::option::Option<i32>,
+    pub(crate) sliding_window_peak_bitrate: ::std::option::Option<i32>,
     pub(crate) slow_pal: ::std::option::Option<crate::types::H264SlowPal>,
     pub(crate) softness: ::std::option::Option<i32>,
     pub(crate) spatial_adaptive_quantization: ::std::option::Option<crate::types::H264SpatialAdaptiveQuantization>,
@@ -903,6 +917,34 @@ impl H264SettingsBuilder {
     pub fn get_slices(&self) -> &::std::option::Option<i32> {
         &self.slices
     }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(mut self, input: i32) -> Self {
+        self.sliding_window_ms = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn set_sliding_window_ms(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_ms = input;
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn get_sliding_window_ms(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(mut self, input: i32) -> Self {
+        self.sliding_window_peak_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn set_sliding_window_peak_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_peak_bitrate = input;
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn get_sliding_window_peak_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_peak_bitrate
+    }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(mut self, input: crate::types::H264SlowPal) -> Self {
         self.slow_pal = ::std::option::Option::Some(input);
@@ -1057,6 +1099,8 @@ impl H264SettingsBuilder {
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             scene_change_detect: self.scene_change_detect,
             slices: self.slices,
+            sliding_window_ms: self.sliding_window_ms,
+            sliding_window_peak_bitrate: self.sliding_window_peak_bitrate,
             slow_pal: self.slow_pal,
             softness: self.softness,
             spatial_adaptive_quantization: self.spatial_adaptive_quantization,

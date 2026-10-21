@@ -85,11 +85,7 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
-pub(crate) mod shape_agent_message_out_of_context_exception;
-
 pub(crate) mod shape_conflict_exception;
-
-pub(crate) mod shape_conversation_not_found_exception;
 
 pub(crate) mod shape_create_data_transformation_profile_input;
 
@@ -127,8 +123,6 @@ pub(crate) mod shape_list_fhir_import_jobs_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
-pub(crate) mod shape_not_implemented_operation_exception;
-
 pub(crate) mod shape_publish_data_transformation_profile_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -147,10 +141,6 @@ pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
-pub(crate) mod shape_unauthorized_exception;
-
-pub(crate) mod shape_unsupported_mime_type_exception;
-
 pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_data_transformation_profile_input;
@@ -159,11 +149,17 @@ pub(crate) mod shape_update_fhir_datastore_input;
 
 pub(crate) mod shape_update_profile_with_agent_input;
 
+pub(crate) mod shape_update_profile_with_agent_output;
+
 pub(crate) mod shape_validation_exception;
 
-pub(crate) mod shape_agent_input_message;
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
-pub(crate) mod shape_agent_output_message;
+pub(crate) mod shape_agent_input_message;
 
 pub(crate) mod shape_analytics_configuration;
 
@@ -221,8 +217,6 @@ pub(crate) mod shape_transformation_output_data_config;
 
 pub(crate) mod shape_continuous_backup_restore_configuration;
 
-pub(crate) mod shape_data_transformation_chat_options_list;
-
 pub(crate) mod shape_data_transformation_profile_summary;
 
 pub(crate) mod shape_data_transformation_profile_version_summary;
@@ -231,7 +225,11 @@ pub(crate) mod shape_data_transformation_s3_configuration;
 
 pub(crate) mod shape_datastore_backup_status;
 
+pub(crate) mod shape_end_of_output_event;
+
 pub(crate) mod shape_error_cause;
+
+pub(crate) mod shape_error_event;
 
 pub(crate) mod shape_existing_versioned_profile_source;
 
@@ -241,14 +239,20 @@ pub(crate) mod shape_kms_encryption_config;
 
 pub(crate) mod shape_profile_mapping_source;
 
+pub(crate) mod shape_progress_event;
+
 pub(crate) mod shape_s3_configuration;
 
 pub(crate) mod shape_sample_data_source;
 
 pub(crate) mod shape_starter_profile_source;
 
+pub(crate) mod shape_text_message_event;
+
 pub(crate) mod shape_transformation_job_progress_report;
 
 pub(crate) mod shape_transformation_job_summary;
 
 pub(crate) mod shape_default_profiles;
+
+pub(crate) mod shape_data_transformation_chat_options_list;

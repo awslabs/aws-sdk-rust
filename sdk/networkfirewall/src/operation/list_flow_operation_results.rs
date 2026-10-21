@@ -211,6 +211,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListFlowOpera
                 captured.insert("AvailabilityZone", value);
             }
         }
+        if requested.should_capture("AvailabilityZoneId") {
+            if let ::std::option::Option::Some(value) = input.availability_zone_id.as_deref() {
+                captured.insert("AvailabilityZoneId", value);
+            }
+        }
         if requested.should_capture("VpcEndpointId") {
             if let ::std::option::Option::Some(value) = input.vpc_endpoint_id.as_deref() {
                 captured.insert("VpcEndpointId", value);

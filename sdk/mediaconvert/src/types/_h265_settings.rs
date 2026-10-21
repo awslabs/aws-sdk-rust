@@ -82,6 +82,10 @@ pub struct H265Settings {
     pub scene_change_detect: ::std::option::Option<crate::types::H265SceneChangeDetect>,
     /// Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures.
     pub slices: ::std::option::Option<i32>,
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub sliding_window_ms: ::std::option::Option<i32>,
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub sliding_window_peak_bitrate: ::std::option::Option<i32>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub slow_pal: ::std::option::Option<crate::types::H265SlowPal>,
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
@@ -266,6 +270,14 @@ impl H265Settings {
     pub fn slices(&self) -> ::std::option::Option<i32> {
         self.slices
     }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_peak_bitrate
+    }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(&self) -> ::std::option::Option<&crate::types::H265SlowPal> {
         self.slow_pal.as_ref()
@@ -365,6 +377,8 @@ pub struct H265SettingsBuilder {
     pub(crate) scan_type_conversion_mode: ::std::option::Option<crate::types::H265ScanTypeConversionMode>,
     pub(crate) scene_change_detect: ::std::option::Option<crate::types::H265SceneChangeDetect>,
     pub(crate) slices: ::std::option::Option<i32>,
+    pub(crate) sliding_window_ms: ::std::option::Option<i32>,
+    pub(crate) sliding_window_peak_bitrate: ::std::option::Option<i32>,
     pub(crate) slow_pal: ::std::option::Option<crate::types::H265SlowPal>,
     pub(crate) spatial_adaptive_quantization: ::std::option::Option<crate::types::H265SpatialAdaptiveQuantization>,
     pub(crate) telecine: ::std::option::Option<crate::types::H265Telecine>,
@@ -931,6 +945,34 @@ impl H265SettingsBuilder {
     pub fn get_slices(&self) -> &::std::option::Option<i32> {
         &self.slices
     }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(mut self, input: i32) -> Self {
+        self.sliding_window_ms = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn set_sliding_window_ms(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_ms = input;
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn get_sliding_window_ms(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(mut self, input: i32) -> Self {
+        self.sliding_window_peak_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn set_sliding_window_peak_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_peak_bitrate = input;
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR, and QVBR rate control modes. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn get_sliding_window_peak_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_peak_bitrate
+    }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25.
     pub fn slow_pal(mut self, input: crate::types::H265SlowPal) -> Self {
         self.slow_pal = ::std::option::Option::Some(input);
@@ -1141,6 +1183,8 @@ impl H265SettingsBuilder {
             scan_type_conversion_mode: self.scan_type_conversion_mode,
             scene_change_detect: self.scene_change_detect,
             slices: self.slices,
+            sliding_window_ms: self.sliding_window_ms,
+            sliding_window_peak_bitrate: self.sliding_window_peak_bitrate,
             slow_pal: self.slow_pal,
             spatial_adaptive_quantization: self.spatial_adaptive_quantization,
             telecine: self.telecine,

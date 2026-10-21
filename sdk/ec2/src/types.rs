@@ -2175,6 +2175,8 @@ pub use crate::types::_ebs_status_summary::EbsStatusSummary;
 
 pub use crate::types::_application_status_summary::ApplicationStatusSummary;
 
+pub use crate::types::_performance_status_summary::PerformanceStatusSummary;
+
 pub use crate::types::_instance_type_hypervisor::InstanceTypeHypervisor;
 
 pub use crate::types::_processor_info::ProcessorInfo;
@@ -2707,6 +2709,8 @@ pub use crate::types::_analysis_security_group_rule::AnalysisSecurityGroupRule;
 
 pub use crate::types::_transit_gateway_route_table_route::TransitGatewayRouteTableRoute;
 
+pub use crate::types::_analysis_transit_gateway_policy_table_entry::AnalysisTransitGatewayPolicyTableEntry;
+
 pub use crate::types::_firewall_stateless_rule::FirewallStatelessRule;
 
 pub use crate::types::_firewall_stateful_rule::FirewallStatefulRule;
@@ -3014,6 +3018,8 @@ mod _analysis_route_table_route;
 mod _analysis_security_group_rule;
 
 mod _analysis_status;
+
+mod _analysis_transit_gateway_policy_table_entry;
 
 mod _appliance_mode_support_value;
 
@@ -4802,6 +4808,8 @@ mod _peering_tgw_info;
 mod _performance_factor_reference;
 
 mod _performance_factor_reference_request;
+
+mod _performance_status_summary;
 
 mod _period_type;
 

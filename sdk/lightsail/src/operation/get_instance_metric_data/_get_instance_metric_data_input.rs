@@ -45,7 +45,36 @@ pub struct GetInstanceMetricDataInput {
     /// <p><b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadOps</code> </b> - The number of read operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteOps</code> </b> - The number of write operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadBytes</code> </b> - The number of bytes read from the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteBytes</code> </b> - The number of bytes written to the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalReadTime</code> </b> - The total number of seconds spent by all read operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalWriteTime</code> </b> - The total number of seconds spent by all write operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskQueueLength</code> </b> - The number of read and write requests that are waiting to access the system disk of the instance. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
+    /// <p>For more information about system disk performance metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-disk-performance-metrics">View system disk performance metrics for your Lightsail instance</a>.</p>
     pub metric_name: ::std::option::Option<crate::types::InstanceMetricName>,
     /// <p>The granularity, in seconds, of the returned data points.</p>
     /// <p>The <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code> instance metric data is available in 1-minute (60 seconds) granularity. All other instance metric data is available in 5-minute (300 seconds) granularity.</p>
@@ -117,7 +146,36 @@ impl GetInstanceMetricDataInput {
     /// <p><b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadOps</code> </b> - The number of read operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteOps</code> </b> - The number of write operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadBytes</code> </b> - The number of bytes read from the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteBytes</code> </b> - The number of bytes written to the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalReadTime</code> </b> - The total number of seconds spent by all read operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalWriteTime</code> </b> - The total number of seconds spent by all write operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskQueueLength</code> </b> - The number of read and write requests that are waiting to access the system disk of the instance. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
+    /// <p>For more information about system disk performance metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-disk-performance-metrics">View system disk performance metrics for your Lightsail instance</a>.</p>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::InstanceMetricName> {
         self.metric_name.as_ref()
     }
@@ -233,7 +291,36 @@ impl GetInstanceMetricDataInputBuilder {
     /// <p><b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadOps</code> </b> - The number of read operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteOps</code> </b> - The number of write operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadBytes</code> </b> - The number of bytes read from the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteBytes</code> </b> - The number of bytes written to the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalReadTime</code> </b> - The total number of seconds spent by all read operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalWriteTime</code> </b> - The total number of seconds spent by all write operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskQueueLength</code> </b> - The number of read and write requests that are waiting to access the system disk of the instance. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
+    /// <p>For more information about system disk performance metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-disk-performance-metrics">View system disk performance metrics for your Lightsail instance</a>.</p>
     /// This field is required.
     pub fn metric_name(mut self, input: crate::types::InstanceMetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
@@ -279,7 +366,36 @@ impl GetInstanceMetricDataInputBuilder {
     /// <p><b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadOps</code> </b> - The number of read operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteOps</code> </b> - The number of write operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadBytes</code> </b> - The number of bytes read from the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteBytes</code> </b> - The number of bytes written to the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalReadTime</code> </b> - The total number of seconds spent by all read operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalWriteTime</code> </b> - The total number of seconds spent by all write operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskQueueLength</code> </b> - The number of read and write requests that are waiting to access the system disk of the instance. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
+    /// <p>For more information about system disk performance metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-disk-performance-metrics">View system disk performance metrics for your Lightsail instance</a>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::InstanceMetricName>) -> Self {
         self.metric_name = input;
         self
@@ -324,7 +440,36 @@ impl GetInstanceMetricDataInputBuilder {
     /// <p><b> <code>MetadataNoToken</code> </b> - Reports the number of times that the instance metadata service was successfully accessed without a token. This metric determines if there are any processes accessing instance metadata by using Instance Metadata Service Version 1, which doesn't use a token. If all requests use token-backed sessions, such as Instance Metadata Service Version 2, then the value is 0.</p>
     /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
     /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadOps</code> </b> - The number of read operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteOps</code> </b> - The number of write operations completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskReadBytes</code> </b> - The number of bytes read from the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskWriteBytes</code> </b> - The number of bytes written to the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Bytes</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalReadTime</code> </b> - The total number of seconds spent by all read operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskTotalWriteTime</code> </b> - The total number of seconds spent by all write operations that completed on the system disk of the instance during the period. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Seconds</code>.</p></li>
+    /// <li>
+    /// <p><b> <code>DiskQueueLength</code> </b> - The number of read and write requests that are waiting to access the system disk of the instance. This metric doesn't include activity on additional disks that you attach to the instance.</p>
+    /// <p><code>Statistics</code>: The most useful statistic is <code>Average</code>.</p>
+    /// <p><code>Unit</code>: The published unit is <code>Count</code>.</p></li>
     /// </ul>
+    /// <p>For more information about system disk performance metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-viewing-instance-disk-performance-metrics">View system disk performance metrics for your Lightsail instance</a>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::InstanceMetricName> {
         &self.metric_name
     }

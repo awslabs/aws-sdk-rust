@@ -177,47 +177,59 @@ pub fn ser_h265_settings(
             ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_44) = &input.slow_pal {
-        object.key("slowPal").string(var_44.as_str());
-    }
-    if let Some(var_45) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_45.as_str());
-    }
-    if let Some(var_46) = &input.telecine {
-        object.key("telecine").string(var_46.as_str());
-    }
-    if let Some(var_47) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_47.as_str());
-    }
-    if let Some(var_48) = &input.temporal_ids {
-        object.key("temporalIds").string(var_48.as_str());
-    }
-    if let Some(var_49) = &input.tile_height {
-        object.key("tileHeight").number(
+    if let Some(var_44) = &input.sliding_window_ms {
+        object.key("slidingWindowMs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_49).into()),
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
-    if let Some(var_50) = &input.tile_padding {
-        object.key("tilePadding").string(var_50.as_str());
+    if let Some(var_45) = &input.sliding_window_peak_bitrate {
+        object.key("slidingWindowPeakBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_45).into()),
+        );
     }
-    if let Some(var_51) = &input.tile_width {
-        object.key("tileWidth").number(
+    if let Some(var_46) = &input.slow_pal {
+        object.key("slowPal").string(var_46.as_str());
+    }
+    if let Some(var_47) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_47.as_str());
+    }
+    if let Some(var_48) = &input.telecine {
+        object.key("telecine").string(var_48.as_str());
+    }
+    if let Some(var_49) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_49.as_str());
+    }
+    if let Some(var_50) = &input.temporal_ids {
+        object.key("temporalIds").string(var_50.as_str());
+    }
+    if let Some(var_51) = &input.tile_height {
+        object.key("tileHeight").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_51).into()),
         );
     }
-    if let Some(var_52) = &input.tiles {
-        object.key("tiles").string(var_52.as_str());
+    if let Some(var_52) = &input.tile_padding {
+        object.key("tilePadding").string(var_52.as_str());
     }
-    if let Some(var_53) = &input.tree_block_size {
-        object.key("treeBlockSize").string(var_53.as_str());
+    if let Some(var_53) = &input.tile_width {
+        object.key("tileWidth").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_53).into()),
+        );
     }
-    if let Some(var_54) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_54.as_str());
+    if let Some(var_54) = &input.tiles {
+        object.key("tiles").string(var_54.as_str());
     }
-    if let Some(var_55) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_55.as_str());
+    if let Some(var_55) = &input.tree_block_size {
+        object.key("treeBlockSize").string(var_55.as_str());
+    }
+    if let Some(var_56) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_56.as_str());
+    }
+    if let Some(var_57) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_57.as_str());
     }
     Ok(())
 }
@@ -508,6 +520,20 @@ where
                         }
                         "slices" => {
                             builder = builder.set_slices(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowMs" => {
+                            builder = builder.set_sliding_window_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowPeakBitrate" => {
+                            builder = builder.set_sliding_window_peak_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

@@ -25,6 +25,7 @@
 ///     Service::McpServerNewrelic => { /* ... */ },
 ///     Service::McpServerSigv4 => { /* ... */ },
 ///     Service::McpServerSplunk => { /* ... */ },
+///     Service::MsTeams => { /* ... */ },
 ///     Service::Pagerduty => { /* ... */ },
 ///     Service::RemoteAgent => { /* ... */ },
 ///     Service::RemoteAgentSigv4 => { /* ... */ },
@@ -85,6 +86,8 @@ pub enum Service {
     /// <p>Splunk MCP server.</p>
     McpServerSplunk,
     #[allow(missing_docs)] // documentation missing in model
+    MsTeams,
+    #[allow(missing_docs)] // documentation missing in model
     Pagerduty,
     /// <p>Remote A2A agent with token-based authentication (API key or OAuth).</p>
     RemoteAgent,
@@ -114,6 +117,7 @@ impl ::std::convert::From<&str> for Service {
             "mcpservernewrelic" => Service::McpServerNewrelic,
             "mcpserversigv4" => Service::McpServerSigv4,
             "mcpserversplunk" => Service::McpServerSplunk,
+            "msteams" => Service::MsTeams,
             "pagerduty" => Service::Pagerduty,
             "remoteagent" => Service::RemoteAgent,
             "remoteagentsigv4" => Service::RemoteAgentSigv4,
@@ -147,6 +151,7 @@ impl Service {
             Service::McpServerNewrelic => "mcpservernewrelic",
             Service::McpServerSigv4 => "mcpserversigv4",
             Service::McpServerSplunk => "mcpserversplunk",
+            Service::MsTeams => "msteams",
             Service::Pagerduty => "pagerduty",
             Service::RemoteAgent => "remoteagent",
             Service::RemoteAgentSigv4 => "remoteagentsigv4",
@@ -171,6 +176,7 @@ impl Service {
             "mcpservernewrelic",
             "mcpserversigv4",
             "mcpserversplunk",
+            "msteams",
             "pagerduty",
             "remoteagent",
             "remoteagentsigv4",
@@ -212,6 +218,7 @@ impl ::std::fmt::Display for Service {
             Service::McpServerNewrelic => write!(f, "mcpservernewrelic"),
             Service::McpServerSigv4 => write!(f, "mcpserversigv4"),
             Service::McpServerSplunk => write!(f, "mcpserversplunk"),
+            Service::MsTeams => write!(f, "msteams"),
             Service::Pagerduty => write!(f, "pagerduty"),
             Service::RemoteAgent => write!(f, "remoteagent"),
             Service::RemoteAgentSigv4 => write!(f, "remoteagentsigv4"),

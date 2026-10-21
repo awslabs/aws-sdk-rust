@@ -7,6 +7,7 @@ pub struct ContainerMonitoringConfiguration {
     /// <p>The ARN of the Amazon ECS or Amazon EKS cluster to monitor. The cluster must be in the same Region and account as the container association.</p>
     pub cluster_arn: ::std::string::String,
     /// <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container instance attributes (EC2 launch type only).</p>
+    /// <p>Attribute values can contain wildcard patterns, for example <code>payments-*</code>. Attribute keys must match exactly.</p>
     pub attribute_filters: ::std::option::Option<::std::vec::Vec<crate::types::ContainerAttribute>>,
 }
 impl ContainerMonitoringConfiguration {
@@ -16,6 +17,7 @@ impl ContainerMonitoringConfiguration {
         self.cluster_arn.deref()
     }
     /// <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container instance attributes (EC2 launch type only).</p>
+    /// <p>Attribute values can contain wildcard patterns, for example <code>payments-*</code>. Attribute keys must match exactly.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attribute_filters.is_none()`.
     pub fn attribute_filters(&self) -> &[crate::types::ContainerAttribute] {
@@ -57,6 +59,7 @@ impl ContainerMonitoringConfigurationBuilder {
     /// To override the contents of this collection use [`set_attribute_filters`](Self::set_attribute_filters).
     ///
     /// <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container instance attributes (EC2 launch type only).</p>
+    /// <p>Attribute values can contain wildcard patterns, for example <code>payments-*</code>. Attribute keys must match exactly.</p>
     pub fn attribute_filters(mut self, input: crate::types::ContainerAttribute) -> Self {
         let mut v = self.attribute_filters.unwrap_or_default();
         v.push(input);
@@ -64,11 +67,13 @@ impl ContainerMonitoringConfigurationBuilder {
         self
     }
     /// <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container instance attributes (EC2 launch type only).</p>
+    /// <p>Attribute values can contain wildcard patterns, for example <code>payments-*</code>. Attribute keys must match exactly.</p>
     pub fn set_attribute_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerAttribute>>) -> Self {
         self.attribute_filters = input;
         self
     }
     /// <p>Key-value pairs that filter which containers are tracked. For Amazon EKS, you can filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container instance attributes (EC2 launch type only).</p>
+    /// <p>Attribute values can contain wildcard patterns, for example <code>payments-*</code>. Attribute keys must match exactly.</p>
     pub fn get_attribute_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerAttribute>> {
         &self.attribute_filters
     }

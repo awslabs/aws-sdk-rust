@@ -405,6 +405,8 @@ pub(crate) mod shape_mcp_server_sigv4_service_details;
 
 pub(crate) mod shape_mcp_server_splunk_configuration;
 
+pub(crate) mod shape_ms_teams_configuration;
+
 pub(crate) mod shape_new_relic_service_details;
 
 pub(crate) mod shape_o_auth_additional_step_details;
@@ -481,6 +483,8 @@ pub(crate) mod shape_mcp_tool_detail;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_ms_teams_transmission_target;
+
 pub(crate) mod shape_network_access_configuration;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
@@ -554,6 +558,8 @@ pub(crate) mod shape_mcp_server_o_auth_client_credentials_config;
 pub(crate) mod shape_mcp_tool_details_list;
 
 pub(crate) mod shape_mcp_tools_list;
+
+pub(crate) mod shape_ms_teams_channel;
 
 pub(crate) mod shape_new_relic_api_key_config;
 

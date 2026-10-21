@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-healthlake = "1.123.0"
+//! aws-sdk-healthlake = "1.124.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -205,6 +205,8 @@ pub mod types;
 
 pub(crate) mod client_idempotency_token;
 
+mod event_receiver;
+
 mod idempotency_token;
 
 mod observability_feature;
@@ -225,6 +227,8 @@ mod serde_util;
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
+
+mod event_stream_serde;
 
 mod json_errors;
 

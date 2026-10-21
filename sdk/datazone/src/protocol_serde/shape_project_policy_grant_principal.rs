@@ -6,14 +6,17 @@ pub fn ser_project_policy_grant_principal(
     {
         object.key("projectDesignation").string(input.project_designation.as_str());
     }
-    if let Some(var_1) = &input.project_identifier {
-        object.key("projectIdentifier").string(var_1.as_str());
+    if let Some(var_1) = &input.user_created_designation_id {
+        object.key("userCreatedDesignationId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.project_grant_filter {
+    if let Some(var_2) = &input.project_identifier {
+        object.key("projectIdentifier").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.project_grant_filter {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("projectGrantFilter").start_object();
-        crate::protocol_serde::shape_project_grant_filter::ser_project_grant_filter(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("projectGrantFilter").start_object();
+        crate::protocol_serde::shape_project_grant_filter::ser_project_grant_filter(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -45,6 +48,13 @@ where
                                 builder = builder.set_project_designation(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                         .map(|s| s.to_unescaped().map(|u| crate::types::ProjectDesignation::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "userCreatedDesignationId" => {
+                                builder = builder.set_user_created_designation_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                         .transpose()?,
                                 );
                             }

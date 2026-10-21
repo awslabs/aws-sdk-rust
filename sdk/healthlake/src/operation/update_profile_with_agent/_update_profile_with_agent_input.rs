@@ -6,8 +6,6 @@
 pub struct UpdateProfileWithAgentInput {
     /// <p>The unique identifier of the profile to update via the agent.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
-    /// <p>The source data format for the transformation.</p>
-    pub source_format: ::std::option::Option<crate::types::SourceFormat>,
     /// <p>The message to send to the agent.</p>
     pub input_message: ::std::option::Option<crate::types::AgentInputMessage>,
     /// <p>The conversation identifier for multi-turn interactions. Omit to start a new conversation.</p>
@@ -17,10 +15,6 @@ impl UpdateProfileWithAgentInput {
     /// <p>The unique identifier of the profile to update via the agent.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn source_format(&self) -> ::std::option::Option<&crate::types::SourceFormat> {
-        self.source_format.as_ref()
     }
     /// <p>The message to send to the agent.</p>
     pub fn input_message(&self) -> ::std::option::Option<&crate::types::AgentInputMessage> {
@@ -43,7 +37,6 @@ impl UpdateProfileWithAgentInput {
 #[non_exhaustive]
 pub struct UpdateProfileWithAgentInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
-    pub(crate) source_format: ::std::option::Option<crate::types::SourceFormat>,
     pub(crate) input_message: ::std::option::Option<crate::types::AgentInputMessage>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
 }
@@ -62,21 +55,6 @@ impl UpdateProfileWithAgentInputBuilder {
     /// <p>The unique identifier of the profile to update via the agent.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
-    }
-    /// <p>The source data format for the transformation.</p>
-    /// This field is required.
-    pub fn source_format(mut self, input: crate::types::SourceFormat) -> Self {
-        self.source_format = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn set_source_format(mut self, input: ::std::option::Option<crate::types::SourceFormat>) -> Self {
-        self.source_format = input;
-        self
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn get_source_format(&self) -> &::std::option::Option<crate::types::SourceFormat> {
-        &self.source_format
     }
     /// <p>The message to send to the agent.</p>
     /// This field is required.
@@ -116,7 +94,6 @@ impl UpdateProfileWithAgentInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::update_profile_with_agent::UpdateProfileWithAgentInput {
             profile_id: self.profile_id,
-            source_format: self.source_format,
             input_message: self.input_message,
             conversation_id: self.conversation_id,
         })

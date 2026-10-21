@@ -26,7 +26,7 @@ impl crate::operation::start_speech_synthesis_stream::builders::StartSpeechSynth
 /// <p>This operation serves as a bidirectional counterpart to <code>SynthesizeSpeech</code>:</p>
 /// <ul>
 /// <li>
-/// <p><a href="https://docs.aws.amazon.com/polly/latest/API/API_SynthesizeSpeech.html">SynthesizeSpeech</a></p></li>
+/// <p><a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a></p></li>
 /// </ul>
 #[derive(::std::fmt::Debug)]
 pub struct StartSpeechSynthesisStreamFluentBuilder {
@@ -188,17 +188,17 @@ impl StartSpeechSynthesisStreamFluentBuilder {
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_rate()
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.inner = self.inner.voice_id(input);
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
         self.inner.get_voice_id()
     }

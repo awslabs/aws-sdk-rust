@@ -753,6 +753,37 @@ impl From<crate::operation::create_data_source::CreateDataSourceError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_designation::CreateDesignationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_designation::CreateDesignationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_designation::CreateDesignationError> for Error {
+    fn from(err: crate::operation::create_designation::CreateDesignationError) -> Self {
+        match err {
+            crate::operation::create_designation::CreateDesignationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_designation::CreateDesignationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_designation::CreateDesignationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_designation::CreateDesignationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_designation::CreateDesignationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_designation::CreateDesignationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_designation::CreateDesignationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_designation::CreateDesignationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_designation::CreateDesignationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_domain::CreateDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1720,6 +1751,34 @@ impl From<crate::operation::delete_data_source::DeleteDataSourceError> for Error
             crate::operation::delete_data_source::DeleteDataSourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_data_source::DeleteDataSourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::delete_data_source::DeleteDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_designation::DeleteDesignationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_designation::DeleteDesignationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_designation::DeleteDesignationError> for Error {
+    fn from(err: crate::operation::delete_designation::DeleteDesignationError) -> Self {
+        match err {
+            crate::operation::delete_designation::DeleteDesignationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_designation::DeleteDesignationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2812,6 +2871,33 @@ impl From<crate::operation::get_data_source_run::GetDataSourceRunError> for Erro
             crate::operation::get_data_source_run::GetDataSourceRunError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_data_source_run::GetDataSourceRunError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_data_source_run::GetDataSourceRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_designation::GetDesignationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_designation::GetDesignationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_designation::GetDesignationError> for Error {
+    fn from(err: crate::operation::get_designation::GetDesignationError) -> Self {
+        match err {
+            crate::operation::get_designation::GetDesignationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_designation::GetDesignationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_designation::GetDesignationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_designation::GetDesignationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_designation::GetDesignationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_designation::GetDesignationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_designation::GetDesignationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4079,6 +4165,33 @@ impl From<crate::operation::list_data_sources::ListDataSourcesError> for Error {
             crate::operation::list_data_sources::ListDataSourcesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_data_sources::ListDataSourcesError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::list_data_sources::ListDataSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_designations::ListDesignationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_designations::ListDesignationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_designations::ListDesignationsError> for Error {
+    fn from(err: crate::operation::list_designations::ListDesignationsError) -> Self {
+        match err {
+            crate::operation::list_designations::ListDesignationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_designations::ListDesignationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_designations::ListDesignationsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_designations::ListDesignationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_designations::ListDesignationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_designations::ListDesignationsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_designations::ListDesignationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5868,6 +5981,34 @@ impl From<crate::operation::update_data_source::UpdateDataSourceError> for Error
             crate::operation::update_data_source::UpdateDataSourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_data_source::UpdateDataSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_designation::UpdateDesignationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_designation::UpdateDesignationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_designation::UpdateDesignationError> for Error {
+    fn from(err: crate::operation::update_designation::UpdateDesignationError) -> Self {
+        match err {
+            crate::operation::update_designation::UpdateDesignationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_designation::UpdateDesignationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_designation::UpdateDesignationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_designation::UpdateDesignationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_designation::UpdateDesignationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_designation::UpdateDesignationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_designation::UpdateDesignationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_designation::UpdateDesignationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

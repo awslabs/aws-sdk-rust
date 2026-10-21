@@ -101,13 +101,13 @@ impl From<crate::operation::associate_service::AssociateServiceError> for Error 
             crate::operation::associate_service::AssociateServiceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::associate_service::AssociateServiceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::associate_service::AssociateServiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_service::AssociateServiceError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::associate_service::AssociateServiceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::associate_service::AssociateServiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::associate_service::AssociateServiceError::ContentSizeExceededException(inner) => {
                 Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::associate_service::AssociateServiceError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::associate_service::AssociateServiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::associate_service::AssociateServiceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1997,15 +1997,15 @@ impl From<crate::operation::update_association::UpdateAssociationError> for Erro
             crate::operation::update_association::UpdateAssociationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_association::UpdateAssociationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_association::UpdateAssociationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_association::UpdateAssociationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_association::UpdateAssociationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_association::UpdateAssociationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_association::UpdateAssociationError::ContentSizeExceededException(inner) => {
                 Error::ContentSizeExceededException(inner)
             }
             crate::operation::update_association::UpdateAssociationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
-            crate::operation::update_association::UpdateAssociationError::ServiceQuotaExceededException(inner) => {
-                Error::ServiceQuotaExceededException(inner)
-            }
             crate::operation::update_association::UpdateAssociationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_association::UpdateAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }

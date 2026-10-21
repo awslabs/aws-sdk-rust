@@ -5,28 +5,18 @@
 pub enum Error {
     /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The agent message does not fit within the current conversation context. Start a new conversation or provide a message that relates to the current profile customization session.</p>
-    AgentMessageOutOfContextException(crate::types::error::AgentMessageOutOfContextException),
     /// <p>The data store is in a transition state and the user requested action cannot be performed.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The specified conversation identifier does not exist. Verify the conversation ID or omit it to start a new conversation.</p>
-    ConversationNotFoundException(crate::types::error::ConversationNotFoundException),
     /// <p>A dependent service failed to fulfill the request.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested operation is not yet available. Check the service documentation for a list of supported operations.</p>
-    NotImplementedOperationException(crate::types::error::NotImplementedOperationException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request exceeds the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You are not authorized to make this request. Verify that your Amazon Web Services credentials are valid and that you have the required permissions.</p>
-    UnauthorizedException(crate::types::error::UnauthorizedException),
-    /// <p>The content type in your request is not supported. Use a supported content type for this operation.</p>
-    UnsupportedMimeTypeException(crate::types::error::UnsupportedMimeTypeException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -42,17 +32,12 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
-            Error::AgentMessageOutOfContextException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
-            Error::ConversationNotFoundException(inner) => inner.fmt(f),
             Error::FailedDependencyException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
-            Error::NotImplementedOperationException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::UnauthorizedException(inner) => inner.fmt(f),
-            Error::UnsupportedMimeTypeException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -76,17 +61,12 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
-            Self::AgentMessageOutOfContextException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
-            Self::ConversationNotFoundException(inner) => inner.meta(),
             Self::FailedDependencyException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
-            Self::NotImplementedOperationException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
-            Self::UnauthorizedException(inner) => inner.meta(),
-            Self::UnsupportedMimeTypeException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -993,28 +973,13 @@ impl From<crate::operation::update_profile_with_agent::UpdateProfileWithAgentErr
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::AgentMessageOutOfContextException(inner) => {
-                Error::AgentMessageOutOfContextException(inner)
-            }
-            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::ConversationNotFoundException(inner) => {
-                Error::ConversationNotFoundException(inner)
-            }
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
-            }
-            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::NotImplementedOperationException(inner) => {
-                Error::NotImplementedOperationException(inner)
             }
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::UnauthorizedException(inner) => {
-                Error::UnauthorizedException(inner)
-            }
-            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::UnsupportedMimeTypeException(inner) => {
-                Error::UnsupportedMimeTypeException(inner)
-            }
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_profile_with_agent::UpdateProfileWithAgentError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1032,21 +997,37 @@ where
         })
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::AgentOutputMessageStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::AgentOutputMessageStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::AgentOutputMessageStreamError> for Error {
+    fn from(err: crate::types::error::AgentOutputMessageStreamError) -> Self {
+        match err {
+            crate::types::error::AgentOutputMessageStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
-            Error::AgentMessageOutOfContextException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
-            Error::ConversationNotFoundException(inner) => inner.source(),
             Error::FailedDependencyException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
-            Error::NotImplementedOperationException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
-            Error::UnauthorizedException(inner) => inner.source(),
-            Error::UnsupportedMimeTypeException(inner) => inner.source(),
             Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -1056,17 +1037,12 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
-            Self::AgentMessageOutOfContextException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
-            Self::ConversationNotFoundException(e) => e.request_id(),
             Self::FailedDependencyException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
-            Self::NotImplementedOperationException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
-            Self::UnauthorizedException(e) => e.request_id(),
-            Self::UnsupportedMimeTypeException(e) => e.request_id(),
             Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

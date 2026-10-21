@@ -165,6 +165,8 @@ pub use crate::types::_remote_agent_configuration::RemoteAgentConfigurationBuild
 
 pub use crate::types::_remote_agent_sigv4_configuration::RemoteAgentSigV4ConfigurationBuilder;
 
+pub use crate::types::_ms_teams_configuration::MsTeamsConfigurationBuilder;
+
 pub use crate::types::_release_management_configuration::ReleaseManagementConfigurationBuilder;
 
 pub use crate::types::_capability_configuration::CapabilityConfigurationBuilder;
@@ -211,6 +213,8 @@ pub use crate::types::_slack_transmission_target::SlackTransmissionTargetBuilder
 
 pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfigurationBuilder;
 
+pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTargetBuilder;
+
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfigBuilder;
 
 pub use crate::types::_service_now_o_auth_client_credentials_config::ServiceNowOAuthClientCredentialsConfigBuilder;
@@ -240,6 +244,8 @@ pub use crate::types::_remote_agent_bearer_token_config::RemoteAgentBearerTokenC
 pub use crate::types::_slack_channel::SlackChannelBuilder;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetailBuilder;
+
+pub use crate::types::_ms_teams_channel::MsTeamsChannelBuilder;
 
 pub use crate::types::_private_network_access::PrivateNetworkAccessBuilder;
 

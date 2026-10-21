@@ -51,7 +51,7 @@ pub use crate::types::_validation_level::ValidationLevel;
 
 pub use crate::types::_agent_input_message::AgentInputMessage;
 
-pub use crate::types::_agent_output_message::AgentOutputMessage;
+pub use crate::types::_agent_output_message_stream::AgentOutputMessageStream;
 
 pub use crate::types::_starter_profile_source::StarterProfileSource;
 
@@ -99,19 +99,29 @@ pub use crate::types::_s3_configuration::S3Configuration;
 
 pub use crate::types::_agent_input_message_type::AgentInputMessageType;
 
-pub use crate::types::_agent_output_message_type::AgentOutputMessageType;
+pub use crate::types::_text_message_event::TextMessageEvent;
+
+pub use crate::types::_progress_event::ProgressEvent;
+
+pub use crate::types::_heartbeat_event::HeartbeatEvent;
+
+pub use crate::types::_error_event::ErrorEvent;
+
+pub use crate::types::_end_of_output_event::EndOfOutputEvent;
 
 pub use crate::types::_cmk_type::CmkType;
 
 pub use crate::types::_error_category::ErrorCategory;
 
+pub use crate::types::_agent_error_type::AgentErrorType;
+
+mod _agent_error_type;
+
 mod _agent_input_message;
 
 mod _agent_input_message_type;
 
-mod _agent_output_message;
-
-mod _agent_output_message_type;
+mod _agent_output_message_stream;
 
 mod _analytics_configuration;
 
@@ -145,15 +155,21 @@ mod _datastore_properties;
 
 mod _datastore_status;
 
+mod _end_of_output_event;
+
 mod _error_category;
 
 mod _error_cause;
+
+mod _error_event;
 
 mod _existing_versioned_profile_source;
 
 mod _export_job_properties;
 
 mod _fhir_version;
+
+mod _heartbeat_event;
 
 mod _identity_provider_configuration;
 
@@ -181,6 +197,8 @@ mod _profile_configuration;
 
 mod _profile_mapping_source;
 
+mod _progress_event;
+
 mod _restore_configuration;
 
 mod _s3_configuration;
@@ -196,6 +214,8 @@ mod _starter_profile_source;
 mod _tag;
 
 mod _target_format;
+
+mod _text_message_event;
 
 mod _transformation_input_data_config;
 

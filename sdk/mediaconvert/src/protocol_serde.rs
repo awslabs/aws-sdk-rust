@@ -663,6 +663,8 @@ pub(crate) mod shape_list_of_cmaf_additional_manifest;
 
 pub(crate) mod shape_list_of_cmaf_image_based_trick_play_variant;
 
+pub(crate) mod shape_list_of_dash_adaptation_set_grouping;
+
 pub(crate) mod shape_list_of_dash_additional_manifest;
 
 pub(crate) mod shape_list_of_dash_iso_image_based_trick_play_variant;

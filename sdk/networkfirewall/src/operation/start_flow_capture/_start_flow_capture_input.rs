@@ -5,9 +5,11 @@
 pub struct StartFlowCaptureInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
     pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the primary endpoint associated with a firewall.</p>
@@ -24,10 +26,14 @@ impl StartFlowCaptureInput {
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
     pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
@@ -63,6 +69,7 @@ impl StartFlowCaptureInput {
 pub struct StartFlowCaptureInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) minimum_flow_age_in_seconds: ::std::option::Option<i32>,
@@ -84,22 +91,36 @@ impl StartFlowCaptureInputBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web Services account, so use this parameter when you coordinate resources across accounts. Specify either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code>, not both. If you specify both, the request fails.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p>The Amazon Resource Name (ARN) of a VPC endpoint association.</p>
     pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -176,6 +197,7 @@ impl StartFlowCaptureInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_flow_capture::StartFlowCaptureInput {
             firewall_arn: self.firewall_arn,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
             vpc_endpoint_id: self.vpc_endpoint_id,
             minimum_flow_age_in_seconds: self.minimum_flow_age_in_seconds,

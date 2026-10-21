@@ -21,7 +21,7 @@ impl SendTaskSuccessInput {
 impl ::std::fmt::Debug for SendTaskSuccessInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendTaskSuccessInput");
-        formatter.field("task_token", &self.task_token);
+        formatter.field("task_token", &"*** Sensitive Data Redacted ***");
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -84,7 +84,7 @@ impl SendTaskSuccessInputBuilder {
 impl ::std::fmt::Debug for SendTaskSuccessInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SendTaskSuccessInputBuilder");
-        formatter.field("task_token", &self.task_token);
+        formatter.field("task_token", &"*** Sensitive Data Redacted ***");
         formatter.field("output", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

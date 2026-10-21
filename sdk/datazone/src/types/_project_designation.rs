@@ -15,6 +15,7 @@
 ///     ProjectDesignation::Contributor => { /* ... */ },
 ///     ProjectDesignation::Owner => { /* ... */ },
 ///     ProjectDesignation::ProjectCatalogSteward => { /* ... */ },
+///     ProjectDesignation::UserCreatedDesignation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ProjectDesignation {
     Owner,
     #[allow(missing_docs)] // documentation missing in model
     ProjectCatalogSteward,
+    #[allow(missing_docs)] // documentation missing in model
+    UserCreatedDesignation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ProjectDesignation {
             "CONTRIBUTOR" => ProjectDesignation::Contributor,
             "OWNER" => ProjectDesignation::Owner,
             "PROJECT_CATALOG_STEWARD" => ProjectDesignation::ProjectCatalogSteward,
+            "USER_CREATED_DESIGNATION" => ProjectDesignation::UserCreatedDesignation,
             other => ProjectDesignation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ProjectDesignation {
             ProjectDesignation::Contributor => "CONTRIBUTOR",
             ProjectDesignation::Owner => "OWNER",
             ProjectDesignation::ProjectCatalogSteward => "PROJECT_CATALOG_STEWARD",
+            ProjectDesignation::UserCreatedDesignation => "USER_CREATED_DESIGNATION",
             ProjectDesignation::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTRIBUTOR", "OWNER", "PROJECT_CATALOG_STEWARD"]
+        &["CONTRIBUTOR", "OWNER", "PROJECT_CATALOG_STEWARD", "USER_CREATED_DESIGNATION"]
     }
 }
 impl ::std::convert::AsRef<str> for ProjectDesignation {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ProjectDesignation {
             ProjectDesignation::Contributor => write!(f, "CONTRIBUTOR"),
             ProjectDesignation::Owner => write!(f, "OWNER"),
             ProjectDesignation::ProjectCatalogSteward => write!(f, "PROJECT_CATALOG_STEWARD"),
+            ProjectDesignation::UserCreatedDesignation => write!(f, "USER_CREATED_DESIGNATION"),
             ProjectDesignation::Unknown(value) => write!(f, "{value}"),
         }
     }

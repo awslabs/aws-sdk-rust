@@ -54,7 +54,7 @@ pub struct ModifyClientVpnEndpointInput {
     pub disconnect_on_session_timeout: ::std::option::Option<bool>,
     /// <p>The Transit Gateway configuration for the Client VPN endpoint. This option is currently not supported.</p>
     pub transit_gateway_configuration: ::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure>,
-    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To disable device posture and remove all device trust providers, specify <code>false</code> for <code>Enabled</code>.</p>
     pub device_posture_options: ::std::option::Option<crate::types::DevicePostureOptions>,
 }
 impl ModifyClientVpnEndpointInput {
@@ -145,7 +145,7 @@ impl ModifyClientVpnEndpointInput {
     pub fn transit_gateway_configuration(&self) -> ::std::option::Option<&crate::types::TransitGatewayConfigurationInputStructure> {
         self.transit_gateway_configuration.as_ref()
     }
-    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To disable device posture and remove all device trust providers, specify <code>false</code> for <code>Enabled</code>.</p>
     pub fn device_posture_options(&self) -> ::std::option::Option<&crate::types::DevicePostureOptions> {
         self.device_posture_options.as_ref()
     }
@@ -480,17 +480,17 @@ impl ModifyClientVpnEndpointInputBuilder {
     pub fn get_transit_gateway_configuration(&self) -> &::std::option::Option<crate::types::TransitGatewayConfigurationInputStructure> {
         &self.transit_gateway_configuration
     }
-    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To disable device posture and remove all device trust providers, specify <code>false</code> for <code>Enabled</code>.</p>
     pub fn device_posture_options(mut self, input: crate::types::DevicePostureOptions) -> Self {
         self.device_posture_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To disable device posture and remove all device trust providers, specify <code>false</code> for <code>Enabled</code>.</p>
     pub fn set_device_posture_options(mut self, input: ::std::option::Option<crate::types::DevicePostureOptions>) -> Self {
         self.device_posture_options = input;
         self
     }
-    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To remove all device trust providers, specify an empty list.</p>
+    /// <p>The device posture options for the Client VPN endpoint. Specifying this parameter replaces the entire device posture configuration for the endpoint. To disable device posture and remove all device trust providers, specify <code>false</code> for <code>Enabled</code>.</p>
     pub fn get_device_posture_options(&self) -> &::std::option::Option<crate::types::DevicePostureOptions> {
         &self.device_posture_options
     }

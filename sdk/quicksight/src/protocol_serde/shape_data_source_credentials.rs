@@ -33,5 +33,23 @@ pub fn ser_data_source_credentials(
         crate::protocol_serde::shape_o_auth_client_credentials::ser_o_auth_client_credentials(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.service_account_credentials {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("ServiceAccountCredentials").start_object();
+        crate::protocol_serde::shape_service_account_credentials::ser_service_account_credentials(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.share_point_client_credentials {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("SharePointClientCredentials").start_object();
+        crate::protocol_serde::shape_share_point_client_credentials::ser_share_point_client_credentials(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.one_drive_client_credentials {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("OneDriveClientCredentials").start_object();
+        crate::protocol_serde::shape_one_drive_client_credentials::ser_one_drive_client_credentials(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

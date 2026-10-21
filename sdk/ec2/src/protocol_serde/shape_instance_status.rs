@@ -133,6 +133,16 @@ pub fn de_instance_status(
                 builder = builder.set_application_status(var_11);
             }
             ,
+            s if s.matches("performanceStatus") /* PerformanceStatus com.amazonaws.ec2#InstanceStatus$PerformanceStatus */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_performance_status_summary::de_performance_status_summary(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_performance_status(var_12);
+            }
+            ,
             _ => {}
         }
     }

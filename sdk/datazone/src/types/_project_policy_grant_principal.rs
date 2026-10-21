@@ -6,6 +6,8 @@
 pub struct ProjectPolicyGrantPrincipal {
     /// <p>The project designation of the project policy grant principal.</p>
     pub project_designation: crate::types::ProjectDesignation,
+    /// <p>The ID of the user-created designation granted to the project principal. Required when <code>projectDesignation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub user_created_designation_id: ::std::option::Option<::std::string::String>,
     /// <p>The project ID of the project policy grant principal.</p>
     pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The project grant filter of the project policy grant principal.</p>
@@ -15,6 +17,10 @@ impl ProjectPolicyGrantPrincipal {
     /// <p>The project designation of the project policy grant principal.</p>
     pub fn project_designation(&self) -> &crate::types::ProjectDesignation {
         &self.project_designation
+    }
+    /// <p>The ID of the user-created designation granted to the project principal. Required when <code>projectDesignation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn user_created_designation_id(&self) -> ::std::option::Option<&str> {
+        self.user_created_designation_id.as_deref()
     }
     /// <p>The project ID of the project policy grant principal.</p>
     pub fn project_identifier(&self) -> ::std::option::Option<&str> {
@@ -37,6 +43,7 @@ impl ProjectPolicyGrantPrincipal {
 #[non_exhaustive]
 pub struct ProjectPolicyGrantPrincipalBuilder {
     pub(crate) project_designation: ::std::option::Option<crate::types::ProjectDesignation>,
+    pub(crate) user_created_designation_id: ::std::option::Option<::std::string::String>,
     pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) project_grant_filter: ::std::option::Option<crate::types::ProjectGrantFilter>,
 }
@@ -55,6 +62,20 @@ impl ProjectPolicyGrantPrincipalBuilder {
     /// <p>The project designation of the project policy grant principal.</p>
     pub fn get_project_designation(&self) -> &::std::option::Option<crate::types::ProjectDesignation> {
         &self.project_designation
+    }
+    /// <p>The ID of the user-created designation granted to the project principal. Required when <code>projectDesignation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn user_created_designation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_created_designation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the user-created designation granted to the project principal. Required when <code>projectDesignation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn set_user_created_designation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_created_designation_id = input;
+        self
+    }
+    /// <p>The ID of the user-created designation granted to the project principal. Required when <code>projectDesignation</code> is <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+    pub fn get_user_created_designation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_created_designation_id
     }
     /// <p>The project ID of the project policy grant principal.</p>
     pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -95,6 +116,7 @@ impl ProjectPolicyGrantPrincipalBuilder {
                     "project_designation was not specified but it is required when building ProjectPolicyGrantPrincipal",
                 )
             })?,
+            user_created_designation_id: self.user_created_designation_id,
             project_identifier: self.project_identifier,
             project_grant_filter: self.project_grant_filter,
         })

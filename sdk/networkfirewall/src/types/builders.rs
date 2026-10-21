@@ -75,6 +75,8 @@ pub use crate::types::_stateful_engine_options::StatefulEngineOptionsBuilder;
 
 pub use crate::types::_policy_variables::PolicyVariablesBuilder;
 
+pub use crate::types::_route53_resolved_ip_validation::Route53ResolvedIpValidationBuilder;
+
 pub use crate::types::_listener_property_request::ListenerPropertyRequestBuilder;
 
 pub use crate::types::_tls_intercept_properties::TlsInterceptPropertiesBuilder;
@@ -140,6 +142,8 @@ pub use crate::types::_custom_action::CustomActionBuilder;
 pub use crate::types::_stateful_rule_group_reference::StatefulRuleGroupReferenceBuilder;
 
 pub use crate::types::_flow_timeouts::FlowTimeoutsBuilder;
+
+pub use crate::types::_firewall_policy_error::FirewallPolicyErrorBuilder;
 
 pub use crate::types::_create_proxy_rule::CreateProxyRuleBuilder;
 

@@ -166,48 +166,58 @@ pub fn de_path_component(
                 builder = builder.set_transit_gateway_route_table_route(var_15);
             }
             ,
-            s if s.matches("explanationSet") /* Explanations com.amazonaws.ec2#PathComponent$Explanations */ =>  {
+            s if s.matches("transitGatewayPolicyTableEntry") /* TransitGatewayPolicyTableEntry com.amazonaws.ec2#PathComponent$TransitGatewayPolicyTableEntry */ =>  {
                 let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_analysis_transit_gateway_policy_table_entry::de_analysis_transit_gateway_policy_table_entry(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_policy_table_entry(var_16);
+            }
+            ,
+            s if s.matches("explanationSet") /* Explanations com.amazonaws.ec2#PathComponent$Explanations */ =>  {
+                let var_17 =
                     Some(
                         crate::protocol_serde::shape_explanation_list::de_explanation_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_explanations(var_16);
+                builder = builder.set_explanations(var_17);
             }
             ,
             s if s.matches("elasticLoadBalancerListener") /* ElasticLoadBalancerListener com.amazonaws.ec2#PathComponent$ElasticLoadBalancerListener */ =>  {
-                let var_17 =
+                let var_18 =
                     Some(
                         crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_elastic_load_balancer_listener(var_17);
+                builder = builder.set_elastic_load_balancer_listener(var_18);
             }
             ,
             s if s.matches("firewallStatelessRule") /* FirewallStatelessRule com.amazonaws.ec2#PathComponent$FirewallStatelessRule */ =>  {
-                let var_18 =
+                let var_19 =
                     Some(
                         crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_firewall_stateless_rule(var_18);
+                builder = builder.set_firewall_stateless_rule(var_19);
             }
             ,
             s if s.matches("firewallStatefulRule") /* FirewallStatefulRule com.amazonaws.ec2#PathComponent$FirewallStatefulRule */ =>  {
-                let var_19 =
+                let var_20 =
                     Some(
                         crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_firewall_stateful_rule(var_19);
+                builder = builder.set_firewall_stateful_rule(var_20);
             }
             ,
             s if s.matches("serviceName") /* ServiceName com.amazonaws.ec2#PathComponent$ServiceName */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -216,7 +226,7 @@ pub fn de_path_component(
                         ?
                     )
                 ;
-                builder = builder.set_service_name(var_20);
+                builder = builder.set_service_name(var_21);
             }
             ,
             _ => {}

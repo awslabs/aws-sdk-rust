@@ -74,6 +74,23 @@ pub fn de_associate_service_http_error(
             };
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::associate_service::AssociateServiceError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::associate_service::AssociateServiceError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -112,23 +129,6 @@ pub fn de_associate_service_http_error(
                         .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::content_size_exceeded_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?
-            };
-            tmp
-        }),
-        "ServiceQuotaExceededException" => crate::operation::associate_service::AssociateServiceError::ServiceQuotaExceededException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
-                    _response_body,
-                    output,
-                )
-                .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::service_quota_exceeded_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::associate_service::AssociateServiceError::unhandled)?
             };

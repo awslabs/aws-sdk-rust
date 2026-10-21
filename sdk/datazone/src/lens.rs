@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_data_sources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_designations_output_output_next_token(
+    input: &crate::operation::list_designations::ListDesignationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_domain_units_for_parent_output_output_next_token(
     input: &crate::operation::list_domain_units_for_parent::ListDomainUnitsForParentOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -459,6 +469,13 @@ pub(crate) fn lens_list_data_sources_output_output_items(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSourceSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_designations_output_output_items(
+    input: crate::operation::list_designations::ListDesignationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DesignationSummary>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

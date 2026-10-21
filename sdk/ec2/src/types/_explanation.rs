@@ -108,6 +108,10 @@ pub struct Explanation {
     pub transit_gateway_route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The transit gateway route table route.</p>
     pub transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    /// <p>The transit gateway policy table.</p>
+    pub transit_gateway_policy_table: ::std::option::Option<crate::types::AnalysisComponent>,
+    /// <p>The transit gateway policy table entry.</p>
+    pub transit_gateway_policy_table_entry: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
     /// <p>The transit gateway attachment.</p>
     pub transit_gateway_attachment: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The Amazon Web Services account for the component.</p>
@@ -338,6 +342,14 @@ impl Explanation {
     pub fn transit_gateway_route_table_route(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableRoute> {
         self.transit_gateway_route_table_route.as_ref()
     }
+    /// <p>The transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
+        self.transit_gateway_policy_table.as_ref()
+    }
+    /// <p>The transit gateway policy table entry.</p>
+    pub fn transit_gateway_policy_table_entry(&self) -> ::std::option::Option<&crate::types::AnalysisTransitGatewayPolicyTableEntry> {
+        self.transit_gateway_policy_table_entry.as_ref()
+    }
     /// <p>The transit gateway attachment.</p>
     pub fn transit_gateway_attachment(&self) -> ::std::option::Option<&crate::types::AnalysisComponent> {
         self.transit_gateway_attachment.as_ref()
@@ -419,6 +431,8 @@ pub struct ExplanationBuilder {
     pub(crate) transit_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) transit_gateway_route_table: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    pub(crate) transit_gateway_policy_table: ::std::option::Option<crate::types::AnalysisComponent>,
+    pub(crate) transit_gateway_policy_table_entry: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
     pub(crate) transit_gateway_attachment: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) component_account: ::std::option::Option<::std::string::String>,
     pub(crate) component_region: ::std::option::Option<::std::string::String>,
@@ -1178,6 +1192,37 @@ impl ExplanationBuilder {
     pub fn get_transit_gateway_route_table_route(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableRoute> {
         &self.transit_gateway_route_table_route
     }
+    /// <p>The transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table(mut self, input: crate::types::AnalysisComponent) -> Self {
+        self.transit_gateway_policy_table = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The transit gateway policy table.</p>
+    pub fn set_transit_gateway_policy_table(mut self, input: ::std::option::Option<crate::types::AnalysisComponent>) -> Self {
+        self.transit_gateway_policy_table = input;
+        self
+    }
+    /// <p>The transit gateway policy table.</p>
+    pub fn get_transit_gateway_policy_table(&self) -> &::std::option::Option<crate::types::AnalysisComponent> {
+        &self.transit_gateway_policy_table
+    }
+    /// <p>The transit gateway policy table entry.</p>
+    pub fn transit_gateway_policy_table_entry(mut self, input: crate::types::AnalysisTransitGatewayPolicyTableEntry) -> Self {
+        self.transit_gateway_policy_table_entry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The transit gateway policy table entry.</p>
+    pub fn set_transit_gateway_policy_table_entry(
+        mut self,
+        input: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
+    ) -> Self {
+        self.transit_gateway_policy_table_entry = input;
+        self
+    }
+    /// <p>The transit gateway policy table entry.</p>
+    pub fn get_transit_gateway_policy_table_entry(&self) -> &::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry> {
+        &self.transit_gateway_policy_table_entry
+    }
     /// <p>The transit gateway attachment.</p>
     pub fn transit_gateway_attachment(mut self, input: crate::types::AnalysisComponent) -> Self {
         self.transit_gateway_attachment = ::std::option::Option::Some(input);
@@ -1300,6 +1345,8 @@ impl ExplanationBuilder {
             transit_gateway: self.transit_gateway,
             transit_gateway_route_table: self.transit_gateway_route_table,
             transit_gateway_route_table_route: self.transit_gateway_route_table_route,
+            transit_gateway_policy_table: self.transit_gateway_policy_table,
+            transit_gateway_policy_table_entry: self.transit_gateway_policy_table_entry,
             transit_gateway_attachment: self.transit_gateway_attachment,
             component_account: self.component_account,
             component_region: self.component_region,

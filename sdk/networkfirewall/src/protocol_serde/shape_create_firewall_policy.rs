@@ -52,6 +52,21 @@ pub fn de_create_firewall_policy_http_error(
             }
             tmp
         }),
+        "InvalidOperationException" => crate::operation::create_firewall_policy::CreateFirewallPolicyError::InvalidOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_operation_exception::de_invalid_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_firewall_policy::CreateFirewallPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidRequestException" => crate::operation::create_firewall_policy::CreateFirewallPolicyError::InvalidRequestException({
             #[allow(unused_mut)]
             let mut tmp = {

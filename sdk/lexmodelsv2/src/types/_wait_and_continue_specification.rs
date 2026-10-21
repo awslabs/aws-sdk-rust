@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaitAndContinueSpecification {
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub waiting_response: ::std::option::Option<crate::types::ResponseSpecification>,
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub continue_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>A response that Amazon Lex sends periodically to the user to indicate that the bot is still waiting for input from the user.</p>
     pub still_waiting_response: ::std::option::Option<crate::types::StillWaitingResponseSpecification>,
@@ -14,11 +14,11 @@ pub struct WaitAndContinueSpecification {
     pub active: ::std::option::Option<bool>,
 }
 impl WaitAndContinueSpecification {
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn waiting_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.waiting_response.as_ref()
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn continue_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.continue_response.as_ref()
     }
@@ -48,33 +48,31 @@ pub struct WaitAndContinueSpecificationBuilder {
     pub(crate) active: ::std::option::Option<bool>,
 }
 impl WaitAndContinueSpecificationBuilder {
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
-    /// This field is required.
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn waiting_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.waiting_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn set_waiting_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.waiting_response = input;
         self
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is waiting for the conversation to continue. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn get_waiting_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.waiting_response
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
-    /// This field is required.
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn continue_response(mut self, input: crate::types::ResponseSpecification) -> Self {
         self.continue_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn set_continue_response(mut self, input: ::std::option::Option<crate::types::ResponseSpecification>) -> Self {
         self.continue_response = input;
         self
     }
-    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation.</p>
+    /// <p>The response that Amazon Lex sends to indicate that the bot is ready to continue the conversation. Required unless the bot locale's <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
     pub fn get_continue_response(&self) -> &::std::option::Option<crate::types::ResponseSpecification> {
         &self.continue_response
     }

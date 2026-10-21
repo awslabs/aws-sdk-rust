@@ -8,6 +8,7 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
 use aws_sdk_s3::config::{Credentials, Region};
+use aws_sdk_s3::error::DisplayErrorContext;
 use aws_sdk_s3::{Client, Config};
 use aws_smithy_http_client::test_util::{capture_request, CaptureRequestReceiver};
 
@@ -163,4 +164,23 @@ async fn write_get_object_response() {
         uri_no_query,
         "https://req-route.s3-object-lambda.us-west-4.amazonaws.com/WriteGetObjectResponse"
     );
+}
+
+#[tokio::test]
+async fn write_get_object_response_rejects_invalid_host_label() {
+    let (req, client) = test_client(|b| b);
+    let err = client
+        .write_get_object_response()
+        .request_route("attacker.example:1")
+        .request_token("token")
+        .send()
+        .await
+        .expect_err("`:` is not valid in a host label");
+    let err = DisplayErrorContext(&err).to_string();
+    assert!(
+        err.contains("forms part of the endpoint host"),
+        "unexpected error: {err}"
+    );
+    // The request must fail before it is signed or dispatched.
+    req.expect_no_request();
 }

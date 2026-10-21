@@ -337,6 +337,12 @@ pub use crate::types::_web_proxy_credentials::WebProxyCredentialsBuilder;
 
 pub use crate::types::_o_auth_client_credentials::OAuthClientCredentialsBuilder;
 
+pub use crate::types::_service_account_credentials::ServiceAccountCredentialsBuilder;
+
+pub use crate::types::_share_point_client_credentials::SharePointClientCredentialsBuilder;
+
+pub use crate::types::_one_drive_client_credentials::OneDriveClientCredentialsBuilder;
+
 pub use crate::types::_microsoft_purview_provider_config::MicrosoftPurviewProviderConfigBuilder;
 
 pub use crate::types::_permission::PermissionBuilder;

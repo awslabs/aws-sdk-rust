@@ -663,6 +663,8 @@ pub use crate::types::_phone_number_status::PhoneNumberStatus;
 
 pub use crate::types::_predefined_attribute_configuration::PredefinedAttributeConfiguration;
 
+pub use crate::types::_security_profile_type::SecurityProfileType;
+
 pub use crate::types::_traffic_distribution_group_status::TrafficDistributionGroupStatus;
 
 pub use crate::types::_hierarchy_path::HierarchyPath;
@@ -2930,6 +2932,8 @@ mod _security_profile_search_criteria;
 mod _security_profile_search_summary;
 
 mod _security_profile_summary;
+
+mod _security_profile_type;
 
 mod _security_profiles_search_filter;
 

@@ -302,66 +302,6 @@ pub(crate) fn update_fhir_datastore_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn agent_message_out_of_context_exception_correct_errors(
-    mut builder: crate::types::error::builders::AgentMessageOutOfContextExceptionBuilder,
-) -> crate::types::error::builders::AgentMessageOutOfContextExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn conversation_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ConversationNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ConversationNotFoundExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn not_implemented_operation_exception_correct_errors(
-    mut builder: crate::types::error::builders::NotImplementedOperationExceptionBuilder,
-) -> crate::types::error::builders::NotImplementedOperationExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn unauthorized_exception_correct_errors(
-    mut builder: crate::types::error::builders::UnauthorizedExceptionBuilder,
-) -> crate::types::error::builders::UnauthorizedExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn unsupported_mime_type_exception_correct_errors(
-    mut builder: crate::types::error::builders::UnsupportedMimeTypeExceptionBuilder,
-) -> crate::types::error::builders::UnsupportedMimeTypeExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn update_profile_with_agent_output_output_correct_errors(
-    mut builder: crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder,
-) -> crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder {
-    if builder.agent_response.is_none() {
-        builder.agent_response = {
-            let builder = crate::types::builders::AgentOutputMessageBuilder::default();
-            crate::serde_util::agent_output_message_correct_errors(builder).build().ok()
-        }
-    }
-    if builder.conversation_id.is_none() {
-        builder.conversation_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn transformation_job_properties_correct_errors(
     mut builder: crate::types::builders::TransformationJobPropertiesBuilder,
 ) -> crate::types::builders::TransformationJobPropertiesBuilder {
@@ -451,18 +391,6 @@ pub(crate) fn import_job_properties_correct_errors(
     }
     if builder.input_data_config.is_none() {
         builder.input_data_config = Some(crate::types::InputDataConfig::Unknown)
-    }
-    builder
-}
-
-pub(crate) fn agent_output_message_correct_errors(
-    mut builder: crate::types::builders::AgentOutputMessageBuilder,
-) -> crate::types::builders::AgentOutputMessageBuilder {
-    if builder.body.is_none() {
-        builder.body = Some(Default::default())
-    }
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::AgentOutputMessageType>().ok()
     }
     builder
 }
@@ -611,11 +539,39 @@ pub(crate) fn data_transformation_s3_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn end_of_output_event_correct_errors(
+    mut builder: crate::types::builders::EndOfOutputEventBuilder,
+) -> crate::types::builders::EndOfOutputEventBuilder {
+    if builder.final_response_message.is_none() {
+        builder.final_response_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn error_event_correct_errors(mut builder: crate::types::builders::ErrorEventBuilder) -> crate::types::builders::ErrorEventBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::AgentErrorType>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kms_encryption_config_correct_errors(
     mut builder: crate::types::builders::KmsEncryptionConfigBuilder,
 ) -> crate::types::builders::KmsEncryptionConfigBuilder {
     if builder.cmk_type.is_none() {
         builder.cmk_type = "no value was set".parse::<crate::types::CmkType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn progress_event_correct_errors(
+    mut builder: crate::types::builders::ProgressEventBuilder,
+) -> crate::types::builders::ProgressEventBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }
@@ -628,6 +584,15 @@ pub(crate) fn s3_configuration_correct_errors(
     }
     if builder.kms_key_id.is_none() {
         builder.kms_key_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn text_message_event_correct_errors(
+    mut builder: crate::types::builders::TextMessageEventBuilder,
+) -> crate::types::builders::TextMessageEventBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

@@ -89,6 +89,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RedshiftQueryUuid" => {
+                            builder = builder.set_redshift_query_uuid(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "HasResultSet" => {
                             builder = builder.set_has_result_set(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }

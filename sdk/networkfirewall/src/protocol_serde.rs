@@ -545,6 +545,8 @@ pub(crate) mod shape_custom_actions;
 
 pub(crate) mod shape_firewall_metadata;
 
+pub(crate) mod shape_firewall_policy_errors;
+
 pub(crate) mod shape_firewall_policy_metadata;
 
 pub(crate) mod shape_flow;
@@ -576,6 +578,8 @@ pub(crate) mod shape_proxy_rule_group_metadata;
 pub(crate) mod shape_proxy_rule_group_priority_result;
 
 pub(crate) mod shape_reference_sets;
+
+pub(crate) mod shape_route53_resolved_ip_validation;
 
 pub(crate) mod shape_rule_group_metadata;
 
@@ -627,6 +631,8 @@ pub(crate) mod shape_cidr_summary;
 
 pub(crate) mod shape_container_attributes;
 
+pub(crate) mod shape_firewall_policy_error;
+
 pub(crate) mod shape_flow_timeouts;
 
 pub(crate) mod shape_hits;
@@ -648,6 +654,8 @@ pub(crate) mod shape_proxy_condition_value_list;
 pub(crate) mod shape_proxy_config_rule_group;
 
 pub(crate) mod shape_proxy_rule_list;
+
+pub(crate) mod shape_route53_resolved_ip_validation_addresses;
 
 pub(crate) mod shape_rule_summary;
 

@@ -35,6 +35,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_correct_errors(
     mut builder: crate::types::error::builders::ValidationExceptionBuilder,
 ) -> crate::types::error::builders::ValidationExceptionBuilder {
@@ -56,15 +65,6 @@ pub(crate) fn access_denied_exception_correct_errors(
 pub(crate) fn content_size_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ContentSizeExceededExceptionBuilder,
 ) -> crate::types::error::builders::ContentSizeExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -1274,6 +1274,24 @@ pub(crate) fn mcp_server_sigv4_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ms_teams_configuration_correct_errors(
+    mut builder: crate::types::builders::MsTeamsConfigurationBuilder,
+) -> crate::types::builders::MsTeamsConfigurationBuilder {
+    if builder.team_id.is_none() {
+        builder.team_id = Some(Default::default())
+    }
+    if builder.team_name.is_none() {
+        builder.team_name = Some(Default::default())
+    }
+    if builder.transmission_target.is_none() {
+        builder.transmission_target = {
+            let builder = crate::types::builders::MsTeamsTransmissionTargetBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn pager_duty_configuration_correct_errors(
     mut builder: crate::types::builders::PagerDutyConfigurationBuilder,
 ) -> crate::types::builders::PagerDutyConfigurationBuilder {
@@ -1541,6 +1559,18 @@ pub(crate) fn mcp_tool_detail_correct_errors(
 ) -> crate::types::builders::McpToolDetailBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ms_teams_channel_correct_errors(
+    mut builder: crate::types::builders::MsTeamsChannelBuilder,
+) -> crate::types::builders::MsTeamsChannelBuilder {
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.channel_id.is_none() {
+        builder.channel_id = Some(Default::default())
     }
     builder
 }

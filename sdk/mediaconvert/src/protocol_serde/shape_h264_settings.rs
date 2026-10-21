@@ -177,32 +177,44 @@ pub fn ser_h264_settings(
             ::aws_smithy_types::Number::NegInt((*var_43).into()),
         );
     }
-    if let Some(var_44) = &input.slow_pal {
-        object.key("slowPal").string(var_44.as_str());
+    if let Some(var_44) = &input.sliding_window_ms {
+        object.key("slidingWindowMs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
+        );
     }
-    if let Some(var_45) = &input.softness {
-        object.key("softness").number(
+    if let Some(var_45) = &input.sliding_window_peak_bitrate {
+        object.key("slidingWindowPeakBitrate").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_45).into()),
         );
     }
-    if let Some(var_46) = &input.spatial_adaptive_quantization {
-        object.key("spatialAdaptiveQuantization").string(var_46.as_str());
+    if let Some(var_46) = &input.slow_pal {
+        object.key("slowPal").string(var_46.as_str());
     }
-    if let Some(var_47) = &input.syntax {
-        object.key("syntax").string(var_47.as_str());
+    if let Some(var_47) = &input.softness {
+        object.key("softness").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_47).into()),
+        );
     }
-    if let Some(var_48) = &input.telecine {
-        object.key("telecine").string(var_48.as_str());
+    if let Some(var_48) = &input.spatial_adaptive_quantization {
+        object.key("spatialAdaptiveQuantization").string(var_48.as_str());
     }
-    if let Some(var_49) = &input.temporal_adaptive_quantization {
-        object.key("temporalAdaptiveQuantization").string(var_49.as_str());
+    if let Some(var_49) = &input.syntax {
+        object.key("syntax").string(var_49.as_str());
     }
-    if let Some(var_50) = &input.unregistered_sei_timecode {
-        object.key("unregisteredSeiTimecode").string(var_50.as_str());
+    if let Some(var_50) = &input.telecine {
+        object.key("telecine").string(var_50.as_str());
     }
-    if let Some(var_51) = &input.write_mp4_packaging_type {
-        object.key("writeMp4PackagingType").string(var_51.as_str());
+    if let Some(var_51) = &input.temporal_adaptive_quantization {
+        object.key("temporalAdaptiveQuantization").string(var_51.as_str());
+    }
+    if let Some(var_52) = &input.unregistered_sei_timecode {
+        object.key("unregisteredSeiTimecode").string(var_52.as_str());
+    }
+    if let Some(var_53) = &input.write_mp4_packaging_type {
+        object.key("writeMp4PackagingType").string(var_53.as_str());
     }
     Ok(())
 }
@@ -490,6 +502,20 @@ where
                         }
                         "slices" => {
                             builder = builder.set_slices(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowMs" => {
+                            builder = builder.set_sliding_window_ms(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "slidingWindowPeakBitrate" => {
+                            builder = builder.set_sliding_window_peak_bitrate(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

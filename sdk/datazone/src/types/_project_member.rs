@@ -8,6 +8,8 @@ pub struct ProjectMember {
     pub member_details: ::std::option::Option<crate::types::MemberDetails>,
     /// <p>The designated role of a project member.</p>
     pub designation: crate::types::UserDesignation,
+    /// <p>The ID of the user-created designation held by the project member when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>.</p>
+    pub user_created_designation_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectMember {
     /// <p>The membership details of a project member.</p>
@@ -17,6 +19,10 @@ impl ProjectMember {
     /// <p>The designated role of a project member.</p>
     pub fn designation(&self) -> &crate::types::UserDesignation {
         &self.designation
+    }
+    /// <p>The ID of the user-created designation held by the project member when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>.</p>
+    pub fn user_created_designation_id(&self) -> ::std::option::Option<&str> {
+        self.user_created_designation_id.as_deref()
     }
 }
 impl ProjectMember {
@@ -32,6 +38,7 @@ impl ProjectMember {
 pub struct ProjectMemberBuilder {
     pub(crate) member_details: ::std::option::Option<crate::types::MemberDetails>,
     pub(crate) designation: ::std::option::Option<crate::types::UserDesignation>,
+    pub(crate) user_created_designation_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectMemberBuilder {
     /// <p>The membership details of a project member.</p>
@@ -64,6 +71,20 @@ impl ProjectMemberBuilder {
     pub fn get_designation(&self) -> &::std::option::Option<crate::types::UserDesignation> {
         &self.designation
     }
+    /// <p>The ID of the user-created designation held by the project member when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>.</p>
+    pub fn user_created_designation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_created_designation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the user-created designation held by the project member when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>.</p>
+    pub fn set_user_created_designation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.user_created_designation_id = input;
+        self
+    }
+    /// <p>The ID of the user-created designation held by the project member when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>.</p>
+    pub fn get_user_created_designation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.user_created_designation_id
+    }
     /// Consumes the builder and constructs a [`ProjectMember`](crate::types::ProjectMember).
     /// This method will fail if any of the following fields are not set:
     /// - [`designation`](crate::types::builders::ProjectMemberBuilder::designation)
@@ -76,6 +97,7 @@ impl ProjectMemberBuilder {
                     "designation was not specified but it is required when building ProjectMember",
                 )
             })?,
+            user_created_designation_id: self.user_created_designation_id,
         })
     }
 }

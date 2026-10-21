@@ -61,6 +61,9 @@ pub mod delete_warm_pool;
 /// Types for the `DescribeAccountLimits` operation.
 pub mod describe_account_limits;
 
+/// Types for the `DescribeAccountSettings` operation.
+pub mod describe_account_settings;
+
 /// Types for the `DescribeAdjustmentTypes` operation.
 pub mod describe_adjustment_types;
 
@@ -153,6 +156,9 @@ pub mod get_predictive_scaling_forecast;
 
 /// Types for the `LaunchInstances` operation.
 pub mod launch_instances;
+
+/// Types for the `PutAccountSetting` operation.
+pub mod put_account_setting;
 
 /// Types for the `PutLifecycleHook` operation.
 pub mod put_lifecycle_hook;

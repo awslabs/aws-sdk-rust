@@ -16,6 +16,12 @@ pub struct DataSourceCredentials {
     pub web_proxy_credentials: ::std::option::Option<crate::types::WebProxyCredentials>,
     /// <p>The OAuth client credentials for connecting to a data source using OAuth 2.0 client credentials (2LO) authentication. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_OAuthClientCredentials.html">OAuthClientCredentials</a> </code>.</p>
     pub o_auth_client_credentials: ::std::option::Option<crate::types::OAuthClientCredentials>,
+    /// <p>The service account credentials for connecting to a data source that uses Google Workspace domain-wide delegation.</p>
+    pub service_account_credentials: ::std::option::Option<crate::types::ServiceAccountCredentials>,
+    /// <p>The client credentials for connecting to a Microsoft SharePoint data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub share_point_client_credentials: ::std::option::Option<crate::types::SharePointClientCredentials>,
+    /// <p>The client credentials for connecting to a Microsoft OneDrive data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub one_drive_client_credentials: ::std::option::Option<crate::types::OneDriveClientCredentials>,
 }
 impl DataSourceCredentials {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
@@ -42,6 +48,18 @@ impl DataSourceCredentials {
     pub fn o_auth_client_credentials(&self) -> ::std::option::Option<&crate::types::OAuthClientCredentials> {
         self.o_auth_client_credentials.as_ref()
     }
+    /// <p>The service account credentials for connecting to a data source that uses Google Workspace domain-wide delegation.</p>
+    pub fn service_account_credentials(&self) -> ::std::option::Option<&crate::types::ServiceAccountCredentials> {
+        self.service_account_credentials.as_ref()
+    }
+    /// <p>The client credentials for connecting to a Microsoft SharePoint data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn share_point_client_credentials(&self) -> ::std::option::Option<&crate::types::SharePointClientCredentials> {
+        self.share_point_client_credentials.as_ref()
+    }
+    /// <p>The client credentials for connecting to a Microsoft OneDrive data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn one_drive_client_credentials(&self) -> ::std::option::Option<&crate::types::OneDriveClientCredentials> {
+        self.one_drive_client_credentials.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataSourceCredentials {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +70,9 @@ impl ::std::fmt::Debug for DataSourceCredentials {
         formatter.field("key_pair_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("web_proxy_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("o_auth_client_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_account_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("share_point_client_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("one_drive_client_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -72,6 +93,9 @@ pub struct DataSourceCredentialsBuilder {
     pub(crate) key_pair_credentials: ::std::option::Option<crate::types::KeyPairCredentials>,
     pub(crate) web_proxy_credentials: ::std::option::Option<crate::types::WebProxyCredentials>,
     pub(crate) o_auth_client_credentials: ::std::option::Option<crate::types::OAuthClientCredentials>,
+    pub(crate) service_account_credentials: ::std::option::Option<crate::types::ServiceAccountCredentials>,
+    pub(crate) share_point_client_credentials: ::std::option::Option<crate::types::SharePointClientCredentials>,
+    pub(crate) one_drive_client_credentials: ::std::option::Option<crate::types::OneDriveClientCredentials>,
 }
 impl DataSourceCredentialsBuilder {
     /// <p>Credential pair. For more information, see <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CredentialPair.html">CredentialPair</a> </code>.</p>
@@ -158,6 +182,48 @@ impl DataSourceCredentialsBuilder {
     pub fn get_o_auth_client_credentials(&self) -> &::std::option::Option<crate::types::OAuthClientCredentials> {
         &self.o_auth_client_credentials
     }
+    /// <p>The service account credentials for connecting to a data source that uses Google Workspace domain-wide delegation.</p>
+    pub fn service_account_credentials(mut self, input: crate::types::ServiceAccountCredentials) -> Self {
+        self.service_account_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The service account credentials for connecting to a data source that uses Google Workspace domain-wide delegation.</p>
+    pub fn set_service_account_credentials(mut self, input: ::std::option::Option<crate::types::ServiceAccountCredentials>) -> Self {
+        self.service_account_credentials = input;
+        self
+    }
+    /// <p>The service account credentials for connecting to a data source that uses Google Workspace domain-wide delegation.</p>
+    pub fn get_service_account_credentials(&self) -> &::std::option::Option<crate::types::ServiceAccountCredentials> {
+        &self.service_account_credentials
+    }
+    /// <p>The client credentials for connecting to a Microsoft SharePoint data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn share_point_client_credentials(mut self, input: crate::types::SharePointClientCredentials) -> Self {
+        self.share_point_client_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client credentials for connecting to a Microsoft SharePoint data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn set_share_point_client_credentials(mut self, input: ::std::option::Option<crate::types::SharePointClientCredentials>) -> Self {
+        self.share_point_client_credentials = input;
+        self
+    }
+    /// <p>The client credentials for connecting to a Microsoft SharePoint data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn get_share_point_client_credentials(&self) -> &::std::option::Option<crate::types::SharePointClientCredentials> {
+        &self.share_point_client_credentials
+    }
+    /// <p>The client credentials for connecting to a Microsoft OneDrive data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn one_drive_client_credentials(mut self, input: crate::types::OneDriveClientCredentials) -> Self {
+        self.one_drive_client_credentials = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client credentials for connecting to a Microsoft OneDrive data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn set_one_drive_client_credentials(mut self, input: ::std::option::Option<crate::types::OneDriveClientCredentials>) -> Self {
+        self.one_drive_client_credentials = input;
+        self
+    }
+    /// <p>The client credentials for connecting to a Microsoft OneDrive data source using two-legged OAuth (2LO) certificate-based authentication.</p>
+    pub fn get_one_drive_client_credentials(&self) -> &::std::option::Option<crate::types::OneDriveClientCredentials> {
+        &self.one_drive_client_credentials
+    }
     /// Consumes the builder and constructs a [`DataSourceCredentials`](crate::types::DataSourceCredentials).
     pub fn build(self) -> crate::types::DataSourceCredentials {
         crate::types::DataSourceCredentials {
@@ -167,6 +233,9 @@ impl DataSourceCredentialsBuilder {
             key_pair_credentials: self.key_pair_credentials,
             web_proxy_credentials: self.web_proxy_credentials,
             o_auth_client_credentials: self.o_auth_client_credentials,
+            service_account_credentials: self.service_account_credentials,
+            share_point_client_credentials: self.share_point_client_credentials,
+            one_drive_client_credentials: self.one_drive_client_credentials,
         }
     }
 }
@@ -179,6 +248,9 @@ impl ::std::fmt::Debug for DataSourceCredentialsBuilder {
         formatter.field("key_pair_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("web_proxy_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("o_auth_client_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("service_account_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("share_point_client_credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("one_drive_client_credentials", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

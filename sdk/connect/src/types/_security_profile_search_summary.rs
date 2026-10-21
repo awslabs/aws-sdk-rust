@@ -16,6 +16,8 @@ pub struct SecurityProfileSearchSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfileSearchSummary {
     /// <p>The identifier of the security profile.</p>
@@ -42,6 +44,10 @@ impl SecurityProfileSearchSummary {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityProfileType> {
+        self.r#type.as_ref()
+    }
 }
 impl SecurityProfileSearchSummary {
     /// Creates a new builder-style object to manufacture [`SecurityProfileSearchSummary`](crate::types::SecurityProfileSearchSummary).
@@ -60,6 +66,7 @@ pub struct SecurityProfileSearchSummaryBuilder {
     pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfileSearchSummaryBuilder {
     /// <p>The identifier of the security profile.</p>
@@ -152,6 +159,20 @@ impl SecurityProfileSearchSummaryBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(mut self, input: crate::types::SecurityProfileType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityProfileType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityProfileType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`SecurityProfileSearchSummary`](crate::types::SecurityProfileSearchSummary).
     pub fn build(self) -> crate::types::SecurityProfileSearchSummary {
         crate::types::SecurityProfileSearchSummary {
@@ -161,6 +182,7 @@ impl SecurityProfileSearchSummaryBuilder {
             security_profile_name: self.security_profile_name,
             description: self.description,
             tags: self.tags,
+            r#type: self.r#type,
         }
     }
 }

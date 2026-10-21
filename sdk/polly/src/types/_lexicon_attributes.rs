@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexiconAttributes {
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>.</p>
     pub alphabet: ::std::option::Option<::std::string::String>,
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub language_code: ::std::option::Option<crate::types::LanguageCode>,
@@ -18,7 +18,7 @@ pub struct LexiconAttributes {
     pub size: i32,
 }
 impl LexiconAttributes {
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>.</p>
     pub fn alphabet(&self) -> ::std::option::Option<&str> {
         self.alphabet.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct LexiconAttributesBuilder {
     pub(crate) size: ::std::option::Option<i32>,
 }
 impl LexiconAttributesBuilder {
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>.</p>
     pub fn alphabet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.alphabet = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>.</p>
     pub fn set_alphabet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alphabet = input;
         self
     }
-    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
+    /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>.</p>
     pub fn get_alphabet(&self) -> &::std::option::Option<::std::string::String> {
         &self.alphabet
     }

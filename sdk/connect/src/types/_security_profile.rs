@@ -30,6 +30,8 @@ pub struct SecurityProfile {
     pub allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The granular access control configuration for the security profile, including data table permissions.</p>
     pub granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfile {
     /// <p>The identifier for the security profile.</p>
@@ -88,6 +90,10 @@ impl SecurityProfile {
     pub fn granular_access_control_configuration(&self) -> ::std::option::Option<&crate::types::GranularAccessControlConfiguration> {
         self.granular_access_control_configuration.as_ref()
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityProfileType> {
+        self.r#type.as_ref()
+    }
 }
 impl SecurityProfile {
     /// Creates a new builder-style object to manufacture [`SecurityProfile`](crate::types::SecurityProfile).
@@ -113,6 +119,7 @@ pub struct SecurityProfileBuilder {
     pub(crate) hierarchy_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) allowed_access_control_hierarchy_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) granular_access_control_configuration: ::std::option::Option<crate::types::GranularAccessControlConfiguration>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SecurityProfileType>,
 }
 impl SecurityProfileBuilder {
     /// <p>The identifier for the security profile.</p>
@@ -333,6 +340,20 @@ impl SecurityProfileBuilder {
     pub fn get_granular_access_control_configuration(&self) -> &::std::option::Option<crate::types::GranularAccessControlConfiguration> {
         &self.granular_access_control_configuration
     }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn r#type(mut self, input: crate::types::SecurityProfileType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SecurityProfileType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the security profile: <code>AWS_MANAGED</code> or <code>CUSTOMER_MANAGED</code>.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::SecurityProfileType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`SecurityProfile`](crate::types::SecurityProfile).
     pub fn build(self) -> crate::types::SecurityProfile {
         crate::types::SecurityProfile {
@@ -349,6 +370,7 @@ impl SecurityProfileBuilder {
             hierarchy_restricted_resources: self.hierarchy_restricted_resources,
             allowed_access_control_hierarchy_group_id: self.allowed_access_control_hierarchy_group_id,
             granular_access_control_configuration: self.granular_access_control_configuration,
+            r#type: self.r#type,
         }
     }
 }

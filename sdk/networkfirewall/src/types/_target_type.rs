@@ -12,6 +12,7 @@
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
+///     TargetType::AwsRoute53ResolvedDomain => { /* ... */ },
 ///     TargetType::HttpHost => { /* ... */ },
 ///     TargetType::TlsSni => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsRoute53ResolvedDomain,
+    #[allow(missing_docs)] // documentation missing in model
     HttpHost,
     #[allow(missing_docs)] // documentation missing in model
     TlsSni,
@@ -53,6 +56,7 @@ pub enum TargetType {
 impl ::std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_ROUTE_53_RESOLVED_DOMAIN" => TargetType::AwsRoute53ResolvedDomain,
             "HTTP_HOST" => TargetType::HttpHost,
             "TLS_SNI" => TargetType::TlsSni,
             other => TargetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TargetType::AwsRoute53ResolvedDomain => "AWS_ROUTE_53_RESOLVED_DOMAIN",
             TargetType::HttpHost => "HTTP_HOST",
             TargetType::TlsSni => "TLS_SNI",
             TargetType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl TargetType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTTP_HOST", "TLS_SNI"]
+        &["AWS_ROUTE_53_RESOLVED_DOMAIN", "HTTP_HOST", "TLS_SNI"]
     }
 }
 impl ::std::convert::AsRef<str> for TargetType {
@@ -100,6 +105,7 @@ impl TargetType {
 impl ::std::fmt::Display for TargetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TargetType::AwsRoute53ResolvedDomain => write!(f, "AWS_ROUTE_53_RESOLVED_DOMAIN"),
             TargetType::HttpHost => write!(f, "HTTP_HOST"),
             TargetType::TlsSni => write!(f, "TLS_SNI"),
             TargetType::Unknown(value) => write!(f, "{value}"),

@@ -326,7 +326,7 @@ pub enum PutLexiconError {
     MaxLexiconsNumberExceededException(crate::types::error::MaxLexiconsNumberExceededException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
-    /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
+    /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>ipa</code>, <code>x-sampa</code>, <code>x-amazon-pinyin</code>, <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and <code>x-amazon-yomigana</code>. Replace the unsupported alphabet with one of the valid values and resubmit your request.</p>
     UnsupportedPlsAlphabetException(crate::types::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::types::error::UnsupportedPlsLanguageException),

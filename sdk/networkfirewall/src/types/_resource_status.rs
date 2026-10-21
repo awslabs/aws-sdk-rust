@@ -15,6 +15,7 @@
 ///     ResourceStatus::Active => { /* ... */ },
 ///     ResourceStatus::Deleting => { /* ... */ },
 ///     ResourceStatus::Error => { /* ... */ },
+///     ResourceStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ResourceStatus {
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ResourceStatus {
             "ACTIVE" => ResourceStatus::Active,
             "DELETING" => ResourceStatus::Deleting,
             "ERROR" => ResourceStatus::Error,
+            "UPDATING" => ResourceStatus::Updating,
             other => ResourceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ResourceStatus {
             ResourceStatus::Active => "ACTIVE",
             ResourceStatus::Deleting => "DELETING",
             ResourceStatus::Error => "ERROR",
+            ResourceStatus::Updating => "UPDATING",
             ResourceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING", "ERROR"]
+        &["ACTIVE", "DELETING", "ERROR", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceStatus {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ResourceStatus {
             ResourceStatus::Active => write!(f, "ACTIVE"),
             ResourceStatus::Deleting => write!(f, "DELETING"),
             ResourceStatus::Error => write!(f, "ERROR"),
+            ResourceStatus::Updating => write!(f, "UPDATING"),
             ResourceStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

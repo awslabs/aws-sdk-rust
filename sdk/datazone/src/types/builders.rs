@@ -295,6 +295,8 @@ pub use crate::types::_data_product_revision::DataProductRevisionBuilder;
 
 pub use crate::types::_data_source_run_activity::DataSourceRunActivityBuilder;
 
+pub use crate::types::_designation_summary::DesignationSummaryBuilder;
+
 pub use crate::types::_environment_action_summary::EnvironmentActionSummaryBuilder;
 
 pub use crate::types::_environment_blueprint_summary::EnvironmentBlueprintSummaryBuilder;

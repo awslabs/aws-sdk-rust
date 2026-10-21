@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-iam = "1.129.0"
+//! aws-sdk-iam = "1.130.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfig {
-    /// Notebook run states that trigger notifications. Ordering is not significant.
+    /// <p>The notebook run states that trigger notifications. You can specify up to 7 states, and the ordering of the states is not significant.</p>
     pub notify_on: ::std::vec::Vec<crate::types::NotifyOnState>,
 }
 impl NotificationConfig {
-    /// Notebook run states that trigger notifications. Ordering is not significant.
+    /// <p>The notebook run states that trigger notifications. You can specify up to 7 states, and the ordering of the states is not significant.</p>
     pub fn notify_on(&self) -> &[crate::types::NotifyOnState] {
         use std::ops::Deref;
         self.notify_on.deref()
@@ -32,19 +32,19 @@ impl NotificationConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_notify_on`](Self::set_notify_on).
     ///
-    /// Notebook run states that trigger notifications. Ordering is not significant.
+    /// <p>The notebook run states that trigger notifications. You can specify up to 7 states, and the ordering of the states is not significant.</p>
     pub fn notify_on(mut self, input: crate::types::NotifyOnState) -> Self {
         let mut v = self.notify_on.unwrap_or_default();
         v.push(input);
         self.notify_on = ::std::option::Option::Some(v);
         self
     }
-    /// Notebook run states that trigger notifications. Ordering is not significant.
+    /// <p>The notebook run states that trigger notifications. You can specify up to 7 states, and the ordering of the states is not significant.</p>
     pub fn set_notify_on(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NotifyOnState>>) -> Self {
         self.notify_on = input;
         self
     }
-    /// Notebook run states that trigger notifications. Ordering is not significant.
+    /// <p>The notebook run states that trigger notifications. You can specify up to 7 states, and the ordering of the states is not significant.</p>
     pub fn get_notify_on(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotifyOnState>> {
         &self.notify_on
     }

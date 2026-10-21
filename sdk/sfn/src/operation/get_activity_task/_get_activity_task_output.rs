@@ -22,7 +22,7 @@ impl GetActivityTaskOutput {
 impl ::std::fmt::Debug for GetActivityTaskOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetActivityTaskOutput");
-        formatter.field("task_token", &self.task_token);
+        formatter.field("task_token", &"*** Sensitive Data Redacted ***");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -98,7 +98,7 @@ impl GetActivityTaskOutputBuilder {
 impl ::std::fmt::Debug for GetActivityTaskOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetActivityTaskOutputBuilder");
-        formatter.field("task_token", &self.task_token);
+        formatter.field("task_token", &"*** Sensitive Data Redacted ***");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

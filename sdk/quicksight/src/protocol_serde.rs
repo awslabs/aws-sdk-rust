@@ -1725,6 +1725,8 @@ pub(crate) mod shape_o_auth_client_application_summary;
 
 pub(crate) mod shape_o_auth_client_credentials;
 
+pub(crate) mod shape_one_drive_client_credentials;
+
 pub(crate) mod shape_one_drive_parameters;
 
 pub(crate) mod shape_oracle_parameters;
@@ -1799,7 +1801,11 @@ pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_semantic_table;
 
+pub(crate) mod shape_service_account_credentials;
+
 pub(crate) mod shape_service_now_parameters;
+
+pub(crate) mod shape_share_point_client_credentials;
 
 pub(crate) mod shape_share_point_parameters;
 

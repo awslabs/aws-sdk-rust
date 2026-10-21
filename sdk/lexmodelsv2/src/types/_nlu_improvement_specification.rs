@@ -6,7 +6,7 @@
 pub struct NluImprovementSpecification {
     /// <p>Determines whether the Assisted NLU feature is enabled for the bot. When set to <code>true</code>, Amazon Lex uses advanced models to improve intent recognition and slot resolution, with the default being <code>false</code>.</p>
     pub enabled: bool,
-    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, <code>Fallback</code> to use it only when standard NLU confidence is low, or <code>DialogManager</code> to use a large language model to manage the conversation, including intent recognition, slot elicitation, and confirmation.</p>
     pub assisted_nlu_mode: ::std::option::Option<crate::types::AssistedNluMode>,
     /// <p>An object containing specifications for the Intent Disambiguation feature within the Assisted NLU settings. These settings determine how the bot handles ambiguous user inputs that could match multiple intents.</p>
     pub intent_disambiguation_settings: ::std::option::Option<crate::types::IntentDisambiguationSettings>,
@@ -16,7 +16,7 @@ impl NluImprovementSpecification {
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, <code>Fallback</code> to use it only when standard NLU confidence is low, or <code>DialogManager</code> to use a large language model to manage the conversation, including intent recognition, slot elicitation, and confirmation.</p>
     pub fn assisted_nlu_mode(&self) -> ::std::option::Option<&crate::types::AssistedNluMode> {
         self.assisted_nlu_mode.as_ref()
     }
@@ -56,17 +56,17 @@ impl NluImprovementSpecificationBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
-    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, <code>Fallback</code> to use it only when standard NLU confidence is low, or <code>DialogManager</code> to use a large language model to manage the conversation, including intent recognition, slot elicitation, and confirmation.</p>
     pub fn assisted_nlu_mode(mut self, input: crate::types::AssistedNluMode) -> Self {
         self.assisted_nlu_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, <code>Fallback</code> to use it only when standard NLU confidence is low, or <code>DialogManager</code> to use a large language model to manage the conversation, including intent recognition, slot elicitation, and confirmation.</p>
     pub fn set_assisted_nlu_mode(mut self, input: ::std::option::Option<crate::types::AssistedNluMode>) -> Self {
         self.assisted_nlu_mode = input;
         self
     }
-    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, or <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+    /// <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to make Assisted NLU the primary intent recognition method, <code>Fallback</code> to use it only when standard NLU confidence is low, or <code>DialogManager</code> to use a large language model to manage the conversation, including intent recognition, slot elicitation, and confirmation.</p>
     pub fn get_assisted_nlu_mode(&self) -> &::std::option::Option<crate::types::AssistedNluMode> {
         &self.assisted_nlu_mode
     }

@@ -537,18 +537,38 @@ pub fn de_explanation(
                 builder = builder.set_transit_gateway_route_table_route(var_49);
             }
             ,
-            s if s.matches("transitGatewayAttachment") /* TransitGatewayAttachment com.amazonaws.ec2#Explanation$TransitGatewayAttachment */ =>  {
+            s if s.matches("transitGatewayPolicyTable") /* TransitGatewayPolicyTable com.amazonaws.ec2#Explanation$TransitGatewayPolicyTable */ =>  {
                 let var_50 =
                     Some(
                         crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_transit_gateway_attachment(var_50);
+                builder = builder.set_transit_gateway_policy_table(var_50);
+            }
+            ,
+            s if s.matches("transitGatewayPolicyTableEntry") /* TransitGatewayPolicyTableEntry com.amazonaws.ec2#Explanation$TransitGatewayPolicyTableEntry */ =>  {
+                let var_51 =
+                    Some(
+                        crate::protocol_serde::shape_analysis_transit_gateway_policy_table_entry::de_analysis_transit_gateway_policy_table_entry(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_policy_table_entry(var_51);
+            }
+            ,
+            s if s.matches("transitGatewayAttachment") /* TransitGatewayAttachment com.amazonaws.ec2#Explanation$TransitGatewayAttachment */ =>  {
+                let var_52 =
+                    Some(
+                        crate::protocol_serde::shape_analysis_component::de_analysis_component(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_attachment(var_52);
             }
             ,
             s if s.matches("componentAccount") /* ComponentAccount com.amazonaws.ec2#Explanation$ComponentAccount */ =>  {
-                let var_51 =
+                let var_53 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -557,11 +577,11 @@ pub fn de_explanation(
                         ?
                     )
                 ;
-                builder = builder.set_component_account(var_51);
+                builder = builder.set_component_account(var_53);
             }
             ,
             s if s.matches("componentRegion") /* ComponentRegion com.amazonaws.ec2#Explanation$ComponentRegion */ =>  {
-                let var_52 =
+                let var_54 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -570,27 +590,27 @@ pub fn de_explanation(
                         ?
                     )
                 ;
-                builder = builder.set_component_region(var_52);
+                builder = builder.set_component_region(var_54);
             }
             ,
             s if s.matches("firewallStatelessRule") /* FirewallStatelessRule com.amazonaws.ec2#Explanation$FirewallStatelessRule */ =>  {
-                let var_53 =
+                let var_55 =
                     Some(
                         crate::protocol_serde::shape_firewall_stateless_rule::de_firewall_stateless_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_firewall_stateless_rule(var_53);
+                builder = builder.set_firewall_stateless_rule(var_55);
             }
             ,
             s if s.matches("firewallStatefulRule") /* FirewallStatefulRule com.amazonaws.ec2#Explanation$FirewallStatefulRule */ =>  {
-                let var_54 =
+                let var_56 =
                     Some(
                         crate::protocol_serde::shape_firewall_stateful_rule::de_firewall_stateful_rule(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_firewall_stateful_rule(var_54);
+                builder = builder.set_firewall_stateful_rule(var_56);
             }
             ,
             _ => {}

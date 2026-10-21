@@ -131,9 +131,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateP
                 UpdateProfileWithAgentTelemetryInputCaptureInterceptor,
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
-                ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
-            ))
-            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 UpdateProfileWithAgentEndpointParamsInterceptor,
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
@@ -204,23 +201,39 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateProfile
 #[derive(Debug)]
 struct UpdateProfileWithAgentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateProfileWithAgentResponseDeserializer {
+    fn deserialize_streaming_with_config(
+        &self,
+        response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        _cfg: &::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::option::Option<::aws_smithy_runtime_api::client::interceptors::context::OutputOrError> {
+        #[allow(unused_mut)]
+        let mut force_error = false;
+        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
+
+        // If this is an error, defer to the non-streaming parser
+        if (!response.status().is_success() && response.status().as_u16() != 200) || force_error {
+            return ::std::option::Option::None;
+        }
+        ::std::option::Option::Some(crate::protocol_serde::type_erase_result(
+            crate::protocol_serde::shape_update_profile_with_agent::de_update_profile_with_agent_http_response(response, _cfg),
+        ))
+    }
+
     fn deserialize_nonstreaming_with_config(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
-        let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
+        // For streaming operations, we only hit this case if its an error
         let body = response.body().bytes().expect("body loaded");
-        #[allow(unused_mut)]
-        let mut force_error = false;
-        ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_update_profile_with_agent::de_update_profile_with_agent_http_error(status, headers, body, _cfg)
-        } else {
-            crate::protocol_serde::shape_update_profile_with_agent::de_update_profile_with_agent_http_response(status, headers, body, _cfg)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
+        crate::protocol_serde::type_erase_result(
+            crate::protocol_serde::shape_update_profile_with_agent::de_update_profile_with_agent_http_error(
+                response.status().as_u16(),
+                response.headers(),
+                body,
+                _cfg,
+            ),
+        )
     }
 }
 #[derive(Debug)]
@@ -330,22 +343,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateProfile
 pub enum UpdateProfileWithAgentError {
     /// <p>Access is denied. Your account is not authorized to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The agent message does not fit within the current conversation context. Start a new conversation or provide a message that relates to the current profile customization session.</p>
-    AgentMessageOutOfContextException(crate::types::error::AgentMessageOutOfContextException),
-    /// <p>The specified conversation identifier does not exist. Verify the conversation ID or omit it to start a new conversation.</p>
-    ConversationNotFoundException(crate::types::error::ConversationNotFoundException),
     /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested operation is not yet available. Check the service documentation for a list of supported operations.</p>
-    NotImplementedOperationException(crate::types::error::NotImplementedOperationException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You are not authorized to make this request. Verify that your Amazon Web Services credentials are valid and that you have the required permissions.</p>
-    UnauthorizedException(crate::types::error::UnauthorizedException),
-    /// <p>The content type in your request is not supported. Use a supported content type for this operation.</p>
-    UnsupportedMimeTypeException(crate::types::error::UnsupportedMimeTypeException),
     /// <p>The user input parameter was invalid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -382,14 +385,9 @@ impl UpdateProfileWithAgentError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::AgentMessageOutOfContextException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::ConversationNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::NotImplementedOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::UnauthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::UnsupportedMimeTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -398,21 +396,9 @@ impl UpdateProfileWithAgentError {
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
     }
-    /// Returns `true` if the error kind is `UpdateProfileWithAgentError::AgentMessageOutOfContextException`.
-    pub fn is_agent_message_out_of_context_exception(&self) -> bool {
-        matches!(self, Self::AgentMessageOutOfContextException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateProfileWithAgentError::ConversationNotFoundException`.
-    pub fn is_conversation_not_found_exception(&self) -> bool {
-        matches!(self, Self::ConversationNotFoundException(_))
-    }
     /// Returns `true` if the error kind is `UpdateProfileWithAgentError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateProfileWithAgentError::NotImplementedOperationException`.
-    pub fn is_not_implemented_operation_exception(&self) -> bool {
-        matches!(self, Self::NotImplementedOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateProfileWithAgentError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -421,14 +407,6 @@ impl UpdateProfileWithAgentError {
     /// Returns `true` if the error kind is `UpdateProfileWithAgentError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateProfileWithAgentError::UnauthorizedException`.
-    pub fn is_unauthorized_exception(&self) -> bool {
-        matches!(self, Self::UnauthorizedException(_))
-    }
-    /// Returns `true` if the error kind is `UpdateProfileWithAgentError::UnsupportedMimeTypeException`.
-    pub fn is_unsupported_mime_type_exception(&self) -> bool {
-        matches!(self, Self::UnsupportedMimeTypeException(_))
     }
     /// Returns `true` if the error kind is `UpdateProfileWithAgentError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -439,14 +417,9 @@ impl ::std::error::Error for UpdateProfileWithAgentError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::AgentMessageOutOfContextException(_inner) => ::std::option::Option::Some(_inner),
-            Self::ConversationNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
-            Self::NotImplementedOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
-            Self::UnauthorizedException(_inner) => ::std::option::Option::Some(_inner),
-            Self::UnsupportedMimeTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -456,14 +429,9 @@ impl ::std::fmt::Display for UpdateProfileWithAgentError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
-            Self::AgentMessageOutOfContextException(_inner) => _inner.fmt(f),
-            Self::ConversationNotFoundException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
-            Self::NotImplementedOperationException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::UnauthorizedException(_inner) => _inner.fmt(f),
-            Self::UnsupportedMimeTypeException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -487,14 +455,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateProfile
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::AgentMessageOutOfContextException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::ConversationNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::NotImplementedOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnauthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::UnsupportedMimeTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

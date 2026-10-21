@@ -6,17 +6,14 @@ pub fn ser_update_profile_with_agent_input_input(
     if let Some(var_1) = &input.profile_id {
         object.key("ProfileId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.source_format {
-        object.key("SourceFormat").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.input_message {
+    if let Some(var_2) = &input.input_message {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("InputMessage").start_object();
-        crate::protocol_serde::shape_agent_input_message::ser_agent_input_message(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_3 = object.key("InputMessage").start_object();
+        crate::protocol_serde::shape_agent_input_message::ser_agent_input_message(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_5) = &input.conversation_id {
-        object.key("ConversationId").string(var_5.as_str());
+    if let Some(var_4) = &input.conversation_id {
+        object.key("ConversationId").string(var_4.as_str());
     }
     Ok(())
 }

@@ -563,6 +563,8 @@ pub use crate::types::_av1_qvbr_settings::Av1QvbrSettings;
 
 pub use crate::types::_av1_rate_control_mode::Av1RateControlMode;
 
+pub use crate::types::_av1_scene_change_detect::Av1SceneChangeDetect;
+
 pub use crate::types::_av1_spatial_adaptive_quantization::Av1SpatialAdaptiveQuantization;
 
 pub use crate::types::_avc_intra_class::AvcIntraClass;
@@ -1257,6 +1259,8 @@ pub use crate::types::_automated_abr_rule::AutomatedAbrRule;
 
 pub use crate::types::_cmaf_additional_manifest::CmafAdditionalManifest;
 
+pub use crate::types::_dash_adaptation_set_grouping::DashAdaptationSetGrouping;
+
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
 
 pub use crate::types::_cmaf_encryption_type::CmafEncryptionType;
@@ -1531,6 +1535,8 @@ mod _av1_qvbr_settings;
 
 mod _av1_rate_control_mode;
 
+mod _av1_scene_change_detect;
+
 mod _av1_settings;
 
 mod _av1_spatial_adaptive_quantization;
@@ -1716,6 +1722,8 @@ mod _container_type;
 mod _content_light_level;
 
 mod _copy_protection_action;
+
+mod _dash_adaptation_set_grouping;
 
 mod _dash_additional_manifest;
 

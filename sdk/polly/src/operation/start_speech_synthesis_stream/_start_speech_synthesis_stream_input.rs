@@ -13,7 +13,7 @@ pub struct StartSpeechSynthesisStreamInput {
     pub output_format: ::std::option::Option<crate::types::OutputFormat>,
     /// <p>The audio frequency, specified in Hz.</p>
     pub sample_rate: ::std::option::Option<::std::string::String>,
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
     /// <p>The input event stream that contains text events and stream control events.</p>
     pub action_stream: ::aws_smithy_http::event_stream::EventStreamSender<
@@ -44,7 +44,7 @@ impl StartSpeechSynthesisStreamInput {
     pub fn sample_rate(&self) -> ::std::option::Option<&str> {
         self.sample_rate.as_deref()
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn voice_id(&self) -> ::std::option::Option<&crate::types::VoiceId> {
         self.voice_id.as_ref()
     }
@@ -161,18 +161,18 @@ impl StartSpeechSynthesisStreamInputBuilder {
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         &self.sample_rate
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     /// This field is required.
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.voice_id = input;
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
         &self.voice_id
     }

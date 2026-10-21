@@ -174,6 +174,8 @@ mod create_data_product_revision;
 
 mod create_data_source;
 
+mod create_designation;
+
 mod create_domain;
 
 mod create_domain_unit;
@@ -257,6 +259,8 @@ mod delete_data_product;
 
 mod delete_data_source;
 
+mod delete_designation;
+
 mod delete_domain;
 
 mod delete_domain_unit;
@@ -320,6 +324,8 @@ mod get_data_product;
 mod get_data_source;
 
 mod get_data_source_run;
+
+mod get_designation;
 
 mod get_domain;
 
@@ -398,6 +404,8 @@ mod list_data_source_run_activities;
 mod list_data_source_runs;
 
 mod list_data_sources;
+
+mod list_designations;
 
 mod list_domain_units_for_parent;
 
@@ -506,6 +514,8 @@ mod update_asset_filter;
 mod update_connection;
 
 mod update_data_source;
+
+mod update_designation;
 
 mod update_domain;
 

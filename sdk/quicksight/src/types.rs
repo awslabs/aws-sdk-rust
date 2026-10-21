@@ -473,6 +473,12 @@ pub use crate::types::_web_proxy_credentials::WebProxyCredentials;
 
 pub use crate::types::_o_auth_client_credentials::OAuthClientCredentials;
 
+pub use crate::types::_service_account_credentials::ServiceAccountCredentials;
+
+pub use crate::types::_share_point_client_credentials::SharePointClientCredentials;
+
+pub use crate::types::_one_drive_client_credentials::OneDriveClientCredentials;
+
 pub use crate::types::_microsoft_purview_provider_config::MicrosoftPurviewProviderConfig;
 
 pub use crate::types::_permission::Permission;
@@ -4701,6 +4707,8 @@ mod _o_auth_client_credentials;
 
 mod _o_auth_parameters;
 
+mod _one_drive_client_credentials;
+
 mod _one_drive_parameters;
 
 mod _oracle_parameters;
@@ -5161,6 +5169,8 @@ mod _semantic_type;
 
 mod _series_item;
 
+mod _service_account_credentials;
+
 mod _service_now_parameters;
 
 mod _service_type;
@@ -5170,6 +5180,8 @@ mod _session_tag;
 mod _set_parameter_value_configuration;
 
 mod _shape_conditional_format;
+
+mod _share_point_client_credentials;
 
 mod _share_point_parameters;
 

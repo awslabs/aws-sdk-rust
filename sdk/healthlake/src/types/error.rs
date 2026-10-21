@@ -15,39 +15,112 @@ pub use crate::types::error::_validation_exception::ValidationException;
 
 pub use crate::types::error::_failed_dependency_exception::FailedDependencyException;
 
-pub use crate::types::error::_agent_message_out_of_context_exception::AgentMessageOutOfContextException;
+/// Error type for the `AgentOutputMessageStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum AgentOutputMessageStreamError {
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-AgentOutputMessageStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl AgentOutputMessageStreamError {
+    /// Creates the `AgentOutputMessageStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
 
-pub use crate::types::error::_conversation_not_found_exception::ConversationNotFoundException;
-
-pub use crate::types::error::_not_implemented_operation_exception::NotImplementedOperationException;
-
-pub use crate::types::error::_unauthorized_exception::UnauthorizedException;
-
-pub use crate::types::error::_unsupported_mime_type_exception::UnsupportedMimeTypeException;
+    /// Creates the `AgentOutputMessageStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+}
+impl ::std::error::Error for AgentOutputMessageStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for AgentOutputMessageStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for AgentOutputMessageStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AgentOutputMessageStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for AgentOutputMessageStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::AgentOutputMessageStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 
 mod _access_denied_exception;
 
-mod _agent_message_out_of_context_exception;
-
 mod _conflict_exception;
-
-mod _conversation_not_found_exception;
 
 mod _failed_dependency_exception;
 
 mod _internal_server_exception;
-
-mod _not_implemented_operation_exception;
 
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
 
 mod _throttling_exception;
-
-mod _unauthorized_exception;
-
-mod _unsupported_mime_type_exception;
 
 mod _validation_exception;
 

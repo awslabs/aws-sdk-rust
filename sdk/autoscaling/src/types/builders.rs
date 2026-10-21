@@ -55,6 +55,8 @@ pub use crate::types::_retention_triggers::RetentionTriggersBuilder;
 
 pub use crate::types::_block_device_mapping::BlockDeviceMappingBuilder;
 
+pub use crate::types::_account_setting::AccountSettingBuilder;
+
 pub use crate::types::_adjustment_type::AdjustmentTypeBuilder;
 
 pub use crate::types::_filter::FilterBuilder;

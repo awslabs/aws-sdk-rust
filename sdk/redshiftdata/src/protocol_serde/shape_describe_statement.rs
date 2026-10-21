@@ -234,6 +234,13 @@ pub(crate) fn de_describe_statement(
                             .transpose()?,
                     );
                 }
+                "RedshiftQueryUuid" => {
+                    builder = builder.set_redshift_query_uuid(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "QueryParameters" => {
                     builder = builder.set_query_parameters(crate::protocol_serde::shape_sql_parameters_list::de_sql_parameters_list(
                         tokens,

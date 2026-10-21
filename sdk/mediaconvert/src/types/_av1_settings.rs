@@ -8,6 +8,8 @@ pub struct Av1Settings {
     pub adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    /// Specify the average bitrate in bits per second. Required when Rate control mode is CBR.
+    pub bitrate: ::std::option::Option<i32>,
     /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
     pub film_grain_synthesis: ::std::option::Option<crate::types::Av1FilmGrainSynthesis>,
     /// Use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
@@ -26,12 +28,18 @@ pub struct Av1Settings {
     pub number_b_frames_between_reference_frames: ::std::option::Option<i32>,
     /// Optionally choose one or more per frame metric reports to generate along with your output. You can use these metrics to analyze your video output according to one or more commonly used image quality metrics. You can specify per frame metrics for output groups or for individual outputs. When you do, MediaConvert writes a CSV (Comma-Separated Values) file to your S3 output destination, named after the output name and metric type. For example: videofile_PSNR.csv Jobs that generate per frame metrics will take longer to complete, depending on the resolution and complexity of your output. For example, some 4K jobs might take up to twice as long to complete. Note that when analyzing the video quality of your output, or when comparing the video quality of multiple different outputs, we generally also recommend a detailed visual review in a controlled environment. You can choose from the following per frame metrics: * PSNR: Peak Signal-to-Noise Ratio * SSIM: Structural Similarity Index Measure * MS_SSIM: Multi-Scale Similarity Index Measure * PSNR_HVS: Peak Signal-to-Noise Ratio, Human Visual System * VMAF: Video Multi-Method Assessment Fusion * QVBR: Quality-Defined Variable Bitrate. This option is only available when your output uses the QVBR rate control mode. * SHOT_CHANGE: Shot Changes
     pub per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
     pub qvbr_settings: ::std::option::Option<crate::types::Av1QvbrSettings>,
-    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
     pub rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
+    /// Optional. Use this setting to have the service insert I-frames at scene changes that it automatically detects. For AV1, scene change detection is disabled by default. Choose Enabled to insert I-frames at detected scene changes, which can improve video quality. If this output uses QVBR, you can instead choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub scene_change_detect: ::std::option::Option<crate::types::Av1SceneChangeDetect>,
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
     pub slices: ::std::option::Option<i32>,
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub sliding_window_ms: ::std::option::Option<i32>,
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the QVBR rate control mode. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub sliding_window_peak_bitrate: ::std::option::Option<i32>,
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub spatial_adaptive_quantization: ::std::option::Option<crate::types::Av1SpatialAdaptiveQuantization>,
 }
@@ -43,6 +51,10 @@ impl Av1Settings {
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub fn bit_depth(&self) -> ::std::option::Option<&crate::types::Av1BitDepth> {
         self.bit_depth.as_ref()
+    }
+    /// Specify the average bitrate in bits per second. Required when Rate control mode is CBR.
+    pub fn bitrate(&self) -> ::std::option::Option<i32> {
+        self.bitrate
     }
     /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
     pub fn film_grain_synthesis(&self) -> ::std::option::Option<&crate::types::Av1FilmGrainSynthesis> {
@@ -82,17 +94,29 @@ impl Av1Settings {
     pub fn per_frame_metrics(&self) -> &[crate::types::FrameMetricType] {
         self.per_frame_metrics.as_deref().unwrap_or_default()
     }
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn qvbr_settings(&self) -> ::std::option::Option<&crate::types::Av1QvbrSettings> {
         self.qvbr_settings.as_ref()
     }
-    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
     pub fn rate_control_mode(&self) -> ::std::option::Option<&crate::types::Av1RateControlMode> {
         self.rate_control_mode.as_ref()
+    }
+    /// Optional. Use this setting to have the service insert I-frames at scene changes that it automatically detects. For AV1, scene change detection is disabled by default. Choose Enabled to insert I-frames at detected scene changes, which can improve video quality. If this output uses QVBR, you can instead choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn scene_change_detect(&self) -> ::std::option::Option<&crate::types::Av1SceneChangeDetect> {
+        self.scene_change_detect.as_ref()
     }
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
     pub fn slices(&self) -> ::std::option::Option<i32> {
         self.slices
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the QVBR rate control mode. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(&self) -> ::std::option::Option<i32> {
+        self.sliding_window_peak_bitrate
     }
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub fn spatial_adaptive_quantization(&self) -> ::std::option::Option<&crate::types::Av1SpatialAdaptiveQuantization> {
@@ -112,6 +136,7 @@ impl Av1Settings {
 pub struct Av1SettingsBuilder {
     pub(crate) adaptive_quantization: ::std::option::Option<crate::types::Av1AdaptiveQuantization>,
     pub(crate) bit_depth: ::std::option::Option<crate::types::Av1BitDepth>,
+    pub(crate) bitrate: ::std::option::Option<i32>,
     pub(crate) film_grain_synthesis: ::std::option::Option<crate::types::Av1FilmGrainSynthesis>,
     pub(crate) framerate_control: ::std::option::Option<crate::types::Av1FramerateControl>,
     pub(crate) framerate_conversion_algorithm: ::std::option::Option<crate::types::Av1FramerateConversionAlgorithm>,
@@ -123,7 +148,10 @@ pub struct Av1SettingsBuilder {
     pub(crate) per_frame_metrics: ::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>>,
     pub(crate) qvbr_settings: ::std::option::Option<crate::types::Av1QvbrSettings>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::Av1RateControlMode>,
+    pub(crate) scene_change_detect: ::std::option::Option<crate::types::Av1SceneChangeDetect>,
     pub(crate) slices: ::std::option::Option<i32>,
+    pub(crate) sliding_window_ms: ::std::option::Option<i32>,
+    pub(crate) sliding_window_peak_bitrate: ::std::option::Option<i32>,
     pub(crate) spatial_adaptive_quantization: ::std::option::Option<crate::types::Av1SpatialAdaptiveQuantization>,
 }
 impl Av1SettingsBuilder {
@@ -154,6 +182,20 @@ impl Av1SettingsBuilder {
     /// Specify the Bit depth. You can choose 8-bit or 10-bit.
     pub fn get_bit_depth(&self) -> &::std::option::Option<crate::types::Av1BitDepth> {
         &self.bit_depth
+    }
+    /// Specify the average bitrate in bits per second. Required when Rate control mode is CBR.
+    pub fn bitrate(mut self, input: i32) -> Self {
+        self.bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the average bitrate in bits per second. Required when Rate control mode is CBR.
+    pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.bitrate = input;
+        self
+    }
+    /// Specify the average bitrate in bits per second. Required when Rate control mode is CBR.
+    pub fn get_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.bitrate
     }
     /// Film grain synthesis replaces film grain present in your content with similar quality synthesized AV1 film grain. We recommend that you choose Enabled to reduce the bandwidth of your QVBR quality level 5, 6, 7, or 8 outputs. For QVBR quality level 9 or 10 outputs we recommend that you keep the default value, Disabled. When you include Film grain synthesis, you cannot include the Noise reducer preprocessor.
     pub fn film_grain_synthesis(mut self, input: crate::types::Av1FilmGrainSynthesis) -> Self {
@@ -287,33 +329,47 @@ impl Av1SettingsBuilder {
     pub fn get_per_frame_metrics(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FrameMetricType>> {
         &self.per_frame_metrics
     }
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn qvbr_settings(mut self, input: crate::types::Av1QvbrSettings) -> Self {
         self.qvbr_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn set_qvbr_settings(mut self, input: ::std::option::Option<crate::types::Av1QvbrSettings>) -> Self {
         self.qvbr_settings = input;
         self
     }
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Use these settings only when you set QVBR for Rate control mode.
     pub fn get_qvbr_settings(&self) -> &::std::option::Option<crate::types::Av1QvbrSettings> {
         &self.qvbr_settings
     }
-    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
     pub fn rate_control_mode(mut self, input: crate::types::Av1RateControlMode) -> Self {
         self.rate_control_mode = ::std::option::Option::Some(input);
         self
     }
-    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
     pub fn set_rate_control_mode(mut self, input: ::std::option::Option<crate::types::Av1RateControlMode>) -> Self {
         self.rate_control_mode = input;
         self
     }
-    /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+    /// 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
     pub fn get_rate_control_mode(&self) -> &::std::option::Option<crate::types::Av1RateControlMode> {
         &self.rate_control_mode
+    }
+    /// Optional. Use this setting to have the service insert I-frames at scene changes that it automatically detects. For AV1, scene change detection is disabled by default. Choose Enabled to insert I-frames at detected scene changes, which can improve video quality. If this output uses QVBR, you can instead choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn scene_change_detect(mut self, input: crate::types::Av1SceneChangeDetect) -> Self {
+        self.scene_change_detect = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Use this setting to have the service insert I-frames at scene changes that it automatically detects. For AV1, scene change detection is disabled by default. Choose Enabled to insert I-frames at detected scene changes, which can improve video quality. If this output uses QVBR, you can instead choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn set_scene_change_detect(mut self, input: ::std::option::Option<crate::types::Av1SceneChangeDetect>) -> Self {
+        self.scene_change_detect = input;
+        self
+    }
+    /// Optional. Use this setting to have the service insert I-frames at scene changes that it automatically detects. For AV1, scene change detection is disabled by default. Choose Enabled to insert I-frames at detected scene changes, which can improve video quality. If this output uses QVBR, you can instead choose Transition detection for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+    pub fn get_scene_change_detect(&self) -> &::std::option::Option<crate::types::Av1SceneChangeDetect> {
+        &self.scene_change_detect
     }
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
     pub fn slices(mut self, input: i32) -> Self {
@@ -328,6 +384,34 @@ impl Av1SettingsBuilder {
     /// Specify the number of slices per picture. This value must be 1, 2, 4, 8, 16, or 32. For progressive pictures, this value must be less than or equal to the number of macroblock rows. For interlaced pictures, this value must be less than or equal to half the number of macroblock rows.
     pub fn get_slices(&self) -> &::std::option::Option<i32> {
         &self.slices
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn sliding_window_ms(mut self, input: i32) -> Self {
+        self.sliding_window_ms = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn set_sliding_window_ms(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_ms = input;
+        self
+    }
+    /// Optional. Specify the duration, in milliseconds, of the sliding window over which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate but omit this value, MediaConvert uses a default sliding window of 1000.
+    pub fn get_sliding_window_ms(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_ms
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the QVBR rate control mode. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn sliding_window_peak_bitrate(mut self, input: i32) -> Self {
+        self.sliding_window_peak_bitrate = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the QVBR rate control mode. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn set_sliding_window_peak_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.sliding_window_peak_bitrate = input;
+        self
+    }
+    /// Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that MediaConvert enforces over the sliding window set by Peak bitrate window. For example, enter fifty megabits per second as 50000000. Applies in the QVBR rate control mode. When you specify a value below Max bitrate, MediaConvert raises it to Max bitrate.
+    pub fn get_sliding_window_peak_bitrate(&self) -> &::std::option::Option<i32> {
+        &self.sliding_window_peak_bitrate
     }
     /// Keep the default value, Enabled, to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
     pub fn spatial_adaptive_quantization(mut self, input: crate::types::Av1SpatialAdaptiveQuantization) -> Self {
@@ -348,6 +432,7 @@ impl Av1SettingsBuilder {
         crate::types::Av1Settings {
             adaptive_quantization: self.adaptive_quantization,
             bit_depth: self.bit_depth,
+            bitrate: self.bitrate,
             film_grain_synthesis: self.film_grain_synthesis,
             framerate_control: self.framerate_control,
             framerate_conversion_algorithm: self.framerate_conversion_algorithm,
@@ -359,7 +444,10 @@ impl Av1SettingsBuilder {
             per_frame_metrics: self.per_frame_metrics,
             qvbr_settings: self.qvbr_settings,
             rate_control_mode: self.rate_control_mode,
+            scene_change_detect: self.scene_change_detect,
             slices: self.slices,
+            sliding_window_ms: self.sliding_window_ms,
+            sliding_window_peak_bitrate: self.sliding_window_peak_bitrate,
             spatial_adaptive_quantization: self.spatial_adaptive_quantization,
         }
     }

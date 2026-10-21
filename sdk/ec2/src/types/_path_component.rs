@@ -34,6 +34,8 @@ pub struct PathComponent {
     pub transit_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The route in a transit gateway route table.</p>
     pub transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    /// <p>The entry in a transit gateway policy table.</p>
+    pub transit_gateway_policy_table_entry: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
     /// <p>The explanation codes.</p>
     pub explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
     /// <p>The load balancer listener.</p>
@@ -108,6 +110,10 @@ impl PathComponent {
     pub fn transit_gateway_route_table_route(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableRoute> {
         self.transit_gateway_route_table_route.as_ref()
     }
+    /// <p>The entry in a transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table_entry(&self) -> ::std::option::Option<&crate::types::AnalysisTransitGatewayPolicyTableEntry> {
+        self.transit_gateway_policy_table_entry.as_ref()
+    }
     /// <p>The explanation codes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.explanations.is_none()`.
@@ -157,6 +163,7 @@ pub struct PathComponentBuilder {
     pub(crate) additional_details: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDetail>>,
     pub(crate) transit_gateway: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) transit_gateway_route_table_route: ::std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    pub(crate) transit_gateway_policy_table_entry: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
     pub(crate) explanations: ::std::option::Option<::std::vec::Vec<crate::types::Explanation>>,
     pub(crate) elastic_load_balancer_listener: ::std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) firewall_stateless_rule: ::std::option::Option<crate::types::FirewallStatelessRule>,
@@ -380,6 +387,23 @@ impl PathComponentBuilder {
     pub fn get_transit_gateway_route_table_route(&self) -> &::std::option::Option<crate::types::TransitGatewayRouteTableRoute> {
         &self.transit_gateway_route_table_route
     }
+    /// <p>The entry in a transit gateway policy table.</p>
+    pub fn transit_gateway_policy_table_entry(mut self, input: crate::types::AnalysisTransitGatewayPolicyTableEntry) -> Self {
+        self.transit_gateway_policy_table_entry = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entry in a transit gateway policy table.</p>
+    pub fn set_transit_gateway_policy_table_entry(
+        mut self,
+        input: ::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry>,
+    ) -> Self {
+        self.transit_gateway_policy_table_entry = input;
+        self
+    }
+    /// <p>The entry in a transit gateway policy table.</p>
+    pub fn get_transit_gateway_policy_table_entry(&self) -> &::std::option::Option<crate::types::AnalysisTransitGatewayPolicyTableEntry> {
+        &self.transit_gateway_policy_table_entry
+    }
     /// Appends an item to `explanations`.
     ///
     /// To override the contents of this collection use [`set_explanations`](Self::set_explanations).
@@ -474,6 +498,7 @@ impl PathComponentBuilder {
             additional_details: self.additional_details,
             transit_gateway: self.transit_gateway,
             transit_gateway_route_table_route: self.transit_gateway_route_table_route,
+            transit_gateway_policy_table_entry: self.transit_gateway_policy_table_entry,
             explanations: self.explanations,
             elastic_load_balancer_listener: self.elastic_load_balancer_listener,
             firewall_stateless_rule: self.firewall_stateless_rule,

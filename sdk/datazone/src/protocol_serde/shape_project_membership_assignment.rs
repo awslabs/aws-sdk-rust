@@ -12,5 +12,8 @@ pub fn ser_project_membership_assignment(
     {
         object.key("designation").string(input.designation.as_str());
     }
+    if let Some(var_3) = &input.user_created_designation_id {
+        object.key("userCreatedDesignationId").string(var_3.as_str());
+    }
     Ok(())
 }

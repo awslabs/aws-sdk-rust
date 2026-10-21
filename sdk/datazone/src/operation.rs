@@ -58,6 +58,9 @@ pub mod create_data_product_revision;
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
 
+/// Types for the `CreateDesignation` operation.
+pub mod create_designation;
+
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
@@ -141,6 +144,9 @@ pub mod delete_data_product;
 
 /// Types for the `DeleteDataSource` operation.
 pub mod delete_data_source;
+
+/// Types for the `DeleteDesignation` operation.
+pub mod delete_designation;
 
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
@@ -237,6 +243,9 @@ pub mod get_data_source;
 
 /// Types for the `GetDataSourceRun` operation.
 pub mod get_data_source_run;
+
+/// Types for the `GetDesignation` operation.
+pub mod get_designation;
 
 /// Types for the `GetDomain` operation.
 pub mod get_domain;
@@ -354,6 +363,9 @@ pub mod list_data_source_runs;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
+
+/// Types for the `ListDesignations` operation.
+pub mod list_designations;
 
 /// Types for the `ListDomainUnitsForParent` operation.
 pub mod list_domain_units_for_parent;
@@ -516,6 +528,9 @@ pub mod update_connection;
 
 /// Types for the `UpdateDataSource` operation.
 pub mod update_data_source;
+
+/// Types for the `UpdateDesignation` operation.
+pub mod update_designation;
 
 /// Types for the `UpdateDomain` operation.
 pub mod update_domain;

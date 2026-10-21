@@ -1419,6 +1419,8 @@ pub use crate::types::_ebs_status_summary::EbsStatusSummaryBuilder;
 
 pub use crate::types::_application_status_summary::ApplicationStatusSummaryBuilder;
 
+pub use crate::types::_performance_status_summary::PerformanceStatusSummaryBuilder;
+
 pub use crate::types::_processor_info::ProcessorInfoBuilder;
 
 pub use crate::types::_v_cpu_info::VCpuInfoBuilder;
@@ -1778,6 +1780,8 @@ pub use crate::types::_analysis_route_table_route::AnalysisRouteTableRouteBuilde
 pub use crate::types::_analysis_security_group_rule::AnalysisSecurityGroupRuleBuilder;
 
 pub use crate::types::_transit_gateway_route_table_route::TransitGatewayRouteTableRouteBuilder;
+
+pub use crate::types::_analysis_transit_gateway_policy_table_entry::AnalysisTransitGatewayPolicyTableEntryBuilder;
 
 pub use crate::types::_firewall_stateless_rule::FirewallStatelessRuleBuilder;
 

@@ -23,6 +23,12 @@ impl crate::operation::update_profile_with_agent::builders::UpdateProfileWithAge
 /// Fluent builder constructing a request to `UpdateProfileWithAgent`.
 ///
 /// <p>Updates a data transformation profile using chat-based interaction with an agent. Supports multi-turn conversations for iteratively customizing profiles.</p>
+///
+/// [`UpdateProfileWithAgentOutput`](crate::operation::update_profile_with_agent::UpdateProfileWithAgentOutput) contains an event stream field as well as one or more non-event stream fields.
+/// Due to its current implementation, the non-event stream fields are not fully deserialized
+/// until the [`send`](Self::send) method completes. As a result, accessing these fields of the operation
+/// output struct within an interceptor may return uninitialized values.
+///
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProfileWithAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -86,7 +92,37 @@ impl UpdateProfileWithAgentFluentBuilder {
             &self.handle.conf,
             self.config_override,
         );
-        crate::operation::update_profile_with_agent::UpdateProfileWithAgent::orchestrate(&runtime_plugins, input).await
+        let mut output = crate::operation::update_profile_with_agent::UpdateProfileWithAgent::orchestrate(&runtime_plugins, input).await?;
+
+        // Converts any error encountered beyond this point into an `SdkError` response error
+        // with an `HttpResponse`. However, since we have already exited the `orchestrate`
+        // function, the original `HttpResponse` is no longer available and cannot be restored.
+        // This means that header information from the original response has been lost.
+        //
+        // Note that the response body would have been consumed by the deserializer
+        // regardless, even if the initial message was hypothetically processed during
+        // the orchestrator's deserialization phase but later resulted in an error.
+        fn response_error(
+            err: impl ::std::convert::Into<::aws_smithy_runtime_api::box_error::BoxError>,
+        ) -> ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_profile_with_agent::UpdateProfileWithAgentError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        > {
+            ::aws_smithy_runtime_api::client::result::SdkError::response_error(
+                err,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse::new(
+                    ::aws_smithy_runtime_api::http::StatusCode::try_from(200).expect("valid successful code"),
+                    ::aws_smithy_types::body::SdkBody::empty(),
+                ),
+            )
+        }
+
+        let message = output.agent_response.try_recv_initial_response().await.map_err(response_error)?;
+
+        match message {
+            ::std::option::Option::Some(_message) => ::std::result::Result::Ok(output),
+            ::std::option::Option::None => ::std::result::Result::Ok(output),
+        }
     }
 
     /// Consumes this builder, creating a customizable operation that can be modified before being sent.
@@ -121,20 +157,6 @@ impl UpdateProfileWithAgentFluentBuilder {
     /// <p>The unique identifier of the profile to update via the agent.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_id()
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn source_format(mut self, input: crate::types::SourceFormat) -> Self {
-        self.inner = self.inner.source_format(input);
-        self
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn set_source_format(mut self, input: ::std::option::Option<crate::types::SourceFormat>) -> Self {
-        self.inner = self.inner.set_source_format(input);
-        self
-    }
-    /// <p>The source data format for the transformation.</p>
-    pub fn get_source_format(&self) -> &::std::option::Option<crate::types::SourceFormat> {
-        self.inner.get_source_format()
     }
     /// <p>The message to send to the agent.</p>
     pub fn input_message(mut self, input: crate::types::AgentInputMessage) -> Self {

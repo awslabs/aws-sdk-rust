@@ -73,6 +73,8 @@ pub use crate::types::_instance_metadata_http_tokens_state::InstanceMetadataHttp
 
 pub use crate::types::_instance_metadata_endpoint_state::InstanceMetadataEndpointState;
 
+pub use crate::types::_account_setting::AccountSetting;
+
 pub use crate::types::_adjustment_type::AdjustmentType;
 
 pub use crate::types::_filter::Filter;
@@ -252,6 +254,8 @@ mod _accelerator_name;
 mod _accelerator_total_memory_mib_request;
 
 mod _accelerator_type;
+
+mod _account_setting;
 
 mod _activity;
 

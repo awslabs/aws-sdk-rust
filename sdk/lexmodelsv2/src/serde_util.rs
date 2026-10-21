@@ -33,18 +33,6 @@ pub(crate) fn fulfillment_code_hook_settings_correct_errors(
     builder
 }
 
-pub(crate) fn intent_confirmation_setting_correct_errors(
-    mut builder: crate::types::builders::IntentConfirmationSettingBuilder,
-) -> crate::types::builders::IntentConfirmationSettingBuilder {
-    if builder.prompt_specification.is_none() {
-        builder.prompt_specification = {
-            let builder = crate::types::builders::PromptSpecificationBuilder::default();
-            crate::serde_util::prompt_specification_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn kendra_configuration_correct_errors(
     mut builder: crate::types::builders::KendraConfigurationBuilder,
 ) -> crate::types::builders::KendraConfigurationBuilder {
@@ -703,24 +691,6 @@ pub(crate) fn utterance_level_test_results_correct_errors(
 ) -> crate::types::builders::UtteranceLevelTestResultsBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn wait_and_continue_specification_correct_errors(
-    mut builder: crate::types::builders::WaitAndContinueSpecificationBuilder,
-) -> crate::types::builders::WaitAndContinueSpecificationBuilder {
-    if builder.waiting_response.is_none() {
-        builder.waiting_response = {
-            let builder = crate::types::builders::ResponseSpecificationBuilder::default();
-            crate::serde_util::response_specification_correct_errors(builder).build().ok()
-        }
-    }
-    if builder.continue_response.is_none() {
-        builder.continue_response = {
-            let builder = crate::types::builders::ResponseSpecificationBuilder::default();
-            crate::serde_util::response_specification_correct_errors(builder).build().ok()
-        }
     }
     builder
 }

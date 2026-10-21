@@ -340,6 +340,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateFirewal
 pub enum UpdateFirewallPolicyError {
     /// <p>Your request is valid, but Network Firewall couldn't perform the operation because of a system problem. Retry your request.</p>
     InternalServerError(crate::types::error::InternalServerError),
+    /// <p>The operation failed because it's not valid. For example, you might have tried to delete a rule group or firewall policy that's in use.</p>
+    InvalidOperationException(crate::types::error::InvalidOperationException),
     /// <p>The operation failed because of a problem with your request. Examples include:</p>
     /// <ul>
     /// <li>
@@ -390,6 +392,7 @@ impl UpdateFirewallPolicyError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -400,6 +403,10 @@ impl UpdateFirewallPolicyError {
     /// Returns `true` if the error kind is `UpdateFirewallPolicyError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
+    }
+    /// Returns `true` if the error kind is `UpdateFirewallPolicyError::InvalidOperationException`.
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(self, Self::InvalidOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateFirewallPolicyError::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
@@ -422,6 +429,7 @@ impl ::std::error::Error for UpdateFirewallPolicyError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
@@ -434,6 +442,7 @@ impl ::std::fmt::Display for UpdateFirewallPolicyError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::InternalServerError(_inner) => _inner.fmt(f),
+            Self::InvalidOperationException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
             Self::InvalidTokenException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
@@ -460,6 +469,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateFirewal
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -300,11 +300,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetGraphSumma
 
         let endpoint_prefix = {
             let graph_identifier = _input.graph_identifier.as_deref().unwrap_or_default();
-            if graph_identifier.is_empty() {
+            if !crate::endpoint_lib::host::is_valid_host_label(
+                graph_identifier,
+                false,
+                &mut crate::endpoint_lib::diagnostic::DiagnosticCollector::new(),
+            ) {
                 return Err(
-                    ::aws_smithy_runtime_api::client::endpoint::error::InvalidEndpointError::failed_to_construct_uri(
-                        "graph_identifier was unset or empty but must be set as part of the endpoint prefix",
-                    )
+                    ::aws_smithy_runtime_api::client::endpoint::error::InvalidEndpointError::failed_to_construct_uri(format!(
+                        "`graph_identifier` forms part of the endpoint host and so must match `[a-zA-Z0-9-]{{1,63}}`, but was `{graph_identifier}`"
+                    ))
                     .into(),
                 );
             }

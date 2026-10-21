@@ -5,9 +5,11 @@
 pub struct ListFlowOperationResultsOutput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>.</p>
+    pub availability_zone_id: ::std::option::Option<::std::string::String>,
     /// <p></p>
     pub vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
@@ -32,10 +34,14 @@ impl ListFlowOperationResultsOutput {
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>.</p>
+    pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
+        self.availability_zone_id.as_deref()
     }
     /// <p></p>
     pub fn vpc_endpoint_association_arn(&self) -> ::std::option::Option<&str> {
@@ -91,6 +97,7 @@ impl ListFlowOperationResultsOutput {
 pub struct ListFlowOperationResultsOutputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_association_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) flow_operation_id: ::std::option::Option<::std::string::String>,
@@ -116,22 +123,36 @@ impl ListFlowOperationResultsOutputBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability_zone = input;
         self
     }
-    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
+    /// <p>The name of the Availability Zone where the firewall is located. For example, <code>us-east-2a</code>.</p>
     /// <p>Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>.</p>
+    pub fn availability_zone_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability_zone_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>.</p>
+    pub fn set_availability_zone_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.availability_zone_id = input;
+        self
+    }
+    /// <p>The ID of the Availability Zone where the firewall is located. For example, <code>use2-az1</code>.</p>
+    pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.availability_zone_id
     }
     /// <p></p>
     pub fn vpc_endpoint_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -268,6 +289,7 @@ impl ListFlowOperationResultsOutputBuilder {
         crate::operation::list_flow_operation_results::ListFlowOperationResultsOutput {
             firewall_arn: self.firewall_arn,
             availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
             vpc_endpoint_association_arn: self.vpc_endpoint_association_arn,
             vpc_endpoint_id: self.vpc_endpoint_id,
             flow_operation_id: self.flow_operation_id,

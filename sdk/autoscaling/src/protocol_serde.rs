@@ -103,6 +103,10 @@ pub(crate) mod shape_describe_account_limits;
 
 pub(crate) mod shape_describe_account_limits_input;
 
+pub(crate) mod shape_describe_account_settings;
+
+pub(crate) mod shape_describe_account_settings_input;
+
 pub(crate) mod shape_describe_adjustment_types;
 
 pub(crate) mod shape_describe_adjustment_types_input;
@@ -226,6 +230,10 @@ pub(crate) mod shape_get_predictive_scaling_forecast_input;
 pub(crate) mod shape_launch_instances;
 
 pub(crate) mod shape_launch_instances_input;
+
+pub(crate) mod shape_put_account_setting;
+
+pub(crate) mod shape_put_account_setting_input;
 
 pub(crate) mod shape_put_lifecycle_hook;
 
@@ -355,6 +363,8 @@ pub(crate) mod shape_target_tracking_configuration;
 
 pub(crate) mod shape_traffic_source_identifier;
 
+pub(crate) mod shape_account_settings;
+
 pub(crate) mod shape_activities;
 
 pub(crate) mod shape_activity;
@@ -428,6 +438,8 @@ pub(crate) mod shape_termination_policies;
 pub(crate) mod shape_traffic_source_states;
 
 pub(crate) mod shape_warm_pool_configuration;
+
+pub(crate) mod shape_account_setting;
 
 pub(crate) mod shape_adjustment_type;
 

@@ -105,6 +105,8 @@ pub use crate::types::_stateful_engine_options::StatefulEngineOptions;
 
 pub use crate::types::_policy_variables::PolicyVariables;
 
+pub use crate::types::_route53_resolved_ip_validation::Route53ResolvedIpValidation;
+
 pub use crate::types::_resource_status::ResourceStatus;
 
 pub use crate::types::_listener_property_request::ListenerPropertyRequest;
@@ -185,6 +187,12 @@ pub use crate::types::_stream_exception_policy::StreamExceptionPolicy;
 
 pub use crate::types::_flow_timeouts::FlowTimeouts;
 
+pub use crate::types::_route53_resolved_ip_validation_action::Route53ResolvedIpValidationAction;
+
+pub use crate::types::_dns_expiry_exception_policy::DnsExpiryExceptionPolicy;
+
+pub use crate::types::_firewall_policy_error::FirewallPolicyError;
+
 pub use crate::types::_listener_property_type::ListenerPropertyType;
 
 pub use crate::types::_create_proxy_rule::CreateProxyRule;
@@ -220,6 +228,8 @@ pub use crate::types::_action_definition::ActionDefinition;
 pub use crate::types::_stateful_rule_group_override::StatefulRuleGroupOverride;
 
 pub use crate::types::_ip_set::IpSet;
+
+pub use crate::types::_firewall_policy_error_code::FirewallPolicyErrorCode;
 
 pub use crate::types::_port_set::PortSet;
 
@@ -333,6 +343,8 @@ mod _describe_proxy_resource;
 
 mod _dimension;
 
+mod _dns_expiry_exception_policy;
+
 mod _enabled_analysis_type;
 
 mod _encryption_configuration;
@@ -344,6 +356,10 @@ mod _firewall;
 mod _firewall_metadata;
 
 mod _firewall_policy;
+
+mod _firewall_policy_error;
+
+mod _firewall_policy_error_code;
 
 mod _firewall_policy_metadata;
 
@@ -466,6 +482,10 @@ mod _resource_managed_type;
 mod _resource_status;
 
 mod _revocation_check_action;
+
+mod _route53_resolved_ip_validation;
+
+mod _route53_resolved_ip_validation_action;
 
 mod _rule_definition;
 

@@ -29,8 +29,6 @@ pub use crate::types::_transformation_output_data_config::TransformationOutputDa
 
 pub use crate::types::_agent_input_message::AgentInputMessageBuilder;
 
-pub use crate::types::_agent_output_message::AgentOutputMessageBuilder;
-
 pub use crate::types::_starter_profile_source::StarterProfileSourceBuilder;
 
 pub use crate::types::_existing_versioned_profile_source::ExistingVersionedProfileSourceBuilder;
@@ -62,3 +60,13 @@ pub use crate::types::_continuous_backup_restore_configuration::ContinuousBackup
 pub use crate::types::_data_transformation_s3_configuration::DataTransformationS3ConfigurationBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
+
+pub use crate::types::_text_message_event::TextMessageEventBuilder;
+
+pub use crate::types::_progress_event::ProgressEventBuilder;
+
+pub use crate::types::_heartbeat_event::HeartbeatEventBuilder;
+
+pub use crate::types::_error_event::ErrorEventBuilder;
+
+pub use crate::types::_end_of_output_event::EndOfOutputEventBuilder;

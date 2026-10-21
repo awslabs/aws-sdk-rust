@@ -2,23 +2,19 @@
 
 /// <p>The response from the <code>UpdateProfileWithAgent</code> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct UpdateProfileWithAgentOutput {
-    /// <p>The response message from the agent.</p>
-    pub agent_response: ::std::option::Option<crate::types::AgentOutputMessage>,
-    /// <p>The conversation identifier to use for follow-up messages in this conversation.</p>
-    pub conversation_id: ::std::string::String,
+    /// <p>The streaming response from the agent.</p>
+    pub agent_response:
+        crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError>,
     _request_id: Option<String>,
 }
 impl UpdateProfileWithAgentOutput {
-    /// <p>The response message from the agent.</p>
-    pub fn agent_response(&self) -> ::std::option::Option<&crate::types::AgentOutputMessage> {
-        self.agent_response.as_ref()
-    }
-    /// <p>The conversation identifier to use for follow-up messages in this conversation.</p>
-    pub fn conversation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.conversation_id.deref()
+    /// <p>The streaming response from the agent.</p>
+    pub fn agent_response(
+        &self,
+    ) -> &crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError> {
+        &self.agent_response
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateProfileWithAgentOutput {
@@ -31,46 +27,48 @@ impl UpdateProfileWithAgentOutput {
     pub fn builder() -> crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder {
         crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder::default()
     }
+    #[allow(unused)]
+    pub(crate) fn into_builder(self) -> crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder {
+        Self::builder().agent_response(self.agent_response)
+    }
 }
 
 /// A builder for [`UpdateProfileWithAgentOutput`](crate::operation::update_profile_with_agent::UpdateProfileWithAgentOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateProfileWithAgentOutputBuilder {
-    pub(crate) agent_response: ::std::option::Option<crate::types::AgentOutputMessage>,
-    pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_response: ::std::option::Option<
+        crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError>,
+    >,
     _request_id: Option<String>,
 }
 impl UpdateProfileWithAgentOutputBuilder {
-    /// <p>The response message from the agent.</p>
+    /// <p>The streaming response from the agent.</p>
     /// This field is required.
-    pub fn agent_response(mut self, input: crate::types::AgentOutputMessage) -> Self {
+    pub fn agent_response(
+        mut self,
+        input: crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError>,
+    ) -> Self {
         self.agent_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The response message from the agent.</p>
-    pub fn set_agent_response(mut self, input: ::std::option::Option<crate::types::AgentOutputMessage>) -> Self {
+    /// <p>The streaming response from the agent.</p>
+    pub fn set_agent_response(
+        mut self,
+        input: ::std::option::Option<
+            crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError>,
+        >,
+    ) -> Self {
         self.agent_response = input;
         self
     }
-    /// <p>The response message from the agent.</p>
-    pub fn get_agent_response(&self) -> &::std::option::Option<crate::types::AgentOutputMessage> {
+    /// <p>The streaming response from the agent.</p>
+    pub fn get_agent_response(
+        &self,
+    ) -> &::std::option::Option<
+        crate::event_receiver::EventReceiver<crate::types::AgentOutputMessageStream, crate::types::error::AgentOutputMessageStreamError>,
+    > {
         &self.agent_response
-    }
-    /// <p>The conversation identifier to use for follow-up messages in this conversation.</p>
-    /// This field is required.
-    pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.conversation_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The conversation identifier to use for follow-up messages in this conversation.</p>
-    pub fn set_conversation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.conversation_id = input;
-        self
-    }
-    /// <p>The conversation identifier to use for follow-up messages in this conversation.</p>
-    pub fn get_conversation_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.conversation_id
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -83,7 +81,7 @@ impl UpdateProfileWithAgentOutputBuilder {
     }
     /// Consumes the builder and constructs a [`UpdateProfileWithAgentOutput`](crate::operation::update_profile_with_agent::UpdateProfileWithAgentOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`conversation_id`](crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder::conversation_id)
+    /// - [`agent_response`](crate::operation::update_profile_with_agent::builders::UpdateProfileWithAgentOutputBuilder::agent_response)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,11 +89,10 @@ impl UpdateProfileWithAgentOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_profile_with_agent::UpdateProfileWithAgentOutput {
-            agent_response: self.agent_response,
-            conversation_id: self.conversation_id.ok_or_else(|| {
+            agent_response: self.agent_response.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "conversation_id",
-                    "conversation_id was not specified but it is required when building UpdateProfileWithAgentOutput",
+                    "agent_response",
+                    "agent_response was not specified but it is required when building UpdateProfileWithAgentOutput",
                 )
             })?,
             _request_id: self._request_id,

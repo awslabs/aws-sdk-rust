@@ -17,6 +17,8 @@
 ///     NoiseReducerFilter::Gaussian => { /* ... */ },
 ///     NoiseReducerFilter::Lanczos => { /* ... */ },
 ///     NoiseReducerFilter::Mean => { /* ... */ },
+///     NoiseReducerFilter::None => { /* ... */ },
+///     NoiseReducerFilter::Perceptual => { /* ... */ },
 ///     NoiseReducerFilter::Sharpen => { /* ... */ },
 ///     NoiseReducerFilter::Spatial => { /* ... */ },
 ///     NoiseReducerFilter::Temporal => { /* ... */ },
@@ -42,7 +44,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
+/// Use Noise reducer filter to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer. * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion. * Perceptual exploits perceptual masking, avoiding encoding bits spent on imperceptible detail. * None disables noise reduction, including the perceptual filter that MediaConvert otherwise applies by default for AVC, HEVC, AV1, MPEG-2, VP8, and VP9 outputs. MediaConvert doesn't apply that default to mezzanine and archival outputs (AVC-Intra, XAVC, Apple ProRes, VC3, Uncompressed), to frame capture outputs, or to outputs that use Dolby Vision, which doesn't support any noise reducer.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -58,6 +60,10 @@ pub enum NoiseReducerFilter {
     Lanczos,
     #[allow(missing_docs)] // documentation missing in model
     Mean,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
+    #[allow(missing_docs)] // documentation missing in model
+    Perceptual,
     #[allow(missing_docs)] // documentation missing in model
     Sharpen,
     #[allow(missing_docs)] // documentation missing in model
@@ -76,6 +82,8 @@ impl ::std::convert::From<&str> for NoiseReducerFilter {
             "GAUSSIAN" => NoiseReducerFilter::Gaussian,
             "LANCZOS" => NoiseReducerFilter::Lanczos,
             "MEAN" => NoiseReducerFilter::Mean,
+            "NONE" => NoiseReducerFilter::None,
+            "PERCEPTUAL" => NoiseReducerFilter::Perceptual,
             "SHARPEN" => NoiseReducerFilter::Sharpen,
             "SPATIAL" => NoiseReducerFilter::Spatial,
             "TEMPORAL" => NoiseReducerFilter::Temporal,
@@ -99,6 +107,8 @@ impl NoiseReducerFilter {
             NoiseReducerFilter::Gaussian => "GAUSSIAN",
             NoiseReducerFilter::Lanczos => "LANCZOS",
             NoiseReducerFilter::Mean => "MEAN",
+            NoiseReducerFilter::None => "NONE",
+            NoiseReducerFilter::Perceptual => "PERCEPTUAL",
             NoiseReducerFilter::Sharpen => "SHARPEN",
             NoiseReducerFilter::Spatial => "SPATIAL",
             NoiseReducerFilter::Temporal => "TEMPORAL",
@@ -107,7 +117,18 @@ impl NoiseReducerFilter {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILATERAL", "CONSERVE", "GAUSSIAN", "LANCZOS", "MEAN", "SHARPEN", "SPATIAL", "TEMPORAL"]
+        &[
+            "BILATERAL",
+            "CONSERVE",
+            "GAUSSIAN",
+            "LANCZOS",
+            "MEAN",
+            "NONE",
+            "PERCEPTUAL",
+            "SHARPEN",
+            "SPATIAL",
+            "TEMPORAL",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for NoiseReducerFilter {
@@ -135,6 +156,8 @@ impl ::std::fmt::Display for NoiseReducerFilter {
             NoiseReducerFilter::Gaussian => write!(f, "GAUSSIAN"),
             NoiseReducerFilter::Lanczos => write!(f, "LANCZOS"),
             NoiseReducerFilter::Mean => write!(f, "MEAN"),
+            NoiseReducerFilter::None => write!(f, "NONE"),
+            NoiseReducerFilter::Perceptual => write!(f, "PERCEPTUAL"),
             NoiseReducerFilter::Sharpen => write!(f, "SHARPEN"),
             NoiseReducerFilter::Spatial => write!(f, "SPATIAL"),
             NoiseReducerFilter::Temporal => write!(f, "TEMPORAL"),

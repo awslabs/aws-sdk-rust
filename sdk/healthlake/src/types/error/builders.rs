@@ -14,13 +14,3 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
 pub use crate::types::error::_failed_dependency_exception::FailedDependencyExceptionBuilder;
-
-pub use crate::types::error::_agent_message_out_of_context_exception::AgentMessageOutOfContextExceptionBuilder;
-
-pub use crate::types::error::_conversation_not_found_exception::ConversationNotFoundExceptionBuilder;
-
-pub use crate::types::error::_not_implemented_operation_exception::NotImplementedOperationExceptionBuilder;
-
-pub use crate::types::error::_unauthorized_exception::UnauthorizedExceptionBuilder;
-
-pub use crate::types::error::_unsupported_mime_type_exception::UnsupportedMimeTypeExceptionBuilder;
